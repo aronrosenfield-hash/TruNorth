@@ -362,6 +362,14 @@ function PaywallScreen({ onSubscribe, onClose }) {
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
         <div style={{ textAlign:"center", marginBottom:20 }}>
+          <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:20 }}>
+            <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center" }}>
+              <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
+                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
+              </svg>
+            </div>
+            <div style={{ fontSize:22, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:T.accent }}>North</span></div>
+          </div>
           <div style={{ width:56, height:56, background:T.goldBg, borderRadius:16, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 14px" }}>
             <i className="ti ti-crown" style={{ fontSize:26, color:T.gold }} aria-hidden="true" />
           </div>
@@ -637,10 +645,13 @@ function Quiz({ onComplete }) {
       <div style={{ flex:1, padding:"20px 16px 0", overflowY:"auto" }}>
         {isWelcome && (
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", paddingTop:20 }}>
-            <div style={{ width:72, height:72, background:T.accentBg, borderRadius:20, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:20 }}>
-              <i className="ti ti-adjustments-horizontal" style={{ fontSize:30, color:T.accent2 }} aria-hidden="true" />
+            <div style={{ width:80, height:80, background:T.accentBg, borderRadius:22, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:20 }}>
+              <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true">
+                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
+              </svg>
             </div>
-            <div style={{ fontSize:22, fontWeight:700, color:T.txt, marginBottom:10 }}>Personalize your scores</div>
+            <div style={{ fontSize:28, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
+            <div style={{ fontSize:12, color:T.txt3, letterSpacing:2, textTransform:"uppercase", marginTop:6, marginBottom:16 }}>Know where your money goes</div>
             <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300 }}>
               Answer 12 quick questions. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
             </div>
@@ -909,8 +920,13 @@ export default function App() {
           </>
         ) : (
           <div style={{ padding:"32px 20px", textAlign:"center" }}>
-            <div style={{ width:72, height:72, background:T.accentBg, borderRadius:20, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 20px" }}>
-              <i className="ti ti-adjustments-horizontal" style={{ fontSize:30, color:T.accent2 }} aria-hidden="true" />
+            <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:24 }}>
+              <div style={{ width:40, height:40, background:T.accentBg, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true">
+                  <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
+                </svg>
+              </div>
+              <div style={{ fontSize:26, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:"#7c6dfa" }}>North</span></div>
             </div>
             <div style={{ fontSize:22, fontWeight:700, color:T.txt, marginBottom:10 }}>Personalized scores are Pro</div>
             <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300, margin:"0 auto 24px" }}>
@@ -939,7 +955,7 @@ export default function App() {
             <i className="ti ti-leaf" style={{ fontSize:18, color:T.accent2 }} aria-hidden="true" />
           </div>
           <div style={{ flex:1 }}>
-            <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3 }}>Conscious</div>
+            <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3 }}>TruNorth</div>
             <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>Know where your money goes · {deduped.length} companies</div>
           </div>
           {isPaid
@@ -1124,7 +1140,7 @@ export default function App() {
                 <i className={`ti ${isPaid ? "ti-crown" : "ti-user"}`} style={{ fontSize:22, color:isPaid ? T.gold : T.txt3 }} aria-hidden="true" />
               </div>
               <div>
-                <div style={{ fontSize:16, fontWeight:700, color:T.txt }}>{isPaid ? "Conscious Pro" : "Free Account"}</div>
+                <div style={{ fontSize:16, fontWeight:700, color:T.txt }}>{isPaid ? "TruNorth Pro" : "Free Account"}</div>
                 <div style={{ fontSize:12, color:isPaid ? T.gold : T.txt3, marginTop:2 }}>{isPaid ? "All features unlocked" : "Upgrade to unlock full profiles"}</div>
               </div>
             </div>
@@ -1167,7 +1183,7 @@ export default function App() {
 
           {/* App info */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16 }}>
-            <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About Conscious</div>
+            <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About TruNorth</div>
             {[
               ["Companies in database", deduped.length.toLocaleString()],
               ["Data sources", "FEC, OSHA, NLRB, SEC, CDP, PETA, HRC"],
