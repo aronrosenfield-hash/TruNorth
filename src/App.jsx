@@ -439,6 +439,13 @@ async function fetchLiveData(name) {
 
 // ─── COMPANY CARD ─────────────────────────────────────────────────────────────
 
+// ─── PILL COMPONENT ──────────────────────────────────────────────────────────
+const Pill = ({ on, bg, color, border, onClick, children }) => (
+  <button onClick={onClick} style={{ padding:"7px 12px", borderRadius:20, fontSize:13, fontWeight:on?600:400, border:`1px solid ${on?border:T.border2}`, background:on?bg:T.bg3, color:on?color:T.txt2, cursor:"pointer", display:"flex", alignItems:"center", gap:5, whiteSpace:"nowrap" }}>
+    {children}
+  </button>
+);
+
 // ─── FILTER PANEL ────────────────────────────────────────────────────────────
 function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, lc }) {
   const [open, setOpen] = useState(false);
@@ -944,11 +951,7 @@ export default function App() {
   const TABS = ["search","browse","top","sources","account"];
   const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",sources:"Sources",account:"Account"};
 
-  const Pill = ({ on, bg, color, border, onClick, children }) => (
-    <button onClick={onClick} style={{ padding:"7px 12px", borderRadius:20, fontSize:13, fontWeight:on?600:400, border:`1px solid ${on?border:T.border2}`, background:on?bg:T.bg3, color:on?color:T.txt2, cursor:"pointer", display:"flex", alignItems:"center", gap:5, whiteSpace:"nowrap" }}>
-      {children}
-    </button>
-  );
+
 
   if (screen === "quiz") {
     return (
