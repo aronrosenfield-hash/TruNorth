@@ -115,7 +115,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 2,
@@ -230,7 +233,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 3,
@@ -348,7 +354,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": true
   },
   {
     "id": 4,
@@ -463,7 +472,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": true
   },
   {
     "id": 5,
@@ -570,7 +582,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 6,
@@ -685,7 +700,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": true
   },
   {
     "id": 7,
@@ -792,7 +810,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 8,
@@ -902,7 +923,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 9,
@@ -1014,7 +1038,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 10,
@@ -1127,7 +1154,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 11,
@@ -1247,7 +1277,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 12,
@@ -1352,7 +1385,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 13,
@@ -1467,7 +1503,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 14,
@@ -1571,7 +1610,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 15,
@@ -1686,7 +1728,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 16,
@@ -1801,7 +1846,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 17,
@@ -1918,7 +1966,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 18,
@@ -2030,7 +2081,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 19,
@@ -2144,7 +2198,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 20,
@@ -2258,7 +2315,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 21,
@@ -2357,7 +2417,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 22,
@@ -2473,7 +2536,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 23,
@@ -2580,7 +2646,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 24,
@@ -2689,7 +2758,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 25,
@@ -2795,7 +2867,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 26,
@@ -2902,7 +2977,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 27,
@@ -3007,7 +3085,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 28,
@@ -3120,7 +3201,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 29,
@@ -3233,7 +3317,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 30,
@@ -3350,7 +3437,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 31,
@@ -3454,7 +3544,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 32,
@@ -3560,7 +3653,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 33,
@@ -3682,7 +3778,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 34,
@@ -3796,7 +3895,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 35,
@@ -3903,7 +4005,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 36,
@@ -4017,7 +4122,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 37,
@@ -4122,7 +4230,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 38,
@@ -4228,7 +4339,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 39,
@@ -4334,7 +4448,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 40,
@@ -4453,7 +4570,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 41,
@@ -4563,7 +4683,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 42,
@@ -4669,7 +4792,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 43,
@@ -4779,7 +4905,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 44,
@@ -4883,7 +5012,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 45,
@@ -4988,7 +5120,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 46,
@@ -5100,7 +5235,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 47,
@@ -5206,7 +5344,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 48,
@@ -5319,7 +5460,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 49,
@@ -5431,7 +5575,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 50,
@@ -5546,7 +5693,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 51,
@@ -5658,7 +5808,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 52,
@@ -5763,7 +5916,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 53,
@@ -5873,7 +6029,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 54,
@@ -5979,7 +6138,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 55,
@@ -6092,7 +6254,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 56,
@@ -6205,7 +6370,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 57,
@@ -6314,7 +6482,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 58,
@@ -6428,7 +6599,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 59,
@@ -6536,7 +6710,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 60,
@@ -6643,7 +6820,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 61,
@@ -6749,7 +6929,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 62,
@@ -6839,7 +7022,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 63,
@@ -6933,7 +7119,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 64,
@@ -7020,7 +7209,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 65,
@@ -7120,7 +7312,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 66,
@@ -7210,7 +7405,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 67,
@@ -7304,7 +7502,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 68,
@@ -7401,7 +7602,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 69,
@@ -7488,7 +7692,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 70,
@@ -7586,7 +7793,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 71,
@@ -7681,7 +7891,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 72,
@@ -7785,7 +7998,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 73,
@@ -7889,7 +8105,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 74,
@@ -7998,7 +8217,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 75,
@@ -8109,7 +8331,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 76,
@@ -8214,7 +8439,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 77,
@@ -8315,7 +8543,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 78,
@@ -8413,7 +8644,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 79,
@@ -8503,7 +8737,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 80,
@@ -8598,7 +8835,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 81,
@@ -8702,7 +8942,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 82,
@@ -8815,7 +9058,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 83,
@@ -8930,7 +9176,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 84,
@@ -9037,7 +9286,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 85,
@@ -9155,7 +9407,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 86,
@@ -9269,7 +9524,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 87,
@@ -9381,7 +9639,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 88,
@@ -9493,7 +9754,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 89,
@@ -9600,7 +9864,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 90,
@@ -9712,7 +9979,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 91,
@@ -9824,7 +10094,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 92,
@@ -9935,7 +10208,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 93,
@@ -10051,7 +10327,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 94,
@@ -10162,7 +10441,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 95,
@@ -10266,7 +10548,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 96,
@@ -10381,7 +10666,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 97,
@@ -10488,7 +10776,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 98,
@@ -10591,7 +10882,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 99,
@@ -10695,7 +10989,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 100,
@@ -10810,7 +11107,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 101,
@@ -10913,7 +11213,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 102,
@@ -11013,7 +11316,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 103,
@@ -11120,7 +11426,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 104,
@@ -11229,7 +11538,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 105,
@@ -11333,7 +11645,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 106,
@@ -11437,7 +11752,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 107,
@@ -11536,7 +11854,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 108,
@@ -11627,7 +11948,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 109,
@@ -11722,7 +12046,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 110,
@@ -11813,7 +12140,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 111,
@@ -11911,7 +12241,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 112,
@@ -11999,7 +12332,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 113,
@@ -12113,7 +12449,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 114,
@@ -12190,7 +12529,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 115,
@@ -12260,7 +12602,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 116,
@@ -12361,7 +12706,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 117,
@@ -12461,7 +12809,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 118,
@@ -12562,7 +12913,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 119,
@@ -12662,7 +13016,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 120,
@@ -12770,7 +13127,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 121,
@@ -12874,7 +13234,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 122,
@@ -12975,7 +13338,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 123,
@@ -13072,7 +13438,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 124,
@@ -13184,7 +13553,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 125,
@@ -13280,7 +13652,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 126,
@@ -13372,7 +13747,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 127,
@@ -13469,7 +13847,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 128,
@@ -13564,7 +13945,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 129,
@@ -13661,7 +14045,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 130,
@@ -13758,7 +14145,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 131,
@@ -13863,7 +14253,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 132,
@@ -13964,7 +14357,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 133,
@@ -14065,7 +14461,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 134,
@@ -14164,7 +14563,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 135,
@@ -14268,7 +14670,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 136,
@@ -14372,7 +14777,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 137,
@@ -14458,7 +14866,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 138,
@@ -14555,7 +14966,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 139,
@@ -14644,7 +15058,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 140,
@@ -14750,7 +15167,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 141,
@@ -14847,7 +15267,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 142,
@@ -14949,7 +15372,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 143,
@@ -15046,7 +15472,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 144,
@@ -15148,7 +15577,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 145,
@@ -15233,7 +15665,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 146,
@@ -15303,7 +15738,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 147,
@@ -15375,7 +15813,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 148,
@@ -15458,7 +15899,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 149,
@@ -15549,7 +15993,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 150,
@@ -15664,7 +16111,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 151,
@@ -15765,7 +16215,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 152,
@@ -15873,7 +16326,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 153,
@@ -15978,7 +16434,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 154,
@@ -16078,7 +16537,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 155,
@@ -16171,7 +16633,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 156,
@@ -16276,7 +16741,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 157,
@@ -16382,7 +16850,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 158,
@@ -16485,7 +16956,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 159,
@@ -16587,7 +17061,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 160,
@@ -16695,7 +17172,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 161,
@@ -16801,7 +17281,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 162,
@@ -16909,7 +17392,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 163,
@@ -17026,7 +17512,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 164,
@@ -17142,7 +17631,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 165,
@@ -17250,7 +17742,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 166,
@@ -17354,7 +17849,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 167,
@@ -17459,7 +17957,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 168,
@@ -17563,7 +18064,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 169,
@@ -17665,7 +18169,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 170,
@@ -17772,7 +18279,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 171,
@@ -17839,7 +18349,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 172,
@@ -17943,7 +18456,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 173,
@@ -18043,7 +18559,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 174,
@@ -18143,7 +18662,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 175,
@@ -18246,7 +18768,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 176,
@@ -18341,7 +18866,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 177,
@@ -18440,7 +18968,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 178,
@@ -18546,7 +19077,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 179,
@@ -18654,7 +19188,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 180,
@@ -18761,7 +19298,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 181,
@@ -18869,7 +19409,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 182,
@@ -18977,7 +19520,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 183,
@@ -19083,7 +19629,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 184,
@@ -19185,7 +19734,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 185,
@@ -19291,7 +19843,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 186,
@@ -19400,7 +19955,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 187,
@@ -19503,7 +20061,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 188,
@@ -19604,7 +20165,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 189,
@@ -19707,7 +20271,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 190,
@@ -19809,7 +20376,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 191,
@@ -19918,7 +20488,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": true
   },
   {
     "id": 192,
@@ -20026,7 +20599,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 193,
@@ -20109,7 +20685,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 194,
@@ -20216,7 +20795,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 195,
@@ -20317,7 +20899,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 196,
@@ -20419,7 +21004,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 197,
@@ -20524,7 +21112,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 198,
@@ -20591,7 +21182,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 199,
@@ -20678,7 +21272,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 200,
@@ -20793,7 +21390,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 201,
@@ -20895,7 +21495,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 202,
@@ -20998,7 +21601,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 203,
@@ -21094,7 +21700,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 204,
@@ -21199,7 +21808,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 205,
@@ -21305,7 +21917,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 206,
@@ -21405,7 +22020,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 207,
@@ -21511,7 +22129,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 208,
@@ -21604,7 +22225,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 209,
@@ -21703,7 +22327,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 210,
@@ -21812,7 +22439,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 211,
@@ -21920,7 +22550,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 212,
@@ -22027,7 +22660,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 213,
@@ -22114,7 +22750,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 214,
@@ -22189,7 +22828,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 215,
@@ -22284,7 +22926,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 216,
@@ -22372,7 +23017,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 217,
@@ -22464,7 +23112,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 218,
@@ -22562,7 +23213,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 219,
@@ -22661,7 +23315,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 220,
@@ -22772,7 +23429,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 221,
@@ -22871,7 +23531,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 222,
@@ -22970,7 +23633,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 223,
@@ -23079,7 +23745,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 224,
@@ -23192,7 +23861,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 225,
@@ -23303,7 +23975,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 226,
@@ -23411,7 +24086,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 227,
@@ -23520,7 +24198,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 228,
@@ -23619,7 +24300,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 229,
@@ -23717,7 +24401,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 230,
@@ -23835,7 +24522,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 231,
@@ -23950,7 +24640,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 232,
@@ -24064,7 +24757,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 233,
@@ -24169,7 +24865,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 234,
@@ -24280,7 +24979,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 235,
@@ -24393,7 +25095,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 236,
@@ -24506,7 +25211,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 237,
@@ -24622,7 +25330,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 238,
@@ -24736,7 +25447,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 239,
@@ -24839,7 +25553,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 240,
@@ -24952,7 +25669,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 241,
@@ -25068,7 +25788,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 242,
@@ -25183,7 +25906,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 243,
@@ -25250,7 +25976,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 244,
@@ -25365,7 +26094,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 245,
@@ -25478,7 +26210,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 246,
@@ -25583,7 +26318,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 247,
@@ -25692,7 +26430,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 248,
@@ -25807,7 +26548,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 249,
@@ -25912,7 +26656,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 250,
@@ -26008,7 +26755,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 251,
@@ -26114,7 +26864,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 252,
@@ -26232,7 +26985,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 253,
@@ -26342,7 +27098,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 254,
@@ -26445,7 +27204,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 255,
@@ -26549,7 +27311,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 256,
@@ -26657,7 +27422,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 257,
@@ -26764,7 +27532,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 258,
@@ -26877,7 +27648,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 259,
@@ -26986,7 +27760,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 260,
@@ -27091,7 +27868,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 261,
@@ -27201,7 +27981,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 262,
@@ -27315,7 +28098,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 263,
@@ -27421,7 +28207,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 264,
@@ -27526,7 +28315,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 265,
@@ -27630,7 +28422,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 266,
@@ -27741,7 +28536,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 267,
@@ -27853,7 +28651,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 268,
@@ -27962,7 +28763,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 269,
@@ -28069,7 +28873,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 270,
@@ -28181,7 +28988,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 271,
@@ -28295,7 +29105,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 272,
@@ -28407,7 +29220,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 273,
@@ -28518,7 +29334,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 274,
@@ -28628,7 +29447,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 275,
@@ -28724,7 +29546,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 276,
@@ -28835,7 +29660,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 277,
@@ -28939,7 +29767,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 278,
@@ -29036,7 +29867,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 279,
@@ -29147,7 +29981,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 280,
@@ -29247,7 +30084,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 281,
@@ -29356,7 +30196,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 282,
@@ -29466,7 +30309,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 283,
@@ -29578,7 +30424,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 284,
@@ -29682,7 +30531,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 285,
@@ -29749,7 +30601,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 286,
@@ -29852,7 +30707,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 287,
@@ -29965,7 +30823,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 288,
@@ -30072,7 +30933,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 289,
@@ -30183,7 +31047,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 290,
@@ -30291,7 +31158,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 291,
@@ -30397,7 +31267,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 292,
@@ -30502,7 +31375,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 293,
@@ -30613,7 +31489,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 294,
@@ -30718,7 +31597,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 295,
@@ -30828,7 +31710,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 296,
@@ -30937,7 +31822,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 297,
@@ -31052,7 +31940,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 298,
@@ -31159,7 +32050,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 299,
@@ -31226,7 +32120,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 300,
@@ -31334,7 +32231,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 301,
@@ -31431,7 +32331,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 302,
@@ -31535,7 +32438,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 303,
@@ -31629,7 +32535,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 304,
@@ -31725,7 +32634,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16"
+    "dataLastUpdated": "2026-05-16",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 305,
@@ -31825,7 +32737,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 306,
@@ -31921,7 +32836,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 307,
@@ -32013,7 +32931,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 308,
@@ -32107,7 +33028,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 309,
@@ -32209,7 +33133,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 310,
@@ -32299,7 +33226,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 311,
@@ -32394,7 +33324,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 312,
@@ -32484,7 +33417,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 313,
@@ -32578,7 +33514,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 314,
@@ -32681,7 +33620,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 315,
@@ -32794,7 +33736,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 316,
@@ -32891,7 +33836,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 317,
@@ -32996,7 +33944,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 318,
@@ -33103,7 +34054,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 319,
@@ -33211,7 +34165,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 320,
@@ -33304,7 +34261,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 321,
@@ -33403,7 +34363,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 322,
@@ -33507,7 +34470,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 323,
@@ -33603,7 +34569,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 324,
@@ -33705,7 +34674,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 325,
@@ -33805,7 +34777,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 326,
@@ -33872,7 +34847,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 327,
@@ -33977,7 +34955,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 328,
@@ -34081,7 +35062,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 329,
@@ -34183,7 +35167,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 330,
@@ -34293,7 +35280,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 331,
@@ -34360,7 +35350,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 332,
@@ -34427,7 +35420,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 333,
@@ -34507,7 +35503,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 334,
@@ -34574,7 +35573,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 335,
@@ -34675,7 +35677,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 336,
@@ -34777,7 +35782,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 337,
@@ -34844,7 +35852,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 338,
@@ -34953,7 +35964,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 339,
@@ -35064,7 +36078,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 340,
@@ -35131,7 +36148,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 341,
@@ -35198,7 +36218,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 342,
@@ -35265,7 +36288,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 343,
@@ -35373,7 +36399,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 344,
@@ -35475,7 +36504,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 345,
@@ -35542,7 +36574,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 346,
@@ -35634,7 +36669,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 347,
@@ -35733,7 +36771,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 348,
@@ -35843,7 +36884,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 349,
@@ -35940,7 +36984,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 350,
@@ -36036,7 +37083,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 351,
@@ -36103,7 +37153,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 352,
@@ -36221,7 +37274,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 353,
@@ -36332,7 +37388,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 354,
@@ -36399,7 +37458,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 355,
@@ -36508,7 +37570,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 356,
@@ -36575,7 +37640,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 357,
@@ -36679,7 +37747,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 358,
@@ -36791,7 +37862,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 359,
@@ -36858,7 +37932,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 360,
@@ -36925,7 +38002,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": true,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 361,
@@ -36992,7 +38072,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 362,
@@ -37105,7 +38188,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 363,
@@ -37213,7 +38299,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 364,
@@ -37324,7 +38413,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 365,
@@ -37391,7 +38483,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 366,
@@ -37507,7 +38602,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 367,
@@ -37618,7 +38716,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 368,
@@ -37728,7 +38829,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 369,
@@ -37795,7 +38899,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 370,
@@ -37862,7 +38969,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 371,
@@ -37929,7 +39039,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 372,
@@ -37996,7 +39109,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 373,
@@ -38109,7 +39225,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 374,
@@ -38176,7 +39295,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 375,
@@ -38276,7 +39398,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 376,
@@ -38383,7 +39508,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 377,
@@ -38450,7 +39578,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 378,
@@ -38555,7 +39686,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 379,
@@ -38659,7 +39793,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 380,
@@ -38761,7 +39898,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 381,
@@ -38860,7 +40000,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 382,
@@ -38953,7 +40096,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 383,
@@ -39055,7 +40201,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 384,
@@ -39161,7 +40310,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 385,
@@ -39228,7 +40380,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 386,
@@ -39329,7 +40484,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 387,
@@ -39434,7 +40592,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 388,
@@ -39532,7 +40693,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 389,
@@ -39636,7 +40800,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 390,
@@ -39703,7 +40870,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 391,
@@ -39824,7 +40994,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 392,
@@ -39930,7 +41103,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 393,
@@ -39997,7 +41173,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 394,
@@ -40097,7 +41276,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 395,
@@ -40164,7 +41346,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 396,
@@ -40231,7 +41416,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 397,
@@ -40336,7 +41524,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 398,
@@ -40441,7 +41632,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 399,
@@ -40542,7 +41736,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 400,
@@ -40644,7 +41841,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 401,
@@ -40742,7 +41942,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 402,
@@ -40829,7 +42032,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 403,
@@ -40935,7 +42141,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 404,
@@ -41039,7 +42248,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 405,
@@ -41132,7 +42344,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 406,
@@ -41245,7 +42460,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 407,
@@ -41351,7 +42569,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 408,
@@ -41418,7 +42639,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 409,
@@ -41526,7 +42750,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 410,
@@ -41632,7 +42859,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 411,
@@ -41737,7 +42967,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 412,
@@ -41839,7 +43072,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 413,
@@ -41937,7 +43173,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 414,
@@ -42047,7 +43286,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 415,
@@ -42158,7 +43400,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 416,
@@ -42271,7 +43516,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 417,
@@ -42384,7 +43632,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 418,
@@ -42485,7 +43736,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 419,
@@ -42552,7 +43806,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 420,
@@ -42619,7 +43876,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 421,
@@ -42723,7 +43983,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 422,
@@ -42829,7 +44092,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 423,
@@ -42925,7 +44191,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 424,
@@ -43038,7 +44307,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 425,
@@ -43105,7 +44377,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 426,
@@ -43209,7 +44484,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 427,
@@ -43276,7 +44554,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 428,
@@ -43381,7 +44662,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 429,
@@ -43484,7 +44768,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 430,
@@ -43551,7 +44838,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 431,
@@ -43656,7 +44946,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 432,
@@ -43752,7 +45045,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 433,
@@ -43867,7 +45163,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 434,
@@ -43934,7 +45233,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 435,
@@ -44042,7 +45344,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 436,
@@ -44149,7 +45454,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 437,
@@ -44216,7 +45524,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 438,
@@ -44315,7 +45626,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 439,
@@ -44417,7 +45731,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 440,
@@ -44484,7 +45801,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 441,
@@ -44551,7 +45871,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 442,
@@ -44635,7 +45958,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 443,
@@ -44733,7 +46059,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 444,
@@ -44830,7 +46159,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 445,
@@ -44897,7 +46229,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 446,
@@ -44964,7 +46299,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 447,
@@ -45031,7 +46369,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 448,
@@ -45135,7 +46476,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 449,
@@ -45237,7 +46581,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 450,
@@ -45345,7 +46692,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 451,
@@ -45459,7 +46809,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 452,
@@ -45561,7 +46914,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": true,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 453,
@@ -45663,7 +47019,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 454,
@@ -45769,7 +47128,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 455,
@@ -45868,7 +47230,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 456,
@@ -45935,7 +47300,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 457,
@@ -46038,7 +47406,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 458,
@@ -46139,7 +47510,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 459,
@@ -46235,7 +47609,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 460,
@@ -46335,7 +47712,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 461,
@@ -46442,7 +47822,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 462,
@@ -46551,7 +47934,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 463,
@@ -46618,7 +48004,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 464,
@@ -46720,7 +48109,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 465,
@@ -46787,7 +48179,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 466,
@@ -46887,7 +48282,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 467,
@@ -46954,7 +48352,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 468,
@@ -47040,7 +48441,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 469,
@@ -47139,7 +48543,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 470,
@@ -47243,7 +48650,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 471,
@@ -47330,7 +48740,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 472,
@@ -47397,7 +48810,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 473,
@@ -47487,7 +48903,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 474,
@@ -47579,7 +48998,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 475,
@@ -47669,7 +49091,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 476,
@@ -47736,7 +49161,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 477,
@@ -47803,7 +49231,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 478,
@@ -47901,7 +49332,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 479,
@@ -48002,7 +49436,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 480,
@@ -48069,7 +49506,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 481,
@@ -48136,7 +49576,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 482,
@@ -48239,7 +49682,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 483,
@@ -48341,7 +49787,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 484,
@@ -48408,7 +49857,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 485,
@@ -48506,7 +49958,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 486,
@@ -48573,7 +50028,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 487,
@@ -48672,7 +50130,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 488,
@@ -48780,7 +50241,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 489,
@@ -48847,7 +50311,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 490,
@@ -48914,7 +50381,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 491,
@@ -49006,7 +50476,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 492,
@@ -49110,7 +50583,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 493,
@@ -49201,7 +50677,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 494,
@@ -49268,7 +50747,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 495,
@@ -49369,7 +50851,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 496,
@@ -49473,7 +50958,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 497,
@@ -49574,7 +51062,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 498,
@@ -49665,7 +51156,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 499,
@@ -49739,7 +51233,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 500,
@@ -49838,7 +51335,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 501,
@@ -49905,7 +51405,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 502,
@@ -50012,7 +51515,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 503,
@@ -50114,7 +51620,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 504,
@@ -50216,7 +51725,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 505,
@@ -50283,7 +51795,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 506,
@@ -50383,7 +51898,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 507,
@@ -50450,7 +51968,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 508,
@@ -50554,7 +52075,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 509,
@@ -50621,7 +52145,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 510,
@@ -50705,7 +52232,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 511,
@@ -50808,7 +52338,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 512,
@@ -50909,7 +52442,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 513,
@@ -51009,7 +52545,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 514,
@@ -51076,7 +52615,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 515,
@@ -51143,7 +52685,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 516,
@@ -51210,7 +52755,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 517,
@@ -51309,7 +52857,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 518,
@@ -51376,7 +52927,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 519,
@@ -51443,7 +52997,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 520,
@@ -51510,7 +53067,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 521,
@@ -51600,7 +53160,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 522,
@@ -51667,7 +53230,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 523,
@@ -51758,7 +53324,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 524,
@@ -51851,7 +53420,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 525,
@@ -51918,7 +53490,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 526,
@@ -52001,7 +53576,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 527,
@@ -52093,7 +53671,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 528,
@@ -52160,7 +53741,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 529,
@@ -52230,7 +53814,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 530,
@@ -52328,7 +53915,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 531,
@@ -52433,7 +54023,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 532,
@@ -52549,7 +54142,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 533,
@@ -52644,7 +54240,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 534,
@@ -52748,7 +54347,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 535,
@@ -52850,7 +54452,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 536,
@@ -52917,7 +54522,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 537,
@@ -53020,7 +54628,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 538,
@@ -53114,7 +54725,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 539,
@@ -53218,7 +54832,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 540,
@@ -53327,7 +54944,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 541,
@@ -53394,7 +55014,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 542,
@@ -53461,7 +55084,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 543,
@@ -53564,7 +55190,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 544,
@@ -53631,7 +55260,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 545,
@@ -53717,7 +55349,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 546,
@@ -53784,7 +55419,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 547,
@@ -53882,7 +55520,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 548,
@@ -53987,7 +55628,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 549,
@@ -54086,7 +55730,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 550,
@@ -54192,7 +55839,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 551,
@@ -54277,7 +55927,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 552,
@@ -54369,7 +56022,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 553,
@@ -54466,7 +56122,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 554,
@@ -54553,7 +56212,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 555,
@@ -54645,7 +56307,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 556,
@@ -54739,7 +56404,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 557,
@@ -54833,7 +56501,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 558,
@@ -54931,7 +56602,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 559,
@@ -55030,7 +56704,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 560,
@@ -55097,7 +56774,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 561,
@@ -55190,7 +56870,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 562,
@@ -55257,7 +56940,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 563,
@@ -55345,7 +57031,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 564,
@@ -55412,7 +57101,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 565,
@@ -55479,7 +57171,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 566,
@@ -55546,7 +57241,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 567,
@@ -55644,7 +57342,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 568,
@@ -55711,7 +57412,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 569,
@@ -55816,7 +57520,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 570,
@@ -55883,7 +57590,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 571,
@@ -55981,7 +57691,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 572,
@@ -56048,7 +57761,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 573,
@@ -56138,7 +57854,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 574,
@@ -56205,7 +57924,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 575,
@@ -56272,7 +57994,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 576,
@@ -56339,7 +58064,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 577,
@@ -56406,7 +58134,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 578,
@@ -56516,7 +58247,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 579,
@@ -56620,7 +58354,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 580,
@@ -56707,7 +58444,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 581,
@@ -56794,7 +58534,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 582,
@@ -56907,7 +58650,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 583,
@@ -56974,7 +58720,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 584,
@@ -57079,7 +58828,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 585,
@@ -57159,7 +58911,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 586,
@@ -57226,7 +58981,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 587,
@@ -57293,7 +59051,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 588,
@@ -57385,7 +59146,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 589,
@@ -57476,7 +59240,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 590,
@@ -57573,7 +59340,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 591,
@@ -57657,7 +59427,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 592,
@@ -57724,7 +59497,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 593,
@@ -57800,7 +59576,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 594,
@@ -57870,7 +59649,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 595,
@@ -57955,7 +59737,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 596,
@@ -58022,7 +59807,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 597,
@@ -58089,7 +59877,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 598,
@@ -58156,7 +59947,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 599,
@@ -58259,7 +60053,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 600,
@@ -58352,7 +60149,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 601,
@@ -58438,7 +60238,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 602,
@@ -58505,7 +60308,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 603,
@@ -58586,7 +60392,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 604,
@@ -58675,7 +60484,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 605,
@@ -58742,7 +60554,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 606,
@@ -58809,7 +60624,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 607,
@@ -58896,7 +60714,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 608,
@@ -59000,7 +60821,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 609,
@@ -59105,7 +60929,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 610,
@@ -59210,7 +61037,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 611,
@@ -59277,7 +61107,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 612,
@@ -59344,7 +61177,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 613,
@@ -59411,7 +61247,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 614,
@@ -59509,7 +61348,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 615,
@@ -59576,7 +61418,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 616,
@@ -59643,7 +61488,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 617,
@@ -59727,7 +61575,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 618,
@@ -59794,7 +61645,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 619,
@@ -59892,7 +61746,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 620,
@@ -59959,7 +61816,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 621,
@@ -60026,7 +61886,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 622,
@@ -60093,7 +61956,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 623,
@@ -60160,7 +62026,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 624,
@@ -60227,7 +62096,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 625,
@@ -60294,7 +62166,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 626,
@@ -60375,7 +62250,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 627,
@@ -60468,7 +62346,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 628,
@@ -60535,7 +62416,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 629,
@@ -60644,7 +62528,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 630,
@@ -60735,7 +62622,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 631,
@@ -60846,7 +62736,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 632,
@@ -60948,7 +62841,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 633,
@@ -61039,7 +62935,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 634,
@@ -61138,7 +63037,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 635,
@@ -61242,7 +63144,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 636,
@@ -61356,7 +63261,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 637,
@@ -61467,7 +63375,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 638,
@@ -61573,7 +63484,10 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 639,
@@ -61685,7 +63599,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 640,
@@ -61752,7 +63669,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 641,
@@ -61863,7 +63783,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 642,
@@ -61976,7 +63899,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 643,
@@ -62088,7 +64014,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 644,
@@ -62155,7 +64084,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 645,
@@ -62256,7 +64188,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 646,
@@ -62368,7 +64303,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 647,
@@ -62466,7 +64404,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 648,
@@ -62533,7 +64474,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 649,
@@ -62644,7 +64588,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 650,
@@ -62711,7 +64658,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 651,
@@ -62817,7 +64767,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 652,
@@ -62884,7 +64837,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 653,
@@ -62997,7 +64953,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 654,
@@ -63064,7 +65023,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 655,
@@ -63131,7 +65093,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 656,
@@ -63198,7 +65163,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 657,
@@ -63290,7 +65258,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 658,
@@ -63393,7 +65364,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 659,
@@ -63505,7 +65479,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 660,
@@ -63572,7 +65549,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 661,
@@ -63639,7 +65619,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 662,
@@ -63754,7 +65737,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 663,
@@ -63858,7 +65844,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 664,
@@ -63960,7 +65949,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 665,
@@ -64063,7 +66055,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 666,
@@ -64164,7 +66159,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 667,
@@ -64231,7 +66229,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 668,
@@ -64334,7 +66335,10 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": true,
+    "childLabor": false
   },
   {
     "id": 669,
@@ -64439,7 +66443,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 670,
@@ -64506,7 +66513,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 671,
@@ -64608,7 +66618,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 672,
@@ -64715,7 +66728,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 673,
@@ -64828,7 +66844,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 674,
@@ -64895,7 +66914,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 675,
@@ -64996,7 +67018,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 676,
@@ -65100,7 +67125,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 677,
@@ -65196,7 +67224,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 678,
@@ -65309,7 +67340,10 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 679,
@@ -65414,7 +67448,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 680,
@@ -65511,7 +67548,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 681,
@@ -65616,7 +67656,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 682,
@@ -65683,7 +67726,10 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    }
+    },
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 683,
@@ -65792,7 +67838,10 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 684,
@@ -65887,7 +67936,10 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   },
   {
     "id": 685,
@@ -66000,6 +68052,9 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17"
+    "dataLastUpdated": "2026-05-17",
+    "foreignOwned": false,
+    "antitrust": false,
+    "childLabor": false
   }
 ];
