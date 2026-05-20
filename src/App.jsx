@@ -438,6 +438,51 @@ async function fetchLiveData(name) {
 }
 
 // ─── COMPANY CARD ─────────────────────────────────────────────────────────────
+
+// ─── FILTER PANEL ────────────────────────────────────────────────────────────
+function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, lc }) {
+  const [open, setOpen] = React.useState(false);
+  const hasFilters = leanFilter !== "all" || catFilters.length > 0;
+  return (
+    <div style={{ borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
+      <div onClick={()=>setOpen(o=>!o)} style={{ display:"flex", alignItems:"center", gap:8, padding:"10px 16px", cursor:"pointer" }}>
+        <i className="ti ti-adjustments-horizontal" style={{fontSize:15,color:hasFilters?T.accent2:T.txt3}} aria-hidden="true" />
+        <span style={{ fontSize:13, fontWeight:600, color:hasFilters?T.accent2:T.txt2 }}>
+          Filter {hasFilters ? "("+((leanFilter!=="all"?1:0)+catFilters.length)+" active)" : ""}
+        </span>
+        {hasFilters && (
+          <button onClick={e=>{e.stopPropagation();setLeanFilter("all");setCatFilters([]);}}
+            style={{fontSize:11,color:T.rep,background:T.repBg,border:`1px solid ${T.rep}`,borderRadius:20,padding:"2px 8px",cursor:"pointer",marginLeft:4}}>
+            Clear all
+          </button>
+        )}
+        <i className={"ti "+(open?"ti-chevron-up":"ti-chevron-down")} style={{fontSize:13,color:T.txt3,marginLeft:"auto"}} aria-hidden="true" />
+      </div>
+      {open && (
+        <div style={{ padding:"0 16px 14px" }}>
+          <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Political Lean</div>
+          <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:12 }}>
+            <Pill on={leanFilter==="all"} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>setLeanFilter("all")}>All</Pill>
+            <Pill on={leanFilter==="left"} bg={T.demBg} color={T.dem} border={T.dem} onClick={()=>setLeanFilter("left")}><DonkeySVG size={13}/> Left ({lc.left})</Pill>
+            <Pill on={leanFilter==="right"} bg={T.repBg} color={T.rep} border={T.rep} onClick={()=>setLeanFilter("right")}><ElephantSVG size={13}/> Right ({lc.right})</Pill>
+            <Pill on={leanFilter==="bi"} bg="#1e1535" color="#9b8ff0" border="#7c6dfa" onClick={()=>setLeanFilter("bi")}>⚖ Bipartisan ({lc.bi})</Pill>
+            <Pill on={leanFilter==="neutral"} bg={T.bg4} color={T.txt} border={T.border2} onClick={()=>setLeanFilter("neutral")}>Neutral ({lc.neutral})</Pill>
+          </div>
+          <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Categories</div>
+          <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
+            {CAT_KEYS.map(f => (
+              <Pill key={f} on={catFilters.includes(f)} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>toggleCat(f)}>
+                <i className={"ti "+CAT_ICONS[f]} style={{fontSize:12}} aria-hidden="true" />
+                {CAT_LABELS[f]}
+                {catFilters.includes(f) && <span style={{fontSize:11}}>✓</span>}
+              </Pill>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
   const [open, setOpen] = useState(false);
   const [showLive, setShowLive] = useState(false);
@@ -946,7 +991,7 @@ export default function App() {
 
   return (
     <div style={{ maxWidth:430, margin:"0 auto", minHeight:"100dvh", background:T.bg }}>
-      {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("main");}} onClose={()=>setShowPaywall(false)} />}
+      {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
       <div style={{ padding:"16px 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
@@ -989,36 +1034,12 @@ export default function App() {
       {/* SEARCH */}
       {tab === "search" && (
         <>
-          <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
-            <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:8 }}>
-              <i className="ti ti-flag-2" style={{fontSize:12,marginRight:4}} aria-hidden="true" /> Political lean
-            </div>
-            <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
-              <Pill on={leanFilter==="all"} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>setLeanFilter("all")}>All</Pill>
-              <Pill on={leanFilter==="left"} bg={T.demBg} color={T.dem} border={T.dem} onClick={()=>setLeanFilter("left")}><DonkeySVG size={13} /> Left ({lc.left})</Pill>
-              <Pill on={leanFilter==="right"} bg={T.repBg} color={T.rep} border={T.rep} onClick={()=>setLeanFilter("right")}><ElephantSVG size={13} /> Right ({lc.right})</Pill>
-              <Pill on={leanFilter==="bi"} bg="#1e1535" color="#9b8ff0" border="#7c6dfa" onClick={()=>setLeanFilter("bi")}>⚖ Bipartisan ({lc.bi})</Pill>
-              <Pill on={leanFilter==="neutral"} bg={T.bg4} color={T.txt} border={T.border2} onClick={()=>setLeanFilter("neutral")}>Neutral ({lc.neutral})</Pill>
-            </div>
-          </div>
-          <div style={{ padding:"10px 16px", borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
-            <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6, display:"flex", alignItems:"center", justifyContent:"space-between" }}>
-              <span><i className="ti ti-adjustments-horizontal" style={{fontSize:12,marginRight:4}} aria-hidden="true" /> Filter by category <span style={{color:T.txt3,fontWeight:400}}>(select multiple)</span></span>
-              {catFilters.length > 0 && <button onClick={()=>setCatFilters([])} style={{fontSize:10,color:T.rep,background:"none",border:"none",cursor:"pointer",textDecoration:"underline"}}>Clear</button>}
-            </div>
-            <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
-              {CAT_KEYS.map(f => (
-                <Pill key={f} on={catFilters.includes(f)} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>toggleCat(f)}>
-                  <i className={`ti ${CAT_ICONS[f]}`} style={{fontSize:12}} aria-hidden="true" />
-                  {CAT_LABELS[f]}
-                  {catFilters.includes(f) && <span style={{fontSize:11}}>✓</span>}
-                </Pill>
-              ))}
-            </div>
-            {catFilters.length > 1 && (
-              <div style={{fontSize:11,color:T.txt3,marginTop:6}}>Showing companies with notable data in all selected categories</div>
-            )}
-          </div>
+          {/* ── Collapsible Filter Panel ── */}
+          <FilterPanel
+            leanFilter={leanFilter} setLeanFilter={setLeanFilter}
+            catFilters={catFilters} setCatFilters={setCatFilters} toggleCat={toggleCat}
+            lc={lc}
+          />
           <div style={{ display:"flex", alignItems:"center", gap:8, padding:"9px 16px", borderBottom:`1px solid ${T.border}` }}>
             <span style={{ fontSize:12, color:T.txt3 }}>Sort:</span>
             {["score","name","lean"].map(sv => (
