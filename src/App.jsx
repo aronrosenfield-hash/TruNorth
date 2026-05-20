@@ -441,7 +441,7 @@ async function fetchLiveData(name) {
 
 // ─── FILTER PANEL ────────────────────────────────────────────────────────────
 function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, lc }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const hasFilters = leanFilter !== "all" || catFilters.length > 0;
   return (
     <div style={{ borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
