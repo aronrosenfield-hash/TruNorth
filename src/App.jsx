@@ -908,7 +908,7 @@ export default function App() {
   if (screen === "quiz") {
     return (
       <div style={{ maxWidth:430, margin:"0 auto" }}>
-        {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("main");}} onClose={()=>setShowPaywall(false)} />}
+        {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
         {isPaid ? (
           <>
             <Quiz onComplete={(p) => { setProfile(p); setScreen("main"); }} />
