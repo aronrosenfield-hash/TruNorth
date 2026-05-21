@@ -938,7 +938,7 @@ export default function App() {
   const [query, setQuery]       = useState("");
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
-  const [sort, setSort]             = useState("score");
+  const [sort, setSort]             = useState("name");
 
   useEffect(() => {
     const el = document.createElement("style");
@@ -987,7 +987,7 @@ export default function App() {
     neutral: deduped.filter(c=>(c.sc.political||"").toLowerCase()==="neutral").length,
   };
 
-  const cats = [...new Set(deduped.map(c=>c.cat.split(" / ")[0]))];
+  const cats = [...new Set(deduped.map(c=>c.cat.split(" / ")[0]).map(c=>c.split(",")[0].trim()))].sort();
   const catIconMap = {Retail:"ti-building-store",Food:"ti-chef-hat",Technology:"ti-device-laptop",Grocery:"ti-shopping-cart",Energy:"ti-bolt",Apparel:"ti-shirt",Media:"ti-device-tv",Finance:"ti-building-bank",Healthcare:"ti-heartbeat",Outdoor:"ti-mountain",Consumer:"ti-package",Conglomerate:"ti-building-skyscraper",Auto:"ti-car",Sports:"ti-ball-basketball"};
   const catBgs = ["#1e1535","#0d2318","#0d1f35","#2a0d0d","#2e1a05","#2a1a05"];
   const catFgs = ["#9b8ff0","#4caf82","#4a90e2","#e24a4a","#e8a042","#f0a030"];
@@ -1143,6 +1143,11 @@ export default function App() {
       {/* TOP PICKS */}
       {tab === "top" && (
         <>
+          <FilterPanel
+            leanFilter={leanFilter} setLeanFilter={setLeanFilter}
+            catFilters={catFilters} setCatFilters={setCatFilters} toggleCat={toggleCat}
+            lc={lc}
+          />
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>
           </div>
