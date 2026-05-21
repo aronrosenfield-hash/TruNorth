@@ -874,7 +874,7 @@ export default function App() {
   const [profile, setProfile]   = useState(null);
   const [isPaid, setIsPaid]     = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
-  const [tab, setTab]           = useState("search");
+  const [tab, setTab]           = useState("top");
   const [query, setQuery]       = useState("");
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
