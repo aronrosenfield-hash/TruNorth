@@ -1209,9 +1209,9 @@ export default function App() {
       {/* BOTTOM NAV BAR */}
       <div style={{ position:"fixed", bottom:0, left:0, right:0, width:"100%", background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
         {[
-          {id:"search", icon:"ti-search",      label:"Search"},
-          {id:"browse", icon:"ti-apps", label:"Browse"},
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
+          {id:"search", icon:"ti-search",       label:"Search"},
+          {id:"browse", icon:"ti-apps",         label:"Browse"},
           {id:"account",icon:"ti-user",         label:"Account"},
         ].map(t => (
           <button key={t.id} onClick={()=>setTab(t.id)}
