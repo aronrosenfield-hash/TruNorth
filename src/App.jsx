@@ -524,8 +524,8 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
         <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
           <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }}>
-            <div style={{ fontSize:17, fontWeight:700, color:T.txt }}>{grade}</div>
-            <div style={{ fontSize:10, color:T.txt3 }}>{ps}</div>
+            <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:T.txt, lineHeight:1 }}>{grade}</div>
+            {isPaid && <div style={{ fontSize:10, color:T.txt3 }}>{ps}</div>}
           </div>
           <i className={`ti ${open ? "ti-chevron-up" : "ti-chevron-down"}`} style={{fontSize:13,color:T.txt3}} aria-hidden="true" />
         </div>
