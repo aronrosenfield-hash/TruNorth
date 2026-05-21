@@ -513,37 +513,21 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
   };
 
   return (
-    <div style={{ background:T.bg2, borderRadius:16, border:`1px solid ${open ? T.accent : T.border}`, overflow:"hidden" }}>
-      {/* Card head — always visible */}
-      <div onClick={handleTap} style={{ display:"flex", alignItems:"center", gap:12, padding:14, cursor:"pointer" }}>
-        <div style={{ width:44, height:44, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center", fontSize:13, fontWeight:700, flexShrink:0, background:company.ab, color:company.ac }}>{company.init}</div>
+    <div style={{ background:T.bg2, borderRadius:14, border:`1px solid ${open ? T.accent : T.border}`, overflow:"hidden", marginBottom:1 }}>
+      {/* Slim row — always visible */}
+      <div onClick={handleTap} style={{ display:"flex", alignItems:"center", gap:10, padding:"11px 14px", cursor:"pointer" }}>
+        <div style={{ width:36, height:36, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, flexShrink:0, background:company.ab||T.bg3, color:company.ac||T.accent2 }}>{company.init}</div>
         <div style={{ flex:1, minWidth:0 }}>
-          <div style={{ fontSize:15, fontWeight:600, color:T.txt }}>{company.name}</div>
-          <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>{company.cat}</div>
-          {/* Summary badges — visible to all */}
-          <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:7 }}>
-            {shownCats.map(k => {
-              const disp = getDisplay(k, company.sc[k], profile);
-              return (
-                <span key={k} style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"3px 8px", borderRadius:20, fontSize:11, fontWeight:600, background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` }}>
-                  {k === "political" && disp.icon === "dem" && <DonkeySVG size={11} />}
-                  {k === "political" && disp.icon === "rep" && <ElephantSVG size={11} />}
-                  {k === "political" && disp.icon === "bi"  && <span style={{fontSize:10}}>⚖</span>}
-                  {k !== "political" && <i className={`ti ${CAT_ICONS[k]}`} style={{fontSize:11}} aria-hidden="true" />}
-                  <span style={{ color:T.txt3 }}>{CAT_LABELS[k]}:</span>
-                  <span style={{ fontWeight:700 }}>{disp.sym} {disp.label}</span>
-                </span>
-              );
-            })}
-          </div>
+          <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.name}</div>
+          <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
         </div>
-        {/* Score */}
-        <div style={{ flexShrink:0, display:"flex", flexDirection:"column", alignItems:"center", gap:2 }}>
-          <div style={{ width:44, height:44, borderRadius:12, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }}>
-            <div style={{ fontSize:16, fontWeight:700, color:T.txt }}>{grade}</div>
-            <div style={{ fontSize:9, color:T.txt3 }}>{ps}/100</div>
-          </div>
+        <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
+          <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }}>
+            <div style={{ fontSize:15, fontWeight:700, color:T.txt }}>{grade}</div>
+            <div style={{ fontSize:8, color:T.txt3 }}>{ps}</div>
+          </div>
+          <i className={`ti ${open ? "ti-chevron-up" : "ti-chevron-down"}`} style={{fontSize:13,color:T.txt3}} aria-hidden="true" />
         </div>
       </div>
 
