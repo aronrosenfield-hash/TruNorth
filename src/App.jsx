@@ -454,7 +454,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
     <div style={{ borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
       <div onClick={()=>setOpen(o=>!o)} style={{ display:"flex", alignItems:"center", gap:8, padding:"10px 16px", cursor:"pointer" }}>
         <i className="ti ti-adjustments-horizontal" style={{fontSize:15,color:hasFilters?T.accent2:T.txt3}} aria-hidden="true" />
-        <span style={{ fontSize:13, fontWeight:600, color:hasFilters?T.accent2:T.txt2 }}>
+        <span style={{ fontSize:15, fontWeight:600, color:hasFilters?T.accent2:T.txt2 }}>
           Filter {hasFilters ? "("+((leanFilter!=="all"?1:0)+catFilters.length)+" active)" : ""}
         </span>
         {hasFilters && (
@@ -467,7 +467,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
       </div>
       {open && (
         <div style={{ padding:"0 16px 14px" }}>
-          <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Political Lean</div>
+          <div style={{ fontSize:13, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Political Lean</div>
           <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:12 }}>
             <Pill on={leanFilter==="all"} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>setLeanFilter("all")}>All</Pill>
             <Pill on={leanFilter==="left"} bg={T.demBg} color={T.dem} border={T.dem} onClick={()=>setLeanFilter("left")}><DonkeySVG size={13}/> Left ({lc.left})</Pill>
@@ -475,7 +475,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
             <Pill on={leanFilter==="bi"} bg="#1e1535" color="#9b8ff0" border="#7c6dfa" onClick={()=>setLeanFilter("bi")}>⚖ Bipartisan ({lc.bi})</Pill>
             <Pill on={leanFilter==="neutral"} bg={T.bg4} color={T.txt} border={T.border2} onClick={()=>setLeanFilter("neutral")}>Neutral ({lc.neutral})</Pill>
           </div>
-          <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Categories</div>
+          <div style={{ fontSize:13, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Categories</div>
           <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
             {CAT_KEYS.map(f => (
               <Pill key={f} on={catFilters.includes(f)} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>toggleCat(f)}>
@@ -518,14 +518,14 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
       <div onClick={handleTap} style={{ display:"flex", alignItems:"center", gap:10, padding:"11px 14px", cursor:"pointer" }}>
         <div style={{ width:36, height:36, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, flexShrink:0, background:company.ab||T.bg3, color:company.ac||T.accent2 }}>{company.init}</div>
         <div style={{ flex:1, minWidth:0 }}>
-          <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.name}</div>
-          <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
+          <div style={{ fontSize:16, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.name}</div>
+          <div style={{ fontSize:13, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
         </div>
         <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
           <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }}>
-            <div style={{ fontSize:15, fontWeight:700, color:T.txt }}>{grade}</div>
-            <div style={{ fontSize:8, color:T.txt3 }}>{ps}</div>
+            <div style={{ fontSize:17, fontWeight:700, color:T.txt }}>{grade}</div>
+            <div style={{ fontSize:10, color:T.txt3 }}>{ps}</div>
           </div>
           <i className={`ti ${open ? "ti-chevron-up" : "ti-chevron-down"}`} style={{fontSize:13,color:T.txt3}} aria-hidden="true" />
         </div>
@@ -1028,7 +1028,7 @@ export default function App() {
             lc={lc}
           />
           <div style={{ display:"flex", alignItems:"center", gap:8, padding:"9px 16px", borderBottom:`1px solid ${T.border}` }}>
-            <span style={{ fontSize:12, color:T.txt3 }}>Sort:</span>
+            <span style={{ fontSize:14, color:T.txt3 }}>Sort:</span>
             {["score","name","lean"].map(sv => (
               <button key={sv} onClick={()=>setSort(sv)} style={{ padding:"5px 10px", borderRadius:20, fontSize:12, fontWeight:sort===sv?600:400, border:`1px solid ${sort===sv?T.accent:T.border}`, background:sort===sv?T.accentBg:T.bg3, color:sort===sv?T.accent2:T.txt2, cursor:"pointer" }}>
                 {sv==="score"?"Your score":sv==="name"?"A–Z":"Lean"}
@@ -1083,19 +1083,19 @@ export default function App() {
 
       {/* TOP PICKS */}
       {tab === "top" && (
-        <>
+        <div style={{ maxWidth:430, margin:"0 auto", width:"100%" }}>
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>
           </div>
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
               <div key={co.id} style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
-                <div style={{ width:24, textAlign:"right", fontSize:12, color:T.txt3, flexShrink:0, paddingTop:14 }}>#{i+1}</div>
+                <div style={{ width:24, textAlign:"right", fontSize:14, color:T.txt3, flexShrink:0, paddingTop:14 }}>#{i+1}</div>
                 <div style={{ flex:1 }}><CompanyCard company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} /></div>
               </div>
             ))}
           </div>
-        </>
+        </div>
       )}
 
       {/* SOURCES — Pro only */}
