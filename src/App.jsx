@@ -447,44 +447,104 @@ const Pill = ({ on, bg, color, border, onClick, children }) => (
 );
 
 // ─── FILTER PANEL ────────────────────────────────────────────────────────────
+const FILTER_GROUPS = [
+  {
+    id: "political", label: "Political Lean", icon: "ti-flag-2",
+    options: [
+      { id:"left",    label:"Left",       icon:"dem" },
+      { id:"right",   label:"Right",      icon:"rep" },
+      { id:"bi",      label:"Bipartisan", icon:"bi"  },
+      { id:"neutral", label:"Neutral",    icon:null  },
+    ]
+  },
+  {
+    id: "categories", label: "Categories", icon: "ti-adjustments-horizontal",
+    options: CAT_KEYS.map(k => ({ id:k, label:CAT_LABELS[k], icon:CAT_ICONS[k] }))
+  },
+];
+
 function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, lc }) {
   const [open, setOpen] = useState(false);
+  const [activeGroup, setActiveGroup] = useState(null);
   const hasFilters = leanFilter !== "all" || catFilters.length > 0;
+  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length;
+
+  const toggleGroup = (id) => setActiveGroup(g => g === id ? null : id);
+
   return (
     <div style={{ borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
-      <div onClick={()=>setOpen(o=>!o)} style={{ display:"flex", alignItems:"center", gap:8, padding:"10px 16px", cursor:"pointer" }}>
-        <i className="ti ti-adjustments-horizontal" style={{fontSize:15,color:hasFilters?T.accent2:T.txt3}} aria-hidden="true" />
+      {/* Top bar */}
+      <div onClick={()=>{ setOpen(o=>!o); if(open) setActiveGroup(null); }} style={{ display:"flex", alignItems:"center", gap:8, padding:"12px 16px", cursor:"pointer" }}>
+        <i className="ti ti-adjustments-horizontal" style={{fontSize:16,color:hasFilters?T.accent2:T.txt3}} aria-hidden="true" />
         <span style={{ fontSize:15, fontWeight:600, color:hasFilters?T.accent2:T.txt2 }}>
-          Filter {hasFilters ? "("+((leanFilter!=="all"?1:0)+catFilters.length)+" active)" : ""}
+          Filter {hasFilters ? `(${totalActive} active)` : ""}
         </span>
         {hasFilters && (
-          <button onClick={e=>{e.stopPropagation();setLeanFilter("all");setCatFilters([]);}}
+          <button onClick={e=>{e.stopPropagation();setLeanFilter("all");setCatFilters([]);setActiveGroup(null);}}
             style={{fontSize:11,color:T.rep,background:T.repBg,border:`1px solid ${T.rep}`,borderRadius:20,padding:"2px 8px",cursor:"pointer",marginLeft:4}}>
             Clear all
           </button>
         )}
         <i className={"ti "+(open?"ti-chevron-up":"ti-chevron-down")} style={{fontSize:13,color:T.txt3,marginLeft:"auto"}} aria-hidden="true" />
       </div>
+
+      {/* Level 1 — Main categories */}
       {open && (
-        <div style={{ padding:"0 16px 14px" }}>
-          <div style={{ fontSize:13, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Political Lean</div>
-          <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:12 }}>
-            <Pill on={leanFilter==="all"} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>setLeanFilter("all")}>All</Pill>
-            <Pill on={leanFilter==="left"} bg={T.demBg} color={T.dem} border={T.dem} onClick={()=>setLeanFilter("left")}><DonkeySVG size={13}/> Left ({lc.left})</Pill>
-            <Pill on={leanFilter==="right"} bg={T.repBg} color={T.rep} border={T.rep} onClick={()=>setLeanFilter("right")}><ElephantSVG size={13}/> Right ({lc.right})</Pill>
-            <Pill on={leanFilter==="bi"} bg="#1e1535" color="#9b8ff0" border="#7c6dfa" onClick={()=>setLeanFilter("bi")}>⚖ Bipartisan ({lc.bi})</Pill>
-            <Pill on={leanFilter==="neutral"} bg={T.bg4} color={T.txt} border={T.border2} onClick={()=>setLeanFilter("neutral")}>Neutral ({lc.neutral})</Pill>
-          </div>
-          <div style={{ fontSize:13, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:6 }}>Categories</div>
-          <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
-            {CAT_KEYS.map(f => (
-              <Pill key={f} on={catFilters.includes(f)} bg={T.accentBg} color={T.accent2} border={T.accent} onClick={()=>toggleCat(f)}>
-                <i className={"ti "+CAT_ICONS[f]} style={{fontSize:12}} aria-hidden="true" />
-                {CAT_LABELS[f]}
-                {catFilters.includes(f) && <span style={{fontSize:11}}>✓</span>}
-              </Pill>
-            ))}
-          </div>
+        <div style={{ borderTop:`1px solid ${T.border}` }}>
+          {FILTER_GROUPS.map(group => {
+            const isActive = activeGroup === group.id;
+            const groupHasFilter = group.id === "political" ? leanFilter !== "all" : catFilters.length > 0;
+            return (
+              <div key={group.id}>
+                {/* Group row */}
+                <div onClick={()=>toggleGroup(group.id)}
+                  style={{ display:"flex", alignItems:"center", gap:10, padding:"12px 16px", cursor:"pointer", background:isActive?T.bg3:T.bg2, borderBottom:`1px solid ${T.border}` }}>
+                  <i className={`ti ${group.icon}`} style={{fontSize:15,color:groupHasFilter?T.accent2:T.txt3}} aria-hidden="true" />
+                  <span style={{ fontSize:14, fontWeight:500, color:groupHasFilter?T.accent2:T.txt, flex:1 }}>
+                    {group.label}
+                    {groupHasFilter && <span style={{fontSize:12,color:T.accent2,marginLeft:6}}>●</span>}
+                  </span>
+                  <i className={`ti ${isActive?"ti-chevron-up":"ti-chevron-right"}`} style={{fontSize:13,color:T.txt3}} aria-hidden="true" />
+                </div>
+
+                {/* Level 2 — Options inside group */}
+                {isActive && (
+                  <div style={{ background:T.bg3, borderBottom:`1px solid ${T.border}` }}>
+                    {group.id === "political" && (
+                      <>
+                        {[
+                          {id:"all", label:"All", extra:""},
+                          {id:"left", label:"Left", extra:`${lc.left} companies`},
+                          {id:"right", label:"Right", extra:`${lc.right} companies`},
+                          {id:"bi", label:"Bipartisan", extra:`${lc.bi} companies`},
+                          {id:"neutral", label:"Neutral", extra:`${lc.neutral} companies`},
+                        ].map(opt => (
+                          <div key={opt.id} onClick={()=>setLeanFilter(opt.id)}
+                            style={{ display:"flex", alignItems:"center", gap:10, padding:"11px 20px", cursor:"pointer", borderBottom:`1px solid ${T.border}` }}>
+                            <div style={{ width:20, height:20, borderRadius:10, border:`2px solid ${leanFilter===opt.id?T.accent:T.border2}`, background:leanFilter===opt.id?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                              {leanFilter===opt.id && <div style={{width:8,height:8,borderRadius:4,background:"#fff"}} />}
+                            </div>
+                            <span style={{ fontSize:14, color:leanFilter===opt.id?T.accent2:T.txt, flex:1 }}>{opt.label}</span>
+                            {opt.extra && <span style={{ fontSize:12, color:T.txt3 }}>{opt.extra}</span>}
+                          </div>
+                        ))}
+                      </>
+                    )}
+                    {group.id === "categories" && CAT_KEYS.map(k => (
+                      <div key={k} onClick={()=>toggleCat(k)}
+                        style={{ display:"flex", alignItems:"center", gap:10, padding:"11px 20px", cursor:"pointer", borderBottom:`1px solid ${T.border}` }}>
+                        <div style={{ width:20, height:20, borderRadius:4, border:`2px solid ${catFilters.includes(k)?T.accent:T.border2}`, background:catFilters.includes(k)?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                          {catFilters.includes(k) && <i className="ti ti-check" style={{fontSize:11,color:"#fff"}} aria-hidden="true" />}
+                        </div>
+                        <i className={`ti ${CAT_ICONS[k]}`} style={{fontSize:14,color:catFilters.includes(k)?T.accent2:T.txt3}} aria-hidden="true" />
+                        <span style={{ fontSize:14, color:catFilters.includes(k)?T.accent2:T.txt, flex:1 }}>{CAT_LABELS[k]}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
