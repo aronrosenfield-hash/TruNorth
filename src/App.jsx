@@ -1063,7 +1063,7 @@ export default function App() {
 
       {/* BROWSE */}
       {tab === "browse" && (
-        <div style={{ width:"100%", maxWidth:"100vw", overflowX:"hidden", boxSizing:"border-box", padding:16, display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
+        <div style={{ padding:16, display:"grid", gridTemplateColumns:"calc(50% - 5px) calc(50% - 5px)", gap:10 }}>
           {cats.map((cat, i) => {
             const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
             const count = deduped.filter(c=>c.cat.includes(cat)).length;
@@ -1082,7 +1082,7 @@ export default function App() {
       )}
       {/* TOP PICKS */}
       {tab === "top" && (
-        <div style={{ width:"100%", maxWidth:"100vw", overflowX:"hidden", boxSizing:"border-box" }}>
+        <>
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>
           </div>
@@ -1094,7 +1094,7 @@ export default function App() {
               </div>
             ))}
           </div>
-        </div>
+        </>
       )}
 
       {/* SOURCES — Pro only */}
