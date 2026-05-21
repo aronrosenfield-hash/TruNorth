@@ -18287,7 +18287,7 @@ export const COMPANIES = [
   {
     "id": 171,
     "name": "Burlington",
-    "cat": "Various",
+    "cat": "Retail",
     "init": "BU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -21120,7 +21120,7 @@ export const COMPANIES = [
   {
     "id": 198,
     "name": "Origins",
-    "cat": "Various",
+    "cat": "Beauty & Personal Care",
     "init": "OR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -25914,7 +25914,7 @@ export const COMPANIES = [
   {
     "id": 243,
     "name": "Baxter International",
-    "cat": "Various",
+    "cat": "Healthcare & Pharma",
     "init": "BA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -30539,7 +30539,7 @@ export const COMPANIES = [
   {
     "id": 285,
     "name": "Edward Jones",
-    "cat": "Various",
+    "cat": "Financial Services",
     "init": "ED",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -32058,7 +32058,7 @@ export const COMPANIES = [
   {
     "id": 299,
     "name": "Ford Motor",
-    "cat": "Various",
+    "cat": "Automotive",
     "init": "FO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -34785,7 +34785,7 @@ export const COMPANIES = [
   {
     "id": 326,
     "name": "AutoTrader",
-    "cat": "Various",
+    "cat": "Automotive",
     "init": "AU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35288,7 +35288,7 @@ export const COMPANIES = [
   {
     "id": 331,
     "name": "Budget",
-    "cat": "Various",
+    "cat": "Automotive / Car Rental",
     "init": "BU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35358,7 +35358,7 @@ export const COMPANIES = [
   {
     "id": 332,
     "name": "National Car Rental",
-    "cat": "Various",
+    "cat": "Automotive / Car Rental",
     "init": "NA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35511,7 +35511,7 @@ export const COMPANIES = [
   {
     "id": 334,
     "name": "Alamo",
-    "cat": "Various",
+    "cat": "Automotive / Car Rental",
     "init": "AL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35790,7 +35790,7 @@ export const COMPANIES = [
   {
     "id": 337,
     "name": "Silvercar / Audi",
-    "cat": "Various",
+    "cat": "Automotive / Car Rental",
     "init": "SI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36086,7 +36086,7 @@ export const COMPANIES = [
   {
     "id": 340,
     "name": "ConocoPhillips",
-    "cat": "Various",
+    "cat": "Energy / Oil & Gas",
     "init": "CO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36156,7 +36156,7 @@ export const COMPANIES = [
   {
     "id": 341,
     "name": "Pioneer Natural Resources",
-    "cat": "Various",
+    "cat": "Energy / Oil & Gas",
     "init": "PI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36226,7 +36226,7 @@ export const COMPANIES = [
   {
     "id": 342,
     "name": "Marathon Petroleum",
-    "cat": "Various",
+    "cat": "Energy / Oil & Gas",
     "init": "MA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36512,7 +36512,7 @@ export const COMPANIES = [
   {
     "id": 345,
     "name": "HollyFrontier",
-    "cat": "Various",
+    "cat": "Energy / Oil & Gas",
     "init": "HO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37091,7 +37091,7 @@ export const COMPANIES = [
   {
     "id": 351,
     "name": "TotalEnergies USA",
-    "cat": "Various",
+    "cat": "Energy / Oil & Gas",
     "init": "TO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37396,7 +37396,7 @@ export const COMPANIES = [
   {
     "id": 354,
     "name": "Dominion Energy",
-    "cat": "Various",
+    "cat": "Energy / Utilities",
     "init": "DO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37578,7 +37578,7 @@ export const COMPANIES = [
   {
     "id": 356,
     "name": "Exelon",
-    "cat": "Various",
+    "cat": "Energy / Utilities",
     "init": "EX",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37870,7 +37870,7 @@ export const COMPANIES = [
   {
     "id": 359,
     "name": "Verizon",
-    "cat": "Various",
+    "cat": "Technology / Telecommunications",
     "init": "VE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37940,7 +37940,7 @@ export const COMPANIES = [
   {
     "id": 360,
     "name": "T-Mobile",
-    "cat": "Various",
+    "cat": "Technology / Telecommunications",
     "init": "T-",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38010,7 +38010,7 @@ export const COMPANIES = [
   {
     "id": 361,
     "name": "Comcast",
-    "cat": "Various",
+    "cat": "Technology / Telecommunications",
     "init": "CO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38421,7 +38421,7 @@ export const COMPANIES = [
   {
     "id": 365,
     "name": "Frontier Communications",
-    "cat": "Various",
+    "cat": "Technology / Telecommunications",
     "init": "FR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38837,7 +38837,7 @@ export const COMPANIES = [
   {
     "id": 369,
     "name": "Netflix",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "NE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38907,7 +38907,7 @@ export const COMPANIES = [
   {
     "id": 370,
     "name": "Warner Bros. Discovery",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "WA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38977,7 +38977,7 @@ export const COMPANIES = [
   {
     "id": 371,
     "name": "Universal / Comcast",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "UN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39047,7 +39047,7 @@ export const COMPANIES = [
   {
     "id": 372,
     "name": "Paramount Global",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "PA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39233,7 +39233,7 @@ export const COMPANIES = [
   {
     "id": 374,
     "name": "Lions Gate Entertainment",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "LI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39516,7 +39516,7 @@ export const COMPANIES = [
   {
     "id": 377,
     "name": "NBCUniversal",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "NB",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -40318,7 +40318,7 @@ export const COMPANIES = [
   {
     "id": 385,
     "name": "Audible",
-    "cat": "Various",
+    "cat": "Entertainment & Media",
     "init": "AU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -40808,7 +40808,7 @@ export const COMPANIES = [
   {
     "id": 390,
     "name": "Oracle Cloud",
-    "cat": "Various",
+    "cat": "Software & Technology",
     "init": "OR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -41111,7 +41111,7 @@ export const COMPANIES = [
   {
     "id": 393,
     "name": "SAP",
-    "cat": "Various",
+    "cat": "Software & Technology",
     "init": "SA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -41284,7 +41284,7 @@ export const COMPANIES = [
   {
     "id": 395,
     "name": "Workday",
-    "cat": "Various",
+    "cat": "Software & Technology",
     "init": "WO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -41354,7 +41354,7 @@ export const COMPANIES = [
   {
     "id": 396,
     "name": "Uber",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "UB",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -42577,7 +42577,7 @@ export const COMPANIES = [
   {
     "id": 408,
     "name": "Hyatt",
-    "cat": "Various",
+    "cat": "Hospitality & Travel",
     "init": "HY",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -43744,7 +43744,7 @@ export const COMPANIES = [
   {
     "id": 419,
     "name": "JetBlue",
-    "cat": "Various",
+    "cat": "Hospitality & Travel / Airlines",
     "init": "JE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -43814,7 +43814,7 @@ export const COMPANIES = [
   {
     "id": 420,
     "name": "Spirit Airlines",
-    "cat": "Various",
+    "cat": "Hospitality & Travel / Airlines",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -44315,7 +44315,7 @@ export const COMPANIES = [
   {
     "id": 425,
     "name": "UPS",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "UP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -44492,7 +44492,7 @@ export const COMPANIES = [
   {
     "id": 427,
     "name": "DHL USA",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "DH",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -44776,7 +44776,7 @@ export const COMPANIES = [
   {
     "id": 430,
     "name": "C.H. Robinson",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "C.",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45171,7 +45171,7 @@ export const COMPANIES = [
   {
     "id": 434,
     "name": "Union Pacific Railroad",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "UN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45462,7 +45462,7 @@ export const COMPANIES = [
   {
     "id": 437,
     "name": "Norfolk Southern",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "NO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45739,7 +45739,7 @@ export const COMPANIES = [
   {
     "id": 440,
     "name": "Greyhound / FlixBus",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "GR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45809,7 +45809,7 @@ export const COMPANIES = [
   {
     "id": 441,
     "name": "Megabus",
-    "cat": "Various",
+    "cat": "Transportation & Logistics",
     "init": "ME",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -46167,7 +46167,7 @@ export const COMPANIES = [
   {
     "id": 445,
     "name": "True Value",
-    "cat": "Various",
+    "cat": "Retail / Home Improvement",
     "init": "TR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -46237,7 +46237,7 @@ export const COMPANIES = [
   {
     "id": 446,
     "name": "Ace Hardware",
-    "cat": "Various",
+    "cat": "Retail / Home Improvement",
     "init": "AC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -46307,7 +46307,7 @@ export const COMPANIES = [
   {
     "id": 447,
     "name": "Do it Best",
-    "cat": "Various",
+    "cat": "Retail / Home Improvement",
     "init": "DO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -47238,7 +47238,7 @@ export const COMPANIES = [
   {
     "id": 456,
     "name": "Restoration Hardware / RH",
-    "cat": "Various",
+    "cat": "Furniture & Home",
     "init": "RE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -47942,7 +47942,7 @@ export const COMPANIES = [
   {
     "id": 463,
     "name": "Staples",
-    "cat": "Various",
+    "cat": "Retail / Office",
     "init": "ST",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48117,7 +48117,7 @@ export const COMPANIES = [
   {
     "id": 465,
     "name": "OfficeMax",
-    "cat": "Various",
+    "cat": "Retail / Office",
     "init": "OF",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48290,7 +48290,7 @@ export const COMPANIES = [
   {
     "id": 467,
     "name": "Fry's Electronics",
-    "cat": "Various",
+    "cat": "Retail / Electronics",
     "init": "FR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48748,7 +48748,7 @@ export const COMPANIES = [
   {
     "id": 472,
     "name": "Apple Store",
-    "cat": "Various",
+    "cat": "Retail / Electronics",
     "init": "AP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49099,7 +49099,7 @@ export const COMPANIES = [
   {
     "id": 476,
     "name": "Sony USA",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "SO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49169,7 +49169,7 @@ export const COMPANIES = [
   {
     "id": 477,
     "name": "Panasonic USA",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "PA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49444,7 +49444,7 @@ export const COMPANIES = [
   {
     "id": 480,
     "name": "Sonos",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "SO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49514,7 +49514,7 @@ export const COMPANIES = [
   {
     "id": 481,
     "name": "Harman International / Samsung",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "HA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49795,7 +49795,7 @@ export const COMPANIES = [
   {
     "id": 484,
     "name": "Bowflex / Nautilus",
-    "cat": "Various",
+    "cat": "Sports & Fitness",
     "init": "BO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49966,7 +49966,7 @@ export const COMPANIES = [
   {
     "id": 486,
     "name": "Precor / Amer Sports",
-    "cat": "Various",
+    "cat": "Sports & Fitness",
     "init": "PR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50249,7 +50249,7 @@ export const COMPANIES = [
   {
     "id": 489,
     "name": "Anytime Fitness",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Fitness Centers",
     "init": "AN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50319,7 +50319,7 @@ export const COMPANIES = [
   {
     "id": 490,
     "name": "24 Hour Fitness",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Fitness Centers",
     "init": "24",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50685,7 +50685,7 @@ export const COMPANIES = [
   {
     "id": 494,
     "name": "Orange Theory",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Fitness Centers",
     "init": "OR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -51343,7 +51343,7 @@ export const COMPANIES = [
   {
     "id": 501,
     "name": "Stretch Zone",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Fitness Centers",
     "init": "ST",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -51733,7 +51733,7 @@ export const COMPANIES = [
   {
     "id": 505,
     "name": "Academy Sports",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Retail",
     "init": "AC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -51906,7 +51906,7 @@ export const COMPANIES = [
   {
     "id": 507,
     "name": "Sports Authority (defunct)",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Retail",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52083,7 +52083,7 @@ export const COMPANIES = [
   {
     "id": 509,
     "name": "Rally House",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Retail",
     "init": "RA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52553,7 +52553,7 @@ export const COMPANIES = [
   {
     "id": 514,
     "name": "Cleveland Golf",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "CL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52623,7 +52623,7 @@ export const COMPANIES = [
   {
     "id": 515,
     "name": "Ping",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "PI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52693,7 +52693,7 @@ export const COMPANIES = [
   {
     "id": 516,
     "name": "Mizuno USA",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "MI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52865,7 +52865,7 @@ export const COMPANIES = [
   {
     "id": 518,
     "name": "Rawlings",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "RA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52935,7 +52935,7 @@ export const COMPANIES = [
   {
     "id": 519,
     "name": "Easton",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "EA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53005,7 +53005,7 @@ export const COMPANIES = [
   {
     "id": 520,
     "name": "Louisville Slugger / Wilson",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "LO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53168,7 +53168,7 @@ export const COMPANIES = [
   {
     "id": 522,
     "name": "Specialized Bicycles",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53428,7 +53428,7 @@ export const COMPANIES = [
   {
     "id": 525,
     "name": "Diamondback",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "DI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53679,7 +53679,7 @@ export const COMPANIES = [
   {
     "id": 528,
     "name": "Scott Sports",
-    "cat": "Various",
+    "cat": "Sports & Fitness / Equipment",
     "init": "SC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -54460,7 +54460,7 @@ export const COMPANIES = [
   {
     "id": 536,
     "name": "Wigwam",
-    "cat": "Various",
+    "cat": "Apparel & Fashion",
     "init": "WI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -54952,7 +54952,7 @@ export const COMPANIES = [
   {
     "id": 541,
     "name": "Pet Supplies Plus",
-    "cat": "Various",
+    "cat": "Pet Care",
     "init": "PE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55022,7 +55022,7 @@ export const COMPANIES = [
   {
     "id": 542,
     "name": "Chewy",
-    "cat": "Various",
+    "cat": "Pet Care",
     "init": "CH",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55198,7 +55198,7 @@ export const COMPANIES = [
   {
     "id": 544,
     "name": "PetPlace",
-    "cat": "Various",
+    "cat": "Pet Care",
     "init": "PE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55357,7 +55357,7 @@ export const COMPANIES = [
   {
     "id": 546,
     "name": "Purina / Nestlé",
-    "cat": "Various",
+    "cat": "Pet Care",
     "init": "PU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -56712,7 +56712,7 @@ export const COMPANIES = [
   {
     "id": 560,
     "name": "VCA Animal Hospitals / Mars",
-    "cat": "Various",
+    "cat": "Pet Care / Veterinary",
     "init": "VC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -56878,7 +56878,7 @@ export const COMPANIES = [
   {
     "id": 562,
     "name": "National Veterinary Associates",
-    "cat": "Various",
+    "cat": "Pet Care / Veterinary",
     "init": "NA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57039,7 +57039,7 @@ export const COMPANIES = [
   {
     "id": 564,
     "name": "Heartland Veterinary Partners",
-    "cat": "Various",
+    "cat": "Pet Care / Veterinary",
     "init": "HE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57109,7 +57109,7 @@ export const COMPANIES = [
   {
     "id": 565,
     "name": "Independent Veterinary Partners",
-    "cat": "Various",
+    "cat": "Pet Care / Veterinary",
     "init": "IN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57179,7 +57179,7 @@ export const COMPANIES = [
   {
     "id": 566,
     "name": "VetCor",
-    "cat": "Various",
+    "cat": "Pet Care / Veterinary",
     "init": "VE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57350,7 +57350,7 @@ export const COMPANIES = [
   {
     "id": 568,
     "name": "H&R Block",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "H&",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57528,7 +57528,7 @@ export const COMPANIES = [
   {
     "id": 570,
     "name": "TaxAct",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "TA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57699,7 +57699,7 @@ export const COMPANIES = [
   {
     "id": 572,
     "name": "Liberty Tax",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "LI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57862,7 +57862,7 @@ export const COMPANIES = [
   {
     "id": 574,
     "name": "Tax Slayer",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "TA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57932,7 +57932,7 @@ export const COMPANIES = [
   {
     "id": 575,
     "name": "Cash App Taxes",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "CA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58002,7 +58002,7 @@ export const COMPANIES = [
   {
     "id": 576,
     "name": "Credit Karma / Intuit",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "CR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58072,7 +58072,7 @@ export const COMPANIES = [
   {
     "id": 577,
     "name": "EY Tax Services",
-    "cat": "Various",
+    "cat": "Financial Services / Tax",
     "init": "EY",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58658,7 +58658,7 @@ export const COMPANIES = [
   {
     "id": 583,
     "name": "Sage",
-    "cat": "Various",
+    "cat": "Software & Technology",
     "init": "SA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58919,7 +58919,7 @@ export const COMPANIES = [
   {
     "id": 586,
     "name": "Bench",
-    "cat": "Various",
+    "cat": "Financial Services",
     "init": "BE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58989,7 +58989,7 @@ export const COMPANIES = [
   {
     "id": 587,
     "name": "Pilot",
-    "cat": "Various",
+    "cat": "Financial Services",
     "init": "PI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59435,7 +59435,7 @@ export const COMPANIES = [
   {
     "id": 592,
     "name": "Nolo",
-    "cat": "Various",
+    "cat": "Legal Services",
     "init": "NO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59745,7 +59745,7 @@ export const COMPANIES = [
   {
     "id": 596,
     "name": "Incfile",
-    "cat": "Various",
+    "cat": "Legal Services",
     "init": "IN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59815,7 +59815,7 @@ export const COMPANIES = [
   {
     "id": 597,
     "name": "ZenBusiness",
-    "cat": "Various",
+    "cat": "Professional Services",
     "init": "ZE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59885,7 +59885,7 @@ export const COMPANIES = [
   {
     "id": 598,
     "name": "Ancestry",
-    "cat": "Various",
+    "cat": "Professional Services",
     "init": "AN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -60246,7 +60246,7 @@ export const COMPANIES = [
   {
     "id": 602,
     "name": "LivingDNA",
-    "cat": "Various",
+    "cat": "Professional Services",
     "init": "LI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -60492,7 +60492,7 @@ export const COMPANIES = [
   {
     "id": 605,
     "name": "GenePlanet",
-    "cat": "Various",
+    "cat": "Professional Services",
     "init": "GE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -60562,7 +60562,7 @@ export const COMPANIES = [
   {
     "id": 606,
     "name": "Helix",
-    "cat": "Various",
+    "cat": "Healthcare & Pharma",
     "init": "HE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61045,7 +61045,7 @@ export const COMPANIES = [
   {
     "id": 611,
     "name": "Nest / Google",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "NE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61115,7 +61115,7 @@ export const COMPANIES = [
   {
     "id": 612,
     "name": "Vivint",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "VI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61185,7 +61185,7 @@ export const COMPANIES = [
   {
     "id": 613,
     "name": "Brinks Home Security",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "BR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61356,7 +61356,7 @@ export const COMPANIES = [
   {
     "id": 615,
     "name": "Abode",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "AB",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61426,7 +61426,7 @@ export const COMPANIES = [
   {
     "id": 616,
     "name": "Cove Home Security",
-    "cat": "Various",
+    "cat": "Consumer Electronics",
     "init": "CO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61583,7 +61583,7 @@ export const COMPANIES = [
   {
     "id": 618,
     "name": "Airgas / Air Liquide",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "AI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61754,7 +61754,7 @@ export const COMPANIES = [
   {
     "id": 620,
     "name": "Air Products",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "AI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61824,7 +61824,7 @@ export const COMPANIES = [
   {
     "id": 621,
     "name": "Matheson",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "MA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61894,7 +61894,7 @@ export const COMPANIES = [
   {
     "id": 622,
     "name": "WestAir Gases",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "WE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61964,7 +61964,7 @@ export const COMPANIES = [
   {
     "id": 623,
     "name": "Roberts Oxygen",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "RO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62034,7 +62034,7 @@ export const COMPANIES = [
   {
     "id": 624,
     "name": "National Welders Supply",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "NA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62104,7 +62104,7 @@ export const COMPANIES = [
   {
     "id": 625,
     "name": "NorLab",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "NO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62354,7 +62354,7 @@ export const COMPANIES = [
   {
     "id": 628,
     "name": "Caterpillar",
-    "cat": "Various",
+    "cat": "Manufacturing & Industrial",
     "init": "CA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -63607,7 +63607,7 @@ export const COMPANIES = [
   {
     "id": 640,
     "name": "Raytheon Technologies",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "RA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64022,7 +64022,7 @@ export const COMPANIES = [
   {
     "id": 644,
     "name": "Textron",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "TE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64412,7 +64412,7 @@ export const COMPANIES = [
   {
     "id": 648,
     "name": "SpaceX",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64596,7 +64596,7 @@ export const COMPANIES = [
   {
     "id": 650,
     "name": "Virgin Galactic",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "VI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64775,7 +64775,7 @@ export const COMPANIES = [
   {
     "id": 652,
     "name": "United Launch Alliance",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "UN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64961,7 +64961,7 @@ export const COMPANIES = [
   {
     "id": 654,
     "name": "Planet Labs",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "PL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65031,7 +65031,7 @@ export const COMPANIES = [
   {
     "id": 655,
     "name": "Astra Space",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "AS",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65101,7 +65101,7 @@ export const COMPANIES = [
   {
     "id": 656,
     "name": "Relativity Space",
-    "cat": "Various",
+    "cat": "Defense & Aerospace",
     "init": "RE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65487,7 +65487,7 @@ export const COMPANIES = [
   {
     "id": 660,
     "name": "Emerson Electric",
-    "cat": "Various",
+    "cat": "Manufacturing & Industrial",
     "init": "EM",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65557,7 +65557,7 @@ export const COMPANIES = [
   {
     "id": 661,
     "name": "Parker Hannifin",
-    "cat": "Various",
+    "cat": "Manufacturing & Industrial",
     "init": "PA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -66167,7 +66167,7 @@ export const COMPANIES = [
   {
     "id": 667,
     "name": "Watts Water Technologies",
-    "cat": "Various",
+    "cat": "Manufacturing & Industrial",
     "init": "WA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -66451,7 +66451,7 @@ export const COMPANIES = [
   {
     "id": 670,
     "name": "BASF USA",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "BA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -66852,7 +66852,7 @@ export const COMPANIES = [
   {
     "id": 674,
     "name": "RPM International",
-    "cat": "Various",
+    "cat": "Chemicals & Materials",
     "init": "RP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -67664,7 +67664,7 @@ export const COMPANIES = [
   {
     "id": 682,
     "name": "Clearwater Paper",
-    "cat": "Various",
+    "cat": "Manufacturing & Industrial",
     "init": "CL",
     "overall": 50,
     "ab": "#1a1a2e",
