@@ -4,11 +4,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          companies: ['./src/companies.js']
+        manualChunks: (id) => {
+          if (id.includes('companies.js')) return 'companies';
         }
       }
     }
