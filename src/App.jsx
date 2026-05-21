@@ -929,12 +929,9 @@ const SOURCES_DATA = [
 ];
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
-
-// ─── STORAGE ─────────────────────────────────────────────────────────────────
-const tnGet = (k,fb) => { try { const v=localStorage.getItem(k); return v!==null?JSON.parse(v):fb; } catch(e){ return fb; } };
-const tnSet = (k,v) => { try { localStorage.setItem(k,JSON.stringify(v)); } catch(e){} };
-
 export default function App() {
+  const tnGet = (k,fb) => { try { const v=localStorage.getItem(k); return v!==null?JSON.parse(v):fb; } catch(e){ return fb; } };
+  const tnSet = (k,v) => { try { localStorage.setItem(k,JSON.stringify(v)); } catch(e){} };
   const [screen, setScreen]     = useState("quiz");
   const [profile, setProfile]   = useState(()=>tnGet("tn_profile",null));
   const [isPaid, setIsPaid]     = useState(()=>tnGet("tn_paid",false));
