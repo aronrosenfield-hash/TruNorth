@@ -930,9 +930,9 @@ const SOURCES_DATA = [
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [screen, setScreen]     = useState(()=>localStorage.getItem("tn_screen")||"quiz");
+  const [screen, setScreen]     = useState(()=>{ try { return localStorage.getItem("tn_screen")||"quiz"; } catch { return "quiz"; } });
   const [profile, setProfile]   = useState(()=>{ try { return JSON.parse(localStorage.getItem("tn_profile")); } catch { return null; } });
-  const [isPaid, setIsPaid]     = useState(()=>localStorage.getItem("tn_paid")==="true");
+  const [isPaid, setIsPaid]     = useState(()=>{ try { return localStorage.getItem("tn_paid")==="true"; } catch { return false; } });
   const [showPaywall, setShowPaywall] = useState(false);
 
   // Persist state to localStorage
@@ -940,7 +940,7 @@ export default function App() {
   useEffect(()=>{ localStorage.setItem(tn_tab, tab); }, [tab]);
   useEffect(()=>{ localStorage.setItem(tn_paid, isPaid); }, [isPaid]);
   useEffect(()=>{ localStorage.setItem(tn_profile, JSON.stringify(profile)); }, [profile]);
-  const [tab, setTab]           = useState(()=>localStorage.getItem("tn_tab")||"top");
+  const [tab, setTab]           = useState(()=>{ try { return localStorage.getItem("tn_tab")||"top"; } catch { return "top"; } });
   const [query, setQuery]       = useState("");
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
