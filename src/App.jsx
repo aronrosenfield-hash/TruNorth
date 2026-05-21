@@ -1086,11 +1086,11 @@ export default function App() {
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>
           </div>
-          <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
+          <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <div key={co.id} style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
+              <div key={co.id} style={{ display:"flex", alignItems:"flex-start", gap:8, minWidth:0 }}>
                 <div style={{ width:24, textAlign:"right", fontSize:14, color:T.txt3, flexShrink:0, paddingTop:14 }}>#{i+1}</div>
-                <div style={{ flex:1 }}><CompanyCard company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} /></div>
+                <div style={{ flex:1, minWidth:0 }}><CompanyCard company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} /></div>
               </div>
             ))}
           </div>
