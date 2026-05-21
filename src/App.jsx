@@ -23,6 +23,12 @@ const T = {
   gold:"#f0c040", goldBg:"#2a2005",
 };
 
+
+// ─── STORAGE HELPERS ─────────────────────────────────────────────────────────
+const store = {
+  get: (k, fallback) => { try { const v = localStorage.getItem(k); return v !== null ? JSON.parse(v) : fallback; } catch(e) { return fallback; } },
+  set: (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} },
+};
 // ─── SYMBOL SYSTEM (replaces color bars) ─────────────────────────────────────
 // Instead of colors, we use symbols + plain text labels
 const SYMBOLS = {
@@ -931,12 +937,15 @@ const SOURCES_DATA = [
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [screen, setScreen]     = useState("quiz");
-  const [profile, setProfile]   = useState(null);
-  const [isPaid, setIsPaid]     = useState(false);
+  const [profile, setProfile]   = useState(()=>store.get("tn_profile",null));
+  const [isPaid, setIsPaid]     = useState(()=>store.get("tn_paid",false));
   const [showPaywall, setShowPaywall] = useState(false);
+  useEffect(()=>store.set("tn_tab", tab), [tab]);
+  useEffect(()=>store.set("tn_paid", isPaid), [isPaid]);
+  useEffect(()=>store.set("tn_profile", profile), [profile]);
 
 
-  const [tab, setTab]           = useState("top");
+  const [tab, setTab]           = useState(()=>store.get("tn_tab","top"));
   const [query, setQuery]       = useState("");
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
