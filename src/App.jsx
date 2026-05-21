@@ -931,11 +931,15 @@ const SOURCES_DATA = [
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [screen, setScreen]     = useState("quiz");
-  const [profile, setProfile]   = useState(null);
-  const [isPaid, setIsPaid]     = useState(false);
+  const [profile, setProfile]   = useState(()=>{ try { const p=localStorage.getItem("tn_profile"); return p?JSON.parse(p):null; } catch(e){ return null; } });
+  const [isPaid, setIsPaid]     = useState(()=>{ try { return localStorage.getItem("tn_paid")==="true"; } catch(e){ return false; } });
   const [showPaywall, setShowPaywall] = useState(false);
 
-  const [tab, setTab]           = useState("top");
+  useEffect(()=>{ window.location.hash = tab; }, [tab]);
+  useEffect(()=>{ try { localStorage.setItem("tn_paid", isPaid); } catch(e){} }, [isPaid]);
+  useEffect(()=>{ try { localStorage.setItem("tn_profile", JSON.stringify(profile)); } catch(e){} }, [profile]);
+
+  const [tab, setTab]           = useState(()=>{ const h = window.location.hash.replace("#",""); return ["top","search","browse","account"].includes(h)?h:"top"; });
   const [query, setQuery]       = useState("");
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
