@@ -1063,6 +1063,7 @@ export default function App() {
 
       {/* BROWSE */}
       {tab === "browse" && (
+        <div style={{ maxWidth:430, margin:"0 auto", width:"100%" }}>
         <div style={{ padding:16, display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
           {cats.map((cat, i) => {
             const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
@@ -1081,6 +1082,7 @@ export default function App() {
         </div>
       )}
 
+        </div>
       {/* TOP PICKS */}
       {tab === "top" && (
         <div style={{ maxWidth:430, margin:"0 auto", width:"100%" }}>
