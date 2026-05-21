@@ -929,14 +929,22 @@ const SOURCES_DATA = [
 ];
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
+
+// ─── STORAGE ─────────────────────────────────────────────────────────────────
+const tnGet = (k,fb) => { try { const v=localStorage.getItem(k); return v!==null?JSON.parse(v):fb; } catch(e){ return fb; } };
+const tnSet = (k,v) => { try { localStorage.setItem(k,JSON.stringify(v)); } catch(e){} };
+
 export default function App() {
   const [screen, setScreen]     = useState("quiz");
-  const [profile, setProfile]   = useState(null);
-  const [isPaid, setIsPaid]     = useState(false);
+  const [profile, setProfile]   = useState(()=>tnGet("tn_profile",null));
+  const [isPaid, setIsPaid]     = useState(()=>tnGet("tn_paid",false));
   const [showPaywall, setShowPaywall] = useState(false);
+  useEffect(()=>tnSet("tn_tab",tab),[tab]);
+  useEffect(()=>tnSet("tn_paid",isPaid),[isPaid]);
+  useEffect(()=>tnSet("tn_profile",profile),[profile]);
 
 
-  const [tab, setTab]           = useState("top");
+  const [tab, setTab]           = useState(()=>tnGet("tn_tab","top"));
   const [query, setQuery]       = useState("");
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
