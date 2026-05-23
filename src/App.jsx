@@ -1,5 +1,7 @@
 import { COMPANIES } from './companies.js';
 import { useState, useEffect } from "react";
+import SplashScreen from "./SplashScreen";
+import OnboardingFlow from "./OnboardingFlow";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
@@ -930,8 +932,12 @@ const SOURCES_DATA = [
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [screen, setScreen]     = useState("quiz");
-  const [profile, setProfile]   = useState(null);
+  const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
+const [screen, setScreen] = useState(hasOnboarded ? "app" : "splash");
+const [currentUser, setCurrentUser] = useState(
+  JSON.parse(localStorage.getItem("tn_user") || "null")
+);
+const [profile, setProfile]   = useState(null);
   const [isPaid, setIsPaid]     = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
 
@@ -1026,6 +1032,20 @@ export default function App() {
 
 
 
+  if (screen === "splash") {
+  return <SplashScreen onDone={() => setScreen("onboarding")} />;
+}
+
+if (screen === "onboarding") {
+  return (
+    <OnboardingFlow
+      onComplete={(user) => {
+        setCurrentUser(user);
+        setScreen("app");
+      }}
+    />
+  );
+}
   if (screen === "quiz") {
     return (
       <div style={{ maxWidth:430, margin:"0 auto" }}>
