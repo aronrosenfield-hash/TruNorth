@@ -933,7 +933,7 @@ const SOURCES_DATA = [
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
-const [screen, setScreen] = useState(hasOnboarded ? "app" : "splash");
+const [screen, setScreen] = useState("splash");
 const [currentUser, setCurrentUser] = useState(
   JSON.parse(localStorage.getItem("tn_user") || "null")
 );
@@ -1041,7 +1041,7 @@ if (screen === "onboarding") {
     <OnboardingFlow
       onComplete={(user) => {
         setCurrentUser(user);
-        setScreen("app");
+        setScreen("top");
       }}
     />
   );
