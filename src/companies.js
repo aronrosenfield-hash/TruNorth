@@ -68058,3 +68058,4 @@ const COMPANIES = [
     "childLabor": false
   }
 ];
+export { COMPANIES };
