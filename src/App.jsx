@@ -758,7 +758,7 @@ function Quiz({ onComplete }) {
           </div>
         )}
 
-        {(current?.type === "single" || current?.type === "single+scale" || current?.type === "scale+single") && (
+        {(current?.type === "single" || current?.type === "single+scale") && (
           <>
             <div style={{ fontSize:16, fontWeight:600, color:T.txt, marginBottom:12, lineHeight:1.4 }}>
               {current.type === "scale+single" ? current.singleQ : current.q}
@@ -1142,7 +1142,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ maxWidth:430, margin:"0 auto", minHeight:"100dvh", background:T.bg, width:"100%" }}>
+    <div style={{ maxWidth:430, margin:"0 auto", height:"100dvh", background:T.bg, width:"100%", display:"flex", flexDirection:"column", overflow:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
