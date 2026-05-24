@@ -358,9 +358,9 @@ function ElephantSVG({ size=14, col="#e24a4a" }) {
 }
 
 // ─── PAYWALL ─────────────────────────────────────────────────────────────────
-function PaywallScreen({ onSubscribe, onClose }) {
+function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(initialEmail);
 
   const handleSubscribe = () => {
     if (!email.includes("@")) { alert("Please enter a valid email."); return; }
@@ -1025,7 +1025,7 @@ if (screen === "onboarding") {
   if (screen === "quiz") {
     return (
       <div style={{ maxWidth:430, margin:"0 auto" }}>
-        {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
+        {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
         {isPaid ? (
           <>
             <Quiz onComplete={(p) => { setProfile(p); setScreen("main"); }} />
@@ -1063,7 +1063,7 @@ if (screen === "onboarding") {
 
   return (
     <div style={{ maxWidth:430, margin:"0 auto", minHeight:"100dvh", background:T.bg, width:"100%" }}>
-      {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
+      {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
       <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
