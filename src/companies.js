@@ -1,4 +1,7 @@
-const COMPANIES = [
+// AUTO-GENERATED — 2026-05-24T17:01:14.167Z
+// 718 companies | Avg score: 52 | API: FEC=180 OSHA=0 NLRB=0
+
+export const COMPANIES = [
   {
     "id": 1,
     "name": "Nike",
@@ -115,10 +118,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 2,
@@ -233,10 +233,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 3,
@@ -354,10 +351,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 4,
@@ -472,10 +466,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 5,
@@ -582,10 +573,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 6,
@@ -700,10 +688,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 7,
@@ -810,10 +795,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 8,
@@ -923,10 +905,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 9,
@@ -1038,10 +1017,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 10,
@@ -1154,10 +1130,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 11,
@@ -1277,10 +1250,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 12,
@@ -1385,10 +1355,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 13,
@@ -1503,10 +1470,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 14,
@@ -1610,10 +1574,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 15,
@@ -1728,10 +1689,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 16,
@@ -1846,10 +1804,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 17,
@@ -1966,10 +1921,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 18,
@@ -2081,10 +2033,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 19,
@@ -2198,10 +2147,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 20,
@@ -2315,10 +2261,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 21,
@@ -2417,10 +2360,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 22,
@@ -2536,10 +2476,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 23,
@@ -2646,10 +2583,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 24,
@@ -2758,10 +2692,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 25,
@@ -2867,10 +2798,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 26,
@@ -2977,10 +2905,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 27,
@@ -3085,10 +3010,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 28,
@@ -3201,10 +3123,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 29,
@@ -3317,10 +3236,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 30,
@@ -3437,10 +3353,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 31,
@@ -3544,10 +3457,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 32,
@@ -3653,10 +3563,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 33,
@@ -3778,10 +3685,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 34,
@@ -3895,10 +3799,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 35,
@@ -4005,10 +3906,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 36,
@@ -4122,10 +4020,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 37,
@@ -4230,10 +4125,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 38,
@@ -4339,10 +4231,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 39,
@@ -4448,10 +4337,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 40,
@@ -4570,10 +4456,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 41,
@@ -4683,10 +4566,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 42,
@@ -4792,10 +4672,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 43,
@@ -4905,10 +4782,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 44,
@@ -5012,10 +4886,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 45,
@@ -5120,10 +4991,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 46,
@@ -5235,10 +5103,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 47,
@@ -5344,10 +5209,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 48,
@@ -5460,10 +5322,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 49,
@@ -5575,10 +5434,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 50,
@@ -5693,10 +5549,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 51,
@@ -5808,10 +5661,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 52,
@@ -5916,10 +5766,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 53,
@@ -6029,10 +5876,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 54,
@@ -6138,10 +5982,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 55,
@@ -6254,10 +6095,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 56,
@@ -6370,10 +6208,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 57,
@@ -6482,10 +6317,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 58,
@@ -6599,10 +6431,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 59,
@@ -6710,10 +6539,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 60,
@@ -6820,10 +6646,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 61,
@@ -6929,10 +6752,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 62,
@@ -7022,10 +6842,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 63,
@@ -7119,10 +6936,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 64,
@@ -7209,10 +7023,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 65,
@@ -7312,10 +7123,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 66,
@@ -7405,10 +7213,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 67,
@@ -7502,10 +7307,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 68,
@@ -7602,10 +7404,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 69,
@@ -7692,10 +7491,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 70,
@@ -7793,10 +7589,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 71,
@@ -7891,10 +7684,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 72,
@@ -7998,10 +7788,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 73,
@@ -8105,10 +7892,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 74,
@@ -8217,10 +8001,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 75,
@@ -8331,10 +8112,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 76,
@@ -8439,10 +8217,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 77,
@@ -8543,10 +8318,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 78,
@@ -8644,10 +8416,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 79,
@@ -8737,10 +8506,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 80,
@@ -8835,10 +8601,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 81,
@@ -8942,10 +8705,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 82,
@@ -9058,10 +8818,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 83,
@@ -9176,10 +8933,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 84,
@@ -9286,10 +9040,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 85,
@@ -9407,10 +9158,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 86,
@@ -9524,10 +9272,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 87,
@@ -9639,10 +9384,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 88,
@@ -9754,10 +9496,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 89,
@@ -9864,10 +9603,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 90,
@@ -9979,10 +9715,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 91,
@@ -10094,10 +9827,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 92,
@@ -10208,10 +9938,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 93,
@@ -10327,10 +10054,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 94,
@@ -10441,10 +10165,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 95,
@@ -10548,10 +10269,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 96,
@@ -10666,10 +10384,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 97,
@@ -10776,10 +10491,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 98,
@@ -10882,10 +10594,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 99,
@@ -10989,10 +10698,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 100,
@@ -11107,10 +10813,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 101,
@@ -11213,10 +10916,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 102,
@@ -11316,10 +11016,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 103,
@@ -11426,10 +11123,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 104,
@@ -11538,10 +11232,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 105,
@@ -11645,10 +11336,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 106,
@@ -11752,10 +11440,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 107,
@@ -11854,10 +11539,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 108,
@@ -11948,10 +11630,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 109,
@@ -12046,10 +11725,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 110,
@@ -12140,10 +11816,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 111,
@@ -12241,10 +11914,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 112,
@@ -12332,10 +12002,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 113,
@@ -12449,10 +12116,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 114,
@@ -12529,10 +12193,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 115,
@@ -12602,10 +12263,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 116,
@@ -12706,10 +12364,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 117,
@@ -12809,10 +12464,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 118,
@@ -12913,10 +12565,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 119,
@@ -13016,10 +12665,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 120,
@@ -13127,10 +12773,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 121,
@@ -13234,10 +12877,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 122,
@@ -13338,10 +12978,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 123,
@@ -13438,10 +13075,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 124,
@@ -13553,10 +13187,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 125,
@@ -13652,10 +13283,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 126,
@@ -13747,10 +13375,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 127,
@@ -13847,10 +13472,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 128,
@@ -13945,10 +13567,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 129,
@@ -14045,10 +13664,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 130,
@@ -14145,10 +13761,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 131,
@@ -14253,10 +13866,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 132,
@@ -14357,10 +13967,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 133,
@@ -14461,10 +14068,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 134,
@@ -14563,10 +14167,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 135,
@@ -14670,10 +14271,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 136,
@@ -14777,10 +14375,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 137,
@@ -14866,10 +14461,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 138,
@@ -14966,10 +14558,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 139,
@@ -15058,10 +14647,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 140,
@@ -15167,10 +14753,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 141,
@@ -15267,10 +14850,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 142,
@@ -15372,10 +14952,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 143,
@@ -15472,10 +15049,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 144,
@@ -15577,10 +15151,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 145,
@@ -15665,10 +15236,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 146,
@@ -15738,10 +15306,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 147,
@@ -15813,10 +15378,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 148,
@@ -15899,10 +15461,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 149,
@@ -15993,10 +15552,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 150,
@@ -16111,10 +15667,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 151,
@@ -16215,10 +15768,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 152,
@@ -16326,10 +15876,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 153,
@@ -16434,10 +15981,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 154,
@@ -16537,10 +16081,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 155,
@@ -16633,10 +16174,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 156,
@@ -16741,10 +16279,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 157,
@@ -16850,10 +16385,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 158,
@@ -16956,10 +16488,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 159,
@@ -17061,10 +16590,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 160,
@@ -17172,10 +16698,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 161,
@@ -17281,10 +16804,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 162,
@@ -17392,10 +16912,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 163,
@@ -17512,10 +17029,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 164,
@@ -17631,10 +17145,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 165,
@@ -17742,10 +17253,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 166,
@@ -17849,10 +17357,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 167,
@@ -17957,10 +17462,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 168,
@@ -18064,10 +17566,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 169,
@@ -18169,10 +17668,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 170,
@@ -18279,15 +17775,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 171,
     "name": "Burlington",
-    "cat": "Retail",
+    "cat": "Various",
     "init": "BU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -18349,10 +17842,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 172,
@@ -18456,10 +17946,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 173,
@@ -18559,10 +18046,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 174,
@@ -18662,10 +18146,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 175,
@@ -18768,10 +18249,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 176,
@@ -18866,10 +18344,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 177,
@@ -18968,10 +18443,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 178,
@@ -19077,10 +18549,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 179,
@@ -19188,10 +18657,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 180,
@@ -19298,10 +18764,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 181,
@@ -19409,10 +18872,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 182,
@@ -19520,10 +18980,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 183,
@@ -19629,10 +19086,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 184,
@@ -19734,10 +19188,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 185,
@@ -19843,10 +19294,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 186,
@@ -19955,10 +19403,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 187,
@@ -20061,10 +19506,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 188,
@@ -20165,10 +19607,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 189,
@@ -20271,10 +19710,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 190,
@@ -20376,10 +19812,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 191,
@@ -20488,10 +19921,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": true
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 192,
@@ -20599,10 +20029,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 193,
@@ -20685,10 +20112,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 194,
@@ -20795,10 +20219,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 195,
@@ -20899,10 +20320,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 196,
@@ -21004,10 +20422,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 197,
@@ -21112,15 +20527,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 198,
     "name": "Origins",
-    "cat": "Beauty & Personal Care",
+    "cat": "Various",
     "init": "OR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -21182,10 +20594,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 199,
@@ -21272,10 +20681,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 200,
@@ -21390,10 +20796,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 201,
@@ -21495,10 +20898,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 202,
@@ -21601,10 +21001,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 203,
@@ -21700,10 +21097,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 204,
@@ -21808,10 +21202,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 205,
@@ -21917,10 +21308,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 206,
@@ -22020,10 +21408,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 207,
@@ -22129,10 +21514,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 208,
@@ -22225,10 +21607,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 209,
@@ -22327,10 +21706,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 210,
@@ -22439,10 +21815,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 211,
@@ -22550,10 +21923,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 212,
@@ -22660,10 +22030,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 213,
@@ -22750,10 +22117,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 214,
@@ -22828,10 +22192,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 215,
@@ -22926,10 +22287,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 216,
@@ -23017,10 +22375,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 217,
@@ -23112,10 +22467,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 218,
@@ -23213,10 +22565,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 219,
@@ -23315,10 +22664,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 220,
@@ -23429,10 +22775,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 221,
@@ -23531,10 +22874,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 222,
@@ -23633,10 +22973,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 223,
@@ -23745,10 +23082,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 224,
@@ -23861,10 +23195,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 225,
@@ -23975,10 +23306,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 226,
@@ -24086,10 +23414,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 227,
@@ -24198,10 +23523,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 228,
@@ -24300,10 +23622,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 229,
@@ -24401,10 +23720,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 230,
@@ -24522,10 +23838,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 231,
@@ -24640,10 +23953,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 232,
@@ -24757,10 +24067,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 233,
@@ -24865,10 +24172,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 234,
@@ -24979,10 +24283,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 235,
@@ -25095,10 +24396,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 236,
@@ -25211,10 +24509,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 237,
@@ -25330,10 +24625,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 238,
@@ -25447,10 +24739,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 239,
@@ -25553,10 +24842,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 240,
@@ -25669,10 +24955,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 241,
@@ -25788,10 +25071,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 242,
@@ -25906,15 +25186,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 243,
     "name": "Baxter International",
-    "cat": "Healthcare & Pharma",
+    "cat": "Various",
     "init": "BA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -25976,10 +25253,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 244,
@@ -26094,10 +25368,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 245,
@@ -26210,10 +25481,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 246,
@@ -26318,10 +25586,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 247,
@@ -26430,10 +25695,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 248,
@@ -26548,10 +25810,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 249,
@@ -26656,10 +25915,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 250,
@@ -26755,10 +26011,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 251,
@@ -26864,10 +26117,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 252,
@@ -26985,10 +26235,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 253,
@@ -27098,10 +26345,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 254,
@@ -27204,10 +26448,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 255,
@@ -27311,10 +26552,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 256,
@@ -27422,10 +26660,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 257,
@@ -27532,10 +26767,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 258,
@@ -27648,10 +26880,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 259,
@@ -27760,10 +26989,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 260,
@@ -27868,10 +27094,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 261,
@@ -27981,10 +27204,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 262,
@@ -28098,10 +27318,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 263,
@@ -28207,10 +27424,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 264,
@@ -28315,10 +27529,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 265,
@@ -28422,10 +27633,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 266,
@@ -28536,10 +27744,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 267,
@@ -28651,10 +27856,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 268,
@@ -28763,10 +27965,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 269,
@@ -28873,10 +28072,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 270,
@@ -28988,10 +28184,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 271,
@@ -29105,10 +28298,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 272,
@@ -29220,10 +28410,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 273,
@@ -29334,10 +28521,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 274,
@@ -29447,10 +28631,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 275,
@@ -29546,10 +28727,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 276,
@@ -29660,10 +28838,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 277,
@@ -29767,10 +28942,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 278,
@@ -29867,10 +29039,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 279,
@@ -29981,10 +29150,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 280,
@@ -30084,10 +29250,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 281,
@@ -30196,10 +29359,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 282,
@@ -30309,10 +29469,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 283,
@@ -30424,10 +29581,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 284,
@@ -30531,15 +29685,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 285,
     "name": "Edward Jones",
-    "cat": "Financial Services",
+    "cat": "Various",
     "init": "ED",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -30601,10 +29752,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 286,
@@ -30707,10 +29855,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 287,
@@ -30823,10 +29968,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 288,
@@ -30933,10 +30075,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 289,
@@ -31047,10 +30186,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 290,
@@ -31158,10 +30294,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 291,
@@ -31267,10 +30400,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 292,
@@ -31375,10 +30505,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 293,
@@ -31489,10 +30616,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 294,
@@ -31597,10 +30721,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 295,
@@ -31710,10 +30831,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 296,
@@ -31822,10 +30940,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 297,
@@ -31940,10 +31055,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 298,
@@ -32050,15 +31162,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 299,
     "name": "Ford Motor",
-    "cat": "Automotive",
+    "cat": "Various",
     "init": "FO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -32120,10 +31229,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 300,
@@ -32231,10 +31337,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 301,
@@ -32331,10 +31434,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 302,
@@ -32438,10 +31538,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 303,
@@ -32535,10 +31632,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 304,
@@ -32634,10 +31728,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 305,
@@ -32737,10 +31828,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 306,
@@ -32836,10 +31924,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 307,
@@ -32931,10 +32016,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 308,
@@ -33028,10 +32110,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 309,
@@ -33133,10 +32212,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 310,
@@ -33226,10 +32302,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 311,
@@ -33324,10 +32397,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 312,
@@ -33417,10 +32487,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 313,
@@ -33514,10 +32581,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 314,
@@ -33620,10 +32684,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 315,
@@ -33736,10 +32797,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 316,
@@ -33836,10 +32894,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 317,
@@ -33944,10 +32999,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 318,
@@ -34054,10 +33106,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 319,
@@ -34165,10 +33214,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 320,
@@ -34261,10 +33307,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 321,
@@ -34363,10 +33406,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 322,
@@ -34470,10 +33510,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 323,
@@ -34569,10 +33606,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 324,
@@ -34674,10 +33708,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 325,
@@ -34777,15 +33808,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 326,
     "name": "AutoTrader",
-    "cat": "Automotive",
+    "cat": "Various",
     "init": "AU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -34847,10 +33875,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 327,
@@ -34955,10 +33980,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 328,
@@ -35062,10 +34084,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 329,
@@ -35167,10 +34186,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 330,
@@ -35280,15 +34296,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 331,
     "name": "Budget",
-    "cat": "Automotive / Car Rental",
+    "cat": "Various",
     "init": "BU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35350,15 +34363,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 332,
     "name": "National Car Rental",
-    "cat": "Automotive / Car Rental",
+    "cat": "Various",
     "init": "NA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35420,10 +34430,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 333,
@@ -35503,15 +34510,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 334,
     "name": "Alamo",
-    "cat": "Automotive / Car Rental",
+    "cat": "Various",
     "init": "AL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35573,10 +34577,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 335,
@@ -35677,10 +34678,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 336,
@@ -35782,15 +34780,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 337,
     "name": "Silvercar / Audi",
-    "cat": "Automotive / Car Rental",
+    "cat": "Various",
     "init": "SI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -35852,10 +34847,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 338,
@@ -35964,10 +34956,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 339,
@@ -36078,15 +35067,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 340,
     "name": "ConocoPhillips",
-    "cat": "Energy / Oil & Gas",
+    "cat": "Various",
     "init": "CO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36148,15 +35134,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 341,
     "name": "Pioneer Natural Resources",
-    "cat": "Energy / Oil & Gas",
+    "cat": "Various",
     "init": "PI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36218,15 +35201,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 342,
     "name": "Marathon Petroleum",
-    "cat": "Energy / Oil & Gas",
+    "cat": "Various",
     "init": "MA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36288,10 +35268,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 343,
@@ -36399,10 +35376,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 344,
@@ -36504,15 +35478,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 345,
     "name": "HollyFrontier",
-    "cat": "Energy / Oil & Gas",
+    "cat": "Various",
     "init": "HO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -36574,10 +35545,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 346,
@@ -36669,10 +35637,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 347,
@@ -36771,10 +35736,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 348,
@@ -36884,10 +35846,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 349,
@@ -36984,10 +35943,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 350,
@@ -37083,15 +36039,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 351,
     "name": "TotalEnergies USA",
-    "cat": "Energy / Oil & Gas",
+    "cat": "Various",
     "init": "TO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37153,10 +36106,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 352,
@@ -37274,10 +36224,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 353,
@@ -37388,15 +36335,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 354,
     "name": "Dominion Energy",
-    "cat": "Energy / Utilities",
+    "cat": "Various",
     "init": "DO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37458,10 +36402,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 355,
@@ -37570,15 +36511,12 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 356,
     "name": "Exelon",
-    "cat": "Energy / Utilities",
+    "cat": "Various",
     "init": "EX",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37640,10 +36578,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 357,
@@ -37747,10 +36682,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 358,
@@ -37862,15 +36794,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 359,
     "name": "Verizon",
-    "cat": "Technology / Telecommunications",
+    "cat": "Various",
     "init": "VE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -37932,15 +36861,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    }
   },
   {
     "id": 360,
     "name": "T-Mobile",
-    "cat": "Technology / Telecommunications",
+    "cat": "Various",
     "init": "T-",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38002,15 +36928,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": true,
-    "antitrust": true,
-    "childLabor": false
+    }
   },
   {
     "id": 361,
     "name": "Comcast",
-    "cat": "Technology / Telecommunications",
+    "cat": "Various",
     "init": "CO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38072,10 +36995,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    }
   },
   {
     "id": 362,
@@ -38188,10 +37108,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 363,
@@ -38299,10 +37216,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 364,
@@ -38413,15 +37327,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 365,
     "name": "Frontier Communications",
-    "cat": "Technology / Telecommunications",
+    "cat": "Various",
     "init": "FR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38483,10 +37394,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 366,
@@ -38602,10 +37510,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 367,
@@ -38716,10 +37621,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 368,
@@ -38829,15 +37731,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 369,
     "name": "Netflix",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "NE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38899,15 +37798,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 370,
     "name": "Warner Bros. Discovery",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "WA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -38969,15 +37865,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 371,
     "name": "Universal / Comcast",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "UN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39039,15 +37932,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 372,
     "name": "Paramount Global",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "PA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39109,10 +37999,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 373,
@@ -39225,15 +38112,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 374,
     "name": "Lions Gate Entertainment",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "LI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39295,10 +38179,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 375,
@@ -39398,10 +38279,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 376,
@@ -39508,15 +38386,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 377,
     "name": "NBCUniversal",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "NB",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -39578,10 +38453,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 378,
@@ -39686,10 +38558,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 379,
@@ -39793,10 +38662,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 380,
@@ -39898,10 +38764,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 381,
@@ -40000,10 +38863,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 382,
@@ -40096,10 +38956,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 383,
@@ -40201,10 +39058,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 384,
@@ -40310,15 +39164,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 385,
     "name": "Audible",
-    "cat": "Entertainment & Media",
+    "cat": "Various",
     "init": "AU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -40380,10 +39231,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 386,
@@ -40484,10 +39332,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 387,
@@ -40592,10 +39437,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 388,
@@ -40693,10 +39535,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 389,
@@ -40800,15 +39639,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 390,
     "name": "Oracle Cloud",
-    "cat": "Software & Technology",
+    "cat": "Various",
     "init": "OR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -40870,10 +39706,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 391,
@@ -40994,10 +39827,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 392,
@@ -41103,15 +39933,12 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 393,
     "name": "SAP",
-    "cat": "Software & Technology",
+    "cat": "Various",
     "init": "SA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -41173,10 +40000,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 394,
@@ -41276,15 +40100,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 395,
     "name": "Workday",
-    "cat": "Software & Technology",
+    "cat": "Various",
     "init": "WO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -41346,15 +40167,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 396,
     "name": "Uber",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "UB",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -41416,10 +40234,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    }
   },
   {
     "id": 397,
@@ -41524,10 +40339,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 398,
@@ -41632,10 +40444,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 399,
@@ -41736,10 +40545,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 400,
@@ -41841,10 +40647,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 401,
@@ -41942,10 +40745,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 402,
@@ -42032,10 +40832,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 403,
@@ -42141,10 +40938,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 404,
@@ -42248,10 +41042,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 405,
@@ -42344,10 +41135,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 406,
@@ -42460,10 +41248,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 407,
@@ -42569,15 +41354,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 408,
     "name": "Hyatt",
-    "cat": "Hospitality & Travel",
+    "cat": "Various",
     "init": "HY",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -42639,10 +41421,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 409,
@@ -42750,10 +41529,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 410,
@@ -42859,10 +41635,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 411,
@@ -42967,10 +41740,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 412,
@@ -43072,10 +41842,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 413,
@@ -43173,10 +41940,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 414,
@@ -43286,10 +42050,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 415,
@@ -43400,10 +42161,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 416,
@@ -43516,10 +42274,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 417,
@@ -43632,10 +42387,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 418,
@@ -43736,15 +42488,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 419,
     "name": "JetBlue",
-    "cat": "Hospitality & Travel / Airlines",
+    "cat": "Various",
     "init": "JE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -43806,15 +42555,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    }
   },
   {
     "id": 420,
     "name": "Spirit Airlines",
-    "cat": "Hospitality & Travel / Airlines",
+    "cat": "Various",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -43876,10 +42622,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 421,
@@ -43983,10 +42726,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 422,
@@ -44092,10 +42832,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 423,
@@ -44191,10 +42928,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 424,
@@ -44307,15 +43041,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 425,
     "name": "UPS",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "UP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -44377,10 +43108,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 426,
@@ -44484,15 +43212,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 427,
     "name": "DHL USA",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "DH",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -44554,10 +43279,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 428,
@@ -44662,10 +43384,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 429,
@@ -44768,15 +43487,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 430,
     "name": "C.H. Robinson",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "C.",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -44838,10 +43554,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 431,
@@ -44946,10 +43659,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 432,
@@ -45045,10 +43755,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 433,
@@ -45163,15 +43870,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 434,
     "name": "Union Pacific Railroad",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "UN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45233,10 +43937,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 435,
@@ -45344,10 +44045,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 436,
@@ -45454,15 +44152,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 437,
     "name": "Norfolk Southern",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "NO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45524,10 +44219,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 438,
@@ -45626,10 +44318,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 439,
@@ -45731,15 +44420,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 440,
     "name": "Greyhound / FlixBus",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "GR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45801,15 +44487,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 441,
     "name": "Megabus",
-    "cat": "Transportation & Logistics",
+    "cat": "Various",
     "init": "ME",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -45871,10 +44554,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 442,
@@ -45958,10 +44638,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 443,
@@ -46059,10 +44736,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 444,
@@ -46159,15 +44833,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 445,
     "name": "True Value",
-    "cat": "Retail / Home Improvement",
+    "cat": "Various",
     "init": "TR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -46229,15 +44900,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 446,
     "name": "Ace Hardware",
-    "cat": "Retail / Home Improvement",
+    "cat": "Various",
     "init": "AC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -46299,15 +44967,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 447,
     "name": "Do it Best",
-    "cat": "Retail / Home Improvement",
+    "cat": "Various",
     "init": "DO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -46369,10 +45034,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 448,
@@ -46476,10 +45138,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 449,
@@ -46581,10 +45240,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 450,
@@ -46692,10 +45348,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 451,
@@ -46809,10 +45462,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 452,
@@ -46914,10 +45564,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": true,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 453,
@@ -47019,10 +45666,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 454,
@@ -47128,10 +45772,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 455,
@@ -47230,15 +45871,12 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 456,
     "name": "Restoration Hardware / RH",
-    "cat": "Furniture & Home",
+    "cat": "Various",
     "init": "RE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -47300,10 +45938,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 457,
@@ -47406,10 +46041,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 458,
@@ -47510,10 +46142,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 459,
@@ -47609,10 +46238,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 460,
@@ -47712,10 +46338,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 461,
@@ -47822,10 +46445,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 462,
@@ -47934,15 +46554,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 463,
     "name": "Staples",
-    "cat": "Retail / Office",
+    "cat": "Various",
     "init": "ST",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48004,10 +46621,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 464,
@@ -48109,15 +46723,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 465,
     "name": "OfficeMax",
-    "cat": "Retail / Office",
+    "cat": "Various",
     "init": "OF",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48179,10 +46790,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 466,
@@ -48282,15 +46890,12 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 467,
     "name": "Fry's Electronics",
-    "cat": "Retail / Electronics",
+    "cat": "Various",
     "init": "FR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48352,10 +46957,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 468,
@@ -48441,10 +47043,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 469,
@@ -48543,10 +47142,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 470,
@@ -48650,10 +47246,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 471,
@@ -48740,15 +47333,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 472,
     "name": "Apple Store",
-    "cat": "Retail / Electronics",
+    "cat": "Various",
     "init": "AP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -48810,10 +47400,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 473,
@@ -48903,10 +47490,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 474,
@@ -48998,10 +47582,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 475,
@@ -49091,15 +47672,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 476,
     "name": "Sony USA",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "SO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49161,15 +47739,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 477,
     "name": "Panasonic USA",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "PA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49231,10 +47806,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 478,
@@ -49332,10 +47904,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 479,
@@ -49436,15 +48005,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 480,
     "name": "Sonos",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "SO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49506,15 +48072,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 481,
     "name": "Harman International / Samsung",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "HA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49576,10 +48139,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 482,
@@ -49682,10 +48242,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 483,
@@ -49787,15 +48344,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 484,
     "name": "Bowflex / Nautilus",
-    "cat": "Sports & Fitness",
+    "cat": "Various",
     "init": "BO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -49857,10 +48411,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 485,
@@ -49958,15 +48509,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 486,
     "name": "Precor / Amer Sports",
-    "cat": "Sports & Fitness",
+    "cat": "Various",
     "init": "PR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50028,10 +48576,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 487,
@@ -50130,10 +48675,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 488,
@@ -50241,15 +48783,12 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 489,
     "name": "Anytime Fitness",
-    "cat": "Sports & Fitness / Fitness Centers",
+    "cat": "Various",
     "init": "AN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50311,15 +48850,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 490,
     "name": "24 Hour Fitness",
-    "cat": "Sports & Fitness / Fitness Centers",
+    "cat": "Various",
     "init": "24",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50381,10 +48917,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 491,
@@ -50476,10 +49009,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 492,
@@ -50583,10 +49113,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 493,
@@ -50677,15 +49204,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 494,
     "name": "Orange Theory",
-    "cat": "Sports & Fitness / Fitness Centers",
+    "cat": "Various",
     "init": "OR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -50747,10 +49271,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 495,
@@ -50851,10 +49372,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 496,
@@ -50958,10 +49476,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 497,
@@ -51062,10 +49577,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 498,
@@ -51156,10 +49668,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 499,
@@ -51233,10 +49742,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 500,
@@ -51335,15 +49841,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 501,
     "name": "Stretch Zone",
-    "cat": "Sports & Fitness / Fitness Centers",
+    "cat": "Various",
     "init": "ST",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -51405,10 +49908,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 502,
@@ -51515,10 +50015,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 503,
@@ -51620,10 +50117,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 504,
@@ -51725,15 +50219,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 505,
     "name": "Academy Sports",
-    "cat": "Sports & Fitness / Retail",
+    "cat": "Various",
     "init": "AC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -51795,10 +50286,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 506,
@@ -51898,15 +50386,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 507,
     "name": "Sports Authority (defunct)",
-    "cat": "Sports & Fitness / Retail",
+    "cat": "Various",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -51968,10 +50453,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 508,
@@ -52075,15 +50557,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 509,
     "name": "Rally House",
-    "cat": "Sports & Fitness / Retail",
+    "cat": "Various",
     "init": "RA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52145,10 +50624,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 510,
@@ -52232,10 +50708,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 511,
@@ -52338,10 +50811,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 512,
@@ -52442,10 +50912,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 513,
@@ -52545,15 +51012,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 514,
     "name": "Cleveland Golf",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "CL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52615,15 +51079,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 515,
     "name": "Ping",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "PI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52685,15 +51146,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 516,
     "name": "Mizuno USA",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "MI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52755,10 +51213,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 517,
@@ -52857,15 +51312,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 518,
     "name": "Rawlings",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "RA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52927,15 +51379,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 519,
     "name": "Easton",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "EA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -52997,15 +51446,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 520,
     "name": "Louisville Slugger / Wilson",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "LO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53067,10 +51513,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 521,
@@ -53160,15 +51603,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 522,
     "name": "Specialized Bicycles",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53230,10 +51670,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 523,
@@ -53324,10 +51761,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 524,
@@ -53420,15 +51854,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 525,
     "name": "Diamondback",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "DI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53490,10 +51921,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 526,
@@ -53576,10 +52004,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 527,
@@ -53671,15 +52096,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 528,
     "name": "Scott Sports",
-    "cat": "Sports & Fitness / Equipment",
+    "cat": "Various",
     "init": "SC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -53741,10 +52163,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 529,
@@ -53814,10 +52233,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 530,
@@ -53915,10 +52331,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 531,
@@ -54023,10 +52436,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 532,
@@ -54142,10 +52552,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 533,
@@ -54240,10 +52647,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 534,
@@ -54347,10 +52751,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 535,
@@ -54452,15 +52853,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 536,
     "name": "Wigwam",
-    "cat": "Apparel & Fashion",
+    "cat": "Various",
     "init": "WI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -54522,10 +52920,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 537,
@@ -54628,10 +53023,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 538,
@@ -54725,10 +53117,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 539,
@@ -54832,10 +53221,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 540,
@@ -54944,15 +53330,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 541,
     "name": "Pet Supplies Plus",
-    "cat": "Pet Care",
+    "cat": "Various",
     "init": "PE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55014,15 +53397,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 542,
     "name": "Chewy",
-    "cat": "Pet Care",
+    "cat": "Various",
     "init": "CH",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55084,10 +53464,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 543,
@@ -55190,15 +53567,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 544,
     "name": "PetPlace",
-    "cat": "Pet Care",
+    "cat": "Various",
     "init": "PE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55260,10 +53634,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 545,
@@ -55349,15 +53720,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 546,
     "name": "Purina / Nestlé",
-    "cat": "Pet Care",
+    "cat": "Various",
     "init": "PU",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -55419,10 +53787,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 547,
@@ -55520,10 +53885,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 548,
@@ -55628,10 +53990,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 549,
@@ -55730,10 +54089,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 550,
@@ -55839,10 +54195,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 551,
@@ -55927,10 +54280,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 552,
@@ -56022,10 +54372,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 553,
@@ -56122,10 +54469,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 554,
@@ -56212,10 +54556,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 555,
@@ -56307,10 +54648,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 556,
@@ -56404,10 +54742,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 557,
@@ -56501,10 +54836,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 558,
@@ -56602,10 +54934,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 559,
@@ -56704,15 +55033,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 560,
     "name": "VCA Animal Hospitals / Mars",
-    "cat": "Pet Care / Veterinary",
+    "cat": "Various",
     "init": "VC",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -56774,10 +55100,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 561,
@@ -56870,15 +55193,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 562,
     "name": "National Veterinary Associates",
-    "cat": "Pet Care / Veterinary",
+    "cat": "Various",
     "init": "NA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -56940,10 +55260,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 563,
@@ -57031,15 +55348,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 564,
     "name": "Heartland Veterinary Partners",
-    "cat": "Pet Care / Veterinary",
+    "cat": "Various",
     "init": "HE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57101,15 +55415,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 565,
     "name": "Independent Veterinary Partners",
-    "cat": "Pet Care / Veterinary",
+    "cat": "Various",
     "init": "IN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57171,15 +55482,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 566,
     "name": "VetCor",
-    "cat": "Pet Care / Veterinary",
+    "cat": "Various",
     "init": "VE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57241,10 +55549,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 567,
@@ -57342,15 +55647,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 568,
     "name": "H&R Block",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "H&",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57412,10 +55714,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 569,
@@ -57520,15 +55819,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 570,
     "name": "TaxAct",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "TA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57590,10 +55886,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 571,
@@ -57691,15 +55984,12 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 572,
     "name": "Liberty Tax",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "LI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57761,10 +56051,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 573,
@@ -57854,15 +56141,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 574,
     "name": "Tax Slayer",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "TA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57924,15 +56208,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 575,
     "name": "Cash App Taxes",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "CA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -57994,15 +56275,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 576,
     "name": "Credit Karma / Intuit",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "CR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58064,15 +56342,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 577,
     "name": "EY Tax Services",
-    "cat": "Financial Services / Tax",
+    "cat": "Various",
     "init": "EY",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58134,10 +56409,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 578,
@@ -58247,10 +56519,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 579,
@@ -58354,10 +56623,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 580,
@@ -58444,10 +56710,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 581,
@@ -58534,10 +56797,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 582,
@@ -58650,15 +56910,12 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 583,
     "name": "Sage",
-    "cat": "Software & Technology",
+    "cat": "Various",
     "init": "SA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58720,10 +56977,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 584,
@@ -58828,10 +57082,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 585,
@@ -58911,15 +57162,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 586,
     "name": "Bench",
-    "cat": "Financial Services",
+    "cat": "Various",
     "init": "BE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -58981,15 +57229,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 587,
     "name": "Pilot",
-    "cat": "Financial Services",
+    "cat": "Various",
     "init": "PI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59051,10 +57296,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 588,
@@ -59146,10 +57388,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 589,
@@ -59240,10 +57479,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 590,
@@ -59340,10 +57576,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 591,
@@ -59427,15 +57660,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 592,
     "name": "Nolo",
-    "cat": "Legal Services",
+    "cat": "Various",
     "init": "NO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59497,10 +57727,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 593,
@@ -59576,10 +57803,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 594,
@@ -59649,10 +57873,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 595,
@@ -59737,15 +57958,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 596,
     "name": "Incfile",
-    "cat": "Legal Services",
+    "cat": "Various",
     "init": "IN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59807,15 +58025,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 597,
     "name": "ZenBusiness",
-    "cat": "Professional Services",
+    "cat": "Various",
     "init": "ZE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59877,15 +58092,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 598,
     "name": "Ancestry",
-    "cat": "Professional Services",
+    "cat": "Various",
     "init": "AN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -59947,10 +58159,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 599,
@@ -60053,10 +58262,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 600,
@@ -60149,10 +58355,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 601,
@@ -60238,15 +58441,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 602,
     "name": "LivingDNA",
-    "cat": "Professional Services",
+    "cat": "Various",
     "init": "LI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -60308,10 +58508,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 603,
@@ -60392,10 +58589,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 604,
@@ -60484,15 +58678,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 605,
     "name": "GenePlanet",
-    "cat": "Professional Services",
+    "cat": "Various",
     "init": "GE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -60554,15 +58745,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 606,
     "name": "Helix",
-    "cat": "Healthcare & Pharma",
+    "cat": "Various",
     "init": "HE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -60624,10 +58812,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 607,
@@ -60714,10 +58899,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 608,
@@ -60821,10 +59003,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 609,
@@ -60929,10 +59108,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 610,
@@ -61037,15 +59213,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 611,
     "name": "Nest / Google",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "NE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61107,15 +59280,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 612,
     "name": "Vivint",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "VI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61177,15 +59347,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 613,
     "name": "Brinks Home Security",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "BR",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61247,10 +59414,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 614,
@@ -61348,15 +59512,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 615,
     "name": "Abode",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "AB",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61418,15 +59579,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 616,
     "name": "Cove Home Security",
-    "cat": "Consumer Electronics",
+    "cat": "Various",
     "init": "CO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61488,10 +59646,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 617,
@@ -61575,15 +59730,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 618,
     "name": "Airgas / Air Liquide",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "AI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61645,10 +59797,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 619,
@@ -61746,15 +59895,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 620,
     "name": "Air Products",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "AI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61816,15 +59962,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 621,
     "name": "Matheson",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "MA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61886,15 +60029,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 622,
     "name": "WestAir Gases",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "WE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -61956,15 +60096,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 623,
     "name": "Roberts Oxygen",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "RO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62026,15 +60163,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 624,
     "name": "National Welders Supply",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "NA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62096,15 +60230,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 625,
     "name": "NorLab",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "NO",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62166,10 +60297,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 626,
@@ -62250,10 +60378,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 627,
@@ -62346,15 +60471,12 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 628,
     "name": "Caterpillar",
-    "cat": "Manufacturing & Industrial",
+    "cat": "Various",
     "init": "CA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -62416,10 +60538,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 629,
@@ -62528,10 +60647,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 630,
@@ -62622,10 +60738,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 631,
@@ -62736,10 +60849,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 632,
@@ -62841,10 +60951,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 633,
@@ -62935,10 +61042,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 634,
@@ -63037,10 +61141,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 635,
@@ -63144,10 +61245,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 636,
@@ -63261,10 +61359,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 637,
@@ -63375,10 +61470,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 638,
@@ -63484,10 +61576,7 @@ const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 639,
@@ -63599,15 +61688,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 640,
     "name": "Raytheon Technologies",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "RA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -63669,10 +61755,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 641,
@@ -63783,10 +61866,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 642,
@@ -63899,10 +61979,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 643,
@@ -64014,15 +62091,12 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 644,
     "name": "Textron",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "TE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64084,10 +62158,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 645,
@@ -64188,10 +62259,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 646,
@@ -64303,10 +62371,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 647,
@@ -64404,15 +62469,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 648,
     "name": "SpaceX",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "SP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64474,10 +62536,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 649,
@@ -64588,15 +62647,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 650,
     "name": "Virgin Galactic",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "VI",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64658,10 +62714,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 651,
@@ -64767,15 +62820,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 652,
     "name": "United Launch Alliance",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "UN",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -64837,10 +62887,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 653,
@@ -64953,15 +63000,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 654,
     "name": "Planet Labs",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "PL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65023,15 +63067,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 655,
     "name": "Astra Space",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "AS",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65093,15 +63134,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 656,
     "name": "Relativity Space",
-    "cat": "Defense & Aerospace",
+    "cat": "Various",
     "init": "RE",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65163,10 +63201,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 657,
@@ -65258,10 +63293,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 658,
@@ -65364,10 +63396,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 659,
@@ -65479,15 +63508,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 660,
     "name": "Emerson Electric",
-    "cat": "Manufacturing & Industrial",
+    "cat": "Various",
     "init": "EM",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65549,15 +63575,12 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 661,
     "name": "Parker Hannifin",
-    "cat": "Manufacturing & Industrial",
+    "cat": "Various",
     "init": "PA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -65619,10 +63642,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 662,
@@ -65737,10 +63757,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 663,
@@ -65844,10 +63861,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 664,
@@ -65949,10 +63963,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 665,
@@ -66055,10 +64066,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 666,
@@ -66159,15 +64167,12 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 667,
     "name": "Watts Water Technologies",
-    "cat": "Manufacturing & Industrial",
+    "cat": "Various",
     "init": "WA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -66229,10 +64234,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 668,
@@ -66335,10 +64337,7 @@ const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": true,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 669,
@@ -66443,15 +64442,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 670,
     "name": "BASF USA",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "BA",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -66513,10 +64509,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 671,
@@ -66618,10 +64611,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 672,
@@ -66728,10 +64718,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 673,
@@ -66844,15 +64831,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 674,
     "name": "RPM International",
-    "cat": "Chemicals & Materials",
+    "cat": "Various",
     "init": "RP",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -66914,10 +64898,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 675,
@@ -67018,10 +64999,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 676,
@@ -67125,10 +65103,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 677,
@@ -67224,10 +65199,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 678,
@@ -67340,10 +65312,7 @@ const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 679,
@@ -67448,10 +65417,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 680,
@@ -67548,10 +65514,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 681,
@@ -67656,15 +65619,12 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 682,
     "name": "Clearwater Paper",
-    "cat": "Manufacturing & Industrial",
+    "cat": "Various",
     "init": "CL",
     "overall": 50,
     "ab": "#1a1a2e",
@@ -67726,10 +65686,7 @@ const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    }
   },
   {
     "id": 683,
@@ -67838,10 +65795,7 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 684,
@@ -67936,10 +65890,7 @@ const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 685,
@@ -68052,10 +66003,3052 @@ const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "foreignOwned": false,
-    "antitrust": false,
-    "childLabor": false
+    "dataLastUpdated": "2026-05-17"
+  },
+  {
+    "id": 686,
+    "name": "Marriott International",
+    "cat": "Hospitality / Hotels",
+    "init": "MAR",
+    "overall": 58,
+    "isPublic": true,
+    "ticker": "MAR",
+    "sc": {
+      "political": "right",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Marriott's PAC donated approximately $1.2M in the 2022 cycle, with roughly 60% going to Republican candidates. The company suspended some political donations after January 6, 2021, but resumed giving within a year. Marriott lobbies heavily on travel, tourism, and tax policy.",
+      "lean": "Right",
+      "amt": "~$1.2M PAC (2022 cycle)",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Marriott Foundation's 'Bridges from School to Work' program has placed over 30,000 young people with disabilities into jobs since 1989. The company contributes tens of millions annually to disaster relief, youth employment, and community development.",
+      "amt": "Tens of millions annually",
+      "focus": "Youth employment, disability inclusion, disaster relief",
+      "sources": [
+        "Company CSR",
+        "Marriott Foundation"
+      ]
+    },
+    "environment": {
+      "s": "Marriott committed to a 50% reduction in carbon intensity by 2025 and has Science Based Targets approved by SBTi. The company earned CDP 'B' rating in 2023. However, operating 8,700+ properties globally creates substantial environmental footprint, and progress on water and waste reduction has been uneven across franchised properties.",
+      "rating": "Mixed",
+      "sources": [
+        "CDP",
+        "SBTi",
+        "Company Sustainability Report"
+      ]
+    },
+    "labor": {
+      "s": "Marriott reached a landmark agreement with UNITE HERE in 2019 after a major strike by 7,700 workers across multiple cities. Workers won wage increases and strengthened job security provisions. However, the company has faced ongoing criticism over housekeeping workload policies and tipped worker wages at franchised properties.",
+      "rating": "Mixed",
+      "sources": [
+        "UNITE HERE",
+        "NLRB",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "Marriott has maintained a perfect 100 score on the HRC Corporate Equality Index for LGBTQ+ workplace equality. The company has set goals for 50% of global leadership roles held by women and 25% by underrepresented groups by 2025.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company DEI Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable — Marriott is a hospitality company and does not manufacture consumer products involving animal testing.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Marriott does not sell or manufacture firearms. The company has navigated controversy around hosting NRA and other gun-industry events at its properties.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Marriott suffered one of the largest data breaches in history — the 2018 Starwood breach exposed data of up to 500 million guests including passport numbers. A second breach in 2020 exposed 5.2 million guest records. The company paid an £18.4M fine to the UK ICO. Data security practices have improved but the track record is poor.",
+      "grade": "Poor",
+      "sources": [
+        "ICO",
+        "FTC",
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Anthony Capuano earned approximately $18.9M in 2023 total compensation. Median Marriott employee pay is approximately $37,000, yielding a CEO-to-median pay ratio of roughly 500:1 per SEC proxy filings.",
+      "ratio": "500:1",
+      "sources": [
+        "SEC proxy",
+        "AFL-CIO Paywatch"
+      ]
+    },
+    "ab": "#1a1a2e",
+    "ac": "#8B1C1C",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 687,
+    "name": "Hilton Worldwide",
+    "cat": "Hospitality / Hotels",
+    "init": "HLT",
+    "overall": 62,
+    "isPublic": true,
+    "ticker": "HLT",
+    "sc": {
+      "political": "right",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Hilton's PAC leans Republican, contributing approximately $400K in recent cycles with roughly 55% to GOP candidates. The company lobbies on hospitality, travel, and workforce policy.",
+      "lean": "Right",
+      "amt": "~$400K PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Hilton's Travel with Purpose program committed to providing 1 million hotel rooms to frontline workers and those in need. The company donated $1M+ to disaster relief following hurricanes and has partnered with Operation Homefront to support military families.",
+      "amt": "Millions annually",
+      "focus": "Veterans, disaster relief, community",
+      "sources": [
+        "Company CSR"
+      ]
+    },
+    "environment": {
+      "s": "Hilton has reduced carbon emissions by over 40% per square foot since 2008 and set a Science Based Target for net zero by 2050. The company earned a CDP 'A-' rating and was named to the Dow Jones Sustainability Index. Hilton's LightStay sustainability measurement system tracks performance across all properties.",
+      "rating": "Positive",
+      "sources": [
+        "CDP",
+        "SBTi",
+        "Dow Jones Sustainability Index"
+      ]
+    },
+    "labor": {
+      "s": "Hilton has been named #1 on Fortune's 100 Best Companies to Work For multiple years. However, most Hilton properties are franchised, and labor conditions vary widely. Some franchised properties have faced union disputes and wage complaints.",
+      "rating": "Mixed",
+      "sources": [
+        "Fortune",
+        "UNITE HERE",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "Hilton scored 100 on the HRC Corporate Equality Index and has committed to doubling the representation of women and minorities in leadership. The company launched a dedicated 'Hilton Effect Foundation' supporting diverse communities and has strong supplier diversity programs.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company DEI Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable — hospitality company, no consumer product animal testing.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Hilton does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Hilton paid a $700,000 settlement to 44 states in 2017 for two data breaches affecting 363,000 credit card numbers. Data security practices have been strengthened since, and Hilton complies with GDPR and CCPA frameworks.",
+      "grade": "Mixed",
+      "sources": [
+        "State AGs",
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Christopher Nassetta earned approximately $30M in 2023 total compensation. With median worker pay around $32,000, the CEO-to-median pay ratio is approximately 900:1.",
+      "ratio": "900:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0d1b2a",
+    "ac": "#003580",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 688,
+    "name": "Hyatt Hotels",
+    "cat": "Hospitality / Hotels",
+    "init": "H",
+    "overall": 60,
+    "isPublic": true,
+    "ticker": "H",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Hyatt's PAC has historically split donations relatively evenly between parties, reflecting the Pritzker family's Democratic ties while the company maintains bipartisan relationships. The Pritzker family (founding owners) are major Democratic donors independently of company PAC activity.",
+      "lean": "Bipartisan",
+      "amt": "~$200K PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Hyatt's RiseHY program pledged to hire 10,000 opportunity youth (young people not in school or work) by 2025. The Hyatt Hotels Foundation supports community development and youth employment globally.",
+      "amt": "Millions annually",
+      "focus": "Youth employment, community",
+      "sources": [
+        "Company CSR"
+      ]
+    },
+    "environment": {
+      "s": "Hyatt committed to reducing carbon intensity 45% by 2030 and has SBTi-approved targets. The company earned a CDP 'B' rating in 2023. Progress has been consistent but slower than industry leaders.",
+      "rating": "Mixed",
+      "sources": [
+        "CDP",
+        "SBTi"
+      ]
+    },
+    "labor": {
+      "s": "Hyatt settled a long-running dispute with UNITE HERE in 2012 following boycotts at multiple properties. Labor relations have been more stable since, but franchised properties continue to have varied conditions. Glassdoor ratings are above hotel industry average.",
+      "rating": "Mixed",
+      "sources": [
+        "UNITE HERE",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "Hyatt scored 100 on the HRC Corporate Equality Index and has diversity goals for leadership representation. The company has active ERGs and supplier diversity programs.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Hyatt does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Hyatt disclosed a payment card data breach in 2015 affecting restaurants at 250 properties. A second breach was reported in 2017. Security practices have since been upgraded. Complies with standard privacy frameworks.",
+      "grade": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Mark Hoplamazian earned approximately $21M in 2023. Median worker pay is approximately $34,000, yielding a pay ratio of roughly 620:1.",
+      "ratio": "620:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#1a1a1a",
+    "ac": "#c9a84c",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 689,
+    "name": "EY",
+    "cat": "Professional Services / Accounting & Consulting",
+    "init": "EY",
+    "overall": 60,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "EY (Ernst & Young) is a private partnership with no corporate PAC. A high-profile failed 2023 split ('Project Everest') between its audit and consulting arms drew significant regulatory and political attention.",
+      "lean": "Bipartisan",
+      "amt": "No corporate PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "EY Foundation supports social enterprise and young people not in education, employment or training (NEET). The firm contributes tens of millions in pro bono services annually.",
+      "amt": "Tens of millions (pro bono)",
+      "focus": "Youth employment, social enterprise",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "environment": {
+      "s": "EY committed to carbon negative by 2025 for its own operations and has SBTi-approved targets. The firm achieved carbon neutrality across Scope 1 and 2 in 2020.",
+      "rating": "Positive",
+      "sources": [
+        "SBTi",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "EY has faced criticism for high-pressure audit culture. In India, an EY employee death in 2024 was attributed by the family to overwork, sparking global attention to consulting work culture. Glassdoor ratings are average for Big Four.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "BBC",
+        "ICAI"
+      ]
+    },
+    "dei": {
+      "s": "EY scored 100 on HRC CEI and has explicit targets for gender and ethnic diversity in leadership. The firm publishes a detailed annual diversity report.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "EY does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "EY handles sensitive financial data for major corporations worldwide. In 2023, EY was affected by the MOVEit file transfer vulnerability, exposing some client data alongside thousands of other organizations globally.",
+      "grade": "Mixed",
+      "sources": [
+        "Company disclosure",
+        "Cybersecurity press"
+      ]
+    },
+    "execPay": {
+      "s": "EY is private; partner compensation not publicly disclosed. Average partner compensation approximately $750K.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "Estimated"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#ffe600",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 690,
+    "name": "PwC",
+    "cat": "Professional Services / Accounting & Consulting",
+    "init": "PWC",
+    "overall": 58,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "PwC is a private partnership with no corporate PAC. The firm lobbies on audit, tax, and professional regulation issues spending approximately $2M annually.",
+      "lean": "Bipartisan",
+      "amt": "No corporate PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "PwC's New World, New Skills initiative committed $3B globally to upskilling workers. The firm provides extensive pro bono services and matches employee donations.",
+      "amt": "$3B global commitment",
+      "focus": "Workforce skills, education, financial literacy",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "environment": {
+      "s": "PwC committed to net zero by 2030 for its own operations and has SBTi-approved targets. The firm achieved carbon neutrality in 2021.",
+      "rating": "Positive",
+      "sources": [
+        "SBTi",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "PwC has faced criticism for high-pressure work culture, especially during busy season. A 2023 Australian scandal involving leaked Treasury budget data led to significant leadership changes and reputational damage.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "AFR"
+      ]
+    },
+    "dei": {
+      "s": "PwC scored 100 on HRC CEI and has women's representation targets for partnership. The firm publishes diversity data and has active ERGs.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "PwC does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "PwC handles highly sensitive financial data for major corporations and governments globally. The firm has robust data security protocols. No major public breaches on record.",
+      "grade": "Mixed",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "execPay": {
+      "s": "PwC is private; partner compensation not disclosed. Average partner compensation is approximately $900K.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "Estimated"
+      ]
+    },
+    "ab": "#1a0a2e",
+    "ac": "#d04a02",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 691,
+    "name": "Deloitte",
+    "cat": "Professional Services / Consulting & Accounting",
+    "init": "DLT",
+    "overall": 61,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Deloitte is a private partnership and does not have a corporate PAC. Individual partners donate across party lines. Deloitte lobbies on tax, audit, and professional services regulation spending approximately $3M annually on federal lobbying.",
+      "lean": "Bipartisan",
+      "amt": "No corporate PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Deloitte donated over $250M in pro bono services and cash contributions in 2023. The Deloitte Foundation supports education and has committed $75M to workforce development programs. The firm also matches employee donations up to $5,000 per year.",
+      "amt": "$250M+ (including pro bono)",
+      "focus": "Education, workforce development, disaster relief",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "environment": {
+      "s": "Deloitte has committed to net zero emissions by 2030 across its own operations and achieved carbon neutrality in 2022. The firm uses 100% renewable electricity in many offices and earned a CDP 'A-' rating. Deloitte's WorldClimate initiative pledges $1B to sustainability initiatives.",
+      "rating": "Positive",
+      "sources": [
+        "CDP",
+        "Company Sustainability Report"
+      ]
+    },
+    "labor": {
+      "s": "Deloitte has faced criticism for high-pressure work culture, extensive travel demands, and performance-based layoffs. However, it consistently ranks highly on employer surveys including Glassdoor and Great Place to Work. The firm offers extensive professional development and compensation packages above market rate.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Great Place to Work"
+      ]
+    },
+    "dei": {
+      "s": "Deloitte has scored 100 on HRC CEI consistently and set targets of 40% women in leadership by 2025. The firm publishes an annual inclusion report tracking representation. In 2023, Deloitte faced some criticism for reducing DEI targets amid political pressure but maintained core commitments.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company Inclusion Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable — professional services firm.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Deloitte does not sell or manufacture firearms. It has provided consulting services to defense clients.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Deloitte suffered a significant data breach in 2017 that exposed client emails and confidential data. As a firm handling sensitive financial and business data for major corporations, data security is critical to its business model. Post-breach security practices have been substantially upgraded.",
+      "grade": "Mixed",
+      "sources": [
+        "Guardian",
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "Deloitte is a private partnership; partner compensation is not publicly disclosed. Deloitte's CEO (Global Chair) earned an estimated $10–15M annually based on comparable firm disclosures.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "Estimated"
+      ]
+    },
+    "ab": "#0d1b2a",
+    "ac": "#86bc25",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 692,
+    "name": "KPMG",
+    "cat": "Professional Services / Accounting & Consulting",
+    "init": "KPM",
+    "overall": 56,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "KPMG is a private partnership with no corporate PAC. The firm lobbies on audit, tax, and regulatory matters. KPMG was sanctioned by the SEC in 2019 for a cheating scandal involving employees obtaining advance notice of which audits would be inspected by the PCAOB.",
+      "lean": "Bipartisan",
+      "amt": "No corporate PAC",
+      "sources": [
+        "FEC",
+        "SEC"
+      ]
+    },
+    "charity": {
+      "s": "KPMG's charitable contributions include the KPMG Foundation supporting education and social mobility. The firm contributes millions in pro bono services and runs 'KPMG Cares' employee volunteer programs globally.",
+      "amt": "Millions annually",
+      "focus": "Education, social mobility",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "environment": {
+      "s": "KPMG committed to net zero by 2030 for its own operations with SBTi-validated targets. Overall progress has lagged some Big Four peers due to high business travel volumes.",
+      "rating": "Mixed",
+      "sources": [
+        "SBTi",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "KPMG has faced notable workplace controversies including a 2019 PCAOB cheating scandal that led to criminal charges against partners. Glassdoor ratings are below the Big Four average.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "DOJ",
+        "SEC"
+      ]
+    },
+    "dei": {
+      "s": "KPMG scored 100 on HRC CEI and publishes an annual inclusion, diversity and equity report. The firm has gender and ethnic representation targets for leadership.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company IDE Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "KPMG does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "KPMG handles sensitive financial data for major clients. The firm was affected by the MOVEit breach in 2023.",
+      "grade": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "KPMG is private; partner compensation not disclosed. US Senior Partner estimated at $4–8M annually.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "Estimated"
+      ]
+    },
+    "ab": "#001a3a",
+    "ac": "#00a3e0",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 693,
+    "name": "McKinsey & Company",
+    "cat": "Professional Services / Management Consulting",
+    "init": "MCK",
+    "overall": 45,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "McKinsey is a private partnership with no corporate PAC. The firm has faced intense scrutiny for consulting work with authoritarian governments including Saudi Arabia, China, and Turkey. McKinsey spent approximately $1.4M on federal lobbying in 2023.",
+      "lean": "Bipartisan",
+      "amt": "No corporate PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets",
+        "NYT investigations"
+      ]
+    },
+    "charity": {
+      "s": "McKinsey's charitable arm and pro bono consulting contribute hundreds of millions in value annually. The McKinsey Global Institute publishes influential research. However, critics note charitable giving does not offset controversy from some client engagements.",
+      "amt": "Hundreds of millions (pro bono estimate)",
+      "focus": "Economic research, nonprofit capacity building",
+      "sources": [
+        "Company reports"
+      ]
+    },
+    "environment": {
+      "s": "McKinsey committed to net zero by 2030 for its own operations and achieved carbon neutrality in 2022. However, McKinsey has simultaneously advised major fossil fuel companies on maximizing output, creating a significant contradiction between internal commitments and client work.",
+      "rating": "Mixed",
+      "sources": [
+        "Company report",
+        "InfluenceMap"
+      ]
+    },
+    "labor": {
+      "s": "McKinsey is known for an 'up or out' culture with extremely high performance pressure. The firm settled a $573M opioid-related case in 2021 after helping Purdue Pharma boost OxyContin sales, raising serious ethical concerns about its advisory practices.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "DOJ settlement"
+      ]
+    },
+    "dei": {
+      "s": "McKinsey publishes the influential annual 'Women in the Workplace' report and 'Diversity Wins' research. The firm has diversity targets and ERGs. However, internal diversity progress has been slower than external advocacy suggests, and the firm has faced lawsuits alleging race discrimination in hiring.",
+      "stance": "Mixed",
+      "sources": [
+        "Company reports",
+        "Court filings"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "McKinsey does not sell or manufacture firearms but has consulted for defense and security clients.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "McKinsey handles highly sensitive strategic and financial data for the world's largest corporations and governments. The firm has robust internal data security protocols but has faced scrutiny for data practices in some international engagements.",
+      "grade": "Mixed",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "execPay": {
+      "s": "McKinsey is private; partner compensation is not disclosed. Senior partners are estimated to earn $3–12M annually.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "Estimated"
+      ]
+    },
+    "ab": "#0a1628",
+    "ac": "#002f6c",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 694,
+    "name": "Accenture",
+    "cat": "Professional Services / IT Consulting",
+    "init": "ACN",
+    "overall": 66,
+    "isPublic": true,
+    "ticker": "ACN",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Accenture's PAC gives roughly evenly to both parties. The firm lobbies on technology, workforce, and trade policy. Accenture has government contracts with agencies across administrations of both parties.",
+      "lean": "Bipartisan",
+      "amt": "~$300K PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Accenture pledged $200M in skills training through its 'Skills to Succeed' initiative, helping over 3 million people build workforce skills since 2010. The firm provides extensive pro bono consulting to nonprofits and matches employee donations.",
+      "amt": "$200M+ (skills initiatives)",
+      "focus": "Workforce development, education, digital inclusion",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "environment": {
+      "s": "Accenture reached net zero across its global operations in 2023 — ahead of its 2025 target — and achieved 100% renewable electricity. The firm earned CDP 'A' rating and is a signatory to the UN Global Compact.",
+      "rating": "Positive",
+      "sources": [
+        "CDP",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "Accenture employs 750,000+ people globally and has faced criticism for high-pressure project environments and periodic large-scale layoffs (19,000 cut in 2023). Glassdoor ratings are mid-range for the consulting industry.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "Accenture has scored 100 on HRC CEI and set a goal of 50% women globally by 2025, achieving 47% as of 2023. The firm publishes detailed diversity data and has strong sponsorship programs for underrepresented groups.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company Diversity Report",
+        "DiversityInc"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Accenture does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Accenture handles sensitive data for thousands of enterprise clients. A 2021 ransomware attack by LockBit exposed some client data. Accenture has strong enterprise security practices but the breach raised concerns.",
+      "grade": "Mixed",
+      "sources": [
+        "Company disclosure",
+        "Cyberscoop"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Julie Sweet earned approximately $22M in fiscal 2023. Median employee pay is approximately $62,000 globally, yielding a pay ratio of roughly 350:1.",
+      "ratio": "350:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a0a1a",
+    "ac": "#a100ff",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 695,
+    "name": "Duolingo",
+    "cat": "Technology / Education App",
+    "init": "DUOL",
+    "overall": 68,
+    "isPublic": true,
+    "ticker": "DUOL",
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Duolingo has no significant corporate PAC. The company and its founders lean progressive, supporting immigration reform and language access as social equity issues.",
+      "lean": "Left",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "charity": {
+      "s": "Duolingo's core mission is free language education for all. The Duolingo English Test has provided affordable English proficiency testing, increasing access for international students. The company donated DET waivers to Ukrainian refugees in 2022.",
+      "amt": "Free platform (mission-driven)",
+      "focus": "Language access, education equity",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "environment": {
+      "s": "Duolingo has limited direct environmental footprint as a software company. No significant formal environmental program publicly disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Duolingo laid off 10% of its contractor workforce in January 2024, primarily affecting AI training contractors — drawing attention to the impact of AI on gig workers. Full-time employee Glassdoor ratings are high. The company is known for a fun, mission-driven culture.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "Duolingo publishes diversity data and has strong representation of women in leadership. The company has ERGs and DEI commitments. Duolingo's product explicitly supports LGBTQ+ learners and has added gender-neutral language learning options.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Duolingo does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Duolingo collects data on learning patterns, progress, and user behavior. The app has been noted by privacy researchers for collecting more data than necessary for language learning. Complies with COPPA, GDPR, and CCPA. Popular with children, making data practices a higher concern.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy",
+        "Common Sense Media"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Luis von Ahn earned approximately $26M in 2023 including stock awards. Median employee pay is approximately $140,000.",
+      "ratio": "High (stock-heavy)",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#58cc02",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 696,
+    "name": "Hims & Hers",
+    "cat": "Health & Wellness / Telehealth",
+    "init": "HIMS",
+    "overall": 52,
+    "isPublic": true,
+    "ticker": "HIMS",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Hims & Hers has no significant political giving record. CEO Andrew Dudum has made public statements supporting reproductive rights and affordable healthcare.",
+      "lean": "Bipartisan",
+      "amt": "Minimal",
+      "sources": [
+        "FEC",
+        "Company blog"
+      ]
+    },
+    "charity": {
+      "s": "Hims & Hers has run programs to provide discounted telehealth services to underserved populations and offered free COVID-19 telehealth consultations.",
+      "amt": "Limited formal program",
+      "focus": "Healthcare access, mental health",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Hims & Hers has limited environmental reporting. The company's direct footprint is modest as a telehealth platform.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Hims & Hers has had significant executive and employee turnover. Glassdoor ratings are below average. The company has faced criticism for aggressive sales tactics for compounded GLP-1 medications that have raised regulatory and medical safety questions.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "FDA warning letters"
+      ]
+    },
+    "dei": {
+      "s": "Hims & Hers was built on inclusive marketing around stigmatized health topics for diverse demographics. The company has supported LGBTQ+ health access and markets gender-affirming care services.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company marketing"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Hims & Hers does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Hims & Hers collects sensitive health data including sexual health history, mental health information, and prescription data. Complies with HIPAA. The FTC has increased scrutiny of telehealth companies sharing health data with advertisers.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy",
+        "FTC guidance"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Andrew Dudum earned approximately $32M in 2023 including stock awards — very high relative to the company's revenues. This has drawn shareholder criticism.",
+      "ratio": "Very high relative to revenue",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#1a0a1a",
+    "ac": "#d4a0c2",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 697,
+    "name": "BetterHelp",
+    "cat": "Health & Wellness / Telehealth Mental Health",
+    "init": "BTH",
+    "overall": 35,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "poor",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "poor",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "BetterHelp (owned by Teladoc Health) has no significant political giving record. The company has lobbied on telehealth regulation.",
+      "lean": "Bipartisan",
+      "amt": "Minimal",
+      "sources": [
+        "FEC"
+      ]
+    },
+    "charity": {
+      "s": "BetterHelp has offered reduced-cost or free services to some underserved populations. The company does not have a substantial formal charitable giving program.",
+      "amt": "Limited",
+      "focus": "Mental health access",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "BetterHelp has minimal direct environmental footprint as a telehealth platform. No significant environmental commitments disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "BetterHelp has been widely criticized for paying therapists extremely low rates — as little as $30–$40 per hour including administrative time — well below standard private practice rates of $100–200/hour. Therapists report pressure to take on more clients than is clinically advisable.",
+      "rating": "Poor",
+      "sources": [
+        "Therapist forums",
+        "Vice",
+        "NASW criticism"
+      ]
+    },
+    "dei": {
+      "s": "BetterHelp markets its ability to match patients with therapists of similar backgrounds, including race, religion, and LGBTQ+ identity. However, a 2022 investigation found some therapists on the platform expressed anti-LGBTQ+ views to patients before being removed.",
+      "stance": "Mixed",
+      "sources": [
+        "Company marketing",
+        "Vice investigation"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "BetterHelp does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "The FTC fined BetterHelp $7.8M in March 2023 for sharing users' sensitive mental health data with Facebook, Snapchat, Pinterest, and Criteo for advertising purposes without adequate disclosure — a serious violation of user trust given the sensitivity of mental health information.",
+      "grade": "Poor",
+      "sources": [
+        "FTC",
+        "FTC press release 2023"
+      ]
+    },
+    "execPay": {
+      "s": "BetterHelp is a subsidiary of Teladoc Health; standalone executive compensation not disclosed.",
+      "ratio": "Not disclosed",
+      "sources": [
+        "N/A"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#5cb85c",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 698,
+    "name": "Talkspace",
+    "cat": "Health & Wellness / Telehealth Mental Health",
+    "init": "TALK",
+    "overall": 42,
+    "isPublic": true,
+    "ticker": "TALK",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "mixed"
+    },
+    "political": {
+      "s": "Talkspace has minimal political giving. The company has lobbied on telehealth and mental health parity legislation.",
+      "lean": "Bipartisan",
+      "amt": "Minimal",
+      "sources": [
+        "FEC"
+      ]
+    },
+    "charity": {
+      "s": "Talkspace has partnered with some nonprofit organizations to provide mental health services to underserved populations and offered discounts for frontline workers during COVID-19.",
+      "amt": "Limited",
+      "focus": "Mental health access",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Minimal direct environmental footprint as a telehealth platform. No significant environmental program disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Talkspace has faced similar criticism to BetterHelp regarding low therapist pay rates. The company has had significant leadership turnover and went through a difficult SPAC merger process. Glassdoor ratings are below average.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Therapist forums"
+      ]
+    },
+    "dei": {
+      "s": "Talkspace markets therapist matching by identity including race and LGBTQ+ status. The company has limited public diversity reporting.",
+      "stance": "Mixed",
+      "sources": [
+        "Company marketing"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Talkspace does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Talkspace's founders were sued by the company in 2020 alleging they gave patient data to investors. The lawsuit was settled. The company has faced scrutiny for its data handling practices given the sensitivity of mental health communications. Complies with HIPAA.",
+      "grade": "Mixed",
+      "sources": [
+        "Court filings",
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Jon Cohen earned approximately $3M in 2023. Company is small and pay ratios are not as extreme as larger firms.",
+      "ratio": "Moderate",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1a1a",
+    "ac": "#00bcd4",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 699,
+    "name": "CNN",
+    "cat": "Media / Cable News",
+    "init": "CNN",
+    "overall": 50,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "left",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "CNN (owned by Warner Bros. Discovery) is widely perceived as center-left in its editorial coverage. Parent company WBD's PAC gives to both parties. The network fired host Don Lemon and made significant staffing cuts under new leadership in 2023.",
+      "lean": "Left",
+      "amt": "Parent company PAC (bipartisan)",
+      "sources": [
+        "AllSides Media Bias",
+        "Ad Fontes Media"
+      ]
+    },
+    "charity": {
+      "s": "CNN hosts the annual CNN Heroes program highlighting everyday people making a difference. Parent company Warner Bros. Discovery contributes to charitable causes.",
+      "amt": "Via parent company",
+      "focus": "Community heroes, disaster awareness",
+      "sources": [
+        "Company programs"
+      ]
+    },
+    "environment": {
+      "s": "Warner Bros. Discovery has committed to carbon neutrality and sustainability goals. CNN's production operations include studios and satellite infrastructure with meaningful energy use.",
+      "rating": "Mixed",
+      "sources": [
+        "WBD Sustainability Report"
+      ]
+    },
+    "labor": {
+      "s": "CNN went through significant layoffs in 2023 under new CEO Mark Thompson, cutting hundreds of positions as the network restructured for digital. The network has faced union issues and criticism of working conditions.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "WGA",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "CNN has a diverse on-air roster and has committed to diversity in hiring. The network faces ongoing tension between editorial independence and parent company DEI policies.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "CNN does not sell or manufacture firearms. The network has extensive editorial coverage of gun violence and gun policy.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "CNN collects user data through its digital platforms and apps. CNN.com uses extensive ad tracking and analytics. The network complies with standard privacy frameworks.",
+      "grade": "Mixed",
+      "sources": [
+        "CNN Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "CNN is a subsidiary of Warner Bros. Discovery; standalone compensation not fully disclosed.",
+      "ratio": "Not disclosed",
+      "sources": [
+        "WBD proxy"
+      ]
+    },
+    "ab": "#1a0a0a",
+    "ac": "#cc0000",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 700,
+    "name": "The New York Times",
+    "cat": "Media / Newspaper & Digital News",
+    "init": "NYT",
+    "overall": 60,
+    "isPublic": true,
+    "ticker": "NYT",
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "The New York Times is widely rated as center-left in its news coverage and editorial positions. The NYT PAC gives modestly and primarily to Democratic-leaning candidates. NYT editorial positions include support for gun control, climate action, and LGBTQ+ rights.",
+      "lean": "Left",
+      "amt": "Small PAC",
+      "sources": [
+        "AllSides",
+        "Ad Fontes Media",
+        "FEC"
+      ]
+    },
+    "charity": {
+      "s": "The New York Times Neediest Cases Fund has raised over $350M for New York charities since 1912. The Times has supported press freedom organizations and journalism education globally.",
+      "amt": "$350M+ historically (Neediest Cases)",
+      "focus": "Local charity, press freedom, journalism education",
+      "sources": [
+        "NYT Neediest Cases Fund"
+      ]
+    },
+    "environment": {
+      "s": "The New York Times committed to net zero by 2050 and carbon neutral operations by 2030. The company achieved carbon neutrality for its own operations in 2020. NYT has strong environmental coverage that has helped shape public climate policy debate.",
+      "rating": "Positive",
+      "sources": [
+        "Company Sustainability Report"
+      ]
+    },
+    "labor": {
+      "s": "NYT Tech Workers Guild and NYT NewsGuild represent hundreds of employees. The company had a contentious 2022 contract negotiation that led to a one-day strike. The Times has faced criticism for contractor working conditions and a dispute with game workers from its Wordle/games acquisition.",
+      "rating": "Mixed",
+      "sources": [
+        "NYT NewsGuild",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "The New York Times publishes diversity reports and has targets for newsroom representation. The Times has been criticized internally over its coverage of transgender issues, with some staff and contributors publicly objecting to certain editorial decisions.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company Diversity Report",
+        "Open letter from staff"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "The NYT does not sell firearms and editorially supports gun control measures.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "The NYT was sued in 2023 by OpenAI for using copyrighted content in AI training. The Times collects user data for its subscription and advertising business. The company complies with GDPR and CCPA. No major data breaches on record.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Meredith Kopit Levien earned approximately $12.5M in 2023. Median employee pay is approximately $96,000, yielding a pay ratio of roughly 130:1.",
+      "ratio": "130:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a0a0a",
+    "ac": "#f4f4f4",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 701,
+    "name": "Reddit",
+    "cat": "Technology / Social Media",
+    "init": "RDDT",
+    "overall": 48,
+    "isPublic": true,
+    "ticker": "RDDT",
+    "sc": {
+      "political": "left",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "poor",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Reddit's platform and user base lean strongly left politically. The company has faced criticism for inconsistent content moderation — banning some right-leaning communities while leaving others intact.",
+      "lean": "Left",
+      "amt": "Minimal PAC",
+      "sources": [
+        "FEC",
+        "Platform analysis"
+      ]
+    },
+    "charity": {
+      "s": "Reddit has run charitable giving campaigns through its platform but does not have a significant standalone charitable giving program.",
+      "amt": "Limited formal program",
+      "focus": "Community causes, crisis relief",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Reddit has committed to carbon neutrality for its operations and uses cloud infrastructure with renewable energy commitments.",
+      "rating": "Mixed",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "Reddit faced a massive moderator protest in June 2023 when it changed API pricing, effectively killing third-party apps. Thousands of subreddits went dark in protest. The company laid off approximately 90 employees (5% of staff) in 2023.",
+      "rating": "Mixed",
+      "sources": [
+        "Verge",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "Reddit published its first diversity report in 2021 showing underrepresentation of women and minorities in technical roles. Progress has been slow. Reddit shut down some communities dedicated to hate speech but moderation consistency remains controversial.",
+      "stance": "Mixed",
+      "sources": [
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Reddit does not sell firearms. The platform hosts communities discussing firearms, legal and otherwise, which has been a source of ongoing content moderation controversy.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Reddit's business model is based on selling user data to AI companies for training — signing a $60M annual data licensing deal with Google in 2024. Reddit collects extensive data on user behavior, interests, and communities.",
+      "grade": "Poor",
+      "sources": [
+        "Company disclosure",
+        "Reuters"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Steve Huffman earned approximately $193M in 2023 including stock awards tied to the IPO. Median employee pay is approximately $155,000, but the CEO package relative to company revenue is extremely high.",
+      "ratio": "Very high",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#1a0a0a",
+    "ac": "#ff4500",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 702,
+    "name": "Discord",
+    "cat": "Technology / Social Communications",
+    "init": "DISC",
+    "overall": 50,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "left",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Discord is a private company with no corporate PAC. The platform originated in gaming communities and has struggled with far-right and extremist content moderation. Discord has progressively improved moderation but faced criticism when the 2023 Pentagon leaker used the platform to share classified documents.",
+      "lean": "Left",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Platform analysis"
+      ]
+    },
+    "charity": {
+      "s": "Discord has run charitable fundraising events on its platform and supports gaming-related charitable causes. Formal giving programs are limited for a company of its size.",
+      "amt": "Limited",
+      "focus": "Gaming community, crisis fundraising",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Discord has limited public environmental reporting as a private company. No formal sustainability commitments publicly disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Discord laid off 170 employees (17% of staff) in January 2024 amid a restructuring, having previously laid off 4% of staff in 2023. The company has faced criticism for NSFW content moderation that created difficult working conditions for trust and safety staff.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "TechCrunch"
+      ]
+    },
+    "dei": {
+      "s": "Discord has published limited diversity data. The company has ERGs and stated DEI commitments but transparency is lower than public companies.",
+      "stance": "Mixed",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Discord does not sell firearms. The platform has hosted communities discussing illegal weapon modifications, which has been an ongoing moderation challenge.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Discord collects extensive data on users including messages, voice activity, friends, and behavior patterns. The platform has complied with law enforcement requests. Users have limited control over data deletion.",
+      "grade": "Mixed",
+      "sources": [
+        "Discord Privacy Policy",
+        "EFF"
+      ]
+    },
+    "execPay": {
+      "s": "Discord is private; executive compensation not disclosed.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "N/A"
+      ]
+    },
+    "ab": "#0a0a1a",
+    "ac": "#5865f2",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 703,
+    "name": "Activision Blizzard",
+    "cat": "Technology / Video Games",
+    "init": "ATVI",
+    "overall": 30,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "right",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "poor",
+      "dei": "anti_dei",
+      "animals": "not_applicable",
+      "guns": "mixed",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Activision Blizzard (now owned by Microsoft) had a PAC that leaned Republican. CEO Bobby Kotick was a major Republican donor. The company faced political controversy for censoring pro-Hong Kong content in esports in 2019 under pressure from China.",
+      "lean": "Right",
+      "amt": "Company PAC (Republican-leaning)",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Activision Blizzard has charitable programs including Call of Duty Endowment, which helps veterans find employment and has placed over 100,000 veterans in jobs. However, charitable giving has been overshadowed by workplace controversy.",
+      "amt": "Call of Duty Endowment + limited giving",
+      "focus": "Veterans employment",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Activision Blizzard committed to carbon neutral operations by 2024. Parent company Microsoft has more aggressive environmental commitments.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure",
+        "Microsoft ESG Report"
+      ]
+    },
+    "labor": {
+      "s": "Activision Blizzard faced one of the most significant workplace misconduct scandals in gaming history. The California DFEH filed a lawsuit in 2021 alleging a pervasive 'frat boy culture' with rampant sexual harassment and discrimination. The company paid $54M to settle with the EEOC and $18M in a separate California settlement. Multiple game studios unionized in response.",
+      "rating": "Poor",
+      "sources": [
+        "EEOC",
+        "California DFEH",
+        "NLRB"
+      ]
+    },
+    "dei": {
+      "s": "Activision Blizzard's DEI record has been severely damaged by the harassment scandal. The company was found to have systematically underpaid women and failed to promote them to leadership.",
+      "stance": "Anti-DEI",
+      "sources": [
+        "EEOC settlement",
+        "California DFEH complaint"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Activision's Call of Duty franchise is one of the most prominent first-person shooter franchises globally.",
+      "verdict": "Virtual guns in games",
+      "sources": [
+        "ESRB"
+      ]
+    },
+    "privacy": {
+      "s": "Activision Blizzard collects gameplay and personal data. Microsoft's acquisition brought more robust data governance practices.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "Bobby Kotick's last disclosed compensation before Microsoft acquisition was approximately $296M in 2021 — one of the highest in corporate America and widely criticized given the workplace scandal.",
+      "ratio": "Extremely high historically",
+      "sources": [
+        "SEC proxy",
+        "WSJ"
+      ]
+    },
+    "ab": "#0a0a1a",
+    "ac": "#000000",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 704,
+    "name": "Etsy",
+    "cat": "E-Commerce / Marketplace",
+    "init": "ETSY",
+    "overall": 65,
+    "isPublic": true,
+    "ticker": "ETSY",
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "mixed",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Etsy's PAC and leadership lean Democratic. The company has advocated for small business policy, trade, and e-commerce regulation. Etsy publicly supported LGBTQ+ rights and racial justice causes.",
+      "lean": "Left",
+      "amt": "Small PAC",
+      "sources": [
+        "FEC",
+        "Company blog"
+      ]
+    },
+    "charity": {
+      "s": "Etsy has committed to powering its marketplace with 100% renewable energy and supports the Etsy Foundation, which funds small business development. The company contributes to disaster relief and community development causes.",
+      "amt": "Millions annually",
+      "focus": "Small business, disaster relief, environmental causes",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "environment": {
+      "s": "Etsy offset 100% of carbon emissions from shipping since 2019 and achieved carbon neutrality for its own operations. The company has Science Based Targets and uses renewable energy.",
+      "rating": "Positive",
+      "sources": [
+        "SBTi",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "Etsy laid off 225 employees (11% of staff) in 2023. The company has faced seller backlash over fee increases (from 5% to 6.5% in 2022) that many small sellers called harmful to their livelihoods — some sellers went on strike.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Seller forums",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "Etsy publishes diversity data and has set representation goals. The company has scored well on HRC CEI and is known for inclusive marketing that features diverse sellers and buyers.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Etsy's marketplace includes both cruelty-free and animal-derived products sold by independent sellers. The company prohibits some animal products (endangered species, live animals) but allows others including leather goods.",
+      "verdict": "Mixed",
+      "sources": [
+        "Etsy Prohibited Items Policy"
+      ]
+    },
+    "guns": {
+      "s": "Etsy prohibits the sale of firearms and most weapons on its platform.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Etsy Prohibited Items Policy"
+      ]
+    },
+    "privacy": {
+      "s": "Etsy collects data on buyers and sellers including purchase history, browsing, and payment data. The company complies with GDPR and CCPA. No major breaches on record.",
+      "grade": "Mixed",
+      "sources": [
+        "Etsy Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Josh Silverman earned approximately $26M in 2023. Median employee pay is approximately $150,000. CEO-to-employee pay ratio is approximately 175:1.",
+      "ratio": "175:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#1a0f00",
+    "ac": "#f1641e",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 705,
+    "name": "Shopify",
+    "cat": "Technology / E-Commerce Platform",
+    "init": "SHOP",
+    "overall": 62,
+    "isPublic": true,
+    "ticker": "SHOP",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "mixed",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Shopify is a Canadian company with US operations and no significant US political PAC. CEO Tobi Lutke has publicly described Shopify as a 'free speech' platform and has resisted pressure to ban controversial merchants.",
+      "lean": "Bipartisan",
+      "amt": "No US corporate PAC",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "charity": {
+      "s": "Shopify's Sustainability Fund invests $5M per year in carbon removal technologies. The company has supported small business owners through grants and relief programs including COVID-19 support for merchants.",
+      "amt": "$5M sustainability + merchant grants",
+      "focus": "Small business support, carbon removal",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Shopify reached carbon neutral for its own operations in 2020 and invests in carbon removal through its Sustainability Fund. The company has committed to 100% renewable energy for its infrastructure.",
+      "rating": "Positive",
+      "sources": [
+        "Company Sustainability Report"
+      ]
+    },
+    "labor": {
+      "s": "Shopify laid off 10% of staff in 2022 and another 20% in 2023. CEO Tobi Lutke sent a viral memo positioning Shopify as 'not a family' that will cut staff when needed. Glassdoor ratings are mixed post-layoffs.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Lutke memo",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "Shopify has moved away from overt DEI programming, with CEO Lutke stating the company focuses on meritocracy. The company removed some DEI commitments from public communications in 2023.",
+      "stance": "Mixed",
+      "sources": [
+        "Company policy",
+        "Tech press"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Shopify allows merchants to sell legally-compliant firearms and accessories, including AR-style rifles where legal. The company refused to remove gun merchants in 2019 following pressure campaigns.",
+      "verdict": "Allows legal gun sales",
+      "sources": [
+        "Company policy",
+        "Wired"
+      ]
+    },
+    "privacy": {
+      "s": "Shopify collects extensive data on merchants and consumers across millions of stores. A 2020 breach by two rogue employees exposed data of approximately 200 merchant stores. Complies with GDPR and CCPA.",
+      "grade": "Mixed",
+      "sources": [
+        "Company disclosure",
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Tobi Lutke earned approximately $18M in 2023. Median employee pay is approximately $140,000.",
+      "ratio": "High",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#96bf48",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 706,
+    "name": "Robinhood",
+    "cat": "Financial Services / Investment App",
+    "init": "HOOD",
+    "overall": 38,
+    "isPublic": true,
+    "ticker": "HOOD",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "poor",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Robinhood became politically controversial in January 2021 when it halted trading of GameStop and AMC during the meme stock surge, facing accusations from politicians on both left and right of market manipulation favoring hedge funds.",
+      "lean": "Bipartisan",
+      "amt": "Small PAC",
+      "sources": [
+        "FEC",
+        "Congressional hearings"
+      ]
+    },
+    "charity": {
+      "s": "Robinhood's stated mission is democratizing finance for all Americans. The company has limited formal charitable giving. Some programs support financial literacy.",
+      "amt": "Limited",
+      "focus": "Financial literacy",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Robinhood has limited environmental reporting. As a fintech company its direct footprint is modest.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Robinhood laid off 23% of its workforce in 2022 and an additional 9% in August 2022 — two rounds in rapid succession. The company was fined $70M by FINRA in 2021, the largest in FINRA history, for widespread customer harm.",
+      "rating": "Mixed",
+      "sources": [
+        "FINRA",
+        "Glassdoor",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "Robinhood has published limited diversity data. The company has DEI programs and ERGs but representation of women and minorities in technical and leadership roles is below tech industry averages.",
+      "stance": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Robinhood does not sell firearms but allows trading of stocks in firearms manufacturers.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Robinhood was fined $65M by the SEC in 2020 for failing to disclose that it sold customer order flow to high-frequency traders. A November 2021 breach exposed data of 5 million email addresses and personal information of 310 users.",
+      "grade": "Poor",
+      "sources": [
+        "SEC",
+        "Company disclosure"
+      ]
+    },
+    "execPay": {
+      "s": "Co-CEOs Vlad Tenev and Baiju Bhatt each received substantial stock compensation. Tenev earned approximately $4.5M in 2023 in direct compensation, but holds significant equity.",
+      "ratio": "High relative to revenue",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#00c805",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 707,
+    "name": "Coinbase",
+    "cat": "Financial Services / Cryptocurrency Exchange",
+    "init": "COIN",
+    "overall": 44,
+    "isPublic": true,
+    "ticker": "COIN",
+    "sc": {
+      "political": "right",
+      "charity": "mixed",
+      "environment": "poor",
+      "labor": "mixed",
+      "dei": "anti_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Coinbase spent $75M through its Fairshake PAC in the 2024 election cycle — one of the largest corporate political spends in US history — focused on electing crypto-friendly candidates, primarily benefiting Republicans. CEO Brian Armstrong has publicly opposed DEI and 'political activism' at work.",
+      "lean": "Right",
+      "amt": "$75M (Fairshake PAC, 2024)",
+      "sources": [
+        "FEC",
+        "OpenSecrets",
+        "Politico"
+      ]
+    },
+    "charity": {
+      "s": "Coinbase has donated to some nonprofit causes but does not have a substantial formal charitable giving program relative to its size.",
+      "amt": "Limited",
+      "focus": "Crypto education, financial access",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Cryptocurrency mining and transactions are extremely energy-intensive. Coinbase facilitates transactions on proof-of-work networks including Bitcoin, which consumes more electricity than many countries. Coinbase has not committed to meaningful environmental targets.",
+      "rating": "Poor",
+      "sources": [
+        "Cambridge Bitcoin Electricity Consumption Index",
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Coinbase laid off 18% of staff in 2022 and another 20% in 2023 amid crypto market downturns. CEO Brian Armstrong posted a memo in 2020 telling employees that political activism at work was not welcome — approximately 5% of staff took offered severance.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Armstrong memo",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "CEO Brian Armstrong publicly opposed DEI in a widely-circulated 2020 memo, positioning Coinbase as a 'mission-focused' company that avoids 'political causes.' The company has not published diversity reports and does not participate in HRC CEI rankings.",
+      "stance": "Anti-DEI",
+      "sources": [
+        "Armstrong memo",
+        "Company policy"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Coinbase does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Coinbase has shared user data with US law enforcement and the IRS. In 2023, a Coinbase insider leaked data of 97,000 customers to fraudsters. The company collects extensive KYC data including government IDs, SSNs, and financial history.",
+      "grade": "Mixed",
+      "sources": [
+        "IRS summons",
+        "Company disclosure",
+        "WSJ"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Brian Armstrong earned approximately $60M in 2021 at the company's peak. Compensation has varied substantially with crypto markets. Median employee pay is approximately $175,000.",
+      "ratio": "Variable",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1628",
+    "ac": "#0052ff",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 708,
+    "name": "Chime",
+    "cat": "Financial Services / Neobank",
+    "init": "CHIM",
+    "overall": 55,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Chime has no significant corporate PAC. The company's mission — no-fee banking for Americans underserved by traditional banks — aligns with progressive financial inclusion values.",
+      "lean": "Left",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "charity": {
+      "s": "Chime has programs providing financial tools to underserved communities. The company waived fees during COVID-19 and provided early access to stimulus payments for members.",
+      "amt": "Fee waivers + partner programs",
+      "focus": "Financial inclusion, underserved communities",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Chime is a digital-only bank with no branches, reducing physical footprint. No significant formal environmental program disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Chime laid off approximately 12% of its workforce in 2022. The company has had significant executive turnover. As a high-growth startup, work culture is intense.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "TechCrunch"
+      ]
+    },
+    "dei": {
+      "s": "Chime has DEI commitments and serves a customer base that skews toward minority and lower-income Americans. The company has published some diversity data and has programs to recruit diverse talent.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Chime does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Chime collects extensive financial data including transaction history, income patterns, and bank balance data. Chime is not a chartered bank itself — it partners with The Bancorp Bank and Stride Bank — creating a complex regulatory structure. Complies with federal banking privacy (GLBA).",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "Private company; CEO compensation not disclosed.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "N/A"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#00d4aa",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 709,
+    "name": "Calm",
+    "cat": "Health & Wellness / Mental Health App",
+    "init": "CALM",
+    "overall": 58,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Calm is a private company with no significant political giving record. The company avoids public political positions.",
+      "lean": "Bipartisan",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "charity": {
+      "s": "Calm has offered free subscriptions to healthcare workers and teachers. The company has partnered with schools and organizations to expand mental health access and donated content and subscriptions during COVID-19.",
+      "amt": "Free access programs",
+      "focus": "Mental health access, schools",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Calm is a software company with limited direct environmental footprint. No formal sustainability program disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Calm laid off approximately 20% of its workforce in 2023 amid a difficult funding environment for consumer health apps. Glassdoor ratings are moderate.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "TechCrunch"
+      ]
+    },
+    "dei": {
+      "s": "Calm has limited public diversity reporting as a private company. The app has expanded to include content in multiple languages and some culturally specific programming.",
+      "stance": "Mixed",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Calm does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Calm collects data on users' meditation habits, sleep patterns, and app usage. The company has a privacy policy complying with CCPA and GDPR. A 2018 Symantec study identified some privacy concerns with the app's data handling.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "Private company; compensation not disclosed.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "N/A"
+      ]
+    },
+    "ab": "#0a1628",
+    "ac": "#00bcd4",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 710,
+    "name": "Headspace",
+    "cat": "Health & Wellness / Mental Health App",
+    "init": "HEAD",
+    "overall": 60,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Headspace leans progressive in its public communications and has advocated for mental health access as a social equity issue. No significant corporate PAC.",
+      "lean": "Left",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "charity": {
+      "s": "Headspace has provided free subscriptions to unemployed users, K-12 teachers, and healthcare workers. The company donated content and subscriptions during COVID-19. The Headspace Health Equity Initiative provides free or subsidized access to underserved communities.",
+      "amt": "Millions in free access",
+      "focus": "Mental health access, equity",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Headspace is a software company with limited direct environmental footprint. No formal sustainability commitments publicly disclosed.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Headspace laid off approximately 500 employees across two rounds in 2023 as the merged Headspace Health entity restructured — roughly 35% of combined staff. Glassdoor ratings declined significantly following the restructuring.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "TechCrunch"
+      ]
+    },
+    "dei": {
+      "s": "Headspace has marketed its content around inclusive mental wellness and has built BIPOC and LGBTQ+-specific content into its app. The company has DEI commitments but limited public reporting as a private company.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Headspace does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Headspace collects sensitive data about users' mental health and meditation habits. The app has faced scrutiny for sharing behavioral data with third-party analytics platforms. The company complies with HIPAA where applicable and CCPA/GDPR frameworks.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy",
+        "Privacy analysis"
+      ]
+    },
+    "execPay": {
+      "s": "Private company; compensation not disclosed.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "N/A"
+      ]
+    },
+    "ab": "#0a0a1a",
+    "ac": "#f47d31",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 711,
+    "name": "Sunrun",
+    "cat": "Energy / Residential Solar",
+    "init": "RUN",
+    "overall": 62,
+    "isPublic": true,
+    "ticker": "RUN",
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Sunrun's PAC leans Democratic and the company has heavily advocated for solar energy subsidies and policies. Sunrun spent millions lobbying for the Inflation Reduction Act's solar provisions.",
+      "lean": "Left",
+      "amt": "~$500K PAC (Democrat-leaning)",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Sunrun has provided solar installations for affordable housing communities and low-income households through the Sunrun GRID Alternatives partnership.",
+      "amt": "Millions in solar access programs",
+      "focus": "Clean energy access, low-income communities",
+      "sources": [
+        "Company blog",
+        "GRID Alternatives"
+      ]
+    },
+    "environment": {
+      "s": "Sunrun's core business installs residential solar panels, directly displacing fossil fuel electricity. The company has installed over 1 million solar systems and is one of the largest residential solar providers in the US.",
+      "rating": "Positive",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "labor": {
+      "s": "Sunrun has faced NLRB complaints and union organizing efforts from installation crews in multiple states. Solar installation workers have raised concerns about safety conditions, high-pressure sales tactics affecting installers, and inconsistent wages across contractors.",
+      "rating": "Mixed",
+      "sources": [
+        "NLRB",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "Sunrun has DEI commitments and publishes diversity data. The company has programs to recruit women and minorities into solar installation careers. CEO Mary Powell was one of few women CEOs in the energy sector.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Sunrun does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Sunrun collects energy usage data from home solar systems and batteries, which reveals detailed information about household occupancy and behavior. Data security of home energy systems is an emerging concern industry-wide.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Mary Powell earned approximately $14M in 2023. Median employee pay is approximately $62,000, yielding a pay ratio of roughly 225:1.",
+      "ratio": "225:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#ff6b00",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 712,
+    "name": "WeWork",
+    "cat": "Real Estate / Co-working Spaces",
+    "init": "WE",
+    "overall": 32,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "poor",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "WeWork has no significant corporate PAC. Founder Adam Neumann was known for charismatic but erratic leadership. The company has received major backing from SoftBank (Japanese).",
+      "lean": "Bipartisan",
+      "amt": "Minimal PAC",
+      "sources": [
+        "FEC"
+      ]
+    },
+    "charity": {
+      "s": "WeWork's 'WeWork Cares' and community programs have supported local nonprofits and small businesses with co-working space. These programs were significantly cut back during the company's financial difficulties.",
+      "amt": "Limited (pre-bankruptcy)",
+      "focus": "Small business, community",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "WeWork claimed green building certifications for many of its spaces. However, the company's rapid expansion and then massive contraction left significant real estate waste. WeWork filed for bankruptcy in 2023.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "WeWork laid off approximately 2,400 employees in 2019 as part of its failed IPO fallout, followed by thousands more as the company contracted. The company filed for Chapter 11 bankruptcy in November 2023. Workers faced abrupt layoffs with limited severance.",
+      "rating": "Poor",
+      "sources": [
+        "Glassdoor",
+        "Reuters",
+        "Bankruptcy filing"
+      ]
+    },
+    "dei": {
+      "s": "WeWork's DEI record was mixed. Founder Adam Neumann's leadership style was criticized as cultish and exclusionary. Post-bankruptcy management has attempted to reset culture.",
+      "stance": "Mixed",
+      "sources": [
+        "Company disclosure",
+        "NYT"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "WeWork does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "WeWork collected data on member activity in its spaces and faced scrutiny for surveillance of members and employees.",
+      "grade": "Mixed",
+      "sources": [
+        "Company disclosure",
+        "CNBC"
+      ]
+    },
+    "execPay": {
+      "s": "Adam Neumann received a $1.7B exit package when SoftBank forced him out in 2019 — widely criticized as one of the most excessive executive payouts relative to company performance in corporate history. The company subsequently went bankrupt.",
+      "ratio": "Extremely high (Neumann exit)",
+      "sources": [
+        "WSJ",
+        "Bloomberg"
+      ]
+    },
+    "ab": "#0a0a0a",
+    "ac": "#ffffff",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 713,
+    "name": "Thrive Market",
+    "cat": "Retail / Organic & Natural Grocery",
+    "init": "THRV",
+    "overall": 74,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "positive",
+      "dei": "pro_dei",
+      "animals": "positive",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Thrive Market's mission and communications lean progressive, emphasizing food access as a social equity issue. The company has no significant corporate PAC and has partnered with food justice organizations.",
+      "lean": "Left",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "charity": {
+      "s": "Thrive Market's 1-for-1 membership model provides a free membership to a low-income family for every paid membership. The company has donated over $5M in memberships to teachers, students, veterans, and first responders. Thrive also donates unsold perishables to food banks.",
+      "amt": "$5M+ in memberships + food donations",
+      "focus": "Food access, low-income families, veterans",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "environment": {
+      "s": "Thrive Market is a certified B Corp and Climate Neutral certified company. The company uses 100% renewable energy in its fulfillment centers, has eliminated plastic from its own-brand packaging, and achieves carbon neutral shipping.",
+      "rating": "Positive",
+      "sources": [
+        "B Corp",
+        "Climate Neutral",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "As a B Corp, Thrive Market's labor practices are assessed as part of certification. The company offers above-average warehouse wages, full benefits, and profit sharing. Thrive was one of the first major e-commerce companies to offer equity to hourly fulfillment center workers.",
+      "rating": "Positive",
+      "sources": [
+        "B Corp",
+        "Company blog"
+      ]
+    },
+    "dei": {
+      "s": "Thrive Market publishes diversity data and has active DEI commitments. The company's leadership team has above-average representation of women and people of color for the tech/retail space.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "B Corp",
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Thrive Market curates products that meet strict ethical standards including cruelty-free, sustainable seafood, and humanely raised animal products. The platform actively highlights animal welfare certifications.",
+      "verdict": "Positive",
+      "sources": [
+        "Company standards",
+        "B Corp"
+      ]
+    },
+    "guns": {
+      "s": "Thrive Market does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Thrive Market collects standard e-commerce customer data. The company complies with CCPA and GDPR. No major data breaches on record.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "Private company; executive compensation not disclosed.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "N/A"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#2e7d32",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 714,
+    "name": "HelloFresh",
+    "cat": "Food & Beverage / Meal Kit Delivery",
+    "init": "HFG",
+    "overall": 52,
+    "isPublic": true,
+    "ticker": "HFG",
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "mixed",
+      "animals": "mixed",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "HelloFresh is a German company with US operations and no significant US political PAC.",
+      "lean": "Bipartisan",
+      "amt": "No US PAC",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "charity": {
+      "s": "HelloFresh has pledged to donate 10 million meals by 2025 through its 'Meals for Good' program and partners with Feeding America.",
+      "amt": "10M+ meals pledged",
+      "focus": "Food security, hunger relief",
+      "sources": [
+        "Company Impact Report"
+      ]
+    },
+    "environment": {
+      "s": "HelloFresh has committed to net zero by 2050 and has reduced food waste by offering pre-portioned ingredients. However, the company generates significant single-use packaging including insulated bags, ice packs, and individual ingredient packaging.",
+      "rating": "Mixed",
+      "sources": [
+        "Company report",
+        "Environmental analysis"
+      ]
+    },
+    "labor": {
+      "s": "HelloFresh has faced significant labor issues at its US fulfillment centers, including a 2022 OSHA investigation following a worker death at its Newnan, Georgia facility. Workers have reported high injury rates, mandatory overtime, and unsafe conditions.",
+      "rating": "Mixed",
+      "sources": [
+        "OSHA",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "HelloFresh has DEI commitments and gender targets for leadership. The company follows EU standards for diversity reporting. US diversity data is limited.",
+      "stance": "Mixed",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "animals": {
+      "s": "HelloFresh offers both meat-containing and plant-based meal options. The company has commitments to responsible sourcing including sustainable seafood and no routine antibiotic use in beef.",
+      "verdict": "Mixed",
+      "sources": [
+        "Company sourcing standards"
+      ]
+    },
+    "guns": {
+      "s": "HelloFresh does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "HelloFresh collects dietary preferences, address, and payment data. The company has faced scrutiny for aggressive email and marketing practices. Complies with GDPR and CCPA.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Dominik Richter earned approximately €13M in 2023. Pay ratios follow German corporate standards.",
+      "ratio": "High (European listed)",
+      "sources": [
+        "Annual Report"
+      ]
+    },
+    "ab": "#0a1a0a",
+    "ac": "#99cc00",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 715,
+    "name": "Warby Parker",
+    "cat": "Retail / Eyewear",
+    "init": "WRBY",
+    "overall": 72,
+    "isPublic": true,
+    "ticker": "WRBY",
+    "sc": {
+      "political": "left",
+      "charity": "positive",
+      "environment": "positive",
+      "labor": "positive",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "mixed",
+      "execPay": "mixed"
+    },
+    "political": {
+      "s": "Warby Parker's founders and leadership lean Democratic. The company has supported voting access initiatives and donated to causes aligned with progressive values. The company signed the CEO Action for Diversity & Inclusion pledge.",
+      "lean": "Left",
+      "amt": "No corporate PAC",
+      "sources": [
+        "Company blog",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Warby Parker's 'Buy a Pair, Give a Pair' program has distributed over 15 million pairs of glasses to people in need globally through VisionSpring. This is a core part of their business model — every pair sold funds the distribution of a pair to someone in a developing country.",
+      "amt": "15M+ pairs donated",
+      "focus": "Vision access, global health",
+      "sources": [
+        "Company Impact Report",
+        "VisionSpring"
+      ]
+    },
+    "environment": {
+      "s": "Warby Parker has been certified carbon neutral since 2019 and achieved B Corp certification. The company uses recycled and sustainable materials in its frames and packaging, and offsets remaining emissions through verified projects.",
+      "rating": "Positive",
+      "sources": [
+        "B Corp",
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "Warby Parker is a certified B Corp, which includes labor standards assessment. The company offers above-average retail wages, full benefits for part-time employees, and paid parental leave. Glassdoor ratings are above retail industry average.",
+      "rating": "Positive",
+      "sources": [
+        "B Corp",
+        "Glassdoor"
+      ]
+    },
+    "dei": {
+      "s": "Warby Parker publishes an annual impact report with diversity data and has targets for representation in leadership. The company scored well on HRC CEI and actively recruits from HBCUs and diverse institutions.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company Impact Report"
+      ]
+    },
+    "animals": {
+      "s": "Warby Parker does not use animal-derived materials in its eyeglass frames and is considered vegan-friendly by animal welfare advocates.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Warby Parker does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Warby Parker collects standard retail customer data including purchase history and vision prescription information. The company complies with HIPAA for prescription data and CCPA/GDPR frameworks. No major breaches on record.",
+      "grade": "Mixed",
+      "sources": [
+        "Company Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "Co-CEOs Neil Blumenthal and Dave Gilboa each earned approximately $3.8M in 2023. Median employee pay is approximately $47,000, yielding a pay ratio of roughly 80:1 — below average for retail.",
+      "ratio": "80:1",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1628",
+    "ac": "#009bde",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 716,
+    "name": "Zoom",
+    "cat": "Technology / Video Communications",
+    "init": "ZM",
+    "overall": 52,
+    "isPublic": true,
+    "ticker": "ZM",
+    "sc": {
+      "political": "left",
+      "charity": "mixed",
+      "environment": "mixed",
+      "labor": "mixed",
+      "dei": "pro_dei",
+      "animals": "not_applicable",
+      "guns": "no_guns",
+      "privacy": "poor",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Zoom's PAC and employee donations lean Democratic. The company has faced political controversy for terminating calls of pro-democracy activists at China's request in 2020, raising concerns about its relationship with the Chinese government.",
+      "lean": "Left",
+      "amt": "~$100K PAC",
+      "sources": [
+        "FEC",
+        "OpenSecrets"
+      ]
+    },
+    "charity": {
+      "s": "Zoom provided free services to K-12 schools globally during COVID-19, worth hundreds of millions in value. The company has contributed to disaster relief and nonprofit causes.",
+      "amt": "Free services (COVID)",
+      "focus": "Education access, nonprofits",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Zoom achieved carbon neutrality for Scope 1 and 2 emissions in 2021 and has committed to net zero. The company's core product reduces the need for business travel, creating significant indirect environmental benefits.",
+      "rating": "Mixed",
+      "sources": [
+        "Company report"
+      ]
+    },
+    "labor": {
+      "s": "Zoom laid off 1,300 employees (15% of workforce) in February 2023. The company returned to near-mandatory in-office work in 2023 while being known as a remote work enabler — a contradiction noted by workers and media.",
+      "rating": "Mixed",
+      "sources": [
+        "Glassdoor",
+        "Reuters"
+      ]
+    },
+    "dei": {
+      "s": "Zoom has committed to increasing representation of women and underrepresented minorities and publishes diversity data. The company scored well on HRC CEI.",
+      "stance": "Pro-DEI",
+      "sources": [
+        "HRC CEI",
+        "Company Diversity Report"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable — software company.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Zoom does not sell or manufacture firearms.",
+      "verdict": "No gun sales",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "Zoom faced a major privacy backlash in 2020 for 'Zoombombing,' routing calls through Chinese servers, sharing data with Facebook without disclosure, and misleading end-to-end encryption claims. The FTC reached a settlement in 2021. In 2023, Zoom updated its terms of service to allow training AI models on user content, then quickly walked back the policy.",
+      "grade": "Poor",
+      "sources": [
+        "FTC",
+        "Company TOS",
+        "EFF"
+      ]
+    },
+    "execPay": {
+      "s": "CEO Eric Yuan took a 98% pay cut in 2023, earning approximately $270K in salary, though total compensation including stock is substantially higher. Median employee pay is approximately $130,000.",
+      "ratio": "Low (CEO took pay cut)",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#0a1628",
+    "ac": "#2d8cff",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 717,
+    "name": "Fox News",
+    "cat": "Media / Cable News",
+    "init": "FOX",
+    "overall": 38,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "right",
+      "charity": "mixed",
+      "environment": "poor",
+      "labor": "poor",
+      "dei": "anti_dei",
+      "animals": "not_applicable",
+      "guns": "pro_guns",
+      "privacy": "mixed",
+      "execPay": "poor"
+    },
+    "political": {
+      "s": "Fox News (owned by Fox Corporation) has a well-documented right-wing editorial stance. Fox Corp's PAC overwhelmingly donates to Republican candidates. Fox News settled the Dominion Voting Systems defamation lawsuit for $787.5M in 2023 — the largest media defamation settlement in US history — related to false claims about the 2020 election.",
+      "lean": "Right",
+      "amt": "Fox Corp PAC — heavily Republican",
+      "sources": [
+        "FEC",
+        "OpenSecrets",
+        "Dominion settlement"
+      ]
+    },
+    "charity": {
+      "s": "Fox News hosts charity drives and has contributed to disaster relief causes. The Fox Corporation Foundation supports various causes.",
+      "amt": "Moderate via Foundation",
+      "focus": "Disaster relief, community",
+      "sources": [
+        "Fox Corporation Foundation"
+      ]
+    },
+    "environment": {
+      "s": "Fox News has historically been a major platform for climate change skepticism and denial. Fox Corporation has made some operational sustainability commitments but the network's editorial stance has significantly influenced public opinion against climate action.",
+      "rating": "Poor",
+      "sources": [
+        "CDP",
+        "Climate Feedback analysis"
+      ]
+    },
+    "labor": {
+      "s": "Fox News has faced multiple high-profile sexual harassment lawsuits, most notably resulting in the firing of Roger Ailes (founder) and Bill O'Reilly following settlements totaling over $100M. Tucker Carlson was abruptly fired in 2023. The network has faced ongoing criticism of its workplace culture.",
+      "rating": "Poor",
+      "sources": [
+        "NYT",
+        "Court records",
+        "EEOC"
+      ]
+    },
+    "dei": {
+      "s": "Fox News has been a consistent critic of DEI programs editorially and politically. The network's coverage of DEI, critical race theory, and related topics has shaped conservative opposition to these policies. Fox News does not publish diversity reports or participate in HRC CEI rankings.",
+      "stance": "Anti-DEI",
+      "sources": [
+        "Editorial record",
+        "Company policy"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Fox News does not sell firearms but has been a consistent editorial advocate for gun rights and Second Amendment positions.",
+      "verdict": "Pro-gun editorially",
+      "sources": [
+        "Editorial record"
+      ]
+    },
+    "privacy": {
+      "s": "Fox News collects user data through its digital platforms. The network complies with standard privacy frameworks. No major data breaches on record.",
+      "grade": "Mixed",
+      "sources": [
+        "Fox News Privacy Policy"
+      ]
+    },
+    "execPay": {
+      "s": "Fox Corporation CEO Lachlan Murdoch earned approximately $24M in fiscal 2023.",
+      "ratio": "High",
+      "sources": [
+        "SEC proxy"
+      ]
+    },
+    "ab": "#1a0a0a",
+    "ac": "#003366",
+    "dataLastUpdated": "2026-05-22"
+  },
+  {
+    "id": 718,
+    "name": "Epic Games",
+    "cat": "Technology / Video Games",
+    "init": "EPIC",
+    "overall": 48,
+    "isPublic": false,
+    "ticker": null,
+    "sc": {
+      "political": "bipartisan",
+      "charity": "positive",
+      "environment": "mixed",
+      "labor": "poor",
+      "dei": "mixed",
+      "animals": "not_applicable",
+      "guns": "mixed",
+      "privacy": "poor",
+      "execPay": "unknown"
+    },
+    "political": {
+      "s": "Epic Games is 40% owned by Tencent (Chinese company), which raises geopolitical concerns. CEO Tim Sweeney has been a vocal critic of Apple and Google's app store monopolies and has funded legal battles around this. No significant US political PAC.",
+      "lean": "Bipartisan",
+      "amt": "No US corporate PAC",
+      "sources": [
+        "Company disclosure",
+        "Bloomberg"
+      ]
+    },
+    "charity": {
+      "s": "Epic Games has donated millions through Fortnite to disaster relief — raising over $144M for COVID relief and $36M for Ukraine through in-game fundraisers. The company has contributed to gaming education and youth STEM programs.",
+      "amt": "$144M+ (COVID), $36M (Ukraine)",
+      "focus": "Disaster relief, gaming education",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "environment": {
+      "s": "Epic has made some commitments to reduce its operational footprint but has no major formal environmental program.",
+      "rating": "Mixed",
+      "sources": [
+        "Company disclosure"
+      ]
+    },
+    "labor": {
+      "s": "Epic Games laid off approximately 16% of its workforce (870 employees) in September 2023, one of the largest gaming industry layoffs in history. Epic has faced criticism for 'crunch culture' — excessive overtime in game development.",
+      "rating": "Poor",
+      "sources": [
+        "Reuters",
+        "Glassdoor",
+        "Bloomberg"
+      ]
+    },
+    "dei": {
+      "s": "Epic has DEI commitments and has partnered with diverse creators in Fortnite. The gaming industry has well-documented diversity challenges. Epic publishes limited diversity data as a private company.",
+      "stance": "Mixed",
+      "sources": [
+        "Company blog"
+      ]
+    },
+    "animals": {
+      "s": "Not applicable.",
+      "verdict": "Not Applicable",
+      "sources": [
+        "Company policy"
+      ]
+    },
+    "guns": {
+      "s": "Fortnite is a battle royale game featuring extensive virtual gun combat rated T (Teen) by ESRB.",
+      "verdict": "Virtual guns in games",
+      "sources": [
+        "ESRB",
+        "Company policy"
+      ]
+    },
+    "privacy": {
+      "s": "The FTC fined Epic Games $275M in 2022 for COPPA violations — collecting personal data from children under 13 without parental consent — and $245M for dark patterns that tricked players into making unintended purchases. These are among the largest FTC gaming fines in history.",
+      "grade": "Poor",
+      "sources": [
+        "FTC",
+        "DOJ"
+      ]
+    },
+    "execPay": {
+      "s": "Private company; CEO Tim Sweeney's compensation not disclosed. Sweeney owns approximately 50% of Epic and has a net worth estimated at $7B+.",
+      "ratio": "Not disclosed (private)",
+      "sources": [
+        "Bloomberg"
+      ]
+    },
+    "ab": "#0a0a1a",
+    "ac": "#313131",
+    "dataLastUpdated": "2026-05-22"
   }
 ];
-export { COMPANIES };
