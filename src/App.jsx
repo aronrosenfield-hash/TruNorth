@@ -709,24 +709,24 @@ function Quiz({ onComplete }) {
   };
 
   return (
-    <div style={{ display:"flex", flexDirection:"column", minHeight:"100dvh" }}>
-      <div style={{ padding:"16px 16px 0" }}>
+    <div style={{ display:"flex", flexDirection:"column", minHeight:"100dvh", paddingTop:"env(safe-area-inset-top, 0px)" }}>
+      <div style={{ padding:"10px 16px 0" }}>
         <div style={{ height:4, background:T.bg3, borderRadius:4 }}>
           <div style={{ height:4, background:T.accent, borderRadius:4, width:`${prog}%`, transition:"width 0.3s" }} />
         </div>
         {step > 0 && <div style={{ fontSize:11, color:T.txt3, textAlign:"right", marginTop:5 }}>{step} of {QUIZ_STEPS.length}</div>}
       </div>
 
-      <div style={{ flex:1, padding:"20px 16px 0", overflowY:"auto" }}>
+      <div style={{ flex:1, padding:"12px 16px 0", overflowY:"auto" }}>
         {isWelcome && (
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", paddingTop:20 }}>
-            <div style={{ width:80, height:80, background:T.accentBg, borderRadius:22, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:20 }}>
-              <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true">
+            <div style={{ width:64, height:64, background:T.accentBg, borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:14 }}>
+              <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
                 <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
               </svg>
             </div>
-            <div style={{ fontSize:28, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
-            <div style={{ fontSize:12, color:T.txt3, letterSpacing:2, textTransform:"uppercase", marginTop:6, marginBottom:16 }}>Know where your money goes</div>
+            <div style={{ fontSize:24, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
+            <div style={{ fontSize:12, color:T.txt3, letterSpacing:2, textTransform:"uppercase", marginTop:4, marginBottom:10 }}>Know where your money goes</div>
             <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300 }}>
               Answer 12 quick questions. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
             </div>
@@ -735,12 +735,12 @@ function Quiz({ onComplete }) {
 
         {current?.type === "single" && (
           <>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:18, lineHeight:1.4 }}>{current.q}</div>
+            <div style={{ fontSize:16, fontWeight:600, color:T.txt, marginBottom:12, lineHeight:1.4 }}>{current.q}</div>
             {current.opts.map((opt, i) => {
               const sel = answers[current.id] === opt.v && answers[current.id+"_idx"] === i;
               return (
                 <button key={i} onClick={() => { set(current.id, opt.v); set(current.id+"_idx", i); }}
-                  style={{ display:"flex", alignItems:"center", gap:12, padding:"13px 14px", borderRadius:12, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:8, textAlign:"left", width:"100%" }}>
+                  style={{ display:"flex", alignItems:"center", gap:12, padding:"10px 12px", borderRadius:12, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:6, textAlign:"left", width:"100%" }}>
                   <div style={{ width:24, height:24, borderRadius:"50%", border:`2px solid ${sel?T.accent:T.border2}`, background:sel?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
                     {sel && <i className="ti ti-check" style={{ fontSize:13, color:"#fff" }} aria-hidden="true" />}
                   </div>
@@ -756,7 +756,7 @@ function Quiz({ onComplete }) {
 
         {current?.type === "scale" && (
           <>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:24, lineHeight:1.4 }}>{current.q}</div>
+            <div style={{ fontSize:16, fontWeight:600, color:T.txt, marginBottom:16, lineHeight:1.4 }}>{current.q}</div>
             <div style={{ display:"flex", gap:10, justifyContent:"center", marginBottom:10 }}>
               {[1,2,3,4,5].map(n => (
                 <button key={n} onClick={() => set(current.id, n)}
@@ -782,7 +782,7 @@ function Quiz({ onComplete }) {
               const sel = (answers[current.id]||[]).includes(opt.v);
               return (
                 <button key={i} onClick={() => toggleMulti(current.id, opt.v)}
-                  style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 14px", borderRadius:12, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:8, textAlign:"left", width:"100%" }}>
+                  style={{ display:"flex", alignItems:"center", gap:12, padding:"9px 12px", borderRadius:12, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:6, textAlign:"left", width:"100%" }}>
                   <div style={{ width:22, height:22, borderRadius:5, border:`2px solid ${sel?T.accent:T.border2}`, background:sel?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
                     {sel && <i className="ti ti-check" style={{ fontSize:12, color:"#fff" }} aria-hidden="true" />}
                   </div>
@@ -795,8 +795,8 @@ function Quiz({ onComplete }) {
         )}
       </div>
 
-      <div style={{ display:"flex", gap:10, padding:16, borderTop:`1px solid ${T.border}`, background:T.bg, position:"sticky", bottom:0 }}>
-        {step > 0 && <button onClick={()=>setStep(s=>s-1)} style={{ padding:"13px 20px", borderRadius:12, border:`1px solid ${T.border}`, background:T.bg3, color:T.txt2, fontSize:15, fontWeight:600, cursor:"pointer" }}>←</button>}
+      <div style={{ display:"flex", gap:10, padding:"12px 16px", borderTop:`1px solid ${T.border}`, background:T.bg, position:"sticky", bottom:0 }}>
+        {step > 0 && <button onClick={()=>setStep(s=>s-1)} style={{ padding:"11px 16px", borderRadius:12, border:`1px solid ${T.border}`, background:T.bg3, color:T.txt2, fontSize:14, fontWeight:600, cursor:"pointer" }}>←</button>}
         <button onClick={advance} disabled={!canAdvance}
           style={{ flex:1, padding:13, borderRadius:12, border:"none", background:canAdvance?T.accent:T.bg3, color:canAdvance?"#fff":T.txt3, fontSize:15, fontWeight:700, cursor:canAdvance?"pointer":"default", opacity:canAdvance?1:0.4 }}>
           {isWelcome ? "Let's go →" : isLast ? "See my scores →" : "Next →"}
