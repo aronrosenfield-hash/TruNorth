@@ -393,7 +393,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:20 }}>
             <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center" }}>
               <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
-                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
+                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
               </svg>
             </div>
             <div style={{ fontSize:22, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:T.accent }}>North</span></div>
@@ -747,7 +747,7 @@ function Quiz({ onComplete }) {
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", paddingTop:20 }}>
             <div style={{ width:64, height:64, background:T.accentBg, borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:14 }}>
               <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
-                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
+                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
               </svg>
             </div>
             <div style={{ fontSize:24, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
@@ -1120,7 +1120,7 @@ if (screen === "onboarding") {
             <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:24 }}>
               <div style={{ width:40, height:40, background:T.accentBg, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center" }}>
                 <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true">
-                  <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/>
+                  <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
                 </svg>
               </div>
               <div style={{ fontSize:26, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:"#7c6dfa" }}>North</span></div>
@@ -1149,7 +1149,7 @@ if (screen === "onboarding") {
       <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:12 }}>
           <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-            <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/></svg>
+            <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
           </div>
           <div style={{ flex:1 }}>
             <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3 }}>TruNorth</div>
