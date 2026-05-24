@@ -416,8 +416,7 @@ function PaywallScreen({ onSubscribe, onClose }) {
           <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
         </div>
 
-        <input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe"
-          style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:14, padding:"11px 13px", marginBottom:10 }} />
+        <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} style={{width:"100%"}}><input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe" style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:14, padding:"11px 13px", marginBottom:10 }} /><button type="submit" style={{display:"none"}} /></form>
 
         <button onClick={handleSubscribe} disabled={loading}
           style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:6 }}>
