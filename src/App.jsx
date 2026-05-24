@@ -372,11 +372,11 @@ function PaywallScreen({ onSubscribe, onClose }) {
             </div>
             <div style={{ fontSize:22, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:T.accent }}>North</span></div>
           </div>
-          <div style={{ width:56, height:56, background:T.goldBg, borderRadius:16, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 14px" }}>
+          <div style={{ width:44, height:44, background:T.goldBg, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 8px" }}>
             <i className="ti ti-crown" style={{ fontSize:26, color:T.gold }} aria-hidden="true" />
           </div>
-          <div style={{ fontSize:20, fontWeight:700, color:T.txt, marginBottom:6 }}>Unlock full details</div>
-          <div style={{ fontSize:13, color:T.txt3, lineHeight:1.7, maxWidth:300, margin:"0 auto" }}>
+          <div style={{ fontSize:17, fontWeight:700, color:T.txt, marginBottom:4 }}>Unlock full details</div>
+          <div style={{ fontSize:12, color:T.txt3, lineHeight:1.6, maxWidth:300, margin:"0 auto" }}>
             Free users see company names and badges. Subscribe to unlock full breakdowns, live updates, and personalized scores.
           </div>
         </div>
@@ -406,7 +406,7 @@ function PaywallScreen({ onSubscribe, onClose }) {
           style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:14, padding:"11px 13px", marginBottom:10 }} />
 
         <button onClick={handleSubscribe} disabled={loading}
-          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:10 }}>
+          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:6 }}>
           {loading ? "Processing..." : "Subscribe for $1.99/mo"}
         </button>
 
