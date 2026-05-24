@@ -104,7 +104,7 @@ export default function OnboardingFlow({ onComplete }) {
 
         {slide === 2 && (
           <div style={s.slide}>
-            <div style={s.ctaArt}><div style={s.ctaArtInner}>↑</div></div>
+            <div style={s.ctaArt}><div style={s.ctaArtInner}><svg width="36" height="36" viewBox="0 0 48 48"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg></div></div>
             <h2 style={{ ...s.headline, fontSize:28, textAlign:"center" }}>Shop with a<br /><em style={{ color:"#7c6dfa", fontStyle:"normal" }}>clear conscience.</em></h2>
             <p style={{ ...s.subtext, textAlign:"center", marginBottom:20 }}>685 companies scored. Free to start — create an account to save your preferences.</p>
             <div style={s.statsRow}>
@@ -171,7 +171,7 @@ const s = {
   catBar:          { width:44, height:5, background:"#222", borderRadius:3, overflow:"hidden" },
   catFill:         { height:"100%", borderRadius:3, background:"linear-gradient(90deg,#7c6dfa,#a99ff7)" },
   ctaArt:          { width:100, height:100, background:"radial-gradient(circle,rgba(124,109,250,0.2) 0%,transparent 70%)", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 20px" },
-  ctaArtInner:     { width:70, height:70, background:"#7c6dfa", borderRadius:20, display:"flex", alignItems:"center", justifyContent:"center", fontSize:32, color:"#fff" },
+  ctaArtInner:     { width:70, height:70, background:"#7c6dfa", borderRadius:20, display:"flex", alignItems:"center", justifyContent:"center" },
   statsRow:        { display:"flex", justifyContent:"space-around", marginBottom:24 },
   statNum:         { fontSize:22, fontWeight:800, color:"#7c6dfa", textAlign:"center" },
   statLabel:       { fontSize:10, color:"#555", marginTop:2, letterSpacing:0.5, textAlign:"center" },

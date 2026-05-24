@@ -140,58 +140,72 @@ function scoreCat(k, v, profile) {
 
   if (k === "political") {
     const lean = profile?.lean || "neutral";
-    if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 95; if (["bipartisan","mixed"].includes(val)) return 60; if (val==="neutral") return 50; return 15; }
-    if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 95; if (["bipartisan","mixed"].includes(val)) return 60; if (val==="neutral") return 50; return 15; }
-    if (["bipartisan","mixed"].includes(val)) return 80; if (val==="neutral") return 75; return 55;
+    if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 97; if (["bipartisan","mixed"].includes(val)) return 62; if (val==="neutral") return 48; return 8; }
+    if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 97; if (["bipartisan","mixed"].includes(val)) return 62; if (val==="neutral") return 48; return 8; }
+    if (["bipartisan","mixed"].includes(val)) return 80; if (val==="neutral") return 72; return 52;
   }
 
   if (k === "dei") {
     const deiLean = profile?.deiLean || "neutral";
-    if (deiLean === "pro")  { if (val==="pro_dei") return 95; if (val==="mixed") return 55; if (val==="neutral") return 50; return 10; }
-    if (deiLean === "anti") { if (val==="anti_dei") return 95; if (val==="mixed") return 55; if (val==="neutral") return 50; return 10; }
-    return 60; // neutral user — DEI stance doesn't strongly affect score
+    if (deiLean === "pro")  { if (val==="pro_dei") return 97; if (val==="mixed") return 52; if (val==="neutral") return 45; return 5; }
+    if (deiLean === "anti") { if (val==="anti_dei") return 97; if (val==="mixed") return 52; if (val==="neutral") return 45; return 5; }
+    return 62;
   }
 
   if (k === "animals") {
     const pref = profile?.animalTesting || "neutral";
-    if (pref === "dealbreaker") { if (val==="cruelty_free") return 95; if (val==="some_testing") return 20; if (val==="tests_animals") return 0; return 50; }
-    if (pref === "prefer_not")  { if (val==="cruelty_free") return 90; if (val==="some_testing") return 55; if (val==="tests_animals") return 25; return 50; }
-    return 60; // neutral
+    if (pref === "dealbreaker") { if (val==="cruelty_free") return 97; if (val==="some_testing") return 15; if (val==="tests_animals") return 0; return 50; }
+    if (pref === "prefer_not")  { if (val==="cruelty_free") return 92; if (val==="some_testing") return 52; if (val==="tests_animals") return 20; return 50; }
+    return 62;
   }
 
   if (k === "guns") {
     const pref = profile?.guns || "neutral";
-    if (pref === "avoid")   { if (val==="no_guns") return 90; if (val==="sells_guns") return 15; if (val==="makes_guns") return 5; return 50; }
-    if (pref === "support") { if (["sells_guns","makes_guns"].includes(val)) return 90; if (val==="no_guns") return 40; return 60; }
-    return 60; // neutral
+    if (pref === "avoid")   { if (val==="no_guns") return 97; if (val==="sells_guns") return 8; if (val==="makes_guns") return 3; return 45; }
+    if (pref === "support") { if (["sells_guns","makes_guns"].includes(val)) return 97; if (val==="no_guns") return 35; return 58; }
+    return 62;
+  }
+
+  if (k === "labor") {
+    const union = profile?.unionSupport || "neutral";
+    const base = ["positive","excellent","strong","good"].includes(val) ? 88
+      : val==="mixed" ? 55 : val==="neutral" ? 50
+      : ["negative","poor","below average"].includes(val) ? 15 : val==="very poor" ? 5 : 50;
+    // Union preference modifies labor score
+    if (union === "pro")  { if (["positive","excellent","strong","good"].includes(val)) return Math.min(base + 8, 97); if (["negative","poor"].includes(val)) return Math.max(base - 15, 3); }
+    if (union === "anti") { if (["positive","excellent","strong","good"].includes(val)) return Math.max(base - 15, 30); if (["negative","poor"].includes(val)) return Math.min(base + 20, 80); if (val==="mixed") return 65; }
+    return base;
   }
 
   if (k === "privacy") {
-    if (val==="good") return 90; if (val==="mixed") return 55; if (val==="poor") return 15; return 50;
+    if (val==="good") return 92; if (val==="mixed") return 52; if (val==="poor") return 10; return 50;
   }
 
   if (k === "execPay") {
-    if (["fair","good"].includes(val)) return 85; if (val==="mixed") return 60; if (val==="poor") return 20; return 50;
+    if (["fair","good"].includes(val)) return 88; if (val==="mixed") return 58; if (val==="poor") return 15; return 50;
   }
 
-  // charity, environment, labor
+  // charity, environment
   if (["positive","excellent","strong","good"].includes(val)) return 88;
-  if (val==="mixed") return 55; if (val==="neutral") return 50;
-  if (["negative","poor","below average"].includes(val)) return 18;
-  if (val==="very poor") return 5;
+  if (val==="mixed") return 52; if (val==="neutral") return 48;
+  if (["negative","poor","below average"].includes(val)) return 15;
+  if (val==="very poor") return 3;
   return 50;
 }
 
 function computeScore(co, profile) {
   if (!profile) return co.overall;
+  // Boost weights for strong preferences, reduce for unimportant ones
+  const gunBoost   = profile.guns !== "neutral" ? 4 : 1;
+  const unionBoost = profile.unionSupport !== "neutral" ? 2 : 1;
   const baseWeights = {
     political:    profile.weights?.political    || 3,
     charity:      profile.weights?.charity      || 2,
     environment:  profile.weights?.environment  || 3,
-    labor:        profile.weights?.labor        || 3,
+    labor:        (profile.weights?.labor       || 3) * unionBoost,
     dei:          profile.weights?.dei          || 3,
     animals:      profile.weights?.animals      || 2,
-    guns:         profile.weights?.guns         || 2,
+    guns:         (profile.weights?.guns        || 2) * gunBoost,
     privacy:      profile.weights?.privacy      || 2,
     execPay:      profile.weights?.execPay      || 2,
   };
