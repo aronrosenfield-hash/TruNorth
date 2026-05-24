@@ -28,7 +28,11 @@ export default function SplashScreen({ onDone }) {
         `}</style>
         <div className="tn-splash-wrap" style={styles.inner}>
           <div className="tn-splash-logo" style={styles.logo}>
-            <div className="tn-splash-icon" style={styles.icon}>↑</div>
+            <div className="tn-splash-icon" style={styles.icon}>
+              <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
+              </svg>
+            </div>
             <div style={styles.wordmark}>
               <span style={{ color: "#f2f2f2" }}>Tru</span>
               <span style={{ color: "#7c6dfa" }}>North</span>

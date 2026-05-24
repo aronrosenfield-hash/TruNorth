@@ -88,7 +88,7 @@ const QUIZ_STEPS = [
   { id:"unionSupport", type:"single", q:"How do you feel about companies and organized labor unions?",
     opts:[
       {v:"pro",    l:"I prefer companies that respect and support unions",               icon:"ti-users"},
-      {v:"anti",   l:"I avoid companies that operate without union involvement",         icon:"ti-x"},
+      {v:"anti",   l:"I prefer companies that operate without union involvement",        icon:"ti-x"},
       {v:"neutral",l:"Union policy does not factor into my shopping",                   icon:null},
     ]},
   { id:"animalTesting", type:"single", q:"How do you feel about companies that test products on animals?",
@@ -175,9 +175,9 @@ function scoreCat(k, v, profile) {
   }
 
   // charity, environment, labor
-  if (["positive","excellent","strong","good"].includes(val)) return 90;
+  if (["positive","excellent","strong","good"].includes(val)) return 88;
   if (val==="mixed") return 55; if (val==="neutral") return 50;
-  if (["negative","poor","below average"].includes(val)) return 20;
+  if (["negative","poor","below average"].includes(val)) return 18;
   if (val==="very poor") return 5;
   return 50;
 }
@@ -281,10 +281,10 @@ function getDisplay(k, val, profile) {
 
 // Score text grade
 function scoreGrade(n) {
-  if (n >= 80) return "A";
-  if (n >= 70) return "B";
-  if (n >= 55) return "C";
-  if (n >= 40) return "D";
+  if (n >= 75) return "A";
+  if (n >= 62) return "B";
+  if (n >= 48) return "C";
+  if (n >= 35) return "D";
   return "F";
 }
 
@@ -360,10 +360,10 @@ function PaywallScreen({ onSubscribe, onClose }) {
 
   return (
     <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
-      <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"24px 20px 40px", width:"100%", maxWidth:430, maxHeight:"90vh", overflowY:"auto" }}>
+      <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px 28px", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
-        <div style={{ textAlign:"center", marginBottom:20 }}>
+        <div style={{ textAlign:"center", marginBottom:12 }}>
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:20 }}>
             <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center" }}>
               <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true">
@@ -397,12 +397,12 @@ function PaywallScreen({ onSubscribe, onClose }) {
           ))}
         </div>
 
-        <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"10px 14px", marginBottom:16, textAlign:"center" }}>
+        <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
           <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$1.99</span>
           <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
         </div>
 
-        <input value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe"
+        <input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe"
           style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:14, padding:"11px 13px", marginBottom:10 }} />
 
         <button onClick={handleSubscribe} disabled={loading}
@@ -554,9 +554,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
 }
 function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
   const [open, setOpen] = useState(false);
-  const [showLive, setShowLive] = useState(false);
-  const [liveData, setLiveData] = useState(null);
-  const [liveState, setLiveState] = useState("idle");
+
   const ps = computeScore(company, profile);
   const grade = scoreGrade(ps);
   const shownCats = catFilter === "all" ? ["political","dei","environment","labor"] : [catFilter];
@@ -566,13 +564,7 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
     setOpen(o => !o);
   };
 
-  const doLive = async () => {
-    setShowLive(true);
-    setLiveState("loading");
-    const d = await fetchLiveData(company.name);
-    setLiveData(d);
-    setLiveState(d ? "done" : "error");
-  };
+
 
   return (
     <div style={{ background:T.bg2, borderRadius:14, border:`1px solid ${open ? T.accent : T.border}`, overflow:"hidden", marginBottom:1 }}>
@@ -646,44 +638,15 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
             );
           })}
 
-          {/* Actions */}
+          {/* Share button */}
           <div style={{ display:"flex", gap:8 }}>
-            <button onClick={doLive} style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.demBg, border:`1px solid ${T.dem}`, color:T.dem }}>
-              <i className={`ti ti-refresh${liveState==="loading"?" spin":""}`} aria-hidden="true" />
-              Live update
-            </button>
             <button style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2 }}>
               <i className="ti ti-share" aria-hidden="true" />
               Share
             </button>
           </div>
 
-          {/* Live panel */}
-          {showLive && (
-            <div style={{ background:T.bg3, borderRadius:12, border:`1px solid ${T.dem}`, padding:14, marginTop:10 }}>
-              <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:10 }}>
-                <div style={{ fontSize:13, fontWeight:600, color:T.dem, display:"flex", alignItems:"center", gap:6 }}>
-                  <i className={`ti ti-refresh${liveState==="loading"?" spin":""}`} aria-hidden="true" />
-                  {liveState==="loading" ? `Searching for latest on ${company.name}...` : `Latest on ${company.name}`}
-                </div>
-                <button onClick={()=>setShowLive(false)} style={{ background:"none", border:"none", color:T.txt3, fontSize:20, cursor:"pointer" }}>×</button>
-              </div>
-              {liveState==="error" && <p style={{ fontSize:13, color:T.rep }}>Could not fetch live data. Try again.</p>}
-              {liveState==="done" && liveData && (
-                <>
-                  {["political","environment","labor","dei","animals"].filter(f=>liveData[f]).map(f=>(
-                    <div key={f} style={{ display:"flex", gap:8, fontSize:13, color:T.txt2, lineHeight:1.6, marginBottom:8 }}>
-                      <i className={`ti ${CAT_ICONS[f]}`} style={{ fontSize:13, color:T.txt3, flexShrink:0, marginTop:2 }} aria-hidden="true" />
-                      <div><span style={{ fontWeight:600, color:T.txt3, fontSize:11, textTransform:"uppercase" }}>{CAT_LABELS[f]}: </span>{liveData[f]}</div>
-                    </div>
-                  ))}
-                  {!["political","environment","labor","dei","animals"].some(f=>liveData[f]) && (
-                    <p style={{ fontSize:13, color:T.txt3 }}>No major recent updates found.</p>
-                  )}
-                </>
-              )}
-            </div>
-          )}
+
         </div>
       )}
     </div>
@@ -1090,10 +1053,10 @@ if (screen === "onboarding") {
       {showPaywall && <PaywallScreen onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
-      <div style={{ padding:"16px 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:12 }}>
           <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-            <i className="ti ti-leaf" style={{ fontSize:18, color:T.accent2 }} aria-hidden="true" />
+            <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#7c6dfa"/></svg>
           </div>
           <div style={{ flex:1 }}>
             <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3 }}>TruNorth</div>
@@ -1302,13 +1265,31 @@ if (screen === "onboarding") {
             <SubmitView isPaid={isPaid} onUpgrade={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} />
           </div>
 
-          {/* App info */}
+          {/* Login details */}
+          {currentUser && (
+            <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
+              <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>Account details</div>
+              <div style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
+                <span style={{ color:T.txt3 }}>Email</span>
+                <span style={{ color:T.txt, fontWeight:500 }}>{currentUser.email || "Guest"}</span>
+              </div>
+              <div style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
+                <span style={{ color:T.txt3 }}>Plan</span>
+                <span style={{ color:isPaid ? T.gold : T.txt2, fontWeight:600 }}>{isPaid ? "Pro" : "Free"}</span>
+              </div>
+              <button style={{ width:"100%", marginTop:12, padding:10, borderRadius:10, border:`1px solid ${T.border2}`, background:"transparent", color:T.txt3, fontSize:13, cursor:"pointer" }}
+                onClick={() => { if(window.confirm("Sign out?")) { localStorage.clear(); window.location.reload(); } }}>
+                Sign out
+              </button>
+            </div>
+          )}
+
+          {/* App info — slimmed */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16 }}>
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About TruNorth</div>
             {[
-              ["Companies in database", deduped.length.toLocaleString()],
-              ["Data sources", "FEC, OSHA, NLRB, SEC, CDP, PETA, HRC"],
-              ["Last updated", "May 2026"],
+              ["Companies", deduped.length.toLocaleString()],
+              ["Updated", "May 2026"],
               ["Version", "2.0"],
             ].map(([label, val]) => (
               <div key={label} style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
