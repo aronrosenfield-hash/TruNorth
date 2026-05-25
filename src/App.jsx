@@ -1148,7 +1148,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ height:"100%", maxWidth:430, margin:"0 auto", background:T.bg, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
+    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
@@ -1269,10 +1269,7 @@ if (screen === "onboarding") {
           </div>
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <div key={co.id} style={{ display:"flex", alignItems:"flex-start", gap:8, minWidth:0 }}>
-                <div style={{ width:24, textAlign:"right", fontSize:14, color:T.txt3, flexShrink:0, paddingTop:14 }}>#{i+1}</div>
-                <div style={{ flex:1, minWidth:0 }}><CompanyCard company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} /></div>
-              </div>
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />
             ))}
           </div>
         </>
