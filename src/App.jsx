@@ -1148,11 +1148,11 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ maxWidth:430, margin:"0 auto", height:"100dvh", background:T.bg, width:"100%", overflowY:"auto", overflowX:"hidden" }}>
+    <div style={{ maxWidth:430, margin:"0 auto", height:"100dvh", background:T.bg, width:"100%", display:"flex", flexDirection:"column", overflowX:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
-      <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
           <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
             <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
@@ -1175,6 +1175,9 @@ if (screen === "onboarding") {
           </div>
         )}
       </div>
+
+      {/* Scrollable content area */}
+      <div style={{ flex:1, overflowY:"auto" }}>
 
       {/* Profile strip */}
       {profile && (
@@ -1404,8 +1407,10 @@ if (screen === "onboarding") {
         </div>
       )}
 
+      </div>{/* end scrollable content */}
+
       {/* BOTTOM NAV BAR */}
-      <div style={{ position:"fixed", bottom:0, left:0, right:0, width:"100%", background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
+      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
         {[
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
           {id:"search", icon:"ti-search",       label:"Search"},
@@ -1419,8 +1424,6 @@ if (screen === "onboarding") {
           </button>
         ))}
       </div>
-      {/* Spacer so content doesn't hide behind bottom nav */}
-      <div style={{ height:80 }} />
     </div>
   );
 }
