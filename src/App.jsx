@@ -6,7 +6,7 @@ import OnboardingFlow from "./OnboardingFlow";
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body, #root { background: #0f0f0f; width: 100%; max-width: 100%; }
+  html, body, #root { background: #0f0f0f; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
@@ -1148,7 +1148,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ position:"fixed", top:0, bottom:0, left:"50%", transform:"translateX(-50%)", width:"100%", maxWidth:430, background:T.bg, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
+    <div style={{ height:"100%", maxWidth:430, margin:"0 auto", background:T.bg, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
