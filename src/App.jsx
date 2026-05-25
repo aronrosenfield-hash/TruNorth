@@ -1148,7 +1148,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ maxWidth:430, margin:"0 auto", height:"100dvh", background:T.bg, width:"100%", display:"flex", flexDirection:"column", overflowX:"hidden" }}>
+    <div style={{ position:"fixed", top:0, bottom:0, left:"50%", transform:"translateX(-50%)", width:"100%", maxWidth:430, background:T.bg, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
