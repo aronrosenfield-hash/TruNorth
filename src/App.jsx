@@ -1148,7 +1148,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
+    <div style={{ position:"fixed", top:0, right:0, bottom:0, left:0, maxWidth:430, marginLeft:"auto", marginRight:"auto", background:T.bg2, display:"flex", flexDirection:"column", overflow:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
@@ -1176,8 +1176,8 @@ if (screen === "onboarding") {
         )}
       </div>
 
-      {/* Scrollable content — padded so last item clears the fixed nav */}
-      <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg, paddingBottom:"calc(56px + env(safe-area-inset-bottom, 0px))" }}>
+      {/* Scrollable content */}
+      <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
 
       {/* Profile strip */}
       {profile && (
@@ -1406,10 +1406,10 @@ if (screen === "onboarding") {
 
       </div>{/* end scrollable content */}
 
-      {/* BOTTOM NAV — position:fixed so it pins to the ACTUAL screen bottom,
-          not just the height:100% container bottom (which excludes safe areas).
-          env(safe-area-inset-bottom) fills the home indicator zone with nav bg. */}
-      <div style={{ position:"fixed", bottom:0, left:0, right:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
+      {/* BOTTOM NAV — in-flow flex child. The outer container is position:fixed; inset:0
+          which explicitly covers the FULL screen (safe areas included, viewport-fit:cover).
+          The nav sits at the physical screen bottom. paddingBottom fills the home indicator. */}
+      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"env(safe-area-inset-bottom, 34px)" }}>
         {[
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
           {id:"search", icon:"ti-search",       label:"Search"},
