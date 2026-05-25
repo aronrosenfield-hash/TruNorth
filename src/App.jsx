@@ -241,7 +241,7 @@ function computeScore(co, profile) {
     return p;
   }, 0);
   // Animal testing dealbreaker
-  if (profile.animalTesting === "dealbreaker" && (co.sc.animals === "tests_animals")) return Math.min(ws - 40, 30);
+  if (profile.animalTesting === "dealbreaker" && (co.sc.animals === "tests_animals")) return Math.max(0, Math.min(ws - 40, 30));
   return Math.max(0, Math.min(100, Math.round(ws - pen)));
 }
 
@@ -453,7 +453,7 @@ async function fetchLiveData(name) {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({
-        model:"claude-sonnet-4-20250514", max_tokens:800,
+        model:"claude-sonnet-4-6", max_tokens:800,
         tools:[{type:"web_search_20250305",name:"web_search"}],
         messages:[{role:"user",content:`For "${name}", give 2-3 sentence updates on any recent 2024-2025 news about political donations, environmental actions, labor disputes, DEI changes, or animal testing controversies. Return ONLY JSON with no markdown: {"political":null,"environment":null,"labor":null,"dei":null,"animals":null,"sources":[]}`}]
       })
@@ -582,7 +582,6 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
 
   const ps = computeScore(company, profile);
   const grade = scoreGrade(ps);
-  const shownCats = catFilter === "all" ? ["political","dei","environment","labor"] : [catFilter];
 
   const handleTap = () => {
     if (!isPaid) { onUpgrade(); return; }
@@ -700,7 +699,6 @@ function Quiz({ onComplete }) {
         deiLean:         answers.deiLean       || "neutral",
         animalTesting:   answers.animalTesting || "neutral",
         guns:            answers.guns          || "neutral",
-        madeInUSA:       answers.madeInUSA     || "neutral",
         unionSupport:    answers.unionSupport  || "neutral",
         weights: {
           political:    answers.politicalImportance  || 3,
@@ -753,7 +751,7 @@ function Quiz({ onComplete }) {
             <div style={{ fontSize:24, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
             <div style={{ fontSize:12, color:T.txt3, letterSpacing:2, textTransform:"uppercase", marginTop:4, marginBottom:10 }}>Know where your money goes</div>
             <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300 }}>
-              Answer 12 quick questions. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
+              Answer 9 quick steps. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
             </div>
           </div>
         )}
@@ -919,7 +917,7 @@ function SubmitView({ isPaid, onUpgrade }) {
   return (
     <div style={{ padding:16 }}>
       <p style={{ fontSize:13, color:T.txt3, marginBottom:16, lineHeight:1.6 }}>Help us keep data accurate. Flag a correction or suggest a company to add.</p>
-      {sent && <div style={{ background:T.greenBg||"#0d2318", border:"1px solid #4caf82", borderRadius:12, padding:14, color:"#4caf82", fontSize:14, fontWeight:600, marginBottom:14, display:"flex", alignItems:"center", gap:8 }}><i className="ti ti-check" style={{fontSize:18}} aria-hidden="true" /> Submitted — thanks!</div>}
+      {sent && <div style={{ background:"#0d2318", border:"1px solid #4caf82", borderRadius:12, padding:14, color:"#4caf82", fontSize:14, fontWeight:600, marginBottom:14, display:"flex", alignItems:"center", gap:8 }}><i className="ti ti-check" style={{fontSize:18}} aria-hidden="true" /> Submitted — thanks!</div>}
       <div style={{ display:"flex", gap:8, marginBottom:16 }}>
         {["correction","new"].map(t => (
           <button key={t} onClick={()=>setType(t)} style={{ padding:"7px 12px", borderRadius:20, fontSize:13, fontWeight:type===t?600:400, border:`1px solid ${type===t?T.accent:T.border2}`, background:type===t?T.accentBg:T.bg3, color:type===t?T.accent2:T.txt2, cursor:"pointer" }}>
@@ -986,13 +984,42 @@ const SOURCES_DATA = [
   ]},
 ];
 
+// ─── BROWSE BUCKET MAP (module scope — used in filtered search) ───────────────
+const CAT_BUCKET_MAP = {
+  "Apparel & Fashion": ["Apparel","Fashion","Athletic Apparel","Footwear","Apparel & Accessories","Apparel & Equipment","Apparel & Footwear","Apparel Manufacturing","Apparel Retail","Apparel/Fashion Retail","Apparel/Footwear Retail","Apparel/Retail"],
+  "Automotive": ["Automotive","Automotive Manufacturing","Automotive Retail","Automotive/E-Commerce","Car Rental"],
+  "Beauty & Personal Care": ["Beauty","Beauty & Cosmetics","Beauty & Personal Care","Cosmetics & Personal Care","Personal Care","Personal Care & Cosmetics"],
+  "Chemicals & Materials": ["Chemicals","Chemicals & Manufacturing","Chemicals & Materials","Chemicals & Petrochemicals","Materials","Industrial Gases & Welding Supplies"],
+  "Defense & Aerospace": ["Aerospace & Defense","Aerospace/Industrial Automation","Defense","Defense & Government Services","Defense Contractor"],
+  "Energy": ["Energy","Oil & Gas","Utilities"],
+  "Entertainment & Media": ["Digital Media","Entertainment","Media","Media & Entertainment","Media Services","Streaming Services","Software/Digital Media"],
+  "Financial Services": ["Financial Services","Financial Software","Financial Technology","Insurance","Legal Services","Legal Technology"],
+  "Food & Beverage": ["Beverage","Beverage Alcohol","Beverage Manufacturing","Beverages","Beverages & Spirits","Food & Agriculture","Food & Beverage","Food & Beverages","Food & Delivery","Food Manufacturing","Food Products","Food Service","Food and Beverage","Online Food Delivery","Restaurant","Restaurants","Restaurants & Food Service","Restaurants & Foodservice","Restaurants & Retail","Spirits","Spirits & Beverages","Agriculture"],
+  "Furniture & Home": ["Furniture","Furniture Manufacturing","Forest Products","Forest Products & Real Estate","Forestry & Building Products"],
+  "Healthcare & Pharma": ["Animal Health","Biopharmaceuticals","Biotechnology","Health","Healthcare","Healthcare Equipment","Healthcare Services","Medical Device Manufacturing","Medical Devices","Pharmaceuticals","Pharmaceuticals & Medical Devices"],
+  "Hospitality & Travel": ["Hospitality","Travel & Hospitality","Airlines","Transportation","Transportation & Logistics","Transportation Services","Logistics"],
+  "Manufacturing & Industrial": ["Industrial Equipment Manufacturing","Industrial Manufacturing","Industrials","Manufacturing"],
+  "Retail": ["Consumer Goods","Consumer Services","E-Commerce","Fashion Retail","Retail","Specialty Retail"],
+  "Software & Technology": ["Consumer Electronics","Electronics","Enterprise Software","Financial Technology","Information Technology","Internet Content & Information","Software","Software & Services","Software & Technology","Software/SaaS","Tax Preparation/Software","Technology","Technology & E-Commerce","Telecommunications"],
+  "Sports & Fitness": ["Fitness","Fitness & Recreation","Fitness & Wellness","Fitness Centers","Health & Fitness","Recreation & Fitness","Recreational Goods","Sporting Goods","Sports Equipment"],
+  "Pet Care": ["Pet Care","Pet Food"],
+  "Professional Services": ["Business Services","Education","Government/Postal Services","Nonprofit","Personal Services","Professional Services","Real Estate","Security Services"],
+};
+function getBucket(cat) {
+  const c = cat.split(" / ")[0].split(",")[0].trim();
+  for (const [bucket, keywords] of Object.entries(CAT_BUCKET_MAP)) {
+    if (keywords.some(k => c.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(c.toLowerCase()))) return bucket;
+  }
+  return c;
+}
+
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
 const [screen, setScreen] = useState("splash");
-const [currentUser, setCurrentUser] = useState(
-  JSON.parse(localStorage.getItem("tn_user") || "null")
-);
+const [currentUser, setCurrentUser] = useState(() => {
+  try { return JSON.parse(localStorage.getItem("tn_user") || "null"); } catch { return null; }
+});
 const [profile, setProfile]   = useState(null);
   const [isPaid, setIsPaid]     = useState(false);
   const [showPaywall, setShowPaywall] = useState(false);
@@ -1031,7 +1058,7 @@ const [profile, setProfile]   = useState(null);
       }
       if (query.trim()) {
         const q = query.toLowerCase();
-        if (!c.name.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q)) return false;
+        if (!c.name.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q) && getBucket(c.cat).toLowerCase() !== q) return false;
       }
       return true;
     })
@@ -1051,33 +1078,6 @@ const [profile, setProfile]   = useState(null);
     neutral: deduped.filter(c=>(c.sc.political||"").toLowerCase()==="neutral").length,
   };
 
-  const CAT_BUCKET_MAP = {
-    "Apparel & Fashion": ["Apparel","Fashion","Athletic Apparel","Footwear","Apparel & Accessories","Apparel & Equipment","Apparel & Footwear","Apparel Manufacturing","Apparel Retail","Apparel/Fashion Retail","Apparel/Footwear Retail","Apparel/Retail"],
-    "Automotive": ["Automotive","Automotive Manufacturing","Automotive Retail","Automotive/E-Commerce","Car Rental"],
-    "Beauty & Personal Care": ["Beauty","Beauty & Cosmetics","Beauty & Personal Care","Cosmetics & Personal Care","Personal Care","Personal Care & Cosmetics"],
-    "Chemicals & Materials": ["Chemicals","Chemicals & Manufacturing","Chemicals & Materials","Chemicals & Petrochemicals","Materials","Industrial Gases & Welding Supplies"],
-    "Defense & Aerospace": ["Aerospace & Defense","Aerospace/Industrial Automation","Defense","Defense & Government Services","Defense Contractor"],
-    "Energy": ["Energy","Oil & Gas","Utilities"],
-    "Entertainment & Media": ["Digital Media","Entertainment","Media","Media & Entertainment","Media Services","Streaming Services","Software/Digital Media"],
-    "Financial Services": ["Financial Services","Financial Software","Financial Technology","Insurance","Legal Services","Legal Technology"],
-    "Food & Beverage": ["Beverage","Beverage Alcohol","Beverage Manufacturing","Beverages","Beverages & Spirits","Food & Agriculture","Food & Beverage","Food & Beverages","Food & Delivery","Food Manufacturing","Food Products","Food Service","Food and Beverage","Online Food Delivery","Restaurant","Restaurants","Restaurants & Food Service","Restaurants & Foodservice","Restaurants & Retail","Spirits","Spirits & Beverages","Agriculture"],
-    "Furniture & Home": ["Furniture","Furniture Manufacturing","Forest Products","Forest Products & Real Estate","Forestry & Building Products"],
-    "Healthcare & Pharma": ["Animal Health","Biopharmaceuticals","Biotechnology","Health","Healthcare","Healthcare Equipment","Healthcare Services","Medical Device Manufacturing","Medical Devices","Pharmaceuticals","Pharmaceuticals & Medical Devices"],
-    "Hospitality & Travel": ["Hospitality","Travel & Hospitality","Airlines","Transportation","Transportation & Logistics","Transportation Services","Logistics"],
-    "Manufacturing & Industrial": ["Industrial Equipment Manufacturing","Industrial Manufacturing","Industrials","Manufacturing"],
-    "Retail": ["Consumer Goods","Consumer Services","E-Commerce","Fashion Retail","Retail","Specialty Retail"],
-    "Software & Technology": ["Consumer Electronics","Electronics","Enterprise Software","Financial Technology","Information Technology","Internet Content & Information","Software","Software & Services","Software & Technology","Software/SaaS","Tax Preparation/Software","Technology","Technology & E-Commerce","Telecommunications"],
-    "Sports & Fitness": ["Fitness","Fitness & Recreation","Fitness & Wellness","Fitness Centers","Health & Fitness","Recreation & Fitness","Recreational Goods","Sporting Goods","Sports Equipment"],
-    "Pet Care": ["Pet Care","Pet Food"],
-    "Professional Services": ["Business Services","Education","Government/Postal Services","Nonprofit","Personal Services","Professional Services","Real Estate","Security Services"],
-  };
-  function getBucket(cat) {
-    const c = cat.split(" / ")[0].split(",")[0].trim();
-    for (const [bucket, keywords] of Object.entries(CAT_BUCKET_MAP)) {
-      if (keywords.some(k => c.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(c.toLowerCase()))) return bucket;
-    }
-    return c;
-  }
   const cats = [...new Set(deduped.map(c=>getBucket(c.cat)))].sort();
   const catIconMap = {Retail:"ti-building-store",Food:"ti-chef-hat",Technology:"ti-device-laptop",Grocery:"ti-shopping-cart",Energy:"ti-bolt",Apparel:"ti-shirt",Media:"ti-device-tv",Finance:"ti-building-bank",Healthcare:"ti-heartbeat",Outdoor:"ti-mountain",Consumer:"ti-package",Conglomerate:"ti-building-skyscraper",Auto:"ti-car",Sports:"ti-ball-basketball"};
   const catBgs = ["#1e1535","#0d2318","#0d1f35","#2a0d0d","#2e1a05","#2a1a05"];
@@ -1089,7 +1089,7 @@ const [profile, setProfile]   = useState(null);
 
 
   if (screen === "splash") {
-  return <SplashScreen onDone={() => setScreen("onboarding")} />;
+  return <SplashScreen onDone={() => setScreen(hasOnboarded ? "main" : "onboarding")} />;
 }
 
 if (screen === "onboarding") {
@@ -1097,7 +1097,7 @@ if (screen === "onboarding") {
     <OnboardingFlow
       onComplete={(user) => {
         setCurrentUser(user);
-        setScreen("top");
+        setScreen("main");
       }}
     />
   );
@@ -1291,7 +1291,7 @@ if (screen === "onboarding") {
               </div>
               {g.items.map(item => (
                 <div key={item.name} style={{ padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, marginBottom:8 }}>
-                  <div onClick={()=>window.open(item.url,"_blank")} style={{ fontSize:14, fontWeight:600, color:T.accent2, cursor:"pointer", display:"flex", alignItems:"center", gap:5 }}>
+                  <div onClick={()=>window.open(item.url,"_blank","noopener,noreferrer")} style={{ fontSize:14, fontWeight:600, color:T.accent2, cursor:"pointer", display:"flex", alignItems:"center", gap:5 }}>
                     {item.name} <i className="ti ti-external-link" style={{fontSize:12}} aria-hidden="true" />
                   </div>
                   <div style={{ fontSize:12, color:T.txt3, marginTop:4, lineHeight:1.5 }}>{item.desc}</div>
@@ -1358,24 +1358,22 @@ if (screen === "onboarding") {
             <SubmitView isPaid={isPaid} onUpgrade={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} />
           </div>
 
-          {/* Login details */}
-          {currentUser && (
-            <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
+          {/* Login details — always show so guest users can sign out */}
+          <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
               <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>Account details</div>
               <div style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
                 <span style={{ color:T.txt3 }}>Email</span>
-                <span style={{ color:T.txt, fontWeight:500 }}>{currentUser.email || "Guest"}</span>
+                <span style={{ color:T.txt, fontWeight:500 }}>{currentUser?.email || "Guest"}</span>
               </div>
               <div style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
                 <span style={{ color:T.txt3 }}>Plan</span>
                 <span style={{ color:isPaid ? T.gold : T.txt2, fontWeight:600 }}>{isPaid ? "Pro" : "Free"}</span>
               </div>
               <button style={{ width:"100%", marginTop:12, padding:10, borderRadius:10, border:`1px solid ${T.border2}`, background:"transparent", color:T.txt3, fontSize:13, cursor:"pointer" }}
-                onClick={() => { if(window.confirm("Sign out?")) { localStorage.clear(); window.location.reload(); } }}>
+                onClick={() => { if(window.confirm("Sign out?")) { ["tn_hasOnboarded","tn_user"].forEach(k=>localStorage.removeItem(k)); window.location.reload(); } }}>
                 Sign out
               </button>
             </div>
-          )}
 
           {/* App info — slimmed */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16 }}>
@@ -1390,6 +1388,10 @@ if (screen === "onboarding") {
                 <span style={{ color:T.txt, fontWeight:500 }}>{val}</span>
               </div>
             ))}
+            <div onClick={()=>setTab("sources")} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"7px 0", fontSize:13, cursor:"pointer" }}>
+              <span style={{ color:T.txt3 }}>Data Sources</span>
+              <span style={{ color:T.accent2, fontWeight:500, display:"flex", alignItems:"center", gap:3 }}>View <i className="ti ti-chevron-right" style={{fontSize:11}} aria-hidden="true"/></span>
+            </div>
           </div>
         </div>
       )}
