@@ -1159,7 +1159,7 @@ if (screen === "onboarding") {
           </div>
           <div style={{ flex:1 }}>
             <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3 }}>TruNorth</div>
-            <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>Know where your money goes · {deduped.length} companies</div>
+            <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap" }}>Know where your money goes · {deduped.length} companies</div>
           </div>
           {isPaid
             ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
