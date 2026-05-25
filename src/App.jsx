@@ -6,7 +6,7 @@ import OnboardingFlow from "./OnboardingFlow";
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body, #root { background: #0f0f0f; height: 100%; overflow: hidden; overscroll-behavior: none; width: 100%; max-width: 100%; }
+  html, body, #root { background: #0f0f0f; min-height: 100vh; overflow-x: hidden; width: 100%; max-width: 100%; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
@@ -1148,11 +1148,11 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg, display:"flex", flexDirection:"column" }}>
+    <div style={{ maxWidth:430, margin:"0 auto", minHeight:"100dvh", background:T.bg, width:"100%" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
-      <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
           <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
             <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
@@ -1175,9 +1175,6 @@ if (screen === "onboarding") {
           </div>
         )}
       </div>
-
-      {/* Scrollable content */}
-      <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
 
       {/* Profile strip */}
       {profile && (
@@ -1404,10 +1401,8 @@ if (screen === "onboarding") {
         </div>
       )}
 
-      </div>{/* end scrollable content */}
-
-      {/* BOTTOM NAV BAR — flex child, not fixed, so env(safe-area-inset-bottom) fills gap with nav bg */}
-      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
+      {/* BOTTOM NAV BAR */}
+      <div style={{ position:"fixed", bottom:0, left:0, right:0, width:"100%", background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
         {[
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
           {id:"search", icon:"ti-search",       label:"Search"},
@@ -1421,6 +1416,8 @@ if (screen === "onboarding") {
           </button>
         ))}
       </div>
+      {/* Spacer so content doesn't hide behind fixed nav */}
+      <div style={{ height:80 }} />
     </div>
   );
 }
