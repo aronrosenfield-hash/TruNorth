@@ -6,7 +6,8 @@ import OnboardingFlow from "./OnboardingFlow";
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body, #root { background: #0f0f0f; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
+  html, body { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
+  #root { background: #0f0f0f; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
