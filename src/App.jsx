@@ -6,7 +6,7 @@ import OnboardingFlow from "./OnboardingFlow";
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body, #root { background: #0f0f0f; min-height: 100vh; width: 100%; max-width: 100%; overflow-x: hidden; }
+  html, body, #root { background: #0f0f0f; height: 100dvh; width: 100%; max-width: 100%; overflow: hidden; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
@@ -447,6 +447,12 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   );
 }
 
+// ─── STRIP CITE TAGS ─────────────────────────────────────────────────────────
+// Removes <cite index="...">...</cite> and bare <cite> tags from AI-generated text
+function stripCites(s) {
+  return (s || "").replace(/<\/?cite[^>]*>/gi, "").trim();
+}
+
 // ─── LIVE FETCH ───────────────────────────────────────────────────────────────
 async function fetchLiveData(name) {
   try {
@@ -651,7 +657,7 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
                     {disp.sym} {disp.label}
                   </span>
                 </div>
-                <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{d.s || d.summary || ""}</div>
+                <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
                 <div style={{ fontSize:11, color:T.txt3, marginTop:5 }}>{extra}</div>
                 {(d.sources||[]).length > 0 && (
                   <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
@@ -1142,12 +1148,12 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ maxWidth:430, margin:"0 auto", minHeight:"100dvh", background:T.bg, width:"100%" }}>
+    <div style={{ maxWidth:430, margin:"0 auto", height:"100dvh", background:T.bg, width:"100%", overflowY:"auto", overflowX:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
       <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, position:"sticky", top:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
-        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:12 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
           <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
             <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
           </div>
@@ -1160,12 +1166,14 @@ if (screen === "onboarding") {
             : <button onClick={()=>setTab("account")} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
           }
         </div>
-        <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
-          <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
-          <input value={query} onChange={e=>{setQuery(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
-            style={{ background:"transparent", border:"none", color:T.txt, fontSize:15, padding:"12px 0", flex:1 }} />
-          {query && <button onClick={()=>setQuery("")} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
-        </div>
+        {tab !== "account" && (
+          <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
+            <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
+            <input value={query} onChange={e=>{setQuery(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
+              style={{ background:"transparent", border:"none", color:T.txt, fontSize:15, padding:"12px 0", flex:1 }} />
+            {query && <button onClick={()=>setQuery("")} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
+          </div>
+        )}
       </div>
 
       {/* Profile strip */}
