@@ -1176,8 +1176,8 @@ if (screen === "onboarding") {
         )}
       </div>
 
-      {/* Scrollable content */}
-      <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
+      {/* Scrollable content — padded so last item clears the fixed nav */}
+      <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg, paddingBottom:"calc(56px + env(safe-area-inset-bottom, 0px))" }}>
 
       {/* Profile strip */}
       {profile && (
@@ -1406,9 +1406,10 @@ if (screen === "onboarding") {
 
       </div>{/* end scrollable content */}
 
-      {/* BOTTOM NAV — flex child (not fixed). Outer div bg = T.bg2 = nav bg, so any
-          safe-area gap below is the same colour as the nav — invisible. */}
-      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
+      {/* BOTTOM NAV — position:fixed so it pins to the ACTUAL screen bottom,
+          not just the height:100% container bottom (which excludes safe areas).
+          env(safe-area-inset-bottom) fills the home indicator zone with nav bg. */}
+      <div style={{ position:"fixed", bottom:0, left:0, right:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 0px)" }}>
         {[
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
           {id:"search", icon:"ti-search",       label:"Search"},
