@@ -1406,8 +1406,11 @@ if (screen === "onboarding") {
 
       </div>{/* end scrollable content */}
 
-      {/* BOTTOM NAV BAR */}
-      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20 }}>
+      {/* Spacer so content isn't hidden behind fixed nav */}
+      <div style={{ flexShrink:0, height:"calc(58px + env(safe-area-inset-bottom, 34px))" }} />
+
+      {/* BOTTOM NAV BAR — fixed to screen bottom so it always covers the safe area */}
+      <div style={{ position:"fixed", bottom:0, left:"50%", transform:"translateX(-50%)", width:"100%", maxWidth:430, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", zIndex:20, paddingBottom:"env(safe-area-inset-bottom, 34px)" }}>
         {[
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
           {id:"search", icon:"ti-search",       label:"Search"},
@@ -1421,8 +1424,6 @@ if (screen === "onboarding") {
           </button>
         ))}
       </div>
-      {/* iOS home indicator safe-area fill — 34px fallback ensures it's always covered */}
-      <div style={{ flexShrink:0, height:"env(safe-area-inset-bottom, 34px)", background:T.bg2 }} />
     </div>
   );
 }
