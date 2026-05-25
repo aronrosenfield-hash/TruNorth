@@ -45,7 +45,7 @@ export default function SplashScreen({ onDone }) {
 }
 
 const styles = {
-  outer: { position:"fixed", inset:0, background:"#0f0f0f", display:"flex", alignItems:"center", justifyContent:"center", zIndex:9999 },
+  outer: { position:"fixed", inset:0, background:"#1a1a1a", display:"flex", alignItems:"center", justifyContent:"center", zIndex:9999 },
   wrap:  { width:"100%", maxWidth:430, height:"100%", display:"flex", alignItems:"center", justifyContent:"center" },
   inner: { display:"flex", alignItems:"center", justifyContent:"center", width:"100%", height:"100%" },
   logo:  { display:"flex", alignItems:"center", gap:12 },
