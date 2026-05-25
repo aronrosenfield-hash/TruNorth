@@ -1148,7 +1148,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
+    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column", overflowX:"hidden" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
@@ -1177,7 +1177,7 @@ if (screen === "onboarding") {
       </div>
 
       {/* Scrollable content area */}
-      <div style={{ flex:1, overflowY:"auto" }}>
+      <div style={{ flex:1, overflowY:"auto", background:T.bg }}>
 
       {/* Profile strip */}
       {profile && (
