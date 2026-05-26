@@ -23,6 +23,9 @@
 
     <title>TruNorth</title>
     <!-- Tabler icons served locally via npm (bundled by Vite, no CDN dependency) -->
+    <!-- Set --app-height synchronously before first paint so standalone PWA
+         has the correct height from frame 0 (no black-bar flash on load). -->
+    <script>document.documentElement.style.setProperty('--app-height',window.innerHeight+'px');</script>
   </head>
   <body style="background:#1a1a1a;margin:0;">
     <div id="root"></div>
