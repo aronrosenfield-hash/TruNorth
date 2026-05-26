@@ -6,11 +6,8 @@ import OnboardingFlow from "./OnboardingFlow";
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html { background: #1a1a1a; height: 100dvh; width: 100%; max-width: 100%; }
+  html { background: #1a1a1a; height: var(--app-height, 100dvh); width: 100%; max-width: 100%; }
   body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
-  @media all and (display-mode: standalone) {
-    html { height: var(--app-height, 100dvh); }
-  }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
@@ -1048,16 +1045,27 @@ const [profile, setProfile]   = useState(null);
     return () => document.head.removeChild(el);
   }, []);
 
-  // Set --app-height to window.innerHeight so standalone PWA always fills the
-  // physical screen. In standalone mode window.innerHeight = full viewport
-  // (including safe areas), whereas 100dvh can be unreliable on iOS WKWebView.
+  // Keep --app-height correct after React mounts.
+  // Standalone PWA: use screen.height (full physical screen in CSS px).
+  //   screen.height NEVER changes when the iOS keyboard opens/closes, which
+  //   is critical — window.innerHeight shrinks on keyboard-open and iOS does
+  //   not reliably fire a resize event when the keyboard closes, so using
+  //   innerHeight causes --app-height to permanently stick at the wrong value.
+  // Browser mode: use innerHeight and track resize normally.
   useEffect(() => {
-    const setAppHeight = () => {
-      document.documentElement.style.setProperty("--app-height", window.innerHeight + "px");
-    };
-    setAppHeight();
-    window.addEventListener("resize", setAppHeight);
-    return () => window.removeEventListener("resize", setAppHeight);
+    const standalone = window.navigator.standalone === true;
+    if (standalone) {
+      // Set once; screen.height is static on iOS, no resize listener needed.
+      const h = window.screen.height || window.innerHeight;
+      document.documentElement.style.setProperty("--app-height", h + "px");
+    } else {
+      const setAppHeight = () => {
+        document.documentElement.style.setProperty("--app-height", window.innerHeight + "px");
+      };
+      setAppHeight();
+      window.addEventListener("resize", setAppHeight);
+      return () => window.removeEventListener("resize", setAppHeight);
+    }
   }, []);
 
   const deduped = COMPANIES.filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i);

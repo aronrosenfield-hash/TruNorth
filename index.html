@@ -23,9 +23,39 @@
 
     <title>TruNorth</title>
     <!-- Tabler icons served locally via npm (bundled by Vite, no CDN dependency) -->
-    <!-- Set --app-height synchronously before first paint so standalone PWA
-         has the correct height from frame 0 (no black-bar flash on load). -->
-    <script>document.documentElement.style.setProperty('--app-height',window.innerHeight+'px');</script>
+
+    <!-- ── Critical layout CSS ──────────────────────────────────────────────
+         Lives here (not in React) so it is applied on the very first paint,
+         before the JS bundle even loads.  React injects the same rules again
+         later — last-write wins for same-specificity, values are identical.
+         html height: var(--app-height, 100dvh) is set by the inline script
+         below using screen.height in standalone mode (keyboard-immune) and
+         innerHeight in browser mode. ──────────────────────────────────────── -->
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+      html { background: #1a1a1a; height: var(--app-height, 100dvh); width: 100%; max-width: 100%; }
+      body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
+      input, textarea, select, button { font-family: inherit; }
+      input:focus, textarea:focus, select:focus { outline: none; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .spin { animation: spin 0.7s linear infinite; display: inline-block; }
+      ::placeholder { color: #555; }
+    </style>
+
+    <!-- Set --app-height BEFORE first paint.
+         Standalone PWA: window.screen.height = full physical screen in CSS px,
+         NEVER changes when the keyboard opens/closes (unlike window.innerHeight).
+         This is what prevents the black bar that reappears after typing in a field.
+         Browser: use innerHeight so the layout follows the browser viewport. -->
+    <script>
+      (function () {
+        var h = window.navigator.standalone === true
+          ? (window.screen.height || window.innerHeight)
+          : window.innerHeight;
+        document.documentElement.style.setProperty('--app-height', h + 'px');
+      })();
+    </script>
   </head>
   <body style="background:#1a1a1a;margin:0;">
     <div id="root"></div>
