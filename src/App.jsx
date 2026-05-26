@@ -6,8 +6,11 @@ import OnboardingFlow from "./OnboardingFlow";
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
-  html { height: 100dvh; /* standalone PWA: dvh = full screen including safe areas */ }
+  html { background: #1a1a1a; height: 100dvh; width: 100%; max-width: 100%; }
+  body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
+  @media all and (display-mode: standalone) {
+    html { height: var(--app-height, 100dvh); }
+  }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
@@ -1043,6 +1046,18 @@ const [profile, setProfile]   = useState(null);
     el.textContent = globalCSS;
     document.head.appendChild(el);
     return () => document.head.removeChild(el);
+  }, []);
+
+  // Set --app-height to window.innerHeight so standalone PWA always fills the
+  // physical screen. In standalone mode window.innerHeight = full viewport
+  // (including safe areas), whereas 100dvh can be unreliable on iOS WKWebView.
+  useEffect(() => {
+    const setAppHeight = () => {
+      document.documentElement.style.setProperty("--app-height", window.innerHeight + "px");
+    };
+    setAppHeight();
+    window.addEventListener("resize", setAppHeight);
+    return () => window.removeEventListener("resize", setAppHeight);
   }, []);
 
   const deduped = COMPANIES.filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i);
