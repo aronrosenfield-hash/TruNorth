@@ -7,6 +7,7 @@ import OnboardingFlow from "./OnboardingFlow";
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
+  html { height: 100dvh; /* standalone PWA: dvh = full screen including safe areas */ }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { outline: none; }
@@ -1148,7 +1149,7 @@ if (screen === "onboarding") {
   }
 
   return (
-    <div style={{ position:"fixed", top:0, right:0, bottom:0, left:0, maxWidth:430, marginLeft:"auto", marginRight:"auto", background:T.bg2, display:"flex", flexDirection:"column", overflow:"hidden" }}>
+    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
       {/* Header */}
@@ -1406,9 +1407,9 @@ if (screen === "onboarding") {
 
       </div>{/* end scrollable content */}
 
-      {/* BOTTOM NAV — in-flow flex child. The outer container is position:fixed; inset:0
-          which explicitly covers the FULL screen (safe areas included, viewport-fit:cover).
-          The nav sits at the physical screen bottom. paddingBottom fills the home indicator. */}
+      {/* BOTTOM NAV — in-flow flex child.
+          html { height:100dvh } makes the full chain reach the physical screen bottom.
+          paddingBottom:env(safe-area-inset-bottom) fills the home indicator zone. */}
       <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"env(safe-area-inset-bottom, 34px)" }}>
         {[
           {id:"top",    icon:"ti-star",         label:"Top Picks"},
