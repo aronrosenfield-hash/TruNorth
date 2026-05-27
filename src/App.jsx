@@ -1,7 +1,8 @@
 import { COMPANIES } from './companies.js';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
+import { initAnalytics, track } from "./lib/analytics";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
@@ -592,7 +593,11 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
 
   const handleTap = () => {
     if (!isPaid) { onUpgrade(); return; }
-    setOpen(o => !o);
+    setOpen(o => {
+      // Track only on expand (not collapse)
+      if (!o) track("company_view", { slug: company.id, name: company.name, grade, score: ps, category: company.cat });
+      return !o;
+    });
   };
 
 
@@ -1033,10 +1038,22 @@ const [profile, setProfile]   = useState(null);
 
 
   const [tab, setTab]           = useState("top");
+  // UX 1B: debounce — input binds to queryRaw, filter uses query (150ms lag)
+  const [queryRaw, setQueryRaw] = useState("");
   const [query, setQuery]       = useState("");
+  useEffect(() => {
+    const id = setTimeout(() => setQuery(queryRaw), 150);
+    return () => clearTimeout(id);
+  }, [queryRaw]);
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [sort, setSort]             = useState("name");
+
+  // Analytics — init once, then track key funnel events
+  useEffect(() => { initAnalytics(); }, []);
+  useEffect(() => {
+    if (showPaywall) track("paywall_shown", { tab, isPaid });
+  }, [showPaywall]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const el = document.createElement("style");
@@ -1068,9 +1085,13 @@ const [profile, setProfile]   = useState(null);
     }
   }, []);
 
-  const deduped = COMPANIES.filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i);
+  // UX 1A: memoize the dedupe/filter/sort chain so it doesn't rerun on unrelated state changes
+  const deduped = useMemo(
+    () => COMPANIES.filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i),
+    []
+  );
 
-  const filtered = deduped
+  const filtered = useMemo(() => deduped
     .filter(c => {
       if (leanFilter !== "all") {
         const l = (c.sc.political||"").toLowerCase();
@@ -1097,18 +1118,27 @@ const [profile, setProfile]   = useState(null);
       if (sort==="name") return a.name.localeCompare(b.name);
       const o={left:0,"left-leaning":1,bipartisan:2,mixed:3,neutral:4,right:6,"right-leaning":6};
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
-    });
+    }),
+    [deduped, leanFilter, catFilters, query, sort, profile]
+  );
+
+  // Analytics — fire `search` when debounced query commits (captures both successful searches and failures with result_count=0)
+  useEffect(() => {
+    const q = query.trim();
+    if (q) track("search", { query: q, result_count: filtered.length });
+  }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleCat = (f) => setCatFilters(prev => prev.includes(f) ? prev.filter(x=>x!==f) : [...prev, f]);
 
-  const lc = {
+  // UX 1A: lean counts and category list — memoized since deduped is stable
+  const lc = useMemo(() => ({
     left: deduped.filter(c=>["left","left-leaning"].includes((c.sc.political||"").toLowerCase())).length,
     right: deduped.filter(c=>["right","right-leaning"].includes((c.sc.political||"").toLowerCase())).length,
     bi: deduped.filter(c=>["bipartisan","mixed"].includes((c.sc.political||"").toLowerCase())).length,
     neutral: deduped.filter(c=>(c.sc.political||"").toLowerCase()==="neutral").length,
-  };
+  }), [deduped]);
 
-  const cats = [...new Set(deduped.map(c=>getBucket(c.cat)))].sort();
+  const cats = useMemo(() => [...new Set(deduped.map(c=>getBucket(c.cat)))].sort(), [deduped]);
   const catIconMap = {Retail:"ti-building-store",Food:"ti-chef-hat",Technology:"ti-device-laptop",Grocery:"ti-shopping-cart",Energy:"ti-bolt",Apparel:"ti-shirt",Media:"ti-device-tv",Finance:"ti-building-bank",Healthcare:"ti-heartbeat",Outdoor:"ti-mountain",Consumer:"ti-package",Conglomerate:"ti-building-skyscraper",Auto:"ti-car",Sports:"ti-ball-basketball"};
   const catBgs = ["#1e1535","#0d2318","#0d1f35","#2a0d0d","#2e1a05","#2a1a05"];
   const catFgs = ["#9b8ff0","#4caf82","#4a90e2","#e24a4a","#e8a042","#f0a030"];
@@ -1193,9 +1223,9 @@ if (screen === "onboarding") {
         {tab !== "account" && (
           <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
             <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
-            <input value={query} onChange={e=>{setQuery(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
+            <input value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
               style={{ background:"transparent", border:"none", color:T.txt, fontSize:15, padding:"12px 0", flex:1 }} />
-            {query && <button onClick={()=>setQuery("")} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
+            {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
           </div>
         )}
       </div>
@@ -1236,7 +1266,7 @@ if (screen === "onboarding") {
             ))}
             <span style={{ marginLeft:"auto", fontSize:11, color:T.txt3 }}>{filtered.length}</span>
             {(leanFilter!=="all"||catFilters.length>0||query) && (
-              <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQuery("");}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
+              <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQueryRaw("");setQuery("");}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
             )}
           </div>
 
@@ -1268,7 +1298,7 @@ if (screen === "onboarding") {
             const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
             const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
             return (
-              <div key={cat} onClick={()=>{setQuery(cat);setTab("search");}}
+              <div key={cat} onClick={()=>{setQueryRaw(cat);setQuery(cat);setTab("search");}}
                 style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:"16px 14px", cursor:"pointer" }}>
                 <div style={{ width:44, height:44, borderRadius:8, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10, background:catBgs[i%catBgs.length] }}>
                   <i className={`ti ${icon}`} style={{ fontSize:22, color:catFgs[i%catFgs.length] }} aria-hidden="true" />
