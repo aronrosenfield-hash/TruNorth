@@ -612,7 +612,117 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
     </div>
   );
 }
-function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave }) {
+// UX 3A: Compare 2 Companies overlay. Shows side-by-side grade + per-category
+// comparison with winner highlighted per row.
+function CompareView({ companies, list, onClose, onRemove, profile, isPaid }) {
+  // Resolve each item in `list` to the full company object (from index or detail)
+  const [details, setDetails] = useState({});
+  useEffect(() => {
+    list.forEach(({ slug }) => {
+      if (details[slug]) return;
+      const fromIndex = companies?.find(c => (c.slug || c.id) === slug);
+      // Always pull full detail so we can show narrative bits if we want later
+      loadCompanyDetail(slug)
+        .then(d => setDetails(prev => ({ ...prev, [slug]: { ...(fromIndex || {}), ...d } })))
+        .catch(() => {
+          if (fromIndex) setDetails(prev => ({ ...prev, [slug]: fromIndex }));
+        });
+    });
+  }, [list, companies]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const resolved = list.map(({ slug, name }) => details[slug] || { slug, name, sc: {} });
+
+  return (
+    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"32px 12px", overflowY:"auto" }}>
+      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:16, color:T.txt }}>
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
+          <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
+          <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, cursor:"pointer" }} aria-label="Close">×</button>
+        </div>
+
+        {resolved.length < 2 ? (
+          <div style={{ padding:"24px", textAlign:"center", color:T.txt3, fontSize:13 }}>
+            Add one more company to compare. (Tap the <i className="ti ti-arrows-left-right" aria-hidden="true" /> icon on any row.)
+          </div>
+        ) : (
+          <>
+            {/* Headers */}
+            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:14 }}>
+              {resolved.map(co => {
+                const ps = computeScore(co, profile);
+                const grade = scoreGrade(ps);
+                return (
+                  <div key={co.slug} style={{ background:T.bg2, borderRadius:12, padding:12, border:`1px solid ${T.border}`, position:"relative" }}>
+                    <button onClick={()=>onRemove(co.slug)} style={{ position:"absolute", top:6, right:6, width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }} aria-label="Remove">×</button>
+                    <div style={{ width:36, height:36, borderRadius:8, background:co.ab || T.bg3, color:co.ac || T.accent2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, marginBottom:6 }}>{co.init || "??"}</div>
+                    <div style={{ fontSize:14, fontWeight:700, color:T.txt, lineHeight:1.2 }}>{co.name}</div>
+                    <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{co.cat || ""}</div>
+                    <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
+                      <div style={{ fontSize:28, fontWeight:800, color:T.txt, lineHeight:1 }}>{grade}</div>
+                      {isPaid && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Category-by-category comparison */}
+            <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+              {CAT_KEYS.map(k => {
+                const a = resolved[0], b = resolved[1];
+                const sa = scoreCat(k, a.sc?.[k], profile);
+                const sb = scoreCat(k, b.sc?.[k], profile);
+                const aUnknown = getDataState(k, a.sc?.[k]) === "unknown";
+                const bUnknown = getDataState(k, b.sc?.[k]) === "unknown";
+                // Winner: higher score (only when both have data)
+                let winner = null;
+                if (!aUnknown && !bUnknown) {
+                  if (sa > sb + 5) winner = 0;
+                  else if (sb > sa + 5) winner = 1;
+                }
+                const da = getDisplay(k, a.sc?.[k], profile);
+                const db = getDisplay(k, b.sc?.[k], profile);
+                return (
+                  <div key={k} style={{ background:T.bg2, borderRadius:10, padding:10, border:`1px solid ${T.border}` }}>
+                    <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:6, display:"flex", alignItems:"center", gap:5 }}>
+                      <i className={`ti ${CAT_ICONS[k]}`} aria-hidden="true" /> {CAT_LABELS[k]}
+                    </div>
+                    <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:6 }}>
+                      {[a, b].map((co, idx) => {
+                        const unknown = idx === 0 ? aUnknown : bUnknown;
+                        const disp = idx === 0 ? da : db;
+                        const isWinner = winner === idx;
+                        return (
+                          <div key={idx} style={{
+                            padding:"6px 10px",
+                            borderRadius:8,
+                            fontSize:12,
+                            background: isWinner ? T.accentBg : (unknown ? "transparent" : T.bg3),
+                            border: isWinner ? `1px solid ${T.accent}` : (unknown ? `1px dashed ${T.border2}` : `1px solid ${T.border}`),
+                            color: unknown ? T.txt3 : (isWinner ? T.accent2 : T.txt),
+                            fontWeight: isWinner ? 700 : 500,
+                            opacity: unknown ? 0.6 : 1,
+                            textAlign:"center",
+                          }}>
+                            {unknown ? "? No data" : (
+                              <>{disp.sym} {disp.label}{isWinner && <span style={{marginLeft:6}}>✓</span>}</>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare }) {
   const [open, setOpen]     = useState(false);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
@@ -654,6 +764,17 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
           <div style={{ fontSize:13, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
         </div>
         <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
+          {/* UX 3A: compare toggle */}
+          {onToggleCompare && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onToggleCompare(); }}
+              aria-label={inCompare ? "Remove from compare" : "Add to compare"}
+              title={inCompare ? "In compare" : "Compare"}
+              style={{ width:28, height:28, padding:0, borderRadius:8, border:`1px solid ${inCompare ? T.accent : "transparent"}`, background:inCompare ? T.accentBg : "transparent", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", fontSize:14, lineHeight:1, color: inCompare ? T.accent2 : T.txt3, fontWeight:700 }}
+            >
+              <i className="ti ti-arrows-left-right" aria-hidden="true" style={{ fontSize:14 }} />
+            </button>
+          )}
           {/* UX 7A: save/star toggle — Unicode ★/☆ for reliable filled vs outlined rendering */}
           {onToggleSave && (
             <button
@@ -1190,6 +1311,24 @@ const [profile, setProfile]   = useState(null);
     catch { return new Set(); }
   });
   const [showSavedOnly, setShowSavedOnly] = useState(false);
+
+  // UX 3A (Phase 4.6): Compare 2 Companies — array of {slug, name} pairs, max 2.
+  const [compareList, setCompareList] = useState([]);
+  const [showCompare, setShowCompare] = useState(false);
+  const isInCompare = (slug) => compareList.some(c => c.slug === slug);
+  const toggleCompare = (slug, name) => {
+    setCompareList(prev => {
+      const exists = prev.find(c => c.slug === slug);
+      if (exists) {
+        track("compare_remove", { slug, name });
+        return prev.filter(c => c.slug !== slug);
+      }
+      // Cap at 2 — replace the older one when a 3rd is added
+      const next = [...prev, { slug, name }].slice(-2);
+      track("compare_add", { slug, name, total: next.length });
+      return next;
+    });
+  };
   const toggleSaved = (slug, name) => {
     setSavedSet(prev => {
       const next = new Set(prev);
@@ -1533,7 +1672,7 @@ if (screen === "onboarding") {
                 <i className="ti ti-search" style={{fontSize:36,display:"block",marginBottom:12}} aria-hidden="true" />No companies match
               </div>
             ) : (
-              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} />)
+              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} />)
             )}
           </div>
         </ErrorBoundary>
@@ -1590,7 +1729,7 @@ if (screen === "onboarding") {
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} />
             ))}
           </div>
         </ErrorBoundary>
@@ -1728,6 +1867,34 @@ if (screen === "onboarding") {
       )}
 
       </div>{/* end scrollable content */}
+
+      {/* UX 3A: floating Compare bar — appears when at least 1 company is queued */}
+      {compareList.length > 0 && (
+        <div style={{ flexShrink:0, background:T.accentBg, borderTop:`1px solid ${T.accent}`, padding:"10px 12px", display:"flex", alignItems:"center", gap:10 }}>
+          <i className="ti ti-arrows-left-right" style={{ fontSize:18, color:T.accent2 }} aria-hidden="true" />
+          <div style={{ flex:1, minWidth:0, fontSize:13, color:T.txt }}>
+            <strong>{compareList.length === 1 ? "Compare:" : "Ready to compare:"}</strong>{" "}
+            <span style={{ color:T.txt2 }}>{compareList.map(c=>c.name).join(" vs ")}</span>
+            {compareList.length === 1 && <span style={{ color:T.txt3, fontSize:11 }}> — pick one more</span>}
+          </div>
+          {compareList.length >= 2 && (
+            <button onClick={()=>{ setShowCompare(true); track("compare_view", { count: compareList.length }); }} style={{ padding:"6px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer" }}>View</button>
+          )}
+          <button onClick={()=>{ setCompareList([]); track("compare_clear"); }} style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }} aria-label="Clear compare">×</button>
+        </div>
+      )}
+
+      {/* UX 3A: Compare overlay */}
+      {showCompare && (
+        <CompareView
+          companies={companies}
+          list={compareList}
+          profile={profile}
+          isPaid={isPaid}
+          onClose={()=>setShowCompare(false)}
+          onRemove={(slug)=>setCompareList(prev => prev.filter(c => c.slug !== slug))}
+        />
+      )}
 
       {/* BOTTOM NAV — in-flow flex child.
           html { height:100dvh } makes the full chain reach the physical screen bottom.
