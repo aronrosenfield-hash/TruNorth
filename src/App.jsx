@@ -743,9 +743,46 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
             );
           })}
 
-          {/* Share button */}
+          {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
+              falls back to copying a URL to the clipboard on desktop browsers. */}
           <div style={{ display:"flex", gap:8 }}>
-            <button style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2 }}>
+            <button
+              onClick={async (e) => {
+                e.stopPropagation();
+                const shareUrl = `https://www.trunorthapp.com/?c=${encodeURIComponent(enriched.name)}`;
+                const shareData = {
+                  title: `${enriched.name} on TruNorth`,
+                  text:  `${enriched.name} earned a ${grade} on TruNorth. Know where your money goes.`,
+                  url:   shareUrl,
+                };
+                let method = "unknown";
+                try {
+                  if (navigator.share && navigator.canShare?.(shareData) !== false) {
+                    await navigator.share(shareData);
+                    method = "native-share";
+                  } else if (navigator.clipboard?.writeText) {
+                    await navigator.clipboard.writeText(shareUrl);
+                    method = "clipboard";
+                    // Light feedback for desktop users
+                    const btn = e.currentTarget;
+                    const orig = btn.innerText;
+                    btn.innerText = "✓ Link copied";
+                    setTimeout(() => { if (btn) btn.innerText = orig; }, 1500);
+                  } else {
+                    window.prompt("Copy this link:", shareUrl);
+                    method = "prompt-fallback";
+                  }
+                } catch (err) {
+                  // User dismissed share sheet — not an error, just no-op
+                  if (err?.name !== "AbortError") {
+                    console.error("share failed:", err);
+                  }
+                  method = err?.name === "AbortError" ? "user-cancelled" : "error";
+                }
+                track("share_clicked", { slug: enriched.slug || enriched.id, name: enriched.name, grade, method });
+              }}
+              style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2 }}
+            >
               <i className="ti ti-share" aria-hidden="true" />
               Share
             </button>
@@ -1224,10 +1261,28 @@ const [profile, setProfile]   = useState(null);
     [deduped, leanFilter, catFilters, query, sort, profile]
   );
 
-  // Analytics — fire `search` when debounced query commits (captures both successful searches and failures with result_count=0)
+  // UX 4E: recent searches (last 5 distinct queries with at least one result)
+  const [recentSearches, setRecentSearches] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("tn_recentSearches") || "[]"); }
+    catch { return []; }
+  });
+  // Trending brands — for v1, hardcoded popular brands; will be PostHog-driven later
+  // (Phase 5 demand-driven OpenSecrets uses the same signal).
+  const TRENDING_BRANDS = ["Patagonia", "Amazon", "Costco", "Tesla", "Nike"];
+
+  // Analytics — fire `search` when debounced query commits + persist recent
   useEffect(() => {
     const q = query.trim();
-    if (q) track("search", { query: q, result_count: filtered.length });
+    if (!q) return;
+    track("search", { query: q, result_count: filtered.length });
+    // Only stash searches that returned something
+    if (filtered.length > 0) {
+      setRecentSearches(prev => {
+        const next = [q, ...prev.filter(x => x.toLowerCase() !== q.toLowerCase())].slice(0, 5);
+        try { localStorage.setItem("tn_recentSearches", JSON.stringify(next)); } catch {}
+        return next;
+      });
+    }
   }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleCat = (f) => setCatFilters(prev => prev.includes(f) ? prev.filter(x=>x!==f) : [...prev, f]);
@@ -1241,6 +1296,27 @@ const [profile, setProfile]   = useState(null);
   }), [deduped]);
 
   const cats = useMemo(() => [...new Set(deduped.map(c=>getBucket(c.cat)))].sort(), [deduped]);
+
+  // UX 6A: pick a single company to tease personalization on, sticky per session.
+  // Only computed when there's no profile yet (free user, no quiz taken).
+  const [teaserDismissed, setTeaserDismissed] = useState(() => {
+    try { return sessionStorage.getItem("tn_teaserDismissed") === "1"; } catch { return false; }
+  });
+  const teaserCompany = useMemo(() => {
+    if (profile) return null;
+    if (!deduped.length) return null;
+    let stored;
+    try { stored = sessionStorage.getItem("tn_teaserCompany"); } catch {}
+    if (stored) {
+      const hit = deduped.find(c => (c.slug || c.id) === stored);
+      if (hit) return hit;
+    }
+    // Prefer a well-known A/B grade company so the tease is compelling
+    const candidates = deduped.filter(c => ["A","B"].includes(scoreGrade(c.overall || 50)));
+    const pick = (candidates.length ? candidates : deduped)[Math.floor(Math.random() * (candidates.length || deduped.length))];
+    try { sessionStorage.setItem("tn_teaserCompany", pick.slug || pick.id); } catch {}
+    return pick;
+  }, [deduped, profile]);
   const catIconMap = {Retail:"ti-building-store",Food:"ti-chef-hat",Technology:"ti-device-laptop",Grocery:"ti-shopping-cart",Energy:"ti-bolt",Apparel:"ti-shirt",Media:"ti-device-tv",Finance:"ti-building-bank",Healthcare:"ti-heartbeat",Outdoor:"ti-mountain",Consumer:"ti-package",Conglomerate:"ti-building-skyscraper",Auto:"ti-car",Sports:"ti-ball-basketball"};
   const catBgs = ["#1e1535","#0d2318","#0d1f35","#2a0d0d","#2e1a05","#2a1a05"];
   const catFgs = ["#9b8ff0","#4caf82","#4a90e2","#e24a4a","#e8a042","#f0a030"];
@@ -1265,40 +1341,22 @@ if (screen === "onboarding") {
   );
 }
   if (screen === "quiz") {
+    // UX 4A: quiz is now open to all users. Free users complete it and get
+    // personalized letter grades; Pro users get personalized number scores
+    // + breakdowns + sources. The Pro upsell moves downstream to those features.
     return (
       <div style={{ maxWidth:430, margin:"0 auto" }}>
-        {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
-        {isPaid ? (
-          <>
-            <Quiz onComplete={(p) => { setProfile(p); setScreen("main"); }} />
-            <div style={{ padding:"0 16px 24px" }}>
-              <button onClick={()=>setScreen("main")} style={{ width:"100%", padding:12, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer" }}>
-                Skip — use AI-generated scores
-              </button>
-            </div>
-          </>
-        ) : (
-          <div style={{ padding:"32px 20px", textAlign:"center" }}>
-            <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:24 }}>
-              <div style={{ width:40, height:40, background:T.accentBg, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center" }}>
-                <svg width="24" height="24" viewBox="0 0 48 48" aria-hidden="true">
-                  <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
-                </svg>
-              </div>
-              <div style={{ fontSize:26, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:"#7c6dfa" }}>North</span></div>
-            </div>
-            <div style={{ fontSize:22, fontWeight:700, color:T.txt, marginBottom:10 }}>Personalized scores are Pro</div>
-            <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300, margin:"0 auto 24px" }}>
-              Free users see our AI-generated score for each company. Upgrade to take the personalization quiz and get scores based on what you actually care about.
-            </div>
-            <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", maxWidth:300, padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:12 }}>
-              Upgrade for $1.99/mo
-            </button>
-            <button onClick={()=>{window.scrollTo(0,0);setScreen("main");}} style={{ width:"100%", maxWidth:300, padding:12, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer" }}>
-              Continue with AI scores
-            </button>
-          </div>
-        )}
+        {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("main");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
+        <Quiz onComplete={(p) => {
+          setProfile(p);
+          track("quiz_completed", { isPaid });
+          setScreen("main");
+        }} />
+        <div style={{ padding:"0 16px 24px" }}>
+          <button onClick={()=>setScreen("main")} style={{ width:"100%", padding:12, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer" }}>
+            Skip — use AI-generated scores
+          </button>
+        </div>
       </div>
     );
   }
@@ -1385,10 +1443,50 @@ if (screen === "onboarding") {
           )}
 
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
-            {filtered.length === 0
-              ? <div style={{ padding:"40px 20px", textAlign:"center", color:T.txt3 }}><i className="ti ti-search" style={{fontSize:36,display:"block",marginBottom:12}} aria-hidden="true" />No companies match</div>
-              : filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />)
-            }
+            {/* UX 4E: when nothing's been typed AND no filters active, show Recent + Trending
+                instead of the full A–Z list (Top Picks tab already shows the full list). */}
+            {!query.trim() && leanFilter === "all" && catFilters.length === 0 ? (
+              <div style={{ padding:"24px 4px" }}>
+                {recentSearches.length > 0 && (
+                  <div style={{ marginBottom:20 }}>
+                    <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
+                      <i className="ti ti-history" aria-hidden="true" /> Recent
+                    </div>
+                    <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                      {recentSearches.map(q => (
+                        <button key={q} onClick={()=>{ setQueryRaw(q); setQuery(q); }}
+                          style={{ padding:"6px 12px", borderRadius:20, fontSize:13, background:T.bg3, border:`1px solid ${T.border2}`, color:T.txt, cursor:"pointer" }}
+                        >{q}</button>
+                      ))}
+                      <button onClick={()=>{ setRecentSearches([]); try { localStorage.removeItem("tn_recentSearches"); } catch {} }}
+                        style={{ padding:"6px 10px", borderRadius:20, fontSize:11, background:"transparent", border:`1px solid ${T.border}`, color:T.txt3, cursor:"pointer" }}
+                      >Clear</button>
+                    </div>
+                  </div>
+                )}
+                <div>
+                  <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
+                    <i className="ti ti-flame" aria-hidden="true" /> Trending
+                  </div>
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                    {TRENDING_BRANDS.map(b => (
+                      <button key={b} onClick={()=>{ setQueryRaw(b); setQuery(b); track("trending_click", { brand: b }); }}
+                        style={{ padding:"6px 12px", borderRadius:20, fontSize:13, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2, cursor:"pointer" }}
+                      >{b}</button>
+                    ))}
+                  </div>
+                </div>
+                <div style={{ marginTop:24, padding:"12px", textAlign:"center", fontSize:12, color:T.txt3 }}>
+                  Type to search {deduped.length.toLocaleString()} companies — or <button onClick={()=>setTab("top")} style={{ background:"none", border:"none", color:T.accent2, fontSize:12, textDecoration:"underline", cursor:"pointer", padding:0 }}>browse the full list</button>
+                </div>
+              </div>
+            ) : filtered.length === 0 ? (
+              <div style={{ padding:"40px 20px", textAlign:"center", color:T.txt3 }}>
+                <i className="ti ti-search" style={{fontSize:36,display:"block",marginBottom:12}} aria-hidden="true" />No companies match
+              </div>
+            ) : (
+              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />)
+            )}
           </div>
         </ErrorBoundary>
       )}
@@ -1423,6 +1521,25 @@ if (screen === "onboarding") {
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>
           </div>
+          {/* UX 6A: personalized score teaser */}
+          {!profile && !teaserDismissed && teaserCompany && (
+            <div style={{ margin:"10px 16px 0", padding:"12px 14px", background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:12, display:"flex", alignItems:"center", gap:12 }}>
+              <i className="ti ti-sparkles" style={{ fontSize:20, color:T.accent2, flexShrink:0 }} aria-hidden="true" />
+              <div style={{ flex:1, minWidth:0 }}>
+                <div style={{ fontSize:13, fontWeight:600, color:T.txt, lineHeight:1.3 }}>See <strong>{teaserCompany.name}</strong>'s score tailored to <em>your</em> values</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:3 }}>30-second quiz — free</div>
+              </div>
+              <button
+                onClick={()=>{ track("personalized_teaser_clicked", { slug: teaserCompany.slug || teaserCompany.id, name: teaserCompany.name }); setScreen("quiz"); }}
+                style={{ padding:"7px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer", flexShrink:0 }}
+              >Take quiz</button>
+              <button
+                onClick={()=>{ setTeaserDismissed(true); try { sessionStorage.setItem("tn_teaserDismissed","1"); } catch {} track("personalized_teaser_dismissed"); }}
+                style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer", flexShrink:0 }}
+                aria-label="Dismiss"
+              >×</button>
+            </div>
+          )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
               <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />
@@ -1511,8 +1628,8 @@ if (screen === "onboarding") {
             ) : (
               <>
                 <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Take the quiz to personalize every company score based on what you care about.</div>
-                <button onClick={()=>{ if(isPaid) setScreen("quiz"); else setShowPaywall(true); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
-                  {isPaid ? "Take the quiz" : "Upgrade to personalize scores"}
+                <button onClick={()=>{ track("quiz_started", { isPaid, from: "account" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
+                  Take the quiz {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
                 </button>
               </>
             )}
