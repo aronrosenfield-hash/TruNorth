@@ -806,6 +806,34 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
           {loadingDetail && (
             <div style={{ height:2, background:T.accent, opacity:0.5, marginBottom:12, borderRadius:1, animation:"pulse 1.5s ease-in-out infinite" }} aria-label="Loading details" />
           )}
+          {/* UX 5B: "On this brand's worst day" callout for D/F-graded companies
+              with substantial federal penalties. Pulls from Violation Tracker. */}
+          {(() => {
+            const vt = enriched.violationTracker;
+            const isBadGrade = ["D", "F"].includes(grade);
+            const hasSignificantPenalty = vt && vt.totalPenalty && vt.totalPenalty >= 1_000_000; // ≥$1M
+            if (!isBadGrade || !hasSignificantPenalty) return null;
+            const penFmt = vt.totalPenalty >= 1e9
+              ? `$${(vt.totalPenalty/1e9).toFixed(2)}B`
+              : `$${(vt.totalPenalty/1e6).toFixed(1)}M`;
+            const topOffense = vt.primaryOffenses?.[0]?.category;
+            return (
+              <div style={{ background:"#2a0d0d", border:`1px solid ${T.rep}`, borderRadius:10, padding:"10px 12px", marginBottom:12, display:"flex", alignItems:"flex-start", gap:10 }}>
+                <i className="ti ti-alert-triangle" style={{ fontSize:18, color:T.rep, flexShrink:0, marginTop:1 }} aria-hidden="true" />
+                <div style={{ minWidth:0, flex:1 }}>
+                  <div style={{ fontSize:12, fontWeight:700, color:T.rep, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:2 }}>Federal penalties</div>
+                  <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.3 }}>
+                    {penFmt} across {vt.totalRecords} record{vt.totalRecords === 1 ? "" : "s"}
+                  </div>
+                  {topOffense && (
+                    <div style={{ fontSize:11, color:T.txt3, marginTop:3, lineHeight:1.4 }}>
+                      Top offense: {topOffense}
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
           {/* Score summary */}
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:16 }}>
             <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
@@ -843,21 +871,21 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
                     <i className={`ti ${CAT_ICONS[k]}`} aria-hidden="true" />
                     {CAT_FULL[k]}
                   </div>
-                  <span
-                    title={isUnknown ? "No data ingested yet — this category is excluded from the overall grade." : ""}
-                    style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"3px 10px", borderRadius:20, fontSize:12, fontWeight:700, ...badgeStyle }}
-                  >
-                    {isUnknown ? (
-                      <>? No data</>
-                    ) : (
-                      <>
-                        {k === "political" && disp.icon === "dem" && <DonkeySVG size={12} />}
-                        {k === "political" && disp.icon === "rep" && <ElephantSVG size={12} />}
-                        {k === "political" && disp.icon === "bi"  && <span style={{fontSize:11}}>⚖</span>}
-                        {disp.sym} {disp.label}
-                      </>
-                    )}
-                  </span>
+                  {k === "political" && !isUnknown ? (
+                    /* UX 5C: spectrum bar in lieu of the cryptic ◀ ▶ ◆ badge */
+                    <PoliticalSpectrum lean={enriched.sc?.political} />
+                  ) : (
+                    <span
+                      title={isUnknown ? "No data ingested yet — this category is excluded from the overall grade." : ""}
+                      style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"3px 10px", borderRadius:20, fontSize:12, fontWeight:700, ...badgeStyle }}
+                    >
+                      {isUnknown ? (
+                        <>? No data</>
+                      ) : (
+                        <>{disp.sym} {disp.label}</>
+                      )}
+                    </span>
+                  )}
                 </div>
                 {!isUnknown && (
                   <>
@@ -1272,6 +1300,85 @@ function getBucket(cat) {
 }
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
+// UX 5C: PoliticalSpectrum — visual bar showing exact lean position.
+// Replaces the ambiguous ◀ ▶ ◆ symbols on the political category card.
+function PoliticalSpectrum({ lean }) {
+  // Position 0..1 on a left → right axis
+  const positions = {
+    "left":           0.10,
+    "left-leaning":   0.28,
+    "mixed":          0.50,
+    "bipartisan":     0.50,
+    "neutral":        0.50,
+    "right-leaning":  0.72,
+    "right":          0.90,
+  };
+  const pos = positions[(lean || "").toLowerCase()];
+  if (pos == null) return null;
+  // Color by lean
+  const dotColor = pos < 0.4 ? "#4a90e2"
+                : pos > 0.6 ? "#e24a4a"
+                : "#9b8ff0";
+  return (
+    <div style={{ display:"flex", flexDirection:"column", gap:4, alignItems:"flex-end", minWidth:120 }}>
+      <div style={{
+        position:"relative", width:120, height:6, borderRadius:3,
+        background: "linear-gradient(to right, #4a90e2 0%, #4a90e2 30%, #555 45%, #555 55%, #e24a4a 70%, #e24a4a 100%)",
+      }} aria-hidden="true">
+        <div style={{
+          position:"absolute", top:-3, left:`calc(${pos*100}% - 6px)`,
+          width:12, height:12, borderRadius:"50%",
+          background:dotColor, border:"2px solid #1a1a1a",
+        }} />
+      </div>
+      <div style={{ fontSize:10, color:"#888", display:"flex", justifyContent:"space-between", width:120 }} aria-hidden="true">
+        <span>Left</span><span>Center</span><span>Right</span>
+      </div>
+    </div>
+  );
+}
+
+// Phase 5.3: SuggestBrandButton — captures a failed search query so the
+// pipeline can pick it up on the next expansion. Stored client-side AND
+// surfaced via PostHog so the demand signal is visible in analytics.
+function SuggestBrandButton({ query }) {
+  const [submitted, setSubmitted] = useState(() => {
+    try {
+      const pending = JSON.parse(localStorage.getItem("tn_pendingSubmits") || "[]");
+      return pending.some(s => s.query.toLowerCase() === query.toLowerCase());
+    } catch { return false; }
+  });
+  const submit = () => {
+    try {
+      const pending = JSON.parse(localStorage.getItem("tn_pendingSubmits") || "[]");
+      if (!pending.some(s => s.query.toLowerCase() === query.toLowerCase())) {
+        pending.push({ query, suggestedAt: new Date().toISOString() });
+        localStorage.setItem("tn_pendingSubmits", JSON.stringify(pending.slice(-50))); // cap
+      }
+    } catch {}
+    track("failed_search_suggest", { query });
+    setSubmitted(true);
+  };
+  if (submitted) {
+    return (
+      <div style={{ fontSize:13, color:"#4caf82", display:"inline-flex", alignItems:"center", gap:6 }}>
+        <i className="ti ti-check" aria-hidden="true" />
+        Thanks — we'll look at adding it
+      </div>
+    );
+  }
+  return (
+    <button onClick={submit} style={{
+      padding:"10px 16px", borderRadius:10, border:`1px solid ${T.accent}`,
+      background:T.accentBg, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer",
+      display:"inline-flex", alignItems:"center", gap:6
+    }}>
+      <i className="ti ti-plus" aria-hidden="true" />
+      Suggest &ldquo;{query}&rdquo; to be added
+    </button>
+  );
+}
+
 export default function App() {
   // Dev-only QA helper: ?skipOnboarding=1 and ?pro=1 let the simulator + Chrome
   // tests bypass onboarding without persisting state on real production users.
@@ -1676,8 +1783,17 @@ if (screen === "onboarding") {
                 </div>
               </div>
             ) : filtered.length === 0 ? (
+              // Phase 5.3: failed search → auto-stub. Capture the query so
+              // the pipeline's next expansion run can pick up brands users
+              // wanted but we didn't have.
               <div style={{ padding:"40px 20px", textAlign:"center", color:T.txt3 }}>
-                <i className="ti ti-search" style={{fontSize:36,display:"block",marginBottom:12}} aria-hidden="true" />No companies match
+                <i className="ti ti-search" style={{fontSize:36,display:"block",marginBottom:12}} aria-hidden="true" />
+                <div style={{ fontSize:14, marginBottom:18 }}>
+                  No companies match {query.trim() ? <strong style={{ color:T.txt }}>&ldquo;{query.trim()}&rdquo;</strong> : ""}
+                </div>
+                {query.trim() && query.trim().length >= 2 && (
+                  <SuggestBrandButton query={query.trim()} />
+                )}
               </div>
             ) : (
               filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} />)
