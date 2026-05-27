@@ -8,6 +8,7 @@ import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail } from "./lib/dataSource";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
+import { T } from "./lib/theme";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
@@ -20,17 +21,22 @@ const globalCSS = `
   @keyframes spin { to { transform: rotate(360deg); } }
   .spin { animation: spin 0.7s linear infinite; display: inline-block; }
   ::placeholder { color: #555; }
+  /* UX 8A: visually hide labels but keep them for screen readers */
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important; height: 1px !important;
+    padding: 0 !important; margin: -1px !important;
+    overflow: hidden !important; clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important; border: 0 !important;
+  }
+  /* UX 8C: honor reduced-motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .spin { animation: none !important; }
+  }
 `;
 
-const T = {
-  bg:"#0f0f0f", bg2:"#1a1a1a", bg3:"#242424", bg4:"#2e2e2e",
-  txt:"#f2f2f2", txt2:"#a8a8a8", txt3:"#666",
-  border:"#2a2a2a", border2:"#3a3a3a",
-  accent:"#7c6dfa", accent2:"#9d91ff", accentBg:"#1e1b3a",
-  dem:"#4a90e2", demBg:"#0d1f35",
-  rep:"#e24a4a", repBg:"#350d0d",
-  gold:"#f0c040", goldBg:"#2a2005",
-};
+// T moved to ./lib/theme
 
 // ─── SYMBOL SYSTEM (replaces color bars) ─────────────────────────────────────
 // Instead of colors, we use symbols + plain text labels
@@ -1657,6 +1663,14 @@ if (screen === "onboarding") {
     <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
 
+      {/* UX 8B: aria-live region for screen readers — announces filtered count
+          and which tab is active without visual clutter. */}
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {tab === "search" && (query.trim() || leanFilter !== "all" || catFilters.length > 0 || showSavedOnly)
+          ? `${filtered.length} compan${filtered.length === 1 ? "y" : "ies"} match your filters`
+          : `${tab} tab`}
+      </div>
+
       {/* Header */}
       <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
@@ -1675,7 +1689,9 @@ if (screen === "onboarding") {
         {tab !== "account" && (
           <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
             <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
-            <input value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
+            <label htmlFor="tn-search" className="sr-only">Search companies</label>
+            <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
+              autoComplete="off"
               style={{ background:"transparent", border:"none", color:T.txt, fontSize:15, padding:"12px 0", flex:1 }} />
             {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
           </div>

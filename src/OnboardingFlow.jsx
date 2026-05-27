@@ -122,8 +122,10 @@ export default function OnboardingFlow({ onComplete }) {
                 </button>
               ))}
             </div>
-            <input type="email" autoComplete="email" placeholder="Email address" value={email} onChange={e => setEmail(e.target.value)} style={{ ...s.authInput, borderColor: errors.email ? "#fca5a5" : "#2a2a2a" }} />
-            <input type="password" autoComplete="current-password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} style={{ ...s.authInput, borderColor: errors.password ? "#fca5a5" : "#2a2a2a" }} />
+            <label htmlFor="auth-email" className="sr-only">Email address</label>
+            <input id="auth-email" type="email" autoComplete="email" placeholder="Email address" value={email} onChange={e => setEmail(e.target.value)} aria-invalid={!!errors.email} style={{ ...s.authInput, borderColor: errors.email ? "#fca5a5" : "#2a2a2a" }} />
+            <label htmlFor="auth-password" className="sr-only">Password</label>
+            <input id="auth-password" type="password" autoComplete="current-password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} aria-invalid={!!errors.password} style={{ ...s.authInput, borderColor: errors.password ? "#fca5a5" : "#2a2a2a" }} />
             <div style={s.divider}><div style={s.dividerLine}/><span style={{ color:"#444", fontSize:11 }}>or</span><div style={s.dividerLine}/></div>
             <button style={s.btnGhost} onClick={handleGuest}>Continue as guest</button>
             <p style={s.terms}>By continuing you agree to our <a href="#" style={{ color:"#7c6dfa", textDecoration:"none" }}>Terms</a> & <a href="#" style={{ color:"#7c6dfa", textDecoration:"none" }}>Privacy Policy</a>.</p>
