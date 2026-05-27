@@ -7,6 +7,7 @@ import OnboardingFlow from "./OnboardingFlow";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail } from "./lib/dataSource";
+import { subscribeEmail, getStoredEmail } from "./lib/marketing";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
@@ -401,12 +402,15 @@ function ElephantSVG({ size=14, col="#e24a4a" }) {
 // ─── PAYWALL ─────────────────────────────────────────────────────────────────
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState(initialEmail);
+  // 4.7: prefill from stored email if we've seen this user before
+  const [email, setEmail] = useState(initialEmail || getStoredEmail());
 
-  const handleSubscribe = () => {
+  const handleSubscribe = async () => {
     if (!email.includes("@")) { alert("Please enter a valid email."); return; }
     setLoading(true);
-    // In production: call Stripe Checkout API here
+    // 4.7: capture the email to MailerLite (gracefully no-ops if unconfigured)
+    await subscribeEmail(email, "paywall", { intendsToSubscribe: true });
+    // In production: call Stripe Checkout API here.
     setTimeout(() => {
       setLoading(false);
       onSubscribe();
@@ -1155,8 +1159,12 @@ function SubmitView({ isPaid, onUpgrade }) {
     );
   }
 
-  const submit = () => {
+  const submit = async () => {
     if (!company.trim() || !detail.trim()) { alert("Please fill in company name and description."); return; }
+    // 4.7: Pro users submitting are already known to us by email; surface this as
+    // a submission event so the pipeline team sees demand. If we collect an email
+    // later (free submit), wire it here too.
+    track("submit_company", { type, category: cat, companyName: company.trim() });
     setSent(true); setCompany(""); setDetail(""); setSource("");
     setTimeout(() => setSent(false), 4000);
   };
