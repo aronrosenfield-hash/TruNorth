@@ -612,7 +612,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
     </div>
   );
 }
-function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
+function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave }) {
   const [open, setOpen]     = useState(false);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
@@ -654,6 +654,17 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
           <div style={{ fontSize:13, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
         </div>
         <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
+          {/* UX 7A: save/star toggle — Unicode ★/☆ for reliable filled vs outlined rendering */}
+          {onToggleSave && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onToggleSave(); }}
+              aria-label={isSaved ? "Unsave" : "Save"}
+              title={isSaved ? "Saved" : "Save for later"}
+              style={{ width:28, height:28, padding:0, borderRadius:8, border:"none", background:"transparent", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, lineHeight:1, color: isSaved ? T.gold : T.txt3 }}
+            >
+              <span aria-hidden="true">{isSaved ? "★" : "☆"}</span>
+            </button>
+          )}
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
           <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }}>
             <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:T.txt, lineHeight:1 }}>{grade}</div>
@@ -1153,7 +1164,14 @@ const [profile, setProfile]   = useState(null);
   const [showPaywall, setShowPaywall] = useState(false);
 
 
-  const [tab, setTab]           = useState("top");
+  const [tab, setTab]           = useState(() => {
+    // Dev-only: ?tab=search|browse|top|account|sources opens that tab directly (for QA)
+    if (import.meta.env.DEV && typeof window !== "undefined") {
+      const t = new URLSearchParams(window.location.search).get("tab");
+      if (t && ["top","search","browse","account","sources","submit"].includes(t)) return t;
+    }
+    return "top";
+  });
   // UX 1B: debounce — input binds to queryRaw, filter uses query (150ms lag)
   const [queryRaw, setQueryRaw] = useState("");
   const [query, setQuery]       = useState("");
@@ -1164,6 +1182,24 @@ const [profile, setProfile]   = useState(null);
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [sort, setSort]             = useState("name");
+
+  // UX 7A: saved/favorites — Set of slugs, persisted in localStorage.
+  // Declared early so the `filtered` memo below can reference it.
+  const [savedSet, setSavedSet] = useState(() => {
+    try { return new Set(JSON.parse(localStorage.getItem("tn_saved") || "[]")); }
+    catch { return new Set(); }
+  });
+  const [showSavedOnly, setShowSavedOnly] = useState(false);
+  const toggleSaved = (slug, name) => {
+    setSavedSet(prev => {
+      const next = new Set(prev);
+      const wasSaved = next.has(slug);
+      if (wasSaved) next.delete(slug); else next.add(slug);
+      try { localStorage.setItem("tn_saved", JSON.stringify([...next])); } catch {}
+      track(wasSaved ? "unsave_company" : "save_company", { slug, name });
+      return next;
+    });
+  };
 
   // Analytics — init once, then track key funnel events
   useEffect(() => { initAnalytics(); }, []);
@@ -1250,6 +1286,8 @@ const [profile, setProfile]   = useState(null);
         const q = query.toLowerCase();
         if (!c.name.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q) && getBucket(c.cat).toLowerCase() !== q) return false;
       }
+      // UX 7A: saved-only filter
+      if (showSavedOnly && !savedSet.has(c.slug || c.id)) return false;
       return true;
     })
     .sort((a,b) => {
@@ -1258,7 +1296,7 @@ const [profile, setProfile]   = useState(null);
       const o={left:0,"left-leaning":1,bipartisan:2,mixed:3,neutral:4,right:6,"right-leaning":6};
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
     }),
-    [deduped, leanFilter, catFilters, query, sort, profile]
+    [deduped, leanFilter, catFilters, query, sort, profile, showSavedOnly, savedSet]
   );
 
   // UX 4E: recent searches (last 5 distinct queries with at least one result)
@@ -1417,16 +1455,26 @@ if (screen === "onboarding") {
             catFilters={catFilters} setCatFilters={setCatFilters} toggleCat={toggleCat}
             lc={lc}
           />
-          <div style={{ display:"flex", alignItems:"center", gap:8, padding:"9px 16px", borderBottom:`1px solid ${T.border}` }}>
+          <div style={{ display:"flex", alignItems:"center", gap:8, padding:"9px 16px", borderBottom:`1px solid ${T.border}`, flexWrap:"wrap" }}>
             <span style={{ fontSize:14, color:T.txt3 }}>Sort:</span>
             {["score","name","lean"].map(sv => (
               <button key={sv} onClick={()=>setSort(sv)} style={{ padding:"5px 10px", borderRadius:20, fontSize:12, fontWeight:sort===sv?600:400, border:`1px solid ${sort===sv?T.accent:T.border}`, background:sort===sv?T.accentBg:T.bg3, color:sort===sv?T.accent2:T.txt2, cursor:"pointer" }}>
                 {sv==="score"?"Your score":sv==="name"?"A–Z":"Lean"}
               </button>
             ))}
+            {/* UX 7A: Saved filter chip (visible only when user has saved at least one) */}
+            {savedSet.size > 0 && (
+              <button
+                onClick={()=>setShowSavedOnly(v=>!v)}
+                style={{ padding:"5px 10px", borderRadius:20, fontSize:12, fontWeight:showSavedOnly?700:500, border:`1px solid ${showSavedOnly?T.gold:T.border}`, background:showSavedOnly?T.goldBg:T.bg3, color:showSavedOnly?T.gold:T.txt2, cursor:"pointer", display:"inline-flex", alignItems:"center", gap:4 }}
+              >
+                <i className="ti ti-star-filled" style={{ fontSize:11 }} aria-hidden="true" />
+                Saved {showSavedOnly ? "" : `(${savedSet.size})`}
+              </button>
+            )}
             <span style={{ marginLeft:"auto", fontSize:11, color:T.txt3 }}>{filtered.length}</span>
-            {(leanFilter!=="all"||catFilters.length>0||query) && (
-              <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQueryRaw("");setQuery("");}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
+            {(leanFilter!=="all"||catFilters.length>0||query||showSavedOnly) && (
+              <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQueryRaw("");setQuery("");setShowSavedOnly(false);}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
             )}
           </div>
 
@@ -1445,7 +1493,7 @@ if (screen === "onboarding") {
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
             {/* UX 4E: when nothing's been typed AND no filters active, show Recent + Trending
                 instead of the full A–Z list (Top Picks tab already shows the full list). */}
-            {!query.trim() && leanFilter === "all" && catFilters.length === 0 ? (
+            {!query.trim() && leanFilter === "all" && catFilters.length === 0 && !showSavedOnly ? (
               <div style={{ padding:"24px 4px" }}>
                 {recentSearches.length > 0 && (
                   <div style={{ marginBottom:20 }}>
@@ -1485,7 +1533,7 @@ if (screen === "onboarding") {
                 <i className="ti ti-search" style={{fontSize:36,display:"block",marginBottom:12}} aria-hidden="true" />No companies match
               </div>
             ) : (
-              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />)
+              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} />)
             )}
           </div>
         </ErrorBoundary>
@@ -1542,7 +1590,7 @@ if (screen === "onboarding") {
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} />
             ))}
           </div>
         </ErrorBoundary>
