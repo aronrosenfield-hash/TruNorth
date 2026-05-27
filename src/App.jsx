@@ -1,9 +1,12 @@
-import { COMPANIES } from './companies.js';
+// Phase 3.1: companies.js is loaded LAZILY (dynamic import) so the 8.8MB module
+// only enters the bundle when the split-bundle path is OFF. With flag ON, the
+// import never fires and the app downloads only /data/index.json (~287 KB).
 import { useState, useEffect, useMemo } from "react";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail } from "./lib/dataSource";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
@@ -610,16 +613,31 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
   );
 }
 function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen]     = useState(false);
+  const [detail, setDetail] = useState(null);
+  const [loadingDetail, setLoadingDetail] = useState(false);
 
-  const ps = computeScore(company, profile);
+  // Phase 3.1: when running in split-bundle mode, the row-level `company`
+  // only has the compact shape (no narrative/sources). On expand, lazy-load
+  // the per-company JSON and merge it in. Use `enriched` everywhere below.
+  const enriched = detail || company;
+  const ps = computeScore(enriched, profile);
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
     if (!isPaid) { onUpgrade(); return; }
     setOpen(o => {
-      // Track only on expand (not collapse)
-      if (!o) track("company_view", { slug: company.id, name: company.name, grade, score: ps, category: company.cat });
+      if (!o) {
+        // Expanding — track view + lazily fetch detail if needed
+        track("company_view", { slug: company.slug || company.id, name: company.name, grade, score: ps, category: company.cat });
+        if (isSplitBundleEnabled() && company.slug && !detail && !loadingDetail) {
+          setLoadingDetail(true);
+          loadCompanyDetail(company.slug)
+            .then(d => setDetail(d))
+            .catch(err => console.error("[dataSource] detail fetch failed for", company.slug, err))
+            .finally(() => setLoadingDetail(false));
+        }
+      }
       return !o;
     });
   };
@@ -648,6 +666,10 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
       {/* Detail — paid only */}
       {open && isPaid && (
         <div style={{ borderTop:`1px solid ${T.border}`, padding:14, background:T.bg2 }}>
+          {/* Phase 3.1: thin loading bar while we fetch full detail */}
+          {loadingDetail && (
+            <div style={{ height:2, background:T.accent, opacity:0.5, marginBottom:12, borderRadius:1, animation:"pulse 1.5s ease-in-out infinite" }} aria-label="Loading details" />
+          )}
           {/* Score summary */}
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:16 }}>
             <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
@@ -655,7 +677,7 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
               <div style={{ fontSize:13, color:T.txt3, marginTop:2 }}>{ps}/100 · {profile ? "your score" : "avg score"}</div>
             </div>
             <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
-              <div style={{ fontSize:12, fontWeight:500, color:T.txt }}>{company.cat}</div>
+              <div style={{ fontSize:12, fontWeight:500, color:T.txt }}>{enriched.cat}</div>
               <div style={{ fontSize:11, color:T.txt3, marginTop:4, lineHeight:1.5 }}>
                 {profile ? `Based on your preferences` : `Based on average scoring`}
               </div>
@@ -664,9 +686,9 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
 
           {/* All categories — symbol + label + detail */}
           {CAT_KEYS.map(k => {
-            const d = company[k] || {};
-            const disp = getDisplay(k, company.sc[k], profile);
-            const state = getDataState(k, company.sc[k]);
+            const d = enriched[k] || {};
+            const disp = getDisplay(k, enriched.sc?.[k], profile);
+            const state = getDataState(k, enriched.sc?.[k]);
             const isUnknown = state === "unknown";
             const extra = k==="political" ? `Est. spending: ${d.amt||"N/A"} · Lean: ${d.lean||"N/A"}`
               : k==="charity"   ? `Amount: ${d.amt||"N/A"} · Focus: ${d.focus||"N/A"}`
@@ -1074,13 +1096,23 @@ function getBucket(cat) {
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
+  // Dev-only QA helper: ?skipOnboarding=1 and ?pro=1 let the simulator + Chrome
+  // tests bypass onboarding without persisting state on real production users.
+  const __qp = (typeof window !== "undefined") ? new URLSearchParams(window.location.search) : new URLSearchParams();
+  if (import.meta.env.DEV && __qp.has("skipOnboarding")) {
+    try { localStorage.setItem("tn_hasOnboarded", "1"); } catch {}
+  }
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
 const [screen, setScreen] = useState("splash");
 const [currentUser, setCurrentUser] = useState(() => {
   try { return JSON.parse(localStorage.getItem("tn_user") || "null"); } catch { return null; }
 });
 const [profile, setProfile]   = useState(null);
-  const [isPaid, setIsPaid]     = useState(false);
+  // Dev-only Pro mode for QA: append `?pro=1` to localhost URL. Production-safe
+  // because we additionally require import.meta.env.DEV.
+  const [isPaid, setIsPaid]     = useState(() =>
+    import.meta.env.DEV && typeof window !== "undefined" && new URLSearchParams(window.location.search).has("pro")
+  );
   const [showPaywall, setShowPaywall] = useState(false);
 
 
@@ -1132,10 +1164,33 @@ const [profile, setProfile]   = useState(null);
     }
   }, []);
 
+  // Phase 3.1: source companies from either the split-bundle loader (flag on,
+  // fast initial paint) or the dynamic-imported legacy monolith (flag off).
+  // Both paths are async — splash holds until companies is non-null.
+  // On primary failure, fall back to the OTHER source so prod stays alive even
+  // if one path is broken.
+  const [companies, setCompanies] = useState(null);
+  useEffect(() => {
+    if (companies) return;
+    let cancelled = false;
+    const splitFirst = isSplitBundleEnabled();
+    const primary  = () => splitFirst ? loadCompanyIndex() : import("./companies.js").then(m => m.COMPANIES);
+    const fallback = () => splitFirst ? import("./companies.js").then(m => m.COMPANIES) : loadCompanyIndex();
+    primary()
+      .then(list => { if (!cancelled) setCompanies(list); })
+      .catch(err => {
+        console.error("[dataSource] primary failed, trying fallback:", err);
+        fallback()
+          .then(list => { if (!cancelled) setCompanies(list); })
+          .catch(err2 => console.error("[dataSource] fallback also failed:", err2));
+      });
+    return () => { cancelled = true; };
+  }, [companies]);
+
   // UX 1A: memoize the dedupe/filter/sort chain so it doesn't rerun on unrelated state changes
   const deduped = useMemo(
-    () => COMPANIES.filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i),
-    []
+    () => (companies || []).filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i),
+    [companies]
   );
 
   const filtered = useMemo(() => deduped
