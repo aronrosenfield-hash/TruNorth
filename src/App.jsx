@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import { initAnalytics, track } from "./lib/analytics";
+import { ErrorBoundary } from "./lib/ErrorBoundary";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
@@ -149,6 +150,20 @@ const CAT_LABELS = {political:"Political",charity:"Charity",environment:"Environ
 const CAT_ICONS  = {political:"ti-flag-2",charity:"ti-heart",environment:"ti-leaf",labor:"ti-users",dei:"ti-rainbow",animals:"ti-paw",guns:"ti-target",privacy:"ti-lock",execPay:"ti-coin"};
 const CAT_FULL   = {political:"Political donations & lobbying",charity:"Charitable giving",environment:"Environmental policy",labor:"Labor practices",dei:"DEI & social equity",animals:"Animal testing",guns:"Firearms policy",privacy:"Data privacy",execPay:"Executive pay ratio"};
 
+// Phase 3.2 — classify per-category data state.
+//   "scored"  — we have a real signal (good/poor/neutral/left/right/etc.)
+//   "unknown" — no data ingested for this category yet
+// Unknown categories are excluded from the overall grade computation so we don't
+// penalize companies for sparse data (and don't artificially boost via fallback=50).
+// Note: "neutral" is a real scored value (the company is genuinely neutral), distinct
+// from unknown. "na"/"N/A" we also treat as unknown for grading purposes (no signal).
+function getDataState(k, v) {
+  if (v == null) return "unknown";
+  const val = String(v).toLowerCase().trim();
+  if (val === "" || val === "unknown" || val === "na" || val === "n/a" || val === "?") return "unknown";
+  return "scored";
+}
+
 function scoreCat(k, v, profile) {
   const val = (v || "").toLowerCase();
 
@@ -223,8 +238,17 @@ function computeScore(co, profile) {
     privacy:      profile.weights?.privacy      || 2,
     execPay:      profile.weights?.execPay      || 2,
   };
-  const total = Object.values(baseWeights).reduce((a,b) => a+b, 0);
-  const ws = CAT_KEYS.reduce((sum, k) => sum + scoreCat(k, co.sc[k], profile) * baseWeights[k], 0) / total;
+  // Phase 3.2 — exclude unknown-data categories from weighted average so they
+  // don't drag the score toward the old fallback (50). Renormalize over the
+  // weights of the categories we actually scored.
+  let weightedSum  = 0;
+  let weightUsed   = 0;
+  for (const k of CAT_KEYS) {
+    if (getDataState(k, co.sc[k]) === "unknown") continue;
+    weightedSum += scoreCat(k, co.sc[k], profile) * baseWeights[k];
+    weightUsed  += baseWeights[k];
+  }
+  const ws = weightUsed > 0 ? weightedSum / weightUsed : 50;
   const pen = (profile.dealBreakers || []).reduce((p, db) => {
     // Standard category dealbreakers
     if (["environment","labor","privacy","execPay","animals","guns","charity"].includes(db)) {
@@ -642,6 +666,8 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
           {CAT_KEYS.map(k => {
             const d = company[k] || {};
             const disp = getDisplay(k, company.sc[k], profile);
+            const state = getDataState(k, company.sc[k]);
+            const isUnknown = state === "unknown";
             const extra = k==="political" ? `Est. spending: ${d.amt||"N/A"} · Lean: ${d.lean||"N/A"}`
               : k==="charity"   ? `Amount: ${d.amt||"N/A"} · Focus: ${d.focus||"N/A"}`
               : k==="animals"   ? `Verdict: ${d.verdict||"N/A"}`
@@ -649,25 +675,46 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade }) {
               : k==="privacy"   ? `Grade: ${d.grade||"N/A"}`
               : k==="execPay"   ? `Ratio: ${d.ratio||"N/A"}`
               : `Rating: ${d.rating||"N/A"}`;
+            const badgeStyle = isUnknown
+              ? { background:"transparent", color:T.txt3, border:`1px dashed ${T.border2}`, opacity:0.75 }
+              : { background:T.bg3, color:T.txt, border:`1px solid ${T.border2}` };
             return (
-              <div key={k} style={{ marginBottom:14, paddingBottom:14, borderBottom:`1px solid ${T.border}` }}>
+              <div key={k} style={{ marginBottom:14, paddingBottom:14, borderBottom:`1px solid ${T.border}`, opacity: isUnknown ? 0.7 : 1 }}>
                 <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:6 }}>
                   <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.05em", display:"flex", alignItems:"center", gap:5 }}>
                     <i className={`ti ${CAT_ICONS[k]}`} aria-hidden="true" />
                     {CAT_FULL[k]}
                   </div>
-                  <span style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"3px 10px", borderRadius:20, fontSize:12, fontWeight:700, background:T.bg3, color:T.txt, border:`1px solid ${T.border2}` }}>
-                    {k === "political" && disp.icon === "dem" && <DonkeySVG size={12} />}
-                    {k === "political" && disp.icon === "rep" && <ElephantSVG size={12} />}
-                    {k === "political" && disp.icon === "bi"  && <span style={{fontSize:11}}>⚖</span>}
-                    {disp.sym} {disp.label}
+                  <span
+                    title={isUnknown ? "No data ingested yet — this category is excluded from the overall grade." : ""}
+                    style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"3px 10px", borderRadius:20, fontSize:12, fontWeight:700, ...badgeStyle }}
+                  >
+                    {isUnknown ? (
+                      <>? No data</>
+                    ) : (
+                      <>
+                        {k === "political" && disp.icon === "dem" && <DonkeySVG size={12} />}
+                        {k === "political" && disp.icon === "rep" && <ElephantSVG size={12} />}
+                        {k === "political" && disp.icon === "bi"  && <span style={{fontSize:11}}>⚖</span>}
+                        {disp.sym} {disp.label}
+                      </>
+                    )}
                   </span>
                 </div>
-                <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:5 }}>{extra}</div>
-                {(d.sources||[]).length > 0 && (
-                  <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
-                    {d.sources.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
+                {!isUnknown && (
+                  <>
+                    <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
+                    <div style={{ fontSize:11, color:T.txt3, marginTop:5 }}>{extra}</div>
+                    {(d.sources||[]).length > 0 && (
+                      <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
+                        {d.sources.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
+                      </div>
+                    )}
+                  </>
+                )}
+                {isUnknown && (
+                  <div style={{ fontSize:11, color:T.txt3, lineHeight:1.5, fontStyle:"italic" }}>
+                    Not penalized — excluded from this company's overall grade.
                   </div>
                 )}
               </div>
@@ -1250,7 +1297,7 @@ if (screen === "onboarding") {
 
       {/* SEARCH */}
       {tab === "search" && (
-        <>
+        <ErrorBoundary name="search">
           {/* ── Collapsible Filter Panel ── */}
           <FilterPanel
             leanFilter={leanFilter} setLeanFilter={setLeanFilter}
@@ -1288,12 +1335,12 @@ if (screen === "onboarding") {
               : filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />)
             }
           </div>
-        </>
+        </ErrorBoundary>
       )}
 
       {/* BROWSE */}
       {tab === "browse" && (
-        <div style={{ padding:16, display:"grid", gridTemplateColumns:"calc(50% - 5px) calc(50% - 5px)", gap:10 }}>
+        <ErrorBoundary name="browse"><div style={{ padding:16, display:"grid", gridTemplateColumns:"calc(50% - 5px) calc(50% - 5px)", gap:10 }}>
           {cats.map((cat, i) => {
             const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
             const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
@@ -1308,11 +1355,11 @@ if (screen === "onboarding") {
               </div>
             );
           })}
-        </div>
+        </div></ErrorBoundary>
       )}
       {/* TOP PICKS */}
       {tab === "top" && (
-        <>
+        <ErrorBoundary name="top-picks">
           <FilterPanel
             leanFilter={leanFilter} setLeanFilter={setLeanFilter}
             catFilters={catFilters} setCatFilters={setCatFilters} toggleCat={toggleCat}
@@ -1326,11 +1373,12 @@ if (screen === "onboarding") {
               <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />
             ))}
           </div>
-        </>
+        </ErrorBoundary>
       )}
 
       {/* SOURCES — Pro only */}
       {tab === "sources" && (
+        <ErrorBoundary name="sources">{
         !isPaid ? (
           <div style={{ padding:24, textAlign:"center" }}>
             <div style={{ width:56, height:56, background:T.goldBg, borderRadius:16, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 14px" }}>
@@ -1363,15 +1411,16 @@ if (screen === "onboarding") {
           ))}
         </div>
         )
+        }</ErrorBoundary>
       )}
 
       {/* SUBMIT */}
-      
+
       {/* ACCOUNT */}
-      {tab === "submit" && <SubmitView isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} />}
+      {tab === "submit" && <ErrorBoundary name="submit"><SubmitView isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} /></ErrorBoundary>}
 
       {tab === "account" && (
-        <div style={{ padding:16 }}>
+        <ErrorBoundary name="account"><div style={{ padding:16 }}>
           {/* Subscription status */}
           <div style={{ background:T.bg2, border:`1px solid ${isPaid ? T.gold : T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
             <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:12 }}>
@@ -1455,7 +1504,7 @@ if (screen === "onboarding") {
               <span style={{ color:T.accent2, fontWeight:500, display:"flex", alignItems:"center", gap:3 }}>View <i className="ti ti-chevron-right" style={{fontSize:11}} aria-hidden="true"/></span>
             </div>
           </div>
-        </div>
+        </div></ErrorBoundary>
       )}
 
       </div>{/* end scrollable content */}
