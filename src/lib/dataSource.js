@@ -6,13 +6,14 @@
 //   /data/companies/<slug>.json   — full per-company detail (~4 KB each)
 //   /data/meta.json               — bundle version metadata
 //
-// Feature-flagged: set VITE_USE_SPLIT_BUNDLE=true to enable in App.jsx. The
-// default (off) keeps the legacy monolithic companies.js import alive so we
-// can roll this out gradually.
+// Phase 4.11: Split-bundle is now the DEFAULT (production has 6,050 companies
+// in the split bundle; the legacy companies.js monolith only has 718 stale
+// entries and is just a fallback if the split bundle fetch fails).
+// Explicitly set VITE_USE_SPLIT_BUNDLE=false to opt out (e.g. for debugging).
 
 import MiniSearch from "minisearch";
 
-const ENABLED = String(import.meta.env.VITE_USE_SPLIT_BUNDLE || "").toLowerCase() === "true";
+const ENABLED = String(import.meta.env.VITE_USE_SPLIT_BUNDLE ?? "true").toLowerCase() !== "false";
 
 let indexPromise = null;
 let searchPromise = null;
