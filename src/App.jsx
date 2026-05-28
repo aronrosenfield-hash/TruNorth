@@ -282,63 +282,92 @@ function computeScore(co, profile) {
 }
 
 // ─── DISPLAY HELPERS ─────────────────────────────────────────────────────────
+// Phase 4.11: The display layer reports FACTS, not verdicts.
+// - Without a user profile, every symbol is the neutral dot "·" — the app
+//   doesn't decide whether testing animals, selling guns, or having a DEI
+//   program is good or bad. Users bring their own values via the quiz.
+// - With a profile, the ✓/✗ reflect whether THAT user's preferences align with
+//   the company's actions, not the app's morality.
+// - Labels prefer factual phrasing ("Pay Ratio >300:1") over editorial
+//   adjectives ("Extreme Pay Gap").
 function getDisplay(k, val, profile) {
   const v = (val || "").toLowerCase();
+  // sym() returns "·" without profile or when user has no preference on this axis.
+  // With a profile + preference, returns ✓ when company matches user's stance, ✗ when opposed.
+  const sym = (alignedWithUser) => {
+    if (!profile || alignedWithUser == null) return "·";
+    return alignedWithUser ? "✓" : "✗";
+  };
 
-  // Political
+  // Political — show donation lean as a fact. Symbol reflects user's lean.
   if (k === "political") {
-    if (["left","left-leaning"].includes(v)) return { sym: "◀", label: "Left-leaning",  icon: "dem" };
-    if (["right","right-leaning"].includes(v)) return { sym: "▶", label: "Right-leaning", icon: "rep" };
-    if (["bipartisan","mixed"].includes(v)) return { sym: "◆", label: "Bipartisan / Mixed", icon: "bi" };
-    return { sym: "–", label: "Neutral / Unknown", icon: null };
+    const userLean = profile?.lean;
+    if (["left","left-leaning"].includes(v))   return { sym: "◀", label: "Donates to Democrats",   icon: "dem", aligned: userLean === "left" };
+    if (["right","right-leaning"].includes(v)) return { sym: "▶", label: "Donates to Republicans", icon: "rep", aligned: userLean === "right" };
+    if (["bipartisan","mixed"].includes(v))    return { sym: "◆", label: "Bipartisan Donations",   icon: "bi" };
+    return { sym: "–", label: "No Significant Donations", icon: null };
   }
 
-  // DEI — show based on user's stance
+  // DEI — neutral by default; symbol depends on user's deiLean.
   if (k === "dei") {
-    if (v === "pro_dei")  return { sym: "✓", label: "Pro-DEI programs",  icon: null };
-    if (v === "anti_dei") return { sym: "✗", label: "Anti-DEI / Removed DEI", icon: null };
-    return { sym: "~", label: "Mixed / Neutral",  icon: null };
+    if (v === "pro_dei")  return { sym: sym(profile?.deiLean === "pro"  ? true : profile?.deiLean === "anti" ? false : null), label: "Public DEI Programs",  icon: null };
+    if (v === "anti_dei") return { sym: sym(profile?.deiLean === "anti" ? true : profile?.deiLean === "pro"  ? false : null), label: "Ended DEI Programs",   icon: null };
+    if (v === "mixed")    return { sym: "·", label: "Mixed Public Record", icon: null };
+    return { sym: "·", label: "No Public Position", icon: null };
   }
 
-  // Animals
+  // Animals — symbol depends on user's animalTesting preference.
   if (k === "animals") {
-    if (v === "cruelty_free")  return { sym: "✓", label: "Cruelty-Free", icon: null };
-    if (v === "tests_animals") return { sym: "✗", label: "Tests on Animals", icon: null };
-    if (v === "some_testing")  return { sym: "~", label: "Some Testing", icon: null };
-    return { sym: "–", label: "N/A", icon: null };
+    const cares = ["dealbreaker","prefer_not"].includes(profile?.animalTesting);
+    if (v === "cruelty_free")  return { sym: sym(cares ? true  : null), label: "Cruelty-Free Certified",   icon: null };
+    if (v === "tests_animals") return { sym: sym(cares ? false : null), label: "Documents Animal Testing", icon: null };
+    if (v === "some_testing")  return { sym: "·", label: "Some Animal Testing", icon: null };
+    return { sym: "·", label: "Not Applicable", icon: null };
   }
 
-  // Guns
+  // Guns — symbol depends on user's gun preference.
   if (k === "guns") {
-    if (v === "no_guns")   return { sym: "✓", label: "Does Not Sell Guns", icon: null };
-    if (v === "sells_guns") return { sym: "✗", label: "Sells Guns / Ammo", icon: null };
-    if (v === "makes_guns") return { sym: "✗", label: "Manufactures Guns", icon: null };
-    return { sym: "–", label: "N/A", icon: null };
+    const userPref = profile?.guns; // "avoid" | "support" | "neutral" | undefined
+    const aligned = (matchesAvoid, matchesSupport) =>
+      userPref === "avoid" ? matchesAvoid
+      : userPref === "support" ? matchesSupport
+      : null;
+    if (v === "no_guns")    return { sym: sym(aligned(true,  false)), label: "Does Not Sell Firearms", icon: null };
+    if (v === "sells_guns") return { sym: sym(aligned(false, true )), label: "Sells Firearms",        icon: null };
+    if (v === "makes_guns") return { sym: sym(aligned(false, true )), label: "Manufactures Firearms", icon: null };
+    return { sym: "·", label: "Not Applicable", icon: null };
   }
 
-  // Privacy
+  // Privacy — factual labels. Most users prefer fewer breaches, but the app
+  // doesn't assume — without a profile we just report.
   if (k === "privacy") {
-    if (v === "good")  return { sym: "✓", label: "Good Privacy Practices", icon: null };
-    if (v === "mixed") return { sym: "~", label: "Mixed Privacy Record",   icon: null };
-    if (v === "poor")  return { sym: "✗", label: "Poor Privacy Practices", icon: null };
-    return { sym: "–", label: "Unknown", icon: null };
+    if (v === "good")  return { sym: sym(profile ? true  : null), label: "No Documented Breaches", icon: null };
+    if (v === "mixed") return { sym: "·", label: "Some Breach History", icon: null };
+    if (v === "poor")  return { sym: sym(profile ? false : null), label: "Documented Breaches", icon: null };
+    return { sym: "·", label: "No Data", icon: null };
   }
 
-  // Exec pay
+  // Exec pay — factual ratios, not editorial labels.
   if (k === "execPay") {
-    if (["fair","good"].includes(v)) return { sym: "✓", label: "Reasonable Pay Ratio", icon: null };
-    if (v === "mixed")  return { sym: "~", label: "Mixed Pay Ratio",    icon: null };
-    if (v === "poor")   return { sym: "✗", label: "Extreme Pay Gap",    icon: null };
-    return { sym: "–", label: "Not Disclosed", icon: null };
+    if (["fair","good"].includes(v)) return { sym: sym(profile ? true  : null), label: "CEO Pay Ratio <50:1",   icon: null };
+    if (v === "mixed")               return { sym: "·", label: "CEO Pay Ratio 50–300:1", icon: null };
+    if (v === "poor")                return { sym: sym(profile ? false : null), label: "CEO Pay Ratio >300:1", icon: null };
+    return { sym: "·", label: "Not Disclosed", icon: null };
   }
 
-  // Others (charity, environment, labor)
-  if (["positive","excellent","strong","good"].includes(v)) return { sym: "✓", label: v.charAt(0).toUpperCase() + v.slice(1), icon: null };
-  if (v === "mixed")   return { sym: "~", label: "Mixed",      icon: null };
-  if (v === "neutral") return { sym: "–", label: "Neutral",    icon: null };
-  if (["negative","poor","below average"].includes(v)) return { sym: "✗", label: v.charAt(0).toUpperCase() + v.slice(1), icon: null };
-  if (v === "very poor") return { sym: "✗✗", label: "Very Poor", icon: null };
-  return { sym: "–", label: "Unknown", icon: null };
+  // Charity / Environment / Labor — factual descriptive labels per category.
+  const factualLabel = (good) => {
+    if (k === "charity")     return good ? "Documented Giving Programs" : "No Documented Giving";
+    if (k === "environment") return good ? "Verified Certifications"     : "Documented Violations";
+    if (k === "labor")       return good ? "No Major Violations on Record" : "Documented Labor Violations";
+    return good ? "On the Record" : "Documented Issues";
+  };
+  if (["positive","excellent","strong","good"].includes(v)) return { sym: sym(profile ? true  : null), label: factualLabel(true),  icon: null };
+  if (v === "mixed")   return { sym: "·", label: "Mixed Record", icon: null };
+  if (v === "neutral") return { sym: "·", label: "Limited Public Record", icon: null };
+  if (["negative","poor","below average"].includes(v)) return { sym: sym(profile ? false : null), label: factualLabel(false), icon: null };
+  if (v === "very poor") return { sym: sym(profile ? false : null), label: "Significant Violations", icon: null };
+  return { sym: "·", label: "No Data", icon: null };
 }
 
 // Score text grade
@@ -519,6 +548,15 @@ const Pill = ({ on, bg, color, border, onClick, children }) => (
 );
 
 // ─── FILTER PANEL ────────────────────────────────────────────────────────────
+// Boolean flag filters surfaced in the Filter panel (Phase 4.9). Each key
+// matches a top-level field on the company record (truthy = bad signal).
+const FLAG_FILTERS = [
+  { id: "stillInRussia", label: "Still in Russia",     icon: "ti-flag-off",     desc: "Operating in Russia post-invasion (Yale CELI)" },
+  { id: "foreignOwned",  label: "Foreign-owned",       icon: "ti-world",        desc: "Parent company headquartered outside the US" },
+  { id: "childLabor",    label: "Child-labor risk",    icon: "ti-mood-sad",     desc: "Supply chain flagged by BHRRC / DOL" },
+  { id: "antitrust",     label: "Antitrust action",    icon: "ti-gavel",        desc: "Active or recent antitrust enforcement" },
+];
+
 const FILTER_GROUPS = [
   {
     id: "political", label: "Political Lean", icon: "ti-flag-2",
@@ -533,13 +571,17 @@ const FILTER_GROUPS = [
     id: "categories", label: "Categories", icon: "ti-adjustments-horizontal",
     options: CAT_KEYS.map(k => ({ id:k, label:CAT_LABELS[k], icon:CAT_ICONS[k] }))
   },
+  {
+    id: "flags", label: "Concerns", icon: "ti-alert-triangle",
+    options: FLAG_FILTERS,
+  },
 ];
 
-function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, lc }) {
+function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
   const [open, setOpen] = useState(false);
   const [activeGroup, setActiveGroup] = useState(null);
-  const hasFilters = leanFilter !== "all" || catFilters.length > 0;
-  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length;
+  const hasFilters = leanFilter !== "all" || catFilters.length > 0 || flagFilters.length > 0;
+  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length + flagFilters.length;
 
   const toggleGroup = (id) => setActiveGroup(g => g === id ? null : id);
 
@@ -552,7 +594,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
           Filter {hasFilters ? `(${totalActive} active)` : ""}
         </span>
         {hasFilters && (
-          <button onClick={e=>{e.stopPropagation();setLeanFilter("all");setCatFilters([]);setActiveGroup(null);}}
+          <button onClick={e=>{e.stopPropagation();setLeanFilter("all");setCatFilters([]);setFlagFilters([]);setActiveGroup(null);}}
             style={{fontSize:11,color:T.rep,background:T.repBg,border:`1px solid ${T.rep}`,borderRadius:20,padding:"2px 8px",cursor:"pointer",marginLeft:4}}>
             Clear all
           </button>
@@ -565,7 +607,10 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
         <div style={{ borderTop:`1px solid ${T.border}` }}>
           {FILTER_GROUPS.map(group => {
             const isActive = activeGroup === group.id;
-            const groupHasFilter = group.id === "political" ? leanFilter !== "all" : catFilters.length > 0;
+            const groupHasFilter =
+              group.id === "political" ? leanFilter !== "all"
+              : group.id === "flags"    ? flagFilters.length > 0
+              : catFilters.length > 0;
             return (
               <div key={group.id}>
                 {/* Group row */}
@@ -612,6 +657,19 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
                         <span style={{ fontSize:14, color:catFilters.includes(k)?T.accent2:T.txt, flex:1 }}>{CAT_LABELS[k]}</span>
                       </div>
                     ))}
+                    {group.id === "flags" && FLAG_FILTERS.map(f => (
+                      <div key={f.id} onClick={()=>toggleFlag(f.id)}
+                        style={{ display:"flex", alignItems:"center", gap:10, padding:"11px 20px", cursor:"pointer", borderBottom:`1px solid ${T.border}` }}>
+                        <div style={{ width:20, height:20, borderRadius:4, border:`2px solid ${flagFilters.includes(f.id)?T.accent:T.border2}`, background:flagFilters.includes(f.id)?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                          {flagFilters.includes(f.id) && <i className="ti ti-check" style={{fontSize:11,color:"#fff"}} aria-hidden="true" />}
+                        </div>
+                        <i className={`ti ${f.icon}`} style={{fontSize:14,color:flagFilters.includes(f.id)?T.accent2:T.txt3}} aria-hidden="true" />
+                        <div style={{ flex:1, minWidth:0 }}>
+                          <div style={{ fontSize:14, color:flagFilters.includes(f.id)?T.accent2:T.txt }}>{f.label}</div>
+                          <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{f.desc}</div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
@@ -622,9 +680,63 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
     </div>
   );
 }
+// Phase 4.9: one-shot announcement modal — shown once per WHATSNEW_VERSION.
+// Bump the version string when there's a new milestone to re-trigger.
+const WHATSNEW_VERSION = "2026-05-6k-launch";
+function WhatsNewModal({ companyCount }) {
+  const [show, setShow] = useState(() => {
+    try { return localStorage.getItem("tn_whatsnew_seen") !== WHATSNEW_VERSION; }
+    catch { return false; }
+  });
+  useEffect(() => {
+    if (show) track("whatsnew_shown", { version: WHATSNEW_VERSION });
+  }, [show]);
+  if (!show) return null;
+  const dismiss = () => {
+    try { localStorage.setItem("tn_whatsnew_seen", WHATSNEW_VERSION); } catch {}
+    track("whatsnew_dismissed", { version: WHATSNEW_VERSION });
+    setShow(false);
+  };
+  return (
+    <div onClick={dismiss} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
+      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:400, width:"100%", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:20, color:T.txt }}>
+        <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:14 }}>
+          <i className="ti ti-sparkles" style={{ fontSize:24, color:T.accent2 }} aria-hidden="true" />
+          <div style={{ fontSize:18, fontWeight:700 }}>What's new</div>
+        </div>
+        <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"12px 14px", marginBottom:14 }}>
+          <div style={{ fontSize:24, fontWeight:800, color:T.accent2 }}>{companyCount.toLocaleString()}</div>
+          <div style={{ fontSize:13, color:T.txt2, marginTop:2 }}>Companies tracked on TruNorth — you decide the verdict</div>
+        </div>
+        <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13, color:T.txt2, lineHeight:1.7 }}>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
+            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
+            <span><b style={{ color:T.txt }}>5,000+ new companies</b> added across food, tech, retail, healthcare, energy</span>
+          </li>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
+            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
+            <span><b style={{ color:T.txt }}>Direct Competitors</b> — every company now shows its top competitors so you can compare</span>
+          </li>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
+            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
+            <span><b style={{ color:T.txt }}>New filters</b>: Still in Russia, foreign-owned, child labor, antitrust</span>
+          </li>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
+            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
+            <span><b style={{ color:T.txt }}>Shareable company links</b> — send any company directly to a friend</span>
+          </li>
+        </ul>
+        <button onClick={dismiss} style={{ width:"100%", marginTop:16, padding:12, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
+          Got it
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // UX 3A: Compare 2 Companies overlay. Shows side-by-side grade + per-category
 // comparison with winner highlighted per row.
-function CompareView({ companies, list, onClose, onRemove, profile, isPaid }) {
+function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPaid }) {
   // Resolve each item in `list` to the full company object (from index or detail)
   const [details, setDetails] = useState({});
   useEffect(() => {
@@ -651,8 +763,81 @@ function CompareView({ companies, list, onClose, onRemove, profile, isPaid }) {
         </div>
 
         {resolved.length < 2 ? (
-          <div style={{ padding:"24px", textAlign:"center", color:T.txt3, fontSize:13 }}>
-            Add one more company to compare. (Tap the <i className="ti ti-arrows-left-right" aria-hidden="true" /> icon on any row.)
+          <div>
+            {/* Show the picked one + suggestions for the second slot */}
+            {resolved.length === 1 && (
+              <div style={{ background:T.bg2, borderRadius:12, padding:12, border:`1px solid ${T.border}`, marginBottom:14, display:"flex", alignItems:"center", gap:10 }}>
+                <div style={{ width:36, height:36, borderRadius:8, background:resolved[0].ab || T.bg3, color:resolved[0].ac || T.accent2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, flexShrink:0 }}>{resolved[0].init || "??"}</div>
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ fontSize:14, fontWeight:700, color:T.txt }}>{resolved[0].name}</div>
+                  <div style={{ fontSize:11, color:T.txt3 }}>{resolved[0].cat || ""}</div>
+                </div>
+                <span style={{ color:T.txt3, fontSize:13 }}>vs ?</span>
+              </div>
+            )}
+            <div style={{ fontSize:12, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:10 }}>
+              Suggested matches
+            </div>
+            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 }}>
+              {(() => {
+                const pickedSlugs = new Set(list.map(l => l.slug));
+                const firstCat = resolved[0]?.cat;
+                const firstCompetitors = Array.isArray(resolved[0]?.competitors) ? resolved[0].competitors : [];
+                const pool = (companies || []).filter(c => !pickedSlugs.has(c.slug || c.id));
+                let suggestions = [];
+                // Tier 1: AI-baked direct competitors (most accurate)
+                if (firstCompetitors.length) {
+                  const compSet = new Set(firstCompetitors);
+                  const matched = pool.filter(c => compSet.has(c.slug || c.id));
+                  // Preserve order from competitors array (Claude's ranking)
+                  matched.sort((a, b) => firstCompetitors.indexOf(a.slug || a.id) - firstCompetitors.indexOf(b.slug || b.id));
+                  suggestions.push(...matched);
+                }
+                const already = new Set(suggestions.map(s => s.slug || s.id));
+                // Tier 2: same-category fill (when we still have room)
+                if (suggestions.length < 6 && firstCat && firstCat !== "Other") {
+                  const sameCat = pool
+                    .filter(c => c.cat === firstCat && !already.has(c.slug || c.id))
+                    .sort((a, b) => {
+                      const aHas = a.sc && Object.values(a.sc).some(v => v && v !== "unknown");
+                      const bHas = b.sc && Object.values(b.sc).some(v => v && v !== "unknown");
+                      if (aHas !== bHas) return aHas ? -1 : 1;
+                      return (b.overall || 0) - (a.overall || 0);
+                    });
+                  for (const c of sameCat) {
+                    if (suggestions.length >= 6) break;
+                    suggestions.push(c);
+                    already.add(c.slug || c.id);
+                  }
+                }
+                // Tier 3 fallback: only used when nothing matched at all
+                if (suggestions.length === 0) {
+                  const POPULAR_CATS = new Set(["Technology","Food & Beverage","Retail","Healthcare","Financial Services","Apparel","Grocery"]);
+                  suggestions = pool
+                    .filter(c => POPULAR_CATS.has(c.cat) && (c.grade === "A" || c.grade === "B"))
+                    .sort((a, b) => (b.overall || 0) - (a.overall || 0));
+                }
+                if (suggestions.length === 0) {
+                  return <div style={{ gridColumn:"1 / -1", padding:"16px", textAlign:"center", color:T.txt3, fontSize:12 }}>No close matches yet — try the <i className="ti ti-arrows-left-right" aria-hidden="true" /> icon on another row.</div>;
+                }
+                return suggestions.slice(0, 6).map(co => (
+                  <button
+                    key={co.slug || co.id}
+                    onClick={() => { onAdd && onAdd(co.slug || co.id, co.name); track("compare_suggest_pick", { slug: co.slug || co.id, name: co.name }); }}
+                    style={{ display:"flex", alignItems:"center", gap:8, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", color:T.txt }}
+                  >
+                    <div style={{ width:28, height:28, borderRadius:6, background:co.ab || T.bg3, color:co.ac || T.accent2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:10, fontWeight:700, flexShrink:0 }}>{co.init || "??"}</div>
+                    <div style={{ minWidth:0, flex:1 }}>
+                      <div style={{ fontSize:12, fontWeight:600, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
+                      <div style={{ fontSize:10, color:T.txt3 }}>{co.cat || ""} · {co.grade || "?"}</div>
+                    </div>
+                  </button>
+                ));
+              })()}
+            </div>
+            <div style={{ marginTop:14, fontSize:11, color:T.txt3, textAlign:"center" }}>
+              Or tap the <i className="ti ti-arrows-left-right" aria-hidden="true" /> icon on any company row.
+            </div>
           </div>
         ) : (
           <>
@@ -668,8 +853,9 @@ function CompareView({ companies, list, onClose, onRemove, profile, isPaid }) {
                     <div style={{ fontSize:14, fontWeight:700, color:T.txt, lineHeight:1.2 }}>{co.name}</div>
                     <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{co.cat || ""}</div>
                     <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
-                      <div style={{ fontSize:28, fontWeight:800, color:T.txt, lineHeight:1 }}>{grade}</div>
-                      {isPaid && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
+                      <div style={{ fontSize:28, fontWeight:800, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
+                      {isPaid && profile && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
+                      {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take quiz</div>}
                     </div>
                   </div>
                 );
@@ -732,8 +918,8 @@ function CompareView({ companies, list, onClose, onRemove, profile, isPaid }) {
   );
 }
 
-function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare }) {
-  const [open, setOpen]     = useState(false);
+function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, allCompanies, initiallyOpen }) {
+  const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
 
@@ -761,6 +947,20 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
       return !o;
     });
   };
+
+  // SEO: update <title> + visible URL when a card is open so the browser
+  // shows the right tab name and shareable URL. Reverts on collapse/unmount.
+  useEffect(() => {
+    if (!open || typeof window === "undefined") return;
+    const slug = company.slug || company.id;
+    const prevTitle = document.title;
+    document.title = `${company.name} — TruNorth`;
+    try { window.history.replaceState({}, "", `/company/${slug}`); } catch {}
+    return () => {
+      document.title = prevTitle;
+      try { window.history.replaceState({}, "", "/"); } catch {}
+    };
+  }, [open, company.name, company.slug, company.id]);
 
 
 
@@ -797,9 +997,9 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             </button>
           )}
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
-          <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }}>
-            <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:T.txt, lineHeight:1 }}>{grade}</div>
-            {isPaid && <div style={{ fontSize:10, color:T.txt3 }}>{ps}</div>}
+          <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }} title={profile ? "Your personalized grade" : "Take the values quiz to see grades"}>
+            <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
+            {isPaid && profile && <div style={{ fontSize:10, color:T.txt3 }}>{ps}</div>}
           </div>
           <i className={`ti ${open ? "ti-chevron-up" : "ti-chevron-down"}`} style={{fontSize:13,color:T.txt3}} aria-hidden="true" />
         </div>
@@ -812,13 +1012,13 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
           {loadingDetail && (
             <div style={{ height:2, background:T.accent, opacity:0.5, marginBottom:12, borderRadius:1, animation:"pulse 1.5s ease-in-out infinite" }} aria-label="Loading details" />
           )}
-          {/* UX 5B: "On this brand's worst day" callout for D/F-graded companies
-              with substantial federal penalties. Pulls from Violation Tracker. */}
+          {/* Federal penalty callout. Phase 4.11: now triggers on the FACT
+              (≥$5M in penalties), not the app's grade verdict. Lets users
+              see the raw data and decide for themselves. */}
           {(() => {
             const vt = enriched.violationTracker;
-            const isBadGrade = ["D", "F"].includes(grade);
-            const hasSignificantPenalty = vt && vt.totalPenalty && vt.totalPenalty >= 1_000_000; // ≥$1M
-            if (!isBadGrade || !hasSignificantPenalty) return null;
+            const hasSignificantPenalty = vt && vt.totalPenalty && vt.totalPenalty >= 5_000_000; // ≥$5M
+            if (!hasSignificantPenalty) return null;
             const penFmt = vt.totalPenalty >= 1e9
               ? `$${(vt.totalPenalty/1e9).toFixed(2)}B`
               : `$${(vt.totalPenalty/1e6).toFixed(1)}M`;
@@ -840,16 +1040,56 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               </div>
             );
           })()}
-          {/* Score summary */}
+          {/* Direct competitors list — Phase 4.11 made this neutral. We no
+              longer label them "better alternatives" (a verdict) — just
+              "competitors". For users WITH a profile, we surface companies
+              that score higher relative to THEIR preferences. */}
+          {(() => {
+            const comps = Array.isArray(enriched.competitors) ? enriched.competitors : [];
+            if (!comps.length || !allCompanies?.length) return null;
+            const lookup = new Map(allCompanies.map(c => [c.slug || c.id, c]));
+            const competitorsResolved = comps.map(slug => lookup.get(slug)).filter(Boolean);
+            // With a profile, filter to those scoring above the current company.
+            // Without a profile, show all competitors so the user can compare.
+            const display = profile
+              ? competitorsResolved.filter(c => computeScore(c, profile) > ps).slice(0, 4)
+              : competitorsResolved.slice(0, 4);
+            if (!display.length) return null;
+            return (
+              <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, padding:"10px 12px", marginBottom:12 }}>
+                <div style={{ fontSize:11, fontWeight:700, color:T.accent2, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:8, display:"flex", alignItems:"center", gap:5 }}>
+                  <i className="ti ti-arrows-left-right" aria-hidden="true" /> {profile ? "Higher-scoring competitors" : "Direct competitors"}
+                </div>
+                <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                  {display.map(alt => (
+                    <button
+                      key={alt.slug || alt.id}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (onCompareWith) onCompareWith(alt.slug || alt.id, alt.name);
+                        track("competitor_pick", { from: enriched.slug || enriched.id, to: alt.slug || alt.id });
+                      }}
+                      style={{ display:"inline-flex", alignItems:"center", gap:6, padding:"6px 10px", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:16, cursor:"pointer", color:T.txt, fontSize:12 }}
+                    >
+                      <span style={{ fontWeight:700 }}>{alt.name}</span>
+                      {profile && <span style={{ padding:"1px 6px", borderRadius:8, background:alt.grade === "A" ? "#0d2318" : T.bg, color:alt.grade === "A" ? "#4caf82" : T.txt2, fontSize:10, fontWeight:700 }}>{alt.grade}</span>}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+          {/* Score summary — only shown to users who've taken the quiz so the
+              app doesn't impose a verdict. Pre-quiz users see a neutral nudge. */}
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:16 }}>
             <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
-              <div style={{ fontSize:28, fontWeight:700, color:T.txt, lineHeight:1 }}>{grade}</div>
-              <div style={{ fontSize:13, color:T.txt3, marginTop:2 }}>{ps}/100 · {profile ? "your score" : "avg score"}</div>
+              <div style={{ fontSize:28, fontWeight:700, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
+              <div style={{ fontSize:13, color:T.txt3, marginTop:2 }}>{profile ? `${ps}/100 · your score` : "Take quiz for your grade"}</div>
             </div>
             <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
               <div style={{ fontSize:12, fontWeight:500, color:T.txt }}>{enriched.cat}</div>
               <div style={{ fontSize:11, color:T.txt3, marginTop:4, lineHeight:1.5 }}>
-                {profile ? `Based on your preferences` : `Based on average scoring`}
+                {profile ? `Based on your preferences` : `Data shown — your values determine the grade`}
               </div>
             </div>
           </div>
@@ -860,13 +1100,6 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             const disp = getDisplay(k, enriched.sc?.[k], profile);
             const state = getDataState(k, enriched.sc?.[k]);
             const isUnknown = state === "unknown";
-            const extra = k==="political" ? `Est. spending: ${d.amt||"N/A"} · Lean: ${d.lean||"N/A"}`
-              : k==="charity"   ? `Amount: ${d.amt||"N/A"} · Focus: ${d.focus||"N/A"}`
-              : k==="animals"   ? `Verdict: ${d.verdict||"N/A"}`
-              : k==="guns"      ? `Verdict: ${d.verdict||"N/A"}`
-              : k==="privacy"   ? `Grade: ${d.grade||"N/A"}`
-              : k==="execPay"   ? `Ratio: ${d.ratio||"N/A"}`
-              : `Rating: ${d.rating||"N/A"}`;
             const badgeStyle = isUnknown
               ? { background:"transparent", color:T.txt3, border:`1px dashed ${T.border2}`, opacity:0.75 }
               : { background:T.bg3, color:T.txt, border:`1px solid ${T.border2}` };
@@ -896,7 +1129,6 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
                 {!isUnknown && (
                   <>
                     <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
-                    <div style={{ fontSize:11, color:T.txt3, marginTop:5 }}>{extra}</div>
                     {(d.sources||[]).length > 0 && (
                       <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
                         {d.sources.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
@@ -919,10 +1151,12 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             <button
               onClick={async (e) => {
                 e.stopPropagation();
-                const shareUrl = `https://www.trunorthapp.com/?c=${encodeURIComponent(enriched.name)}`;
+                const shareUrl = `https://www.trunorthapp.com/company/${encodeURIComponent(enriched.slug || enriched.id)}`;
                 const shareData = {
                   title: `${enriched.name} on TruNorth`,
-                  text:  `${enriched.name} earned a ${grade} on TruNorth. Know where your money goes.`,
+                  text:  profile
+                    ? `Check out ${enriched.name}'s record on TruNorth — politics, labor, environment, and more.`
+                    : `${enriched.name} — see their political donations, labor record, and environmental data on TruNorth.`,
                   url:   shareUrl,
                 };
                 let method = "unknown";
@@ -1238,10 +1472,15 @@ function SubmitView({ isPaid, onUpgrade }) {
 
 // ─── SOURCES ──────────────────────────────────────────────────────────────────
 const SOURCES_DATA = [
+  {group:"Company universe",icon:"ti-building",items:[
+    {name:"SEC EDGAR",url:"https://www.sec.gov/edgar/searchedgar/companysearch",desc:"Official US filings — pulls every public ticker plus the 10-K Exhibit 21 subsidiary tree for ownership graphs."},
+    {name:"Wikidata",url:"https://www.wikidata.org",desc:"Open knowledge graph used to map consumer brands back to their corporate parents (e.g. Aunt Jemima → PepsiCo)."},
+    {name:"Open Food Facts",url:"https://world.openfoodfacts.org",desc:"Crowdsourced food product database — adds brand-to-parent links for grocery."},
+  ]},
   {group:"Political donations",icon:"ti-flag-2",items:[
-    {name:"OpenSecrets.org",url:"https://www.opensecrets.org",desc:"Tracks all disclosed political donations, PAC spending, lobbying, and candidate fundraising from FEC filings."},
-    {name:"FEC.gov",url:"https://www.fec.gov",desc:"Official US government source for all federal campaign finance disclosures."},
-    {name:"InfluenceMap",url:"https://influencemap.org",desc:"Scores companies on climate policy lobbying and political influence."},
+    {name:"FEC.gov",url:"https://www.fec.gov",desc:"Official US federal campaign finance API. Maps every company donation and lobbying disclosure to candidate / party / lean."},
+    {name:"OpenSecrets.org",url:"https://www.opensecrets.org",desc:"Tracks aggregated political donations, PAC spending, lobbying, and candidate fundraising."},
+    {name:"InfluenceMap",url:"https://influencemap.org",desc:"Scores companies on climate-policy lobbying and political influence."},
   ]},
   {group:"Charitable giving",icon:"ti-heart",items:[
     {name:"Charity Navigator",url:"https://www.charitynavigator.org",desc:"Rates 1.8M nonprofits on financial health, accountability, and transparency."},
@@ -1250,12 +1489,19 @@ const SOURCES_DATA = [
   {group:"Environmental",icon:"ti-leaf",items:[
     {name:"CDP (Carbon Disclosure Project)",url:"https://www.cdp.net",desc:"World's largest environmental disclosure system. Companies scored A–D on climate, water, forests."},
     {name:"B Corp Certification",url:"https://www.bcorporation.net",desc:"Rigorous certification for companies meeting high social and environmental standards."},
+    {name:"EPA Enforcement",url:"https://www.epa.gov/enforcement",desc:"Federal environmental enforcement actions — Clean Air, Clean Water, Superfund."},
     {name:"Break Free From Plastic",url:"https://www.breakfreefromplastic.org",desc:"Annual Brand Audit ranks top plastic polluters globally."},
   ]},
   {group:"Labor practices",icon:"ti-users",items:[
-    {name:"OSHA (osha.gov)",url:"https://www.osha.gov",desc:"Official US workplace safety database with inspection records, violations, and fines."},
-    {name:"NLRB (nlrb.gov)",url:"https://www.nlrb.gov",desc:"National Labor Relations Board — tracks unfair labor practice cases and union elections."},
+    {name:"OSHA (osha.gov)",url:"https://www.osha.gov",desc:"Federal workplace safety inspections, violations, and fines."},
+    {name:"NLRB (nlrb.gov)",url:"https://www.nlrb.gov",desc:"National Labor Relations Board — unfair labor practice cases and union elections."},
+    {name:"Violation Tracker",url:"https://violationtracker.goodjobsfirst.org",desc:"Aggregates federal penalties across 50+ agencies — wage theft, safety, environmental, antitrust."},
     {name:"Oxfam Scorecard",url:"https://www.oxfam.org/en/research/behind-brands",desc:"Rates major food companies on worker rights."},
+  ]},
+  {group:"Supply-chain & human rights",icon:"ti-world",items:[
+    {name:"BHRRC (Business & Human Rights Resource Centre)",url:"https://www.business-humanrights.org",desc:"Tracks human-rights allegations against companies including forced labor, child labor, and modern slavery."},
+    {name:"US DOL — List of Goods Produced by Child or Forced Labor",url:"https://www.dol.gov/agencies/ilab/reports/child-labor/list-of-goods",desc:"Department of Labor's annual list flagging products with documented forced or child-labor risk."},
+    {name:"Yale CELI — Russia Exit Tracker",url:"https://som.yale.edu/story/2022/over-1000-companies-have-curtailed-operations-russia-some-remain",desc:"Yale School of Management's grades A–F on whether companies pulled out of Russia after the 2022 invasion."},
   ]},
   {group:"DEI",icon:"ti-rainbow",items:[
     {name:"HRC Corporate Equality Index",url:"https://www.hrc.org/resources/corporate-equality-index",desc:"Annual scorecard rating companies 0–100 on LGBTQ+ workplace equality."},
@@ -1266,13 +1512,20 @@ const SOURCES_DATA = [
     {name:"Leaping Bunny",url:"https://www.leapingbunny.org",desc:"Global certification program for cruelty-free companies."},
     {name:"ASPCA",url:"https://www.aspca.org",desc:"Tracks animal welfare standards in food and agriculture supply chains."},
   ]},
-  {group:"Data privacy",icon:"ti-lock",items:[
+  {group:"Data privacy & breaches",icon:"ti-lock",items:[
+    {name:"Have I Been Pwned",url:"https://haveibeenpwned.com",desc:"Curated database of 1,000+ documented data breaches with account counts and exposed data classes."},
     {name:"EFF (Electronic Frontier Foundation)",url:"https://www.eff.org",desc:"Tracks corporate surveillance practices and data privacy records."},
     {name:"Mozilla Privacy Not Included",url:"https://foundation.mozilla.org/en/privacynotincluded/",desc:"Rates apps and services on data collection and privacy practices."},
+  ]},
+  {group:"Health & product safety",icon:"ti-stethoscope",items:[
+    {name:"OpenFDA",url:"https://open.fda.gov",desc:"Public FDA enforcement API — pulls every food, drug, and device recall, classified by severity (Class I / II / III)."},
   ]},
   {group:"Executive pay",icon:"ti-coin",items:[
     {name:"AFL-CIO Executive Paywatch",url:"https://aflcio.org/paywatch",desc:"Tracks CEO-to-worker pay ratios at major US corporations."},
     {name:"SEC Executive Compensation Proxy",url:"https://www.sec.gov/cgi-bin/browse-edgar",desc:"Official source for executive compensation disclosures."},
+  ]},
+  {group:"Synthesis & narratives",icon:"ti-cpu",items:[
+    {name:"Anthropic Claude (Haiku)",url:"https://www.anthropic.com",desc:"Synthesizes the per-category narratives and competitor lists from the verified data above. We do NOT trust Claude alone — government data overrides any AI claim."},
   ]},
 ];
 
@@ -1299,8 +1552,13 @@ const CAT_BUCKET_MAP = {
 };
 function getBucket(cat) {
   const c = cat.split(" / ")[0].split(",")[0].trim();
+  const lc = c.toLowerCase();
   for (const [bucket, keywords] of Object.entries(CAT_BUCKET_MAP)) {
-    if (keywords.some(k => c.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(c.toLowerCase()))) return bucket;
+    // EXACT match only (case-insensitive). The previous bidirectional
+    // `includes` check caused "Manufacturing" to match "Apparel Manufacturing"
+    // and dump everything into Apparel & Fashion. Strict equality keeps
+    // buckets honest at the cost of slightly more "uncategorized" fallback.
+    if (keywords.some(k => k.toLowerCase() === lc)) return bucket;
   }
   return c;
 }
@@ -1423,6 +1681,8 @@ const [profile, setProfile]   = useState(null);
   }, [queryRaw]);
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
+  const [flagFilters, setFlagFilters] = useState([]); // multi-select boolean flags
+  const toggleFlag = (id) => setFlagFilters(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
   const [sort, setSort]             = useState("name");
 
   // UX 7A: saved/favorites — Set of slugs, persisted in localStorage.
@@ -1503,6 +1763,15 @@ const [profile, setProfile]   = useState(null);
   // On primary failure, fall back to the OTHER source so prod stays alive even
   // if one path is broken.
   const [companies, setCompanies] = useState(null);
+
+  // Deep-link slug: parsed from /company/<slug>. CompanyCard reads it and
+  // auto-expands the matching row on first render so shared links open the
+  // intended company profile.
+  const [deepLinkSlug, setDeepLinkSlug] = useState(() => {
+    if (typeof window === "undefined") return null;
+    const m = window.location.pathname.match(/^\/company\/([^/?#]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
+  });
   useEffect(() => {
     if (companies) return;
     let cancelled = false;
@@ -1519,6 +1788,25 @@ const [profile, setProfile]   = useState(null);
       });
     return () => { cancelled = true; };
   }, [companies]);
+
+  // Deep-link: when companies have loaded and we have a slug from the URL,
+  // jump to the search tab and seed the search with the company's name so
+  // the card surfaces and CompanyCard's initiallyOpen prop expands it.
+  useEffect(() => {
+    if (!deepLinkSlug || !companies) return;
+    const co = companies.find(c => (c.slug || c.id) === deepLinkSlug);
+    if (!co) {
+      console.warn("[deep-link] slug not found:", deepLinkSlug);
+      setDeepLinkSlug(null);
+      return;
+    }
+    setTab("search");
+    setQueryRaw(co.name);
+    setQuery(co.name);
+    track("deep_link_open", { slug: deepLinkSlug, name: co.name });
+    // Replace URL with clean root so back-button works as expected
+    try { window.history.replaceState({}, "", "/"); } catch {}
+  }, [deepLinkSlug, companies]);
 
   // UX 1A: memoize the dedupe/filter/sort chain so it doesn't rerun on unrelated state changes
   const deduped = useMemo(
@@ -1542,6 +1830,10 @@ const [profile, setProfile]   = useState(null);
         });
         if (!allPass) return false;
       }
+      // Phase 4.9: boolean flag filters — every selected flag must be truthy
+      if (flagFilters.length > 0) {
+        if (!flagFilters.every(f => !!c[f])) return false;
+      }
       if (query.trim()) {
         const q = query.toLowerCase();
         if (!c.name.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q) && getBucket(c.cat).toLowerCase() !== q) return false;
@@ -1556,7 +1848,7 @@ const [profile, setProfile]   = useState(null);
       const o={left:0,"left-leaning":1,bipartisan:2,mixed:3,neutral:4,right:6,"right-leaning":6};
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
     }),
-    [deduped, leanFilter, catFilters, query, sort, profile, showSavedOnly, savedSet]
+    [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet]
   );
 
   // UX 4E: recent searches (last 5 distinct queries with at least one result)
@@ -1662,6 +1954,7 @@ if (screen === "onboarding") {
   return (
     <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
       {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
+      <WhatsNewModal companyCount={companies?.length || 6000} />
 
       {/* UX 8B: aria-live region for screen readers — announces filtered count
           and which tab is active without visual clutter. */}
@@ -1723,6 +2016,7 @@ if (screen === "onboarding") {
           <FilterPanel
             leanFilter={leanFilter} setLeanFilter={setLeanFilter}
             catFilters={catFilters} setCatFilters={setCatFilters} toggleCat={toggleCat}
+            flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
           <div style={{ display:"flex", alignItems:"center", gap:8, padding:"9px 16px", borderBottom:`1px solid ${T.border}`, flexWrap:"wrap" }}>
@@ -1812,7 +2106,7 @@ if (screen === "onboarding") {
                 )}
               </div>
             ) : (
-              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} />)
+              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)
             )}
           </div>
         </ErrorBoundary>
@@ -1843,6 +2137,7 @@ if (screen === "onboarding") {
           <FilterPanel
             leanFilter={leanFilter} setLeanFilter={setLeanFilter}
             catFilters={catFilters} setCatFilters={setCatFilters} toggleCat={toggleCat}
+            flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
@@ -1869,7 +2164,7 @@ if (screen === "onboarding") {
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} />
             ))}
           </div>
         </ErrorBoundary>
@@ -1884,7 +2179,7 @@ if (screen === "onboarding") {
               <i className="ti ti-crown" style={{ fontSize:26, color:T.gold }} aria-hidden="true" />
             </div>
             <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:8 }}>Data sources are Pro only</div>
-            <div style={{ fontSize:13, color:T.txt3, marginBottom:20, lineHeight:1.6 }}>Upgrade to see all 8 research databases we use, including OpenSecrets, CDP, OSHA, NLRB, PETA, HRC, and more.</div>
+            <div style={{ fontSize:13, color:T.txt3, marginBottom:20, lineHeight:1.6 }}>Upgrade to see all 25+ research sources we use — SEC EDGAR, FEC, OSHA, NLRB, EPA, BHRRC, Yale CELI, Have I Been Pwned, OpenFDA, Violation Tracker, and more.</div>
             <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $1.99/mo</button>
           </div>
         ) : (
@@ -2017,6 +2312,9 @@ if (screen === "onboarding") {
             <span style={{ color:T.txt2 }}>{compareList.map(c=>c.name).join(" vs ")}</span>
             {compareList.length === 1 && <span style={{ color:T.txt3, fontSize:11 }}> — pick one more</span>}
           </div>
+          {compareList.length === 1 && (
+            <button onClick={()=>{ setShowCompare(true); track("compare_suggest_open"); }} style={{ padding:"6px 12px", borderRadius:8, border:`1px solid ${T.accent}`, background:"transparent", color:T.accent2, fontSize:12, fontWeight:700, cursor:"pointer" }}>Suggest</button>
+          )}
           {compareList.length >= 2 && (
             <button onClick={()=>{ setShowCompare(true); track("compare_view", { count: compareList.length }); }} style={{ padding:"6px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer" }}>View</button>
           )}
@@ -2033,6 +2331,7 @@ if (screen === "onboarding") {
           isPaid={isPaid}
           onClose={()=>setShowCompare(false)}
           onRemove={(slug)=>setCompareList(prev => prev.filter(c => c.slug !== slug))}
+          onAdd={(slug, name)=>setCompareList(prev => prev.length >= 2 ? prev : [...prev, { slug, name }])}
         />
       )}
 
