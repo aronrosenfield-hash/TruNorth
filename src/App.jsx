@@ -800,7 +800,279 @@ const FILTER_GROUPS = [
   },
 ];
 
-function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+// Phase 5.ab: three alternative filter designs. Switched via ?filterDesign=A|B|C
+// so you can compare them side-by-side and pick the one to keep. After choice,
+// the others get removed and FilterPanel reverts to single canonical impl.
+
+// ─── DESIGN A — Horizontal pill bar, always visible ──────────────────────────
+// Like Apple News topic bar. Pills scroll horizontally. Tap to toggle.
+// Active pills get accent border. A "More" pill at the end opens a sheet for
+// the longer list of categories/flags. Optimized for one-handed quick access.
+function FilterPanelDesignA({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const hasFilters = leanFilter !== "all" || catFilters.length > 0 || flagFilters.length > 0;
+  const pillStyle = (active) => ({
+    flexShrink:0, padding:"8px 14px", borderRadius:20, fontSize:13, fontWeight:600, cursor:"pointer",
+    background: active ? T.accentBg : T.bg2,
+    border: `1px solid ${active ? T.accent : T.border}`,
+    color: active ? T.accent2 : T.txt2,
+    whiteSpace:"nowrap",
+  });
+  // Quick pills surface the 3 most-common filters: Left, Right, Bipartisan + popular categories
+  const quickCats = ["political","environment","labor","dei","privacy"];
+  return (
+    <div style={{ background:T.bg2, borderBottom:`1px solid ${T.border}`, paddingBottom:6 }}>
+      <div style={{ display:"flex", gap:8, padding:"10px 16px", overflowX:"auto", WebkitOverflowScrolling:"touch", scrollbarWidth:"none" }}>
+        {["all","left","right","bi"].map(id => (
+          <button key={id} onClick={() => setLeanFilter(id)} style={pillStyle(leanFilter === id)}>
+            {id === "all" ? "All leans" : id === "left" ? "◀ Left" : id === "right" ? "▶ Right" : "◆ Bipartisan"}
+          </button>
+        ))}
+        <div style={{ width:1, background:T.border, margin:"6px 4px" }} />
+        {quickCats.map(k => (
+          <button key={k} onClick={() => toggleCat(k)} style={pillStyle(catFilters.includes(k))}>
+            <i className={`ti ${CAT_ICONS[k]}`} style={{ marginRight:5 }} /> {CAT_LABELS[k]}
+          </button>
+        ))}
+        <button onClick={() => setSheetOpen(true)} style={pillStyle(false)}>
+          <i className="ti ti-dots" /> More
+        </button>
+        {hasFilters && (
+          <button onClick={() => { setLeanFilter("all"); setCatFilters([]); setFlagFilters([]); }}
+            style={{ ...pillStyle(false), background:T.repBg, color:T.rep, borderColor:T.rep }}>
+            Clear
+          </button>
+        )}
+      </div>
+      {sheetOpen && (
+        <FilterSheet
+          onClose={() => setSheetOpen(false)}
+          leanFilter={leanFilter} setLeanFilter={setLeanFilter}
+          catFilters={catFilters} toggleCat={toggleCat}
+          flagFilters={flagFilters} toggleFlag={toggleFlag}
+          lc={lc}
+        />
+      )}
+    </div>
+  );
+}
+
+// ─── DESIGN B — Bottom sheet drawer (Instagram-style) ─────────────────────────
+// Compact button shows count of active filters. Tap → slides up bottom sheet
+// with everything. Cleanest "native iOS" feel; gets out of the way until used.
+function FilterPanelDesignB({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length + flagFilters.length;
+  return (
+    <div style={{ background:T.bg2, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ display:"flex", alignItems:"center", padding:"10px 16px", gap:8 }}>
+        <button onClick={() => setSheetOpen(true)}
+          style={{ display:"flex", alignItems:"center", gap:6, padding:"9px 14px", borderRadius:22, border:`1px solid ${totalActive>0 ? T.accent : T.border}`, background: totalActive>0 ? T.accentBg : T.bg3, color: totalActive>0 ? T.accent2 : T.txt2, fontSize:13, fontWeight:600, cursor:"pointer" }}>
+          <i className="ti ti-adjustments-horizontal" />
+          Filter
+          {totalActive > 0 && <span style={{ background:T.accent, color:"#fff", padding:"1px 7px", borderRadius:12, fontSize:11 }}>{totalActive}</span>}
+        </button>
+        {totalActive > 0 && (
+          <>
+            <div style={{ flex:1, display:"flex", gap:6, overflowX:"auto", WebkitOverflowScrolling:"touch", scrollbarWidth:"none" }}>
+              {leanFilter !== "all" && (
+                <button onClick={() => setLeanFilter("all")} style={chipStyle()}>
+                  {leanFilter === "left" ? "Left" : leanFilter === "right" ? "Right" : leanFilter === "bi" ? "Bipartisan" : "Neutral"} ×
+                </button>
+              )}
+              {catFilters.map(k => (
+                <button key={k} onClick={() => toggleCat(k)} style={chipStyle()}>
+                  {CAT_LABELS[k]} ×
+                </button>
+              ))}
+              {flagFilters.map(id => {
+                const f = FLAG_FILTERS.find(x => x.id === id);
+                return <button key={id} onClick={() => toggleFlag(id)} style={chipStyle()}>{f?.label || id} ×</button>;
+              })}
+            </div>
+            <button onClick={() => { setLeanFilter("all"); setCatFilters([]); setFlagFilters([]); }}
+              style={{ background:"none", border:"none", color:T.rep, fontSize:12, cursor:"pointer", padding:"6px 0" }}>
+              Clear
+            </button>
+          </>
+        )}
+      </div>
+      {sheetOpen && (
+        <FilterSheet
+          onClose={() => setSheetOpen(false)}
+          leanFilter={leanFilter} setLeanFilter={setLeanFilter}
+          catFilters={catFilters} toggleCat={toggleCat}
+          flagFilters={flagFilters} toggleFlag={toggleFlag}
+          lc={lc}
+        />
+      )}
+    </div>
+  );
+}
+const chipStyle = () => ({ flexShrink:0, padding:"5px 10px", borderRadius:12, fontSize:11, fontWeight:600, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}`, cursor:"pointer", whiteSpace:"nowrap" });
+
+// ─── DESIGN C — Two-tier with icon strip + contextual sub-filters ────────────
+// Stripe-style. Top row is a thin icon strip with all 3 groups visible.
+// Tap any → that group's options inline below. Active filters surface as
+// removable chips above the results. Power-user-friendly, very compact.
+function FilterPanelDesignC({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+  const [activeGroup, setActiveGroup] = useState(null);
+  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length + flagFilters.length;
+  const tabStyle = (active, has) => ({
+    flex:1, padding:"10px 8px", border:"none", background:"transparent", color: active ? T.accent2 : has ? T.txt : T.txt3,
+    fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:5,
+    borderBottom: active ? `2px solid ${T.accent}` : "2px solid transparent",
+  });
+  return (
+    <div style={{ background:T.bg2, borderBottom:`1px solid ${T.border}` }}>
+      {/* Active filter chip row */}
+      {totalActive > 0 && (
+        <div style={{ display:"flex", gap:6, padding:"8px 16px 0", flexWrap:"wrap" }}>
+          {leanFilter !== "all" && <button onClick={() => setLeanFilter("all")} style={chipStyle()}>{leanFilter} ×</button>}
+          {catFilters.map(k => <button key={k} onClick={() => toggleCat(k)} style={chipStyle()}>{CAT_LABELS[k]} ×</button>)}
+          {flagFilters.map(id => {
+            const f = FLAG_FILTERS.find(x => x.id === id);
+            return <button key={id} onClick={() => toggleFlag(id)} style={chipStyle()}>{f?.label || id} ×</button>;
+          })}
+          <button onClick={() => { setLeanFilter("all"); setCatFilters([]); setFlagFilters([]); }}
+            style={{ background:"none", border:"none", color:T.rep, fontSize:11, cursor:"pointer" }}>Clear all</button>
+        </div>
+      )}
+      {/* Icon strip — 3 tabs */}
+      <div style={{ display:"flex", padding:"0 8px", marginTop:totalActive>0?6:0, borderBottom:`1px solid ${T.border}` }}>
+        <button onClick={() => setActiveGroup(activeGroup === "political" ? null : "political")}
+          style={tabStyle(activeGroup === "political", leanFilter !== "all")}>
+          <i className="ti ti-flag-2" /> Political {leanFilter !== "all" && "•"}
+        </button>
+        <button onClick={() => setActiveGroup(activeGroup === "categories" ? null : "categories")}
+          style={tabStyle(activeGroup === "categories", catFilters.length > 0)}>
+          <i className="ti ti-tag" /> Categories {catFilters.length > 0 && `(${catFilters.length})`}
+        </button>
+        <button onClick={() => setActiveGroup(activeGroup === "flags" ? null : "flags")}
+          style={tabStyle(activeGroup === "flags", flagFilters.length > 0)}>
+          <i className="ti ti-alert-triangle" /> Concerns {flagFilters.length > 0 && `(${flagFilters.length})`}
+        </button>
+      </div>
+      {/* Contextual sub-filters */}
+      {activeGroup === "political" && (
+        <div style={{ display:"flex", flexWrap:"wrap", gap:6, padding:10 }}>
+          {[
+            { id:"all", l:"All" },
+            { id:"left", l:`◀ Left (${lc.left})` },
+            { id:"right", l:`▶ Right (${lc.right})` },
+            { id:"bi", l:`◆ Bipartisan (${lc.bi})` },
+            { id:"neutral", l:`– Neutral (${lc.neutral})` },
+          ].map(opt => (
+            <button key={opt.id} onClick={() => setLeanFilter(opt.id)}
+              style={{ padding:"7px 12px", borderRadius:18, fontSize:12, fontWeight:600, cursor:"pointer", background: leanFilter === opt.id ? T.accent : T.bg3, color: leanFilter === opt.id ? "#fff" : T.txt2, border:`1px solid ${leanFilter === opt.id ? T.accent : T.border2}` }}>
+              {opt.l}
+            </button>
+          ))}
+        </div>
+      )}
+      {activeGroup === "categories" && (
+        <div style={{ display:"flex", flexWrap:"wrap", gap:6, padding:10 }}>
+          {CAT_KEYS.map(k => {
+            const active = catFilters.includes(k);
+            return (
+              <button key={k} onClick={() => toggleCat(k)}
+                style={{ padding:"7px 12px", borderRadius:18, fontSize:12, fontWeight:600, cursor:"pointer", background: active ? T.accent : T.bg3, color: active ? "#fff" : T.txt2, border:`1px solid ${active ? T.accent : T.border2}`, display:"flex", alignItems:"center", gap:5 }}>
+                <i className={`ti ${CAT_ICONS[k]}`} /> {CAT_LABELS[k]}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      {activeGroup === "flags" && (
+        <div style={{ display:"flex", flexDirection:"column", gap:6, padding:10 }}>
+          {FLAG_FILTERS.map(f => {
+            const active = flagFilters.includes(f.id);
+            return (
+              <button key={f.id} onClick={() => toggleFlag(f.id)}
+                style={{ display:"flex", alignItems:"center", gap:10, padding:"9px 12px", borderRadius:10, fontSize:13, cursor:"pointer", background: active ? T.accentBg : T.bg3, color: active ? T.accent2 : T.txt, border:`1px solid ${active ? T.accent : T.border}`, textAlign:"left" }}>
+                <i className={`ti ${f.icon}`} style={{ fontSize:16, color: active ? T.accent2 : T.txt3 }} />
+                <div style={{ flex:1 }}>
+                  <div style={{ fontWeight:600 }}>{f.label}</div>
+                  <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{f.desc}</div>
+                </div>
+                {active && <i className="ti ti-check" style={{ color:T.accent2 }} />}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Shared bottom sheet used by Designs A + B
+function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat, flagFilters, toggleFlag, lc }) {
+  return (
+    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+      <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderTopLeftRadius:20, borderTopRightRadius:20, padding:"6px 16px 24px", paddingBottom:"calc(24px + env(safe-area-inset-bottom, 0px))", maxHeight:"82dvh", overflowY:"auto" }}>
+        <div style={{ width:38, height:4, background:T.border2, borderRadius:2, margin:"6px auto 14px" }} />
+        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
+          <div style={{ fontSize:16, fontWeight:700 }}>Filters</div>
+          <button onClick={onClose} style={{ background:T.bg3, border:"none", color:T.txt, width:28, height:28, borderRadius:14, fontSize:16, cursor:"pointer" }}>×</button>
+        </div>
+        <div style={{ fontSize:11, fontWeight:700, color:T.txt3, letterSpacing:0.6, marginBottom:8 }}>POLITICAL LEAN</div>
+        <div style={{ display:"flex", flexWrap:"wrap", gap:6, marginBottom:18 }}>
+          {[{id:"all",l:"All"},{id:"left",l:`Left (${lc.left})`},{id:"right",l:`Right (${lc.right})`},{id:"bi",l:`Bipartisan (${lc.bi})`},{id:"neutral",l:`Neutral`}].map(o => (
+            <button key={o.id} onClick={()=>setLeanFilter(o.id)}
+              style={{ padding:"7px 13px", borderRadius:18, fontSize:12, fontWeight:600, cursor:"pointer", background: leanFilter===o.id ? T.accent : T.bg3, color: leanFilter===o.id ? "#fff" : T.txt2, border:`1px solid ${leanFilter===o.id ? T.accent : T.border2}` }}>
+              {o.l}
+            </button>
+          ))}
+        </div>
+        <div style={{ fontSize:11, fontWeight:700, color:T.txt3, letterSpacing:0.6, marginBottom:8 }}>CATEGORIES</div>
+        <div style={{ display:"flex", flexWrap:"wrap", gap:6, marginBottom:18 }}>
+          {CAT_KEYS.map(k => {
+            const a = catFilters.includes(k);
+            return (
+              <button key={k} onClick={()=>toggleCat(k)}
+                style={{ padding:"7px 12px", borderRadius:18, fontSize:12, fontWeight:600, cursor:"pointer", background: a ? T.accent : T.bg3, color: a ? "#fff" : T.txt2, border:`1px solid ${a ? T.accent : T.border2}`, display:"flex", alignItems:"center", gap:5 }}>
+                <i className={`ti ${CAT_ICONS[k]}`} /> {CAT_LABELS[k]}
+              </button>
+            );
+          })}
+        </div>
+        <div style={{ fontSize:11, fontWeight:700, color:T.txt3, letterSpacing:0.6, marginBottom:8 }}>CONCERNS</div>
+        <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
+          {FLAG_FILTERS.map(f => {
+            const a = flagFilters.includes(f.id);
+            return (
+              <button key={f.id} onClick={()=>toggleFlag(f.id)}
+                style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 12px", borderRadius:10, fontSize:13, cursor:"pointer", background: a ? T.accentBg : T.bg3, color: a ? T.accent2 : T.txt, border:`1px solid ${a ? T.accent : T.border}`, textAlign:"left" }}>
+                <i className={`ti ${f.icon}`} style={{ fontSize:16, color: a ? T.accent2 : T.txt3 }} />
+                <div style={{ flex:1 }}>
+                  <div style={{ fontWeight:600 }}>{f.label}</div>
+                  <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{f.desc}</div>
+                </div>
+                {a && <i className="ti ti-check" style={{ color:T.accent2 }} />}
+              </button>
+            );
+          })}
+        </div>
+        <button onClick={onClose} style={{ width:"100%", marginTop:18, padding:13, borderRadius:12, border:"none", background:T.accent, color:"#fff", fontSize:14, fontWeight:700, cursor:"pointer" }}>
+          Done
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// Switcher — picks design based on ?filterDesign=A|B|C or defaults to current.
+function FilterPanel(props) {
+  if (typeof window !== "undefined") {
+    const q = new URLSearchParams(window.location.search).get("filterDesign");
+    if (q === "A") return <FilterPanelDesignA {...props} />;
+    if (q === "B") return <FilterPanelDesignB {...props} />;
+    if (q === "C") return <FilterPanelDesignC {...props} />;
+  }
+  return <FilterPanelOriginal {...props} />;
+}
+
+function FilterPanelOriginal({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
   const [open, setOpen] = useState(false);
   const [activeGroup, setActiveGroup] = useState(null);
   const hasFilters = leanFilter !== "all" || catFilters.length > 0 || flagFilters.length > 0;
@@ -917,12 +1189,14 @@ function WhatsNewModal({ companyCount }) {
       // throwing a "what's new" modal over their target is poor UX. Skip it.
       if (/^\/company\//.test(window.location.pathname)) return false;
     }
-    // Phase 5.aa: show on EVERY session start (not just once forever).
-    // Tracked via sessionStorage so it shows once per Safari/PWA session
-    // but disappears within-session after dismissal.
-    try { return sessionStorage.getItem("tn_whatsnew_session") !== WHATSNEW_VERSION; }
-    catch { return false; }
+    // Phase 5.ab: if the user previously checked "Don't show again", honor
+    // it across sessions. Otherwise show once per session (Phase 5.aa).
+    try {
+      if (localStorage.getItem("tn_whatsnew_optout") === WHATSNEW_VERSION) return false;
+      return sessionStorage.getItem("tn_whatsnew_session") !== WHATSNEW_VERSION;
+    } catch { return false; }
   });
+  const [dontShowAgain, setDontShowAgain] = useState(false);
   useEffect(() => {
     if (show) track("whatsnew_shown", { version: WHATSNEW_VERSION });
   }, [show]);
@@ -931,7 +1205,11 @@ function WhatsNewModal({ companyCount }) {
     // Phase 5.aa: track per-session dismissal so the modal still shows on
     // the user's NEXT login (the requested behavior).
     try { sessionStorage.setItem("tn_whatsnew_session", WHATSNEW_VERSION); } catch {}
-    track("whatsnew_dismissed", { version: WHATSNEW_VERSION });
+    // Phase 5.ab: respect "Don't show again" — persists across sessions.
+    if (dontShowAgain) {
+      try { localStorage.setItem("tn_whatsnew_optout", WHATSNEW_VERSION); } catch {}
+    }
+    track("whatsnew_dismissed", { version: WHATSNEW_VERSION, dontShowAgain });
     setShow(false);
   };
   return (
@@ -966,6 +1244,17 @@ function WhatsNewModal({ companyCount }) {
         <button onClick={dismiss} style={{ width:"100%", marginTop:16, padding:12, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
           Got it
         </button>
+        {/* Phase 5.ab: opt-out checkbox — small, below CTA. Persists across
+            sessions when checked. */}
+        <label style={{ display:"flex", alignItems:"center", gap:8, marginTop:10, fontSize:12, color:T.txt3, cursor:"pointer", justifyContent:"center" }}>
+          <input
+            type="checkbox"
+            checked={dontShowAgain}
+            onChange={e => setDontShowAgain(e.target.checked)}
+            style={{ width:14, height:14, accentColor:T.accent, cursor:"pointer" }}
+          />
+          <span>Don't show this again</span>
+        </label>
       </div>
     </div>
   );
