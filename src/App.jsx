@@ -978,13 +978,17 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
 
   const resolved = list.map(({ slug, name }) => details[slug] || { slug, name, sc: {} });
 
+  // Phase 5.z: Compare modal now properly height-constrained so on smaller
+  // iPhones the suggestion grid doesn't push content off-screen. The outer
+  // wrapper uses 100dvh and the inner card scrolls internally when tall.
   return (
-    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"32px 12px", overflowY:"auto" }}>
-      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:16, color:T.txt }}>
-        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
-          <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
-          <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, cursor:"pointer" }} aria-label="Close">×</button>
-        </div>
+    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
+      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
+      <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 16px 10px", borderBottom:`1px solid ${T.border}`, flexShrink:0 }}>
+        <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
+        <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, cursor:"pointer" }} aria-label="Close">×</button>
+      </div>
+      <div style={{ padding:16, overflowY:"auto", flex:1, minHeight:0, WebkitOverflowScrolling:"touch" }}>
 
         {resolved.length < 2 ? (
           <div>
@@ -1044,7 +1048,10 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                 if (suggestions.length === 0) {
                   return <div style={{ gridColumn:"1 / -1", padding:"16px", textAlign:"center", color:T.txt3, fontSize:12 }}>No close matches yet — try the <i className="ti ti-arrows-left-right" aria-hidden="true" /> icon on another row.</div>;
                 }
-                return suggestions.slice(0, 6).map(co => (
+                // Phase 5.z: 4 instead of 6 — keeps the suggestion grid above
+                // the fold on small iPhones and avoids needing to scroll inside
+                // an already-modal experience.
+                return suggestions.slice(0, 4).map(co => (
                   <button
                     key={co.slug || co.id}
                     onClick={() => { onAdd && onAdd(co.slug || co.id, co.name); track("compare_suggest_pick", { slug: co.slug || co.id, name: co.name }); }}
@@ -1138,6 +1145,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
           </>
         )}
       </div>
+      </div>
     </div>
   );
 }
@@ -1205,6 +1213,139 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
         }}
         style={{ width:"86%", height:"86%", objectFit:"contain" }}
       />
+    </div>
+  );
+}
+
+// Phase 5.z: CategoryRow — YUKA-style progressive disclosure.
+//
+// Collapsed (default): category icon + name + a colored spectrum bar with a
+//   dot positioned at the company's score. One-line scan. No paragraph text.
+// Expanded (after tap): rationale, source pills, and the original badge.
+//
+// The spectrum is the same blue→grey→red gradient we already use for political
+// donations, generalized so every category gets the same visual treatment.
+// Each category has its own "lo → hi" semantic (e.g. labor: "violations" →
+// "clean record"; environment: "documented harm" → "verified leader"). The
+// dot position is derived from scoreCat() so it reflects the SAME numeric
+// score that feeds the overall grade.
+function categorySpectrumPos(k, v, profile) {
+  // Returns a 0..1 position on the left-right axis (left = "bad-for-user",
+  // right = "good-for-user"). For political: left = Democratic, right = Rep.
+  // For everything else: left = documented-negative, right = verified-positive.
+  // Returns null when the value is unknown (no dot rendered).
+  if (getDataState(k, v) === "unknown") return null;
+  if (k === "political") {
+    const lean = String(v || "").toLowerCase();
+    if (lean === "left")          return 0.10;
+    if (lean === "left-leaning")  return 0.28;
+    if (lean === "right")         return 0.90;
+    if (lean === "right-leaning") return 0.72;
+    if (["bipartisan","mixed","neutral"].includes(lean)) return 0.50;
+    return null;
+  }
+  // For other categories, map scoreCat()'s 0–100 to 0–1.
+  // We pass a temporary profile context so the spectrum reflects the user's
+  // alignment too (e.g. a "right" donator on a "left" user's profile lands
+  // far-left on their personal spectrum — same as the political case).
+  const sc = scoreCat(k, v, profile);
+  if (sc == null) return null;
+  return Math.max(0, Math.min(1, sc / 100));
+}
+
+function CategorySpectrum({ pos, leftLabel, rightLabel }) {
+  if (pos == null) return null;
+  const dotColor = pos < 0.35 ? "#e24a4a"
+                : pos > 0.65 ? "#4caf82"
+                : "#9b8ff0";
+  return (
+    <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%", maxWidth:200 }}>
+      <div style={{
+        position:"relative", width:"100%", height:6, borderRadius:3,
+        background: "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)",
+      }} aria-hidden="true">
+        <div style={{
+          position:"absolute", top:-3, left:`calc(${pos*100}% - 6px)`,
+          width:12, height:12, borderRadius:"50%",
+          background:dotColor, border:"2px solid #fff",
+          boxShadow:"0 0 0 1px rgba(0,0,0,0.4)",
+        }} />
+      </div>
+      <div style={{ display:"flex", justifyContent:"space-between", fontSize:10, color:"#888" }}>
+        <span>{leftLabel}</span><span>{rightLabel}</span>
+      </div>
+    </div>
+  );
+}
+
+// Per-category spectrum endpoint labels. Keep them neutral — they describe
+// the AXIS, not a verdict ("Documented violations" is a category of FACT,
+// not a value judgment).
+const SPECTRUM_LABELS = {
+  political:   { lo: "Left",                hi: "Right" },
+  charity:     { lo: "No record",           hi: "Documented giving" },
+  environment: { lo: "Documented harm",     hi: "Verified leader" },
+  labor:       { lo: "Documented violations", hi: "No major violations" },
+  dei:         { lo: "Rolled back",         hi: "Active programs" },
+  animals:     { lo: "Documented testing",  hi: "Cruelty-free" },
+  guns:        { lo: "Manufactures",        hi: "Does not sell" },
+  privacy:     { lo: "Documented breaches", hi: "No breaches" },
+  execPay:     { lo: "Ratio >300:1",        hi: "Ratio <50:1" },
+};
+
+function CategoryRow({ cat: k, enriched, profile }) {
+  const [expanded, setExpanded] = useState(false);
+  const v = enriched.sc?.[k];
+  const d = enriched[k] || {};
+  const state = getDataState(k, v);
+  const isUnknown = state === "unknown";
+  const disp = getDisplay(k, v, profile);
+  const pos = categorySpectrumPos(k, v, profile);
+  const labels = SPECTRUM_LABELS[k];
+
+  // YUKA-style trim: only show the spectrum + name in the collapsed row.
+  // Tap toggles the expanded section with the rationale + sources.
+  return (
+    <div style={{ marginBottom:10, paddingBottom:10, borderBottom:`1px solid ${T.border}`, opacity: isUnknown ? 0.6 : 1 }}>
+      <button
+        onClick={() => setExpanded(e => !e)}
+        aria-expanded={expanded}
+        style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0", background:"none", border:"none", cursor:"pointer", color:T.txt, width:"100%", textAlign:"left" }}
+      >
+        <i className={`ti ${CAT_ICONS[k]}`} style={{ fontSize:16, color:T.txt3, width:18, flexShrink:0 }} aria-hidden="true" />
+        <div style={{ fontSize:12, fontWeight:600, color:T.txt2, letterSpacing:0.2, flex:1, minWidth:0 }}>{CAT_FULL[k]}</div>
+        {isUnknown ? (
+          <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:8 }}>No data</span>
+        ) : (
+          <div style={{ flexShrink:0 }}>
+            <CategorySpectrum pos={pos} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} />
+          </div>
+        )}
+        <i className={`ti ${expanded ? "ti-chevron-up" : "ti-chevron-down"}`} style={{ fontSize:14, color:T.txt3, marginLeft:6 }} aria-hidden="true" />
+      </button>
+      {expanded && (
+        <div style={{ paddingTop:8, paddingLeft:28 }}>
+          {!isUnknown ? (
+            <>
+              <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
+              {!isUnknown && disp?.label && (
+                <div style={{ marginTop:6, fontSize:11, color:T.txt3 }}>
+                  Signal: <span style={{ color:T.txt2, fontWeight:600 }}>{disp.label}</span>
+                </div>
+              )}
+              {(d.sources||[]).length > 0 && (
+                <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
+                  {d.sources.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
+                </div>
+              )}
+            </>
+          ) : (
+            <div style={{ fontSize:11, color:T.txt3, fontStyle:"italic" }}>
+              No public record found yet. This category is excluded from the overall grade.
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -1467,70 +1608,19 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
           })()}
 
           {/* All categories — symbol + label + detail */}
-          {CAT_KEYS.map(k => {
-            const d = enriched[k] || {};
-            const disp = getDisplay(k, enriched.sc?.[k], profile);
-            const state = getDataState(k, enriched.sc?.[k]);
-            const isUnknown = state === "unknown";
-            // YUKA-inspired color coding: green for positive, red for documented
-            // negatives, amber for mixed, neutral grey otherwise. Lifts the
-            // visual hierarchy beyond "everything looks the same".
-            const enumV = String(enriched.sc?.[k] || "").toLowerCase();
-            const POS = ["positive","excellent","strong","good","cruelty_free","fair","pro_dei","bipartisan"];
-            const NEG = ["negative","poor","very poor","below average","tests_animals","sells_guns","makes_guns","anti_dei"];
-            const MIX = ["mixed","some_testing"];
-            const tone = isUnknown ? "unknown"
-              : POS.includes(enumV) ? "good"
-              : NEG.includes(enumV) ? "bad"
-              : MIX.includes(enumV) ? "mid"
-              : "neutral";
-            const badgeStyle =
-              tone === "unknown" ? { background:"transparent", color:T.txt3, border:`1px dashed ${T.border2}`, opacity:0.75 }
-              : tone === "good"  ? { background:"#0d2318", color:"#4caf82", border:"1px solid #1e3e2e" }
-              : tone === "bad"   ? { background:"#2a0d0d", color:"#e24a4a", border:"1px solid #3e1e1e" }
-              : tone === "mid"   ? { background:"#2a1a05", color:"#f0a030", border:"1px solid #3e2a15" }
-              : { background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` };
-            return (
-              <div key={k} style={{ marginBottom:14, paddingBottom:14, borderBottom:`1px solid ${T.border}`, opacity: isUnknown ? 0.7 : 1 }}>
-                <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:6 }}>
-                  <div style={{ fontSize:11, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.05em", display:"flex", alignItems:"center", gap:5 }}>
-                    <i className={`ti ${CAT_ICONS[k]}`} aria-hidden="true" />
-                    {CAT_FULL[k]}
-                  </div>
-                  {k === "political" && !isUnknown ? (
-                    /* UX 5C: spectrum bar in lieu of the cryptic ◀ ▶ ◆ badge */
-                    <PoliticalSpectrum lean={enriched.sc?.political} />
-                  ) : (
-                    <span
-                      title={isUnknown ? "No data ingested yet — this category is excluded from the overall grade." : ""}
-                      style={{ display:"inline-flex", alignItems:"center", gap:4, padding:"3px 10px", borderRadius:20, fontSize:12, fontWeight:700, ...badgeStyle }}
-                    >
-                      {isUnknown ? (
-                        <>? No data</>
-                      ) : (
-                        <>{disp.sym} {disp.label}</>
-                      )}
-                    </span>
-                  )}
-                </div>
-                {!isUnknown && (
-                  <>
-                    <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
-                    {(d.sources||[]).length > 0 && (
-                      <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
-                        {d.sources.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
-                      </div>
-                    )}
-                  </>
-                )}
-                {isUnknown && (
-                  <div style={{ fontSize:11, color:T.txt3, lineHeight:1.5, fontStyle:"italic" }}>
-                    Not penalized — excluded from this company's overall grade.
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {/* Phase 5.z: progressive disclosure — like YUKA's nutrition cards.
+              Each category shows ONLY a colored spectrum bar + dot by default.
+              Tap to expand → rationale, sources, raw data. This collapses the
+              cognitive load and matches the YUKA "score first, click for why"
+              pattern the user asked for. */}
+          {CAT_KEYS.map(k => (
+            <CategoryRow
+              key={k}
+              cat={k}
+              enriched={enriched}
+              profile={profile}
+            />
+          ))}
 
           {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
               falls back to copying a URL to the clipboard on desktop browsers. */}
@@ -1587,7 +1677,7 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
 }
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
-function Quiz({ onComplete }) {
+function Quiz({ onComplete, onSkip }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const isWelcome = step === 0;
@@ -1643,15 +1733,19 @@ function Quiz({ onComplete }) {
   };
 
   return (
-    <div style={{ display:"flex", flexDirection:"column", minHeight:"100dvh", paddingTop:"env(safe-area-inset-top, 0px)" }}>
-      <div style={{ padding:"10px 16px 0" }}>
+    // Phase 5.z: full-height column with constrained inner scroll. The CRITICAL
+    // bit is `minHeight:0` on the flex child — without it, the inner scroller
+    // grows to fit its content instead of letting overflow:auto kick in. This
+    // is why the dealbreakers page wouldn't scroll on iPhone.
+    <div style={{ display:"flex", flexDirection:"column", height:"100dvh", paddingTop:"env(safe-area-inset-top, 0px)", overflow:"hidden" }}>
+      <div style={{ padding:"10px 16px 0", flexShrink:0 }}>
         <div style={{ height:4, background:T.bg3, borderRadius:4 }}>
           <div style={{ height:4, background:T.accent, borderRadius:4, width:`${prog}%`, transition:"width 0.3s" }} />
         </div>
         {step > 0 && <div style={{ fontSize:11, color:T.txt3, textAlign:"right", marginTop:5 }}>{step} of {QUIZ_STEPS.length}</div>}
       </div>
 
-      <div style={{ flex:1, padding:"12px 16px 24px", overflowY:"auto", WebkitOverflowScrolling:"touch" }}>
+      <div style={{ flex:1, minHeight:0, padding:"12px 16px 24px", overflowY:"auto", WebkitOverflowScrolling:"touch" }}>
         {isWelcome && (
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", paddingTop:20 }}>
             <div style={{ width:64, height:64, background:T.accentBg, borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:14 }}>
@@ -1783,12 +1877,21 @@ function Quiz({ onComplete }) {
         )}
       </div>
 
-      <div style={{ display:"flex", gap:10, padding:"12px 16px", paddingBottom:"calc(12px + env(safe-area-inset-bottom, 0px))", borderTop:`1px solid ${T.border}`, background:T.bg, position:"sticky", bottom:0, flexShrink:0 }}>
-        {step > 0 && <button onClick={()=>setStep(s=>s-1)} style={{ padding:"11px 16px", borderRadius:12, border:`1px solid ${T.border}`, background:T.bg3, color:T.txt2, fontSize:14, fontWeight:600, cursor:"pointer" }}>←</button>}
-        <button onClick={advance} disabled={!canAdvance}
-          style={{ flex:1, padding:13, borderRadius:12, border:"none", background:canAdvance?T.accent:T.bg3, color:canAdvance?"#fff":T.txt3, fontSize:15, fontWeight:700, cursor:canAdvance?"pointer":"default", opacity:canAdvance?1:0.4 }}>
-          {isWelcome ? "Let's go →" : isLast ? "See my scores →" : "Next →"}
-        </button>
+      <div style={{ display:"flex", flexDirection:"column", gap:8, padding:"12px 16px", paddingBottom:"calc(12px + env(safe-area-inset-bottom, 0px))", borderTop:`1px solid ${T.border}`, background:T.bg, flexShrink:0 }}>
+        <div style={{ display:"flex", gap:10 }}>
+          {step > 0 && <button onClick={()=>setStep(s=>s-1)} style={{ padding:"11px 16px", borderRadius:12, border:`1px solid ${T.border}`, background:T.bg3, color:T.txt2, fontSize:14, fontWeight:600, cursor:"pointer" }}>←</button>}
+          <button onClick={advance} disabled={!canAdvance}
+            style={{ flex:1, padding:13, borderRadius:12, border:"none", background:canAdvance?T.accent:T.bg3, color:canAdvance?"#fff":T.txt3, fontSize:15, fontWeight:700, cursor:canAdvance?"pointer":"default", opacity:canAdvance?1:0.4 }}>
+            {isWelcome ? "Let's go →" : isLast ? "See my scores →" : "Next →"}
+          </button>
+        </div>
+        {/* Phase 5.z: Skip lives in the Quiz footer so it's always reachable
+            and doesn't extend the page below the viewport (the old bug). */}
+        {onSkip && (
+          <button onClick={onSkip} style={{ width:"100%", padding:9, borderRadius:10, border:"none", background:"transparent", color:T.txt3, fontSize:12, cursor:"pointer" }}>
+            Skip — use AI-generated scores
+          </button>
+        )}
       </div>
     </div>
   );
@@ -2041,6 +2144,13 @@ export default function App() {
   // where forcing onboarding hurts the experience. The flag only sets a
   // localStorage marker, no security implication (it doesn't grant any access).
   if (__qp.has("skipOnboarding")) {
+    try { localStorage.setItem("tn_hasOnboarded", "1"); } catch {}
+  }
+  // Phase 5.z: deep-link arrivals (/company/<slug>) skip onboarding too. A
+  // first-time visitor who taps a shared company link expects to LAND on
+  // that company, not be forced through a 3-slide intro that loses the
+  // target. Onboarding still surfaces from the homepage on first visit.
+  if (typeof window !== "undefined" && /^\/company\//.test(window.location.pathname)) {
     try { localStorage.setItem("tn_hasOnboarded", "1"); } catch {}
   }
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
@@ -2341,19 +2451,20 @@ if (screen === "onboarding") {
     // UX 4A: quiz is now open to all users. Free users complete it and get
     // personalized letter grades; Pro users get personalized number scores
     // + breakdowns + sources. The Pro upsell moves downstream to those features.
+    // Phase 5.z: parent owns 100dvh so Quiz's inner scroll can pin its footer
+    // and scroll the rest. The "Skip" button moved INTO Quiz (welcome screen)
+    // so the Quiz fully fills the viewport.
     return (
-      <div style={{ maxWidth:430, margin:"0 auto" }}>
+      <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden" }}>
         {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("main");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
-        <Quiz onComplete={(p) => {
-          setProfile(p);
-          track("quiz_completed", { isPaid });
-          setScreen("main");
-        }} />
-        <div style={{ padding:"0 16px 24px" }}>
-          <button onClick={()=>setScreen("main")} style={{ width:"100%", padding:12, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer" }}>
-            Skip — use AI-generated scores
-          </button>
-        </div>
+        <Quiz
+          onComplete={(p) => {
+            setProfile(p);
+            track("quiz_completed", { isPaid });
+            setScreen("main");
+          }}
+          onSkip={() => setScreen("main")}
+        />
       </div>
     );
   }
