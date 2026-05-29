@@ -905,6 +905,9 @@ function WhatsNewModal({ companyCount }) {
     if (typeof window !== "undefined") {
       const qp = new URLSearchParams(window.location.search);
       if (qp.has("skipOnboarding") || qp.has("noWhatsnew")) return false;
+      // Deep-link arrivals (/company/<slug>) get the company immediately —
+      // throwing a "what's new" modal over their target is poor UX. Skip it.
+      if (/^\/company\//.test(window.location.pathname)) return false;
     }
     try { return localStorage.getItem("tn_whatsnew_seen") !== WHATSNEW_VERSION; }
     catch { return false; }
@@ -2033,7 +2036,11 @@ export default function App() {
   // Dev-only QA helper: ?skipOnboarding=1 and ?pro=1 let the simulator + Chrome
   // tests bypass onboarding without persisting state on real production users.
   const __qp = (typeof window !== "undefined") ? new URLSearchParams(window.location.search) : new URLSearchParams();
-  if (import.meta.env.DEV && __qp.has("skipOnboarding")) {
+  // Phase 5.y: ?skipOnboarding=1 now works in production builds too — it's
+  // useful for QA/simulator testing and for sharing direct-to-content links
+  // where forcing onboarding hurts the experience. The flag only sets a
+  // localStorage marker, no security implication (it doesn't grant any access).
+  if (__qp.has("skipOnboarding")) {
     try { localStorage.setItem("tn_hasOnboarded", "1"); } catch {}
   }
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
