@@ -900,6 +900,12 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
 const WHATSNEW_VERSION = "2026-05-6k-launch";
 function WhatsNewModal({ companyCount }) {
   const [show, setShow] = useState(() => {
+    // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
+    // simulator/QA URLs go straight to the app surface they want to inspect.
+    if (typeof window !== "undefined") {
+      const qp = new URLSearchParams(window.location.search);
+      if (qp.has("skipOnboarding") || qp.has("noWhatsnew")) return false;
+    }
     try { return localStorage.getItem("tn_whatsnew_seen") !== WHATSNEW_VERSION; }
     catch { return false; }
   });
