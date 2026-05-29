@@ -1259,7 +1259,7 @@ function CategorySpectrum({ pos, leftLabel, rightLabel }) {
                 : pos > 0.65 ? "#4caf82"
                 : "#9b8ff0";
   return (
-    <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%", maxWidth:200 }}>
+    <div style={{ display:"flex", flexDirection:"column", gap:4, width:160, flexShrink:0 }}>
       <div style={{
         position:"relative", width:"100%", height:6, borderRadius:3,
         background: "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)",
@@ -1271,8 +1271,9 @@ function CategorySpectrum({ pos, leftLabel, rightLabel }) {
           boxShadow:"0 0 0 1px rgba(0,0,0,0.4)",
         }} />
       </div>
-      <div style={{ display:"flex", justifyContent:"space-between", fontSize:10, color:"#888" }}>
-        <span>{leftLabel}</span><span>{rightLabel}</span>
+      <div style={{ display:"flex", justifyContent:"space-between", fontSize:9, color:"#888", lineHeight:1.2, gap:6 }}>
+        <span style={{ maxWidth:"48%", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", textAlign:"left" }}>{leftLabel}</span>
+        <span style={{ maxWidth:"48%", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", textAlign:"right" }}>{rightLabel}</span>
       </div>
     </div>
   );
@@ -1282,15 +1283,15 @@ function CategorySpectrum({ pos, leftLabel, rightLabel }) {
 // the AXIS, not a verdict ("Documented violations" is a category of FACT,
 // not a value judgment).
 const SPECTRUM_LABELS = {
-  political:   { lo: "Left",                hi: "Right" },
-  charity:     { lo: "No record",           hi: "Documented giving" },
-  environment: { lo: "Documented harm",     hi: "Verified leader" },
-  labor:       { lo: "Documented violations", hi: "No major violations" },
-  dei:         { lo: "Rolled back",         hi: "Active programs" },
-  animals:     { lo: "Documented testing",  hi: "Cruelty-free" },
-  guns:        { lo: "Manufactures",        hi: "Does not sell" },
-  privacy:     { lo: "Documented breaches", hi: "No breaches" },
-  execPay:     { lo: "Ratio >300:1",        hi: "Ratio <50:1" },
+  political:   { lo: "Left",         hi: "Right" },
+  charity:     { lo: "No record",    hi: "Active giving" },
+  environment: { lo: "Violations",   hi: "Certified" },
+  labor:       { lo: "Violations",   hi: "Clean record" },
+  dei:         { lo: "Rolled back",  hi: "Active" },
+  animals:     { lo: "Tested",       hi: "Cruelty-free" },
+  guns:        { lo: "Makes guns",   hi: "No guns" },
+  privacy:     { lo: "Breaches",     hi: "No breaches" },
+  execPay:     { lo: ">300:1",       hi: "<50:1" },
 };
 
 function CategoryRow({ cat: k, enriched, profile }) {
