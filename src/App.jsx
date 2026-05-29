@@ -427,16 +427,24 @@ function scoreCat(k, v, profile) {
 
 function computeScore(co, profile) {
   if (!profile) return co.overall;
-  // Boost weights for strong preferences, reduce for unimportant ones
-  const gunBoost   = profile.guns !== "neutral" ? 4 : 1;
-  const unionBoost = profile.unionSupport !== "neutral" ? 2 : 1;
+  // Phase 5.aa: SYMMETRIC user-preference boosts. A user who picks a clear
+  // side (Left / Right / Pro-DEI / Anti-DEI / Pro-Gun / Anti-Gun / Union pro
+  // / Union anti) gets that axis weighted higher, regardless of which side
+  // they picked. Previously only guns and union got boosts which created an
+  // implicit bias toward letting labor + environment dominate everyone else.
+  // Now political and DEI also boost when the user has a clear stance.
+  const politicalBoost = profile.lean         && profile.lean         !== "neutral" ? 2 : 1;
+  const deiBoost       = profile.deiLean      && profile.deiLean      !== "neutral" ? 2 : 1;
+  const animalBoost    = profile.animalTesting && profile.animalTesting !== "neutral" ? 2 : 1;
+  const gunBoost       = profile.guns         && profile.guns         !== "neutral" ? 4 : 1;
+  const unionBoost     = profile.unionSupport && profile.unionSupport !== "neutral" ? 2 : 1;
   const baseWeights = {
-    political:    profile.weights?.political    || 3,
+    political:    (profile.weights?.political    || 3) * politicalBoost,
     charity:      profile.weights?.charity      || 2,
     environment:  profile.weights?.environment  || 3,
     labor:        (profile.weights?.labor       || 3) * unionBoost,
-    dei:          profile.weights?.dei          || 3,
-    animals:      profile.weights?.animals      || 2,
+    dei:          (profile.weights?.dei          || 3) * deiBoost,
+    animals:      (profile.weights?.animals      || 2) * animalBoost,
     guns:         (profile.weights?.guns        || 2) * gunBoost,
     privacy:      profile.weights?.privacy      || 2,
     execPay:      profile.weights?.execPay      || 2,
@@ -909,7 +917,10 @@ function WhatsNewModal({ companyCount }) {
       // throwing a "what's new" modal over their target is poor UX. Skip it.
       if (/^\/company\//.test(window.location.pathname)) return false;
     }
-    try { return localStorage.getItem("tn_whatsnew_seen") !== WHATSNEW_VERSION; }
+    // Phase 5.aa: show on EVERY session start (not just once forever).
+    // Tracked via sessionStorage so it shows once per Safari/PWA session
+    // but disappears within-session after dismissal.
+    try { return sessionStorage.getItem("tn_whatsnew_session") !== WHATSNEW_VERSION; }
     catch { return false; }
   });
   useEffect(() => {
@@ -917,7 +928,9 @@ function WhatsNewModal({ companyCount }) {
   }, [show]);
   if (!show) return null;
   const dismiss = () => {
-    try { localStorage.setItem("tn_whatsnew_seen", WHATSNEW_VERSION); } catch {}
+    // Phase 5.aa: track per-session dismissal so the modal still shows on
+    // the user's NEXT login (the requested behavior).
+    try { sessionStorage.setItem("tn_whatsnew_session", WHATSNEW_VERSION); } catch {}
     track("whatsnew_dismissed", { version: WHATSNEW_VERSION });
     setShow(false);
   };
@@ -1259,7 +1272,7 @@ function CategorySpectrum({ pos, leftLabel, rightLabel }) {
                 : pos > 0.65 ? "#4caf82"
                 : "#9b8ff0";
   return (
-    <div style={{ display:"flex", flexDirection:"column", gap:4, width:160, flexShrink:0 }}>
+    <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%" }}>
       <div style={{
         position:"relative", width:"100%", height:6, borderRadius:3,
         background: "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)",
@@ -1271,9 +1284,9 @@ function CategorySpectrum({ pos, leftLabel, rightLabel }) {
           boxShadow:"0 0 0 1px rgba(0,0,0,0.4)",
         }} />
       </div>
-      <div style={{ display:"flex", justifyContent:"space-between", fontSize:9, color:"#888", lineHeight:1.2, gap:6 }}>
-        <span style={{ maxWidth:"48%", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", textAlign:"left" }}>{leftLabel}</span>
-        <span style={{ maxWidth:"48%", whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", textAlign:"right" }}>{rightLabel}</span>
+      <div style={{ display:"flex", justifyContent:"space-between", fontSize:10, color:"#888", lineHeight:1.2 }}>
+        <span>{leftLabel}</span>
+        <span>{rightLabel}</span>
       </div>
     </div>
   );
@@ -1304,25 +1317,27 @@ function CategoryRow({ cat: k, enriched, profile }) {
   const pos = categorySpectrumPos(k, v, profile);
   const labels = SPECTRUM_LABELS[k];
 
-  // YUKA-style trim: only show the spectrum + name in the collapsed row.
-  // Tap toggles the expanded section with the rationale + sources.
+  // Phase 5.aa: vertical-stacked layout. Top row is just icon + name + chevron;
+  // the spectrum bar lives on its own line below so long names like "DEI &
+  // social equity" don't wrap or get overlapped by the bar.
   return (
     <div style={{ marginBottom:10, paddingBottom:10, borderBottom:`1px solid ${T.border}`, opacity: isUnknown ? 0.6 : 1 }}>
       <button
         onClick={() => setExpanded(e => !e)}
         aria-expanded={expanded}
-        style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0", background:"none", border:"none", cursor:"pointer", color:T.txt, width:"100%", textAlign:"left" }}
+        style={{ display:"block", padding:"6px 0", background:"none", border:"none", cursor:"pointer", color:T.txt, width:"100%", textAlign:"left" }}
       >
-        <i className={`ti ${CAT_ICONS[k]}`} style={{ fontSize:16, color:T.txt3, width:18, flexShrink:0 }} aria-hidden="true" />
-        <div style={{ fontSize:12, fontWeight:600, color:T.txt2, letterSpacing:0.2, flex:1, minWidth:0 }}>{CAT_FULL[k]}</div>
-        {isUnknown ? (
-          <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:8 }}>No data</span>
-        ) : (
-          <div style={{ flexShrink:0 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
+          <i className={`ti ${CAT_ICONS[k]}`} style={{ fontSize:16, color:T.txt3, width:18, flexShrink:0 }} aria-hidden="true" />
+          <div style={{ fontSize:13, fontWeight:600, color:T.txt2, letterSpacing:0.2, flex:1, minWidth:0 }}>{CAT_FULL[k]}</div>
+          {isUnknown && <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:6 }}>No data</span>}
+          <i className={`ti ${expanded ? "ti-chevron-up" : "ti-chevron-down"}`} style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
+        </div>
+        {!isUnknown && (
+          <div style={{ paddingLeft:28, paddingRight:4 }}>
             <CategorySpectrum pos={pos} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} />
           </div>
         )}
-        <i className={`ti ${expanded ? "ti-chevron-up" : "ti-chevron-down"}`} style={{ fontSize:14, color:T.txt3, marginLeft:6 }} aria-hidden="true" />
       </button>
       {expanded && (
         <div style={{ paddingTop:8, paddingLeft:28 }}>

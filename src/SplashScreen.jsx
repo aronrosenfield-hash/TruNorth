@@ -27,16 +27,20 @@ export default function SplashScreen({ onDone }) {
           .tn-splash-wrap  { animation: tn-fade-out 0.4s ease 1.6s forwards; }
         `}</style>
         <div className="tn-splash-wrap" style={styles.inner}>
-          <div className="tn-splash-logo" style={styles.logo}>
-            <div className="tn-splash-icon" style={styles.icon}>
-              <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
-                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
-              </svg>
+          <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:14 }}>
+            <div className="tn-splash-logo" style={styles.logo}>
+              <div className="tn-splash-icon" style={styles.icon}>
+                <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+                  <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
+                </svg>
+              </div>
+              <div style={styles.wordmark}>
+                <span style={{ color: "#f2f2f2" }}>Tru</span>
+                <span style={{ color: "#7c6dfa" }}>North</span>
+              </div>
             </div>
-            <div style={styles.wordmark}>
-              <span style={{ color: "#f2f2f2" }}>Tru</span>
-              <span style={{ color: "#7c6dfa" }}>North</span>
-            </div>
+            <div style={styles.tagline}>Know where your money goes</div>
+            <div style={styles.subtagline}>6,000+ companies · 9 categories · 25+ sources</div>
           </div>
         </div>
       </div>
@@ -51,4 +55,6 @@ const styles = {
   logo:  { display:"flex", alignItems:"center", gap:12 },
   icon:  { width:52, height:52, background:"#7c6dfa", borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", fontSize:26, color:"#fff" },
   wordmark: { fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize:30, fontWeight:800, letterSpacing:-0.5 },
+  tagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:13, color:"#bbb", letterSpacing:0.3, marginTop:4 },
+  subtagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:11, color:"#666", letterSpacing:0.5 },
 };
