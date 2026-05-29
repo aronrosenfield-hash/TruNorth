@@ -7,11 +7,15 @@ const COMPANIES = [
 ];
 
 const CATEGORIES = [
-  { emoji:"🗳️", bg:"#1e2e3e", name:"Political Donations", desc:"Where executives & PACs send money", pct:65 },
-  { emoji:"🌿", bg:"#1e3e2e", name:"Environment",         desc:"EPA violations, carbon pledges",      pct:80 },
-  { emoji:"⚖️", bg:"#2e2a1e", name:"Labor Practices",     desc:"OSHA & NLRB violations, wages",       pct:55 },
-  { emoji:"🏳️‍🌈",bg:"#2a1e3e", name:"DEI",               desc:"HRC index, representation data",      pct:70 },
-  { emoji:"❤️", bg:"#2e1e2e", name:"Charitable Giving",   desc:"% of profits donated, causes",        pct:45 },
+  { emoji:"🗳️", bg:"#1e2e3e", name:"Political Donations", desc:"FEC: PAC contributions to parties",   pct:65 },
+  { emoji:"🌿", bg:"#1e3e2e", name:"Environment",         desc:"EPA violations, pollution penalties",  pct:80 },
+  { emoji:"⚖️", bg:"#2e2a1e", name:"Labor Practices",     desc:"OSHA, NLRB, Violation Tracker fines",  pct:55 },
+  { emoji:"🏳️‍🌈",bg:"#2a1e3e", name:"DEI",                desc:"Public programs & rollbacks",          pct:70 },
+  { emoji:"❤️", bg:"#2e1e2e", name:"Charitable Giving",   desc:"Documented programs & amounts",        pct:45 },
+  { emoji:"🐰", bg:"#2e2a1e", name:"Animal Testing",      desc:"PETA & Leaping Bunny certifications", pct:50 },
+  { emoji:"🔫", bg:"#3e1e1e", name:"Firearms",            desc:"Sells or manufactures guns",           pct:30 },
+  { emoji:"🔒", bg:"#1e2e3e", name:"Data Privacy",        desc:"HIBP breaches, FTC actions",           pct:60 },
+  { emoji:"💵", bg:"#1e3e2e", name:"Executive Pay",       desc:"CEO-to-worker pay ratio",              pct:40 },
 ];
 
 export default function OnboardingFlow({ onComplete }) {
@@ -87,8 +91,8 @@ export default function OnboardingFlow({ onComplete }) {
 
         {slide === 1 && (
           <div style={s.slide}>
-            <h2 style={{ ...s.headline, fontSize:30 }}>5 things<br />that matter.</h2>
-            <p style={{ ...s.subtext, marginBottom:24 }}>Real data from the FEC, EPA, OSHA, NLRB, and more — not opinions.</p>
+            <h2 style={{ ...s.headline, fontSize:30 }}>9 things<br />that matter.</h2>
+            <p style={{ ...s.subtext, marginBottom:24 }}>Real data from the FEC, EPA, OSHA, NLRB, BHRRC, HIBP, and more — not opinions.</p>
             {CATEGORIES.map(cat => (
               <div key={cat.name} style={s.catItem}>
                 <div style={{ ...s.catIcon, background:cat.bg }}>{cat.emoji}</div>

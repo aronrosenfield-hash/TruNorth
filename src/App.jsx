@@ -166,11 +166,15 @@ const CAT_FULL   = {political:"Political donations & lobbying",charity:"Charitab
 // Unknown categories are excluded from the overall grade computation so we don't
 // penalize companies for sparse data (and don't artificially boost via fallback=50).
 // Note: "neutral" is a real scored value (the company is genuinely neutral), distinct
-// from unknown. "na"/"N/A" we also treat as unknown for grading purposes (no signal).
+// from unknown. For Animals, Guns, Privacy, ExecPay — "na" means "not applicable
+// to this kind of company" which is a meaningful factual answer, NOT "no data";
+// render it as a normal scored badge instead of greyed-out "? No data".
+const NA_IS_FACTUAL = new Set(["animals", "guns", "privacy", "execPay"]);
 function getDataState(k, v) {
   if (v == null) return "unknown";
   const val = String(v).toLowerCase().trim();
-  if (val === "" || val === "unknown" || val === "na" || val === "n/a" || val === "?") return "unknown";
+  if (val === "" || val === "unknown" || val === "?") return "unknown";
+  if (val === "na" || val === "n/a") return NA_IS_FACTUAL.has(k) ? "scored" : "unknown";
   return "scored";
 }
 
@@ -997,10 +1001,23 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             </button>
           )}
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
-          <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:T.bg3, border:`1px solid ${T.border2}` }} title={profile ? "Your personalized grade" : "Take the values quiz to see grades"}>
-            <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
-            {isPaid && profile && <div style={{ fontSize:10, color:T.txt3 }}>{ps}</div>}
-          </div>
+          {(() => {
+            const gradeRowColors = {
+              A: { bg:"#0d2318", border:"#1e3e2e", text:"#4caf82" },
+              B: { bg:"#1a2810", border:"#2e3e1e", text:"#8bc34a" },
+              C: { bg:"#2a2210", border:"#3e321e", text:"#f0a030" },
+              D: { bg:"#2a1810", border:"#3e2818", text:"#ff7043" },
+              F: { bg:"#2a0d0d", border:"#3e1e1e", text:"#e24a4a" },
+              "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
+            };
+            const rc = gradeRowColors[profile ? grade : "?"];
+            return (
+              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : "Take the values quiz to see grades"}>
+                <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1 }}>{profile ? grade : "?"}</div>
+                {isPaid && profile && <div style={{ fontSize:10, color:rc.text, opacity:0.7 }}>{ps}</div>}
+              </div>
+            );
+          })()}
           <i className={`ti ${open ? "ti-chevron-up" : "ti-chevron-down"}`} style={{fontSize:13,color:T.txt3}} aria-hidden="true" />
         </div>
       </div>
@@ -1049,10 +1066,11 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             if (!comps.length || !allCompanies?.length) return null;
             const lookup = new Map(allCompanies.map(c => [c.slug || c.id, c]));
             const competitorsResolved = comps.map(slug => lookup.get(slug)).filter(Boolean);
-            // With a profile, filter to those scoring above the current company.
+            // With a profile, filter to those scoring meaningfully higher than
+            // the current company (≥7 points, ~one letter grade better).
             // Without a profile, show all competitors so the user can compare.
             const display = profile
-              ? competitorsResolved.filter(c => computeScore(c, profile) > ps).slice(0, 4)
+              ? competitorsResolved.filter(c => computeScore(c, profile) >= ps + 7).slice(0, 4)
               : competitorsResolved.slice(0, 4);
             if (!display.length) return null;
             return (
@@ -1079,20 +1097,47 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               </div>
             );
           })()}
-          {/* Score summary — only shown to users who've taken the quiz so the
-              app doesn't impose a verdict. Pre-quiz users see a neutral nudge. */}
-          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:16 }}>
-            <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
-              <div style={{ fontSize:28, fontWeight:700, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
-              <div style={{ fontSize:13, color:T.txt3, marginTop:2 }}>{profile ? `${ps}/100 · your score` : "Take quiz for your grade"}</div>
-            </div>
-            <div style={{ background:T.bg3, borderRadius:10, padding:"10px 12px", border:`1px solid ${T.border}` }}>
-              <div style={{ fontSize:12, fontWeight:500, color:T.txt }}>{enriched.cat}</div>
-              <div style={{ fontSize:11, color:T.txt3, marginTop:4, lineHeight:1.5 }}>
-                {profile ? `Based on your preferences` : `Data shown — your values determine the grade`}
+          {/* Phase 5.x: YUKA-inspired hero score block.
+              Big circular grade badge color-coded by letter (green=A, yellow=B,
+              orange=C, red=D, dark red=F). Visual-first; the rest of the
+              profile flows below it. Pre-quiz users see a neutral grey circle. */}
+          {(() => {
+            const gradeColors = {
+              A: { bg:"#0d2318", border:"#4caf82", text:"#4caf82" },
+              B: { bg:"#1a2810", border:"#8bc34a", text:"#8bc34a" },
+              C: { bg:"#2a2210", border:"#f0a030", text:"#f0a030" },
+              D: { bg:"#2a1810", border:"#ff7043", text:"#ff7043" },
+              F: { bg:"#2a0d0d", border:"#e24a4a", text:"#e24a4a" },
+              "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
+            };
+            const gc = gradeColors[profile ? grade : "?"];
+            return (
+              <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:18, padding:"14px 14px 16px", background:T.bg3, borderRadius:14, border:`1px solid ${T.border}` }}>
+                <div style={{
+                  width:78, height:78, borderRadius:"50%",
+                  background:gc.bg, border:`3px solid ${gc.border}`,
+                  display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0,
+                }}>
+                  <div style={{ fontSize:38, fontWeight:800, color:gc.text, lineHeight:1 }}>
+                    {profile ? grade : "?"}
+                  </div>
+                </div>
+                <div style={{ flex:1, minWidth:0 }}>
+                  {profile ? (
+                    <>
+                      <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.1 }}>{ps}<span style={{ fontSize:14, color:T.txt3, fontWeight:500 }}>/100</span></div>
+                      <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>{enriched.cat} · your personalized score</div>
+                    </>
+                  ) : (
+                    <>
+                      <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.2 }}>Take the 30-second quiz</div>
+                      <div style={{ fontSize:12, color:T.txt3, marginTop:3, lineHeight:1.4 }}>{enriched.cat} · data shown below; your values set the grade</div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })()}
 
           {/* All categories — symbol + label + detail */}
           {CAT_KEYS.map(k => {
@@ -1100,9 +1145,24 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             const disp = getDisplay(k, enriched.sc?.[k], profile);
             const state = getDataState(k, enriched.sc?.[k]);
             const isUnknown = state === "unknown";
-            const badgeStyle = isUnknown
-              ? { background:"transparent", color:T.txt3, border:`1px dashed ${T.border2}`, opacity:0.75 }
-              : { background:T.bg3, color:T.txt, border:`1px solid ${T.border2}` };
+            // YUKA-inspired color coding: green for positive, red for documented
+            // negatives, amber for mixed, neutral grey otherwise. Lifts the
+            // visual hierarchy beyond "everything looks the same".
+            const enumV = String(enriched.sc?.[k] || "").toLowerCase();
+            const POS = ["positive","excellent","strong","good","cruelty_free","fair","pro_dei","bipartisan"];
+            const NEG = ["negative","poor","very poor","below average","tests_animals","sells_guns","makes_guns","anti_dei"];
+            const MIX = ["mixed","some_testing"];
+            const tone = isUnknown ? "unknown"
+              : POS.includes(enumV) ? "good"
+              : NEG.includes(enumV) ? "bad"
+              : MIX.includes(enumV) ? "mid"
+              : "neutral";
+            const badgeStyle =
+              tone === "unknown" ? { background:"transparent", color:T.txt3, border:`1px dashed ${T.border2}`, opacity:0.75 }
+              : tone === "good"  ? { background:"#0d2318", color:"#4caf82", border:"1px solid #1e3e2e" }
+              : tone === "bad"   ? { background:"#2a0d0d", color:"#e24a4a", border:"1px solid #3e1e1e" }
+              : tone === "mid"   ? { background:"#2a1a05", color:"#f0a030", border:"1px solid #3e2a15" }
+              : { background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` };
             return (
               <div key={k} style={{ marginBottom:14, paddingBottom:14, borderBottom:`1px solid ${T.border}`, opacity: isUnknown ? 0.7 : 1 }}>
                 <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:6 }}>
@@ -2186,7 +2246,7 @@ if (screen === "onboarding") {
         <div style={{ padding:16 }}>
           <p style={{ fontSize:13, color:T.txt3, marginBottom:4, lineHeight:1.6 }}>All scores are researched from these databases. The Live update button on each company uses real-time web search.</p>
           <div style={{ padding:"8px 12px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:12, fontSize:12, color:T.txt3, lineHeight:1.6 }}>
-            <strong style={{color:T.txt2}}>About data freshness:</strong> Base scores are researched periodically and reflect information as of early 2025. For breaking news, tap "Live update" on any company card — it searches the web in real time. Political donation data updates after each election cycle (OpenSecrets), environmental data updates annually (CDP), and labor data updates as NLRB and OSHA cases are filed.
+            <strong style={{color:T.txt2}}>About data freshness:</strong> Government-derived signals (FEC donations, EPA enforcement, OSHA, NLRB, Violation Tracker, HIBP) refresh nightly via automated workflows. AI-synthesized narratives are re-baked monthly to incorporate new public records. Political donation totals reflect the current election cycle; environmental enforcement totals span 2000–present. For breaking news, tap "Live update" on any company card.
           </div>
           {SOURCES_DATA.map(g => (
             <div key={g.group}>
