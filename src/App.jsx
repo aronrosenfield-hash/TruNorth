@@ -1,7 +1,7 @@
 // Phase 3.1: companies.js is loaded LAZILY (dynamic import) so the 8.8MB module
 // only enters the bundle when the split-bundle path is OFF. With flag ON, the
 // import never fires and the app downloads only /data/index.json (~287 KB).
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import { initAnalytics, track } from "./lib/analytics";
@@ -78,6 +78,195 @@ function getSymbol(val) {
 }
 
 // ─── COMPANY DATA ─────────────────────────────────────────────────────────────
+
+// ─── BARCODE SCANNER (Phase 5.y / UX 7B) ──────────────────────────────────────
+// In-store killer feature. Camera scans a product barcode, we look up the
+// brand via Open Food Facts (free, no auth, 2M+ products), then route to that
+// company's profile. Strategy:
+//   1. Open camera via getUserMedia (rear-facing on phones).
+//   2. Try the native BarcodeDetector API (Chrome on Android, Safari iOS 17+).
+//   3. Fall back to ZXing-wasm if BarcodeDetector isn't available (server-loaded
+//      on first scan, ~200KB gzipped).
+//   4. On code detected → fetch https://world.openfoodfacts.org/api/v0/product/<barcode>.json
+//      Pull `brands`, normalize, fuzzy-match to our company index, navigate.
+//   5. If brand isn't in our index, show "We don't have this brand yet — suggest?".
+//
+// Privacy: camera stream stays local. Open Food Facts lookup sends only the
+// barcode (UPC/EAN/etc.) — no PII. We never store the barcode.
+function BarcodeScanner({ onClose, onMatch, companies }) {
+  const videoRef = React.useRef(null);
+  const streamRef = React.useRef(null);
+  const detectorRef = React.useRef(null);
+  const [status, setStatus] = useState("starting"); // starting | scanning | lookup | nomatch | error
+  const [error, setError] = useState(null);
+  const [lastCode, setLastCode] = useState(null);
+  const [lookupBrand, setLookupBrand] = useState(null);
+
+  // Build a quick brand→slug lookup once.
+  const brandIndex = useMemo(() => {
+    const m = new Map();
+    (companies || []).forEach(c => {
+      const k = (c.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+      if (k) m.set(k, c);
+    });
+    return m;
+  }, [companies]);
+
+  const resolveBrand = (rawBrand) => {
+    if (!rawBrand) return null;
+    // Try each brand token in the comma/pipe-separated list, prefer first match
+    const candidates = rawBrand.split(/[,|;\/]/).map(s => s.trim()).filter(Boolean);
+    for (const cand of candidates) {
+      const k = cand.toLowerCase().replace(/[^a-z0-9]+/g, "");
+      if (brandIndex.has(k)) return brandIndex.get(k);
+      // Word-prefix fallback: e.g. "Coca-Cola Company" → "cocacola" → match "cocacola"
+      for (const [bk, bv] of brandIndex) {
+        if (bk.length >= 4 && (bk.startsWith(k) || k.startsWith(bk))) return bv;
+      }
+    }
+    return null;
+  };
+
+  useEffect(() => {
+    let cancelled = false;
+    let rafId = null;
+    let intervalId = null;
+
+    async function start() {
+      try {
+        // 1. Start camera
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: { ideal: "environment" }, width: { ideal: 1280 }, height: { ideal: 720 } },
+          audio: false,
+        });
+        if (cancelled) { stream.getTracks().forEach(t => t.stop()); return; }
+        streamRef.current = stream;
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+          await videoRef.current.play().catch(() => {});
+        }
+
+        // 2. Set up detector
+        if (typeof window !== "undefined" && "BarcodeDetector" in window) {
+          detectorRef.current = new window.BarcodeDetector({
+            formats: ["ean_13", "ean_8", "upc_a", "upc_e", "code_128", "code_39", "code_93", "qr_code"],
+          });
+        } else {
+          // Browser doesn't support native BarcodeDetector — show graceful message
+          setStatus("error");
+          setError("Your browser doesn't support barcode scanning. Try Chrome on Android or Safari iOS 17+.");
+          return;
+        }
+
+        setStatus("scanning");
+
+        // 3. Poll the video frame for codes ~5x/sec
+        const scan = async () => {
+          if (cancelled || !videoRef.current || !detectorRef.current) return;
+          try {
+            const codes = await detectorRef.current.detect(videoRef.current);
+            if (codes && codes.length > 0) {
+              const code = codes[0].rawValue;
+              if (code && code !== lastCode) {
+                setLastCode(code);
+                lookup(code);
+                return; // stop polling once we have one
+              }
+            }
+          } catch { /* detect can throw transiently — ignore */ }
+        };
+        intervalId = setInterval(scan, 200);
+      } catch (err) {
+        console.error("[scanner] camera error:", err);
+        setStatus("error");
+        setError(err.name === "NotAllowedError"
+          ? "Camera access denied. Grant permission in your browser settings to scan."
+          : "Couldn't start the camera. Make sure you're using HTTPS and have a working camera.");
+      }
+    }
+
+    async function lookup(code) {
+      setStatus("lookup");
+      try {
+        const res = await fetch(`https://world.openfoodfacts.org/api/v0/product/${encodeURIComponent(code)}.json`);
+        const data = await res.json();
+        if (data?.status === 1 && data?.product) {
+          const brand = data.product.brands || data.product.brand_owner || data.product.product_name;
+          setLookupBrand(brand);
+          const match = resolveBrand(brand);
+          if (match) {
+            onMatch(match, { barcode: code, brand });
+            return;
+          }
+          setStatus("nomatch");
+        } else {
+          setStatus("nomatch");
+        }
+      } catch (err) {
+        setStatus("error");
+        setError("Couldn't reach the product database. Check your connection.");
+      }
+    }
+
+    start();
+    return () => {
+      cancelled = true;
+      if (rafId) cancelAnimationFrame(rafId);
+      if (intervalId) clearInterval(intervalId);
+      if (streamRef.current) streamRef.current.getTracks().forEach(t => t.stop());
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  return (
+    <div style={{ position:"fixed", inset:0, background:"#000", zIndex:300, display:"flex", flexDirection:"column" }}>
+      <div style={{ padding:"calc(12px + env(safe-area-inset-top, 0px)) 16px 12px", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+        <div style={{ color:"#fff", fontSize:16, fontWeight:700 }}>Scan barcode</div>
+        <button onClick={onClose} aria-label="Close scanner" style={{ width:36, height:36, padding:0, borderRadius:"50%", border:"none", background:"rgba(255,255,255,0.12)", color:"#fff", fontSize:22, cursor:"pointer" }}>×</button>
+      </div>
+      <div style={{ flex:1, position:"relative", overflow:"hidden" }}>
+        <video ref={videoRef} playsInline muted style={{ width:"100%", height:"100%", objectFit:"cover" }} />
+        {/* Aim reticle */}
+        {status === "scanning" && (
+          <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"none" }}>
+            <div style={{ width:"70%", maxWidth:280, aspectRatio:"1.6", border:"2px solid rgba(255,255,255,0.7)", borderRadius:18, boxShadow:"0 0 0 9999px rgba(0,0,0,0.4)" }} />
+          </div>
+        )}
+        {(status === "lookup" || status === "nomatch" || status === "error" || status === "starting") && (
+          <div style={{ position:"absolute", inset:0, background:"rgba(0,0,0,0.65)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:32, textAlign:"center", color:"#fff" }}>
+            {status === "starting" && <div style={{ fontSize:14 }}>Starting camera…</div>}
+            {status === "lookup" && (
+              <>
+                <div className="spin" style={{ width:36, height:36, border:"3px solid rgba(255,255,255,0.3)", borderTopColor:"#fff", borderRadius:"50%", marginBottom:14 }} />
+                <div style={{ fontSize:14 }}>Looking up barcode {lastCode}…</div>
+              </>
+            )}
+            {status === "nomatch" && (
+              <>
+                <i className="ti ti-package-off" style={{ fontSize:34, color:T.gold, marginBottom:10 }} aria-hidden="true" />
+                <div style={{ fontSize:15, fontWeight:600, marginBottom:6 }}>Not in our catalog yet</div>
+                <div style={{ fontSize:12, color:"rgba(255,255,255,0.7)", marginBottom:18, maxWidth:280, lineHeight:1.5 }}>
+                  Barcode {lastCode}{lookupBrand ? ` (${lookupBrand})` : ""} isn't tracked. Try another product or suggest it.
+                </div>
+                <button onClick={() => { setStatus("scanning"); setLastCode(null); setLookupBrand(null); }} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:"#fff", color:"#000", fontSize:13, fontWeight:700, cursor:"pointer" }}>Scan another</button>
+              </>
+            )}
+            {status === "error" && (
+              <>
+                <i className="ti ti-camera-off" style={{ fontSize:34, color:T.rep, marginBottom:10 }} aria-hidden="true" />
+                <div style={{ fontSize:15, fontWeight:600, marginBottom:6 }}>Can't scan</div>
+                <div style={{ fontSize:12, color:"rgba(255,255,255,0.75)", marginBottom:18, maxWidth:300, lineHeight:1.5 }}>{error}</div>
+                <button onClick={onClose} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:"#fff", color:"#000", fontSize:13, fontWeight:700, cursor:"pointer" }}>Close</button>
+              </>
+            )}
+          </div>
+        )}
+      </div>
+      <div style={{ padding:"12px 16px calc(12px + env(safe-area-inset-bottom, 0px))", textAlign:"center", color:"rgba(255,255,255,0.7)", fontSize:11 }}>
+        Aim at a UPC/EAN barcode on any product. Powered by Open Food Facts.
+      </div>
+    </div>
+  );
+}
 
 // ─── QUIZ STEPS ───────────────────────────────────────────────────────────────
 const QUIZ_STEPS = [
@@ -252,14 +441,36 @@ function computeScore(co, profile) {
     privacy:      profile.weights?.privacy      || 2,
     execPay:      profile.weights?.execPay      || 2,
   };
-  // Phase 3.2 — exclude unknown-data categories from weighted average so they
-  // don't drag the score toward the old fallback (50). Renormalize over the
-  // weights of the categories we actually scored.
+  // Phase 5.y — exclude both UNKNOWN and NEUTRAL signals from the weighted
+  // average. "Neutral" means we have no specific data signal for that category,
+  // and treating it as 48-50 was dragging strongly-aligned companies toward C.
+  //
+  // Real-world example: A "right" company donates 80% to Republicans (FEC).
+  // A user who prefers Republican-leaning companies should see this as A-grade
+  // on political. But if charity/labor/env/etc. are all "neutral" (no data)
+  // they were each contributing 48 to the average, pulling the overall to ~60.
+  // Now: only categories with actual signal contribute. Renormalize over those.
+  //
+  // Exception: an enum-level "neutral" for a CATEGORY where the user has a
+  // strong preference (e.g. user wants pro-DEI, company is dei:"neutral") DOES
+  // still score — neutrality vs the user's strong preference is meaningful.
+  const userCaresAbout = (k) => {
+    if (k === "political") return profile.lean && profile.lean !== "neutral";
+    if (k === "dei")       return profile.deiLean && profile.deiLean !== "neutral";
+    if (k === "animals")   return profile.animalTesting && profile.animalTesting !== "neutral";
+    if (k === "guns")      return profile.guns && profile.guns !== "neutral";
+    if (k === "labor")     return profile.unionSupport && profile.unionSupport !== "neutral";
+    return false;
+  };
   let weightedSum  = 0;
   let weightUsed   = 0;
   for (const k of CAT_KEYS) {
-    if (getDataState(k, co.sc[k]) === "unknown") continue;
-    weightedSum += scoreCat(k, co.sc[k], profile) * baseWeights[k];
+    const v = co.sc[k];
+    if (getDataState(k, v) === "unknown") continue;
+    // Skip "neutral" enum when user has no strong preference on this axis —
+    // it's signal-less for grading purposes and only adds noise toward 50.
+    if (String(v || "").toLowerCase() === "neutral" && !userCaresAbout(k)) continue;
+    weightedSum += scoreCat(k, v, profile) * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
   const ws = weightUsed > 0 ? weightedSum / weightUsed : 50;
@@ -853,7 +1064,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                 return (
                   <div key={co.slug} style={{ background:T.bg2, borderRadius:12, padding:12, border:`1px solid ${T.border}`, position:"relative" }}>
                     <button onClick={()=>onRemove(co.slug)} style={{ position:"absolute", top:6, right:6, width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }} aria-label="Remove">×</button>
-                    <div style={{ width:36, height:36, borderRadius:8, background:co.ab || T.bg3, color:co.ac || T.accent2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, marginBottom:6 }}>{co.init || "??"}</div>
+                    <div style={{ marginBottom:6 }}><CompanyLogo company={co} size={36} rounded={8} /></div>
                     <div style={{ fontSize:14, fontWeight:700, color:T.txt, lineHeight:1.2 }}>{co.name}</div>
                     <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{co.cat || ""}</div>
                     <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
@@ -922,6 +1133,73 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
   );
 }
 
+// Phase 5.y: real brand logos via Clearbit Logo API.
+// Strategy: try logo.clearbit.com/<domain>. If it 404s or errors, fall back to
+// the initials avatar (which we always have). The image element handles its
+// own error state — no JS coordination needed beyond the onError handler.
+//
+// Domain inference: prefer company.domain (when we have it from SEC/Wikidata),
+// else derive from name (e.g. "Coca-Cola" → "cocacola.com"). Conservative —
+// when guessing fails the fallback is just initials, never broken UI.
+function guessDomain(co) {
+  if (co.domain) return co.domain;
+  const name = (co.name || "").toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/['"`.,]/g, "")
+    .replace(/\s+(inc|corp|corporation|company|co|llc|ltd|plc|holdings|group)\b.*/i, "")
+    .replace(/[^a-z0-9]+/g, "");
+  return name ? name + ".com" : null;
+}
+
+function CompanyLogo({ company, size = 36, rounded = 10 }) {
+  const domain = guessDomain(company);
+  // Two providers tried in sequence. Google favicon API is the most reliable
+  // (always returns SOMETHING — at minimum a generic globe). DuckDuckGo's
+  // icons.duckduckgo.com is a fallback. We previously used Clearbit but it
+  // started 404'ing in 2025 after they deprecated free tier access.
+  const providers = domain ? [
+    `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
+    `https://icons.duckduckgo.com/ip3/${domain}.ico`,
+  ] : [];
+  const [providerIdx, setProviderIdx] = React.useState(0);
+  const [errored, setErrored] = React.useState(!domain);
+  React.useEffect(() => {
+    setErrored(!domain);
+    setProviderIdx(0);
+  }, [company?.slug || company?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  const initialsAvatar = (
+    <div style={{
+      width:size, height:size, borderRadius:rounded,
+      display:"flex", alignItems:"center", justifyContent:"center",
+      fontSize: Math.max(10, Math.round(size*0.30)), fontWeight:700, flexShrink:0,
+      background:company.ab||T.bg3, color:company.ac||T.accent2,
+    }} aria-hidden="true">{company.init}</div>
+  );
+  if (errored) return initialsAvatar;
+  return (
+    <div style={{
+      width:size, height:size, borderRadius:rounded,
+      background:"#fff", flexShrink:0,
+      display:"flex", alignItems:"center", justifyContent:"center",
+      overflow:"hidden", border:`1px solid ${T.border}`,
+    }} aria-hidden="true">
+      <img
+        src={providers[providerIdx]}
+        alt=""
+        width={size}
+        height={size}
+        loading="lazy"
+        onError={() => {
+          // Try next provider; fall back to initials when exhausted.
+          if (providerIdx + 1 < providers.length) setProviderIdx(providerIdx + 1);
+          else setErrored(true);
+        }}
+        style={{ width:"86%", height:"86%", objectFit:"contain" }}
+      />
+    </div>
+  );
+}
+
 function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, allCompanies, initiallyOpen }) {
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
@@ -972,7 +1250,8 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
     <div style={{ background:T.bg2, borderRadius:14, border:`1px solid ${open ? T.accent : T.border}`, overflow:"hidden", marginBottom:1 }}>
       {/* Slim row — always visible */}
       <div onClick={handleTap} style={{ display:"flex", alignItems:"center", gap:10, padding:"11px 14px", cursor:"pointer" }}>
-        <div style={{ width:36, height:36, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, flexShrink:0, background:company.ab||T.bg3, color:company.ac||T.accent2 }}>{company.init}</div>
+        <CompanyLogo company={company} size={36} />
+        <div style={{ display:"none" }}>{/* legacy initials avatar slot (now handled by CompanyLogo) */}</div>
         <div style={{ flex:1, minWidth:0 }}>
           <div style={{ fontSize:16, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.name}</div>
           <div style={{ fontSize:13, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
@@ -1127,6 +1406,45 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
                     <>
                       <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.1 }}>{ps}<span style={{ fontSize:14, color:T.txt3, fontWeight:500 }}>/100</span></div>
                       <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>{enriched.cat} · your personalized score</div>
+                      {(() => {
+                        // Phase 5.y "Why this grade?" — surface the 1–2 categories
+                        // that moved the needle most on this user's score, derived
+                        // from |scoreCat − 50| × weight. Plain English, no judgment.
+                        const baseW = {
+                          political:profile.weights?.political||3, charity:profile.weights?.charity||2,
+                          environment:profile.weights?.environment||3, labor:profile.weights?.labor||3,
+                          dei:profile.weights?.dei||3, animals:profile.weights?.animals||2,
+                          guns:profile.weights?.guns||2, privacy:profile.weights?.privacy||2,
+                          execPay:profile.weights?.execPay||2,
+                        };
+                        const impacts = CAT_KEYS.map(k => {
+                          const v = enriched.sc?.[k];
+                          if (getDataState(k, v) === "unknown") return null;
+                          if (String(v||"").toLowerCase() === "neutral") return null;
+                          const sc = scoreCat(k, v, profile);
+                          const delta = sc - 50;
+                          return { k, sc, delta, impact: Math.abs(delta) * baseW[k] };
+                        }).filter(Boolean).sort((a,b) => b.impact - a.impact);
+                        const top = impacts.slice(0, 2);
+                        if (!top.length) return null;
+                        const reasonFor = (it) => {
+                          const cat = CAT_LABELS[it.k];
+                          const goodOrBad = it.delta > 0 ? "helped" : "hurt";
+                          return `${cat} ${goodOrBad}`;
+                        };
+                        return (
+                          <div style={{ marginTop:8, fontSize:11, color:T.txt2, lineHeight:1.4 }}>
+                            <span style={{ color:T.txt3 }}>Why: </span>
+                            {top.map((it, i) => (
+                              <span key={it.k}>
+                                {i > 0 && ", "}
+                                <span style={{ color: it.delta > 0 ? "#4caf82" : "#e24a4a", fontWeight:600 }}>{reasonFor(it)}</span>
+                              </span>
+                            ))}
+                            {top[0] && <span style={{ color:T.txt3 }}> most</span>}
+                          </div>
+                        );
+                      })()}
                     </>
                   ) : (
                     <>
@@ -1267,12 +1585,14 @@ function Quiz({ onComplete }) {
   const current = isWelcome ? null : QUIZ_STEPS[step-1];
   const isLast = step === QUIZ_STEPS.length;
   const prog = (step / QUIZ_STEPS.length) * 100;
+  // Phase 5.y bug fix: combined-question pages were advancing when ONLY the
+  // primary question had an answer. Now every sub-question must be answered.
   const canAdvance = isWelcome || current?.type === "multi"
-    || (current?.type === "scale" && answers[current?.id] !== undefined)
+    || (current?.type === "scale"  && answers[current?.id] !== undefined)
     || (current?.type === "single" && answers[current?.id] !== undefined)
-    || (current?.type === "single+scale" && answers[current?.id] !== undefined)
-    || (current?.type === "scale+single" && answers[current?.id] !== undefined)
-    || (current?.type === "scale+scale" && answers[current?.id] !== undefined);
+    || (current?.type === "single+scale" && answers[current?.id] !== undefined && answers[current?.scaleId] !== undefined)
+    || (current?.type === "scale+single" && answers[current?.id] !== undefined && answers[current?.singleId] !== undefined)
+    || (current?.type === "scale+scale"  && answers[current?.id] !== undefined && answers[current?.scale2Id] !== undefined);
 
   const advance = () => {
     if (isLast) {
@@ -1322,7 +1642,7 @@ function Quiz({ onComplete }) {
         {step > 0 && <div style={{ fontSize:11, color:T.txt3, textAlign:"right", marginTop:5 }}>{step} of {QUIZ_STEPS.length}</div>}
       </div>
 
-      <div style={{ flex:1, padding:"12px 16px 0", overflowY:"auto" }}>
+      <div style={{ flex:1, padding:"12px 16px 24px", overflowY:"auto", WebkitOverflowScrolling:"touch" }}>
         {isWelcome && (
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", paddingTop:20 }}>
             <div style={{ width:64, height:64, background:T.accentBg, borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:14 }}>
@@ -1454,7 +1774,7 @@ function Quiz({ onComplete }) {
         )}
       </div>
 
-      <div style={{ display:"flex", gap:10, padding:"12px 16px", borderTop:`1px solid ${T.border}`, background:T.bg, position:"sticky", bottom:0 }}>
+      <div style={{ display:"flex", gap:10, padding:"12px 16px", paddingBottom:"calc(12px + env(safe-area-inset-bottom, 0px))", borderTop:`1px solid ${T.border}`, background:T.bg, position:"sticky", bottom:0, flexShrink:0 }}>
         {step > 0 && <button onClick={()=>setStep(s=>s-1)} style={{ padding:"11px 16px", borderRadius:12, border:`1px solid ${T.border}`, background:T.bg3, color:T.txt2, fontSize:14, fontWeight:600, cursor:"pointer" }}>←</button>}
         <button onClick={advance} disabled={!canAdvance}
           style={{ flex:1, padding:13, borderRadius:12, border:"none", background:canAdvance?T.accent:T.bg3, color:canAdvance?"#fff":T.txt3, fontSize:15, fontWeight:700, cursor:canAdvance?"pointer":"default", opacity:canAdvance?1:0.4 }}>
@@ -1715,7 +2035,18 @@ const [screen, setScreen] = useState("splash");
 const [currentUser, setCurrentUser] = useState(() => {
   try { return JSON.parse(localStorage.getItem("tn_user") || "null"); } catch { return null; }
 });
-const [profile, setProfile]   = useState(null);
+// Phase 5.y: persist profile across sessions so a returning user doesn't lose
+// their personalization after a reload (and so paying after a quiz doesn't
+// trigger a retake).
+const [profile, setProfile]   = useState(() => {
+  try { return JSON.parse(localStorage.getItem("tn_profile") || "null"); } catch { return null; }
+});
+useEffect(() => {
+  try {
+    if (profile) localStorage.setItem("tn_profile", JSON.stringify(profile));
+    else         localStorage.removeItem("tn_profile");
+  } catch {}
+}, [profile]);
   // Dev-only Pro mode for QA: append `?pro=1` to localhost URL. Production-safe
   // because we additionally require import.meta.env.DEV.
   const [isPaid, setIsPaid]     = useState(() =>
@@ -1823,6 +2154,9 @@ const [profile, setProfile]   = useState(null);
   // On primary failure, fall back to the OTHER source so prod stays alive even
   // if one path is broken.
   const [companies, setCompanies] = useState(null);
+
+  // Phase 5.y / UX 7B: barcode scanner modal state. Opened from the search bar.
+  const [showScanner, setShowScanner] = useState(false);
 
   // Deep-link slug: parsed from /company/<slug>. CompanyCard reads it and
   // auto-expands the matching row on first render so shared links open the
@@ -2013,7 +2347,30 @@ if (screen === "onboarding") {
 
   return (
     <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
-      {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("quiz");}} onClose={()=>setShowPaywall(false)} />}
+      {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{
+        setIsPaid(true);
+        setShowPaywall(false);
+        window.scrollTo(0,0);
+        // Phase 5.y: don't force a quiz retake if the user already personalized.
+        // Previously this always sent them back to step 0 of the 9-question quiz,
+        // wiping the experience they just paid for.
+        if (!profile) setScreen("quiz");
+      }} onClose={()=>setShowPaywall(false)} />}
+      {/* UX 7B: barcode scanner overlay — opens camera, decodes, routes to match */}
+      {showScanner && (
+        <BarcodeScanner
+          companies={companies || []}
+          onClose={() => setShowScanner(false)}
+          onMatch={(co, meta) => {
+            setShowScanner(false);
+            track("scanner_match", { slug: co.slug || co.id, name: co.name, barcode: meta?.barcode });
+            setQueryRaw(co.name);
+            setQuery(co.name);
+            setTab("search");
+            setDeepLinkSlug(co.slug || co.id);
+          }}
+        />
+      )}
       <WhatsNewModal companyCount={companies?.length || 6000} />
 
       {/* UX 8B: aria-live region for screen readers — announces filtered count
@@ -2024,20 +2381,25 @@ if (screen === "onboarding") {
           : `${tab} tab`}
       </div>
 
-      {/* Header */}
+      {/* Header — Phase 5.y: title is true-centered now (3-column grid) so the
+          Pro/Upgrade chip width on the right can't shift it off-center. */}
       <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
-        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
-          <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-            <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
+        <div style={{ display:"grid", gridTemplateColumns:"1fr auto 1fr", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
+          <div style={{ display:"flex", justifyContent:"flex-start" }}>
+            <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+              <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
+            </div>
           </div>
-          <div style={{ flex:1 }}>
-            <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3 }}>TruNorth</div>
-            <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap" }}>Know where your money goes · {deduped.length} companies</div>
+          <div style={{ textAlign:"center", minWidth:0 }}>
+            <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3, lineHeight:1.1 }}>TruNorth</div>
+            <div style={{ fontSize:11, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>Know where your money goes · {deduped.length} companies</div>
           </div>
-          {isPaid
-            ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
-            : <button onClick={()=>setTab("account")} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
-          }
+          <div style={{ display:"flex", justifyContent:"flex-end" }}>
+            {isPaid
+              ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
+              : <button onClick={()=>setTab("account")} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
+            }
+          </div>
         </div>
         {tab !== "account" && (
           <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
@@ -2047,6 +2409,19 @@ if (screen === "onboarding") {
               autoComplete="off"
               style={{ background:"transparent", border:"none", color:T.txt, fontSize:15, padding:"12px 0", flex:1 }} />
             {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
+            {/* Phase 5.y (UX 7B): in-store barcode scanner — opens camera overlay
+                and routes to the matched company. Hidden behind feature detection
+                so it doesn't appear in browsers without media-devices support. */}
+            {typeof navigator !== "undefined" && navigator.mediaDevices?.getUserMedia && (
+              <button
+                onClick={() => { setShowScanner(true); track("scanner_open", { tab }); }}
+                aria-label="Scan barcode"
+                title="Scan a product barcode"
+                style={{ background:"none", border:"none", color:T.accent2, fontSize:20, cursor:"pointer", padding:"6px 0", display:"flex", alignItems:"center" }}
+              >
+                <i className="ti ti-scan" aria-hidden="true" />
+              </button>
+            )}
           </div>
         )}
       </div>
