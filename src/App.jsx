@@ -449,39 +449,31 @@ function computeScore(co, profile) {
     privacy:      profile.weights?.privacy      || 2,
     execPay:      profile.weights?.execPay      || 2,
   };
-  // Phase 5.y — exclude both UNKNOWN and NEUTRAL signals from the weighted
-  // average. "Neutral" means we have no specific data signal for that category,
-  // and treating it as 48-50 was dragging strongly-aligned companies toward C.
+  // Phase 5.ac — "neutral" enum means NO DATA SIGNAL for that category and is
+  // ALWAYS excluded from the weighted score. (Previously we kept it when the
+  // user had a strong preference — that pulled scores toward C even when the
+  // company was clearly aligned on the only axis with data.)
   //
-  // Real-world example: A "right" company donates 80% to Republicans (FEC).
-  // A user who prefers Republican-leaning companies should see this as A-grade
-  // on political. But if charity/labor/env/etc. are all "neutral" (no data)
-  // they were each contributing 48 to the average, pulling the overall to ~60.
-  // Now: only categories with actual signal contribute. Renormalize over those.
+  // Principle requested by user: "If we don't have data, we shouldn't be
+  // scoring them as neutral for any area. If only one area matches, they
+  // should get the grade on that one." So: score is computed ONLY on
+  // categories where we have a real signal (positive, negative, mixed, or
+  // a definite-stance enum like cruelty_free/sells_guns/left/right).
   //
-  // Exception: an enum-level "neutral" for a CATEGORY where the user has a
-  // strong preference (e.g. user wants pro-DEI, company is dei:"neutral") DOES
-  // still score — neutrality vs the user's strong preference is meaningful.
-  const userCaresAbout = (k) => {
-    if (k === "political") return profile.lean && profile.lean !== "neutral";
-    if (k === "dei")       return profile.deiLean && profile.deiLean !== "neutral";
-    if (k === "animals")   return profile.animalTesting && profile.animalTesting !== "neutral";
-    if (k === "guns")      return profile.guns && profile.guns !== "neutral";
-    if (k === "labor")     return profile.unionSupport && profile.unionSupport !== "neutral";
-    return false;
-  };
+  // The display layer still uses "neutral" badges where data is absent, but
+  // those badges are informational only — they don't contribute to the grade.
   let weightedSum  = 0;
   let weightUsed   = 0;
   for (const k of CAT_KEYS) {
     const v = co.sc[k];
     if (getDataState(k, v) === "unknown") continue;
-    // Skip "neutral" enum when user has no strong preference on this axis —
-    // it's signal-less for grading purposes and only adds noise toward 50.
-    if (String(v || "").toLowerCase() === "neutral" && !userCaresAbout(k)) continue;
+    if (String(v || "").toLowerCase() === "neutral") continue;
     weightedSum += scoreCat(k, v, profile) * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
-  const ws = weightUsed > 0 ? weightedSum / weightUsed : 50;
+  // If nothing scored, fall back to the overall (un-personalized) score so the
+  // app doesn't show a misleading "50" for companies with no data at all.
+  const ws = weightUsed > 0 ? weightedSum / weightUsed : (co.overall || 50);
   const pen = (profile.dealBreakers || []).reduce((p, db) => {
     // Standard category dealbreakers
     if (["environment","labor","privacy","execPay","animals","guns","charity"].includes(db)) {
@@ -1061,13 +1053,153 @@ function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat
   );
 }
 
-// Switcher — picks design based on ?filterDesign=A|B|C or defaults to current.
+// ─── DESIGN D — "Smart Pill Stack" — B variant with auto-expanded categories ──
+// User said they liked B. This is B but smarter: when sheet is closed, the
+// active-filter chips are GROUPED visually by type (political | category |
+// concern) with mini section headers. Less "wall of chips" feel.
+function FilterPanelDesignD({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length + flagFilters.length;
+  return (
+    <div style={{ background:T.bg2, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ display:"flex", alignItems:"flex-start", padding:"10px 16px", gap:10 }}>
+        <button onClick={() => setSheetOpen(true)}
+          style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6, padding:"9px 14px", borderRadius:22, border:`1px solid ${totalActive>0 ? T.accent : T.border}`, background: totalActive>0 ? T.accentBg : T.bg3, color: totalActive>0 ? T.accent2 : T.txt2, fontSize:13, fontWeight:600, cursor:"pointer" }}>
+          <i className="ti ti-adjustments-horizontal" />
+          Filter
+          {totalActive > 0 && <span style={{ background:T.accent, color:"#fff", padding:"1px 7px", borderRadius:12, fontSize:11 }}>{totalActive}</span>}
+        </button>
+        {totalActive > 0 && (
+          <div style={{ flex:1, display:"flex", flexDirection:"column", gap:4 }}>
+            {leanFilter !== "all" && (
+              <div style={{ display:"flex", alignItems:"center", gap:5 }}>
+                <span style={{ fontSize:9, color:T.txt3, fontWeight:700, letterSpacing:0.5, width:54 }}>POLITICAL</span>
+                <button onClick={() => setLeanFilter("all")} style={chipStyle()}>
+                  {leanFilter === "left" ? "Left" : leanFilter === "right" ? "Right" : leanFilter === "bi" ? "Bipartisan" : "Neutral"} ×
+                </button>
+              </div>
+            )}
+            {catFilters.length > 0 && (
+              <div style={{ display:"flex", alignItems:"flex-start", gap:5, flexWrap:"wrap" }}>
+                <span style={{ fontSize:9, color:T.txt3, fontWeight:700, letterSpacing:0.5, width:54, marginTop:4 }}>CATEGORY</span>
+                <div style={{ flex:1, display:"flex", gap:4, flexWrap:"wrap" }}>
+                  {catFilters.map(k => (
+                    <button key={k} onClick={() => toggleCat(k)} style={chipStyle()}>{CAT_LABELS[k]} ×</button>
+                  ))}
+                </div>
+              </div>
+            )}
+            {flagFilters.length > 0 && (
+              <div style={{ display:"flex", alignItems:"flex-start", gap:5, flexWrap:"wrap" }}>
+                <span style={{ fontSize:9, color:T.txt3, fontWeight:700, letterSpacing:0.5, width:54, marginTop:4 }}>CONCERN</span>
+                <div style={{ flex:1, display:"flex", gap:4, flexWrap:"wrap" }}>
+                  {flagFilters.map(id => {
+                    const f = FLAG_FILTERS.find(x => x.id === id);
+                    return <button key={id} onClick={() => toggleFlag(id)} style={chipStyle()}>{f?.label || id} ×</button>;
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+        {totalActive > 0 && (
+          <button onClick={() => { setLeanFilter("all"); setCatFilters([]); setFlagFilters([]); }}
+            style={{ flexShrink:0, background:"none", border:"none", color:T.rep, fontSize:12, cursor:"pointer", padding:"6px 0" }}>
+            Clear
+          </button>
+        )}
+      </div>
+      {sheetOpen && <FilterSheet onClose={() => setSheetOpen(false)} leanFilter={leanFilter} setLeanFilter={setLeanFilter} catFilters={catFilters} toggleCat={toggleCat} flagFilters={flagFilters} toggleFlag={toggleFlag} lc={lc} />}
+    </div>
+  );
+}
+
+// ─── DESIGN E — "Quick-Lean + Sheet" — Political always inline + sheet for rest ──
+// Political is the highest-frequency filter, so it's always reachable as 4
+// inline pills (All / Left / Right / Bipartisan). Categories + Concerns
+// behind a single "Filter" button. Hybrid of A and B.
+function FilterPanelDesignE({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const otherCount = catFilters.length + flagFilters.length;
+  const leanPill = (id, label, count) => (
+    <button key={id} onClick={() => setLeanFilter(id)}
+      style={{ flexShrink:0, padding:"8px 12px", borderRadius:18, fontSize:12, fontWeight:600, cursor:"pointer", background: leanFilter === id ? T.accent : T.bg3, color: leanFilter === id ? "#fff" : T.txt2, border:`1px solid ${leanFilter === id ? T.accent : T.border2}`, whiteSpace:"nowrap" }}>
+      {label}{count != null && <span style={{ opacity:0.65, marginLeft:4 }}>{count}</span>}
+    </button>
+  );
+  return (
+    <div style={{ background:T.bg2, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ display:"flex", gap:6, padding:"10px 16px", overflowX:"auto", WebkitOverflowScrolling:"touch", scrollbarWidth:"none", alignItems:"center" }}>
+        {leanPill("all", "All")}
+        {leanPill("left", "Left", lc.left)}
+        {leanPill("right", "Right", lc.right)}
+        {leanPill("bi", "Bipartisan", lc.bi)}
+        <div style={{ width:1, height:24, background:T.border, margin:"0 4px" }} />
+        <button onClick={() => setSheetOpen(true)}
+          style={{ flexShrink:0, display:"flex", alignItems:"center", gap:5, padding:"8px 12px", borderRadius:18, fontSize:12, fontWeight:600, cursor:"pointer", background: otherCount>0 ? T.accentBg : T.bg3, color: otherCount>0 ? T.accent2 : T.txt2, border:`1px solid ${otherCount>0 ? T.accent : T.border2}`, whiteSpace:"nowrap" }}>
+          <i className="ti ti-filter" />
+          More
+          {otherCount > 0 && <span style={{ background:T.accent, color:"#fff", padding:"1px 6px", borderRadius:10, fontSize:10 }}>{otherCount}</span>}
+        </button>
+      </div>
+      {sheetOpen && <FilterSheet onClose={() => setSheetOpen(false)} leanFilter={leanFilter} setLeanFilter={setLeanFilter} catFilters={catFilters} toggleCat={toggleCat} flagFilters={flagFilters} toggleFlag={toggleFlag} lc={lc} />}
+    </div>
+  );
+}
+
+// ─── DESIGN F — "Floating FAB + Sheet" — minimal chrome, FAB triggers sheet ──
+// Like Google Maps. The list dominates the screen. A small floating "filter"
+// button at the bottom-right opens the sheet. Active filters show as a small
+// counter badge on the FAB. Most minimal of all six options.
+function FilterPanelDesignF({ leanFilter, setLeanFilter, catFilters, setCatFilters, toggleCat, flagFilters, toggleFlag, setFlagFilters, lc }) {
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const totalActive = (leanFilter !== "all" ? 1 : 0) + catFilters.length + flagFilters.length;
+  return (
+    <>
+      {/* Inline above the list: ONLY the active filter summary (or nothing) */}
+      {totalActive > 0 && (
+        <div style={{ background:T.bg2, borderBottom:`1px solid ${T.border}`, padding:"8px 16px", display:"flex", alignItems:"center", gap:8, fontSize:12, color:T.txt2 }}>
+          <i className="ti ti-filter-filled" style={{ color:T.accent2 }} />
+          <span style={{ flex:1 }}><b style={{ color:T.accent2 }}>{totalActive}</b> filter{totalActive === 1 ? "" : "s"} active</span>
+          <button onClick={() => { setLeanFilter("all"); setCatFilters([]); setFlagFilters([]); }}
+            style={{ background:"none", border:"none", color:T.rep, fontSize:12, cursor:"pointer", padding:0 }}>
+            Clear
+          </button>
+        </div>
+      )}
+      {/* Floating action button. Stays anchored to bottom-right above the tab bar. */}
+      <button onClick={() => setSheetOpen(true)}
+        aria-label="Open filters"
+        style={{
+          position:"fixed", right:18, bottom:78,
+          width:54, height:54, borderRadius:"50%",
+          background: T.accent, border:`2px solid ${T.bg}`,
+          boxShadow:"0 4px 12px rgba(0,0,0,0.4)",
+          display:"flex", alignItems:"center", justifyContent:"center",
+          cursor:"pointer", zIndex:20,
+        }}>
+        <i className="ti ti-adjustments-horizontal" style={{ fontSize:22, color:"#fff" }} />
+        {totalActive > 0 && (
+          <span style={{ position:"absolute", top:-4, right:-4, background:"#fff", color:T.accent, fontSize:11, fontWeight:700, padding:"2px 6px", borderRadius:10, minWidth:18, textAlign:"center", border:`2px solid ${T.bg}` }}>
+            {totalActive}
+          </span>
+        )}
+      </button>
+      {sheetOpen && <FilterSheet onClose={() => setSheetOpen(false)} leanFilter={leanFilter} setLeanFilter={setLeanFilter} catFilters={catFilters} toggleCat={toggleCat} flagFilters={flagFilters} toggleFlag={toggleFlag} lc={lc} />}
+    </>
+  );
+}
+
+// Switcher — picks design based on ?filterDesign=A|B|C|D|E|F or defaults to current.
 function FilterPanel(props) {
   if (typeof window !== "undefined") {
     const q = new URLSearchParams(window.location.search).get("filterDesign");
     if (q === "A") return <FilterPanelDesignA {...props} />;
     if (q === "B") return <FilterPanelDesignB {...props} />;
     if (q === "C") return <FilterPanelDesignC {...props} />;
+    if (q === "D") return <FilterPanelDesignD {...props} />;
+    if (q === "E") return <FilterPanelDesignE {...props} />;
+    if (q === "F") return <FilterPanelDesignF {...props} />;
   }
   return <FilterPanelOriginal {...props} />;
 }
