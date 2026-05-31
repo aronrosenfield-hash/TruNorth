@@ -1406,7 +1406,34 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    if (!isPaid) { onUpgrade(); return; }
+    // Phase 5.ag (item B): free users get FREE_QUOTA full profile reveals
+    // before the paywall fires. The previous "tap = paywall on first tap"
+    // pattern killed conversion — users couldn't evaluate whether the data
+    // was worth paying for. Now: try-then-buy.
+    const FREE_QUOTA = 5;
+    if (!isPaid && !open) {
+      try {
+        const viewedKey = "tn_freeViewed";
+        const viewed = JSON.parse(localStorage.getItem(viewedKey) || "[]");
+        const slug = company.slug || company.id;
+        const alreadyViewed = viewed.includes(slug);
+        if (!alreadyViewed && viewed.length >= FREE_QUOTA) {
+          // Out of quota AND this is a new company — paywall.
+          track("paywall_shown", { reason: "free_quota_exhausted", quota: FREE_QUOTA });
+          onUpgrade();
+          return;
+        }
+        if (!alreadyViewed) {
+          viewed.push(slug);
+          localStorage.setItem(viewedKey, JSON.stringify(viewed));
+          track("free_profile_viewed", { slug, count: viewed.length, quota: FREE_QUOTA });
+        }
+      } catch {
+        // localStorage failure — fall back to old behavior for safety
+        onUpgrade();
+        return;
+      }
+    }
     setOpen(o => {
       if (!o) {
         // Expanding — track view + lazily fetch detail if needed
@@ -2849,17 +2876,33 @@ if (screen === "onboarding") {
             )}
           </div>
 
-          {/* Paywall notice for free users */}
-          {!isPaid && (
-            <div onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ margin:"10px 16px 0", padding:"10px 14px", background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
-              <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
-              <div>
-                <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>Tap any company for full details</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Upgrade to Pro for $1.99/mo to unlock everything</div>
+          {/* Phase 5.ag: Quota-aware paywall banner for free users.
+              Shows "X of 5 free views left" then morphs into the upgrade CTA
+              once the user has exhausted the free quota. (Was: misleading
+              "Tap any company for full details" — implied free; users tapped
+              and immediately hit paywall.) */}
+          {!isPaid && (() => {
+            let freeViewed = [];
+            try { freeViewed = JSON.parse(localStorage.getItem("tn_freeViewed") || "[]"); } catch {}
+            const remaining = Math.max(0, 5 - freeViewed.length);
+            const exhausted = remaining === 0;
+            return (
+              <div onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ margin:"10px 16px 0", padding:"10px 14px", background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
+                <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
+                <div>
+                  <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>
+                    {exhausted ? "You're out of free views" : `${remaining} of 5 free views left`}
+                  </div>
+                  <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>
+                    {exhausted
+                      ? "Upgrade to Pro for $1.99/mo for unlimited"
+                      : "Upgrade to Pro for $1.99/mo — unlimited views + sources"}
+                  </div>
+                </div>
+                <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
               </div>
-              <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
-            </div>
-          )}
+            );
+          })()}
 
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
             {/* UX 4E: when nothing's been typed AND no filters active, show Recent + Trending
