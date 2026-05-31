@@ -1200,20 +1200,22 @@ function guessDomain(co) {
 
 function CompanyLogo({ company, size = 36, rounded = 10 }) {
   const domain = guessDomain(company);
-  // Two providers tried in sequence. Google favicon API is the most reliable
-  // (always returns SOMETHING — at minimum a generic globe). DuckDuckGo's
-  // icons.duckduckgo.com is a fallback. We previously used Clearbit but it
-  // started 404'ing in 2025 after they deprecated free tier access.
-  const providers = domain ? [
-    `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
-    `https://icons.duckduckgo.com/ip3/${domain}.ico`,
-  ] : [];
+  // Phase 5.af: prefer the curated logoUrl from the pipeline's logo harvester
+  // (Wikidata P154 > Wikipedia infobox > DuckDuckGo favicon, picked at build
+  // time). Falls back to the favicon-API providers when no curated URL exists.
+  const providers = [
+    ...(company?.logoUrl ? [company.logoUrl] : []),
+    ...(domain ? [
+      `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
+      `https://icons.duckduckgo.com/ip3/${domain}.ico`,
+    ] : []),
+  ];
   const [providerIdx, setProviderIdx] = React.useState(0);
-  const [errored, setErrored] = React.useState(!domain);
+  const [errored, setErrored] = React.useState(providers.length === 0);
   React.useEffect(() => {
-    setErrored(!domain);
+    setErrored(providers.length === 0);
     setProviderIdx(0);
-  }, [company?.slug || company?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [company?.slug || company?.id, company?.logoUrl]); // eslint-disable-line react-hooks/exhaustive-deps
   const initialsAvatar = (
     <div style={{
       width:size, height:size, borderRadius:rounded,
@@ -1659,7 +1661,7 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               Pulled from Wikipedia infoboxes, BBB/SEC complaint counts, and
               GDELT news mentions. Each subsection only renders if data
               exists, so old/unenriched companies show nothing. */}
-          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news) && (
+          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint) && (
             <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:14, marginTop:4 }}>
               <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginBottom:10, letterSpacing:0.2 }}>
                 About this company
@@ -1712,7 +1714,7 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               )}
 
               {enriched.news && (enriched.news.mentionCount90d > 0 || (enriched.news.scandalSignals?.length > 0)) && (
-                <div>
+                <div style={{ marginBottom: 10 }}>
                   <div style={{ fontSize:11, color:T.txt3, marginBottom:6 }}>
                     News last 90d: <b style={{ color:T.txt2 }}>{enriched.news.mentionCount90d || 0}</b> mentions
                     {typeof enriched.news.avgTone === "number" && (
@@ -1735,6 +1737,85 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
                       ))}
                     </div>
                   )}
+                </div>
+              )}
+
+              {/* Phase 5.af: SEC DEF 14A pay-ratio */}
+              {enriched.payRatio && (enriched.payRatio.ratioDisplay || enriched.payRatio.ratio) && (
+                <div style={{ marginBottom:10, fontSize:11, color:T.txt3 }}>
+                  CEO-to-median pay ratio: <b style={{ color: enriched.payRatio.ratio > 250 ? "#e24a4a" : enriched.payRatio.ratio > 50 ? T.gold : "#4caf82" }}>{enriched.payRatio.ratioDisplay || `${Math.round(enriched.payRatio.ratio)}:1`}</b>
+                  {enriched.payRatio.ceoPay && (
+                    <> · CEO ${(enriched.payRatio.ceoPay/1e6).toFixed(1)}M</>
+                  )}
+                  {enriched.payRatio.medianWorkerPay && (
+                    <> · median ${(enriched.payRatio.medianWorkerPay/1000).toFixed(0)}k</>
+                  )}
+                  {enriched.payRatio.sourceUrl && (
+                    <> · <a href={enriched.payRatio.sourceUrl} target="_blank" rel="noreferrer" style={{ color:T.accent2, textDecoration:"none" }}>SEC {enriched.payRatio.sourceForm} ({enriched.payRatio.year})</a></>
+                  )}
+                </div>
+              )}
+
+              {/* Phase 5.af: DEI badges from CEI / Disability:IN / Bloomberg */}
+              {enriched.deiBadges?.length > 0 && (
+                <div style={{ marginBottom:10 }}>
+                  <div style={{ fontSize:11, color:T.txt3, marginBottom:4 }}>DEI recognition</div>
+                  <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
+                    {enriched.deiBadges.map((b, i) => {
+                      const label = b.scoreType === "hrc_cei" ? "HRC CEI"
+                                  : b.scoreType === "disability_in" ? "Disability:IN"
+                                  : b.scoreType === "bloomberg_gei" ? "Bloomberg GEI"
+                                  : b.scoreType;
+                      const scoreOk = typeof b.score === "number" && b.score >= 80;
+                      const Tag = b.sourceUrl ? "a" : "span";
+                      return (
+                        <Tag key={i} href={b.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background: scoreOk ? "rgba(76,175,130,0.12)" : T.bg3, border:`1px solid ${scoreOk ? "rgba(76,175,130,0.4)" : T.border}`, color: scoreOk ? "#4caf82" : T.txt2, textDecoration:"none" }}>
+                          {label} {b.score != null ? `· ${b.score}` : ""} {b.year ? `· ${b.year}` : ""}
+                        </Tag>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Phase 5.af: Animal-testing certifications */}
+              {enriched.animalCerts?.length > 0 && (
+                <div style={{ marginBottom:10 }}>
+                  <div style={{ fontSize:11, color:T.txt3, marginBottom:4 }}>Animal testing</div>
+                  <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
+                    {enriched.animalCerts.map((c, i) => {
+                      const negative = c.certified === false || c.certifyingBody === "peta_tests";
+                      const label = c.certifyingBody === "peta_cf" ? "PETA Cruelty-Free"
+                                  : c.certifyingBody === "leaping_bunny" ? "Leaping Bunny"
+                                  : c.certifyingBody === "cfi" ? "Cruelty Free International"
+                                  : c.certifyingBody === "peta_tests" ? "PETA: Tests on animals"
+                                  : c.certifyingBody;
+                      const Tag = c.sourceUrl ? "a" : "span";
+                      return (
+                        <Tag key={i} href={c.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background: negative ? "rgba(226,74,74,0.12)" : "rgba(76,175,130,0.12)", border:`1px solid ${negative ? "rgba(226,74,74,0.4)" : "rgba(76,175,130,0.4)"}`, color: negative ? "#e24a4a" : "#4caf82", textDecoration:"none" }}>
+                          {negative ? "✗ " : "✓ "}{label}
+                        </Tag>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Phase 5.af: Top products (from Open Food Facts) */}
+              {enriched.products?.length > 0 && (
+                <div style={{ marginBottom:10, fontSize:11, color:T.txt3 }}>
+                  Top products: <span style={{ color:T.txt2 }}>{enriched.products.slice(0, 5).join(" · ")}</span>
+                </div>
+              )}
+
+              {/* Phase 5.af: OSM store footprint */}
+              {enriched.storeFootprint?.usStoreCount > 0 && (
+                <div style={{ marginBottom:10, fontSize:11, color:T.txt3 }}>
+                  US footprint: <b style={{ color:T.txt2 }}>{enriched.storeFootprint.usStoreCount.toLocaleString()}</b> locations
+                  {enriched.storeFootprint.byState && Object.keys(enriched.storeFootprint.byState).length > 0 && (() => {
+                    const top = Object.entries(enriched.storeFootprint.byState).sort((a,b) => b[1]-a[1]).slice(0, 3);
+                    return <> · most in <span style={{ color:T.txt2 }}>{top.map(([s,n]) => `${s} (${n})`).join(", ")}</span></>;
+                  })()}
                 </div>
               )}
             </div>
