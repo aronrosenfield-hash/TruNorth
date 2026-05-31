@@ -736,6 +736,11 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
 
   const handleSubscribe = async () => {
     if (!email.includes("@")) { alert("Please enter a valid email."); return; }
+    // Phase 5.aj: fire upgrade_clicked at the moment the user commits — this
+    // is the funnel-conversion event that paywall_shown should convert into.
+    // PostHog diagnostic on 2026-05-31 showed 43 paywall_shown / 0
+    // upgrade_clicked because this event was never being emitted.
+    track("upgrade_clicked", { email_provided: true, source: "paywall" });
     setLoading(true);
     // 4.7: capture the email to MailerLite (gracefully no-ops if unconfigured)
     await subscribeEmail(email, "paywall", { intendsToSubscribe: true });
@@ -3042,6 +3047,11 @@ useEffect(() => {
     catch { return new Set(); }
   });
   const [showSavedOnly, setShowSavedOnly] = useState(false);
+  // Phase 5.ak (item #6): industryBucket filter — set when user taps a
+  // Browse-tab category tile. Stricter than the loose name-match the
+  // search input does (so "Airline" doesn't pull in companies whose
+  // name happens to contain the word).
+  const [industryBucket, setIndustryBucket] = useState(null);
 
   // Phase 5.ah: in-app weekly digest. Fetched once per session; gracefully
   // null when the file isn't there yet (early days / dev). Cron rebuilds
@@ -3224,6 +3234,8 @@ useEffect(() => {
       }
       // UX 7A: saved-only filter
       if (showSavedOnly && !savedSet.has(c.slug || c.id)) return false;
+      // Phase 5.ak (item #6): industry-bucket filter — strict bucket match
+      if (industryBucket && getBucket(c.cat || "") !== industryBucket) return false;
       return true;
     })
     .sort((a,b) => {
@@ -3233,7 +3245,7 @@ useEffect(() => {
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
     });
   },
-    [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet, focusedSlug]
+    [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket]
   );
 
   // Phase 5.ag (perf): cap rendered company cards. Creating 11,000+ JSX
@@ -3241,7 +3253,7 @@ useEffect(() => {
   // render budget. Show the first N matches and a "Show more" button.
   const VISIBLE_BATCH = 200;
   const [visibleLimit, setVisibleLimit] = useState(VISIBLE_BATCH);
-  useEffect(() => { setVisibleLimit(VISIBLE_BATCH); }, [query, leanFilter, catFilters, flagFilters, sort, showSavedOnly]);
+  useEffect(() => { setVisibleLimit(VISIBLE_BATCH); }, [query, leanFilter, catFilters, flagFilters, sort, showSavedOnly, industryBucket]);
   const visibleFiltered = useMemo(() => filtered.slice(0, visibleLimit), [filtered, visibleLimit]);
 
   // UX 4E: recent searches (last 5 distinct queries with at least one result)
@@ -3278,7 +3290,21 @@ useEffect(() => {
     neutral: deduped.filter(c=>(c.sc.political||"").toLowerCase()==="neutral").length,
   }), [deduped]);
 
-  const cats = useMemo(() => [...new Set(deduped.map(c=>getBucket(c.cat)))].sort(), [deduped]);
+  // Phase 5.ak (item #6): filter junk categories from the Browse grid.
+  // "Other", "Various", "NA", "Uncategorized", null, and tiny categories
+  // with fewer than 3 companies aren't worth a tile.
+  const cats = useMemo(() => {
+    const JUNK = new Set(["other","various","na","n/a","uncategorized","unknown","misc","miscellaneous",""]);
+    const counts = {};
+    for (const c of deduped) {
+      const b = getBucket(c.cat || "");
+      counts[b] = (counts[b] || 0) + 1;
+    }
+    return Object.entries(counts)
+      .filter(([b, n]) => b && !JUNK.has(b.toLowerCase()) && n >= 3)
+      .map(([b]) => b)
+      .sort();
+  }, [deduped]);
 
   // UX 6A: pick a single company to tease personalization on, sticky per session.
   // Only computed when there's no profile yet (free user, no quiz taken).
@@ -3625,7 +3651,7 @@ if (screen === "onboarding") {
           <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
             {profile.deiLean==="pro"?"✓ Pro-DEI":profile.deiLean==="anti"?"✗ Anti-DEI":"– DEI neutral"}
           </span>
-          <button onClick={()=>setScreen("quiz")} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
+          <button onClick={()=>{ track("quiz_started", { from: "profile_strip_edit" }); setScreen("quiz"); }} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
         </div>
       )}
 
@@ -3739,6 +3765,16 @@ if (screen === "onboarding") {
                     </button>
                   </div>
                 )}
+                {industryBucket && (
+                  <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"8px 12px", background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:8, marginBottom:8 }}>
+                    <span style={{ fontSize:12, color:T.accent2 }}>
+                      <i className="ti ti-category" aria-hidden="true" style={{ marginRight:6 }} /> {industryBucket} · {filtered.length} {filtered.length === 1 ? "brand" : "brands"}
+                    </span>
+                    <button onClick={() => { setIndustryBucket(null); track("industry_cleared"); }} style={{ background:"none", border:"none", color:T.accent2, fontSize:12, cursor:"pointer", padding:0 }}>
+                      ✕ Clear
+                    </button>
+                  </div>
+                )}
                 {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
                 {filtered.length > visibleLimit && (
                   <button
@@ -3761,7 +3797,11 @@ if (screen === "onboarding") {
             const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
             const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
             return (
-              <div key={cat} onClick={()=>{setQueryRaw(cat);setQuery(cat);setTab("search");}}
+              // Phase 5.ak (item #6 cont'd): click sets industryBucket
+              // instead of seeding the search input — exact bucket-level
+              // filtering prevents "Airline" matching unrelated brands that
+              // happen to contain the word in their name.
+              <div key={cat} onClick={()=>{ setIndustryBucket(cat); setQueryRaw(""); setQuery(""); setTab("search"); track("browse_category_open", { bucket: cat, count }); }}
                 style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:"16px 14px", cursor:"pointer" }}>
                 <div style={{ width:44, height:44, borderRadius:8, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10, background:catBgs[i%catBgs.length] }}>
                   <i className={`ti ${icon}`} style={{ fontSize:22, color:catFgs[i%catFgs.length] }} aria-hidden="true" />
@@ -3991,7 +4031,7 @@ if (screen === "onboarding") {
                 <div style={{ fontSize:11, color:T.txt3, marginTop:3 }}>30-second quiz — free</div>
               </div>
               <button
-                onClick={()=>{ track("personalized_teaser_clicked", { slug: teaserCompany.slug || teaserCompany.id, name: teaserCompany.name }); setScreen("quiz"); }}
+                onClick={()=>{ track("personalized_teaser_clicked", { slug: teaserCompany.slug || teaserCompany.id, name: teaserCompany.name }); track("quiz_started", { from: "personalized_teaser" }); setScreen("quiz"); }}
                 style={{ padding:"7px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer", flexShrink:0 }}
               >Take quiz</button>
               <button
@@ -4082,7 +4122,7 @@ if (screen === "onboarding") {
                   {" · "}DEI: <strong style={{color:T.txt}}>{profile.deiLean==="pro"?"Pro-DEI":profile.deiLean==="anti"?"Anti-DEI":"Neutral"}</strong>
                   {" · "}Animals: <strong style={{color:T.txt}}>{profile.animalTesting==="dealbreaker"?"Dealbreaker":profile.animalTesting==="prefer_not"?"Prefer cruelty-free":"Neutral"}</strong>
                 </div>
-                <button onClick={()=>setScreen("quiz")} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
+                <button onClick={()=>{ track("quiz_started", { isPaid, from: "account_retake" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
                   Retake personalization quiz
                 </button>
               </>
@@ -4102,12 +4142,51 @@ if (screen === "onboarding") {
             <SubmitView isPaid={isPaid} onUpgrade={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} />
           </div>
 
+          {/* Phase 5.ak (item #4): saved companies surface. Previously the
+              only entry point was a subtle chip on the Search tab — users
+              couldn't find "where do my favorites go?". Now a prominent
+              card on Account that jumps to the filtered list. */}
+          {savedSet.size > 0 && (
+            <div
+              onClick={() => { setShowSavedOnly(true); setTab("search"); track("saved_list_opened", { count: savedSet.size, from: "account" }); }}
+              style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:16, padding:14, marginBottom:12, cursor:"pointer", display:"flex", alignItems:"center", gap:12 }}
+            >
+              <i className="ti ti-star-filled" style={{ fontSize:22, color:T.gold, flexShrink:0 }} aria-hidden="true" />
+              <div style={{ flex:1, minWidth:0 }}>
+                <div style={{ fontSize:14, fontWeight:700, color:T.gold }}>Your saved companies</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{savedSet.size} brand{savedSet.size === 1 ? "" : "s"} you're tracking</div>
+              </div>
+              <i className="ti ti-chevron-right" style={{ fontSize:16, color:T.gold }} aria-hidden="true" />
+            </div>
+          )}
+
           {/* Login details — always show so guest users can sign out */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
               <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>Account details</div>
-              <div style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
                 <span style={{ color:T.txt3 }}>Email</span>
-                <span style={{ color:T.txt, fontWeight:500 }}>{currentUser?.email || "Guest"}</span>
+                <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                  <span style={{ color:T.txt, fontWeight:500 }}>{currentUser?.email || "Guest"}</span>
+                  {/* Phase 5.ak (item #8): change-email button. Prompts for a
+                      new address, validates loosely, persists to localStorage. */}
+                  <button
+                    onClick={() => {
+                      const next = window.prompt("New email address:", currentUser?.email || "");
+                      if (!next || !next.includes("@")) {
+                        if (next !== null) alert("Please enter a valid email address.");
+                        return;
+                      }
+                      const updated = { ...(currentUser || {}), email: next.trim() };
+                      try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
+                      setCurrentUser(updated);
+                      track("email_changed");
+                      alert("Email updated.");
+                    }}
+                    style={{ fontSize:11, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", padding:0 }}
+                  >
+                    {currentUser?.email ? "Edit" : "Add"}
+                  </button>
+                </div>
               </div>
               <div style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
                 <span style={{ color:T.txt3 }}>Plan</span>
