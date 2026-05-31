@@ -2872,6 +2872,19 @@ useEffect(() => {
   });
   const [showSavedOnly, setShowSavedOnly] = useState(false);
 
+  // Phase 5.ah: in-app weekly digest. Fetched once per session; gracefully
+  // null when the file isn't there yet (early days / dev). Cron rebuilds
+  // it every Sunday via the weekly workflow.
+  const [weeklyChanges, setWeeklyChanges] = useState(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/data/weekly_changes.json", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (!cancelled) setWeeklyChanges(d); })
+      .catch(() => { /* file just doesn't exist yet — fine */ });
+    return () => { cancelled = true; };
+  }, []);
+
   // UX 3A (Phase 4.6): Compare 2 Companies — array of {slug, name} pairs, max 2.
   const [compareList, setCompareList] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
@@ -3578,6 +3591,61 @@ if (screen === "onboarding") {
             flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
+          {/* Phase 5.ah (item K): "This week" in-app digest. Reads
+              weekly_changes.json (built every Sunday by cron from a
+              raw.json week-over-week diff). Only renders when there's at
+              least one change to show. Each item taps into the brand.
+              Anti-pattern compliance: not a feed, not infinite scroll —
+              a capped, dated weekly summary card. */}
+          {weeklyChanges && weeklyChanges.changes && weeklyChanges.changes.length > 0 && (
+            <div style={{ margin:"12px 16px", padding:"12px 14px", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:14 }}>
+              <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:10 }}>
+                <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>
+                  This week
+                </div>
+                <div style={{ fontSize:10, color:T.txt3 }}>
+                  {weeklyChanges.stats?.gradeChanges || 0} grade · {weeklyChanges.stats?.newScandals || 0} scandal · {weeklyChanges.stats?.newRecalls || 0} recall
+                </div>
+              </div>
+              <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+                {weeklyChanges.changes.slice(0, 5).map((c, i) => {
+                  const tint = c.severity === "alert" ? "#e24a4a"
+                            : c.severity === "warn"  ? "#f0a030"
+                            : T.accent2;
+                  const icon = c.type === "grade_drop"   ? "ti-trending-down"
+                            : c.type === "grade_up"     ? "ti-trending-up"
+                            : c.type === "new_scandal"  ? "ti-alert-triangle"
+                            : c.type === "new_recall"   ? "ti-rosette"
+                            : c.type === "new_brand"    ? "ti-sparkles"
+                            : "ti-circle";
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        track("weekly_digest_clicked", { slug: c.slug, type: c.type });
+                        setDeepLinkSlug(c.slug);
+                        setTab("search");
+                      }}
+                      style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%" }}
+                    >
+                      <i className={`ti ${icon}`} style={{ fontSize:14, color: tint, flexShrink:0 }} aria-hidden="true" />
+                      <div style={{ flex:1, minWidth:0 }}>
+                        <div style={{ fontSize:13, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{c.name}</div>
+                        <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{c.detail}</div>
+                      </div>
+                      <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
+                    </button>
+                  );
+                })}
+              </div>
+              {weeklyChanges.changes.length > 5 && (
+                <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8 }}>
+                  +{weeklyChanges.changes.length - 5} more changes this week
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Phase 5.ag (item N): "Brand of the day" — one curated brand
               per day with a short framing line. Deterministic rotation based
               on date so all users see the same brand on the same day (good
