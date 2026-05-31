@@ -322,246 +322,100 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
 }
 
 // ─── QUIZ STEPS ───────────────────────────────────────────────────────────────
-// Phase 5.ag: Alt-A quiz design (from the Quiz-Review doc) with one swap —
-// Politics + Environment positions flipped per user request. Identity-issues
-// (DEI + Animals + Firearms) collapsed into one combined screen via a new
-// "tri-single" question type. Dealbreakers narrowed to the 5 most-actioned.
+// Phase 5.ai: Alt-B is now the DEFAULT (and only) quiz. Order + copy
+// derived from research synthesis (Krosnick, Pew polarization, evergreen
+// survey-design literature, Coglode onboarding research). Locked in after
+// user picked alt-b over v1 and alt-a.
 //
-// Live behind ?quiz=alt-a — visit https://www.trunorthapp.com/?quiz=alt-a
-// to preview. Once locked in (or rejected) the loser variant gets stripped.
-const QUIZ_STEPS_ALT_A = [
-  // Q1: Politics — same as current
-  { id:"politicalLean", type:"single+scale", scaleId:"politicalImportance",
-    q:"When a company donates to political campaigns, which direction do you prefer?",
-    scaleQ:"How important is this to you?",
-    lo:"No influence", hi:"Strong influence",
-    opts:[
-      {v:"right",  l:"I prefer companies that support Republican / conservative causes", icon:"rep"},
-      {v:"left",   l:"I prefer companies that support Democratic / progressive causes",  icon:"dem"},
-      {v:"neutral",l:"I prefer companies that stay completely out of politics",           icon:null},
-      {v:"neutral",l:"Political donations do not affect where I shop",                   icon:null},
-    ]},
-  // Q2: Workers (Labor importance + union stance combined — already the
-  //     "scale+single" shape in the existing quiz; just reused)
-  { id:"laborImportance", type:"scale+single", singleId:"unionSupport",
-    q:"How important is it that companies treat their workers well?",
-    lo:"Does not concern me", hi:"Major concern",
-    singleQ:"How do you feel about organized labor unions?",
-    opts:[
-      {v:"pro",    l:"I prefer companies that respect and support unions",        icon:"ti-users"},
-      {v:"anti",   l:"I prefer companies that operate without union involvement", icon:"ti-x"},
-      {v:"neutral",l:"Union policy does not factor into my shopping",            icon:null},
-    ]},
-  // Q3: Environment — same as current Q3
-  { id:"envImportance", type:"scale",
-    q:"How much does a company's environmental record matter to you?",
-    lo:"Does not concern me", hi:"Major concern" },
-  // Q4: Identity-issues combined card — three quick toggles on one screen.
-  //     New question type "tri-single" — each sub-question has its own
-  //     header + 3 options stacked compactly.
-  { id:"identityIssues", type:"tri-single",
-    q:"A few quick stances:",
+// Screen order is INTENTIONALLY soft-to-hard, not topic-first:
+//   1. "Things you'd rather not buy"  — foot-in-the-door (low-stakes avoids)
+//   2. "Rank what matters most"       — values-mindset anchoring
+//   3. "Your positions"                — identity questions AFTER commitment
+//                                        (Politics never first — see research)
+//   4. "Lines you won't cross"         — peak-end commitment device
+//
+// "No preference" replaces "Don't care" everywhere — research found
+// "don't care" reads as morally dismissive on values topics like child labor.
+const QUIZ_STEPS_ALT_B = [
+  // ── Screen 1 (was screen 2): low-stakes avoids — foot-in-the-door ──────
+  { id:"stances_avoid", type:"tri-single",
+    q:"Things you'd rather not buy",
     subs:[
-      { id:"deiLean", title:"DEI programs",
-        opts:[
-          {v:"pro",    l:"Support",     icon:"ti-heart"},
-          {v:"anti",   l:"Avoid",       icon:"ti-x"},
-          {v:"neutral",l:"Don't care",  icon:null},
-        ]},
       { id:"animalTesting", title:"Animal testing",
         opts:[
-          {v:"dealbreaker",l:"Avoid",       icon:"ti-paw"},
-          {v:"prefer_not", l:"Prefer not",  icon:"ti-paw"},
-          {v:"neutral",    l:"Don't care",  icon:null},
+          {v:"dealbreaker",l:"Cruelty-free",   icon:"ti-paw"},
+          {v:"prefer_not", l:"Not a priority", icon:"ti-paw"},
+          {v:"neutral",    l:"No preference",  icon:null},
         ]},
       { id:"guns", title:"Firearms",
         opts:[
-          {v:"avoid",   l:"Avoid",      icon:"ti-x"},
-          {v:"support", l:"Support",    icon:"ti-check"},
-          {v:"neutral", l:"Don't care", icon:null},
+          {v:"avoid",   l:"Gun-industry-free", icon:"ti-x"},
+          {v:"support", l:"Supportive",        icon:"ti-check"},
+          {v:"neutral", l:"No preference",     icon:null},
         ]},
     ]},
-  // Q5: Dealbreakers — condensed to the 5 most-actioned per audit
-  { id:"dealBreakers", type:"multi",
-    q:"Any absolute dealbreakers for you?",
-    sub:"Companies with poor records in these areas get heavily penalized.",
-    opts:[
-      {v:"privacy",      l:"Selling or misusing customer data",                       icon:"ti-lock"},
-      {v:"forcedLabor",  l:"Supply chain forced labor or modern slavery",             icon:"ti-link"},
-      {v:"childLabor",   l:"Child labor in supply chain",                             icon:"ti-baby-carriage"},
-      {v:"foreignOwn",   l:"Owned or controlled by a foreign adversarial government", icon:"ti-world"},
-      {v:"monopoly",     l:"Monopolistic behavior or antitrust violations",           icon:"ti-crown"},
+  // ── Screen 2 (was screen 3): importance grid ────────────────────────────
+  { id:"importances", type:"importance-grid",
+    q:"Rank what matters most",
+    rows:[
+      // Lead with broadly-endorsed categories (anchoring high), CEO pay last
+      // (most ideologically charged of the five — straightlining risk).
+      { id:"envImportance",     label:"Environment",           icon:"ti-leaf" },
+      { id:"laborImportance",   label:"Worker treatment",      icon:"ti-users" },
+      { id:"charityImportance", label:"Charitable giving",     icon:"ti-heart" },
+      { id:"privacy",           label:"Data privacy",          icon:"ti-lock" },
+      { id:"execPay",           label:"CEO-to-worker pay gap", icon:"ti-coin" },
     ]},
-];
-
-// Default quiz — current 9-question version (preserved as fallback)
-const QUIZ_STEPS_V1 = [
-  // Step 1: Political — single + importance scale on same screen
-  { id:"politicalLean", type:"single+scale", scaleId:"politicalImportance",
-    q:"When a company donates to political campaigns, which direction do you prefer?",
-    scaleQ:"How important is this to you?",
-    lo:"No influence", hi:"Strong influence",
-    opts:[
-      {v:"right",  l:"I prefer companies that support Republican / conservative causes", icon:"rep"},
-      {v:"left",   l:"I prefer companies that support Democratic / progressive causes",  icon:"dem"},
-      {v:"neutral",l:"I prefer companies that stay completely out of politics",           icon:null},
-      {v:"neutral",l:"Political donations do not affect where I shop",                   icon:null},
-    ]},
-  // Step 2: DEI — single + importance scale on same screen
-  { id:"deiLean", type:"single+scale", scaleId:"deiImportance",
-    q:"How do you feel about DEI (Diversity, Equity and Inclusion) programs at companies?",
-    scaleQ:"How important is this to you?",
-    lo:"No influence", hi:"Strong influence",
-    opts:[
-      {v:"pro",    l:"Positive — I seek out companies with strong DEI programs",         icon:"ti-heart"},
-      {v:"anti",   l:"Negative — I do not want companies that push DEI agendas",         icon:"ti-x"},
-      {v:"neutral",l:"Neutral — DEI programs do not factor into my shopping",            icon:null},
-    ]},
-  // Step 3: Environment — scale only
-  { id:"envImportance", type:"scale", q:"How much does a company's environmental record matter to you?", lo:"Does not concern me", hi:"Major concern" },
-  // Step 4: Labor + unions combined
-  { id:"laborImportance", type:"scale+single", singleId:"unionSupport",
-    q:"How important is it that companies treat their workers well?",
-    lo:"Does not concern me", hi:"Major concern",
-    singleQ:"How do you feel about organized labor unions?",
-    opts:[
-      {v:"pro",    l:"I prefer companies that respect and support unions",               icon:"ti-users"},
-      {v:"anti",   l:"I prefer companies that operate without union involvement",        icon:"ti-x"},
-      {v:"neutral",l:"Union policy does not factor into my shopping",                   icon:null},
-    ]},
-  // Step 5: Animal testing
-  { id:"animalTesting", type:"single", q:"How do you feel about companies that test products on animals?",
-    opts:[
-      {v:"dealbreaker",l:"Dealbreaker — I will not buy from companies that test on animals", icon:"ti-paw"},
-      {v:"prefer_not", l:"I prefer cruelty-free but it is not a dealbreaker",               icon:"ti-paw"},
-      {v:"neutral",    l:"Animal testing does not factor into my shopping decisions",        icon:null},
-    ]},
-  // Step 6: Guns
-  { id:"guns", type:"single", q:"How do you feel about companies that sell or manufacture firearms?",
-    opts:[
-      {v:"support",  l:"I prefer companies that support Second Amendment rights",       icon:"ti-check"},
-      {v:"avoid",    l:"I avoid companies that sell or manufacture guns",               icon:"ti-x"},
-      {v:"neutral",  l:"Gun sales do not factor into my shopping choices",              icon:null},
-    ]},
-  // Step 7: Privacy + Exec pay combined
-  { id:"privacy", type:"scale+scale", scale2Id:"execPay",
-    q:"How much does a company misusing your personal data concern you?",
-    lo:"Does not concern me", hi:"Major concern",
-    scale2Q:"Does it bother you when CEOs earn hundreds of times more than workers?",
-    lo2:"Does not concern me", hi2:"Major concern" },
-  // Step 8: Charity
-  { id:"charityImportance", type:"scale", q:"How much does a company's charitable giving matter to you?", lo:"Does not concern me", hi:"Major concern" },
-  // Step 9: Dealbreakers
-  { id:"dealBreakers", type:"multi", q:"Select any absolute dealbreakers for you:",
-    sub:"Companies with poor records in these areas will be heavily penalized in your scores.",
-    opts:[
-      {v:"environment",   l:"Environmental violations or pollution",                    icon:"ti-leaf"},
-      {v:"labor",         l:"Poor treatment of workers",                               icon:"ti-users"},
-      {v:"privacy",       l:"Selling or misusing customer data",                       icon:"ti-lock"},
-      {v:"execPay",       l:"Extreme executive pay gaps",                              icon:"ti-coin"},
-      {v:"forcedLabor",   l:"Supply chain forced labor or modern slavery",             icon:"ti-link"},
-      {v:"taxAvoidance",  l:"Aggressive tax avoidance using offshore havens",          icon:"ti-building-bank"},
-      {v:"predatoryPrice",l:"Predatory pricing on essential goods",                    icon:"ti-tag"},
-      {v:"darkPatterns",  l:"Addictive design or dark patterns targeting users",       icon:"ti-device-mobile"},
-      {v:"foreignOwn",    l:"Owned or controlled by a foreign adversarial government", icon:"ti-world"},
-      {v:"monopoly",      l:"Monopolistic behavior or antitrust violations",           icon:"ti-crown"},
-      {v:"childLabor",    l:"Child labor in supply chain",                             icon:"ti-baby-carriage"},
-    ]},
-];
-
-// Phase 5.ah: Alt-B — all-pill quiz design. User loved the Q4 tri-single
-// feel in Alt A and asked for the WHOLE quiz to feel like that. This version
-// collapses 9 questions → 4 screens, all using compact horizontal pill
-// buttons. Total time ~45 seconds.
-//
-// Screen 1: "Where you stand" — 3 stance toggles (Politics, DEI, Unions)
-// Screen 2: "Issues you avoid" — 2 stance toggles (Animals, Firearms)
-// Screen 3: "How much each matters" — 5 importance scales in a compact grid
-// Screen 4: "Any dealbreakers?" — 5 multi-select chips
-//
-// Live behind ?quiz=alt-b. Once locked in, the loser variants get stripped.
-const QUIZ_STEPS_ALT_B = [
-  // Screen 1: Where you stand
-  { id:"stances1", type:"tri-single",
-    q:"Where do you stand?",
+  // ── Screen 3 (was screen 1): identity questions — Politics LAST ────────
+  // Reassurance microcopy added per research (reduces social-desirability
+  // distortion on the most sensitive screen).
+  { id:"stances_identity", type:"tri-single",
+    q:"Your positions",
+    sub:"Stays on your device. We never sell or share this.",
     subs:[
-      { id:"politicalLean", title:"Politics",
+      { id:"deiLean", title:"Workplace diversity programs",
         opts:[
-          {v:"left",   l:"Left",       icon:"dem"},
-          {v:"right",  l:"Right",      icon:"rep"},
-          {v:"neutral",l:"Don't care", icon:null},
-        ]},
-      { id:"deiLean", title:"DEI programs",
-        opts:[
-          {v:"pro",    l:"Support",    icon:"ti-heart"},
-          {v:"anti",   l:"Avoid",      icon:"ti-x"},
-          {v:"neutral",l:"Don't care", icon:null},
+          {v:"pro",    l:"Support",       icon:"ti-heart"},
+          {v:"anti",   l:"Avoid",         icon:"ti-x"},
+          {v:"neutral",l:"No preference", icon:null},
         ]},
       { id:"unionSupport", title:"Labor unions",
         opts:[
-          {v:"pro",    l:"Support",    icon:"ti-users"},
-          {v:"anti",   l:"Avoid",      icon:"ti-x"},
-          {v:"neutral",l:"Don't care", icon:null},
+          {v:"pro",    l:"Pro-union",     icon:"ti-users"},
+          {v:"anti",   l:"Anti-union",    icon:"ti-x"},
+          {v:"neutral",l:"No preference", icon:null},
         ]},
-    ]},
-  // Screen 2: Issues you avoid
-  { id:"stances2", type:"tri-single",
-    q:"Anything you actively avoid?",
-    subs:[
-      { id:"animalTesting", title:"Animal testing",
+      // Politics has 4 options — adds "Mixed" so the ~40% of Americans
+      // with cross-cutting views aren't forced into a false binary
+      // (Pew). Mixed scores the same as Neutral (no left/right boost)
+      // but lets the user opt in honestly instead of lying or quitting.
+      { id:"politicalLean", title:"Politics",
         opts:[
-          {v:"dealbreaker",l:"Avoid",       icon:"ti-paw"},
-          {v:"prefer_not", l:"Prefer not",  icon:"ti-paw"},
-          {v:"neutral",    l:"Don't care",  icon:null},
-        ]},
-      { id:"guns", title:"Firearms",
-        opts:[
-          {v:"avoid",   l:"Avoid",      icon:"ti-x"},
-          {v:"support", l:"Support",    icon:"ti-check"},
-          {v:"neutral", l:"Don't care", icon:null},
+          {v:"left",   l:"Progressive",   icon:"dem"},
+          {v:"right",  l:"Conservative",  icon:"rep"},
+          {v:"neutral",l:"Mixed",         icon:null},
+          {v:"neutral",l:"No preference", icon:null},
         ]},
     ]},
-  // Screen 3: Importance scales (5 categories, compact 1-5 grid)
-  { id:"importances", type:"importance-grid",
-    q:"How much does each area matter to you?",
-    rows:[
-      { id:"envImportance",     label:"Environment", icon:"ti-leaf" },
-      { id:"laborImportance",   label:"Worker treatment", icon:"ti-users" },
-      { id:"privacy",           label:"Data privacy", icon:"ti-lock" },
-      { id:"execPay",           label:"CEO-to-worker pay gap", icon:"ti-coin" },
-      { id:"charityImportance", label:"Charitable giving", icon:"ti-heart" },
-    ]},
-  // Screen 4: Dealbreakers
+  // ── Screen 4: dealbreakers — peak-end commitment ─────────────────────
   { id:"dealBreakers", type:"multi",
-    q:"Any absolute dealbreakers?",
-    sub:"Companies with poor records in these areas get heavily penalized.",
+    q:"Lines you won't cross",
+    sub:"Companies with poor records here get heavily penalized. Skipping is fine.",
     opts:[
-      {v:"privacy",      l:"Selling or misusing customer data",                       icon:"ti-lock"},
-      {v:"forcedLabor",  l:"Supply-chain forced labor or modern slavery",             icon:"ti-link"},
-      {v:"childLabor",   l:"Child labor in supply chain",                             icon:"ti-baby-carriage"},
-      {v:"foreignOwn",   l:"Owned or controlled by a foreign adversarial government", icon:"ti-world"},
-      {v:"monopoly",     l:"Monopolistic behavior or antitrust violations",           icon:"ti-crown"},
+      // Universal-moral first, geopolitical last (most divisive)
+      {v:"forcedLabor",  l:"Forced labor in supply chain",      icon:"ti-link"},
+      {v:"childLabor",   l:"Child labor in supply chain",        icon:"ti-baby-carriage"},
+      {v:"privacy",      l:"Privacy abuse",                      icon:"ti-lock"},
+      {v:"monopoly",     l:"Monopoly behavior",                  icon:"ti-crown"},
+      {v:"foreignOwn",   l:"Made in adversary nations",          icon:"ti-world"},
     ]},
 ];
 
-// Resolve which quiz to render. Reads ?quiz=alt-a|alt-b|v1 from URL on first
-// load, caches in localStorage so subsequent navigation stays consistent.
-function getQuizSteps() {
-  if (typeof window === "undefined") return QUIZ_STEPS_V1;
-  try {
-    const qs = new URLSearchParams(window.location.search).get("quiz");
-    if (qs === "alt-a" || qs === "alt-b" || qs === "v1") {
-      try { localStorage.setItem("tn_quizVersion", qs); } catch {}
-    }
-    const v = localStorage.getItem("tn_quizVersion");
-    if (v === "alt-a") return QUIZ_STEPS_ALT_A;
-    if (v === "alt-b") return QUIZ_STEPS_ALT_B;
-    return QUIZ_STEPS_V1;
-  } catch {
-    return QUIZ_STEPS_V1;
-  }
-}
-const QUIZ_STEPS = QUIZ_STEPS_V1; // back-compat for any direct refs elsewhere
+// Phase 5.ai: alt-b is now the universal quiz. v1 and alt-a are removed —
+// the experiment is over, the winner picked. Keeping this as a tiny helper
+// in case we ever want to re-enable variants for an A/B test.
+function getQuizSteps() { return QUIZ_STEPS_ALT_B; }
+const QUIZ_STEPS = QUIZ_STEPS_ALT_B; // back-compat for any direct refs elsewhere
 
 // ─── SCORING ENGINE ───────────────────────────────────────────────────────────
 const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
@@ -2560,23 +2414,29 @@ function Quiz({ onComplete, onSkip }) {
           </>
         )}
 
-        {/* Phase 5.ag: tri-single — three quick single-selects on one screen.
-            Used by Alt A's "identity issues" combined card. Each sub-question
-            gets a compact header + horizontal pill row of options. */}
+        {/* Phase 5.ag/ai: tri-single — multiple quick single-selects on one
+            screen. Pill row wraps to 2 lines when there are 4 options
+            (Politics) on narrow screens. Sub-question microcopy ("Stays on
+            your device…") is the reassurance line on the identity screen. */}
         {current?.type === "tri-single" && (
           <>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:16, lineHeight:1.4 }}>{current.q}</div>
+            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:current.sub ? 6 : 16, lineHeight:1.4 }}>{current.q}</div>
+            {current.sub && (
+              <div style={{ fontSize:12, color:T.txt3, marginBottom:16, lineHeight:1.5 }}>{current.sub}</div>
+            )}
             {(current.subs || []).map((sub) => (
               <div key={sub.id} style={{ marginBottom:18 }}>
                 <div style={{ fontSize:12, fontWeight:700, color:T.txt2, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>{sub.title}</div>
-                <div style={{ display:"flex", gap:6 }}>
+                <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
                   {sub.opts.map((opt, i) => {
                     const sel = answers[sub.id] === opt.v;
+                    // 4-option rows (politics) wrap to 2x2; others stay 1 row
+                    const minWidth = sub.opts.length >= 4 ? "calc(50% - 3px)" : "0";
                     return (
                       <button
                         key={i}
                         onClick={() => set(sub.id, opt.v)}
-                        style={{ flex:1, padding:"10px 8px", borderRadius:10, border:`1.5px solid ${sel ? T.accent : T.border}`, background: sel ? T.accentBg : T.bg2, color: sel ? T.accent2 : T.txt, fontSize:12, fontWeight: sel ? 700 : 500, cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4 }}
+                        style={{ flex:"1 1 0", minWidth, padding:"10px 8px", borderRadius:10, border:`1.5px solid ${sel ? T.accent : T.border}`, background: sel ? T.accentBg : T.bg2, color: sel ? T.accent2 : T.txt, fontSize:12, fontWeight: sel ? 700 : 500, cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4 }}
                       >
                         {opt.icon && opt.icon !== "dem" && opt.icon !== "rep" && (
                           <i className={`ti ${opt.icon}`} style={{ fontSize:14 }} aria-hidden="true" />
@@ -2597,7 +2457,7 @@ function Quiz({ onComplete, onSkip }) {
         {current?.type === "importance-grid" && (
           <>
             <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:6, lineHeight:1.4 }}>{current.q}</div>
-            <div style={{ fontSize:12, color:T.txt3, marginBottom:18 }}>1 = doesn't matter · 5 = critical</div>
+            <div style={{ fontSize:12, color:T.txt3, marginBottom:18 }}>1 = not at all · 5 = critical</div>
             {(current.rows || []).map(row => {
               const v = answers[row.id];
               return (
