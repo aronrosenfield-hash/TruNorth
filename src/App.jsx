@@ -1655,6 +1655,91 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             />
           ))}
 
+          {/* Phase 5.ae: About-this-company enrichment block.
+              Pulled from Wikipedia infoboxes, BBB/SEC complaint counts, and
+              GDELT news mentions. Each subsection only renders if data
+              exists, so old/unenriched companies show nothing. */}
+          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news) && (
+            <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:14, marginTop:4 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginBottom:10, letterSpacing:0.2 }}>
+                About this company
+              </div>
+
+              {enriched.wiki && (
+                <div style={{ marginBottom:10 }}>
+                  {(enriched.wiki.founded || enriched.wiki.hq || enriched.wiki.employees || enriched.wiki.revenue || enriched.wiki.industry || enriched.wiki.parent) && (
+                    <div style={{ display:"grid", gridTemplateColumns:"110px 1fr", rowGap:4, columnGap:8, fontSize:12, color:T.txt2, marginBottom:8 }}>
+                      {enriched.wiki.founded   && (<><div style={{ color:T.txt3 }}>Founded</div><div>{enriched.wiki.founded}</div></>)}
+                      {enriched.wiki.hq        && (<><div style={{ color:T.txt3 }}>HQ</div><div>{enriched.wiki.hq}</div></>)}
+                      {enriched.wiki.industry  && (<><div style={{ color:T.txt3 }}>Industry</div><div>{enriched.wiki.industry}</div></>)}
+                      {enriched.wiki.employees && (<><div style={{ color:T.txt3 }}>Employees</div><div>{enriched.wiki.employees}</div></>)}
+                      {enriched.wiki.revenue   && (<><div style={{ color:T.txt3 }}>Revenue</div><div>{enriched.wiki.revenue}</div></>)}
+                      {enriched.wiki.parent    && (<><div style={{ color:T.txt3 }}>Parent</div><div>{enriched.wiki.parent}</div></>)}
+                    </div>
+                  )}
+                  {enriched.wiki.extract && (
+                    <div style={{ fontSize:12, color:T.txt2, lineHeight:1.5 }}>
+                      {enriched.wiki.extract}
+                      {enriched.wiki.wikipediaUrl && (
+                        <> <a href={enriched.wiki.wikipediaUrl} target="_blank" rel="noreferrer" style={{ color:T.accent2, textDecoration:"none" }}>Wikipedia →</a></>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {(enriched.bbb || enriched.secComplaints) && (
+                <div style={{ display:"flex", gap:8, flexWrap:"wrap", marginBottom: enriched.news ? 10 : 0 }}>
+                  {enriched.bbb?.rating && (
+                    <a
+                      href={enriched.bbb.profileUrl || "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ fontSize:11, padding:"4px 8px", borderRadius:6, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2, textDecoration:"none" }}
+                    >
+                      BBB <b style={{ color:T.txt }}>{enriched.bbb.rating}</b>
+                      {typeof enriched.bbb.complaintCount === "number" && enriched.bbb.complaintCount > 0 && (
+                        <> · {enriched.bbb.complaintCount} complaints</>
+                      )}
+                    </a>
+                  )}
+                  {enriched.secComplaints?.count > 0 && (
+                    <span style={{ fontSize:11, padding:"4px 8px", borderRadius:6, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}>
+                      SEC filings: <b style={{ color:T.txt }}>{enriched.secComplaints.count}</b>
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {enriched.news && (enriched.news.mentionCount90d > 0 || (enriched.news.scandalSignals?.length > 0)) && (
+                <div>
+                  <div style={{ fontSize:11, color:T.txt3, marginBottom:6 }}>
+                    News last 90d: <b style={{ color:T.txt2 }}>{enriched.news.mentionCount90d || 0}</b> mentions
+                    {typeof enriched.news.avgTone === "number" && (
+                      <> · tone <b style={{ color: enriched.news.avgTone < -2 ? "#e24a4a" : enriched.news.avgTone > 2 ? "#4caf82" : T.txt2 }}>{enriched.news.avgTone.toFixed(1)}</b></>
+                    )}
+                  </div>
+                  {enriched.news.scandalSignals?.length > 0 && (
+                    <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:6 }}>
+                      {enriched.news.scandalSignals.slice(0, 5).map((s, i) => (
+                        <span key={i} style={{ fontSize:10, padding:"2px 6px", borderRadius:4, background:"rgba(226,74,74,0.12)", border:"1px solid rgba(226,74,74,0.3)", color:"#e24a4a", textTransform:"uppercase", letterSpacing:0.3 }}>{s}</span>
+                      ))}
+                    </div>
+                  )}
+                  {enriched.news.topArticles?.length > 0 && (
+                    <div style={{ display:"flex", flexDirection:"column", gap:4 }}>
+                      {enriched.news.topArticles.slice(0, 3).map((a, i) => (
+                        <a key={i} href={a.url} target="_blank" rel="noreferrer" style={{ fontSize:11, color:T.accent2, textDecoration:"none", lineHeight:1.4 }}>
+                          → {a.title || a.url}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
               falls back to copying a URL to the clipboard on desktop browsers. */}
           <div style={{ display:"flex", gap:8 }}>
