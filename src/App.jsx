@@ -905,7 +905,7 @@ function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat
 
 // Phase 4.9: one-shot announcement modal — shown once per WHATSNEW_VERSION.
 // Bump the version string when there's a new milestone to re-trigger.
-const WHATSNEW_VERSION = "2026-05-6k-launch";
+const WHATSNEW_VERSION = "2026-05-11k-launch";
 function WhatsNewModal({ companyCount }) {
   const [show, setShow] = useState(() => {
     // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
@@ -954,19 +954,19 @@ function WhatsNewModal({ companyCount }) {
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13, color:T.txt2, lineHeight:1.7 }}>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>5,000+ new companies</b> added across food, tech, retail, healthcare, energy</span>
+            <span><b style={{ color:T.txt }}>5,000+ new companies</b> — catalog nearly doubled to 11,000+</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Direct Competitors</b> — every company now shows its top competitors so you can compare</span>
+            <span><b style={{ color:T.txt }}>About this company</b> — Wikipedia overview, BBB rating, and news on every profile</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>New filters</b>: Still in Russia, foreign-owned, child labor, antitrust</span>
+            <span><b style={{ color:T.txt }}>Smarter scoring</b> — only categories with real data count toward the grade</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Shareable company links</b> — send any company directly to a friend</span>
+            <span><b style={{ color:T.txt }}>New filter drawer</b> — bottom sheet with all filters in one tap</span>
           </li>
         </ul>
         <button onClick={dismiss} style={{ width:"100%", marginTop:16, padding:12, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
@@ -2613,7 +2613,7 @@ if (screen === "onboarding") {
           }}
         />
       )}
-      <WhatsNewModal companyCount={companies?.length || 6000} />
+      <WhatsNewModal companyCount={companies?.length || 11000} />
 
       {/* UX 8B: aria-live region for screen readers — announces filtered count
           and which tab is active without visual clutter. */}

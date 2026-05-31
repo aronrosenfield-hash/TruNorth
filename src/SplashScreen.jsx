@@ -40,7 +40,7 @@ export default function SplashScreen({ onDone }) {
               </div>
             </div>
             <div style={styles.tagline}>Know where your money goes</div>
-            <div style={styles.subtagline}>6,000+ companies · 9 categories · 25+ sources</div>
+            <div style={styles.subtagline}>11,000+ companies · 9 categories · 25+ sources</div>
           </div>
         </div>
       </div>
