@@ -134,27 +134,21 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
     let intervalId = null;
 
     async function start() {
+      const useNative = typeof window !== "undefined" && "BarcodeDetector" in window;
       try {
-        // 1. Start camera
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: { ideal: "environment" }, width: { ideal: 1280 }, height: { ideal: 720 } },
-          audio: false,
-        });
-        if (cancelled) { stream.getTracks().forEach(t => t.stop()); return; }
-        streamRef.current = stream;
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-          await videoRef.current.play().catch(() => {});
-        }
-
-        // 2. Set up detector — prefer the native BarcodeDetector on Chrome
-        //    (super fast), fall back to @zxing/library on iOS Safari, desktop
-        //    Safari, Firefox, and anywhere BarcodeDetector is missing. ZXing
-        //    is loaded dynamically so it doesn't bloat the main bundle.
-        setStatus("scanning");
-
-        if (typeof window !== "undefined" && "BarcodeDetector" in window) {
-          // Fast path — native API on Chrome Android / Edge / Chrome desktop.
+        if (useNative) {
+          // ── Native fast path (Chrome / Edge / Chrome Android) ───────────
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: { ideal: "environment" }, width: { ideal: 1280 }, height: { ideal: 720 } },
+            audio: false,
+          });
+          if (cancelled) { stream.getTracks().forEach(t => t.stop()); return; }
+          streamRef.current = stream;
+          if (videoRef.current) {
+            videoRef.current.srcObject = stream;
+            await videoRef.current.play().catch(() => {});
+          }
+          setStatus("scanning");
           detectorRef.current = new window.BarcodeDetector({
             formats: ["ean_13", "ean_8", "upc_a", "upc_e", "code_128", "code_39", "code_93", "qr_code"],
           });
@@ -174,53 +168,65 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
           };
           intervalId = setInterval(scan, 200);
         } else {
-          // Universal fallback — ZXing pure-JS reader. Works on Safari iOS,
-          // desktop Safari, Firefox, and any browser with getUserMedia.
-          try {
-            const { BrowserMultiFormatReader, BarcodeFormat, DecodeHintType } = await import("@zxing/library");
+          // ── Universal fallback: let ZXing OWN the camera ────────────────
+          // Previously we pre-opened getUserMedia and handed the video
+          // element to ZXing, but that double-bound the stream and ZXing
+          // never received decode-able frames on iOS Safari. Now ZXing
+          // calls getUserMedia itself with our preferred constraints and
+          // drives the video element directly.
+          const { BrowserMultiFormatReader, BarcodeFormat, DecodeHintType } = await import("@zxing/library");
+          if (cancelled) return;
+          const hints = new Map();
+          hints.set(DecodeHintType.POSSIBLE_FORMATS, [
+            BarcodeFormat.EAN_13, BarcodeFormat.EAN_8, BarcodeFormat.UPC_A,
+            BarcodeFormat.UPC_E,  BarcodeFormat.CODE_128, BarcodeFormat.CODE_39,
+            BarcodeFormat.CODE_93, BarcodeFormat.QR_CODE,
+          ]);
+          const reader = new BrowserMultiFormatReader(hints, /* timeBetweenScansMillis */ 250);
+          setStatus("scanning");
+
+          let stopFn = null;
+          const onResult = (result, _err) => {
             if (cancelled) return;
-            const hints = new Map();
-            hints.set(DecodeHintType.POSSIBLE_FORMATS, [
-              BarcodeFormat.EAN_13, BarcodeFormat.EAN_8, BarcodeFormat.UPC_A,
-              BarcodeFormat.UPC_E,  BarcodeFormat.CODE_128, BarcodeFormat.CODE_39,
-              BarcodeFormat.CODE_93, BarcodeFormat.QR_CODE,
-            ]);
-            const reader = new BrowserMultiFormatReader(hints);
-            // ZXing scans every frame internally; the callback fires on
-            // every decode attempt (with result OR err). We only care about
-            // successful decodes.
-            const controls = await reader.decodeFromVideoElementContinuously(
-              videoRef.current,
-              (result) => {
-                if (cancelled) return;
-                if (!result) return;
-                const code = result.getText();
-                if (code && code !== lastCode) {
-                  setLastCode(code);
-                  lookup(code);
-                  // stop the reader once we have a match
-                  if (zxingControlsRef.current?.stop) {
-                    try { zxingControlsRef.current.stop(); } catch {}
-                  } else if (reader.reset) {
-                    try { reader.reset(); } catch {}
-                  }
-                }
-              },
-            );
-            // Older @zxing/library versions return undefined from
-            // decodeFromVideoElementContinuously and expose reader.reset()
-            // to stop. Newer return a controls object with .stop(). Cache
-            // whatever we got so the cleanup-effect can stop it.
-            zxingControlsRef.current = controls || { stop: () => { try { reader.reset(); } catch {} } };
-          } catch (e) {
-            console.error("[scanner] zxing failed to load:", e);
+            if (!result) return; // null result = no barcode this frame, ZXing will retry
+            const code = result.getText();
+            if (!code || code === lastCode) return;
+            console.info("[scanner] decoded:", code);
+            setLastCode(code);
+            lookup(code);
+            if (stopFn) { try { stopFn(); } catch {} }
+            else if (reader.reset) { try { reader.reset(); } catch {} }
+          };
+
+          // Prefer the modern API (returns IScannerControls with .stop()).
+          // Fall back to the legacy continuous method on older library
+          // versions. Either way, ZXing opens its own camera via the
+          // constraints and binds it to videoRef.current.
+          const constraints = { video: { facingMode: { ideal: "environment" } } };
+          try {
+            if (typeof reader.decodeFromConstraints === "function") {
+              const controls = await reader.decodeFromConstraints(constraints, videoRef.current, onResult);
+              stopFn = controls?.stop ? () => controls.stop() : () => reader.reset();
+            } else if (typeof reader.decodeFromVideoDevice === "function") {
+              // Older API — opens default rear camera (deviceId=undefined),
+              // attaches to videoRef, callback every frame.
+              await reader.decodeFromVideoDevice(undefined, videoRef.current, onResult);
+              stopFn = () => reader.reset();
+            } else {
+              throw new Error("@zxing/library is missing both decodeFromConstraints and decodeFromVideoDevice");
+            }
+          } catch (camErr) {
+            console.error("[scanner] zxing camera open failed:", camErr);
             setStatus("error");
-            setError("Couldn't load the barcode reader. Check your connection and try again.");
+            setError(camErr?.name === "NotAllowedError"
+              ? "Camera access denied. Grant permission in your browser settings to scan."
+              : "Couldn't start the camera. Make sure you're on HTTPS and grant camera permission.");
             return;
           }
+          zxingControlsRef.current = { stop: stopFn };
         }
       } catch (err) {
-        console.error("[scanner] camera error:", err);
+        console.error("[scanner] start failed:", err);
         setStatus("error");
         setError(err.name === "NotAllowedError"
           ? "Camera access denied. Grant permission in your browser settings to scan."
