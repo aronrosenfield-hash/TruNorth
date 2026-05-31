@@ -3606,6 +3606,58 @@ if (screen === "onboarding") {
             flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
+          {/* Phase 5.aj (Tier 3 L — in-app version): "Updates on brands you've saved".
+              Per user verbiage correction — instead of "Brand X was recalled"
+              push notification, we surface in-app: "There is new recall data
+              on a brand you've saved." Web Push infra can come later as a
+              separate sprint; this is the safe pre-launch surface that
+              delivers the same value through the app rather than the OS.
+
+              Filters the weekly_changes digest down to ONLY brands in the
+              user's saved-set, so power users with 20+ saved brands get a
+              personally-relevant view of what changed. */}
+          {weeklyChanges && weeklyChanges.changes && savedSet.size > 0 && (() => {
+            const savedChanges = weeklyChanges.changes.filter(c => savedSet.has(c.slug));
+            if (!savedChanges.length) return null;
+            return (
+              <div style={{ margin:"12px 16px", padding:"12px 14px", background:T.goldBg, border:`1.5px solid ${T.gold}`, borderRadius:14 }}>
+                <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:10 }}>
+                  <div style={{ fontSize:10, color:T.gold, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6, display:"flex", alignItems:"center", gap:5 }}>
+                    <i className="ti ti-bell" aria-hidden="true" /> Updates on brands you've saved
+                  </div>
+                  <div style={{ fontSize:10, color:T.txt3 }}>{savedChanges.length} update{savedChanges.length === 1 ? "" : "s"}</div>
+                </div>
+                <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+                  {savedChanges.slice(0, 5).map((c, i) => {
+                    // Phase 5.aj: corrected verbiage per user — "there is recall
+                    // data on a brand you just saved", not "brand was recalled".
+                    const verbiage = c.type === "new_recall"  ? `New recall data on ${c.name}`
+                                   : c.type === "new_scandal" ? `News flag on ${c.name}: ${c.detail}`
+                                   : c.type === "grade_drop"  ? `${c.name} grade changed: ${c.detail}`
+                                   : c.type === "grade_up"    ? `${c.name} grade improved: ${c.detail}`
+                                   : c.detail;
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => {
+                          track("saved_update_clicked", { slug: c.slug, type: c.type });
+                          setFocusedSlug(c.slug);
+                          setDeepLinkSlug(c.slug);
+                          setTab("search");
+                        }}
+                        style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%" }}
+                      >
+                        <i className="ti ti-rosette" style={{ fontSize:14, color: c.severity === "alert" ? "#e24a4a" : T.gold, flexShrink:0 }} aria-hidden="true" />
+                        <div style={{ flex:1, minWidth:0, fontSize:12, color:T.txt2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{verbiage}</div>
+                        <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
           {/* Phase 5.ah (item K): "This week" in-app digest. Reads
               weekly_changes.json (built every Sunday by cron from a
               raw.json week-over-week diff). Only renders when there's at
