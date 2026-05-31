@@ -102,6 +102,11 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
   const [error, setError] = useState(null);
   const [lastCode, setLastCode] = useState(null);
   const [lookupBrand, setLookupBrand] = useState(null);
+  // Phase 5.aj: bumping scanRound restarts the camera + decoder (used by
+  // the "Scan another" button after a no-match). The useEffect below is
+  // keyed off scanRound so changing it re-runs start() with a fresh
+  // ZXing controller + fresh getUserMedia stream.
+  const [scanRound, setScanRound] = useState(0);
 
   // Build a quick brand→slug lookup once.
   const brandIndex = useMemo(() => {
@@ -268,7 +273,7 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
       }
       if (streamRef.current) streamRef.current.getTracks().forEach(t => t.stop());
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [scanRound]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div style={{ position:"fixed", inset:0, background:"#000", zIndex:300, display:"flex", flexDirection:"column" }}>
@@ -300,7 +305,7 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
                 <div style={{ fontSize:12, color:"rgba(255,255,255,0.7)", marginBottom:18, maxWidth:280, lineHeight:1.5 }}>
                   Barcode {lastCode}{lookupBrand ? ` (${lookupBrand})` : ""} isn't tracked. Try another product or suggest it.
                 </div>
-                <button onClick={() => { setStatus("scanning"); setLastCode(null); setLookupBrand(null); }} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:"#fff", color:"#000", fontSize:13, fontWeight:700, cursor:"pointer" }}>Scan another</button>
+                <button onClick={() => { setStatus("starting"); setLastCode(null); setLookupBrand(null); setError(null); setScanRound(n => n + 1); }} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:"#fff", color:"#000", fontSize:13, fontWeight:700, cursor:"pointer" }}>Scan another</button>
               </>
             )}
             {status === "error" && (
@@ -1506,22 +1511,16 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    // Phase 5.ag (item B + QA fix #3): free-quota check now uses lifted App
-    // state (passed in via freeQuotaUsed / onRecordFreeView). This keeps the
-    // banner reactive — App re-renders when the count changes, banner refreshes.
+    // Phase 5.aj: paywall fires IMMEDIATELY on every non-paid tap.
+    // Per user feedback: the 5-free-quota system gave free users access
+    // but to a profile that looks empty (no narrative, no sources, "?"
+    // grades pre-quiz) — so they thought nothing happened. Better to
+    // fire the paywall and surface the value proposition explicitly
+    // than let them poke around an apparently-broken card.
     if (!isPaid && !open) {
-      const slug = company.slug || company.id;
-      const used = freeQuotaUsed || [];
-      const alreadyViewed = used.includes(slug);
-      if (!alreadyViewed && used.length >= (freeQuotaMax || 5)) {
-        track("paywall_shown", { reason: "free_quota_exhausted", quota: freeQuotaMax || 5 });
-        onUpgrade();
-        return;
-      }
-      if (!alreadyViewed && onRecordFreeView) {
-        onRecordFreeView(slug);
-        track("free_profile_viewed", { slug, count: used.length + 1, quota: freeQuotaMax || 5 });
-      }
+      track("paywall_shown", { reason: "non_paid_profile_tap", slug: company.slug || company.id });
+      onUpgrade();
+      return;
     }
     setOpen(o => {
       if (!o) {
@@ -2963,6 +2962,11 @@ useEffect(() => {
     const m = window.location.pathname.match(/^\/company\/([^/?#]+)/);
     return m ? decodeURIComponent(m[1]) : null;
   });
+  // Phase 5.aj: when scanner matches OR Better-Alts taps a brand, we want
+  // the search to show JUST that one company — not a list of name-matches.
+  // focusedSlug overrides the filter chain entirely and pops a "Clear ×"
+  // banner so the user can return to normal search.
+  const [focusedSlug, setFocusedSlug] = useState(null);
   useEffect(() => {
     if (companies) return;
     let cancelled = false;
@@ -3010,7 +3014,15 @@ useEffect(() => {
     [companies]
   );
 
-  const filtered = useMemo(() => deduped
+  const filtered = useMemo(() => {
+    // Phase 5.aj: focusedSlug bypasses the whole filter chain. Used when the
+    // scanner matches a single brand or a Better-Alts row routes — we want
+    // EXACTLY one company shown, never a list of similarly-named matches.
+    if (focusedSlug) {
+      const co = deduped.find(c => (c.slug || c.id) === focusedSlug);
+      return co ? [co] : [];
+    }
+    return deduped
     .filter(c => {
       if (leanFilter !== "all") {
         const l = (c.sc.political||"").toLowerCase();
@@ -3043,8 +3055,9 @@ useEffect(() => {
       if (sort==="name") return a.name.localeCompare(b.name);
       const o={left:0,"left-leaning":1,bipartisan:2,mixed:3,neutral:4,right:6,"right-leaning":6};
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
-    }),
-    [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet]
+    });
+  },
+    [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet, focusedSlug]
   );
 
   // Phase 5.ag (perf): cap rendered company cards. Creating 11,000+ JSX
@@ -3353,9 +3366,16 @@ if (screen === "onboarding") {
           onMatch={(co, meta) => {
             setShowScanner(false);
             track("scanner_match", { slug: co.slug || co.id, name: co.name, barcode: meta?.barcode });
-            setQueryRaw(co.name);
-            setQuery(co.name);
+            // Phase 5.aj: focus on exactly that one company — no list.
+            // Clear other filters so the focused view isn't double-restricted.
+            setQueryRaw("");
+            setQuery("");
+            setLeanFilter("all");
+            setCatFilters([]);
+            setFlagFilters([]);
+            setShowSavedOnly(false);
             setTab("search");
+            setFocusedSlug(co.slug || co.id);
             setDeepLinkSlug(co.slug || co.id);
           }}
         />
@@ -3466,30 +3486,19 @@ if (screen === "onboarding") {
             )}
           </div>
 
-          {/* Phase 5.ag: Quota-aware paywall banner for free users.
-              QA fix #3: now uses lifted `freeViewed` state instead of reading
-              localStorage on every render — banner reactively updates the
-              moment a profile is opened. */}
-          {!isPaid && (() => {
-            const remaining = Math.max(0, FREE_QUOTA - freeViewed.length);
-            const exhausted = remaining === 0;
-            return (
-              <div onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ margin:"10px 16px 0", padding:"10px 14px", background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
-                <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
-                <div>
-                  <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>
-                    {exhausted ? "You're out of free views" : `${remaining} of 5 free views left`}
-                  </div>
-                  <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>
-                    {exhausted
-                      ? "Upgrade to Pro for $1.99/mo for unlimited"
-                      : "Upgrade to Pro for $1.99/mo — unlimited views + sources"}
-                  </div>
-                </div>
-                <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
+          {/* Phase 5.aj: paywall now fires immediately on every non-paid
+              tap, so the banner is a single clear upsell instead of a
+              quota counter. */}
+          {!isPaid && (
+            <div onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ margin:"10px 16px 0", padding:"10px 14px", background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
+              <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
+              <div>
+                <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>Unlock personalized scores</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $1.99/mo · narratives, sources & full profiles</div>
               </div>
-            );
-          })()}
+              <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
+            </div>
+          )}
 
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
             {/* UX 4E: when nothing's been typed AND no filters active, show Recent + Trending
@@ -3544,7 +3553,17 @@ if (screen === "onboarding") {
               </div>
             ) : (
               <>
-                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
+                {focusedSlug && (
+                  <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"8px 12px", background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:8, marginBottom:8 }}>
+                    <span style={{ fontSize:12, color:T.accent2 }}>
+                      <i className="ti ti-target" aria-hidden="true" style={{ marginRight:6 }} /> Showing 1 brand
+                    </span>
+                    <button onClick={() => { setFocusedSlug(null); track("focused_cleared"); }} style={{ background:"none", border:"none", color:T.accent2, fontSize:12, cursor:"pointer", padding:0 }}>
+                      ✕ Clear
+                    </button>
+                  </div>
+                )}
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
                 {filtered.length > visibleLimit && (
                   <button
                     onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
@@ -3756,7 +3775,7 @@ if (screen === "onboarding") {
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} />
             ))}
           </div>
         </ErrorBoundary>
