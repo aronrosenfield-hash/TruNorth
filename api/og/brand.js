@@ -61,7 +61,7 @@ export default function handler(req) {
             props: {
               style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 50 },
               children: [
-                { type: "div", props: { style: { fontSize: 36, fontWeight: 800 }, children: [
+                { type: "div", props: { style: { display: "flex", fontSize: 36, fontWeight: 800 }, children: [
                   { type: "span", props: { style: { color: TXT }, children: "Tru" } },
                   { type: "span", props: { style: { color: ACCENT2 }, children: "North" } },
                 ] } },

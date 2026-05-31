@@ -134,7 +134,7 @@ export default function handler(req) {
             props: {
               style: { display: "flex", alignItems: "center", gap: 12, marginBottom: 30 },
               children: [
-                { type: "div", props: { style: { fontSize: 36, fontWeight: 800 }, children: [
+                { type: "div", props: { style: { display: "flex", fontSize: 36, fontWeight: 800 }, children: [
                   { type: "span", props: { style: { color: TXT }, children: "Tru" } },
                   { type: "span", props: { style: { color: ACCENT2 }, children: "North" } },
                 ] } },
@@ -150,8 +150,11 @@ export default function handler(req) {
               children: [
                 { type: "div", props: { style: { fontSize: 44, fontWeight: 700, lineHeight: 1.1 }, children: "Here's what matters to me." } },
                 top
-                  ? { type: "div", props: { style: { fontSize: 22, color: TXT2 }, children: ["Top match: ", { type: "span", props: { style: { color: GREEN, fontWeight: 700 }, children: top } }] } }
-                  : { type: "div", props: { style: { fontSize: 22, color: TXT2 }, children: "Take the 60-second quiz to see yours." } },
+                  ? { type: "div", props: { style: { display: "flex", fontSize: 22, color: TXT2 }, children: [
+                      { type: "span", props: { children: "Top match: " } },
+                      { type: "span", props: { style: { color: GREEN, fontWeight: 700, marginLeft: 6 }, children: top } },
+                    ] } }
+                  : { type: "div", props: { style: { display: "flex", fontSize: 22, color: TXT2 }, children: "Take the 60-second quiz to see yours." } },
               ],
             },
           },

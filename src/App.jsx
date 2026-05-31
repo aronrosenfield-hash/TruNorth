@@ -1400,7 +1400,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
 // parent render but are functionally identical (just closures over the same
 // stable parent state). Comparing the data props that actually drive the
 // render is enough.
-const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, allCompanies, initiallyOpen }) {
+const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, freeQuotaUsed, freeQuotaMax, onRecordFreeView, allCompanies, initiallyOpen }) {
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
@@ -1413,32 +1413,21 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    // Phase 5.ag (item B): free users get FREE_QUOTA full profile reveals
-    // before the paywall fires. The previous "tap = paywall on first tap"
-    // pattern killed conversion — users couldn't evaluate whether the data
-    // was worth paying for. Now: try-then-buy.
-    const FREE_QUOTA = 5;
+    // Phase 5.ag (item B + QA fix #3): free-quota check now uses lifted App
+    // state (passed in via freeQuotaUsed / onRecordFreeView). This keeps the
+    // banner reactive — App re-renders when the count changes, banner refreshes.
     if (!isPaid && !open) {
-      try {
-        const viewedKey = "tn_freeViewed";
-        const viewed = JSON.parse(localStorage.getItem(viewedKey) || "[]");
-        const slug = company.slug || company.id;
-        const alreadyViewed = viewed.includes(slug);
-        if (!alreadyViewed && viewed.length >= FREE_QUOTA) {
-          // Out of quota AND this is a new company — paywall.
-          track("paywall_shown", { reason: "free_quota_exhausted", quota: FREE_QUOTA });
-          onUpgrade();
-          return;
-        }
-        if (!alreadyViewed) {
-          viewed.push(slug);
-          localStorage.setItem(viewedKey, JSON.stringify(viewed));
-          track("free_profile_viewed", { slug, count: viewed.length, quota: FREE_QUOTA });
-        }
-      } catch {
-        // localStorage failure — fall back to old behavior for safety
+      const slug = company.slug || company.id;
+      const used = freeQuotaUsed || [];
+      const alreadyViewed = used.includes(slug);
+      if (!alreadyViewed && used.length >= (freeQuotaMax || 5)) {
+        track("paywall_shown", { reason: "free_quota_exhausted", quota: freeQuotaMax || 5 });
         onUpgrade();
         return;
+      }
+      if (!alreadyViewed && onRecordFreeView) {
+        onRecordFreeView(slug);
+        track("free_profile_viewed", { slug, count: used.length + 1, quota: freeQuotaMax || 5 });
       }
     }
     setOpen(o => {
@@ -1588,11 +1577,11 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                           onClick={(e) => {
                             e.stopPropagation();
                             track("better_alt_pick", { from: enriched.slug || enriched.id, to: alt.slug || alt.id, fromScore: ps, toScore: altScore });
-                            // Deep-link into the alternative — uses existing routing
-                            if (typeof window !== "undefined") {
-                              window.history.pushState({}, "", `/company/${alt.slug || alt.id}`);
-                              window.dispatchEvent(new PopStateEvent("popstate"));
-                            }
+                            // Phase 5.ag (QA fix #1): route via the parent's
+                            // navigation callback. Previously pushed history
+                            // + dispatched popstate, but nothing listened —
+                            // the click was a silent no-op.
+                            if (onNavigate) onNavigate(alt.slug || alt.id);
                           }}
                           style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%" }}
                         >
@@ -2067,6 +2056,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   // Custom equality — only re-render when the data that actually drives the
   // visible card changes. Callbacks are intentionally NOT compared (they're
   // recreated on every parent render but are functionally identical closures).
+  // freeQuotaUsed IS compared because the closed-row currently doesn't render
+  // any quota state — but pass-through equality keeps things consistent if a
+  // future change surfaces "X views left" inside the card.
   prev.company       === next.company       &&
   prev.catFilter     === next.catFilter     &&
   prev.profile       === next.profile       &&
@@ -2074,7 +2066,8 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   prev.isSaved       === next.isSaved       &&
   prev.inCompare     === next.inCompare     &&
   prev.initiallyOpen === next.initiallyOpen &&
-  prev.allCompanies  === next.allCompanies
+  prev.allCompanies  === next.allCompanies  &&
+  prev.freeQuotaUsed === next.freeQuotaUsed
 ));
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
@@ -2600,6 +2593,33 @@ useEffect(() => {
   // deferred, just calling setQueryRaw is enough (query catches up on next
   // tick). Kept as a thin alias so existing call sites don't need to change.
   const setQuery = setQueryRaw;
+
+  // Phase 5.ag (QA fix #3 + #6): Free-tier quota lifted to App state with a
+  // monthly window. Lifting fixes the stale-banner bug where the "X of 5"
+  // counter only refreshed on tab switches. Monthly windowing avoids the
+  // "tried the app 6 months ago, hit the wall on my first new tap today"
+  // bad freshness. Storage shape:
+  //   { month: "2026-05", slugs: ["walmart","amazon",...] }
+  const FREE_QUOTA = 5;
+  const monthKey = () => {
+    const d = new Date();
+    return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+  };
+  const [freeViewed, setFreeViewed] = useState(() => {
+    try {
+      const raw = JSON.parse(localStorage.getItem("tn_freeViewed") || "null");
+      if (raw && raw.month === monthKey() && Array.isArray(raw.slugs)) return raw.slugs;
+    } catch {}
+    return [];
+  });
+  const recordFreeView = (slug) => {
+    setFreeViewed(prev => {
+      if (prev.includes(slug)) return prev;
+      const next = [...prev, slug];
+      try { localStorage.setItem("tn_freeViewed", JSON.stringify({ month: monthKey(), slugs: next })); } catch {}
+      return next;
+    });
+  };
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [flagFilters, setFlagFilters] = useState([]); // multi-select boolean flags
@@ -2730,6 +2750,11 @@ useEffect(() => {
     track("deep_link_open", { slug: deepLinkSlug, name: co.name });
     // Replace URL with clean root so back-button works as expected
     try { window.history.replaceState({}, "", "/"); } catch {}
+    // Phase 5.ag (QA fix #4): clear after a beat so the CompanyCard has time
+    // to mount and consume initiallyOpen, but stale-auto-open on later tab
+    // returns doesn't happen.
+    const t = setTimeout(() => setDeepLinkSlug(null), 800);
+    return () => clearTimeout(t);
   }, [deepLinkSlug, companies]);
 
   // UX 1A: memoize the dedupe/filter/sort chain so it doesn't rerun on unrelated state changes
@@ -2917,10 +2942,25 @@ if (screen === "onboarding") {
                   <div style={{ fontSize:16, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{winner.co.name}</div>
                   <div style={{ fontSize:12, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{winner.co.cat}</div>
                 </div>
-                <div style={{ width:44, height:44, borderRadius:10, background:"#0d2318", border:"1px solid #1e3e2e", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-                  <div style={{ fontSize:18, fontWeight:700, color:"#4caf82", lineHeight:1 }}>{scoreGrade(winner.score)}</div>
-                  <div style={{ fontSize:9, color:"#4caf82", opacity:0.7 }}>{winner.score}</div>
-                </div>
+                {/* Phase 5.ag QA fix #5: badge color matches the actual
+                    grade, not always green. With sparse-data profiles the
+                    winner could legitimately be a B or C — don't lie. */}
+                {(() => {
+                  const wg = scoreGrade(winner.score);
+                  const palette = {
+                    A: { bg:"#0d2318", border:"#1e3e2e", text:"#4caf82" },
+                    B: { bg:"#1a2810", border:"#2e3e1e", text:"#8bc34a" },
+                    C: { bg:"#2a2210", border:"#3e321e", text:"#f0a030" },
+                    D: { bg:"#2a1810", border:"#3e2818", text:"#ff7043" },
+                    F: { bg:"#2a0d0d", border:"#3e1e1e", text:"#e24a4a" },
+                  }[wg] || { bg:T.bg3, border:T.border2, text:T.txt3 };
+                  return (
+                    <div style={{ width:44, height:44, borderRadius:10, background:palette.bg, border:`1px solid ${palette.border}`, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                      <div style={{ fontSize:18, fontWeight:700, color:palette.text, lineHeight:1 }}>{wg}</div>
+                      <div style={{ fontSize:9, color:palette.text, opacity:0.7 }}>{winner.score}</div>
+                    </div>
+                  );
+                })()}
               </div>
               {top3.length > 1 && (
                 <>
@@ -3180,14 +3220,11 @@ if (screen === "onboarding") {
           </div>
 
           {/* Phase 5.ag: Quota-aware paywall banner for free users.
-              Shows "X of 5 free views left" then morphs into the upgrade CTA
-              once the user has exhausted the free quota. (Was: misleading
-              "Tap any company for full details" — implied free; users tapped
-              and immediately hit paywall.) */}
+              QA fix #3: now uses lifted `freeViewed` state instead of reading
+              localStorage on every render — banner reactively updates the
+              moment a profile is opened. */}
           {!isPaid && (() => {
-            let freeViewed = [];
-            try { freeViewed = JSON.parse(localStorage.getItem("tn_freeViewed") || "[]"); } catch {}
-            const remaining = Math.max(0, 5 - freeViewed.length);
+            const remaining = Math.max(0, FREE_QUOTA - freeViewed.length);
             const exhausted = remaining === 0;
             return (
               <div onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ margin:"10px 16px 0", padding:"10px 14px", background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
@@ -3260,7 +3297,7 @@ if (screen === "onboarding") {
               </div>
             ) : (
               <>
-                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
                 {filtered.length > visibleLimit && (
                   <button
                     onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
@@ -3315,10 +3352,11 @@ if (screen === "onboarding") {
               one item, journalism framing, no infinite scroll, no streak.
               Builds a daily-open ritual without the doomscroll downside. */}
           {(() => {
-            // Daily seed: integer day-of-year. Same for all users on the
-            // same calendar day.
-            const today = new Date();
-            const day = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86_400_000);
+            // Phase 5.ag QA fix #7: globally synchronized UTC day index so
+            // users in different timezones see the same brand on the same
+            // day. (Previously used local-time day-of-year, which split JST
+            // and PST users onto different brands during the overlap window.)
+            const day = Math.floor(Date.now() / 86_400_000);
             const wellKnown = deduped.filter(c => c.overall != null && c.cat && c.cat !== "Other");
             if (!wellKnown.length) return null;
             const pick = wellKnown[day % wellKnown.length];
@@ -3416,7 +3454,7 @@ if (screen === "onboarding") {
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} />
             ))}
           </div>
         </ErrorBoundary>
