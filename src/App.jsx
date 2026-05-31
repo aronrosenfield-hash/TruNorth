@@ -1393,7 +1393,14 @@ function CategoryRow({ cat: k, enriched, profile }) {
   );
 }
 
-function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, allCompanies, initiallyOpen }) {
+// Phase 5.ag: memoize CompanyCard so root re-renders (every keystroke in the
+// search input) don't cascade into re-rendering every visible card. The
+// custom equality function intentionally IGNORES callback props (onUpgrade,
+// onToggleSave, onToggleCompare, onCompareWith) — they're recreated on every
+// parent render but are functionally identical (just closures over the same
+// stable parent state). Comparing the data props that actually drive the
+// render is enough.
+const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, allCompanies, initiallyOpen }) {
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
@@ -2056,7 +2063,19 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
       )}
     </div>
   );
-}
+}, (prev, next) => (
+  // Custom equality — only re-render when the data that actually drives the
+  // visible card changes. Callbacks are intentionally NOT compared (they're
+  // recreated on every parent render but are functionally identical closures).
+  prev.company       === next.company       &&
+  prev.catFilter     === next.catFilter     &&
+  prev.profile       === next.profile       &&
+  prev.isPaid        === next.isPaid        &&
+  prev.isSaved       === next.isSaved       &&
+  prev.inCompare     === next.inCompare     &&
+  prev.initiallyOpen === next.initiallyOpen &&
+  prev.allCompanies  === next.allCompanies
+));
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
 function Quiz({ onComplete, onSkip }) {
@@ -2568,13 +2587,19 @@ useEffect(() => {
     }
     return "top";
   });
-  // UX 1B: debounce — input binds to queryRaw, filter uses query (150ms lag)
+  // Phase 5.ag (perf): use React 18 useDeferredValue instead of a manual
+  // 150ms setTimeout debounce. useDeferredValue keeps the input itself at
+  // high render priority while the heavy filter+map of 11k items happens
+  // at transition priority — yields to keystrokes so typing feels instant
+  // even on slower devices. The 150ms debounce was a fixed delay regardless
+  // of device speed; deferred adapts.
   const [queryRaw, setQueryRaw] = useState("");
-  const [query, setQuery]       = useState("");
-  useEffect(() => {
-    const id = setTimeout(() => setQuery(queryRaw), 150);
-    return () => clearTimeout(id);
-  }, [queryRaw]);
+  const query = React.useDeferredValue(queryRaw);
+  // Legacy setQuery shim — used by recent-search and trending button clicks
+  // that want to set both the input and the filter immediately. With
+  // deferred, just calling setQueryRaw is enough (query catches up on next
+  // tick). Kept as a thin alias so existing call sites don't need to change.
+  const setQuery = setQueryRaw;
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [flagFilters, setFlagFilters] = useState([]); // multi-select boolean flags
@@ -2749,6 +2774,14 @@ useEffect(() => {
     }),
     [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet]
   );
+
+  // Phase 5.ag (perf): cap rendered company cards. Creating 11,000+ JSX
+  // elements on every keystroke (even with memo'd cards) blows out the
+  // render budget. Show the first N matches and a "Show more" button.
+  const VISIBLE_BATCH = 200;
+  const [visibleLimit, setVisibleLimit] = useState(VISIBLE_BATCH);
+  useEffect(() => { setVisibleLimit(VISIBLE_BATCH); }, [query, leanFilter, catFilters, flagFilters, sort, showSavedOnly]);
+  const visibleFiltered = useMemo(() => filtered.slice(0, visibleLimit), [filtered, visibleLimit]);
 
   // UX 4E: recent searches (last 5 distinct queries with at least one result)
   const [recentSearches, setRecentSearches] = useState(() => {
@@ -3226,7 +3259,17 @@ if (screen === "onboarding") {
                 )}
               </div>
             ) : (
-              filtered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)
+              <>
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
+                {filtered.length > visibleLimit && (
+                  <button
+                    onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
+                    style={{ marginTop:8, padding:14, borderRadius:12, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2, fontSize:13, fontWeight:600, cursor:"pointer", width:"100%" }}
+                  >
+                    Show more · {filtered.length - visibleLimit} remaining
+                  </button>
+                )}
+              </>
             )}
           </div>
         </ErrorBoundary>
