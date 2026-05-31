@@ -1198,6 +1198,57 @@ function guessDomain(co) {
   return name ? name + ".com" : null;
 }
 
+// Phase 5.af: name-display variant picker.
+//   ?nameStyle=wrap  → 2-line wrap, no ellipsis on name
+//   ?nameStyle=short → smart-shorten suffixes (Corporation→Corp., etc.)
+//   ?nameStyle=slim  → drop save+compare buttons from closed row, more name space
+//   (default — current behavior, single-line ellipsis)
+function getNameStyle() {
+  if (typeof window === "undefined") return "default";
+  try {
+    const qs = new URLSearchParams(window.location.search).get("nameStyle");
+    if (qs) {
+      try { localStorage.setItem("tn_nameStyle", qs); } catch {}
+      return qs;
+    }
+    return localStorage.getItem("tn_nameStyle") || "default";
+  } catch { return "default"; }
+}
+
+// Smart shortening — only used when nameStyle=short. Replaces common
+// long suffixes/words with abbreviations in priority order.
+const NAME_SHORTENINGS = [
+  [/^The\s+/i, ""],
+  [/\bIncorporated\b/gi, "Inc."],
+  [/\bCorporation\b/gi, "Corp."],
+  [/\bCompany\b/gi, "Co."],
+  [/\bInternational\b/gi, "Int'l"],
+  [/\bAssociation\b/gi, "Assn."],
+  [/\bIndustries\b/gi, "Ind."],
+  [/\bTechnologies\b/gi, "Tech."],
+  [/\bTechnology\b/gi, "Tech."],
+  [/\bEnterprises\b/gi, "Ent."],
+  [/\bManufacturing\b/gi, "Mfg."],
+  [/\bManagement\b/gi, "Mgmt."],
+  [/\bInvestment\b/gi, "Inv."],
+  [/\bInvestments\b/gi, "Inv."],
+  [/\bDevelopment\b/gi, "Dev."],
+  [/\bSolutions\b/gi, "Sol."],
+  [/\bCommunications\b/gi, "Comm."],
+  [/\bResources\b/gi, "Res."],
+  [/\bServices\b/gi, "Svcs."],
+  [/\bSystems\b/gi, "Sys."],
+  [/\bAdministration\b/gi, "Admin."],
+  [/\bAmerica\b/gi, "Am."],
+  [/\bAmerican\b/gi, "Am."],
+];
+function shortenName(name) {
+  if (!name) return "";
+  let s = name;
+  for (const [re, rep] of NAME_SHORTENINGS) s = s.replace(re, rep);
+  return s.replace(/\s+/g, " ").trim();
+}
+
 function CompanyLogo({ company, size = 36, rounded = 10 }) {
   const domain = guessDomain(company);
   // Phase 5.af: prefer the curated logoUrl from the pipeline's logo harvester
@@ -1431,6 +1482,13 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
 
 
 
+  // Phase 5.af: per-session URL-param name variant. Read once on mount so
+  // toggling URL param applies after navigation; localStorage caches across.
+  const nameStyle = React.useMemo(getNameStyle, []);
+  const displayName = nameStyle === "short" ? shortenName(company.name) : company.name;
+  const nameWraps = nameStyle === "wrap";
+  const slimRow = nameStyle === "slim";
+
   return (
     <div style={{ background:T.bg2, borderRadius:14, border:`1px solid ${open ? T.accent : T.border}`, overflow:"hidden", marginBottom:1 }}>
       {/* Slim row — always visible */}
@@ -1438,12 +1496,21 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
         <CompanyLogo company={company} size={36} />
         <div style={{ display:"none" }}>{/* legacy initials avatar slot (now handled by CompanyLogo) */}</div>
         <div style={{ flex:1, minWidth:0 }}>
-          <div style={{ fontSize:16, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.name}</div>
+          <div
+            title={company.name}
+            style={{
+              fontSize:16, fontWeight:600, color:T.txt,
+              // wrap variant: 2-line clamp; default/short/slim: ellipsis
+              ...(nameWraps
+                ? { display:"-webkit-box", WebkitLineClamp:2, WebkitBoxOrient:"vertical", overflow:"hidden", lineHeight:1.2 }
+                : { whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }),
+            }}
+          >{displayName}</div>
           <div style={{ fontSize:13, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
         </div>
         <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
-          {/* UX 3A: compare toggle */}
-          {onToggleCompare && (
+          {/* UX 3A: compare toggle — hidden in slim variant (moves to open profile) */}
+          {onToggleCompare && !slimRow && (
             <button
               onClick={(e) => { e.stopPropagation(); onToggleCompare(); }}
               aria-label={inCompare ? "Remove from compare" : "Add to compare"}
@@ -1453,8 +1520,8 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               <i className="ti ti-arrows-left-right" aria-hidden="true" style={{ fontSize:14 }} />
             </button>
           )}
-          {/* UX 7A: save/star toggle — Unicode ★/☆ for reliable filled vs outlined rendering */}
-          {onToggleSave && (
+          {/* UX 7A: save/star toggle — hidden in slim variant */}
+          {onToggleSave && !slimRow && (
             <button
               onClick={(e) => { e.stopPropagation(); onToggleSave(); }}
               aria-label={isSaved ? "Unsave" : "Save"}
@@ -1858,6 +1925,30 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               </div>
             );
           })()}
+
+          {/* Phase 5.af: Save + Compare buttons surface here only in 'slim'
+              variant — the closed row hides them to give the company name
+              more horizontal space. */}
+          {slimRow && (onToggleSave || onToggleCompare) && (
+            <div style={{ display:"flex", gap:8, marginBottom:8 }}>
+              {onToggleSave && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onToggleSave(); }}
+                  style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:isSaved ? T.goldBg : T.bg3, border:`1px solid ${isSaved ? T.gold : T.border}`, color: isSaved ? T.gold : T.txt2 }}
+                >
+                  <span aria-hidden="true">{isSaved ? "★" : "☆"}</span> {isSaved ? "Saved" : "Save"}
+                </button>
+              )}
+              {onToggleCompare && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onToggleCompare(); }}
+                  style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:inCompare ? T.accentBg : T.bg3, border:`1px solid ${inCompare ? T.accent : T.border}`, color: inCompare ? T.accent2 : T.txt2 }}
+                >
+                  <i className="ti ti-arrows-left-right" aria-hidden="true" /> {inCompare ? "In compare" : "Compare"}
+                </button>
+              )}
+            </div>
+          )}
 
           {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
               falls back to copying a URL to the clipboard on desktop browsers. */}
