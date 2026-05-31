@@ -1890,7 +1890,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               Pulled from Wikipedia infoboxes, BBB/SEC complaint counts, and
               GDELT news mentions. Each subsection only renders if data
               exists, so old/unenriched companies show nothing. */}
-          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint) && (
+          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint || enriched.recalls || enriched.origin || enriched.ownership) && (
             <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:14, marginTop:4 }}>
               <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginBottom:10, letterSpacing:0.2 }}>
                 About this company
@@ -2027,6 +2027,70 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                       );
                     })}
                   </div>
+                </div>
+              )}
+
+              {/* Phase 5.ah: Recalls — top-5 search-volume gap. Always
+                  prominent (red border for high-severity, gold otherwise)
+                  because recall events are real safety signals users want. */}
+              {enriched.recalls?.recalls?.length > 0 && (
+                <div style={{ marginBottom:10, padding:"10px 12px", borderRadius:10, background: enriched.recalls.severityMax === "high" ? "rgba(226,74,74,0.12)" : "rgba(240,160,48,0.10)", border:`1.5px solid ${enriched.recalls.severityMax === "high" ? "rgba(226,74,74,0.5)" : "rgba(240,160,48,0.4)"}` }}>
+                  <div style={{ fontSize:11, fontWeight:700, color: enriched.recalls.severityMax === "high" ? "#e24a4a" : "#f0a030", textTransform:"uppercase", letterSpacing:0.5, marginBottom:6, display:"flex", alignItems:"center", gap:6 }}>
+                    <i className="ti ti-rosette" aria-hidden="true" /> {enriched.recalls.recallCount24mo} recall{enriched.recalls.recallCount24mo === 1 ? "" : "s"} in 24 months
+                  </div>
+                  <div style={{ display:"flex", flexDirection:"column", gap:5 }}>
+                    {enriched.recalls.recalls.slice(0, 3).map((r, i) => (
+                      <a key={i} href={r.recallUrl || "#"} target="_blank" rel="noreferrer" style={{ fontSize:11, color:T.txt2, lineHeight:1.4, textDecoration:"none" }}>
+                        <span style={{ fontWeight:600, color:T.txt }}>{r.date || "—"}</span> · {r.agency} · {r.reason || r.productName || "recall issued"}
+                      </a>
+                    ))}
+                  </div>
+                  {enriched.recalls.recalls.length > 3 && (
+                    <div style={{ fontSize:10, color:T.txt3, marginTop:6 }}>+{enriched.recalls.recalls.length - 3} more</div>
+                  )}
+                </div>
+              )}
+
+              {/* Phase 5.ah: BDS factual disclosure — NEVER a score, just a
+                  citable flag for users who care. Per anti-pattern memory:
+                  factual framing only, source link required. */}
+              {enriched.ownership?.bdsListed && (
+                <div style={{ marginBottom:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border}` }}>
+                  <div style={{ fontSize:11, color:T.txt2, marginBottom:4 }}>
+                    <b style={{ color:T.txt }}>Listed on the BDS target list</b> ({enriched.ownership.bdsListed.category || "Awareness"})
+                  </div>
+                  {enriched.ownership.bdsListed.sourceUrl && (
+                    <a href={enriched.ownership.bdsListed.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:11, color:T.accent2, textDecoration:"none" }}>
+                      Source · bdsmovement.net →
+                    </a>
+                  )}
+                </div>
+              )}
+
+              {/* Phase 5.ah: Ownership identity badges (positive signals only) */}
+              {enriched.ownership && (enriched.ownership.blackOwned || enriched.ownership.womenOwned || enriched.ownership.minorityOwned || enriched.ownership.lgbtOwned || enriched.ownership.smallBusiness) && (
+                <div style={{ marginBottom:10 }}>
+                  <div style={{ fontSize:11, color:T.txt3, marginBottom:4 }}>Ownership</div>
+                  <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
+                    {enriched.ownership.blackOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#9d91ff" }}>Black-owned</span>}
+                    {enriched.ownership.womenOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#9d91ff" }}>Women-owned</span>}
+                    {enriched.ownership.minorityOwned && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#9d91ff" }}>Minority-owned</span>}
+                    {enriched.ownership.lgbtOwned     && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#9d91ff" }}>LGBT-owned</span>}
+                    {enriched.ownership.smallBusiness && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}>Small business</span>}
+                  </div>
+                </div>
+              )}
+
+              {/* Phase 5.ah: Manufacturing origin + forced-labor risk */}
+              {enriched.origin && (enriched.origin.primaryCountries?.length > 0 || enriched.origin.uflpaListed) && (
+                <div style={{ marginBottom:10, fontSize:11, color:T.txt3 }}>
+                  Made in:{" "}
+                  <span style={{ color:T.txt2 }}>{(enriched.origin.primaryCountries || []).slice(0, 3).join(" · ") || "unknown"}</span>
+                  {enriched.origin.forcedLaborRisk === "high" && (
+                    <span style={{ marginLeft:8, padding:"2px 6px", borderRadius:4, background:"rgba(226,74,74,0.15)", border:"1px solid rgba(226,74,74,0.4)", color:"#e24a4a", fontSize:10, fontWeight:700 }}>
+                      ⚠ Forced-labor risk
+                    </span>
+                  )}
                 </div>
               )}
 
