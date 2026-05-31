@@ -1507,16 +1507,28 @@ function categorySpectrumPos(k, v, profile) {
   return Math.max(0, Math.min(1, sc / 100));
 }
 
-function CategorySpectrum({ pos, leftLabel, rightLabel }) {
+// Phase 5.ah: spectrum-bar color now varies by axis TYPE.
+//   "universal" axes — environment, labor, privacy — keep red→green
+//   because more violations / more breaches are objectively worse for
+//   every user.
+//   "stance" axes — politics, DEI, animals, firearms, charity, exec pay —
+//   use a NEUTRAL gray→accent gradient. Position is shown without value
+//   judgment (the personalized GRADE on the row carries the verdict
+//   relative to the user's quiz answers).
+function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance" }) {
   if (pos == null) return null;
-  const dotColor = pos < 0.35 ? "#e24a4a"
-                : pos > 0.65 ? "#4caf82"
-                : "#9b8ff0";
+  const isUniversal = axisType === "universal";
+  const dotColor = isUniversal
+    ? (pos < 0.35 ? "#e24a4a" : pos > 0.65 ? "#4caf82" : "#9b8ff0")
+    : "#9b8ff0";
+  const gradient = isUniversal
+    ? "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)"
+    : "linear-gradient(to right, #3a3a3a 0%, #555 50%, #6a5dca 100%)";
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%" }}>
       <div style={{
         position:"relative", width:"100%", height:6, borderRadius:3,
-        background: "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)",
+        background: gradient,
       }} aria-hidden="true">
         <div style={{
           position:"absolute", top:-3, left:`calc(${pos*100}% - 6px)`,
@@ -1533,19 +1545,26 @@ function CategorySpectrum({ pos, leftLabel, rightLabel }) {
   );
 }
 
-// Per-category spectrum endpoint labels. Keep them neutral — they describe
-// the AXIS, not a verdict ("Documented violations" is a category of FACT,
-// not a value judgment).
+// Per-category spectrum endpoint labels + axis type.
+//
+// LABEL POLICY: describe the AXIS factually, never the verdict.
+//   - "Limited" / "Active" (not "Rolled back" — implies they once had it)
+//   - "Left" / "Right" (not "Liberal" / "Conservative" — partisan)
+//   - "No record" — they may be charitable; we just don't have data
+//
+// AXIS TYPE:
+//   "universal" → red→green coloring; more violations objectively worse
+//   "stance"    → neutral gray→accent; position-only, no value implied
 const SPECTRUM_LABELS = {
-  political:   { lo: "Left",         hi: "Right" },
-  charity:     { lo: "No record",    hi: "Active giving" },
-  environment: { lo: "Violations",   hi: "Certified" },
-  labor:       { lo: "Violations",   hi: "Clean record" },
-  dei:         { lo: "Rolled back",  hi: "Active" },
-  animals:     { lo: "Tested",       hi: "Cruelty-free" },
-  guns:        { lo: "Makes guns",   hi: "No guns" },
-  privacy:     { lo: "Breaches",     hi: "No breaches" },
-  execPay:     { lo: ">300:1",       hi: "<50:1" },
+  political:   { lo: "Left",         hi: "Right",          axisType: "stance"    },
+  charity:     { lo: "No record",    hi: "Active giving",  axisType: "stance"    },
+  environment: { lo: "Violations",   hi: "Certified",      axisType: "universal" },
+  labor:       { lo: "Violations",   hi: "Clean record",   axisType: "universal" },
+  dei:         { lo: "Limited",      hi: "Active",         axisType: "stance"    },
+  animals:     { lo: "Tests",        hi: "Cruelty-free",   axisType: "stance"    },
+  guns:        { lo: "Makes guns",   hi: "No guns",        axisType: "stance"    },
+  privacy:     { lo: "Breaches",     hi: "No breaches",    axisType: "universal" },
+  execPay:     { lo: ">300:1",       hi: "<50:1",          axisType: "stance"    },
 };
 
 function CategoryRow({ cat: k, enriched, profile }) {
@@ -1576,7 +1595,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
         </div>
         {!isUnknown && (
           <div style={{ paddingLeft:28, paddingRight:4 }}>
-            <CategorySpectrum pos={pos} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} />
+            <CategorySpectrum pos={pos} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} axisType={labels?.axisType || "stance"} />
           </div>
         )}
       </button>
