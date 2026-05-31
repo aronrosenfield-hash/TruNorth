@@ -269,7 +269,80 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
 }
 
 // ─── QUIZ STEPS ───────────────────────────────────────────────────────────────
-const QUIZ_STEPS = [
+// Phase 5.ag: Alt-A quiz design (from the Quiz-Review doc) with one swap —
+// Politics + Environment positions flipped per user request. Identity-issues
+// (DEI + Animals + Firearms) collapsed into one combined screen via a new
+// "tri-single" question type. Dealbreakers narrowed to the 5 most-actioned.
+//
+// Live behind ?quiz=alt-a — visit https://www.trunorthapp.com/?quiz=alt-a
+// to preview. Once locked in (or rejected) the loser variant gets stripped.
+const QUIZ_STEPS_ALT_A = [
+  // Q1: Politics — same as current
+  { id:"politicalLean", type:"single+scale", scaleId:"politicalImportance",
+    q:"When a company donates to political campaigns, which direction do you prefer?",
+    scaleQ:"How important is this to you?",
+    lo:"No influence", hi:"Strong influence",
+    opts:[
+      {v:"right",  l:"I prefer companies that support Republican / conservative causes", icon:"rep"},
+      {v:"left",   l:"I prefer companies that support Democratic / progressive causes",  icon:"dem"},
+      {v:"neutral",l:"I prefer companies that stay completely out of politics",           icon:null},
+      {v:"neutral",l:"Political donations do not affect where I shop",                   icon:null},
+    ]},
+  // Q2: Workers (Labor importance + union stance combined — already the
+  //     "scale+single" shape in the existing quiz; just reused)
+  { id:"laborImportance", type:"scale+single", singleId:"unionSupport",
+    q:"How important is it that companies treat their workers well?",
+    lo:"Does not concern me", hi:"Major concern",
+    singleQ:"How do you feel about organized labor unions?",
+    opts:[
+      {v:"pro",    l:"I prefer companies that respect and support unions",        icon:"ti-users"},
+      {v:"anti",   l:"I prefer companies that operate without union involvement", icon:"ti-x"},
+      {v:"neutral",l:"Union policy does not factor into my shopping",            icon:null},
+    ]},
+  // Q3: Environment — same as current Q3
+  { id:"envImportance", type:"scale",
+    q:"How much does a company's environmental record matter to you?",
+    lo:"Does not concern me", hi:"Major concern" },
+  // Q4: Identity-issues combined card — three quick toggles on one screen.
+  //     New question type "tri-single" — each sub-question has its own
+  //     header + 3 options stacked compactly.
+  { id:"identityIssues", type:"tri-single",
+    q:"A few quick stances:",
+    subs:[
+      { id:"deiLean", title:"DEI programs",
+        opts:[
+          {v:"pro",    l:"Support",     icon:"ti-heart"},
+          {v:"anti",   l:"Avoid",       icon:"ti-x"},
+          {v:"neutral",l:"Don't care",  icon:null},
+        ]},
+      { id:"animalTesting", title:"Animal testing",
+        opts:[
+          {v:"dealbreaker",l:"Avoid",       icon:"ti-paw"},
+          {v:"prefer_not", l:"Prefer not",  icon:"ti-paw"},
+          {v:"neutral",    l:"Don't care",  icon:null},
+        ]},
+      { id:"guns", title:"Firearms",
+        opts:[
+          {v:"avoid",   l:"Avoid",      icon:"ti-x"},
+          {v:"support", l:"Support",    icon:"ti-check"},
+          {v:"neutral", l:"Don't care", icon:null},
+        ]},
+    ]},
+  // Q5: Dealbreakers — condensed to the 5 most-actioned per audit
+  { id:"dealBreakers", type:"multi",
+    q:"Any absolute dealbreakers for you?",
+    sub:"Companies with poor records in these areas get heavily penalized.",
+    opts:[
+      {v:"privacy",      l:"Selling or misusing customer data",                       icon:"ti-lock"},
+      {v:"forcedLabor",  l:"Supply chain forced labor or modern slavery",             icon:"ti-link"},
+      {v:"childLabor",   l:"Child labor in supply chain",                             icon:"ti-baby-carriage"},
+      {v:"foreignOwn",   l:"Owned or controlled by a foreign adversarial government", icon:"ti-world"},
+      {v:"monopoly",     l:"Monopolistic behavior or antitrust violations",           icon:"ti-crown"},
+    ]},
+];
+
+// Default quiz — current 9-question version (preserved as fallback)
+const QUIZ_STEPS_V1 = [
   // Step 1: Political — single + importance scale on same screen
   { id:"politicalLean", type:"single+scale", scaleId:"politicalImportance",
     q:"When a company donates to political campaigns, which direction do you prefer?",
@@ -342,6 +415,24 @@ const QUIZ_STEPS = [
       {v:"childLabor",    l:"Child labor in supply chain",                             icon:"ti-baby-carriage"},
     ]},
 ];
+
+// Resolve which quiz to render. Reads ?quiz=alt-a from URL on first load,
+// caches in localStorage so subsequent navigation stays consistent.
+function getQuizSteps() {
+  if (typeof window === "undefined") return QUIZ_STEPS_V1;
+  try {
+    const qs = new URLSearchParams(window.location.search).get("quiz");
+    if (qs === "alt-a" || qs === "v1") {
+      try { localStorage.setItem("tn_quizVersion", qs); } catch {}
+    }
+    const v = localStorage.getItem("tn_quizVersion");
+    if (v === "alt-a") return QUIZ_STEPS_ALT_A;
+    return QUIZ_STEPS_V1;
+  } catch {
+    return QUIZ_STEPS_V1;
+  }
+}
+const QUIZ_STEPS = QUIZ_STEPS_V1; // back-compat for any direct refs elsewhere
 
 // ─── SCORING ENGINE ───────────────────────────────────────────────────────────
 const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
@@ -2072,20 +2163,26 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
 function Quiz({ onComplete, onSkip }) {
+  // Phase 5.ag: resolve QUIZ_STEPS at mount via URL param ?quiz=alt-a or
+  // the cached preference. Switching mid-quiz isn't supported (resets the
+  // answer state), so the choice is captured once on mount.
+  const steps = React.useMemo(getQuizSteps, []);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const isWelcome = step === 0;
-  const current = isWelcome ? null : QUIZ_STEPS[step-1];
-  const isLast = step === QUIZ_STEPS.length;
-  const prog = (step / QUIZ_STEPS.length) * 100;
+  const current = isWelcome ? null : steps[step-1];
+  const isLast = step === steps.length;
+  const prog = (step / steps.length) * 100;
   // Phase 5.y bug fix: combined-question pages were advancing when ONLY the
   // primary question had an answer. Now every sub-question must be answered.
+  // Phase 5.ag: tri-single requires every sub answered before advancing.
   const canAdvance = isWelcome || current?.type === "multi"
     || (current?.type === "scale"  && answers[current?.id] !== undefined)
     || (current?.type === "single" && answers[current?.id] !== undefined)
     || (current?.type === "single+scale" && answers[current?.id] !== undefined && answers[current?.scaleId] !== undefined)
     || (current?.type === "scale+single" && answers[current?.id] !== undefined && answers[current?.singleId] !== undefined)
-    || (current?.type === "scale+scale"  && answers[current?.id] !== undefined && answers[current?.scale2Id] !== undefined);
+    || (current?.type === "scale+scale"  && answers[current?.id] !== undefined && answers[current?.scale2Id] !== undefined)
+    || (current?.type === "tri-single"   && (current.subs || []).every(sub => answers[sub.id] !== undefined));
 
   const advance = () => {
     if (isLast) {
@@ -2136,7 +2233,7 @@ function Quiz({ onComplete, onSkip }) {
         <div style={{ height:4, background:T.bg3, borderRadius:4 }}>
           <div style={{ height:4, background:T.accent, borderRadius:4, width:`${prog}%`, transition:"width 0.3s" }} />
         </div>
-        {step > 0 && <div style={{ fontSize:11, color:T.txt3, textAlign:"right", marginTop:5 }}>{step} of {QUIZ_STEPS.length}</div>}
+        {step > 0 && <div style={{ fontSize:11, color:T.txt3, textAlign:"right", marginTop:5 }}>{step} of {steps.length}</div>}
       </div>
 
       <div style={{ flex:1, minHeight:0, padding:"12px 16px 24px", overflowY:"auto", WebkitOverflowScrolling:"touch" }}>
@@ -2247,6 +2344,37 @@ function Quiz({ onComplete, onSkip }) {
                 })}
               </div>
             )}
+          </>
+        )}
+
+        {/* Phase 5.ag: tri-single — three quick single-selects on one screen.
+            Used by Alt A's "identity issues" combined card. Each sub-question
+            gets a compact header + horizontal pill row of options. */}
+        {current?.type === "tri-single" && (
+          <>
+            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:16, lineHeight:1.4 }}>{current.q}</div>
+            {(current.subs || []).map((sub) => (
+              <div key={sub.id} style={{ marginBottom:18 }}>
+                <div style={{ fontSize:12, fontWeight:700, color:T.txt2, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>{sub.title}</div>
+                <div style={{ display:"flex", gap:6 }}>
+                  {sub.opts.map((opt, i) => {
+                    const sel = answers[sub.id] === opt.v;
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => set(sub.id, opt.v)}
+                        style={{ flex:1, padding:"10px 8px", borderRadius:10, border:`1.5px solid ${sel ? T.accent : T.border}`, background: sel ? T.accentBg : T.bg2, color: sel ? T.accent2 : T.txt, fontSize:12, fontWeight: sel ? 700 : 500, cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4 }}
+                      >
+                        {opt.icon && opt.icon !== "dem" && opt.icon !== "rep" && (
+                          <i className={`ti ${opt.icon}`} style={{ fontSize:14 }} aria-hidden="true" />
+                        )}
+                        <span>{opt.l}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </>
         )}
 
