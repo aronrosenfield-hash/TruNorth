@@ -3260,6 +3260,95 @@ if (screen === "onboarding") {
             flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
+          {/* Phase 5.ag (item N): "Brand of the day" — one curated brand
+              per day with a short framing line. Deterministic rotation based
+              on date so all users see the same brand on the same day (good
+              for shareability) but it changes daily (rewards return visits).
+              Pick rotates through: well-known A-graders (positive surprise),
+              well-known F-graders (the worst-day callout already exists for
+              search), and a "category spotlight" pull from a random cat.
+
+              Audit warning: this is the SAFE version of variable reward —
+              one item, journalism framing, no infinite scroll, no streak.
+              Builds a daily-open ritual without the doomscroll downside. */}
+          {(() => {
+            // Daily seed: integer day-of-year. Same for all users on the
+            // same calendar day.
+            const today = new Date();
+            const day = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86_400_000);
+            const wellKnown = deduped.filter(c => c.overall != null && c.cat && c.cat !== "Other");
+            if (!wellKnown.length) return null;
+            const pick = wellKnown[day % wellKnown.length];
+            const pickScore = computeScore(pick, profile);
+            const pickGrade = scoreGrade(pickScore);
+            const flavorByGrade = {
+              A: { tag: "Worth knowing", color: "#4caf82", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
+              B: { tag: "Worth knowing", color: "#8bc34a", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
+              C: { tag: "Mixed signal",  color: "#f0a030", bgTint: "rgba(240,160,48,0.08)", borderTint: "rgba(240,160,48,0.4)" },
+              D: { tag: "Worth a look",  color: "#ff7043", bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
+              F: { tag: "Worth a look",  color: "#e24a4a", bgTint: "rgba(226,74,74,0.08)", borderTint: "rgba(226,74,74,0.4)" },
+            };
+            const fl = flavorByGrade[pickGrade] || flavorByGrade.C;
+            return (
+              <div
+                onClick={() => {
+                  track("brand_of_day_clicked", { slug: pick.slug || pick.id, grade: pickGrade, day });
+                  setDeepLinkSlug(pick.slug || pick.id);
+                  setTab("search");
+                }}
+                style={{ margin:"12px 16px", padding:"12px 14px", background:fl.bgTint, border:`1.5px solid ${fl.borderTint}`, borderRadius:14, cursor:"pointer", display:"flex", alignItems:"center", gap:12 }}
+              >
+                <CompanyLogo company={pick} size={44} />
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ fontSize:10, color:fl.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {fl.tag}</div>
+                  <div style={{ fontSize:15, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", marginTop:2 }}>{pick.name}</div>
+                  <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{pick.cat}</div>
+                </div>
+                <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#0d2318" : pickGrade === "B" ? "#1a2810" : pickGrade === "C" ? "#2a2210" : pickGrade === "D" ? "#2a1810" : "#2a0d0d", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+              </div>
+            );
+          })()}
+
+          {/* Phase 5.ag (item M-partial): personal monthly stats card.
+              Reads tn_purchaseLog (populated by the I-bought/skipped toggle
+              from item J) and surfaces a tiny "your month" summary on the
+              Top Picks tab — building toward the full Year-in-Review
+              eventually. Only renders if the user has logged ≥3 actions
+              this month (otherwise it's not enough data to be interesting). */}
+          {(() => {
+            let log = {};
+            try { log = JSON.parse(localStorage.getItem("tn_purchaseLog") || "{}"); } catch {}
+            const monthStart = new Date(); monthStart.setDate(1); monthStart.setHours(0,0,0,0);
+            const monthMs = monthStart.getTime();
+            const entries = Object.values(log).filter(e => e?.at >= monthMs);
+            if (entries.length < 3) return null;
+            const bought  = entries.filter(e => e.action === "bought").length;
+            const skipped = entries.filter(e => e.action === "skipped").length;
+            const skippedF = entries.filter(e => e.action === "skipped" && ["D","F"].includes(e.grade)).length;
+            return (
+              <div style={{ margin:"0 16px 12px", padding:"14px", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:12 }}>
+                <div style={{ fontSize:10, color:T.txt3, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>Your month so far</div>
+                <div style={{ display:"flex", gap:16 }}>
+                  <div style={{ flex:1, textAlign:"center" }}>
+                    <div style={{ fontSize:22, fontWeight:800, color:"#4caf82" }}>{bought}</div>
+                    <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>BOUGHT</div>
+                  </div>
+                  <div style={{ flex:1, textAlign:"center" }}>
+                    <div style={{ fontSize:22, fontWeight:800, color:"#f0a030" }}>{skipped}</div>
+                    <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>SKIPPED</div>
+                  </div>
+                  <div style={{ flex:1, textAlign:"center" }}>
+                    <div style={{ fontSize:22, fontWeight:800, color:T.accent2 }}>{skippedF}</div>
+                    <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>SKIPPED D / F</div>
+                  </div>
+                </div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:10, textAlign:"center", lineHeight:1.4 }}>
+                  Tap "I bought it" or "I skipped it" on any brand profile to track your month.
+                </div>
+              </div>
+            );
+          })()}
+
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>
           </div>
