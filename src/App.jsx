@@ -416,17 +416,93 @@ const QUIZ_STEPS_V1 = [
     ]},
 ];
 
-// Resolve which quiz to render. Reads ?quiz=alt-a from URL on first load,
-// caches in localStorage so subsequent navigation stays consistent.
+// Phase 5.ah: Alt-B — all-pill quiz design. User loved the Q4 tri-single
+// feel in Alt A and asked for the WHOLE quiz to feel like that. This version
+// collapses 9 questions → 4 screens, all using compact horizontal pill
+// buttons. Total time ~45 seconds.
+//
+// Screen 1: "Where you stand" — 3 stance toggles (Politics, DEI, Unions)
+// Screen 2: "Issues you avoid" — 2 stance toggles (Animals, Firearms)
+// Screen 3: "How much each matters" — 5 importance scales in a compact grid
+// Screen 4: "Any dealbreakers?" — 5 multi-select chips
+//
+// Live behind ?quiz=alt-b. Once locked in, the loser variants get stripped.
+const QUIZ_STEPS_ALT_B = [
+  // Screen 1: Where you stand
+  { id:"stances1", type:"tri-single",
+    q:"Where do you stand?",
+    subs:[
+      { id:"politicalLean", title:"Politics",
+        opts:[
+          {v:"left",   l:"Left",       icon:"dem"},
+          {v:"right",  l:"Right",      icon:"rep"},
+          {v:"neutral",l:"Don't care", icon:null},
+        ]},
+      { id:"deiLean", title:"DEI programs",
+        opts:[
+          {v:"pro",    l:"Support",    icon:"ti-heart"},
+          {v:"anti",   l:"Avoid",      icon:"ti-x"},
+          {v:"neutral",l:"Don't care", icon:null},
+        ]},
+      { id:"unionSupport", title:"Labor unions",
+        opts:[
+          {v:"pro",    l:"Support",    icon:"ti-users"},
+          {v:"anti",   l:"Avoid",      icon:"ti-x"},
+          {v:"neutral",l:"Don't care", icon:null},
+        ]},
+    ]},
+  // Screen 2: Issues you avoid
+  { id:"stances2", type:"tri-single",
+    q:"Anything you actively avoid?",
+    subs:[
+      { id:"animalTesting", title:"Animal testing",
+        opts:[
+          {v:"dealbreaker",l:"Avoid",       icon:"ti-paw"},
+          {v:"prefer_not", l:"Prefer not",  icon:"ti-paw"},
+          {v:"neutral",    l:"Don't care",  icon:null},
+        ]},
+      { id:"guns", title:"Firearms",
+        opts:[
+          {v:"avoid",   l:"Avoid",      icon:"ti-x"},
+          {v:"support", l:"Support",    icon:"ti-check"},
+          {v:"neutral", l:"Don't care", icon:null},
+        ]},
+    ]},
+  // Screen 3: Importance scales (5 categories, compact 1-5 grid)
+  { id:"importances", type:"importance-grid",
+    q:"How much does each area matter to you?",
+    rows:[
+      { id:"envImportance",     label:"Environment", icon:"ti-leaf" },
+      { id:"laborImportance",   label:"Worker treatment", icon:"ti-users" },
+      { id:"privacy",           label:"Data privacy", icon:"ti-lock" },
+      { id:"execPay",           label:"CEO-to-worker pay gap", icon:"ti-coin" },
+      { id:"charityImportance", label:"Charitable giving", icon:"ti-heart" },
+    ]},
+  // Screen 4: Dealbreakers
+  { id:"dealBreakers", type:"multi",
+    q:"Any absolute dealbreakers?",
+    sub:"Companies with poor records in these areas get heavily penalized.",
+    opts:[
+      {v:"privacy",      l:"Selling or misusing customer data",                       icon:"ti-lock"},
+      {v:"forcedLabor",  l:"Supply-chain forced labor or modern slavery",             icon:"ti-link"},
+      {v:"childLabor",   l:"Child labor in supply chain",                             icon:"ti-baby-carriage"},
+      {v:"foreignOwn",   l:"Owned or controlled by a foreign adversarial government", icon:"ti-world"},
+      {v:"monopoly",     l:"Monopolistic behavior or antitrust violations",           icon:"ti-crown"},
+    ]},
+];
+
+// Resolve which quiz to render. Reads ?quiz=alt-a|alt-b|v1 from URL on first
+// load, caches in localStorage so subsequent navigation stays consistent.
 function getQuizSteps() {
   if (typeof window === "undefined") return QUIZ_STEPS_V1;
   try {
     const qs = new URLSearchParams(window.location.search).get("quiz");
-    if (qs === "alt-a" || qs === "v1") {
+    if (qs === "alt-a" || qs === "alt-b" || qs === "v1") {
       try { localStorage.setItem("tn_quizVersion", qs); } catch {}
     }
     const v = localStorage.getItem("tn_quizVersion");
     if (v === "alt-a") return QUIZ_STEPS_ALT_A;
+    if (v === "alt-b") return QUIZ_STEPS_ALT_B;
     return QUIZ_STEPS_V1;
   } catch {
     return QUIZ_STEPS_V1;
@@ -2182,7 +2258,8 @@ function Quiz({ onComplete, onSkip }) {
     || (current?.type === "single+scale" && answers[current?.id] !== undefined && answers[current?.scaleId] !== undefined)
     || (current?.type === "scale+single" && answers[current?.id] !== undefined && answers[current?.singleId] !== undefined)
     || (current?.type === "scale+scale"  && answers[current?.id] !== undefined && answers[current?.scale2Id] !== undefined)
-    || (current?.type === "tri-single"   && (current.subs || []).every(sub => answers[sub.id] !== undefined));
+    || (current?.type === "tri-single"   && (current.subs || []).every(sub => answers[sub.id] !== undefined))
+    || (current?.type === "importance-grid" && (current.rows || []).every(r => answers[r.id] !== undefined));
 
   const advance = () => {
     if (isLast) {
@@ -2375,6 +2452,39 @@ function Quiz({ onComplete, onSkip }) {
                 </div>
               </div>
             ))}
+          </>
+        )}
+
+        {/* Phase 5.ah: importance-grid — N categories, each with a 1-5
+            compact pill row. Reuses the tri-single look-and-feel but for
+            importance (not stance). All rows on one screen for speed. */}
+        {current?.type === "importance-grid" && (
+          <>
+            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:6, lineHeight:1.4 }}>{current.q}</div>
+            <div style={{ fontSize:12, color:T.txt3, marginBottom:18 }}>1 = doesn't matter · 5 = critical</div>
+            {(current.rows || []).map(row => {
+              const v = answers[row.id];
+              return (
+                <div key={row.id} style={{ marginBottom:14, display:"flex", alignItems:"center", gap:10 }}>
+                  <div style={{ flex:1, minWidth:0, display:"flex", alignItems:"center", gap:6 }}>
+                    {row.icon && <i className={`ti ${row.icon}`} style={{ fontSize:14, color:T.txt3, flexShrink:0 }} aria-hidden="true" />}
+                    <span style={{ fontSize:13, color:T.txt, fontWeight:500 }}>{row.label}</span>
+                  </div>
+                  <div style={{ display:"flex", gap:4, flexShrink:0 }}>
+                    {[1,2,3,4,5].map(n => {
+                      const sel = v === n;
+                      return (
+                        <button
+                          key={n}
+                          onClick={() => set(row.id, n)}
+                          style={{ width:34, height:34, borderRadius:8, border:`1.5px solid ${sel ? T.accent : T.border}`, background: sel ? T.accent : T.bg2, color: sel ? "#fff" : T.txt3, fontSize:13, fontWeight:700, cursor:"pointer" }}
+                        >{n}</button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </>
         )}
 
