@@ -1517,15 +1517,23 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
 
   const handleTap = () => {
     // Phase 5.aj: paywall fires IMMEDIATELY on every non-paid tap.
-    // Per user feedback: the 5-free-quota system gave free users access
-    // but to a profile that looks empty (no narrative, no sources, "?"
-    // grades pre-quiz) — so they thought nothing happened. Better to
-    // fire the paywall and surface the value proposition explicitly
-    // than let them poke around an apparently-broken card.
     if (!isPaid && !open) {
       track("paywall_shown", { reason: "non_paid_profile_tap", slug: company.slug || company.id });
       onUpgrade();
       return;
+    }
+    // Phase 5.al (item #2): record view to local History list — capped
+    // at 100, most-recent first, dedup by slug so re-views bump rather
+    // than duplicate. Powers the new History bottom-nav tab.
+    if (!open) {
+      try {
+        const slug = company.slug || company.id;
+        const raw = JSON.parse(localStorage.getItem("tn_viewHistory") || "[]");
+        const filtered = raw.filter(e => e.slug !== slug);
+        filtered.unshift({ slug, name: company.name, cat: company.cat, viewedAt: Date.now() });
+        if (filtered.length > 100) filtered.length = 100;
+        localStorage.setItem("tn_viewHistory", JSON.stringify(filtered));
+      } catch {}
     }
     setOpen(o => {
       if (!o) {
@@ -1807,6 +1815,57 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               Tap to expand → rationale, sources, raw data. This collapses the
               cognitive load and matches the YUKA "score first, click for why"
               pattern the user asked for. */}
+
+          {/* Phase 5.al (item #3): Risk-signal preview row. Per the
+              stickiness audit, recalls + breaches + lawsuits are
+              "verdict → why → what to do" decision-critical signals
+              that belong at the TOP of the profile, not buried in the
+              About block. Compact chip strip — full detail still lives
+              in the About-this-company section below. */}
+          {(() => {
+            const recalls = enriched.recalls;
+            const breaches = enriched.privacy_hibp_breaches;
+            const litigation = enriched.litigation_courtlistener;
+            const hasAny = (recalls?.recalls?.length > 0) ||
+                           (breaches?.breachCount > 0) ||
+                           (litigation?.caseCount24mo > 0);
+            if (!hasAny) return null;
+            return (
+              <div style={{ marginBottom:14, display:"flex", flexWrap:"wrap", gap:6 }}>
+                {recalls?.recalls?.length > 0 && (
+                  <div style={{ flex:"1 1 130px", padding:"8px 10px", borderRadius:8, background: recalls.severityMax === "high" ? "rgba(226,74,74,0.15)" : "rgba(240,160,48,0.12)", border:`1px solid ${recalls.severityMax === "high" ? "rgba(226,74,74,0.5)" : "rgba(240,160,48,0.5)"}` }}>
+                    <div style={{ fontSize:10, color: recalls.severityMax === "high" ? "#e24a4a" : "#f0a030", fontWeight:700, textTransform:"uppercase", letterSpacing:0.4 }}>
+                      <i className="ti ti-rosette" aria-hidden="true" /> Recalls
+                    </div>
+                    <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginTop:2 }}>
+                      {recalls.recallCount24mo} in 24mo
+                    </div>
+                  </div>
+                )}
+                {breaches?.breachCount > 0 && (
+                  <div style={{ flex:"1 1 130px", padding:"8px 10px", borderRadius:8, background:"rgba(226,74,74,0.12)", border:"1px solid rgba(226,74,74,0.4)" }}>
+                    <div style={{ fontSize:10, color:"#e24a4a", fontWeight:700, textTransform:"uppercase", letterSpacing:0.4 }}>
+                      <i className="ti ti-shield-off" aria-hidden="true" /> Breaches
+                    </div>
+                    <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginTop:2 }}>
+                      {breaches.breachCount} · {breaches.totalRecordsLost >= 1e6 ? `${(breaches.totalRecordsLost/1e6).toFixed(1)}M` : `${(breaches.totalRecordsLost/1e3).toFixed(0)}K`} records
+                    </div>
+                  </div>
+                )}
+                {litigation?.caseCount24mo > 0 && (
+                  <div style={{ flex:"1 1 130px", padding:"8px 10px", borderRadius:8, background:"rgba(240,160,48,0.10)", border:"1px solid rgba(240,160,48,0.4)" }}>
+                    <div style={{ fontSize:10, color:"#f0a030", fontWeight:700, textTransform:"uppercase", letterSpacing:0.4 }}>
+                      <i className="ti ti-gavel" aria-hidden="true" /> Lawsuits
+                    </div>
+                    <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginTop:2 }}>
+                      {litigation.caseCount24mo} · 24mo
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
+
           {CAT_KEYS.map(k => (
             <CategoryRow
               key={k}
@@ -3330,8 +3389,12 @@ useEffect(() => {
   const catBgs = ["#1e1535","#0d2318","#0d1f35","#2a0d0d","#2e1a05","#2a1a05"];
   const catFgs = ["#9b8ff0","#4caf82","#4a90e2","#e24a4a","#e8a042","#f0a030"];
 
-  const TABS = ["search","browse","top","sources","account"];
-  const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",sources:"Sources",account:"Account"};
+  // Phase 5.al (item #2): added "history" tab — Yuka-style chronological
+  // list of brands the user has viewed. Sources tab moved off the bottom
+  // nav since it was reference content, accessed rarely; still reachable
+  // via Account → Sources link.
+  const TABS = ["search","browse","top","history","account"];
+  const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",history:"History",account:"Account"};
 
 
 
@@ -3792,26 +3855,196 @@ if (screen === "onboarding") {
 
       {/* BROWSE */}
       {tab === "browse" && (
-        <ErrorBoundary name="browse"><div style={{ padding:16, display:"grid", gridTemplateColumns:"calc(50% - 5px) calc(50% - 5px)", gap:10 }}>
-          {cats.map((cat, i) => {
-            const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
-            const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
+        <ErrorBoundary name="browse">{(() => {
+          // Phase 5.al (item #7): 3 Browse layouts behind ?browse= URL toggle
+          //   ?browse=v1     (default) — original tile grid (current)
+          //   ?browse=alt-a  — list with featured-brand chips per category
+          //   ?browse=alt-b  — search-first + horizontal category chips
+          //   ?browse=alt-c  — curated editorial collections
+          // Cached in localStorage so navigation preserves the choice.
+          const browseVariant = (() => {
+            if (typeof window === "undefined") return "v1";
+            try {
+              const qs = new URLSearchParams(window.location.search).get("browse");
+              if (qs && ["v1","alt-a","alt-b","alt-c"].includes(qs)) {
+                localStorage.setItem("tn_browseVariant", qs);
+                return qs;
+              }
+              return localStorage.getItem("tn_browseVariant") || "v1";
+            } catch { return "v1"; }
+          })();
+
+          // Helper: top-N brands in a bucket, sorted by overall score desc
+          const topBrandsIn = (cat, n = 3) => deduped
+            .filter(c => getBucket(c.cat) === cat)
+            .sort((a, b) => (b.overall || 0) - (a.overall || 0))
+            .slice(0, n);
+
+          const openBucket = (cat, count) => {
+            setIndustryBucket(cat); setQueryRaw(""); setQuery("");
+            setTab("search"); track("browse_category_open", { bucket: cat, count, variant: browseVariant });
+          };
+
+          // ── ALT-A: List view with featured brands per category ────────────
+          if (browseVariant === "alt-a") {
             return (
-              // Phase 5.ak (item #6 cont'd): click sets industryBucket
-              // instead of seeding the search input — exact bucket-level
-              // filtering prevents "Airline" matching unrelated brands that
-              // happen to contain the word in their name.
-              <div key={cat} onClick={()=>{ setIndustryBucket(cat); setQueryRaw(""); setQuery(""); setTab("search"); track("browse_category_open", { bucket: cat, count }); }}
-                style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:"16px 14px", cursor:"pointer" }}>
-                <div style={{ width:44, height:44, borderRadius:8, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10, background:catBgs[i%catBgs.length] }}>
-                  <i className={`ti ${icon}`} style={{ fontSize:22, color:catFgs[i%catFgs.length] }} aria-hidden="true" />
-                </div>
-                <div style={{ fontSize:14, fontWeight:600, color:T.txt }}>{cat}</div>
-                <div style={{ fontSize:12, color:T.txt3, marginTop:3 }}>{count} companies</div>
+              <div style={{ padding:"8px 0 80px" }}>
+                {cats.map((cat, i) => {
+                  const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
+                  const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
+                  const featured = topBrandsIn(cat, 4);
+                  return (
+                    <div key={cat} onClick={() => openBucket(cat, count)}
+                      style={{ background:T.bg2, borderTop:`1px solid ${T.border}`, padding:"14px 16px", cursor:"pointer" }}>
+                      <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:8 }}>
+                        <div style={{ width:36, height:36, borderRadius:8, display:"flex", alignItems:"center", justifyContent:"center", background:catBgs[i%catBgs.length], flexShrink:0 }}>
+                          <i className={`ti ${icon}`} style={{ fontSize:18, color:catFgs[i%catFgs.length] }} aria-hidden="true" />
+                        </div>
+                        <div style={{ flex:1, minWidth:0 }}>
+                          <div style={{ fontSize:15, fontWeight:600, color:T.txt }}>{cat}</div>
+                          <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{count} {count === 1 ? "brand" : "brands"}</div>
+                        </div>
+                        <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
+                      </div>
+                      {featured.length > 0 && (
+                        <div style={{ display:"flex", gap:6, flexWrap:"wrap", paddingLeft:48 }}>
+                          {featured.map(f => (
+                            <span key={f.slug || f.id} style={{ fontSize:11, padding:"3px 8px", borderRadius:12, background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` }}>
+                              {f.name}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             );
-          })}
-        </div></ErrorBoundary>
+          }
+
+          // ── ALT-B: Search-first + horizontal scrolling category chips ────
+          if (browseVariant === "alt-b") {
+            return (
+              <div style={{ padding:"16px 0 80px" }}>
+                <div style={{ padding:"0 16px 18px" }}>
+                  <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.2, marginBottom:6 }}>Find a brand or browse</div>
+                  <div style={{ fontSize:13, color:T.txt3, marginBottom:14 }}>{deduped.length.toLocaleString()} companies scored</div>
+                  <button onClick={()=>setTab("search")} style={{ width:"100%", padding:"12px 16px", borderRadius:12, background:T.bg3, border:`1px solid ${T.border2}`, color:T.txt3, fontSize:14, textAlign:"left", cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
+                    <i className="ti ti-search" style={{ fontSize:16 }} aria-hidden="true" /> Search brands…
+                  </button>
+                </div>
+                <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, padding:"0 16px 8px" }}>Categories</div>
+                <div style={{ overflowX:"auto", whiteSpace:"nowrap", padding:"0 16px 12px", display:"flex", gap:8 }}>
+                  {cats.map((cat, i) => {
+                    const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
+                    const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
+                    return (
+                      <button key={cat} onClick={() => openBucket(cat, count)} style={{ flexShrink:0, padding:"10px 14px", borderRadius:20, background:catBgs[i%catBgs.length], border:`1px solid ${T.border}`, color:catFgs[i%catFgs.length], fontSize:13, fontWeight:600, cursor:"pointer", display:"inline-flex", alignItems:"center", gap:6 }}>
+                        <i className={`ti ${icon}`} style={{ fontSize:13 }} aria-hidden="true" />
+                        {cat} · {count}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, padding:"18px 16px 8px" }}>Suggested by category</div>
+                <div style={{ padding:"0 16px" }}>
+                  {cats.slice(0, 6).map((cat, i) => {
+                    const top = topBrandsIn(cat, 3);
+                    if (!top.length) return null;
+                    return (
+                      <div key={cat} style={{ marginBottom:14 }}>
+                        <div style={{ fontSize:12, fontWeight:600, color:T.txt2, marginBottom:6 }}>{cat}</div>
+                        <div style={{ display:"flex", flexDirection:"column", gap:4 }}>
+                          {top.map(b => (
+                            <button key={b.slug || b.id} onClick={() => { setFocusedSlug(b.slug || b.id); setDeepLinkSlug(b.slug || b.id); setTab("search"); }} style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:8, cursor:"pointer", textAlign:"left" }}>
+                              <CompanyLogo company={b} size={26} />
+                              <span style={{ flex:1, minWidth:0, fontSize:13, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{b.name}</span>
+                              <span style={{ fontSize:13, fontWeight:700, color:scoreGrade(b.overall) === "A" ? "#4caf82" : scoreGrade(b.overall) === "F" ? "#e24a4a" : T.txt3 }}>{profile ? scoreGrade(computeScore(b, profile)) : "?"}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+
+          // ── ALT-C: Curated editorial collections ─────────────────────────
+          if (browseVariant === "alt-c") {
+            const collections = [
+              { id: "topA", title: "A-graded standouts", subtitle: "Brands scoring highest overall", filter: c => scoreGrade(c.overall) === "A", color: "#4caf82" },
+              { id: "worstF", title: "F-graded watch list", subtitle: "Brands with the worst records", filter: c => scoreGrade(c.overall) === "F", color: "#e24a4a" },
+              { id: "russia", title: "Still operating in Russia", subtitle: "Yale CELI list", filter: c => c.stillInRussia, color: "#f0a030" },
+              { id: "childLab", title: "Child labor risk", subtitle: "BHRRC-flagged supply chain", filter: c => c.childLabor, color: "#e24a4a" },
+              { id: "foreign", title: "Foreign-owned brands", subtitle: "Parented outside the US", filter: c => c.foreignOwned, color: "#9b8ff0" },
+              { id: "antitrust", title: "Antitrust spotlight", subtitle: "Active antitrust history", filter: c => c.antitrust, color: "#f0a030" },
+            ];
+            return (
+              <div style={{ padding:"16px 16px 80px" }}>
+                <div style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.5 }}>
+                  Curated lists across the catalog, beyond traditional industry categories. Tap any list to explore.
+                </div>
+                <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+                  {collections.map(coll => {
+                    const matched = deduped.filter(coll.filter);
+                    if (!matched.length) return null;
+                    const top3 = matched.slice(0, 3);
+                    return (
+                      <div key={coll.id} onClick={() => {
+                        // Set the flag filter the existing chain understands
+                        if (coll.id === "russia") { setFlagFilters(["stillInRussia"]); }
+                        else if (coll.id === "childLab") { setFlagFilters(["childLabor"]); }
+                        else if (coll.id === "foreign") { setFlagFilters(["foreignOwned"]); }
+                        else if (coll.id === "antitrust") { setFlagFilters(["antitrust"]); }
+                        // For grade-based collections, no flag — use search seed
+                        setTab("search"); track("browse_collection_open", { id: coll.id, count: matched.length });
+                      }} style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:14, padding:"12px 14px", cursor:"pointer" }}>
+                        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+                          <div style={{ width:8, height:32, borderRadius:2, background:coll.color, flexShrink:0 }} />
+                          <div style={{ flex:1, minWidth:0 }}>
+                            <div style={{ fontSize:14, fontWeight:700, color:T.txt }}>{coll.title}</div>
+                            <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{coll.subtitle} · {matched.length} brand{matched.length === 1 ? "" : "s"}</div>
+                          </div>
+                          <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
+                        </div>
+                        <div style={{ display:"flex", gap:6, flexWrap:"wrap", paddingLeft:18 }}>
+                          {top3.map(c => (
+                            <span key={c.slug || c.id} style={{ fontSize:10, padding:"2px 7px", borderRadius:10, background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` }}>{c.name}</span>
+                          ))}
+                          {matched.length > 3 && (
+                            <span style={{ fontSize:10, padding:"2px 7px", color:T.txt3 }}>+{matched.length - 3} more</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+
+          // ── V1 (default, current): tile grid ─────────────────────────────
+          return (
+            <div style={{ padding:16, display:"grid", gridTemplateColumns:"calc(50% - 5px) calc(50% - 5px)", gap:10 }}>
+              {cats.map((cat, i) => {
+                const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
+                const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
+                return (
+                  <div key={cat} onClick={() => openBucket(cat, count)}
+                    style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:"16px 14px", cursor:"pointer" }}>
+                    <div style={{ width:44, height:44, borderRadius:8, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:10, background:catBgs[i%catBgs.length] }}>
+                      <i className={`ti ${icon}`} style={{ fontSize:22, color:catFgs[i%catFgs.length] }} aria-hidden="true" />
+                    </div>
+                    <div style={{ fontSize:14, fontWeight:600, color:T.txt }}>{cat}</div>
+                    <div style={{ fontSize:12, color:T.txt3, marginTop:3 }}>{count} companies</div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })()}</ErrorBoundary>
       )}
       {/* TOP PICKS */}
       {tab === "top" && (
@@ -4050,6 +4283,107 @@ if (screen === "onboarding") {
       )}
 
       {/* SOURCES — Pro only */}
+      {/* Phase 5.al (item #2): HISTORY tab — Yuka-style chronological
+          view-history list. Sourced from tn_viewHistory localStorage,
+          populated on every CompanyCard expand. Cap 100, dedup by slug. */}
+      {tab === "history" && (
+        <ErrorBoundary name="history">
+          {(() => {
+            let history = [];
+            try { history = JSON.parse(localStorage.getItem("tn_viewHistory") || "[]"); } catch {}
+            if (!history.length) {
+              return (
+                <div style={{ padding:"60px 24px", textAlign:"center", color:T.txt3 }}>
+                  <i className="ti ti-history" style={{ fontSize:48, color:T.txt3, marginBottom:14 }} aria-hidden="true" />
+                  <div style={{ fontSize:15, fontWeight:600, color:T.txt2 }}>No history yet</div>
+                  <div style={{ fontSize:12, marginTop:6, lineHeight:1.4 }}>
+                    Brands you view will appear here in order, most recent first.
+                  </div>
+                  <button
+                    onClick={() => setTab("search")}
+                    style={{ marginTop:18, padding:"10px 18px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer" }}
+                  >
+                    Start exploring →
+                  </button>
+                </div>
+              );
+            }
+            // Group by date (Today / Yesterday / older)
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+            const yesterday = today - 86_400_000;
+            const groups = { today: [], yesterday: [], older: [] };
+            for (const e of history) {
+              if (e.viewedAt >= today) groups.today.push(e);
+              else if (e.viewedAt >= yesterday) groups.yesterday.push(e);
+              else groups.older.push(e);
+            }
+            const renderGroup = (label, items) => items.length > 0 && (
+              <div key={label} style={{ marginBottom:18 }}>
+                <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, margin:"0 16px 8px" }}>{label}</div>
+                <div style={{ display:"flex", flexDirection:"column", gap:1 }}>
+                  {items.map((e, i) => {
+                    const fullCo = deduped.find(c => (c.slug || c.id) === e.slug);
+                    const ago = (() => {
+                      const mins = Math.floor((Date.now() - e.viewedAt) / 60_000);
+                      if (mins < 60)  return `${mins}m ago`;
+                      const hrs = Math.floor(mins / 60);
+                      if (hrs < 24)   return `${hrs}h ago`;
+                      const days = Math.floor(hrs / 24);
+                      return `${days}d ago`;
+                    })();
+                    return (
+                      <button
+                        key={e.slug + i}
+                        onClick={() => { setFocusedSlug(e.slug); setDeepLinkSlug(e.slug); setTab("search"); track("history_clicked", { slug: e.slug }); }}
+                        style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:T.bg2, border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", textAlign:"left", width:"100%" }}
+                      >
+                        {fullCo && <CompanyLogo company={fullCo} size={32} />}
+                        <div style={{ flex:1, minWidth:0 }}>
+                          <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{e.name}</div>
+                          <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{e.cat || ""} · {ago}</div>
+                        </div>
+                        {fullCo && (() => {
+                          const ps = computeScore(fullCo, profile);
+                          const g = scoreGrade(ps);
+                          const colors = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a", "?":T.txt3 };
+                          return <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>;
+                        })()}
+                        <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+            return (
+              <div style={{ paddingTop:12, paddingBottom:80 }}>
+                <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"0 16px 12px" }}>
+                  <div style={{ fontSize:13, color:T.txt3 }}>{history.length} brand{history.length === 1 ? "" : "s"} viewed</div>
+                  <button
+                    onClick={() => {
+                      if (window.confirm("Clear your view history?")) {
+                        try { localStorage.removeItem("tn_viewHistory"); } catch {}
+                        track("history_cleared", { count: history.length });
+                        // Force a re-render
+                        setTab("history");
+                        window.location.reload();
+                      }
+                    }}
+                    style={{ background:"none", border:"none", color:T.rep, fontSize:11, cursor:"pointer", padding:0 }}
+                  >
+                    Clear all
+                  </button>
+                </div>
+                {renderGroup("Today",     groups.today)}
+                {renderGroup("Yesterday", groups.yesterday)}
+                {renderGroup("Earlier",   groups.older)}
+              </div>
+            );
+          })()}
+        </ErrorBoundary>
+      )}
+
       {tab === "sources" && (
         <ErrorBoundary name="sources">{
         !isPaid ? (
