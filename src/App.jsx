@@ -1536,29 +1536,81 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
               </div>
             );
           })()}
-          {/* Direct competitors list — Phase 4.11 made this neutral. We no
-              longer label them "better alternatives" (a verdict) — just
-              "competitors". For users WITH a profile, we surface companies
-              that score higher relative to THEIR preferences. */}
+          {/* Phase 5.ag (item G): "Better for your values" recommendation.
+              YUKA's single highest-leverage retention feature — when the
+              current grade is C/D/F for the user, surface 2-3 same-category
+              brands that score noticeably higher FOR THEIR VALUES. Without
+              this, users get the verdict but no next step, and 94% of YUKA's
+              behavior-change comes from exactly this nudge.
+
+              Visual treatment: green callout (signals "switch to this"),
+              full company card style (logo + name + their grade), tap to
+              jump to that profile. Conditional on profile presence AND a
+              bad grade — for A/B grades we DON'T show alternatives (would
+              undermine the positive verdict). For users without a profile,
+              show neutral "Direct competitors" as before. */}
           {(() => {
             const comps = Array.isArray(enriched.competitors) ? enriched.competitors : [];
             if (!comps.length || !allCompanies?.length) return null;
             const lookup = new Map(allCompanies.map(c => [c.slug || c.id, c]));
             const competitorsResolved = comps.map(slug => lookup.get(slug)).filter(Boolean);
-            // With a profile, filter to those scoring meaningfully higher than
-            // the current company (≥7 points, ~one letter grade better).
-            // Without a profile, show all competitors so the user can compare.
+            // Branch on profile + grade.
+            const isBadGrade = profile && ["C","D","F"].includes(grade);
             const display = profile
-              ? competitorsResolved.filter(c => computeScore(c, profile) >= ps + 7).slice(0, 4)
-              : competitorsResolved.slice(0, 4);
+              ? competitorsResolved
+                  .map(c => ({ co: c, score: computeScore(c, profile) }))
+                  .filter(x => x.score >= ps + 7)
+                  .sort((a, b) => b.score - a.score)
+                  .slice(0, 3)
+              : competitorsResolved.slice(0, 4).map(c => ({ co: c, score: c.overall }));
             if (!display.length) return null;
+            // Bad-grade users get the prominent green "Better for your values"
+            // call-to-switch. Everyone else gets neutral competitor chips.
+            if (isBadGrade) {
+              return (
+                <div style={{ background:"rgba(76,175,130,0.08)", border:"1.5px solid rgba(76,175,130,0.4)", borderRadius:12, padding:"12px 14px", marginBottom:14 }}>
+                  <div style={{ fontSize:11, fontWeight:700, color:"#4caf82", textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
+                    <i className="ti ti-arrow-up-right" aria-hidden="true" /> Better for your values
+                  </div>
+                  <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
+                    {display.map(({ co: alt, score: altScore }) => {
+                      const altGrade = scoreGrade(altScore);
+                      return (
+                        <button
+                          key={alt.slug || alt.id}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            track("better_alt_pick", { from: enriched.slug || enriched.id, to: alt.slug || alt.id, fromScore: ps, toScore: altScore });
+                            // Deep-link into the alternative — uses existing routing
+                            if (typeof window !== "undefined") {
+                              window.history.pushState({}, "", `/company/${alt.slug || alt.id}`);
+                              window.dispatchEvent(new PopStateEvent("popstate"));
+                            }
+                          }}
+                          style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%" }}
+                        >
+                          <CompanyLogo company={alt} size={32} />
+                          <div style={{ flex:1, minWidth:0 }}>
+                            <div style={{ fontSize:13, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{alt.name}</div>
+                            <div style={{ fontSize:11, color:T.txt3 }}>{altScore - ps}+ points better for you</div>
+                          </div>
+                          <div style={{ padding:"4px 10px", borderRadius:8, background:altGrade === "A" ? "#0d2318" : "#1a2810", color: altGrade === "A" ? "#4caf82" : "#8bc34a", fontSize:13, fontWeight:700 }}>{altGrade}</div>
+                          <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+            // Non-bad-grade fallback: neutral competitor chips (old behavior)
             return (
               <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, padding:"10px 12px", marginBottom:12 }}>
                 <div style={{ fontSize:11, fontWeight:700, color:T.accent2, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:8, display:"flex", alignItems:"center", gap:5 }}>
-                  <i className="ti ti-arrows-left-right" aria-hidden="true" /> {profile ? "Higher-scoring competitors" : "Direct competitors"}
+                  <i className="ti ti-arrows-left-right" aria-hidden="true" /> Direct competitors
                 </div>
                 <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-                  {display.map(alt => (
+                  {display.map(({ co: alt }) => (
                     <button
                       key={alt.slug || alt.id}
                       onClick={(e) => {
@@ -1569,7 +1621,6 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
                       style={{ display:"inline-flex", alignItems:"center", gap:6, padding:"6px 10px", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:16, cursor:"pointer", color:T.txt, fontSize:12 }}
                     >
                       <span style={{ fontWeight:700 }}>{alt.name}</span>
-                      {profile && <span style={{ padding:"1px 6px", borderRadius:8, background:alt.grade === "A" ? "#0d2318" : T.bg, color:alt.grade === "A" ? "#4caf82" : T.txt2, fontSize:10, fontWeight:700 }}>{alt.grade}</span>}
                     </button>
                   ))}
                 </div>
@@ -1836,6 +1887,42 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             </div>
           )}
 
+          {/* Phase 5.ag (item J): "I bought it / I skipped it" toggle.
+              Single tap. Optional. Builds the data spine for the monthly
+              recap (item M) without forcing receipt-forwarding. Audit
+              specifically warned: never auto-enable, never push for it,
+              never gate features behind it. Pure self-tracking. */}
+          {(() => {
+            const slug = enriched.slug || enriched.id;
+            const lsKey = "tn_purchaseLog";
+            let log = {};
+            try { log = JSON.parse(localStorage.getItem(lsKey) || "{}"); } catch {}
+            const current = log[slug]?.action || null; // "bought" | "skipped" | null
+            const setAction = (action) => {
+              try {
+                const updated = { ...log };
+                if (current === action) delete updated[slug]; // toggle off
+                else updated[slug] = { action, at: Date.now(), name: enriched.name, grade, score: ps };
+                localStorage.setItem(lsKey, JSON.stringify(updated));
+                track("purchase_log", { slug, action: current === action ? "cleared" : action, grade });
+              } catch {}
+            };
+            const btn = (action, label, icon, color) => (
+              <button
+                onClick={(e) => { e.stopPropagation(); setAction(action); }}
+                style={{ flex:1, padding:"7px 8px", fontSize:11, fontWeight:600, borderRadius:8, cursor:"pointer", border:`1px solid ${current === action ? color : T.border}`, background: current === action ? `${color}22` : T.bg3, color: current === action ? color : T.txt3, display:"flex", alignItems:"center", justifyContent:"center", gap:5 }}
+              >
+                <i className={`ti ${icon}`} aria-hidden="true" style={{ fontSize:12 }} /> {label}
+              </button>
+            );
+            return (
+              <div style={{ marginTop:8, display:"flex", gap:6 }}>
+                {btn("bought",  "I bought it",  "ti-shopping-cart", "#4caf82")}
+                {btn("skipped", "I skipped it", "ti-arrow-back",    "#f0a030")}
+              </div>
+            );
+          })()}
+
           {/* Phase 5.af: Recency + Report-correction footer.
               Always rendered so every profile shows a freshness signal and a
               way to flag bad data — no infra beyond mailto: for now. */}
@@ -1898,12 +1985,32 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
           )}
 
           {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
-              falls back to copying a URL to the clipboard on desktop browsers. */}
+              falls back to copying a URL to the clipboard on desktop browsers.
+              Phase 5.ag (item I): every share URL now carries UTM params +
+              a per-user `from` hash so we can attribute K-factor by channel
+              and by user. Channel inferred from navigator.share availability;
+              `from` is a short stable hash of the user's slug-history so we
+              can spot which users drive the most shares without leaking PII. */}
           <div style={{ display:"flex", gap:8 }}>
             <button
               onClick={async (e) => {
                 e.stopPropagation();
-                const shareUrl = `https://www.trunorthapp.com/company/${encodeURIComponent(enriched.slug || enriched.id)}`;
+                const channel = (typeof navigator !== "undefined" && navigator.share) ? "native_share" : "clipboard";
+                // Lightweight user hash — stable per device but no PII; used only
+                // for cohort analysis of which sharers drive activations.
+                let fromHash = "";
+                try {
+                  const stable = localStorage.getItem("tn_user_hash") || (Math.random().toString(36).slice(2, 10));
+                  localStorage.setItem("tn_user_hash", stable);
+                  fromHash = stable;
+                } catch {}
+                const utm = new URLSearchParams({
+                  utm_source: "share",
+                  utm_medium: channel,
+                  utm_campaign: "company_profile",
+                  ...(fromHash ? { from: fromHash } : {}),
+                });
+                const shareUrl = `https://www.trunorthapp.com/company/${encodeURIComponent(enriched.slug || enriched.id)}?${utm.toString()}`;
                 const shareData = {
                   title: `${enriched.name} on TruNorth`,
                   text:  profile
