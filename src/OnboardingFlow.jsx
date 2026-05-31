@@ -39,13 +39,18 @@ export default function OnboardingFlow({ onComplete }) {
     if (!password.trim()) errs.password = true;
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
+    // Phase 5.ag: stamp the onboarding moment so WhatsNew can suppress itself
+    // on the first session after onboarding (it's meaningless to a brand-new
+    // user — they have no baseline).
     localStorage.setItem("tn_hasOnboarded", "1");
+    try { sessionStorage.setItem("tn_justOnboarded", String(Date.now())); } catch {}
     localStorage.setItem("tn_user", JSON.stringify({ email }));
     onComplete({ email, isGuest: false });
   }
 
   function handleGuest() {
     localStorage.setItem("tn_hasOnboarded", "1");
+    try { sessionStorage.setItem("tn_justOnboarded", String(Date.now())); } catch {}
     onComplete({ email: null, isGuest: true });
   }
 

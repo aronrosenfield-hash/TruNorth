@@ -921,6 +921,14 @@ function WhatsNewModal({ companyCount }) {
     // it across sessions. Otherwise show once per session (Phase 5.aa).
     try {
       if (localStorage.getItem("tn_whatsnew_optout") === WHATSNEW_VERSION) return false;
+      // Phase 5.ag: a first-time user just landed — "What's NEW" is meaningless
+      // (they have no baseline). Suppress on the session that immediately
+      // follows onboarding; show on session 2+.
+      const justOnboarded = sessionStorage.getItem("tn_justOnboarded");
+      if (justOnboarded) {
+        const age = Date.now() - parseInt(justOnboarded, 10);
+        if (age < 5 * 60 * 1000) return false; // 5-min window
+      }
       return sessionStorage.getItem("tn_whatsnew_session") !== WHATSNEW_VERSION;
     } catch { return false; }
   });
@@ -2129,7 +2137,7 @@ function Quiz({ onComplete, onSkip }) {
             and doesn't extend the page below the viewport (the old bug). */}
         {onSkip && (
           <button onClick={onSkip} style={{ width:"100%", padding:9, borderRadius:10, border:"none", background:"transparent", color:T.txt3, fontSize:12, cursor:"pointer" }}>
-            Skip — use AI-generated scores
+            Skip — see baseline scores. You can take the quiz anytime from Account.
           </button>
         )}
       </div>
