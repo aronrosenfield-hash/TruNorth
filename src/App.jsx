@@ -1498,7 +1498,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
 // parent render but are functionally identical (just closures over the same
 // stable parent state). Comparing the data props that actually drive the
 // render is enough.
-const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, freeQuotaUsed, freeQuotaMax, onRecordFreeView, allCompanies, initiallyOpen }) {
+const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, allCompanies, initiallyOpen }) {
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
@@ -1815,7 +1815,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               Pulled from Wikipedia infoboxes, BBB/SEC complaint counts, and
               GDELT news mentions. Each subsection only renders if data
               exists, so old/unenriched companies show nothing. */}
-          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint || enriched.recalls || enriched.origin || enriched.ownership) && (
+          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint || enriched.recalls || enriched.origin || enriched.ownership || enriched.charity_irs990 || enriched.firearms_atf_ffl || enriched.privacy_hibp_breaches || enriched.litigation_courtlistener) && (
             <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:14, marginTop:4 }}>
               <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginBottom:10, letterSpacing:0.2 }}>
                 About this company
@@ -1893,6 +1893,137 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   )}
                 </div>
               )}
+
+              {/* Phase 5.aj: Reputation history — HIBP breaches + CourtListener litigation.
+                  Universal-truth axes (breaches and lawsuits are objectively bad for
+                  everyone), so red/gold coloring per bias-fix policy is allowed here.
+                  Defensive sanity check on litigation: the upstream CourtListener
+                  pull was flagged as broken (every entry had caseCount24mo=20 with
+                  generic case names). We require a non-generic mostRecentCase and
+                  explicitly reject the sentinel value while the fixup workflow lands. */}
+              {(() => {
+                const br = enriched.privacy_hibp_breaches;
+                const lt = enriched.litigation_courtlistener;
+                const mrc = lt?.mostRecentCase ? String(lt.mostRecentCase).trim() : "";
+                const litLooksLegit = !!(
+                  lt &&
+                  lt.caseCount24mo > 0 &&
+                  mrc.length > 8 &&
+                  !/^(case|lawsuit|filing|complaint|matter|action)\s*\d*$/i.test(mrc) &&
+                  lt.caseCount24mo !== 20 // sentinel from the broken pull
+                );
+                const hasBreach = !!(br && br.breachCount > 0);
+                if (!hasBreach && !litLooksLegit) return null;
+
+                const now = Date.now();
+                const threeYearsMs = 3 * 365 * 24 * 60 * 60 * 1000;
+                const breachAgeMs = br?.mostRecentBreach ? (now - new Date(br.mostRecentBreach).getTime()) : null;
+                const breachStale = breachAgeMs != null && breachAgeMs > threeYearsMs;
+                const breachSevere = hasBreach && (br.totalRecordsLost > 1_000_000 || br.hasSensitiveBreach);
+                const breachColor = breachStale ? T.txt3 : breachSevere ? "#e24a4a" : "#f0a030";
+                const breachBg = breachStale ? T.bg3
+                                : breachSevere ? "rgba(226,74,74,0.12)"
+                                : "rgba(240,160,48,0.10)";
+                const breachBorder = breachStale ? T.border
+                                    : breachSevere ? "rgba(226,74,74,0.5)"
+                                    : "rgba(240,160,48,0.4)";
+
+                const litSevere = litLooksLegit && lt.classActionCount > 0;
+                const litWarn = litLooksLegit && !litSevere && lt.caseCount24mo > 5;
+                const litColor = litSevere ? "#e24a4a" : litWarn ? "#f0a030" : T.txt3;
+                const litBg = litSevere ? "rgba(226,74,74,0.12)"
+                             : litWarn ? "rgba(240,160,48,0.10)"
+                             : T.bg3;
+                const litBorder = litSevere ? "rgba(226,74,74,0.5)"
+                                 : litWarn ? "rgba(240,160,48,0.4)"
+                                 : T.border;
+
+                const fmt = (d) => {
+                  if (!d) return "—";
+                  try { return new Date(d).toISOString().slice(0, 10); } catch { return String(d).slice(0, 10); }
+                };
+
+                return (
+                  <div style={{ marginBottom:10 }}>
+                    <div style={{ fontSize:11, color:T.txt3, marginBottom:6, textTransform:"uppercase", letterSpacing:0.4, fontWeight:600 }}>
+                      Reputation history
+                    </div>
+                    <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+                      {hasBreach && (
+                        <div style={{ padding:"10px 12px", borderRadius:10, background:breachBg, border:`1.5px solid ${breachBorder}` }}>
+                          <div style={{ fontSize:11, fontWeight:700, color:breachColor, textTransform:"uppercase", letterSpacing:0.5, marginBottom:6, display:"flex", alignItems:"center", gap:6 }}>
+                            <i className="ti ti-shield-lock" aria-hidden="true" />
+                            {br.breachCount} data breach{br.breachCount === 1 ? "" : "es"}
+                            {br.totalRecordsLost > 0 && (
+                              <> · {br.totalRecordsLost >= 1_000_000 ? `${(br.totalRecordsLost/1e6).toFixed(1)}M` : br.totalRecordsLost >= 1_000 ? `${Math.round(br.totalRecordsLost/1e3)}k` : br.totalRecordsLost} records</>
+                            )}
+                            {br.hasSensitiveBreach && <> · sensitive data</>}
+                          </div>
+                          {br.breaches?.length > 0 && (
+                            <div style={{ display:"flex", flexDirection:"column", gap:5 }}>
+                              {[...br.breaches]
+                                .sort((a, b) => new Date(b.breachDate || 0) - new Date(a.breachDate || 0))
+                                .slice(0, 3)
+                                .map((b, i) => (
+                                  <div key={i} style={{ fontSize:11, color:T.txt2, lineHeight:1.4 }}>
+                                    <span style={{ fontWeight:600, color:T.txt }}>{fmt(b.breachDate)}</span>
+                                    {b.name ? <> · {b.name}</> : null}
+                                    {b.pwnCount > 0 && (
+                                      <> · {b.pwnCount >= 1_000_000 ? `${(b.pwnCount/1e6).toFixed(1)}M` : b.pwnCount >= 1_000 ? `${Math.round(b.pwnCount/1e3)}k` : b.pwnCount} accounts</>
+                                    )}
+                                    {b.dataClasses?.length > 0 && (
+                                      <span style={{ color:T.txt3 }}> · {b.dataClasses.slice(0, 3).join(", ")}</span>
+                                    )}
+                                  </div>
+                                ))}
+                              {br.breaches.length > 3 && (
+                                <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>+{br.breaches.length - 3} more</div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {litLooksLegit && (
+                        <div style={{ padding:"10px 12px", borderRadius:10, background:litBg, border:`1.5px solid ${litBorder}` }}>
+                          <div style={{ fontSize:11, fontWeight:700, color:litColor, textTransform:"uppercase", letterSpacing:0.5, marginBottom:6, display:"flex", alignItems:"center", gap:6 }}>
+                            <i className="ti ti-gavel" aria-hidden="true" />
+                            {lt.caseCount24mo} federal case{lt.caseCount24mo === 1 ? "" : "s"} in 24 months
+                            {lt.classActionCount > 0 && (
+                              <> · {lt.classActionCount} class action{lt.classActionCount === 1 ? "" : "s"}</>
+                            )}
+                          </div>
+                          {lt.cases?.length > 0 && (
+                            <div style={{ display:"flex", flexDirection:"column", gap:5 }}>
+                              {[...lt.cases]
+                                .sort((a, b) => new Date(b.dateFiled || 0) - new Date(a.dateFiled || 0))
+                                .slice(0, 3)
+                                .map((c, i) => {
+                                  const Tag = c.sourceUrl ? "a" : "div";
+                                  return (
+                                    <Tag
+                                      key={i}
+                                      {...(c.sourceUrl ? { href: c.sourceUrl, target: "_blank", rel: "noreferrer" } : {})}
+                                      style={{ fontSize:11, color:T.txt2, lineHeight:1.4, textDecoration:"none" }}
+                                    >
+                                      <span style={{ fontWeight:600, color:T.txt }}>{fmt(c.dateFiled)}</span>
+                                      {c.caseName ? <> · {c.caseName}</> : null}
+                                      {c.court && <span style={{ color:T.txt3 }}> · {c.court}</span>}
+                                      {c.natureOfSuit && <span style={{ color:T.txt3 }}> · {c.natureOfSuit}</span>}
+                                    </Tag>
+                                  );
+                                })}
+                              {lt.cases.length > 3 && (
+                                <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>+{lt.cases.length - 3} more</div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Phase 5.af: SEC DEF 14A pay-ratio */}
               {enriched.payRatio && (enriched.payRatio.ratioDisplay || enriched.payRatio.ratio) && (
@@ -2006,6 +2137,40 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                 </div>
               )}
 
+              {/* Phase 5.aj: Charity / foundation giving from IRS 990 filings.
+                  Stance axis (giving is a value, not a universal good) — neutral
+                  chip styling only, no red/green. Source link to ProPublica
+                  Nonprofit Explorer so the user can verify the filing. */}
+              {enriched.charity_irs990?.totalGrants > 0 && (() => {
+                const c = enriched.charity_irs990;
+                const fmt = (n) => {
+                  if (n >= 1e9) return `$${(n / 1e9).toFixed(1)}B`;
+                  if (n >= 1e6) return `$${Math.round(n / 1e6)}M`;
+                  if (n >= 1e3) return `$${Math.round(n / 1e3)}K`;
+                  return `$${n}`;
+                };
+                return (
+                  <div style={{ marginBottom:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border}` }}>
+                    <div style={{ fontSize:11, fontWeight:700, color:T.txt, textTransform:"uppercase", letterSpacing:0.5, marginBottom:6, display:"flex", alignItems:"center", gap:6 }}>
+                      <i className="ti ti-heart" aria-hidden="true" /> Foundation giving
+                    </div>
+                    <div style={{ fontSize:12, color:T.txt2, lineHeight:1.4 }}>
+                      <b style={{ color:T.txt }}>{c.foundationName}</b> granted{" "}
+                      <b style={{ color:T.txt }}>{fmt(c.totalGrants)}</b>
+                      {c.givingAsPctRev != null && (
+                        <> ({(c.givingAsPctRev * 100).toFixed(2)}% of revenue)</>
+                      )}
+                      {c.fiscalYear && <> in FY{c.fiscalYear}</>}
+                    </div>
+                    {c.propublicaUrl && (
+                      <a href={c.propublicaUrl} target="_blank" rel="noreferrer" style={{ fontSize:11, color:T.accent2, textDecoration:"none", marginTop:4, display:"inline-block" }}>
+                        Source · ProPublica IRS 990 →
+                      </a>
+                    )}
+                  </div>
+                );
+              })()}
+
               {/* Phase 5.ah: Manufacturing origin + forced-labor risk */}
               {enriched.origin && (enriched.origin.primaryCountries?.length > 0 || enriched.origin.uflpaListed) && (
                 <div style={{ marginBottom:10, fontSize:11, color:T.txt3 }}>
@@ -2018,6 +2183,42 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   )}
                 </div>
               )}
+
+              {/* Phase 5.aj: ATF Federal Firearms License — factual disclosure
+                  only. Per bias-fix policy this is a stance axis (pro-2A vs
+                  anti-firearms), so NO color coding and neutral verbiage.
+                  Defense primes with primaryRole='destructive_devices' get
+                  softened framing ("manufacturer of regulated products") since
+                  the literal ATF term is alarming out of context. */}
+              {enriched.firearms_atf_ffl?.licenseCount > 0 && (() => {
+                const ffl = enriched.firearms_atf_ffl;
+                const roleLabels = {
+                  manufacturer: "Manufacturer",
+                  importer: "Importer",
+                  dealer: "Dealer",
+                  collector: "Collector",
+                  destructive_devices: "Manufacturer of regulated products",
+                };
+                const roleLabel = roleLabels[ffl.primaryRole] || null;
+                const stateCount = ffl.states?.length || 0;
+                return (
+                  <div style={{ marginBottom:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border}` }}>
+                    <div style={{ fontSize:11, color:T.txt2, marginBottom:4, display:"flex", alignItems:"center", gap:6 }}>
+                      <i className="ti ti-target" aria-hidden="true" style={{ color:T.txt3 }} />
+                      <span>
+                        <b style={{ color:T.txt }}>Federal firearms license</b>
+                        {roleLabel ? <> · {roleLabel}</> : null}
+                        {" · "}{ffl.licenseCount} active{stateCount > 0 ? <> in {stateCount} state{stateCount === 1 ? "" : "s"}</> : null}
+                      </span>
+                    </div>
+                    {ffl.sourceUrl && (
+                      <a href={ffl.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:11, color:T.accent2, textDecoration:"none" }}>
+                        Source · ATF FFL list{ffl.sourceMonth ? ` (${ffl.sourceMonth})` : ""} →
+                      </a>
+                    )}
+                  </div>
+                );
+              })()}
 
               {/* Phase 5.af: Top products (from Open Food Facts) */}
               {enriched.products?.length > 0 && (
@@ -2212,9 +2413,6 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   // Custom equality — only re-render when the data that actually drives the
   // visible card changes. Callbacks are intentionally NOT compared (they're
   // recreated on every parent render but are functionally identical closures).
-  // freeQuotaUsed IS compared because the closed-row currently doesn't render
-  // any quota state — but pass-through equality keeps things consistent if a
-  // future change surfaces "X views left" inside the card.
   prev.company       === next.company       &&
   prev.catFilter     === next.catFilter     &&
   prev.profile       === next.profile       &&
@@ -2222,8 +2420,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   prev.isSaved       === next.isSaved       &&
   prev.inCompare     === next.inCompare     &&
   prev.initiallyOpen === next.initiallyOpen &&
-  prev.allCompanies  === next.allCompanies  &&
-  prev.freeQuotaUsed === next.freeQuotaUsed
+  prev.allCompanies  === next.allCompanies
 ));
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
@@ -2827,32 +3024,11 @@ useEffect(() => {
   // tick). Kept as a thin alias so existing call sites don't need to change.
   const setQuery = setQueryRaw;
 
-  // Phase 5.ag (QA fix #3 + #6): Free-tier quota lifted to App state with a
-  // monthly window. Lifting fixes the stale-banner bug where the "X of 5"
-  // counter only refreshed on tab switches. Monthly windowing avoids the
-  // "tried the app 6 months ago, hit the wall on my first new tap today"
-  // bad freshness. Storage shape:
-  //   { month: "2026-05", slugs: ["walmart","amazon",...] }
-  const FREE_QUOTA = 5;
-  const monthKey = () => {
-    const d = new Date();
-    return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
-  };
-  const [freeViewed, setFreeViewed] = useState(() => {
-    try {
-      const raw = JSON.parse(localStorage.getItem("tn_freeViewed") || "null");
-      if (raw && raw.month === monthKey() && Array.isArray(raw.slugs)) return raw.slugs;
-    } catch {}
-    return [];
-  });
-  const recordFreeView = (slug) => {
-    setFreeViewed(prev => {
-      if (prev.includes(slug)) return prev;
-      const next = [...prev, slug];
-      try { localStorage.setItem("tn_freeViewed", JSON.stringify({ month: monthKey(), slugs: next })); } catch {}
-      return next;
-    });
-  };
+  // Phase 5.aj: switched to immediate-paywall; the free-quota state is gone.
+  // Clean up the orphaned localStorage key for users who hit the old code.
+  useEffect(() => {
+    try { localStorage.removeItem("tn_freeViewed"); } catch {}
+  }, []);
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [flagFilters, setFlagFilters] = useState([]); // multi-select boolean flags
@@ -3563,7 +3739,7 @@ if (screen === "onboarding") {
                     </button>
                   </div>
                 )}
-                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
                 {filtered.length > visibleLimit && (
                   <button
                     onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
@@ -3827,7 +4003,7 @@ if (screen === "onboarding") {
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
             {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} freeQuotaUsed={freeViewed} freeQuotaMax={FREE_QUOTA} onRecordFreeView={recordFreeView} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} />
             ))}
           </div>
         </ErrorBoundary>
