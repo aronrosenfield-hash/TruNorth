@@ -23,6 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 .env.local
+.env.testflight
+build/
+*.xcarchive
+scripts/ExportOptions.plist
 
 # Claude Code session data
 .claude/

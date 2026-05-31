@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ship:ios": "bash scripts/ship-ios.sh",
+    "ship:ios:dryrun": "bash scripts/ship-ios.sh --skip-upload"
   },
   "dependencies": {
     "@capacitor/app": "^8.1.0",
