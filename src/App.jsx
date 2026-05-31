@@ -1740,6 +1740,44 @@ function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, 
             </div>
           )}
 
+          {/* Phase 5.af: Recency + Report-correction footer.
+              Always rendered so every profile shows a freshness signal and a
+              way to flag bad data — no infra beyond mailto: for now. */}
+          {(() => {
+            const ts = enriched.lastUpdated;
+            const slug = enriched.slug || enriched.id;
+            const subject = encodeURIComponent(`TruNorth correction: ${enriched.name}`);
+            const body = encodeURIComponent(
+              `Company: ${enriched.name}\nProfile: https://www.trunorthapp.com/company/${slug}\n\nWhich category is wrong (Political / Charity / Environment / Labor / DEI / Animals / Firearms / Privacy / ExecPay / Flags)?\n\n\nWhat is the correct information, and where can we verify it (source URL)?\n\n\n— Sent from TruNorth\n`
+            );
+            const mailto = `mailto:corrections@trunorthapp.com?subject=${subject}&body=${body}`;
+            let recencyLabel = "";
+            if (ts) {
+              const ageMs = Date.now() - new Date(ts).getTime();
+              const days = Math.floor(ageMs / 86_400_000);
+              if (days < 1)        recencyLabel = "Updated today";
+              else if (days < 7)   recencyLabel = `Updated ${days}d ago`;
+              else if (days < 30)  recencyLabel = `Updated ${Math.floor(days/7)}w ago`;
+              else if (days < 365) recencyLabel = `Updated ${Math.floor(days/30)}mo ago`;
+              else                 recencyLabel = `Updated ${Math.floor(days/365)}y ago`;
+            }
+            return (
+              <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", gap:8, marginTop:8, paddingTop:8, borderTop:`1px dashed ${T.border}`, fontSize:11, color:T.txt3 }}>
+                <span title={ts ? new Date(ts).toLocaleString() : ""}>
+                  {recencyLabel || "Update history unavailable"}
+                </span>
+                <a
+                  href={mailto}
+                  onClick={() => track("report_correction_clicked", { slug, name: enriched.name })}
+                  style={{ color:T.accent2, textDecoration:"none", display:"inline-flex", alignItems:"center", gap:4 }}
+                >
+                  <i className="ti ti-flag" aria-hidden="true" style={{ fontSize:11 }} />
+                  Report incorrect info
+                </a>
+              </div>
+            );
+          })()}
+
           {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
               falls back to copying a URL to the clipboard on desktop browsers. */}
           <div style={{ display:"flex", gap:8 }}>
