@@ -2717,11 +2717,104 @@ if (screen === "onboarding") {
     <OnboardingFlow
       onComplete={(user) => {
         setCurrentUser(user);
-        setScreen("main");
+        // Phase 5.ag (item A): quiz is now the default first-run experience.
+        // Previously onboarding routed straight to "main", leaving the
+        // personalized values quiz (TruNorth's differentiating mechanic)
+        // discoverable only via 4 buried entry points. Most users never
+        // found it — meaning most users never saw personalized grades —
+        // meaning the moat was invisible by default. Now: new users land
+        // in the quiz immediately, see their personalized "top match"
+        // celebration, then enter the main app.
+        track("quiz_started", { from: "onboarding_rail" });
+        setScreen("quiz");
       }}
     />
   );
 }
+  if (screen === "reveal") {
+    // Phase 5.ag (item C): Quiz completion celebration.
+    //
+    // The user just finished the quiz (peak emotional investment moment).
+    // We compute their top-3 best-matched companies from the bundle by
+    // applying the new profile to every entry's computeScore, sort by
+    // personalized score, and surface the winner as the "aha" moment.
+    //
+    // Why a dedicated screen instead of a toast: per the stickiness audit,
+    // peak emotion is the highest-converting share/CTA moment in the entire
+    // funnel. Dumping the user straight into the search list (the old
+    // behavior) wasted the moment. Wave 3 will add a "share my values"
+    // PNG card on this screen.
+    const top3 = (companies || [])
+      .filter(c => {
+        // Only consider companies with at least one scored category — exclude
+        // unknown-only entries so the reveal feels substantive.
+        const sc = c.sc || {};
+        return Object.keys(sc).some(k => sc[k] && String(sc[k]).toLowerCase() !== "neutral" && String(sc[k]).toLowerCase() !== "unknown");
+      })
+      .map(c => ({ co: c, score: computeScore(c, profile) }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3);
+    const winner = top3[0];
+    return (
+      <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg }}>
+        <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center" }}>
+          <div style={{ width:64, height:64, borderRadius:"50%", background:T.accentBg, border:`2px solid ${T.accent}`, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:16 }}>
+            <i className="ti ti-sparkles" style={{ fontSize:28, color:T.accent2 }} aria-hidden="true" />
+          </div>
+          <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6 }}>Your values are set.</div>
+          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4 }}>
+            Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
+          </div>
+          {winner && (
+            <>
+              <div style={{ fontSize:11, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Your top match</div>
+              <div
+                onClick={() => { setDeepLinkSlug(winner.co.slug || winner.co.id); setScreen("main"); }}
+                style={{ width:"100%", maxWidth:340, background:T.bg2, border:`2px solid ${T.accent}`, borderRadius:16, padding:18, cursor:"pointer", display:"flex", alignItems:"center", gap:14, marginBottom:14 }}
+              >
+                <CompanyLogo company={winner.co} size={48} />
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ fontSize:16, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{winner.co.name}</div>
+                  <div style={{ fontSize:12, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{winner.co.cat}</div>
+                </div>
+                <div style={{ width:44, height:44, borderRadius:10, background:"#0d2318", border:"1px solid #1e3e2e", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+                  <div style={{ fontSize:18, fontWeight:700, color:"#4caf82", lineHeight:1 }}>{scoreGrade(winner.score)}</div>
+                  <div style={{ fontSize:9, color:"#4caf82", opacity:0.7 }}>{winner.score}</div>
+                </div>
+              </div>
+              {top3.length > 1 && (
+                <>
+                  <div style={{ fontSize:11, color:T.txt3, marginBottom:6 }}>Runners-up</div>
+                  <div style={{ width:"100%", maxWidth:340, display:"flex", flexDirection:"column", gap:6 }}>
+                    {top3.slice(1).map(({ co, score }) => (
+                      <div
+                        key={co.slug || co.id}
+                        onClick={() => { setDeepLinkSlug(co.slug || co.id); setScreen("main"); }}
+                        style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:"10px 14px", cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}
+                      >
+                        <CompanyLogo company={co} size={28} />
+                        <div style={{ flex:1, minWidth:0, fontSize:13, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
+                        <div style={{ fontSize:13, fontWeight:700, color:"#8bc34a" }}>{scoreGrade(score)}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          )}
+        </div>
+        <div style={{ padding:"12px 16px 20px", borderTop:`1px solid ${T.border}`, background:T.bg }}>
+          <button
+            onClick={() => setScreen("main")}
+            style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}
+          >
+            Explore all 11,000+ brands →
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (screen === "quiz") {
     // UX 4A: quiz is now open to all users. Free users complete it and get
     // personalized letter grades; Pro users get personalized number scores
@@ -2736,7 +2829,11 @@ if (screen === "onboarding") {
           onComplete={(p) => {
             setProfile(p);
             track("quiz_completed", { isPaid });
-            setScreen("main");
+            // Phase 5.ag (item C): show the reveal celebration after EVERY
+            // quiz completion. The reveal computes the user's top-matched
+            // brand from the bundle and surfaces it as the "aha — this is
+            // for me" payoff before entering the main app.
+            setScreen("reveal");
           }}
           onSkip={() => setScreen("main")}
         />
