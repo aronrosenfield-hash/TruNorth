@@ -1,0 +1,31 @@
+{
+  "appId": "com.trunorthapp.app",
+  "appName": "TruNorth",
+  "webDir": "dist",
+  "server": {
+    "iosScheme": "https",
+    "hostname": "trunorthapp.com",
+    "androidScheme": "https"
+  },
+  "ios": {
+    "contentInset": "always",
+    "limitsNavigationsToAppBoundDomains": false,
+    "scheme": "TruNorth",
+    "backgroundColor": "#0f0f0f"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "launchAutoHide": true,
+      "backgroundColor": "#0f0f0f",
+      "androidSplashResourceName": "splash",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#7c6dfa",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#0f0f0f"
+    }
+  }
+}
