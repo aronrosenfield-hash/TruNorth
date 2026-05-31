@@ -2910,7 +2910,73 @@ if (screen === "onboarding") {
             </>
           )}
         </div>
-        <div style={{ padding:"12px 16px 20px", borderTop:`1px solid ${T.border}`, background:T.bg }}>
+        <div style={{ padding:"12px 16px 20px", borderTop:`1px solid ${T.border}`, background:T.bg, display:"flex", flexDirection:"column", gap:8 }}>
+          {/* Phase 5.ag (item C cont'd, growth-loop unlock): "Share my values"
+              button at peak emotion. Generates a URL pointing at the OG-image
+              endpoint with the user's profile encoded — friend who opens the
+              link sees the user's values fingerprint as a rich preview, then
+              lands on the quiz with utm_source=share_card. */}
+          <button
+            onClick={async () => {
+              if (!profile) return;
+              const qp = new URLSearchParams({
+                p:   profile.lean         || "neutral",
+                d:   profile.deiLean      || "neutral",
+                a:   profile.animalTesting || "neutral",
+                g:   profile.guns         || "neutral",
+                env: String(profile.weights?.environment || 3),
+                lab: String(profile.weights?.labor       || 3),
+                pri: String(profile.weights?.privacy     || 3),
+                exp: String(profile.weights?.execPay     || 3),
+                cha: String(profile.weights?.charity     || 3),
+                ...(winner?.co?.name ? { top: winner.co.name } : {}),
+              });
+              // Stable per-device sharer hash so we can attribute K-factor
+              let fromHash = "";
+              try {
+                const stable = localStorage.getItem("tn_user_hash") || Math.random().toString(36).slice(2, 10);
+                localStorage.setItem("tn_user_hash", stable);
+                fromHash = stable;
+              } catch {}
+              // Bundle profile params + UTM into a single query string. Both
+              // are needed: profile params drive the dynamic og:image via
+              // middleware (so the rich preview shows the user's actual
+              // values card); UTM drives attribution in PostHog.
+              const combined = new URLSearchParams(qp);
+              combined.set("utm_source",   "share");
+              combined.set("utm_medium",   "share_card");
+              combined.set("utm_campaign", "values_fingerprint");
+              if (fromHash) combined.set("from", fromHash);
+              const shareUrl = `https://www.trunorthapp.com/?${combined.toString()}`;
+              const shareData = {
+                title: "My TruNorth values",
+                text:  "I just mapped out what I care about as a shopper — see yours in 60 seconds.",
+                url:   shareUrl,
+              };
+              let method = "unknown";
+              try {
+                if (navigator.share && navigator.canShare?.(shareData) !== false) {
+                  await navigator.share(shareData);
+                  method = "native_share";
+                } else if (navigator.clipboard?.writeText) {
+                  await navigator.clipboard.writeText(shareUrl);
+                  method = "clipboard";
+                }
+              } catch (err) {
+                if (err?.name !== "AbortError") console.error("share failed:", err);
+                method = err?.name === "AbortError" ? "user-cancelled" : "error";
+              }
+              track("values_card_shared", { method, top: winner?.co?.slug || winner?.co?.id || null });
+              // (For the curious: the OG image actually previewed by social
+              // platforms is /api/og/values?<qp> — we don't push it in the
+              // share intent because Web Share API only supports url+text.
+              // The destination page sets the og:image meta dynamically.)
+              console.info("[share] og image url:", `/api/og/values?${qp.toString()}`);
+            }}
+            style={{ width:"100%", padding:14, borderRadius:12, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
+          >
+            <i className="ti ti-share" aria-hidden="true" /> Share my values
+          </button>
           <button
             onClick={() => setScreen("main")}
             style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}
