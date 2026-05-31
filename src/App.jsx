@@ -3389,12 +3389,15 @@ useEffect(() => {
   const catBgs = ["#1e1535","#0d2318","#0d1f35","#2a0d0d","#2e1a05","#2a1a05"];
   const catFgs = ["#9b8ff0","#4caf82","#4a90e2","#e24a4a","#e8a042","#f0a030"];
 
-  // Phase 5.al (item #2): added "history" tab — Yuka-style chronological
-  // list of brands the user has viewed. Sources tab moved off the bottom
-  // nav since it was reference content, accessed rarely; still reachable
-  // via Account → Sources link.
-  const TABS = ["search","browse","top","history","account"];
-  const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",history:"History",account:"Account"};
+  // Phase 5.am: combined "library" tab replacing the separate History tab.
+  // User asked to surface Favorites prominently (was buried in Account)
+  // + couldn't find the History tab. Library is one tab with two sub-tabs
+  // (Saved | History) — both made first-class without crowding the bottom
+  // nav past 5 slots. Sources still reachable via Account → Data Sources.
+  const TABS = ["search","browse","top","library","account"];
+  const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",library:"Library",account:"Account"};
+  // Which sub-tab is active inside Library. Defaults to "saved".
+  const [librarySubtab, setLibrarySubtab] = useState("saved");
 
 
 
@@ -4283,12 +4286,85 @@ if (screen === "onboarding") {
       )}
 
       {/* SOURCES — Pro only */}
-      {/* Phase 5.al (item #2): HISTORY tab — Yuka-style chronological
-          view-history list. Sourced from tn_viewHistory localStorage,
-          populated on every CompanyCard expand. Cap 100, dedup by slug. */}
-      {tab === "history" && (
-        <ErrorBoundary name="history">
-          {(() => {
+      {/* Phase 5.am: LIBRARY tab — Saved + History sub-tabs. Replaces the
+          standalone History tab; lifts Favorites out of Account → much more
+          discoverable in the bottom nav. */}
+      {tab === "library" && (
+        <ErrorBoundary name="library">
+          <div style={{ display:"flex", borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
+            {[
+              { id:"saved",   label:"Saved",   icon:"ti-star",     count: savedSet.size },
+              { id:"history", label:"History", icon:"ti-history",  count: (() => { try { return JSON.parse(localStorage.getItem("tn_viewHistory") || "[]").length; } catch { return 0; } })() },
+            ].map(s => {
+              const active = librarySubtab === s.id;
+              return (
+                <button
+                  key={s.id}
+                  onClick={() => setLibrarySubtab(s.id)}
+                  style={{ flex:1, padding:"12px 8px", background:"none", border:"none", borderBottom:`2px solid ${active ? T.accent2 : "transparent"}`, color: active ? T.accent2 : T.txt3, fontSize:13, fontWeight: active ? 700 : 500, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6 }}
+                >
+                  <i className={`ti ${s.icon}`} style={{ fontSize:14 }} aria-hidden="true" />
+                  {s.label}
+                  {s.count > 0 && <span style={{ fontSize:11, padding:"1px 6px", borderRadius:10, background: active ? T.accentBg : T.bg3, color: active ? T.accent2 : T.txt3, fontWeight:600 }}>{s.count}</span>}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* ── SAVED sub-tab ─────────────────────────────────────────── */}
+          {librarySubtab === "saved" && (() => {
+            const savedSlugs = Array.from(savedSet);
+            const savedCos = savedSlugs.map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
+            if (!savedCos.length) {
+              return (
+                <div style={{ padding:"60px 24px", textAlign:"center", color:T.txt3 }}>
+                  <i className="ti ti-star" style={{ fontSize:48, color:T.txt3, marginBottom:14 }} aria-hidden="true" />
+                  <div style={{ fontSize:15, fontWeight:600, color:T.txt2 }}>No saved brands yet</div>
+                  <div style={{ fontSize:12, marginTop:6, lineHeight:1.4 }}>
+                    Tap the ☆ on any brand to save it for later.
+                  </div>
+                  <button
+                    onClick={() => setTab("search")}
+                    style={{ marginTop:18, padding:"10px 18px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer" }}
+                  >
+                    Find brands to save →
+                  </button>
+                </div>
+              );
+            }
+            return (
+              <div style={{ padding:"12px 0 80px" }}>
+                {savedCos.map(co => {
+                  const ps = computeScore(co, profile);
+                  const g = scoreGrade(ps);
+                  const colors = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a", "?":T.txt3 };
+                  return (
+                    <button
+                      key={co.slug || co.id}
+                      onClick={() => { setFocusedSlug(co.slug || co.id); setDeepLinkSlug(co.slug || co.id); setTab("search"); track("library_saved_clicked", { slug: co.slug || co.id }); }}
+                      style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:T.bg2, border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", textAlign:"left", width:"100%" }}
+                    >
+                      <CompanyLogo company={co} size={32} />
+                      <div style={{ flex:1, minWidth:0 }}>
+                        <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
+                        <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.cat}</div>
+                      </div>
+                      <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); toggleSaved(co.slug || co.id, co.name); }}
+                        style={{ background:"none", border:"none", color:T.gold, fontSize:18, cursor:"pointer", padding:"0 4px" }}
+                        aria-label="Remove from saved"
+                      >★</button>
+                      <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
+                    </button>
+                  );
+                })}
+              </div>
+            );
+          })()}
+
+          {/* ── HISTORY sub-tab — Yuka-style chronological view list ──── */}
+          {librarySubtab === "history" && (() => {
             let history = [];
             try { history = JSON.parse(localStorage.getItem("tn_viewHistory") || "[]"); } catch {}
             if (!history.length) {
@@ -4476,23 +4552,8 @@ if (screen === "onboarding") {
             <SubmitView isPaid={isPaid} onUpgrade={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} />
           </div>
 
-          {/* Phase 5.ak (item #4): saved companies surface. Previously the
-              only entry point was a subtle chip on the Search tab — users
-              couldn't find "where do my favorites go?". Now a prominent
-              card on Account that jumps to the filtered list. */}
-          {savedSet.size > 0 && (
-            <div
-              onClick={() => { setShowSavedOnly(true); setTab("search"); track("saved_list_opened", { count: savedSet.size, from: "account" }); }}
-              style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:16, padding:14, marginBottom:12, cursor:"pointer", display:"flex", alignItems:"center", gap:12 }}
-            >
-              <i className="ti ti-star-filled" style={{ fontSize:22, color:T.gold, flexShrink:0 }} aria-hidden="true" />
-              <div style={{ flex:1, minWidth:0 }}>
-                <div style={{ fontSize:14, fontWeight:700, color:T.gold }}>Your saved companies</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{savedSet.size} brand{savedSet.size === 1 ? "" : "s"} you're tracking</div>
-              </div>
-              <i className="ti ti-chevron-right" style={{ fontSize:16, color:T.gold }} aria-hidden="true" />
-            </div>
-          )}
+          {/* Phase 5.am: Saved-companies card removed from Account. Lives in
+              the new Library tab now (bottom nav · Saved sub-tab). */}
 
           {/* Login details — always show so guest users can sign out */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
@@ -4592,10 +4653,14 @@ if (screen === "onboarding") {
           paddingBottom:env(safe-area-inset-bottom) fills the home indicator zone. */}
       <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"env(safe-area-inset-bottom, 34px)" }}>
         {[
-          {id:"top",    icon:"ti-star",         label:"Top Picks"},
-          {id:"search", icon:"ti-search",       label:"Search"},
-          {id:"browse", icon:"ti-apps",         label:"Browse"},
-          {id:"account",icon:"ti-user",         label:"Account"},
+          // Phase 5.am: bottom-nav had 4 icons but TABS array had 5 — that's
+          // why the new History tab from 5.al never appeared. Library tab
+          // now wraps Saved + History sub-tabs into one slot.
+          {id:"top",     icon:"ti-star",            label:"Top Picks"},
+          {id:"search",  icon:"ti-search",          label:"Search"},
+          {id:"browse",  icon:"ti-apps",            label:"Browse"},
+          {id:"library", icon:"ti-bookmarks",       label:"Library"},
+          {id:"account", icon:"ti-user",            label:"Account"},
         ].map(t => (
           <button key={t.id} onClick={()=>setTab(t.id)}
             style={{ flex:1, padding:"10px 4px 8px", display:"flex", flexDirection:"column", alignItems:"center", gap:3, background:"none", border:"none", cursor:"pointer" }}>
