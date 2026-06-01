@@ -145,7 +145,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | ~~**B-23**~~ | ~~iOS Universal Links~~ | ✅ done 2026-06-01 | AASA live at `/.well-known/apple-app-site-association`. Entitlements wired into pbxproj. User enabled "Associated Domains" capability in Apple Dev Portal. Build 28 ships with the wiring. Every shared `/company/X` link opens in the app. |
 | **B-24** | Privacy page review for CCPA/GDPR compliance pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts |
 | **B-25** | k6 loadtest run once we have real DAU baseline | S | Script at `/scripts/loadtest.js`, GH Action ready (manual dispatch) |
-| **B-26** | TestFlight → App Store production cutover process documented | S | Once approved, document the steps for future updates |
+| ~~**B-26**~~ | ~~TestFlight → App Store cutover doc~~ | ✅ done 2026-06-01 | Full 10-step playbook at `/docs/app-store-cutover.md`: how to update `APP_STORE_URL` constant, PH First Comment, outreach templates, social profiles, structured-data SEO, smart app banner, press follow-ups, metrics watch. |
 
 ---
 
@@ -179,7 +179,9 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — Grade scale legend in Account (UX 5D) — A through F with score ranges + descriptions, answers the #1 onboarding question
+1. **2026-06-01 PM** — App Store cutover doc (B-26) — 10-step playbook for the moment Apple approves v1
+2. **2026-06-01 PM** — App Store submission metadata draft at `/docs/app-store-submission.md` — paste-ready Name/Description/Keywords + Reviewer Notes
+3. **2026-06-01 PM** — Grade scale legend in Account (UX 5D) — A through F with score ranges + descriptions, answers the #1 onboarding question
 2. **2026-06-01 PM** — Paywall conversion table (UX 6B) — Free vs Pro side-by-side comparison with highlighted "Personalized scores" + "Barcode scanner" rows
 2. **2026-06-01 PM** — iOS Universal Links (B-23) — AASA file + entitlements + Vercel header. Every shared `/company/<slug>` link opens IN the iOS app instead of Safari (after Build 21)
 2. **2026-06-01 PM** — Weekly digest opt-in UX (B-3) — Account-screen `EmailDigestCard` lets users explicitly subscribe to the Sunday digest with `weekly_digest_optin` MailerLite tag
