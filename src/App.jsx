@@ -3306,6 +3306,18 @@ useEffect(() => {
     return () => { cancelled = true; };
   }, []);
 
+  // Phase 5.au: editorial.json — hand-curated weekly Brand-of-the-Day
+  // rotation. Falls back to algorithmic pool if no story matches today.
+  const [editorial, setEditorial] = useState(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/data/editorial.json", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (!cancelled) setEditorial(d); })
+      .catch(() => { /* missing = silently fall back to algorithmic pool */ });
+    return () => { cancelled = true; };
+  }, []);
+
   // UX 3A (Phase 4.6): Compare 2 Companies — array of {slug, name} pairs, max 2.
   const [compareList, setCompareList] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
@@ -4491,24 +4503,71 @@ if (screen === "onboarding") {
               one item, journalism framing, no infinite scroll, no streak.
               Builds a daily-open ritual without the doomscroll downside. */}
           {(() => {
-            // Phase 5.as r2: Brand of the Day was surfacing random no-name
-            // companies ("powerdyne-international" etc.) — actively erodes
-            // trust. Now restricted to the top ~200 well-known brands by
-            // logo presence + non-junk category + verified grade. Still
-            // deterministic per UTC day so all users see the same brand,
-            // but the pool is curated.
+            // Phase 5.au (QA round 2 #6): editorial-curated Brand of the
+            // Day. Reads /public/data/editorial.json — hand-curated
+            // journalism stories with a clear headline + 1-3 sentence
+            // blurb. Falls back to the top-200 curated-pool rotation if
+            // no editorial story exists for today.
+            const todayIso = new Date().toISOString().slice(0, 10);
+            let story = null;
+            try {
+              if (editorial?.stories) {
+                story = editorial.stories.find(s =>
+                  Array.isArray(s.displayDays) && s.displayDays.includes(todayIso)
+                );
+              }
+            } catch {}
+
+            // If we have an editorial story today, look up the company
+            // record to render the logo + grade.
+            if (story) {
+              const co = deduped.find(c => (c.slug || c.id) === story.slug);
+              if (co) {
+                const pickScore = computeScore(co, profile);
+                const pickGrade = scoreGrade(pickScore);
+                const flavor = {
+                  A: { color:"#4caf82", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0d2318" },
+                  B: { color:"#8bc34a", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#1a2810" },
+                  C: { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" },
+                  D: { color:"#ff7043", bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:"#2a1810" },
+                  F: { color:"#e24a4a", bgTint:"rgba(226,74,74,0.08)", borderTint:"rgba(226,74,74,0.4)", chipBg:"#2a0d0d" },
+                }[pickGrade] || { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" };
+                return (
+                  <div
+                    onClick={() => {
+                      track("editorial_clicked", { slug: co.slug || co.id, story_id: story.id });
+                      setDeepLinkSlug(co.slug || co.id);
+                      setTab("search");
+                    }}
+                    style={{ margin:"12px 16px", padding:"14px 16px", background:flavor.bgTint, border:`1.5px solid ${flavor.borderTint}`, borderRadius:14, cursor:"pointer" }}
+                  >
+                    <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10 }}>
+                      <CompanyLogo company={co} size={40} />
+                      <div style={{ flex:1, minWidth:0 }}>
+                        <div style={{ fontSize:10, color:flavor.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {story.tag || "Worth knowing"}</div>
+                        <div style={{ fontSize:15, fontWeight:700, color:T.txt, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{story.name || co.name}</div>
+                      </div>
+                      <div style={{ padding:"6px 12px", borderRadius:10, background:flavor.chipBg, color:flavor.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+                    </div>
+                    <div style={{ fontSize:14, fontWeight:600, color:T.txt2, marginBottom:6, lineHeight:1.35 }}>{story.headline}</div>
+                    <div style={{ fontSize:12.5, color:T.txt3, lineHeight:1.55 }}>{story.blurb}</div>
+                  </div>
+                );
+              }
+            }
+
+            // Fallback: curated top-200 rotation (Phase 5.as r2)
             const day = Math.floor(Date.now() / 86_400_000);
             const JUNK = new Set(["Other","Various","NA","Uncategorized","Industrial Equipment Manufacturing","Forest Products"]);
             const wellKnown = deduped
               .filter(c => c.overall != null && c.cat && !JUNK.has(c.cat))
-              .filter(c => c.logo || c.hasLogo || (c.name && c.name.length <= 30))   // proxy for "recognizable"
-              .filter(c => ["A","B","C","D","F"].includes(scoreGrade(c.overall)))    // verified grade
+              .filter(c => c.logo || c.hasLogo || (c.name && c.name.length <= 30))
+              .filter(c => ["A","B","C","D","F"].includes(scoreGrade(c.overall)))
               .sort((a, b) => {
-                // Prioritize brands with richer data (more flags / non-neutral signals)
                 const score = (c) => Object.values(c.sc || {}).filter(v => v && String(v).toLowerCase() !== "neutral" && String(v).toLowerCase() !== "unknown").length;
                 return score(b) - score(a);
               })
-              .slice(0, 200); // Top 200 most enriched, well-categorized
+              .slice(0, 200);
             if (!wellKnown.length) return null;
             const pick = wellKnown[day % wellKnown.length];
             const pickScore = computeScore(pick, profile);
@@ -4944,6 +5003,22 @@ if (screen === "onboarding") {
             )}
           </div>
 
+          {/* Phase 5.au: Values Fingerprint card — pinned to Account so it's
+              always visible. Shows the user's archetype + 4-letter codename
+              + 1-sentence blurb. Source of identity in the app — every
+              return visit reinforces "this is who I am". */}
+          {profile && (() => {
+            const fp = getStoredFingerprint() || computeFingerprint(profile);
+            if (!fp) return null;
+            return (
+              <div style={{ background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:16, padding:16, marginBottom:12 }}>
+                <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:6 }}>Your values archetype</div>
+                <div style={{ fontSize:18, fontWeight:800, color:T.txt, lineHeight:1.2 }}>{fp.name}</div>
+                <div style={{ fontSize:10, color:T.accent2, fontFamily:"ui-monospace, Menlo, monospace", letterSpacing:1.5, marginTop:2, marginBottom:8 }}>{fp.codename}</div>
+                <div style={{ fontSize:12, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
+              </div>
+            );
+          })()}
           {/* Profile / personalization */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:4 }}>My values profile</div>
