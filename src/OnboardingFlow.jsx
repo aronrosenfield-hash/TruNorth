@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { subscribeEmail } from "./lib/marketing";
 
 const COMPANIES = [
   { emoji:"🛒", bg:"#1a1a2e", name:"Amazon",    meta:"Retail · E-commerce",  grade:"C", gradeStyle:{background:"#2e2a1a",color:"#fde68a"}, details:[{label:"🌿 Environment",pct:70,color:"#4ade80",grade:"B"},{label:"⚖️ Labor",pct:30,color:"#fca5a5",grade:"D"},{label:"🏳️ DEI",pct:72,color:"#a99ff7",grade:"B"}] },
@@ -45,6 +46,10 @@ export default function OnboardingFlow({ onComplete }) {
     localStorage.setItem("tn_hasOnboarded", "1");
     try { sessionStorage.setItem("tn_justOnboarded", String(Date.now())); } catch {}
     localStorage.setItem("tn_user", JSON.stringify({ email }));
+    // Phase 5.ap: fire-and-forget MailerLite subscribe on signup. Never
+    // blocks onboarding — failure here doesn't hurt the user, they're
+    // already in the app.
+    try { subscribeEmail(email, "onboarding_signup", { authMode }); } catch {}
     onComplete({ email, isGuest: false });
   }
 

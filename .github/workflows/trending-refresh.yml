@@ -1,0 +1,51 @@
+# Phase 5.aq — Nightly Trending Now refresh.
+#
+# Queries PostHog for the top 15 company_view brands over the last 7 days
+# and commits the updated public/data/trending.json back to main. The next
+# Vercel deploy picks up the change automatically.
+#
+# Secrets needed in GitHub repo settings → Secrets and variables → Actions:
+#   POSTHOG_API_KEY  — read-only Personal API Key from PostHog
+#
+# Runs at 06:00 UTC nightly (~01:00 ET, ~22:00 PT — outside US peak hours).
+# Manual triggers also enabled via "Run workflow" button.
+
+name: trending-refresh
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # daily at 06:00 UTC
+  workflow_dispatch:      # allow manual runs
+
+permissions:
+  contents: write  # required to commit trending.json back to main
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh trending.json from PostHog
+        env:
+          POSTHOG_API_KEY:    ${{ secrets.POSTHOG_API_KEY }}
+          POSTHOG_PROJECT_ID: "442021"
+        run: node scripts/refresh-trending.mjs
+
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet public/data/trending.json; then
+            git config user.name  "trending-refresh-bot"
+            git config user.email "bot@trunorthapp.com"
+            git add public/data/trending.json
+            git commit -m "chore(trending): nightly refresh from PostHog [skip ci]"
+            git push
+          else
+            echo "No changes — trending.json unchanged this run."
+          fi

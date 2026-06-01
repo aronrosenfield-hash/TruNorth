@@ -139,6 +139,51 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
     let intervalId = null;
 
     async function start() {
+      // ── Native iOS via Capacitor: use Google ML Kit ──────────────────
+      // Phase 5.ao: ML Kit massively beats ZXing on damaged/glare/curved
+      // grocery barcodes. Capacitor's WebView camera is also flaky, so
+      // when running in the iOS shell we ALWAYS prefer the native plugin.
+      let capacitor = null;
+      try {
+        const mod = await import("@capacitor/core");
+        capacitor = mod.Capacitor;
+      } catch { /* not in Capacitor build */ }
+
+      if (capacitor?.isNativePlatform?.()) {
+        try {
+          const { BarcodeScanner } = await import("@capacitor-mlkit/barcode-scanning");
+          // First-run: prompt for camera permission.
+          const perm = await BarcodeScanner.requestPermissions();
+          if (cancelled) return;
+          if (perm?.camera !== "granted" && perm?.camera !== "limited") {
+            setStatus("error");
+            setError("Camera access denied. Grant permission in iOS Settings → TruNorth.");
+            return;
+          }
+          setStatus("scanning");
+          // Native UI takes over the screen for the scan. When the user
+          // either scans a code or cancels, we get the result here.
+          const result = await BarcodeScanner.scan({
+            formats: ["EAN_13", "EAN_8", "UPC_A", "UPC_E", "CODE_128", "CODE_39", "CODE_93", "QR_CODE"],
+          });
+          if (cancelled) return;
+          const code = result?.barcodes?.[0]?.rawValue;
+          if (!code) {
+            // User canceled the native scanner — close our overlay too.
+            onClose?.();
+            return;
+          }
+          // iOS quirk: ML Kit returns UPC-A as a 13-digit EAN-13 with a
+          // leading zero. Open Food Facts accepts both, so we don't strip.
+          setLastCode(code);
+          await lookup(code);
+          return;
+        } catch (mlkitErr) {
+          console.error("[scanner] ML Kit failed, falling back:", mlkitErr);
+          // Fall through to browser path
+        }
+      }
+
       const useNative = typeof window !== "undefined" && "BarcodeDetector" in window;
       try {
         if (useNative) {
@@ -4575,6 +4620,8 @@ if (screen === "onboarding") {
                       try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
                       setCurrentUser(updated);
                       track("email_changed");
+                      // Phase 5.ap: also push the new email to MailerLite.
+                      try { subscribeEmail(next.trim(), "account_email_change"); } catch {}
                       alert("Email updated.");
                     }}
                     style={{ fontSize:11, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", padding:0 }}
