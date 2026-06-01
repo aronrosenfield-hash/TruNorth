@@ -3904,6 +3904,16 @@ useEffect(() => {
     });
   };
 
+  // 2026-06-01: scroll to top whenever the active tab changes. Bottom-nav
+  // tap = "fresh view" intent; preserving scroll across tabs felt buggy.
+  const tabScrollRef = React.useRef(null);
+  useEffect(() => {
+    if (tabScrollRef.current) tabScrollRef.current.scrollTo({ top: 0, behavior: "auto" });
+    // Also reset window scroll for the rare cases where the inner div
+    // delegates to body (older Safari with no overflow ancestor).
+    try { window.scrollTo({ top: 0, behavior: "auto" }); } catch {}
+  }, [tab]);
+
   // Analytics — init once, then track key funnel events
   useEffect(() => { initAnalytics(); }, []);
 
@@ -4662,8 +4672,11 @@ if (screen === "onboarding") {
         )}
       </div>
 
-      {/* Scrollable content */}
-      <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
+      {/* Scrollable content — 2026-06-01: ref'd so we can reset scroll to
+          top on tab change. Without this, switching tabs preserves the
+          previous tab's scroll position, which confuses users who tap a
+          bottom-nav tab expecting to "start over." */}
+      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
 
       {/* Profile strip — locked to v4 (centered pill) on 2026-06-01 per
           user pick. Other variants stripped. Edit takes user back to the
