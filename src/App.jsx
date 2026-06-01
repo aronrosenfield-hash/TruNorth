@@ -806,7 +806,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
 
   return (
     <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
-      <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px 28px", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
+      <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px calc(28px + env(safe-area-inset-bottom, 0px))", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
         <div style={{ textAlign:"center", marginBottom:12 }}>
@@ -1570,22 +1570,25 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    // Phase 5.as (QA fleet bug #2): immediate paywall on first tap had 0%
-    // conversion (43 shown / 0 clicked) because users dismiss-and-leave
-    // before they understand what they'd be paying for. Restore the
-    // tn_freeViewed counter — 3 free deep-dives per ISO week, then
-    // paywall. Quota resets weekly = built-in return trigger.
+    // Phase 5.as (QA fleet round 2): paywall now has a 3/week quota AND
+    // a 4-hour dismiss cooldown. Without the cooldown, users who dismiss
+    // re-trigger the paywall on every subsequent tap — abusive UX that
+    // teaches dismiss-and-leave. With cooldown, post-dismiss browsing
+    // stays free until the next session (or 4h, whichever is sooner).
     if (!isPaid && !open) {
       const slug = company.slug || company.id;
       const now = new Date();
-      // ISO week key: YYYY-Www (good enough for our purposes)
       const weekKey = `${now.getUTCFullYear()}-W${Math.floor((now.getTime() - Date.UTC(now.getUTCFullYear(),0,1)) / (7*86_400_000))}`;
       let log = {};
       try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
-      // Drop entries from prior weeks
       if (log.week !== weekKey) log = { week: weekKey, slugs: [] };
+      // Dismiss cooldown: if user closed paywall within last 4 hours, treat
+      // the request as if they're still in their free quota — record the
+      // view but don't re-fire the paywall.
+      const dismissedAt = Number(sessionStorage.getItem("tn_paywallDismissedAt") || 0);
+      const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 4 * 60 * 60 * 1000;
       const alreadyViewed = log.slugs.includes(slug);
-      if (!alreadyViewed && log.slugs.length >= 3) {
+      if (!alreadyViewed && log.slugs.length >= 3 && !inCooldown) {
         track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
         onUpgrade();
         return;
@@ -2663,7 +2666,7 @@ function Quiz({ onComplete, onSkip }) {
             <div style={{ fontSize:24, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
             <div style={{ fontSize:12, color:T.txt3, letterSpacing:2, textTransform:"uppercase", marginTop:4, marginBottom:10 }}>Know where your money goes</div>
             <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300 }}>
-              Answer 9 quick steps. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
+              Answer 4 quick steps. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
             </div>
           </div>
         )}
@@ -2898,10 +2901,27 @@ function SubmitView({ isPaid, onUpgrade }) {
 
   const submit = async () => {
     if (!company.trim() || !detail.trim()) { alert("Please fill in company name and description."); return; }
-    // 4.7: Pro users submitting are already known to us by email; surface this as
-    // a submission event so the pipeline team sees demand. If we collect an email
-    // later (free submit), wire it here too.
     track("submit_company", { type, category: cat, companyName: company.trim() });
+    // Phase 5.as r2: actually deliver the submission (was being dropped).
+    // /api/submit is a Vercel edge function that emails Aron@trunorth.com
+    // via Resend (with a console-log fallback if Resend isn't configured).
+    // Non-blocking — UI confirms regardless of API success so the user is
+    // never penalized for our infra hiccups.
+    try {
+      const storedEmail = (typeof localStorage !== "undefined" && localStorage.getItem("tn_email")) || "";
+      fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type,
+          category: cat,
+          company:  company.trim(),
+          detail:   detail.trim(),
+          source:   source.trim(),
+          email:    storedEmail,
+        }),
+      }).catch(() => {});
+    } catch {}
     setSent(true); setCompany(""); setDetail(""); setSource("");
     setTimeout(() => setSent(false), 4000);
   };
@@ -3658,7 +3678,7 @@ if (screen === "onboarding") {
             </>
           )}
         </div>
-        <div style={{ padding:"12px 16px 20px", borderTop:`1px solid ${T.border}`, background:T.bg, display:"flex", flexDirection:"column", gap:8 }}>
+        <div style={{ padding:"12px 16px calc(20px + env(safe-area-inset-bottom, 0px))", borderTop:`1px solid ${T.border}`, background:T.bg, display:"flex", flexDirection:"column", gap:8 }}>
           {/* Phase 5.ag (item C cont'd, growth-loop unlock): "Share my values"
               button at peak emotion. Generates a URL pointing at the OG-image
               endpoint with the user's profile encoded — friend who opens the
@@ -3762,7 +3782,13 @@ if (screen === "onboarding") {
             window.scrollTo(0,0);
             setScreen("main");
           }}
-          onClose={()=>{setShowPaywall(false);setScreen("main");}}
+          onClose={()=>{
+            // Phase 5.as r2: cooldown timestamp — stops paywall from re-firing
+            // on every subsequent tap until 4h have passed.
+            try { sessionStorage.setItem("tn_paywallDismissedAt", String(Date.now())); } catch {}
+            setShowPaywall(false);
+            setScreen("main");
+          }}
         />}
         <Quiz
           onComplete={(p) => {
@@ -3796,7 +3822,10 @@ if (screen === "onboarding") {
         // Previously this always sent them back to step 0 of the 9-question quiz,
         // wiping the experience they just paid for.
         if (!profile) setScreen("quiz");
-      }} onClose={()=>setShowPaywall(false)} />}
+      }} onClose={()=>{
+        try { sessionStorage.setItem("tn_paywallDismissedAt", String(Date.now())); } catch {}
+        setShowPaywall(false);
+      }} />}
       {/* UX 7B: barcode scanner overlay — opens camera, decodes, routes to match */}
       {showScanner && (
         <BarcodeScanner
@@ -4348,12 +4377,24 @@ if (screen === "onboarding") {
               one item, journalism framing, no infinite scroll, no streak.
               Builds a daily-open ritual without the doomscroll downside. */}
           {(() => {
-            // Phase 5.ag QA fix #7: globally synchronized UTC day index so
-            // users in different timezones see the same brand on the same
-            // day. (Previously used local-time day-of-year, which split JST
-            // and PST users onto different brands during the overlap window.)
+            // Phase 5.as r2: Brand of the Day was surfacing random no-name
+            // companies ("powerdyne-international" etc.) — actively erodes
+            // trust. Now restricted to the top ~200 well-known brands by
+            // logo presence + non-junk category + verified grade. Still
+            // deterministic per UTC day so all users see the same brand,
+            // but the pool is curated.
             const day = Math.floor(Date.now() / 86_400_000);
-            const wellKnown = deduped.filter(c => c.overall != null && c.cat && c.cat !== "Other");
+            const JUNK = new Set(["Other","Various","NA","Uncategorized","Industrial Equipment Manufacturing","Forest Products"]);
+            const wellKnown = deduped
+              .filter(c => c.overall != null && c.cat && !JUNK.has(c.cat))
+              .filter(c => c.logo || c.hasLogo || (c.name && c.name.length <= 30))   // proxy for "recognizable"
+              .filter(c => ["A","B","C","D","F"].includes(scoreGrade(c.overall)))    // verified grade
+              .sort((a, b) => {
+                // Prioritize brands with richer data (more flags / non-neutral signals)
+                const score = (c) => Object.values(c.sc || {}).filter(v => v && String(v).toLowerCase() !== "neutral" && String(v).toLowerCase() !== "unknown").length;
+                return score(b) - score(a);
+              })
+              .slice(0, 200); // Top 200 most enriched, well-categorized
             if (!wellKnown.length) return null;
             const pick = wellKnown[day % wellKnown.length];
             const pickScore = computeScore(pick, profile);

@@ -172,7 +172,7 @@ const s = {
   dividerLine:     { flex:1, height:1, background:"#222" },
   btnGhost:        { width:"100%", padding:14, background:"transparent", border:"1px solid #2a2a2a", borderRadius:14, color:"#888", fontFamily:"inherit", fontSize:14, fontWeight:600, cursor:"pointer", marginBottom:12 },
   terms:           { fontSize:10, color:"#444", textAlign:"center", lineHeight:1.5 },
-  bottom:          { padding:"0 24px 40px" },
+  bottom:          { padding:"0 24px calc(40px + env(safe-area-inset-bottom, 0px))" },
   dots:            { display:"flex", justifyContent:"center", gap:6, marginBottom:16 },
   dot:             { width:6, height:6, borderRadius:3, background:"#333", transition:"all 0.3s ease" },
   dotActive:       { width:20, background:"#7c6dfa" },
