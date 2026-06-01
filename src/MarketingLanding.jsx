@@ -371,6 +371,31 @@ export default function MarketingLanding({ onOpenPrivacy }) {
             <div style={{ marginTop:18, fontSize:13, color:C.textMute }}>
               iPhone first · Android coming soon. {APP_STORE_URL ? "Download on the App Store." : "App Store launch imminent — TestFlight invite arrives same day."}
             </div>
+            {/* 2026-06-01 (L-6): Product Hunt Coming Soon chip. Highest-leverage
+                conversion surface on the landing for the pre-launch window.
+                Disappears the day we ship — easy to delete in one edit. */}
+            <a
+              href="https://www.producthunt.com/products/trunorth?launch=trunorth"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display:"inline-flex", alignItems:"center", gap:10,
+                marginTop:22, padding:"10px 16px",
+                background:`linear-gradient(135deg, ${C.accent}22 0%, ${C.accent2}22 100%)`,
+                border:`1px solid ${C.accent}55`,
+                borderRadius:999, color:C.text, textDecoration:"none",
+                fontSize:13, fontWeight:600, lineHeight:1.3,
+                transition:"transform 0.15s ease, border-color 0.15s ease",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.borderColor = C.accent; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.borderColor = `${C.accent}55`; }}
+            >
+              <span style={{ fontSize:16 }} aria-hidden="true">🚀</span>
+              <span>
+                Launching on Product Hunt <b style={{ color:C.accent2 }}>June 23</b>
+                <span style={{ color:C.textMute, marginLeft:6 }}>· Subscribe for the launch notification →</span>
+              </span>
+            </a>
           </div>
           <div className="tn-fade-in">
             <DemoCard />

@@ -54,7 +54,14 @@ export default function PrivacyPolicy({ onBack }) {
 
   return (
     <div style={{
-      background:C.bg, color:C.text, fontFamily:FONT, minHeight:"100vh",
+      background:C.bg, color:C.text, fontFamily:FONT,
+      // 2026-06-01 fix: index.html sets `body { overflow: hidden }` for the
+      // iOS app shell — that traps any direct child under 100vh and clipped
+      // the privacy page on web. Owning our own scroll container (height +
+      // overflowY) bypasses the parent rule on every browser.
+      height:"100vh",
+      overflowY:"auto",
+      WebkitOverflowScrolling:"touch",
       WebkitFontSmoothing:"antialiased",
     }}>
       {/* Header */}

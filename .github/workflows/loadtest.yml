@@ -1,0 +1,57 @@
+name: Load test
+
+# Manual trigger only — load tests burn Vercel bandwidth and can trip
+# rate limits on third-party APIs. Never run on push.
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "Target base URL (no trailing slash)"
+        required: true
+        default: "https://trunorthapp.com"
+      peak_vus:
+        description: "Peak concurrent virtual users (default 1000)"
+        required: false
+        default: "1000"
+
+jobs:
+  k6:
+    name: k6 1000-VU journey
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run k6 (official Docker image)
+        run: |
+          mkdir -p loadtest-out
+          docker run --rm \
+            -e BASE_URL="${{ github.event.inputs.target_url }}" \
+            -e K6_PEAK_VUS="${{ github.event.inputs.peak_vus }}" \
+            -v "$PWD/scripts:/scripts:ro" \
+            -v "$PWD/loadtest-out:/out" \
+            -w /out \
+            grafana/k6:latest \
+            run \
+              --summary-export=/out/summary.json \
+              --out json=/out/raw.json \
+              /scripts/loadtest.js \
+            | tee loadtest-out/run.log
+
+      - name: Show summary
+        if: always()
+        run: |
+          echo "## k6 load test summary" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          tail -n 60 loadtest-out/run.log >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload k6 artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-loadtest-results
+          path: loadtest-out/
+          retention-days: 14

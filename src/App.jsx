@@ -1047,7 +1047,7 @@ function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat
 
 // Phase 4.9: one-shot announcement modal — shown once per WHATSNEW_VERSION.
 // Bump the version string when there's a new milestone to re-trigger.
-const WHATSNEW_VERSION = "2026-05-11k-launch";
+const WHATSNEW_VERSION = "2026-06-launch-day";
 function WhatsNewModal({ companyCount }) {
   const [show, setShow] = useState(() => {
     // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
@@ -1093,34 +1093,39 @@ function WhatsNewModal({ companyCount }) {
   return (
     <div onClick={dismiss} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:400, width:"100%", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:20, color:T.txt }}>
+        {/* 2026-06-01: Launch-mode rewrite. The pre-launch "what's new" was
+            a dev-internal changelog ("5,000+ new companies", "new filter
+            drawer"). Re-cast as a welcome / value-prop card for the wave of
+            new users arriving from ProductHunt + press. Bumped
+            WHATSNEW_VERSION above so returning users see it once. */}
         <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:14 }}>
           <i className="ti ti-sparkles" style={{ fontSize:24, color:T.accent2 }} aria-hidden="true" />
-          <div style={{ fontSize:18, fontWeight:700 }}>What's new</div>
+          <div style={{ fontSize:18, fontWeight:700 }}>Welcome to TruNorth</div>
         </div>
-        <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"12px 14px", marginBottom:14 }}>
-          <div style={{ fontSize:24, fontWeight:800, color:T.accent2 }}>{companyCount.toLocaleString()}</div>
-          <div style={{ fontSize:13, color:T.txt2, marginTop:2 }}>Companies tracked on TruNorth — you decide the verdict</div>
+        <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
+          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>{companyCount.toLocaleString()}+</div>
+          <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>Companies graded across 9 value categories — using only public records.</div>
         </div>
-        <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13, color:T.txt2, lineHeight:1.7 }}>
-          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
+        <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>5,000+ new companies</b> — catalog nearly doubled to 11,000+</span>
+            <span><b style={{ color:T.txt }}>No opinions — just public records.</b> FEC donations, OSHA violations, EPA enforcement, SEC filings.</span>
+          </li>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
+            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
+            <span><b style={{ color:T.txt }}>Tailored to your values.</b> 30-second quiz reweights every grade so what matters to you, counts.</span>
+          </li>
+          <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
+            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
+            <span><b style={{ color:T.txt }}>Scan any barcode in-store.</b> Get the verdict before you pay.</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>About this company</b> — Wikipedia overview, BBB rating, and news on every profile</span>
-          </li>
-          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
-            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Smarter scoring</b> — only categories with real data count toward the grade</span>
-          </li>
-          <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
-            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>New filter drawer</b> — bottom sheet with all filters in one tap</span>
+            <span><b style={{ color:T.txt }}>Free forever.</b> No ads, no affiliate links, no selling your data.</span>
           </li>
         </ul>
-        <button onClick={dismiss} style={{ width:"100%", marginTop:16, padding:12, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
-          Got it
+        <button onClick={dismiss} style={{ width:"100%", marginTop:18, padding:13, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
+          Let's go →
         </button>
         {/* Phase 5.ab: opt-out checkbox — small, below CTA. Persists across
             sessions when checked. */}
@@ -3754,8 +3759,11 @@ if (screen === "onboarding") {
               </div>
             );
           })()}
-          <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6 }}>Your values are set.</div>
-          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4, maxWidth:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
+          <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>Your values are set.</div>
+          {/* 2026-06-01 fix: was maxWidth:"100%" which inherited parent width
+              and let the italic "you" overflow past the viewport on narrow
+              iPhones. Constrained to 340 to match the archetype card above. */}
+          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
             Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
           </div>
           {winner && (
