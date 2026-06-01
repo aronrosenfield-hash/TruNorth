@@ -1,0 +1,53 @@
+# Phase 5.as — Sunday weekly digest.
+#
+# Sends one MailerLite campaign every Sunday at 14:00 UTC (~9am ET, 6am PT)
+# summarizing the week's grade changes + new recalls + scandals from
+# public/data/weekly_changes.json. The data file is rebuilt by other crons
+# during the week; this just packages it as an email.
+#
+# Repo secrets required:
+#   MAILERLITE_API_KEY     — MailerLite API token (Subscribers + Campaigns scope)
+#   MAILERLITE_GROUP_ID    — group of digest subscribers (see lib/marketing.js)
+#
+# Manual run also enabled — useful for "send a fresh digest today" or testing
+# with DRY_RUN=true (renders the HTML to build/digest-preview.html, no send).
+
+name: weekly-digest
+
+on:
+  schedule:
+    - cron: "0 14 * * 0"   # Sunday 14:00 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (render only, no send)"
+        required: false
+        default: "false"
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Send weekly digest
+        env:
+          MAILERLITE_API_KEY:  ${{ secrets.MAILERLITE_API_KEY }}
+          MAILERLITE_GROUP_ID: ${{ secrets.MAILERLITE_GROUP_ID }}
+          APP_URL:             "https://trunorthapp.com"
+          DRY_RUN:             ${{ inputs.dry_run }}
+        run: node scripts/send-weekly-digest.mjs
+
+      - name: Upload preview (dry-run only)
+        if: ${{ inputs.dry_run == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-preview
+          path: build/digest-preview.html
+          if-no-files-found: warn

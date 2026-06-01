@@ -3542,6 +3542,9 @@ useEffect(() => {
   const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",library:"Library",account:"Account"};
   // Which sub-tab is active inside Library. Defaults to "saved".
   const [librarySubtab, setLibrarySubtab] = useState("saved");
+  // Phase 5.as (QA friction #6): saved sort + category filter
+  const [savedSortMode, setSavedSortMode] = useState("recent");
+  const [savedCategoryFilter, setSavedCategoryFilter] = useState("all");
 
 
 
@@ -4495,8 +4498,24 @@ if (screen === "onboarding") {
           {/* ── SAVED sub-tab ─────────────────────────────────────────── */}
           {librarySubtab === "saved" && (() => {
             const savedSlugs = Array.from(savedSet);
-            const savedCos = savedSlugs.map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
-            if (!savedCos.length) {
+            let savedCos = savedSlugs.map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
+            // Phase 5.as (QA friction #6): sort + category filter for Library/Saved.
+            // A user with 20+ saved brands can't find anything in a flat dump.
+            if (savedSortMode === "grade") {
+              savedCos = [...savedCos].sort((a,b) => computeScore(b, profile) - computeScore(a, profile));
+            } else if (savedSortMode === "name") {
+              savedCos = [...savedCos].sort((a,b) => (a.name||"").localeCompare(b.name||""));
+            } else if (savedSortMode === "category") {
+              savedCos = [...savedCos].sort((a,b) => (a.cat||"").localeCompare(b.cat||"") || (a.name||"").localeCompare(b.name||""));
+            } // default: "recent" (insertion order, already correct)
+            if (savedCategoryFilter !== "all") {
+              savedCos = savedCos.filter(c => getBucket(c.cat || "") === savedCategoryFilter);
+            }
+            const savedCategoryOptions = Array.from(new Set(savedSlugs.map(s => {
+              const co = deduped.find(c => (c.slug || c.id) === s);
+              return co ? getBucket(co.cat || "") : null;
+            }).filter(Boolean))).sort();
+            if (!savedSlugs.length) {
               return (
                 <div style={{ padding:"60px 24px", textAlign:"center", color:T.txt3 }}>
                   <i className="ti ti-star" style={{ fontSize:48, color:T.txt3, marginBottom:14 }} aria-hidden="true" />
@@ -4514,8 +4533,41 @@ if (screen === "onboarding") {
               );
             }
             return (
-              <div style={{ padding:"12px 0 80px" }}>
-                {savedCos.map(co => {
+              <div style={{ padding:"0 0 80px" }}>
+                {/* Sort + category filter bar */}
+                <div style={{ padding:"10px 16px", display:"flex", gap:8, alignItems:"center", borderBottom:`1px solid ${T.border}`, background:T.bg2, overflowX:"auto", WebkitOverflowScrolling:"touch" }}>
+                  <select
+                    value={savedSortMode}
+                    onChange={e => setSavedSortMode(e.target.value)}
+                    style={{ background:T.bg3, color:T.txt, border:`1px solid ${T.border}`, borderRadius:8, padding:"6px 8px", fontSize:12, flexShrink:0 }}
+                    aria-label="Sort saved brands"
+                  >
+                    <option value="recent">Recently saved</option>
+                    <option value="grade">Grade (best first)</option>
+                    <option value="name">Name (A–Z)</option>
+                    <option value="category">Category</option>
+                  </select>
+                  {savedCategoryOptions.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => setSavedCategoryFilter("all")}
+                        style={{ flexShrink:0, padding:"5px 10px", borderRadius:14, border:"none", fontSize:11, fontWeight:600, cursor:"pointer", background: savedCategoryFilter === "all" ? T.accent : T.bg3, color: savedCategoryFilter === "all" ? "#fff" : T.txt3 }}
+                      >All</button>
+                      {savedCategoryOptions.map(cat => (
+                        <button
+                          key={cat}
+                          onClick={() => setSavedCategoryFilter(cat === savedCategoryFilter ? "all" : cat)}
+                          style={{ flexShrink:0, padding:"5px 10px", borderRadius:14, border:"none", fontSize:11, fontWeight:600, cursor:"pointer", background: savedCategoryFilter === cat ? T.accent : T.bg3, color: savedCategoryFilter === cat ? "#fff" : T.txt3 }}
+                        >{cat}</button>
+                      ))}
+                    </>
+                  )}
+                </div>
+                {savedCos.length === 0 ? (
+                  <div style={{ padding:"40px 24px", textAlign:"center", color:T.txt3, fontSize:13 }}>
+                    No saved brands in <strong>{savedCategoryFilter}</strong>. <button onClick={() => setSavedCategoryFilter("all")} style={{ background:"none", border:"none", color:T.accent2, textDecoration:"underline", cursor:"pointer" }}>Clear filter</button>
+                  </div>
+                ) : savedCos.map(co => {
                   const ps = computeScore(co, profile);
                   const g = scoreGrade(ps);
                   const colors = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a", "?":T.txt3 };
