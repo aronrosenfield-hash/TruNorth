@@ -1806,16 +1806,14 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    // 2026-06-01 (user feedback): paywall fires on FIRST company tap by
-    // free users (was: 3 free views/week). The pre-launch comment at the
-    // banner site already said "paywall now fires immediately on every
-    // non-paid tap" but the quota gate was never lowered to match. Now it
-    // is. Cooldown preserved so dismissers can browse for 4h before being
-    // re-asked.
+    // 2026-06-01 (user pick): 1 free company view per week, then paywall.
+    // Refined from the previous "0 free / paywall on first tap" — that was
+    // too aggressive; users couldn't even sample the product before being
+    // gated. 1 free view lets them experience the depth of one brand
+    // profile, builds the desire, then the paywall asks for $1.99/mo to
+    // unlock the rest. Cooldown preserved so dismissers can browse for 4h.
     //
-    // Exception: a company they've ALREADY viewed (alreadyViewed=true)
-    // doesn't re-fire the paywall — re-opening a card you already opened
-    // shouldn't punish you.
+    // Re-opening an already-viewed company doesn't punish the user.
     if (!isPaid && !open) {
       const slug = company.slug || company.id;
       const now = new Date();
@@ -1826,9 +1824,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
       const dismissedAt = Number(sessionStorage.getItem("tn_paywallDismissedAt") || 0);
       const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 4 * 60 * 60 * 1000;
       const alreadyViewed = log.slugs.includes(slug);
-      // Fire paywall on EVERY new company tap (unless in cooldown).
-      if (!alreadyViewed && !inCooldown) {
-        track("paywall_shown", { reason: "free_company_tap", slug, viewed_this_week: log.slugs.length });
+      // 1 free view per week: paywall fires on the 2nd unique tap.
+      if (!alreadyViewed && log.slugs.length >= 1 && !inCooldown) {
+        track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
         onUpgrade();
         return;
       }
@@ -4423,100 +4421,25 @@ if (screen === "onboarding") {
       {/* Scrollable content */}
       <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
 
-      {/* Profile strip — 2026-06-01 (user feedback): 4 design variants
-          toggleable via ?profilestrip=v1|v2|v3|v4. Pick locks in via
-          localStorage. User picks → I strip unused variants. */}
-      {profile && (() => {
-        const ps = (() => {
-          if (typeof window === "undefined") return "v1";
-          try {
-            const qs = new URLSearchParams(window.location.search).get("profilestrip");
-            if (qs && ["v1","v2","v3","v4"].includes(qs)) {
-              localStorage.setItem("tn_profilestripVariant", qs);
-              return qs;
-            }
-            return localStorage.getItem("tn_profilestripVariant") || "v1";
-          } catch { return "v1"; }
-        })();
-        const politicsText = profile.lean==="left"?"Left":profile.lean==="right"?"Right":"Neutral";
-        const politicsIcon = profile.lean==="left"?"◀":profile.lean==="right"?"▶":"⚖";
-        const deiText = profile.deiLean==="pro"?"Pro-DEI":profile.deiLean==="anti"?"Anti-DEI":"DEI neutral";
-        const deiIcon = profile.deiLean==="pro"?"✓":profile.deiLean==="anti"?"✗":"–";
-        const onEdit = () => { track("quiz_started", { from: "profile_strip_edit", variant: ps }); setScreen("quiz"); };
-
-        // ── V1: Current — chips wrap, ~80-100px tall ─────────────────────
-        if (ps === "v1") {
-          return (
-            <div style={{ padding:"8px 16px", background:T.accentBg, borderBottom:`1px solid ${T.accent}`, display:"flex", alignItems:"center", gap:8, flexWrap:"wrap" }}>
-              <i className="ti ti-sparkles" style={{ fontSize:12, color:T.accent2 }} aria-hidden="true" />
-              <span style={{ fontSize:11, color:T.accent2, fontWeight:600 }}>Scores personalized</span>
-              <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
-                {politicsIcon} {politicsText} politics
-              </span>
-              <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
-                {deiIcon} {deiText}
-              </span>
-              <button onClick={onEdit} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
-            </div>
-          );
-        }
-
-        // ── V2: Slim single-line — ~32px tall, no chips, text separators ─
-        if (ps === "v2") {
-          return (
-            <div style={{
-              padding:"6px 16px", background:T.accentBg, borderBottom:`1px solid ${T.accent}`,
-              display:"flex", alignItems:"center", gap:6, fontSize:11, lineHeight:1.3,
-              whiteSpace:"nowrap", overflow:"hidden",
-            }}>
-              <i className="ti ti-sparkles" style={{ fontSize:11, color:T.accent2, flexShrink:0 }} aria-hidden="true" />
-              <span style={{ color:T.accent2, fontWeight:600, flexShrink:0 }}>Personalized</span>
-              <span style={{ color:T.txt3, flexShrink:0 }}>·</span>
-              <span style={{ color:T.txt2, flexShrink:0 }}>{politicsText}</span>
-              <span style={{ color:T.txt3, flexShrink:0 }}>·</span>
-              <span style={{ color:T.txt2, flexShrink:0, overflow:"hidden", textOverflow:"ellipsis" }}>{deiText}</span>
-              <button onClick={onEdit} style={{ marginLeft:"auto", fontSize:11, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", flexShrink:0 }}>Edit</button>
-            </div>
-          );
-        }
-
-        // ── V3: Tiny eyebrow above search — minimal, no background tint ──
-        if (ps === "v3") {
-          return (
-            <div style={{
-              padding:"4px 16px 0", background:T.bg,
-              display:"flex", alignItems:"center", gap:6, fontSize:10,
-            }}>
-              <i className="ti ti-sparkles" style={{ fontSize:10, color:T.accent2 }} aria-hidden="true" />
-              <span style={{ color:T.txt3, fontWeight:500, letterSpacing:0.3 }}>
-                Personalized for <span style={{ color:T.accent2, fontWeight:600 }}>{politicsText}</span> · <span style={{ color:T.accent2, fontWeight:600 }}>{deiText}</span>
-              </span>
-              <button onClick={onEdit} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
-            </div>
-          );
-        }
-
-        // ── V4: Tappable pill on its own — centered, compact, no chips ───
-        if (ps === "v4") {
-          return (
-            <div style={{ padding:"6px 16px", display:"flex", justifyContent:"center", background:T.bg }}>
-              <button
-                onClick={onEdit}
-                style={{
-                  display:"inline-flex", alignItems:"center", gap:6,
-                  padding:"5px 12px", borderRadius:999,
-                  background:T.accentBg, border:`1px solid ${T.accent}`,
-                  color:T.accent2, fontSize:11, fontWeight:600, cursor:"pointer",
-                }}
-              >
-                <i className="ti ti-sparkles" style={{ fontSize:11 }} aria-hidden="true" />
-                Personalized · Tap to edit
-              </button>
-            </div>
-          );
-        }
-        return null;
-      })()}
+      {/* Profile strip — locked to v4 (centered pill) on 2026-06-01 per
+          user pick. Other variants stripped. Edit takes user back to the
+          quiz to update their values. */}
+      {profile && (
+        <div style={{ padding:"6px 16px", display:"flex", justifyContent:"center", background:T.bg }}>
+          <button
+            onClick={() => { track("quiz_started", { from: "profile_strip_edit" }); setScreen("quiz"); }}
+            style={{
+              display:"inline-flex", alignItems:"center", gap:6,
+              padding:"5px 12px", borderRadius:999,
+              background:T.accentBg, border:`1px solid ${T.accent}`,
+              color:T.accent2, fontSize:11, fontWeight:600, cursor:"pointer",
+            }}
+          >
+            <i className="ti ti-sparkles" style={{ fontSize:11 }} aria-hidden="true" />
+            Personalized · Tap to edit
+          </button>
+        </div>
+      )}
 
       {/* SEARCH */}
       {tab === "search" && (
@@ -4631,8 +4554,12 @@ if (screen === "onboarding") {
 
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10 }}>
             {/* UX 4E: when nothing's been typed AND no filters active, show Recent + Trending
-                instead of the full A–Z list (Top Picks tab already shows the full list). */}
-            {!query.trim() && leanFilter === "all" && catFilters.length === 0 && !showSavedOnly ? (
+                instead of the full A–Z list (Top Picks tab already shows the full list).
+                2026-06-01 (user feedback) bug fix: must ALSO check industryBucket — when
+                the user taps an industry from Browse, openBucket() clears all other
+                filters and only sets industryBucket. Without this check, the empty-
+                state captured the click and the industry's company list never rendered. */}
+            {!query.trim() && leanFilter === "all" && catFilters.length === 0 && !showSavedOnly && !industryBucket ? (
               <div style={{ padding:"24px 4px" }}>
                 {recentSearches.length > 0 && (
                   <div style={{ marginBottom:20 }}>
@@ -4717,39 +4644,14 @@ if (screen === "onboarding") {
         </ErrorBoundary>
       )}
 
-      {/* BROWSE */}
+      {/* BROWSE — locked to v1 (tile grid) on 2026-06-01 per user pick.
+          Phase 5.al's 3 alternatives (alt-a / alt-b / alt-c) stripped. */}
       {tab === "browse" && (
         <ErrorBoundary name="browse">{(() => {
-          // Phase 5.al (item #7): 3 Browse layouts behind ?browse= URL toggle
-          //   ?browse=v1     (default) — original tile grid (current)
-          //   ?browse=alt-a  — list with featured-brand chips per category
-          //   ?browse=alt-b  — search-first + horizontal category chips
-          //   ?browse=alt-c  — curated editorial collections
-          // Cached in localStorage so navigation preserves the choice.
-          const browseVariant = (() => {
-            if (typeof window === "undefined") return "v1";
-            try {
-              const qs = new URLSearchParams(window.location.search).get("browse");
-              if (qs && ["v1","alt-a","alt-b","alt-c"].includes(qs)) {
-                localStorage.setItem("tn_browseVariant", qs);
-                return qs;
-              }
-              return localStorage.getItem("tn_browseVariant") || "v1";
-            } catch { return "v1"; }
-          })();
-
-          // Helper: top-N brands in a bucket, sorted by overall score desc
-          const topBrandsIn = (cat, n = 3) => deduped
-            .filter(c => getBucket(c.cat) === cat)
-            .sort((a, b) => (b.overall || 0) - (a.overall || 0))
-            .slice(0, n);
-
           const openBucket = (cat, count) => {
-            // 2026-06-01 bug fix: previously only cleared query — but stale
-            // catFilters / flagFilters / focusedSlug / showSavedOnly /
-            // leanFilter from prior browsing intersected with the industry
-            // bucket and could yield an empty list. Now reset EVERY filter
-            // so the industry view always shows that bucket's full set.
+            // 2026-06-01 bug fix: reset EVERY filter so the industry view
+            // always shows that bucket's full set, even if the user had
+            // filters active from a prior session.
             setIndustryBucket(cat);
             setQueryRaw(""); setQuery("");
             setCatFilters([]); setFlagFilters([]);
@@ -4757,150 +4659,10 @@ if (screen === "onboarding") {
             setShowSavedOnly(false);
             setFocusedSlug(null);
             setTab("search");
-            track("browse_category_open", { bucket: cat, count, variant: browseVariant });
+            track("browse_category_open", { bucket: cat, count });
           };
 
-          // ── ALT-A: List view with featured brands per category ────────────
-          if (browseVariant === "alt-a") {
-            return (
-              <div style={{ padding:"8px 0 80px" }}>
-                {cats.map((cat, i) => {
-                  const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
-                  const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
-                  const featured = topBrandsIn(cat, 4);
-                  return (
-                    <div key={cat} onClick={() => openBucket(cat, count)}
-                      style={{ background:T.bg2, borderTop:`1px solid ${T.border}`, padding:"14px 16px", cursor:"pointer" }}>
-                      <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:8 }}>
-                        <div style={{ width:36, height:36, borderRadius:8, display:"flex", alignItems:"center", justifyContent:"center", background:catBgs[i%catBgs.length], flexShrink:0 }}>
-                          <i className={`ti ${icon}`} style={{ fontSize:18, color:catFgs[i%catFgs.length] }} aria-hidden="true" />
-                        </div>
-                        <div style={{ flex:1, minWidth:0 }}>
-                          <div style={{ fontSize:15, fontWeight:600, color:T.txt }}>{cat}</div>
-                          <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{count} {count === 1 ? "brand" : "brands"}</div>
-                        </div>
-                        <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
-                      </div>
-                      {featured.length > 0 && (
-                        <div style={{ display:"flex", gap:6, flexWrap:"wrap", paddingLeft:48 }}>
-                          {featured.map(f => (
-                            <span key={f.slug || f.id} style={{ fontSize:11, padding:"3px 8px", borderRadius:12, background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` }}>
-                              {f.name}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          }
-
-          // ── ALT-B: Search-first + horizontal scrolling category chips ────
-          if (browseVariant === "alt-b") {
-            return (
-              <div style={{ padding:"16px 0 80px" }}>
-                <div style={{ padding:"0 16px 18px" }}>
-                  <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.2, marginBottom:6 }}>Find a brand or browse</div>
-                  <div style={{ fontSize:13, color:T.txt3, marginBottom:14 }}>{deduped.length.toLocaleString()} companies scored</div>
-                  <button onClick={()=>setTab("search")} style={{ width:"100%", padding:"12px 16px", borderRadius:12, background:T.bg3, border:`1px solid ${T.border2}`, color:T.txt3, fontSize:14, textAlign:"left", cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}>
-                    <i className="ti ti-search" style={{ fontSize:16 }} aria-hidden="true" /> Search brands…
-                  </button>
-                </div>
-                <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, padding:"0 16px 8px" }}>Categories</div>
-                <div style={{ overflowX:"auto", whiteSpace:"nowrap", padding:"0 16px 12px", display:"flex", gap:8 }}>
-                  {cats.map((cat, i) => {
-                    const count = deduped.filter(c=>getBucket(c.cat)===cat).length;
-                    const icon = Object.entries(catIconMap).find(([k])=>cat.includes(k))?.[1]||"ti-briefcase";
-                    return (
-                      <button key={cat} onClick={() => openBucket(cat, count)} style={{ flexShrink:0, padding:"10px 14px", borderRadius:20, background:catBgs[i%catBgs.length], border:`1px solid ${T.border}`, color:catFgs[i%catFgs.length], fontSize:13, fontWeight:600, cursor:"pointer", display:"inline-flex", alignItems:"center", gap:6 }}>
-                        <i className={`ti ${icon}`} style={{ fontSize:13 }} aria-hidden="true" />
-                        {cat} · {count}
-                      </button>
-                    );
-                  })}
-                </div>
-                <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, padding:"18px 16px 8px" }}>Suggested by category</div>
-                <div style={{ padding:"0 16px" }}>
-                  {cats.slice(0, 6).map((cat, i) => {
-                    const top = topBrandsIn(cat, 3);
-                    if (!top.length) return null;
-                    return (
-                      <div key={cat} style={{ marginBottom:14 }}>
-                        <div style={{ fontSize:12, fontWeight:600, color:T.txt2, marginBottom:6 }}>{cat}</div>
-                        <div style={{ display:"flex", flexDirection:"column", gap:4 }}>
-                          {top.map(b => (
-                            <button key={b.slug || b.id} onClick={() => { setFocusedSlug(b.slug || b.id); setDeepLinkSlug(b.slug || b.id); setTab("search"); }} style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:8, cursor:"pointer", textAlign:"left" }}>
-                              <CompanyLogo company={b} size={26} />
-                              <span style={{ flex:1, minWidth:0, fontSize:13, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{b.name}</span>
-                              <span style={{ fontSize:13, fontWeight:700, color:scoreGrade(b.overall) === "A" ? "#4caf82" : scoreGrade(b.overall) === "F" ? "#e24a4a" : T.txt3 }}>{profile ? scoreGrade(computeScore(b, profile)) : "?"}</span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          }
-
-          // ── ALT-C: Curated editorial collections ─────────────────────────
-          if (browseVariant === "alt-c") {
-            const collections = [
-              { id: "topA", title: "A-graded standouts", subtitle: "Brands scoring highest overall", filter: c => scoreGrade(c.overall) === "A", color: "#4caf82" },
-              { id: "worstF", title: "F-graded watch list", subtitle: "Brands with the worst records", filter: c => scoreGrade(c.overall) === "F", color: "#e24a4a" },
-              { id: "russia", title: "Still operating in Russia", subtitle: "Yale CELI list", filter: c => c.stillInRussia, color: "#f0a030" },
-              { id: "childLab", title: "Child labor risk", subtitle: "BHRRC-flagged supply chain", filter: c => c.childLabor, color: "#e24a4a" },
-              { id: "foreign", title: "Foreign-owned brands", subtitle: "Parented outside the US", filter: c => c.foreignOwned, color: "#9b8ff0" },
-              { id: "antitrust", title: "Antitrust spotlight", subtitle: "Active antitrust history", filter: c => c.antitrust, color: "#f0a030" },
-            ];
-            return (
-              <div style={{ padding:"16px 16px 80px" }}>
-                <div style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.5 }}>
-                  Curated lists across the catalog, beyond traditional industry categories. Tap any list to explore.
-                </div>
-                <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
-                  {collections.map(coll => {
-                    const matched = deduped.filter(coll.filter);
-                    if (!matched.length) return null;
-                    const top3 = matched.slice(0, 3);
-                    return (
-                      <div key={coll.id} onClick={() => {
-                        // Set the flag filter the existing chain understands
-                        if (coll.id === "russia") { setFlagFilters(["stillInRussia"]); }
-                        else if (coll.id === "childLab") { setFlagFilters(["childLabor"]); }
-                        else if (coll.id === "foreign") { setFlagFilters(["foreignOwned"]); }
-                        else if (coll.id === "antitrust") { setFlagFilters(["antitrust"]); }
-                        // For grade-based collections, no flag — use search seed
-                        setTab("search"); track("browse_collection_open", { id: coll.id, count: matched.length });
-                      }} style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:14, padding:"12px 14px", cursor:"pointer" }}>
-                        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
-                          <div style={{ width:8, height:32, borderRadius:2, background:coll.color, flexShrink:0 }} />
-                          <div style={{ flex:1, minWidth:0 }}>
-                            <div style={{ fontSize:14, fontWeight:700, color:T.txt }}>{coll.title}</div>
-                            <div style={{ fontSize:11, color:T.txt3, marginTop:1 }}>{coll.subtitle} · {matched.length} brand{matched.length === 1 ? "" : "s"}</div>
-                          </div>
-                          <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
-                        </div>
-                        <div style={{ display:"flex", gap:6, flexWrap:"wrap", paddingLeft:18 }}>
-                          {top3.map(c => (
-                            <span key={c.slug || c.id} style={{ fontSize:10, padding:"2px 7px", borderRadius:10, background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}` }}>{c.name}</span>
-                          ))}
-                          {matched.length > 3 && (
-                            <span style={{ fontSize:10, padding:"2px 7px", color:T.txt3 }}>+{matched.length - 3} more</span>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          }
-
-          // ── V1 (default, current): tile grid ─────────────────────────────
+          // ── V1: tile grid (locked default) ───────────────────────────────
           return (
             <div style={{ padding:16, display:"grid", gridTemplateColumns:"calc(50% - 5px) calc(50% - 5px)", gap:10 }}>
               {cats.map((cat, i) => {

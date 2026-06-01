@@ -179,7 +179,8 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — Bug batch: Splash "11,000+" rounding, Browse→Search empty-state fix (openBucket now resets all stale filters), free-plan paywall fires on FIRST company tap (was 3-quota), Brand of Day moved above Top Picks, paid Sources tab now narrative paragraph (no exact API list)
+1. **2026-06-01 PM** — Design picks locked: v1 Browse + v4 ProfileStrip + 1-free paywall. Real Browse→Search empty bug FIXED (empty-state path also checked industryBucket). Stripped alt-a/b/c Browse variants + v1/v2/v3 ProfileStrip variants from code.
+2. **2026-06-01 PM** — Bug batch: Splash "11,000+" rounding, Browse→Search empty-state fix attempt #1 (openBucket filter reset), free-plan paywall, Brand of Day moved above Top Picks, paid Sources tab now narrative paragraph
 2. **2026-06-01 PM** — OG / Twitter card metadata sharpened — "public records" differentiator now in first 10 words; updated to mention 9 categories + iOS
 3. **2026-06-01 PM** — Failed-search "notify me" (B-11) — SuggestBrandButton 3-phase flow with brand-tagged MailerLite signup
 4. **2026-06-01 PM** — Soft email ask after quiz completion (B-6) — inline card on Reveal screen, fires `reveal_email_captured`
