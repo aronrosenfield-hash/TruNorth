@@ -142,7 +142,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 | ID | Item | Effort | Source |
 |---|---|---|---|
-| ~~**B-23**~~ | ~~iOS Universal Links~~ | ✅ done 2026-06-01 | AASA live at `/.well-known/apple-app-site-association`. Entitlements wired into pbxproj. User enabled "Associated Domains" capability in Apple Dev Portal. Build 28 ships with the wiring. Every shared `/company/X` link opens in the app. |
+| **B-23** | iOS Universal Links | 🟡 **90% done** — AASA file ✅, entitlements file ✅, capability enabled in Apple Dev Portal ✅. Stuck on: xcodebuild can't fetch a regenerated provisioning profile from Apple (cached profile lacks the capability). **Unstick:** open `ios/App/App.xcworkspace` in Xcode app, let it auto-regenerate the profile, then `npm run ship:ios`. Or wait 15-30 min for Apple to propagate + retry. |
 | **B-24** | Privacy page review for CCPA/GDPR compliance pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts |
 | **B-25** | k6 loadtest run once we have real DAU baseline | S | Script at `/scripts/loadtest.js`, GH Action ready (manual dispatch) |
 | ~~**B-26**~~ | ~~TestFlight → App Store cutover doc~~ | ✅ done 2026-06-01 | Full 10-step playbook at `/docs/app-store-cutover.md`: how to update `APP_STORE_URL` constant, PH First Comment, outreach templates, social profiles, structured-data SEO, smart app banner, press follow-ups, metrics watch. |
