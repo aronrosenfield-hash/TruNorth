@@ -10,6 +10,7 @@ import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex } from "./lib/dataSource";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
+import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
 import { T } from "./lib/theme";
 
@@ -3137,6 +3138,12 @@ function SuggestBrandButton({ query }) {
 }
 
 export default function App() {
+  // Phase 5.au: themed alert/confirm/prompt — replaces native browser dialogs
+  // that render as "trunorthapp.com says:" scam popups on Android Chrome.
+  const { confirm } = useConfirm();
+  const { prompt:themedPrompt } = usePrompt();
+  const { alert:themedAlert } = useAlert();
+
   // Dev-only QA helper: ?skipOnboarding=1 and ?pro=1 let the simulator + Chrome
   // tests bypass onboarding without persisting state on real production users.
   const __qp = (typeof window !== "undefined") ? new URLSearchParams(window.location.search) : new URLSearchParams();
@@ -5012,16 +5019,23 @@ if (screen === "onboarding") {
                 <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"0 16px 12px" }}>
                   <div style={{ fontSize:13, color:T.txt3 }}>{history.length} brand{history.length === 1 ? "" : "s"} viewed</div>
                   <button
-                    onClick={() => {
-                      if (window.confirm("Clear your view history?")) {
-                        try { localStorage.removeItem("tn_viewHistory"); } catch {}
-                        track("history_cleared", { count: history.length });
-                        // Force a re-render
-                        setTab("history");
-                        window.location.reload();
-                      }
+                    onClick={async () => {
+                      // Phase 5.au: themed confirm replaces window.confirm
+                      const ok = await confirm({
+                        title: "Clear your history?",
+                        body: `This will delete ${history.length} viewed brand${history.length === 1 ? "" : "s"} from this device. Saved brands aren't affected.`,
+                        confirmLabel: "Clear history",
+                        cancelLabel: "Keep",
+                        danger: true,
+                      });
+                      if (!ok) return;
+                      try { localStorage.removeItem("tn_viewHistory"); } catch {}
+                      track("history_cleared", { count: history.length });
+                      setTab("library");
+                      setLibrarySubtab("history");
+                      // No reload — state change triggers re-render
                     }}
-                    style={{ background:"none", border:"none", color:T.rep, fontSize:11, cursor:"pointer", padding:0 }}
+                    style={{ background:"none", border:"none", color:T.rep, fontSize:11, cursor:"pointer", padding:0, minHeight:32 }}
                   >
                     Clear all
                   </button>
@@ -5190,19 +5204,26 @@ if (screen === "onboarding") {
                   {/* Phase 5.ak (item #8): change-email button. Prompts for a
                       new address, validates loosely, persists to localStorage. */}
                   <button
-                    onClick={() => {
-                      const next = window.prompt("New email address:", currentUser?.email || "");
-                      if (!next || !next.includes("@")) {
-                        if (next !== null) alert("Please enter a valid email address.");
+                    onClick={async () => {
+                      const next = await themedPrompt({
+                        title: currentUser?.email ? "Update email" : "Add email",
+                        body: "We'll use this to email you product updates and the Sunday digest.",
+                        placeholder: "you@example.com",
+                        defaultValue: currentUser?.email || "",
+                        confirmLabel: "Save",
+                      });
+                      if (next === null) return;
+                      const trimmed = String(next).trim();
+                      if (!trimmed.includes("@") || !trimmed.includes(".")) {
+                        await themedAlert({ title: "Invalid email", body: "Please enter a valid email address.", kind: "error" });
                         return;
                       }
-                      const updated = { ...(currentUser || {}), email: next.trim() };
+                      const updated = { ...(currentUser || {}), email: trimmed };
                       try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
                       setCurrentUser(updated);
                       track("email_changed");
-                      // Phase 5.ap: also push the new email to MailerLite.
-                      try { subscribeEmail(next.trim(), "account_email_change"); } catch {}
-                      alert("Email updated.");
+                      try { subscribeEmail(trimmed, "account_email_change"); } catch {}
+                      await themedAlert({ title: "Email saved", body: trimmed, kind: "success" });
                     }}
                     style={{ fontSize:11, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", padding:0 }}
                   >
@@ -5215,7 +5236,18 @@ if (screen === "onboarding") {
                 <span style={{ color:isPaid ? T.gold : T.txt2, fontWeight:600 }}>{isPaid ? "Pro" : "Free"}</span>
               </div>
               <button style={{ width:"100%", marginTop:12, padding:10, borderRadius:10, border:`1px solid ${T.border2}`, background:"transparent", color:T.txt3, fontSize:13, cursor:"pointer" }}
-                onClick={() => { if(window.confirm("Sign out?")) { ["tn_hasOnboarded","tn_user"].forEach(k=>localStorage.removeItem(k)); window.location.reload(); } }}>
+                onClick={async () => {
+                  const ok = await confirm({
+                    title: "Sign out?",
+                    body: "Your saved brands and preferences stay on this device. You can sign back in any time.",
+                    confirmLabel: "Sign out",
+                    cancelLabel: "Stay",
+                    danger: true,
+                  });
+                  if (!ok) return;
+                  ["tn_hasOnboarded","tn_user"].forEach(k => { try { localStorage.removeItem(k); } catch {} });
+                  window.location.reload();
+                }}>
                 Sign out
               </button>
             </div>
