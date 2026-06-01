@@ -50,13 +50,18 @@
   }
 }
 
-body {
+html, body {
   margin: 0;
+  width: 100%;
+  /* Phase 5.as (#19): prevent any rogue child overflow from triggering
+     a page-wide horizontal scroll on iOS WebView — that was clipping
+     the quiz-complete grade badge off the right edge. */
+  overflow-x: hidden;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1126px;
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);

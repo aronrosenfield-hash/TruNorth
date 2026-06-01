@@ -3394,6 +3394,20 @@ useEffect(() => {
     neutral: deduped.filter(c=>(c.sc.political||"").toLowerCase()==="neutral").length,
   }), [deduped]);
 
+  // Phase 5.as (#12 + #13): memoize Top Picks ranking + cap visible cards.
+  // The previous in-render sort over 11K companies was the source of the
+  // multi-second delay when entering the Top tab. Memo invalidates only
+  // on profile / deduped change. topPicksLimit lets the user "Show more"
+  // without re-blowing the budget on every screen visit.
+  const topPicksRanked = useMemo(
+    () => [...deduped]
+      .map(c => ({ co: c, score: computeScore(c, profile) }))
+      .sort((a, b) => b.score - a.score)
+      .map(({ co }) => co),
+    [deduped, profile]
+  );
+  const [topPicksLimit, setTopPicksLimit] = useState(50);
+
   // Phase 5.ak (item #6): filter junk categories from the Browse grid.
   // "Other", "Various", "NA", "Uncategorized", null, and tiny categories
   // with fewer than 3 companies aren't worth a tile.
@@ -3494,13 +3508,13 @@ if (screen === "onboarding") {
       .slice(0, 3);
     const winner = top3[0];
     return (
-      <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg }}>
-        <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center" }}>
+      <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg, paddingTop:"env(safe-area-inset-top,0px)" }}>
+        <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center", boxSizing:"border-box", width:"100%" }}>
           <div style={{ width:64, height:64, borderRadius:"50%", background:T.accentBg, border:`2px solid ${T.accent}`, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:16 }}>
             <i className="ti ti-sparkles" style={{ fontSize:28, color:T.accent2 }} aria-hidden="true" />
           </div>
           <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6 }}>Your values are set.</div>
-          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4 }}>
+          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4, maxWidth:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
             Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
           </div>
           {winner && (
@@ -4323,9 +4337,22 @@ if (screen === "onboarding") {
             </div>
           )}
           <div style={{ padding:"12px 16px", display:"flex", flexDirection:"column", gap:10, overflowX:"hidden" }}>
-            {[...deduped].sort((a,b)=>computeScore(b,profile)-computeScore(a,profile)).map((co,i) => (
+            {/* Phase 5.as (#12 + #13): the previous render computed score for
+                all 11K companies and sorted them on every render. That hit
+                ~280K computeScore calls per Top Picks render — the source
+                of the "slow to navigate" delay. Now memoized + capped at
+                top 50. Tap "Show all" to expand to the full list (rare). */}
+            {topPicksRanked.slice(0, topPicksLimit).map((co) => (
               <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} />
             ))}
+            {topPicksLimit < topPicksRanked.length && (
+              <button
+                onClick={() => { setTopPicksLimit(n => n + 100); track("top_picks_show_more", { from: topPicksLimit }); }}
+                style={{ marginTop:8, padding:"12px 16px", borderRadius:10, border:`1px solid ${T.border}`, background:T.bg2, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer" }}
+              >
+                Show {Math.min(100, topPicksRanked.length - topPicksLimit)} more · {topPicksRanked.length - topPicksLimit} remaining
+              </button>
+            )}
           </div>
         </ErrorBoundary>
       )}
