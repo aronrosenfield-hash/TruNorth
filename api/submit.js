@@ -50,7 +50,7 @@ export default async function handler(req) {
 
   // Forward to Resend if configured
   const RESEND  = process.env.RESEND_API_KEY;
-  const INBOX   = process.env.SUBMIT_INBOX || "Aron@trunorth.com";
+  const INBOX   = process.env.SUBMIT_INBOX || "aron.rosenfield@protonmail.com";
   if (RESEND) {
     try {
       const subject = `TruNorth submit · ${cleaned.type || "?"} · ${cleaned.company}`;
@@ -74,7 +74,11 @@ export default async function handler(req) {
           "Content-Type":  "application/json",
         },
         body: JSON.stringify({
-          from:    "TruNorth Submissions <submit@trunorth.com>",
+          // Use Resend's default verified sender so we don't need DNS setup.
+          // When trunorthapp.com is verified in Resend → switch to
+          // "TruNorth Submissions <submit@trunorthapp.com>" for branded
+          // From: lines.
+          from:    "TruNorth Submissions <onboarding@resend.dev>",
           to:      [INBOX],
           subject,
           html,
