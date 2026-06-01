@@ -42,7 +42,7 @@
 | **L-7** | Activate Google Apps Script personalized auto-reply | 20 min | `/docs/gmail-personalized-autoreply-setup.md` — reduces email triage during launch |
 | **L-8** | Daily 10-min PH "warming" routine (upvote 5-10, comment on 1) | 10 min/day × 22 days | PH algo rewards engaged accounts |
 | **L-9** | Record 30-60 sec demo video for PH gallery | 1-2 hr | Demo videos boost PH conversion ~30% |
-| **L-12** | Add `MAILERLITE_API_KEY` to GitHub Actions secrets | 2 min | Without it, Sunday digest cron skips silently |
+| ~~**L-12**~~ | ~~Add `MAILERLITE_API_KEY` to GitHub Actions secrets~~ | ✅ done 2026-06-01 | All 3 secrets verified: `MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `POSTHOG_API_KEY` (the last for the trending cron, not Vercel). Names match what scripts read. |
 
 **Send-on-Jun-16:** L-10 trade press pitches (drafts ready at `/docs/trade-press-pitches.md`).
 
@@ -175,7 +175,8 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top.
 
-1. **2026-06-01** — Scroll-to-top on tab change (user-reported UX bug)
+1. **2026-06-01** — L-12: GitHub Actions secrets verified (`MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `POSTHOG_API_KEY`) — Sunday digest + nightly trending cron now have everything they need
+2. **2026-06-01** — Scroll-to-top on tab change (user-reported UX bug)
 2. **2026-06-01** — PostHog env var rename `POSTHOG_API_KEY` → `VITE_POSTHOG_KEY` (was silently disabled)
 3. **2026-06-01** — Vercel env vars audited; all critical keys verified (L-11)
 4. **2026-06-01** — iOS Universal Links shipped end-to-end (Build 33): AASA + entitlements + manual provisioning + `appUrlOpen` handler + ship script hardened
