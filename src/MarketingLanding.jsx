@@ -123,7 +123,7 @@ const VALUE_PROPS = [
   {
     icon:"◉",
     title:"Real data, not opinions",
-    body:"Scores pulled from FEC filings, EPA enforcement, OSHA violations, OpenFDA recalls, SEC EDGAR, and 20+ public sources. No vibes, no AI hallucination.",
+    body:"Scores pulled from FEC filings, EPA enforcement, OSHA violations, OpenFDA recalls, SEC EDGAR, and 20+ public sources. No vibes. No spin. Just public records.",
   },
   {
     icon:"✦",
@@ -177,7 +177,7 @@ const FAQ = [
   },
   {
     q:"How do you score companies?",
-    a:"We only use public records: campaign-finance filings, environmental enforcement actions, labor citations, SEC disclosures, regulatory recalls, and similar primary sources. Every grade can be traced back to its inputs in the in-app Sources tab. No AI guesses, no scraped opinions.",
+    a:"We only use public records: campaign-finance filings, environmental enforcement actions, labor citations, SEC disclosures, regulatory recalls, and similar primary sources. Every grade can be traced back to its inputs in the in-app Sources tab. No guesses, no scraped opinions.",
   },
   {
     q:"Why no streaks or notifications?",

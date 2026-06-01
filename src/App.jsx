@@ -3018,9 +3018,6 @@ const SOURCES_DATA = [
     {name:"AFL-CIO Executive Paywatch",url:"https://aflcio.org/paywatch",desc:"Tracks CEO-to-worker pay ratios at major US corporations."},
     {name:"SEC Executive Compensation Proxy",url:"https://www.sec.gov/cgi-bin/browse-edgar",desc:"Official source for executive compensation disclosures."},
   ]},
-  {group:"Synthesis & narratives",icon:"ti-cpu",items:[
-    {name:"Anthropic Claude (Haiku)",url:"https://www.anthropic.com",desc:"Synthesizes the per-category narratives and competitor lists from the verified data above. We do NOT trust Claude alone — government data overrides any AI claim."},
-  ]},
 ];
 
 // ─── BROWSE BUCKET MAP (module scope — used in filtered search) ───────────────
@@ -5057,7 +5054,7 @@ if (screen === "onboarding") {
           // might rate-limit us. Full list unlocks at Pro.
           <div style={{ padding:16 }}>
             <p style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.6 }}>
-              Every score is researched from public databases across 11 categories. Government records always override AI claims.
+              Every score is researched from public databases across 11 categories.
             </p>
             {/* Top 5 anchor names — proof of credibility */}
             <div style={{ padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, marginBottom:14 }}>
@@ -5095,7 +5092,7 @@ if (screen === "onboarding") {
         <div style={{ padding:16 }}>
           <p style={{ fontSize:13, color:T.txt3, marginBottom:4, lineHeight:1.6 }}>All scores are researched from these databases. The Live update button on each company uses real-time web search.</p>
           <div style={{ padding:"8px 12px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:12, fontSize:12, color:T.txt3, lineHeight:1.6 }}>
-            <strong style={{color:T.txt2}}>About data freshness:</strong> Government-derived signals (FEC donations, EPA enforcement, OSHA, NLRB, Violation Tracker, HIBP) refresh nightly via automated workflows. AI-synthesized narratives are re-baked monthly to incorporate new public records. Political donation totals reflect the current election cycle; environmental enforcement totals span 2000–present. For breaking news, tap "Live update" on any company card.
+            <strong style={{color:T.txt2}}>About data freshness:</strong> Government-derived signals (FEC donations, EPA enforcement, OSHA, NLRB, Violation Tracker, HIBP) refresh nightly via automated workflows. Per-company narratives are re-researched monthly to incorporate new public records. Political donation totals reflect the current election cycle; environmental enforcement totals span 2000–present. For breaking news, tap "Live update" on any company card.
           </div>
           {SOURCES_DATA.map(g => (
             <div key={g.group}>
