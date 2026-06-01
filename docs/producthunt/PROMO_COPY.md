@@ -2,7 +2,7 @@
 
 After your Coming Soon page is live, share this URL aggressively for 1-2 weeks before launch. Goal: 100+ subscribers = ~30+ guaranteed upvotes hour 1.
 
-Replace `[YOUR-PH-URL]` with the actual Coming Soon URL ProductHunt gives you.
+Replace `https://www.producthunt.com/products/trunorth?launch=trunorth` with the actual Coming Soon URL ProductHunt gives you.
 
 ---
 
@@ -16,7 +16,7 @@ Grades 11,000+ companies on politics, environment, labor, animal testing & more 
 No vibes. No spin. Just journalism.
 
 Subscribe for the launch ↓
-[YOUR-PH-URL]
+https://www.producthunt.com/products/trunorth?launch=trunorth
 ```
 
 ## LinkedIn — pinned post
@@ -42,7 +42,7 @@ You can scan a barcode in-store and get the verdict before you pay.
 Free forever. iOS first.
 
 Subscribe on Product Hunt to get notified when we launch ↓
-[YOUR-PH-URL]
+https://www.producthunt.com/products/trunorth?launch=trunorth
 
 #startup #consumertech #climate #ethicalshopping #indieMaker
 ```
@@ -52,7 +52,7 @@ Subscribe on Product Hunt to get notified when we launch ↓
 Add this line under your current email signature:
 
 ```
-🚀 Subscribe to our Product Hunt launch: [YOUR-PH-URL]
+🚀 Subscribe to our Product Hunt launch: https://www.producthunt.com/products/trunorth?launch=trunorth
 ```
 
 ## Personal email blast to your network
@@ -68,7 +68,7 @@ It pulls from public records only — FEC donations, EPA violations, OSHA citati
 
 We're launching on Product Hunt in the next ~2 weeks. Would mean a lot if you'd subscribe to get the launch notification (one email, no spam):
 
-[YOUR-PH-URL]
+https://www.producthunt.com/products/trunorth?launch=trunorth
 
 And if you want early TestFlight access in the meantime, just reply.
 
@@ -94,7 +94,7 @@ Hey HN/IH,
 
 After a year solo, my consumer values app launches on Product Hunt in about a week. The unique angle: every grade across 11,000 companies traces back to a public record (FEC, EPA, OSHA, SEC, NLRB, OpenFDA). No AI scoring, no scraped opinions.
 
-Subscribe here if interested: [YOUR-PH-URL]
+Subscribe here if interested: https://www.producthunt.com/products/trunorth?launch=trunorth
 
 Happy to answer questions about the data pipeline, scoring methodology, or the indie founder journey.
 ```
