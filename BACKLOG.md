@@ -40,7 +40,7 @@ Things that should land before the PH launch fires. Sorted by impact ÷ effort.
 | **L-7** | **Activate Google Apps Script personalized auto-reply** | 20 min | Setup guide at `/docs/gmail-personalized-autoreply-setup.md`; reduces email triage burden during launch chaos | None |
 | **L-8** | **Daily 10-min PH "warming" routine** (upvote 5-10, comment on 1) | 10 min/day × 22 days | PH algo weights engagement; warm account = higher launch reach | None — recurring |
 | **L-9** | **Record a 30-60 second demo video** for PH gallery | 1-2 hr | Demo videos boost PH conversion ~30%; QuickTime → iPhone screen rec → unlisted YouTube | None |
-| **L-10** | **Trade press pre-pitches** (Verge, Fast Company, Mother Jones, ESG Today) | 2-3 hr | Embargoed pitch 1 week before = launch day coverage | None |
+| ~~**L-10**~~ | ~~Trade press pre-pitches~~ — **drafts ready, you send Jun 16** | ✅ drafted | 4 personalized pitches at `/docs/trade-press-pitches.md` (Verge/Fast Co/Mother Jones/ESG Today) with target journalists + follow-up copy | Your action: personalize + send Jun 16 |
 | **L-11** | **Verify Vercel env vars still active** (RESEND_API_KEY, SUBMIT_INBOX, MAILERLITE_API_KEY) | 5 min | Submit form + email capture break silently if any rotate | None |
 
 ---
@@ -133,10 +133,10 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | ID | Item | Effort | Source |
 |---|---|---|---|
 | **B-18** | Reddit/HN "behind the scenes" post (data pipeline deep dive) | M | Best fired 1 week after PH launch as follow-up content |
-| **B-19** | Email drip: 3-step welcome sequence in MailerLite | M | Captures already firing; need automation built in MailerLite dashboard |
+| ~~**B-19**~~ | ~~Email drip: 3-step welcome sequence~~ — **copy ready, you wire in MailerLite** | ✅ drafted | 3 paste-ready emails at `/docs/mailerlite-welcome-drip.md` (welcome / behind-the-data / top brands) with personalization tokens + setup checklist |
 | **B-20** | PostHog → daily KPI digest email | S | Already a built-in PH feature; just subscribe |
 | **B-21** | "Worst of the week" / "Best of the week" social content (auto-generated) | M | Use `/public/data/weekly_changes.json` already produced by Sunday digest |
-| **B-22** | TikTok / Reels strategy (record 5-10 "scan this barcode" short videos) | M-L | Highest-leverage social channel for the value prop |
+| ~~**B-22**~~ | ~~TikTok / Reels strategy~~ — **7 scripts ready, you film** | ✅ drafted | 7 video concepts at `/docs/tiktok-reels-content-scripts.md` (Patagonia vs Exxon, barcode scan, founder story, FEC reveal, personalization, "what mom thinks", fast-food OSHA) + production logistics |
 
 ### Infra / ops
 
@@ -179,12 +179,16 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — Reveal "tailored to you" overflow fix (constrained to maxWidth:340)
-2. **2026-06-01 PM** — Privacy Policy scroll fix on web (owns 100vh scroll container, bypasses body overflow:hidden)
-3. **2026-06-01 PM** — What's New modal rewritten for launch (welcome card vs. dev changelog) + WHATSNEW_VERSION bumped
-4. **2026-06-01 PM** — Email signatures all 4 corrected to `Aron@trunorthapp.com` (L-4)
-5. **2026-06-01 PM** — ProductHunt "Coming Soon" chip added to marketing landing hero (L-6)
-6. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
+1. **2026-06-01 PM** — TestFlight Build 17 uploaded with Reveal fix + new What's New copy
+2. **2026-06-01 PM** — TikTok/Reels content scripts drafted (B-22) — 7 video concepts
+3. **2026-06-01 PM** — MailerLite 3-step welcome drip copy drafted (B-19)
+4. **2026-06-01 PM** — Trade press pitch drafts ready (L-10) — Verge / Fast Co / Mother Jones / ESG Today
+5. **2026-06-01 PM** — Reveal "tailored to you" overflow fix (maxWidth:340)
+6. **2026-06-01 PM** — Privacy Policy scroll fix on web (owns 100vh scroll container)
+7. **2026-06-01 PM** — What's New modal rewritten for launch + WHATSNEW_VERSION bumped
+8. **2026-06-01 PM** — Email signatures all 4 corrected to `Aron@trunorthapp.com` (L-4)
+9. **2026-06-01 PM** — ProductHunt "Coming Soon" chip on marketing landing (L-6)
+10. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
 7. **2026-06-01** — PROMO_COPY.md filled with real PH Coming Soon URL, committed + pushed
 8. **2026-06-01** — ProductHunt Coming Soon page scheduled for June 23 (logo, 5 gallery images, First Comment, 3 shoutouts)
 9. **2026-05-31** — Phase 5.av/aw/ax: iOS-only landing + Claude/AI scrub + bulletproof Capacitor native detection
