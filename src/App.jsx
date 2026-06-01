@@ -3172,27 +3172,27 @@ export default function App() {
   } catch {}
 
   // ─── Marketing landing gate ─────────────────────────────────────────────
-  // First-time root-URL visitors see MarketingLanding instead of the SPA.
-  // Setting localStorage.tn_skipMarketing=1 (via the "Try the Web App" CTA
-  // inside MarketingLanding) bypasses the gate on subsequent loads.
+  // Phase 5.av: The user decided to direct ALL web visitors to download the
+  // iOS app rather than offer the web app as a primary surface. Strategy:
+  //   - Root URL (www.trunorthapp.com) → MarketingLanding ALWAYS (no shortcut)
+  //   - Deep-link path (/company/<slug>, /c/<slug>) → web app (so share
+  //     links still work)
+  //   - Any query string (?slug=, ?skipOnboarding, ?tab=) → web app
+  //   - Hash #privacy → standalone PrivacyPolicy
   //
-  // We deliberately do NOT show the marketing page when:
-  //   - tn_skipMarketing is set (returning user / already chose "open app")
-  //   - the URL has any query params (e.g. ?skipOnboarding, ?tab, share links)
-  //   - it's a deep-link path like /company/<slug>
-  //   - the QA pro flag is on
-  // The hash route #privacy renders the standalone privacy policy.
+  // Migration note: any legacy tn_skipMarketing flag is intentionally
+  // IGNORED now so previous visitors who clicked the old "Try the Web App"
+  // button see the new landing on next visit (and won't be lost in the SPA).
   const __pathname = (typeof window !== "undefined") ? window.location.pathname : "/";
   const __hash     = (typeof window !== "undefined") ? window.location.hash     : "";
   const __search   = (typeof window !== "undefined") ? window.location.search   : "";
   const __isRoot   = __pathname === "/" || __pathname === "";
   const __hasDeepLink = /^\/(company|c)\//.test(__pathname);
-  const __skipMarketing = (() => {
-    try { return localStorage.getItem("tn_skipMarketing") === "1"; } catch { return false; }
-  })();
+  // Clean up stale flag from the previous flow if present.
+  try { localStorage.removeItem("tn_skipMarketing"); } catch {}
   const [marketingScreen, setMarketingScreen] = useState(() => {
     if (__hash.replace(/^#/, "") === "privacy") return "privacy";
-    if (!__skipMarketing && __isRoot && !__hasDeepLink && !__search) return "landing";
+    if (__isRoot && !__hasDeepLink && !__search) return "landing";
     return "app";
   });
   useEffect(() => {
@@ -3200,11 +3200,11 @@ export default function App() {
     const onHash = () => {
       const h = window.location.hash.replace(/^#/, "");
       if (h === "privacy") setMarketingScreen("privacy");
-      else if (marketingScreen === "privacy") setMarketingScreen(__skipMarketing || !__isRoot ? "app" : "landing");
+      else if (marketingScreen === "privacy") setMarketingScreen(__isRoot && !__hasDeepLink && !__search ? "landing" : "app");
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
-  }, [marketingScreen, __isRoot, __skipMarketing]);
+  }, [marketingScreen, __isRoot, __hasDeepLink, __search]);
 
 const [screen, setScreen] = useState("splash");
 const [currentUser, setCurrentUser] = useState(() => {
@@ -3644,11 +3644,8 @@ useEffect(() => {
     }} />;
   }
   if (marketingScreen === "landing") {
+    // Phase 5.av: no onEnterApp — landing is iOS-download-driven only.
     return <MarketingLanding
-      onEnterApp={() => {
-        try { localStorage.setItem("tn_skipMarketing", "1"); } catch {}
-        setMarketingScreen("app");
-      }}
       onOpenPrivacy={() => {
         try { window.location.hash = "#privacy"; } catch {}
         setMarketingScreen("privacy");

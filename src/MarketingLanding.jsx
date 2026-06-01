@@ -247,16 +247,14 @@ function SecondaryCTA({ children, onClick, href, style }) {
 }
 
 // ─── main component ────────────────────────────────────────────────────────
-export default function MarketingLanding({ onEnterApp, onOpenPrivacy }) {
+// Phase 5.av: web app entry is DISABLED. Landing page drives iOS download
+// only via mailto:Aron@trunorthapp.com TestFlight invite. The web app
+// continues to work for deep-link shares (/company/<slug>) but is no
+// longer a primary surface.
+export default function MarketingLanding({ onOpenPrivacy }) {
   const [openFaq, setOpenFaq] = useState(null);
   const [email, setEmail] = useState("");
   const [submitState, setSubmitState] = useState("idle"); // idle | loading | done | error
-
-  const handleEnter = () => {
-    setMarketingSkipped();
-    if (onEnterApp) onEnterApp();
-    else if (typeof window !== "undefined") window.location.reload();
-  };
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
@@ -309,12 +307,13 @@ export default function MarketingLanding({ onEnterApp, onOpenPrivacy }) {
           <img src="/apple-touch-icon.png" alt="" width={32} height={32} style={{ borderRadius:8 }} />
           <div style={{ fontWeight:800, fontSize:17, letterSpacing:-0.3 }}>TruNorth</div>
         </div>
-        <button onClick={handleEnter} style={{
-          background:"none", border:"none", color:C.textDim,
-          fontSize:14, fontWeight:600, cursor:"pointer", fontFamily:FONT,
+        <a href="mailto:Aron@trunorthapp.com?subject=TestFlight%20access" style={{
+          color:C.text, fontSize:14, fontWeight:600,
+          textDecoration:"none", fontFamily:FONT,
+          background:C.accent, padding:"8px 14px", borderRadius:8,
         }}>
-          Open app →
-        </button>
+          Get TruNorth →
+        </a>
       </header>
 
       {/* ── Hero ── */}
@@ -337,13 +336,15 @@ export default function MarketingLanding({ onEnterApp, onOpenPrivacy }) {
               TruNorth grades 11,000+ companies across nine categories — politics, environment, labor, DEI, charity, animal testing, firearms, privacy, and exec pay — using public records, not opinions.
             </Lead>
             <div className="tn-cta-row">
-              <PrimaryCTA onClick={handleEnter}>Try the Web App</PrimaryCTA>
-              <SecondaryCTA href="mailto:Aron@trunorthapp.com?subject=TestFlight%20access">
-                Get Early iOS Access
+              <PrimaryCTA href="mailto:Aron@trunorthapp.com?subject=TestFlight%20access&body=Hi%20Aron%2C%20please%20send%20me%20a%20TestFlight%20invite%20for%20TruNorth.">
+                Get TruNorth on iOS
+              </PrimaryCTA>
+              <SecondaryCTA href="mailto:Aron@trunorthapp.com?subject=TruNorth%20Question">
+                Email Aron
               </SecondaryCTA>
             </div>
             <div style={{ marginTop:18, fontSize:13, color:C.textMute }}>
-              Free forever. No account required. Works offline.
+              Free forever. iPhone first · Android coming soon. App Store launch in beta — TestFlight invite arrives same day.
             </div>
           </div>
           <div className="tn-fade-in">
