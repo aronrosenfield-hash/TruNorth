@@ -87,6 +87,20 @@ npx vite build >/dev/null
 echo "📲 Syncing to iOS..."
 npx cap sync ios >/dev/null
 
+# 2026-06-01: `cap sync` overwrites project.pbxproj and strips our custom
+# CODE_SIGN_ENTITLEMENTS reference (needed for Universal Links). Re-inject
+# it here, idempotently. Skips if the entitlements file doesn't exist.
+PBXPROJ="$ROOT/ios/App/App.xcodeproj/project.pbxproj"
+ENTITLEMENTS_PATH="App/App.entitlements"
+if [[ -f "$ROOT/ios/App/$ENTITLEMENTS_PATH" ]]; then
+  if ! grep -q "CODE_SIGN_ENTITLEMENTS" "$PBXPROJ"; then
+    # Insert the CODE_SIGN_ENTITLEMENTS line right above each CODE_SIGN_STYLE line
+    sed -i '' "s|CODE_SIGN_STYLE = Automatic;|CODE_SIGN_ENTITLEMENTS = $ENTITLEMENTS_PATH;\\
+\t\t\t\tCODE_SIGN_STYLE = Automatic;|g" "$PBXPROJ"
+    echo "🔐 Re-injected CODE_SIGN_ENTITLEMENTS (cap sync had stripped it)"
+  fi
+fi
+
 # ─── Step 2: Bump build number (always); optionally bump version ─────────────
 # 2026-06-01: must bump BOTH places. The Xcode "Generate Info.plist File"
 # default uses CURRENT_PROJECT_VERSION from project.pbxproj as the build
