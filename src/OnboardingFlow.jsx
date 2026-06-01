@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { subscribeEmail } from "./lib/marketing";
 
 const COMPANIES = [
   { emoji:"🛒", bg:"#1a1a2e", name:"Amazon",    meta:"Retail · E-commerce",  grade:"C", gradeStyle:{background:"#2e2a1a",color:"#fde68a"}, details:[{label:"🌿 Environment",pct:70,color:"#4ade80",grade:"B"},{label:"⚖️ Labor",pct:30,color:"#fca5a5",grade:"D"},{label:"🏳️ DEI",pct:72,color:"#a99ff7",grade:"B"}] },
@@ -21,10 +20,6 @@ const CATEGORIES = [
 
 export default function OnboardingFlow({ onComplete }) {
   const [slide, setSlide]           = useState(0);
-  const [authMode, setAuthMode]     = useState("signup");
-  const [email, setEmail]           = useState("");
-  const [password, setPassword]     = useState("");
-  const [errors, setErrors]         = useState({});
   const [expandedCo, setExpandedCo] = useState(null);
   const [fading, setFading]         = useState(false);
 
@@ -35,31 +30,17 @@ export default function OnboardingFlow({ onComplete }) {
 
   function handleNext() {
     if (slide < 2) { goTo(slide + 1); return; }
-    const errs = {};
-    if (!email.trim())    errs.email = true;
-    if (!password.trim()) errs.password = true;
-    if (Object.keys(errs).length) { setErrors(errs); return; }
-    setErrors({});
-    // Phase 5.ag: stamp the onboarding moment so WhatsNew can suppress itself
-    // on the first session after onboarding (it's meaningless to a brand-new
-    // user — they have no baseline).
-    localStorage.setItem("tn_hasOnboarded", "1");
-    try { sessionStorage.setItem("tn_justOnboarded", String(Date.now())); } catch {}
-    localStorage.setItem("tn_user", JSON.stringify({ email }));
-    // Phase 5.ap: fire-and-forget MailerLite subscribe on signup. Never
-    // blocks onboarding — failure here doesn't hurt the user, they're
-    // already in the app.
-    try { subscribeEmail(email, "onboarding_signup", { authMode }); } catch {}
-    onComplete({ email, isGuest: false });
-  }
-
-  function handleGuest() {
+    // Phase 5.as (#11): killed the onboarding sign-in. We were capturing
+    // email + password that did nothing (no backend auth), creating a
+    // fake-friction funnel. Now: 3 informational slides → straight into
+    // the app. Email is captured ONLY at Pro upgrade (paywall), where
+    // it's actually required for Stripe + tied to a real account.
     localStorage.setItem("tn_hasOnboarded", "1");
     try { sessionStorage.setItem("tn_justOnboarded", String(Date.now())); } catch {}
     onComplete({ email: null, isGuest: true });
   }
 
-  const btnLabel = slide === 0 ? "Let's go →" : slide === 1 ? "Next →" : authMode === "signup" ? "Create account →" : "Sign in →";
+  const btnLabel = slide === 0 ? "Let's go →" : slide === 1 ? "Next →" : "Start exploring →";
 
   return (
     <div style={s.wrap}>
@@ -120,7 +101,7 @@ export default function OnboardingFlow({ onComplete }) {
           <div style={s.slide}>
             <div style={s.ctaArt}><div style={s.ctaArtInner}><svg width="36" height="36" viewBox="0 0 48 48"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg></div></div>
             <h2 style={{ ...s.headline, fontSize:28, textAlign:"center" }}>Shop with a<br /><em style={{ color:"#7c6dfa", fontStyle:"normal" }}>clear conscience.</em></h2>
-            <p style={{ ...s.subtext, textAlign:"center", marginBottom:20 }}>11,000+ companies tracked. Free to start — create an account to save your preferences.</p>
+            <p style={{ ...s.subtext, textAlign:"center", marginBottom:28 }}>11,000+ companies tracked. Free forever — upgrade to Pro for personalized scoring and full source breakdowns.</p>
             <div style={s.statsRow}>
               {[["11,000+","Companies"],["9","Categories"],["25+","Sources"]].map(([num,label]) => (
                 <div key={label} style={{ textAlign:"center" }}>
@@ -129,19 +110,11 @@ export default function OnboardingFlow({ onComplete }) {
                 </div>
               ))}
             </div>
-            <div style={s.authTabs}>
-              {["signup","login"].map(mode => (
-                <button key={mode} style={{ ...s.authTab, ...(authMode===mode ? s.authTabActive : {}) }} onClick={() => setAuthMode(mode)}>
-                  {mode === "signup" ? "Create account" : "Sign in"}
-                </button>
-              ))}
+            <div style={{ background:"#161616", border:"1px solid #222", borderRadius:14, padding:"16px 18px", marginBottom:8 }}>
+              <div style={{ fontSize:13, color:"#aaa", lineHeight:1.55 }}>
+                Search, scan barcodes, browse by category — all free. Take the 30-second values quiz any time to personalize your scores.
+              </div>
             </div>
-            <label htmlFor="auth-email" className="sr-only">Email address</label>
-            <input id="auth-email" type="email" autoComplete="email" placeholder="Email address" value={email} onChange={e => setEmail(e.target.value)} aria-invalid={!!errors.email} style={{ ...s.authInput, borderColor: errors.email ? "#fca5a5" : "#2a2a2a" }} />
-            <label htmlFor="auth-password" className="sr-only">Password</label>
-            <input id="auth-password" type="password" autoComplete="current-password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} aria-invalid={!!errors.password} style={{ ...s.authInput, borderColor: errors.password ? "#fca5a5" : "#2a2a2a" }} />
-            <div style={s.divider}><div style={s.dividerLine}/><span style={{ color:"#444", fontSize:11 }}>or</span><div style={s.dividerLine}/></div>
-            <button style={s.btnGhost} onClick={handleGuest}>Continue as guest</button>
             <p style={s.terms}>By continuing you agree to our <a href="#" style={{ color:"#7c6dfa", textDecoration:"none" }}>Terms</a> & <a href="#" style={{ color:"#7c6dfa", textDecoration:"none" }}>Privacy Policy</a>.</p>
           </div>
         )}

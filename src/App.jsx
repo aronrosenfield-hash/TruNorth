@@ -792,7 +792,9 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
     // In production: call Stripe Checkout API here.
     setTimeout(() => {
       setLoading(false);
-      onSubscribe();
+      // Phase 5.as (#11): pass the email up so parent can persist it to
+      // tn_user → Account auto-populates.
+      onSubscribe(email);
     }, 1500);
   };
 
@@ -3657,7 +3659,25 @@ if (screen === "onboarding") {
     // so the Quiz fully fills the viewport.
     return (
       <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden" }}>
-        {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{setIsPaid(true);setShowPaywall(false);window.scrollTo(0,0);setScreen("main");}} onClose={()=>{setShowPaywall(false);setScreen("main");}} />}
+        {showPaywall && <PaywallScreen
+          initialEmail={currentUser?.email||""}
+          onSubscribe={(paidEmail)=>{
+            setIsPaid(true);
+            // Phase 5.as (#11): when sign-in was killed from onboarding, the
+            // paywall became the only place we collect email. Persist it
+            // to tn_user so Account screen auto-populates without the user
+            // having to re-enter it.
+            if (paidEmail) {
+              const updated = { ...(currentUser || {}), email: paidEmail };
+              try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
+              setCurrentUser(updated);
+            }
+            setShowPaywall(false);
+            window.scrollTo(0,0);
+            setScreen("main");
+          }}
+          onClose={()=>{setShowPaywall(false);setScreen("main");}}
+        />}
         <Quiz
           onComplete={(p) => {
             setProfile(p);
@@ -3676,8 +3696,14 @@ if (screen === "onboarding") {
 
   return (
     <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
-      {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={()=>{
+      {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={(paidEmail)=>{
         setIsPaid(true);
+        // Phase 5.as (#11): persist paywall email to Account.
+        if (paidEmail) {
+          const updated = { ...(currentUser || {}), email: paidEmail };
+          try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
+          setCurrentUser(updated);
+        }
         setShowPaywall(false);
         window.scrollTo(0,0);
         // Phase 5.y: don't force a quiz retake if the user already personalized.
@@ -4535,13 +4561,47 @@ if (screen === "onboarding") {
       {tab === "sources" && (
         <ErrorBoundary name="sources">{
         !isPaid ? (
-          <div style={{ padding:24, textAlign:"center" }}>
-            <div style={{ width:56, height:56, background:T.goldBg, borderRadius:16, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 14px" }}>
-              <i className="ti ti-crown" style={{ fontSize:26, color:T.gold }} aria-hidden="true" />
+          // Phase 5.as (#14): B+C combo for free users. Show source
+          // CATEGORIES + the top 5 most authoritative named sources
+          // (the credibility anchors). Hide the long-tail source names
+          // and URLs so competitors can't trivially replicate our
+          // pipeline and we don't advertise heavy use of sources that
+          // might rate-limit us. Full list unlocks at Pro.
+          <div style={{ padding:16 }}>
+            <p style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.6 }}>
+              Every score is researched from public databases across 11 categories. Government records always override AI claims.
+            </p>
+            {/* Top 5 anchor names — proof of credibility */}
+            <div style={{ padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, marginBottom:14 }}>
+              <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
+                Verified by
+              </div>
+              <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                {["SEC EDGAR","FEC.gov","EPA","OSHA","OpenFDA"].map(n => (
+                  <span key={n} style={{ fontSize:11, fontWeight:600, padding:"5px 10px", borderRadius:8, background:T.bg3, color:T.txt2, border:`1px solid ${T.border}` }}>{n}</span>
+                ))}
+                <span style={{ fontSize:11, color:T.txt3, padding:"5px 4px" }}>+ 20 more (Pro)</span>
+              </div>
             </div>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:8 }}>Data sources are Pro only</div>
-            <div style={{ fontSize:13, color:T.txt3, marginBottom:20, lineHeight:1.6 }}>Upgrade to see all 25+ research sources we use — SEC EDGAR, FEC, OSHA, NLRB, EPA, BHRRC, Yale CELI, Have I Been Pwned, OpenFDA, Violation Tracker, and more.</div>
-            <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $1.99/mo</button>
+            {/* Category groups — no individual source names, just the
+                shape of the pipeline */}
+            <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
+              Source categories
+            </div>
+            {SOURCES_DATA.map(g => (
+              <div key={g.group} style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, marginBottom:6 }}>
+                <i className={`ti ${g.icon}`} style={{ fontSize:16, color:T.txt3 }} aria-hidden="true" />
+                <div style={{ flex:1, fontSize:13, fontWeight:600, color:T.txt }}>{g.group}</div>
+                <div style={{ fontSize:11, color:T.txt3 }}>{g.items.length} source{g.items.length === 1 ? "" : "s"}</div>
+              </div>
+            ))}
+            <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", marginTop:14, padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
+              <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
+              Unlock all 25+ named sources — $1.99/mo
+            </button>
+            <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
+              Pro shows every source name, URL, and how it feeds each category.
+            </div>
           </div>
         ) : (
         <div style={{ padding:16 }}>
