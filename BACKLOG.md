@@ -179,10 +179,12 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — OG / Twitter card metadata sharpened — "public records" differentiator now in first 10 words; updated to mention 9 categories + iOS
-2. **2026-06-01 PM** — Failed-search "notify me" (B-11) — SuggestBrandButton 3-phase flow with brand-tagged MailerLite signup
-3. **2026-06-01 PM** — Soft email ask after quiz completion (B-6) — inline card on Reveal screen, fires `reveal_email_captured`
-3. **2026-06-01 PM** — TestFlight Build 17 uploaded with Reveal fix + new What's New copy
+1. **2026-06-01 PM** — Bug batch: Splash "11,000+" rounding, Browse→Search empty-state fix (openBucket now resets all stale filters), free-plan paywall fires on FIRST company tap (was 3-quota), Brand of Day moved above Top Picks, paid Sources tab now narrative paragraph (no exact API list)
+2. **2026-06-01 PM** — OG / Twitter card metadata sharpened — "public records" differentiator now in first 10 words; updated to mention 9 categories + iOS
+3. **2026-06-01 PM** — Failed-search "notify me" (B-11) — SuggestBrandButton 3-phase flow with brand-tagged MailerLite signup
+4. **2026-06-01 PM** — Soft email ask after quiz completion (B-6) — inline card on Reveal screen, fires `reveal_email_captured`
+5. **2026-06-01 PM** — TestFlight Build 18 uploaded with B-6 + B-11 (email capture moments)
+6. **2026-06-01 PM** — TestFlight Build 17 uploaded with Reveal fix + new What's New copy
 4. **2026-06-01 PM** — TikTok/Reels content scripts drafted (B-22) — 7 video concepts
 5. **2026-06-01 PM** — MailerLite 3-step welcome drip copy drafted (B-19)
 6. **2026-06-01 PM** — Trade press pitch drafts ready (L-10) — Verge / Fast Co / Mother Jones / ESG Today

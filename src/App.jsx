@@ -1170,6 +1170,108 @@ function RevealEmailCapture() {
   );
 }
 
+// Phase 5.ag (item N) + 2026-06-01 (user feedback): extracted to a component
+// so it can render ABOVE the top-picks list on the Top Picks tab. Was
+// inline below "More for you this week" — moved up because Brand of Day
+// is the daily-ritual hook, and burying it under the picks list buries
+// the reason a user opens the app on day 2.
+//
+// Deterministic rotation by date: all users see the same brand on the
+// same day (shareability) and it changes daily (return visits). Reads
+// /public/data/editorial.json for hand-curated stories; falls back to a
+// curated top-200 pool rotation when no story exists for today.
+function BrandOfDayCard({ editorial, deduped, profile, setDeepLinkSlug, setTab }) {
+  const todayIso = new Date().toISOString().slice(0, 10);
+  let story = null;
+  try {
+    if (editorial?.stories) {
+      story = editorial.stories.find(s =>
+        Array.isArray(s.displayDays) && s.displayDays.includes(todayIso)
+      );
+    }
+  } catch {}
+
+  // Branch 1 — editorial-curated story exists for today
+  if (story) {
+    const co = deduped.find(c => (c.slug || c.id) === story.slug);
+    if (co) {
+      const pickScore = computeScore(co, profile);
+      const pickGrade = scoreGrade(pickScore);
+      const flavor = {
+        A: { color:"#4caf82", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0d2318" },
+        B: { color:"#8bc34a", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#1a2810" },
+        C: { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" },
+        D: { color:"#ff7043", bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:"#2a1810" },
+        F: { color:"#e24a4a", bgTint:"rgba(226,74,74,0.08)", borderTint:"rgba(226,74,74,0.4)", chipBg:"#2a0d0d" },
+      }[pickGrade] || { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" };
+      return (
+        <div
+          onClick={() => {
+            track("editorial_clicked", { slug: co.slug || co.id, story_id: story.id });
+            setDeepLinkSlug(co.slug || co.id);
+            setTab("search");
+          }}
+          style={{ margin:"12px 16px", padding:"14px 16px", background:flavor.bgTint, border:`1.5px solid ${flavor.borderTint}`, borderRadius:14, cursor:"pointer" }}
+        >
+          <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10 }}>
+            <CompanyLogo company={co} size={40} />
+            <div style={{ flex:1, minWidth:0 }}>
+              <div style={{ fontSize:10, color:flavor.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {story.tag || "Worth knowing"}</div>
+              <div style={{ fontSize:15, fontWeight:700, color:T.txt, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{story.name || co.name}</div>
+            </div>
+            <div style={{ padding:"6px 12px", borderRadius:10, background:flavor.chipBg, color:flavor.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+          </div>
+          <div style={{ fontSize:14, fontWeight:600, color:T.txt2, marginBottom:6, lineHeight:1.35 }}>{story.headline}</div>
+          <div style={{ fontSize:12.5, color:T.txt3, lineHeight:1.55 }}>{story.blurb}</div>
+        </div>
+      );
+    }
+  }
+
+  // Branch 2 — curated top-200 fallback rotation
+  const day = Math.floor(Date.now() / 86_400_000);
+  const JUNK = new Set(["Other","Various","NA","Uncategorized","Industrial Equipment Manufacturing","Forest Products"]);
+  const wellKnown = deduped
+    .filter(c => c.overall != null && c.cat && !JUNK.has(c.cat))
+    .filter(c => c.logo || c.hasLogo || (c.name && c.name.length <= 30))
+    .filter(c => ["A","B","C","D","F"].includes(scoreGrade(c.overall)))
+    .sort((a, b) => {
+      const score = (c) => Object.values(c.sc || {}).filter(v => v && String(v).toLowerCase() !== "neutral" && String(v).toLowerCase() !== "unknown").length;
+      return score(b) - score(a);
+    })
+    .slice(0, 200);
+  if (!wellKnown.length) return null;
+  const pick = wellKnown[day % wellKnown.length];
+  const pickScore = computeScore(pick, profile);
+  const pickGrade = scoreGrade(pickScore);
+  const flavorByGrade = {
+    A: { tag: "Worth knowing", color: "#4caf82", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
+    B: { tag: "Worth knowing", color: "#8bc34a", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
+    C: { tag: "Mixed signal",  color: "#f0a030", bgTint: "rgba(240,160,48,0.08)", borderTint: "rgba(240,160,48,0.4)" },
+    D: { tag: "Worth a look",  color: "#ff7043", bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
+    F: { tag: "Worth a look",  color: "#e24a4a", bgTint: "rgba(226,74,74,0.08)", borderTint: "rgba(226,74,74,0.4)" },
+  };
+  const fl = flavorByGrade[pickGrade] || flavorByGrade.C;
+  return (
+    <div
+      onClick={() => {
+        track("brand_of_day_clicked", { slug: pick.slug || pick.id, grade: pickGrade, day });
+        setDeepLinkSlug(pick.slug || pick.id);
+        setTab("search");
+      }}
+      style={{ margin:"12px 16px", padding:"12px 14px", background:fl.bgTint, border:`1.5px solid ${fl.borderTint}`, borderRadius:14, cursor:"pointer", display:"flex", alignItems:"center", gap:12 }}
+    >
+      <CompanyLogo company={pick} size={44} />
+      <div style={{ flex:1, minWidth:0 }}>
+        <div style={{ fontSize:10, color:fl.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {fl.tag}</div>
+        <div style={{ fontSize:15, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", marginTop:2 }}>{pick.name}</div>
+        <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{pick.cat}</div>
+      </div>
+      <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#0d2318" : pickGrade === "B" ? "#1a2810" : pickGrade === "C" ? "#2a2210" : pickGrade === "D" ? "#2a1810" : "#2a0d0d", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+    </div>
+  );
+}
+
 function WhatsNewModal({ companyCount }) {
   const [show, setShow] = useState(() => {
     // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
@@ -1225,7 +1327,10 @@ function WhatsNewModal({ companyCount }) {
           <div style={{ fontSize:18, fontWeight:700 }}>Welcome to TruNorth</div>
         </div>
         <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
-          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>{companyCount.toLocaleString()}+</div>
+          {/* 2026-06-01: round to "11,000+" rather than the exact toLocaleString
+              count. The exact 11,209 read as precision theater; "11,000+" reads
+              as scale. Same number, better punch. */}
+          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>11,000+</div>
           <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>Companies graded across 9 value categories — using only public records.</div>
         </div>
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>
@@ -1701,11 +1806,16 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    // Phase 5.as (QA fleet round 2): paywall now has a 3/week quota AND
-    // a 4-hour dismiss cooldown. Without the cooldown, users who dismiss
-    // re-trigger the paywall on every subsequent tap — abusive UX that
-    // teaches dismiss-and-leave. With cooldown, post-dismiss browsing
-    // stays free until the next session (or 4h, whichever is sooner).
+    // 2026-06-01 (user feedback): paywall fires on FIRST company tap by
+    // free users (was: 3 free views/week). The pre-launch comment at the
+    // banner site already said "paywall now fires immediately on every
+    // non-paid tap" but the quota gate was never lowered to match. Now it
+    // is. Cooldown preserved so dismissers can browse for 4h before being
+    // re-asked.
+    //
+    // Exception: a company they've ALREADY viewed (alreadyViewed=true)
+    // doesn't re-fire the paywall — re-opening a card you already opened
+    // shouldn't punish you.
     if (!isPaid && !open) {
       const slug = company.slug || company.id;
       const now = new Date();
@@ -1713,14 +1823,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
       let log = {};
       try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
       if (log.week !== weekKey) log = { week: weekKey, slugs: [] };
-      // Dismiss cooldown: if user closed paywall within last 4 hours, treat
-      // the request as if they're still in their free quota — record the
-      // view but don't re-fire the paywall.
       const dismissedAt = Number(sessionStorage.getItem("tn_paywallDismissedAt") || 0);
       const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 4 * 60 * 60 * 1000;
       const alreadyViewed = log.slugs.includes(slug);
-      if (!alreadyViewed && log.slugs.length >= 3 && !inCooldown) {
-        track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
+      // Fire paywall on EVERY new company tap (unless in cooldown).
+      if (!alreadyViewed && !inCooldown) {
+        track("paywall_shown", { reason: "free_company_tap", slug, viewed_this_week: log.slugs.length });
         onUpgrade();
         return;
       }
@@ -4557,8 +4665,19 @@ if (screen === "onboarding") {
             .slice(0, n);
 
           const openBucket = (cat, count) => {
-            setIndustryBucket(cat); setQueryRaw(""); setQuery("");
-            setTab("search"); track("browse_category_open", { bucket: cat, count, variant: browseVariant });
+            // 2026-06-01 bug fix: previously only cleared query — but stale
+            // catFilters / flagFilters / focusedSlug / showSavedOnly /
+            // leanFilter from prior browsing intersected with the industry
+            // bucket and could yield an empty list. Now reset EVERY filter
+            // so the industry view always shows that bucket's full set.
+            setIndustryBucket(cat);
+            setQueryRaw(""); setQuery("");
+            setCatFilters([]); setFlagFilters([]);
+            setLeanFilter("all");
+            setShowSavedOnly(false);
+            setFocusedSlug(null);
+            setTab("search");
+            track("browse_category_open", { bucket: cat, count, variant: browseVariant });
           };
 
           // ── ALT-A: List view with featured brands per category ────────────
@@ -4731,13 +4850,17 @@ if (screen === "onboarding") {
             flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
-          {/* Phase 5.au (QA round 2 friction #1): The QA fleet flagged that
-              Top Picks was burying the ranked list under 400-540px of
-              editorial chrome — on iPhone SE users saw ZERO ranked cards
-              above the fold. Now: top 3 ranked picks render FIRST, then
-              editorial cards collapse below under "More for you this week".
-              The headline value of the tab — ranked picks for ME — finally
-              owns the first viewport. */}
+          {/* 2026-06-01 (user feedback): Brand of the Day moved ABOVE Top
+              Picks. Daily-ritual hook + journalism framing belongs at the
+              top of the tab; the ranked list still appears immediately
+              below. */}
+          <BrandOfDayCard
+            editorial={editorial}
+            deduped={deduped}
+            profile={profile}
+            setDeepLinkSlug={setDeepLinkSlug}
+            setTab={setTab}
+          />
           {profile && topPicksRanked.length > 0 && (
             <div style={{ padding:"12px 16px 4px" }}>
               <div style={{ fontSize:11, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
@@ -4871,114 +4994,9 @@ if (screen === "onboarding") {
             </div>
           )}
 
-          {/* Phase 5.ag (item N): "Brand of the day" — one curated brand
-              per day with a short framing line. Deterministic rotation based
-              on date so all users see the same brand on the same day (good
-              for shareability) but it changes daily (rewards return visits).
-              Pick rotates through: well-known A-graders (positive surprise),
-              well-known F-graders (the worst-day callout already exists for
-              search), and a "category spotlight" pull from a random cat.
-
-              Audit warning: this is the SAFE version of variable reward —
-              one item, journalism framing, no infinite scroll, no streak.
-              Builds a daily-open ritual without the doomscroll downside. */}
-          {(() => {
-            // Phase 5.au (QA round 2 #6): editorial-curated Brand of the
-            // Day. Reads /public/data/editorial.json — hand-curated
-            // journalism stories with a clear headline + 1-3 sentence
-            // blurb. Falls back to the top-200 curated-pool rotation if
-            // no editorial story exists for today.
-            const todayIso = new Date().toISOString().slice(0, 10);
-            let story = null;
-            try {
-              if (editorial?.stories) {
-                story = editorial.stories.find(s =>
-                  Array.isArray(s.displayDays) && s.displayDays.includes(todayIso)
-                );
-              }
-            } catch {}
-
-            // If we have an editorial story today, look up the company
-            // record to render the logo + grade.
-            if (story) {
-              const co = deduped.find(c => (c.slug || c.id) === story.slug);
-              if (co) {
-                const pickScore = computeScore(co, profile);
-                const pickGrade = scoreGrade(pickScore);
-                const flavor = {
-                  A: { color:"#4caf82", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0d2318" },
-                  B: { color:"#8bc34a", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#1a2810" },
-                  C: { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" },
-                  D: { color:"#ff7043", bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:"#2a1810" },
-                  F: { color:"#e24a4a", bgTint:"rgba(226,74,74,0.08)", borderTint:"rgba(226,74,74,0.4)", chipBg:"#2a0d0d" },
-                }[pickGrade] || { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" };
-                return (
-                  <div
-                    onClick={() => {
-                      track("editorial_clicked", { slug: co.slug || co.id, story_id: story.id });
-                      setDeepLinkSlug(co.slug || co.id);
-                      setTab("search");
-                    }}
-                    style={{ margin:"12px 16px", padding:"14px 16px", background:flavor.bgTint, border:`1.5px solid ${flavor.borderTint}`, borderRadius:14, cursor:"pointer" }}
-                  >
-                    <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10 }}>
-                      <CompanyLogo company={co} size={40} />
-                      <div style={{ flex:1, minWidth:0 }}>
-                        <div style={{ fontSize:10, color:flavor.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {story.tag || "Worth knowing"}</div>
-                        <div style={{ fontSize:15, fontWeight:700, color:T.txt, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{story.name || co.name}</div>
-                      </div>
-                      <div style={{ padding:"6px 12px", borderRadius:10, background:flavor.chipBg, color:flavor.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
-                    </div>
-                    <div style={{ fontSize:14, fontWeight:600, color:T.txt2, marginBottom:6, lineHeight:1.35 }}>{story.headline}</div>
-                    <div style={{ fontSize:12.5, color:T.txt3, lineHeight:1.55 }}>{story.blurb}</div>
-                  </div>
-                );
-              }
-            }
-
-            // Fallback: curated top-200 rotation (Phase 5.as r2)
-            const day = Math.floor(Date.now() / 86_400_000);
-            const JUNK = new Set(["Other","Various","NA","Uncategorized","Industrial Equipment Manufacturing","Forest Products"]);
-            const wellKnown = deduped
-              .filter(c => c.overall != null && c.cat && !JUNK.has(c.cat))
-              .filter(c => c.logo || c.hasLogo || (c.name && c.name.length <= 30))
-              .filter(c => ["A","B","C","D","F"].includes(scoreGrade(c.overall)))
-              .sort((a, b) => {
-                const score = (c) => Object.values(c.sc || {}).filter(v => v && String(v).toLowerCase() !== "neutral" && String(v).toLowerCase() !== "unknown").length;
-                return score(b) - score(a);
-              })
-              .slice(0, 200);
-            if (!wellKnown.length) return null;
-            const pick = wellKnown[day % wellKnown.length];
-            const pickScore = computeScore(pick, profile);
-            const pickGrade = scoreGrade(pickScore);
-            const flavorByGrade = {
-              A: { tag: "Worth knowing", color: "#4caf82", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
-              B: { tag: "Worth knowing", color: "#8bc34a", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
-              C: { tag: "Mixed signal",  color: "#f0a030", bgTint: "rgba(240,160,48,0.08)", borderTint: "rgba(240,160,48,0.4)" },
-              D: { tag: "Worth a look",  color: "#ff7043", bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
-              F: { tag: "Worth a look",  color: "#e24a4a", bgTint: "rgba(226,74,74,0.08)", borderTint: "rgba(226,74,74,0.4)" },
-            };
-            const fl = flavorByGrade[pickGrade] || flavorByGrade.C;
-            return (
-              <div
-                onClick={() => {
-                  track("brand_of_day_clicked", { slug: pick.slug || pick.id, grade: pickGrade, day });
-                  setDeepLinkSlug(pick.slug || pick.id);
-                  setTab("search");
-                }}
-                style={{ margin:"12px 16px", padding:"12px 14px", background:fl.bgTint, border:`1.5px solid ${fl.borderTint}`, borderRadius:14, cursor:"pointer", display:"flex", alignItems:"center", gap:12 }}
-              >
-                <CompanyLogo company={pick} size={44} />
-                <div style={{ flex:1, minWidth:0 }}>
-                  <div style={{ fontSize:10, color:fl.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {fl.tag}</div>
-                  <div style={{ fontSize:15, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", marginTop:2 }}>{pick.name}</div>
-                  <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{pick.cat}</div>
-                </div>
-                <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#0d2318" : pickGrade === "B" ? "#1a2810" : pickGrade === "C" ? "#2a2210" : pickGrade === "D" ? "#2a1810" : "#2a0d0d", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
-              </div>
-            );
-          })()}
+          {/* Phase 5.ag (item N) — Brand of Day moved to top of tab on
+              2026-06-01 per user feedback. Renders via <BrandOfDayCard />
+              above the Top Picks list. */}
 
           {/* Phase 5.ag (item M-partial): personal monthly stats card.
               Reads tn_purchaseLog (populated by the I-bought/skipped toggle
@@ -5354,26 +5372,41 @@ if (screen === "onboarding") {
             </div>
           </div>
         ) : (
+        // 2026-06-01 (user feedback): paid Sources tab no longer enumerates
+        // individual database names. Itemized lists felt like a spec sheet
+        // and exposed the specific endpoints we depend on. Replaced with a
+        // narrative explanation grouped by source TYPE — preserves the
+        // credibility signal ("we use real public records") without
+        // advertising every API. Source URLs remain accessible via the
+        // sitemap + per-company Sources tab (which is per-grade citation).
         <div style={{ padding:16 }}>
-          <p style={{ fontSize:13, color:T.txt3, marginBottom:4, lineHeight:1.6 }}>All scores are researched from these databases. The Live update button on each company uses real-time web search.</p>
-          <div style={{ padding:"8px 12px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:12, fontSize:12, color:T.txt3, lineHeight:1.6 }}>
-            <strong style={{color:T.txt2}}>About data freshness:</strong> Government-derived signals (FEC donations, EPA enforcement, OSHA, NLRB, Violation Tracker, HIBP) refresh nightly via automated workflows. Per-company narratives are re-researched monthly to incorporate new public records. Political donation totals reflect the current election cycle; environmental enforcement totals span 2000–present. For breaking news, tap "Live update" on any company card.
+          <div style={{ fontSize:11, fontWeight:700, color:T.accent2, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
+            How TruNorth grades a brand
           </div>
+          <p style={{ fontSize:14, color:T.txt2, marginBottom:14, lineHeight:1.6 }}>
+            Every score in TruNorth is built from <strong style={{ color:T.txt }}>primary public records</strong> — not opinions, not vibes, not AI synthesis. We pull from federal regulators, court records, public financial filings, accredited certifications, and independent human-rights monitors across 11 categories of source data.
+          </p>
+          <p style={{ fontSize:14, color:T.txt2, marginBottom:14, lineHeight:1.6 }}>
+            The result: <strong style={{ color:T.txt }}>every grade is auditable end-to-end.</strong> Tap any company → Sources tab to see the specific filings that drove that brand's score. If a score moves, it's because new public records moved it — not because our editorial position changed.
+          </p>
+          <div style={{ padding:"12px 14px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:14, fontSize:13, color:T.txt3, lineHeight:1.65 }}>
+            <strong style={{ color:T.txt2 }}>About freshness.</strong> Government-derived signals refresh nightly via automated workflows. Per-company narratives are re-researched monthly to incorporate new filings. Donation totals reflect the current election cycle; enforcement records span 2000-present. For breaking news, tap "Live update" on any company card.
+          </div>
+          <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginTop:18, marginBottom:8 }}>
+            Source categories
+          </div>
+          {/* Show only the GROUPS — no individual API names. Group icons + counts
+              communicate "we have depth across N categories" without spec-sheet noise. */}
           {SOURCES_DATA.map(g => (
-            <div key={g.group}>
-              <div style={{ fontSize:12, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", margin:"16px 0 8px", display:"flex", alignItems:"center", gap:6 }}>
-                <i className={`ti ${g.icon}`} aria-hidden="true" />{g.group}
-              </div>
-              {g.items.map(item => (
-                <div key={item.name} style={{ padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, marginBottom:8 }}>
-                  <div onClick={()=>window.open(item.url,"_blank","noopener,noreferrer")} style={{ fontSize:14, fontWeight:600, color:T.accent2, cursor:"pointer", display:"flex", alignItems:"center", gap:5 }}>
-                    {item.name} <i className="ti ti-external-link" style={{fontSize:12}} aria-hidden="true" />
-                  </div>
-                  <div style={{ fontSize:12, color:T.txt3, marginTop:4, lineHeight:1.5 }}>{item.desc}</div>
-                </div>
-              ))}
+            <div key={g.group} style={{ display:"flex", alignItems:"center", gap:10, padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, marginBottom:6 }}>
+              <i className={`ti ${g.icon}`} style={{ fontSize:16, color:T.accent2 }} aria-hidden="true" />
+              <div style={{ flex:1, fontSize:13, fontWeight:600, color:T.txt }}>{g.group}</div>
+              <div style={{ fontSize:11, color:T.txt3 }}>{g.items.length} source{g.items.length === 1 ? "" : "s"}</div>
             </div>
           ))}
+          <div style={{ fontSize:12, color:T.txt3, marginTop:14, lineHeight:1.55, textAlign:"center" }}>
+            Per-grade citations are visible on each brand's profile under "Why this grade?"
+          </div>
         </div>
         )
         }</ErrorBoundary>
