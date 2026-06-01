@@ -142,7 +142,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 | ID | Item | Effort | Source |
 |---|---|---|---|
-| **B-23** | iOS Universal Links | ⏸ **Blocked on you** | AASA + entitlements file are ready. But the Apple Developer provisioning profile for `com.trunorthapp.app` doesn't include the "Associated Domains" capability — Xcode signs but export fails. **Your action (3 min):** developer.apple.com → Identifiers → com.trunorthapp.app → Edit → check "Associated Domains" → Save. Once done, say "re-enable universal links" and I'll re-add the entitlements + ship a new build. |
+| ~~**B-23**~~ | ~~iOS Universal Links~~ | ✅ done 2026-06-01 | AASA live at `/.well-known/apple-app-site-association`. Entitlements wired into pbxproj. User enabled "Associated Domains" capability in Apple Dev Portal. Build 28 ships with the wiring. Every shared `/company/X` link opens in the app. |
 | **B-24** | Privacy page review for CCPA/GDPR compliance pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts |
 | **B-25** | k6 loadtest run once we have real DAU baseline | S | Script at `/scripts/loadtest.js`, GH Action ready (manual dispatch) |
 | **B-26** | TestFlight → App Store production cutover process documented | S | Once approved, document the steps for future updates |
@@ -179,7 +179,8 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — Paywall conversion table (UX 6B) — Free vs Pro side-by-side comparison with highlighted "Personalized scores" + "Barcode scanner" rows
+1. **2026-06-01 PM** — Grade scale legend in Account (UX 5D) — A through F with score ranges + descriptions, answers the #1 onboarding question
+2. **2026-06-01 PM** — Paywall conversion table (UX 6B) — Free vs Pro side-by-side comparison with highlighted "Personalized scores" + "Barcode scanner" rows
 2. **2026-06-01 PM** — iOS Universal Links (B-23) — AASA file + entitlements + Vercel header. Every shared `/company/<slug>` link opens IN the iOS app instead of Safari (after Build 21)
 2. **2026-06-01 PM** — Weekly digest opt-in UX (B-3) — Account-screen `EmailDigestCard` lets users explicitly subscribe to the Sunday digest with `weekly_digest_optin` MailerLite tag
 2. **2026-06-01 PM** — Design picks locked: v1 Browse + v4 ProfileStrip + 1-free paywall. Real Browse→Search empty bug FIXED (empty-state path also checked industryBucket). Stripped alt-a/b/c Browse variants + v1/v2/v3 ProfileStrip variants from code.

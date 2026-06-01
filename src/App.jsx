@@ -5563,6 +5563,35 @@ if (screen === "onboarding") {
               </button>
             </div>
 
+          {/* UX 5D (2026-06-01): Grade scale legend. Most-asked question in
+              early QA was 'what does each letter actually mean?' — surface
+              it explicitly so the A-F reads as objective ranges, not
+              editorial. */}
+          <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
+            <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>How grades work</div>
+            <div style={{ fontSize:12, color:T.txt3, marginBottom:12, lineHeight:1.55 }}>
+              Each company is scored 0–100 across the value categories with data, then averaged. The letter grade is the overall score put on a school-grade curve:
+            </div>
+            {[
+              { grade:"A", range:"90–100", desc:"Best of class — strong on most categories with no major red flags",  color:"#4caf82", bg:"#0d2318", border:"#1e3e2e" },
+              { grade:"B", range:"80–89",  desc:"Above average — clearly more positive than negative signals",          color:"#8bc34a", bg:"#1a2810", border:"#2e3e1e" },
+              { grade:"C", range:"70–79",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#f0a030", bg:"#2a2210", border:"#3e321e" },
+              { grade:"D", range:"60–69",  desc:"Below average — clear negative signals outweigh the positives",         color:"#ff7043", bg:"#2a1810", border:"#3e2818" },
+              { grade:"F", range:"0–59",   desc:"Severe issues across most categories with public-record evidence",      color:"#e24a4a", bg:"#2a0d0d", border:"#3e1e1e" },
+            ].map((r) => (
+              <div key={r.grade} style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0" }}>
+                <div style={{ width:34, height:34, borderRadius:8, background:r.bg, border:`1px solid ${r.border}`, color:r.color, fontSize:16, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>{r.grade}</div>
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ fontSize:12, fontWeight:600, color:T.txt }}>{r.range}</div>
+                  <div style={{ fontSize:11, color:T.txt3, marginTop:1, lineHeight:1.4 }}>{r.desc}</div>
+                </div>
+              </div>
+            ))}
+            <div style={{ fontSize:11, color:T.txt3, marginTop:10, lineHeight:1.5, paddingTop:10, borderTop:`1px solid ${T.border}` }}>
+              Categories without enough data are <strong style={{ color:T.txt2 }}>excluded</strong> from the grade — they don't count for or against the brand.
+            </div>
+          </div>
+
           {/* App info — slimmed */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16 }}>
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About TruNorth</div>
