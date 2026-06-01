@@ -88,15 +88,28 @@ echo "📲 Syncing to iOS..."
 npx cap sync ios >/dev/null
 
 # ─── Step 2: Bump build number (always); optionally bump version ─────────────
+# 2026-06-01: must bump BOTH places. The Xcode "Generate Info.plist File"
+# default uses CURRENT_PROJECT_VERSION from project.pbxproj as the build
+# number at build time (Info.plist contains the $(CURRENT_PROJECT_VERSION)
+# macro). PlistBuddy on Info.plist alone wasn't propagating to the IPA, so
+# Apple kept rejecting uploads as duplicates of the prior real build.
 CURRENT_BUILD=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$PLIST" 2>/dev/null || echo "0")
 if ! [[ "$CURRENT_BUILD" =~ ^[0-9]+$ ]]; then CURRENT_BUILD=0; fi
-NEXT_BUILD=$((CURRENT_BUILD + 1))
+PBXPROJ_BUILD=$(grep -m 1 "CURRENT_PROJECT_VERSION = " "$ROOT/ios/App/App.xcodeproj/project.pbxproj" | grep -oE "[0-9]+" | head -1)
+if ! [[ "$PBXPROJ_BUILD" =~ ^[0-9]+$ ]]; then PBXPROJ_BUILD=0; fi
+# Use whichever is higher as the source of truth, then bump.
+HIGHER_BUILD=$(( CURRENT_BUILD > PBXPROJ_BUILD ? CURRENT_BUILD : PBXPROJ_BUILD ))
+NEXT_BUILD=$((HIGHER_BUILD + 1))
+
+# Write to BOTH places so Xcode's build phase agrees with our intent.
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $NEXT_BUILD" "$PLIST" 2>/dev/null \
   || /usr/libexec/PlistBuddy -c "Add :CFBundleVersion string $NEXT_BUILD" "$PLIST"
+sed -i '' "s/CURRENT_PROJECT_VERSION = [0-9]*;/CURRENT_PROJECT_VERSION = $NEXT_BUILD;/g" "$ROOT/ios/App/App.xcodeproj/project.pbxproj"
 
 if [[ -n "$NEW_VERSION" ]]; then
   /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $NEW_VERSION" "$PLIST" 2>/dev/null \
     || /usr/libexec/PlistBuddy -c "Add :CFBundleShortVersionString string $NEW_VERSION" "$PLIST"
+  sed -i '' "s/MARKETING_VERSION = [^;]*;/MARKETING_VERSION = $NEW_VERSION;/g" "$ROOT/ios/App/App.xcodeproj/project.pbxproj"
   echo "🏷  Version: $NEW_VERSION (build $NEXT_BUILD)"
 else
   CURRENT_VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$PLIST" 2>/dev/null || echo "1.0")

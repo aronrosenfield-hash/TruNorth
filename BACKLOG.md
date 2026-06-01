@@ -142,7 +142,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 | ID | Item | Effort | Source |
 |---|---|---|---|
-| ~~**B-23**~~ | ~~iOS Universal Links~~ | ✅ done 2026-06-01 | AASA at `/.well-known/apple-app-site-association` (Team 22SZQ6B763 + bundle com.trunorthapp.app, matches `/company/*` + `/c/*`). Entitlements file + project.pbxproj wired. Every `https://www.trunorthapp.com/company/X` share now opens IN the app after Build 21 lands. |
+| **B-23** | iOS Universal Links | ⏸ **Blocked on you** | AASA + entitlements file are ready. But the Apple Developer provisioning profile for `com.trunorthapp.app` doesn't include the "Associated Domains" capability — Xcode signs but export fails. **Your action (3 min):** developer.apple.com → Identifiers → com.trunorthapp.app → Edit → check "Associated Domains" → Save. Once done, say "re-enable universal links" and I'll re-add the entitlements + ship a new build. |
 | **B-24** | Privacy page review for CCPA/GDPR compliance pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts |
 | **B-25** | k6 loadtest run once we have real DAU baseline | S | Script at `/scripts/loadtest.js`, GH Action ready (manual dispatch) |
 | **B-26** | TestFlight → App Store production cutover process documented | S | Once approved, document the steps for future updates |
