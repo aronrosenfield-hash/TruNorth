@@ -34,9 +34,9 @@ Things that should land before the PH launch fires. Sorted by impact ÷ effort.
 | **L-1** | **Pin Twitter tweet from PROMO_COPY.md** | 5 min | Hour-1 Coming Soon subscribers = ~30+ launch-day votes | None — just paste |
 | **L-2** | **LinkedIn pinned post from PROMO_COPY.md** | 5 min | Same as L-1 but B2B audience | None |
 | **L-3** | **Personal email blast to 10-20 closest contacts** | 30 min | Warmest voters on launch day | None |
-| **L-4** | **Email signature domain fix** (`Aron@trunorth.com` → `Aron@trunorthapp.com`) | 10 min | Wrong email currently in 4 generated signatures at `/docs/email-signatures/` | None |
+| ~~**L-4**~~ | ~~Email signature domain fix~~ | ✅ done 2026-06-01 | Patched v1 script + regenerated all 4 PNGs; now all show `Aron@trunorthapp.com` | — |
 | **L-5** | **Pick + install ONE email signature** in Mac Mail | 5 min | Every cold email is a marketing surface | None |
-| **L-6** | **Add PH "Subscribe" badge to trunorthapp.com landing** | 15 min | Direct CTA from your busiest surface; embed code is in PH Pre-Launch Dashboard | None |
+| ~~**L-6**~~ | ~~Add PH "Subscribe" chip to landing~~ | ✅ done 2026-06-01 | Pill chip under hero CTA links to Coming Soon page; gradient hover, easy to remove post-launch | — |
 | **L-7** | **Activate Google Apps Script personalized auto-reply** | 20 min | Setup guide at `/docs/gmail-personalized-autoreply-setup.md`; reduces email triage burden during launch chaos | None |
 | **L-8** | **Daily 10-min PH "warming" routine** (upvote 5-10, comment on 1) | 10 min/day × 22 days | PH algo weights engagement; warm account = higher launch reach | None — recurring |
 | **L-9** | **Record a 30-60 second demo video** for PH gallery | 1-2 hr | Demo videos boost PH conversion ~30%; QuickTime → iPhone screen rec → unlisted YouTube | None |
@@ -179,21 +179,21 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
-2. **2026-06-01** — PROMO_COPY.md filled with real PH Coming Soon URL, committed + pushed
-3. **2026-06-01** — ProductHunt Coming Soon page scheduled for June 23 (with logo, 5 gallery images, First Comment, 3 shoutouts)
-4. **2026-05-31** — Phase 5.av: marketing landing always shown on web root (web-only)
-5. **2026-05-31** — Phase 5.aw: scrubbed all Claude/AI references from 11,205 company JSONs
-6. **2026-05-31** — Phase 5.ax: bulletproof 6-signal Capacitor native detection (fixed iOS app loading marketing landing)
-7. **2026-05-31** — Capacitor switched from `server.hostname` mode to bundled `dist/` (App Store ready)
-8. **2026-05-31** — TestFlight builds 5-16 shipped via `npm run ship:ios` automation
-9. **2026-05-31** — SEO foundation: sitemap.xml (11,211 URLs), robots.txt, per-company SEO edge function with JSON-LD
-10. **2026-05-31** — Google Search Console + Bing Webmaster Tools verified
-11. **2026-05-31** — Resend DNS chain verified (SPF, DKIM, MX, DMARC all PASS)
-12. **2026-05-31** — Email signatures generated (1200×* PNGs) — *but domain typo, see L-4*
-13. **2026-05-31** — Day-7 reflection card + Values Fingerprint + Saved-brand badges + editorial Brand of Day + ConfirmModal
-14. **2026-05-31** — Inline typeahead dropdown + Top Picks rearrange + email capture wiring
-15. **2026-05-28** — 6,050-company expansion + full neutrality overhaul shipped to production
+1. **2026-06-01 PM** — Reveal "tailored to you" overflow fix (constrained to maxWidth:340)
+2. **2026-06-01 PM** — Privacy Policy scroll fix on web (owns 100vh scroll container, bypasses body overflow:hidden)
+3. **2026-06-01 PM** — What's New modal rewritten for launch (welcome card vs. dev changelog) + WHATSNEW_VERSION bumped
+4. **2026-06-01 PM** — Email signatures all 4 corrected to `Aron@trunorthapp.com` (L-4)
+5. **2026-06-01 PM** — ProductHunt "Coming Soon" chip added to marketing landing hero (L-6)
+6. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
+7. **2026-06-01** — PROMO_COPY.md filled with real PH Coming Soon URL, committed + pushed
+8. **2026-06-01** — ProductHunt Coming Soon page scheduled for June 23 (logo, 5 gallery images, First Comment, 3 shoutouts)
+9. **2026-05-31** — Phase 5.av/aw/ax: iOS-only landing + Claude/AI scrub + bulletproof Capacitor native detection
+10. **2026-05-31** — Capacitor switched from `server.hostname` mode to bundled `dist/` (App Store ready)
+11. **2026-05-31** — TestFlight builds 5-16 shipped via `npm run ship:ios` automation
+12. **2026-05-31** — SEO foundation: sitemap.xml (11,211 URLs), robots.txt, per-company SEO edge function with JSON-LD
+13. **2026-05-31** — Google Search Console + Bing Webmaster Tools verified
+14. **2026-05-31** — Resend DNS chain verified (SPF, DKIM, MX, DMARC all PASS)
+15. **2026-05-31** — Day-7 reflection + Values Fingerprint + Saved-brand badges + editorial Brand of Day + ConfirmModal + inline typeahead + Top Picks rearrange + email capture wiring
 
 ---
 
