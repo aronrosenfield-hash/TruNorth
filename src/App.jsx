@@ -3185,16 +3185,31 @@ export default function App() {
   const __search   = (typeof window !== "undefined") ? window.location.search   : "";
   const __isRoot   = __pathname === "/" || __pathname === "";
   const __hasDeepLink = /^\/(company|c)\//.test(__pathname);
-  // Phase 5.ax: detect Capacitor native shell — the TestFlight/App Store
-  // iOS app loads the bundled assets at root URL with no params, which
-  // previously triggered the marketing landing INSIDE the native app. The
-  // landing page is web-only; the native shell should always go straight
-  // to the app surface.
+  // Phase 5.ax: detect Capacitor native shell with MULTIPLE signals — relying
+  // only on window.Capacitor.isNativePlatform() failed in build 12 because
+  // the bridge sometimes isn't initialized before React's first render.
+  // We check ALL of these and return true if ANY succeed:
+  //   1. window.Capacitor.isNativePlatform() — the official API
+  //   2. URL protocol capacitor:// or ionic:// — set by Capacitor iOS shell
+  //   3. URL hostname "localhost" with iOS UA (Capacitor's default config)
+  //   4. window.webkit.messageHandlers — WKWebView native bridge
+  //   5. presence of cordova/Capacitor globals
   const __isCapacitorNative = (() => {
     if (typeof window === "undefined") return false;
     try {
-      // Capacitor exposes itself on window when running inside the native shell
-      return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+      const cap = window.Capacitor;
+      if (cap?.isNativePlatform?.()) return true;
+      if (cap?.platform && cap.platform !== "web") return true;
+      const loc = window.location || {};
+      if (loc.protocol === "capacitor:" || loc.protocol === "ionic:") return true;
+      const ua = (navigator?.userAgent || "").toLowerCase();
+      const isIOS = /iphone|ipad|ipod/.test(ua);
+      if (isIOS && (loc.hostname === "localhost" || loc.protocol === "file:")) return true;
+      // WKWebView native bridge — present on iOS Capacitor apps
+      if (window.webkit?.messageHandlers?.bridge) return true;
+      // Cordova-style globals (Capacitor still respects these)
+      if (window.cordova || window._cordovaNative) return true;
+      return false;
     } catch { return false; }
   })();
   // Clean up stale flag from the previous flow if present.
