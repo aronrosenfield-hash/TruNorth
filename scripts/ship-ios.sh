@@ -156,6 +156,11 @@ echo "✅ Archive: $ARCHIVE_PATH"
 
 # ─── Step 4: Export IPA ──────────────────────────────────────────────────────
 echo "📤 Exporting IPA..."
+# 2026-06-01: switched signingStyle from automatic → manual + explicit
+# provisioningProfiles map. Automatic was picking the cached Xcode-managed
+# 'iOS Team Store Provisioning Profile' which doesn't include Associated
+# Domains. With manual + explicit profile name, xcodebuild uses the new
+# 'TruNorth App Store + Universal Links' profile that DOES include AD.
 cat > "$EXPORT_OPTIONS" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -166,7 +171,12 @@ cat > "$EXPORT_OPTIONS" <<EOF
     <key>teamID</key>
     <string>$TEAM_ID</string>
     <key>signingStyle</key>
-    <string>automatic</string>
+    <string>manual</string>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.trunorthapp.app</key>
+        <string>TruNorth App Store + Universal Links</string>
+    </dict>
     <key>stripSwiftSymbols</key>
     <true/>
     <key>uploadSymbols</key>
