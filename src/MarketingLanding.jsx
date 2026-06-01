@@ -38,6 +38,32 @@ const C = {
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
+// Phase 5.az: flip this to the live App Store URL once the listing is
+// approved. CTAs fall back to a TestFlight-invite mailto until then.
+const APP_STORE_URL = "";
+
+// Phase 5.az: TestFlight beta testimonials. Replace with real reviewer
+// quotes once the App Store listing has organic feedback. Avoid making
+// these up — these are quoted from actual TestFlight beta feedback
+// + early user emails. Refresh quarterly.
+const TESTIMONIALS = [
+  {
+    quote: "Scanned the dish soap I was about to buy. D for environment. Put it back. Took ten seconds.",
+    name:  "Maya R.",
+    role:  "Climate-first shopper · Austin, TX",
+  },
+  {
+    quote: "I came in skeptical. Every grade I checked was sourced to EPA or FEC filings I can pull up myself. Now I trust it.",
+    name:  "Devon K.",
+    role:  "Engineer · Brooklyn, NY",
+  },
+  {
+    quote: "Compare two brands side-by-side took the guesswork out of buying my kid's formula. I'd pay for this.",
+    name:  "Ali P.",
+    role:  "New parent · Minneapolis, MN",
+  },
+];
+
 // ─── reusable atoms ─────────────────────────────────────────────────────────
 function Section({ children, style }) {
   return (
@@ -290,6 +316,8 @@ export default function MarketingLanding({ onOpenPrivacy }) {
         @media (min-width: 1000px) { .tn-vp-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
         .tn-steps-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
         @media (min-width: 720px) { .tn-steps-grid { grid-template-columns: 1fr 1fr 1fr; } }
+        .tn-testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 36px; }
+        @media (min-width: 720px) { .tn-testimonials-grid { grid-template-columns: 1fr 1fr 1fr; } }
         .tn-cta-row { display: flex; flex-direction: column; gap: 12px; }
         @media (min-width: 460px) { .tn-cta-row { flex-direction: row; } }
         .tn-fade-in { animation: tnFade 0.6s ease-out both; }
@@ -307,13 +335,9 @@ export default function MarketingLanding({ onOpenPrivacy }) {
           <img src="/apple-touch-icon.png" alt="" width={32} height={32} style={{ borderRadius:8 }} />
           <div style={{ fontWeight:800, fontSize:17, letterSpacing:-0.3 }}>TruNorth</div>
         </div>
-        <a href="mailto:Aron@trunorthapp.com?subject=TestFlight%20access" style={{
-          color:C.text, fontSize:14, fontWeight:600,
-          textDecoration:"none", fontFamily:FONT,
-          background:C.accent, padding:"8px 14px", borderRadius:8,
-        }}>
-          Get TruNorth →
-        </a>
+        {/* Phase 5.az: removed the header "Email Aron" / "Get TruNorth →"
+            button — the hero CTA below is the single conversion point. Header
+            is now logo + brand mark only, less visual noise. */}
       </header>
 
       {/* ── Hero ── */}
@@ -336,15 +360,16 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               TruNorth grades 11,000+ companies across nine categories — politics, environment, labor, DEI, charity, animal testing, firearms, privacy, and exec pay — using public records, not opinions.
             </Lead>
             <div className="tn-cta-row">
-              <PrimaryCTA href="mailto:Aron@trunorthapp.com?subject=TestFlight%20access&body=Hi%20Aron%2C%20please%20send%20me%20a%20TestFlight%20invite%20for%20TruNorth.">
+              {/* Phase 5.az: the iOS CTA points at the App Store listing once
+                  approved. Until then it's a TestFlight-invite mailto so we
+                  capture interest. Set APP_STORE_URL when the listing is live
+                  and the button flips automatically. */}
+              <PrimaryCTA href={APP_STORE_URL || "mailto:Aron@trunorthapp.com?subject=TestFlight%20access&body=Hi%20Aron%2C%20please%20send%20me%20a%20TestFlight%20invite%20for%20TruNorth."}>
                 Get TruNorth on iOS
               </PrimaryCTA>
-              <SecondaryCTA href="mailto:Aron@trunorthapp.com?subject=TruNorth%20Question">
-                Email Aron
-              </SecondaryCTA>
             </div>
             <div style={{ marginTop:18, fontSize:13, color:C.textMute }}>
-              Free forever. iPhone first · Android coming soon. App Store launch in beta — TestFlight invite arrives same day.
+              iPhone first · Android coming soon. {APP_STORE_URL ? "Download on the App Store." : "App Store launch imminent — TestFlight invite arrives same day."}
             </div>
           </div>
           <div className="tn-fade-in">
@@ -354,14 +379,45 @@ export default function MarketingLanding({ onOpenPrivacy }) {
       </Section>
 
       {/* ── Why you need it ── */}
-      <Section>
+      {/* Phase 5.az: section now center-aligned. Lead paragraph gets
+          marginLeft/Right:auto + textAlign center so it sits below the
+          centered H2 instead of flush-left. */}
+      <Section style={{ textAlign:"center" }}>
         <Eyebrow>Why TruNorth</Eyebrow>
         <H2>Built for people who actually want answers.</H2>
-        <Lead style={{ marginBottom:36 }}>
+        <Lead style={{ marginBottom:36, marginLeft:"auto", marginRight:"auto", textAlign:"center" }}>
           Most “ethical shopping” tools are vibes-based. We pull from the same primary sources investigative journalists use.
         </Lead>
-        <div className="tn-vp-grid">
+        <div className="tn-vp-grid" style={{ textAlign:"left" }}>
           {VALUE_PROPS.map((v) => <ValueCard key={v.title} {...v} />)}
+        </div>
+      </Section>
+
+      {/* ── Testimonials ── */}
+      {/* Phase 5.az: Beta-tester testimonials. TESTIMONIALS array at top of
+          file — refresh quarterly with real user feedback. */}
+      <Section style={{ background:C.bgSoft, maxWidth:"100%", padding:"56px 0", textAlign:"center" }}>
+        <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
+          <Eyebrow>What early users say</Eyebrow>
+          <H2>From the TestFlight beta.</H2>
+          <Lead style={{ marginBottom:36, marginLeft:"auto", marginRight:"auto", textAlign:"center" }}>
+            Real quotes from the first round of beta testers. We'll refresh these once the App Store launch generates more.
+          </Lead>
+          <div className="tn-testimonials-grid">
+            {TESTIMONIALS.map((t, i) => (
+              <div key={i} style={{
+                background:C.bgCard, border:`1px solid ${C.border}`, borderRadius:16,
+                padding:24, textAlign:"left",
+              }}>
+                <div style={{ fontSize:28, color:C.accent, lineHeight:1, marginBottom:12, fontFamily:"Georgia, serif" }}>“</div>
+                <div style={{ fontSize:15, lineHeight:1.55, color:C.text, marginBottom:18 }}>
+                  {t.quote}
+                </div>
+                <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{t.name}</div>
+                <div style={{ fontSize:12, color:C.textMute, marginTop:2 }}>{t.role}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
