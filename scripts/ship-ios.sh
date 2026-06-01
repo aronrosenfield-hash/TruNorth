@@ -69,6 +69,15 @@ if ! $SKIP_UPLOAD; then
     fi
   done
   [[ -f "$APP_STORE_CONNECT_KEY_PATH" ]] || { echo "❌ Key file not found: $APP_STORE_CONNECT_KEY_PATH"; exit 1; }
+  # altool reads keys from a fixed set of dirs (~/.appstoreconnect/private_keys
+  # is the canonical one). Stage a symlink so future uploads find it without
+  # us having to remember to copy.
+  ALTOOL_KEYS_DIR="$HOME/.appstoreconnect/private_keys"
+  mkdir -p "$ALTOOL_KEYS_DIR"
+  KEY_FILENAME="AuthKey_${APP_STORE_CONNECT_KEY_ID}.p8"
+  if [[ ! -f "$ALTOOL_KEYS_DIR/$KEY_FILENAME" ]]; then
+    cp "$APP_STORE_CONNECT_KEY_PATH" "$ALTOOL_KEYS_DIR/$KEY_FILENAME"
+  fi
 fi
 
 # ─── Step 1: Build web + sync iOS ────────────────────────────────────────────
