@@ -3238,6 +3238,7 @@ useEffect(() => {
   // even on slower devices. The 150ms debounce was a fixed delay regardless
   // of device speed; deferred adapts.
   const [queryRaw, setQueryRaw] = useState("");
+  const [showSearchDropdown, setShowSearchDropdown] = useState(false);
   const query = React.useDeferredValue(queryRaw);
   // Legacy setQuery shim — used by recent-search and trending button clicks
   // that want to set both the input and the filter immediately. With
@@ -3980,26 +3981,67 @@ if (screen === "onboarding") {
           </div>
         </div>
         {tab !== "account" && (
-          <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
-            <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
-            <label htmlFor="tn-search" className="sr-only">Search companies</label>
-            <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
-              autoComplete="off"
-              style={{ background:"transparent", border:"none", color:T.txt, fontSize:16, padding:"12px 0", flex:1 }} />
-            {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
-            {/* Phase 5.y (UX 7B): in-store barcode scanner — opens camera overlay
-                and routes to the matched company. Hidden behind feature detection
-                so it doesn't appear in browsers without media-devices support. */}
-            {typeof navigator !== "undefined" && navigator.mediaDevices?.getUserMedia && (
-              <button
-                onClick={() => { setShowScanner(true); track("scanner_open", { tab }); }}
-                aria-label="Scan barcode"
-                title="Scan a product barcode"
-                style={{ background:"none", border:"none", color:T.accent2, fontSize:20, cursor:"pointer", padding:"6px 0", display:"flex", alignItems:"center" }}
-              >
-                <i className="ti ti-scan" aria-hidden="true" />
-              </button>
-            )}
+          <div style={{ position:"relative" }}>
+            <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
+              <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
+              <label htmlFor="tn-search" className="sr-only">Search companies</label>
+              <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
+                autoComplete="off"
+                onFocus={() => setShowSearchDropdown(true)}
+                onBlur={() => setTimeout(() => setShowSearchDropdown(false), 200)}
+                style={{ background:"transparent", border:"none", color:T.txt, fontSize:16, padding:"12px 0", flex:1 }} />
+              {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer", minWidth:44, minHeight:44, display:"flex", alignItems:"center", justifyContent:"center" }} aria-label="Clear search">×</button>}
+              {typeof navigator !== "undefined" && navigator.mediaDevices?.getUserMedia && (
+                <button
+                  onClick={() => { setShowScanner(true); track("scanner_open", { tab }); }}
+                  aria-label="Scan barcode"
+                  title="Scan a product barcode"
+                  style={{ background:"none", border:"none", color:T.accent2, fontSize:20, cursor:"pointer", padding:"6px 0", minWidth:44, minHeight:44, display:"flex", alignItems:"center", justifyContent:"center" }}
+                >
+                  <i className="ti ti-scan" aria-hidden="true" />
+                </button>
+              )}
+            </div>
+            {/* Phase 5.au (QA round 2 #4): inline typeahead dropdown. The
+                MiniSearch index was wired for filtering in Phase 5.as but the
+                UX asked for a 5-row suggestion list while typing. Renders
+                below the input, taps route to the brand. Closes on blur. */}
+            {showSearchDropdown && queryRaw.trim().length >= 1 && searchHits && (() => {
+              const suggestions = [...searchHits].slice(0, 5)
+                .map(slug => deduped.find(c => (c.slug || c.id) === slug))
+                .filter(Boolean);
+              if (!suggestions.length) return null;
+              return (
+                <div style={{ position:"absolute", top:"calc(100% + 4px)", left:0, right:0, background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, boxShadow:"0 8px 24px rgba(0,0,0,0.4)", zIndex:50, overflow:"hidden" }}>
+                  {suggestions.map(co => {
+                    const g = co.overall != null ? scoreGrade(co.overall) : "?";
+                    const gradeColor = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a" }[g] || T.txt3;
+                    return (
+                      <button
+                        key={co.slug || co.id}
+                        onMouseDown={(e) => { e.preventDefault(); }}
+                        onClick={() => {
+                          track("search_typeahead_clicked", { slug: co.slug || co.id });
+                          setQueryRaw("");
+                          setShowSearchDropdown(false);
+                          setFocusedSlug(co.slug || co.id);
+                          setDeepLinkSlug(co.slug || co.id);
+                          setTab("search");
+                        }}
+                        style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", background:"none", border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", width:"100%", textAlign:"left", minHeight:44 }}
+                      >
+                        <CompanyLogo company={co} size={28} />
+                        <div style={{ flex:1, minWidth:0 }}>
+                          <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
+                          <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.cat}</div>
+                        </div>
+                        <div style={{ fontSize:14, fontWeight:700, color: gradeColor, minWidth:20, textAlign:"center" }}>{g}</div>
+                      </button>
+                    );
+                  })}
+                </div>
+              );
+            })()}
           </div>
         )}
       </div>
@@ -4857,15 +4899,29 @@ if (screen === "onboarding") {
                   const ps = computeScore(co, profile);
                   const g = scoreGrade(ps);
                   const colors = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a", "?":T.txt3 };
+                  // Phase 5.au (QA #12): "Updates since you saved" badge.
+                  // Counts weekly_changes entries for this brand. Promotes
+                  // Saved from passive list → active dossier (journalism loop).
+                  const slugKey = co.slug || co.id;
+                  const changeCount = weeklyChanges?.changes
+                    ? weeklyChanges.changes.filter(c => c.slug === slugKey).length
+                    : 0;
                   return (
                     <button
                       key={co.slug || co.id}
-                      onClick={() => { setFocusedSlug(co.slug || co.id); setDeepLinkSlug(co.slug || co.id); setTab("search"); track("library_saved_clicked", { slug: co.slug || co.id }); }}
+                      onClick={() => { setFocusedSlug(co.slug || co.id); setDeepLinkSlug(co.slug || co.id); setTab("search"); track("library_saved_clicked", { slug: co.slug || co.id, change_count: changeCount }); }}
                       style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:T.bg2, border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", textAlign:"left", width:"100%" }}
                     >
                       <CompanyLogo company={co} size={32} />
                       <div style={{ flex:1, minWidth:0 }}>
-                        <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
+                        <div style={{ display:"flex", alignItems:"center", gap:6 }}>
+                          <div style={{ fontSize:14, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
+                          {changeCount > 0 && (
+                            <span style={{ flexShrink:0, fontSize:10, fontWeight:700, padding:"2px 7px", borderRadius:10, background:T.goldBg, color:T.gold, border:`1px solid ${T.gold}` }}>
+                              {changeCount} new
+                            </span>
+                          )}
+                        </div>
                         <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.cat}</div>
                       </div>
                       <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>
