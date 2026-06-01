@@ -103,6 +103,10 @@ xcodebuild \
   -configuration Release \
   -destination "generic/platform=iOS" \
   -archivePath "$ARCHIVE_PATH" \
+  -allowProvisioningUpdates \
+  -authenticationKeyID "$APP_STORE_CONNECT_KEY_ID" \
+  -authenticationKeyIssuerID "$APP_STORE_CONNECT_ISSUER_ID" \
+  -authenticationKeyPath "$APP_STORE_CONNECT_KEY_PATH" \
   DEVELOPMENT_TEAM="$TEAM_ID" \
   CODE_SIGN_STYLE=Automatic \
   archive \
@@ -141,6 +145,10 @@ xcodebuild -exportArchive \
   -archivePath "$ARCHIVE_PATH" \
   -exportPath "$EXPORT_PATH" \
   -exportOptionsPlist "$EXPORT_OPTIONS" \
+  -allowProvisioningUpdates \
+  -authenticationKeyID "$APP_STORE_CONNECT_KEY_ID" \
+  -authenticationKeyIssuerID "$APP_STORE_CONNECT_ISSUER_ID" \
+  -authenticationKeyPath "$APP_STORE_CONNECT_KEY_PATH" \
   2>&1 | grep -E "^(error|warning|\*\* |Exported)" || true
 
 IPA=$(find "$EXPORT_PATH" -name "*.ipa" | head -1)
