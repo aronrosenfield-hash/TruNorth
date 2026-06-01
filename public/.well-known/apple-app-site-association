@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["22SZQ6B763.com.trunorthapp.app"],
+        "components": [
+          {
+            "/": "/company/*",
+            "comment": "Match deep links to a brand profile — /company/<slug>"
+          },
+          {
+            "/": "/c/*",
+            "comment": "Match the short alias — /c/<slug>"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["22SZQ6B763.com.trunorthapp.app"]
+  }
+}
