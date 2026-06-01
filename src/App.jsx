@@ -3156,6 +3156,14 @@ export default function App() {
   }
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
 
+  // Phase 5.au: stamp install timestamp on first ever launch (powers the
+  // Day-7 reflection card in the Search tab). Idempotent — only sets once.
+  try {
+    if (!localStorage.getItem("tn_installedAt")) {
+      localStorage.setItem("tn_installedAt", String(Date.now()));
+    }
+  } catch {}
+
   // ─── Marketing landing gate ─────────────────────────────────────────────
   // First-time root-URL visitors see MarketingLanding instead of the SPA.
   // Setting localStorage.tn_skipMarketing=1 (via the "Try the Web App" CTA
@@ -4017,6 +4025,70 @@ if (screen === "onboarding") {
       {/* SEARCH */}
       {tab === "search" && (
         <ErrorBoundary name="search">
+          {/* Phase 5.au (QA #14): Day-7 reflection card. Letterboxd-style.
+              On the first Search visit ≥7 days after install, surface a
+              one-time dismissible card with: top 3 viewed brands from
+              tn_viewHistory, dominant category, identity line from
+              fingerprint. Replaces nothing — pure delight + ritual
+              reinforcement. Self-suppresses after dismiss or view. */}
+          {(() => {
+            try {
+              const dismissed = localStorage.getItem("tn_day7Seen") === "1";
+              if (dismissed) return null;
+              const installedAt = Number(localStorage.getItem("tn_installedAt") || 0);
+              if (!installedAt) {
+                // Backfill if missing — set now (resets the 7-day clock for legacy users)
+                localStorage.setItem("tn_installedAt", String(Date.now()));
+                return null;
+              }
+              const daysSince = (Date.now() - installedAt) / 86_400_000;
+              if (daysSince < 7) return null;
+              const history = JSON.parse(localStorage.getItem("tn_viewHistory") || "[]");
+              if (history.length < 3) return null;
+              const fp = getStoredFingerprint() || (profile ? computeFingerprint(profile) : null);
+              // Compute dominant category from history
+              const catCounts = {};
+              history.forEach(h => { if (h.cat) catCounts[h.cat] = (catCounts[h.cat]||0)+1; });
+              const topCat = Object.entries(catCounts).sort((a,b) => b[1]-a[1])[0];
+              const topBrands = history.slice(0, 3);
+              return (
+                <div style={{ margin:"12px 16px", padding:"14px 16px", background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:14, position:"relative" }}>
+                  <button
+                    onClick={() => {
+                      localStorage.setItem("tn_day7Seen", "1");
+                      track("day7_card_dismissed");
+                      // Force re-render by toggling a state — easiest: setTopPicksLimit (innocent reset)
+                      setTopPicksLimit(n => n);
+                    }}
+                    aria-label="Dismiss"
+                    style={{ position:"absolute", top:6, right:6, width:28, height:28, padding:0, borderRadius:14, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }}
+                  >×</button>
+                  <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:8 }}>Your first week on TruNorth</div>
+                  <div style={{ fontSize:16, fontWeight:700, color:T.txt, marginBottom:10, lineHeight:1.3 }}>
+                    {Math.floor(daysSince)} days · {history.length} brands viewed
+                  </div>
+                  <div style={{ fontSize:12, color:T.txt2, lineHeight:1.55, marginBottom:8 }}>
+                    Most-viewed:{" "}
+                    {topBrands.map((b, i) => (
+                      <span key={b.slug}>
+                        <button
+                          onClick={() => { track("day7_brand_clicked", { slug: b.slug }); setDeepLinkSlug(b.slug); setTab("search"); }}
+                          style={{ background:"none", border:"none", color:T.accent2, fontWeight:600, cursor:"pointer", padding:0, textDecoration:"underline" }}
+                        >{b.name}</button>
+                        {i < topBrands.length - 1 ? ", " : ""}
+                      </span>
+                    ))}
+                  </div>
+                  {topCat && (
+                    <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5 }}>
+                      You've been shopping <strong style={{color:T.txt}}>{topCat[0]}</strong> the most ({topCat[1]} views).
+                      {fp && <> Aligns with <strong style={{color:T.accent2}}>{fp.name}</strong>.</>}
+                    </div>
+                  )}
+                </div>
+              );
+            } catch { return null; }
+          })()}
           {/* ── Collapsible Filter Panel ── */}
           <FilterPanel
             leanFilter={leanFilter} setLeanFilter={setLeanFilter}
