@@ -1272,6 +1272,149 @@ function BrandOfDayCard({ editorial, deduped, profile, setDeepLinkSlug, setTab }
   );
 }
 
+// B-3 (2026-06-01): Weekly digest opt-in for Account screen. Sunday
+// digest infra already runs via /scripts/send-weekly-digest.mjs +
+// GitHub Actions cron + MailerLite campaign. This is the in-app UI
+// surface where users explicitly opt in (and we get the email to send
+// to). Without an explicit opt-in we don't auto-send — even if we have
+// the email from a paywall, that consent was for product updates, not
+// a recurring digest. Two-state toggle:
+//
+//   off / no email  → "Get the weekly digest" + inline email + Subscribe
+//   off / has email → "Get the weekly digest" tappable card (one tap)
+//   on              → "✓ You're subscribed" + Unsubscribe
+function EmailDigestCard() {
+  const prefilled = getStoredEmail();
+  const [subscribed, setSubscribed] = useState(() => {
+    try { return localStorage.getItem("tn_weeklyDigest") === "1"; }
+    catch { return false; }
+  });
+  const [email, setEmail] = useState(prefilled || "");
+  const [expanded, setExpanded] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const turnOn = async () => {
+    const target = email.trim() || prefilled;
+    if (!target || !target.includes("@") || !target.includes(".")) {
+      setExpanded(true);
+      return;
+    }
+    setLoading(true);
+    const res = await subscribeEmail(target, "weekly_digest_optin", { weeklyDigest: true });
+    setLoading(false);
+    if (res.ok) {
+      setSubscribed(true);
+      setExpanded(false);
+      try { localStorage.setItem("tn_weeklyDigest", "1"); } catch {}
+      try { track("weekly_digest_subscribed"); } catch {}
+    }
+  };
+
+  const turnOff = () => {
+    setSubscribed(false);
+    try { localStorage.setItem("tn_weeklyDigest", "0"); } catch {}
+    try { track("weekly_digest_unsubscribed"); } catch {}
+    // We don't auto-remove from MailerLite — that requires their unsubscribe
+    // link in the email. This just hides the in-app affordance. Users can
+    // hit "unsubscribe" in any digest email to fully remove.
+  };
+
+  if (subscribed) {
+    return (
+      <div style={{ background:T.bg2, border:`1px solid ${T.accent}`, borderRadius:16, padding:16, marginBottom:12 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+          <div style={{ width:36, height:36, borderRadius:10, background:T.accentBg, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+            <i className="ti ti-mail-check" style={{ fontSize:18, color:T.accent2 }} aria-hidden="true" />
+          </div>
+          <div style={{ flex:1, minWidth:0 }}>
+            <div style={{ fontSize:14, fontWeight:600, color:T.txt }}>Weekly digest · subscribed</div>
+            <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>One email every Sunday — only when something changed.</div>
+          </div>
+        </div>
+        <button onClick={turnOff} style={{ marginTop:12, fontSize:12, color:T.txt3, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", padding:0 }}>
+          Unsubscribe in-app
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
+      <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: expanded ? 12 : 0 }}>
+        <div style={{ width:36, height:36, borderRadius:10, background:T.bg3, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+          <i className="ti ti-mail" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
+        </div>
+        <div style={{ flex:1, minWidth:0 }}>
+          <div style={{ fontSize:14, fontWeight:600, color:T.txt }}>Weekly digest</div>
+          <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>Grade changes + new recalls every Sunday. No spam.</div>
+        </div>
+        {!expanded && prefilled && (
+          <button
+            onClick={turnOn}
+            disabled={loading}
+            style={{ padding:"8px 14px", borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor: loading ? "default" : "pointer", flexShrink:0 }}
+          >
+            {loading ? "…" : "Subscribe"}
+          </button>
+        )}
+        {!expanded && !prefilled && (
+          <button
+            onClick={() => setExpanded(true)}
+            style={{ padding:"8px 14px", borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:12, fontWeight:700, cursor:"pointer", flexShrink:0 }}
+          >
+            Subscribe
+          </button>
+        )}
+      </div>
+      {expanded && (
+        <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+          <input
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            placeholder="you@example.com"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            disabled={loading}
+            style={{
+              width:"100%", boxSizing:"border-box",
+              background:T.bg3, border:`1px solid ${T.border2}`,
+              borderRadius:10, color:T.txt,
+              fontSize:16, padding:"10px 12px",
+            }}
+          />
+          <div style={{ display:"flex", gap:8 }}>
+            <button
+              onClick={turnOn}
+              disabled={loading || !email.trim()}
+              style={{
+                flex:1, padding:"10px 12px", borderRadius:10, border:"none",
+                background:T.accent2, color:"#000",
+                fontSize:13, fontWeight:700,
+                cursor: loading ? "default" : "pointer",
+                opacity: !email.trim() ? 0.5 : 1,
+              }}
+            >
+              {loading ? "Subscribing…" : "Subscribe"}
+            </button>
+            <button
+              onClick={() => { setExpanded(false); setEmail(prefilled || ""); }}
+              disabled={loading}
+              style={{
+                padding:"10px 12px", borderRadius:10,
+                border:`1px solid ${T.border}`, background:"transparent",
+                color:T.txt3, fontSize:12, fontWeight:600, cursor:"pointer",
+              }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function WhatsNewModal({ companyCount }) {
   const [show, setShow] = useState(() => {
     // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
@@ -5318,6 +5461,12 @@ if (screen === "onboarding") {
               </>
             )}
           </div>
+
+          {/* B-3 (2026-06-01): Weekly digest opt-in. Sits between the values
+              profile card and the Submit form. Hidden by default if the
+              user has zero saved brands AND no email captured AND has
+              been on the app less than 1 day — too early to ask. */}
+          <EmailDigestCard />
 
           {/* Submit a Company */}
           <div style={{ marginBottom:16 }}>

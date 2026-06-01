@@ -102,7 +102,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 |---|---|---|---|
 | **B-1** | **iPad tablet breakpoint** | M-L | Plan at `/docs/tablet-breakpoint-plan.md`. iPhone-first is fine for launch; iPad fixes deferred. |
 | **B-2** | Browser/Safari extension (UX 7C) — grade badge overlay on Amazon/Target/Walmart | L (1 week) | Primer at `/docs/TruNorth-Tier-C-Browser-Extension-Primer.docx` |
-| **B-3** | Weekly score-changes digest (UX 7D) | S | Tied to Sunday digest infra already built; needs UI opt-in flow |
+| ~~**B-3**~~ | ~~Weekly digest opt-in UX~~ | ✅ done 2026-06-01 | `EmailDigestCard` on Account screen. Two-state toggle, expands inline email input when no email captured, persists `tn_weeklyDigest=1` to localStorage and `weekly_digest_optin` source to MailerLite |
 | **B-4** | Break up App.jsx (UX 9A) — ~5000 lines → component files | L | Refactor only; no user-facing change |
 | **B-5** | JSDoc `@typedef` for Company shape (UX 9C) | M | Autocomplete win, no behavior change |
 | ~~**B-6**~~ | ~~Soft email ask after quiz completion~~ | ✅ done 2026-06-01 | Inline `RevealEmailCapture` card on the Reveal screen; suppresses if email already stored; per-session dismiss; fires `reveal_email_captured` to PostHog + MailerLite |
@@ -179,7 +179,8 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — Design picks locked: v1 Browse + v4 ProfileStrip + 1-free paywall. Real Browse→Search empty bug FIXED (empty-state path also checked industryBucket). Stripped alt-a/b/c Browse variants + v1/v2/v3 ProfileStrip variants from code.
+1. **2026-06-01 PM** — Weekly digest opt-in UX (B-3) — Account-screen `EmailDigestCard` lets users explicitly subscribe to the Sunday digest with `weekly_digest_optin` MailerLite tag
+2. **2026-06-01 PM** — Design picks locked: v1 Browse + v4 ProfileStrip + 1-free paywall. Real Browse→Search empty bug FIXED (empty-state path also checked industryBucket). Stripped alt-a/b/c Browse variants + v1/v2/v3 ProfileStrip variants from code.
 2. **2026-06-01 PM** — Bug batch: Splash "11,000+" rounding, Browse→Search empty-state fix attempt #1 (openBucket filter reset), free-plan paywall, Brand of Day moved above Top Picks, paid Sources tab now narrative paragraph
 2. **2026-06-01 PM** — OG / Twitter card metadata sharpened — "public records" differentiator now in first 10 words; updated to mention 9 categories + iOS
 3. **2026-06-01 PM** — Failed-search "notify me" (B-11) — SuggestBrandButton 3-phase flow with brand-tagged MailerLite signup
