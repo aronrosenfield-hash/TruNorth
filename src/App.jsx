@@ -4079,9 +4079,33 @@ useEffect(() => {
     try { return JSON.parse(localStorage.getItem("tn_recentSearches") || "[]"); }
     catch { return []; }
   });
-  // Trending brands — for v1, hardcoded popular brands; will be PostHog-driven later
-  // (Phase 5 demand-driven OpenSecrets uses the same signal).
-  const TRENDING_BRANDS = ["Patagonia", "Amazon", "Costco", "Tesla", "Nike"];
+  // Trending brands — wired to /public/data/trending.json on 2026-06-01.
+  // The nightly cron at scripts/refresh-trending.mjs pulls top brands from
+  // PostHog and writes them here. We filter to only brands that EXIST in our
+  // index (slug != null) so taps always land somewhere real, and fall back
+  // to the curated hardcoded list when:
+  //   - fetch fails (offline / first load)
+  //   - the file has fewer than 3 matched brands (low-signal day)
+  const TRENDING_FALLBACK = ["Patagonia", "Amazon", "Costco", "Tesla", "Nike"];
+  const [TRENDING_BRANDS, setTrendingBrands] = useState(TRENDING_FALLBACK);
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/data/trending.json", { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (cancelled || !data?.brands) return;
+        // Only matched brands (slug present) — unmatched names like "ARDELYX"
+        // would route to a dead search.
+        const matched = data.brands
+          .filter(b => b.slug && b.name)
+          .slice(0, 5)
+          .map(b => b.name);
+        if (matched.length >= 3) setTrendingBrands(matched);
+        // else: keep the curated fallback — better than a 1-brand chip row
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
 
   // Analytics — fire `search` when debounced query commits + persist recent
   useEffect(() => {
