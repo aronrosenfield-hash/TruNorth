@@ -2,7 +2,7 @@
 
 After your Coming Soon page is live, share this URL aggressively for 1-2 weeks before launch. Goal: 100+ subscribers = ~30+ guaranteed upvotes hour 1.
 
-Replace `https://www.producthunt.com/products/trunorth?launch=trunorth` with the actual Coming Soon URL ProductHunt gives you.
+All `https://www.producthunt.com/products/trunorth?launch=trunorth` URLs below are filled in — paste each block directly into the matching channel.
 
 ---
 
