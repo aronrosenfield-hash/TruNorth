@@ -74,11 +74,8 @@ export default async function handler(req) {
           "Content-Type":  "application/json",
         },
         body: JSON.stringify({
-          // Use Resend's default verified sender so we don't need DNS setup.
-          // When trunorthapp.com is verified in Resend → switch to
-          // "TruNorth Submissions <submit@trunorthapp.com>" for branded
-          // From: lines.
-          from:    "TruNorth Submissions <onboarding@resend.dev>",
+          // trunorthapp.com is DNS-verified in Resend (DKIM + SPF + MX bounce).
+          from:    "TruNorth Submissions <submit@trunorthapp.com>",
           to:      [INBOX],
           subject,
           html,
