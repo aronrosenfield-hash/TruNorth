@@ -3906,6 +3906,45 @@ useEffect(() => {
 
   // Analytics — init once, then track key funnel events
   useEffect(() => { initAnalytics(); }, []);
+
+  // B-23 (2026-06-01): Universal Link handler. When iOS opens the app via
+  // a tapped https://www.trunorthapp.com/company/<slug> link from iMessage /
+  // Safari / Mail / Twitter / etc, the Capacitor App plugin fires
+  // 'appUrlOpen' with the full URL. We parse out the slug and navigate
+  // directly to the brand — without this, the link would open the app
+  // but dump the user on the home screen.
+  //
+  // Web users hit this same /company/<slug> path via normal navigation;
+  // they're already handled by the deep-link logic on first render.
+  useEffect(() => {
+    if (!__isCapacitorNative) return;
+    let unlisten = null;
+    (async () => {
+      try {
+        const { App } = await import("@capacitor/app");
+        const handle = await App.addListener("appUrlOpen", (event) => {
+          try {
+            const url = new URL(event.url);
+            // /company/<slug> or /c/<slug>
+            const m = url.pathname.match(/^\/(?:company|c)\/([^/?#]+)/);
+            if (m && m[1]) {
+              const slug = decodeURIComponent(m[1]);
+              track("universal_link_opened", { slug, full_url: event.url });
+              setDeepLinkSlug(slug);
+              setFocusedSlug(slug);
+              setTab("search");
+            }
+          } catch (err) {
+            console.warn("[universal-link] failed to parse:", event?.url, err);
+          }
+        });
+        unlisten = () => handle.remove();
+      } catch (err) {
+        console.warn("[universal-link] App plugin unavailable:", err);
+      }
+    })();
+    return () => { if (unlisten) unlisten(); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (showPaywall) track("paywall_shown", { tab, isPaid });
   }, [showPaywall]); // eslint-disable-line react-hooks/exhaustive-deps
