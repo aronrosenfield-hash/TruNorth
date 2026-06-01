@@ -631,6 +631,16 @@ function computeScore(co, profile) {
 }
 
 // ─── DISPLAY HELPERS ─────────────────────────────────────────────────────────
+// 2026-06-01 (user feedback): everywhere the app shows a company count to
+// the user, round DOWN to the nearest thousand and append "+". The exact
+// count (e.g. 11,209) reads as precision theater and dates the build.
+// "11,000+" is the marketing voice; it's the same number, better punch.
+function formatCompanyCount(n) {
+  if (!n || n < 1000) return String(n || 0);
+  const rounded = Math.floor(n / 1000) * 1000;
+  return `${rounded.toLocaleString()}+`;
+}
+
 // Phase 4.11: The display layer reports FACTS, not verdicts.
 // - Without a user profile, every symbol is the neutral dot "·" — the app
 //   doesn't decide whether testing animals, selling guns, or having a DEI
@@ -4514,7 +4524,7 @@ if (screen === "onboarding") {
           </div>
           <div style={{ textAlign:"center", minWidth:0 }}>
             <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3, lineHeight:1.1 }}>TruNorth</div>
-            <div style={{ fontSize:11, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>Know where your money goes · {deduped.length} companies</div>
+            <div style={{ fontSize:11, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>Know where your money goes · {formatCompanyCount(deduped.length)} companies</div>
           </div>
           <div style={{ display:"flex", justifyContent:"flex-end" }}>
             {isPaid
@@ -4528,7 +4538,7 @@ if (screen === "onboarding") {
             <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
               <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
               <label htmlFor="tn-search" className="sr-only">Search companies</label>
-              <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
+              <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${formatCompanyCount(deduped.length)} companies...`}
                 autoComplete="off"
                 onFocus={() => setShowSearchDropdown(true)}
                 onBlur={() => setTimeout(() => setShowSearchDropdown(false), 200)}
@@ -4762,7 +4772,7 @@ if (screen === "onboarding") {
                   </div>
                 </div>
                 <div style={{ marginTop:24, padding:"12px", textAlign:"center", fontSize:12, color:T.txt3 }}>
-                  Type to search {deduped.length.toLocaleString()} companies — or <button onClick={()=>setTab("top")} style={{ background:"none", border:"none", color:T.accent2, fontSize:12, textDecoration:"underline", cursor:"pointer", padding:0 }}>browse the full list</button>
+                  Type to search {formatCompanyCount(deduped.length)} companies — or <button onClick={()=>setTab("top")} style={{ background:"none", border:"none", color:T.accent2, fontSize:12, textDecoration:"underline", cursor:"pointer", padding:0 }}>browse the full list</button>
                 </div>
               </div>
             ) : filtered.length === 0 ? (
@@ -5596,7 +5606,7 @@ if (screen === "onboarding") {
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16 }}>
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About TruNorth</div>
             {[
-              ["Companies", deduped.length.toLocaleString()],
+              ["Companies", formatCompanyCount(deduped.length)],
               ["Updated", "May 2026"],
               ["Version", "2.0"],
             ].map(([label, val]) => (
