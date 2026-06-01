@@ -4423,20 +4423,100 @@ if (screen === "onboarding") {
       {/* Scrollable content */}
       <div style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
 
-      {/* Profile strip */}
-      {profile && (
-        <div style={{ padding:"8px 16px", background:T.accentBg, borderBottom:`1px solid ${T.accent}`, display:"flex", alignItems:"center", gap:8, flexWrap:"wrap" }}>
-          <i className="ti ti-sparkles" style={{ fontSize:12, color:T.accent2 }} aria-hidden="true" />
-          <span style={{ fontSize:11, color:T.accent2, fontWeight:600 }}>Scores personalized</span>
-          <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
-            {profile.lean==="left"?"◀ Left":profile.lean==="right"?"▶ Right":"⚖ Neutral"} politics
-          </span>
-          <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
-            {profile.deiLean==="pro"?"✓ Pro-DEI":profile.deiLean==="anti"?"✗ Anti-DEI":"– DEI neutral"}
-          </span>
-          <button onClick={()=>{ track("quiz_started", { from: "profile_strip_edit" }); setScreen("quiz"); }} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
-        </div>
-      )}
+      {/* Profile strip — 2026-06-01 (user feedback): 4 design variants
+          toggleable via ?profilestrip=v1|v2|v3|v4. Pick locks in via
+          localStorage. User picks → I strip unused variants. */}
+      {profile && (() => {
+        const ps = (() => {
+          if (typeof window === "undefined") return "v1";
+          try {
+            const qs = new URLSearchParams(window.location.search).get("profilestrip");
+            if (qs && ["v1","v2","v3","v4"].includes(qs)) {
+              localStorage.setItem("tn_profilestripVariant", qs);
+              return qs;
+            }
+            return localStorage.getItem("tn_profilestripVariant") || "v1";
+          } catch { return "v1"; }
+        })();
+        const politicsText = profile.lean==="left"?"Left":profile.lean==="right"?"Right":"Neutral";
+        const politicsIcon = profile.lean==="left"?"◀":profile.lean==="right"?"▶":"⚖";
+        const deiText = profile.deiLean==="pro"?"Pro-DEI":profile.deiLean==="anti"?"Anti-DEI":"DEI neutral";
+        const deiIcon = profile.deiLean==="pro"?"✓":profile.deiLean==="anti"?"✗":"–";
+        const onEdit = () => { track("quiz_started", { from: "profile_strip_edit", variant: ps }); setScreen("quiz"); };
+
+        // ── V1: Current — chips wrap, ~80-100px tall ─────────────────────
+        if (ps === "v1") {
+          return (
+            <div style={{ padding:"8px 16px", background:T.accentBg, borderBottom:`1px solid ${T.accent}`, display:"flex", alignItems:"center", gap:8, flexWrap:"wrap" }}>
+              <i className="ti ti-sparkles" style={{ fontSize:12, color:T.accent2 }} aria-hidden="true" />
+              <span style={{ fontSize:11, color:T.accent2, fontWeight:600 }}>Scores personalized</span>
+              <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
+                {politicsIcon} {politicsText} politics
+              </span>
+              <span style={{ fontSize:10, color:T.txt2, background:T.bg, border:`1px solid ${T.border}`, borderRadius:20, padding:"2px 8px" }}>
+                {deiIcon} {deiText}
+              </span>
+              <button onClick={onEdit} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
+            </div>
+          );
+        }
+
+        // ── V2: Slim single-line — ~32px tall, no chips, text separators ─
+        if (ps === "v2") {
+          return (
+            <div style={{
+              padding:"6px 16px", background:T.accentBg, borderBottom:`1px solid ${T.accent}`,
+              display:"flex", alignItems:"center", gap:6, fontSize:11, lineHeight:1.3,
+              whiteSpace:"nowrap", overflow:"hidden",
+            }}>
+              <i className="ti ti-sparkles" style={{ fontSize:11, color:T.accent2, flexShrink:0 }} aria-hidden="true" />
+              <span style={{ color:T.accent2, fontWeight:600, flexShrink:0 }}>Personalized</span>
+              <span style={{ color:T.txt3, flexShrink:0 }}>·</span>
+              <span style={{ color:T.txt2, flexShrink:0 }}>{politicsText}</span>
+              <span style={{ color:T.txt3, flexShrink:0 }}>·</span>
+              <span style={{ color:T.txt2, flexShrink:0, overflow:"hidden", textOverflow:"ellipsis" }}>{deiText}</span>
+              <button onClick={onEdit} style={{ marginLeft:"auto", fontSize:11, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", flexShrink:0 }}>Edit</button>
+            </div>
+          );
+        }
+
+        // ── V3: Tiny eyebrow above search — minimal, no background tint ──
+        if (ps === "v3") {
+          return (
+            <div style={{
+              padding:"4px 16px 0", background:T.bg,
+              display:"flex", alignItems:"center", gap:6, fontSize:10,
+            }}>
+              <i className="ti ti-sparkles" style={{ fontSize:10, color:T.accent2 }} aria-hidden="true" />
+              <span style={{ color:T.txt3, fontWeight:500, letterSpacing:0.3 }}>
+                Personalized for <span style={{ color:T.accent2, fontWeight:600 }}>{politicsText}</span> · <span style={{ color:T.accent2, fontWeight:600 }}>{deiText}</span>
+              </span>
+              <button onClick={onEdit} style={{ marginLeft:"auto", fontSize:10, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline" }}>Edit</button>
+            </div>
+          );
+        }
+
+        // ── V4: Tappable pill on its own — centered, compact, no chips ───
+        if (ps === "v4") {
+          return (
+            <div style={{ padding:"6px 16px", display:"flex", justifyContent:"center", background:T.bg }}>
+              <button
+                onClick={onEdit}
+                style={{
+                  display:"inline-flex", alignItems:"center", gap:6,
+                  padding:"5px 12px", borderRadius:999,
+                  background:T.accentBg, border:`1px solid ${T.accent}`,
+                  color:T.accent2, fontSize:11, fontWeight:600, cursor:"pointer",
+                }}
+              >
+                <i className="ti ti-sparkles" style={{ fontSize:11 }} aria-hidden="true" />
+                Personalized · Tap to edit
+              </button>
+            </div>
+          );
+        }
+        return null;
+      })()}
 
       {/* SEARCH */}
       {tab === "search" && (
