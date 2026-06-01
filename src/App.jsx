@@ -3185,10 +3185,24 @@ export default function App() {
   const __search   = (typeof window !== "undefined") ? window.location.search   : "";
   const __isRoot   = __pathname === "/" || __pathname === "";
   const __hasDeepLink = /^\/(company|c)\//.test(__pathname);
+  // Phase 5.ax: detect Capacitor native shell — the TestFlight/App Store
+  // iOS app loads the bundled assets at root URL with no params, which
+  // previously triggered the marketing landing INSIDE the native app. The
+  // landing page is web-only; the native shell should always go straight
+  // to the app surface.
+  const __isCapacitorNative = (() => {
+    if (typeof window === "undefined") return false;
+    try {
+      // Capacitor exposes itself on window when running inside the native shell
+      return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+    } catch { return false; }
+  })();
   // Clean up stale flag from the previous flow if present.
   try { localStorage.removeItem("tn_skipMarketing"); } catch {}
   const [marketingScreen, setMarketingScreen] = useState(() => {
     if (__hash.replace(/^#/, "") === "privacy") return "privacy";
+    // Native shell ALWAYS goes to the app — no marketing landing on iOS.
+    if (__isCapacitorNative) return "app";
     if (__isRoot && !__hasDeepLink && !__search) return "landing";
     return "app";
   });
@@ -3197,11 +3211,15 @@ export default function App() {
     const onHash = () => {
       const h = window.location.hash.replace(/^#/, "");
       if (h === "privacy") setMarketingScreen("privacy");
-      else if (marketingScreen === "privacy") setMarketingScreen(__isRoot && !__hasDeepLink && !__search ? "landing" : "app");
+      else if (marketingScreen === "privacy") {
+        // Same rule: native always to app, web back to landing or app based on URL
+        if (__isCapacitorNative) setMarketingScreen("app");
+        else setMarketingScreen(__isRoot && !__hasDeepLink && !__search ? "landing" : "app");
+      }
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
-  }, [marketingScreen, __isRoot, __hasDeepLink, __search]);
+  }, [marketingScreen, __isRoot, __hasDeepLink, __search, __isCapacitorNative]);
 
 const [screen, setScreen] = useState("splash");
 const [currentUser, setCurrentUser] = useState(() => {
