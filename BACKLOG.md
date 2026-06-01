@@ -179,8 +179,9 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — Failed-search "notify me" (B-11) — SuggestBrandButton 3-phase flow with brand-tagged MailerLite signup
-2. **2026-06-01 PM** — Soft email ask after quiz completion (B-6) — inline card on Reveal screen, fires `reveal_email_captured`
+1. **2026-06-01 PM** — OG / Twitter card metadata sharpened — "public records" differentiator now in first 10 words; updated to mention 9 categories + iOS
+2. **2026-06-01 PM** — Failed-search "notify me" (B-11) — SuggestBrandButton 3-phase flow with brand-tagged MailerLite signup
+3. **2026-06-01 PM** — Soft email ask after quiz completion (B-6) — inline card on Reveal screen, fires `reveal_email_captured`
 3. **2026-06-01 PM** — TestFlight Build 17 uploaded with Reveal fix + new What's New copy
 4. **2026-06-01 PM** — TikTok/Reels content scripts drafted (B-22) — 7 video concepts
 5. **2026-06-01 PM** — MailerLite 3-step welcome drip copy drafted (B-19)
@@ -191,6 +192,7 @@ Most recent at top. Helps remember "what did we just do?"
 10. **2026-06-01 PM** — Email signatures all 4 corrected to `Aron@trunorthapp.com` (L-4)
 11. **2026-06-01 PM** — ProductHunt "Coming Soon" chip on marketing landing (L-6)
 12. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
+13. **2026-06-01** — Master BACKLOG.md created as single source of truth
 7. **2026-06-01** — PROMO_COPY.md filled with real PH Coming Soon URL, committed + pushed
 8. **2026-06-01** — ProductHunt Coming Soon page scheduled for June 23 (logo, 5 gallery images, First Comment, 3 shoutouts)
 9. **2026-05-31** — Phase 5.av/aw/ax: iOS-only landing + Claude/AI scrub + bulletproof Capacitor native detection
