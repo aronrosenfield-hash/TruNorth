@@ -1048,6 +1048,128 @@ function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat
 // Phase 4.9: one-shot announcement modal — shown once per WHATSNEW_VERSION.
 // Bump the version string when there's a new milestone to re-trigger.
 const WHATSNEW_VERSION = "2026-06-launch-day";
+// B-6 (2026-06-01): soft email capture at the highest-intent moment in the
+// entire funnel — right after the user finishes the values quiz. Inline card
+// that sits between the runners-up list and the footer CTAs on the Reveal
+// screen. Pre-filled from getStoredEmail() so returning users see "✓ on the
+// list" instead of being asked again. Dismissible per-session.
+function RevealEmailCapture() {
+  const prefilled = getStoredEmail();
+  const [email, setEmail] = useState(prefilled || "");
+  // idle | loading | done | error | dismissed
+  // If email is already stored, jump straight to "done" — no point asking again.
+  const [status, setStatus] = useState(prefilled ? "done" : "idle");
+
+  // Per-session dismiss — if the user already X'd it on this reveal, don't
+  // re-show on quiz retake. Reset across sessions so we get another shot.
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem("tn_reveal_email_dismissed") === "1") {
+        setStatus("dismissed");
+      }
+    } catch {}
+  }, []);
+
+  const submit = async (e) => {
+    e?.preventDefault?.();
+    if (status === "loading" || status === "done") return;
+    setStatus("loading");
+    const res = await subscribeEmail(email, "quiz_reveal", { intendsLaunchUpdates: true });
+    if (res.ok) {
+      setStatus("done");
+      try { track("reveal_email_captured", { source: "quiz_reveal" }); } catch {}
+    } else {
+      setStatus("error");
+    }
+  };
+
+  const dismiss = () => {
+    setStatus("dismissed");
+    try { sessionStorage.setItem("tn_reveal_email_dismissed", "1"); } catch {}
+    try { track("reveal_email_dismissed", {}); } catch {}
+  };
+
+  if (status === "dismissed") return null;
+
+  return (
+    <div style={{
+      width:"100%", maxWidth:340, marginTop:18, marginBottom:8,
+      padding:"14px 16px",
+      background:T.bg2, border:`1px solid ${T.border}`, borderRadius:14,
+      textAlign:"center",
+    }}>
+      {status === "done" ? (
+        <>
+          <div style={{ fontSize:14, fontWeight:700, color:T.accent2, marginBottom:4 }}>
+            ✓ You're on the list
+          </div>
+          <div style={{ fontSize:12, color:T.txt3, lineHeight:1.4 }}>
+            We'll email when TruNorth ships on the App Store.
+          </div>
+        </>
+      ) : (
+        <>
+          <div style={{ fontSize:14, fontWeight:700, color:T.txt, marginBottom:4 }}>
+            Want launch updates?
+          </div>
+          <div style={{ fontSize:12, color:T.txt3, marginBottom:10, lineHeight:1.4 }}>
+            One email when we ship on the App Store. Then quiet — no spam.
+          </div>
+          <form onSubmit={submit} style={{ display:"flex", flexDirection:"column", gap:8 }}>
+            <input
+              type="email"
+              autoComplete="email"
+              inputMode="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              disabled={status === "loading"}
+              style={{
+                width:"100%", boxSizing:"border-box",
+                background:T.bg3, border:`1px solid ${T.border2}`,
+                borderRadius:10, color:T.txt,
+                fontSize:16,   // 16 prevents iOS auto-zoom on focus
+                padding:"10px 12px",
+              }}
+            />
+            <div style={{ display:"flex", gap:8 }}>
+              <button
+                type="submit"
+                disabled={status === "loading" || !email}
+                style={{
+                  flex:1, padding:"10px 12px", borderRadius:10, border:"none",
+                  background:T.accent2, color:"#000",
+                  fontSize:13, fontWeight:700,
+                  cursor: status === "loading" ? "default" : "pointer",
+                  opacity: !email ? 0.5 : 1,
+                }}
+              >
+                {status === "loading" ? "Subscribing…" : "Notify me"}
+              </button>
+              <button
+                type="button"
+                onClick={dismiss}
+                style={{
+                  padding:"10px 12px", borderRadius:10,
+                  border:`1px solid ${T.border}`, background:"transparent",
+                  color:T.txt3, fontSize:12, fontWeight:600, cursor:"pointer",
+                }}
+              >
+                Maybe later
+              </button>
+            </div>
+            {status === "error" && (
+              <div style={{ fontSize:11, color:"#ff7043", marginTop:4 }}>
+                Couldn't subscribe — check the email and try again.
+              </div>
+            )}
+          </form>
+        </>
+      )}
+    </div>
+  );
+}
+
 function WhatsNewModal({ companyCount }) {
   const [show, setShow] = useState(() => {
     // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
@@ -3818,6 +3940,10 @@ if (screen === "onboarding") {
               )}
             </>
           )}
+          {/* B-6 (2026-06-01): soft email ask at the highest-intent moment.
+              Quiz completion = peak emotional investment. Component handles
+              its own state, suppresses if email already captured. */}
+          <RevealEmailCapture />
         </div>
         <div style={{ padding:"12px 16px calc(20px + env(safe-area-inset-bottom, 0px))", borderTop:`1px solid ${T.border}`, background:T.bg, display:"flex", flexDirection:"column", gap:8 }}>
           {/* Phase 5.ag (item C cont'd, growth-loop unlock): "Share my values"

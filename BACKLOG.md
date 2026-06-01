@@ -105,7 +105,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | **B-3** | Weekly score-changes digest (UX 7D) | S | Tied to Sunday digest infra already built; needs UI opt-in flow |
 | **B-4** | Break up App.jsx (UX 9A) — ~5000 lines → component files | L | Refactor only; no user-facing change |
 | **B-5** | JSDoc `@typedef` for Company shape (UX 9C) | M | Autocomplete win, no behavior change |
-| **B-6** | Soft email ask after quiz completion | S | Capture moment exists in code; just needs UX wire-up |
+| ~~**B-6**~~ | ~~Soft email ask after quiz completion~~ | ✅ done 2026-06-01 | Inline `RevealEmailCapture` card on the Reveal screen; suppresses if email already stored; per-session dismiss; fires `reveal_email_captured` to PostHog + MailerLite |
 
 ### Data / pipeline
 
@@ -179,16 +179,17 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — TestFlight Build 17 uploaded with Reveal fix + new What's New copy
-2. **2026-06-01 PM** — TikTok/Reels content scripts drafted (B-22) — 7 video concepts
-3. **2026-06-01 PM** — MailerLite 3-step welcome drip copy drafted (B-19)
-4. **2026-06-01 PM** — Trade press pitch drafts ready (L-10) — Verge / Fast Co / Mother Jones / ESG Today
-5. **2026-06-01 PM** — Reveal "tailored to you" overflow fix (maxWidth:340)
-6. **2026-06-01 PM** — Privacy Policy scroll fix on web (owns 100vh scroll container)
-7. **2026-06-01 PM** — What's New modal rewritten for launch + WHATSNEW_VERSION bumped
-8. **2026-06-01 PM** — Email signatures all 4 corrected to `Aron@trunorthapp.com` (L-4)
-9. **2026-06-01 PM** — ProductHunt "Coming Soon" chip on marketing landing (L-6)
-10. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
+1. **2026-06-01 PM** — Soft email ask after quiz completion (B-6) — inline card on Reveal screen, fires `reveal_email_captured`
+2. **2026-06-01 PM** — TestFlight Build 17 uploaded with Reveal fix + new What's New copy
+3. **2026-06-01 PM** — TikTok/Reels content scripts drafted (B-22) — 7 video concepts
+4. **2026-06-01 PM** — MailerLite 3-step welcome drip copy drafted (B-19)
+5. **2026-06-01 PM** — Trade press pitch drafts ready (L-10) — Verge / Fast Co / Mother Jones / ESG Today
+6. **2026-06-01 PM** — Reveal "tailored to you" overflow fix (maxWidth:340)
+7. **2026-06-01 PM** — Privacy Policy scroll fix on web (owns 100vh scroll container)
+8. **2026-06-01 PM** — What's New modal rewritten for launch + WHATSNEW_VERSION bumped
+9. **2026-06-01 PM** — Email signatures all 4 corrected to `Aron@trunorthapp.com` (L-4)
+10. **2026-06-01 PM** — ProductHunt "Coming Soon" chip on marketing landing (L-6)
+11. **2026-06-01** — All 3 PH launch reminders scheduled (Jun 16, Jun 22, Jun 23)
 7. **2026-06-01** — PROMO_COPY.md filled with real PH Coming Soon URL, committed + pushed
 8. **2026-06-01** — ProductHunt Coming Soon page scheduled for June 23 (logo, 5 gallery images, First Comment, 3 shoutouts)
 9. **2026-05-31** — Phase 5.av/aw/ax: iOS-only landing + Claude/AI scrub + bulletproof Capacitor native detection
