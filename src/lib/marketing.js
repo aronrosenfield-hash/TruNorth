@@ -15,9 +15,13 @@
 
 import { track, identify } from "./analytics";
 
-const ML_KEY      = import.meta.env.VITE_MAILERLITE_API_KEY;
-const ML_GROUP_ID = import.meta.env.VITE_MAILERLITE_GROUP_ID; // optional
-const ML_ENDPOINT = "https://connect.mailerlite.com/api/subscribers";
+// CRITICAL FIX (audit 2026-06-01): MailerLite API key was here, but
+// VITE_-prefixed values inline into the public bundle at build time —
+// the moment Vercel had the var set, the write key would have been
+// extractable from the JS bundle. Now we POST to our own /api/subscribe
+// edge function, which holds MAILERLITE_API_KEY (no VITE_ prefix)
+// server-side. Same client-facing API for backwards compatibility.
+const SUBSCRIBE_ENDPOINT = "/api/subscribe";
 
 /**
  * Captures an email at a known funnel point.
@@ -41,41 +45,23 @@ export async function subscribeEmail(email, source, metadata = {}) {
   // 3) Analytics event (never blocks — never throws)
   try { track("email_captured", { source, ...metadata }); } catch {}
 
-  // 4) MailerLite — only if configured. CORS-friendly call.
-  if (ML_KEY) {
-    try {
-      const body = {
-        email: cleaned,
-        fields: {
-          source,
-          ...metadata,
-        },
-      };
-      if (ML_GROUP_ID) body.groups = [ML_GROUP_ID];
-      const res = await fetch(ML_ENDPOINT, {
-        method:  "POST",
-        headers: {
-          "Authorization": `Bearer ${ML_KEY}`,
-          "Content-Type":  "application/json",
-          "Accept":        "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-      if (!res.ok) {
-        // Non-200 from MailerLite — log but don't block user flow
-        const text = await res.text().catch(()=>"");
-        console.warn("[marketing] MailerLite responded", res.status, text.slice(0, 200));
-        return { ok: true, source, warning: `mailerlite_${res.status}` };
-      }
-      return { ok: true, source };
-    } catch (err) {
-      console.warn("[marketing] MailerLite call failed:", err);
-      return { ok: true, source, warning: "mailerlite_network" };
+  // 4) Server-side proxy to MailerLite (key never touches the client bundle)
+  try {
+    const res = await fetch(SUBSCRIBE_ENDPOINT, {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify({ email: cleaned, source, metadata }),
+    });
+    if (!res.ok) {
+      console.warn("[marketing] /api/subscribe returned", res.status);
+      return { ok: true, source, warning: `subscribe_${res.status}` };
     }
+    const data = await res.json().catch(() => ({}));
+    return { ok: data.ok !== false, source, warning: data.warning };
+  } catch (err) {
+    console.warn("[marketing] /api/subscribe call failed:", err);
+    return { ok: true, source, warning: "subscribe_network" };
   }
-
-  // No MailerLite configured — that's fine, we still captured the email locally + in PostHog
-  return { ok: true, source, warning: "mailerlite_not_configured" };
 }
 
 /** Prefill helper — returns the stored email if any. */

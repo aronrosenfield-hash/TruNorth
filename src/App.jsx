@@ -2096,8 +2096,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
         </div>
       </div>
 
-      {/* Detail — paid only */}
-      {open && isPaid && (
+      {/* Detail — CRITICAL FIX 2026-06-01 (audit): was `open && isPaid &&` which
+          gated the entire detail panel on Pro, so free users got nothing when
+          they tapped a brand (despite onboarding promising 1 free view/week).
+          Now: any expanded row shows the detail. Sources / per-grade citations
+          / personalized scores remain individually paywalled below. */}
+      {open && (
         <div style={{ borderTop:`1px solid ${T.border}`, padding:14, background:T.bg2 }}>
           {/* Phase 3.1: thin loading bar while we fetch full detail */}
           {loadingDetail && (
@@ -3766,9 +3770,23 @@ useEffect(() => {
 }, [profile]);
   // Dev-only Pro mode for QA: append `?pro=1` to localhost URL. Production-safe
   // because we additionally require import.meta.env.DEV.
-  const [isPaid, setIsPaid]     = useState(() =>
-    import.meta.env.DEV && typeof window !== "undefined" && new URLSearchParams(window.location.search).has("pro")
-  );
+  // CRITICAL FIX 2026-06-01 (audit): persist Pro entitlement across launches.
+  // Was: in-memory only (URLSearchParams + dev-only) — every relaunch reset to
+  // Free, breaking the Pro UX entirely for paying users.
+  // Now: localStorage `tn_isPaid` reads on init, written on every setIsPaid.
+  // Restore Purchase flow still TODO when real IAP lands — for now this at
+  // least keeps the demo-paid state sticky across refreshes.
+  const [isPaid, _setIsPaidRaw] = useState(() => {
+    try {
+      if (typeof window === "undefined") return false;
+      if (import.meta.env.DEV && new URLSearchParams(window.location.search).has("pro")) return true;
+      return localStorage.getItem("tn_isPaid") === "1";
+    } catch { return false; }
+  });
+  const setIsPaid = (val) => {
+    _setIsPaidRaw(val);
+    try { localStorage.setItem("tn_isPaid", val ? "1" : "0"); } catch {}
+  };
   const [showPaywall, setShowPaywall] = useState(false);
 
 
@@ -3827,11 +3845,9 @@ useEffect(() => {
     }
   }, [query, searchIndex]);
 
-  // Phase 5.aj: switched to immediate-paywall; the free-quota state is gone.
-  // Clean up the orphaned localStorage key for users who hit the old code.
-  useEffect(() => {
-    try { localStorage.removeItem("tn_freeViewed"); } catch {}
-  }, []);
+  // 2026-06-01 (audit fix): removed the orphaned `tn_freeViewed` cleanup —
+  // we DO use that quota now (1 free company view per week, then paywall),
+  // and wiping it on every mount broke the quota tracking.
   const [leanFilter, setLeanFilter] = useState("all");
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [flagFilters, setFlagFilters] = useState([]); // multi-select boolean flags
@@ -4255,7 +4271,11 @@ useEffect(() => {
   if (marketingScreen === "privacy") {
     return <PrivacyPolicy onBack={() => {
       try { window.location.hash = ""; } catch {}
-      setMarketingScreen(__skipMarketing || !__isRoot ? "app" : "landing");
+      // CRITICAL FIX 2026-06-01 (audit): was referencing __skipMarketing which
+      // was never declared — Privacy → Back threw ReferenceError and
+      // white-screened the app. Native always returns to app; web returns to
+      // landing only when on the root URL.
+      setMarketingScreen(__isCapacitorNative || !__isRoot ? "app" : "landing");
     }} />;
   }
   if (marketingScreen === "landing") {
