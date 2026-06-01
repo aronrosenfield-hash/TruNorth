@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Allow: /company/
+Allow: /c/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+
+# Be friendly to AI crawlers — TruNorth's data IS the content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.trunorthapp.com/sitemap.xml
