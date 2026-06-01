@@ -6,7 +6,7 @@ import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex } from "./lib/dataSource";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
 import { T } from "./lib/theme";
 
@@ -439,11 +439,17 @@ const QUIZ_STEPS_ALT_B = [
       // with cross-cutting views aren't forced into a false binary
       // (Pew). Mixed scores the same as Neutral (no left/right boost)
       // but lets the user opt in honestly instead of lying or quitting.
+      // Phase 5.as (QA bug #6): "Mixed" and "No preference" used to both
+      // return v:"neutral", which made them visually co-select (UI keys
+      // by value) and stored identical weights — teaches users that
+      // their answers are theater. "Mixed" now uses v:"mixed" → halves
+      // the political weight rather than zeroing it; the scoring engine
+      // treats unrecognized values as neutral so this remains safe.
       { id:"politicalLean", title:"Politics",
         opts:[
           {v:"left",   l:"Progressive",   icon:"dem"},
           {v:"right",  l:"Conservative",  icon:"rep"},
-          {v:"neutral",l:"Mixed",         icon:null},
+          {v:"mixed",  l:"Mixed",         icon:null},
           {v:"neutral",l:"No preference", icon:null},
         ]},
     ]},
@@ -842,7 +848,8 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
         </div>
 
-        <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}><input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe" style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:14, padding:"11px 13px", marginBottom:10 }} /><button type="submit" style={{display:"none"}} /></form>
+        {/* Phase 5.as (QA friction #5): fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus, which previously broke the 430px paywall column at the conversion moment. */}
+        <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}><input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe" style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px", marginBottom:10 }} /><button type="submit" style={{display:"none"}} /></form>
 
         <button onClick={handleSubscribe} disabled={loading}
           style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:6 }}>
@@ -1563,11 +1570,30 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const grade = scoreGrade(ps);
 
   const handleTap = () => {
-    // Phase 5.aj: paywall fires IMMEDIATELY on every non-paid tap.
+    // Phase 5.as (QA fleet bug #2): immediate paywall on first tap had 0%
+    // conversion (43 shown / 0 clicked) because users dismiss-and-leave
+    // before they understand what they'd be paying for. Restore the
+    // tn_freeViewed counter — 3 free deep-dives per ISO week, then
+    // paywall. Quota resets weekly = built-in return trigger.
     if (!isPaid && !open) {
-      track("paywall_shown", { reason: "non_paid_profile_tap", slug: company.slug || company.id });
-      onUpgrade();
-      return;
+      const slug = company.slug || company.id;
+      const now = new Date();
+      // ISO week key: YYYY-Www (good enough for our purposes)
+      const weekKey = `${now.getUTCFullYear()}-W${Math.floor((now.getTime() - Date.UTC(now.getUTCFullYear(),0,1)) / (7*86_400_000))}`;
+      let log = {};
+      try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
+      // Drop entries from prior weeks
+      if (log.week !== weekKey) log = { week: weekKey, slugs: [] };
+      const alreadyViewed = log.slugs.includes(slug);
+      if (!alreadyViewed && log.slugs.length >= 3) {
+        track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
+        onUpgrade();
+        return;
+      }
+      if (!alreadyViewed) {
+        log.slugs.push(slug);
+        try { localStorage.setItem("tn_freeViewed", JSON.stringify(log)); } catch {}
+      }
     }
     // Phase 5.al (item #2): record view to local History list — capped
     // at 100, most-recent first, dedup by slug so re-views bump rather
@@ -2540,8 +2566,21 @@ function Quiz({ onComplete, onSkip }) {
   // the cached preference. Switching mid-quiz isn't supported (resets the
   // answer state), so the choice is captured once on mount.
   const steps = React.useMemo(getQuizSteps, []);
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({});
+  // Phase 5.as (QA bug #7): quiz answers used to live in useState only,
+  // so iOS Safari aggressively backgrounding the tab under memory pressure
+  // would dump the entire quiz back to step 0. Persist answers + step to
+  // localStorage on every change; restore on mount.
+  const [step, setStep] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}").step || 0; }
+    catch { return 0; }
+  });
+  const [answers, setAnswers] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}").answers || {}; }
+    catch { return {}; }
+  });
+  useEffect(() => {
+    try { localStorage.setItem("tn_quiz_draft", JSON.stringify({ step, answers, at: Date.now() })); } catch {}
+  }, [step, answers]);
   const isWelcome = step === 0;
   const current = isWelcome ? null : steps[step-1];
   const isLast = step === steps.length;
@@ -2560,6 +2599,9 @@ function Quiz({ onComplete, onSkip }) {
 
   const advance = () => {
     if (isLast) {
+      // Phase 5.as: clear the draft once the quiz completes so a retake
+      // starts fresh.
+      try { localStorage.removeItem("tn_quiz_draft"); } catch {}
       onComplete({
         lean:            answers.politicalLean || "neutral",
         deiLean:         answers.deiLean       || "neutral",
@@ -2864,7 +2906,8 @@ function SubmitView({ isPaid, onUpgrade }) {
     setTimeout(() => setSent(false), 4000);
   };
 
-  const inp = { width:"100%", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:8, color:T.txt, fontSize:14, padding:"11px 13px", marginBottom:14 };
+  // Phase 5.as (QA friction #5): fontSize ≥16 prevents iOS/Android focus-zoom.
+  const inp = { width:"100%", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:8, color:T.txt, fontSize:16, padding:"11px 13px", marginBottom:14 };
   const lbl = { fontSize:12, fontWeight:600, color:T.txt3, marginBottom:6, display:"block", textTransform:"uppercase", letterSpacing:"0.04em" };
 
   return (
@@ -3135,6 +3178,38 @@ useEffect(() => {
   // tick). Kept as a thin alias so existing call sites don't need to change.
   const setQuery = setQueryRaw;
 
+  // Phase 5.as (QA fleet bug #5): wire the MiniSearch fuzzy index into the
+  // search filter. The index is already loaded into every bundle but Search
+  // was using naive .includes() — unlocks typo tolerance ("amazn" → Amazon),
+  // prefix matching, and ranked relevance for FREE (the asset is already
+  // paid for in the bundle).
+  const [searchIndex, setSearchIndex] = useState(null);
+  useEffect(() => {
+    if (!isSplitBundleEnabled()) return;
+    let cancelled = false;
+    // Defer the index load by 800ms so first-paint isn't slowed
+    const t = setTimeout(() => {
+      loadSearchIndex()
+        .then(ix => { if (!cancelled) setSearchIndex(ix); })
+        .catch(err => console.warn("[search-index] load failed:", err));
+    }, 800);
+    return () => { cancelled = true; clearTimeout(t); };
+  }, []);
+
+  // Resolve query → Set<slug> of MiniSearch hits. Memo so the filter
+  // chain just does a Set.has() check per company instead of re-searching.
+  const searchHits = useMemo(() => {
+    const q = (query || "").trim();
+    if (!q || !searchIndex) return null;
+    try {
+      const results = searchIndex.search(q, { boost: { name: 2 }, prefix: true, fuzzy: 0.2 });
+      return new Set(results.map(r => r.slug || r.id));
+    } catch (err) {
+      console.warn("[search-index] search failed:", err);
+      return null;
+    }
+  }, [query, searchIndex]);
+
   // Phase 5.aj: switched to immediate-paywall; the free-quota state is gone.
   // Clean up the orphaned localStorage key for users who hit the old code.
   useEffect(() => {
@@ -3335,8 +3410,16 @@ useEffect(() => {
         if (!flagFilters.every(f => !!c[f])) return false;
       }
       if (query.trim()) {
-        const q = query.toLowerCase();
-        if (!c.name.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q) && getBucket(c.cat).toLowerCase() !== q) return false;
+        // Phase 5.as: if the MiniSearch index is loaded, use its fuzzy/
+        // prefix-aware hits. Falls back to naive .includes() while the
+        // index is still loading so the user can search immediately.
+        if (searchHits) {
+          const slug = c.slug || c.id;
+          if (!searchHits.has(slug)) return false;
+        } else {
+          const q = query.toLowerCase();
+          if (!c.name.toLowerCase().includes(q) && !c.cat.toLowerCase().includes(q) && getBucket(c.cat).toLowerCase() !== q) return false;
+        }
       }
       // UX 7A: saved-only filter
       if (showSavedOnly && !savedSet.has(c.slug || c.id)) return false;
@@ -3351,7 +3434,7 @@ useEffect(() => {
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
     });
   },
-    [deduped, leanFilter, catFilters, flagFilters, query, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket]
+    [deduped, leanFilter, catFilters, flagFilters, query, searchHits, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket]
   );
 
   // Phase 5.ag (perf): cap rendered company cards. Creating 11,000+ JSX
@@ -3745,7 +3828,7 @@ if (screen === "onboarding") {
 
       {/* Header — Phase 5.y: title is true-centered now (3-column grid) so the
           Pro/Upgrade chip width on the right can't shift it off-center. */}
-      <div style={{ padding:"env(safe-area-inset-top, 16px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ padding:"calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
         <div style={{ display:"grid", gridTemplateColumns:"1fr auto 1fr", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
           <div style={{ display:"flex", justifyContent:"flex-start" }}>
             <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
@@ -3769,7 +3852,7 @@ if (screen === "onboarding") {
             <label htmlFor="tn-search" className="sr-only">Search companies</label>
             <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${deduped.length} companies...`}
               autoComplete="off"
-              style={{ background:"transparent", border:"none", color:T.txt, fontSize:15, padding:"12px 0", flex:1 }} />
+              style={{ background:"transparent", border:"none", color:T.txt, fontSize:16, padding:"12px 0", flex:1 }} />
             {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer" }}>×</button>}
             {/* Phase 5.y (UX 7B): in-store barcode scanner — opens camera overlay
                 and routes to the matched company. Hidden behind feature detection
@@ -4785,7 +4868,7 @@ if (screen === "onboarding") {
       {/* BOTTOM NAV — in-flow flex child.
           html { height:100dvh } makes the full chain reach the physical screen bottom.
           paddingBottom:env(safe-area-inset-bottom) fills the home indicator zone. */}
-      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"env(safe-area-inset-bottom, 34px)" }}>
+      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 8px)" }}>
         {[
           // Phase 5.am: bottom-nav had 4 icons but TABS array had 5 — that's
           // why the new History tab from 5.al never appeared. Library tab
