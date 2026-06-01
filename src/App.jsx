@@ -3220,37 +3220,135 @@ function PoliticalSpectrum({ lean }) {
   );
 }
 
-// Phase 5.3: SuggestBrandButton — captures a failed search query so the
-// pipeline can pick it up on the next expansion. Stored client-side AND
-// surfaced via PostHog so the demand signal is visible in analytics.
+// Phase 5.3 + B-11 (2026-06-01): SuggestBrandButton — captures a failed
+// search query so the pipeline can pick it up on the next expansion. Now
+// also offers a "notify me when added" email opt-in, turning the
+// disappointment of "no results" into a MailerLite signup with a specific
+// brand-name tag. The tag (brand=<query>) means the user gets a targeted
+// email when THAT brand lands, not generic marketing.
+//
+// Flow:
+//   idle  → button "Suggest 'X'"
+//   form  → email input + Submit (email optional — can skip)
+//   done  → "Thanks — we'll email you when X is added" (or generic if no email)
 function SuggestBrandButton({ query }) {
-  const [submitted, setSubmitted] = useState(() => {
+  const prefilledEmail = getStoredEmail();
+  const [phase, setPhase] = useState(() => {
     try {
       const pending = JSON.parse(localStorage.getItem("tn_pendingSubmits") || "[]");
-      return pending.some(s => s.query.toLowerCase() === query.toLowerCase());
-    } catch { return false; }
+      const found = pending.find(s => s.query.toLowerCase() === query.toLowerCase());
+      if (found) return found.notifyEmail ? "done_email" : "done_anon";
+    } catch {}
+    return "idle";
   });
-  const submit = () => {
+  const [email, setEmail] = useState(prefilledEmail || "");
+  const [loading, setLoading] = useState(false);
+
+  // Persist the suggestion locally + fire analytics. Email is optional.
+  const finalize = async (withEmail) => {
     try {
       const pending = JSON.parse(localStorage.getItem("tn_pendingSubmits") || "[]");
       if (!pending.some(s => s.query.toLowerCase() === query.toLowerCase())) {
-        pending.push({ query, suggestedAt: new Date().toISOString() });
-        localStorage.setItem("tn_pendingSubmits", JSON.stringify(pending.slice(-50))); // cap
+        pending.push({
+          query,
+          suggestedAt: new Date().toISOString(),
+          notifyEmail: withEmail ? email.trim() : null,
+        });
+        localStorage.setItem("tn_pendingSubmits", JSON.stringify(pending.slice(-50)));
       }
     } catch {}
-    track("failed_search_suggest", { query });
-    setSubmitted(true);
+    track("failed_search_suggest", { query, hasEmail: !!withEmail });
+
+    if (withEmail && email) {
+      setLoading(true);
+      // brand=<query> tag lets MailerLite segment + send a targeted email
+      // to ONLY the people who asked for that brand when it lands.
+      await subscribeEmail(email, "failed_search_notify", {
+        brand: query,
+        intendsBrandNotification: true,
+      });
+      setLoading(false);
+      setPhase("done_email");
+    } else {
+      setPhase("done_anon");
+    }
   };
-  if (submitted) {
+
+  if (phase === "done_email") {
     return (
-      <div style={{ fontSize:13, color:"#4caf82", display:"inline-flex", alignItems:"center", gap:6 }}>
+      <div style={{ fontSize:13, color:"#4caf82", display:"flex", alignItems:"center", justifyContent:"center", gap:6, padding:"4px 8px" }}>
+        <i className="ti ti-mail-check" aria-hidden="true" />
+        Thanks — we'll email you when &ldquo;{query}&rdquo; is added
+      </div>
+    );
+  }
+  if (phase === "done_anon") {
+    return (
+      <div style={{ fontSize:13, color:"#4caf82", display:"flex", alignItems:"center", justifyContent:"center", gap:6 }}>
         <i className="ti ti-check" aria-hidden="true" />
         Thanks — we'll look at adding it
       </div>
     );
   }
+  if (phase === "form") {
+    return (
+      <div style={{
+        maxWidth:340, margin:"0 auto",
+        padding:14, borderRadius:12,
+        background:T.bg2, border:`1px solid ${T.border}`,
+        textAlign:"left",
+      }}>
+        <div style={{ fontSize:13, color:T.txt2, marginBottom:10, lineHeight:1.4 }}>
+          Want us to email you when <strong style={{ color:T.txt }}>&ldquo;{query}&rdquo;</strong> is added? (Optional)
+        </div>
+        <input
+          type="email"
+          autoComplete="email"
+          inputMode="email"
+          placeholder="you@example.com"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          disabled={loading}
+          style={{
+            width:"100%", boxSizing:"border-box",
+            background:T.bg3, border:`1px solid ${T.border2}`,
+            borderRadius:10, color:T.txt,
+            fontSize:16, padding:"10px 12px",
+            marginBottom:10,
+          }}
+        />
+        <div style={{ display:"flex", gap:8 }}>
+          <button
+            onClick={() => finalize(true)}
+            disabled={loading || !email.trim()}
+            style={{
+              flex:1, padding:"10px 12px", borderRadius:10, border:"none",
+              background:T.accent2, color:"#000",
+              fontSize:13, fontWeight:700,
+              cursor: loading ? "default" : "pointer",
+              opacity: !email.trim() ? 0.5 : 1,
+            }}
+          >
+            {loading ? "Saving…" : "Notify me"}
+          </button>
+          <button
+            onClick={() => finalize(false)}
+            disabled={loading}
+            style={{
+              padding:"10px 12px", borderRadius:10,
+              border:`1px solid ${T.border}`, background:"transparent",
+              color:T.txt3, fontSize:12, fontWeight:600, cursor:"pointer",
+            }}
+          >
+            Skip — just suggest
+          </button>
+        </div>
+      </div>
+    );
+  }
+  // idle
   return (
-    <button onClick={submit} style={{
+    <button onClick={() => setPhase("form")} style={{
       padding:"10px 16px", borderRadius:10, border:`1px solid ${T.accent}`,
       background:T.accentBg, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer",
       display:"inline-flex", alignItems:"center", gap:6
