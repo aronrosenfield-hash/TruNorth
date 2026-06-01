@@ -4,9 +4,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
+import MarketingLanding from "./MarketingLanding";
+import PrivacyPolicy from "./PrivacyPolicy";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex } from "./lib/dataSource";
+import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
 import { T } from "./lib/theme";
 
@@ -3152,6 +3155,42 @@ export default function App() {
     try { localStorage.setItem("tn_hasOnboarded", "1"); } catch {}
   }
   const hasOnboarded = localStorage.getItem("tn_hasOnboarded");
+
+  // ─── Marketing landing gate ─────────────────────────────────────────────
+  // First-time root-URL visitors see MarketingLanding instead of the SPA.
+  // Setting localStorage.tn_skipMarketing=1 (via the "Try the Web App" CTA
+  // inside MarketingLanding) bypasses the gate on subsequent loads.
+  //
+  // We deliberately do NOT show the marketing page when:
+  //   - tn_skipMarketing is set (returning user / already chose "open app")
+  //   - the URL has any query params (e.g. ?skipOnboarding, ?tab, share links)
+  //   - it's a deep-link path like /company/<slug>
+  //   - the QA pro flag is on
+  // The hash route #privacy renders the standalone privacy policy.
+  const __pathname = (typeof window !== "undefined") ? window.location.pathname : "/";
+  const __hash     = (typeof window !== "undefined") ? window.location.hash     : "";
+  const __search   = (typeof window !== "undefined") ? window.location.search   : "";
+  const __isRoot   = __pathname === "/" || __pathname === "";
+  const __hasDeepLink = /^\/(company|c)\//.test(__pathname);
+  const __skipMarketing = (() => {
+    try { return localStorage.getItem("tn_skipMarketing") === "1"; } catch { return false; }
+  })();
+  const [marketingScreen, setMarketingScreen] = useState(() => {
+    if (__hash.replace(/^#/, "") === "privacy") return "privacy";
+    if (!__skipMarketing && __isRoot && !__hasDeepLink && !__search) return "landing";
+    return "app";
+  });
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onHash = () => {
+      const h = window.location.hash.replace(/^#/, "");
+      if (h === "privacy") setMarketingScreen("privacy");
+      else if (marketingScreen === "privacy") setMarketingScreen(__skipMarketing || !__isRoot ? "app" : "landing");
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, [marketingScreen, __isRoot, __skipMarketing]);
+
 const [screen, setScreen] = useState("splash");
 const [currentUser, setCurrentUser] = useState(() => {
   try { return JSON.parse(localStorage.getItem("tn_user") || "null"); } catch { return null; }
@@ -3568,6 +3607,27 @@ useEffect(() => {
 
 
 
+  // ─── Marketing / privacy early-returns ──────────────────────────────────
+  // These run AFTER every hook above, so React's rules-of-hooks stay happy.
+  if (marketingScreen === "privacy") {
+    return <PrivacyPolicy onBack={() => {
+      try { window.location.hash = ""; } catch {}
+      setMarketingScreen(__skipMarketing || !__isRoot ? "app" : "landing");
+    }} />;
+  }
+  if (marketingScreen === "landing") {
+    return <MarketingLanding
+      onEnterApp={() => {
+        try { localStorage.setItem("tn_skipMarketing", "1"); } catch {}
+        setMarketingScreen("app");
+      }}
+      onOpenPrivacy={() => {
+        try { window.location.hash = "#privacy"; } catch {}
+        setMarketingScreen("privacy");
+      }}
+    />;
+  }
+
   if (screen === "splash") {
   return <SplashScreen onDone={() => setScreen(hasOnboarded ? "main" : "onboarding")} />;
 }
@@ -3621,6 +3681,24 @@ if (screen === "onboarding") {
           <div style={{ width:64, height:64, borderRadius:"50%", background:T.accentBg, border:`2px solid ${T.accent}`, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:16 }}>
             <i className="ti ti-sparkles" style={{ fontSize:28, color:T.accent2 }} aria-hidden="true" />
           </div>
+          {/* Phase 5.au: Values Fingerprint card — the #1 stickiness play.
+              Coined identity ("The Climate Pragmatist") derived from quiz
+              weights, with a 4-letter shareable codename and a 1-sentence
+              blurb. Pinned to Account; resurfaced every 14 days. */}
+          {(() => {
+            const fp = computeFingerprint(profile);
+            if (!fp) return null;
+            return (
+              <div style={{ width:"100%", maxWidth:340, marginBottom:18, padding:"16px 18px", background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:16, textAlign:"center" }}>
+                <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:8 }}>
+                  Your values archetype
+                </div>
+                <div style={{ fontSize:22, fontWeight:800, color:T.txt, lineHeight:1.2, marginBottom:4 }}>{fp.name}</div>
+                <div style={{ fontSize:11, color:T.accent2, fontFamily:"ui-monospace, Menlo, monospace", letterSpacing:1.5, marginBottom:10 }}>{fp.codename}</div>
+                <div style={{ fontSize:12.5, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
+              </div>
+            );
+          })()}
           <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6 }}>Your values are set.</div>
           <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4, maxWidth:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
             Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
@@ -3793,11 +3871,14 @@ if (screen === "onboarding") {
         <Quiz
           onComplete={(p) => {
             setProfile(p);
-            track("quiz_completed", { isPaid });
-            // Phase 5.ag (item C): show the reveal celebration after EVERY
-            // quiz completion. The reveal computes the user's top-matched
-            // brand from the bundle and surfaces it as the "aha — this is
-            // for me" payoff before entering the main app.
+            // Phase 5.au: mint the Values Fingerprint at quiz completion.
+            // Pure derivation from quiz weights — no PII, deterministic,
+            // safe to share. Becomes the user's "identity card" — pinned to
+            // Account, shown on the share PNG, resurfaces every 14 days
+            // ("Still feel right? [Re-take]").
+            const fp = computeFingerprint(p);
+            persistFingerprint(fp);
+            track("quiz_completed", { isPaid, archetype: fp?.id, codename: fp?.codename });
             setScreen("reveal");
           }}
           onSkip={() => setScreen("main")}
@@ -4258,6 +4339,39 @@ if (screen === "onboarding") {
             flagFilters={flagFilters} toggleFlag={toggleFlag} setFlagFilters={setFlagFilters}
             lc={lc}
           />
+          {/* Phase 5.au (QA round 2 friction #1): The QA fleet flagged that
+              Top Picks was burying the ranked list under 400-540px of
+              editorial chrome — on iPhone SE users saw ZERO ranked cards
+              above the fold. Now: top 3 ranked picks render FIRST, then
+              editorial cards collapse below under "More for you this week".
+              The headline value of the tab — ranked picks for ME — finally
+              owns the first viewport. */}
+          {profile && topPicksRanked.length > 0 && (
+            <div style={{ padding:"12px 16px 4px" }}>
+              <div style={{ fontSize:11, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
+                Your top picks
+              </div>
+              <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+                {topPicksRanked.slice(0, 3).map(co => (
+                  <CompanyCard
+                    key={`leadpick-${co.id}`}
+                    company={co} catFilter="all" profile={profile} isPaid={isPaid}
+                    onUpgrade={()=>setShowPaywall(true)}
+                    isSaved={savedSet.has(co.slug || co.id)}
+                    onToggleSave={() => toggleSaved(co.slug || co.id, co.name)}
+                    inCompare={isInCompare(co.slug || co.id)}
+                    onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)}
+                    allCompanies={companies}
+                    onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }}
+                    onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }}
+                  />
+                ))}
+              </div>
+              <div style={{ fontSize:11, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginTop:18, marginBottom:2, paddingBottom:4, borderBottom:`1px solid ${T.border}` }}>
+                More for you this week
+              </div>
+            </div>
+          )}
           {/* Phase 5.aj (Tier 3 L — in-app version): "Updates on brands you've saved".
               Per user verbiage correction — instead of "Brand X was recalled"
               push notification, we surface in-app: "There is new recall data
