@@ -831,18 +831,46 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           </div>
         </div>
 
-        <div style={{ background:T.bg3, borderRadius:14, padding:14, marginBottom:16 }}>
+        {/* UX 6B (2026-06-01): side-by-side Free vs Pro comparison table.
+            Replaces the single-column Pro feature list. Conversion research
+            shows comparison tables convert dramatically better than feature
+            lists — readers anchor to the contrast, not the spec sheet. */}
+        <div style={{ background:T.bg3, borderRadius:14, padding:"12px 14px 8px", marginBottom:16 }}>
+          {/* Header */}
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 56px 56px", alignItems:"center", paddingBottom:8, borderBottom:`1px solid ${T.border}` }}>
+            <div></div>
+            <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, textAlign:"center" }}>Free</div>
+            <div style={{ fontSize:11, fontWeight:700, color:T.gold, textTransform:"uppercase", letterSpacing:0.6, textAlign:"center" }}>Pro</div>
+          </div>
           {[
-            "Full company details on all 9 categories",
-            "Personalization quiz — scores based on YOUR values",
-            "Live data updates from OpenSecrets, NLRB & more",
-            "Animal testing, gun policy, privacy & exec pay data",
-            "Multi-category filtering",
-            "Full data sources directory",
-          ].map((f, i) => (
-            <div key={i} style={{ display:"flex", alignItems:"center", gap:10, padding:"7px 0", borderBottom: i<4 ? `1px solid ${T.border}` : "none" }}>
-              <span style={{ color:T.gold, fontSize:14, flexShrink:0 }}>✓</span>
-              <span style={{ fontSize:13, color:T.txt2 }}>{f}</span>
+            { feat: "View brand names + grade",       free: true,  pro: true  },
+            { feat: "30-second values quiz",          free: true,  pro: true  },
+            { feat: "Browse 11,000+ companies",       free: true,  pro: true  },
+            { feat: "Personalized scores",            free: false, pro: true, hi: true },
+            { feat: "Full grade breakdowns",          free: false, pro: true  },
+            { feat: "All 9 value categories",         free: false, pro: true  },
+            { feat: "Per-grade citations",            free: false, pro: true  },
+            { feat: "In-store barcode scanner",       free: false, pro: true, hi: true },
+            { feat: "Live data + Sunday digest",      free: false, pro: true  },
+          ].map((row, i, arr) => (
+            <div key={i} style={{
+              display:"grid", gridTemplateColumns:"1fr 56px 56px", alignItems:"center",
+              padding:"7px 0",
+              borderBottom: i < arr.length - 1 ? `1px solid ${T.border}` : "none",
+              background: row.hi ? `${T.goldBg}` : "transparent",
+              borderRadius: row.hi ? 6 : 0,
+              marginLeft: row.hi ? -6 : 0,
+              marginRight: row.hi ? -6 : 0,
+              paddingLeft: row.hi ? 6 : 0,
+              paddingRight: row.hi ? 6 : 0,
+            }}>
+              <span style={{ fontSize:13, color: row.hi ? T.txt : T.txt2, fontWeight: row.hi ? 600 : 400 }}>{row.feat}</span>
+              <span style={{ textAlign:"center", fontSize:14, color: row.free ? "#8bc34a" : T.txt3 }}>
+                {row.free ? "✓" : "—"}
+              </span>
+              <span style={{ textAlign:"center", fontSize:14, color: row.pro ? T.gold : T.txt3, fontWeight: row.pro ? 700 : 400 }}>
+                {row.pro ? "✓" : "—"}
+              </span>
             </div>
           ))}
         </div>

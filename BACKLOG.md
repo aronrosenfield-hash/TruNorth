@@ -179,7 +179,8 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top. Helps remember "what did we just do?"
 
-1. **2026-06-01 PM** — iOS Universal Links (B-23) — AASA file + entitlements + Vercel header. Every shared `/company/<slug>` link opens IN the iOS app instead of Safari (after Build 21)
+1. **2026-06-01 PM** — Paywall conversion table (UX 6B) — Free vs Pro side-by-side comparison with highlighted "Personalized scores" + "Barcode scanner" rows
+2. **2026-06-01 PM** — iOS Universal Links (B-23) — AASA file + entitlements + Vercel header. Every shared `/company/<slug>` link opens IN the iOS app instead of Safari (after Build 21)
 2. **2026-06-01 PM** — Weekly digest opt-in UX (B-3) — Account-screen `EmailDigestCard` lets users explicitly subscribe to the Sunday digest with `weekly_digest_optin` MailerLite tag
 2. **2026-06-01 PM** — Design picks locked: v1 Browse + v4 ProfileStrip + 1-free paywall. Real Browse→Search empty bug FIXED (empty-state path also checked industryBucket). Stripped alt-a/b/c Browse variants + v1/v2/v3 ProfileStrip variants from code.
 2. **2026-06-01 PM** — Bug batch: Splash "11,000+" rounding, Browse→Search empty-state fix attempt #1 (openBucket filter reset), free-plan paywall, Brand of Day moved above Top Picks, paid Sources tab now narrative paragraph
