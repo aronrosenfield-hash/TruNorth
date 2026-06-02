@@ -34,4 +34,8 @@ jobs:
           git add public/data/lawsuits.json
           git diff --quiet --staged && echo "No changes" && exit 0
           git commit -m "data(lawsuits): weekly CourtListener refresh [skip ci]"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

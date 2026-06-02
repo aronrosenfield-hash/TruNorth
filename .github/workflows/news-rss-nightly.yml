@@ -46,4 +46,8 @@ jobs:
           git add public/data/news/$DATE.json public/data/news/$DATE.extracted.json public/data/news/merge-log.json public/data/companies/
           git diff --quiet --staged && echo "No changes" && exit 0
           git commit -m "data(news): nightly RSS digest + AI extraction + per-company merge $DATE [skip ci]"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

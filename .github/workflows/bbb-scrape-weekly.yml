@@ -40,4 +40,10 @@ jobs:
           git add public/data/bbb-ratings.json
           git diff --quiet --staged && echo "No changes" && exit 0
           git commit -m "data(bbb): weekly BBB ratings refresh [skip ci]"
-          git push
+          # Pull-rebase before push: another scheduled job may have
+          # committed since we started, race-condition-safe.
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
