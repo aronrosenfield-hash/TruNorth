@@ -1,0 +1,38 @@
+name: news-rss-nightly
+
+# Option A — Google News RSS collector
+# Runs nightly at 04:00 UTC. Pulls 30-day RSS for each brand in
+# /public/data/top-500-brands.txt, filters to high-signal articles via
+# keyword match + outlet whitelist, annotates AllSides bias rating per
+# domain, writes /public/data/news/YYYY-MM-DD.json.
+#
+# AI extraction (using Anthropic API) is a separate downstream step that
+# only runs on the high-signal subset to keep cost down.
+
+on:
+  schedule:
+    - cron: "0 4 * * *"    # daily 04:00 UTC
+  workflow_dispatch:        # allow manual runs
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run news collector
+        run: node scripts/news-rss-collect.mjs
+
+      - name: Commit + push the digest
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/news/$DATE.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(news): nightly RSS digest $DATE [skip ci]"
+          git push

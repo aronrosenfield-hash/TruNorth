@@ -1,0 +1,41 @@
+name: bbb-scrape-weekly
+
+# Option B — Better Business Bureau weekly scrape
+# Runs Sunday 16:00 UTC. For each brand, pulls BBB rating + complaint
+# count via Playwright headless. Overwrites /public/data/bbb-ratings.json.
+#
+# BBB ToS permits scraping their public ratings pages. Throttled at
+# ~1 req/sec to stay courteous.
+
+on:
+  schedule:
+    - cron: "0 16 * * 0"   # Sunday 16:00 UTC
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --omit=optional
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run BBB scraper
+        run: node scripts/bbb-scrape.mjs
+
+      - name: Commit + push the ratings
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/bbb-ratings.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(bbb): weekly BBB ratings refresh [skip ci]"
+          git push

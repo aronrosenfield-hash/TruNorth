@@ -1,0 +1,34 @@
+name: courtlistener-weekly
+
+# Option C — CourtListener.com lawsuit fetcher
+# Runs Sunday 17:00 UTC. For each brand, queries CourtListener's free
+# search API for federal/state cases where the brand is a party. Captures
+# case counts, types breakdown, 5 most-recent cases. Overwrites
+# /public/data/lawsuits.json.
+
+on:
+  schedule:
+    - cron: "0 17 * * 0"   # Sunday 17:00 UTC
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CourtListener fetcher
+        run: node scripts/courtlistener-fetch.mjs
+
+      - name: Commit + push the lawsuit data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/lawsuits.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(lawsuits): weekly CourtListener refresh [skip ci]"
+          git push
