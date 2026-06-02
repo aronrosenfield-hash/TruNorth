@@ -137,12 +137,21 @@ function parseRssItems(xml) {
       const x = re.exec(block);
       return x ? x[1].replace(/<!\[CDATA\[(.*?)\]\]>/s, "$1").trim() : null;
     };
+    // <source url="https://www.reuters.com">Reuters</source>
+    //   ^ has attributes, so plain get("source") (which only matches
+    //   <source>X</source>) returns null. Extract both the text and the
+    //   url attribute separately.
+    const sourceMatch = /<source\s+url="([^"]+)"\s*>([\s\S]*?)<\/source>/.exec(block);
+    const sourceUrl  = sourceMatch ? sourceMatch[1] : null;
+    const sourceName = sourceMatch ? sourceMatch[2].replace(/<!\[CDATA\[(.*?)\]\]>/s, "$1").trim() : null;
+
     items.push({
       title:       get("title"),
       link:        get("link"),
       pubDate:     get("pubDate"),
       description: get("description"),
-      source:      get("source"),
+      source:      sourceName,   // human-readable, eg "Reuters"
+      sourceUrl,                 // publisher domain URL, eg "https://www.reuters.com"
     });
   }
   return items;
@@ -161,7 +170,10 @@ async function fetchBrandNews(brand) {
     const xml = await res.text();
     const items = parseRssItems(xml);
     return items.map(it => {
-      const domain = extractDomain(it.link);
+      // Use the <source url="..."> attribute to find the REAL publisher
+      // domain. it.link points at news.google.com (Google's redirect),
+      // which is useless for outlet identification.
+      const domain = it.sourceUrl ? extractDomain(it.sourceUrl) : extractDomain(it.link);
       const meta = OUTLET_BIAS[domain] || { bias: "unknown", weight: 0.3, fact_driver: false };
       return {
         brand_slug: brand.slug,
@@ -169,6 +181,7 @@ async function fetchBrandNews(brand) {
         title:      it.title,
         url:        it.link,
         domain,
+        outlet:     it.source,        // human-readable outlet name
         pub_date:   it.pubDate,
         source_name: it.source,
         bias:       meta.bias,
