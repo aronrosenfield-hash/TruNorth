@@ -4,7 +4,7 @@
 >
 > **How to use:** Open this file → say "let's do **L-3**" or "work on the next item under PRE-LAUNCH" or "what's blocked?"
 >
-> **Last updated:** 2026-06-01 PM
+> **Last updated:** 2026-06-02 PM
 
 ---
 
@@ -127,6 +127,9 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | **B-8** | Quarterly full re-narrate of Tier 1 (top 1k) companies — Sonnet batch | S + $5-10 | `parked_update_cadence.md` |
 | **B-9** | Annual HRC CEI + CDP A-List re-ingest | S | Set a yearly reminder |
 | **B-10** | Drop Glassdoor source from any future planning | — | ToS forbids scraping, Cloudflare-blocked, prior lawsuits |
+| **B-22** | **Sub-brand → parent slug mapping** for Option A merge | M | 278/528 top-500 slugs have no `/companies/<slug>.json` because they're sub-brands (Sprite→Coca-Cola, Mountain Dew→PepsiCo). Currently logged as orphans in `news/merge-log.json`. Add a `parentSlug` field in `top-500-brands.txt` or build a separate mapping JSON that the merge layer reads. |
+| **B-23** | **Scoring rebake from `recent_events[]`** | M-L | The news merge layer writes structured events but doesn't mutate scores. Need a scoring engine that reads `recent_events[]` (weighted by severity × magnitude × evidence_strength × bias) and re-derives `sc.*` values. Run weekly to keep grades fresh without per-article volatility. |
+| **B-24** | **AllSides outlet whitelist expansion** | S | Currently 33 outlets mapped. Many Tier-2 outlets (Axios, Politico, The Verge, Ars Technica) appear in high-signal results — add their bias ratings to `OUTLET_BIAS` in `news-rss-collect.mjs` for richer fact_driver coverage. |
 
 ### Scoring schema expansion
 
@@ -176,9 +179,9 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | Trending refresh | `.github/workflows/trending-refresh.yml` | Daily 06:00 UTC | PostHog → `/public/data/trending.json` |
 | Sunday digest | `.github/workflows/weekly-digest.yml` | Sunday 14:00 UTC | MailerLite campaign of weekly grade changes |
 | Loadtest | `.github/workflows/loadtest.yml` | Manual dispatch | k6 stress test |
-| **Option A (planned)** | News RSS for top 500 brands | Nightly | Will be `.github/workflows/news-rss.yml` |
-| **Option B (planned)** | BBB scraper for top 500 | Weekly | Will be `.github/workflows/bbb-scrape.yml` |
-| **Option C (planned)** | CourtListener lawsuits for top 500 | Weekly | Will be `.github/workflows/courtlistener.yml` |
+| **News RSS (Option A)** | `.github/workflows/news-rss-nightly.yml` | Daily 04:00 UTC | 528 brands → 45k+ RSS items → 350+ high-signal → Claude AI extraction → merge into per-company `news[]` + `recent_events[]`. ~$0.50-1/run. |
+| **BBB scrape (Option B)** | `.github/workflows/bbb-scrape-weekly.yml` | Sunday 16:00 UTC | Playwright pulls BBB rating + complaint count → `/public/data/bbb-ratings.json` |
+| **CourtListener (Option C)** | `.github/workflows/courtlistener-weekly.yml` | Sunday 17:00 UTC | Free Law Project API → per-brand lawsuit counts → `/public/data/lawsuits.json` |
 
 ### Human-action reminders (scheduled — you'll get pinged)
 
@@ -201,7 +204,11 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top.
 
-1. **2026-06-01** — **25-agent audit shipped**: 343 raw findings synthesized → 5 critical / 15 high / 35 medium / 20 low / 15 wins. Full doc at `/docs/full-audit-2026-06-01.md`.
+1. **2026-06-02** — **Option A News pipeline LIVE end-to-end**: nightly cron pulls 528-brand Google News RSS (~45k articles) → keyword + AllSides-bias filter → Claude Sonnet AI extraction (~350 high-signal items/night, ~$0.50-1/run) → merge layer writes per-company `news[]` + `recent_events[]` (180-day TTL, 50-item cap). Score values NOT mutated automatically — separate scoring rebake consumes `recent_events[]`. Workflow: `news-rss-nightly.yml`. Files: `scripts/news-rss-collect.mjs`, `scripts/news-rss-extract.mjs`, `scripts/news-extracted-merge.mjs`.
+2. **2026-06-02** — **Option B (BBB scrape) + Option C (CourtListener) workflows shipped**: weekly Playwright scrape of BBB ratings + weekly CourtListener API pull for lawsuit counts. Outputs: `/public/data/bbb-ratings.json`, `/public/data/lawsuits.json`.
+3. **2026-06-02** — **Critical security incident handled**: 3 leaked API keys (Anthropic TruNorth Pipeline + PostHog Claude Diagnostic + Anthropic Conscious Consumer) revoked + rotated. Leak source `docs/API Key and Tokens.docx` scrubbed from git history via `git-filter-repo` + force-pushed clean main. `.gitignore` tightened so all `.env*` files blocked except `*.example`. Rotation verified end-to-end via manual workflow dispatch on 3 dependent crons.
+4. **2026-06-02** — **528 hand-curated top-brand list** at `public/data/top-500-brands.txt` (14 tiers: CPG / household / restaurants / retail / apparel / tech / banking / telecom / auto / healthcare / travel / controversy / home / misc). Drives Options A/B/C scrapers.
+5. **2026-06-01** — **25-agent audit shipped**: 343 raw findings synthesized → 5 critical / 15 high / 35 medium / 20 low / 15 wins. Full doc at `/docs/full-audit-2026-06-01.md`.
 2. **2026-06-01** — **All 4 fixable critical bugs fixed** (5th = real IAP, blocked on LLC):
    • `__skipMarketing` ReferenceError white-screen fixed; root ErrorBoundary added
    • `tn_isPaid` localStorage persistence (Pro state survives relaunch)
