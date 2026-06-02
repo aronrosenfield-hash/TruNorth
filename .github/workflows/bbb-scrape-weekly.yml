@@ -12,21 +12,23 @@ on:
     - cron: "0 16 * * 0"   # Sunday 16:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write   # required to commit bbb-ratings.json back to main
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: npm ci --omit=optional
-
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright (ad-hoc — not in package.json)
+        run: |
+          npm install playwright@1.48.0 --no-save
+          npx playwright install --with-deps chromium
 
       - name: Run BBB scraper
         run: node scripts/bbb-scrape.mjs

@@ -11,6 +11,9 @@ on:
     - cron: "0 17 * * 0"   # Sunday 17:00 UTC
   workflow_dispatch:
 
+permissions:
+  contents: write   # required to commit lawsuits.json back to main
+
 jobs:
   fetch:
     runs-on: ubuntu-latest

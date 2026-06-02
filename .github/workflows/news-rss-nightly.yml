@@ -14,6 +14,9 @@ on:
     - cron: "0 4 * * *"    # daily 04:00 UTC
   workflow_dispatch:        # allow manual runs
 
+permissions:
+  contents: write   # required to commit the digest back to main
+
 jobs:
   collect:
     runs-on: ubuntu-latest
