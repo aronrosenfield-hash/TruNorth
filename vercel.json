@@ -1,7 +1,8 @@
 {
   "rewrites": [
     { "source": "/company/:slug", "destination": "/api/company-seo?slug=:slug" },
-    { "source": "/c/:slug",       "destination": "/api/company-seo?slug=:slug" }
+    { "source": "/c/:slug",       "destination": "/api/company-seo?slug=:slug" },
+    { "source": "/privacy",       "destination": "/index.html" }
   ],
   "headers": [
     {

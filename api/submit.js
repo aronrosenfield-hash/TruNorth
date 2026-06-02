@@ -19,9 +19,32 @@
 
 export const config = { runtime: "edge" };
 
+// H14 fix (audit 2026-06-01): per-IP rate limit — 5 submits per 60s.
+// Without this, a script could flood our Resend quota (100 emails/day free
+// tier) in 20 seconds, AND fill the inbox with garbage. In-memory cache
+// resets on cold-start which is fine for spam protection.
+const _hits = new Map();
+function rateLimited(ip, max = 5, windowMs = 60_000) {
+  const now = Date.now();
+  const arr = (_hits.get(ip) || []).filter(t => now - t < windowMs);
+  if (arr.length >= max) return true;
+  arr.push(now);
+  _hits.set(ip, arr);
+  return false;
+}
+
 export default async function handler(req) {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ ok: false, error: "method_not_allowed" }), { status: 405 });
+  }
+
+  // Rate limit before parsing any body
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (rateLimited(ip)) {
+    return new Response(JSON.stringify({ ok: false, error: "rate_limited" }), {
+      status: 429,
+      headers: { "Content-Type": "application/json", "Retry-After": "60" },
+    });
   }
 
   let payload;
