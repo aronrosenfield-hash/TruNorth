@@ -22,8 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env.local
-.env.testflight
+# Env files: ignore all variants by default, allow only example templates
+.env
+.env.*
+!.env.*.example
+!.env.testflight.example
 build/
 *.xcarchive
 scripts/ExportOptions.plist
