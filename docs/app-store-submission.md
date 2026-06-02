@@ -95,7 +95,7 @@ Scan any product in the store. Get the verdict in 2 seconds before you pay.
 Politics · Environment · Labor · DEI · Charity · Animal Testing · Firearms · Privacy · Executive Pay
 
 FREE FOREVER
-The core experience is free. Browse 11,000+ companies, take the values quiz, see letter grades, scan barcodes. TruNorth Pro ($1.99/mo) unlocks personalized scoring, per-grade citations, the full sources directory, and the weekly digest.
+The core experience is free. Browse 11,000+ companies, take the values quiz, see letter grades, scan barcodes. TruNorth Pro ($0.99/mo) unlocks personalized scoring, per-grade citations, the full sources directory, and the weekly digest.
 
 NO ADS · NO AFFILIATE LINKS · NO SELLING YOUR DATA
 
@@ -155,7 +155,7 @@ GETTING STARTED:
 
 PAYWALL TESTING:
 - Free users can view 1 company detail per week
-- After that, a paywall appears offering $1.99/month
+- After that, a paywall appears offering $0.99/month
 - We use Apple In-App Purchase via [RevenueCat — pending integration]
 - For review purposes, the paywall is currently in "demo mode" — tapping Subscribe does not charge but flips the user to Pro state locally
 

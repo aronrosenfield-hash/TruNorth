@@ -52,7 +52,14 @@
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
       html { background: #1a1a1a; height: var(--app-height, 100dvh); width: 100%; max-width: 100%; }
-      body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
+      /* 2026-06-01 (user-reported "entire screen moves" bug): on iOS Safari +
+         Capacitor WKWebView, scrolling the inner container can rubber-band
+         the html/body too, shifting the safe-area-inset and visually moving
+         the header / bottom nav. `overscroll-behavior: none` on html + body
+         pins the outer container so only the inner div scrolls. `position:
+         fixed` on body is the nuclear option that guarantees no body bounce. */
+      body, #root { background: #1a1a1a; height: 100%; overflow: hidden; width: 100%; max-width: 100%; overscroll-behavior: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; }
+      html { overscroll-behavior: none; }
       body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #f2f2f2; }
       input, textarea, select, button { font-family: inherit; }
       input:focus, textarea:focus, select:focus { outline: none; }

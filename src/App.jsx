@@ -938,11 +938,11 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           {PRO_WAITLIST_MODE ? (
             <>
               <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $1.99/mo</span>
+              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
             </>
           ) : (
             <>
-              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$1.99</span>
+              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$0.99</span>
               <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
             </>
           )}
@@ -961,7 +961,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
-            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : "Subscribe for $1.99/mo")}
+            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : "Subscribe for $0.99/mo")}
         </button>
 
         <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10 }}>
@@ -2072,7 +2072,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     // Refined from the previous "0 free / paywall on first tap" — that was
     // too aggressive; users couldn't even sample the product before being
     // gated. 1 free view lets them experience the depth of one brand
-    // profile, builds the desire, then the paywall asks for $1.99/mo to
+    // profile, builds the desire, then the paywall asks for $0.99/mo to
     // unlock the rest. Cooldown preserved so dismissers can browse for 4h.
     //
     // Re-opening an already-viewed company doesn't punish the user.
@@ -3404,7 +3404,7 @@ function SubmitView({ isPaid, onUpgrade }) {
         </div>
         <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:8 }}>Submissions are for subscribers</div>
         <div style={{ fontSize:13, color:T.txt3, marginBottom:20, lineHeight:1.6 }}>Upgrade to help keep our database accurate by flagging corrections or suggesting new companies.</div>
-        <button onClick={onUpgrade} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $1.99/mo</button>
+        <button onClick={onUpgrade} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $0.99/mo</button>
       </div>
     );
   }
@@ -4290,8 +4290,19 @@ useEffect(() => {
   // multi-second delay when entering the Top tab. Memo invalidates only
   // on profile / deduped change. topPicksLimit lets the user "Show more"
   // without re-blowing the budget on every screen visit.
+  // 2026-06-01 (user-reported): Top Picks must only show brands with at least
+  // ONE signal (not all neutral/unknown/na). Long-tail brands without any
+  // public-record data are still findable via Search, but they don't deserve
+  // a Top Picks slot until they're backfilled.
   const topPicksRanked = useMemo(
     () => [...deduped]
+      .filter(c => {
+        const sc = c.sc || {};
+        return Object.keys(sc).some(k => {
+          const v = String(sc[k] || "").toLowerCase().trim();
+          return v && v !== "neutral" && v !== "unknown" && v !== "na" && v !== "n/a" && v !== "?";
+        });
+      })
       .map(c => ({ co: c, score: computeScore(c, profile) }))
       .sort((a, b) => b.score - a.score)
       .map(({ co }) => co),
@@ -4787,7 +4798,10 @@ if (screen === "onboarding") {
           top on tab change. Without this, switching tabs preserves the
           previous tab's scroll position, which confuses users who tap a
           bottom-nav tab expecting to "start over." */}
-      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", background:T.bg }}>
+      {/* 2026-06-01: overscrollBehavior:contain stops rubber-band of inner
+          scroll from propagating to body, fixing the "entire screen moves
+          during drag" bug. */}
+      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", overscrollBehavior:"contain", background:T.bg }}>
 
       {/* Profile strip — locked to v4 (centered pill) on 2026-06-01 per
           user pick. Other variants stripped. Edit takes user back to the
@@ -4914,7 +4928,7 @@ if (screen === "onboarding") {
               <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
               <div>
                 <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>Unlock personalized scores</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $1.99/mo · narratives, sources & full profiles</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $0.99/mo · narratives, sources & full profiles</div>
               </div>
               <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
             </div>
@@ -5542,7 +5556,7 @@ if (screen === "onboarding") {
             ))}
             <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", marginTop:14, padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
               <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
-              Unlock all 25+ named sources — $1.99/mo
+              Unlock all 25+ named sources — $0.99/mo
             </button>
             <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
               Pro shows every source name, URL, and how it feeds each category.
@@ -5609,7 +5623,7 @@ if (screen === "onboarding") {
             </div>
             {!isPaid && (
               <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:12, borderRadius:10, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
-                Upgrade to Pro — $1.99/mo
+                Upgrade to Pro — $0.99/mo
               </button>
             )}
           </div>

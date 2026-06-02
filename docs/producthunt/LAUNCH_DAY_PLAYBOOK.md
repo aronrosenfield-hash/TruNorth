@@ -132,7 +132,7 @@ Solo founder bandwidth + Capacitor architecture decisions. Android target is ~1 
 ```
 Free forever for the core: search, scan, browse, basic grades.
 
-Pro tier ($1.99/mo, launching with App Store): personalized scoring, full Sources tab, "Updates on brands you've saved" weekly digest, ad-free.
+Pro tier ($0.99/mo, launching with App Store): personalized scoring, full Sources tab, "Updates on brands you've saved" weekly digest, ad-free.
 
 No selling user data. No affiliate links. Public records are free; the work is in cleaning + cross-referencing them.
 ```
