@@ -601,7 +601,14 @@ function computeScore(co, profile) {
   for (const k of CAT_KEYS) {
     const v = co.sc[k];
     if (getDataState(k, v) === "unknown") continue;
-    if (String(v || "").toLowerCase() === "neutral") continue;
+    const lv = String(v || "").toLowerCase();
+    if (lv === "neutral") continue;
+    // 2026-06-01 (user-reported bug): 'na' (not applicable, e.g. animal
+    // testing on a B2B software company) was being scored as 50 (fallback)
+    // because NA_IS_FACTUAL marks it 'scored' for display. But the GRADE
+    // should ignore inapplicable categories — they're not a positive OR
+    // negative signal, they just don't apply. Exclude them like neutral.
+    if (lv === "na" || lv === "n/a") continue;
     weightedSum += scoreCat(k, v, profile) * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
@@ -844,7 +851,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   };
 
   return (
-    <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
+    <div role="dialog" aria-modal="true" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
       <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px calc(28px + env(safe-area-inset-bottom, 0px))", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
@@ -1092,7 +1099,7 @@ const chipStyle = () => ({ flexShrink:0, padding:"5px 10px", borderRadius:12, fo
 
 function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat, flagFilters, toggleFlag, lc }) {
   return (
-    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+    <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Barcode scanner" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
       <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderTopLeftRadius:20, borderTopRightRadius:20, padding:"6px 16px 24px", paddingBottom:"calc(24px + env(safe-area-inset-bottom, 0px))", maxHeight:"82dvh", overflowY:"auto" }}>
         <div style={{ width:38, height:4, background:T.border2, borderRadius:2, margin:"6px auto 14px" }} />
         <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
@@ -1559,23 +1566,34 @@ function WhatsNewModal({ companyCount }) {
     setShow(false);
   };
   return (
-    <div onClick={dismiss} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
+    <div onClick={dismiss} role="dialog" aria-modal="true" aria-label="What's new" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:400, width:"100%", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:20, color:T.txt }}>
         {/* 2026-06-01: Launch-mode rewrite. The pre-launch "what's new" was
             a dev-internal changelog ("5,000+ new companies", "new filter
             drawer"). Re-cast as a welcome / value-prop card for the wave of
             new users arriving from ProductHunt + press. Bumped
             WHATSNEW_VERSION above so returning users see it once. */}
-        <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:14 }}>
-          <i className="ti ti-sparkles" style={{ fontSize:24, color:T.accent2 }} aria-hidden="true" />
-          <div style={{ fontSize:18, fontWeight:700 }}>Welcome to TruNorth</div>
+        {/* 2026-06-01 (user feedback): swapped generic sparkles icon for
+            the actual TruNorth logo mark to match the brand lockup used
+            in email signatures + header + marketing landing. */}
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:14 }}>
+          <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
+            <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+              <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
+            </svg>
+          </div>
+          <div style={{ fontSize:20, fontWeight:800, color:T.txt, letterSpacing:-0.3 }}>
+            Welcome to Tru<span style={{ color:T.accent2 }}>North</span>
+          </div>
         </div>
         <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
-          {/* 2026-06-01: round to "11,000+" rather than the exact toLocaleString
-              count. The exact 11,209 read as precision theater; "11,000+" reads
-              as scale. Same number, better punch. */}
           <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>11,000+</div>
-          <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>Companies graded across 9 value categories — using only public records.</div>
+          {/* 2026-06-01 (user feedback + audit H2): honest framing — we
+              TRACK 11,000+ companies but only grade the ones with
+              verified public-record signal. Top brands have full coverage. */}
+          <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>
+            Companies tracked. Top brands have full grades across 9 categories using public records — FEC, EPA, OSHA, NLRB, SEC.
+          </div>
         </div>
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
@@ -1638,7 +1656,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
   // iPhones the suggestion grid doesn't push content off-screen. The outer
   // wrapper uses 100dvh and the inner card scrolls internally when tall.
   return (
-    <div onClick={onClose} style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
+    <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Compare brands" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 16px 10px", borderBottom:`1px solid ${T.border}`, flexShrink:0 }}>
         <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
@@ -2061,10 +2079,13 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     if (!isPaid && !open) {
       const slug = company.slug || company.id;
       const now = new Date();
-      const weekKey = `${now.getUTCFullYear()}-W${Math.floor((now.getTime() - Date.UTC(now.getUTCFullYear(),0,1)) / (7*86_400_000))}`;
+      // 2026-06-01 (user pick): switched from 1 free view/week → 1 free
+      // view/day. Same field name `log.week` retained but it now holds a
+      // YYYY-MM-DD day key. Resets at local midnight (UTC).
+      const dayKey = now.toISOString().slice(0, 10);
       let log = {};
       try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
-      if (log.week !== weekKey) log = { week: weekKey, slugs: [] };
+      if (log.week !== dayKey) log = { week: dayKey, slugs: [] };
       // H1 fix (audit 2026-06-01): cooldown was sessionStorage (clears on tab
       // close → mobile web reopens evict it instantly → paywall fired every
       // tap, training users to dismiss reflexively). Now localStorage with a
@@ -2870,41 +2891,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             </div>
           )}
 
-          {/* Phase 5.ag (item J): "I bought it / I skipped it" toggle.
-              Single tap. Optional. Builds the data spine for the monthly
-              recap (item M) without forcing receipt-forwarding. Audit
-              specifically warned: never auto-enable, never push for it,
-              never gate features behind it. Pure self-tracking. */}
-          {(() => {
-            const slug = enriched.slug || enriched.id;
-            const lsKey = "tn_purchaseLog";
-            let log = {};
-            try { log = JSON.parse(localStorage.getItem(lsKey) || "{}"); } catch {}
-            const current = log[slug]?.action || null; // "bought" | "skipped" | null
-            const setAction = (action) => {
-              try {
-                const updated = { ...log };
-                if (current === action) delete updated[slug]; // toggle off
-                else updated[slug] = { action, at: Date.now(), name: enriched.name, grade, score: ps };
-                localStorage.setItem(lsKey, JSON.stringify(updated));
-                track("purchase_log", { slug, action: current === action ? "cleared" : action, grade });
-              } catch {}
-            };
-            const btn = (action, label, icon, color) => (
-              <button
-                onClick={(e) => { e.stopPropagation(); setAction(action); }}
-                style={{ flex:1, padding:"7px 8px", fontSize:11, fontWeight:600, borderRadius:8, cursor:"pointer", border:`1px solid ${current === action ? color : T.border}`, background: current === action ? `${color}22` : T.bg3, color: current === action ? color : T.txt3, display:"flex", alignItems:"center", justifyContent:"center", gap:5 }}
-              >
-                <i className={`ti ${icon}`} aria-hidden="true" style={{ fontSize:12 }} /> {label}
-              </button>
-            );
-            return (
-              <div style={{ marginTop:8, display:"flex", gap:6 }}>
-                {btn("bought",  "I bought it",  "ti-shopping-cart", "#4caf82")}
-                {btn("skipped", "I skipped it", "ti-arrow-back",    "#f0a030")}
-              </div>
-            );
-          })()}
+          {/* 2026-06-01 (user feedback): removed "I bought it" / "I skipped it"
+              toggle. The feedback was "they don't work, and where do they go?"
+              They DID save to tn_purchaseLog and feed the monthly recap card
+              on Top Picks — but without a visible affordance explaining that,
+              the UI just looked broken. Killed both the buttons and the
+              monthly card that depended on them. Cleaner. */}
 
           {/* Phase 5.af: Recency + Report-correction footer.
               Always rendered so every profile shows a freshness signal and a
@@ -4704,22 +4696,26 @@ if (screen === "onboarding") {
       {/* Header — Phase 5.y: title is true-centered now (3-column grid) so the
           Pro/Upgrade chip width on the right can't shift it off-center. */}
       <div style={{ padding:"calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
-        <div style={{ display:"grid", gridTemplateColumns:"1fr auto 1fr", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
-          <div style={{ display:"flex", justifyContent:"flex-start" }}>
+        {/* 2026-06-01 (user feedback): logo + 'TruNorth' wordmark were
+            visually separated by a 3-column grid (logo left / title center /
+            upgrade right) — looked disjointed. Now grouped as a single
+            unit on the left, matching the email-signature lockup. The
+            cut-off 'Know where your money goes · N companies' tagline
+            was always being truncated → removed entirely (info already
+            lives in marketing landing + search placeholder + About). */}
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: tab !== "account" ? 12 : 0 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:8, flex:1, minWidth:0 }}>
             <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
               <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg>
             </div>
+            <div style={{ fontSize:20, fontWeight:800, color:T.txt, letterSpacing:-0.3, lineHeight:1, whiteSpace:"nowrap" }}>
+              Tru<span style={{ color:T.accent2 }}>North</span>
+            </div>
           </div>
-          <div style={{ textAlign:"center", minWidth:0 }}>
-            <div style={{ fontSize:18, fontWeight:700, color:T.txt, letterSpacing:-0.3, lineHeight:1.1 }}>TruNorth</div>
-            <div style={{ fontSize:11, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>Know where your money goes · {formatCompanyCount(deduped.length)} companies</div>
-          </div>
-          <div style={{ display:"flex", justifyContent:"flex-end" }}>
-            {isPaid
-              ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
-              : <button onClick={()=>setTab("account")} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
-            }
-          </div>
+          {isPaid
+            ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4, flexShrink:0 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
+            : <button onClick={()=>setTab("account")} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4, flexShrink:0, minHeight:32 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
+          }
         </div>
         {tab !== "account" && (
           <div style={{ position:"relative" }}>
@@ -5212,45 +5208,9 @@ if (screen === "onboarding") {
               2026-06-01 per user feedback. Renders via <BrandOfDayCard />
               above the Top Picks list. */}
 
-          {/* Phase 5.ag (item M-partial): personal monthly stats card.
-              Reads tn_purchaseLog (populated by the I-bought/skipped toggle
-              from item J) and surfaces a tiny "your month" summary on the
-              Top Picks tab — building toward the full Year-in-Review
-              eventually. Only renders if the user has logged ≥3 actions
-              this month (otherwise it's not enough data to be interesting). */}
-          {(() => {
-            let log = {};
-            try { log = JSON.parse(localStorage.getItem("tn_purchaseLog") || "{}"); } catch {}
-            const monthStart = new Date(); monthStart.setDate(1); monthStart.setHours(0,0,0,0);
-            const monthMs = monthStart.getTime();
-            const entries = Object.values(log).filter(e => e?.at >= monthMs);
-            if (entries.length < 3) return null;
-            const bought  = entries.filter(e => e.action === "bought").length;
-            const skipped = entries.filter(e => e.action === "skipped").length;
-            const skippedF = entries.filter(e => e.action === "skipped" && ["D","F"].includes(e.grade)).length;
-            return (
-              <div style={{ margin:"0 16px 12px", padding:"14px", background:T.bg3, border:`1px solid ${T.border}`, borderRadius:12 }}>
-                <div style={{ fontSize:10, color:T.txt3, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>Your month so far</div>
-                <div style={{ display:"flex", gap:16 }}>
-                  <div style={{ flex:1, textAlign:"center" }}>
-                    <div style={{ fontSize:22, fontWeight:800, color:"#4caf82" }}>{bought}</div>
-                    <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>BOUGHT</div>
-                  </div>
-                  <div style={{ flex:1, textAlign:"center" }}>
-                    <div style={{ fontSize:22, fontWeight:800, color:"#f0a030" }}>{skipped}</div>
-                    <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>SKIPPED</div>
-                  </div>
-                  <div style={{ flex:1, textAlign:"center" }}>
-                    <div style={{ fontSize:22, fontWeight:800, color:T.accent2 }}>{skippedF}</div>
-                    <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>SKIPPED D / F</div>
-                  </div>
-                </div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:10, textAlign:"center", lineHeight:1.4 }}>
-                  Tap "I bought it" or "I skipped it" on any brand profile to track your month.
-                </div>
-              </div>
-            );
-          })()}
+          {/* 2026-06-01: removed monthly stats card — depended on the
+              I-bought/I-skipped toggle which we just killed. Reintroduce
+              after Year-in-Review feature is properly designed. */}
 
           <div style={{ padding:"12px 16px", borderBottom:`1px solid ${T.border}` }}>
             <div style={{ fontSize:12, color:T.txt3 }}>Ranked by {profile?"your personalized score":"average score"} · Letter grade shown</div>

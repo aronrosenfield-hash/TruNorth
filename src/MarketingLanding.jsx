@@ -358,7 +358,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth grades 11,000+ companies across nine categories — politics, environment, labor, DEI, charity, animal testing, firearms, privacy, and exec pay — using public records, not opinions.
+              TruNorth tracks 11,000+ companies and grades them on the categories with verified public-record signal — politics (Federal Election Commission), environment (Environmental Protection Agency), labor (OSHA + NLRB), animal testing, executive pay, and more. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* Phase 5.az: the iOS CTA points at the App Store listing once
