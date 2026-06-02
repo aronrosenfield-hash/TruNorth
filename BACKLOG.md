@@ -104,9 +104,9 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **A-1** | **H3: Unified `openBrand(slug)` helper** | M | Brand-of-Day, Weekly Digest, Library, search-row taps all navigate differently. Extract one canonical helper, call from all 6+ entry points. Currently some land on focused-brand view, others dump into search list. |
-| **A-2** | **H5: Modal a11y** | M | Compare / Scanner / WhatsNew / Paywall need `role="dialog"`, `aria-modal="true"`, focus trap on open, focus return on close, ESC to close. ConfirmModal already does this — promote to shared pattern. |
-| **A-3** | **H13: Copy honesty + acronym pass** | M | Expand FEC / OSHA / NLRB / EPA on first use. Neutralize US-political-specific framing for international readers. Shorten dense sentences. Touch every screen's copy. |
+| ~~**A-1**~~ | ~~H3: Unified `openBrand(slug)` helper~~ | ✅ done 2026-06-02 | 12 nav entry points → 1 canonical helper. Build green. |
+| ~~**A-2**~~ | ~~H5: Modal a11y~~ | ✅ done 2026-06-02 | `useModalA11y` shared hook → Paywall/Scanner/WhatsNew/Compare. Focus trap + ESC + focus return. |
+| ~~**A-3**~~ | ~~H13: Copy honesty + acronym pass~~ | ✅ done 2026-06-02 | FEC/EPA/OSHA/NLRB/SEC/BHRRC/DOL/HRC/EEOC expanded on first use. US qualifiers added to political labels. Marketing landing acronyms expanded. |
 | **A-4** | **H2: Backfill personalization signal for top 100 brands** | L | 85% of catalog has `neutral` or empty scores in every category, so quiz can't actually personalize them. Pipeline work in `/Users/aronrosenfield/Developer/hybrid-pipeline/`. Prioritize top-100 by PostHog impressions or curated list. |
 | **A-5** | **H15: Bundle splitting (2.5MB companies + 4MB Tabler font)** | L | Lazy-load companies dataset, swap Tabler webfont for a sprite subset of the ~30 icons actually used. Risky — break dynamic imports / asset paths. |
 
