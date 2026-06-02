@@ -1642,7 +1642,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 16px 10px", borderBottom:`1px solid ${T.border}`, flexShrink:0 }}>
         <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
-        <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, cursor:"pointer" }} aria-label="Close">×</button>
+        <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, minWidth:44, minHeight:44, cursor:"pointer" }} aria-label="Close">×</button>
       </div>
       <div style={{ padding:16, overflowY:"auto", flex:1, minHeight:0, WebkitOverflowScrolling:"touch" }}>
 
@@ -1735,7 +1735,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                 const grade = scoreGrade(ps);
                 return (
                   <div key={co.slug} style={{ background:T.bg2, borderRadius:12, padding:12, border:`1px solid ${T.border}`, position:"relative" }}>
-                    <button onClick={()=>onRemove(co.slug)} style={{ position:"absolute", top:6, right:6, width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }} aria-label="Remove">×</button>
+                    <button onClick={()=>onRemove(co.slug)} style={{ position:"absolute", top:6, right:6, width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer" }} aria-label="Remove">×</button>
                     <div style={{ marginBottom:6 }}><CompanyLogo company={co} size={36} rounded={8} /></div>
                     <div style={{ fontSize:14, fontWeight:700, color:T.txt, lineHeight:1.2 }}>{co.name}</div>
                     <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{co.cat || ""}</div>
@@ -3054,22 +3054,50 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
 ));
 
 // ─── QUIZ ─────────────────────────────────────────────────────────────────────
-function Quiz({ onComplete, onSkip }) {
+function Quiz({ onComplete, onSkip, initialProfile = null }) {
   // Phase 5.ag: resolve QUIZ_STEPS at mount via URL param ?quiz=alt-a or
   // the cached preference. Switching mid-quiz isn't supported (resets the
   // answer state), so the choice is captured once on mount.
   const steps = React.useMemo(getQuizSteps, []);
-  // Phase 5.as (QA bug #7): quiz answers used to live in useState only,
-  // so iOS Safari aggressively backgrounding the tab under memory pressure
-  // would dump the entire quiz back to step 0. Persist answers + step to
-  // localStorage on every change; restore on mount.
+
+  // H10 fix (audit 2026-06-01): when retaking the quiz, hydrate from the
+  // existing profile so the user can tweak rather than re-answer from
+  // scratch. Order of precedence:
+  //   1. In-progress draft (tn_quiz_draft) — never lose work in flight
+  //   2. Existing profile — retake-friendly defaults
+  //   3. Empty {} — true first-time visitor
+  const profileAsAnswers = React.useMemo(() => {
+    if (!initialProfile) return null;
+    const p = initialProfile;
+    const w = p.weights || {};
+    return {
+      politicalLean:      p.lean        || "neutral",
+      deiLean:            p.deiLean     || "neutral",
+      animalTesting:      p.animalTesting || "neutral",
+      guns:               p.guns        || "neutral",
+      unionSupport:       p.unionSupport || "neutral",
+      politicalImportance: w.political,
+      charityImportance:   w.charity,
+      envImportance:       w.environment,
+      laborImportance:     w.labor,
+      deiImportance:       w.dei,
+      privacy:             w.privacy,
+      execPay:             w.execPay,
+      dealBreakers:        p.dealBreakers || [],
+    };
+  }, [initialProfile]);
+
   const [step, setStep] = useState(() => {
     try { return JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}").step || 0; }
     catch { return 0; }
   });
   const [answers, setAnswers] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}").answers || {}; }
-    catch { return {}; }
+    try {
+      const draft = JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}");
+      if (draft.answers && Object.keys(draft.answers).length) return draft.answers;
+    } catch {}
+    // No draft → hydrate from profile if available (retake), else empty.
+    return profileAsAnswers || {};
   });
   useEffect(() => {
     try { localStorage.setItem("tn_quiz_draft", JSON.stringify({ step, answers, at: Date.now() })); } catch {}
@@ -4604,13 +4632,12 @@ if (screen === "onboarding") {
           }}
         />}
         <Quiz
+          // H10 fix (audit 2026-06-01): pass current profile so retake
+          // hydrates existing answers instead of starting blank. Quiz
+          // reads this on mount only when there's no in-progress draft.
+          initialProfile={profile}
           onComplete={(p) => {
             setProfile(p);
-            // Phase 5.au: mint the Values Fingerprint at quiz completion.
-            // Pure derivation from quiz weights — no PII, deterministic,
-            // safe to share. Becomes the user's "identity card" — pinned to
-            // Account, shown on the share PNG, resurfaces every 14 days
-            // ("Still feel right? [Re-take]").
             const fp = computeFingerprint(p);
             persistFingerprint(fp);
             track("quiz_completed", { isPaid, archetype: fp?.id, codename: fp?.codename });
@@ -4825,7 +4852,7 @@ if (screen === "onboarding") {
                       setTopPicksLimit(n => n);
                     }}
                     aria-label="Dismiss"
-                    style={{ position:"absolute", top:6, right:6, width:28, height:28, padding:0, borderRadius:14, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }}
+                    style={{ position:"absolute", top:6, right:6, width:28, height:28, padding:0, borderRadius:14, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer" }}
                   >×</button>
                   <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:8 }}>Your first week on TruNorth</div>
                   <div style={{ fontSize:16, fontWeight:700, color:T.txt, marginBottom:10, lineHeight:1.3 }}>
@@ -5242,7 +5269,7 @@ if (screen === "onboarding") {
               >Take quiz</button>
               <button
                 onClick={()=>{ setTeaserDismissed(true); try { sessionStorage.setItem("tn_teaserDismissed","1"); } catch {} track("personalized_teaser_dismissed"); }}
-                style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer", flexShrink:0 }}
+                style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer", flexShrink:0 }}
                 aria-label="Dismiss"
               >×</button>
             </div>
@@ -5338,7 +5365,10 @@ if (screen === "onboarding") {
                   <select
                     value={savedSortMode}
                     onChange={e => setSavedSortMode(e.target.value)}
-                    style={{ background:T.bg3, color:T.txt, border:`1px solid ${T.border}`, borderRadius:8, padding:"6px 8px", fontSize:12, flexShrink:0 }}
+                    /* H4 fix: fontSize:16 stops iOS Safari from auto-zooming
+                       on focus. The previous 12 looked nicer but trapped
+                       users in zoomed-Library state until they pinch out. */
+                    style={{ background:T.bg3, color:T.txt, border:`1px solid ${T.border}`, borderRadius:8, padding:"6px 8px", fontSize:16, flexShrink:0, minHeight:36 }}
                     aria-label="Sort saved brands"
                   >
                     <option value="recent">Recently saved</option>
@@ -5577,7 +5607,7 @@ if (screen === "onboarding") {
             The result: <strong style={{ color:T.txt }}>every grade is auditable end-to-end.</strong> Tap any company → Sources tab to see the specific filings that drove that brand's score. If a score moves, it's because new public records moved it — not because our editorial position changed.
           </p>
           <div style={{ padding:"12px 14px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:14, fontSize:13, color:T.txt3, lineHeight:1.65 }}>
-            <strong style={{ color:T.txt2 }}>About freshness.</strong> Government-derived signals refresh nightly via automated workflows. Per-company narratives are re-researched monthly to incorporate new filings. Donation totals reflect the current election cycle; enforcement records span 2000-present. For breaking news, tap "Live update" on any company card.
+            <strong style={{ color:T.txt2 }}>About freshness.</strong> Government-derived signals refresh nightly via automated workflows. Per-company narratives are re-researched monthly to incorporate new filings. Donation totals reflect the current election cycle; enforcement records span 2000-present.
           </div>
           <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginTop:18, marginBottom:8 }}>
             Source categories
@@ -5720,20 +5750,66 @@ if (screen === "onboarding") {
                 <span style={{ color:T.txt3 }}>Plan</span>
                 <span style={{ color:isPaid ? T.gold : T.txt2, fontWeight:600 }}>{isPaid ? "Pro" : "Free"}</span>
               </div>
-              <button style={{ width:"100%", marginTop:12, padding:10, borderRadius:10, border:`1px solid ${T.border2}`, background:"transparent", color:T.txt3, fontSize:13, cursor:"pointer" }}
+              {/* H7 fix (audit 2026-06-01): Sign-out used to leave the email
+                  + Values Fingerprint + saved brands + view history all
+                  parked in localStorage — that's the user's PII still
+                  sitting on the device after they "logged out." Now Sign
+                  out clears the PII-laden keys but preserves UX-only
+                  preferences (saved brands, history, fingerprint stay
+                  unless the user explicitly chooses "Delete my data"). */}
+              <button style={{ width:"100%", marginTop:12, padding:10, borderRadius:10, border:`1px solid ${T.border2}`, background:"transparent", color:T.txt3, fontSize:13, cursor:"pointer", minHeight:44 }}
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Sign out?",
-                    body: "Your saved brands and preferences stay on this device. You can sign back in any time.",
+                    body: "Your saved brands and preferences stay on this device. To wipe everything, use 'Delete my data' below.",
                     confirmLabel: "Sign out",
                     cancelLabel: "Stay",
                     danger: true,
                   });
                   if (!ok) return;
-                  ["tn_hasOnboarded","tn_user"].forEach(k => { try { localStorage.removeItem(k); } catch {} });
+                  // Clear sign-in identity but keep app-state for next session.
+                  ["tn_hasOnboarded","tn_user","tn_email","tn_user_hash","tn_isPaid"].forEach(k => {
+                    try { localStorage.removeItem(k); } catch {}
+                  });
+                  track("signed_out");
                   window.location.reload();
                 }}>
                 Sign out
+              </button>
+
+              {/* H7 (audit) — full GDPR/CCPA-grade data deletion.
+                  Wipes EVERY tn_* localStorage key, opts out of PostHog
+                  going forward, then hard-reloads. Doesn't touch the
+                  MailerLite server-side record (user must email us per
+                  the Privacy Policy) — but the in-app surface is now
+                  honest and the app behaves like a fresh install. */}
+              <button style={{ width:"100%", marginTop:8, padding:10, borderRadius:10, border:`1px solid ${T.rep || "#e24a4a"}`, background:"transparent", color:T.rep || "#e24a4a", fontSize:13, cursor:"pointer", minHeight:44 }}
+                onClick={async () => {
+                  const ok = await confirm({
+                    title: "Delete all my data on this device?",
+                    body: "Wipes your saved brands, history, quiz answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
+                    confirmLabel: "Delete everything",
+                    cancelLabel: "Cancel",
+                    danger: true,
+                  });
+                  if (!ok) return;
+                  try {
+                    // Wipe everything tn_* — comprehensive across the app
+                    for (let i = localStorage.length - 1; i >= 0; i--) {
+                      const k = localStorage.key(i);
+                      if (k && k.startsWith("tn_")) localStorage.removeItem(k);
+                    }
+                    // Best-effort PostHog opt-out for this session + going forward
+                    try {
+                      const posthog = (await import("posthog-js")).default;
+                      posthog.opt_out_capturing?.();
+                      posthog.reset?.();
+                    } catch {}
+                  } catch {}
+                  track("user_data_deleted"); // last gasp before opt-out lands
+                  window.location.reload();
+                }}>
+                Delete my data on this device
               </button>
             </div>
 
@@ -5804,7 +5880,7 @@ if (screen === "onboarding") {
           {compareList.length >= 2 && (
             <button onClick={()=>{ setShowCompare(true); track("compare_view", { count: compareList.length }); }} style={{ padding:"6px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer" }}>View</button>
           )}
-          <button onClick={()=>{ setCompareList([]); track("compare_clear"); }} style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, cursor:"pointer" }} aria-label="Clear compare">×</button>
+          <button onClick={()=>{ setCompareList([]); track("compare_clear"); }} style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer" }} aria-label="Clear compare">×</button>
         </div>
       )}
 

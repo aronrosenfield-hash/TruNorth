@@ -34,6 +34,7 @@ const C = {
   good:      "#4ade80",
   warn:      "#fde68a",
   bad:       "#fca5a5",
+  gold:      "#fdb74e",
 };
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
@@ -370,6 +371,22 @@ export default function MarketingLanding({ onOpenPrivacy }) {
             </div>
             <div style={{ marginTop:18, fontSize:13, color:C.textMute }}>
               iPhone first · Android coming soon. {APP_STORE_URL ? "Download on the App Store." : "App Store launch imminent — TestFlight invite arrives same day."}
+            </div>
+            {/* 2026-06-01 (audit) founder pricing chip — points pre-launch
+                visitors at the in-app Pro waitlist via a single line. Once
+                real IAP ships, swap "founder" → "Get Pro" + flip target URL. */}
+            <div style={{
+              marginTop:14, padding:"8px 14px",
+              display:"inline-flex", alignItems:"center", gap:8,
+              background:`${C.gold || "#ffd97a"}14`,
+              border:`1px solid ${C.gold || "#ffd97a"}55`,
+              borderRadius:999, fontSize:12, color:C.text,
+            }}>
+              <span style={{ fontSize:14 }} aria-hidden="true">👑</span>
+              <span>
+                <b style={{ color:C.gold || "#ffd97a" }}>Founder pricing:</b>{" "}
+                <span style={{ color:C.textDim }}>first 500 supporters get TruNorth Pro at $9/yr forever — join the in-app waitlist after install</span>
+              </span>
             </div>
             {/* 2026-06-01 (L-6): Product Hunt Coming Soon chip. Highest-leverage
                 conversion surface on the landing for the pre-launch window.

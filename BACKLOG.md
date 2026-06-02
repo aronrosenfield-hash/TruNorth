@@ -86,6 +86,7 @@ Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DA
 
 | ID | Item | Blocked on |
 |---|---|---|
+| **X-0** | Flip `PRO_WAITLIST_MODE = false` to enable real IAP | RevenueCat live + LLC + bank (X-2). When done: single constant flip in `src/App.jsx` + verify Apple receipt validation in `handleSubscribe`. Currently the paywall captures waitlist signups with founder pricing ($9/yr first 500). |
 | **X-1** | App Store URL in PH First Comment + landing CTA | Apple App Store approval (you submit, Apple reviews) |
 | **X-2** | RevenueCat / Stripe / Apple IAP integration | TruNorthApp LLC + business bank account. Plan at `/docs/payments-integration-plan.md`. |
 | **X-3** | Apify Indeed reviews scraper | $10/mo Apify subscription + `APIFY_API_TOKEN`. Code ready in hybrid-pipeline. |
@@ -98,6 +99,16 @@ Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DA
 ## 📋 BACKLOG — pick when relevant
 
 Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
+
+### Audit deferrals (after the Jun 1 25-agent audit)
+
+| ID | Item | Effort | Notes |
+|---|---|---|---|
+| **A-1** | **H3: Unified `openBrand(slug)` helper** | M | Brand-of-Day, Weekly Digest, Library, search-row taps all navigate differently. Extract one canonical helper, call from all 6+ entry points. Currently some land on focused-brand view, others dump into search list. |
+| **A-2** | **H5: Modal a11y** | M | Compare / Scanner / WhatsNew / Paywall need `role="dialog"`, `aria-modal="true"`, focus trap on open, focus return on close, ESC to close. ConfirmModal already does this — promote to shared pattern. |
+| **A-3** | **H13: Copy honesty + acronym pass** | M | Expand FEC / OSHA / NLRB / EPA on first use. Neutralize US-political-specific framing for international readers. Shorten dense sentences. Touch every screen's copy. |
+| **A-4** | **H2: Backfill personalization signal for top 100 brands** | L | 85% of catalog has `neutral` or empty scores in every category, so quiz can't actually personalize them. Pipeline work in `/Users/aronrosenfield/Developer/hybrid-pipeline/`. Prioritize top-100 by PostHog impressions or curated list. |
+| **A-5** | **H15: Bundle splitting (2.5MB companies + 4MB Tabler font)** | L | Lazy-load companies dataset, swap Tabler webfont for a sprite subset of the ~30 icons actually used. Risky — break dynamic imports / asset paths. |
 
 ### App / UX polish
 
@@ -175,7 +186,23 @@ Manage in sidebar under "Scheduled".
 
 Most recent at top.
 
-1. **2026-06-01** — L-12: GitHub Actions secrets verified (`MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `POSTHOG_API_KEY`) — Sunday digest + nightly trending cron now have everything they need
+1. **2026-06-01** — **25-agent audit shipped**: 343 raw findings synthesized → 5 critical / 15 high / 35 medium / 20 low / 15 wins. Full doc at `/docs/full-audit-2026-06-01.md`.
+2. **2026-06-01** — **All 4 fixable critical bugs fixed** (5th = real IAP, blocked on LLC):
+   • `__skipMarketing` ReferenceError white-screen fixed; root ErrorBoundary added
+   • `tn_isPaid` localStorage persistence (Pro state survives relaunch)
+   • Free-tier detail panel unlocked (removed `isPaid` gate); orphaned `tn_freeViewed` wipe killed
+   • MailerLite write key moved off the client bundle into new `/api/subscribe` edge function
+3. **2026-06-01** — **Waitlist pivot**: `PRO_WAITLIST_MODE` constant; paywall now captures founder-pricing email signups ($9/yr first 500) instead of fake-charging. App-Store-safe + intent-capturing. Flip the constant when real IAP lands.
+4. **2026-06-01** — Marketing landing: founder pricing chip below hero CTA
+5. **2026-06-01** — Account: "Delete my data" button (GDPR/CCPA-grade — wipes all `tn_*` keys + PostHog opt-out). Sign-out also clears email + user_hash + isPaid.
+6. **2026-06-01** — Quiz retake hydrates from existing profile (audit H10)
+7. **2026-06-01** — Paywall cooldown: sessionStorage → localStorage, 4h → 7d (audit H1)
+8. **2026-06-01** — Email validation regex tightened; submit button disabled until valid (H8)
+9. **2026-06-01** — `/privacy` 404 fixed (vercel rewrite + SPA path normalization, audit H12)
+10. **2026-06-01** — `/api/submit` per-IP rate limit (5/min, 429+Retry-After, audit H14)
+11. **2026-06-01** — Sources tab: removed dead "Live update" promise (H11)
+12. **2026-06-01** — 7 small tap targets bumped to 44×44 minimum + Library `<select>` fontSize 12→16 (H4)
+13. **2026-06-01** — L-12: GitHub Actions secrets verified (`MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `POSTHOG_API_KEY`)
 2. **2026-06-01** — Scroll-to-top on tab change (user-reported UX bug)
 2. **2026-06-01** — PostHog env var rename `POSTHOG_API_KEY` → `VITE_POSTHOG_KEY` (was silently disabled)
 3. **2026-06-01** — Vercel env vars audited; all critical keys verified (L-11)
