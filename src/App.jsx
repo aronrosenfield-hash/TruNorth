@@ -794,28 +794,53 @@ function ElephantSVG({ size=14, col="#e24a4a" }) {
 }
 
 // ─── PAYWALL ─────────────────────────────────────────────────────────────────
+// 2026-06-01 (audit fix #1): pivoted from fake-Pro-subscription to
+// "Pro waitlist" mode. Real Stripe/RevenueCat IAP is blocked on LLC + bank
+// account formation. Shipping a fake-charging paywall would:
+//   1. Burn user trust if they discover it
+//   2. Trigger Apple App Store rejection under Guideline 4.5.3 / IAP rules
+//
+// Waitlist mode:
+//   - "Subscribe" button → "Join the Pro waitlist"
+//   - Tapping it captures email to MailerLite with source=pro_waitlist
+//   - Promises "first 500 get $9/yr forever" (founder pricing anchor)
+//   - User is NOT flipped to Pro (isPaid stays false)
+//   - When real IAP launches, flip PRO_WAITLIST_MODE = false and the
+//     same component switches back to the real subscription flow.
+const PRO_WAITLIST_MODE = true;
+
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const [loading, setLoading] = useState(false);
+  const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
   const [email, setEmail] = useState(initialEmail || getStoredEmail());
 
+  // Tighter email validation (audit H8): catches "@@", trailing dots, etc.
+  const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
+
   const handleSubscribe = async () => {
-    if (!email.includes("@")) { alert("Please enter a valid email."); return; }
-    // Phase 5.aj: fire upgrade_clicked at the moment the user commits — this
-    // is the funnel-conversion event that paywall_shown should convert into.
-    // PostHog diagnostic on 2026-05-31 showed 43 paywall_shown / 0
-    // upgrade_clicked because this event was never being emitted.
-    track("upgrade_clicked", { email_provided: true, source: "paywall" });
+    if (!isValidEmail(email)) { return; /* button stays disabled — no native alert() */ }
+    track("upgrade_clicked", {
+      email_provided: true,
+      source: PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall",
+      mode: PRO_WAITLIST_MODE ? "waitlist" : "subscription",
+    });
     setLoading(true);
-    // 4.7: capture the email to MailerLite (gracefully no-ops if unconfigured)
-    await subscribeEmail(email, "paywall", { intendsToSubscribe: true });
-    // In production: call Stripe Checkout API here.
-    setTimeout(() => {
-      setLoading(false);
-      // Phase 5.as (#11): pass the email up so parent can persist it to
-      // tn_user → Account auto-populates.
-      onSubscribe(email);
-    }, 1500);
+    await subscribeEmail(email, PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall", {
+      intendsToSubscribe: true,
+      waitlist: PRO_WAITLIST_MODE,
+    });
+    setLoading(false);
+    if (PRO_WAITLIST_MODE) {
+      // Don't grant Pro — just confirm the waitlist signup. The user stays
+      // free; we surface this to them with a success state, then close.
+      setDone(true);
+      setTimeout(() => onClose(), 2200);
+    } else {
+      // Real-IAP path (future): only flip Pro after actual Stripe/StoreKit
+      // receipt verification. setTimeout below is just a placeholder.
+      setTimeout(() => onSubscribe(email), 1500);
+    }
   };
 
   return (
@@ -823,6 +848,19 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px calc(28px + env(safe-area-inset-bottom, 0px))", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
+        {done ? (
+          // Waitlist success state — shows for ~2.2s then auto-dismisses
+          <div style={{ textAlign:"center", padding:"24px 16px 12px" }}>
+            <div style={{ width:64, height:64, borderRadius:32, background:T.goldBg, border:`2px solid ${T.gold}`, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 16px" }}>
+              <i className="ti ti-mail-check" style={{ fontSize:32, color:T.gold }} aria-hidden="true" />
+            </div>
+            <div style={{ fontSize:20, fontWeight:800, color:T.txt, marginBottom:8 }}>You're on the list ✓</div>
+            <div style={{ fontSize:13, color:T.txt2, lineHeight:1.55, maxWidth:300, margin:"0 auto" }}>
+              We'll email you the moment TruNorth Pro opens. First 500 get founder pricing — $9/year forever.
+            </div>
+          </div>
+        ) : (
+        <>
         <div style={{ textAlign:"center", marginBottom:12 }}>
           <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:10, marginBottom:20 }}>
             <div style={{ width:36, height:36, background:T.accentBg, borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center" }}>
@@ -835,9 +873,13 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           <div style={{ width:44, height:44, background:T.goldBg, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 8px" }}>
             <i className="ti ti-crown" style={{ fontSize:26, color:T.gold }} aria-hidden="true" />
           </div>
-          <div style={{ fontSize:17, fontWeight:700, color:T.txt, marginBottom:4 }}>Unlock full details</div>
+          <div style={{ fontSize:17, fontWeight:700, color:T.txt, marginBottom:4 }}>
+            {PRO_WAITLIST_MODE ? "TruNorth Pro · Founder pricing" : "Unlock full details"}
+          </div>
           <div style={{ fontSize:12, color:T.txt3, lineHeight:1.6, maxWidth:300, margin:"0 auto" }}>
-            Free users see company names and badges. Subscribe to unlock full breakdowns, live updates, and personalized scores.
+            {PRO_WAITLIST_MODE
+              ? "We're finalizing payments. Join the waitlist — the first 500 get founder pricing forever ($9/year)."
+              : "Free users see company names and badges. Subscribe to unlock full breakdowns, live updates, and personalized scores."}
           </div>
         </div>
 
@@ -886,25 +928,46 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
         </div>
 
         <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
-          <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$1.99</span>
-          <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
+          {PRO_WAITLIST_MODE ? (
+            <>
+              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
+              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $1.99/mo</span>
+            </>
+          ) : (
+            <>
+              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$1.99</span>
+              <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
+            </>
+          )}
         </div>
 
-        {/* Phase 5.as (QA friction #5): fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus, which previously broke the 430px paywall column at the conversion moment. */}
-        <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}><input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your email to subscribe" style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px", marginBottom:10 }} /><button type="submit" style={{display:"none"}} /></form>
+        {/* fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus */}
+        <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}>
+          <input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)}
+            placeholder={PRO_WAITLIST_MODE ? "Email for the waitlist" : "Enter your email to subscribe"}
+            style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px", marginBottom:10, boxSizing:"border-box" }}
+          />
+          <button type="submit" style={{display:"none"}} />
+        </form>
 
-        <button onClick={handleSubscribe} disabled={loading}
-          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:6 }}>
-          {loading ? "Processing..." : "Subscribe for $1.99/mo"}
+        <button onClick={handleSubscribe} disabled={loading || !isValidEmail(email)}
+          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
+          {loading
+            ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
+            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : "Subscribe for $1.99/mo")}
         </button>
 
         <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10 }}>
-          Secure payment · Cancel anytime · No contracts
+          {PRO_WAITLIST_MODE
+            ? "We email once: when Pro opens. No charges yet · cancel before launch."
+            : "Secure payment · Cancel anytime · No contracts"}
         </div>
 
-        <button onClick={onClose} style={{ width:"100%", padding:11, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer" }}>
+        <button onClick={onClose} style={{ width:"100%", padding:11, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer", minHeight:44 }}>
           Maybe later
         </button>
+        </>
+        )}
       </div>
     </div>
   );
@@ -2002,8 +2065,13 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
       let log = {};
       try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
       if (log.week !== weekKey) log = { week: weekKey, slugs: [] };
-      const dismissedAt = Number(sessionStorage.getItem("tn_paywallDismissedAt") || 0);
-      const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 4 * 60 * 60 * 1000;
+      // H1 fix (audit 2026-06-01): cooldown was sessionStorage (clears on tab
+      // close → mobile web reopens evict it instantly → paywall fired every
+      // tap, training users to dismiss reflexively). Now localStorage with a
+      // 7-day window: dismiss once, get the rest of the free-quota week
+      // uninterrupted.
+      const dismissedAt = Number(localStorage.getItem("tn_paywallDismissedAt") || 0);
+      const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 7 * 24 * 60 * 60 * 1000;
       const alreadyViewed = log.slugs.includes(slug);
       // 1 free view per week: paywall fires on the 2nd unique tap.
       if (!alreadyViewed && log.slugs.length >= 1 && !inCooldown) {
@@ -4530,7 +4598,7 @@ if (screen === "onboarding") {
           onClose={()=>{
             // Phase 5.as r2: cooldown timestamp — stops paywall from re-firing
             // on every subsequent tap until 4h have passed.
-            try { sessionStorage.setItem("tn_paywallDismissedAt", String(Date.now())); } catch {}
+            try { localStorage.setItem("tn_paywallDismissedAt", String(Date.now())); } catch {}
             setShowPaywall(false);
             setScreen("main");
           }}
@@ -4571,7 +4639,7 @@ if (screen === "onboarding") {
         // wiping the experience they just paid for.
         if (!profile) setScreen("quiz");
       }} onClose={()=>{
-        try { sessionStorage.setItem("tn_paywallDismissedAt", String(Date.now())); } catch {}
+        try { localStorage.setItem("tn_paywallDismissedAt", String(Date.now())); } catch {}
         setShowPaywall(false);
       }} />}
       {/* UX 7B: barcode scanner overlay — opens camera, decodes, routes to match */}
