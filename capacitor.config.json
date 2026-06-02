@@ -3,7 +3,8 @@
   "appName": "TruNorth",
   "webDir": "dist",
   "ios": {
-    "contentInset": "always",
+    "contentInset": "never",
+    "scrollEnabled": false,
     "limitsNavigationsToAppBoundDomains": false,
     "scheme": "TruNorth",
     "backgroundColor": "#0f0f0f"

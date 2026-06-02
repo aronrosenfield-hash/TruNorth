@@ -4798,10 +4798,12 @@ if (screen === "onboarding") {
           top on tab change. Without this, switching tabs preserves the
           previous tab's scroll position, which confuses users who tap a
           bottom-nav tab expecting to "start over." */}
-      {/* 2026-06-01: overscrollBehavior:contain stops rubber-band of inner
-          scroll from propagating to body, fixing the "entire screen moves
-          during drag" bug. */}
-      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", overscrollBehavior:"contain", background:T.bg }}>
+      {/* 2026-06-01 v2 (still fixing "entire screen moves"): touchAction:
+          'pan-y' tells the browser this element handles vertical pan only,
+          preventing the body / outer WebView from interpreting the drag.
+          overscrollBehavior contain stops momentum from escaping upward
+          to body even on iOS where it likes to ignore the rule. */}
+      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", overscrollBehavior:"contain", touchAction:"pan-y", background:T.bg }}>
 
       {/* Profile strip — locked to v4 (centered pill) on 2026-06-01 per
           user pick. Other variants stripped. Edit takes user back to the
