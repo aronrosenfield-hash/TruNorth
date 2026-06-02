@@ -2,6 +2,7 @@
 // only enters the bundle when the split-bundle path is OFF. With flag ON, the
 // import never fires and the app downloads only /data/index.json (~287 KB).
 import React, { useState, useEffect, useMemo, useCallback } from "react";
+import { useModalA11y } from "./lib/useModalA11y";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import MarketingLanding from "./MarketingLanding";
@@ -98,6 +99,7 @@ function getSymbol(val) {
 // Privacy: camera stream stays local. Open Food Facts lookup sends only the
 // barcode (UPC/EAN/etc.) — no PII. We never store the barcode.
 function BarcodeScanner({ onClose, onMatch, companies }) {
+  const dialogRef = useModalA11y({ isOpen: true, onClose });
   const videoRef = React.useRef(null);
   const streamRef = React.useRef(null);
   const detectorRef = React.useRef(null);
@@ -817,6 +819,7 @@ function ElephantSVG({ size=14, col="#e24a4a" }) {
 const PRO_WAITLIST_MODE = true;
 
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
+  const dialogRef = useModalA11y({ isOpen: true, onClose });
   const [loading, setLoading] = useState(false);
   const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
@@ -851,7 +854,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   };
 
   return (
-    <div role="dialog" aria-modal="true" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
+    <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="TruNorth Pro upgrade" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
       <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px calc(28px + env(safe-area-inset-bottom, 0px))", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
@@ -1099,7 +1102,7 @@ const chipStyle = () => ({ flexShrink:0, padding:"5px 10px", borderRadius:12, fo
 
 function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat, flagFilters, toggleFlag, lc }) {
   return (
-    <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Barcode scanner" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+    <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Barcode scanner" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
       <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderTopLeftRadius:20, borderTopRightRadius:20, padding:"6px 16px 24px", paddingBottom:"calc(24px + env(safe-area-inset-bottom, 0px))", maxHeight:"82dvh", overflowY:"auto" }}>
         <div style={{ width:38, height:4, background:T.border2, borderRadius:2, margin:"6px auto 14px" }} />
         <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
@@ -1516,6 +1519,8 @@ function EmailDigestCard() {
 }
 
 function WhatsNewModal({ companyCount }) {
+  // useModalA11y reads onClose, so we need dismiss declared before. Use a
+  // ref that the hook reads on each Tab/ESC — declared right after show.
   const [show, setShow] = useState(() => {
     // Phase 5.y: ?skipOnboarding=1 also dismisses the What's New modal so
     // simulator/QA URLs go straight to the app surface they want to inspect.
@@ -1545,20 +1550,20 @@ function WhatsNewModal({ companyCount }) {
   useEffect(() => {
     if (show) track("whatsnew_shown", { version: WHATSNEW_VERSION });
   }, [show]);
-  if (!show) return null;
-  const dismiss = () => {
-    // Phase 5.aa: track per-session dismissal so the modal still shows on
-    // the user's NEXT login (the requested behavior).
+  // dismiss declared before the conditional return so useModalA11y can
+  // see it as a stable callback at every render (rules of hooks).
+  const dismiss = useCallback(() => {
     try { sessionStorage.setItem("tn_whatsnew_session", WHATSNEW_VERSION); } catch {}
-    // Phase 5.ab: respect "Don't show again" — persists across sessions.
     if (dontShowAgain) {
       try { localStorage.setItem("tn_whatsnew_optout", WHATSNEW_VERSION); } catch {}
     }
     track("whatsnew_dismissed", { version: WHATSNEW_VERSION, dontShowAgain });
     setShow(false);
-  };
+  }, [dontShowAgain]);
+  const dialogRef = useModalA11y({ isOpen: show, onClose: dismiss });
+  if (!show) return null;
   return (
-    <div onClick={dismiss} role="dialog" aria-modal="true" aria-label="What's new" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
+    <div ref={dialogRef} onClick={dismiss} role="dialog" aria-modal="true" aria-label="What's new" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:400, width:"100%", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:20, color:T.txt }}>
         {/* 2026-06-01: Launch-mode rewrite. The pre-launch "what's new" was
             a dev-internal changelog ("5,000+ new companies", "new filter
@@ -1627,6 +1632,7 @@ function WhatsNewModal({ companyCount }) {
 // UX 3A: Compare 2 Companies overlay. Shows side-by-side grade + per-category
 // comparison with winner highlighted per row.
 function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPaid }) {
+  const dialogRef = useModalA11y({ isOpen: true, onClose });
   // Resolve each item in `list` to the full company object (from index or detail)
   const [details, setDetails] = useState({});
   useEffect(() => {
@@ -1648,7 +1654,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
   // iPhones the suggestion grid doesn't push content off-screen. The outer
   // wrapper uses 100dvh and the inner card scrolls internally when tall.
   return (
-    <div onClick={onClose} role="dialog" aria-modal="true" aria-label="Compare brands" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
+    <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Compare brands" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 16px 10px", borderBottom:`1px solid ${T.border}`, flexShrink:0 }}>
         <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
