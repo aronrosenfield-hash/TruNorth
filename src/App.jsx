@@ -1,7 +1,7 @@
 // Phase 3.1: companies.js is loaded LAZILY (dynamic import) so the 8.8MB module
 // only enters the bundle when the split-bundle path is OFF. With flag ON, the
 // import never fires and the app downloads only /data/index.json (~287 KB).
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import MarketingLanding from "./MarketingLanding";
@@ -1288,7 +1288,7 @@ function RevealEmailCapture() {
 // same day (shareability) and it changes daily (return visits). Reads
 // /public/data/editorial.json for hand-curated stories; falls back to a
 // curated top-200 pool rotation when no story exists for today.
-function BrandOfDayCard({ editorial, deduped, profile, setDeepLinkSlug, setTab }) {
+function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
   const todayIso = new Date().toISOString().slice(0, 10);
   let story = null;
   try {
@@ -1314,11 +1314,7 @@ function BrandOfDayCard({ editorial, deduped, profile, setDeepLinkSlug, setTab }
       }[pickGrade] || { color:"#f0a030", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#2a2210" };
       return (
         <div
-          onClick={() => {
-            track("editorial_clicked", { slug: co.slug || co.id, story_id: story.id });
-            setDeepLinkSlug(co.slug || co.id);
-            setTab("search");
-          }}
+          onClick={() => openBrand(co.slug || co.id, { focusDetail: false, trackEvent: "editorial_clicked", trackProps: { story_id: story.id } })}
           style={{ margin:"12px 16px", padding:"14px 16px", background:flavor.bgTint, border:`1.5px solid ${flavor.borderTint}`, borderRadius:14, cursor:"pointer" }}
         >
           <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10 }}>
@@ -1362,11 +1358,7 @@ function BrandOfDayCard({ editorial, deduped, profile, setDeepLinkSlug, setTab }
   const fl = flavorByGrade[pickGrade] || flavorByGrade.C;
   return (
     <div
-      onClick={() => {
-        track("brand_of_day_clicked", { slug: pick.slug || pick.id, grade: pickGrade, day });
-        setDeepLinkSlug(pick.slug || pick.id);
-        setTab("search");
-      }}
+      onClick={() => openBrand(pick.slug || pick.id, { focusDetail: false, trackEvent: "brand_of_day_clicked", trackProps: { grade: pickGrade, day } })}
       style={{ margin:"12px 16px", padding:"12px 14px", background:fl.bgTint, border:`1.5px solid ${fl.borderTint}`, borderRadius:14, cursor:"pointer", display:"flex", alignItems:"center", gap:12 }}
     >
       <CompanyLogo company={pick} size={44} />
@@ -4043,10 +4035,7 @@ useEffect(() => {
             const m = url.pathname.match(/^\/(?:company|c)\/([^/?#]+)/);
             if (m && m[1]) {
               const slug = decodeURIComponent(m[1]);
-              track("universal_link_opened", { slug, full_url: event.url });
-              setDeepLinkSlug(slug);
-              setFocusedSlug(slug);
-              setTab("search");
+              openBrand(slug, { trackEvent: "universal_link_opened", trackProps: { full_url: event.url } });
             }
           } catch (err) {
             console.warn("[universal-link] failed to parse:", event?.url, err);
@@ -4116,6 +4105,52 @@ useEffect(() => {
   // focusedSlug overrides the filter chain entirely and pops a "Clear ×"
   // banner so the user can return to normal search.
   const [focusedSlug, setFocusedSlug] = useState(null);
+
+  // A-1 (audit H3): Single canonical navigation helper. Every entry point
+  // that lands the user on a brand's detail panel routes through here, so
+  // behavior stays consistent across Brand-of-Day, Scanner, Library,
+  // History, Weekly Digest, Quiz winner, Day-7, Typeahead, Universal Link,
+  // and CompanyCard alternatives.
+  //
+  // Defaults match the most common case (focus + switch to search tab).
+  // Edge cases pass options to deviate:
+  //   - focusDetail: false   — Brand-of-Day card surfaces brand without
+  //                             pinning it (e.g. Day-7 list)
+  //   - switchTab: false     — already on the target screen
+  //   - setMainScreen: true  — quiz winner exits the quiz overlay first
+  //   - clearFilters: true   — Scanner clears filters so the match isn't
+  //                             hidden by an active category filter
+  //   - clearQuery: true     — Typeahead empties the search box on tap
+  //   - trackEvent: 'name'   — fire analytics with consistent shape
+  const openBrand = useCallback((slug, options = {}) => {
+    if (!slug) return;
+    const {
+      focusDetail = true,
+      switchTab   = true,
+      setMainScreen = false,
+      clearFilters  = false,
+      clearQuery    = false,
+      trackEvent    = null,
+      trackProps    = {},
+    } = options;
+
+    if (trackEvent) track(trackEvent, { slug, ...trackProps });
+    setDeepLinkSlug(slug);
+    if (focusDetail)  setFocusedSlug(slug);
+    if (switchTab)    setTab("search");
+    if (setMainScreen) setScreen("main");
+    if (clearFilters) {
+      setLeanFilter("all");
+      setCatFilters([]);
+      setFlagFilters([]);
+      setShowSavedOnly(false);
+    }
+    if (clearQuery) {
+      setQueryRaw("");
+      setQuery("");
+    }
+  }, []);
+
   useEffect(() => {
     if (companies) return;
     let cancelled = false;
@@ -4469,7 +4504,7 @@ if (screen === "onboarding") {
             <>
               <div style={{ fontSize:11, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Your top match</div>
               <div
-                onClick={() => { setDeepLinkSlug(winner.co.slug || winner.co.id); setScreen("main"); }}
+                onClick={() => openBrand(winner.co.slug || winner.co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
                 style={{ width:"100%", maxWidth:340, background:T.bg2, border:`2px solid ${T.accent}`, borderRadius:16, padding:18, cursor:"pointer", display:"flex", alignItems:"center", gap:14, marginBottom:14 }}
               >
                 <CompanyLogo company={winner.co} size={48} />
@@ -4504,7 +4539,7 @@ if (screen === "onboarding") {
                     {top3.slice(1).map(({ co, score }) => (
                       <div
                         key={co.slug || co.id}
-                        onClick={() => { setDeepLinkSlug(co.slug || co.id); setScreen("main"); }}
+                        onClick={() => openBrand(co.slug || co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
                         style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:"10px 14px", cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}
                       >
                         <CompanyLogo company={co} size={28} />
@@ -4681,16 +4716,8 @@ if (screen === "onboarding") {
             setShowScanner(false);
             track("scanner_match", { slug: co.slug || co.id, name: co.name, barcode: meta?.barcode });
             // Phase 5.aj: focus on exactly that one company — no list.
-            // Clear other filters so the focused view isn't double-restricted.
-            setQueryRaw("");
-            setQuery("");
-            setLeanFilter("all");
-            setCatFilters([]);
-            setFlagFilters([]);
-            setShowSavedOnly(false);
-            setTab("search");
-            setFocusedSlug(co.slug || co.id);
-            setDeepLinkSlug(co.slug || co.id);
+            // openBrand with clearFilters+clearQuery does the full reset.
+            openBrand(co.slug || co.id, { clearFilters: true, clearQuery: true });
           }}
         />
       )}
@@ -4769,12 +4796,8 @@ if (screen === "onboarding") {
                         key={co.slug || co.id}
                         onMouseDown={(e) => { e.preventDefault(); }}
                         onClick={() => {
-                          track("search_typeahead_clicked", { slug: co.slug || co.id });
-                          setQueryRaw("");
                           setShowSearchDropdown(false);
-                          setFocusedSlug(co.slug || co.id);
-                          setDeepLinkSlug(co.slug || co.id);
-                          setTab("search");
+                          openBrand(co.slug || co.id, { trackEvent: "search_typeahead_clicked", clearQuery: true });
                         }}
                         style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", background:"none", border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", width:"100%", textAlign:"left", minHeight:44 }}
                       >
@@ -4875,7 +4898,7 @@ if (screen === "onboarding") {
                     {topBrands.map((b, i) => (
                       <span key={b.slug}>
                         <button
-                          onClick={() => { track("day7_brand_clicked", { slug: b.slug }); setDeepLinkSlug(b.slug); setTab("search"); }}
+                          onClick={() => openBrand(b.slug, { focusDetail: false, trackEvent: "day7_brand_clicked" })}
                           style={{ background:"none", border:"none", color:T.accent2, fontWeight:600, cursor:"pointer", padding:0, textDecoration:"underline" }}
                         >{b.name}</button>
                         {i < topBrands.length - 1 ? ", " : ""}
@@ -5013,7 +5036,7 @@ if (screen === "onboarding") {
                     </button>
                   </div>
                 )}
-                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
                 {filtered.length > visibleLimit && (
                   <button
                     onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
@@ -5084,8 +5107,7 @@ if (screen === "onboarding") {
             editorial={editorial}
             deduped={deduped}
             profile={profile}
-            setDeepLinkSlug={setDeepLinkSlug}
-            setTab={setTab}
+            openBrand={openBrand}
           />
           {profile && topPicksRanked.length > 0 && (
             <div style={{ padding:"12px 16px 4px" }}>
@@ -5104,7 +5126,7 @@ if (screen === "onboarding") {
                     onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)}
                     allCompanies={companies}
                     onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }}
-                    onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }}
+                    onNavigate={(slug) => openBrand(slug)}
                   />
                 ))}
               </div>
@@ -5146,12 +5168,7 @@ if (screen === "onboarding") {
                     return (
                       <button
                         key={i}
-                        onClick={() => {
-                          track("saved_update_clicked", { slug: c.slug, type: c.type });
-                          setFocusedSlug(c.slug);
-                          setDeepLinkSlug(c.slug);
-                          setTab("search");
-                        }}
+                        onClick={() => openBrand(c.slug, { trackEvent: "saved_update_clicked", trackProps: { type: c.type } })}
                         style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%" }}
                       >
                         <i className="ti ti-rosette" style={{ fontSize:14, color: c.severity === "alert" ? "#e24a4a" : T.gold, flexShrink:0 }} aria-hidden="true" />
@@ -5195,11 +5212,7 @@ if (screen === "onboarding") {
                   return (
                     <button
                       key={i}
-                      onClick={() => {
-                        track("weekly_digest_clicked", { slug: c.slug, type: c.type });
-                        setDeepLinkSlug(c.slug);
-                        setTab("search");
-                      }}
+                      onClick={() => openBrand(c.slug, { focusDetail: false, trackEvent: "weekly_digest_clicked", trackProps: { type: c.type } })}
                       style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%" }}
                     >
                       <i className={`ti ${icon}`} style={{ fontSize:14, color: tint, flexShrink:0 }} aria-hidden="true" />
@@ -5257,7 +5270,7 @@ if (screen === "onboarding") {
                 of the "slow to navigate" delay. Now memoized + capped at
                 top 50. Tap "Show all" to expand to the full list (rare). */}
             {topPicksRanked.slice(0, topPicksLimit).map((co) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => { setFocusedSlug(slug); setDeepLinkSlug(slug); setTab("search"); }} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} />
             ))}
             {topPicksLimit < topPicksRanked.length && (
               <button
@@ -5386,7 +5399,7 @@ if (screen === "onboarding") {
                   return (
                     <button
                       key={co.slug || co.id}
-                      onClick={() => { setFocusedSlug(co.slug || co.id); setDeepLinkSlug(co.slug || co.id); setTab("search"); track("library_saved_clicked", { slug: co.slug || co.id, change_count: changeCount }); }}
+                      onClick={() => openBrand(co.slug || co.id, { trackEvent: "library_saved_clicked", trackProps: { change_count: changeCount } })}
                       style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:T.bg2, border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", textAlign:"left", width:"100%" }}
                     >
                       <CompanyLogo company={co} size={32} />
@@ -5463,7 +5476,7 @@ if (screen === "onboarding") {
                     return (
                       <button
                         key={e.slug + i}
-                        onClick={() => { setFocusedSlug(e.slug); setDeepLinkSlug(e.slug); setTab("search"); track("history_clicked", { slug: e.slug }); }}
+                        onClick={() => openBrand(e.slug, { trackEvent: "history_clicked" })}
                         style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:T.bg2, border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", textAlign:"left", width:"100%" }}
                       >
                         {fullCo && <CompanyLogo company={fullCo} size={32} />}
