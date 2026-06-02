@@ -30,12 +30,17 @@ jobs:
       - name: Run news collector
         run: node scripts/news-rss-collect.mjs
 
+      - name: Run AI extraction on high-signal items
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/news-rss-extract.mjs
+
       - name: Commit + push the digest
         run: |
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/news/$DATE.json
+          git add public/data/news/$DATE.json public/data/news/$DATE.extracted.json
           git diff --quiet --staged && echo "No changes" && exit 0
-          git commit -m "data(news): nightly RSS digest $DATE [skip ci]"
+          git commit -m "data(news): nightly RSS digest + AI extraction $DATE [skip ci]"
           git push
