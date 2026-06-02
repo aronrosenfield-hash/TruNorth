@@ -167,16 +167,31 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 ---
 
-## ⏰ SCHEDULED REMINDERS (active)
+## ⏰ DATA-FRESHNESS CADENCE — full system map
 
-| Date (CDT) | Reminder | Topic |
+### Fully automated (GitHub Actions cron — runs without your involvement)
+
+| Job | File | Cadence | What it does |
+|---|---|---|---|
+| Trending refresh | `.github/workflows/trending-refresh.yml` | Daily 06:00 UTC | PostHog → `/public/data/trending.json` |
+| Sunday digest | `.github/workflows/weekly-digest.yml` | Sunday 14:00 UTC | MailerLite campaign of weekly grade changes |
+| Loadtest | `.github/workflows/loadtest.yml` | Manual dispatch | k6 stress test |
+| **Option A (planned)** | News RSS for top 500 brands | Nightly | Will be `.github/workflows/news-rss.yml` |
+| **Option B (planned)** | BBB scraper for top 500 | Weekly | Will be `.github/workflows/bbb-scrape.yml` |
+| **Option C (planned)** | CourtListener lawsuits for top 500 | Weekly | Will be `.github/workflows/courtlistener.yml` |
+
+### Human-action reminders (scheduled — you'll get pinged)
+
+| Date | Reminder | What |
 |---|---|---|
-| Tue, Jun 2 · 9 AM | SEO check-in (Tuesday) | Google Search Console + sitemap status |
-| Fri, Jun 5 · 9 AM | SEO check-in (Friday) | First indexing pass review |
-| Mon, Jun 8 · 9 AM | SEO check-in (Monday) | Week-1 SEO results |
-| **Tue, Jun 16 · 9 AM** | PH 1-week-out prep | Subscriber count + outreach + demo video + App Store status |
-| **Mon, Jun 22 · 7 PM** | PH launch eve | Schedule social posts, final link verification, mental prep |
-| **Tue, Jun 23 · 1:50 AM** | PH launch hour ☕ | Wake-up + 4-hour battle plan |
+| Jun 2, 5, 8 · 9 AM CDT | SEO check-ins | Google Search Console + sitemap status |
+| **Jun 16 · 9 AM** | PH 1-week prep | Subscriber count + outreach + demo video |
+| **Jun 22 · 7 PM** | PH launch eve | Pre-schedule social posts |
+| **Jun 23 · 1:50 AM** | PH launch hour ☕ | Wake-up + 4-hour battle plan |
+| **Jul 1 + monthly** | Cron health check | Verify GH Actions actually ran, no silent failures |
+| **Sept 1 + quarterly** | Tier-1 re-narrate | Top-100 brand narratives refresh via Sonnet batch (~$10) |
+| **Nov 15 + yearly** | HRC CEI re-ingest | Annual DEI scoring list (HRC publishes Nov-Dec) |
+| **Feb 15 + yearly** | CDP A-List re-ingest | Annual climate disclosure list (CDP publishes Feb) |
 
 Manage in sidebar under "Scheduled".
 
