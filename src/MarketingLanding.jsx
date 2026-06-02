@@ -54,7 +54,7 @@ const TESTIMONIALS = [
     role:  "Climate-first shopper · Austin, TX",
   },
   {
-    quote: "I came in skeptical. Every grade I checked was sourced to EPA or FEC filings I can pull up myself. Now I trust it.",
+    quote: "I came in skeptical. Every grade I checked was sourced to public records I can pull up myself — EPA enforcement, campaign finance disclosures. Now I trust it.",
     name:  "Devon K.",
     role:  "Engineer · Brooklyn, NY",
   },
@@ -358,7 +358,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth tracks 11,000+ companies and grades them on the categories with verified public-record signal — politics (Federal Election Commission), environment (Environmental Protection Agency), labor (OSHA + NLRB), animal testing, executive pay, and more. Real records, not opinions.
+              TruNorth tracks 11,000+ companies and grades them on the categories with verified public-record signal — campaign finance (Federal Election Commission), environment (Environmental Protection Agency), worker safety (OSHA), labor disputes (National Labor Relations Board), animal testing, executive pay, and more. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* Phase 5.az: the iOS CTA points at the App Store listing once

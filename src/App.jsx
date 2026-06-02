@@ -670,9 +670,9 @@ function getDisplay(k, val, profile) {
   // Political — show donation lean as a fact. Symbol reflects user's lean.
   if (k === "political") {
     const userLean = profile?.lean;
-    if (["left","left-leaning"].includes(v))   return { sym: "◀", label: "Donates to Democrats",   icon: "dem", aligned: userLean === "left" };
-    if (["right","right-leaning"].includes(v)) return { sym: "▶", label: "Donates to Republicans", icon: "rep", aligned: userLean === "right" };
-    if (["bipartisan","mixed"].includes(v))    return { sym: "◆", label: "Bipartisan Donations",   icon: "bi" };
+    if (["left","left-leaning"].includes(v))   return { sym: "◀", label: "Donates to Democrats (US)",   icon: "dem", aligned: userLean === "left" };
+    if (["right","right-leaning"].includes(v)) return { sym: "▶", label: "Donates to Republicans (US)", icon: "rep", aligned: userLean === "right" };
+    if (["bipartisan","mixed"].includes(v))    return { sym: "◆", label: "Bipartisan donations (US)",   icon: "bi" };
     return { sym: "–", label: "No Significant Donations", icon: null };
   }
 
@@ -1021,7 +1021,7 @@ const Pill = ({ on, bg, color, border, onClick, children }) => (
 const FLAG_FILTERS = [
   { id: "stillInRussia", label: "Still in Russia",     icon: "ti-flag-off",     desc: "Operating in Russia post-invasion (Yale CELI)" },
   { id: "foreignOwned",  label: "Foreign-owned",       icon: "ti-world",        desc: "Parent company headquartered outside the US" },
-  { id: "childLabor",    label: "Child-labor risk",    icon: "ti-mood-sad",     desc: "Supply chain flagged by BHRRC / DOL" },
+  { id: "childLabor",    label: "Child-labor risk",    icon: "ti-mood-sad",     desc: "Supply chain flagged by the Business & Human Rights Resource Centre or US Department of Labor" },
   { id: "antitrust",     label: "Antitrust action",    icon: "ti-gavel",        desc: "Active or recent antitrust enforcement" },
 ];
 
@@ -1589,13 +1589,13 @@ function WhatsNewModal({ companyCount }) {
               TRACK 11,000+ companies but only grade the ones with
               verified public-record signal. Top brands have full coverage. */}
           <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>
-            Companies tracked. Top brands have full grades across 9 categories using public records — FEC, EPA, OSHA, NLRB, SEC.
+            Companies tracked. Top brands have full grades across 9 categories using US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC).
           </div>
         </div>
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>No opinions — just public records.</b> FEC donations, OSHA violations, EPA enforcement, SEC filings.</span>
+            <span><b style={{ color:T.txt }}>No opinions — just public records.</b> Campaign donations, workplace-safety violations, environmental enforcement, corporate filings.</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
@@ -3471,12 +3471,12 @@ function SubmitView({ isPaid, onUpgrade }) {
 // ─── SOURCES ──────────────────────────────────────────────────────────────────
 const SOURCES_DATA = [
   {group:"Company universe",icon:"ti-building",items:[
-    {name:"SEC EDGAR",url:"https://www.sec.gov/edgar/searchedgar/companysearch",desc:"Official US filings — pulls every public ticker plus the 10-K Exhibit 21 subsidiary tree for ownership graphs."},
+    {name:"SEC EDGAR",url:"https://www.sec.gov/edgar/searchedgar/companysearch",desc:"Official US Securities and Exchange Commission filings. Pulls every public ticker plus the 10-K Exhibit 21 subsidiary tree for ownership graphs."},
     {name:"Wikidata",url:"https://www.wikidata.org",desc:"Open knowledge graph used to map consumer brands back to their corporate parents (e.g. Aunt Jemima → PepsiCo)."},
     {name:"Open Food Facts",url:"https://world.openfoodfacts.org",desc:"Crowdsourced food product database — adds brand-to-parent links for grocery."},
   ]},
   {group:"Political donations",icon:"ti-flag-2",items:[
-    {name:"FEC.gov",url:"https://www.fec.gov",desc:"Official US federal campaign finance API. Maps every company donation and lobbying disclosure to candidate / party / lean."},
+    {name:"FEC.gov (Federal Election Commission)",url:"https://www.fec.gov",desc:"Official US campaign finance API. Maps company donations and lobbying disclosures to candidates, parties, and political lean."},
     {name:"OpenSecrets.org",url:"https://www.opensecrets.org",desc:"Tracks aggregated political donations, PAC spending, lobbying, and candidate fundraising."},
     {name:"InfluenceMap",url:"https://influencemap.org",desc:"Scores companies on climate-policy lobbying and political influence."},
   ]},
@@ -3487,23 +3487,23 @@ const SOURCES_DATA = [
   {group:"Environmental",icon:"ti-leaf",items:[
     {name:"CDP (Carbon Disclosure Project)",url:"https://www.cdp.net",desc:"World's largest environmental disclosure system. Companies scored A–D on climate, water, forests."},
     {name:"B Corp Certification",url:"https://www.bcorporation.net",desc:"Rigorous certification for companies meeting high social and environmental standards."},
-    {name:"EPA Enforcement",url:"https://www.epa.gov/enforcement",desc:"Federal environmental enforcement actions — Clean Air, Clean Water, Superfund."},
+    {name:"EPA Enforcement (Environmental Protection Agency)",url:"https://www.epa.gov/enforcement",desc:"US federal environmental enforcement actions — Clean Air, Clean Water, Superfund."},
     {name:"Break Free From Plastic",url:"https://www.breakfreefromplastic.org",desc:"Annual Brand Audit ranks top plastic polluters globally."},
   ]},
   {group:"Labor practices",icon:"ti-users",items:[
-    {name:"OSHA (osha.gov)",url:"https://www.osha.gov",desc:"Federal workplace safety inspections, violations, and fines."},
-    {name:"NLRB (nlrb.gov)",url:"https://www.nlrb.gov",desc:"National Labor Relations Board — unfair labor practice cases and union elections."},
+    {name:"OSHA (Occupational Safety and Health Administration)",url:"https://www.osha.gov",desc:"US federal workplace-safety inspections, violations, and fines."},
+    {name:"NLRB (National Labor Relations Board)",url:"https://www.nlrb.gov",desc:"US agency that oversees union elections and investigates illegal labor practices."},
     {name:"Violation Tracker",url:"https://violationtracker.goodjobsfirst.org",desc:"Aggregates federal penalties across 50+ agencies — wage theft, safety, environmental, antitrust."},
     {name:"Oxfam Scorecard",url:"https://www.oxfam.org/en/research/behind-brands",desc:"Rates major food companies on worker rights."},
   ]},
   {group:"Supply-chain & human rights",icon:"ti-world",items:[
     {name:"BHRRC (Business & Human Rights Resource Centre)",url:"https://www.business-humanrights.org",desc:"Tracks human-rights allegations against companies including forced labor, child labor, and modern slavery."},
-    {name:"US DOL — List of Goods Produced by Child or Forced Labor",url:"https://www.dol.gov/agencies/ilab/reports/child-labor/list-of-goods",desc:"Department of Labor's annual list flagging products with documented forced or child-labor risk."},
+    {name:"US Department of Labor — List of Goods Produced by Child or Forced Labor",url:"https://www.dol.gov/agencies/ilab/reports/child-labor/list-of-goods",desc:"Annual government list. Flags products with documented risk of forced labor or child labor."},
     {name:"Yale CELI — Russia Exit Tracker",url:"https://som.yale.edu/story/2022/over-1000-companies-have-curtailed-operations-russia-some-remain",desc:"Yale School of Management's grades A–F on whether companies pulled out of Russia after the 2022 invasion."},
   ]},
   {group:"DEI",icon:"ti-rainbow",items:[
-    {name:"HRC Corporate Equality Index",url:"https://www.hrc.org/resources/corporate-equality-index",desc:"Annual scorecard rating companies 0–100 on LGBTQ+ workplace equality."},
-    {name:"EEOC (eeoc.gov)",url:"https://www.eeoc.gov",desc:"Official database of discrimination charges and enforcement actions."},
+    {name:"HRC (Human Rights Campaign) Corporate Equality Index",url:"https://www.hrc.org/resources/corporate-equality-index",desc:"Annual scorecard rating companies 0–100 on LGBTQ+ workplace equality."},
+    {name:"EEOC (Equal Employment Opportunity Commission)",url:"https://www.eeoc.gov",desc:"US database of workplace discrimination charges and enforcement actions."},
   ]},
   {group:"Animal testing",icon:"ti-paw",items:[
     {name:"PETA Beauty Without Bunnies",url:"https://www.peta.org/living/personal-care-fashion/beauty-without-bunnies/",desc:"Database of companies that do and do not test on animals."},
