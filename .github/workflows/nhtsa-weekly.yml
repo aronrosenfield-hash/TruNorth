@@ -1,0 +1,49 @@
+name: nhtsa-weekly
+
+# NHTSA vehicle complaints + recalls
+# Runs Sunday 19:00 UTC. For each Automotive brand in the top-500 list,
+# queries the NHTSA public API for recalls + complaints across the last 5
+# model years and merges aggregated data onto each company JSON.
+#
+# Free, official government API — no auth required for recalls or
+# complaints endpoints.
+
+on:
+  schedule:
+    - cron: "0 19 * * 0"   # Sunday 19:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit nhtsa-auto.json + companies/ back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    # Auto brands × 5 years × ~30 models × 3 requests with 1s throttle ≈
+    # 60 min worst case. Give it room.
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run NHTSA fetcher
+        run: node scripts/nhtsa-fetch.mjs
+
+      - name: Merge NHTSA data into per-company JSON
+        run: node scripts/nhtsa-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/nhtsa-auto.json public/data/companies/
+          [ -f public/data/_meta/nhtsa-merge-log.json ] && git add public/data/_meta/nhtsa-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(nhtsa): weekly NHTSA recall + complaint refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
