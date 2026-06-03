@@ -1,85 +1,554 @@
 {
   "_doc": "B-22: maps sub-brand slugs (orphans in top-500-brands.txt) to the parent company slug whose /companies/<slug>.json file should receive news merges. Hand-curated 2026-06-03 with parent slugs verified against actual files in /public/data/companies/. Twilio + a few Stellantis brands have no matching parent file and are omitted.",
-
-  "sprite":         { "parent": "coca-cola",                   "confidence": "high" },
-  "mountain-dew":   { "parent": "pepsi",                       "confidence": "high" },
-  "fairlife":       { "parent": "coca-cola",                   "confidence": "high" },
-  "cheerios":       { "parent": "general-mills",               "confidence": "high" },
-  "lucky-charms":   { "parent": "general-mills",               "confidence": "high" },
-  "yoplait":        { "parent": "general-mills",               "confidence": "high" },
-  "oreo":           { "parent": "mondelez-international",      "confidence": "high" },
-  "chips-ahoy":     { "parent": "mondelez-international",      "confidence": "high" },
-  "ritz":           { "parent": "mondelez-international",      "confidence": "high" },
-  "cheez-its":      { "parent": "kellogg-s",                   "confidence": "high" },
-  "goldfish":       { "parent": "campbell-soup",               "confidence": "high" },
-  "mms":            { "parent": "mars",                        "confidence": "high" },
-  "snickers":       { "parent": "mars",                        "confidence": "high" },
-  "twix":           { "parent": "mars",                        "confidence": "high" },
-  "reeses":         { "parent": "hershey",                     "confidence": "high" },
-  "kraft":          { "parent": "kraft-heinz",                 "confidence": "high" },
-  "quaker":         { "parent": "pepsi",                       "confidence": "high" },
-
-  "tide":           { "parent": "procter-and-gamble",          "confidence": "high" },
-  "charmin":        { "parent": "procter-and-gamble",          "confidence": "high" },
-  "pampers":        { "parent": "procter-and-gamble",          "confidence": "high" },
-  "cascade":        { "parent": "procter-and-gamble",          "confidence": "high" },
-  "swiffer":        { "parent": "procter-and-gamble",          "confidence": "high" },
-  "old-spice":      { "parent": "procter-and-gamble",          "confidence": "high" },
-  "huggies":        { "parent": "kimberly-clark",              "confidence": "high" },
-  "suave":          { "parent": "unilever",                    "confidence": "high" },
-  "axe":            { "parent": "unilever",                    "confidence": "high" },
-  "ben-jerrys":     { "parent": "unilever",                    "confidence": "high" },
-  "aveeno":         { "parent": "johnson-and-johnson",         "confidence": "high" },
-  "neutrogena":     { "parent": "johnson-and-johnson",         "confidence": "high" },
-  "marlboro":       { "parent": "altria-group",                "confidence": "high" },
-
-  "nordstrom-rack": { "parent": "nordstrom",                   "confidence": "high" },
-  "cabelas":        { "parent": "bass-pro-shops",              "confidence": "high" },
-
-  "old-navy":       { "parent": "gap-inc",                     "confidence": "high" },
-  "hollister":      { "parent": "abercrombie-and-fitch",       "confidence": "high" },
-
-  "google":         { "parent": "google-alphabet",             "confidence": "high" },
-  "youtube":        { "parent": "google-alphabet",             "confidence": "high" },
-  "facebook":       { "parent": "meta-platforms",              "confidence": "high" },
-  "instagram":      { "parent": "meta-platforms",              "confidence": "high" },
-  "whatsapp":       { "parent": "meta-platforms",              "confidence": "high" },
-  "threads":        { "parent": "meta-platforms",              "confidence": "high" },
-  "meta":           { "parent": "meta-platforms",              "confidence": "high" },
-
-  "hulu":           { "parent": "disney",                      "confidence": "high" },
-  "hbo-max":        { "parent": "warner-bros-discovery",       "confidence": "high" },
-  "peacock":        { "parent": "comcast",                     "confidence": "high" },
-  "firetv":         { "parent": "amazon",                      "confidence": "high" },
-  "twitch":         { "parent": "amazon",                      "confidence": "high" },
-  "snapchat":       { "parent": "snap",                        "confidence": "high" },
-
-  "square":         { "parent": "block-inc",                   "confidence": "high" },
-  "cash-app":       { "parent": "block-inc",                   "confidence": "high" },
-  "venmo":          { "parent": "paypal",                      "confidence": "high" },
-
-  "xfinity":        { "parent": "comcast",                     "confidence": "high" },
-
-  "audi":           { "parent": "volkswagen-usa",              "confidence": "high" },
-  "lamborghini":    { "parent": "volkswagen-usa",              "confidence": "high" },
-  "volkswagen":     { "parent": "volkswagen-usa",              "confidence": "high" },
-
-  "elevance":       { "parent": "anthem-elevance-health",      "confidence": "high" },
-  "anthem":         { "parent": "anthem-elevance-health",      "confidence": "high" },
-
-  "priceline":      { "parent": "booking-holdings",            "confidence": "high" },
-  "kayak":          { "parent": "booking-holdings",            "confidence": "high" },
-  "booking":        { "parent": "booking-holdings",            "confidence": "high" },
-  "trivago":        { "parent": "expedia-group",               "confidence": "high" },
-  "expedia":        { "parent": "expedia-group",               "confidence": "high" },
-  "disney-cruise":  { "parent": "disney",                      "confidence": "high" },
-
-  "kitchenaid":     { "parent": "whirlpool-corp",              "confidence": "high" },
-  "whirlpool":      { "parent": "whirlpool-corp",              "confidence": "high" },
-  "playstation":    { "parent": "sony-entertainment",          "confidence": "high" },
-  "sony":           { "parent": "sony-entertainment",          "confidence": "medium", "note": "Routing all Sony brand news to entertainment arm; corporate Sony is a separate filing entity not in catalog" },
-  "xbox":           { "parent": "microsoft",                   "confidence": "high" },
-  "teams":          { "parent": "microsoft",                   "confidence": "high" },
-  "github":         { "parent": "microsoft",                   "confidence": "high" },
-  "linkedin":       { "parent": "microsoft",                   "confidence": "high" }
+  "sprite": {
+    "parent": "coca-cola",
+    "confidence": "high"
+  },
+  "mountain-dew": {
+    "parent": "pepsi",
+    "confidence": "high"
+  },
+  "fairlife": {
+    "parent": "coca-cola",
+    "confidence": "high"
+  },
+  "cheerios": {
+    "parent": "general-mills",
+    "confidence": "high"
+  },
+  "lucky-charms": {
+    "parent": "general-mills",
+    "confidence": "high"
+  },
+  "yoplait": {
+    "parent": "general-mills",
+    "confidence": "high"
+  },
+  "oreo": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "chips-ahoy": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "ritz": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "cheez-its": {
+    "parent": "kellogg-s",
+    "confidence": "high"
+  },
+  "goldfish": {
+    "parent": "campbell-soup",
+    "confidence": "high"
+  },
+  "mms": {
+    "parent": "mars",
+    "confidence": "high"
+  },
+  "snickers": {
+    "parent": "mars",
+    "confidence": "high"
+  },
+  "twix": {
+    "parent": "mars",
+    "confidence": "high"
+  },
+  "reeses": {
+    "parent": "hershey",
+    "confidence": "high"
+  },
+  "kraft": {
+    "parent": "kraft-heinz",
+    "confidence": "high"
+  },
+  "quaker": {
+    "parent": "pepsi",
+    "confidence": "high"
+  },
+  "tide": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "charmin": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "pampers": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "cascade": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "swiffer": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "old-spice": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "huggies": {
+    "parent": "kimberly-clark",
+    "confidence": "high"
+  },
+  "suave": {
+    "parent": "unilever",
+    "confidence": "high"
+  },
+  "axe": {
+    "parent": "unilever",
+    "confidence": "high"
+  },
+  "ben-jerrys": {
+    "parent": "unilever",
+    "confidence": "high"
+  },
+  "aveeno": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high"
+  },
+  "neutrogena": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high"
+  },
+  "marlboro": {
+    "parent": "altria-group",
+    "confidence": "high"
+  },
+  "nordstrom-rack": {
+    "parent": "nordstrom",
+    "confidence": "high"
+  },
+  "cabelas": {
+    "parent": "bass-pro-shops",
+    "confidence": "high"
+  },
+  "old-navy": {
+    "parent": "gap-inc",
+    "confidence": "high"
+  },
+  "hollister": {
+    "parent": "abercrombie-and-fitch",
+    "confidence": "high"
+  },
+  "google": {
+    "parent": "google-alphabet",
+    "confidence": "high"
+  },
+  "youtube": {
+    "parent": "google-alphabet",
+    "confidence": "high"
+  },
+  "facebook": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "instagram": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "whatsapp": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "threads": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "meta": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "hulu": {
+    "parent": "disney",
+    "confidence": "high"
+  },
+  "hbo-max": {
+    "parent": "warner-bros-discovery",
+    "confidence": "high"
+  },
+  "peacock": {
+    "parent": "comcast",
+    "confidence": "high"
+  },
+  "firetv": {
+    "parent": "amazon",
+    "confidence": "high"
+  },
+  "twitch": {
+    "parent": "amazon",
+    "confidence": "high"
+  },
+  "snapchat": {
+    "parent": "snap",
+    "confidence": "high"
+  },
+  "square": {
+    "parent": "block-inc",
+    "confidence": "high"
+  },
+  "cash-app": {
+    "parent": "block-inc",
+    "confidence": "high"
+  },
+  "venmo": {
+    "parent": "paypal",
+    "confidence": "high"
+  },
+  "xfinity": {
+    "parent": "comcast",
+    "confidence": "high"
+  },
+  "audi": {
+    "parent": "volkswagen-usa",
+    "confidence": "high"
+  },
+  "lamborghini": {
+    "parent": "volkswagen-usa",
+    "confidence": "high"
+  },
+  "volkswagen": {
+    "parent": "volkswagen-usa",
+    "confidence": "high"
+  },
+  "elevance": {
+    "parent": "anthem-elevance-health",
+    "confidence": "high"
+  },
+  "anthem": {
+    "parent": "anthem-elevance-health",
+    "confidence": "high"
+  },
+  "priceline": {
+    "parent": "booking-holdings",
+    "confidence": "high"
+  },
+  "kayak": {
+    "parent": "booking-holdings",
+    "confidence": "high"
+  },
+  "booking": {
+    "parent": "booking-holdings",
+    "confidence": "high"
+  },
+  "trivago": {
+    "parent": "expedia-group",
+    "confidence": "high"
+  },
+  "expedia": {
+    "parent": "expedia-group",
+    "confidence": "high"
+  },
+  "disney-cruise": {
+    "parent": "disney",
+    "confidence": "high"
+  },
+  "kitchenaid": {
+    "parent": "whirlpool-corp",
+    "confidence": "high"
+  },
+  "whirlpool": {
+    "parent": "whirlpool-corp",
+    "confidence": "high"
+  },
+  "playstation": {
+    "parent": "sony-entertainment",
+    "confidence": "high"
+  },
+  "sony": {
+    "parent": "sony-entertainment",
+    "confidence": "medium",
+    "note": "Routing all Sony brand news to entertainment arm; corporate Sony is a separate filing entity not in catalog"
+  },
+  "xbox": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "teams": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "github": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "linkedin": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "budweiser": {
+    "parent": "anheuser-busch",
+    "confidence": "high"
+  },
+  "bud-light": {
+    "parent": "anheuser-busch",
+    "confidence": "high"
+  },
+  "stella-artois": {
+    "parent": "anheuser-busch",
+    "confidence": "high"
+  },
+  "coors-light": {
+    "parent": "molson-coors-beverage",
+    "confidence": "high"
+  },
+  "heineken": {
+    "parent": "heineken-usa",
+    "confidence": "high"
+  },
+  "mondelez": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "hormel": {
+    "parent": "hormel-foods",
+    "confidence": "high"
+  },
+  "conagra": {
+    "parent": "conagra-brands",
+    "confidence": "high"
+  },
+  "silk": {
+    "parent": "danone",
+    "confidence": "high"
+  },
+  "clorox": {
+    "parent": "clorox-co",
+    "confidence": "high"
+  },
+  "cerave": {
+    "parent": "l-or-al",
+    "confidence": "high"
+  },
+  "cetaphil": {
+    "parent": "galderma-group-ag",
+    "confidence": "high"
+  },
+  "the-ordinary": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high"
+  },
+  "procter-gamble": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "johnson-johnson": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high"
+  },
+  "philip-morris": {
+    "parent": "philip-morris-international",
+    "confidence": "high"
+  },
+  "altria": {
+    "parent": "altria-group",
+    "confidence": "high"
+  },
+  "camel": {
+    "parent": "r-j-reynolds-tobacco-company",
+    "confidence": "high"
+  },
+  "sonic": {
+    "parent": "sonic-drive-in",
+    "confidence": "high"
+  },
+  "hoka": {
+    "parent": "deckers-outdoor",
+    "confidence": "high"
+  },
+  "gap": {
+    "parent": "gap-inc",
+    "confidence": "high"
+  },
+  "abercrombie": {
+    "parent": "abercrombie-and-fitch",
+    "confidence": "high"
+  },
+  "gucci": {
+    "parent": "kering",
+    "confidence": "high"
+  },
+  "kate-spade": {
+    "parent": "tapestry",
+    "confidence": "high"
+  },
+  "fossil": {
+    "parent": "fossil-group",
+    "confidence": "high"
+  },
+  "moncler": {
+    "parent": "moncler-s-p-a",
+    "confidence": "high"
+  },
+  "tommy-hilfiger": {
+    "parent": "tommy-hilfiger-pvh",
+    "confidence": "high"
+  },
+  "alphabet": {
+    "parent": "google-alphabet",
+    "confidence": "high"
+  },
+  "oracle": {
+    "parent": "oracle-cloud",
+    "confidence": "high"
+  },
+  "samsung": {
+    "parent": "samsung-usa",
+    "confidence": "high"
+  },
+  "lg": {
+    "parent": "lg-usa",
+    "confidence": "high"
+  },
+  "slack": {
+    "parent": "salesforce",
+    "confidence": "high"
+  },
+  "jira": {
+    "parent": "atlassian",
+    "confidence": "high"
+  },
+  "trello": {
+    "parent": "atlassian",
+    "confidence": "high"
+  },
+  "mailchimp": {
+    "parent": "intuit",
+    "confidence": "high"
+  },
+  "toyota": {
+    "parent": "toyota-usa",
+    "confidence": "high"
+  },
+  "honda": {
+    "parent": "honda-motor-co",
+    "confidence": "high"
+  },
+  "nissan": {
+    "parent": "nissan-technical-center-north-america",
+    "confidence": "medium",
+    "note": "Only Nissan-affiliated file in catalog is the NA R&D arm"
+  },
+  "hyundai": {
+    "parent": "hyundai-usa",
+    "confidence": "high"
+  },
+  "kia": {
+    "parent": "kia-usa",
+    "confidence": "high"
+  },
+  "subaru": {
+    "parent": "subaru-usa",
+    "confidence": "high"
+  },
+  "mitsubishi": {
+    "parent": "mitsubishi-motors-north-america",
+    "confidence": "high"
+  },
+  "bmw": {
+    "parent": "bmw-usa",
+    "confidence": "high"
+  },
+  "mercedes-benz": {
+    "parent": "mercedes-benz-usa",
+    "confidence": "high"
+  },
+  "ferrari": {
+    "parent": "ferrari-n-v",
+    "confidence": "high"
+  },
+  "rivian": {
+    "parent": "rivian-automotive",
+    "confidence": "high"
+  },
+  "shell": {
+    "parent": "shell-usa",
+    "confidence": "high"
+  },
+  "bp": {
+    "parent": "bp-usa",
+    "confidence": "high"
+  },
+  "abbott": {
+    "parent": "abbott-laboratories",
+    "confidence": "high"
+  },
+  "labcorp": {
+    "parent": "labcorp-drug-development",
+    "confidence": "high"
+  },
+  "ihg": {
+    "parent": "ihg-holiday-inn",
+    "confidence": "medium",
+    "note": "Only IHG-affiliated file in catalog is the Holiday Inn sub-brand"
+  },
+  "wyndham": {
+    "parent": "wyndham-hotels",
+    "confidence": "high"
+  },
+  "enterprise": {
+    "parent": "enterprise-rent-a-car",
+    "confidence": "high"
+  },
+  "carnival": {
+    "parent": "carnival-corp",
+    "confidence": "high"
+  },
+  "royal-caribbean": {
+    "parent": "royal-caribbean-cruises",
+    "confidence": "high"
+  },
+  "norwegian-cruise": {
+    "parent": "norwegian-cruise-line",
+    "confidence": "high"
+  },
+  "citi": {
+    "parent": "citigroup",
+    "confidence": "high"
+  },
+  "pnc": {
+    "parent": "pnc-financial",
+    "confidence": "high"
+  },
+  "truist": {
+    "parent": "truist-financial",
+    "confidence": "high"
+  },
+  "discover": {
+    "parent": "discover-financial",
+    "confidence": "high"
+  },
+  "ally-bank": {
+    "parent": "ally-financial",
+    "confidence": "high"
+  },
+  "black-decker": {
+    "parent": "stanley-black-and-decker",
+    "confidence": "high"
+  },
+  "milwaukee-tools": {
+    "parent": "techtronic-industries",
+    "confidence": "high"
+  },
+  "ryobi": {
+    "parent": "techtronic-industries",
+    "confidence": "high"
+  },
+  "john-deere": {
+    "parent": "deere-and-company",
+    "confidence": "high"
+  },
+  "mattel": {
+    "parent": "mattel-inc",
+    "confidence": "high"
+  },
+  "parler": {
+    "parent": "parler-llc",
+    "confidence": "high"
+  }
 }
