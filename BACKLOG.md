@@ -132,6 +132,8 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | **B-24** | **AllSides outlet whitelist expansion** | S | Currently 33 outlets mapped. Many Tier-2 outlets (Axios, Politico, The Verge, Ars Technica) appear in high-signal results — add their bias ratings to `OUTLET_BIAS` in `news-rss-collect.mjs` for richer fact_driver coverage. |
 | ~~**B-25**~~ | ~~Option B — fix BBB scraper letter extraction~~ | ✅ done 2026-06-03 | 3-layer extraction: JSON-LD `aggregateRating` → body-text regex "BBB Rating: X" → original `.bds-body`. Workflow re-running to verify. |
 | ~~**B-26**~~ | ~~Option C — disambiguate CourtListener party search~~ | ✅ done 2026-06-03 | Combined `party:"BRAND"` with `suitNature:[400 TO 895]` range filter. Dawn dropped from 183,001 → ~2,700 commercial cases. Field was `suitNature` not `nature_of_suit`. |
+| **B-27** | **CA AG enforcement-actions scrape** | M | `oag.ca.gov/consumers/actions` publishes named consumer-protection settlements (e.g. "$X for deceptive practice"). Low volume but extremely high signal — a CA AG settlement is a prosecutable fact. Once-monthly scrape feeding the news-extract AI pipeline. The only state AG in 5-state survey that has scrape-friendly per-company data. |
+| **B-28** | **Skip state AG complaint databases** | — | Surveyed 2026-06-03: CA/NY/IL/FL/TX have NO public per-company complaint records. NY/IL publish only "Top 10 industries" annual press releases (no company names). TX is "public" but PIA-request-gated (not automatable). FTC Sentinel is law-enforcement-only. Treat as resolved-not-feasible. |
 
 ### Scoring schema expansion
 
