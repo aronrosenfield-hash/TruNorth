@@ -1,0 +1,48 @@
+name: nvd-monthly
+
+# NIST NVD — Per-vendor CVE aggregation (monthly)
+# Runs the 1st of each month at 08:00 UTC. Iterates a curated list of tech
+# vendors and queries the NVD API 2.0 (cpeName=cpe:2.3:a:VENDOR:*),
+# aggregating per-vendor CVE counts + top-severity samples, then merging
+# into per-company JSON under enriched.nvd.
+#
+# NVD allows 5 req/30s without an API key; the fetcher paces at 6 req/30s.
+# 60-minute timeout covers the full vendor list with retries.
+
+on:
+  schedule:
+    - cron: "0 8 1 * *"   # 1st of month, 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit nvd-cves.json + per-company changes
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run NVD fetcher
+        run: node scripts/nvd-fetch.mjs
+
+      - name: Merge NVD data into per-company JSON
+        run: node scripts/nvd-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/nvd-cves.json public/data/companies/
+          [ -f public/data/_meta/nvd-merge-log.json ] && git add public/data/_meta/nvd-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(nvd): monthly NIST NVD per-vendor CVE refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
