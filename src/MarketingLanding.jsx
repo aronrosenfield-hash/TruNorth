@@ -150,7 +150,7 @@ const VALUE_PROPS = [
   {
     icon:"◉",
     title:"Real data, not opinions",
-    body:"Scores pulled from FEC filings, EPA enforcement, OSHA violations, OpenFDA recalls, SEC EDGAR, and 20+ public sources. No vibes. No spin. Just public records.",
+    body:"Scores pulled from FEC, EPA, OSHA, OpenFDA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, and 35+ more public-records sources. No vibes. No spin. Just receipts.",
   },
   {
     icon:"✦",

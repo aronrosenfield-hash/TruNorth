@@ -3507,56 +3507,78 @@ function SubmitView({ isPaid, onUpgrade }) {
 // ─── SOURCES ──────────────────────────────────────────────────────────────────
 const SOURCES_DATA = [
   {group:"Company universe",icon:"ti-building",items:[
-    {name:"SEC EDGAR",url:"https://www.sec.gov/edgar/searchedgar/companysearch",desc:"Official US Securities and Exchange Commission filings. Pulls every public ticker plus the 10-K Exhibit 21 subsidiary tree for ownership graphs."},
-    {name:"Wikidata",url:"https://www.wikidata.org",desc:"Open knowledge graph used to map consumer brands back to their corporate parents (e.g. Aunt Jemima → PepsiCo)."},
-    {name:"Open Food Facts",url:"https://world.openfoodfacts.org",desc:"Crowdsourced food product database — adds brand-to-parent links for grocery."},
+    {name:"SEC EDGAR",url:"https://www.sec.gov/edgar/searchedgar/companysearch",desc:"Official US Securities and Exchange Commission filings. Every public ticker plus the 10-K Exhibit 21 subsidiary tree for ownership graphs.",cadence:"Quarterly"},
+    {name:"Wikidata",url:"https://www.wikidata.org",desc:"Open knowledge graph used to map consumer brands back to their corporate parents (e.g. Aunt Jemima → PepsiCo).",cadence:"Quarterly"},
+    {name:"Open Food Facts",url:"https://world.openfoodfacts.org",desc:"Crowdsourced food product database — adds brand-to-parent links for grocery.",cadence:"Annual"},
+  ]},
+  {group:"Federal enforcement",icon:"ti-gavel",items:[
+    {name:"DOJ Press Releases",url:"https://www.justice.gov/news",desc:"Daily stream of US Department of Justice press releases: antitrust, fraud, criminal, civil rights, environment, tax cases. Per-brand mention tracking over 90 days.",cadence:"Weekly"},
+    {name:"SEC Litigation Releases",url:"https://www.sec.gov/litigation/litreleases",desc:"SEC enforcement actions naming defendant companies. Lifetime + recent 24-month counts.",cadence:"Weekly"},
+    {name:"CourtListener (RECAP)",url:"https://www.courtlistener.com",desc:"Federal court records via the Free Law Project. Lawsuit counts, case types (antitrust, labor, consumer, IP, securities, environmental).",cadence:"Weekly"},
+    {name:"GSA SAM.gov Excluded Parties",url:"https://sam.gov/exclusions",desc:"Federal contractor blacklist. Companies barred from doing business with the US government — rare but extremely high signal.",cadence:"Monthly"},
+  ]},
+  {group:"Consumer protection",icon:"ti-shield",items:[
+    {name:"CFPB Consumer Complaint Database",url:"https://www.consumerfinance.gov/data-research/consumer-complaints",desc:"US Consumer Financial Protection Bureau complaints for banks, credit cards, mortgages, debt collection. Per-brand: top issues, products, timely-response rate.",cadence:"Weekly"},
+    {name:"CPSC Recalls",url:"https://www.cpsc.gov/Recalls",desc:"Consumer Product Safety Commission product recalls (toys, electronics, appliances) — separate from FDA's food/drug coverage.",cadence:"Weekly"},
+    {name:"NHTSA Vehicle Recalls + Complaints",url:"https://www.nhtsa.gov/recalls",desc:"National Highway Traffic Safety Administration vehicle recall records and consumer-filed complaints for every auto brand.",cadence:"Weekly"},
   ]},
   {group:"Political donations",icon:"ti-flag-2",items:[
-    {name:"FEC.gov (Federal Election Commission)",url:"https://www.fec.gov",desc:"Official US campaign finance API. Maps company donations and lobbying disclosures to candidates, parties, and political lean."},
-    {name:"OpenSecrets.org",url:"https://www.opensecrets.org",desc:"Tracks aggregated political donations, PAC spending, lobbying, and candidate fundraising."},
-    {name:"InfluenceMap",url:"https://influencemap.org",desc:"Scores companies on climate-policy lobbying and political influence."},
+    {name:"FEC.gov (Federal Election Commission)",url:"https://www.fec.gov",desc:"Official US campaign finance API. Maps company donations and lobbying disclosures to candidates, parties, and political lean.",cadence:"Monthly"},
+    {name:"OpenSecrets.org",url:"https://www.opensecrets.org",desc:"Aggregated political donations, PAC spending, lobbying, and candidate fundraising.",cadence:"Monthly"},
+    {name:"InfluenceMap",url:"https://influencemap.org",desc:"Scores companies on climate-policy lobbying and political influence.",cadence:"Annual"},
+    {name:"OpenStates",url:"https://openstates.org",desc:"State-level legislation across all 50 states. Picks up lobbying signal beyond federal-only FEC data.",cadence:"Monthly"},
   ]},
   {group:"Charitable giving",icon:"ti-heart",items:[
-    {name:"Charity Navigator",url:"https://www.charitynavigator.org",desc:"Rates 1.8M nonprofits on financial health, accountability, and transparency."},
-    {name:"Candid / GuideStar",url:"https://candid.org",desc:"Largest database of nonprofit 990 forms."},
+    {name:"Charity Navigator",url:"https://www.charitynavigator.org",desc:"Rates 1.8M nonprofits on financial health, accountability, and transparency.",cadence:"Annual"},
+    {name:"Candid / GuideStar",url:"https://candid.org",desc:"Largest database of nonprofit 990 forms.",cadence:"Annual"},
   ]},
   {group:"Environmental",icon:"ti-leaf",items:[
-    {name:"CDP (Carbon Disclosure Project)",url:"https://www.cdp.net",desc:"World's largest environmental disclosure system. Companies scored A–D on climate, water, forests."},
-    {name:"B Corp Certification",url:"https://www.bcorporation.net",desc:"Rigorous certification for companies meeting high social and environmental standards."},
-    {name:"EPA Enforcement (Environmental Protection Agency)",url:"https://www.epa.gov/enforcement",desc:"US federal environmental enforcement actions — Clean Air, Clean Water, Superfund."},
-    {name:"Break Free From Plastic",url:"https://www.breakfreefromplastic.org",desc:"Annual Brand Audit ranks top plastic polluters globally."},
+    {name:"CDP (Carbon Disclosure Project)",url:"https://www.cdp.net",desc:"World's largest environmental disclosure system. Companies scored A–D on climate, water, forests.",cadence:"Annual"},
+    {name:"B Corp Certification",url:"https://www.bcorporation.net",desc:"Rigorous certification for companies meeting high social and environmental standards.",cadence:"Annual"},
+    {name:"EPA Enforcement",url:"https://www.epa.gov/enforcement",desc:"US federal environmental enforcement actions — Clean Air, Clean Water, Superfund.",cadence:"Monthly"},
+    {name:"EPA ECHO",url:"https://echo.epa.gov",desc:"Enforcement and Compliance History Online — facility-level inspections, violations, formal/informal actions, total federal penalties per company.",cadence:"Weekly"},
+    {name:"Break Free From Plastic",url:"https://www.breakfreefromplastic.org",desc:"Annual Brand Audit ranks top plastic polluters globally.",cadence:"Annual"},
   ]},
   {group:"Labor practices",icon:"ti-users",items:[
-    {name:"OSHA (Occupational Safety and Health Administration)",url:"https://www.osha.gov",desc:"US federal workplace-safety inspections, violations, and fines."},
-    {name:"NLRB (National Labor Relations Board)",url:"https://www.nlrb.gov",desc:"US agency that oversees union elections and investigates illegal labor practices."},
-    {name:"Violation Tracker",url:"https://violationtracker.goodjobsfirst.org",desc:"Aggregates federal penalties across 50+ agencies — wage theft, safety, environmental, antitrust."},
-    {name:"Oxfam Scorecard",url:"https://www.oxfam.org/en/research/behind-brands",desc:"Rates major food companies on worker rights."},
+    {name:"OSHA Violations",url:"https://www.osha.gov",desc:"US federal workplace-safety inspections, violations, and fines.",cadence:"Monthly"},
+    {name:"OSHA Severe Injury Reports",url:"https://www.osha.gov/severe-injury-reports",desc:"Per-establishment injury counts (amputations, hospitalizations) — separate dataset from the violations endpoint.",cadence:"Monthly"},
+    {name:"NLRB (National Labor Relations Board)",url:"https://www.nlrb.gov",desc:"US agency that oversees union elections and investigates illegal labor practices.",cadence:"Monthly"},
+    {name:"Violation Tracker",url:"https://violationtracker.goodjobsfirst.org",desc:"Aggregates federal penalties across 50+ agencies — wage theft, safety, environmental, antitrust.",cadence:"Monthly"},
+    {name:"Oxfam Behind The Brands",url:"https://www.oxfam.org/en/research/behind-brands",desc:"Rates major food companies on worker rights.",cadence:"Annual"},
   ]},
   {group:"Supply-chain & human rights",icon:"ti-world",items:[
-    {name:"BHRRC (Business & Human Rights Resource Centre)",url:"https://www.business-humanrights.org",desc:"Tracks human-rights allegations against companies including forced labor, child labor, and modern slavery."},
-    {name:"US Department of Labor — List of Goods Produced by Child or Forced Labor",url:"https://www.dol.gov/agencies/ilab/reports/child-labor/list-of-goods",desc:"Annual government list. Flags products with documented risk of forced labor or child labor."},
-    {name:"Yale CELI — Russia Exit Tracker",url:"https://som.yale.edu/story/2022/over-1000-companies-have-curtailed-operations-russia-some-remain",desc:"Yale School of Management's grades A–F on whether companies pulled out of Russia after the 2022 invasion."},
+    {name:"BHRRC (Business & Human Rights Resource Centre)",url:"https://www.business-humanrights.org",desc:"Tracks human-rights allegations including forced labor, child labor, and modern slavery.",cadence:"Annual"},
+    {name:"US Department of Labor — List of Goods Produced by Child or Forced Labor",url:"https://www.dol.gov/agencies/ilab/reports/child-labor/list-of-goods",desc:"Annual government list. Flags products with documented risk of forced labor or child labor.",cadence:"Annual"},
+    {name:"Yale CELI — Russia Exit Tracker",url:"https://som.yale.edu/story/2022/over-1000-companies-have-curtailed-operations-russia-some-remain",desc:"Yale School of Management's A–F grades on whether companies pulled out of Russia after the 2022 invasion.",cadence:"Annual"},
   ]},
   {group:"DEI",icon:"ti-rainbow",items:[
-    {name:"HRC (Human Rights Campaign) Corporate Equality Index",url:"https://www.hrc.org/resources/corporate-equality-index",desc:"Annual scorecard rating companies 0–100 on LGBTQ+ workplace equality."},
-    {name:"EEOC (Equal Employment Opportunity Commission)",url:"https://www.eeoc.gov",desc:"US database of workplace discrimination charges and enforcement actions."},
+    {name:"HRC Corporate Equality Index",url:"https://www.hrc.org/resources/corporate-equality-index",desc:"Annual scorecard rating companies 0–100 on LGBTQ+ workplace equality.",cadence:"Annual"},
+    {name:"EEOC (Equal Employment Opportunity Commission)",url:"https://www.eeoc.gov",desc:"US workplace discrimination enforcement (aggregate data).",cadence:"Annual"},
   ]},
   {group:"Animal testing",icon:"ti-paw",items:[
-    {name:"PETA Beauty Without Bunnies",url:"https://www.peta.org/living/personal-care-fashion/beauty-without-bunnies/",desc:"Database of companies that do and do not test on animals."},
-    {name:"Leaping Bunny",url:"https://www.leapingbunny.org",desc:"Global certification program for cruelty-free companies."},
-    {name:"ASPCA",url:"https://www.aspca.org",desc:"Tracks animal welfare standards in food and agriculture supply chains."},
+    {name:"PETA Beauty Without Bunnies",url:"https://www.peta.org/living/personal-care-fashion/beauty-without-bunnies/",desc:"Database of companies that do and do not test on animals.",cadence:"Annual"},
+    {name:"Leaping Bunny",url:"https://www.leapingbunny.org",desc:"Global certification program for cruelty-free companies.",cadence:"Annual"},
+    {name:"ASPCA",url:"https://www.aspca.org",desc:"Tracks animal welfare standards in food and agriculture supply chains.",cadence:"Annual"},
   ]},
-  {group:"Data privacy & breaches",icon:"ti-lock",items:[
-    {name:"Have I Been Pwned",url:"https://haveibeenpwned.com",desc:"Curated database of 1,000+ documented data breaches with account counts and exposed data classes."},
-    {name:"EFF (Electronic Frontier Foundation)",url:"https://www.eff.org",desc:"Tracks corporate surveillance practices and data privacy records."},
-    {name:"Mozilla Privacy Not Included",url:"https://foundation.mozilla.org/en/privacynotincluded/",desc:"Rates apps and services on data collection and privacy practices."},
+  {group:"Data privacy & security",icon:"ti-lock",items:[
+    {name:"Have I Been Pwned",url:"https://haveibeenpwned.com",desc:"Curated database of 1,000+ documented data breaches with account counts and exposed data classes.",cadence:"Monthly"},
+    {name:"CISA Known Exploited Vulnerabilities",url:"https://www.cisa.gov/known-exploited-vulnerabilities-catalog",desc:"US Cybersecurity and Infrastructure Security Agency catalog of CVEs actively exploited in the wild — per-vendor signal for tech brands.",cadence:"Weekly"},
+    {name:"EFF (Electronic Frontier Foundation)",url:"https://www.eff.org",desc:"Tracks corporate surveillance practices and data privacy records.",cadence:"Annual"},
+    {name:"Mozilla Privacy Not Included",url:"https://foundation.mozilla.org/en/privacynotincluded/",desc:"Rates apps and services on data collection and privacy practices.",cadence:"Annual"},
   ]},
   {group:"Health & product safety",icon:"ti-stethoscope",items:[
-    {name:"OpenFDA",url:"https://open.fda.gov",desc:"Public FDA enforcement API — pulls every food, drug, and device recall, classified by severity (Class I / II / III)."},
+    {name:"OpenFDA",url:"https://open.fda.gov",desc:"Public FDA enforcement API — food, drug, and device recalls classified by severity (Class I / II / III).",cadence:"Weekly"},
+    {name:"CDC FoodNet outbreak tracking",url:"https://www.cdc.gov/foodnet",desc:"US Centers for Disease Control multistate foodborne outbreak records — illness counts, hospitalizations, deaths per brand.",cadence:"Monthly"},
+    {name:"HHS OIG enforcement",url:"https://oig.hhs.gov/fraud/enforcement",desc:"US Health & Human Services Office of Inspector General — healthcare fraud cases + LEIE exclusions for pharma, hospital, insurance brands.",cadence:"Monthly"},
   ]},
   {group:"Executive pay",icon:"ti-coin",items:[
-    {name:"AFL-CIO Executive Paywatch",url:"https://aflcio.org/paywatch",desc:"Tracks CEO-to-worker pay ratios at major US corporations."},
-    {name:"SEC Executive Compensation Proxy",url:"https://www.sec.gov/cgi-bin/browse-edgar",desc:"Official source for executive compensation disclosures."},
+    {name:"AFL-CIO Executive Paywatch",url:"https://aflcio.org/paywatch",desc:"Tracks CEO-to-worker pay ratios at major US corporations.",cadence:"Annual"},
+    {name:"SEC Executive Compensation Proxy",url:"https://www.sec.gov/cgi-bin/browse-edgar",desc:"Official source for executive compensation disclosures.",cadence:"Annual"},
+  ]},
+  {group:"News & global press",icon:"ti-news",items:[
+    {name:"Google News RSS",url:"https://news.google.com",desc:"Daily aggregate of US news mentions per brand across 1000+ outlets.",cadence:"Daily"},
+    {name:"AllSides Media Bias",url:"https://www.allsides.com/media-bias",desc:"Bias ratings (left / lean-left / center / lean-right / right) for 33+ news outlets. Used to weight news signals so political lean of source is transparent.",cadence:"Quarterly"},
+    {name:"GDELT Project",url:"https://www.gdeltproject.org",desc:"Global news + events database in 100+ languages. Catches international press that US-only sources miss.",cadence:"Weekly"},
   ]},
 ];
 
@@ -5640,25 +5662,39 @@ if (screen === "onboarding") {
           <div style={{ fontSize:11, fontWeight:700, color:T.accent2, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
             How TruNorth grades a brand
           </div>
-          <p style={{ fontSize:14, color:T.txt2, marginBottom:14, lineHeight:1.6 }}>
-            Every score in TruNorth is built from <strong style={{ color:T.txt }}>primary public records</strong> — not opinions, not vibes, not AI synthesis. We pull from federal regulators, court records, public financial filings, accredited certifications, and independent human-rights monitors across 11 categories of source data.
-          </p>
+          {(() => {
+            const totalSources = SOURCES_DATA.reduce((a, g) => a + g.items.length, 0);
+            return (
+              <p style={{ fontSize:14, color:T.txt2, marginBottom:14, lineHeight:1.6 }}>
+                Every score in TruNorth is built from <strong style={{ color:T.txt }}>primary public records</strong> — not opinions, not vibes, not AI synthesis. We pull from federal regulators, court records, public financial filings, accredited certifications, and independent monitors across <strong style={{ color:T.txt }}>{totalSources}+ data sources</strong> spanning {SOURCES_DATA.length} categories.
+              </p>
+            );
+          })()}
           <p style={{ fontSize:14, color:T.txt2, marginBottom:14, lineHeight:1.6 }}>
             The result: <strong style={{ color:T.txt }}>every grade is auditable end-to-end.</strong> Tap any company → Sources tab to see the specific filings that drove that brand's score. If a score moves, it's because new public records moved it — not because our editorial position changed.
           </p>
           <div style={{ padding:"12px 14px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:14, fontSize:13, color:T.txt3, lineHeight:1.65 }}>
-            <strong style={{ color:T.txt2 }}>About freshness.</strong> Government-derived signals refresh nightly via automated workflows. Per-company narratives are re-researched monthly to incorporate new filings. Donation totals reflect the current election cycle; enforcement records span 2000-present.
+            <strong style={{ color:T.txt2 }}>About freshness.</strong> News mentions refresh <b>daily</b>. Federal enforcement, consumer complaints, lawsuit filings, vehicle/product recalls, and global news refresh <b>weekly</b>. Per-company narratives, severe-injury reports, foodborne outbreaks, healthcare-fraud actions, state legislation, and exclusion lists refresh <b>monthly</b>. Annual lists (HRC CEI, CDP A-List, Russia tracker, B Corp) re-ingest on their publish dates.
           </div>
           <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginTop:18, marginBottom:8 }}>
-            Source categories
+            Sources by category
           </div>
-          {/* Show only the GROUPS — no individual API names. Group icons + counts
-              communicate "we have depth across N categories" without spec-sheet noise. */}
           {SOURCES_DATA.map(g => (
-            <div key={g.group} style={{ display:"flex", alignItems:"center", gap:10, padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, marginBottom:6 }}>
-              <i className={`ti ${g.icon}`} style={{ fontSize:16, color:T.accent2 }} aria-hidden="true" />
-              <div style={{ flex:1, fontSize:13, fontWeight:600, color:T.txt }}>{g.group}</div>
-              <div style={{ fontSize:11, color:T.txt3 }}>{g.items.length} source{g.items.length === 1 ? "" : "s"}</div>
+            <div key={g.group} style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, marginBottom:6, padding:"12px 14px" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom: g.items?.length ? 8 : 0 }}>
+                <i className={`ti ${g.icon}`} style={{ fontSize:16, color:T.accent2 }} aria-hidden="true" />
+                <div style={{ flex:1, fontSize:13, fontWeight:600, color:T.txt }}>{g.group}</div>
+                <div style={{ fontSize:11, color:T.txt3 }}>{g.items.length} source{g.items.length === 1 ? "" : "s"}</div>
+              </div>
+              {g.items?.length > 0 && (
+                <div style={{ display:"flex", flexWrap:"wrap", gap:6, paddingLeft:26 }}>
+                  {g.items.map(it => (
+                    <a key={it.name} href={it.url} target="_blank" rel="noreferrer" style={{ fontSize:10.5, padding:"3px 8px", borderRadius:12, background:T.bg3, color:T.txt2, border:`1px solid ${T.border2}`, textDecoration:"none" }}>
+                      {it.name}{it.cadence ? <span style={{ color:T.txt3, marginLeft:4 }}>· {it.cadence}</span> : null}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
           <div style={{ fontSize:12, color:T.txt3, marginTop:14, lineHeight:1.55, textAlign:"center" }}>
