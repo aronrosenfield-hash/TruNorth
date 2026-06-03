@@ -38,7 +38,7 @@
 | **L-1** | Pin Twitter tweet from `/docs/producthunt/PROMO_COPY.md` | 5 min | Hour-1 PH subscribers → launch-day votes |
 | **L-2** | LinkedIn pinned post from same doc | 5 min | B2B reach |
 | **L-3** | Personal email blast to 10-20 closest contacts | 30 min | Warmest hour-1 voters |
-| **L-5** | Pick + install ONE email signature in Mac Mail | 5 min | Every cold email is a marketing surface |
+| ~~**L-5**~~ | ~~Pick + install ONE email signature in Mac Mail~~ | ✅ done 2026-06-03 | |
 | **L-7** | Activate Google Apps Script personalized auto-reply | 20 min | `/docs/gmail-personalized-autoreply-setup.md` — reduces email triage during launch |
 | **L-8** | Daily 10-min PH "warming" routine (upvote 5-10, comment on 1) | 10 min/day × 22 days | PH algo rewards engaged accounts |
 | **L-9** | Record 30-60 sec demo video for PH gallery | 1-2 hr | Demo videos boost PH conversion ~30% |
