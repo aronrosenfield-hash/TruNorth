@@ -1,0 +1,60 @@
+name: kntc-annual
+
+# KnowTheChain forced-labor benchmark — annual mirror of the four sector
+# benchmarks (ICT, Food & Beverage, Apparel & Footwear, General). Runs
+# April 1 at 14:00 UTC, ~1 month after the typical KTC report publication
+# cycle so the latest scores are in the public record.
+#
+# Step 1 (kntc-fetch.mjs):
+#   - Pings the four KTC benchmark sector pages (1 req/sec) to confirm the
+#     public URLs still resolve
+#   - Indexes the curated KTC mirror (re-verified annually against the
+#     published benchmark reports + executive summaries)
+#   - Checks top brands against the index
+#   - Writes public/data/kntc.json
+#
+# Step 2 (kntc-merge.mjs):
+#   - Merges enriched.knowTheChain {score, rank, sector, year, weakAreas,
+#     sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 labor-rights batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes (timeout-minutes: 30 for safety).
+
+on:
+  schedule:
+    - cron: "0 14 1 4 *"   # April 1, 14:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit kntc.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run KnowTheChain fetcher
+        run: node scripts/kntc-fetch.mjs
+
+      - name: Merge KnowTheChain data into per-company JSON
+        run: node scripts/kntc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/kntc.json public/data/companies/
+          [ -f public/data/_meta/kntc-merge-log.json ] && git add public/data/_meta/kntc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(kntc): annual KnowTheChain forced-labor benchmark refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
