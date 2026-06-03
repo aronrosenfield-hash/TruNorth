@@ -1,0 +1,50 @@
+name: osha-sir-monthly
+
+# OSHA Severe Injury Reports (SIR) — per-establishment injury counts.
+# Runs on the 1st of each month at 01:00 UTC. Downloads the official SIR
+# bulk ZIP (single CSV, ~15 MB compressed / ~55 MB raw, ~250K rows from
+# 2015→present), aggregates per-brand totals, and merges into per-company
+# JSON under enriched.oshaSevereInjury.
+#
+# Distinct from the OSHA violations/citations endpoint covered elsewhere.
+
+on:
+  schedule:
+    - cron: "0 1 1 * *"   # 01:00 UTC, day 1 of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit osha-sir.json + companies/ back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Ensure unzip is available
+        run: which unzip || sudo apt-get install -y unzip
+
+      - name: Run OSHA SIR fetcher
+        run: node scripts/osha-sir-fetch.mjs
+
+      - name: Merge SIR data into per-company JSON
+        run: node scripts/osha-sir-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/osha-sir.json public/data/companies/
+          [ -f public/data/_meta/osha-sir-merge-log.json ] && git add public/data/_meta/osha-sir-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(osha-sir): monthly OSHA Severe Injury Reports refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
