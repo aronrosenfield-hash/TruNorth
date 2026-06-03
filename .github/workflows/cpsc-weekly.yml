@@ -1,0 +1,45 @@
+name: cpsc-weekly
+
+# CPSC Consumer Product Safety Commission — Recalls
+# Runs Sunday 20:00 UTC. For each brand, queries the official CPSC
+# SaferProducts REST API for product recall records.
+#
+# Free, official US government API — no auth, ~1 req/sec courtesy throttle.
+
+on:
+  schedule:
+    - cron: "0 20 * * 0"   # Sunday 20:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit cpsc-recalls.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CPSC fetcher
+        run: node scripts/cpsc-fetch.mjs
+
+      - name: Merge recall data into per-company JSON
+        run: node scripts/cpsc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/cpsc-recalls.json public/data/companies/
+          [ -f public/data/_meta/cpsc-merge-log.json ] && git add public/data/_meta/cpsc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(cpsc): weekly CPSC recall refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
