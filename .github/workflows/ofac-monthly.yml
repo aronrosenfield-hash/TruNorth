@@ -1,0 +1,48 @@
+name: ofac-monthly
+
+# Treasury OFAC sanctions lists (monthly)
+# First day of each month, 05:00 UTC. Downloads the SDN + Consolidated
+# Sanctions lists as CSV, indexes them in-memory, and checks every top-500
+# brand for any matching entity. Rare signal -- US consumer brands almost
+# never appear -- but when one does the consequence is severe (criminal
+# liability for US persons transacting with them).
+#
+# No API key required; uses treasury.gov public CSV downloads.
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # 1st of the month, 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit the data file back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run OFAC sanctions fetcher
+        run: node scripts/ofac-fetch.mjs
+
+      - name: Merge sanctions data into per-company JSON
+        run: node scripts/ofac-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/ofac-sanctions.json public/data/companies/
+          [ -f public/data/_meta/ofac-merge-log.json ] && git add public/data/_meta/ofac-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ofac): monthly OFAC sanctions refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
