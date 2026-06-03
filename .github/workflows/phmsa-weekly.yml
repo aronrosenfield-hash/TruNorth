@@ -1,0 +1,51 @@
+name: phmsa-weekly
+
+# PHMSA — Pipeline & Hazardous Materials Safety Administration
+# Runs Monday 05:00 UTC. For each brand, queries the PHMSA enforcement +
+# incident-linked-case data for pipeline safety actions tied to that operator.
+#
+# Notes:
+#   - PHMSA's bulk incident ZIPs (hl/gd/gtgg 2010toPresent.zip) are blocked by
+#     AkamaiGHost at the TLS-fingerprint layer. Only the enforcement raw TXT
+#     and the Gatsby incident-report page-data JSON are reachable from CI.
+#   - That means fatalities/injuries/dollar-damage per incident are NOT
+#     available — see phmsa-fetch.mjs for the full data-limitation note.
+#   - User-Agent: TruNorth-PHMSA/1.0. Courtesy 1 req/sec.
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # Monday 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit phmsa-incidents.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run PHMSA fetcher
+        run: node scripts/phmsa-fetch.mjs
+
+      - name: Merge PHMSA data into per-company JSON
+        run: node scripts/phmsa-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/phmsa-incidents.json public/data/companies/
+          [ -f public/data/_meta/phmsa-merge-log.json ] && git add public/data/_meta/phmsa-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(phmsa): weekly PHMSA pipeline-incident refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
