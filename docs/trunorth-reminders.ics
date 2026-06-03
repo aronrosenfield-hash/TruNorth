@@ -1,0 +1,277 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//TruNorth//Launch Reminders//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TruNorth Launch & Ops
+X-WR-CALDESC:Pre-launch SEO check-ins, PH launch day playbook, and ongoing data maintenance for the TruNorth app.
+X-WR-TIMEZONE:America/Chicago
+
+BEGIN:VEVENT
+UID:trunorth-seo-checkin-2-friday@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260605T140000Z
+DTEND:20260605T141500Z
+SUMMARY:🔎 SEO check-in #2 (GSC + Bing)
+DESCRIPTION:Open Google Search Console → Indexing → Sitemaps & Pages. Look for: sitemap "Success" status, indexed-count climbing, no soft-404s. Then check Bing Webmaster too. 5 min.
+LOCATION:https://search.google.com/search-console
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:SEO check-in #2 — 5 min in Search Console
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-seo-checkin-3-monday@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260608T140000Z
+DTEND:20260608T141500Z
+SUMMARY:🔎 SEO check-in #3 (full week of GSC data)
+DESCRIPTION:By now you should have a week of real data. Performance tab → check Impressions / Clicks trends. Pages tab → indexed count should be climbing. If "Discovered – not indexed" plateaus, request indexing on top 10 brand pages manually.
+LOCATION:https://search.google.com/search-console
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-app-store-submission@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260617T140000Z
+DTEND:20260617T160000Z
+SUMMARY:🍎 Submit to Apple App Store
+DESCRIPTION:Target submission date (gives ~5-day Apple review buffer before PH launch Jun 23). Use App Store Connect. Follow /docs/producthunt/LAUNCH_DAY_PLAYBOOK.md prep steps. Have metadata + screenshots ready.
+LOCATION:https://appstoreconnect.apple.com
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-prelaunch-1week@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260616T140000Z
+DTEND:20260616T143000Z
+SUMMARY:🚀 PH launch — 1 week out checklist
+DESCRIPTION:1-week-out prep:
+ • Fire L-10 trade press pitches (/docs/trade-press-pitches.md)
+ • Confirm PH subscriber count > goal
+ • Twitter pinned tweet live (L-1)
+ • LinkedIn pinned post live (L-2)
+ • Demo video recorded + uploaded to PH (L-9)
+ • Email blast list ready (L-3)
+ • Apple App Store status confirmed
+LOCATION:https://www.producthunt.com/products/trunorth
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-eve@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T000000Z
+DTEND:20260623T010000Z
+SUMMARY:🌙 PH launch eve — final readiness
+DESCRIPTION:Night before launch (7pm CDT Jun 22):
+ • Pre-schedule launch-day Twitter (D-2) for 2:05 AM
+ • Pre-schedule launch-day LinkedIn (D-3) for 2:05 AM
+ • Draft First Comment (D-1) — paste-ready
+ • Test alarm for 1:50 AM
+ • Phone fully charged, coffee maker set
+ • Re-read /docs/producthunt/LAUNCH_DAY_PLAYBOOK.md
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT0M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-hour@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T065000Z
+DTEND:20260623T070000Z
+SUMMARY:☕🚀 PH LAUNCH WAKE-UP (1:50 AM CDT)
+DESCRIPTION:Launch fires at 2:01 AM CDT (12:01 AM PT). You have 11 minutes to:
+ 1. Boot up, coffee on
+ 2. Have First Comment in clipboard
+ 3. PH dashboard open
+ 4. Twitter + LinkedIn scheduled posts armed
+ 5. Phone notifications on for comments
+BEGIN:VALARM
+ACTION:AUDIO
+TRIGGER:-PT0M
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT10M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-firstcomment@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T070100Z
+DTEND:20260623T070500Z
+SUMMARY:🔥 D-1 PASTE FIRST COMMENT NOW
+DESCRIPTION:Launch is live. Paste the First Comment immediately — the algorithm weighs early activity heavily.
+BEGIN:VALARM
+ACTION:AUDIO
+TRIGGER:-PT0M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-socialfire@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T070500Z
+DTEND:20260623T071000Z
+SUMMARY:📣 D-2/D-3 Fire Twitter + LinkedIn launch posts
+DESCRIPTION:Pre-scheduled posts should auto-fire. Verify they went out. Otherwise, fire manually.
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT0M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-textnetwork@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T071000Z
+DTEND:20260623T071500Z
+SUMMARY:📱 D-4 Text 5 closest people the launch URL
+DESCRIPTION:Pre-drafted text. Send to your 5 most-likely-to-vote contacts. PH algorithm rewards hour-1 votes heavily.
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT0M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-comments@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T071500Z
+DTEND:20260623T110000Z
+SUMMARY:💬 D-5 Reply to every PH comment within 5 min (2-6 AM CDT)
+DESCRIPTION:Camp on the PH page. Reply to every comment within 5 min. Engagement velocity = ranking velocity.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-secondwave@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T140000Z
+DTEND:20260623T141500Z
+SUMMARY:🌊 D-6/D-7/D-8 Second-wave posts (9 AM CDT)
+DESCRIPTION:Indie Hackers post + Hacker News Show HN + Reddit r/SideProject + r/Anticonsumption. All pre-drafted in /docs/producthunt/LAUNCH_DAY_PLAYBOOK.md.
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-midday@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T170000Z
+DTEND:20260623T171500Z
+SUMMARY:📊 D-9 Midday rank check + strategy adjust
+DESCRIPTION:What's the current PH rank? Top 3? Top 10? Adjust outreach intensity accordingly.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-communities@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T200000Z
+DTEND:20260623T201500Z
+SUMMARY:🤝 D-10 Slack/Discord community pings
+DESCRIPTION:Hit your maker-community Slacks/Discords. Indie Hackers, Maker Logs, etc.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-launch-finalpush@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260623T230000Z
+DTEND:20260623T231500Z
+SUMMARY:🎯 D-11 Final ping to network non-responders
+DESCRIPTION:Last push to anyone who hasn't voted yet. Polite nudge. Then breathe.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-cron-health-monthly@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260701T140000Z
+DTEND:20260701T141500Z
+SUMMARY:🩺 Monthly cron health check
+DESCRIPTION:Verify the GitHub Actions crons all ran on schedule and produced output: news-rss-nightly, bbb-scrape-weekly, courtlistener-weekly, trending-refresh, weekly-digest. Quick `gh run list` review. ~10 min.
+LOCATION:https://github.com/aronrosenfield-hash/TruNorth/actions
+RRULE:FREQ=MONTHLY;BYMONTHDAY=1
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-tier1-renarrate-quarterly@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260901T140000Z
+DTEND:20260901T143000Z
+SUMMARY:📝 Quarterly Tier-1 re-narrate
+DESCRIPTION:Re-bake AI narratives for the top 100 brands using fresh source data. Run hybrid-pipeline/bake-ai-narratives.mjs with --tier 1. ~30 min + ~$10 in Sonnet cost.
+RRULE:FREQ=YEARLY;BYMONTH=3,6,9,12;BYMONTHDAY=1
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-hrc-cei-annual@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20261115T150000Z
+DTEND:20261115T160000Z
+SUMMARY:🏳️‍🌈 Annual HRC Corporate Equality Index ingest
+DESCRIPTION:HRC publishes their LGBTQ+ workplace-equality scorecard (used for our DEI signal) once a year, usually Nov-Jan. Pull the new dataset, re-import via hybrid-pipeline merge script, ship.
+LOCATION:https://www.hrc.org/resources/corporate-equality-index
+RRULE:FREQ=YEARLY
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-cdp-alist-annual@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20270215T150000Z
+DTEND:20270215T160000Z
+SUMMARY:🌍 Annual CDP A-List ingest
+DESCRIPTION:CDP publishes their climate-disclosure A-List each February. Pull the new dataset, re-import, ship.
+LOCATION:https://www.cdp.net
+RRULE:FREQ=YEARLY
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+
+BEGIN:VEVENT
+UID:trunorth-ph-warming-routine@trunorthapp.com
+DTSTAMP:20260603T120000Z
+DTSTART:20260603T160000Z
+DTEND:20260603T161000Z
+SUMMARY:📈 PH warming (10 min) — upvote 5-10, comment on 1
+DESCRIPTION:L-8 daily routine. Browse Product Hunt, upvote 5-10 products you genuinely like, leave one thoughtful comment. PH algo rewards engaged accounts when YOUR launch day comes. Stop when launch fires (Jun 23).
+LOCATION:https://www.producthunt.com
+RRULE:FREQ=DAILY;UNTIL=20260623T000000Z
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT5M
+END:VALARM
+END:VEVENT
+
+END:VCALENDAR
