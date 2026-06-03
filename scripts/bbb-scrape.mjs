@@ -135,6 +135,18 @@ async function scrapeOne(page, brand) {
     const complaintsMatch = bodyText.match(/(\d[\d,]*)\s+(?:customer\s+)?complaints?/i);
     const complaints = complaintsMatch ? Number(complaintsMatch[1].replace(/,/g, "")) : null;
 
+    // B-25 diagnostic: when all three strategies fail, log the first ~400
+    // chars of body text + page title so we can tell whether Cloudflare is
+    // serving a challenge page on GitHub runners (vs. the actual profile).
+    // Only logged for the first 3 failures per run to avoid log spam.
+    if (!rating && globalThis.__bbbDiagCount === undefined) globalThis.__bbbDiagCount = 0;
+    if (!rating && globalThis.__bbbDiagCount < 3) {
+      const title = await page.title().catch(() => "");
+      const head  = bodyText.slice(0, 400).replace(/\s+/g, " ");
+      console.log(`  [DIAG ${brand.slug}] title=${JSON.stringify(title)} body[0:400]=${JSON.stringify(head)}`);
+      globalThis.__bbbDiagCount++;
+    }
+
     return {
       slug:        brand.slug,
       name:        brand.name,

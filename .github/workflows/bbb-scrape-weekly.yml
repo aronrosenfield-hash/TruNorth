@@ -33,13 +33,17 @@ jobs:
       - name: Run BBB scraper
         run: node scripts/bbb-scrape.mjs
 
+      - name: Merge BBB ratings into per-company JSON
+        run: node scripts/bbb-merge.mjs
+
       - name: Commit + push the ratings
         run: |
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/bbb-ratings.json
+          git add public/data/bbb-ratings.json public/data/companies/
+          [ -f public/data/_meta/bbb-merge-log.json ] && git add public/data/_meta/bbb-merge-log.json
           git diff --quiet --staged && echo "No changes" && exit 0
-          git commit -m "data(bbb): weekly BBB ratings refresh [skip ci]"
+          git commit -m "data(bbb): weekly BBB ratings refresh + per-company merge [skip ci]"
           # Pull-rebase before push: another scheduled job may have
           # committed since we started, race-condition-safe.
           for i in 1 2 3; do
