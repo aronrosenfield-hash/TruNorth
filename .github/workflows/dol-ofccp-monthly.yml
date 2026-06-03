@@ -1,0 +1,60 @@
+name: dol-ofccp-monthly
+
+# DOL OFCCP (Office of Federal Contract Compliance Programs) — federal-
+# contractor enforcement, audits, back-pay settlements, debarments.
+# Runs first of the month at 07:00 UTC.
+#
+# Step 1 (dol-ofccp-fetch.mjs):
+#   - Crawls https://www.dol.gov/newsroom/releases/ofccp listing pages
+#     backwards until it crosses a 5-year cutoff (~10–40 listing pages,
+#     ~3–6 releases each, all @ 1 req/sec per spec)
+#   - Parses each release: date, body, back-pay $, violation tags
+#   - Scans 528 brands for whole-word name matches → per-brand aggregate
+#   - Writes public/data/dol-ofccp.json
+#
+# Step 2 (dol-ofccp-merge.mjs):
+#   - Merges dolOfccp {totalActions5y, totalBackPayUsd, topViolationTypes,
+#     sampleCases, …} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Free, official US government data — no auth required. The GH-Actions
+# runner typically passes Akamai's WAF where local curl does not.
+# Total runtime ≈ 10–20 min (5y of OFCCP releases @ 1 req/s).
+
+on:
+  schedule:
+    - cron: "0 7 1 * *"   # 1st of month, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit dol-ofccp.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run DOL OFCCP fetcher
+        run: node scripts/dol-ofccp-fetch.mjs
+
+      - name: Merge OFCCP data into per-company JSON
+        run: node scripts/dol-ofccp-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/dol-ofccp.json public/data/companies/
+          [ -f public/data/_meta/dol-ofccp-merge-log.json ] && git add public/data/_meta/dol-ofccp-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(dol-ofccp): monthly federal-contractor enforcement refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
