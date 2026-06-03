@@ -27,13 +27,17 @@ jobs:
       - name: Run CourtListener fetcher
         run: node scripts/courtlistener-fetch.mjs
 
+      - name: Merge lawsuit data into per-company JSON
+        run: node scripts/lawsuits-merge.mjs
+
       - name: Commit + push the lawsuit data
         run: |
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/lawsuits.json
+          git add public/data/lawsuits.json public/data/companies/
+          [ -f public/data/_meta/lawsuits-merge-log.json ] && git add public/data/_meta/lawsuits-merge-log.json
           git diff --quiet --staged && echo "No changes" && exit 0
-          git commit -m "data(lawsuits): weekly CourtListener refresh [skip ci]"
+          git commit -m "data(lawsuits): weekly CourtListener refresh + per-company merge [skip ci]"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin main && break
             echo "Push attempt $i failed, retrying…"
