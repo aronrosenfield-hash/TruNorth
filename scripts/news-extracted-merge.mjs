@@ -101,6 +101,61 @@ function dedupeByUrl(arr) {
   });
 }
 
+// Compute the aggregate `news` object the UI reads:
+//   enriched.news = { mentionCount90d, avgTone, scandalSignals, topArticles }
+// from the raw array of items we've stored at news_items[].
+//
+// avgTone: per-item tone is severity-weighted. high=±3, medium=±1.5, low=±0.5.
+// Sign flips on score_impact.direction (positive event → positive tone).
+// Mean across items in the 90-day window.
+//
+// scandalSignals: uppercase category labels from high+medium severity
+// negative-direction items. Deduped, capped at 5. Shown as red chips.
+//
+// topArticles: 3 most recent items overall (the panel cap is 3).
+function buildAggregateNews(items) {
+  const now = Date.now();
+  const NINETY_D_MS = 90 * 24 * 60 * 60 * 1000;
+  const recent = items.filter(it => {
+    const t = Date.parse(it.date);
+    return !Number.isNaN(t) && now - t <= NINETY_D_MS;
+  });
+
+  const sevWeight = { high: 3, medium: 1.5, low: 0.5 };
+  const tones = recent.map(it => {
+    const w = sevWeight[it.severity] ?? 1;
+    const dir = it.direction === "positive" ? 1 : it.direction === "negative" ? -1 : 0;
+    return dir * w;
+  });
+  const avgTone = tones.length ? tones.reduce((a, b) => a + b, 0) / tones.length : 0;
+
+  const scandalSet = new Set();
+  for (const it of recent) {
+    if ((it.severity === "high" || it.severity === "medium") && it.direction !== "positive") {
+      // Use the news category if available, fall back to the score_impact category
+      const label = (it.category || it.trunorth_category || "").toUpperCase();
+      if (label && label !== "OTHER") scandalSet.add(label);
+    }
+  }
+  const scandalSignals = [...scandalSet].slice(0, 5);
+
+  // Most recent articles regardless of severity, capped at 3
+  const sorted = [...items].sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  const topArticles = sorted.slice(0, 3).map(it => ({
+    title: it.title,
+    url:   it.url,
+  }));
+
+  return {
+    mentionCount90d: recent.length,
+    avgTone:         Number(avgTone.toFixed(2)),
+    scandalSignals,
+    topArticles,
+    lastUpdated:     new Date().toISOString(),
+    source:          "rss-extraction",
+  };
+}
+
 async function mergeOneCompany(slug, items, now) {
   const file = path.join(COMP_DIR, `${slug}.json`);
   if (!existsSync(file)) return { slug, status: "orphan", count: items.length };
@@ -110,34 +165,42 @@ async function mergeOneCompany(slug, items, now) {
   try { company = JSON.parse(raw); }
   catch (e) { return { slug, status: "parse_error", error: e.message }; }
 
-  // --- 1. Append to news[] (user-visible) ---
+  // --- 1. Build the raw item array (used by news_items for audit + score rebake) ---
   const newsEntries = items.map(it => ({
-    date:     it.pub_date,
-    title:    it.title,
-    outlet:   it.outlet,
-    bias:     it.bias,
-    summary:  it.summary,
-    category: it.category,
-    severity: it.severity,
-    url:      it.url,
-    source:   "rss-extraction",
+    date:      it.pub_date,
+    title:     it.title,
+    outlet:    it.outlet,
+    bias:      it.bias,
+    summary:   it.summary,
+    category:  it.category,
+    severity:  it.severity,
+    direction: it.score_impact?.direction,
+    url:       it.url,
+    source:    "rss-extraction",
   }));
 
-  company.news = dedupeByUrl([...newsEntries, ...(company.news || [])])
-    .filter(n => ageDays(n.date) < NEWS_TTL_DAYS)
-    .slice(0, MAX_NEWS_PER_COMPANY);
+  // news_items[] is the raw audit/score-rebake list — capped + TTL'd.
+  // Preserves any prior items so the 90-day window is honored across runs.
+  const allItems = dedupeByUrl([...newsEntries, ...(company.news_items || [])])
+    .filter(n => ageDays(n.date) < NEWS_TTL_DAYS);
+  company.news_items = allItems.slice(0, MAX_NEWS_PER_COMPANY);
 
-  // --- 2. Append to recent_events[] (for future score rebake) ---
+  // --- 2. Compute aggregate `news` OBJECT (what the UI reads) ---
+  // Critical schema match: enriched.news.{mentionCount90d, avgTone,
+  // scandalSignals, topArticles}.
+  company.news = buildAggregateNews(company.news_items);
+
+  // --- 3. Append to recent_events[] (separate path for score rebake) ---
   const eventEntries = items
     .filter(it => it.score_impact?.trunorth_category && it.score_impact.trunorth_category !== "none")
     .map(it => ({
-      date:      it.pub_date,
-      category:  it.score_impact.trunorth_category,
-      direction: it.score_impact.direction,
-      magnitude: it.score_impact.magnitude,
-      severity:  it.severity,
-      summary:   it.summary,
-      url:       it.url,
+      date:        it.pub_date,
+      category:    it.score_impact.trunorth_category,
+      direction:   it.score_impact.direction,
+      magnitude:   it.score_impact.magnitude,
+      severity:    it.severity,
+      summary:     it.summary,
+      url:         it.url,
       ingested_at: now,
     }));
 
@@ -145,7 +208,7 @@ async function mergeOneCompany(slug, items, now) {
     .filter(e => ageDays(e.date) < NEWS_TTL_DAYS)
     .slice(0, MAX_EVENTS_PER_COMPANY);
 
-  // --- 3. Freshness tracking ---
+  // --- 4. Freshness tracking ---
   // Some legacy company files store dataLastUpdated as a bare string
   // (e.g. "2026-05-28") rather than an object. Coerce to object,
   // preserving the legacy value for audit.
@@ -156,7 +219,6 @@ async function mergeOneCompany(slug, items, now) {
   }
   company.dataLastUpdated.news_rss = now;
 
-  // Write back — NO pretty-print to keep file size down (matches existing convention)
   await fs.writeFile(file, JSON.stringify(company));
 
   return {
@@ -164,8 +226,9 @@ async function mergeOneCompany(slug, items, now) {
     status:        "merged",
     news_added:    newsEntries.length,
     events_added:  eventEntries.length,
-    news_total:    company.news.length,
+    items_total:   company.news_items.length,
     events_total:  company.recent_events.length,
+    aggregate:     company.news,
   };
 }
 
@@ -182,7 +245,16 @@ async function main() {
   console.log(`📋 ${items.length} extracted items to merge`);
 
   if (items.length === 0) {
-    console.log("⚠ No items to merge — skipping");
+    console.log("⚠ No items to merge — writing empty log + skipping");
+    // Always write merge-log.json so the workflow's `git add` doesn't
+    // error on missing pathspec on no-data days.
+    await fs.writeFile(LOG_FILE, JSON.stringify({
+      merged_at: now,
+      total_items: 0,
+      brand_count: 0,
+      merged_count: 0,
+      note: "no items_for_ai in extracted file — skipped merge",
+    }, null, 2));
     return;
   }
 
