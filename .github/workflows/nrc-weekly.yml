@@ -1,0 +1,47 @@
+name: nrc-weekly
+
+# NRC — Nuclear Regulatory Commission Event Reports & Enforcement Actions
+# Runs Tuesday 03:00 UTC. Walks the last 5 years of event-status + enforcement
+# index pages, matches nuclear-operator licensee names against a curated
+# alias list (Exelon, Constellation, Duke, Southern, NextEra), aggregates
+# event counts + violations + samples per operator.
+#
+# Free, official US government data — no auth. Polite 1 req/sec.
+
+on:
+  schedule:
+    - cron: "0 3 * * 2"   # Tuesday 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit nrc-events.json + per-company changes back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run NRC fetcher
+        run: node scripts/nrc-fetch.mjs
+
+      - name: Merge NRC data into per-company JSON
+        run: node scripts/nrc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/nrc-events.json public/data/companies/
+          [ -f public/data/_meta/nrc-merge-log.json ] && git add public/data/_meta/nrc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(nrc): weekly NRC events + enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
