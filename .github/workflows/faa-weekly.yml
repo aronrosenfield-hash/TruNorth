@@ -1,0 +1,46 @@
+name: faa-weekly
+
+# FAA Safety Data — Service Difficulty Reports, Airworthiness Directives,
+# and Accident/Incident records. Aerospace-relevant brands only (most of
+# top-500 will be skipped as not_available — that's expected).
+#
+# Sources are public FAA web systems; no auth required.
+# 1 req/sec courtesy throttle, UA "TruNorth-FAA/1.0".
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # Monday 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit faa-safety.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run FAA fetcher
+        run: node scripts/faa-fetch.mjs
+
+      - name: Merge FAA data into per-company JSON
+        run: node scripts/faa-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/faa-safety.json public/data/companies/
+          [ -f public/data/_meta/faa-merge-log.json ] && git add public/data/_meta/faa-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(faa): weekly FAA safety refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
