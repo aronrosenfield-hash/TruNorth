@@ -1,0 +1,48 @@
+name: fra-weekly
+
+# FRA — Federal Railroad Administration safety data (weekly)
+# Runs Monday 08:00 UTC. Pulls the FRA Equipment Accident/Incident
+# dataset (Form F 6180.54) from data.transportation.gov, aggregates a
+# 5-year window per reporting railroad (incidents, fatalities, hazmat
+# releases, 5 most-recent samples) and merges into per-company JSON.
+#
+# Free, official US-DOT open dataset — no auth, no rate-limit issues.
+# Courtesy 1 req/sec from the fetcher, UA "TruNorth-FRA/1.0".
+
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # Monday 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit fra-incidents.json + company files
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run FRA fetcher
+        run: node scripts/fra-fetch.mjs
+
+      - name: Merge incident data into per-company JSON
+        run: node scripts/fra-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/fra-incidents.json public/data/companies/
+          [ -f public/data/_meta/fra-merge-log.json ] && git add public/data/_meta/fra-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(fra): weekly FRA safety refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
