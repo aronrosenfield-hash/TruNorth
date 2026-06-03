@@ -611,6 +611,13 @@ function computeScore(co, profile) {
     // should ignore inapplicable categories — they're not a positive OR
     // negative signal, they just don't apply. Exclude them like neutral.
     if (lv === "na" || lv === "n/a") continue;
+    // 2026-06-03 (user-reported bug, Walmart): sc.dei = "pro_dei" was
+    // dragging the grade down even though dei.s says "No public record
+    // found." The category enum exists (often from AI synthesis) but
+    // there's no hard public record. Exclude these from the grade too —
+    // a categorical guess shouldn't penalize the company.
+    const detailObj = co[k] || {};
+    if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) continue;
     weightedSum += scoreCat(k, v, profile) * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
@@ -2377,7 +2384,16 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         const impacts = CAT_KEYS.map(k => {
                           const v = enriched.sc?.[k];
                           if (getDataState(k, v) === "unknown") return null;
-                          if (String(v||"").toLowerCase() === "neutral") return null;
+                          const lv = String(v||"").toLowerCase();
+                          if (lv === "neutral" || lv === "na" || lv === "n/a") return null;
+                          // 2026-06-03: same fix as computeScore — if the
+                          // detail card says "No public record found." we
+                          // shouldn't cite this category as a reason the
+                          // grade moved. The bar may still position to
+                          // show the categorical signal, but it's not a
+                          // grading factor.
+                          const detailObj = enriched[k] || {};
+                          if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) return null;
                           const sc = scoreCat(k, v, profile);
                           const delta = sc - 50;
                           return { k, sc, delta, impact: Math.abs(delta) * baseW[k] };
