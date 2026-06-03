@@ -1,0 +1,49 @@
+name: ferc-weekly
+
+# FERC (Federal Energy Regulatory Commission) Enforcement Actions
+# Runs Tuesday 04:00 UTC. Aggregates civil penalty actions and stipulated
+# orders involving each brand (primarily energy utilities and traders).
+#
+# Data sources:
+#   1. Best-effort live scrape of FERC's Civil Penalty Actions index
+#      (often Cloudflare-blocked — handled gracefully)
+#   2. Curated seed at public/data/ferc-enforcement-seed.json
+#      (extracted from FERC's annual Reports on Enforcement)
+
+on:
+  schedule:
+    - cron: "0 4 * * 2"   # Tuesday 04:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit ferc-enforcement.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run FERC enforcement fetcher
+        run: node scripts/ferc-fetch.mjs
+
+      - name: Merge FERC data into per-company JSON
+        run: node scripts/ferc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/ferc-enforcement.json public/data/companies/
+          [ -f public/data/_meta/ferc-merge-log.json ] && git add public/data/_meta/ferc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ferc): weekly FERC enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
