@@ -1,0 +1,48 @@
+name: sec-litigation-weekly
+
+# SEC Litigation Releases — weekly enforcement-action refresh.
+# Walks https://www.sec.gov/enforcement-litigation/litigation-releases
+# at 1 req/sec, counts releases naming each top-528 brand, and merges
+# aggregates (total / recent 24mo / sample releases) into per-company
+# JSON under enriched.secLitigation.
+#
+# Free, no auth. SEC fair-use asks for descriptive UA + ≤10 req/sec.
+# We use 1 req/sec, identifying as "TruNorth-SEC-Lit/1.0".
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"   # Sunday 23:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit sec-litigation.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run SEC Litigation Releases fetcher
+        run: node scripts/sec-litigation-fetch.mjs
+
+      - name: Merge release data into per-company JSON
+        run: node scripts/sec-litigation-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/sec-litigation.json public/data/companies/
+          [ -f public/data/_meta/sec-litigation-merge-log.json ] && git add public/data/_meta/sec-litigation-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(sec): weekly SEC litigation release refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
