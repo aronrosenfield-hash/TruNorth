@@ -28,7 +28,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const NEWS_DIR = path.join(ROOT, "public/data/news");
 
-const MODEL = "claude-sonnet-4-5-20250929";  // current Sonnet
+// claude-sonnet-4-6 is the current Sonnet alias (1M context, $3/$15 per 1M).
+// claude-sonnet-4-5-20250929 still works (legacy active) but the API surface
+// changes between versions — 4.6 supports adaptive thinking out of the box
+// and is the recommended target for new code.
+const MODEL = "claude-sonnet-4-6";
 const BATCH_SIZE = 20;
 const MAX_RETRIES = 2;
 
@@ -156,11 +160,29 @@ ${batch.map((item, i) => `[${i + 1}] BRAND: ${item.brand_name} (${item.brand_slu
 
     if (!res.ok) {
       const err = await res.text();
-      throw new Error(`HTTP ${res.status}: ${err.slice(0, 200)}`);
+      // Detect the retired-model 404 pattern so we fail loudly with a clear hint.
+      if (res.status === 404 && /not_found_error|model/i.test(err)) {
+        throw new Error(`Retired or unknown model "${MODEL}". Update MODEL to a current alias from https://platform.claude.com/docs/en/about-claude/models/overview . Raw: ${err.slice(0, 200)}`);
+      }
+      throw new Error(`HTTP ${res.status}: ${err.slice(0, 400)}`);
     }
     const data = await res.json();
+
+    // Defensive: log the full response shape when content is missing. The bug
+    // we hit on 2026-06-03 was `data.content.find is not a function` — that
+    // happens when the API returns {type:"error",...} with HTTP 200 (rare but
+    // possible), or when the response shape changed across model versions.
+    if (!Array.isArray(data.content)) {
+      throw new Error(`Unexpected response shape (no content array). type=${data.type} error=${JSON.stringify(data.error || {}).slice(0, 200)} keys=${Object.keys(data).join(",")}`);
+    }
+
     const toolUse = data.content.find(b => b.type === "tool_use");
-    if (!toolUse) throw new Error("No tool_use in response");
+    if (!toolUse) {
+      // Could be a refusal — log the stop_reason and the first text block so
+      // the failure is diagnosable from CI logs.
+      const text = data.content.find(b => b.type === "text")?.text || "";
+      throw new Error(`No tool_use in response. stop_reason=${data.stop_reason} stop_details=${JSON.stringify(data.stop_details || {})} first_text=${text.slice(0, 200)}`);
+    }
     return toolUse.input.items;
   } catch (err) {
     if (attempt < MAX_RETRIES) {
