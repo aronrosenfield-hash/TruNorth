@@ -1,0 +1,47 @@
+name: hud-monthly
+
+# HUD Fair Housing — monthly enforcement refresh.
+# Runs on the 1st of each month at 19:00 UTC. Searches HUD's press-release
+# archive for Fair Housing Act charges and settlements per brand in
+# top-500-brands.txt, aggregates totals + top violation categories, and
+# merges the result into per-company JSON.
+#
+# Public, no-auth source. Rate-limited to 1 req/sec.
+
+on:
+  schedule:
+    - cron: "0 19 1 * *"   # 1st of month, 19:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit hud-fairhousing.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run HUD fetcher
+        run: node scripts/hud-fetch.mjs
+
+      - name: Merge HUD data into per-company JSON
+        run: node scripts/hud-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/hud-fairhousing.json public/data/companies/
+          [ -f public/data/_meta/hud-merge-log.json ] && git add public/data/_meta/hud-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(hud): monthly Fair Housing refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
