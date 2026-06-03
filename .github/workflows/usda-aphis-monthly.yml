@@ -1,0 +1,63 @@
+name: usda-aphis-monthly
+
+# USDA APHIS — Animal Welfare Act enforcement actions (research labs,
+# exhibitors/zoos/aquaria, dealers, carriers). Monthly cadence: APHIS
+# publishes new final orders + consent decisions a few times a month.
+#
+# Runs 1st of the month at 22:00 UTC.
+#
+# Step 1 (usda-aphis-fetch.mjs):
+#   - Walks the APHIS enforcement-actions index + fiscal-year archives,
+#     parses release HTML + PDF anchors back to a 5-year cutoff (1 req/s,
+#     UA TruNorth-USDA-APHIS/1.0).
+#   - Per release: extracts date, licensee, AWA violation tags, NCI count,
+#     civil-penalty $ amount.
+#   - Scans top-500 brands (plus inline animal-welfare extras: Charles
+#     River, Envigo, SeaWorld) for whole-word name matches.
+#   - Writes public/data/usda-aphis.json.
+#
+# Step 2 (usda-aphis-merge.mjs):
+#   - Merges usdaAphis {totalAwaViolations5y, totalCivilPenaltiesUsd,
+#     actionCount5y, topViolationTypes, sampleViolations, …} into each
+#     matching company file.
+#   - Honors slug-aliases + brand-parent-map.
+#
+# Free, official US government data — no auth required.
+
+on:
+  schedule:
+    - cron: "0 22 1 * *"   # 1st of month, 22:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit usda-aphis.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run USDA APHIS fetcher
+        run: node scripts/usda-aphis-fetch.mjs
+
+      - name: Merge USDA APHIS data into per-company JSON
+        run: node scripts/usda-aphis-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/usda-aphis.json public/data/companies/
+          [ -f public/data/_meta/usda-aphis-merge-log.json ] && git add public/data/_meta/usda-aphis-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(usda-aphis): monthly animal-welfare-violations refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
