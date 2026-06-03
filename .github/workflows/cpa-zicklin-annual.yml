@@ -1,0 +1,59 @@
+name: cpa-zicklin-annual
+
+# CPA-Zicklin Index — annual mirror of the Center for Political
+# Accountability's S&P 500 ranking on corporate political-spending
+# disclosure and accountability. Runs Oct 1 at 13:00 UTC (the index
+# is typically released in late summer / early fall).
+#
+# Step 1 (cpa-zicklin-fetch.mjs):
+#   - Pings the CPA-Zicklin index + rankings pages (1 req/sec)
+#   - Indexes the curated CPA-Zicklin mirror (re-verified annually
+#     against the index PDF + interactive web ranking)
+#   - Checks 528 top brands against the index
+#   - Writes public/data/cpa-zicklin.json
+#
+# Step 2 (cpa-zicklin-merge.mjs):
+#   - Merges enriched.cpaZicklin {score, tier, year, sourceUrl, ...}
+#     into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 governance batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 13 1 10 *"   # Oct 1, 13:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit cpa-zicklin.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CPA-Zicklin Index fetcher
+        run: node scripts/cpa-zicklin-fetch.mjs
+
+      - name: Merge CPA-Zicklin data into per-company JSON
+        run: node scripts/cpa-zicklin-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/cpa-zicklin.json public/data/companies/
+          [ -f public/data/_meta/cpa-zicklin-merge-log.json ] && git add public/data/_meta/cpa-zicklin-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(cpa-zicklin): annual CPA-Zicklin Index refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
