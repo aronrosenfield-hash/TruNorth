@@ -1,0 +1,46 @@
+name: osv-monthly
+
+# OSV — Open Source Vulnerabilities catalog (monthly)
+# Runs the 1st of each month at 09:00 UTC. Queries OSV.dev per-package for
+# each tracked OS/software vendor, aggregates, then merges into per-company
+# JSON under enriched.osv.
+#
+# Free, no-auth Google-operated open data. Per-task spec: 1 req/sec, custom UA.
+
+on:
+  schedule:
+    - cron: "0 9 1 * *"   # 1st of month, 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit osv.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run OSV fetcher
+        run: node scripts/osv-fetch.mjs
+
+      - name: Merge OSV data into per-company JSON
+        run: node scripts/osv-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/osv.json public/data/companies/
+          [ -f public/data/_meta/osv-merge-log.json ] && git add public/data/_meta/osv-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(osv): monthly OSV vulnerabilities refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
