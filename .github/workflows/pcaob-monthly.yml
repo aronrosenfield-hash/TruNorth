@@ -1,0 +1,47 @@
+name: pcaob-monthly
+
+# PCAOB Enforcement Actions — monthly refresh
+# Runs the 1st of each month at 16:00 UTC. For each brand, queries the public
+# PCAOB HawkSearch index for Enforcement Documents (settled & adjudicated
+# disciplinary orders, bar terminations) naming the brand in the respondent
+# caption. Most brands aren't audit firms and are silently skipped by the
+# merger; the relevant universe is the Big Four + a handful of mid-tier
+# audit firms and occasional audited-issuer co-respondents.
+
+on:
+  schedule:
+    - cron: "0 16 1 * *"   # 1st of month, 16:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit pcaob-enforcement.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run PCAOB fetcher
+        run: node scripts/pcaob-fetch.mjs
+
+      - name: Merge enforcement data into per-company JSON
+        run: node scripts/pcaob-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/pcaob-enforcement.json public/data/companies/
+          [ -f public/data/_meta/pcaob-merge-log.json ] && git add public/data/_meta/pcaob-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(pcaob): monthly enforcement actions refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
