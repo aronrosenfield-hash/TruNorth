@@ -1,0 +1,45 @@
+name: finra-weekly
+
+# FINRA BrokerCheck — weekly disclosure refresh
+# Runs Tuesday 02:00 UTC. For each brand, queries the public BrokerCheck API
+# for the firm's regulatory disclosure history (regulatory events, civil
+# events, arbitrations). Most brands aren't broker-dealers and are silently
+# skipped by the merger; the relevant universe is ~30-50 financial firms.
+
+on:
+  schedule:
+    - cron: "0 2 * * 2"   # Tuesday 02:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit finra-disclosures.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run FINRA fetcher
+        run: node scripts/finra-fetch.mjs
+
+      - name: Merge disclosure data into per-company JSON
+        run: node scripts/finra-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/finra-disclosures.json public/data/companies/
+          [ -f public/data/_meta/finra-merge-log.json ] && git add public/data/_meta/finra-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(finra): weekly BrokerCheck disclosure refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
