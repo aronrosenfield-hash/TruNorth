@@ -37,36 +37,20 @@ const OUT_FILE    = path.join(ROOT, "public/data/lawsuits.json");
 
 const CL_BASE = "https://www.courtlistener.com/api/rest/v4";
 
-// B-26: Commercial-litigation `suitNature` codes. The API field is
+// B-26: Filter to ESG-relevant `suitNature` range. The API field is
 // `suitNature` (not `nature_of_suit` as I first assumed), stored as
 // "CODE TEXT" like "410 Antitrust" or "840 Trademark". Filtering by
-// these codes cuts party-name false positives by ~99% — e.g. Dawn
-// dish-soap goes from 183,001 hits (every person named Dawn) to a
+// commercial codes drops party-name false positives by ~99% — e.g.
+// "Dawn" goes from 183k hits (every person named Dawn) to a small
 // realistic count of commercial cases.
 //
-// Codes chosen for ESG signal value to consumers:
-const COMMERCIAL_NOS_CODES = [
-  // Contract / commercial disputes
-  "110", "120", "190", "195", "196",
-  // Product safety + liability
-  "380", "385",
-  // Antitrust
-  "410",
-  // Civil rights / employment
-  "440", "441", "442", "443", "445", "446",
-  // Consumer
-  "480",
-  // Forfeiture / regulatory
-  "690",
-  // Labor (FLSA, ERISA, NLRA)
-  "710", "720", "740", "790", "791",
-  // IP
-  "820", "830", "840",
-  // Securities
-  "850",
-  // Statutory / environmental / energy
-  "890", "892", "893", "895",
-];
+// Range [400 TO 895] covers: antitrust (410), civil rights/labor
+// discrimination (440-446), consumer credit (480), forfeiture (690),
+// FLSA/ERISA/labor (710-791), IP (820-840), securities (850),
+// statutory/environmental (890-895). Excludes tort + real property +
+// prisoner cases — those aren't ESG signal.
+const NOS_RANGE_LO = 400;
+const NOS_RANGE_HI = 895;
 
 // Case-type heuristics — used to categorize cases for TruNorth scoring
 // after we've fetched them.
@@ -103,14 +87,13 @@ async function loadBrands() {
 
 async function fetchBrandLawsuits(brand) {
   // CourtListener Search API with commercial-litigation scope.
-  // /api/rest/v4/search/?type=r&q=party:"BRAND" AND suitNature:(CODES…)
+  // /api/rest/v4/search/?type=r&q=party:"BRAND" AND suitNature:[400 TO 895]
   //
   // B-26 fix: without the suitNature filter, "Dawn" matched every person
   // named Dawn (183k hits). With it, only commercial cases relevant to
-  // ESG scoring are returned (~10-500 per major brand, very few for
+  // ESG scoring are returned (~10-3000 per major brand, very few for
   // brands that don't legally exist as a corporate entity).
-  const nosScope = COMMERCIAL_NOS_CODES.join(" ");
-  const queryStr = `party:"${brand.name}" AND suitNature:(${nosScope})`;
+  const queryStr = `party:"${brand.name}" AND suitNature:[${NOS_RANGE_LO} TO ${NOS_RANGE_HI}]`;
   const q = encodeURIComponent(queryStr);
   const url = `${CL_BASE}/search/?type=r&q=${q}&order_by=dateFiled%20desc&page_size=20`;
 
