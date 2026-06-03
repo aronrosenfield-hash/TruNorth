@@ -1,0 +1,50 @@
+name: atf-monthly
+
+# ATF (Bureau of Alcohol, Tobacco, Firearms & Explosives) — monthly refresh
+# of FFL compliance-inspection violations and license-revocation data for
+# firearms-industry brands (manufacturers, distributors, major retailers).
+#
+# Runs on the 1st of each month at 20:00 UTC. ATF's published Firearms
+# Commerce Report tables and revocation list refresh sporadically; monthly
+# cadence is more than sufficient and keeps GitHub Action minutes low.
+#
+# Source: https://www.atf.gov/firearms/firearms-industry
+#         https://www.atf.gov/resource-center/data-statistics
+
+on:
+  schedule:
+    - cron: "0 20 1 * *"   # 1st of month, 20:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit atf-firearms.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run ATF fetcher
+        run: node scripts/atf-fetch.mjs
+
+      - name: Merge ATF data into per-company JSON
+        run: node scripts/atf-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/atf-firearms.json public/data/companies/
+          [ -f public/data/_meta/atf-merge-log.json ] && git add public/data/_meta/atf-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(atf): monthly ATF FFL compliance refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
