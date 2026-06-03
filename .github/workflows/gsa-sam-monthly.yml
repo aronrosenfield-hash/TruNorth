@@ -1,0 +1,47 @@
+name: gsa-sam-monthly
+
+# GSA SAM.gov Excluded Parties List (monthly)
+# First day of each month, 00:00 UTC. For each brand, queries the public
+# SAM.gov exclusions search endpoint to detect federal-contract debarment.
+# Rare signal — most top-500 brands return zero matches — but extremely
+# high-value when it does fire (DOJ/HHS/Treasury formal bars).
+#
+# No API key required; uses sam.gov public search endpoint.
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"   # 1st of the month, 00:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit the data file back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run GSA SAM exclusion fetcher
+        run: node scripts/gsa-sam-fetch.mjs
+
+      - name: Merge exclusion data into per-company JSON
+        run: node scripts/gsa-sam-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/gsa-sam-exclusions.json public/data/companies/
+          [ -f public/data/_meta/gsa-sam-merge-log.json ] && git add public/data/_meta/gsa-sam-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(gsa-sam): monthly GSA SAM exclusion refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
