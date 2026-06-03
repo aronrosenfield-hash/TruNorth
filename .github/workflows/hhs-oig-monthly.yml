@@ -1,0 +1,56 @@
+name: hhs-oig-monthly
+
+# HHS OIG (Office of Inspector General) — healthcare fraud enforcement.
+# Runs first of the month at 03:00 UTC.
+#
+# Step 1 (hhs-oig-fetch.mjs):
+#   - Downloads LEIE bulk CSV (~83k excluded providers)
+#   - Crawls /fraud/enforcement/ pages until 24mo cutoff (~85 pages, 1 req/s)
+#   - For each of 528 brands, matches business names + action titles
+#   - Writes public/data/hhs-oig.json
+#
+# Step 2 (hhs-oig-merge.mjs):
+#   - Merges hhsOig {isExcluded, exclusionCount, recentFraudActions24mo,
+#     sampleActions, …} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Free, official US government data — no auth, no rate-limit issues.
+# Total runtime ≈ 4–6 min (LEIE download + ~110 enforcement pages @ 1 req/s).
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"   # 1st of month, 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit hhs-oig.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run HHS OIG fetcher
+        run: node scripts/hhs-oig-fetch.mjs
+
+      - name: Merge OIG data into per-company JSON
+        run: node scripts/hhs-oig-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/hhs-oig.json public/data/companies/
+          [ -f public/data/_meta/hhs-oig-merge-log.json ] && git add public/data/_meta/hhs-oig-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(hhs-oig): monthly enforcement + exclusion refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
