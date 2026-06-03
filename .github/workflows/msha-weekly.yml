@@ -1,0 +1,48 @@
+name: msha-weekly
+
+# MSHA (Mine Safety and Health Administration) — weekly bulk-data refresh.
+# Downloads three official MSHA open-government datasets (Mines, Violations,
+# Accidents), stream-parses them, aggregates per-brand citation / fatality /
+# penalty totals, and merges into per-company JSON.
+#
+# Runs Monday 06:00 UTC (MSHA refreshes the underlying ZIPs Fridays, so
+# a Monday job picks up the freshest data without colliding with the
+# Friday maintenance window). Free, official US government dataset.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit msha-incidents.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run MSHA fetcher
+        run: node scripts/msha-fetch.mjs
+
+      - name: Merge MSHA data into per-company JSON
+        run: node scripts/msha-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/msha-incidents.json public/data/companies/
+          [ -f public/data/_meta/msha-merge-log.json ] && git add public/data/_meta/msha-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(msha): weekly MSHA citation + fatality refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
