@@ -107,7 +107,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | ~~**A-1**~~ | ~~H3: Unified `openBrand(slug)` helper~~ | ✅ done 2026-06-02 | 12 nav entry points → 1 canonical helper. Build green. |
 | ~~**A-2**~~ | ~~H5: Modal a11y~~ | ✅ done 2026-06-02 | `useModalA11y` shared hook → Paywall/Scanner/WhatsNew/Compare. Focus trap + ESC + focus return. |
 | ~~**A-3**~~ | ~~H13: Copy honesty + acronym pass~~ | ✅ done 2026-06-02 | FEC/EPA/OSHA/NLRB/SEC/BHRRC/DOL/HRC/EEOC expanded on first use. US qualifiers added to political labels. Marketing landing acronyms expanded. |
-| **A-4** | **H2: Backfill personalization signal for top 100 brands** | L | 85% of catalog has `neutral` or empty scores in every category, so quiz can't actually personalize them. Pipeline work in `/Users/aronrosenfield/Developer/hybrid-pipeline/`. Prioritize top-100 by PostHog impressions or curated list. |
+| **A-4** | **H2: Backfill personalization signal for top 100 brands** | L · $15-60 | Procedure documented at `/docs/A-4-backfill-procedure.md`. Confirmed sample (2026-06-03): 24/41 top-100 brands with files have all-neutral scores. Run requires API budget approval. Pipeline at `/Users/aronrosenfield/Developer/hybrid-pipeline/`. |
 | **A-5** | **H15: Bundle splitting (2.5MB companies + 4MB Tabler font)** | L | Lazy-load companies dataset, swap Tabler webfont for a sprite subset of the ~30 icons actually used. Risky — break dynamic imports / asset paths. |
 
 ### App / UX polish
