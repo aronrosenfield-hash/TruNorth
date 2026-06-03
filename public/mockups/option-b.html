@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Option B mock — Walmart</title>
+<style>
+  :root {
+    --bg: #0c0a18;
+    --card: #161229;
+    --card-border: #2a2348;
+    --text: #ffffff;
+    --text-mute: #9890b8;
+    --text-dim: #6b6488;
+    --accent: #8a82ff;
+    --accent-soft: rgba(138, 130, 255, 0.18);
+    --green: #34d27e;
+    --red: #ff6e6e;
+    --amber: #ffba4d;
+    --gradient-bar: linear-gradient(90deg, #ff6e6e 0%, #2a2348 50%, #34d27e 100%);
+    --gradient-purple: linear-gradient(90deg, #2a2348 0%, #8a82ff 100%);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    padding: 0 0 80px;
+  }
+  .topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  .logo-mark {
+    width: 38px; height: 38px;
+    border-radius: 9px;
+    background: #2820a8;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--text);
+  }
+  .logo-text { font-size: 22px; font-weight: 700; }
+  .logo-text .north { color: var(--accent); }
+  .upgrade {
+    margin-left: auto;
+    border: 1px solid #c39a3a;
+    color: #ffd87a;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+  .search {
+    margin: 12px 16px;
+    background: #1a1530;
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--text);
+    font-size: 17px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .search .q { opacity: 0.5; }
+  .search .x { margin-left: auto; opacity: 0.5; }
+  .container { padding: 0 16px; }
+
+  /* Header banner */
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .hero-init {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: #1e1535;
+    display: flex; align-items: center; justify-content: center;
+    color: #9b8ff0; font-weight: 800; font-size: 22px;
+  }
+  .hero-name { font-size: 22px; font-weight: 700; }
+  .hero-grade { font-size: 14px; color: var(--text-mute); margin-top: 2px; }
+  .hero-pill {
+    margin-left: auto;
+    background: #2c1a1a;
+    color: var(--red);
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  /* Category card */
+  .cat {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .cat-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .cat-icon {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    background: rgba(138,130,255,0.12);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .cat-name { font-weight: 700; font-size: 16px; flex: 1; }
+  .cat-caret { color: var(--text-mute); font-size: 18px; }
+
+  /* Slider (continuous) */
+  .slider {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--gradient-bar);
+    position: relative;
+    margin: 8px 0 6px;
+  }
+  .slider.unknown {
+    background: #2a2348;
+    opacity: 0.55;
+  }
+  .slider .dot {
+    position: absolute;
+    width: 18px; height: 18px;
+    background: #ffffff;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: -5px;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .slider .dot.left { left: 8%; }
+  .slider .dot.center { left: 50%; }
+  .slider .dot.right { left: 92%; }
+  .slider .dot.unknown {
+    background: transparent;
+    border: 2px dashed #8a82ff;
+    width: 22px; height: 22px;
+    top: -7px;
+  }
+  .slider .dot.unknown::after {
+    content: "?";
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #8a82ff;
+    font-size: 12px; font-weight: 700;
+  }
+  .slider-labels {
+    display: flex; justify-content: space-between;
+    color: var(--text-mute);
+    font-size: 13px;
+  }
+
+  /* Badge row (categorical) */
+  .badge-row {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .badge {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    color: var(--text-mute);
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: transparent;
+  }
+  .badge.active {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .badge.active.warn {
+    background: rgba(255,186,77,0.15);
+    border-color: var(--amber);
+    color: var(--amber);
+  }
+  .badge.active.bad {
+    background: rgba(255,110,110,0.15);
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .badge.active.good {
+    background: rgba(52,210,126,0.15);
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .badge .icon { font-size: 14px; }
+
+  /* Source line */
+  .source {
+    margin-top: 8px;
+    color: var(--text-dim);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .source strong { color: var(--text-mute); font-weight: 600; }
+  .source-research {
+    display: inline-block;
+    margin-top: 8px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  /* Comparison toggle */
+  .toggle-bar {
+    display: flex; gap: 6px;
+    background: #1a1530;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0 16px 16px;
+  }
+  .toggle {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: var(--text-mute);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .toggle.on {
+    background: var(--accent);
+    color: #1a1330;
+  }
+  .header-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    padding: 16px 16px 6px;
+  }
+  .legend {
+    margin: 16px;
+    padding: 14px;
+    background: #1a1530;
+    border-radius: 12px;
+    color: var(--text-mute);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .legend h3 {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 14px;
+  }
+  .legend ul { padding-left: 18px; margin: 6px 0; }
+  .legend li { margin-bottom: 4px; }
+
+  /* Bottom nav */
+  .nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--bg);
+    border-top: 1px solid var(--card-border);
+    padding: 10px 12px 24px;
+    display: flex; justify-content: space-around;
+  }
+  .nav-item { color: var(--text-mute); font-size: 11px; text-align: center; }
+  .nav-item .ico { display: block; font-size: 22px; margin-bottom: 2px; }
+  .nav-item.on { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo-mark">↑</div>
+  <div class="logo-text">Tru<span class="north">North</span></div>
+  <div class="upgrade">👑 Upgrade</div>
+</div>
+
+<div class="search"><span class="q">🔍</span><span>Walmart</span><span class="x">✕</span></div>
+
+<div class="header-note">Option B preview · Mixed UI · Walmart detail card</div>
+
+<div class="toggle-bar">
+  <div class="toggle on">NEW (Option B)</div>
+  <div class="toggle"><a href="option-b-old.html" style="color: inherit; text-decoration: none;">Today</a></div>
+</div>
+
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-init">WMT</div>
+    <div>
+      <div class="hero-name">Walmart</div>
+      <div class="hero-grade">Retail · Public · WMT</div>
+    </div>
+    <div class="hero-pill">F</div>
+  </div>
+
+  <!-- Environmental policy: SLIDER (continuous, has data) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">🌿</div>
+      <div class="cat-name">Environmental policy</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="slider"><div class="dot left"></div></div>
+    <div class="slider-labels"><span>Violations</span><span>Certified</span></div>
+    <div class="source"><strong>Source:</strong> $90.8M in federal water-pollution penalties (Violation Tracker, EPA).</div>
+  </div>
+
+  <!-- Labor practices: SLIDER (continuous, has data) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">👥</div>
+      <div class="cat-name">Labor practices</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="slider"><div class="dot left"></div></div>
+    <div class="slider-labels"><span>Violations</span><span>Clean record</span></div>
+    <div class="source"><strong>Source:</strong> 609 federal penalties totaling $5.8B since 2000 (Violation Tracker, OSHA, NLRB).</div>
+  </div>
+
+  <!-- Data privacy: SLIDER (continuous, NO DATA) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">🔒</div>
+      <div class="cat-name">Data privacy</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="slider unknown"><div class="dot unknown center"></div></div>
+    <div class="slider-labels"><span>Breaches</span><span>No breaches</span></div>
+    <div class="source"><strong>Insufficient public data.</strong> No documented breaches in HIBP, no privacy enforcement actions on record.</div>
+  </div>
+
+  <!-- Executive pay: SLIDER (continuous, has SEC data) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">💲</div>
+      <div class="cat-name">Executive pay ratio</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="slider"><div class="dot left"></div></div>
+    <div class="slider-labels"><span>&gt;300:1</span><span>&lt;50:1</span></div>
+    <div class="source"><strong>958:1</strong> · CEO Doug McMillon $29.2M / median $30,520 (SEC DEF 14A, 2026-04-23).</div>
+  </div>
+
+  <!-- Charitable giving: BADGE ROW (2-state) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">❤</div>
+      <div class="cat-name">Charitable giving</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="badge-row">
+      <div class="badge active good"><span class="icon">●</span>Active Giving</div>
+      <div class="badge">No record</div>
+      <div class="badge">Unknown</div>
+    </div>
+    <div class="source"><strong>Source:</strong> Walmart Foundation EIN 20-5639919 — $131M in grants FY2024 (IRS 990, ProPublica Nonprofit Explorer).</div>
+  </div>
+
+  <!-- Firearms: BADGE ROW (4-state) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">🎯</div>
+      <div class="cat-name">Firearms policy</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="badge-row">
+      <div class="badge active bad"><span class="icon">●</span>Sells / manufactures</div>
+      <div class="badge">Restricts</div>
+      <div class="badge">Not applicable</div>
+      <div class="badge">Unknown</div>
+    </div>
+    <div class="source"><strong>Source:</strong> 348 active federal firearms licenses across 17 states (ATF FFL April 2026).</div>
+  </div>
+
+  <!-- DEI: BADGE ROW (4-state) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">🌈</div>
+      <div class="cat-name">DEI &amp; social equity</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="badge-row">
+      <div class="badge active good"><span class="icon">●</span>Active programs</div>
+      <div class="badge">Limited</div>
+      <div class="badge">Rolled back</div>
+      <div class="badge">Unknown</div>
+    </div>
+    <div class="source"><strong>Source:</strong> HRC Corporate Equality Index 90/100 (2025) · Disability:IN 100/100 (2021) · Bloomberg Gender-Equality Index 100/100 (2023).</div>
+  </div>
+
+  <!-- Animal welfare: BADGE ROW (3-state, N/A for retail) -->
+  <div class="cat">
+    <div class="cat-head">
+      <div class="cat-icon">🐾</div>
+      <div class="cat-name">Animal welfare</div>
+      <div class="cat-caret">⌄</div>
+    </div>
+    <div class="badge-row">
+      <div class="badge">Certified</div>
+      <div class="badge">Violations</div>
+      <div class="badge active"><span class="icon">●</span>Not applicable</div>
+      <div class="badge">Unknown</div>
+    </div>
+    <div class="source"><strong>Source:</strong> Walmart does not directly manufacture animal-tested products; supplier-level animal-welfare commitments since 2015.</div>
+  </div>
+
+  <div class="legend">
+    <h3>What changed</h3>
+    <ul>
+      <li><strong>Sliders</strong> stay for continuous spectrums (Environment, Labor, Privacy, Exec pay).</li>
+      <li><strong>Badges</strong> replace sliders for categorical data (Charity, Firearms, DEI, Animal welfare).</li>
+      <li><strong>"Unknown" badges</strong> are visually muted, never selected by default — clear absence of data.</li>
+      <li><strong>Privacy bar</strong> when no data: dimmed bar + dashed "?" dot + "Insufficient public data" copy.</li>
+      <li>Scoring math <strong>unchanged</strong> — "No record" / "Unknown" already excluded from grade.</li>
+      <li>Top Picks gate <strong>unchanged</strong> — still requires 3+ filled categories.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-item"><span class="ico">★</span>Top Picks</div>
+  <div class="nav-item on"><span class="ico">🔍</span>Search</div>
+  <div class="nav-item"><span class="ico">⊞</span>Browse</div>
+  <div class="nav-item"><span class="ico">▤</span>Library</div>
+  <div class="nav-item"><span class="ico">👤</span>Account</div>
+</div>
+
+</body>
+</html>
