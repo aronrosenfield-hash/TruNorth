@@ -1,0 +1,50 @@
+name: openstates-monthly
+
+# OpenStates — state legislation tracker
+# Runs day 1 of each month at 04:00 UTC. For each brand, queries the
+# OpenStates v3 API for bills mentioning the brand in the last 12 months
+# across all 50 state legislatures.
+#
+# Free API key required — stored as the OPENSTATES_API_KEY repo secret.
+# Free tier is ~500 req/day, which is roughly one full sweep of our 528
+# brands, hence MONTHLY not weekly.
+
+on:
+  schedule:
+    - cron: "0 4 1 * *"   # day 1 of month, 04:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit openstates-bills.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENSTATES_API_KEY: ${{ secrets.OPENSTATES_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run OpenStates fetcher
+        run: node scripts/openstates-fetch.mjs
+
+      - name: Merge bill data into per-company JSON
+        run: node scripts/openstates-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/openstates-bills.json public/data/companies/
+          [ -f public/data/_meta/openstates-merge-log.json ] && git add public/data/_meta/openstates-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(openstates): monthly state-bill refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
