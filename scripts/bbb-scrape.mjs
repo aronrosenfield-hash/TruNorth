@@ -47,38 +47,100 @@ async function loadBrands() {
     .filter(b => b.slug && b.name);
 }
 
+// B-25: Three-layer rating extraction. The original .bds-body selector
+// returned text that didn't contain the letter — first live run gave
+// rating=null for all 528 brands. BBB's CSS classes are unstable across
+// their design refreshes; this falls back through 3 strategies, most
+// stable to least:
+//   1. JSON-LD structured data (schema.org/LocalBusiness aggregateRating)
+//   2. Body-text regex for "BBB Rating: A+" pattern
+//   3. The old .bds-body selector as last resort
+async function extractRatingFromPage(page) {
+  // 1. JSON-LD — most stable, doesn't depend on layout.
+  try {
+    const jsonLdRating = await page.$$eval(
+      'script[type="application/ld+json"]',
+      (nodes) => {
+        for (const n of nodes) {
+          try {
+            const data = JSON.parse(n.textContent);
+            const arr = Array.isArray(data) ? data : [data];
+            for (const obj of arr) {
+              const r = obj?.aggregateRating?.ratingValue;
+              if (r) return String(r);
+              if (obj?.['@graph']) {
+                for (const g of obj['@graph']) {
+                  const rr = g?.aggregateRating?.ratingValue;
+                  if (rr) return String(rr);
+                }
+              }
+            }
+          } catch {}
+        }
+        return null;
+      }
+    );
+    if (jsonLdRating && /^(A\+|A-|A|B\+|B-|B|C\+|C-|C|D\+|D-|D|F|NR)$/.test(jsonLdRating)) {
+      return { rating: jsonLdRating, source: "jsonld" };
+    }
+  } catch {}
+
+  // 2. Body-text regex — robust to CSS-class churn.
+  const bodyText = await page.evaluate(() => document.body?.innerText || "");
+  const ratingMatch = bodyText.match(
+    /BBB\s+Rating[:\s]+([A-DF][+\-]?|NR)(?!\w)/i
+  );
+  if (ratingMatch) {
+    return { rating: ratingMatch[1].toUpperCase(), source: "bodytext" };
+  }
+
+  // 3. Last-resort: original .bds-body selector.
+  try {
+    const rt = await page.$eval(".bds-body", (el) => el.textContent || "");
+    const m = rt.match(/\b(A\+|A-|A|B\+|B-|B|C\+|C-|C|D\+|D-|D|F|NR)\b/);
+    if (m) return { rating: m[1], source: "bds-fallback" };
+  } catch {}
+
+  return { rating: null, source: "not_found" };
+}
+
 async function scrapeOne(page, brand) {
   try {
     await page.goto(bbbSearchUrl(brand.name), {
       waitUntil: "domcontentloaded",
       timeout: 15000,
     });
-    // BBB renders results as cards. Pick the first that looks like the brand.
-    const firstResult = await page.$('a[href*="/us/"][href*="/profile/"]');
+    // BBB renders results as cards. Filter out FAQ/news pages — only
+    // real business profiles.
+    const firstResult = await page.$(
+      'a[href*="/us/"][href*="/profile/"]:not([href*="/faq"]):not([href*="/news"])'
+    );
     if (!firstResult) {
       return { slug: brand.slug, name: brand.name, status: "not_found" };
     }
     const profileUrl = await firstResult.getAttribute("href");
     if (!profileUrl) return { slug: brand.slug, name: brand.name, status: "not_found" };
 
+    // networkidle for the profile page so JSON-LD scripts + heading text
+    // are guaranteed to be in the DOM before we read.
     await page.goto(profileUrl.startsWith("http") ? profileUrl : `https://www.bbb.org${profileUrl}`, {
-      waitUntil: "domcontentloaded",
-      timeout: 15000,
+      waitUntil: "networkidle",
+      timeout: 20000,
     });
-    // Selectors are based on the current BBB page structure (June 2026).
-    // If BBB redesigns, these will break — easy to repair, just refresh.
-    const ratingText = await page.$eval(".bds-body", el => el.textContent || "").catch(() => "");
-    const ratingMatch = ratingText.match(/\b(A\+|A-|A|B\+|B-|B|C\+|C-|C|D\+|D-|D|F|NR)\b/);
-    const rating = ratingMatch ? ratingMatch[1] : null;
 
-    const complaintsMatch = ratingText.match(/(\d[\d,]*)\s+customer complaint/i);
+    const { rating, source } = await extractRatingFromPage(page);
+
+    // Complaints count uses body-text approach for the same reason as rating.
+    const bodyText = await page.evaluate(() => document.body?.innerText || "");
+    const complaintsMatch = bodyText.match(/(\d[\d,]*)\s+(?:customer\s+)?complaints?/i);
     const complaints = complaintsMatch ? Number(complaintsMatch[1].replace(/,/g, "")) : null;
 
     return {
       slug:        brand.slug,
       name:        brand.name,
       status:      "ok",
-      rating:      rating,
+      rating,
+      rating_source: source,
       rating_score: rating ? RATE_MAP[rating] : null,
       complaints,
       profile_url: page.url(),
