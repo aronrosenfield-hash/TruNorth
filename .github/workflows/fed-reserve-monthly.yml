@@ -1,0 +1,49 @@
+name: fed-reserve-monthly
+
+# Federal Reserve enforcement actions — monthly bulk-CSV refresh.
+# Downloads the canonical enforcementactions.csv published by the Board
+# of Governors, aggregates per-brand action/penalty totals, and merges
+# into per-company JSON. Coverage: bank holding companies, state member
+# banks, US branches of foreign banks, Edge Act corps, and affiliated
+# individuals — complementary to OCC (national banks) and FDIC.
+#
+# Runs the 1st of each month at 17:00 UTC. Free, official US government
+# dataset, no auth, single ~450 KB CSV.
+
+on:
+  schedule:
+    - cron: "0 17 1 * *"   # 1st of month, 17:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit fed-reserve-enforcement.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Fed Reserve fetcher
+        run: node scripts/fed-reserve-fetch.mjs
+
+      - name: Merge Fed Reserve data into per-company JSON
+        run: node scripts/fed-reserve-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/fed-reserve-enforcement.json public/data/companies/
+          [ -f public/data/_meta/fed-reserve-merge-log.json ] && git add public/data/_meta/fed-reserve-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(fed-reserve): monthly Fed Reserve enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
