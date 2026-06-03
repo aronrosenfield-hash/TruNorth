@@ -1907,23 +1907,33 @@ function categorySpectrumPos(k, v, profile) {
   // Returns a 0..1 position on the left-right axis (left = "bad-for-user",
   // right = "good-for-user"). For political: left = Democratic, right = Rep.
   // For everything else: left = documented-negative, right = verified-positive.
-  // Returns null when the value is unknown (no dot rendered).
-  if (getDataState(k, v) === "unknown") return null;
+  //
+  // 2026-06-03 (user-reported UI fix): when a category has NO real data
+  // (neutral / unknown / na / empty / "?"), return EXACTLY 0.5 so the dot
+  // is dead-center across every category. Previously scoreCat() applied
+  // a per-category profile-influenced default, so the dot landed at
+  // category-specific positions (Labor slightly left of center, Animals
+  // right of center, etc.) even though the brand had no real data. Center
+  // is the only honest position when we don't know.
+  const raw = String(v || "").toLowerCase().trim();
+  if (!raw || ["neutral","unknown","na","n/a","?"].includes(raw)) return 0.5;
+  if (getDataState(k, v) === "unknown") return 0.5;
+
   if (k === "political") {
-    const lean = String(v || "").toLowerCase();
+    const lean = raw;
     if (lean === "left")          return 0.10;
     if (lean === "left-leaning")  return 0.28;
     if (lean === "right")         return 0.90;
     if (lean === "right-leaning") return 0.72;
-    if (["bipartisan","mixed","neutral"].includes(lean)) return 0.50;
-    return null;
+    if (["bipartisan","mixed"].includes(lean)) return 0.50;
+    return 0.5;
   }
   // For other categories, map scoreCat()'s 0–100 to 0–1.
   // We pass a temporary profile context so the spectrum reflects the user's
   // alignment too (e.g. a "right" donator on a "left" user's profile lands
   // far-left on their personal spectrum — same as the political case).
   const sc = scoreCat(k, v, profile);
-  if (sc == null) return null;
+  if (sc == null) return 0.5;
   return Math.max(0, Math.min(1, sc / 100));
 }
 
@@ -4331,22 +4341,31 @@ useEffect(() => {
   // multi-second delay when entering the Top tab. Memo invalidates only
   // on profile / deduped change. topPicksLimit lets the user "Show more"
   // without re-blowing the budget on every screen visit.
-  // 2026-06-01 (user-reported): Top Picks must only show brands with at least
-  // ONE signal (not all neutral/unknown/na). Long-tail brands without any
-  // public-record data are still findable via Search, but they don't deserve
-  // a Top Picks slot until they're backfilled.
+  //
+  // 2026-06-03 (user-reported): Top Picks must only show brands with at
+  // least THREE filled categories (was ONE). The 88%-neutral catalog was
+  // sneaking thinly-scored brands into the top list, hurting the trust
+  // signal. Below-bar brands are still findable via Search. Hard cap at
+  // 100 brands so launch-day surface area is curated.
+  const TOP_PICKS_MIN_FILLED = 3;
+  const TOP_PICKS_HARD_CAP   = 100;
+  const NO_DATA = new Set(["", "neutral", "unknown", "na", "n/a", "?"]);
+  const countFilledCategories = (c) => {
+    const sc = c.sc || {};
+    let n = 0;
+    for (const k of Object.keys(sc)) {
+      const v = String(sc[k] || "").toLowerCase().trim();
+      if (!NO_DATA.has(v)) n++;
+    }
+    return n;
+  };
   const topPicksRanked = useMemo(
     () => [...deduped]
-      .filter(c => {
-        const sc = c.sc || {};
-        return Object.keys(sc).some(k => {
-          const v = String(sc[k] || "").toLowerCase().trim();
-          return v && v !== "neutral" && v !== "unknown" && v !== "na" && v !== "n/a" && v !== "?";
-        });
-      })
+      .filter(c => countFilledCategories(c) >= TOP_PICKS_MIN_FILLED)
       .map(c => ({ co: c, score: computeScore(c, profile) }))
       .sort((a, b) => b.score - a.score)
-      .map(({ co }) => co),
+      .map(({ co }) => co)
+      .slice(0, TOP_PICKS_HARD_CAP),
     [deduped, profile]
   );
   const [topPicksLimit, setTopPicksLimit] = useState(50);
