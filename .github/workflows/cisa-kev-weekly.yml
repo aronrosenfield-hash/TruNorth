@@ -1,0 +1,45 @@
+name: cisa-kev-weekly
+
+# CISA KEV — Known Exploited Vulnerabilities catalog (weekly)
+# Runs Monday 00:00 UTC. Downloads CISA's KEV JSON feed once, aggregates
+# per vendor, and merges into per-company JSON under enriched.cisaKev.
+#
+# Free, official US government open data — no auth, no rate limit.
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"   # Monday 00:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit cisa-kev.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CISA KEV fetcher
+        run: node scripts/cisa-kev-fetch.mjs
+
+      - name: Merge KEV data into per-company JSON
+        run: node scripts/cisa-kev-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/cisa-kev.json public/data/companies/
+          [ -f public/data/_meta/cisa-kev-merge-log.json ] && git add public/data/_meta/cisa-kev-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(cisa-kev): weekly KEV catalog refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
