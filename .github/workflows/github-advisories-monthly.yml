@@ -1,0 +1,44 @@
+name: github-advisories-monthly
+
+# GitHub Security Advisories — per-brand GHSA aggregates (monthly)
+# Runs the 1st of each month at 10:00 UTC. Queries the public GHSA API
+# (no auth; 60 req/hr unauthenticated limit) at 1 req/sec for the smoke
+# brand list, then merges into per-company JSON under enriched.githubAdvisories.
+
+on:
+  schedule:
+    - cron: "0 10 1 * *"   # 1st of month, 10:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit github-advisories.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run GitHub Advisories fetcher
+        run: node scripts/github-advisories-fetch.mjs
+
+      - name: Merge GHSA data into per-company JSON
+        run: node scripts/github-advisories-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/github-advisories.json public/data/companies/
+          [ -f public/data/_meta/github-advisories-merge-log.json ] && git add public/data/_meta/github-advisories-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(github-advisories): monthly GHSA refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
