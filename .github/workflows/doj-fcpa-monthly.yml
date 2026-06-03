@@ -1,0 +1,48 @@
+name: doj-fcpa-monthly
+
+# DOJ FCPA enforcement-action scraper.
+# Walks the public FCPA catalog at
+# justice.gov/criminal/criminal-fraud/foreign-corrupt-practices-act,
+# parses each linked case page for type / date / fine, then aggregates
+# per top-500 brand into doj-fcpa.json and merges into per-company JSON
+# under enriched.dojFcpa.
+#
+# Runs the 1st of every month at 15:00 UTC.
+
+on:
+  schedule:
+    - cron: "0 15 1 * *"   # 1st of month, 15:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit doj-fcpa.json + per-company changes
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run DOJ FCPA fetcher
+        run: node scripts/doj-fcpa-fetch.mjs
+
+      - name: Merge DOJ FCPA data into per-company JSON
+        run: node scripts/doj-fcpa-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/doj-fcpa.json public/data/companies/
+          [ -f public/data/_meta/doj-fcpa-merge-log.json ] && git add public/data/_meta/doj-fcpa-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(doj-fcpa): monthly FCPA enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
