@@ -1,0 +1,48 @@
+name: cftc-monthly
+
+# CFTC enforcement — monthly refresh of civil monetary penalties.
+# Walks https://www.cftc.gov/PressRoom/PressReleases at 1 req/sec,
+# counts enforcement-flavored releases that name each top-528 brand,
+# extracts civil monetary penalty $ amounts from release bodies, and
+# merges aggregates (total 5y actions / total fines $ / sample
+# actions) into per-company JSON under enriched.cftc.
+#
+# Free, no auth. We identify as "TruNorth-CFTC/1.0".
+
+on:
+  schedule:
+    - cron: "0 18 1 * *"   # 1st of month, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit cftc-enforcement.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CFTC enforcement fetcher
+        run: node scripts/cftc-fetch.mjs
+
+      - name: Merge enforcement data into per-company JSON
+        run: node scripts/cftc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/cftc-enforcement.json public/data/companies/
+          [ -f public/data/_meta/cftc-merge-log.json ] && git add public/data/_meta/cftc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(cftc): monthly CFTC enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
