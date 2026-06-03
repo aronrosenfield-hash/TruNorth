@@ -1,0 +1,53 @@
+name: fdic-weekly
+
+# FDIC Enforcement Decisions & Orders — weekly refresh.
+#
+# Resolves each top-528 brand to its FDIC-insured bank subsidiaries via the
+# BankFind API (api.fdic.gov/banks/institutions) and aggregates the last 5
+# years of enforcement actions from EDOS (orders.fdic.gov). Per parent we
+# capture total_orders_5y, total_civil_money_penalties_usd, and up to 5
+# sample actions, merged into enriched.fdic on each company file.
+#
+# Free, no auth. EDOS is a Salesforce Community SPA — the fetcher includes
+# a guest-session token flow and falls back to "edos_unreachable" status
+# (still emitting the BankFind CERT mapping) if the token flow breaks.
+#
+# 1 req/sec, UA "TruNorth-FDIC/1.0". ~528 brands -> ~9-18 minutes.
+
+on:
+  schedule:
+    - cron: "0 1 * * 2"   # Tuesday 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit fdic-enforcement.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run FDIC enforcement fetcher
+        run: node scripts/fdic-fetch.mjs
+
+      - name: Merge enforcement data into per-company JSON
+        run: node scripts/fdic-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/fdic-enforcement.json public/data/companies/
+          [ -f public/data/_meta/fdic-merge-log.json ] && git add public/data/_meta/fdic-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(fdic): weekly FDIC enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
