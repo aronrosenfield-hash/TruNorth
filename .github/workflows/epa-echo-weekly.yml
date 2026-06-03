@@ -1,0 +1,47 @@
+name: epa-echo-weekly
+
+# EPA ECHO (Enforcement and Compliance History Online)
+# Runs Sunday 22:00 UTC. For each brand in top-500-brands.txt, queries
+# the EPA ECHO REST API for facility-level enforcement actions, inspections,
+# and violations. More granular than the basic EPA Facility Registry.
+#
+# Free, official US government API. Throttled to 300 req/hour at the source,
+# so we sleep 1s/req and the script handles 429s with backoff.
+
+on:
+  schedule:
+    - cron: "0 22 * * 0"   # Sunday 22:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit epa-echo.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run EPA ECHO fetcher
+        run: node scripts/epa-echo-fetch.mjs
+
+      - name: Merge ECHO data into per-company JSON
+        run: node scripts/epa-echo-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/epa-echo.json public/data/companies/
+          [ -f public/data/_meta/epa-echo-merge-log.json ] && git add public/data/_meta/epa-echo-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(epa-echo): weekly facility enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
