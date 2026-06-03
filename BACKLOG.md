@@ -182,12 +182,24 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 | Job | File | Cadence | What it does |
 |---|---|---|---|
-| Trending refresh | `.github/workflows/trending-refresh.yml` | Daily 06:00 UTC | PostHog → `/public/data/trending.json` |
-| Sunday digest | `.github/workflows/weekly-digest.yml` | Sunday 14:00 UTC | MailerLite campaign of weekly grade changes |
-| Loadtest | `.github/workflows/loadtest.yml` | Manual dispatch | k6 stress test |
-| **News RSS (Option A)** | `.github/workflows/news-rss-nightly.yml` | Daily 04:00 UTC | 528 brands → 45k+ RSS items → 350+ high-signal → Claude AI extraction → merge into per-company `news[]` + `recent_events[]`. ~$0.50-1/run. |
-| **BBB scrape (Option B)** | `.github/workflows/bbb-scrape-weekly.yml` | Sunday 16:00 UTC | Playwright pulls BBB rating + complaint count → `/public/data/bbb-ratings.json` |
-| **CourtListener (Option C)** | `.github/workflows/courtlistener-weekly.yml` | Sunday 17:00 UTC | Free Law Project API → per-brand lawsuit counts → `/public/data/lawsuits.json` |
+| Trending refresh | `trending-refresh.yml` | Daily 06:00 UTC | PostHog → `trending.json` |
+| Sunday digest | `weekly-digest.yml` | Sunday 14:00 UTC | MailerLite weekly grade-changes campaign |
+| Loadtest | `loadtest.yml` | Manual dispatch | k6 stress test |
+| **News RSS + AI extract** | `news-rss-nightly.yml` | Daily 04:00 UTC | 528 brands → ~45k RSS → ~350 high-signal → Claude Sonnet → merge into `company.news` |
+| **CourtListener lawsuits** | `courtlistener-weekly.yml` | Sunday 17:00 UTC | Federal court records per brand |
+| **CFPB complaints** | `cfpb-weekly.yml` | Sunday 18:00 UTC | Consumer financial complaints + canonical-name resolution |
+| **NHTSA vehicle data** | `nhtsa-weekly.yml` | Sunday 19:00 UTC | Recalls + complaints across make × model × year |
+| **CPSC product recalls** | `cpsc-weekly.yml` | Sunday 20:00 UTC | SaferProducts recall API for non-vehicle products |
+| **DOJ press releases** | `doj-weekly.yml` | Sunday 21:00 UTC | Antitrust, fraud, criminal, civil-rights, environment, tax mentions (90-day window) |
+| **EPA ECHO** | `epa-echo-weekly.yml` | Sunday 22:00 UTC | Facility-level enforcement (granular than basic EPA endpoint) |
+| **SEC Litigation Releases** | `sec-litigation-weekly.yml` | Sunday 23:00 UTC | SEC enforcement actions naming defendant companies |
+| **CISA KEV catalog** | `cisa-kev-weekly.yml` | Monday 00:00 UTC | Known Exploited Vulnerabilities per vendor (tech-brand security signal) |
+| **GDELT global news** | `gdelt-weekly.yml` | Monday 02:00 UTC | International multilingual press per brand |
+| **GSA SAM exclusions** | `gsa-sam-monthly.yml` | 1st of month 00:00 UTC | Federal contractor blacklist (Target is on it ⚠️) |
+| **OSHA Severe Injury** | `osha-sir-monthly.yml` | 1st of month 01:00 UTC | Per-establishment severe injuries (amputations + hospitalizations) |
+| **CDC FoodNet outbreaks** | `cdc-foodnet-monthly.yml` | 1st of month 02:00 UTC | Multistate foodborne outbreaks per brand |
+| **HHS OIG enforcement** | `hhs-oig-monthly.yml` | 1st of month 03:00 UTC | Healthcare fraud cases + LEIE exclusions |
+| **OpenStates legislation** | `openstates-monthly.yml` | 1st of month 04:00 UTC | State-level bills mentioning each brand (requires `OPENSTATES_API_KEY`) |
 
 ### Human-action reminders (scheduled — you'll get pinged)
 
@@ -206,11 +218,18 @@ Manage in sidebar under "Scheduled".
 
 ---
 
-## ✅ RECENTLY SHIPPED (rolling, last 15)
+## ✅ RECENTLY SHIPPED (rolling, last 20)
 
 Most recent at top.
 
-1. **2026-06-02** — **Option A News pipeline LIVE end-to-end**: nightly cron pulls 528-brand Google News RSS (~45k articles) → keyword + AllSides-bias filter → Claude Sonnet AI extraction (~350 high-signal items/night, ~$0.50-1/run) → merge layer writes per-company `news[]` + `recent_events[]` (180-day TTL, 50-item cap). Score values NOT mutated automatically — separate scoring rebake consumes `recent_events[]`. Workflow: `news-rss-nightly.yml`. Files: `scripts/news-rss-collect.mjs`, `scripts/news-rss-extract.mjs`, `scripts/news-extracted-merge.mjs`.
+1. **2026-06-03** — **Massive data-source expansion (11 new sources in one day):** CFPB Complaint Database, NHTSA Vehicle Recalls + Complaints, CPSC Product Recalls, DOJ press releases (antitrust/fraud/criminal/etc.), EPA ECHO facility-level enforcement, SEC Litigation Releases, CISA KEV catalog, GSA SAM federal exclusions (Target debarred by EPA in 2006 ⚠️), OSHA Severe Injury Reports, CDC FoodNet outbreaks, HHS OIG enforcement, OpenStates legislation, GDELT global news. Built via 11 parallel agents in isolated git worktrees. Total sources: **46** (was ~20). Sources tab redesigned to show per-source cadence chips (Daily/Weekly/Monthly/Quarterly/Annual). Marketing landing updated.
+2. **2026-06-03** — **Walmart scoring fix:** computeScore + "Why hurt most" picker now exclude categories where `d.s` says "No public record found" — even when `sc.<k>` has an AI-synthesized value. Walmart's grade no longer dragged by no-record DEI. Shipped as TestFlight Build 41.
+3. **2026-06-03** — **Spectrum-dot fixes (3 iterations):** centered when no data, repositioned to true value but with honest text ("Signal inferred from corporate behavior...") when sc has value but detail says no public record.
+4. **2026-06-03** — **BBB scrape dropped → CFPB replacement.** BBB was Cloudflare-blocked from GitHub runners ("Just a moment..." on every request). CFPB Consumer Complaint Database is the official US gov API replacement — works for financial brands (Chase 168k, BofA 179k complaints).
+5. **2026-06-03** — **State AG research:** surveyed CA/NY/TX/FL/IL + federal Sentinel/EEOC/ConsumerAffairs. Only NHTSA viable as new source (built). State AGs publish "Top 10 industries" press releases only — no per-company data. Documented in B-27/B-28/B-29.
+6. **2026-06-03** — **brand-parent-map expanded from 65 → 137 entries** via second-pass agent. Covers Anheuser-Busch family, all major auto manufacturers, hotel chains, tech subsidiaries (LinkedIn/GitHub→Microsoft, Hulu/Twitch→Amazon, etc.).
+7. **2026-06-03** — **A-1, A-2, A-3 all shipped** (the 3 audit deferrals): unified openBrand helper (12 nav entry points → 1), `useModalA11y` hook applied to Paywall/Scanner/WhatsNew/Compare, full acronym + US-centric framing pass.
+8. **2026-06-02** — **Option A News pipeline LIVE end-to-end**: nightly cron pulls 528-brand Google News RSS (~45k articles) → keyword + AllSides-bias filter → Claude Sonnet AI extraction (~350 high-signal items/night, ~$0.50-1/run) → merge layer writes per-company `news[]` + `recent_events[]` (180-day TTL, 50-item cap). Score values NOT mutated automatically — separate scoring rebake consumes `recent_events[]`.
 2. **2026-06-02** — **Option B (BBB scrape) + Option C (CourtListener) workflows shipped**: weekly Playwright scrape of BBB ratings + weekly CourtListener API pull for lawsuit counts. Outputs: `/public/data/bbb-ratings.json`, `/public/data/lawsuits.json`.
 3. **2026-06-02** — **Critical security incident handled**: 3 leaked API keys (Anthropic TruNorth Pipeline + PostHog Claude Diagnostic + Anthropic Conscious Consumer) revoked + rotated. Leak source `docs/API Key and Tokens.docx` scrubbed from git history via `git-filter-repo` + force-pushed clean main. `.gitignore` tightened so all `.env*` files blocked except `*.example`. Rotation verified end-to-end via manual workflow dispatch on 3 dependent crons.
 4. **2026-06-02** — **528 hand-curated top-brand list** at `public/data/top-500-brands.txt` (14 tiers: CPG / household / restaurants / retail / apparel / tech / banking / telecom / auto / healthcare / travel / controversy / home / misc). Drives Options A/B/C scrapers.
