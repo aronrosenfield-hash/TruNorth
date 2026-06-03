@@ -2004,16 +2004,18 @@ function CategoryRow({ cat: k, enriched, profile }) {
   const state = getDataState(k, v);
   const isUnknown = state === "unknown";
   const disp = getDisplay(k, v, profile);
-  // 2026-06-03: when the detail card explicitly says "No public record",
-  // the dot must be dead center regardless of what sc.<k> contains.
-  // The scoring engine sometimes produces a categorical value (e.g.
-  // sc.dei: "pro_dei" from Claude AI synthesis) even when no hard public
-  // record exists — that creates a UI contradiction where the dot
-  // suggests we know the position but the text says we don't. Center
-  // wins: the text is the source of truth for "do we have evidence?"
-  const detailSaysNoRecord = /\bno public record\b/i.test(String(d?.s || ""));
-  const pos = detailSaysNoRecord ? 0.5 : categorySpectrumPos(k, v, profile);
+  const pos = categorySpectrumPos(k, v, profile);
   const labels = SPECTRUM_LABELS[k];
+
+  // 2026-06-03 (user-reported): if the bar moves (sc has a real value)
+  // but the detail text says "No public record found.", the UI
+  // contradicts itself — we have *some* signal but display says we
+  // don't. Detect this and rewrite the text to acknowledge the
+  // directional signal without overstating the evidence.
+  const literalNoRecord = /^\s*no public record found\.?\s*$/i.test(String(d?.s || ""));
+  const sNarrative = literalNoRecord && !isUnknown
+    ? "Signal inferred from corporate behavior and public sources — no specific filing or enforcement record in our datasets."
+    : stripCites(d.s || d.summary || "");
 
   // Phase 5.aa: vertical-stacked layout. Top row is just icon + name + chevron;
   // the spectrum bar lives on its own line below so long names like "DEI &
@@ -2041,7 +2043,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
         <div style={{ paddingTop:8, paddingLeft:28 }}>
           {!isUnknown ? (
             <>
-              <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{stripCites(d.s || d.summary || "")}</div>
+              <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{sNarrative}</div>
               {!isUnknown && disp?.label && (
                 <div style={{ marginTop:6, fontSize:11, color:T.txt3 }}>
                   Signal: <span style={{ color:T.txt2, fontWeight:600 }}>{disp.label}</span>
