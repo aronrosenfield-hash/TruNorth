@@ -183,6 +183,14 @@ ${batch.map((item, i) => `[${i + 1}] BRAND: ${item.brand_name} (${item.brand_slu
       const text = data.content.find(b => b.type === "text")?.text || "";
       throw new Error(`No tool_use in response. stop_reason=${data.stop_reason} stop_details=${JSON.stringify(data.stop_details || {})} first_text=${text.slice(0, 200)}`);
     }
+
+    // 2026-06-03: defensive check on tool_use.input shape. Sonnet 4.6 has
+    // returned tool_use blocks where `input.items` is missing — causing
+    // the caller's `.find` on the return value to crash with a generic
+    // TypeError. Surface the actual input shape so we can diagnose.
+    if (!Array.isArray(toolUse.input?.items)) {
+      throw new Error(`tool_use.input.items missing or wrong shape. input_keys=${Object.keys(toolUse.input || {}).join(",")} input_sample=${JSON.stringify(toolUse.input).slice(0, 400)}`);
+    }
     return toolUse.input.items;
   } catch (err) {
     if (attempt < MAX_RETRIES) {
