@@ -1,0 +1,52 @@
+name: gdelt-weekly
+
+# GDELT Project — global multilingual news collector.
+# Complements news-rss-nightly (US Google News RSS) by covering
+# international press in 100+ languages. Surfaces brand mentions abroad
+# that domestic outlets underweight — useful for human rights, labor,
+# and environmental signals in supplier countries.
+#
+# Runs Monday 02:00 UTC. Hits api.gdeltproject.org (free, no auth) at
+# ~1 req/sec with exponential backoff on rate-limit rejection. The full
+# 528-brand sweep makes ~1,100 requests (artlist + tonechart per brand).
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"     # Monday 02:00 UTC
+  workflow_dispatch:         # allow manual runs
+
+permissions:
+  contents: write   # required to commit the digest back to main
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch GDELT brand digests
+        run: node scripts/gdelt-fetch.mjs
+
+      - name: Merge GDELT signals into per-company JSON
+        run: node scripts/gdelt-merge.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          for f in "public/data/gdelt.json" "public/data/_meta/gdelt-merge-log.json"; do
+            [ -f "$f" ] && git add -- "$f" || echo "skip: $f not present"
+          done
+          git add public/data/companies/ || true
+          git diff --quiet --staged && echo "No changes" && exit 0
+          DATE=$(date -u +%Y-%m-%d)
+          git commit -m "data(gdelt): weekly global news digest + per-company merge $DATE [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
