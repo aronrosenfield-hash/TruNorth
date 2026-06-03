@@ -64,12 +64,41 @@ function topN(items, n = 5) {
     .map(([label, count]) => ({ label, count }));
 }
 
+// Resolve our brand display name to CFPB's canonical company name via
+// the suggest endpoint. Returns up to 3 candidate canonical names.
+// (CFPB stores companies as "JPMORGAN CHASE & CO.", "BANK OF AMERICA,
+// NATIONAL ASSOCIATION" etc. — the `company` query param requires
+// exact match.)
+async function resolveCfpbName(brandName) {
+  const url = `${CFPB_BASE}/_suggest_company/?text=${encodeURIComponent(brandName)}&size=3`;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": "TruNorth-CFPB/1.0 (+https://www.trunorthapp.com)",
+        "Accept": "application/json",
+      },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    // Response is a bare array of strings: ["JPMORGAN CHASE & CO.", ...]
+    return Array.isArray(data) ? data.filter(Boolean) : [];
+  } catch {
+    return [];
+  }
+}
+
 async function fetchBrandComplaints(brand) {
-  // CFPB does fuzzy company-name matching on the `company` query param,
-  // so "Bank of America" matches "BANK OF AMERICA, NATIONAL ASSOCIATION".
-  // size=100 returns the most recent 100 complaints (plenty for aggregates).
-  const q = encodeURIComponent(brand.name);
-  const url = `${CFPB_BASE}/?company=${q}&size=100&sort=created_date_desc`;
+  // Two-step query because CFPB's `company` param requires exact match:
+  //   1. Resolve "Chase" → "JPMORGAN CHASE & CO." via suggest endpoint
+  //   2. Sum complaints across all matched canonical names
+  const canonical = await resolveCfpbName(brand.name);
+  if (canonical.length === 0) {
+    return { slug: brand.slug, name: brand.name, status: "not_found_in_cfpb" };
+  }
+
+  // Build `company=A&company=B&...` (CFPB OR's repeated params)
+  const companyParams = canonical.map(n => `company=${encodeURIComponent(n)}`).join("&");
+  const url = `${CFPB_BASE}/?${companyParams}&size=100&sort=created_date_desc`;
 
   try {
     const res = await fetch(url, {
@@ -86,7 +115,7 @@ async function fetchBrandComplaints(brand) {
     const hits = data?.hits?.hits ?? [];
 
     if (total === 0) {
-      return { slug: brand.slug, name: brand.name, status: "no_complaints", total_complaints: 0 };
+      return { slug: brand.slug, name: brand.name, status: "no_complaints", total_complaints: 0, canonical };
     }
 
     const complaints = hits.map(h => h._source);
@@ -103,6 +132,7 @@ async function fetchBrandComplaints(brand) {
       slug:                   brand.slug,
       name:                   brand.name,
       status:                 "ok",
+      cfpb_canonical_names:   canonical,
       total_complaints:       total,
       recent_12mo_count:      recent12mo.length,
       // 100 is the sample we pulled; if we wanted exact 12mo across all-time
