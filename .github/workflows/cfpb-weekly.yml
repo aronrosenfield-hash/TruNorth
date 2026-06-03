@@ -1,0 +1,46 @@
+name: cfpb-weekly
+
+# Option D — CFPB Consumer Complaint Database
+# Runs Sunday 18:00 UTC. For each brand, queries the official CFPB API
+# for consumer financial complaints (banks, credit cards, debt collection,
+# mortgages, student loans). Replaces the broken BBB scrape (Cloudflare).
+#
+# Free, official government API — no auth, no rate-limit issues.
+
+on:
+  schedule:
+    - cron: "0 18 * * 0"   # Sunday 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit cfpb-complaints.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CFPB fetcher
+        run: node scripts/cfpb-fetch.mjs
+
+      - name: Merge complaint data into per-company JSON
+        run: node scripts/cfpb-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/cfpb-complaints.json public/data/companies/
+          [ -f public/data/_meta/cfpb-merge-log.json ] && git add public/data/_meta/cfpb-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(cfpb): weekly CFPB complaint refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
