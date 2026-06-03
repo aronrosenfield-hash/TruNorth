@@ -29,15 +29,56 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+// existsSync is already imported above but resolveSlug uses it inside
+// a non-async helper, so it's fine to keep this single import.
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const NEWS_DIR  = path.join(ROOT, "public/data/news");
 const COMP_DIR  = path.join(ROOT, "public/data/companies");
+const META_DIR  = path.join(ROOT, "public/data/_meta");
 const LOG_FILE  = path.join(NEWS_DIR, "merge-log.json");
 
 const MAX_NEWS_PER_COMPANY    = 50;   // cap visible news list
 const MAX_EVENTS_PER_COMPANY  = 30;   // cap structured events for scoring
 const NEWS_TTL_DAYS           = 180;  // drop news older than this
+
+// B-22: slug-alias and sub-brand→parent mappings let the merger route
+// news for orphan slugs (top-500 brands without their own company file)
+// into the correct destination. Sources, in priority order:
+//   1. slug-aliases.json — same brand, different slugification
+//      (Lay's: "lays" → "lay-s") — high confidence, file IS that brand
+//   2. brand-parent-map.json — sub-brand → parent corporate slug
+//      (Sprite → Coca-Cola, Bud Light → AB InBev) — news lands on
+//      the parent's file
+async function loadMaps() {
+  const tryLoad = async (f) => {
+    try { return JSON.parse(await fs.readFile(path.join(META_DIR, f), "utf-8")); }
+    catch { return {}; }
+  };
+  return {
+    aliases: await tryLoad("slug-aliases.json"),
+    parents: await tryLoad("brand-parent-map.json"),
+  };
+}
+
+// Resolve an item's brand_slug to the actual /companies/<slug>.json that
+// exists. Returns { slug, routed_via } where routed_via is "direct",
+// "alias", "parent", or "orphan".
+function resolveSlug(slug, maps) {
+  const direct = path.join(COMP_DIR, `${slug}.json`);
+  if (existsSync(direct)) return { slug, routed_via: "direct" };
+
+  const alias = maps.aliases[slug];
+  if (alias && existsSync(path.join(COMP_DIR, `${alias}.json`))) {
+    return { slug: alias, routed_via: "alias" };
+  }
+  const parent = maps.parents[slug]?.parent;
+  if (parent && existsSync(path.join(COMP_DIR, `${parent}.json`))) {
+    return { slug: parent, routed_via: "parent" };
+  }
+  return { slug: null, routed_via: "orphan" };
+}
 
 async function loadExtracted(dateStr) {
   const file = path.join(NEWS_DIR, `${dateStr}.extracted.json`);
@@ -134,6 +175,8 @@ async function main() {
   const now = new Date().toISOString();
 
   console.log(`🔀 News merge starting for ${today}…`);
+  const maps = await loadMaps();
+  console.log(`🗺️  Loaded ${Object.keys(maps.aliases).length} slug aliases + ${Object.keys(maps.parents).length} parent mappings`);
   const extracted = await loadExtracted(today);
   const items = extracted.items || [];
   console.log(`📋 ${items.length} extracted items to merge`);
@@ -143,15 +186,21 @@ async function main() {
     return;
   }
 
-  // Group items by brand_slug
+  // Resolve each item's brand_slug through alias + parent maps BEFORE
+  // grouping, so news about Sprite lands on Coca-Cola and Lay's lands
+  // on lay-s.
+  const routing = { direct: 0, alias: 0, parent: 0, orphan: 0 };
   const byBrand = {};
   for (const it of items) {
-    const slug = it.brand_slug;
-    if (!slug) continue;
-    (byBrand[slug] = byBrand[slug] || []).push(it);
+    if (!it.brand_slug) continue;
+    const { slug: resolvedSlug, routed_via } = resolveSlug(it.brand_slug, maps);
+    routing[routed_via]++;
+    if (!resolvedSlug) continue;  // orphan — log only, don't merge
+    (byBrand[resolvedSlug] = byBrand[resolvedSlug] || []).push(it);
   }
   const brandCount = Object.keys(byBrand).length;
-  console.log(`🏷️  Items span ${brandCount} unique brands`);
+  console.log(`🔀 Routing: ${routing.direct} direct · ${routing.alias} alias · ${routing.parent} parent · ${routing.orphan} orphan`);
+  console.log(`🏷️  Items now span ${brandCount} unique destination brands`);
 
   // Merge each brand serially (file IO, no need to parallelize)
   const results = [];
