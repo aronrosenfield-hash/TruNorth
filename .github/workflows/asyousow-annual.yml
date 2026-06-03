@@ -1,0 +1,59 @@
+name: asyousow-annual
+
+# As You Sow — semi-annual mirror of the public ESG scorecards
+# (pesticides-in-food, plastic packaging, gun safety, racial justice,
+# climate / road to zero emissions). Runs Jan 1 + Jul 1 at 12:00 UTC.
+#
+# Step 1 (asyousow-fetch.mjs):
+#   - Pings each public As You Sow report URL (1 req/sec)
+#   - Indexes the curated As You Sow scorecard mirror (re-verified semi-
+#     annually against the linked reports)
+#   - Matches against top-500 brands, picks best + worst scores per brand
+#   - Writes public/data/asyousow.json
+#
+# Step 2 (asyousow-merge.mjs):
+#   - Merges enriched.asYouSow {lists, bestScores, worstScores, ...}
+#     into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 ESG-rankings batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 12 1 1 *"   # Jan 1, 12:00 UTC
+    - cron: "0 12 1 7 *"   # Jul 1, 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit asyousow.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run As You Sow fetcher
+        run: node scripts/asyousow-fetch.mjs
+
+      - name: Merge As You Sow data into per-company JSON
+        run: node scripts/asyousow-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/asyousow.json public/data/companies/
+          [ -f public/data/_meta/asyousow-merge-log.json ] && git add public/data/_meta/asyousow-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(asyousow): semi-annual As You Sow ESG scorecard refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
