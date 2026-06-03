@@ -37,11 +37,42 @@ const OUT_FILE    = path.join(ROOT, "public/data/lawsuits.json");
 
 const CL_BASE = "https://www.courtlistener.com/api/rest/v4";
 
-// Case-type heuristics — CL uses 4-letter codes (eg "cv" = civil). For
-// TruNorth scoring, we care about the SUBSTANTIVE category.
+// B-26: Commercial-litigation `suitNature` codes. The API field is
+// `suitNature` (not `nature_of_suit` as I first assumed), stored as
+// "CODE TEXT" like "410 Antitrust" or "840 Trademark". Filtering by
+// these codes cuts party-name false positives by ~99% — e.g. Dawn
+// dish-soap goes from 183,001 hits (every person named Dawn) to a
+// realistic count of commercial cases.
+//
+// Codes chosen for ESG signal value to consumers:
+const COMMERCIAL_NOS_CODES = [
+  // Contract / commercial disputes
+  "110", "120", "190", "195", "196",
+  // Product safety + liability
+  "380", "385",
+  // Antitrust
+  "410",
+  // Civil rights / employment
+  "440", "441", "442", "443", "445", "446",
+  // Consumer
+  "480",
+  // Forfeiture / regulatory
+  "690",
+  // Labor (FLSA, ERISA, NLRA)
+  "710", "720", "740", "790", "791",
+  // IP
+  "820", "830", "840",
+  // Securities
+  "850",
+  // Statutory / environmental / energy
+  "890", "892", "893", "895",
+];
+
+// Case-type heuristics — used to categorize cases for TruNorth scoring
+// after we've fetched them.
 const TYPE_HINTS = {
   antitrust:   ["antitrust", "monopol", "sherman act"],
-  labor:       ["labor", "wage", "overtime", "wrongful termination", "discrimination", "harassment"],
+  labor:       ["labor", "wage", "overtime", "wrongful termination", "discrimination", "harassment", "erisa"],
   consumer:    ["consumer protection", "deceptive", "false advertising", "class action"],
   privacy:     ["privacy", "data breach", "ccpa", "gdpr", "wiretap"],
   ip:          ["patent", "trademark", "copyright"],
@@ -71,10 +102,16 @@ async function loadBrands() {
 }
 
 async function fetchBrandLawsuits(brand) {
-  // CourtListener Search API — Boolean party search
-  // /api/rest/v4/search/?type=r&q=party:"BRAND NAME"
-  // "type=r" = RECAP federal court records
-  const q = encodeURIComponent(`party:"${brand.name}"`);
+  // CourtListener Search API with commercial-litigation scope.
+  // /api/rest/v4/search/?type=r&q=party:"BRAND" AND suitNature:(CODES…)
+  //
+  // B-26 fix: without the suitNature filter, "Dawn" matched every person
+  // named Dawn (183k hits). With it, only commercial cases relevant to
+  // ESG scoring are returned (~10-500 per major brand, very few for
+  // brands that don't legally exist as a corporate entity).
+  const nosScope = COMMERCIAL_NOS_CODES.join(" ");
+  const queryStr = `party:"${brand.name}" AND suitNature:(${nosScope})`;
+  const q = encodeURIComponent(queryStr);
   const url = `${CL_BASE}/search/?type=r&q=${q}&order_by=dateFiled%20desc&page_size=20`;
 
   try {
@@ -88,13 +125,21 @@ async function fetchBrandLawsuits(brand) {
       return { slug: brand.slug, name: brand.name, status: "error", code: res.status };
     }
     const data = await res.json();
-    const cases = (data.results || []).map(c => ({
-      title:     c.caseName || c.case_name,
-      court:     c.court || c.court_name,
-      filed:     c.dateFiled || c.date_filed,
-      docket:    c.docket_number,
-      types:     categorize(c.caseName || c.case_name || ""),
-    }));
+    const cases = (data.results || []).map(c => {
+      const caseName = c.caseName || c.case_name || "";
+      // suitNature comes back as "410 Antitrust" — split into code + label
+      const sn = c.suitNature || "";
+      const snMatch = sn.match(/^(\d+)\s+(.+)$/);
+      return {
+        title:     caseName,
+        court:     c.court || c.court_name,
+        filed:     c.dateFiled || c.date_filed,
+        docket:    c.docketNumber || c.docket_number,
+        suit_nature_code:  snMatch ? snMatch[1] : null,
+        suit_nature_label: snMatch ? snMatch[2] : sn,
+        types:     categorize(caseName + " " + sn),
+      };
+    });
     const types_breakdown = {};
     for (const c of cases) for (const t of c.types) types_breakdown[t] = (types_breakdown[t] || 0) + 1;
 
@@ -106,6 +151,7 @@ async function fetchBrandLawsuits(brand) {
       total_hits:     data.count || cases.length,
       recent_cases:   cases.slice(0, 5),
       types_breakdown,
+      query_scope:    "commercial_nos_only",
       scraped_at:     new Date().toISOString(),
     };
   } catch (err) {
