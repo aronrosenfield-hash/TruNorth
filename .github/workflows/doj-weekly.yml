@@ -1,0 +1,46 @@
+name: doj-weekly
+
+# DOJ press release scraper
+# Runs Sunday 21:00 UTC. Scrapes the last 90 days of DOJ press releases via
+# the public JSON API at /api/v1/press_releases.json (no auth, no
+# Cloudflare). For each brand, full-text searches the title+body+teaser
+# and records the count, category breakdown (antitrust / fraud / criminal),
+# and the 5 most recent releases.
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"   # Sunday 21:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit doj-mentions.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run DOJ fetcher
+        run: node scripts/doj-fetch.mjs
+
+      - name: Merge DOJ data into per-company JSON
+        run: node scripts/doj-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/doj-mentions.json public/data/companies/
+          [ -f public/data/_meta/doj-merge-log.json ] && git add public/data/_meta/doj-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(doj): weekly DOJ press-release refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
