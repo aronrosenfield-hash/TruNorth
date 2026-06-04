@@ -1,0 +1,61 @@
+name: uk-gpg-annual
+
+# UK Gender Pay Gap Service — annual mirror of the public registry of
+# UK employers with 250+ staff. Runs April 1 at 19:00 UTC, comfortably
+# after the 4 April private-sector publication deadline (snapshots are
+# from the previous April; the prior reporting year is fully published
+# by the time we fetch).
+#
+# Step 1 (uk-gpg-fetch.mjs):
+#   - Downloads the bulk CSV from gender-pay-gap.service.gov.uk
+#     for the most recently completed reporting year (falls back two
+#     years if the current year isn't yet live)
+#   - Matches brands by normalised employer name (+ light slug variants)
+#   - Surfaces uk_gpg_mean_pct, uk_gpg_median_pct, uk_gpg_bonus_pct_male,
+#     uk_gpg_bonus_pct_female plus quartile distribution + year + URL
+#   - Writes public/data/uk-gpg.json
+#
+# Step 2 (uk-gpg-merge.mjs):
+#   - Merges enriched.ukGpg into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 labor / DEI data. Free, public, no auth. Total runtime ~10 min
+# (one CSV download + per-brand in-memory lookup), timeout 30 min.
+
+on:
+  schedule:
+    - cron: "0 19 1 4 *"   # April 1, 19:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit uk-gpg.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run UK GPG fetcher
+        run: node scripts/uk-gpg-fetch.mjs
+
+      - name: Merge UK GPG data into per-company JSON
+        run: node scripts/uk-gpg-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/uk-gpg.json public/data/companies/
+          [ -f public/data/_meta/uk-gpg-merge-log.json ] && git add public/data/_meta/uk-gpg-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(uk-gpg): annual UK Gender Pay Gap refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
