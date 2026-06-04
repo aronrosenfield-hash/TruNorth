@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TruNorth LinkedIn banner — 1128×191</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; padding: 40px; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+  .label { color: #fff; font-size: 13px; margin-bottom: 12px; opacity: 0.6; }
+
+  /* LinkedIn Company Page banner: 1128×191 (4:1 to 6:1 safe area) */
+  .banner {
+    width: 1128px;
+    height: 191px;
+    background: linear-gradient(135deg, #1a1330 0%, #2820a8 50%, #7c6dfa 100%);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 56px;
+    color: #fff;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  /* Decorative grade pills on the right side */
+  .pills {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(8px);
+  }
+  .pill .name { font-size: 14px; font-weight: 600; letter-spacing: -0.2px; }
+  .pill .grade {
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 18px;
+  }
+  .grade-a { background: rgba(74, 222, 128, 0.22); color: #4ade80; }
+  .grade-c { background: rgba(253, 230, 138, 0.22); color: #fde68a; }
+  .grade-d { background: rgba(252, 165, 165, 0.22); color: #fca5a5; }
+
+  /* Left side: logo + wordmark + tagline */
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    z-index: 2;
+  }
+  .logo-mark {
+    width: 60px; height: 60px;
+    background: #fff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+  .arrow {
+    width: 32px; height: 32px;
+  }
+  .arrow polygon { fill: #2820a8; }
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .wordmark {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 1;
+  }
+  .wordmark .tru { color: #ffffff; }
+  .wordmark .north { color: #c4baff; }
+  .tagline {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.1px;
+    font-weight: 500;
+  }
+  .stat-strip {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .stat-strip strong { color: #fff; }
+
+  /* Subtle background pattern */
+  .banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 40%),
+      radial-gradient(circle at 20% 80%, rgba(170, 59, 255, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .instructions {
+    color: #fff;
+    margin-top: 30px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    max-width: 1128px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .instructions h3 { font-size: 14px; margin-bottom: 8px; }
+  .instructions kbd {
+    background: #555; color: #fff; padding: 2px 6px; border-radius: 4px;
+    font-family: monospace; font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="label">📐 Live banner at exact 1128×191 pixels. Use <kbd>Cmd+Shift+4</kbd> to screenshot just the banner.</div>
+
+<div class="banner">
+  <div class="left">
+    <div class="logo-mark">
+      <svg class="arrow" viewBox="0 0 48 48" aria-hidden="true">
+        <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30"/>
+      </svg>
+    </div>
+    <div class="text-block">
+      <div class="wordmark">
+        <span class="tru">Tru</span><span class="north">North</span>
+      </div>
+      <div class="tagline">Know where your money goes</div>
+      <div class="stat-strip"><strong>100</strong> public-records sources · <strong>11,000+</strong> brands · grades you can trace</div>
+    </div>
+  </div>
+
+  <div class="pills">
+    <div class="pill">
+      <span class="name">Patagonia</span>
+      <span class="grade grade-a">A</span>
+    </div>
+    <div class="pill">
+      <span class="name">Amazon</span>
+      <span class="grade grade-c">C</span>
+    </div>
+    <div class="pill">
+      <span class="name">ExxonMobil</span>
+      <span class="grade grade-d">D</span>
+    </div>
+  </div>
+</div>
+
+<div class="instructions">
+  <h3>How to grab this as a PNG for LinkedIn</h3>
+  <ol style="padding-left: 20px; margin: 0;">
+    <li>Press <kbd>Cmd+Shift+4</kbd> (screenshot region tool)</li>
+    <li>Press <kbd>Space</kbd> then click anywhere on the banner — it'll grab the whole element pixel-perfect</li>
+    <li>Image saves to your Desktop as <code>Screen Shot YYYY-MM-DD at HH.MM.SS.png</code></li>
+    <li>LinkedIn → your Company Page → Edit Page → upload as Cover image</li>
+  </ol>
+</div>
+
+</body>
+</html>
