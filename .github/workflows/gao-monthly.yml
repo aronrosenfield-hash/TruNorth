@@ -1,0 +1,46 @@
+name: gao-monthly
+
+# GAO Reports & Testimonies — monthly refresh
+# Runs the 2nd of each month at 00:00 UTC. For each brand, queries the
+# public GAO search API for reports, testimonies, and bid-protest decisions
+# mentioning the brand in the last 5 years. Most consumer brands are
+# silently skipped by the merger; the relevant universe is federal
+# contractors (defense primes, IT services, healthcare contractors).
+
+on:
+  schedule:
+    - cron: "0 0 2 * *"   # 2nd of month, 00:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit gao-reports.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run GAO fetcher
+        run: node scripts/gao-fetch.mjs
+
+      - name: Merge GAO data into per-company JSON
+        run: node scripts/gao-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/gao-reports.json public/data/companies/
+          [ -f public/data/_meta/gao-merge-log.json ] && git add public/data/_meta/gao-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(gao): monthly reports & testimonies refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
