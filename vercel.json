@@ -1,5 +1,14 @@
 {
   "rewrites": [
+    { "source": "/static/:path*",
+      "has": [{ "type": "host", "value": "ph.trunorthapp.com" }],
+      "destination": "https://us-assets.i.posthog.com/static/:path*" },
+    { "source": "/array/:path*",
+      "has": [{ "type": "host", "value": "ph.trunorthapp.com" }],
+      "destination": "https://us-assets.i.posthog.com/array/:path*" },
+    { "source": "/:path*",
+      "has": [{ "type": "host", "value": "ph.trunorthapp.com" }],
+      "destination": "https://us.i.posthog.com/:path*" },
     { "source": "/company/:slug", "destination": "/api/company-seo?slug=:slug" },
     { "source": "/c/:slug",       "destination": "/api/company-seo?slug=:slug" },
     { "source": "/privacy",       "destination": "/index.html" }
