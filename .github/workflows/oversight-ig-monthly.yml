@@ -1,0 +1,60 @@
+name: oversight-ig-monthly
+
+# Oversight.gov Inspector General reports — monthly refresh.
+#
+# Scrapes the CIGIE Oversight.gov federal-reports listing for each brand
+# in top-500-brands.txt, aggregates IG reports issued in the last 5 years
+# (count, top agencies reporting, top report types, 5 most-recent samples)
+# and merges into per-company JSON. Coverage spans 70+ federal Inspectors
+# General — DOD IG, HHS OIG, DOJ OIG, VA OIG, GSA OIG, DOL OIG, USPS OIG,
+# SBA OIG, etc. — making it a uniquely cross-agency source of independent
+# audit, inspection, and investigation findings.
+#
+# Source has no auth, no documented API; we scrape the public HTML view
+# at https://www.oversight.gov/reports/federal with the
+# `search_api_fulltext`, `field_report_date_issued[min/max]`, and
+# `items_per_page` query params (50 results per page, max 20 pages
+# per brand). Throttled to 1 req/sec with UA "TruNorth-OversightIG/1.0".
+#
+# Runs the 2nd of each month at 01:00 UTC (a day after most other
+# monthly pipelines so we don't contend on the same hour). 30-minute
+# timeout is comfortably above the ~10-15 min expected runtime for
+# 500 brands at 1 req/sec.
+
+on:
+  schedule:
+    - cron: "0 1 2 * *"   # 2nd of month, 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit oversight-ig-reports.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Oversight.gov IG fetcher
+        run: node scripts/oversight-ig-fetch.mjs
+
+      - name: Merge Oversight.gov IG data into per-company JSON
+        run: node scripts/oversight-ig-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/oversight-ig-reports.json public/data/companies/
+          [ -f public/data/_meta/oversight-ig-merge-log.json ] && git add public/data/_meta/oversight-ig-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(oversight-ig): monthly Oversight.gov IG report refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
