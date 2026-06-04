@@ -1,0 +1,61 @@
+name: just-capital-annual
+
+# JUST Capital — annual mirror of the "America's Most JUST Companies"
+# ranking (JUST 100 + broader Russell 1000 leaderboard) covering
+# stakeholder-centric performance across workers, customers, communities,
+# environment, shareholders, and governance. Runs Sep 1 at 18:00 UTC
+# (the JUST 100 list is typically refreshed in late summer / early fall
+# ahead of the new ranking cycle).
+#
+# Step 1 (just-capital-fetch.mjs):
+#   - Pings the JUST Capital rankings + companies pages (1 req/sec)
+#   - Indexes the curated JUST Capital mirror (re-verified annually
+#     against the published JUST 100 list + Russell 1000 leaderboard)
+#   - Checks the top brands against the ranking
+#   - Writes public/data/just-capital.json
+#
+# Step 2 (just-capital-merge.mjs):
+#   - Merges enriched.justCapital {rank, score, industryRank, year,
+#     sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 governance batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 9 *"   # Sep 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit just-capital.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run JUST Capital ranking fetcher
+        run: node scripts/just-capital-fetch.mjs
+
+      - name: Merge JUST Capital data into per-company JSON
+        run: node scripts/just-capital-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/just-capital.json public/data/companies/
+          [ -f public/data/_meta/just-capital-merge-log.json ] && git add public/data/_meta/just-capital-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(just-capital): annual JUST 100 ranking refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
