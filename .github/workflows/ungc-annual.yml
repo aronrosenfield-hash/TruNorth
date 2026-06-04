@@ -1,0 +1,59 @@
+name: ungc-annual
+
+# UN Global Compact — annual mirror of the participant directory + per-
+# brand joined-year and COP (Communication on Progress) status. Runs
+# Aug 1 at 18:00 UTC, after UNGC's mid-year expulsion/delisting cycle.
+#
+# Step 1 (ungc-fetch.mjs):
+#   - Pings the UNGC public participant directory + interactive dashboard
+#     (1 req/sec)
+#   - Indexes the curated UNGC mirror (re-verified annually against the
+#     directory + press releases + annual progress reports)
+#   - Checks 528 top brands against the index
+#   - Writes public/data/ungc.json
+#
+# Step 2 (ungc-merge.mjs):
+#   - Merges enriched.ungc {isUngcParticipant, ungcJoinedYear,
+#     ungcCopStatus, sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 certifications batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 8 *"   # Aug 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit ungc.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run UN Global Compact fetcher
+        run: node scripts/ungc-fetch.mjs
+
+      - name: Merge UNGC data into per-company JSON
+        run: node scripts/ungc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/ungc.json public/data/companies/
+          [ -f public/data/_meta/ungc-merge-log.json ] && git add public/data/_meta/ungc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ungc): annual UN Global Compact participant refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
