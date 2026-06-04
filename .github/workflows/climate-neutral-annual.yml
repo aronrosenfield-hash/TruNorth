@@ -1,0 +1,58 @@
+name: climate-neutral-annual
+
+# Climate Neutral Certified — annual mirror of the certified-brand directory
+# + per-brand since-year, annual offset tons, and source URL. Runs Jun 1 at
+# 18:00 UTC.
+#
+# Step 1 (climate-neutral-fetch.mjs):
+#   - Pings the Climate Neutral public directory + label page (1 req/sec)
+#   - Indexes the curated Climate Neutral mirror (re-verified annually
+#     against the directory + annual impact reports)
+#   - Checks top brands against the index
+#   - Writes public/data/climate-neutral.json
+#
+# Step 2 (climate-neutral-merge.mjs):
+#   - Merges enriched.climateNeutral {isClimateNeutralCertified, sinceYear,
+#     offsetTonsYear, sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 certifications batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 6 *"   # Jun 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit climate-neutral.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Climate Neutral fetcher
+        run: node scripts/climate-neutral-fetch.mjs
+
+      - name: Merge Climate Neutral data into per-company JSON
+        run: node scripts/climate-neutral-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/climate-neutral.json public/data/companies/
+          [ -f public/data/_meta/climate-neutral-merge-log.json ] && git add public/data/_meta/climate-neutral-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(climate-neutral): annual Climate Neutral Certified refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
