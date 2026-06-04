@@ -10,11 +10,13 @@
 
 | Status | Count |
 |---|---|
-| ✅ Live in pipeline | 46 |
+| ✅ Live in pipeline | **100** 🎯 |
 | 🟡 In flight (agent building) | 0 |
-| 📋 Planned (queued) | 54 |
+| 📋 Planned (queued) | 0 |
 | 💰 Paid alternatives (not used) | see bottom |
-| **Total target** | **100+** |
+| **Total target** | **100+ (HIT)** |
+
+> **2026-06-03 milestone:** Hit the 100-source mark. All Tier 1-7 integrations shipped in this session (46 baseline + 54 new = 100). Tier 8 (California Prop 65 + CARB) was deferred per product decision. The full per-tier rundown is preserved below for historical reference.
 
 ---
 
