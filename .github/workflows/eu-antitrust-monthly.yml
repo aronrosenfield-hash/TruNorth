@@ -1,0 +1,47 @@
+name: eu-antitrust-monthly
+
+# EU Commission DG Competition antitrust decisions — monthly refresh.
+# Pulls recent DG COMP press notices, attributes them to the ~528 brands
+# in top-500-brands.txt (parent + subsidiary names), and merges per-brand
+# totals (lifetime actions + EUR fines) into per-company JSON.
+#
+# Runs the 2nd of each month at 04:00 UTC. Free, official EU source,
+# no auth. Throttled to 1 req/sec via the fetcher's REQUEST_DELAY_MS.
+
+on:
+  schedule:
+    - cron: "0 4 2 * *"   # 2nd of month, 04:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit eu-antitrust.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run EU antitrust fetcher
+        run: node scripts/eu-antitrust-fetch.mjs
+
+      - name: Merge EU antitrust data into per-company JSON
+        run: node scripts/eu-antitrust-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/eu-antitrust.json public/data/companies/
+          [ -f public/data/_meta/eu-antitrust-merge-log.json ] && git add public/data/_meta/eu-antitrust-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(eu-antitrust): monthly EU DG Comp antitrust refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
