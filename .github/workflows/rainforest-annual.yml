@@ -1,0 +1,59 @@
+name: rainforest-annual
+
+# Rainforest Alliance — annual mirror of the certified-brand directory +
+# per-brand categories, since-year, and source URL. Runs Feb 1 at 18:00 UTC.
+#
+# Step 1 (rainforest-fetch.mjs):
+#   - Pings the Rainforest Alliance portal + "Find Certified" directory
+#     (1 req/sec)
+#   - Indexes the curated RA mirror (re-verified annually against the
+#     directory + press releases + annual certification data reports)
+#   - Checks 528 top brands against the index
+#   - Writes public/data/rainforest.json
+#
+# Step 2 (rainforest-merge.mjs):
+#   - Merges enriched.rainforestAlliance {isRainforestAllianceCertified,
+#     raCategories, sinceYear, sourceUrl, ...} into each matching company
+#     file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 certifications batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 2 *"   # Feb 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit rainforest.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Rainforest Alliance fetcher
+        run: node scripts/rainforest-fetch.mjs
+
+      - name: Merge Rainforest Alliance data into per-company JSON
+        run: node scripts/rainforest-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/rainforest.json public/data/companies/
+          [ -f public/data/_meta/rainforest-merge-log.json ] && git add public/data/_meta/rainforest-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(rainforest): annual Rainforest Alliance certification refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
