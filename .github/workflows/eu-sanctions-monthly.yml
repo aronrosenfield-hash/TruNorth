@@ -1,0 +1,52 @@
+name: eu-sanctions-monthly
+
+# EU consolidated financial sanctions list (monthly)
+# 2nd of each month, 05:00 UTC. Downloads the EU Financial Sanctions
+# Database (FSD) consolidated list as JSON (XML fallback), indexes it
+# in-memory, and checks every top-500 brand for any matching entity.
+# Rare signal -- US consumer brands almost never appear -- but when one
+# does the consequence is severe (criminal liability for EU persons /
+# entities transacting with them).
+#
+# Runs the day after the OFAC monthly job so EU + US sanctions land in
+# rapid succession without competing for the same window.
+#
+# No API key required; uses the public FSD download endpoint.
+
+on:
+  schedule:
+    - cron: "0 5 2 * *"   # 2nd of the month, 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit the data file back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run EU sanctions fetcher
+        run: node scripts/eu-sanctions-fetch.mjs
+
+      - name: Merge EU sanctions data into per-company JSON
+        run: node scripts/eu-sanctions-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/eu-sanctions.json public/data/companies/
+          [ -f public/data/_meta/eu-sanctions-merge-log.json ] && git add public/data/_meta/eu-sanctions-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(eu-sanctions): monthly EU consolidated sanctions refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
