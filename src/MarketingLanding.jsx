@@ -194,7 +194,7 @@ const STEPS = [
 ];
 
 // ─── data sources strip ─────────────────────────────────────────────────────
-const SOURCES = ["SEC EDGAR", "FEC", "EPA ECHO", "OSHA", "OpenFDA", "+ 20 more"];
+const SOURCES = ["SEC EDGAR", "FEC", "EPA ECHO", "OSHA", "OpenFDA", "CFPB", "NHTSA", "DOJ", "CourtListener", "CISA KEV", "FINRA", "+ 89 more"];
 
 // ─── FAQ ────────────────────────────────────────────────────────────────────
 const FAQ = [
@@ -358,7 +358,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth tracks 11,000+ companies and grades them on the categories with verified public-record signal — campaign finance (Federal Election Commission), environment (Environmental Protection Agency), worker safety (OSHA), labor disputes (National Labor Relations Board), animal testing, executive pay, and more. Real records, not opinions.
+              TruNorth tracks 11,000+ companies and grades them on the categories with verified public-record signal — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 90+ more. <strong style={{color:C.text}}>100 public-records sources</strong> in total. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* Phase 5.az: the iOS CTA points at the App Store listing once

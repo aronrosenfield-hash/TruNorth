@@ -155,6 +155,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | **B-18** | Reddit/HN "behind the scenes" post (data pipeline deep dive) | M | Best fired ~1 week after PH launch as follow-up content |
 | **B-20** | PostHog → daily KPI digest email | S | Built-in PH feature; just subscribe |
 | **B-21** | "Worst of the week" / "Best of the week" social content (auto-generated) | M | Use `/public/data/weekly_changes.json` from Sunday digest |
+| **B-27** | Set up Postiz self-hosted cross-poster | M | Deploy on Railway free tier. Connects X, LinkedIn, Threads, IG, FB, Bluesky. One-click cross-platform posting. ~30-60 min setup. Defer until post-launch traction warrants. https://github.com/gitroomhq/postiz-app |
 
 ### Infra / ops
 
