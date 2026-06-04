@@ -1,0 +1,58 @@
+name: c2c-annual
+
+# Cradle to Cradle Certified — annual mirror of the certified-product
+# registry + per-brand tier (Bronze/Silver/Gold/Platinum), categories,
+# since-year, and source URL. Runs May 1 at 18:00 UTC.
+#
+# Step 1 (c2c-fetch.mjs):
+#   - Pings the C2C public home + registry (1 req/sec)
+#   - Indexes the curated C2C mirror (re-verified annually against the
+#     registry + press releases + case studies)
+#   - Checks 528 top brands against the index
+#   - Writes public/data/c2c.json
+#
+# Step 2 (c2c-merge.mjs):
+#   - Merges enriched.c2c {isC2cCertified, c2cTier, c2cCategories,
+#     sinceYear, sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 certifications batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 5 *"   # May 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit c2c.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Cradle to Cradle fetcher
+        run: node scripts/c2c-fetch.mjs
+
+      - name: Merge Cradle to Cradle data into per-company JSON
+        run: node scripts/c2c-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/c2c.json public/data/companies/
+          [ -f public/data/_meta/c2c-merge-log.json ] && git add public/data/_meta/c2c-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(c2c): annual Cradle to Cradle certification refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
