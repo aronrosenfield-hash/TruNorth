@@ -4456,6 +4456,17 @@ useEffect(() => {
       trackProps    = {},
     } = options;
 
+    // 2026-06-04 (user-reported): on iOS, the soft keyboard stayed up
+    // after tapping a search result because nothing ever blurred the
+    // active input. Centralized blur here so EVERY nav entry point
+    // (typeahead, search-card click, Top Picks, Compare-with, news
+    // related-brand chip, deep link, etc.) dismisses the keyboard.
+    try {
+      if (typeof document !== "undefined" && document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
+    } catch {}
+
     if (trackEvent) track(trackEvent, { slug, ...trackProps });
     setDeepLinkSlug(slug);
     if (focusDetail)  setFocusedSlug(slug);
@@ -5144,6 +5155,11 @@ if (screen === "onboarding") {
                         key={co.slug || co.id}
                         onMouseDown={(e) => { e.preventDefault(); }}
                         onClick={() => {
+                          // 2026-06-04 (user-reported): tapping a search
+                          // result on iOS left the keyboard up because we
+                          // never blurred the input. Explicit blur tears
+                          // it down before the brand sheet opens.
+                          try { document.getElementById("tn-search")?.blur(); } catch {}
                           setShowSearchDropdown(false);
                           openBrand(co.slug || co.id, { trackEvent: "search_typeahead_clicked", clearQuery: true });
                         }}
