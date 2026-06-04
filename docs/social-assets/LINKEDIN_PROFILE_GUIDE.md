@@ -21,16 +21,17 @@
 
 ---
 
-### 2. Upload the new banner (5 min)
+### 2. Upload the new banner (1 min)
 
-**Source**: `/docs/social-assets/linkedin-banner.html`
+**Files** (pick one — both are pre-rendered PNGs):
+- `/docs/social-assets/linkedin-banner-1128x191.png` — exact LinkedIn spec
+- `/docs/social-assets/linkedin-banner-2256x382-retina.png` — 2× Retina version (sharper on hi-DPI displays; LinkedIn will downsize automatically)
 
-**To capture as a PNG**:
-1. Open the file in Safari/Chrome: `file:///Users/aronrosenfield/Developer/trunorth/docs/social-assets/linkedin-banner.html`
-2. Press **Cmd+Shift+4**, then tap **Space** so the cursor becomes a camera
-3. Click on the banner element — it captures exactly 1128×191 pixels
-4. Image saves to Desktop
-5. LinkedIn → Edit Page → **Cover image** → upload the screenshot
+**Recommended**: upload the **Retina version**. LinkedIn handles the downscale and it'll look sharper.
+
+LinkedIn → Edit Page → **Cover image** → upload the PNG → save.
+
+> The HTML source (`linkedin-banner.html`) is included for reference if you want to tweak copy/colors and re-render. Open in Chrome, then re-run the `chrome --headless --screenshot` command in your shell to regenerate.
 
 **Banner content**:
 - TruNorth logo + wordmark on the left
@@ -232,7 +233,9 @@ Don't chase follower count — chase **engagement rate**. A 50-follower page wit
 | Asset | Location |
 |---|---|
 | Logo (400×400 PNG) | `/docs/social-assets/linkedin-logo-400.png` |
-| Banner template (HTML, capture as PNG) | `/docs/social-assets/linkedin-banner.html` |
+| Banner — standard (1128×191 PNG) | `/docs/social-assets/linkedin-banner-1128x191.png` |
+| Banner — Retina (2256×382 PNG) | `/docs/social-assets/linkedin-banner-2256x382-retina.png` ⭐ recommended |
+| Banner HTML source (for future tweaks) | `/docs/social-assets/linkedin-banner.html` |
 | This guide | `/docs/social-assets/LINKEDIN_PROFILE_GUIDE.md` |
 
 ---
