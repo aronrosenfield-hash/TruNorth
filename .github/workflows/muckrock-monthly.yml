@@ -1,0 +1,46 @@
+name: muckrock-monthly
+
+# MuckRock FOIA Database — monthly refresh.
+# Runs the 2nd of each month at 02:00 UTC. For each brand, queries the
+# public MuckRock /foia/?search= endpoint and aggregates FOIA request
+# counts, completion rates, top topics/agencies, and sample request URLs.
+# Most brands will have at least some hits (FOIA covers everything from
+# government contracts to police reports naming corporate actors).
+
+on:
+  schedule:
+    - cron: "0 2 2 * *"   # 2nd of month, 02:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit muckrock-foia.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run MuckRock fetcher
+        run: node scripts/muckrock-fetch.mjs
+
+      - name: Merge FOIA data into per-company JSON
+        run: node scripts/muckrock-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/muckrock-foia.json public/data/companies/
+          [ -f public/data/_meta/muckrock-merge-log.json ] && git add public/data/_meta/muckrock-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(muckrock): monthly FOIA request refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
