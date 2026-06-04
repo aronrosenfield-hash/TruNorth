@@ -1608,13 +1608,9 @@ function WhatsNewModal({ companyCount }) {
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
             <span><b style={{ color:T.txt }}>Tailored to your values.</b> 30-second quiz reweights every grade so what matters to you, counts.</span>
           </li>
-          <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
-            <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Scan any barcode in-store.</b> Get the verdict before you pay.</span>
-          </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Free forever.</b> No ads, no affiliate links, no selling your data.</span>
+            <span><b style={{ color:T.txt }}>Scan any barcode in-store.</b> Get the verdict before you pay.</span>
           </li>
         </ul>
         <button onClick={dismiss} style={{ width:"100%", marginTop:18, padding:13, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
@@ -4652,32 +4648,49 @@ useEffect(() => {
   // on profile / deduped change. topPicksLimit lets the user "Show more"
   // without re-blowing the budget on every screen visit.
   //
-  // 2026-06-03 (user-reported): Top Picks must only show brands with at
-  // least THREE filled categories (was ONE). The 88%-neutral catalog was
-  // sneaking thinly-scored brands into the top list, hurting the trust
-  // signal. Below-bar brands are still findable via Search. Hard cap at
-  // 100 brands so launch-day surface area is curated.
-  const TOP_PICKS_MIN_FILLED = 3;
-  const TOP_PICKS_HARD_CAP   = 100;
-  const NO_DATA = new Set(["", "neutral", "unknown", "na", "n/a", "?"]);
-  const countFilledCategories = (c) => {
-    const sc = c.sc || {};
-    let n = 0;
-    for (const k of Object.keys(sc)) {
-      const v = String(sc[k] || "").toLowerCase().trim();
-      if (!NO_DATA.has(v)) n++;
-    }
-    return n;
-  };
-  const topPicksRanked = useMemo(
-    () => [...deduped]
-      .filter(c => countFilledCategories(c) >= TOP_PICKS_MIN_FILLED)
+  // 2026-06-04 (user-requested): Top Picks is now a CURATED list of the
+  // ~50 most household-recognizable US brands. Previously it scored every
+  // brand with 3+ filled categories and ranked them — but that made Top
+  // Picks unpredictable (a regional bank could outrank Amazon). For a
+  // pre-launch consumer app, "Top Picks" should mean "the brands you
+  // already know" so first-time users see something they recognize and
+  // can immediately compare against their values.
+  //
+  // Order below is intentional — household frequency-of-use, roughly.
+  // Brands missing from the catalog (or with no data) are silently
+  // dropped on render. Profile-based ranking still applies WITHIN this
+  // curated set so two users get different orderings.
+  const TOP_PICKS_CURATED = [
+    // Retail / e-commerce
+    "amazon", "walmart", "target", "costco", "kroger", "home-depot", "lowe-s",
+    "best-buy", "trader-joe-s", "whole-foods", "publix",
+    // Food & beverage giants
+    "coca-cola", "pepsi", "nestl", "starbucks", "mcdonald-s", "chipotle",
+    "subway", "chick-fil-a", "dunkin", "taco-bell", "wendy-s", "burger-king",
+    // Tech consumer
+    "apple", "google-alphabet", "microsoft", "meta-facebook", "netflix",
+    "spotify", "uber", "lyft", "airbnb", "tesla",
+    // Apparel & lifestyle
+    "nike", "adidas", "lululemon", "gap-inc", "patagonia",
+    // Banks & finance
+    "jpmorgan-chase", "bank-of-america", "wells-fargo", "capital-one", "american-express",
+    "paypal",
+    // Travel & hospitality
+    "hilton", "marriott", "delta-air-lines", "united-airlines", "american-airlines",
+    "southwest-airlines",
+    // CPG & household
+    "procter-and-gamble", "unilever", "johnson-and-johnson", "kraft-heinz",
+    "general-mills",
+  ];
+  const topPicksRanked = useMemo(() => {
+    const idx = new Map(deduped.map(c => [c.slug, c]));
+    return TOP_PICKS_CURATED
+      .map(slug => idx.get(slug))
+      .filter(Boolean)
       .map(c => ({ co: c, score: computeScore(c, profile) }))
       .sort((a, b) => b.score - a.score)
-      .map(({ co }) => co)
-      .slice(0, TOP_PICKS_HARD_CAP),
-    [deduped, profile]
-  );
+      .map(({ co }) => co);
+  }, [deduped, profile]);
   const [topPicksLimit, setTopPicksLimit] = useState(50);
 
   // Phase 5.ak (item #6): filter junk categories from the Browse grid.

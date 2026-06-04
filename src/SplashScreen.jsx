@@ -40,7 +40,7 @@ export default function SplashScreen({ onDone }) {
               </div>
             </div>
             <div style={styles.tagline}>Know where your money goes</div>
-            <div style={styles.subtagline}>See if Amazon, Nike, and your usual brands match your values</div>
+            <div style={styles.subtagline}>Do your brands match your values?</div>
           </div>
         </div>
       </div>
@@ -56,5 +56,5 @@ const styles = {
   icon:  { width:52, height:52, background:"#7c6dfa", borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", fontSize:26, color:"#fff" },
   wordmark: { fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize:30, fontWeight:800, letterSpacing:-0.5 },
   tagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:13, color:"#bbb", letterSpacing:0.3, marginTop:4 },
-  subtagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:11, color:"#666", letterSpacing:0.5 },
+  subtagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:14, color:"#888", letterSpacing:0.3, marginTop:2 },
 };
