@@ -1,0 +1,48 @@
+name: doj-atr-monthly
+
+# DOJ Antitrust Division case-documents scraper.
+# Walks the public ATR case-document index at
+# justice.gov/atr/case-document, parses each linked case page for
+# defendant / date / case type / filing kind, then aggregates per
+# top-500 brand into doj-atr.json and merges into per-company JSON
+# under enriched.dojAtr.
+#
+# Runs the 2nd of every month at 03:00 UTC.
+
+on:
+  schedule:
+    - cron: "0 3 2 * *"   # 2nd of month, 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit doj-atr.json + per-company changes
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run DOJ ATR fetcher
+        run: node scripts/doj-atr-fetch.mjs
+
+      - name: Merge DOJ ATR data into per-company JSON
+        run: node scripts/doj-atr-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/doj-atr.json public/data/companies/
+          [ -f public/data/_meta/doj-atr-merge-log.json ] && git add public/data/_meta/doj-atr-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(doj-atr): monthly antitrust case-document refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
