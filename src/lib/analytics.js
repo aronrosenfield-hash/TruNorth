@@ -13,11 +13,13 @@ export function initAnalytics() {
     console.warn('[analytics] VITE_POSTHOG_KEY not set — analytics disabled');
     return;
   }
-  // 2026-06-04: route through Vercel reverse proxy (/ingest) so ad-blockers
-  // can't recognize PostHog's domain and silently drop events. ui_host
-  // pinned to us.posthog.com so internal links from the SDK still work.
-  // Override the proxy by setting VITE_POSTHOG_HOST in .env locally.
-  const apiHost = import.meta.env.VITE_POSTHOG_HOST || '/ingest';
+  // 2026-06-04: route through dedicated subdomain reverse proxy
+  // (ph.trunorthapp.com → us.i.posthog.com via Vercel host-based rewrite).
+  // Ad-blockers see ph.trunorthapp.com and can't recognize it as PostHog,
+  // so events flow uninterrupted. ui_host pinned to us.posthog.com so the
+  // SDK's internal links to the PostHog dashboard still work.
+  // Override locally by setting VITE_POSTHOG_HOST in .env.
+  const apiHost = import.meta.env.VITE_POSTHOG_HOST || 'https://ph.trunorthapp.com';
   const uiHost  = import.meta.env.VITE_POSTHOG_UI_HOST || 'https://us.posthog.com';
   posthog.init(key, {
     api_host: apiHost,
