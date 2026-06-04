@@ -1,0 +1,47 @@
+name: fcc-weekly
+
+# FCC Consumer Complaints (CGB dataset 3xyp-aqkj on Socrata)
+# Runs Monday 10:00 UTC. For each brand, queries the FCC's Consumer &
+# Governmental Affairs Bureau complaint dataset for the last 24 months
+# of complaints (wireless, internet, robocalls, TV/cable, billing).
+#
+# Free, official government API — Socrata SODA 2.1, no auth, 1000 req/hr
+# unauthenticated limit.
+
+on:
+  schedule:
+    - cron: "0 10 * * 1"   # Monday 10:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit fcc-complaints.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run FCC fetcher
+        run: node scripts/fcc-fetch.mjs
+
+      - name: Merge complaint data into per-company JSON
+        run: node scripts/fcc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/fcc-complaints.json public/data/companies/
+          [ -f public/data/_meta/fcc-merge-log.json ] && git add public/data/_meta/fcc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(fcc): weekly FCC consumer complaint refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
