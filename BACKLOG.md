@@ -159,6 +159,7 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | **B-20** | PostHog → daily KPI digest email | S | Built-in PH feature; just subscribe |
 | **B-21** | "Worst of the week" / "Best of the week" social content (auto-generated) | M | Use `/public/data/weekly_changes.json` from Sunday digest |
 | **B-27** | Set up Postiz self-hosted cross-poster | M | Deploy on Railway free tier. Connects X, LinkedIn, Threads, IG, FB, Bluesky. One-click cross-platform posting. ~30-60 min setup. Defer until post-launch traction warrants. https://github.com/gitroomhq/postiz-app |
+| **B-28** | PostHog reverse proxy via Cloudflare Worker | M | Re-enable proxy so ad-blockers can't drop ~25-40% of events. Vercel-based rewrites (both path-based `/ingest/*` and subdomain-based `ph.trunorthapp.com`) both failed on CORS preflights — Vercel strips/modifies headers PostHog needs. **Setup** (1 hr): (1) Move DNS from Namecheap → Cloudflare (free, 15 min, free CDN bonus). (2) Deploy Cloudflare Worker that proxies to us.i.posthog.com with proper CORS header forwarding. (3) Route `ph.trunorthapp.com/*` to the worker via Cloudflare Workers Routes. (4) Update analytics.js api_host → `https://ph.trunorthapp.com`. **Subdomain `ph.trunorthapp.com` is already DNS-configured at Namecheap + Vercel SSL-issued** — just unused. Worker script template in PostHog docs: https://posthog.com/docs/advanced/proxy/cloudflare. Defer until post-launch — direct PostHog ingestion is fine for hour-1 launch metrics. |
 
 ### Infra / ops
 

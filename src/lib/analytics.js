@@ -13,13 +13,12 @@ export function initAnalytics() {
     console.warn('[analytics] VITE_POSTHOG_KEY not set — analytics disabled');
     return;
   }
-  // 2026-06-04: route through dedicated subdomain reverse proxy
-  // (ph.trunorthapp.com → us.i.posthog.com via Vercel host-based rewrite).
-  // Ad-blockers see ph.trunorthapp.com and can't recognize it as PostHog,
-  // so events flow uninterrupted. ui_host pinned to us.posthog.com so the
-  // SDK's internal links to the PostHog dashboard still work.
-  // Override locally by setting VITE_POSTHOG_HOST in .env.
-  const apiHost = import.meta.env.VITE_POSTHOG_HOST || 'https://ph.trunorthapp.com';
+  // 2026-06-04: direct to PostHog. Ad-blockers will drop ~25-40% of
+  // events but the proxy approaches (path-based and subdomain-based via
+  // Vercel rewrites) both hit Vercel/PostHog CORS preflight issues.
+  // Proper fix tracked in BACKLOG as B-28 (Cloudflare Worker reverse
+  // proxy after DNS migration to Cloudflare).
+  const apiHost = import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com';
   const uiHost  = import.meta.env.VITE_POSTHOG_UI_HOST || 'https://us.posthog.com';
   posthog.init(key, {
     api_host: apiHost,
