@@ -1,0 +1,59 @@
+name: newsweek-mrc-annual
+
+# Newsweek America's Most Responsible Companies — annual mirror of the
+# Newsweek / Statista top-600 US ranking on ESG perception + KPI
+# performance. Runs Nov 1 at 18:00 UTC (the ranking is typically
+# released in October each year for the following year's label).
+#
+# Step 1 (newsweek-mrc-fetch.mjs):
+#   - Pings the Newsweek MRC ranking + methodology pages (1 req/sec)
+#   - Indexes the curated Newsweek MRC mirror (re-verified annually
+#     against the public Newsweek + Statista ranking)
+#   - Checks top brands against the index
+#   - Writes public/data/newsweek-mrc.json
+#
+# Step 2 (newsweek-mrc-merge.mjs):
+#   - Merges enriched.newsweekMrc {rank, score, year, sourceUrl, ...}
+#     into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 governance / ESG batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 11 *"   # Nov 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit newsweek-mrc.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Newsweek MRC fetcher
+        run: node scripts/newsweek-mrc-fetch.mjs
+
+      - name: Merge Newsweek MRC data into per-company JSON
+        run: node scripts/newsweek-mrc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/newsweek-mrc.json public/data/companies/
+          [ -f public/data/_meta/newsweek-mrc-merge-log.json ] && git add public/data/_meta/newsweek-mrc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(newsweek-mrc): annual Newsweek MRC ranking refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
