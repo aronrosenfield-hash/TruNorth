@@ -1,0 +1,51 @@
+name: accc-monthly
+
+# ACCC (Australian Competition & Consumer Commission) — monthly refresh
+# of enforcement actions, court matters, and infringement notices for
+# TruNorth brands trading in Australia.
+#
+# Runs on the 2nd of each month at 07:00 UTC (Sydney early-evening).
+# The ACCC's media-release / court-action register refreshes weekly at
+# most; monthly cadence keeps GitHub Action minutes low and avoids any
+# appearance of scraping pressure on accc.gov.au.
+#
+# Source: https://www.accc.gov.au/media/media-releases
+#         https://www.accc.gov.au/business/business-rights-and-protections/court-action
+
+on:
+  schedule:
+    - cron: "0 7 2 * *"   # 2nd of month, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit accc-enforcement.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run ACCC fetcher
+        run: node scripts/accc-fetch.mjs
+
+      - name: Merge ACCC data into per-company JSON
+        run: node scripts/accc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/accc-enforcement.json public/data/companies/
+          [ -f public/data/_meta/accc-merge-log.json ] && git add public/data/_meta/accc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(accc): monthly ACCC enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
