@@ -1,0 +1,58 @@
+name: goodweave-annual
+
+# GoodWeave — annual mirror of the certified-brand directory (rugs,
+# textiles, apparel) + per-brand categories, since-year, and source URL.
+# Runs Jul 1 at 18:00 UTC.
+#
+# Step 1 (goodweave-fetch.mjs):
+#   - Pings the GoodWeave public directory + about page (1 req/sec)
+#   - Indexes the curated GoodWeave mirror (re-verified annually
+#     against the Find-Certified directory + impact reports + news)
+#   - Checks top brands against the index
+#   - Writes public/data/goodweave.json
+#
+# Step 2 (goodweave-merge.mjs):
+#   - Merges enriched.goodWeave {isGoodWeaveCertified, gwCategories,
+#     sinceYear, sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 certifications batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 7 *"   # Jul 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit goodweave.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run GoodWeave fetcher
+        run: node scripts/goodweave-fetch.mjs
+
+      - name: Merge GoodWeave data into per-company JSON
+        run: node scripts/goodweave-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/goodweave.json public/data/companies/
+          [ -f public/data/_meta/goodweave-merge-log.json ] && git add public/data/_meta/goodweave-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(goodweave): annual GoodWeave certification refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
