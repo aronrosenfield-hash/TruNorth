@@ -58,6 +58,7 @@ Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DA
 | **D-2** | Fire scheduled Twitter launch tweet | 2:05 AM |
 | **D-3** | Fire scheduled LinkedIn launch post | 2:05 AM |
 | **D-4** | Text 5 closest people the launch URL | 2:10 AM |
+| **D-4b** | Swap LinkedIn personal-profile headline to launch-day version (copy in `/docs/social-assets/LINKEDIN_PROFILE_GUIDE.md`) | 7 AM |
 | **D-5** | Reply to every PH comment within 5 minutes | 2-6 AM |
 | **D-6** | Indie Hackers post | 9 AM |
 | **D-7** | Hacker News "Show HN" post | 9 AM |
@@ -79,6 +80,8 @@ Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DA
 | **P-5** | Reach out to anyone who hit site with `?ref=producthunt` UTM | 30 min | Day 3-7 |
 | **P-6** | Post-launch retro — what worked, top requested features | 1 hr | End of week 1 |
 | **P-7** | Trade press follow-ups with launch results data | 1 hr | Week 2 |
+| **P-8** | Swap LinkedIn personal-profile headline to **1-week-after** version | 2 min | Day 7 (Jun 30) — copy in `/docs/social-assets/LINKEDIN_PROFILE_GUIDE.md` |
+| **P-9** | Swap LinkedIn personal-profile headline to **1-month-after** version | 2 min | Day ~30 (Jul 23) — copy in same guide |
 
 ---
 

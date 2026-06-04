@@ -4,6 +4,34 @@
 
 ---
 
+## 🔄 Personal-profile headline rotation (220 chars max)
+
+LinkedIn lets you change your headline anytime, no broadcast. **Swap on each milestone** to keep your profile fresh + signal momentum to anyone who lands.
+
+### Pre-launch (use until Jun 22)
+```
+Founder @ TruNorth · Conscious-consumer shopping app · 100 public-records sources, 11,000+ brand grades · Launching iOS on Product Hunt Jun 23
+```
+
+### Launch day (swap morning of Jun 23)
+```
+Founder @ TruNorth · Just launched: the conscious-shopping app with 11,000+ brand grades sourced from 100 public records · Live on the App Store + Product Hunt
+```
+
+### One week after launch (swap Jun 30, regardless of PH rank)
+```
+Founder @ TruNorth · Conscious-consumer shopping app · 11,000+ brand grades from 100 public-records sources · iOS live, Android next · [PH #X] [add metric: "5k downloads," etc. only if real]
+```
+
+### One month after launch (swap ~Jul 23)
+```
+Founder @ TruNorth · The conscious-shopping app where every brand grade traces back to a primary public record · 11,000+ brands · 100 sources · iOS + Android
+```
+
+> **Reminder:** Task #125 is set to nudge you to make the launch-day swap on Jun 23. Don't broadcast the headline update — leave the "share with network" toggle OFF.
+
+---
+
 ## ✅ Done
 
 - Page created at LinkedIn → your account → Pages → TruNorth
