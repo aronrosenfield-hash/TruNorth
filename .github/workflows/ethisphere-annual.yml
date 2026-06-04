@@ -1,0 +1,59 @@
+name: ethisphere-annual
+
+# Ethisphere World's Most Ethical Companies — annual mirror of the
+# Ethisphere Institute's ~135-company WME honoree list. Runs Oct 1 at
+# 18:00 UTC (the list is typically released in spring; Oct refresh
+# allows time for any additions or corrections to settle).
+#
+# Step 1 (ethisphere-fetch.mjs):
+#   - Pings the WME landing + honoree directory pages (1 req/sec)
+#   - Indexes the curated WME mirror (re-verified annually against the
+#     Ethisphere press release + honoree directory)
+#   - Checks 528 top brands against the honoree list
+#   - Writes public/data/ethisphere.json
+#
+# Step 2 (ethisphere-merge.mjs):
+#   - Merges enriched.ethisphere {isWme, yearFirst, industry, ...}
+#     into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 governance / ethics batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 10 *"   # Oct 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit ethisphere.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Ethisphere WME fetcher
+        run: node scripts/ethisphere-fetch.mjs
+
+      - name: Merge Ethisphere WME data into per-company JSON
+        run: node scripts/ethisphere-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/ethisphere.json public/data/companies/
+          [ -f public/data/_meta/ethisphere-merge-log.json ] && git add public/data/_meta/ethisphere-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ethisphere): annual Ethisphere WME honoree refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
