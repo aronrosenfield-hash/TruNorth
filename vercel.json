@@ -2,7 +2,10 @@
   "rewrites": [
     { "source": "/company/:slug", "destination": "/api/company-seo?slug=:slug" },
     { "source": "/c/:slug",       "destination": "/api/company-seo?slug=:slug" },
-    { "source": "/privacy",       "destination": "/index.html" }
+    { "source": "/privacy",       "destination": "/index.html" },
+    { "source": "/ingest/static/:path*", "destination": "https://us-assets.i.posthog.com/static/:path*" },
+    { "source": "/ingest/:path*",        "destination": "https://us.i.posthog.com/:path*" },
+    { "source": "/ingest",               "destination": "https://us.i.posthog.com/" }
   ],
   "headers": [
     {
