@@ -1952,27 +1952,37 @@ function categorySpectrumPos(k, v, profile) {
 //   use a NEUTRAL gray→accent gradient. Position is shown without value
 //   judgment (the personalized GRADE on the row carries the verdict
 //   relative to the user's quiz answers).
-function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance" }) {
+function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance", unknown = false }) {
   if (pos == null) return null;
   const isUniversal = axisType === "universal";
-  const dotColor = isUniversal
-    ? (pos < 0.35 ? "#e24a4a" : pos > 0.65 ? "#4caf82" : "#9b8ff0")
-    : "#9b8ff0";
-  const gradient = isUniversal
-    ? "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)"
-    : "linear-gradient(to right, #3a3a3a 0%, #555 50%, #6a5dca 100%)";
+  // 2026-06-03 (Option B): when `unknown` is set, the bar dims to a flat
+  // muted background and the dot becomes a dashed-outline "?" — clearly
+  // distinct from a real centered signal.
+  const dotColor = unknown
+    ? "transparent"
+    : isUniversal
+      ? (pos < 0.35 ? "#e24a4a" : pos > 0.65 ? "#4caf82" : "#9b8ff0")
+      : "#9b8ff0";
+  const gradient = unknown
+    ? "#2a2348"
+    : isUniversal
+      ? "linear-gradient(to right, #e24a4a 0%, #e24a4a 22%, #555 38%, #555 62%, #4caf82 78%, #4caf82 100%)"
+      : "linear-gradient(to right, #3a3a3a 0%, #555 50%, #6a5dca 100%)";
   return (
-    <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%" }}>
+    <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%", opacity: unknown ? 0.65 : 1 }}>
       <div style={{
         position:"relative", width:"100%", height:6, borderRadius:3,
         background: gradient,
       }} aria-hidden="true">
         <div style={{
-          position:"absolute", top:-3, left:`calc(${pos*100}% - 6px)`,
-          width:12, height:12, borderRadius:"50%",
-          background:dotColor, border:"2px solid #fff",
-          boxShadow:"0 0 0 1px rgba(0,0,0,0.4)",
-        }} />
+          position:"absolute", top: unknown ? -4 : -3, left:`calc(${pos*100}% - ${unknown ? 7 : 6}px)`,
+          width: unknown ? 14 : 12, height: unknown ? 14 : 12, borderRadius:"50%",
+          background: dotColor, border: unknown ? "2px dashed #9b8ff0" : "2px solid #fff",
+          boxShadow: unknown ? "none" : "0 0 0 1px rgba(0,0,0,0.4)",
+          display: unknown ? "flex" : "block",
+          alignItems: "center", justifyContent: "center",
+          color: "#9b8ff0", fontSize: 8, fontWeight: 700,
+        }}>{unknown ? "?" : ""}</div>
       </div>
       <div style={{ display:"flex", justifyContent:"space-between", fontSize:10, color:"#888", lineHeight:1.2 }}>
         <span>{leftLabel}</span>
@@ -2004,15 +2014,196 @@ const SPECTRUM_LABELS = {
   execPay:     { lo: ">300:1",       hi: "<50:1",          axisType: "stance"    },
 };
 
+// 2026-06-03 (Option B): mixed UI — sliders for continuous spectrums,
+// badges for categorical fields.
+//
+// A "slider" axis (Environment, Labor, Privacy, Exec pay, Political) has a
+// real ordering from one end to the other and a known position. A "badge"
+// axis (Charity, DEI, Animals, Firearms) has DISCRETE STATES that can't
+// honestly be placed on a continuous scale — "Active Giving" isn't "60% of
+// the way between No record and the right side"; it's an unambiguous state.
+// Sliders pretended otherwise and made a centered dot look like a real
+// signal when it actually meant "we don't know."
+const CATEGORY_UI_TYPE = {
+  political:   "slider",
+  environment: "slider",
+  labor:       "slider",
+  privacy:     "slider",
+  execPay:     "slider",
+  charity:     "badge",
+  dei:         "badge",
+  animals:     "badge",
+  guns:        "badge",
+};
+
+// Badge-state definitions for categorical categories. Each entry:
+//   match(co): which sc value(s) or evidence keys trigger this badge
+//   label: text shown on the pill
+//   tone:  visual color — "good" | "bad" | "warn" | "neutral" | "muted"
+//
+// IMPORTANT: tones describe the SIGNAL itself (action vs. absence), NOT a
+// verdict. Whether a tone is "good for the user" depends on their profile;
+// that's already reflected in the row's overall grade. The tone here is
+// just an axis-relative read: action (good=accent), opposition (bad=red),
+// mixed (warn=amber), no data (muted).
+const CATEGORY_BADGES = {
+  charity: {
+    states: [
+      { key: "active",  label: "Active giving",   tone: "good",
+        match: (co) => {
+          const v = (co.sc?.charity || "").toLowerCase();
+          if (["active_giving","positive","excellent","strong","good"].includes(v)) return true;
+          if (co.charity_irs990?.totalGrants > 0) return true;
+          return false;
+        } },
+      { key: "norec",   label: "No public record", tone: "muted",
+        match: (co) => {
+          const v = (co.sc?.charity || "").toLowerCase();
+          return ["","neutral","mixed"].includes(v);
+        } },
+      { key: "unknown", label: "Unknown",         tone: "muted",
+        match: (co) => getDataState("charity", co.sc?.charity) === "unknown" },
+    ],
+  },
+  dei: {
+    states: [
+      { key: "active",  label: "Active programs", tone: "good",
+        match: (co) => {
+          const v = (co.sc?.dei || "").toLowerCase();
+          if (v === "pro_dei") return true;
+          if (Array.isArray(co.deiBadges) && co.deiBadges.length > 0) return true;
+          return false;
+        } },
+      { key: "mixed",   label: "Mixed signals",   tone: "warn",
+        match: (co) => (co.sc?.dei || "").toLowerCase() === "mixed" },
+      { key: "rolled",  label: "Rolled back",     tone: "bad",
+        match: (co) => (co.sc?.dei || "").toLowerCase() === "anti_dei" },
+      { key: "unknown", label: "Unknown",         tone: "muted",
+        match: (co) => {
+          const v = (co.sc?.dei || "").toLowerCase();
+          if (Array.isArray(co.deiBadges) && co.deiBadges.length > 0) return false;
+          return ["","neutral"].includes(v);
+        } },
+    ],
+  },
+  animals: {
+    states: [
+      { key: "cruelty_free", label: "Cruelty-free",       tone: "good",
+        match: (co) => (co.sc?.animals || "").toLowerCase() === "cruelty_free" },
+      { key: "some",         label: "Some testing",       tone: "warn",
+        match: (co) => (co.sc?.animals || "").toLowerCase() === "some_testing" },
+      { key: "tests",        label: "Documents testing",  tone: "bad",
+        match: (co) => (co.sc?.animals || "").toLowerCase() === "tests_animals" },
+      { key: "na",           label: "Not applicable",     tone: "neutral",
+        match: (co) => ["na","n/a"].includes((co.sc?.animals || "").toLowerCase()) },
+      { key: "unknown",      label: "Unknown",            tone: "muted",
+        match: (co) => {
+          const v = (co.sc?.animals || "").toLowerCase();
+          return ["","neutral","unknown","?"].includes(v);
+        } },
+    ],
+  },
+  guns: {
+    states: [
+      { key: "no_guns",     label: "Does not sell",      tone: "good",
+        match: (co) => (co.sc?.guns || "").toLowerCase() === "no_guns" },
+      { key: "sells_guns",  label: "Sells firearms",     tone: "warn",
+        match: (co) => {
+          const v = (co.sc?.guns || "").toLowerCase();
+          if (v === "sells_guns") return true;
+          // ATF FFL evidence override: brand has active dealer licenses
+          if (co.firearms_atf_ffl?.licenseCount > 0 && (co.firearms_atf_ffl?.primaryRole === "dealer" || !co.firearms_atf_ffl?.primaryRole)) return true;
+          return false;
+        } },
+      { key: "makes_guns",  label: "Manufactures",       tone: "bad",
+        match: (co) => {
+          const v = (co.sc?.guns || "").toLowerCase();
+          if (v === "makes_guns") return true;
+          if (co.firearms_atf_ffl?.primaryRole === "manufacturer") return true;
+          return false;
+        } },
+      { key: "na",          label: "Not applicable",     tone: "neutral",
+        match: (co) => ["na","n/a"].includes((co.sc?.guns || "").toLowerCase()) && !co.firearms_atf_ffl?.licenseCount },
+      { key: "unknown",     label: "Unknown",            tone: "muted",
+        match: (co) => {
+          const v = (co.sc?.guns || "").toLowerCase();
+          if (co.firearms_atf_ffl?.licenseCount > 0) return false;
+          return ["","neutral","unknown","?"].includes(v);
+        } },
+    ],
+  },
+};
+
+// Resolve which state(s) a company falls into for a given badge category.
+// Returns the FIRST matching state (states are ordered most-specific first).
+function resolveBadgeState(k, co) {
+  const def = CATEGORY_BADGES[k];
+  if (!def) return null;
+  for (const s of def.states) {
+    try { if (s.match(co)) return s; } catch { /* swallow — fall through */ }
+  }
+  // Fallback to "unknown" if no rule matched (shouldn't happen if rules cover all cases)
+  return def.states.find(s => s.key === "unknown") || def.states[def.states.length - 1];
+}
+
+// CategoryBadgeRow — renders all possible states as muted pills, with the
+// active state highlighted by tone. Replaces the spectrum bar for categorical
+// categories.
+function CategoryBadgeRow({ cat: k, company }) {
+  const def = CATEGORY_BADGES[k];
+  if (!def) return null;
+  const active = resolveBadgeState(k, company);
+  const toneStyles = {
+    good:    { bg:"rgba(52,210,126,0.15)",  bd:"#34d27e", fg:"#34d27e" },
+    bad:     { bg:"rgba(255,110,110,0.15)", bd:"#ff6e6e", fg:"#ff6e6e" },
+    warn:    { bg:"rgba(255,186,77,0.15)",  bd:"#ffba4d", fg:"#ffba4d" },
+    neutral: { bg:"rgba(155,143,240,0.10)", bd:T.accent,  fg:T.accent2 },
+    muted:   { bg:"transparent",            bd:T.border,  fg:T.txt3 },
+  };
+  return (
+    <div style={{ display:"flex", gap:6, flexWrap:"wrap", width:"100%" }}>
+      {def.states.map(s => {
+        const isActive = active && active.key === s.key;
+        const tone = isActive ? toneStyles[s.tone] || toneStyles.neutral : toneStyles.muted;
+        return (
+          <span key={s.key}
+            style={{
+              padding:"5px 10px",
+              fontSize:11,
+              fontWeight: isActive ? 700 : 500,
+              borderRadius:999,
+              background: tone.bg,
+              border:`1px solid ${tone.bd}`,
+              color: tone.fg,
+              letterSpacing:0.2,
+              whiteSpace:"nowrap",
+            }}>
+            {isActive ? "●  " : ""}{s.label}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
 function CategoryRow({ cat: k, enriched, profile }) {
   const [expanded, setExpanded] = useState(false);
   const v = enriched.sc?.[k];
   const d = enriched[k] || {};
   const state = getDataState(k, v);
-  const isUnknown = state === "unknown";
+  const uiType = CATEGORY_UI_TYPE[k] || "slider";
+  const isBadge = uiType === "badge";
+
+  // For badge categories, "unknown" is just one of the displayable states —
+  // we always render the badge row so the user can see all possible values.
+  // For sliders, "unknown" means we draw a muted bar with a dashed dot.
+  const isUnknown = !isBadge && state === "unknown";
+
   const disp = getDisplay(k, v, profile);
   const pos = categorySpectrumPos(k, v, profile);
   const labels = SPECTRUM_LABELS[k];
+  const badgeState = isBadge ? resolveBadgeState(k, enriched) : null;
+  const badgeIsUnknown = badgeState?.key === "unknown";
 
   // 2026-06-03 (user-reported): if the bar moves (sc has a real value)
   // but the detail text says "No public record found.", the UI
@@ -2020,15 +2211,20 @@ function CategoryRow({ cat: k, enriched, profile }) {
   // don't. Detect this and rewrite the text to acknowledge the
   // directional signal without overstating the evidence.
   const literalNoRecord = /^\s*no public record found\.?\s*$/i.test(String(d?.s || ""));
-  const sNarrative = literalNoRecord && !isUnknown
+  const sNarrative = literalNoRecord && !isUnknown && !badgeIsUnknown
     ? "Signal inferred from corporate behavior and public sources — no specific filing or enforcement record in our datasets."
     : stripCites(d.s || d.summary || "");
 
   // Phase 5.aa: vertical-stacked layout. Top row is just icon + name + chevron;
-  // the spectrum bar lives on its own line below so long names like "DEI &
-  // social equity" don't wrap or get overlapped by the bar.
+  // the spectrum bar (or badge row) lives on its own line below so long names
+  // like "DEI & social equity" don't wrap or get overlapped.
+  //
+  // 2026-06-03 (Option B): for categorical categories we render a CategoryBadgeRow
+  // instead of a slider. The badge row always shows ALL possible states so
+  // the user understands the axis at a glance; the active state is colored.
+  const rowDimmed = isUnknown || (isBadge && badgeIsUnknown);
   return (
-    <div style={{ marginBottom:10, paddingBottom:10, borderBottom:`1px solid ${T.border}`, opacity: isUnknown ? 0.6 : 1 }}>
+    <div style={{ marginBottom:10, paddingBottom:10, borderBottom:`1px solid ${T.border}`, opacity: rowDimmed ? 0.7 : 1 }}>
       <button
         onClick={() => setExpanded(e => !e)}
         aria-expanded={expanded}
@@ -2037,14 +2233,18 @@ function CategoryRow({ cat: k, enriched, profile }) {
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
           <i className={`ti ${CAT_ICONS[k]}`} style={{ fontSize:16, color:T.txt3, width:18, flexShrink:0 }} aria-hidden="true" />
           <div style={{ fontSize:13, fontWeight:600, color:T.txt2, letterSpacing:0.2, flex:1, minWidth:0 }}>{CAT_FULL[k]}</div>
-          {isUnknown && <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:6 }}>No data</span>}
+          {rowDimmed && <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:6 }}>No data</span>}
           <i className={`ti ${expanded ? "ti-chevron-up" : "ti-chevron-down"}`} style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
         </div>
-        {!isUnknown && (
-          <div style={{ paddingLeft:28, paddingRight:4 }}>
+        <div style={{ paddingLeft:28, paddingRight:4 }}>
+          {isBadge ? (
+            <CategoryBadgeRow cat={k} company={enriched} />
+          ) : isUnknown ? (
+            <CategorySpectrum pos={0.5} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} axisType={labels?.axisType || "stance"} unknown />
+          ) : (
             <CategorySpectrum pos={pos} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} axisType={labels?.axisType || "stance"} />
-          </div>
-        )}
+          )}
+        </div>
       </button>
       {expanded && (
         <div style={{ paddingTop:8, paddingLeft:28 }}>
