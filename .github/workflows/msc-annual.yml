@@ -1,0 +1,58 @@
+name: msc-annual
+
+# Marine Stewardship Council (MSC) — annual mirror of the certified-brand
+# / chain-of-custody directory + per-brand categories, since-year, and
+# source URL. Runs Mar 1 at 18:00 UTC.
+#
+# Step 1 (msc-fetch.mjs):
+#   - Pings the MSC public "Where to Buy" + fishery directory (1 req/sec)
+#   - Indexes the curated MSC mirror (re-verified annually against the
+#     directory + press releases + annual sustainability reports)
+#   - Checks top brands against the index
+#   - Writes public/data/msc.json
+#
+# Step 2 (msc-merge.mjs):
+#   - Merges enriched.msc {isMscCertified, mscCategories, sinceYear,
+#     sourceUrl, ...} into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Tier 3 certifications batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
+
+on:
+  schedule:
+    - cron: "0 18 1 3 *"   # Mar 1, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit msc.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run MSC fetcher
+        run: node scripts/msc-fetch.mjs
+
+      - name: Merge MSC data into per-company JSON
+        run: node scripts/msc-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/msc.json public/data/companies/
+          [ -f public/data/_meta/msc-merge-log.json ] && git add public/data/_meta/msc-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(msc): annual Marine Stewardship Council certification refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
