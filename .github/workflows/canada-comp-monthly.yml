@@ -1,0 +1,49 @@
+name: canada-comp-monthly
+
+# Canadian Competition Bureau enforcement actions — monthly listing crawl.
+# Walks the public news/announcement listing under canada.ca, hydrates each
+# release page, full-text scans every brand in top-500-brands.txt, and
+# merges per-brand totals (actions in last 5y, CAD fines, sample actions)
+# into per-company JSON. Coverage: merger reviews, deceptive marketing,
+# cartel investigations, consent agreements, AMPs.
+#
+# Runs the 2nd of each month at 06:00 UTC. Free public data, no auth.
+# 1 req/sec polite throttle, UA "TruNorth-CanadaComp/1.0".
+
+on:
+  schedule:
+    - cron: "0 6 2 * *"   # 2nd of month, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit canada-comp-actions.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Canada Competition Bureau fetcher
+        run: node scripts/canada-comp-fetch.mjs
+
+      - name: Merge Canada Competition Bureau data into per-company JSON
+        run: node scripts/canada-comp-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/canada-comp-actions.json public/data/companies/
+          [ -f public/data/_meta/canada-comp-merge-log.json ] && git add public/data/_meta/canada-comp-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(canada-comp): monthly Competition Bureau enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
