@@ -1,0 +1,47 @@
+name: stanford-scac-monthly
+
+# Stanford Securities Class Action Clearinghouse (SCAC) — monthly refresh.
+# Runs the 1st of each month at 23:00 UTC. For each brand, scans the public
+# SCAC filings index (https://securities.stanford.edu/filings.html — 30 most-
+# recent rows) and accumulates per-brand class-action counts into an additive
+# lifetime ledger at public/data/_meta/stanford-scac-lifetime-ledger.json.
+# Settlement values live behind SCAC auth and are NOT scraped.
+
+on:
+  schedule:
+    - cron: "0 23 1 * *"   # 1st of month, 23:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit stanford-scac.json back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Stanford SCAC fetcher
+        run: node scripts/stanford-scac-fetch.mjs
+
+      - name: Merge SCAC data into per-company JSON
+        run: node scripts/stanford-scac-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/stanford-scac.json public/data/companies/
+          [ -f public/data/_meta/stanford-scac-lifetime-ledger.json ] && git add public/data/_meta/stanford-scac-lifetime-ledger.json
+          [ -f public/data/_meta/stanford-scac-merge-log.json ] && git add public/data/_meta/stanford-scac-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(stanford-scac): monthly securities class action refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
