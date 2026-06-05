@@ -5917,48 +5917,72 @@ if (screen === "onboarding") {
       {tab === "sources" && (
         <ErrorBoundary name="sources">{
         !isPaid ? (
-          // Phase 5.as (#14): B+C combo for free users. Show source
-          // CATEGORIES + the top 5 most authoritative named sources
-          // (the credibility anchors). Hide the long-tail source names
-          // and URLs so competitors can't trivially replicate our
-          // pipeline and we don't advertise heavy use of sources that
-          // might rate-limit us. Full list unlocks at Pro.
-          <div style={{ padding:16 }}>
-            <p style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.6 }}>
-              Every score is researched from public databases across 11 categories.
-            </p>
-            {/* Top 5 anchor names — proof of credibility */}
-            <div style={{ padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, marginBottom:14 }}>
-              <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
-                Verified by
+          // 2026-06-05 (B-33 — full Pro-gate per Aron's call). Free users
+          // see 10 household-name anchor sources + a single locked tile
+          // "+90 more verified sources" — the source-by-category
+          // breakdown that used to render here is now Pro-only.
+          // Rationale: prevents competitors from cloning our data pipeline
+          // by reading our app. The "100 public-records sources" badge
+          // on landing still drives credibility; the recipe stays behind
+          // the wall. Per-grade citations on each company page remain free
+          // — that's the audit trail, not the pipeline shape.
+          //
+          // Source count is computed from SOURCES_DATA so it never goes
+          // stale as we add more sources.
+          (() => {
+            const totalSources = SOURCES_DATA.reduce((a, g) => a + g.items.length, 0);
+            const ANCHOR_NAMES = ["FEC.gov","OSHA","EPA","SEC EDGAR","NLRB","CFPB","NHTSA","CISA","OpenFDA","DOJ"];
+            const remaining = Math.max(0, totalSources - ANCHOR_NAMES.length);
+            return (
+              <div style={{ padding:16 }}>
+                <p style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.6 }}>
+                  Every score is researched from <strong style={{ color:T.txt2 }}>{totalSources} primary public-record sources</strong> across {SOURCES_DATA.length} categories — federal regulators, court records, accredited certifications, independent monitors.
+                </p>
+
+                {/* Anchor names — proof of credibility */}
+                <div style={{ padding:"12px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, marginBottom:14 }}>
+                  <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
+                    Verified by
+                  </div>
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                    {ANCHOR_NAMES.map(n => (
+                      <span key={n} style={{ fontSize:11, fontWeight:600, padding:"5px 10px", borderRadius:8, background:T.bg3, color:T.txt2, border:`1px solid ${T.border}` }}>{n}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Locked tile — the Pro hide signal */}
+                <button
+                  onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }}
+                  style={{ width:"100%", padding:"14px 16px", background:T.bg2, border:`1px dashed ${T.border2}`, borderRadius:12, marginBottom:14, cursor:"pointer", textAlign:"left" }}
+                  aria-label={`Unlock ${remaining} more verified sources with Pro`}
+                >
+                  <div style={{ display:"flex", alignItems:"center", gap:10 }}>
+                    <i className="ti ti-lock" style={{ fontSize:20, color:T.gold }} aria-hidden="true" />
+                    <div style={{ flex:1 }}>
+                      <div style={{ fontSize:13, fontWeight:700, color:T.txt }}>+ {remaining} more verified sources</div>
+                      <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Full source list with URLs unlocks at Pro</div>
+                    </div>
+                    <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
+                  </div>
+                </button>
+
+                {/* Per-grade citations remain free — that's the credibility moat,
+                    not the threat surface */}
+                <div style={{ padding:"12px 14px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:14, fontSize:12, color:T.txt3, lineHeight:1.55 }}>
+                  <strong style={{ color:T.txt2 }}>Per-grade citations are always free.</strong> Tap any company → Sources tab to see exactly which records drove that brand's score.
+                </div>
+
+                <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
+                  <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
+                  Unlock all {totalSources} named sources — $0.99/mo
+                </button>
+                <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
+                  Pro shows every source name, URL, and which categories it feeds.
+                </div>
               </div>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-                {["SEC EDGAR","FEC.gov","EPA","OSHA","OpenFDA"].map(n => (
-                  <span key={n} style={{ fontSize:11, fontWeight:600, padding:"5px 10px", borderRadius:8, background:T.bg3, color:T.txt2, border:`1px solid ${T.border}` }}>{n}</span>
-                ))}
-                <span style={{ fontSize:11, color:T.txt3, padding:"5px 4px" }}>+ 20 more (Pro)</span>
-              </div>
-            </div>
-            {/* Category groups — no individual source names, just the
-                shape of the pipeline */}
-            <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
-              Source categories
-            </div>
-            {SOURCES_DATA.map(g => (
-              <div key={g.group} style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 14px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, marginBottom:6 }}>
-                <i className={`ti ${g.icon}`} style={{ fontSize:16, color:T.txt3 }} aria-hidden="true" />
-                <div style={{ flex:1, fontSize:13, fontWeight:600, color:T.txt }}>{g.group}</div>
-                <div style={{ fontSize:11, color:T.txt3 }}>{g.items.length} source{g.items.length === 1 ? "" : "s"}</div>
-              </div>
-            ))}
-            <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", marginTop:14, padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
-              <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
-              Unlock all 25+ named sources — $0.99/mo
-            </button>
-            <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
-              Pro shows every source name, URL, and how it feeds each category.
-            </div>
-          </div>
+            );
+          })()
         ) : (
         // 2026-06-01 (user feedback): paid Sources tab no longer enumerates
         // individual database names. Itemized lists felt like a spec sheet
@@ -6097,12 +6121,25 @@ if (screen === "onboarding") {
           {/* Login details — always show so guest users can sign out */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
               <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>Account details</div>
-              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
                 <span style={{ color:T.txt3 }}>Email</span>
                 <div style={{ display:"flex", alignItems:"center", gap:8 }}>
                   <span style={{ color:T.txt, fontWeight:500 }}>{currentUser?.email || "Guest"}</span>
-                  {/* Phase 5.ak (item #8): change-email button. Prompts for a
-                      new address, validates loosely, persists to localStorage. */}
+                  {/* B-31 (2026-06-05): upgraded change-email affordance.
+                      Previously a tiny fontSize:11 underline-text "Edit"
+                      link that users were missing (per 5.31.26 doc item 7:
+                      "There is nowhere for me to change my email"). Now a
+                      proper pencil-icon pill button with WCAG-compliant
+                      tap target (44×44pt logical area via padding).
+
+                      On save we ALSO call MailerLite via subscribeEmail()
+                      with action='account_email_change' — the /api/subscribe
+                      edge function upserts on email, so a new address creates
+                      a new subscriber and the previous one becomes inert
+                      (no duplicate digest sends since groups dedupe). For
+                      true rename we'd need MailerLite's PUT /subscribers/{id}
+                      endpoint — added to backlog if old-record cleanup
+                      becomes a real problem post-launch. */}
                   <button
                     onClick={async () => {
                       const next = await themedPrompt({
@@ -6113,20 +6150,42 @@ if (screen === "onboarding") {
                         confirmLabel: "Save",
                       });
                       if (next === null) return;
-                      const trimmed = String(next).trim();
-                      if (!trimmed.includes("@") || !trimmed.includes(".")) {
+                      const trimmed = String(next).trim().toLowerCase();
+                      if (!trimmed.includes("@") || !trimmed.includes(".") || trimmed.length > 320) {
                         await themedAlert({ title: "Invalid email", body: "Please enter a valid email address.", kind: "error" });
+                        return;
+                      }
+                      const previous = currentUser?.email || null;
+                      if (previous && previous === trimmed) {
+                        await themedAlert({ title: "No change", body: "That's already your saved email.", kind: "info" });
                         return;
                       }
                       const updated = { ...(currentUser || {}), email: trimmed };
                       try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
                       setCurrentUser(updated);
-                      track("email_changed");
-                      try { subscribeEmail(trimmed, "account_email_change"); } catch {}
+                      track("email_changed", { had_previous: !!previous });
+                      try {
+                        await subscribeEmail(trimmed, "account_email_change", {
+                          previous_email: previous,
+                          intendsLaunchUpdates: true,
+                        });
+                      } catch {}
                       await themedAlert({ title: "Email saved", body: trimmed, kind: "success" });
                     }}
-                    style={{ fontSize:11, color:T.accent2, background:"none", border:"none", cursor:"pointer", textDecoration:"underline", padding:0 }}
+                    aria-label={currentUser?.email ? "Edit email address" : "Add email address"}
+                    style={{
+                      display:"flex", alignItems:"center", gap:5,
+                      fontSize:12, fontWeight:600,
+                      color:T.accent2,
+                      background:T.accentBg,
+                      border:`1px solid ${T.accent}`,
+                      borderRadius:8,
+                      padding:"6px 10px",
+                      cursor:"pointer",
+                      minHeight:32,
+                    }}
                   >
+                    <i className={`ti ${currentUser?.email ? "ti-pencil" : "ti-plus"}`} style={{ fontSize:12 }} aria-hidden="true" />
                     {currentUser?.email ? "Edit" : "Add"}
                   </button>
                 </div>
