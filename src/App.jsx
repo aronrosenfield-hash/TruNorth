@@ -616,6 +616,16 @@ function computeScore(co, profile) {
     // found." The category enum exists (often from AI synthesis) but
     // there's no hard public record. Exclude these from the grade too —
     // a categorical guess shouldn't penalize the company.
+    //
+    // 2026-06-04 (Top Picks grade flicker bug): the bundle index
+    // (index.json) doesn't carry the per-category `.s` narrative
+    // text — only the per-company detail JSON does. So this exclusion
+    // never fired for collapsed rows, but DID fire on expand → grade
+    // flickered (Lululemon A→C, Capital One D→B, etc.). The bundle
+    // generator (scripts/rebuild-bundle-index.mjs) now bakes an `excl`
+    // array of "no public record" category keys into each index entry,
+    // so we honor it here regardless of whether co[k].s is present.
+    if (Array.isArray(co.excl) && co.excl.includes(k)) continue;
     const detailObj = co[k] || {};
     if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) continue;
     weightedSum += scoreCat(k, v, profile) * baseWeights[k];

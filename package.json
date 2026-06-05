@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.mjs && vite build",
+    "build": "node scripts/rebuild-bundle-index.mjs && node scripts/generate-sitemap.mjs && vite build",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "ship:ios": "bash scripts/ship-ios.sh",
-    "ship:ios:dryrun": "bash scripts/ship-ios.sh --skip-upload"
+    "ship:ios:dryrun": "bash scripts/ship-ios.sh --skip-upload",
+    "index:rebuild": "node scripts/rebuild-bundle-index.mjs"
   },
   "dependencies": {
     "@capacitor-mlkit/barcode-scanning": "^8.1.0",
