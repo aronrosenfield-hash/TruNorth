@@ -22,25 +22,76 @@
 
 export const config = {
   matcher: [
-    "/",
-    // 2026-06-05: removed /company/:path* from matcher. That route is
-    // now handled by /api/company-seo.js (Phase 5.ba), which emits FULL
-    // SEO HTML — branded title, branded description, JSON-LD Organization
-    // + AggregateRating schemas (essential for Google rich snippets),
-    // canonical URL, OG/Twitter meta, and a <noscript> crawler-readable
-    // body. This middleware was intercepting first and returning the bare
-    // SPA shell with surgical OG-tag replacement only — which silently
-    // blocked all of the JSON-LD / canonical / noscript benefits for ~3
-    // months. Rich Results Test confirmed "No items detected" until this
-    // fix.
+    // 2026-06-05 (B-35): widened from `/` to cover landing + privacy +
+    // brand pages too, so the geo-block runs everywhere a human would
+    // hit the app. Negative lookahead excludes API endpoints (so
+    // /api/company-seo still serves SEO HTML for /company/*), static
+    // assets, data files, and any URL ending in a recognized static
+    // extension. The OG-rewrite logic below stays scoped to `/` via
+    // the explicit early-return on /company/*.
+    "/((?!api/|_next/|assets/|data/|favicon\\.svg|favicon\\.ico|robots\\.txt|sitemap\\.xml|manifest\\.json|apple-touch-icon\\.png|og-image\\.png|email-signature-logo\\.png|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|woff2?|ttf|otf|eot|css|js|json|xml|txt|webmanifest)$).*)",
   ],
 };
+
+// 2026-06-05 (B-35): country-level firewall. PostHog showed scraper
+// traffic from regions TruNorth doesn't operate in — burning Vercel
+// bandwidth quota with zero conversion potential and inflating
+// analytics noise. The iOS app is US-only (App Store gates by region),
+// so blocking these origins has zero downside.
+//
+// List combines OFAC-comprehensive-sanctions countries (CU/IR/KP/SY) +
+// the highest-noise scraper origins. Tweak by editing this Set —
+// middleware reloads on every deploy.
+//
+// Country codes are ISO 3166-1 alpha-2. Vercel injects them as
+// request.geo.country and as the x-vercel-ip-country header.
+const BLOCKED_COUNTRIES = new Set([
+  "RU", // Russia       — sanctions overlap + heavy scraper origin
+  "BY", // Belarus      — sanctions overlap
+  "CN", // China        — high scraper origin, no App Store presence
+  "KP", // North Korea  — OFAC comprehensive
+  "IR", // Iran         — OFAC comprehensive
+  "SY", // Syria        — OFAC comprehensive
+  "CU", // Cuba         — OFAC comprehensive
+  "VE", // Venezuela    — OFAC sectoral + heavy bot origin
+]);
+
+function geoBlocked(request) {
+  const country =
+    (request.geo && request.geo.country) ||
+    request.headers.get("x-vercel-ip-country") ||
+    "";
+  return BLOCKED_COUNTRIES.has(country);
+}
 
 // Whitelist of forwardable params so we don't reflect random junk into og:
 const VALUES_PARAMS = ["p", "d", "a", "g", "u", "env", "lab", "pri", "exp", "cha", "top"];
 
 export default async function middleware(request) {
+  // ── 1. Geo-block first ───────────────────────────────────────────────
+  // Runs before any heavier work so blocked traffic doesn't hit our
+  // compute budget. 451 Unavailable For Legal Reasons is semantically
+  // closer to a geo-block than 403 Forbidden. Googlebot (mostly US) is
+  // unaffected.
+  if (geoBlocked(request)) {
+    return new Response("TruNorth is not available in your region.", {
+      status: 451,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "public, max-age=300",
+      },
+    });
+  }
+
   const url = new URL(request.url);
+
+  // ── 2. OG rewrite — scope back down to `/` ───────────────────────────
+  // Brand pages get richer SEO HTML from /api/company-seo.js (Phase 5.ba).
+  // For /company/* (now in the matcher for geo-block coverage), we
+  // simply fall through so the rewrite to /api/company-seo can take over.
+  if (url.pathname.startsWith("/company/") || url.pathname.startsWith("/c/")) {
+    return;
+  }
 
   // Only rewrite GETs (POSTs, OPTIONS etc. pass through)
   if (request.method !== "GET") return;
