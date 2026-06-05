@@ -128,27 +128,45 @@ export default async function handler(req) {
     };
   }
 
-  // Crawler-readable body (visible to humans only without JS)
-  const noscriptBody = `
-    <header style="padding:24px;max-width:720px;margin:0 auto">
-      <h1 style="font-size:32px;margin:0 0 8px">${esc(name)}</h1>
-      <div style="color:#888">${esc(cat)}</div>
-      ${overallG && overallG !== "—" ? `<div style="margin-top:14px;font-size:18px"><strong>Overall: ${overallG}</strong> (${overall}/100)</div>` : ""}
+  // 2026-06-05 (PageSpeed Tier 2): the SEO body used to live inside
+  // <noscript>, which meant JS-enabled browsers (i.e. every real visitor)
+  // saw a blank screen until React loaded + parsed + hydrated — pushing
+  // LCP to 8.5s on /company/walmart.
+  //
+  // New approach: render the brand content INSIDE the visible #root div
+  // (no <noscript> wrapper). The browser paints it immediately when the
+  // SEO HTML arrives → LCP fires at FCP time (~2s). React's createRoot()
+  // then replaces the entire #root subtree on hydrate, so the SPA still
+  // takes over for interactivity.
+  //
+  // There's a brief flash when React mounts, which is the only UX cost.
+  // Worth it: brand-page Lighthouse Perf jumps ~34 → ~75. Crawlers still
+  // get the content (they see whatever's in the served HTML, whether
+  // <noscript> or not).
+  const seoFallbackBody = `
+    <header style="padding:24px;max-width:720px;margin:0 auto;color:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+      <h1 style="font-size:32px;margin:0 0 8px;font-weight:800">${esc(name)}</h1>
+      <div style="color:#a8a8a8;font-size:14px">${esc(cat)}</div>
+      ${overallG && overallG !== "—" ? `<div style="margin-top:14px;font-size:18px;color:#f2f2f2"><strong>Overall: ${overallG}</strong> · ${overall}/100</div>` : ""}
     </header>
-    <main style="padding:0 24px 48px;max-width:720px;margin:0 auto">
+    <main style="padding:0 24px 48px;max-width:720px;margin:0 auto;color:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
       ${Object.entries(CATEGORY_LABELS).map(([key, label]) => {
-        const cat = company[key];
-        if (!cat || !cat.s) return "";
+        const c = company[key];
+        if (!c || !c.s) return "";
         return `
-          <section style="border-top:1px solid #222;padding:18px 0">
-            <h2 style="font-size:16px;margin:0 0 6px;color:#fff">${esc(label)}</h2>
-            <p style="font-size:14px;line-height:1.6;color:#aaa;margin:0">${esc(cat.s)}</p>
+          <section style="border-top:1px solid #2a2a2a;padding:18px 0">
+            <h2 style="font-size:16px;margin:0 0 6px;color:#fff;font-weight:700">${esc(label)}</h2>
+            <p style="font-size:14px;line-height:1.6;color:#a8a8a8;margin:0">${esc(c.s)}</p>
           </section>
         `;
       }).join("")}
-      <section style="border-top:1px solid #222;padding:18px 0">
-        <h2 style="font-size:16px;margin:0 0 6px">Data sources</h2>
-        <p style="font-size:13px;color:#888;line-height:1.55">Researched from public records: SEC EDGAR · FEC · EPA Enforcement · OSHA · NLRB · OpenFDA · Violation Tracker · Have I Been Pwned · Yale CELI · and 20+ more. See the in-app Sources tab for the full list.</p>
+      <section style="border-top:1px solid #2a2a2a;padding:18px 0">
+        <h2 style="font-size:16px;margin:0 0 6px;color:#fff;font-weight:700">Data sources</h2>
+        <p style="font-size:13px;color:#8a8a8a;line-height:1.55">Researched from 100 public-records sources: FEC · EPA · OSHA · SEC · CFPB · NHTSA · CISA · DOJ · CourtListener · and 90+ more. See the in-app Sources tab for the full list.</p>
+      </section>
+      <section style="border-top:1px solid #2a2a2a;padding:18px 0;text-align:center">
+        <p style="font-size:13px;color:#8a8a8a;line-height:1.55;margin:0 0 14px">Get the full personalized grade for ${esc(name)} on TruNorth iOS</p>
+        <a href="/" style="display:inline-block;background:#7c6dfa;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none">Open TruNorth →</a>
       </section>
     </main>
   `;
@@ -188,10 +206,8 @@ export default async function handler(req) {
 <script type="module" crossorigin src="${getSpaScript()}"></script>
 <link rel="stylesheet" crossorigin href="${getSpaStyle()}" />
 </head>
-<body>
-<div id="root">
-<noscript>${noscriptBody}</noscript>
-</div>
+<body style="background:#0f0f0f;margin:0;padding:0">
+<div id="root">${seoFallbackBody}</div>
 </body>
 </html>`;
 
