@@ -23,7 +23,16 @@
 export const config = {
   matcher: [
     "/",
-    "/company/:path*",
+    // 2026-06-05: removed /company/:path* from matcher. That route is
+    // now handled by /api/company-seo.js (Phase 5.ba), which emits FULL
+    // SEO HTML — branded title, branded description, JSON-LD Organization
+    // + AggregateRating schemas (essential for Google rich snippets),
+    // canonical URL, OG/Twitter meta, and a <noscript> crawler-readable
+    // body. This middleware was intercepting first and returning the bare
+    // SPA shell with surgical OG-tag replacement only — which silently
+    // blocked all of the JSON-LD / canonical / noscript benefits for ~3
+    // months. Rich Results Test confirmed "No items detected" until this
+    // fix.
   ],
 };
 

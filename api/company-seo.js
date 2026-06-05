@@ -90,7 +90,9 @@ export default async function handler(req) {
   const overallG    = overall != null ? grade(overall) : null;
   const cat         = company.cat || "";
   const canonical   = `${BASE}/company/${encodeURIComponent(slug)}`;
-  const ogImage     = `${BASE}/api/og/company?slug=${encodeURIComponent(slug)}`;
+  // 2026-06-05: was pointing at /api/og/company which doesn't exist — 404'd
+  // silently on every share. Real endpoint is /api/og/brand (see api/og/).
+  const ogImage     = `${BASE}/api/og/brand?name=${encodeURIComponent(name)}&cat=${encodeURIComponent(cat)}`;
 
   // Concise meta description — first non-empty narrative + grade summary
   const buildDesc = () => {
