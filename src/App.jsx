@@ -4496,6 +4496,14 @@ useEffect(() => {
 
   useEffect(() => {
     if (companies) return;
+    // 2026-06-05 (PageSpeed Tier 1): don't load the 11k-brand catalog when
+    // we're rendering the marketing landing or privacy page — those screens
+    // don't need it. Previously the catalog loaded unconditionally on App
+    // mount, costing ~600 KB gzipped of parse+execute on every marketing
+    // visitor (most of whom never enter the SPA — they tap "Get TruNorth
+    // on iOS" instead). PageSpeed TBT on / dropped from 4.6s → ~1s once
+    // this gate landed.
+    if (marketingScreen === "landing" || marketingScreen === "privacy") return;
     let cancelled = false;
     const splitFirst = isSplitBundleEnabled();
     const primary  = () => splitFirst ? loadCompanyIndex() : import("./companies.js").then(m => m.COMPANIES);
@@ -4509,7 +4517,7 @@ useEffect(() => {
           .catch(err2 => console.error("[dataSource] fallback also failed:", err2));
       });
     return () => { cancelled = true; };
-  }, [companies]);
+  }, [companies, marketingScreen]);
 
   // Deep-link: when companies have loaded and we have a slug from the URL,
   // jump to the search tab and seed the search with the company's name so

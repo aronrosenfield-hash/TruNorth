@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <!-- 2026-06-05 (PageSpeed Tier 1 / a11y): removed maximum-scale=1.0 and
+         user-scalable=no. They block pinch-zoom which is an a11y violation
+         (Lighthouse a11y: -5 to -10 pts). Apple iOS WKWebView already prevents
+         pinch-zoom inside Capacitor apps natively, and the input-focus auto-
+         zoom we used to suppress is now handled by fontSize:16 on inputs
+         (see App.jsx selects + the H4 fix comment). Web visitors regain the
+         ability to pinch-zoom on the marketing landing — net a11y win. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- PWA / Home Screen -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
