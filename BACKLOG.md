@@ -121,6 +121,10 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 | **B-2** | Browser/Safari extension (UX 7C) — grade badge overlay on Amazon/Target/Walmart | L | Primer at `/docs/TruNorth-Tier-C-Browser-Extension-Primer.docx` |
 | **B-4** | Break up App.jsx (UX 9A) — ~5,000 lines → component files | L | Refactor only; no user-facing change |
 | **B-5** | JSDoc `@typedef` for Company shape (UX 9C) | M | Dev autocomplete win, no behavior change |
+| **B-31** | **Account → Edit email** (from 5.31.26 doc item 7) | S | Account screen has no email-change UI. Wire to MailerLite subscriber rename API + local pref so the email shown on Account matches what gets the launch / weekly digest. Trivial form + one API call. |
+| **B-32** | **Email signature HTML template** (from 5.31.26 doc item 15) | S | Aron has the LinkedIn-quality logo + name tile from May. Package as Mac Mail signature: 110×30 logo + name + role + trunorthapp.com. Generate `/docs/email-signature.html` they can paste into Mail → Preferences → Signatures. |
+| **B-33** | **Sources tab redaction decision** (from 5.31.26 doc item 14) | S — decision | Currently the in-app `/sources` tab lists all 100 sources. Concern: copycats clone us. Three options: (a) keep all 100 visible (current — drives credibility), (b) show top-25 + "+75 more verified sources", (c) hide entirely behind Pro paywall. Recommend (b) — keeps the "100 sources" badge value without giving competitors the recipe. |
+| **B-34** | **Hide the Group ID 189038375757415926 reference** | S — clarify | Listed in the 5.31.26 doc with no context. Looks like an Apple App Store Connect / TestFlight group ID? Confirm what it is and what action is needed. |
 
 ### Data / pipeline
 
@@ -167,6 +171,8 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 |---|---|---|---|
 | **B-24** | Privacy page review for CCPA/GDPR compliance pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts |
 | **B-25** | k6 loadtest run once we have real DAU baseline | S | Script at `/scripts/loadtest.js`, GH Action ready (manual dispatch) |
+| **B-35** | **Country-level geo-block / WAF** (from 5.31.26 doc *** opener) | S | PostHog shows traffic from countries we don't operate in (RU/CN/etc — likely scraper bots). Add Vercel Firewall rule (Vercel dashboard → Firewall → Rules → "Country is X" → Deny). Free on Pro plan. ~15 min to configure 8-10 high-risk countries. Won't affect SEO since Googlebot doesn't originate from those countries. |
+| **B-36** | **Pre-launch load test** (from 5.31.26 doc item 16) | S | Aron's concern: "Can we test 1000 users at once?" Existing `/scripts/loadtest.js` + `loadtest.yml` GH Action ready, but never run. Trigger before launch day: simulate 1k concurrent landing visitors + 100 concurrent brand-page loads. Vercel free tier should handle it (static CDN + ~10 Edge fn invocations); confirms it. |
 
 ---
 
