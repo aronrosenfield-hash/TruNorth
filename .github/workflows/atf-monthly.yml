@@ -4,16 +4,28 @@ name: atf-monthly
 # of FFL compliance-inspection violations and license-revocation data for
 # firearms-industry brands (manufacturers, distributors, major retailers).
 #
-# Runs on the 1st of each month at 20:00 UTC. ATF's published Firearms
-# Commerce Report tables and revocation list refresh sporadically; monthly
-# cadence is more than sufficient and keeps GitHub Action minutes low.
-#
 # Source: https://www.atf.gov/firearms/firearms-industry
 #         https://www.atf.gov/resource-center/data-statistics
+#
+# ⚠️  PAUSED — 2026-06-06 (B-37)
+# --------------------------------------------------------------------
+# The previous fetch/merge cycle attached firearms_atf_ffl to ~85 false
+# positives via name-only fuzzy matching (Uber, AMD, Safeway, French's
+# mustard, etc.). The merge script has been rewritten with proper
+# entity resolution (allow-list + CIK/ticker + SIC/NAICS evidence
+# chain) but the upstream fetcher (atf-fetch.mjs) still produces the
+# old atf-firearms.json shape and does NOT yet emit the FFL licensee
+# feed (public/data/atf-ffl.json) the new merge expects.
+#
+# This cron stays off until the fetcher is rewritten to publish the
+# new schema. Manual one-off runs can use workflow_dispatch + the
+# `if: ${{ false }}` guards must be flipped to true after a dry-run
+# of `node scripts/atf-verify-no-false-positives.mjs` passes clean.
+# --------------------------------------------------------------------
 
 on:
-  schedule:
-    - cron: "0 20 1 * *"   # 1st of month, 20:00 UTC
+  # schedule:               # disabled per B-37 — see header.
+  #   - cron: "0 20 1 * *"  # 1st of month, 20:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -23,6 +35,10 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # Disabled per B-37 — flip to `true` (or remove this `if:`) once the
+    # fetcher produces public/data/atf-ffl.json in the new schema and
+    # `node scripts/atf-verify-no-false-positives.mjs` passes locally.
+    if: ${{ false }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,6 +50,9 @@ jobs:
 
       - name: Merge ATF data into per-company JSON
         run: node scripts/atf-merge.mjs
+
+      - name: Verify no FFL false positives
+        run: node scripts/atf-verify-no-false-positives.mjs
 
       - name: Commit + push the data
         run: |
