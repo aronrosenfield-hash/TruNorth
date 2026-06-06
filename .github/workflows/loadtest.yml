@@ -27,6 +27,11 @@ jobs:
       - name: Run k6 (official Docker image)
         run: |
           mkdir -p loadtest-out
+          # 2026-06-06 (B-36): k6 image runs as user k6 (uid 1000); the GH
+          # runner created loadtest-out as owned by `runner`. Make the dir
+          # world-writable so k6 can drop summary.json/raw.json into it.
+          # First run blew up with "permission denied" and reported 0 VUs.
+          chmod 777 loadtest-out
           docker run --rm \
             -e BASE_URL="${{ github.event.inputs.target_url }}" \
             -e K6_PEAK_VUS="${{ github.event.inputs.peak_vus }}" \
