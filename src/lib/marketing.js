@@ -57,7 +57,15 @@ export async function subscribeEmail(email, source, metadata = {}) {
       return { ok: true, source, warning: `subscribe_${res.status}` };
     }
     const data = await res.json().catch(() => ({}));
-    return { ok: data.ok !== false, source, warning: data.warning };
+    // 2026-06-05: pass through requiresVerification so the calling UI can
+    // show "Check your inbox" when MailerLite is sending a double-opt-in
+    // confirmation email.
+    return {
+      ok: data.ok !== false,
+      source,
+      warning: data.warning,
+      requiresVerification: !!data.requiresVerification,
+    };
   } catch (err) {
     console.warn("[marketing] /api/subscribe call failed:", err);
     return { ok: true, source, warning: "subscribe_network" };

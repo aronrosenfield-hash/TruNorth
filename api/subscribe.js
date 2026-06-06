@@ -89,6 +89,18 @@ export default async function handler(req) {
     const payload = {
       email,
       fields: { source, ...sanitizeMetadata(metadata) },
+      // 2026-06-05: opt EVERY subscriber into double-opt-in by default.
+      // MailerLite recognizes status:"unconfirmed" → automatically sends
+      // a "Please confirm your subscription" email with a click-through
+      // link. Until the user clicks, the subscriber stays "unconfirmed"
+      // and won't receive campaigns. This:
+      //   1. Stops fake/typo emails (a@a.com) from clogging our list
+      //   2. Improves sender reputation (only verified humans → lower
+      //      spam complaint rate → better inbox placement)
+      //   3. Provides GDPR / CASL "explicit consent" audit trail
+      //   4. Costs nothing — MailerLite free tier includes confirmation
+      //      emails with our brand
+      status: "unconfirmed",
     };
     if (ML_GROUP_ID) payload.groups = [ML_GROUP_ID];
 
@@ -109,7 +121,9 @@ export default async function handler(req) {
         headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
       });
     }
-    return new Response(JSON.stringify({ ok: true, source }), {
+    // Signal to the client that the user needs to confirm via email
+    // before they're on the list — drives the "check your inbox" UX.
+    return new Response(JSON.stringify({ ok: true, source, requiresVerification: true }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
     });

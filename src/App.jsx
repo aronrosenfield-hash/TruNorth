@@ -5951,34 +5951,36 @@ if (screen === "onboarding") {
                   </div>
                 </div>
 
-                {/* Locked tile — the Pro hide signal */}
+                {/* 2026-06-05: revised copy — was "Full source list with URLs
+                    unlocks at Pro" which oversold what Pro actually shows. The
+                    real Pro value-add is the PER-GRADE citation depth on each
+                    brand's profile, NOT a global source-name dump. Reframed
+                    around what users actually benefit from. */}
                 <button
                   onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }}
                   style={{ width:"100%", padding:"14px 16px", background:T.bg2, border:`1px dashed ${T.border2}`, borderRadius:12, marginBottom:14, cursor:"pointer", textAlign:"left" }}
-                  aria-label={`Unlock ${remaining} more verified sources with Pro`}
+                  aria-label="Unlock per-grade source citations with Pro"
                 >
                   <div style={{ display:"flex", alignItems:"center", gap:10 }}>
                     <i className="ti ti-lock" style={{ fontSize:20, color:T.gold }} aria-hidden="true" />
                     <div style={{ flex:1 }}>
-                      <div style={{ fontSize:13, fontWeight:700, color:T.txt }}>+ {remaining} more verified sources</div>
-                      <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Full source list with URLs unlocks at Pro</div>
+                      <div style={{ fontSize:13, fontWeight:700, color:T.txt }}>Per-grade source citations</div>
+                      <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>See the exact filings that drove each brand's grade — unlocks with Pro</div>
                     </div>
                     <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
                   </div>
                 </button>
 
-                {/* Per-grade citations remain free — that's the credibility moat,
-                    not the threat surface */}
                 <div style={{ padding:"12px 14px", background:T.bg3, borderRadius:10, border:`1px solid ${T.border}`, marginBottom:14, fontSize:12, color:T.txt3, lineHeight:1.55 }}>
-                  <strong style={{ color:T.txt2 }}>Per-grade citations are always free.</strong> Tap any company → Sources tab to see exactly which records drove that brand's score.
+                  <strong style={{ color:T.txt2 }}>Why no full source list here?</strong> Listing every endpoint we depend on makes us trivially replicable. Pro members see source citations on every brand grade — that's the audit trail that matters.
                 </div>
 
                 <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
                   <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
-                  Unlock all {totalSources} named sources — $0.99/mo
+                  Unlock per-grade citations — $0.99/mo
                 </button>
                 <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
-                  Pro shows every source name, URL, and which categories it feeds.
+                  Pro shows which specific records drove each brand's grade.
                 </div>
               </div>
             );
@@ -6125,6 +6127,20 @@ if (screen === "onboarding") {
                 <span style={{ color:T.txt3 }}>Email</span>
                 <div style={{ display:"flex", alignItems:"center", gap:8 }}>
                   <span style={{ color:T.txt, fontWeight:500 }}>{currentUser?.email || "Guest"}</span>
+                  {/* 2026-06-05: "Pending verification" badge. Shows when a
+                      user has entered a new email and MailerLite has sent a
+                      confirmation link but they haven't clicked it yet. We
+                      track this purely via emailVerified===false flag in
+                      localStorage; flips to verified when the user later
+                      hits an in-app surface that proves they clicked the
+                      link (TODO: tn-confirmed=1 query param on app-return
+                      deep link — a true confirmation handshake requires
+                      MailerLite webhook → /api/verify-confirm). */}
+                  {currentUser?.email && currentUser?.emailVerified === false && (
+                    <span style={{ fontSize:10, fontWeight:600, padding:"3px 8px", borderRadius:6, background:T.goldBg, color:T.gold, border:`1px solid ${T.gold}`, whiteSpace:"nowrap" }}>
+                      Pending
+                    </span>
+                  )}
                   {/* B-31 (2026-06-05): upgraded change-email affordance.
                       Previously a tiny fontSize:11 underline-text "Edit"
                       link that users were missing (per 5.31.26 doc item 7:
@@ -6160,17 +6176,37 @@ if (screen === "onboarding") {
                         await themedAlert({ title: "No change", body: "That's already your saved email.", kind: "info" });
                         return;
                       }
-                      const updated = { ...(currentUser || {}), email: trimmed };
+                      // 2026-06-05 (verification flow):
+                      // Save locally as UNVERIFIED, then ping MailerLite which
+                      // sends a confirmation email. Until the user clicks the
+                      // link in that email, they aren't on our mailing list and
+                      // we display a "Pending verification" badge on Account.
+                      // No artificial gating — the email is still usable for
+                      // local prefs like Sunday digest opt-in display state.
+                      const updated = {
+                        ...(currentUser || {}),
+                        email: trimmed,
+                        emailVerified: false,
+                        emailPendingSince: Date.now(),
+                      };
                       try { localStorage.setItem("tn_user", JSON.stringify(updated)); } catch {}
                       setCurrentUser(updated);
                       track("email_changed", { had_previous: !!previous });
+                      let verificationSent = false;
                       try {
-                        await subscribeEmail(trimmed, "account_email_change", {
+                        const result = await subscribeEmail(trimmed, "account_email_change", {
                           previous_email: previous,
                           intendsLaunchUpdates: true,
                         });
+                        verificationSent = !!result?.requiresVerification;
                       } catch {}
-                      await themedAlert({ title: "Email saved", body: trimmed, kind: "success" });
+                      await themedAlert({
+                        title: verificationSent ? "Check your inbox" : "Email saved",
+                        body: verificationSent
+                          ? `We sent a confirmation link to ${trimmed}. Click it to start getting updates and the Sunday digest.`
+                          : trimmed,
+                        kind: "success",
+                      });
                     }}
                     aria-label={currentUser?.email ? "Edit email address" : "Add email address"}
                     style={{
