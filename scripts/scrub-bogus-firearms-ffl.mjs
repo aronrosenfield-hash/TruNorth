@@ -49,6 +49,50 @@ const SCRUB_CATEGORIES = new Set([
   "Automotive",             // car brands aren't gun makers; auto-parts shops are separate
   "Travel & Hospitality",
   "Other",                  // too ambiguous — better safe than sued
+  // 2026-06-06 (B-37 prep / dealer follow-up) — second wave of false positives
+  // surfaced after the first scrub. Sierra Nevada the brewery was matched to
+  // Sierra Nevada Corp (defense). Mars-Wrigley was matched to a "Mars" defense
+  // vendor. French's mustard was matched to a small pawnbroker. None of these
+  // industries hold real FFLs.
+  "Beverage",
+  "Consumer Goods",         // covers Mars, French's, Craftsman, Wilson Sporting (golf), etc.
+  "Grocery",                // Safeway, QFC — grocery chains don't hold FFLs
+]);
+
+// 2026-06-06: also scrub clearly-bogus consumer-staples brands that landed in
+// an ambiguous Retail category. Walmart legitimately holds FFL dealer licenses
+// (firearms in sporting-goods sections of some stores) so it stays. Other
+// retailers without a credible firearms-retail presence get explicit removal.
+const FORCE_SCRUB_BY_SLUG = new Set([
+  "arhaus",            // upscale furniture
+  "fontana",           // unclear what this is — name collision likely
+  "custom-shop",       // generic name
+  "prime",             // generic name — probably Amazon Prime / Prime Hydration
+  "geo",               // probably Geo (Hyundai) or a satellite company
+  "mks",
+  "iac",
+  "hansens",
+  "eldorado",          // could be gaming/casino brand
+  "rogers",            // probably Rogers Communications (telecom) or sporting goods false positive
+  "sawyers",           // false positive — name only
+  "true-value",        // hardware chain — could be legit FFL dealer in some stores; revisit
+  "ace-hardware",      // hardware chain — same case as True Value
+  "wilson-sporting-goods", // tennis/golf brand
+  "dupont",            // chemicals giant — not a gun dealer
+  "dover-corporation", // industrial conglomerate — clearly not
+  "safeway",           // grocery
+  "qfc",               // grocery
+  "craftsman",         // tools brand (Stanley Black & Decker)
+  "eos",               // lip balm
+  "sos",
+  "dts-inc",           // audio tech
+  "bang",              // beverage (Bang Energy)
+  "huntsman",          // chemicals company
+  "graco",             // pumps/baby gear
+  "sierra-nevada",     // brewery
+  "mars",              // candy giant
+  "rca",               // electronics brand
+  "frenchs",           // mustard
 ]);
 
 let scanned = 0, scrubbed = 0;
@@ -63,10 +107,14 @@ for (const fname of fs.readdirSync(DIR)) {
   catch { continue; }
 
   if (!doc.firearms_atf_ffl) continue;
-  if (!SCRUB_CATEGORIES.has(doc.cat || "")) continue;
+
+  const slug = fname.replace(".json","");
+  const hitByCategory = SCRUB_CATEGORIES.has(doc.cat || "");
+  const hitBySlug = FORCE_SCRUB_BY_SLUG.has(slug);
+  if (!hitByCategory && !hitBySlug) continue;
 
   const role = doc.firearms_atf_ffl.primaryRole || "?";
-  removed.push({ slug: fname.replace(".json",""), name: doc.name, cat: doc.cat, role });
+  removed.push({ slug, name: doc.name, cat: doc.cat, role, why: hitBySlug ? "slug" : "category" });
   delete doc.firearms_atf_ffl;
   fs.writeFileSync(fp, JSON.stringify(doc, null, 2) + "\n");
   scrubbed++;

@@ -1,1 +1,328 @@
-{"name":"Ace Hardware","cat":"Retail","init":"AC","overall":50,"ab":"#0d2318","ac":"#4caf82","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No public record found.","amt":"N/A","lean":"Neutral","sources":["Public records research"]},"charity":{"s":"No public record found.","amt":"N/A","focus":"N/A","sources":["Public records research"]},"environment":{"s":"air pollution violation: $687K in federal penalties (Violation Tracker).","rating":"Mixed","sources":["EPA","Violation Tracker"]},"labor":{"s":"29 federal penalties totaling $1.1M since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Public records research"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Public records research"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":["Public records research"]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Public records research"]},"execPay":{"s":"No public record found.","ratio":"N/A","sources":["Public records research"]},"laborAPI":{"violationTracker":{"slug":"ace-hardware-corporation","matchedName":"Ace Hardware Corporation","totalPenalty":1097776,"totalRecords":29,"offenseGroups":[{"category":"environment-related offenses","penalty":898780,"records":13},{"category":"safety-related offenses","penalty":179025,"records":14},{"category":"employment-related offenses","penalty":19971,"records":2}],"primaryOffenses":[{"category":"air pollution violation","penalty":687300,"records":5},{"category":"pesticide violation","penalty":159170,"records":6},{"category":"workplace safety or health violation","penalty":154025,"records":12},{"category":"environmental violation","penalty":52310,"records":2},{"category":"aviation safety violation","penalty":20000,"records":1}],"rating":"good"}},"dataLastUpdated":"2026-05-28","competitors":["home-depot","lowe-s","true-value","menards","do-it-best"],"childLabor":true,"wiki":{"founded":"1924-01-01","hq":"Oak Brook","employees":null,"revenue":null,"parent":null,"industry":"hardware store","products":null,"keyPeople":null,"website":"https://www.acehardware.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Ace_Hardware_Logo.svg/330px-Ace_Hardware_Logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Ace_Hardware","extract":"Ace Hardware Corporation is an American hardware retailers' cooperative based in Oak Brook, Illinois, United States. It is the largest non-grocery retail cooperative in the United States."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/sc/anderson/profile/hardware-sales/elders-ace-hardware-0673-90048282/addressId/89312"},"secComplaints":{"count":9,"sample":[{"adsh":"0001539497-25-001527","date":"2025-05-23","filer":"BMO 2025-C12 Mortgage Trust  (CIK 0002061839)","form":"8-K"},{"adsh":"0001539497-25-001561","date":"2025-06-02","filer":"BANK 2025-BNK50  (CIK 0002062966)","form":"8-K"},{"adsh":"0001539497-25-001835","date":"2025-07-14","filer":"BBCMS Mortgage Trust 2025-C35  (CIK 0002074653)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/a/ad/Ace_Hardware_Logo.svg","logoSource":"wiki_infobox","storeFootprint":{"usStoreCount":2690,"byState":{"CA":219,"MI":130,"IL":128,"FL":124,"TX":117,"WA":102,"AZ":95,"NY":85,"GA":74,"WI":73,"PA":72,"OH":69,"MN":69,"NC":67,"CO":66,"OR":63,"VA":54,"UT":50,"TN":48,"MA":46,"IN":41,"MO":39,"SC":39,"IA":37,"ID":35,"MT":34,"MD":33,"AL":27,"KS":26,"NE":25,"KY":23,"NM":20,"WY":20,"CT":20,"NV":20,"SD":19,"NJ":17,"OK":17,"VT":17,"NH":15,"AR":13,"ME":13,"LA":12,"MS":12,"WV":11,"DC":7,"DE":7,"RI":5,"ND":3}},"firearms_atf_ffl":{"fflTypes":["01"],"fflTypeNames":["Dealer in Firearms Other Than Destructive Devices (01)"],"licenseCount":15,"states":["IA","MD","MN","MP","NC","NV","OR","TN","TX","UT","WA","WI"],"primaryRole":"dealer","sourceMonth":"2026-04","sourceUrl":"https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"},"slug":"ace-hardware","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Ace Hardware Corporation","slug":"ace-hardware-corporation","ownership":"cooperative","hq":"Illinois","majorIndustry":"retailing","specificIndustry":"retail-hardware","totalPenalty":1097776,"totalRecords":29,"offenseGroups":[{"category":"environment-related offenses","penalty":898780,"records":13},{"category":"safety-related offenses","penalty":179025,"records":14},{"category":"employment-related offenses","penalty":19971,"records":2}],"primaryOffenses":[{"category":"air pollution violation","penalty":687300,"records":5},{"category":"pesticide violation","penalty":159170,"records":6},{"category":"workplace safety or health violation","penalty":154025,"records":12},{"category":"environmental violation","penalty":52310,"records":2},{"category":"aviation safety violation","penalty":20000,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Ace Hardware",
+  "cat": "Retail",
+  "init": "AC",
+  "overall": 50,
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "lean": "Neutral",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "focus": "N/A",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $687K in federal penalties (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "29 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "N/A",
+    "sources": [
+      "Public records research"
+    ]
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "ace-hardware-corporation",
+      "matchedName": "Ace Hardware Corporation",
+      "totalPenalty": 1097776,
+      "totalRecords": 29,
+      "offenseGroups": [
+        {
+          "category": "environment-related offenses",
+          "penalty": 898780,
+          "records": 13
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 179025,
+          "records": 14
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 19971,
+          "records": 2
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "air pollution violation",
+          "penalty": 687300,
+          "records": 5
+        },
+        {
+          "category": "pesticide violation",
+          "penalty": 159170,
+          "records": 6
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 154025,
+          "records": 12
+        },
+        {
+          "category": "environmental violation",
+          "penalty": 52310,
+          "records": 2
+        },
+        {
+          "category": "aviation safety violation",
+          "penalty": 20000,
+          "records": 1
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "home-depot",
+    "lowe-s",
+    "true-value",
+    "menards",
+    "do-it-best"
+  ],
+  "childLabor": true,
+  "wiki": {
+    "founded": "1924-01-01",
+    "hq": "Oak Brook",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "hardware store",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.acehardware.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Ace_Hardware_Logo.svg/330px-Ace_Hardware_Logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ace_Hardware",
+    "extract": "Ace Hardware Corporation is an American hardware retailers' cooperative based in Oak Brook, Illinois, United States. It is the largest non-grocery retail cooperative in the United States."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/sc/anderson/profile/hardware-sales/elders-ace-hardware-0673-90048282/addressId/89312"
+  },
+  "secComplaints": {
+    "count": 9,
+    "sample": [
+      {
+        "adsh": "0001539497-25-001527",
+        "date": "2025-05-23",
+        "filer": "BMO 2025-C12 Mortgage Trust  (CIK 0002061839)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001539497-25-001561",
+        "date": "2025-06-02",
+        "filer": "BANK 2025-BNK50  (CIK 0002062966)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001539497-25-001835",
+        "date": "2025-07-14",
+        "filer": "BBCMS Mortgage Trust 2025-C35  (CIK 0002074653)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Ace_Hardware_Logo.svg",
+  "logoSource": "wiki_infobox",
+  "storeFootprint": {
+    "usStoreCount": 2690,
+    "byState": {
+      "CA": 219,
+      "MI": 130,
+      "IL": 128,
+      "FL": 124,
+      "TX": 117,
+      "WA": 102,
+      "AZ": 95,
+      "NY": 85,
+      "GA": 74,
+      "WI": 73,
+      "PA": 72,
+      "OH": 69,
+      "MN": 69,
+      "NC": 67,
+      "CO": 66,
+      "OR": 63,
+      "VA": 54,
+      "UT": 50,
+      "TN": 48,
+      "MA": 46,
+      "IN": 41,
+      "MO": 39,
+      "SC": 39,
+      "IA": 37,
+      "ID": 35,
+      "MT": 34,
+      "MD": 33,
+      "AL": 27,
+      "KS": 26,
+      "NE": 25,
+      "KY": 23,
+      "NM": 20,
+      "WY": 20,
+      "CT": 20,
+      "NV": 20,
+      "SD": 19,
+      "NJ": 17,
+      "OK": 17,
+      "VT": 17,
+      "NH": 15,
+      "AR": 13,
+      "ME": 13,
+      "LA": 12,
+      "MS": 12,
+      "WV": 11,
+      "DC": 7,
+      "DE": 7,
+      "RI": 5,
+      "ND": 3
+    }
+  },
+  "slug": "ace-hardware",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Ace Hardware Corporation",
+    "slug": "ace-hardware-corporation",
+    "ownership": "cooperative",
+    "hq": "Illinois",
+    "majorIndustry": "retailing",
+    "specificIndustry": "retail-hardware",
+    "totalPenalty": 1097776,
+    "totalRecords": 29,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 898780,
+        "records": 13
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 179025,
+        "records": 14
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 19971,
+        "records": 2
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "air pollution violation",
+        "penalty": 687300,
+        "records": 5
+      },
+      {
+        "category": "pesticide violation",
+        "penalty": 159170,
+        "records": 6
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 154025,
+        "records": 12
+      },
+      {
+        "category": "environmental violation",
+        "penalty": 52310,
+        "records": 2
+      },
+      {
+        "category": "aviation safety violation",
+        "penalty": 20000,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

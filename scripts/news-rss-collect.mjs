@@ -47,6 +47,18 @@ const OUTLET_BIAS = {
   "csmonitor.com":        { bias: "center", weight: 0.9, fact_driver: true },
   "marketwatch.com":      { bias: "center", weight: 0.85, fact_driver: true },
   "cnbc.com":             { bias: "center", weight: 0.8, fact_driver: true },
+  // B-24 (2026-06-06): expanded center/tech/business outlets. These show up
+  // frequently in news scrapes for enforcement, security incidents, and recalls
+  // — adding them as fact_drivers lets their signal actually move scores.
+  "arstechnica.com":      { bias: "center", weight: 0.85, fact_driver: true },
+  "techcrunch.com":       { bias: "center", weight: 0.7,  fact_driver: true },
+  "bleepingcomputer.com": { bias: "center", weight: 0.9,  fact_driver: true },
+  "krebsonsecurity.com":  { bias: "center", weight: 0.95, fact_driver: true },
+  "thehill.com":          { bias: "center", weight: 0.8,  fact_driver: true },
+  "semafor.com":          { bias: "center", weight: 0.85, fact_driver: true },
+  "404media.co":          { bias: "lean-left", weight: 0.8, fact_driver: true },
+  "theverge.com":         { bias: "lean-left", weight: 0.75, fact_driver: true },
+  "wired.com":            { bias: "lean-left", weight: 0.75, fact_driver: true },
 
   // LEAN LEFT — fact-driving when news, not opinion
   "nytimes.com":          { bias: "lean-left", weight: 0.9, fact_driver: true },
