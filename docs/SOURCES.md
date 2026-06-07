@@ -84,7 +84,7 @@
 | Charity Navigator | https://www.charitynavigator.org | Annual | Nonprofit financial health |
 | Candid / GuideStar | https://candid.org | Annual | Nonprofit 990 forms |
 
-### Environmental (8)
+### Environmental (10)
 
 | Source | URL | Cadence | Notes |
 |---|---|---|---|
@@ -92,6 +92,8 @@
 | B Corp Certification | https://www.bcorporation.net | Annual | Certified-brand list |
 | EPA Enforcement | https://www.epa.gov/enforcement | Monthly | Clean Air/Water/Superfund actions |
 | EPA ECHO | https://echo.epa.gov | Weekly | Facility-level enforcement |
+| EPA GHGRP (Greenhouse Gas Reporting Program) | https://www.epa.gov/ghgreporting/data-sets | Annual | Direct CO2e emissions per facility; ~8,000 large emitters; aggregated to parent company; 4-year YoY trend (B-data2) |
+| EPA TRI (Toxics Release Inventory) | https://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-data-files-calendar-years-1987-present | Annual | Chemical releases per facility (~21,000 facilities); top-3 chemicals + 4-year trend per parent (B-data2) |
 | PHMSA Pipeline Incidents | https://www.phmsa.dot.gov/data-and-statistics/pipeline/pipeline-incident-flagged-files | Weekly | Fatalities, injuries, damages per pipeline operator |
 | NRC Event Reports | https://www.nrc.gov/reading-rm/doc-collections/event-status | Weekly | Nuclear utility events + enforcement |
 | Break Free From Plastic | https://www.breakfreefromplastic.org | Annual | Annual plastic polluter ranking |

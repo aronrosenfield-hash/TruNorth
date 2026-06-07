@@ -190,6 +190,89 @@ Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
 
 ---
 
+## 🎯 DATA DEPTH WAITLIST — 60 ranked candidates (research 2026-06-07)
+
+Surfaced by 4 parallel research agents on 2026-06-07. Ranked by coverage × ease. These STRENGTHEN existing categories instead of opening new ones. Pick the next wave based on which categories need depth most.
+
+### Tier S — Quick wins (S effort, clean static CSV/JSON, huge coverage)
+
+| ID | Source | Category | Why |
+|---|---|---|---|
+| **DW-1** | SBTi Target Dashboard (XLSX, 10k companies) | Environment | Boolean "has 1.5°C-aligned target" — massive coverage of mid-cap brands CDP misses |
+| **DW-2** | WBA Social Benchmark (CSV/XLSX, 2,000 most-influential cos × 18 indicators) | Labor + Human Rights | **Doubles TruNorth's labor coverage instantly.** Biggest single human-rights data dump available. |
+| **DW-3** | Forest 500 (XLSX + 4 CSVs, 500 cos × deforestation drivers) | Environment | TruNorth has ZERO deforestation signal today — this is the standard |
+| **DW-4** | 50/50 Women on Boards Gender Diversity Index (Russell 3000, quarterly) | DEI | Board-level gender data for every US public consumer brand we track |
+| **DW-5** | USDA Organic Integrity Database (45k operations, monthly CSV) | Animals + product cert | Federal-backed organic gold standard, SKU-level scannable |
+| **DW-6** | USDA FSIS Recall API (JSON REST, real-time) | Animals + safety | Closes the meat/poultry/egg recall gap (Tyson, JBS, Smithfield, Hormel currently invisible to OpenFDA) |
+| **DW-7** | OFAC SDN + Consolidated Sanctions List (XML/JSON, continuous) | Political | Sanctions-exposure flag — Russia/Iran/cartel ties |
+| **DW-8** | BIS Entity List + Denied Persons (CSV, weekly) | Political | Export-control violators (Seagate, semiconductor diversions) |
+| **DW-9** | FERC Civil Penalties ($905M+ historical) | Environment + Political | Energy-sector enforcement — utilities, traders, pipelines |
+| **DW-10** | DOL WHD Compliance Actions (CSV, employer-named since FY05) | Labor | Direct "$X stolen from workers" per company |
+| **DW-11** | Energy Star Product Finder API (75k products, daily) | Environment + scanner UX | UPC lookup at barcode scan — appliances/electronics |
+| **DW-12** | 1% for the Planet Directory (~5,000 climate-giving businesses) | Environment | Instantly tags brand as verified climate-giving |
+| **DW-13** | Disability:IN Equality Index (655 cos, annual) | DEI | Picks up where retreating HRC CEI leaves off |
+| **DW-14** | CFTC Enforcement (via OpenSanctions JSON mirror) | Political + finance | $2.6B in FY24 penalties — energy traders, crypto, ag commodities |
+| **DW-15** | UK ICO Data Protection Enforcement (62 actions in 2024) | Privacy | Pairs with EU GDPR for full UK+EU post-Brexit coverage |
+| **DW-16** | Singapore MAS Enforcement (via OpenSanctions mirror) | Political + finance | JPM, Goldman, Credit Suisse Asia cases |
+| **DW-17** | Canada Competition Bureau Deceptive Marketing Cases | Privacy + DEI | Searchable since 2015 |
+
+### Tier A — Strategic plays (S/M effort, high differentiation)
+
+| ID | Source | Category | Why |
+|---|---|---|---|
+| **DW-18** | InfluenceMap / LobbyMap — anti-climate-policy lobbying scores | Environment + Political | **Catches greenwashers.** Orthogonal to CDP self-reported action. |
+| **DW-19** | Carbon Majors (122 producers × cumulative tCO2 since 1854) | Environment | "You cooked the planet" attribution dataset (NY Climate Superfund cites it) |
+| **DW-20** | EEOC Litigation Resolutions | DEI | **TruNorth's DEI category has ZERO enforcement signal today.** Federal lawsuit naming companies for discrimination = strongest possible signal. |
+| **DW-21** | IRS Form 990 / 990-PF / 990-T (via ProPublica API) | Charity | True charity-% calculation per Fortune 500 corporate foundation. **Currently ~5% coverage; this becomes ~50%+.** |
+| **DW-22** | KnowTheChain Forced Labor Benchmark (ICT 49, Apparel 65, F&B 43) | Labor + Supply chain | Samsung, HPE, Cisco, Apple, Nike, Adidas, Nestle |
+| **DW-23** | Corporate Human Rights Benchmark (WBA, biennial) | Human Rights | Toyota, VW, Glencore, Shell, BHP, Rio Tinto — deep non-US extractives + automotive |
+| **DW-24** | BHRRC API upgrade (50k stories, daily JSON) | Labor + Human Rights | We have static BHRRC; upgrade to API consumption for daily refresh |
+| **DW-25** | Mighty Earth Deforestation Trackers (Soy + Cattle + Palm) | Environment + Supply chain | Satellite-verified Cargill/JBS/Bunge/Wilmar attribution to consumer brand buyers |
+| **DW-26** | FMCSA Motor Carrier Safety (DOT# crashes/inspections) | Labor + Environment | Every trucking/logistics brand — Sysco, Amazon DSPs, Walmart fleet, FedEx Ground |
+| **DW-27** | PHMSA Pipeline Enforcement (incidents + civil penalties) | Environment | Enbridge, Energy Transfer, Kinder Morgan, Marathon — major fossil-industry upgrade |
+| **DW-28** | FTC Cases & Proceedings (JSON via legal-library API) | Privacy + DEI | Backbone US consumer-protection enforcer — Amazon, Meta, Epic, Drizly, Chegg |
+| **DW-29** | Coller FAIRR Protein Producer Index (60 largest meat/dairy/aquaculture) | Animals | Tyson, JBS, Hormel, Danone tier with animal welfare + antibiotics + climate scores |
+| **DW-30** | Australia ACCC + ASIC Enforcement | Environment + Privacy | **ACCC's 2026 priority is greenwashing enforcement** — unique signal |
+| **DW-31** | Banking on Climate Chaos (65 banks × 2,700 fossil clients × $ flows) | Environment | Bank-specific climate accountability — annual June refresh |
+| **DW-32** | Ranking Digital Rights Corporate Accountability Index (14 platforms × 58 indicators) | Privacy | None scored >50/100 in 2025 — Apple, Google, Meta, Samsung, Tencent, ByteDance |
+| **DW-33** | FDA Inspection Dashboard + Warning Letters (Form 483) | Animals + Labor | Pharma, cosmetics, supplements, infant formula brands |
+| **DW-34** | OCC + FDIC Enforcement Actions | Political + finance | Bank-specific enforcement Chase/Wells/Citi |
+| **DW-35** | FCC Enforcement Bureau Forfeitures | Privacy | Location-data + TCPA fines ($200M+ against carriers) |
+| **DW-36** | EWG Skin Deep (~100,000 product beauty/personal-care safety database) | Health + scanner UX | Massive UX win at barcode scan moment |
+| **DW-37** | EPEAT Registry (33,000+ electronics × 40 brands, daily) | Environment + scanner UX | Defining ecolabel for laptops/phones/displays |
+| **DW-38** | Non-GMO Project Verified (60k products, 3k brands) | Animals + product cert | Highest US consumer-recognition seal after USDA Organic |
+| **DW-39** | Certified Humane + Animal Welfare Approved (AGW) | Animals | Meat/egg/dairy gap-filler |
+| **DW-40** | OU/OK/Star-K Kosher Product Search (~1M+ SKUs) | Religious-dietary | Zero religious-dietary coverage today |
+| **DW-41** | V-Label Certified Products (70k+ vegan/vegetarian-certified) | Animals + scanner UX | International equivalent of Leaping Bunny |
+| **DW-42** | Cornell ILR Labor Action Tracker (303 US strikes in 2025) | Labor | Real-time strike map — catches Starbucks/Amazon/UAW weeks faster than NLRB |
+| **DW-43** | ICIJ Offshore Leaks Database (810k+ entities) | Governance | Panama/Pandora/Paradise Papers — flags governance opacity |
+| **DW-44** | RSPO Palm Oil Certified Holders (5,200 members, live) | Environment | Palm oil is in ~50% of supermarket SKUs |
+| **DW-45** | Regenerative Organic Certified Brand Directory (Patagonia Provisions, Dr. Bronner's tier) | Environment | Fastest-growing premium ag label (+22% YoY 2025) |
+| **DW-46** | Bonsucro Certified Entity Lookup (sugar buyers, daily) | Environment + Labor | Sugar is 2nd most ubiquitous commodity after palm |
+| **DW-47** | Climate Label (cradle-to-customer carbon, ~hundreds of brands) | Environment | Only consumer-facing carbon label |
+| **DW-48** | Cradle to Cradle Certified Products Registry (1,200 products) | Environment | Method, Steelcase, premium home goods |
+| **DW-49** | DOL List of Goods Produced by Child/Forced Labor (TVPRA, biennial) | Supply Chain + Human Rights | 204 goods × 82 countries — cross-reference brand ingredient origins |
+| **DW-50** | NLRB C-cases JSON mirror (labordata.bunkum.us) | Labor | Union-busting granularity beyond ALJ rulings — Starbucks, Amazon, Trader Joe's |
+
+### Tier B — Specialist depth (M effort, narrower coverage)
+
+DW-51 As You Sow Fund Lists (Carbon Underground 200, Coal Free, Deforestation Free, Weapon Free)
+DW-52 BaFin Securities Sanctions (Germany)
+DW-53 FCA Enforcement Final Notices (UK)
+DW-54 KFTC (Korea Fair Trade Commission)
+DW-55 India SEBI Orders + Debarred Entities
+DW-56 South Africa Competition Tribunal
+DW-57 Better Cotton Initiative members
+DW-58 Demeter Biodynamic Certified
+DW-59 Bird-Friendly Smithsonian coffee
+DW-60 Global Animal Partnership 5-Step Manufacturers
+
+### Recommendation
+
+**Next sprint (DW-1 through DW-17 = Tier S)** — 17 sources, mostly Low effort, fills the weakest categories (DEI, environment, animal welfare). Estimated 2-3 days of agent compute. Adds ~5,000-10,000 new data points across 9 categories.
+
+---
+
 ## 💤 PARKED / FUTURE — not on critical path
 
 | ID | Item | Why parked |
