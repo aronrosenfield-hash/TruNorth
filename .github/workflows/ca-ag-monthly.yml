@@ -1,0 +1,45 @@
+name: ca-ag-monthly
+
+# California Attorney General — Consumer-Protection Enforcement Actions (B-27)
+# Scrapes https://oag.ca.gov/consumers/actions on the 1st of each month
+# at 06:00 UTC. Low-volume but high-signal: every action is a prosecutable
+# fact (signed settlement, judgment, lawsuit). Feeds the news-extract
+# pipeline via recent_events[] for score rebake.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"   # 1st of each month, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw data + per-company merges
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run CA AG fetcher
+        run: node scripts/ca-ag-fetch.mjs
+
+      - name: Merge CA AG data into per-company JSON
+        run: node scripts/ca-ag-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/ca-ag-actions.json public/data/companies/
+          [ -f public/data/_meta/ca-ag-merge-log.json ] && git add public/data/_meta/ca-ag-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ca-ag): monthly CA AG enforcement refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

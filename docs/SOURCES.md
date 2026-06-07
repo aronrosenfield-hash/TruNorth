@@ -10,7 +10,7 @@
 
 | Status | Count |
 |---|---|
-| ✅ Live in pipeline | **100** 🎯 |
+| ✅ Live in pipeline | **101** 🎯 |
 | 🟡 In flight | 0 |
 | 📋 Planned (queued) | 0 |
 | 💰 Paid alternatives (not used) | see bottom |
@@ -56,7 +56,7 @@
 | Oversight.gov (IG reports) | https://www.oversight.gov/reports | Monthly | 70+ federal Inspector General offices aggregated |
 | MuckRock FOIA | https://www.muckrock.com | Monthly | Public Freedom of Information Act requests per brand |
 
-### Consumer protection (4)
+### Consumer protection (5)
 
 | Source | URL | Cadence | Notes |
 |---|---|---|---|
@@ -64,6 +64,7 @@
 | CPSC Recalls | https://www.cpsc.gov/Recalls | Weekly | Toys, electronics, appliances |
 | NHTSA Vehicle Recalls + Complaints | https://www.nhtsa.gov | Weekly | Auto brands — make × model × year |
 | FCC Consumer Complaints | https://opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/3xyp-aqkj | Weekly | Wireless, internet, robocalls, billing |
+| California AG Enforcement Actions | https://oag.ca.gov/consumers/actions | Monthly | High-signal consumer-protection settlements — privacy, labor, environment, charity, consumer fraud (B-27) |
 
 ### Political donations (6)
 
