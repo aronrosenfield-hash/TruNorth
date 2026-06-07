@@ -49,6 +49,12 @@ var MAX_THREADS_PER_RUN = 25;
 /** Placeholder until Aron sets up a Calendly link. */
 var CALENDLY_URL = 'https://calendly.com/trunorth/press'; // TODO: replace once live
 
+/** Logo shown at the bottom of every HTML reply. Must be publicly fetchable. */
+var LOGO_URL = 'https://www.trunorthapp.com/email-signature-logo.png';
+
+/** Width the logo is displayed at, in pixels. */
+var LOGO_WIDTH = 160;
+
 // ===== ENTRY POINT ============================================================
 
 /**
@@ -120,13 +126,17 @@ function handleThread_(thread, repliedLabel) {
   var body = buildReplyBody_(category, firstName);
   var replySubject = REPLY_SUBJECT_PREFIX + stripRePrefix_(subject);
 
-  // Use replyAll on the first message so Gmail keeps it threaded.
+  // Use reply on the first message so Gmail keeps it threaded.
   // Specifying from + name routes it through the support alias.
-  firstMsg.reply('', {
+  // IMPORTANT: the FIRST positional argument is the plain-text body — the
+  // options object's `body` field is ignored by GmailMessage.reply(). Pass
+  // the body positionally so the recipient doesn't get an empty reply.
+  // htmlBody is a real option — that's where the logo-styled version lives.
+  firstMsg.reply(body, {
     from: FROM_ADDRESS,
     name: FROM_NAME,
     subject: replySubject,
-    body: body
+    htmlBody: buildHtmlReplyBody_(body)
   });
 
   // Mark thread as handled.
@@ -224,6 +234,32 @@ function detectCategory_(subject, body) {
 // ===== TEMPLATES ==============================================================
 // Modify the text below freely. {{FIRSTNAME}} is the only token replaced.
 // Keep them in a warm, conversational tone matching Aron's voice.
+
+/**
+ * Wrap the plain-text body in styled HTML with a trailing TruNorth logo.
+ * Plain-text version is the truth; this just adds visual polish + logo.
+ */
+function buildHtmlReplyBody_(plainBody) {
+  // Escape HTML-unsafe chars in the plain-text body, then convert newlines
+  // to <br> so the structure carries over visually.
+  var escaped = String(plainBody)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+  var htmlBody = escaped.replace(/\n/g, '<br>');
+
+  return [
+    '<div style="font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.55;color:#1a1a1a;max-width:600px;">',
+    '  <div>' + htmlBody + '</div>',
+    '  <div style="margin-top:24px;padding-top:18px;border-top:1px solid #e5e5e5;">',
+    '    <a href="https://www.trunorthapp.com" style="display:inline-block;text-decoration:none;">',
+    '      <img src="' + LOGO_URL + '" alt="TruNorth" width="' + LOGO_WIDTH + '" style="display:block;border:0;max-width:' + LOGO_WIDTH + 'px;height:auto;" />',
+    '    </a>',
+    '  </div>',
+    '</div>'
+  ].join('\n');
+}
 
 /** Build the final body string for a given category. */
 function buildReplyBody_(category, firstName) {
