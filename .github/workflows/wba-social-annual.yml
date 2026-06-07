@@ -1,0 +1,50 @@
+name: wba-social-annual
+
+# WBA Social Benchmark — annual scores for ~2,000 most-influential
+# companies on 18 human-rights/decent-work/ethics indicators.
+#
+# Cadence: annual. WBA publishes once per year (typically Q2). We run
+# quarterly so we don't miss a mid-year revision.
+
+on:
+  schedule:
+    - cron: "0 6 10 1,4,7,10 *"   # 10th of Jan/Apr/Jul/Oct, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: Fetch WBA Social (live)
+        run: node scripts/wba-social-fetch.mjs --apply
+
+      - name: Merge to augment file
+        run: node scripts/wba-social-merge.mjs
+
+      - name: Run tests
+        run: node --test scripts/wba-social-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(wba-social): annual benchmark refresh"
+          title: "data(wba-social): annual refresh"
+          body: |
+            Automated WBA Social Benchmark refresh.
+
+            - Raw: `data/raw/wba-social/`
+            - Derived: `data/derived/wba-social-augment.json`
+          branch: data/wba-social
+          add-paths: |
+            data/raw/wba-social/**
+            data/derived/wba-social-augment.json
+          delete-branch: true

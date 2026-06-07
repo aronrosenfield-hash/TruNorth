@@ -1,0 +1,59 @@
+name: uk-ico-monthly
+
+# DW-15 — UK ICO (Information Commissioner's Office) enforcement, monthly.
+#
+# Runs on the 4th of each month at 07:00 UTC. Uses ICO_URL secret to
+# point at the latest ICO enforcement listing (RSS/JSON) or falls back
+# to the bundled fixture.
+
+on:
+  schedule:
+    - cron: "0 7 4 * *"
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Optional override URL (ICO JSON or CSV)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch ICO enforcement
+        env:
+          ICO_API_KEY: ${{ secrets.ICO_API_KEY }}
+        run: |
+          URL="${{ github.event.inputs.url || secrets.ICO_URL }}"
+          if [ -n "$URL" ]; then
+            node scripts/uk-ico-fetch.mjs --apply --url "$URL"
+          else
+            node scripts/uk-ico-fetch.mjs
+          fi
+
+      - name: Merge into derived augment
+        run: node scripts/uk-ico-merge.mjs
+
+      - name: Run tests
+        run: node --test scripts/uk-ico-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/uk-ico/ data/derived/uk-ico-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(uk-ico): monthly ICO enforcement refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

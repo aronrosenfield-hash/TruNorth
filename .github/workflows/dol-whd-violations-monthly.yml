@@ -1,0 +1,48 @@
+name: dol-whd-violations-monthly
+
+# DW-10 — DOL Wage & Hour Division compliance actions. CSV bulk download
+# from enforcedata.dol.gov. DOL rotates the exact static URL — DOL_WHD_CSV_URL
+# can override the default.
+
+on:
+  schedule:
+    - cron: "15 5 2 * *"   # 05:15 UTC on the 2nd of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # Optional: pin a known-good static download URL if the default 302s.
+      DOL_WHD_CSV_URL: ${{ vars.DOL_WHD_CSV_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch DOL WHD
+        run: node scripts/dol-whd-violations-fetch.mjs
+
+      - name: Merge into augment
+        run: node scripts/dol-whd-violations-merge.mjs
+
+      - name: Run parser tests
+        run: node --test scripts/dol-whd-violations-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/dol-whd-violations/ data/derived/dol-whd-violations-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(dol-whd-violations): monthly snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

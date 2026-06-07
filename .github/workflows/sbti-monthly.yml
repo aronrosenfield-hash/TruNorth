@@ -1,0 +1,52 @@
+name: sbti-monthly
+
+# SBTi (Science Based Targets initiative) — Companies Taking Action.
+# Public CSV/XLSX export of every company that has either committed to
+# setting climate targets or had them approved.
+#
+# Cadence: monthly. SBTi rebuilds the dashboard roughly monthly; running
+# more often would just diff the same file.
+
+on:
+  schedule:
+    - cron: "0 5 5 * *"   # 5th of each month, 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch SBTi dashboard (live)
+        run: node scripts/sbti-fetch.mjs --apply
+
+      - name: Build augment file
+        run: node scripts/sbti-merge.mjs
+
+      - name: Run unit tests
+        run: node --test scripts/sbti-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(sbti): monthly Companies Taking Action refresh"
+          title: "data(sbti): monthly refresh"
+          body: |
+            Automated monthly refresh of SBTi Companies Taking Action.
+
+            - Raw snapshot under `data/raw/sbti/`
+            - Derived augment file: `data/derived/sbti-augment.json`
+          branch: data/sbti-monthly
+          add-paths: |
+            data/raw/sbti/**
+            data/derived/sbti-augment.json
+          delete-branch: true

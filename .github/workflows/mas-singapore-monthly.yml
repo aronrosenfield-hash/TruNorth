@@ -1,0 +1,59 @@
+name: mas-singapore-monthly
+
+# DW-16 — Singapore MAS enforcement actions, monthly.
+#
+# Runs on the 5th of each month at 07:30 UTC. Uses MAS_URL secret
+# for the MAS RSS-as-JSON feed (or OpenSanctions mirror). Falls back
+# to the bundled fixture when the secret is unset.
+
+on:
+  schedule:
+    - cron: "30 7 5 * *"
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Optional override URL (MAS JSON or CSV)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch MAS enforcement
+        env:
+          MAS_API_KEY: ${{ secrets.MAS_API_KEY }}
+        run: |
+          URL="${{ github.event.inputs.url || secrets.MAS_URL }}"
+          if [ -n "$URL" ]; then
+            node scripts/mas-singapore-fetch.mjs --apply --url "$URL"
+          else
+            node scripts/mas-singapore-fetch.mjs
+          fi
+
+      - name: Merge into derived augment
+        run: node scripts/mas-singapore-merge.mjs
+
+      - name: Run tests
+        run: node --test scripts/mas-singapore-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/mas-singapore/ data/derived/mas-singapore-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(mas-singapore): monthly MAS enforcement refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

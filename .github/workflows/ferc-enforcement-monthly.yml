@@ -1,0 +1,45 @@
+name: ferc-enforcement-monthly
+
+# DW-9 — FERC civil penalty actions (energy market manipulation, pipeline
+# safety). RSS-first; falls back to bundled seed if the RSS feed is empty
+# or unreachable.
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch FERC enforcement
+        run: node scripts/ferc-enforcement-fetch.mjs
+
+      - name: Merge into augment
+        run: node scripts/ferc-enforcement-merge.mjs
+
+      - name: Run parser tests
+        run: node --test scripts/ferc-enforcement-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/ferc-enforcement/ data/derived/ferc-enforcement-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ferc-enforcement): monthly snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

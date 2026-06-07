@@ -1,0 +1,64 @@
+name: disability-in-annual
+
+# DW-13 — Disability:IN Disability Equality Index (DEI) ratings.
+#
+# Disability:IN publishes the DEI top-scorers list annually each July.
+# This workflow runs August 1 at 05:00 UTC to give the foundation time
+# to publish the official press release and companies-listed page.
+#
+# In default (no DISABILITY_IN_CSV_URL set), the fetcher reads the
+# bundled fixture in scripts/fixtures/disability-in/sample.csv. To
+# actually pull a fresh list, set DISABILITY_IN_CSV_URL as a repo
+# secret pointing at the latest CSV snapshot.
+
+on:
+  schedule:
+    - cron: "0 5 1 8 *"   # 05:00 UTC, Aug 1
+  workflow_dispatch:
+    inputs:
+      csv_url:
+        description: "Optional override URL for the DEI CSV"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch DEI ratings
+        env:
+          DISABILITY_IN_API_KEY: ${{ secrets.DISABILITY_IN_API_KEY }}
+        run: |
+          URL="${{ github.event.inputs.csv_url || secrets.DISABILITY_IN_CSV_URL }}"
+          if [ -n "$URL" ]; then
+            node scripts/disability-in-fetch.mjs --apply --url "$URL"
+          else
+            node scripts/disability-in-fetch.mjs
+          fi
+
+      - name: Merge into derived augment
+        run: node scripts/disability-in-merge.mjs
+
+      - name: Run tests
+        run: node --test scripts/disability-in-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/disability-in/ data/derived/disability-in-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(disability-in): annual DEI ratings refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

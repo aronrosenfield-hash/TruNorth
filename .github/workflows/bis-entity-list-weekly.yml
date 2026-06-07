@@ -1,0 +1,45 @@
+name: bis-entity-list-weekly
+
+# DW-8 — BIS Entity List (export-control restricted parties). Pulled via
+# trade.gov's free unauthenticated Consolidated Screening List CSV bulk
+# feed; we then filter to Entity-List-only rows.
+
+on:
+  schedule:
+    - cron: "0 4 * * 1"    # 04:00 UTC every Monday
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch BIS Entity List
+        run: node scripts/bis-entity-list-fetch.mjs
+
+      - name: Merge into augment
+        run: node scripts/bis-entity-list-merge.mjs
+
+      - name: Run parser tests
+        run: node --test scripts/bis-entity-list-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/bis-entity-list/ data/derived/bis-entity-list-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(bis-entity-list): weekly snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

@@ -1,0 +1,50 @@
+name: forest500-annual
+
+# Forest 500 — annual tropical deforestation scorecards for the 500
+# most-influential entities (companies + financial institutions).
+#
+# Cadence: annual (typically published Jan–Mar). We run quarterly so we
+# pick up any methodology corrections.
+
+on:
+  schedule:
+    - cron: "0 6 15 1,4,7,10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: Fetch Forest500 (live)
+        run: node scripts/forest500-fetch.mjs --apply
+
+      - name: Build augment
+        run: node scripts/forest500-merge.mjs
+
+      - name: Tests
+        run: node --test scripts/forest500-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(forest500): annual deforestation scorecard refresh"
+          title: "data(forest500): annual refresh"
+          body: |
+            Automated Forest 500 deforestation scorecard refresh.
+
+            - Raw: `data/raw/forest500/`
+            - Derived: `data/derived/forest500-augment.json`
+          branch: data/forest500
+          add-paths: |
+            data/raw/forest500/**
+            data/derived/forest500-augment.json
+          delete-branch: true

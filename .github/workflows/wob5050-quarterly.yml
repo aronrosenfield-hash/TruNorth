@@ -1,0 +1,47 @@
+name: wob5050-quarterly
+
+# 50/50 Women on Boards — quarterly Gender Diversity Index ratings for
+# the Russell 3000.
+
+on:
+  schedule:
+    - cron: "0 7 20 1,4,7,10 *"   # 20th of Jan/Apr/Jul/Oct, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: Fetch 50/50 WOB (live)
+        run: node scripts/wob5050-fetch.mjs --apply
+
+      - name: Build augment
+        run: node scripts/wob5050-merge.mjs
+
+      - name: Tests
+        run: node --test scripts/wob5050-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(wob5050): quarterly board parity refresh"
+          title: "data(wob5050): quarterly refresh"
+          body: |
+            Automated 50/50 Women on Boards refresh.
+
+            - Raw: `data/raw/wob5050/`
+            - Derived: `data/derived/wob5050-augment.json`
+          branch: data/wob5050
+          add-paths: |
+            data/raw/wob5050/**
+            data/derived/wob5050-augment.json
+          delete-branch: true

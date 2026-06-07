@@ -1,0 +1,60 @@
+name: canada-competition-bureau-monthly
+
+# DW-17 — Canada Competition Bureau enforcement, monthly.
+#
+# Runs on the 6th of each month at 08:00 UTC. Uses the
+# COMP_BUREAU_URL secret for the Open Government CSV/JSON mirror
+# (or set it to the Bureau's own news-release JSON). Falls back to
+# the bundled fixture when the secret is unset.
+
+on:
+  schedule:
+    - cron: "0 8 6 * *"
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Optional override URL (Open Gov JSON or CSV)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch Canada Competition Bureau enforcement
+        env:
+          COMP_BUREAU_API_KEY: ${{ secrets.COMP_BUREAU_API_KEY }}
+        run: |
+          URL="${{ github.event.inputs.url || secrets.COMP_BUREAU_URL }}"
+          if [ -n "$URL" ]; then
+            node scripts/canada-competition-bureau-fetch.mjs --apply --url "$URL"
+          else
+            node scripts/canada-competition-bureau-fetch.mjs
+          fi
+
+      - name: Merge into derived augment
+        run: node scripts/canada-competition-bureau-merge.mjs
+
+      - name: Run tests
+        run: node --test scripts/canada-competition-bureau-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/canada-competition-bureau/ data/derived/canada-competition-bureau-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(canada-competition-bureau): monthly refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
