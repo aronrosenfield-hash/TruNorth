@@ -1,0 +1,48 @@
+name: leaping-bunny-quarterly
+
+# Leaping Bunny — quarterly mirror of the certified cruelty-free brand list.
+# Runs 1st of Jan/Apr/Jul/Oct at 02:00 UTC.
+#
+# Step 1 (leaping-bunny-fetch.mjs):
+#   - Walks A–Z + 0–9 letter pages on leapingbunny.org/shopping-guide
+#   - 2s delay between requests (small nonprofit, be polite)
+#   - Writes public/data/_raw/leaping-bunny.json
+#
+# Merging is decoupled: cruelty-free-merge-weekly.yml owns the merge step
+# so a single weekly merge can combine fresh LB + PETA snapshots.
+#
+# B-14 — animal-testing flags (cruelty-free certification overlay).
+
+on:
+  schedule:
+    - cron: "0 2 1 1,4,7,10 *"   # 02:00 UTC on Jan/Apr/Jul/Oct 1
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit public/data/_raw/leaping-bunny.json
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run Leaping Bunny fetcher
+        run: node scripts/leaping-bunny-fetch.mjs
+
+      - name: Commit + push the snapshot
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/leaping-bunny.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(leaping-bunny): quarterly certified-brand refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

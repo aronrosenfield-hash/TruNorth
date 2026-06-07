@@ -2,7 +2,7 @@
 
 > **Single source of truth** for every data source TruNorth pulls from. Mirrored by `SOURCES_DATA` in `src/App.jsx`, which renders the in-app Sources tab. Any time we add or remove a source, both this doc + that array stay in sync.
 
-**Last updated:** 2026-06-04
+**Last updated:** 2026-06-07 (B-14: Leaping Bunny + PETA BWB upgraded from manual entries to live quarterly pipeline)
 
 ---
 
@@ -137,18 +137,12 @@
 |---|---|---|---|
 | ATF Federal Firearms Licenses | https://www.atf.gov/firearms/listing-federal-firearms-licensees | Monthly | Manufacturer/dealer/importer license types by state |
 
-### Industry-membership flags (curated)
-
-| Source | URL | Cadence | Notes |
-|---|---|---|---|
-| Industry membership lists (curated) | scripts/industry-allowlists/ | Monthly | B-15 — hand-curated allow-lists for tobacco, fossil-fuel, firearms-industry, and alcohol companies. Data drawn from public Wikipedia industry lists + each company's investor disclosures. Read-only disclosure pills; not score modifiers. PRs welcome to add brands. |
-
 ### Animal testing & welfare (4)
 
 | Source | URL | Cadence | Notes |
 |---|---|---|---|
-| PETA Beauty Without Bunnies | https://www.peta.org/living/personal-care-fashion/beauty-without-bunnies/ | Annual | Cruelty-free database |
-| Leaping Bunny | https://www.leapingbunny.org | Annual | Cruelty-free certification |
+| PETA Beauty Without Bunnies | https://crueltyfree.peta.org/companies-do-test-on-animals/ + /companies-dont-test-on-animals/ | Quarterly | B-14: two-list scrape (DO test + DON'T test). Negative list lights "Confirmed animal testing" badge; positive list lights "Cruelty-free certified". Fetcher: `scripts/peta-bwb-fetch.mjs`; merger: `scripts/cruelty-free-merge.mjs`. Cloudflare-tolerant (emits `blocked` field on 403/503 so merger can keep using prior snapshot). |
+| Leaping Bunny | https://www.leapingbunny.org/shopping-guide | Quarterly | B-14: certified-brand list scrape by A–Z + 0–9 letter pages, 2s req delay. Strongest cruelty-free signal (binding pledge incl. ingredient suppliers). Third-party certification overrides AI-narrative-based `sc.animals`. Fetcher: `scripts/leaping-bunny-fetch.mjs`. |
 | ASPCA | https://www.aspca.org | Annual | Animal welfare in food/agriculture supply chains |
 | USDA APHIS Enforcement | https://www.aphis.usda.gov/aphis/ourfocus/animalwelfare/news-info/enforcement | Monthly | AWA inspection violations + civil penalties |
 

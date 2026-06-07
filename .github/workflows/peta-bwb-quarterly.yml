@@ -1,0 +1,50 @@
+name: peta-bwb-quarterly
+
+# PETA Beauty Without Bunnies — quarterly mirror of the cruelty-free database
+# (both the "DON'T test" positive list and the "DO test" negative list).
+# Runs 1st of Jan/Apr/Jul/Oct at 02:00 UTC.
+#
+# Step 1 (peta-bwb-fetch.mjs):
+#   - Hits crueltyfree.peta.org's two list pages
+#   - 2s delay between requests
+#   - Writes public/data/_raw/peta-bwb.json
+#   - Tolerant of Cloudflare 403/503 — emits a `blocked` field instead of
+#     crashing so the previous snapshot can still be merged.
+#
+# Merging is decoupled — see cruelty-free-merge-weekly.yml.
+#
+# B-14 — animal-testing flags (cruelty-free certification overlay).
+
+on:
+  schedule:
+    - cron: "0 2 1 1,4,7,10 *"   # 02:00 UTC on Jan/Apr/Jul/Oct 1
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit public/data/_raw/peta-bwb.json
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run PETA BWB fetcher
+        run: node scripts/peta-bwb-fetch.mjs
+
+      - name: Commit + push the snapshot
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/peta-bwb.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(peta-bwb): quarterly cruelty-free database refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
