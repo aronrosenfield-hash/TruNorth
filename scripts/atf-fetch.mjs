@@ -1,342 +1,221 @@
 #!/usr/bin/env node
 /**
- * ATF (Bureau of Alcohol, Tobacco, Firearms & Explosives) — monthly fetch.
+ * ATF Federal Firearms Licensee fetcher — schema v2.
  *
- * Per-brand FFL (Federal Firearms License) compliance data: inspection
- * violations, top violation types, license revocations.
+ * 2026-06-07 (B-37b): rewritten from scratch.
  *
- * ATF publishes structured data through two main channels:
+ * The previous version pulled "compliance violations" / "FFL revocations"
+ * / "FCR Table 6 inspection results" — a different dataset, with the wrong
+ * schema for what the new entity-resolved merger (scripts/atf-merge.mjs,
+ * see B-37) actually consumes. The merger expects the FFL LISTING (every
+ * currently-active FFL holder, by license type), and matches each license
+ * to TruNorth brands through allow-list / strict evidence chain / hard
+ * blocklist gates.
  *
- *   1) FFL eZ Check listing endpoint
- *      https://fflezcheck.atf.gov/fflezcheck/  (HTML, behind a form)
- *   2) ATF data tables (CSV / XLSX) on the data-statistics page:
- *      https://www.atf.gov/resource-center/data-statistics
- *      including the annual Firearms Commerce Report tables which
- *      cover compliance inspections, FFL revocations, and warning-letter
- *      conferences per fiscal year (industry-wide totals + revocation
- *      reason breakdowns).
+ * Source: https://www.atf.gov/firearms/listing-federal-firearms-licensees
+ * ATF publishes a monthly per-license-type CSV/TXT bundle. The dataset is
+ * split into 9 files, one per FFL type (01, 02, 03, 06, 07, 08, 09, 10,
+ * 11), each ~50-500k rows. We consume whichever files the operator has
+ * placed in public/data/_raw/atf-ffl/.
  *
- * ATF DOES NOT publish a per-licensee inspection results API. The closest
- * public granular dataset is the "FFL Revocation List" (released sporadically
- * via FOIA and on atf.gov) which names individual licensees whose licenses
- * were revoked + the cited violation reasons.
+ * USAGE
+ *   node scripts/atf-fetch.mjs                 # consume local CSVs only
+ *   node scripts/atf-fetch.mjs --download      # NOT YET — manual seed for now
+ *   node scripts/atf-fetch.mjs --month=2026-04 # tag output with a specific month
  *
- * This fetcher does two things per brand:
+ * OUTPUT
+ *   public/data/atf-ffl.json — schema consumed by scripts/atf-merge.mjs:
+ *     {
+ *       generated_at:    "ISO-8601",
+ *       source_url:      "https://www.atf.gov/firearms/listing-federal-firearms-licensees",
+ *       source_month:    "YYYY-MM",
+ *       licensee_count:  N,
+ *       licensees: [
+ *         { business_name, license_type, state, expiration, sic_code? },
+ *         ...
+ *       ]
+ *     }
  *
- *   A) Pulls the consolidated revocation-reason table (5y rolling) and
- *      matches the brand's normalized token set against the licensee
- *      `business_name` column.
+ * SAFETY
+ *   - This fetcher NEVER writes to per-company JSON files. Only the merger
+ *     does, and only after the entity-resolution gates (B-37).
+ *   - Until someone reviews a real run end-to-end, .github/workflows/
+ *     atf-monthly.yml stays paused (`if: false` guard).
+ *   - When no local CSVs and no --download, a tiny synthetic fixture is
+ *     emitted instead so the merger can be smoke-tested.
  *
- *   B) Aggregates inspection-violation counts from the published Firearms
- *      Commerce Report (FCR) Table 6 ("FFL Compliance Inspection
- *      Results") — these are industry totals broken down by violation
- *      category. We attribute the industry totals only to brands flagged
- *      as `industry: "Firearms"` in their top-500-brands record (or that
- *      match a small hand-curated FFL_LICENSEES set); non-firearms
- *      brands get an explicit `status: "not_in_atf_universe"`.
- *
- * Output: /public/data/atf-firearms.json (overwritten monthly)
- *
- * Per-brand aggregates (firearms-industry brands only):
- *   - total_inspection_violations_5y
- *   - top_violation_types          [{ label, count }]
- *   - license_revocations_5y
- *   - sample                       up to 5 revocation / violation records
- *
- * Honor-system courtesy: 1 req/sec between brand lookups,
- * UA "TruNorth-ATF/1.0".
- *
- * Runs via .github/workflows/atf-monthly.yml on the 1st @ 20:00 UTC.
- *
- * Locally:    node scripts/atf-fetch.mjs
- * Smoke:      node scripts/atf-fetch.mjs --smoke
- *             (runs against Smith & Wesson, Sturm Ruger, Glock, Walmart)
+ * SCHEMA NOTES
+ *   - license_type is the two-digit ATF code, kept as a string ("01"..."11").
+ *     Leading zeros matter — don't coerce to number.
+ *   - business_name comes verbatim from ATF (often UPPERCASE). The merger
+ *     does its own normalization.
+ *   - state is two-letter USPS code.
+ *   - expiration is "YYYY-MM-DD" if present; ATF sometimes omits it.
+ *   - sic_code is OPTIONAL. ATF rarely includes it; when present it
+ *     significantly improves the merger's evidence-chain gate.
  */
 
 import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT        = path.resolve(__dirname, "..");
-const BRANDS_FILE = path.join(ROOT, "public/data/top-500-brands.txt");
-const OUT_FILE    = path.join(ROOT, "public/data/atf-firearms.json");
+const ROOT       = path.resolve(__dirname, "..");
+const RAW_DIR    = path.join(ROOT, "public/data/_raw/atf-ffl");
+const OUT_FILE   = path.join(ROOT, "public/data/atf-ffl.json");
+const SOURCE_URL = "https://www.atf.gov/firearms/listing-federal-firearms-licensees";
 
-const UA = "TruNorth-ATF/1.0 (+https://www.trunorthapp.com)";
-const SMOKE = process.argv.includes("--smoke");
+const ARGS      = process.argv.slice(2);
+const DOWNLOAD  = ARGS.includes("--download");
+const MONTH_ARG = ARGS.find((a) => a.startsWith("--month="))?.slice("--month=".length);
 
-const SMOKE_SLUGS = new Set([
-  "smith-wesson",
-  "sturm-ruger",
-  "ruger",
-  "glock",
-  "walmart",
-]);
-
-const FIVE_YEARS_MS = 5 * 365 * 24 * 60 * 60 * 1000;
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-// ─── ATF universe ─────────────────────────────────────────────────────────
-//
-// Brands that are firearms manufacturers, distributors, or major firearms
-// retailers (i.e. operate as FFL licensees). Only these brands are eligible
-// for ATF inspection-violation / revocation aggregation. The slug strings
-// match top-500-brands.txt + slug-aliases.json.
-const FFL_LICENSEES = new Set([
-  // manufacturers
-  "smith-wesson",
-  "sturm-ruger",
-  "ruger",
-  "glock",
-  "remington",
-  "winchester",
-  "colt",
-  "beretta",
-  "sig-sauer",
-  "browning",
-  "mossberg",
-  "savage-arms",
-  "kimber",
-  "henry-repeating-arms",
-  "springfield-armory",
-  "fn-herstal",
-  "heckler-koch",
-  "taurus",
-  // major firearms retailers (Type 01 FFLs)
-  "walmart",
-  "dicks-sporting-goods",
-  "bass-pro-shops",
-  "cabelas",
-  "academy-sports",
-  "sportsmans-warehouse",
-]);
-
-// Industry-wide FCR (Firearms Commerce Report) compliance-inspection
-// violation buckets — published annually by ATF. Values are 5-year
-// industry totals (FY 2019 – FY 2023, most recent publicly released
-// tables at the time of writing). These are used as a fall-through
-// attribution for firearms-industry brands when no licensee-specific
-// data is available.
-//
-// Source: https://www.atf.gov/firearms/docs/report/2023-firearms-commerce-report
-// Table 6 — "Federal Firearms Licensee Compliance Inspection Findings"
-const FCR_VIOLATION_CATEGORIES_5Y = [
-  { label: "Failure to Account for Firearms",                     count: 8421 },
-  { label: "Failure to Maintain A&D Records",                     count: 6512 },
-  { label: "Failure to Conduct/Document NICS Check",              count: 4187 },
-  { label: "Failure to Complete ATF Form 4473",                   count: 3955 },
-  { label: "Failure to Verify Purchaser Identification",          count: 2103 },
-  { label: "Failure to Report Multiple Handgun Sales",            count: 1644 },
-  { label: "Transfer to Prohibited Person",                       count:  812 },
-  { label: "Failure to Respond to Trace Request",                 count:  611 },
-];
-
-// 5-year (FY19-FY23) industry totals from the same FCR tables.
-const FCR_INDUSTRY_TOTALS_5Y = {
-  inspections_conducted: 45_837,
-  warning_letters:        8_201,
-  warning_conferences:    1_976,
-  revocations_initiated:    471,
-  revocations_final:        348,
+const COLUMN_ALIASES = {
+  business_name: ["business_name", "businessname", "license_name", "licensee_name", "trade_name", "business name"],
+  license_type:  ["license_type", "lic_type", "type", "license type"],
+  state:         ["state", "premise_state", "state code", "st"],
+  expiration:    ["expiration", "expire_date", "exp_date", "expiration_date"],
+  sic_code:      ["sic_code", "naics_code", "sic", "naics"],
 };
 
-// ─── data acquisition ─────────────────────────────────────────────────────
-//
-// ATF's revocation list is published periodically as a static PDF/CSV
-// bundle. We attempt to fetch the latest CSV; if unavailable (404 / non-
-// 200) we fall back to a known-good cached copy embedded in this file
-// (kept short — just enough to validate the pipeline + give merge
-// something to write).
-const ATF_REVOCATION_URL =
-  "https://www.atf.gov/file/atf-ffl-revocation-list-current.csv";
-
-// Embedded fallback revocation rows. Format mirrors the CSV.
-const FALLBACK_REVOCATIONS = [
-  { license_name: "SMITH & WESSON SALES COMPANY",  license_type: "07", state: "MA", effective_date: "2022-11-14", primary_reason: "Willful Failure to Maintain A&D Records" },
-  { license_name: "SPRINGFIELD ARMORY INC",        license_type: "07", state: "IL", effective_date: "2023-03-09", primary_reason: "Willful Violation of Recordkeeping Requirements" },
-];
-
-async function tryFetchRevocations() {
-  try {
-    const res = await fetch(ATF_REVOCATION_URL, {
-      headers: { "User-Agent": UA, "Accept": "text/csv,text/plain,*/*" },
-    });
-    if (!res.ok) {
-      console.warn(`  ATF revocation CSV returned ${res.status}; using fallback`);
-      return FALLBACK_REVOCATIONS;
+function pickField(row, aliases) {
+  for (const a of aliases) {
+    const want = a.toLowerCase().replace(/[_\s-]/g, "");
+    for (const k of Object.keys(row)) {
+      const have = k.toLowerCase().replace(/[_\s-]/g, "");
+      if (have === want) {
+        const v = row[k];
+        if (v != null && String(v).trim()) return String(v).trim();
+      }
     }
-    const text = await res.text();
-    return parseCsv(text);
-  } catch (e) {
-    console.warn(`  ATF revocation CSV fetch failed (${e.message}); using fallback`);
-    return FALLBACK_REVOCATIONS;
   }
+  return null;
+}
+
+// ─── Lightweight CSV parser ──────────────────────────────────────────────
+// ATF files are sometimes pipe-delimited, sometimes comma. Auto-detect.
+function detectDelimiter(headerLine) {
+  const counts = {
+    "|": (headerLine.match(/\|/g) || []).length,
+    ",": (headerLine.match(/,/g)  || []).length,
+    "\t": (headerLine.match(/\t/g) || []).length,
+  };
+  return Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
 }
 
 function parseCsv(text) {
-  const lines = text.split(/\r?\n/).filter(Boolean);
+  const lines = text.split(/\r?\n/).filter((l) => l.length > 0);
   if (lines.length < 2) return [];
-  const headers = lines[0].split(",").map((h) => h.trim().toLowerCase().replace(/\s+/g, "_"));
-  return lines.slice(1).map((line) => {
-    const cells = splitCsvLine(line);
-    const row = {};
-    headers.forEach((h, i) => { row[h] = (cells[i] || "").trim(); });
-    return row;
-  });
-}
-
-function splitCsvLine(line) {
+  const delim = detectDelimiter(lines[0]);
+  const header = lines[0].split(delim).map((h) => h.trim());
   const out = [];
-  let cur = "", inQ = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (c === '"') { inQ = !inQ; continue; }
-    if (c === "," && !inQ) { out.push(cur); cur = ""; continue; }
-    cur += c;
+  for (let i = 1; i < lines.length; i++) {
+    const cols = lines[i].split(delim);
+    const row = {};
+    for (let j = 0; j < header.length; j++) row[header[j]] = (cols[j] || "").trim();
+    out.push(row);
   }
-  out.push(cur);
   return out;
 }
 
-// ─── brand matching ───────────────────────────────────────────────────────
-function normalize(s) {
-  return (s || "")
-    .toLowerCase()
-    .replace(/[&]/g, " and ")
-    .replace(/[^a-z0-9\s]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+// ─── Local CSV ingest ────────────────────────────────────────────────────
+async function ingestLocal() {
+  if (!existsSync(RAW_DIR)) {
+    console.log(`[atf-fetch] no raw dir at ${RAW_DIR} — nothing to ingest`);
+    return [];
+  }
+  const files = (await fs.readdir(RAW_DIR)).filter(
+    (f) => f.endsWith(".csv") || f.endsWith(".txt"),
+  );
+  if (files.length === 0) {
+    console.log(`[atf-fetch] raw dir is empty: ${RAW_DIR}`);
+    return [];
+  }
+  const licensees = [];
+  for (const file of files) {
+    // Infer license type from filename if possible: 0625-type-07-ffl.csv or 07-...
+    const m = file.match(/type[-_]?(\d{2})/i) || file.match(/^(\d{2})[-_]/);
+    const inferredType = m ? m[1] : null;
+    const fp = path.join(RAW_DIR, file);
+    const text = await fs.readFile(fp, "utf-8");
+    const rows = parseCsv(text);
+    let kept = 0;
+    for (const r of rows) {
+      const business_name = pickField(r, COLUMN_ALIASES.business_name);
+      let license_type   = pickField(r, COLUMN_ALIASES.license_type) || inferredType;
+      const state        = pickField(r, COLUMN_ALIASES.state);
+      const expiration   = pickField(r, COLUMN_ALIASES.expiration);
+      const sic_code     = pickField(r, COLUMN_ALIASES.sic_code);
+      if (!business_name || !license_type) continue;
+      license_type = String(license_type).padStart(2, "0").slice(0, 2);
+      licensees.push({
+        business_name,
+        license_type,
+        ...(state      ? { state }      : {}),
+        ...(expiration ? { expiration } : {}),
+        ...(sic_code   ? { sic_code }   : {}),
+      });
+      kept++;
+    }
+    console.log(`[atf-fetch] ${file}: parsed ${rows.length} rows, kept ${kept} licensees`);
+  }
+  return licensees;
 }
 
-function brandTokens(name) {
-  const stop = new Set(["the", "a", "an", "of", "and", "co", "inc", "llc", "corp", "company", "corporation", "international", "group", "holdings"]);
-  return normalize(name).split(" ").filter((t) => t.length >= 3 && !stop.has(t));
-}
-
-function matchesBrand(licenseeName, tokens) {
-  if (!tokens.length) return false;
-  const norm = normalize(licenseeName);
-  return tokens.every((t) => norm.includes(t));
-}
-
-// ─── brand loading ────────────────────────────────────────────────────────
-async function loadBrands() {
-  const raw = await fs.readFile(BRANDS_FILE, "utf-8");
-  let brands = raw
-    .split("\n")
-    .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith("#"))
-    .map((l) => {
-      const [slug, name, industry] = l.split("|").map((s) => s.trim());
-      return { slug, name, industry: industry || null };
-    })
-    .filter((b) => b.slug && b.name);
-
-  // Ensure smoke brands always present (even if not in top-500).
-  const present = new Set(brands.map((b) => b.slug));
-  const SMOKE_EXTRAS = [
-    { slug: "smith-wesson", name: "Smith & Wesson",  industry: "Firearms" },
-    { slug: "sturm-ruger",  name: "Sturm, Ruger & Co.", industry: "Firearms" },
-    { slug: "glock",        name: "Glock",            industry: "Firearms" },
+// ─── Synthetic fixture — used when no local CSVs and no --download ───────
+// Lets us smoke-test the full pipeline (fetch → merger → companies) before
+// real ATF data is available. Only well-known legit FFL holders so the
+// merger's allow-list correctly attaches them.
+function syntheticFixture() {
+  console.warn("[atf-fetch] no local CSVs found — emitting tiny synthetic fixture");
+  console.warn("[atf-fetch] for real data: download CSVs from " + SOURCE_URL);
+  console.warn("[atf-fetch] and drop them into " + RAW_DIR);
+  return [
+    { business_name: "STURM RUGER & CO INC",          license_type: "07", state: "NC", sic_code: "332994" },
+    { business_name: "SMITH & WESSON BRANDS INC",     license_type: "07", state: "MA", sic_code: "332994" },
+    { business_name: "BROWNING ARMS COMPANY",         license_type: "07", state: "UT", sic_code: "332994" },
+    { business_name: "WALMART INC.",                  license_type: "01", state: "AR", sic_code: "5941"   },
+    { business_name: "BASS PRO SHOPS INC",            license_type: "01", state: "MO", sic_code: "5941"   },
+    { business_name: "ACADEMY SPORTS + OUTDOORS INC", license_type: "01", state: "TX", sic_code: "5941"   },
   ];
-  for (const e of SMOKE_EXTRAS) if (!present.has(e.slug)) brands.push(e);
-
-  if (SMOKE) brands = brands.filter((b) => SMOKE_SLUGS.has(b.slug));
-  return brands;
 }
 
-// ─── per-brand aggregation ────────────────────────────────────────────────
-function aggregateBrand(brand, revocations, now) {
-  const eligible = FFL_LICENSEES.has(brand.slug)
-                || /firearm|gun|ammunit/i.test(brand.industry || "");
-
-  if (!eligible) {
-    return { slug: brand.slug, name: brand.name, status: "not_in_atf_universe" };
-  }
-
-  const tokens = brandTokens(brand.name);
-  const cutoff = Date.now() - FIVE_YEARS_MS;
-
-  const matched = revocations.filter((r) => {
-    if (!matchesBrand(r.license_name, tokens)) return false;
-    const t = Date.parse(r.effective_date);
-    return Number.isNaN(t) ? true : t >= cutoff;
-  });
-
-  // Inspection-violation estimate: industry totals weighted equally
-  // across FFL_LICENSEES (a stand-in until ATF publishes per-licensee
-  // results). Documented as industry-share basis in output.
-  const fflPool = FFL_LICENSEES.size;
-  const share   = 1 / fflPool;
-  const fcrTopTypes = FCR_VIOLATION_CATEGORIES_5Y.map((v) => ({
-    label: v.label,
-    count: Math.round(v.count * share),
-  })).filter((v) => v.count > 0);
-
-  const totalInspectionViolations5y = fcrTopTypes.reduce((s, v) => s + v.count, 0);
-
-  const sample = matched.slice(0, 5).map((r) => ({
-    license_name:   r.license_name,
-    license_type:   r.license_type,
-    state:          r.state,
-    effective_date: r.effective_date,
-    primary_reason: r.primary_reason,
-  }));
-
-  return {
-    slug:                            brand.slug,
-    name:                            brand.name,
-    status:                          "ok",
-    total_inspection_violations_5y:  totalInspectionViolations5y,
-    top_violation_types:             fcrTopTypes,
-    license_revocations_5y:          matched.length,
-    industry_share_basis:            `1 of ${fflPool} tracked FFL licensees`,
-    industry_totals_5y:              FCR_INDUSTRY_TOTALS_5Y,
-    sample,
-    fetched_at:                      now,
-  };
+// ─── Download mode (not yet implemented end-to-end) ──────────────────────
+// ATF's download landing page lists files at non-stable URLs that change
+// each month. Robust auto-fetch needs page scraping that we haven't built
+// yet. For now operators must download manually. Filed as B-37c.
+async function downloadCurrentMonth() {
+  console.warn("[atf-fetch] --download not yet implemented end-to-end (filed as B-37c).");
+  console.warn("[atf-fetch] Manual procedure:");
+  console.warn("[atf-fetch]   1. Visit " + SOURCE_URL);
+  console.warn("[atf-fetch]   2. Download each type's CSV/TXT for the current month");
+  console.warn("[atf-fetch]   3. Drop them into " + RAW_DIR);
+  console.warn("[atf-fetch]   4. Re-run without --download");
 }
 
-// ─── main ─────────────────────────────────────────────────────────────────
+// ─── Main ────────────────────────────────────────────────────────────────
 async function main() {
-  const now = new Date().toISOString();
-  console.log("ATF firearms-industry fetcher starting...");
-  const brands = await loadBrands();
-  console.log(`Loaded ${brands.length} brands${SMOKE ? " (smoke)" : ""}`);
+  await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
+  await fs.mkdir(RAW_DIR, { recursive: true });
 
-  console.log("Fetching ATF revocation list...");
-  const revocations = await tryFetchRevocations();
-  console.log(`  ${revocations.length} revocation rows`);
-  await sleep(1000);
+  if (DOWNLOAD) await downloadCurrentMonth();
 
-  const results = [];
-  let eligibleCount = 0;
-  for (let i = 0; i < brands.length; i++) {
-    const r = aggregateBrand(brands[i], revocations, now);
-    results.push(r);
-    if (r.status === "ok") eligibleCount++;
-    if (SMOKE) await sleep(250);
-    if (i % 100 === 0 && i > 0) console.log(`  ...${i}/${brands.length}`);
-  }
+  let licensees = await ingestLocal();
+  if (licensees.length === 0) licensees = syntheticFixture();
 
+  const month = MONTH_ARG || new Date().toISOString().slice(0, 7);
   const out = {
-    generated_at:        now,
-    source:              "ATF (https://www.atf.gov/firearms/firearms-industry, https://www.atf.gov/resource-center/data-statistics)",
-    brand_count:         brands.length,
-    eligible_count:      eligibleCount,
-    industry_totals_5y:  FCR_INDUSTRY_TOTALS_5Y,
-    fcr_violation_types: FCR_VIOLATION_CATEGORIES_5Y,
-    revocation_rows:     revocations.length,
-    brands:              results,
+    generated_at:   new Date().toISOString(),
+    source_url:     SOURCE_URL,
+    source_month:   month,
+    licensee_count: licensees.length,
+    licensees,
   };
-
-  await fs.writeFile(OUT_FILE, JSON.stringify(out, null, 2));
-  console.log(`\nWrote ${OUT_FILE}`);
-  console.log(`  Eligible (firearms-industry) brands: ${eligibleCount}`);
-  console.log(`  Not-in-universe (skipped):           ${brands.length - eligibleCount}`);
+  await fs.writeFile(OUT_FILE, JSON.stringify(out, null, 2) + "\n");
+  console.log(`[atf-fetch] wrote ${licensees.length} licensees → ${path.relative(ROOT, OUT_FILE)} (source_month=${month})`);
 }
 
-main().catch((err) => {
-  console.error("atf-fetch failed:", err);
+main().catch((e) => {
+  console.error("[atf-fetch] fatal:", e);
   process.exit(1);
 });
