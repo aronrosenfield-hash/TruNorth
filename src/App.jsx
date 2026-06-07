@@ -9,7 +9,7 @@ import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap } from "./lib/dataSource";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
@@ -124,6 +124,28 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
     return m;
   }, [companies]);
 
+  // Load the brand→parent-slug fallback map once. Open Food Facts often
+  // returns sub-brands like "Oreo" or "Nabisco" that aren't top-level
+  // companies in our index but DO map to a parent (Mondelez International)
+  // that is. Without this fallback the scanner shows "no match" on very
+  // recognizable products and looks broken in-store.
+  const [brandParentMap, setBrandParentMap] = useState({});
+  useEffect(() => {
+    let cancelled = false;
+    loadBrandParentMap().then(map => {
+      if (!cancelled) setBrandParentMap(map || {});
+    });
+    return () => { cancelled = true; };
+  }, []);
+
+  // Build a slug→company index so we can resolve a parent slug from the
+  // brand-parent-map back to a full company object.
+  const slugIndex = useMemo(() => {
+    const m = new Map();
+    (companies || []).forEach(c => { if (c.slug) m.set(c.slug, c); });
+    return m;
+  }, [companies]);
+
   const resolveBrand = (rawBrand) => {
     if (!rawBrand) return null;
     // Try each brand token in the comma/pipe-separated list, prefer first match
@@ -134,6 +156,13 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
       // Word-prefix fallback: e.g. "Coca-Cola Company" → "cocacola" → match "cocacola"
       for (const [bk, bv] of brandIndex) {
         if (bk.length >= 4 && (bk.startsWith(k) || k.startsWith(bk))) return bv;
+      }
+      // Brand-parent-map fallback: e.g. "Nabisco" or "Oreo" → mondelez-international
+      // This is what makes the scanner work for sub-brands that aren't
+      // themselves top-level companies.
+      const mapped = brandParentMap[k];
+      if (mapped?.parent && slugIndex.has(mapped.parent)) {
+        return slugIndex.get(mapped.parent);
       }
     }
     return null;

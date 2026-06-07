@@ -75,3 +75,25 @@ export function warmDetailCache(slugs, limit = 6) {
   if (!Array.isArray(slugs)) return;
   slugs.slice(0, limit).forEach(s => { loadCompanyDetail(s).catch(() => {}); });
 }
+
+let brandParentPromise = null;
+
+/**
+ * Load the brand → parent-slug fallback map. Used by the in-store barcode
+ * scanner: Open Food Facts often returns a sub-brand like "Oreo" or
+ * "Nabisco" that isn't a top-level company in our index, but maps to a
+ * parent (Mondelez International) that IS. Without this fallback the
+ * scanner shows "no match" for very recognizable products.
+ *
+ * Shape: { [normalizedBrandKey]: { parent: "<slug>", confidence: "high"|"medium"|"low" } }
+ * Normalization: lowercase, alphanumeric-only (same as App.jsx resolveBrand()).
+ * Returns {} on fetch failure so callers can degrade gracefully.
+ */
+export async function loadBrandParentMap() {
+  if (!brandParentPromise) {
+    brandParentPromise = fetch("/data/_meta/brand-parent-map.json")
+      .then(r => r.ok ? r.json() : {})
+      .catch(() => ({}));
+  }
+  return brandParentPromise;
+}

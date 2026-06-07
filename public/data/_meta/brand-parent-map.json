@@ -1,324 +1,287 @@
 {
   "_doc": "B-22: maps sub-brand slugs (orphans in top-500-brands.txt) to the parent company slug whose /companies/<slug>.json file should receive news merges. Hand-curated 2026-06-03 with parent slugs verified against actual files in /public/data/companies/. Twilio + a few Stellantis brands have no matching parent file and are omitted.",
-  "sprite": {
-    "parent": "coca-cola",
+  "abbott": {
+    "parent": "abbott-laboratories",
     "confidence": "high"
   },
-  "mountain-dew": {
-    "parent": "pepsi",
+  "abercrombie": {
+    "parent": "abercrombie-and-fitch",
     "confidence": "high"
   },
-  "fairlife": {
-    "parent": "coca-cola",
+  "aidells": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ajax": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ally-bank": {
+    "parent": "ally-financial",
     "confidence": "high"
   },
-  "cheerios": {
-    "parent": "general-mills",
-    "confidence": "high"
-  },
-  "lucky-charms": {
-    "parent": "general-mills",
-    "confidence": "high"
-  },
-  "yoplait": {
-    "parent": "general-mills",
-    "confidence": "high"
-  },
-  "oreo": {
-    "parent": "mondelez-international",
-    "confidence": "high"
-  },
-  "chips-ahoy": {
-    "parent": "mondelez-international",
-    "confidence": "high"
-  },
-  "ritz": {
-    "parent": "mondelez-international",
-    "confidence": "high"
-  },
-  "cheez-its": {
-    "parent": "kellogg-s",
-    "confidence": "high"
-  },
-  "goldfish": {
-    "parent": "campbell-soup",
-    "confidence": "high"
-  },
-  "mms": {
-    "parent": "mars",
-    "confidence": "high"
-  },
-  "snickers": {
-    "parent": "mars",
-    "confidence": "high"
-  },
-  "twix": {
-    "parent": "mars",
-    "confidence": "high"
-  },
-  "reeses": {
+  "almondjoy": {
     "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "alphabet": {
+    "parent": "google-alphabet",
     "confidence": "high"
   },
-  "kraft": {
-    "parent": "kraft-heinz",
+  "altria": {
+    "parent": "altria-group",
     "confidence": "high"
   },
-  "quaker": {
+  "always": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "annies": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "anthem": {
+    "parent": "anthem-elevance-health",
+    "confidence": "high"
+  },
+  "applejacks": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "aquafina": {
     "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "aramis": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "audi": {
+    "parent": "volkswagen-usa",
     "confidence": "high"
   },
-  "tide": {
-    "parent": "procter-and-gamble",
-    "confidence": "high"
+  "aveda": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "charmin": {
-    "parent": "procter-and-gamble",
-    "confidence": "high"
-  },
-  "pampers": {
-    "parent": "procter-and-gamble",
-    "confidence": "high"
-  },
-  "cascade": {
-    "parent": "procter-and-gamble",
-    "confidence": "high"
-  },
-  "swiffer": {
-    "parent": "procter-and-gamble",
-    "confidence": "high"
-  },
-  "old-spice": {
-    "parent": "procter-and-gamble",
-    "confidence": "high"
-  },
-  "huggies": {
-    "parent": "kimberly-clark",
-    "confidence": "high"
-  },
-  "suave": {
-    "parent": "unilever",
+  "aveeno": {
+    "parent": "johnson-and-johnson",
     "confidence": "high"
   },
   "axe": {
     "parent": "unilever",
     "confidence": "high"
   },
+  "ballpark": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bandaid": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "banquet": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "becks": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "belvita": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
   "ben-jerrys": {
     "parent": "unilever",
     "confidence": "high"
   },
-  "aveeno": {
+  "benadryl": {
     "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "benandjerrys": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "benjerrys": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bensoriginal": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bestfoods": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bettycrocker": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "birdseye": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bisquick": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "black-decker": {
+    "parent": "stanley-black-and-decker",
     "confidence": "high"
   },
-  "neutrogena": {
-    "parent": "johnson-and-johnson",
+  "bluemoon": {
+    "parent": "molson-coors-beverage",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bmw": {
+    "parent": "bmw-usa",
     "confidence": "high"
   },
-  "marlboro": {
-    "parent": "altria-group",
-    "confidence": "high"
+  "bobbibrown": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "nordstrom-rack": {
-    "parent": "nordstrom",
-    "confidence": "high"
-  },
-  "cabelas": {
-    "parent": "bass-pro-shops",
-    "confidence": "high"
-  },
-  "old-navy": {
-    "parent": "gap-inc",
-    "confidence": "high"
-  },
-  "hollister": {
-    "parent": "abercrombie-and-fitch",
-    "confidence": "high"
-  },
-  "google": {
-    "parent": "google-alphabet",
-    "confidence": "high"
-  },
-  "youtube": {
-    "parent": "google-alphabet",
-    "confidence": "high"
-  },
-  "facebook": {
-    "parent": "meta-platforms",
-    "confidence": "high"
-  },
-  "instagram": {
-    "parent": "meta-platforms",
-    "confidence": "high"
-  },
-  "whatsapp": {
-    "parent": "meta-platforms",
-    "confidence": "high"
-  },
-  "threads": {
-    "parent": "meta-platforms",
-    "confidence": "high"
-  },
-  "meta": {
-    "parent": "meta-platforms",
-    "confidence": "high"
-  },
-  "hulu": {
-    "parent": "disney",
-    "confidence": "high"
-  },
-  "hbo-max": {
-    "parent": "warner-bros-discovery",
-    "confidence": "high"
-  },
-  "peacock": {
-    "parent": "comcast",
-    "confidence": "high"
-  },
-  "firetv": {
-    "parent": "amazon",
-    "confidence": "high"
-  },
-  "twitch": {
-    "parent": "amazon",
-    "confidence": "high"
-  },
-  "snapchat": {
-    "parent": "snap",
-    "confidence": "high"
-  },
-  "square": {
-    "parent": "block-inc",
-    "confidence": "high"
-  },
-  "cash-app": {
-    "parent": "block-inc",
-    "confidence": "high"
-  },
-  "venmo": {
-    "parent": "paypal",
-    "confidence": "high"
-  },
-  "xfinity": {
-    "parent": "comcast",
-    "confidence": "high"
-  },
-  "audi": {
-    "parent": "volkswagen-usa",
-    "confidence": "high"
-  },
-  "lamborghini": {
-    "parent": "volkswagen-usa",
-    "confidence": "high"
-  },
-  "volkswagen": {
-    "parent": "volkswagen-usa",
-    "confidence": "high"
-  },
-  "elevance": {
-    "parent": "anthem-elevance-health",
-    "confidence": "high"
-  },
-  "anthem": {
-    "parent": "anthem-elevance-health",
-    "confidence": "high"
-  },
-  "priceline": {
-    "parent": "booking-holdings",
-    "confidence": "high"
-  },
-  "kayak": {
-    "parent": "booking-holdings",
-    "confidence": "high"
+  "bodyarmor": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
   "booking": {
     "parent": "booking-holdings",
     "confidence": "high"
   },
-  "trivago": {
-    "parent": "expedia-group",
+  "bounce": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bounty": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "bp": {
+    "parent": "bp-usa",
     "confidence": "high"
   },
-  "expedia": {
-    "parent": "expedia-group",
-    "confidence": "high"
+  "breyers": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "disney-cruise": {
-    "parent": "disney",
-    "confidence": "high"
+  "brita": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "kitchenaid": {
-    "parent": "whirlpool-corp",
-    "confidence": "high"
-  },
-  "whirlpool": {
-    "parent": "whirlpool-corp",
-    "confidence": "high"
-  },
-  "playstation": {
-    "parent": "sony-entertainment",
-    "confidence": "high"
-  },
-  "sony": {
-    "parent": "sony-entertainment",
-    "confidence": "medium",
-    "note": "Routing all Sony brand news to entertainment arm; corporate Sony is a separate filing entity not in catalog"
-  },
-  "xbox": {
-    "parent": "microsoft",
-    "confidence": "high"
-  },
-  "teams": {
-    "parent": "microsoft",
-    "confidence": "high"
-  },
-  "github": {
-    "parent": "microsoft",
-    "confidence": "high"
-  },
-  "linkedin": {
-    "parent": "microsoft",
-    "confidence": "high"
-  },
-  "budweiser": {
-    "parent": "anheuser-busch",
-    "confidence": "high"
+  "bubly": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
   "bud-light": {
     "parent": "anheuser-busch",
     "confidence": "high"
   },
-  "stella-artois": {
+  "budlight": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "budweiser": {
     "parent": "anheuser-busch",
     "confidence": "high"
   },
-  "coors-light": {
-    "parent": "molson-coors-beverage",
-    "confidence": "high"
+  "bumbleandbumble": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "heineken": {
-    "parent": "heineken-usa",
-    "confidence": "high"
-  },
-  "mondelez": {
-    "parent": "mondelez-international",
-    "confidence": "high"
-  },
-  "hormel": {
-    "parent": "hormel-foods",
-    "confidence": "high"
-  },
-  "conagra": {
-    "parent": "conagra-brands",
-    "confidence": "high"
-  },
-  "silk": {
-    "parent": "danone",
-    "confidence": "high"
-  },
-  "clorox": {
+  "burtsbees": {
     "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cabelas": {
+    "parent": "bass-pro-shops",
+    "confidence": "high"
+  },
+  "cadbury": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cadburycream": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "calphalon": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "camel": {
+    "parent": "r-j-reynolds-tobacco-company",
+    "confidence": "high"
+  },
+  "capncrunch": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "caprisun": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "carefree": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "carnival": {
+    "parent": "carnival-corp",
+    "confidence": "high"
+  },
+  "carrs": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cascade": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "cash-app": {
+    "parent": "block-inc",
     "confidence": "high"
   },
   "cerave": {
@@ -329,226 +292,1823 @@
     "parent": "galderma-group-ag",
     "confidence": "high"
   },
-  "the-ordinary": {
-    "parent": "estee-lauder-companies",
-    "confidence": "high"
-  },
-  "procter-gamble": {
+  "charmin": {
     "parent": "procter-and-gamble",
     "confidence": "high"
   },
-  "johnson-johnson": {
+  "cheerios": {
+    "parent": "general-mills",
+    "confidence": "high"
+  },
+  "cheetos": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cheez-its": {
+    "parent": "kellogg-s",
+    "confidence": "high"
+  },
+  "cheezit": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "chefboyardee": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "chips-ahoy": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "chipsahoy": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cinnamontoast": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "citi": {
+    "parent": "citigroup",
+    "confidence": "high"
+  },
+  "classico": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cleanandclear": {
     "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "clinique": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "clorox": {
+    "parent": "clorox-co",
     "confidence": "high"
   },
-  "philip-morris": {
-    "parent": "philip-morris-international",
+  "cocacola": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cocacolacompany": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cocoapuffs": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "coke": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cokezero": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "coleman": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "colgate": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "combos": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "conagra": {
+    "parent": "conagra-brands",
     "confidence": "high"
   },
-  "altria": {
-    "parent": "altria-group",
+  "coors-light": {
+    "parent": "molson-coors-beverage",
     "confidence": "high"
   },
-  "camel": {
-    "parent": "r-j-reynolds-tobacco-company",
+  "coorslight": {
+    "parent": "molson-coors-beverage",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cornflakes": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "corona": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "costacoffee": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "crest": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "crockpot": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "cuddlysoftener": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "dasani": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "dawn": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "degree": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "dietcoke": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "discover": {
+    "parent": "discover-financial",
     "confidence": "high"
   },
-  "sonic": {
-    "parent": "sonic-drive-in",
+  "disney-cruise": {
+    "parent": "disney",
     "confidence": "high"
   },
-  "hoka": {
-    "parent": "deckers-outdoor",
-    "confidence": "high"
+  "doritos": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "gap": {
-    "parent": "gap-inc",
-    "confidence": "high"
+  "doublemint": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "abercrombie": {
-    "parent": "abercrombie-and-fitch",
-    "confidence": "high"
+  "dove": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "gucci": {
-    "parent": "kering",
-    "confidence": "high"
+  "downy": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "kate-spade": {
-    "parent": "tapestry",
-    "confidence": "high"
+  "drjart": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "fossil": {
-    "parent": "fossil-group",
-    "confidence": "high"
+  "duncan": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "moncler": {
-    "parent": "moncler-s-p-a",
-    "confidence": "high"
+  "duncanhines": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "tommy-hilfiger": {
-    "parent": "tommy-hilfiger-pvh",
-    "confidence": "high"
+  "eggo": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   },
-  "alphabet": {
-    "parent": "google-alphabet",
-    "confidence": "high"
-  },
-  "oracle": {
-    "parent": "oracle-cloud",
-    "confidence": "high"
-  },
-  "samsung": {
-    "parent": "samsung-usa",
-    "confidence": "high"
-  },
-  "lg": {
-    "parent": "lg-usa",
-    "confidence": "high"
-  },
-  "slack": {
-    "parent": "salesforce",
-    "confidence": "high"
-  },
-  "jira": {
-    "parent": "atlassian",
-    "confidence": "high"
-  },
-  "trello": {
-    "parent": "atlassian",
-    "confidence": "high"
-  },
-  "mailchimp": {
-    "parent": "intuit",
-    "confidence": "high"
-  },
-  "toyota": {
-    "parent": "toyota-usa",
-    "confidence": "high"
-  },
-  "honda": {
-    "parent": "honda-motor-co",
-    "confidence": "high"
-  },
-  "nissan": {
-    "parent": "nissan-technical-center-north-america",
-    "confidence": "medium",
-    "note": "Only Nissan-affiliated file in catalog is the NA R&D arm"
-  },
-  "hyundai": {
-    "parent": "hyundai-usa",
-    "confidence": "high"
-  },
-  "kia": {
-    "parent": "kia-usa",
-    "confidence": "high"
-  },
-  "subaru": {
-    "parent": "subaru-usa",
-    "confidence": "high"
-  },
-  "mitsubishi": {
-    "parent": "mitsubishi-motors-north-america",
-    "confidence": "high"
-  },
-  "bmw": {
-    "parent": "bmw-usa",
-    "confidence": "high"
-  },
-  "mercedes-benz": {
-    "parent": "mercedes-benz-usa",
-    "confidence": "high"
-  },
-  "ferrari": {
-    "parent": "ferrari-n-v",
-    "confidence": "high"
-  },
-  "rivian": {
-    "parent": "rivian-automotive",
-    "confidence": "high"
-  },
-  "shell": {
-    "parent": "shell-usa",
-    "confidence": "high"
-  },
-  "bp": {
-    "parent": "bp-usa",
-    "confidence": "high"
-  },
-  "abbott": {
-    "parent": "abbott-laboratories",
-    "confidence": "high"
-  },
-  "labcorp": {
-    "parent": "labcorp-drug-development",
-    "confidence": "high"
-  },
-  "ihg": {
-    "parent": "ihg-holiday-inn",
-    "confidence": "medium",
-    "note": "Only IHG-affiliated file in catalog is the Holiday Inn sub-brand"
-  },
-  "wyndham": {
-    "parent": "wyndham-hotels",
+  "elevance": {
+    "parent": "anthem-elevance-health",
     "confidence": "high"
   },
   "enterprise": {
     "parent": "enterprise-rent-a-car",
     "confidence": "high"
   },
-  "carnival": {
-    "parent": "carnival-corp",
+  "esteelauder": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "expedia": {
+    "parent": "expedia-group",
     "confidence": "high"
   },
-  "royal-caribbean": {
-    "parent": "royal-caribbean-cruises",
+  "expo": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "extra": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fabuloso": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "facebook": {
+    "parent": "meta-platforms",
     "confidence": "high"
   },
-  "norwegian-cruise": {
-    "parent": "norwegian-cruise-line",
+  "fairlife": {
+    "parent": "coca-cola",
     "confidence": "high"
   },
-  "citi": {
-    "parent": "citigroup",
+  "famousamos": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fanta": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "febreze": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ferrari": {
+    "parent": "ferrari-n-v",
     "confidence": "high"
   },
-  "pnc": {
-    "parent": "pnc-financial",
+  "fiber": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fifthavenue": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "firetv": {
+    "parent": "amazon",
     "confidence": "high"
   },
-  "truist": {
-    "parent": "truist-financial",
+  "foodsaver": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fossil": {
+    "parent": "fossil-group",
     "confidence": "high"
   },
-  "discover": {
-    "parent": "discover-financial",
+  "fresh": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "freshstep": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fritolay": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "frootloops": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "frostedflakes": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fruitloops": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fruitsnacks": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fruity": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "funyuns": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fuze": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "fuzetea": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "gain": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "gap": {
+    "parent": "gap-inc",
     "confidence": "high"
   },
-  "ally-bank": {
-    "parent": "ally-financial",
+  "gatorade": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "gillette": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "github": {
+    "parent": "microsoft",
     "confidence": "high"
   },
-  "black-decker": {
-    "parent": "stanley-black-and-decker",
+  "glaceau": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "glad": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "goldfish": {
+    "parent": "campbell-soup",
     "confidence": "high"
   },
-  "milwaukee-tools": {
-    "parent": "techtronic-industries",
+  "goldmedal": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "goldpeak": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "goodhumor": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "google": {
+    "parent": "google-alphabet",
     "confidence": "high"
   },
-  "ryobi": {
-    "parent": "techtronic-industries",
+  "gooseisland": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "greengiant": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "grey": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "greypoupon": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "gucci": {
+    "parent": "kering",
+    "confidence": "high"
+  },
+  "haagendazs": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "halls": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hamburgerhelper": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hbo-max": {
+    "parent": "warner-bros-discovery",
+    "confidence": "high"
+  },
+  "headandshoulders": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "healthychoice": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "heath": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hebrewnational": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "heineken": {
+    "parent": "heineken-usa",
+    "confidence": "high"
+  },
+  "heinz": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hellmann": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hellmanns": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hersheys": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hiddenvalley": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hillshirefarm": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hillspetnutrition": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hillssciencediet": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hoegaarden": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hoka": {
+    "parent": "deckers-outdoor",
+    "confidence": "high"
+  },
+  "hollister": {
+    "parent": "abercrombie-and-fitch",
+    "confidence": "high"
+  },
+  "honda": {
+    "parent": "honda-motor-co",
+    "confidence": "high"
+  },
+  "honesttea": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "honeymaid": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hormel": {
+    "parent": "hormel-foods",
+    "confidence": "high"
+  },
+  "huggies": {
+    "parent": "kimberly-clark",
+    "confidence": "high"
+  },
+  "hulu": {
+    "parent": "disney",
+    "confidence": "high"
+  },
+  "hunts": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "hyundai": {
+    "parent": "hyundai-usa",
+    "confidence": "high"
+  },
+  "iams": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "iceakes": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ihg": {
+    "parent": "ihg-holiday-inn",
+    "confidence": "medium",
+    "note": "Only IHG-affiliated file in catalog is the Holiday Inn sub-brand"
+  },
+  "instagram": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "irishspring": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "jello": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "jimmydean": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "jira": {
+    "parent": "atlassian",
     "confidence": "high"
   },
   "john-deere": {
     "parent": "deere-and-company",
     "confidence": "high"
   },
+  "johnson-johnson": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high"
+  },
+  "jollyrancher": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "juicyfruit": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "kashi": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "kate-spade": {
+    "parent": "tapestry",
+    "confidence": "high"
+  },
+  "kayak": {
+    "parent": "booking-holdings",
+    "confidence": "high"
+  },
+  "kcmasterpiece": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "keebler": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "keystonelight": {
+    "parent": "molson-coors-beverage",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "kia": {
+    "parent": "kia-usa",
+    "confidence": "high"
+  },
+  "kingsford": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "kisses": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "kitchenaid": {
+    "parent": "whirlpool-corp",
+    "confidence": "high"
+  },
+  "kix": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "klondike": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "knorr": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "koolaid": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "krackel": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "kraft": {
+    "parent": "kraft-heinz",
+    "confidence": "high"
+  },
+  "labcorp": {
+    "parent": "labcorp-drug-development",
+    "confidence": "high"
+  },
+  "lachoy": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lamborghini": {
+    "parent": "volkswagen-usa",
+    "confidence": "high"
+  },
+  "lamer": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "larabar": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lays": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lg": {
+    "parent": "lg-usa",
+    "confidence": "high"
+  },
+  "lifecereal": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lifesavers": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "linkedin": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "liptontea": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "liquidplumr": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "listerine": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lubriderm": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lucky-charms": {
+    "parent": "general-mills",
+    "confidence": "high"
+  },
+  "luckycharms": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "lunchables": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "luvs": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mac": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "magnum": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mailchimp": {
+    "parent": "intuit",
+    "confidence": "high"
+  },
+  "mariecallenders": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "marlboro": {
+    "parent": "altria-group",
+    "confidence": "high"
+  },
+  "marsbar": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
   "mattel": {
     "parent": "mattel-inc",
     "confidence": "high"
   },
+  "maxwellhouse": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mercedes-benz": {
+    "parent": "mercedes-benz-usa",
+    "confidence": "high"
+  },
+  "meta": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "metamucil": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "michelob": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "milka": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "milkduds": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "milkyway": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "millerlite": {
+    "parent": "molson-coors-beverage",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "milwaukee-tools": {
+    "parent": "techtronic-industries",
+    "confidence": "high"
+  },
+  "miniwheats": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "minutemaid": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "miraclewhip": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mitsubishi": {
+    "parent": "mitsubishi-motors-north-america",
+    "confidence": "high"
+  },
+  "mms": {
+    "parent": "mars",
+    "confidence": "high"
+  },
+  "modelo": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "moncler": {
+    "parent": "moncler-s-p-a",
+    "confidence": "high"
+  },
+  "mondelez": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "morningstarfarms": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "motrin": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mounds": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mountain-dew": {
+    "parent": "pepsi",
+    "confidence": "high"
+  },
+  "mountaindew": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mrclean": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mrcoffee": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mrpibb": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mtndew": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "mug": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "nabisco": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "naturevalley": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "neutrogena": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high"
+  },
+  "nilla": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "nissan": {
+    "parent": "nissan-technical-center-north-america",
+    "confidence": "medium",
+    "note": "Only Nissan-affiliated file in catalog is the NA R&D arm"
+  },
+  "nordstrom-rack": {
+    "parent": "nordstrom",
+    "confidence": "high"
+  },
+  "norwegian-cruise": {
+    "parent": "norwegian-cruise-line",
+    "confidence": "high"
+  },
+  "nutrigrain": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "nutterbutter": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "olay": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "old-navy": {
+    "parent": "gap-inc",
+    "confidence": "high"
+  },
+  "old-spice": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "oldelpaso": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "oldspice": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "oracle": {
+    "parent": "oracle-cloud",
+    "confidence": "high"
+  },
+  "oralb": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "orbit": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ore": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "oreida": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "oreo": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "oreos": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "origins": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "orvilleredenbacher": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "oscarmayer": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "oster": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "palmolive": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pam": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pamcooking": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pampers": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "pampershuggies": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pantene": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "papermate": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
   "parler": {
     "parent": "parler-llc",
     "confidence": "high"
+  },
+  "pasta": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "payday": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "peacock": {
+    "parent": "comcast",
+    "confidence": "high"
+  },
+  "pedigree": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pepsico": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "peptobismol": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pg": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pgtide": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "philadelphia": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "philadelphiacreamcheese": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "philip-morris": {
+    "parent": "philip-morris-international",
+    "confidence": "high"
+  },
+  "pibbxtra": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pillsbury": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "pinesol": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "planters": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "playstation": {
+    "parent": "sony-entertainment",
+    "confidence": "high"
+  },
+  "pnc": {
+    "parent": "pnc-financial",
+    "confidence": "high"
+  },
+  "ponds": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "popsicle": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "poptarts": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "powerade": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "premium": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "priceline": {
+    "parent": "booking-holdings",
+    "confidence": "high"
+  },
+  "pringles": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "procter-gamble": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "puffs": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "qtips": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "quaker": {
+    "parent": "pepsi",
+    "confidence": "high"
+  },
+  "quakeroats": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "raisinbran": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "reddiwip": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "reeses": {
+    "parent": "hershey",
+    "confidence": "high"
+  },
+  "reesescup": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ricearoni": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ricekrispies": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ricekrispiestreats": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ritz": {
+    "parent": "mondelez-international",
+    "confidence": "high"
+  },
+  "ritzcrackers": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "rivian": {
+    "parent": "rivian-automotive",
+    "confidence": "high"
+  },
+  "rockstar": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "rolddoritos": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "rolo": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "rosarita": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "royal-caribbean": {
+    "parent": "royal-caribbean-cruises",
+    "confidence": "high"
+  },
+  "royalcanin": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "rubbermaid": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ruffles": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "ryobi": {
+    "parent": "techtronic-industries",
+    "confidence": "high"
+  },
+  "sabra": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "saltines": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "samsung": {
+    "parent": "samsung-usa",
+    "confidence": "high"
+  },
+  "saralee": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "schweppes": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "scoopaway": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "secret": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "sharpie": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "sheba": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "shell": {
+    "parent": "shell-usa",
+    "confidence": "high"
+  },
+  "silk": {
+    "parent": "danone",
+    "confidence": "high"
+  },
+  "simply": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "simplyorange": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "skittles": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "skor": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "slack": {
+    "parent": "salesforce",
+    "confidence": "high"
+  },
+  "slimjim": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "smartones": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "smartwater": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "smashbox": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "snackpack": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "snapchat": {
+    "parent": "snap",
+    "confidence": "high"
+  },
+  "snickers": {
+    "parent": "mars",
+    "confidence": "high"
+  },
+  "sodastream": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "softsoap": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "sonic": {
+    "parent": "sonic-drive-in",
+    "confidence": "high"
+  },
+  "sony": {
+    "parent": "sony-entertainment",
+    "confidence": "medium",
+    "note": "Routing all Sony brand news to entertainment arm; corporate Sony is a separate filing entity not in catalog"
+  },
+  "sourpatchkids": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "specialk": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "speedstick": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "splenda": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "sprite": {
+    "parent": "coca-cola",
+    "confidence": "high"
+  },
+  "square": {
+    "parent": "block-inc",
+    "confidence": "high"
+  },
+  "starbucksfrappuccino": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "starburst": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "statefair": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "stayfree": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "stella-artois": {
+    "parent": "anheuser-busch",
+    "confidence": "high"
+  },
+  "stellaartois": {
+    "parent": "anheuser-busch",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "stives": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "suave": {
+    "parent": "unilever",
+    "confidence": "high"
+  },
+  "subaru": {
+    "parent": "subaru-usa",
+    "confidence": "high"
+  },
+  "sudafed": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "sunbeam": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "sunchips": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "swedishfish": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "swiffer": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "swissmiss": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tampax": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "teams": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "teddygrahams": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "the-ordinary": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high"
+  },
+  "threads": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "threemusketeers": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tide": {
+    "parent": "procter-and-gamble",
+    "confidence": "high"
+  },
+  "tilex": {
+    "parent": "clorox-co",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "toblerone": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tomfordbeauty": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tommy-hilfiger": {
+    "parent": "tommy-hilfiger-pvh",
+    "confidence": "high"
+  },
+  "tomsofmaine": {
+    "parent": "colgate-palmolive",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "toofaced": {
+    "parent": "estee-lauder-companies",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "topochico": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tostitos": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "totino": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "totinos": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "townhouse": {
+    "parent": "kellogg-s",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "toyota": {
+    "parent": "toyota-usa",
+    "confidence": "high"
+  },
+  "trello": {
+    "parent": "atlassian",
+    "confidence": "high"
+  },
+  "tresemme": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "trident": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "triscuit": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "trivago": {
+    "parent": "expedia-group",
+    "confidence": "high"
+  },
+  "trix": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tropicana": {
+    "parent": "pepsi",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "truist": {
+    "parent": "truist-financial",
+    "confidence": "high"
+  },
+  "twitch": {
+    "parent": "amazon",
+    "confidence": "high"
+  },
+  "twix": {
+    "parent": "mars",
+    "confidence": "high"
+  },
+  "twizzlers": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tylenol": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "tyson": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "unclebens": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "vaseline": {
+    "parent": "unilever",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "velveeta": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "venmo": {
+    "parent": "paypal",
+    "confidence": "high"
+  },
+  "vicks": {
+    "parent": "procter-and-gamble",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "visine": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "vitaminwater": {
+    "parent": "coca-cola",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "vlasic": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "volkswagen": {
+    "parent": "volkswagen-usa",
+    "confidence": "high"
+  },
+  "weight": {
+    "parent": "kraft-heinz",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "wesson": {
+    "parent": "conagra-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "whatsapp": {
+    "parent": "meta-platforms",
+    "confidence": "high"
+  },
+  "wheaties": {
+    "parent": "general-mills",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "wheatthins": {
+    "parent": "mondelez-international",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "whirlpool": {
+    "parent": "whirlpool-corp",
+    "confidence": "high"
+  },
+  "whiskas": {
+    "parent": "mars",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "whoppers": {
+    "parent": "hershey",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "wrightbrand": {
+    "parent": "tyson-foods",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "wyndham": {
+    "parent": "wyndham-hotels",
+    "confidence": "high"
+  },
+  "xbox": {
+    "parent": "microsoft",
+    "confidence": "high"
+  },
+  "xfinity": {
+    "parent": "comcast",
+    "confidence": "high"
+  },
+  "yankeecandle": {
+    "parent": "newell-brands",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
+  },
+  "yoplait": {
+    "parent": "general-mills",
+    "confidence": "high"
+  },
+  "youtube": {
+    "parent": "google-alphabet",
+    "confidence": "high"
+  },
+  "zyrtec": {
+    "parent": "johnson-and-johnson",
+    "confidence": "high",
+    "source": "hand-curated-seed-2026-06-07"
   }
 }
