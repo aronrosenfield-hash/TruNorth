@@ -1,228 +1,343 @@
 #!/usr/bin/env node
 /**
- * WikiRate — Crowdsourced ESG metrics aggregator (monthly)
+ * WikiRate — Step 1: Fetch aggregated answers for a curated list of
+ * high-value ESG / labor / climate metrics across many companies.
  *
- * For each brand in /public/data/top-500-brands.txt, queries WikiRate for
- * crowdsourced ESG/sustainability metrics keyed off the company's slug on
- * wikirate.org.
+ * WikiRate (https://wikirate.org) is a volunteer-run open knowledge graph
+ * that aggregates 8M+ datapoints across 150k+ companies from dozens of
+ * academic / NGO benchmarks (Fashion Transparency Index, Clean Clothes
+ * Campaign Living Wage Gap, KnowTheChain forced-labor scores, CDP climate
+ * scores, Corporate Human Rights Benchmark, Break Free From Plastic, etc.)
+ * and re-publishes the lot under CC BY 4.0 — the most permissive license
+ * of any source we've evaluated. The license terms require attribution
+ * back to WikiRate; this script bakes that attribution into the output
+ * as the `_license` field so it follows the data through the pipeline.
  *
- * Output: /public/data/wikirate-metrics.json (overwritten monthly)
+ * This is a metric-first paginator: rather than walking 11k companies
+ * and asking each one what answers it has, we walk a curated handful of
+ * high-signal metrics and paginate all answers for each. WikiRate's
+ * data is sparse per company but dense per metric, so one full page of
+ * "Fashion Transparency Index+Score" yields ~250 fashion brands in one
+ * request instead of 250 separate company probes.
  *
- * API endpoints (no auth required):
- *   Per-company answers card: https://wikirate.org/{company_slug}+Answer.json?limit=100
- *   Per-company card:         https://wikirate.org/{company_slug}.json
- *   API discovery:            https://wikirate.org/+API.json
+ * API endpoint (documented at https://wikirate.org/Wikirate/api_documentation):
+ *   GET https://wikirate.org/Wikirate.json
+ *       ?metric_name=<Designer+Title>
+ *       &view=answer_list
+ *       &limit=<n>&offset=<n>
  *
- * Per-brand aggregates:
- *   - wikirate_metrics_count     — # of distinct metrics with a value
- *   - top_metrics                — array of {topic, value, year, source}
- *                                  (up to 10, prioritized by recency)
- *   - data_completeness_pct     — pct of solicited metrics with non-null value
+ * Output:
+ *   data/raw/wikirate/<YYYY-MM-DD>.json
  *
- * Slug resolution strategy:
- *   1. Try our brand slug directly (often differs from WikiRate's slug).
- *   2. Search the +Company endpoint for the brand display name.
- *   3. If neither yields a card, mark as not_found.
+ * Standalone usage:
+ *   node scripts/wikirate-fetch.mjs                                  # full curated list
+ *   node scripts/wikirate-fetch.mjs --metric "Transparency Pledge"   # one metric
+ *   node scripts/wikirate-fetch.mjs --limit 50 --out /tmp/test.json  # custom paging + path
+ *   node scripts/wikirate-fetch.mjs --cache                          # cache raw pages under .cache/wikirate
+ *   node scripts/wikirate-fetch.mjs --dry                            # offline: replay from fixture
  *
- * Runs via .github/workflows/wikirate-monthly.yml — 1st of month 14:30 UTC.
- * Locally: node scripts/wikirate-fetch.mjs
+ * Constraints honored:
+ *   - 1 req/sec courtesy throttle (WikiRate is volunteer-run; don't hammer).
+ *   - 50k-answer total cap as a sanity guard.
+ *   - Node 22 built-ins only (fetch, fs/promises). No deps.
+ *   - License attribution baked into the output as `_license`.
+ *
+ * Runs via .github/workflows/wikirate-quarterly.yml on the 5th of
+ * Jan/Apr/Jul/Oct at 05:30 UTC.
  */
 
 import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const BRANDS_FILE = path.join(ROOT, "public/data/top-500-brands.txt");
-const OUT_FILE    = path.join(ROOT, "public/data/wikirate-metrics.json");
+const RAW_DIR = path.join(ROOT, "data/raw/wikirate");
+const CACHE_DIR = path.join(ROOT, ".cache/wikirate");
+const FIXTURE = path.join(ROOT, "scripts/fixtures/wikirate/sample.json");
 
-const WIKIRATE_BASE = "https://wikirate.org";
-const UA = "TruNorth-WikiRate/1.0 (+https://www.trunorthapp.com)";
-const REQ_DELAY_MS = 1000; // 1 req/sec courtesy rate limit
-const API_KEY = process.env.WIKIRATE_API_KEY || "";
-// WikiRate sits behind Cloudflare; without an API key, anonymous requests
-// from non-browser UAs are returned 403. Set WIKIRATE_API_KEY as a secret
-// in CI to authenticate — the fetcher otherwise degrades to not_found.
+const API_BASE = "https://wikirate.org/Wikirate.json";
+const UA = "TruNorth-WikiRate/1.0 (+https://www.trunorthapp.com; CC BY 4.0 attribution)";
+const RATE_LIMIT_MS = 1000;   // 1 req/sec courtesy throttle
+const DEFAULT_PAGE_SIZE = 100;
+const SAFETY_CAP = 50_000;    // never fetch more than 50k answers per run
+export const LICENSE = "CC BY 4.0 — WikiRate, https://wikirate.org";
 
-const SMOKE = (process.env.WIKIRATE_SMOKE || "").trim() === "1";
-const SMOKE_BRANDS = ["apple", "walmart", "nike", "mcdonalds"];
+// ─────────────────────────── curated metrics ────────────────────────────
+// Each entry maps a TruNorth scoring "family" to the WikiRate metric_name
+// parameter. metric_name uses "Designer+Title" syntax — Designer is the
+// publisher card on WikiRate.
+//
+// The list is intentionally short and high-signal: every metric here is a
+// recognized, peer-reviewed benchmark with a CC BY licence on WikiRate.
+export const METRICS = [
+  {
+    family: "transparency",
+    metric_name: "Fashion Transparency Index+Score",
+    label: "Fashion Transparency Index",
+    sourceUrl: "https://www.fashionrevolution.org/about/transparency/",
+  },
+  {
+    family: "transparency",
+    metric_name: "Transparency Pledge+Disclosure Score",
+    label: "Transparency Pledge",
+    sourceUrl: "https://transparencypledge.org/",
+  },
+  {
+    family: "labor",
+    metric_name: "Clean Clothes Campaign+Living Wage Gap",
+    label: "Clean Clothes Campaign Living Wage Gap",
+    sourceUrl: "https://cleanclothes.org/",
+  },
+  {
+    family: "labor",
+    metric_name: "KnowTheChain+Apparel Benchmark Score",
+    label: "KnowTheChain Apparel",
+    sourceUrl: "https://knowthechain.org/",
+  },
+  {
+    family: "labor",
+    metric_name: "KnowTheChain+ICT Benchmark Score",
+    label: "KnowTheChain ICT",
+    sourceUrl: "https://knowthechain.org/",
+  },
+  {
+    family: "labor",
+    metric_name: "KnowTheChain+Food and Beverage Benchmark Score",
+    label: "KnowTheChain Food & Beverage",
+    sourceUrl: "https://knowthechain.org/",
+  },
+  {
+    family: "environment",
+    metric_name: "CDP+Climate Change Score",
+    label: "CDP Climate Change",
+    sourceUrl: "https://www.cdp.net/",
+  },
+  {
+    family: "governance",
+    metric_name: "Corporate Human Rights Benchmark+Overall Score",
+    label: "Corporate Human Rights Benchmark",
+    sourceUrl: "https://www.worldbenchmarkingalliance.org/publication/chrb/",
+  },
+  {
+    family: "environment",
+    metric_name: "Break Free From Plastic+Brand Audit Count",
+    label: "Break Free From Plastic Brand Audit",
+    sourceUrl: "https://www.breakfreefromplastic.org/brandaudit/",
+  },
+];
 
-async function loadBrands() {
-  const raw = await fs.readFile(BRANDS_FILE, "utf-8");
-  const all = raw.split("\n")
-    .map(l => l.trim())
-    .filter(l => l && !l.startsWith("#"))
-    .map(l => {
-      const [slug, name] = l.split("|").map(s => s.trim());
-      return { slug, name };
-    })
-    .filter(b => b.slug && b.name);
-  if (SMOKE) return all.filter(b => SMOKE_BRANDS.includes(b.slug));
-  return all;
+// ─────────────────────────── CLI ────────────────────────────────────────
+export function parseArgs(argv) {
+  const args = { metric: null, limit: DEFAULT_PAGE_SIZE, out: null, cache: false, dry: false };
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    if (a === "--metric") args.metric = argv[++i];
+    else if (a === "--limit") args.limit = Math.max(1, Math.min(200, Number(argv[++i]) || DEFAULT_PAGE_SIZE));
+    else if (a === "--out") args.out = argv[++i];
+    else if (a === "--cache") args.cache = true;
+    else if (a === "--dry") args.dry = true;
+  }
+  return args;
 }
 
-// Convert our slug ("coca-cola") to WikiRate slug guesses ("Coca_Cola", "Coca-Cola").
-// WikiRate uses underscores and TitleCase for many company slugs.
-function slugCandidates(brand) {
-  const out = new Set();
-  out.add(brand.slug);
-  // Capitalize each dash-separated word
-  const titled = brand.slug
-    .split("-")
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join("_");
-  out.add(titled);
-  // Display name → underscores
-  const fromName = brand.name.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");
-  out.add(fromName);
-  // Hyphenated version
-  out.add(brand.slug.replace(/-/g, "_"));
-  return [...out].filter(Boolean);
+// ─────────────────────────── parsing ────────────────────────────────────
+// The WikiRate Answer payload comes back as either { answer: [...] } (the
+// answer_list view) or as a top-level array. Normalize both. Each row has
+// at minimum metric/company/value; we drop rows missing any of those
+// rather than emit null-valued rows downstream.
+export function normalizeAnswerPayload(payload) {
+  if (!payload) return [];
+  const arr = Array.isArray(payload)
+    ? payload
+    : Array.isArray(payload.answer)
+      ? payload.answer
+      : Array.isArray(payload.items)
+        ? payload.items
+        : [];
+  const rows = [];
+  for (const r of arr) {
+    if (!r) continue;
+    const metric = r.metric ?? r.metric_name ?? null;
+    const company = r.company ?? r.company_name ?? null;
+    const value = r.value ?? r.content ?? r.answer ?? null;
+    if (!metric || !company) continue;
+    if (value === null || value === "" || value === undefined) continue;
+    rows.push({
+      id: r.id ?? null,
+      metric: String(metric),
+      company: String(company),
+      year: r.year != null ? Number(r.year) : null,
+      value: typeof value === "object" ? JSON.stringify(value) : String(value),
+      url: r.url ?? r.html_url ?? null,
+    });
+  }
+  return rows;
 }
 
-async function httpJson(url) {
+// ─────────────────────────── network ────────────────────────────────────
+export function buildUrl(metricName, limit, offset) {
+  const u = new URL(API_BASE);
+  u.searchParams.set("metric_name", metricName);
+  u.searchParams.set("view", "answer_list");
+  u.searchParams.set("limit", String(limit));
+  u.searchParams.set("offset", String(offset));
+  return u.toString();
+}
+
+async function fetchPage(metricName, limit, offset, { cache }) {
+  const url = buildUrl(metricName, limit, offset);
+  if (cache) {
+    const key = `${metricName.replace(/[^a-z0-9]+/gi, "_")}_${offset}.json`;
+    const file = path.join(CACHE_DIR, key);
+    if (existsSync(file)) {
+      return JSON.parse(await fs.readFile(file, "utf-8"));
+    }
+    const data = await fetchJson(url);
+    await fs.mkdir(CACHE_DIR, { recursive: true });
+    await fs.writeFile(file, JSON.stringify(data));
+    return data;
+  }
+  return fetchJson(url);
+}
+
+async function fetchJson(url) {
   const headers = { "User-Agent": UA, "Accept": "application/json" };
-  if (API_KEY) headers["X-API-KEY"] = API_KEY;
+  // Optional auth for CI — anonymous traffic from non-browser UAs may be
+  // 403'd by WikiRate's Cloudflare in front of the API.
+  if (process.env.WIKIRATE_API_KEY) headers["X-API-KEY"] = process.env.WIKIRATE_API_KEY;
   const res = await fetch(url, { headers });
-  if (!res.ok) {
-    if (res.status === 404) return { _notFound: true };
-    return { _error: true, status: res.status };
-  }
-  try { return await res.json(); }
-  catch (e) { return { _error: true, parse: e.message }; }
-}
-
-// Probe a candidate slug — returns the canonical slug if WikiRate has a card.
-async function probeCompany(candidate) {
-  const url = `${WIKIRATE_BASE}/${encodeURIComponent(candidate)}.json`;
-  const data = await httpJson(url);
-  if (data._notFound || data._error) return null;
-  // A real company card has a "name" or "codename" field
-  if (data.name || data.codename) {
-    return data.codename || data.name || candidate;
-  }
-  return null;
-}
-
-// Resolve our brand to a WikiRate slug via candidate probing.
-async function resolveCompany(brand) {
-  for (const cand of slugCandidates(brand)) {
-    const resolved = await probeCompany(cand);
-    await sleep(REQ_DELAY_MS);
-    if (resolved) return resolved;
-  }
-  return null;
-}
-
-// Fetch the +Answer card for a given company slug. WikiRate returns the
-// answer set as an array of items with {metric, value, year, source}.
-async function fetchAnswers(companySlug) {
-  // The +Answer view is paginated; cap at 100 for the smoke / monthly run.
-  const url = `${WIKIRATE_BASE}/${encodeURIComponent(companySlug)}+Answer.json?limit=100`;
-  const data = await httpJson(url);
-  if (data._notFound || data._error) return [];
-  // WikiRate's +Answer card returns an array directly or an object with `items`.
-  if (Array.isArray(data)) return data;
-  if (Array.isArray(data.items)) return data.items;
-  return [];
+  if (!res.ok) throw new Error(`WikiRate ${res.status} for ${url}`);
+  return res.json();
 }
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-// Reduce a raw answer record to {topic, value, year, source}
-function normalizeAnswer(a) {
-  const metric = a.metric || a.metric_name || a.designer + "+" + a.title || "";
-  const topic  = (metric || "").split("+").pop() || metric || "Unknown";
-  const value  = a.value ?? a.answer ?? a.content ?? null;
-  const year   = a.year ?? a.report_year ?? null;
-  const source = a.source || a.source_url ||
-                 (Array.isArray(a.sources) && a.sources[0]) || null;
-  return { topic, value, year, source };
+// ─────────────────────────── fetch one metric ──────────────────────────
+export async function fetchMetric(metricEntry, { limit, cache, log = () => {} }) {
+  const all = [];
+  let offset = 0;
+  let pageCount = 0;
+  while (true) {
+    if (all.length >= SAFETY_CAP) {
+      log(`  (safety cap reached at ${SAFETY_CAP} answers)`);
+      break;
+    }
+    pageCount++;
+    const payload = await fetchPage(metricEntry.metric_name, limit, offset, { cache });
+    const rows = normalizeAnswerPayload(payload);
+    if (rows.length === 0) break;
+    for (const row of rows) {
+      // Tag every row with the family/label so the merger doesn't need to
+      // re-derive them from the metric_name.
+      all.push({
+        ...row,
+        family: metricEntry.family,
+        label: metricEntry.label,
+        sourceUrl: metricEntry.sourceUrl,
+      });
+      if (all.length >= SAFETY_CAP) break;
+    }
+    log(`  page ${pageCount}: +${rows.length} (running total: ${all.length})`);
+    if (rows.length < limit) break;
+    offset += limit;
+    await sleep(RATE_LIMIT_MS);
+  }
+  return all;
 }
 
-async function fetchBrandMetrics(brand) {
-  const wikirateSlug = await resolveCompany(brand);
-  if (!wikirateSlug) {
-    return { slug: brand.slug, name: brand.name, status: "not_found" };
+// ─────────────────────────── dry-run replay ─────────────────────────────
+// Replay the checked-in fixture as if it were the live API. Used by
+// --dry and by the test suite.
+export async function replayFixture(metricFilter, fixturePath = FIXTURE) {
+  const payload = JSON.parse(await fs.readFile(fixturePath, "utf-8"));
+  const rows = normalizeAnswerPayload(payload);
+  const tagged = [];
+  for (const r of rows) {
+    // Match each row's metric to a curated entry — works whether the
+    // metric came back as "Designer+Title" or just "Title".
+    const entry = METRICS.find(m => r.metric === m.metric_name)
+               ?? METRICS.find(m => r.metric.startsWith(m.metric_name.split("+")[0] + "+"))
+               ?? METRICS.find(m => {
+                    const title = m.metric_name.split("+")[1];
+                    return title && r.metric.includes(title);
+                  });
+    if (!entry) continue;
+    if (metricFilter && !entry.metric_name.toLowerCase().includes(metricFilter.toLowerCase())
+                     && !entry.label.toLowerCase().includes(metricFilter.toLowerCase())) continue;
+    tagged.push({ ...r, family: entry.family, label: entry.label, sourceUrl: entry.sourceUrl });
   }
-
-  await sleep(REQ_DELAY_MS);
-  const rawAnswers = await fetchAnswers(wikirateSlug);
-
-  const valued = rawAnswers
-    .map(normalizeAnswer)
-    .filter(a => a.value !== null && a.value !== "" && a.value !== "Unknown");
-
-  if (valued.length === 0) {
-    return {
-      slug: brand.slug,
-      name: brand.name,
-      status: "no_metrics",
-      wikirate_slug: wikirateSlug,
-    };
-  }
-
-  // Rank by recency: prefer answers with a numeric year, newest first.
-  valued.sort((a, b) => {
-    const ya = Number(a.year) || 0;
-    const yb = Number(b.year) || 0;
-    return yb - ya;
-  });
-  const top = valued.slice(0, 10);
-
-  // Completeness: we treat the sample window as a denominator proxy.
-  // If every solicited metric has a value, we're at 100%. The +Answer
-  // endpoint only returns answered metrics, so this is the lower bound:
-  // valued / max(rawAnswers.length, valued.length).
-  const denom = Math.max(rawAnswers.length, valued.length);
-  const completeness = denom > 0 ? Math.round(valued.length / denom * 100) : 0;
-
-  return {
-    slug: brand.slug,
-    name: brand.name,
-    status: "ok",
-    wikirate_slug: wikirateSlug,
-    wikirate_metrics_count: valued.length,
-    top_metrics: top,
-    data_completeness_pct: completeness,
-    scraped_at: new Date().toISOString(),
-  };
+  return tagged;
 }
 
+// ─────────────────────────── runner ─────────────────────────────────────
 async function main() {
-  console.log(`WikiRate fetcher starting${SMOKE ? " (smoke mode)" : ""}...`);
-  const brands = await loadBrands();
-  console.log(`Loaded ${brands.length} brands`);
+  const args = parseArgs(process.argv.slice(2));
+  const today = new Date().toISOString().slice(0, 10);
+  const outFile = args.out || path.join(RAW_DIR, `${today}.json`);
 
-  const results = [];
-  for (let i = 0; i < brands.length; i++) {
-    const r = await fetchBrandMetrics(brands[i]);
-    results.push(r);
-    if (i % 25 === 0) console.log(`  ...${i}/${brands.length}`);
-    await sleep(REQ_DELAY_MS);
+  console.log(`WikiRate fetcher starting... (mode=${args.dry ? "DRY (fixture)" : "LIVE"})`);
+  console.log(`License: ${LICENSE}`);
+
+  const metrics = args.metric
+    ? METRICS.filter(m => m.metric_name.toLowerCase().includes(args.metric.toLowerCase())
+                       || m.label.toLowerCase().includes(args.metric.toLowerCase()))
+    : METRICS;
+
+  if (metrics.length === 0) {
+    console.error(`No metric matching "${args.metric}". Available:`);
+    for (const m of METRICS) console.error(`  - ${m.label}  [${m.metric_name}]`);
+    process.exit(2);
   }
 
-  const ok       = results.filter(r => r.status === "ok").length;
-  const noMetric = results.filter(r => r.status === "no_metrics").length;
-  const notFound = results.filter(r => r.status === "not_found").length;
+  await fs.mkdir(path.dirname(outFile), { recursive: true });
 
-  await fs.writeFile(OUT_FILE, JSON.stringify({
+  const allRows = [];
+  if (args.dry) {
+    const rows = await replayFixture(args.metric);
+    console.log(`  [dry] replayed ${rows.length} rows from fixture`);
+    allRows.push(...rows);
+  } else {
+    for (let i = 0; i < metrics.length; i++) {
+      const m = metrics[i];
+      console.log(`\n[${i + 1}/${metrics.length}] ${m.label}  (${m.metric_name})`);
+      try {
+        const rows = await fetchMetric(m, { limit: args.limit, cache: args.cache, log: (s) => console.log(s) });
+        console.log(`  -> ${rows.length} answers`);
+        allRows.push(...rows);
+      } catch (e) {
+        console.error(`  ! failed: ${e.message}`);
+      }
+      if (i < metrics.length - 1) await sleep(RATE_LIMIT_MS);
+      if (allRows.length >= SAFETY_CAP) {
+        console.log(`(global safety cap ${SAFETY_CAP} reached; stopping)`);
+        break;
+      }
+    }
+  }
+
+  // Output bundle. The `_license` field rides with the data through the
+  // rest of the pipeline so downstream consumers cannot accidentally drop
+  // the required CC BY 4.0 attribution.
+  const bundle = {
+    _license: LICENSE,
+    _source: "https://wikirate.org",
+    _api: API_BASE,
     generated_at: new Date().toISOString(),
-    brand_count:  brands.length,
-    ok_count:     ok,
-    no_metrics_count: noMetric,
-    not_found_count:  notFound,
-    metrics:      results,
-  }, null, 2));
-
-  console.log(`Wrote ${OUT_FILE}`);
-  console.log(`  With metrics: ${ok}`);
-  console.log(`  No metrics:   ${noMetric}`);
-  console.log(`  Not found:    ${notFound}`);
+    mode: args.dry ? "dry" : "live",
+    metrics_requested: metrics.map(m => m.metric_name),
+    answer_count: allRows.length,
+    answers: allRows,
+  };
+  await fs.writeFile(outFile, JSON.stringify(bundle, null, 2));
+  console.log(`\nWrote ${outFile}  (${allRows.length} answers)`);
 }
 
-main().catch(err => {
-  console.error("wikirate-fetch failed:", err);
-  process.exit(1);
-});
+const isMain = import.meta.url === `file://${process.argv[1]}`;
+if (isMain) {
+  main().catch(err => {
+    console.error("wikirate-fetch failed:", err);
+    process.exit(1);
+  });
+}
