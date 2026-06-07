@@ -561,6 +561,17 @@ function scoreCat(k, v, profile) {
   return 50;
 }
 
+// B-23 (2026-06-06): apply the scoring_overlay sidecar produced by
+// scripts/rebake-scores-from-events.mjs. The overlay is purely additive
+// on top of the scoreCat-derived 0-100 — sc.* is never mutated, so the
+// rebake is fully reversible by deleting co.scoring_overlay.
+// Backward-compatible: companies without a sidecar are unaffected.
+function applyOverlay(co, k, baseline0to100) {
+  const ov = co.scoring_overlay?.[k];
+  if (!ov || typeof ov.delta !== "number") return baseline0to100;
+  return Math.max(0, Math.min(100, baseline0to100 + ov.delta));
+}
+
 function computeScore(co, profile) {
   if (!profile) return co.overall;
   // Phase 5.aa: SYMMETRIC user-preference boosts. A user who picks a clear
@@ -628,7 +639,10 @@ function computeScore(co, profile) {
     if (Array.isArray(co.excl) && co.excl.includes(k)) continue;
     const detailObj = co[k] || {};
     if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) continue;
-    weightedSum += scoreCat(k, v, profile) * baseWeights[k];
+    // B-23: apply scoring_overlay delta if present (numeric categories only;
+    // categorical categories carry events_agg + excl_stale, not deltas).
+    const catScore = applyOverlay(co, k, scoreCat(k, v, profile));
+    weightedSum += catScore * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
   // If nothing scored, fall back to the overall (un-personalized) score so the

@@ -1,0 +1,53 @@
+name: score-rebake-weekly
+
+# B-23 — Weekly scoring rebake.
+# Sundays at 16:00 UTC, which is 2 hours after the Sunday news-extract digest
+# (news-rss-nightly runs 04:00 UTC daily; we leave a buffer so the latest
+# recent_events[] is in place before we re-derive overlays).
+#
+# Reads each /public/data/companies/<slug>.json's recent_events[] in the
+# last 90 days, derives a SIDECAR scoring_overlay.<category> = { delta, ... }
+# (and events_agg for categorical categories), and commits the change.
+#
+# Sidecar approach — sc.* baselines are never mutated. To revert a bad
+# rebake: `git revert` the commit, or strip co.scoring_overlay/events_agg/
+# excl_stale by hand. The runtime's applyOverlay() in src/App.jsx is the
+# only consumer; absence of the sidecar leaves grades at baseline.
+
+on:
+  schedule:
+    - cron: "0 16 * * 0"   # Sundays 16:00 UTC
+  workflow_dispatch:        # manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  rebake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Dry-run (always — prints summary even if --apply fails)
+        run: node scripts/rebake-scores-from-events.mjs
+
+      - name: Apply rebake (writes sidecar to per-company JSON)
+        run: node scripts/rebake-scores-from-events.mjs --apply
+
+      - name: Commit + push
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/companies/ || true
+          git diff --quiet --staged && echo "No changes to rebake — exiting" && exit 0
+          git commit -m "data(rebake): weekly scoring overlay refresh $DATE [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
