@@ -1,0 +1,59 @@
+name: au-fair-work-monthly
+
+# Australia Fair Work Ombudsman — litigation outcomes (monthly)
+#
+# Scrapes https://www.fairwork.gov.au/.../litigation-outcomes?year=YYYY
+# for each calendar year 2020..(current), normalises every concluded
+# litigation outcome (defendant, breach, penalty AUD, court, date,
+# summary, source URL), and merges into data/derived per TruNorth slug.
+#
+# Runs the 4th of each month at 05:30 UTC (offset from other crons).
+# 2 sec courtesy delay between requests; total wall time <2 min.
+
+on:
+  schedule:
+    - cron: "30 5 4 * *"   # 05:30 UTC on the 4th of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps (cheerio is in package.json)
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Run FWO fetcher (live scrape)
+        run: node scripts/au-fair-work-fetch.mjs
+
+      - name: Run FWO merger
+        run: node scripts/au-fair-work-merge.mjs
+
+      - name: Run FWO tests (fixture parser sanity)
+        run: node --test scripts/au-fair-work-fetch.test.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(au-fair-work): monthly FWO litigation refresh"
+          branch: "data/au-fair-work-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(au-fair-work): monthly Fair Work Ombudsman refresh"
+          body: |
+            Automated monthly refresh from the Australia Fair Work
+            Ombudsman litigation-outcomes pages.
+
+            Source: https://www.fairwork.gov.au/about-us/our-role-and-purpose/our-priorities/our-litigation-activities/litigation-outcomes
+            License: Public, Fair Work Ombudsman, Australian Government
+          add-paths: |
+            data/raw/au-fair-work/**
+            data/derived/au-fair-work-augment.json
