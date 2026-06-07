@@ -154,13 +154,25 @@ GETTING STARTED:
 4. Tap any company to see its grade
 
 PAYWALL TESTING:
-- Free users can view 1 company detail per week
-- After that, a paywall appears offering $0.99/month
-- We use Apple In-App Purchase via [RevenueCat — pending integration]
-- For review purposes, the paywall is currently in "demo mode" — tapping Subscribe does not charge but flips the user to Pro state locally
+- Free users can fully view 1 company detail per day (resets at local midnight)
+- Tapping a 2nd company within the same day triggers the paywall
+- Already-viewed companies can be re-opened anytime without paywall
+- Paywall offers founder pricing: $0.99/mo, first 500 subscribers
+- Currently using a waitlist mode — tapping Subscribe captures email; real Apple IAP via RevenueCat integration ships in version 1.1 once LLC banking is finalized
+- Search, Browse, Scan, Quiz, and Save (Favorites) are all FREE with no quota — only the full detail-card expansion is gated
+
+EMAIL CAPTURE / VERIFICATION:
+- Adding an email is optional (Account tab → Edit email)
+- We use MailerLite double opt-in: entering an email triggers a confirmation message; user must click the link in that email before becoming an active subscriber
+- We send a Sunday digest with brand grade movements and occasional product updates
+- Unsubscribe link in every email
+- All processing servers are in the US
 
 DATA SOURCES:
-All data is researched from publicly available sources. No data is sold. No data is shared with third parties. See Privacy Policy: https://www.trunorthapp.com/#privacy
+All data is researched from publicly available sources (FEC, OSHA, EPA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, etc. — 100 sources total). No data is sold. No data is shared with third parties. See Privacy Policy: https://www.trunorthapp.com/#privacy
+
+GEO RESTRICTIONS:
+The app is currently US-only by design (App Store can confirm this). Backend additionally blocks 8 countries at the edge for compliance: RU, BY, CN, KP, IR, SY, CU, VE.
 
 CONTACT:
 Aron Rosenfield, Founder
@@ -188,11 +200,12 @@ Welcome to TruNorth — the consumer values shopping app that uses only public r
 
 This first release includes:
 • 11,000+ companies graded across 9 value categories
+• 100 public-records data sources (FEC, OSHA, EPA, SEC, CFPB, NHTSA, CISA, DOJ + 90 more)
 • 30-second values quiz to personalize every grade
-• In-store barcode scanner
+• In-store barcode scanner (ML Kit, on-device)
 • Compare any 2 companies side-by-side
 • Save favorites + see weekly grade changes
-• Free forever; Pro tier unlocks personalized scoring
+• Free to use; Pro tier unlocks personalized scoring + per-grade citations
 
 Built solo, indie, no VC money. Thanks for trying it.
 
