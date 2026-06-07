@@ -34,12 +34,20 @@ jobs:
         run: |
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/lawsuits.json public/data/companies/
-          [ -f public/data/_meta/lawsuits-merge-log.json ] && git add public/data/_meta/lawsuits-merge-log.json
+          git add -A public/data/lawsuits.json public/data/companies/ public/data/_meta/
           git diff --quiet --staged && echo "No changes" && exit 0
           git commit -m "data(lawsuits): weekly CourtListener refresh + per-company merge [skip ci]"
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin main && break
+          # 5 retries with jittered backoff — courtlistener-weekly raced
+          # another bot push on 2026-06-02 and dropped its commit. A short
+          # 3-try loop wasn't enough; bumping to 5 with 10–40s jitter so
+          # parallel bot workflows have time to land.
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin main; then
+              echo "Push succeeded on attempt $i"
+              exit 0
+            fi
+            sleep $((RANDOM % 30 + 10))
             echo "Push attempt $i failed, retrying…"
-            sleep 5
           done
+          echo "All push attempts exhausted"
+          exit 1
