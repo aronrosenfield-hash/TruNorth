@@ -10,7 +10,7 @@
 
 | Status | Count |
 |---|---|
-| ✅ Live in pipeline | **101** 🎯 |
+| ✅ Live in pipeline | **102** 🎯 |
 | 🟡 In flight | 0 |
 | 📋 Planned (queued) | 0 |
 | 💰 Paid alternatives (not used) | see bottom |
@@ -66,7 +66,7 @@
 | FCC Consumer Complaints | https://opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/3xyp-aqkj | Weekly | Wireless, internet, robocalls, billing |
 | California AG Enforcement Actions | https://oag.ca.gov/consumers/actions | Monthly | High-signal consumer-protection settlements — privacy, labor, environment, charity, consumer fraud (B-27) |
 
-### Political donations (6)
+### Political donations (7)
 
 | Source | URL | Cadence | Notes |
 |---|---|---|---|
@@ -76,6 +76,7 @@
 | OpenStates | https://openstates.org | Monthly | State-level legislation |
 | CPA-Zicklin Index | https://politicalaccountability.net/cpa-zicklin-index | Annual | S&P 500 ranking on political-spending disclosure |
 | As You Sow | https://www.asyousow.org/reports | Annual | Shareholder-resolution + corporate scorecards |
+| Bonica DIME (Stanford) | https://data.stanford.edu/dime | Annual | ~100M+ itemized donations 1979–present, employer-aggregated. Yields per-company `avg_recipient_cfscore`, donor count, and Dem/Rep $ split — deeper than corporate-PAC FEC alone. Academic/journalism license; TruNorth credits Bonica + Stanford in-app. (B-DATA3) |
 
 ### Charitable giving (2)
 
@@ -84,7 +85,7 @@
 | Charity Navigator | https://www.charitynavigator.org | Annual | Nonprofit financial health |
 | Candid / GuideStar | https://candid.org | Annual | Nonprofit 990 forms |
 
-### Environmental (10)
+### Environmental (8)
 
 | Source | URL | Cadence | Notes |
 |---|---|---|---|
@@ -92,8 +93,6 @@
 | B Corp Certification | https://www.bcorporation.net | Annual | Certified-brand list |
 | EPA Enforcement | https://www.epa.gov/enforcement | Monthly | Clean Air/Water/Superfund actions |
 | EPA ECHO | https://echo.epa.gov | Weekly | Facility-level enforcement |
-| EPA GHGRP (Greenhouse Gas Reporting Program) | https://www.epa.gov/ghgreporting/data-sets | Annual | Direct CO2e emissions per facility; ~8,000 large emitters; aggregated to parent company; 4-year YoY trend (B-data2) |
-| EPA TRI (Toxics Release Inventory) | https://www.epa.gov/toxics-release-inventory-tri-program/tri-basic-data-files-calendar-years-1987-present | Annual | Chemical releases per facility (~21,000 facilities); top-3 chemicals + 4-year trend per parent (B-data2) |
 | PHMSA Pipeline Incidents | https://www.phmsa.dot.gov/data-and-statistics/pipeline/pipeline-incident-flagged-files | Weekly | Fatalities, injuries, damages per pipeline operator |
 | NRC Event Reports | https://www.nrc.gov/reading-rm/doc-collections/event-status | Weekly | Nuclear utility events + enforcement |
 | Break Free From Plastic | https://www.breakfreefromplastic.org | Annual | Annual plastic polluter ranking |

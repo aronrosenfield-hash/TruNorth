@@ -1,0 +1,66 @@
+name: bonica-dime-annual
+
+# Bonica DIME — Database on Ideology, Money in Politics, and Elections
+# (Stanford). Aggregates ~100M+ itemized political contributions to give
+# every TruNorth company an employee-giving ideology score.
+#
+# Cadence: ONCE A YEAR, Jan 15 04:00 UTC.
+#   - End-of-cycle FEC filings (deadline Jan 31) won't be fully ingested
+#     into the Bonica release until early Jan at earliest.
+#   - The CSV is multi-GB so running monthly would burn GH Action minutes
+#     for almost no fresh data — donor histories don't move quickly.
+#
+# Requires the DIME_CSV_URL repo secret pointing at the current Stanford
+# release URL (changes per release). If unset, fetch fails fast.
+
+on:
+  schedule:
+    - cron: "0 4 15 1 *"   # Jan 15, 04:00 UTC
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Apply merge to per-company JSONs (false → dry-run shadow only)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write   # required to commit aggregate + per-company changes
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      DIME_CSV_URL: ${{ secrets.DIME_CSV_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch DIME contributions (live)
+        run: node scripts/bonica-dime-fetch.mjs --live
+
+      - name: Merge into per-company JSON
+        run: |
+          if [ "${{ github.event.inputs.apply || 'true' }}" = "true" ]; then
+            node scripts/bonica-dime-merge.mjs --apply
+          else
+            node scripts/bonica-dime-merge.mjs
+          fi
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/bonica-dime-aggregate.json public/data/companies/
+          [ -f public/data/_meta/bonica-dime-merge-log.json ] && git add public/data/_meta/bonica-dime-merge-log.json
+          [ -f public/data/_meta/bonica-dime-review.json ] && git add public/data/_meta/bonica-dime-review.json
+          [ -f public/data/_meta/bonica-dime-dryrun.json ] && git add public/data/_meta/bonica-dime-dryrun.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(bonica-dime): annual employer-giving refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
