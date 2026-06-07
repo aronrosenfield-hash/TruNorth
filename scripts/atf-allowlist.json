@@ -1,0 +1,173 @@
+{
+  "_comment": "B-37 — Allow-list of TruNorth company slugs that legitimately hold (or are corporate parents of holders of) ATF Federal Firearms Licenses. Curated 2026-06-06. Anything not in this allow-list and not passing the strict CIK/SIC guardrail in atf-merge.mjs will land in the manual review queue (public/data/_meta/atf-review-queue.json) rather than being attached to the brand.",
+  "_format": {
+    "slug": "<TruNorth company slug>",
+    "rationale": "<one line: why this brand legitimately holds FFLs>",
+    "expected_role": "<manufacturer|dealer|importer|pawnbroker|ammo_only|destructive_devices>",
+    "match_terms": "<extra business-name search terms used by the matcher>"
+  },
+
+  "retailers": {
+    "walmart": {
+      "rationale": "Largest U.S. firearms retailer by store count; FFL Type 01 dealers in many stores.",
+      "expected_role": "dealer",
+      "match_terms": ["WAL-MART", "WALMART"]
+    },
+    "dick-s-sporting-goods": {
+      "rationale": "Dick's Sporting Goods + Field & Stream — FFL counters in selected locations.",
+      "expected_role": "dealer",
+      "match_terms": ["DICK'S SPORTING GOODS", "DICKS SPORTING GOODS", "FIELD & STREAM"]
+    },
+    "cabela-s-bass-pro": {
+      "rationale": "Cabela's + Bass Pro merger; both legacy chains operate FFL dealer counters in nearly every store.",
+      "expected_role": "dealer",
+      "match_terms": ["CABELA", "BASS PRO", "BASS PRO SHOPS"]
+    },
+    "bass-pro-shops": {
+      "rationale": "Bass Pro Shops — major sporting-goods chain with FFL Type 01 dealers.",
+      "expected_role": "dealer",
+      "match_terms": ["BASS PRO", "BASS PRO SHOPS"]
+    },
+    "academy-sports": {
+      "rationale": "Academy Sports + Outdoors — large Southern sporting-goods chain, FFL Type 01.",
+      "expected_role": "dealer",
+      "match_terms": ["ACADEMY SPORTS", "ACADEMY, LTD"]
+    },
+    "rural-king": {
+      "rationale": "Rural-supply chain with FFL counters in most stores.",
+      "expected_role": "dealer",
+      "match_terms": ["RURAL KING"]
+    },
+    "l-l-bean": {
+      "rationale": "L.L.Bean Hunting & Fishing division; FFL dealer at the Freeport, ME flagship.",
+      "expected_role": "dealer",
+      "match_terms": ["L.L. BEAN", "L.L.BEAN", "LL BEAN", "LLBEAN"]
+    },
+    "orvis": {
+      "rationale": "Orvis hunting/fly-fishing flagship operates FFL dealer counters.",
+      "expected_role": "dealer",
+      "match_terms": ["ORVIS"]
+    },
+    "sportsmans-warehouse": {
+      "rationale": "Sportsman's Warehouse — every store has an FFL dealer counter.",
+      "expected_role": "dealer",
+      "match_terms": ["SPORTSMAN'S WAREHOUSE", "SPORTSMANS WAREHOUSE"]
+    },
+    "dunham-s-sports": {
+      "rationale": "Dunham's Sports — Midwest sporting-goods chain with FFL dealer counters.",
+      "expected_role": "dealer",
+      "match_terms": ["DUNHAM"]
+    }
+  },
+
+  "manufacturers": {
+    "smith-and-wesson-brands": {
+      "rationale": "Smith & Wesson — flagship U.S. handgun manufacturer.",
+      "expected_role": "manufacturer",
+      "match_terms": ["SMITH & WESSON", "SMITH AND WESSON"]
+    },
+    "sturm-ruger-and-co": {
+      "rationale": "Sturm, Ruger & Co. — large publicly-traded firearms manufacturer.",
+      "expected_role": "manufacturer",
+      "match_terms": ["STURM, RUGER", "STURM RUGER", "RUGER"]
+    },
+    "browning-arms-company": {
+      "rationale": "Browning Arms — long-running firearms manufacturer (Herstal Group subsidiary).",
+      "expected_role": "manufacturer",
+      "match_terms": ["BROWNING ARMS", "BROWNING"]
+    },
+    "colt-s-manufacturing-company": {
+      "rationale": "Colt's Manufacturing — historic U.S. firearms maker.",
+      "expected_role": "manufacturer",
+      "match_terms": ["COLT'S MANUFACTURING", "COLTS MANUFACTURING", "COLT"]
+    },
+    "winchester-repeating-arms-company": {
+      "rationale": "Winchester Repeating Arms — long-rifle manufacturer (Olin/Browning subsidiary).",
+      "expected_role": "manufacturer",
+      "match_terms": ["WINCHESTER REPEATING ARMS", "WINCHESTER"]
+    },
+    "sig-sauer-inc": {
+      "rationale": "SIG SAUER — handgun and rifle manufacturer.",
+      "expected_role": "manufacturer",
+      "match_terms": ["SIG SAUER", "SIGARMS", "SIG-SAUER"]
+    },
+    "federal-cartridge": {
+      "rationale": "Federal Cartridge — ammunition manufacturer (Vista Outdoor subsidiary).",
+      "expected_role": "manufacturer",
+      "match_terms": ["FEDERAL CARTRIDGE"]
+    },
+    "byrna-technologies": {
+      "rationale": "Byrna Technologies — less-lethal launchers, holds Type 07 FFLs.",
+      "expected_role": "manufacturer",
+      "match_terms": ["BYRNA"]
+    },
+    "olin-corporation": {
+      "rationale": "Olin — Winchester Ammunition parent, large ammo manufacturer.",
+      "expected_role": "manufacturer",
+      "match_terms": ["OLIN", "WINCHESTER AMMUNITION"]
+    }
+  },
+
+  "defense": {
+    "lockheed-martin": {
+      "rationale": "Lockheed Martin — defense prime; holds Type 10 destructive-device FFLs.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["LOCKHEED MARTIN"]
+    },
+    "boeing": {
+      "rationale": "Boeing Defense — holds Type 10/Type 11 destructive-device licenses.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["BOEING"]
+    },
+    "bae-systems-inc": {
+      "rationale": "BAE Systems U.S. — defense manufacturer; destructive-device FFLs.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["BAE SYSTEMS"]
+    },
+    "leidos": {
+      "rationale": "Leidos — defense contractor with destructive-device FFL holdings.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["LEIDOS"]
+    },
+    "saic": {
+      "rationale": "Science Applications International — defense contractor with destructive-device FFLs.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["SCIENCE APPLICATIONS INTERNATIONAL", "SAIC"]
+    },
+    "am-general": {
+      "rationale": "AM General — Humvee maker; destructive-device FFLs for military variants.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["AM GENERAL"]
+    },
+    "bell-textron": {
+      "rationale": "Bell Textron — military rotorcraft, destructive-device FFL holdings.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["BELL HELICOPTER", "BELL TEXTRON"]
+    },
+    "md-helicopters": {
+      "rationale": "MD Helicopters — armed military rotorcraft, destructive-device FFL.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["MD HELICOPTERS", "MCDONNELL DOUGLAS HELICOPTER"]
+    },
+    "aerovironment": {
+      "rationale": "AeroVironment — military UAV maker; destructive-device FFL.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["AEROVIRONMENT"]
+    },
+    "bwx-technologies": {
+      "rationale": "BWX Technologies — nuclear/defense; destructive-device FFL.",
+      "expected_role": "destructive_devices",
+      "match_terms": ["BWX TECHNOLOGIES", "BABCOCK & WILCOX"]
+    }
+  },
+
+  "_review_required_drop_list": {
+    "_comment": "Slugs currently carrying firearms_atf_ffl in production that ARE NOT in the allow-list and DO NOT have a credible firearms-industry tie. The new merger will refuse to attach FFL records to these; any apparent match lands in the review queue. Listed here so reviewers can confirm the scrub when ingestion next runs.",
+    "slugs": [
+      "3d-systems", "agc", "api-group", "brc", "cts", "e-m-f-company",
+      "eagle", "jm-group", "kennametal", "lloyd-s", "moog", "newmarket",
+      "noble", "sawyer-s", "sgs", "skunk-works", "tactical-resources",
+      "tk-holdings", "trw-inc", "winners"
+    ]
+  }
+}
