@@ -25,7 +25,14 @@
 
 ## 🔥 ACTIVE — working on now
 
-*Nothing actively in progress. Pick an item from below and tell me to start.*
+🚨 **CRITICAL PRE-LAUNCH BUG** discovered 2026-06-07: `/api/subscribe` returns `"mailerlite_not_configured"` on production. Means `MAILERLITE_API_KEY` is missing from Vercel runtime env (it's set in GitHub Actions but NOT in Vercel). Every email signup since the env var was lost has been silently dropped. The 2 subscribers we see in MailerLite signed up before this broke.
+
+**Fix (5 min, requires Aron)**:
+  1. Vercel → trunorthapp Project → Settings → Environment Variables
+  2. Add `MAILERLITE_API_KEY` (no `VITE_` prefix — server-side only) with the key from MailerLite → Integrations → Developer API
+  3. Add `MAILERLITE_GROUP_ID` (numeric group ID)
+  4. Redeploy (Vercel auto-redeploys on env change)
+  5. Verify: `curl -X POST https://www.trunorthapp.com/api/subscribe -H 'Content-Type: application/json' -H 'Origin: https://www.trunorthapp.com' -d '{"email":"test+v@trunorthapp.com","source":"qa"}'` should return `requiresVerification: true`
 
 ---
 
