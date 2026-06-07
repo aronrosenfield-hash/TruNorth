@@ -14,6 +14,15 @@ on:
     - cron: "0 4 * * *"    # daily 04:00 UTC
   workflow_dispatch:        # allow manual runs
 
+# Serialize overlapping triggers (manual dispatch landing on top of a still-
+# running cron, repeated workflow_dispatch from cleanup tasks, etc.). We saw
+# 8 cancellations in 14 runs before this lock landed — `cancel-in-progress:
+# false` queues newcomers instead of killing the in-flight job, which is the
+# correct behavior for a data-collection workflow that writes commits.
+concurrency:
+  group: news-rss-nightly
+  cancel-in-progress: false
+
 permissions:
   contents: write   # required to commit the digest back to main
 
