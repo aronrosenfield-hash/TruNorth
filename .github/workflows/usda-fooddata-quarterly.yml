@@ -1,0 +1,82 @@
+name: usda-fooddata-quarterly
+
+# USDA FoodData Central — Branded Foods (DW-61, "Nabisco scanner gap").
+#
+# Quarterly fetch of the ~700 MB branded-food CSV bulk dump from
+# fdc.nal.usda.gov, filtered to rows with a usable GTIN/UPC AND a non-empty
+# brand_owner. Two outputs:
+#
+#   1.  public/data/_meta/brand-parent-map.json
+#       augmented with new {brandName -> parent-slug} entries (only when
+#       brand_owner slug-matches a real company in public/data/index.json).
+#   2.  data/derived/usda-fooddata-augment.json
+#       a {GTIN -> {brandName, brandOwner, parentSlug}} lookup the scanner
+#       can use as a fast direct path.
+#
+# Data is U.S. public domain (USDA FoodData Central). No API key, no auth.
+#
+# Runs on the 15th of Feb / May / Aug / Nov at 05:00 UTC (USDA refreshes
+# the dump roughly every quarter; staggering by 15 days catches the new
+# release without racing the publish window). Opens an auto-PR rather
+# than direct-pushing to main, because the changes to brand-parent-map
+# can be large and benefit from a once-over before they land.
+
+on:
+  schedule:
+    - cron: "0 5 15 2,5,8,11 *"   # 05:00 UTC on Feb/May/Aug/Nov 15
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90        # ~700 MB download + 1.9M-row stream parse
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run quick test suite against the fixture (no network)
+        run: node --test scripts/usda-fooddata-fetch.test.mjs
+
+      - name: Run USDA FoodData fetcher (live download + extract + filter)
+        run: node scripts/usda-fooddata-fetch.mjs --apply
+
+      - name: Merge into brand-parent-map + augment file
+        run: node scripts/usda-fooddata-merge.mjs --apply
+
+      - name: Stage changed data
+        id: stage
+        run: |
+          git add public/data/_meta/brand-parent-map.json \
+                  public/data/_meta/usda-fooddata-merge-log.json \
+                  data/derived/usda-fooddata-augment.json
+          if git diff --quiet --staged; then
+            echo "No data changes — skipping PR."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open / update auto-PR
+        if: steps.stage.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          BRANCH="bot/usda-fooddata-$(date -u +%Y-%m-%d)"
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git checkout -b "$BRANCH"
+          git commit -m "data(usda-fooddata): quarterly branded-foods refresh [skip ci]"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "data(usda-fooddata): quarterly refresh ($(date -u +%Y-%m-%d))" \
+            --body "Automated quarterly USDA FoodData Central refresh. See public/data/_meta/usda-fooddata-merge-log.json for the diff summary." \
+            || echo "PR may already exist for this branch"
