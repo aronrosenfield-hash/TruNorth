@@ -238,9 +238,19 @@ async function main() {
     process.stdout.write(`  batch ${i + 1}/${batches.length} (${batch.length} items)… `);
     try {
       const extracted = await extractBatch(batch, apiKey);
+      // Belt-and-suspenders: extractBatch's guards should have already turned
+      // any non-array response into a thrown error, but if a future code path
+      // ever returns undefined here we want to log + skip the batch rather
+      // than crash the whole run on the .find() call below (the 2026-06-03
+      // outage symptom — see git log on this file).
+      if (!Array.isArray(extracted)) {
+        console.log(`✗ extractor returned non-array (${typeof extracted}) — skipping batch`);
+        batch.forEach(it => failures.push({ ...it, error: `extractor returned ${typeof extracted}` }));
+        continue;
+      }
       // Join input metadata with extracted classification by URL
       for (const item of batch) {
-        const ex = extracted.find(e => e.url === item.url);
+        const ex = extracted.find(e => e && e.url === item.url);
         if (ex) {
           results.push({
             ...ex,

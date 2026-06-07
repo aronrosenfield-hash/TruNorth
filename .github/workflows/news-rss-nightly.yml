@@ -43,12 +43,12 @@ jobs:
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          # Add files individually with -- so missing ones don't fail the whole step.
-          for f in "public/data/news/$DATE.json" "public/data/news/$DATE.extracted.json" "public/data/news/merge-log.json"; do
-            [ -f "$f" ] && git add -- "$f" || echo "skip: $f not present"
-          done
-          # Companies dir always exists; add only if it has changes.
-          git add public/data/companies/ || true
+          # Stage everything under the news + companies dirs in one shot;
+          # -A tolerates missing files (merge-log.json may not exist on a
+          # zero-merge night). This was the second half of the 2026-06-03
+          # outage — git add of a literal nonexistent path failed the step
+          # before the data/news files could be committed.
+          git add -A public/data/news/ public/data/companies/
           git diff --quiet --staged && echo "No changes" && exit 0
           git commit -m "data(news): nightly RSS digest + AI extraction + per-company merge $DATE [skip ci]"
           for i in 1 2 3; do
