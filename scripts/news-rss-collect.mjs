@@ -136,6 +136,146 @@ function isHighSignal(title, description) {
   return SIGNAL_KEYWORDS.some(kw => text.includes(kw));
 }
 
+// ─── B-38 fix (2026-06-06) ─────────────────────────────────────────────────
+// Google News RSS does loose substring search. For brand names that are
+// also common English words (Mars, Apple, Meta, Target, Prime, Lay's, etc.)
+// it returns avalanches of irrelevant hits: "SpaceX IPO filing lays bare
+// losses" matched Lay's, "Mars colony plan" matched Mars candy, etc. The
+// AI extractor at sonnet-4-6 correctly rejected all 200 such matches as
+// "not about the brand" but logged them as failures → final extracted file
+// had items: []. Every brand grade has been stale because the pipeline
+// produces zero high-signal output.
+//
+// Fix: validateBrandMatch() filters at collection time. Two-tier:
+//   1. Brand-name must literally appear in the TITLE (not just description
+//      — Google sometimes promotes items into the feed based on entity
+//      matching that doesn't surface the brand text).
+//   2. For NEEDS_CONTEXT brands (short common-word names), require a
+//      business-context keyword somewhere in title + description.
+//
+// Tune NEEDS_CONTEXT_BRANDS as we discover more false positives.
+
+const NEEDS_CONTEXT_BRANDS = new Set([
+  // Common English-word brand names (high false-positive rate without context)
+  "apple", "meta", "mars", "target", "prime", "lays", "lay-s",
+  "bang", "gem", "fox", "fox-corporation",
+  "circle", "fortune", "century", "carters",
+  "eldorado", "ace", "ace-hardware", "true-value",
+  // 3-4 letter acronym brands — almost always need disambiguation
+  "amd", "hp", "sap", "ati", "kla", "slm", "dac", "ibm", "ge",
+  "gm", "ms", "rca", "mks", "iac", "eos", "sos", "dts-inc",
+  "nrj", "geo", "apa", "aec", "brp", "bce", "bbc", "edf-inc",
+  "hci-group", "cme-group", "skunk-works",
+  // Single-word common nouns
+  "dove", "tide", "joy", "ivory", "axe", "raid", "fab", "dawn",
+  "windex", "pledge", "pinesol", "shout", "tilex", "scrub",
+  "honda", "ford", "tesla", // car brands - "ford" especially common verb
+  "amazon", // "Amazon rainforest"
+  "shell",  // "seashell", "shell of"
+  "guess",  // verb
+  "kind",   // adj
+  "tide",   // noun
+  // Brands sharing names with people, places, generic terms
+  "james", "rogers", "wilson-sporting-goods",
+  "sawyer-s", "huntsman", "graco", "noble", "eagle",
+  "hansens", "sierra-nevada", "french-s",
+  "kennametal", "moog", "winners", "lloyd-s",
+]);
+
+const BUSINESS_CONTEXT_WORDS = [
+  // Corporate-identity markers
+  "company", "companies", "corp", "corporation", "inc.", "inc ",
+  "ltd.", "ltd ", "llc", "holdings", "group",
+  // Business-context verbs / nouns
+  "ceo", "cfo", "coo", "executive", "founder",
+  "earnings", "revenue", "ipo", "stock", "shares", "shareholder",
+  "store", "stores", "products", "brand", "consumer", "customers",
+  "sales", "profit", "loss", "quarter", "fiscal", "board",
+  "merger", "acquisition", "investor", "investors",
+  // Plus all SIGNAL_KEYWORDS are valid context (lawsuit, recall, etc.)
+];
+
+// Normalize for matching: lowercase + strip ASCII-style apostrophes + accents
+// + collapse multiple spaces. "McDonald's" / "Mcdonalds" / "McDonalds" all
+// reduce to "mcdonalds"; "Estée Lauder" → "estee lauder".
+function normalizeForMatch(s) {
+  return String(s || "")
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")  // strip combining accents
+    .replace(/[‘’‚‛'`]/g, "") // strip smart + plain apostrophes
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Per-brand "negative context" — words that strongly suggest the article
+// is using the brand name in a non-trademark sense. If ANY of these
+// appear in the title, the match is dropped regardless of context.
+// Expand as we discover more noise.
+const NEGATIVE_CONTEXT = {
+  mars:    ["spacex", "planet mars", "mars rover", "mars mission", "mars colony", "mars surface", "perseverance", "curiosity", "musk's mars", "to mars"],
+  apple:   ["apple pie", "apple tree", "apple of his", "rotten apple", "candied apple"],
+  target:  ["on target", "off target", "target audience", "target practice", "missile target", "easy target"],
+  amazon:  ["amazon rainforest", "amazon river", "amazon basin", "amazon jungle", "amazon tribe"],
+  shell:   ["seashell", "shell shock", "shell of", "egg shell"],
+  prime:   ["prime minister", "prime suspect", "prime time", "prime real estate", "subprime", "primer"],
+  meta:    ["meta-analysis", "meta level", "meta description", "meta-physical", "metadata"],
+  fox:     ["arctic fox", "red fox", "silver fox", "fox in the"],
+  honda:   [], // placeholder; tune as needed
+  ford:    ["ford river", "ford a stream", "henry ford ii", "rob ford", "harrison ford", "tom ford"],
+  gem:     ["gem stone", "hidden gem"],
+  bang:    ["big bang", "bang for the buck"],
+  // Verb-form collisions that survive context check via unrelated business words.
+  lays:    ["lays bare", "lays out", "lays the groundwork", "lays claim", "lays down", "lays the foundation", "lays the blame"],
+  "lay-s": ["lays bare", "lays out", "lays the groundwork", "lays claim", "lays down", "lays the foundation", "lays the blame"],
+  tide:    ["tide turns", "tide turning", "high tide", "low tide", "tide of", "rising tide"],
+  axe:     ["must axe", "to axe", "axe the", "axe to", "axed the"],
+  dawn:    ["at dawn", "dawn of", "dawn raid", "before dawn"],
+  joy:     ["joy of", "tears of joy", "pure joy"],
+  raid:    ["raid on", "police raid", "fbi raid"],
+  pledge:  ["pledge of", "took the pledge"],
+  shout:   ["shout out", "shout at"],
+};
+
+function brandAppearsInTitle(brand, title) {
+  if (!title) return false;
+  const t = normalizeForMatch(title);
+  const name = normalizeForMatch(brand.name);
+  if (!name) return false;
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // Word boundary on the left so "smart" doesn't match "walmart", but the
+  // right side allows possessives ("walmart's plans") and plurals.
+  return new RegExp(`(?:^|[^a-z0-9])${escaped}`, "i").test(t);
+}
+
+function validateBrandMatch(brand, item) {
+  if (!brandAppearsInTitle(brand, item.title)) return false;
+
+  const title = normalizeForMatch(item.title);
+  const desc  = normalizeForMatch(item.description);
+  const text  = `${title} ${desc}`;
+  const name  = normalizeForMatch(brand.name);
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+  // Negative context — strong rejection signals per brand.
+  const neg = NEGATIVE_CONTEXT[brand.slug];
+  if (neg && neg.some(phrase => text.includes(phrase))) return false;
+
+  // For common-word brands, require either:
+  //   (a) brand starts the title (high confidence it's the subject), OR
+  //   (b) brand is followed by Inc/Corp/Co/Ltd ('Mars Inc'), OR
+  //   (c) business or signal context word elsewhere in title+desc.
+  if (NEEDS_CONTEXT_BRANDS.has(brand.slug)) {
+    const startsWithBrand = new RegExp(`^${escaped}\\b`, "i").test(title);
+    const followedByCorp  = new RegExp(`${escaped}['s]*\\s+(inc|corp|co\\.|company|llc|ltd|holdings|group|stores?|brand|consumer|wrigley|wireless|motors?|technologies?)`, "i").test(title);
+    if (startsWithBrand || followedByCorp) return true;
+
+    const allContext = [...BUSINESS_CONTEXT_WORDS, ...SIGNAL_KEYWORDS];
+    if (!allContext.some(w => text.includes(w))) return false;
+  }
+  return true;
+}
+
 function parseRssItems(xml) {
   // Lightweight RSS parser — Google News RSS is well-formed enough
   // that a regex-based parse works fine. No dep needed.
@@ -181,7 +321,10 @@ async function fetchBrandNews(brand) {
     if (!res.ok) return [];
     const xml = await res.text();
     const items = parseRssItems(xml);
-    return items.map(it => {
+    // B-38 (2026-06-06): drop noise BEFORE building output objects.
+    // Otherwise 200 false-positive matches per day clog the AI extractor.
+    const validItems = items.filter(it => validateBrandMatch(brand, it));
+    return validItems.map(it => {
       // Use the <source url="..."> attribute to find the REAL publisher
       // domain. it.link points at news.google.com (Google's redirect),
       // which is useless for outlet identification.
