@@ -1,0 +1,97 @@
+{
+  "_comment": "B-15 — Curated allow-list of TruNorth slugs whose primary revenue is oil/gas/coal extraction or refining. Source: public investor disclosures + Wikipedia 'List of largest oil and gas companies by revenue'. Excludes integrated utilities (Duke, Southern Co) — those have a separate emissions story. Coal-only miners are included. Curated conservatively 2026-06-07.",
+  "_format": {
+    "slug": "<TruNorth company slug>",
+    "rationale": "<one line: why this brand is a fossil-fuel industry member>",
+    "subsector": "<oil_gas|coal|oilfield_services|refining>"
+  },
+
+  "exxonmobil": {
+    "rationale": "Largest U.S. integrated oil major; upstream E&P + refining + petrochemicals.",
+    "subsector": "oil_gas"
+  },
+  "exxon-mobil": {
+    "rationale": "Alias slug for ExxonMobil parent.",
+    "subsector": "oil_gas"
+  },
+  "exxon": {
+    "rationale": "Retail/brand slug for ExxonMobil.",
+    "subsector": "oil_gas"
+  },
+  "chevron": {
+    "rationale": "U.S. integrated oil major; upstream + downstream + Chevron Phillips Chemical JV.",
+    "subsector": "oil_gas"
+  },
+  "shell-usa": {
+    "rationale": "U.S. arm of Shell plc — integrated oil & gas major.",
+    "subsector": "oil_gas"
+  },
+  "bp-usa": {
+    "rationale": "U.S. arm of BP plc — integrated oil & gas major.",
+    "subsector": "oil_gas"
+  },
+  "conocophillips": {
+    "rationale": "Largest pure-play independent E&P in the U.S.",
+    "subsector": "oil_gas"
+  },
+  "conoco": {
+    "rationale": "Retail/brand slug tied to ConocoPhillips/Phillips 66.",
+    "subsector": "oil_gas"
+  },
+  "totalenergies-usa": {
+    "rationale": "U.S. arm of TotalEnergies SE — French oil & gas major.",
+    "subsector": "oil_gas"
+  },
+  "equinor-asa": {
+    "rationale": "Norwegian state oil major (formerly Statoil); offshore E&P.",
+    "subsector": "oil_gas"
+  },
+  "eni-spa": {
+    "rationale": "Italian integrated oil & gas major.",
+    "subsector": "oil_gas"
+  },
+  "phillips-66": {
+    "rationale": "Refining + midstream spinoff of ConocoPhillips.",
+    "subsector": "refining"
+  },
+  "marathon-petroleum": {
+    "rationale": "Largest U.S. independent refiner (Speedway divested).",
+    "subsector": "refining"
+  },
+  "valero-energy": {
+    "rationale": "Major U.S. independent refiner.",
+    "subsector": "refining"
+  },
+  "devon-energy": {
+    "rationale": "U.S. independent E&P (Permian, Anadarko, Williston).",
+    "subsector": "oil_gas"
+  },
+  "occidental-petroleum": {
+    "rationale": "U.S. independent E&P (Permian focus post-Anadarko acquisition).",
+    "subsector": "oil_gas"
+  },
+  "pioneer-natural-resources": {
+    "rationale": "U.S. independent E&P, Permian pure-play (acquired by ExxonMobil 2024).",
+    "subsector": "oil_gas"
+  },
+  "eog-resources": {
+    "rationale": "U.S. independent E&P, shale operator.",
+    "subsector": "oil_gas"
+  },
+  "halliburton": {
+    "rationale": "Global oilfield services major.",
+    "subsector": "oilfield_services"
+  },
+  "baker-hughes": {
+    "rationale": "Global oilfield services + LNG equipment (GE spinoff).",
+    "subsector": "oilfield_services"
+  },
+  "peabody-energy": {
+    "rationale": "Largest U.S. private-sector coal producer.",
+    "subsector": "coal"
+  },
+  "glencore-plc": {
+    "rationale": "Swiss commodity trader; major thermal & metallurgical coal producer.",
+    "subsector": "coal"
+  }
+}

@@ -137,6 +137,12 @@
 |---|---|---|---|
 | ATF Federal Firearms Licenses | https://www.atf.gov/firearms/listing-federal-firearms-licensees | Monthly | Manufacturer/dealer/importer license types by state |
 
+### Industry-membership flags (curated)
+
+| Source | URL | Cadence | Notes |
+|---|---|---|---|
+| Industry membership lists (curated) | scripts/industry-allowlists/ | Monthly | B-15 — hand-curated allow-lists for tobacco, fossil-fuel, firearms-industry, and alcohol companies. Data drawn from public Wikipedia industry lists + each company's investor disclosures. Read-only disclosure pills; not score modifiers. PRs welcome to add brands. |
+
 ### Animal testing & welfare (4)
 
 | Source | URL | Cadence | Notes |

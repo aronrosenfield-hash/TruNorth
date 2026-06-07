@@ -1,0 +1,41 @@
+{
+  "_comment": "B-15 — Curated allow-list of TruNorth slugs whose primary business is alcoholic beverage manufacture (beer, wine, spirits). Source: public investor disclosures + Wikipedia 'List of largest alcoholic drink companies'. Sub-brands resolve via brand-parent-map. Curated conservatively 2026-06-07.",
+  "_format": {
+    "slug": "<TruNorth company slug>",
+    "rationale": "<one line: why this brand is an alcohol industry member>",
+    "subsector": "<beer|wine|spirits|mixed>"
+  },
+
+  "anheuser-busch": {
+    "rationale": "U.S. arm of Anheuser-Busch InBev — largest brewer globally (Budweiser, Bud Light, Stella, Corona US).",
+    "subsector": "beer"
+  },
+  "molson-coors-beverage": {
+    "rationale": "Molson Coors — Coors, Miller Lite, Blue Moon, Coors Light.",
+    "subsector": "beer"
+  },
+  "heineken-usa": {
+    "rationale": "U.S. arm of Heineken N.V. — Heineken, Dos Equis, Amstel, Tecate.",
+    "subsector": "beer"
+  },
+  "diageo": {
+    "rationale": "Global spirits leader — Johnnie Walker, Smirnoff, Guinness, Captain Morgan, Don Julio, Crown Royal.",
+    "subsector": "mixed"
+  },
+  "brown-forman": {
+    "rationale": "U.S. spirits maker — Jack Daniel's, Woodford Reserve, Old Forester, Herradura.",
+    "subsector": "spirits"
+  },
+  "jack-daniel-s": {
+    "rationale": "Brand of Brown-Forman — Tennessee whiskey.",
+    "subsector": "spirits"
+  },
+  "jack-daniel-s-brown-forman": {
+    "rationale": "Brand of Brown-Forman — Tennessee whiskey (parent-linked slug).",
+    "subsector": "spirits"
+  },
+  "budweiser-anheuser-busch-inbev": {
+    "rationale": "Budweiser beer brand of Anheuser-Busch InBev.",
+    "subsector": "beer"
+  }
+}

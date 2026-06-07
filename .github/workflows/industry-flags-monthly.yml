@@ -1,0 +1,48 @@
+name: industry-flags-monthly
+
+# B-15 — Industry-membership flags (tobacco, fossil-fuel, firearms-industry,
+# alcohol) refresh. No scraping — just reads the curated JSON allow-lists in
+# scripts/industry-allowlists/ and stamps per-company JSON files. Fast.
+#
+# Curators add/remove brands by PR-editing those JSON files; this workflow
+# just re-applies the lists. Runs 15th of month, 06:00 UTC, plus on
+# allow-list edits to main.
+
+on:
+  schedule:
+    - cron: "0 6 15 * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/industry-allowlists/**"
+      - "scripts/industry-flags.mjs"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Apply industry-membership flags
+        run: node scripts/industry-flags.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/companies/
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(industry-flags): monthly industry-membership refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

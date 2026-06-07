@@ -1,0 +1,45 @@
+{
+  "_comment": "B-15 — Curated allow-list of TruNorth slugs whose primary business is the manufacture or sale of firearms/ammunition. DELIBERATELY EXCLUDES brands that incidentally hold FFLs (Walmart, Dick's, etc.) — those use firearms_atf_ffl (B-37) for license disclosure. This flag is for 'pure-play' gun-industry membership. Curated conservatively 2026-06-07.",
+  "_format": {
+    "slug": "<TruNorth company slug>",
+    "rationale": "<one line: why this brand is a firearms-industry member>",
+    "role": "<manufacturer|retailer|ammunition>"
+  },
+
+  "sturm-ruger-and-co": {
+    "rationale": "Sturm Ruger & Co. — top U.S. firearms manufacturer (pistols, rifles).",
+    "role": "manufacturer"
+  },
+  "smith-and-wesson-brands": {
+    "rationale": "Smith & Wesson — major U.S. handgun + long-gun manufacturer.",
+    "role": "manufacturer"
+  },
+  "vista-outdoor": {
+    "rationale": "Parent of Federal Premium / CCI / Remington Ammunition / Speer.",
+    "role": "ammunition"
+  },
+  "olin-corporation": {
+    "rationale": "Olin Corp — Winchester Ammunition (commercial + military contracts).",
+    "role": "ammunition"
+  },
+  "browning-arms-company": {
+    "rationale": "Browning Arms — sporting firearms manufacturer (FN Herstal subsidiary).",
+    "role": "manufacturer"
+  },
+  "sig-sauer-inc": {
+    "rationale": "SIG Sauer Inc. — handgun + rifle manufacturer; U.S. Army M17/M18 contract.",
+    "role": "manufacturer"
+  },
+  "colt-s-manufacturing-company": {
+    "rationale": "Colt's Manufacturing — historic U.S. firearms maker (1911, AR-15 platform).",
+    "role": "manufacturer"
+  },
+  "bass-pro-shops": {
+    "rationale": "Bass Pro Shops — sporting-goods retailer; firearms are a primary product line (vs Walmart where it's incidental).",
+    "role": "retailer"
+  },
+  "cabela-s-bass-pro": {
+    "rationale": "Cabela's (merged with Bass Pro) — sporting-goods retailer; firearms are a primary product line.",
+    "role": "retailer"
+  }
+}

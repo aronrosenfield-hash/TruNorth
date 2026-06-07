@@ -2066,6 +2066,49 @@ const CATEGORY_UI_TYPE = {
 // that's already reflected in the row's overall grade. The tone here is
 // just an axis-relative read: action (good=accent), opposition (bad=red),
 // mixed (warn=amber), no data (muted).
+// B-15 — Industry-membership flags. Read-only disclosure pills shown near
+// the top of the brand-detail card. NOT score modifiers — users decide what
+// matters. Data lives in co.industry_flags, written by scripts/industry-flags.mjs.
+// Flip SHOW_INDUSTRY_FLAGS to false to globally hide the row if a category
+// proves controversial post-launch.
+const SHOW_INDUSTRY_FLAGS = true;
+const INDUSTRY_FLAG_PILLS = [
+  { key: "tobacco",           label: "Tobacco industry",     icon: "ti-cigarette",      color: "#f59e0b", bg: "rgba(245,158,11,0.12)"  },
+  { key: "fossil_fuel",       label: "Fossil-fuel industry", icon: "ti-flame",          color: "#fb923c", bg: "rgba(251,146,60,0.12)"  },
+  { key: "firearms_industry", label: "Firearms industry",    icon: "ti-target",         color: "#ef4444", bg: "rgba(239,68,68,0.12)"   },
+  { key: "alcohol",           label: "Alcohol industry",     icon: "ti-glass-cocktail", color: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
+];
+
+function IndustryFlagsRow({ company }) {
+  if (!SHOW_INDUSTRY_FLAGS) return null;
+  const f = company?.industry_flags;
+  if (!f) return null;
+  const active = INDUSTRY_FLAG_PILLS.filter(p => f[p.key] === true);
+  if (active.length === 0) return null;
+  return (
+    <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:10 }}>
+      {active.map(p => (
+        <span key={p.key}
+          title={`Curated industry-membership flag. Public disclosure only; not a score modifier.`}
+          style={{
+            display:"inline-flex", alignItems:"center", gap:5,
+            padding:"4px 9px",
+            fontSize:11, fontWeight:600,
+            borderRadius:999,
+            background: p.bg,
+            border:`1px solid ${p.color}`,
+            color: p.color,
+            letterSpacing:0.2,
+            whiteSpace:"nowrap",
+          }}>
+          <i className={`ti ${p.icon}`} aria-hidden="true" style={{ fontSize:12 }} />
+          {p.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 const CATEGORY_BADGES = {
   charity: {
     states: [
@@ -2784,11 +2827,14 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               Pulled from Wikipedia infoboxes, BBB/SEC complaint counts, and
               GDELT news mentions. Each subsection only renders if data
               exists, so old/unenriched companies show nothing. */}
-          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint || enriched.recalls || enriched.origin || enriched.ownership || enriched.charity_irs990 || enriched.firearms_atf_ffl || enriched.privacy_hibp_breaches || enriched.litigation_courtlistener) && (
+          {(enriched.wiki || enriched.bbb || enriched.secComplaints || enriched.news || enriched.payRatio || enriched.deiBadges || enriched.animalCerts || enriched.products || enriched.storeFootprint || enriched.recalls || enriched.origin || enriched.ownership || enriched.charity_irs990 || enriched.firearms_atf_ffl || enriched.privacy_hibp_breaches || enriched.litigation_courtlistener || enriched.industry_flags) && (
             <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:14, marginTop:4 }}>
               <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginBottom:10, letterSpacing:0.2 }}>
                 About this company
               </div>
+
+              {/* B-15: industry-membership pills (read-only). */}
+              <IndustryFlagsRow company={enriched} />
 
               {enriched.wiki && (
                 <div style={{ marginBottom:10 }}>

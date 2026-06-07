@@ -1,0 +1,33 @@
+{
+  "_comment": "B-15 — Curated allow-list of TruNorth slugs whose primary business is tobacco (cigarettes, cigars, smokeless, vaping subsidiaries of these parents). Source: Wikipedia 'List of largest tobacco companies' + each parent's brand portfolio. Sub-brands resolve via brand-parent-map. Curated conservatively 2026-06-07.",
+  "_format": {
+    "slug": "<TruNorth company slug>",
+    "rationale": "<one line: why this brand is a tobacco industry member>",
+    "role": "<parent|brand>"
+  },
+
+  "altria-group": {
+    "rationale": "U.S. tobacco parent (Philip Morris USA, US Smokeless Tobacco, John Middleton, NJOY).",
+    "role": "parent"
+  },
+  "philip-morris-international": {
+    "rationale": "Global tobacco multinational; Marlboro outside US, IQOS heat-not-burn.",
+    "role": "parent"
+  },
+  "british-american-tobacco-p-l-c": {
+    "rationale": "Global tobacco parent (Lucky Strike, Dunhill, Newport, Camel via Reynolds American).",
+    "role": "parent"
+  },
+  "r-j-reynolds-tobacco-company": {
+    "rationale": "U.S. operating subsidiary of BAT — Camel, Newport, Pall Mall.",
+    "role": "parent"
+  },
+  "marlboro": {
+    "rationale": "Flagship cigarette brand of Philip Morris/Altria.",
+    "role": "brand"
+  },
+  "camel": {
+    "rationale": "Cigarette brand of R.J. Reynolds.",
+    "role": "brand"
+  }
+}
