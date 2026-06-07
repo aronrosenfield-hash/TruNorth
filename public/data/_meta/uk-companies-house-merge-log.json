@@ -1,0 +1,93 @@
+{
+  "merged_at": "2026-06-07T20:53:40.078Z",
+  "mode": "write",
+  "input_mode": "live",
+  "source_file": "public/data/uk-companies-house.json",
+  "total_brands": 30,
+  "merged_count": 7,
+  "skipped_count": 1,
+  "orphan_count": 22,
+  "error_count": 0,
+  "orphans": [
+    "bp-uk",
+    "boots-uk",
+    "marks-and-spencer",
+    "sainsburys",
+    "hsbc",
+    "standard-chartered",
+    "prudential-uk",
+    "vodafone-uk",
+    "sky-uk",
+    "itv",
+    "bbc",
+    "britvic",
+    "glaxosmithkline",
+    "reckitt-benckiser",
+    "unilever-uk",
+    "kingfisher-uk",
+    "asda",
+    "morrisons",
+    "royal-mail",
+    "smiths-group",
+    "jaguar-land-rover",
+    "jet2"
+  ],
+  "routed_list": [
+    {
+      "brand": "tesco",
+      "target": "tesco",
+      "routed_via": "direct",
+      "company_number": "00445790",
+      "incorporated": "1947-11-27",
+      "officers": 11
+    },
+    {
+      "brand": "lloyds-banking-group",
+      "target": "lloyds-banking-group",
+      "routed_via": "direct",
+      "company_number": "SC095000",
+      "incorporated": "1985-10-21",
+      "officers": 11
+    },
+    {
+      "brand": "barclays",
+      "target": "barclays",
+      "routed_via": "direct",
+      "company_number": "00048839",
+      "incorporated": "1896-07-20",
+      "officers": 12
+    },
+    {
+      "brand": "bt-group",
+      "target": "bt-group",
+      "routed_via": "direct",
+      "company_number": "04190816",
+      "incorporated": "2001-03-30",
+      "officers": 12
+    },
+    {
+      "brand": "diageo",
+      "target": "diageo",
+      "routed_via": "direct",
+      "company_number": "00023307",
+      "incorporated": "1886-10-21",
+      "officers": 11
+    },
+    {
+      "brand": "astrazeneca",
+      "target": "astrazeneca",
+      "routed_via": "direct",
+      "company_number": "02723534",
+      "incorporated": "1992-06-17",
+      "officers": 12
+    },
+    {
+      "brand": "rolls-royce",
+      "target": "rolls-royce",
+      "routed_via": "direct",
+      "company_number": "07524813",
+      "incorporated": "2011-02-10",
+      "officers": 12
+    }
+  ]
+}

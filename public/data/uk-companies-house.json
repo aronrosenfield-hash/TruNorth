@@ -1,0 +1,1924 @@
+{
+  "generated_at": "2026-06-07T20:53:40.035Z",
+  "mode": "live",
+  "source": "UK Companies House (api.company-information.service.gov.uk)",
+  "source_url": "https://developer.company-information.service.gov.uk/",
+  "target_count": 30,
+  "ok_count": 29,
+  "error_count": 1,
+  "smoke": [
+    {
+      "slug": "tesco",
+      "status": "ok",
+      "company_number": "00445790",
+      "incorporated": "1947-11-27",
+      "officer_count": 11
+    },
+    {
+      "slug": "barclays",
+      "status": "ok",
+      "company_number": "00048839",
+      "incorporated": "1896-07-20",
+      "officer_count": 12
+    },
+    {
+      "slug": "astrazeneca",
+      "status": "ok",
+      "company_number": "02723534",
+      "incorporated": "1992-06-17",
+      "officer_count": 12
+    },
+    {
+      "slug": "bbc",
+      "status": "ok",
+      "company_number": "RC000776",
+      "incorporated": null,
+      "officer_count": 0
+    }
+  ],
+  "note": null,
+  "companies": [
+    {
+      "slug": "bp-uk",
+      "name": "BP p.l.c.",
+      "status": "ok",
+      "company_number": "00102498",
+      "incorporated": "1909-04-14",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "FAZAL, Alia",
+          "role": "secretary",
+          "appointed": "2022-01-04"
+        },
+        {
+          "name": "MATHEWS, Benedict John Spurway",
+          "role": "secretary",
+          "appointed": "2019-05-07"
+        },
+        {
+          "name": "THURSTON, Julian",
+          "role": "secretary",
+          "appointed": "2022-05-02"
+        },
+        {
+          "name": "BLANC, Amanda Jayne",
+          "role": "director",
+          "appointed": "2022-09-01"
+        },
+        {
+          "name": "HAGER, David Alan",
+          "role": "director",
+          "appointed": "2025-06-02"
+        },
+        {
+          "name": "MORZARIA, Tushar",
+          "role": "director",
+          "appointed": "2020-09-01"
+        },
+        {
+          "name": "NAGARAJAN, Hina",
+          "role": "director",
+          "appointed": "2023-03-01"
+        },
+        {
+          "name": "O‘NEILL, Marguerite Eileen",
+          "role": "director",
+          "appointed": "2026-04-01"
+        },
+        {
+          "name": "PAI, Satish",
+          "role": "director",
+          "appointed": "2023-03-01"
+        },
+        {
+          "name": "TEYSSEN, Johannes Antonius",
+          "role": "director",
+          "appointed": "2021-01-01"
+        },
+        {
+          "name": "THOMSON, Katherine Anne",
+          "role": "director",
+          "appointed": "2024-02-02"
+        },
+        {
+          "name": "TYLER, Ian Paul",
+          "role": "director",
+          "appointed": "2025-04-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-05",
+      "latest_filing_description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+      "registered_office_address": "1 St James's Square, London, SW1Y 4PD",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00102498"
+    },
+    {
+      "slug": "tesco",
+      "name": "Tesco PLC",
+      "status": "ok",
+      "company_number": "00445790",
+      "incorporated": "1947-11-27",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "47110"
+      ],
+      "officers": [
+        {
+          "name": "TAYLOR, Christopher Jon",
+          "role": "secretary",
+          "appointed": "2025-04-14"
+        },
+        {
+          "name": "BETHELL, Melissa",
+          "role": "director",
+          "appointed": "2018-09-24"
+        },
+        {
+          "name": "BODSON, Bertrand Jean Francois",
+          "role": "director",
+          "appointed": "2021-06-01"
+        },
+        {
+          "name": "FAIRBAIRN, Carolyn Julie",
+          "role": "director",
+          "appointed": "2023-09-01"
+        },
+        {
+          "name": "GILLILAND, Stewart Charles",
+          "role": "director",
+          "appointed": "2018-03-05"
+        },
+        {
+          "name": "KENNEDY, Christopher John",
+          "role": "director",
+          "appointed": "2025-02-20"
+        },
+        {
+          "name": "MURPHY, Gerard Martin",
+          "role": "director",
+          "appointed": "2023-09-01"
+        },
+        {
+          "name": "MURPHY, Ken",
+          "role": "director",
+          "appointed": "2020-10-01"
+        },
+        {
+          "name": "NAWAZ, Imran",
+          "role": "director",
+          "appointed": "2021-05-01"
+        },
+        {
+          "name": "SILVER, Caroline Louise",
+          "role": "director",
+          "appointed": "2022-10-01"
+        },
+        {
+          "name": "WHITWORTH, Karen Tracy",
+          "role": "director",
+          "appointed": "2021-06-18"
+        }
+      ],
+      "latest_filing_date": "2026-05-07",
+      "latest_filing_description": "termination-director-company-with-name-termination-date",
+      "registered_office_address": "Tesco House, Shire Park, Kestrel Way, Welwyn Garden City, AL7 1GA, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00445790"
+    },
+    {
+      "slug": "boots-uk",
+      "name": "Boots UK Limited",
+      "status": "ok",
+      "company_number": "00928555",
+      "incorporated": "1968-03-11",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "47190",
+        "47730"
+      ],
+      "officers": [
+        {
+          "name": "THOMPSON, Andrew Richard",
+          "role": "secretary",
+          "appointed": "2015-10-02"
+        },
+        {
+          "name": "HEMMERDINGER, Anthony Stuart",
+          "role": "director",
+          "appointed": "2024-02-02"
+        },
+        {
+          "name": "HUNTER, Samuel James",
+          "role": "director",
+          "appointed": "2023-05-22"
+        },
+        {
+          "name": "KERRUISH, Jamie",
+          "role": "director",
+          "appointed": "2024-09-17"
+        }
+      ],
+      "latest_filing_date": "2026-06-06",
+      "latest_filing_description": "accounts-with-accounts-type-full",
+      "registered_office_address": "Nottingham, NG2 3AA",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00928555"
+    },
+    {
+      "slug": "marks-and-spencer",
+      "name": "Marks and Spencer Group plc",
+      "status": "ok",
+      "company_number": "04256886",
+      "incorporated": "2001-07-23",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "47190"
+      ],
+      "officers": [
+        {
+          "name": "FOLLAND, Nick James",
+          "role": "secretary",
+          "appointed": "2019-02-01"
+        },
+        {
+          "name": "BOURKE, Evelyn Brigid",
+          "role": "director",
+          "appointed": "2021-02-01"
+        },
+        {
+          "name": "BURNLEY, Roger Michael",
+          "role": "director",
+          "appointed": "2025-12-01"
+        },
+        {
+          "name": "DAWSON, Fiona Eleanor",
+          "role": "director",
+          "appointed": "2021-05-25"
+        },
+        {
+          "name": "DOLAN, Alison Ann",
+          "role": "director",
+          "appointed": "2025-01-06"
+        },
+        {
+          "name": "DOYLE, Sean Liam",
+          "role": "director",
+          "appointed": "2025-12-01"
+        },
+        {
+          "name": "HOOD, Cheryl Yvonne",
+          "role": "director",
+          "appointed": "2023-03-01"
+        },
+        {
+          "name": "INGRAM, Tamara",
+          "role": "director",
+          "appointed": "2020-06-01"
+        },
+        {
+          "name": "MACHIN, Stuart Barry",
+          "role": "director",
+          "appointed": "2022-05-25"
+        },
+        {
+          "name": "NORMAN, Archibald John",
+          "role": "director",
+          "appointed": "2017-09-01"
+        },
+        {
+          "name": "SOOD, Sapna Rani",
+          "role": "director",
+          "appointed": "2020-06-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-04",
+      "latest_filing_description": "capital-allotment-shares",
+      "registered_office_address": "Waterside House, 35 North Wharf Road, London, W2 1NW",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/04256886"
+    },
+    {
+      "slug": "sainsburys",
+      "name": "J Sainsbury plc",
+      "status": "ok",
+      "company_number": "00185647",
+      "incorporated": "1922-11-10",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "47110"
+      ],
+      "officers": [
+        {
+          "name": "GRANT, Nicolas",
+          "role": "secretary",
+          "appointed": "2024-07-05"
+        },
+        {
+          "name": "BERGIN, Blathnaid",
+          "role": "director",
+          "appointed": "2023-03-05"
+        },
+        {
+          "name": "BERTRAM, Joanna",
+          "role": "director",
+          "appointed": "2022-07-07"
+        },
+        {
+          "name": "BICKERSTAFFE, Kate",
+          "role": "director",
+          "appointed": "2025-07-03"
+        },
+        {
+          "name": "HARE, Stephen",
+          "role": "director",
+          "appointed": "2025-07-03"
+        },
+        {
+          "name": "HARLOW, Jo Nell",
+          "role": "director",
+          "appointed": "2017-09-11"
+        },
+        {
+          "name": "HENNAH, Adrian",
+          "role": "director",
+          "appointed": "2021-04-01"
+        },
+        {
+          "name": "KAPILASHRAMI, Tanuj",
+          "role": "director",
+          "appointed": "2020-07-01"
+        },
+        {
+          "name": "ROBERTS, Simon John",
+          "role": "director",
+          "appointed": "2020-06-01"
+        },
+        {
+          "name": "SCICLUNA, Martin Anthony",
+          "role": "director",
+          "appointed": "2018-11-01"
+        },
+        {
+          "name": "WEED, Keith Charles Frederick",
+          "role": "director",
+          "appointed": "2020-07-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-01",
+      "latest_filing_description": "capital-cancellation-shares",
+      "registered_office_address": "33 Charterhouse Street, London, EC1M 6HA, England",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00185647"
+    },
+    {
+      "slug": "lloyds-banking-group",
+      "name": "Lloyds Banking Group plc",
+      "status": "ok",
+      "company_number": "SC095000",
+      "incorporated": "1985-10-21",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "64205"
+      ],
+      "officers": [
+        {
+          "name": "CHEETHAM, Catharine Lucy",
+          "role": "secretary",
+          "appointed": "2019-07-01"
+        },
+        {
+          "name": "BOSTOCK, Nathan Mark",
+          "role": "director",
+          "appointed": "2024-08-01"
+        },
+        {
+          "name": "BUDENBERG, Robin Francis",
+          "role": "director",
+          "appointed": "2020-10-01"
+        },
+        {
+          "name": "CHALMERS, William Leon David",
+          "role": "director",
+          "appointed": "2019-08-01"
+        },
+        {
+          "name": "LEGG, Sarah Catherine",
+          "role": "director",
+          "appointed": "2019-12-01"
+        },
+        {
+          "name": "MACKENZIE, Amanda Felicity",
+          "role": "director",
+          "appointed": "2018-10-01"
+        },
+        {
+          "name": "MEHTA, Harmeen",
+          "role": "director",
+          "appointed": "2021-11-01"
+        },
+        {
+          "name": "NUNN, Charles Alan",
+          "role": "director",
+          "appointed": "2021-08-16"
+        },
+        {
+          "name": "TURNER, Catherine Lucy",
+          "role": "director",
+          "appointed": "2022-11-01"
+        },
+        {
+          "name": "VOGELZANG, Christiaan Franciscus Henricus Herman",
+          "role": "director",
+          "appointed": "2025-06-16"
+        },
+        {
+          "name": "WOODS, Catherine Marie",
+          "role": "director",
+          "appointed": "2020-03-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-05",
+      "latest_filing_description": "capital-cancellation-shares",
+      "registered_office_address": "The Mound, Edinburgh, EH1 1YZ",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/SC095000"
+    },
+    {
+      "slug": "barclays",
+      "name": "Barclays PLC",
+      "status": "ok",
+      "company_number": "00048839",
+      "incorporated": "1896-07-20",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "64191"
+      ],
+      "officers": [
+        {
+          "name": "ELLWOOD, Hannah Elisabeth, Ms.",
+          "role": "secretary",
+          "appointed": "2023-02-15"
+        },
+        {
+          "name": "BERRY, Robert",
+          "role": "director",
+          "appointed": "2022-02-08"
+        },
+        {
+          "name": "CROSS, Angela Anna",
+          "role": "director",
+          "appointed": "2022-04-23"
+        },
+        {
+          "name": "FITZPATRICK, Dawn",
+          "role": "director",
+          "appointed": "2019-09-25"
+        },
+        {
+          "name": "GILVARY, Brian, Dr",
+          "role": "director",
+          "appointed": "2020-02-01"
+        },
+        {
+          "name": "HIGGINS, Nigel Paul",
+          "role": "director",
+          "appointed": "2019-03-01"
+        },
+        {
+          "name": "KINGMAN, John Oliver Frank, Sir",
+          "role": "director",
+          "appointed": "2023-06-01"
+        },
+        {
+          "name": "LEBOT, Dioni-Catherine",
+          "role": "director",
+          "appointed": "2025-03-17"
+        },
+        {
+          "name": "MACK, Mary Tabb",
+          "role": "director",
+          "appointed": "2025-06-01"
+        },
+        {
+          "name": "MOSES, Menasey Marc",
+          "role": "director",
+          "appointed": "2023-01-23"
+        },
+        {
+          "name": "SHEA, Brian Thomas",
+          "role": "director",
+          "appointed": "2024-07-19"
+        },
+        {
+          "name": "VENKATAKRISHNAN, Coimbatore Sundararajan",
+          "role": "director",
+          "appointed": "2021-11-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-06",
+      "latest_filing_description": "resolution",
+      "registered_office_address": "1 Churchill Place, London, E14 5HP",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00048839"
+    },
+    {
+      "slug": "hsbc",
+      "name": "HSBC Holdings plc",
+      "status": "ok",
+      "company_number": "00617987",
+      "incorporated": "1959-01-01",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "MCENTEE, Angela Claire",
+          "role": "secretary",
+          "appointed": "2026-01-01"
+        },
+        {
+          "name": "BUCKINGHAM, Geraldine Joyce",
+          "role": "director",
+          "appointed": "2022-05-01"
+        },
+        {
+          "name": "CHRISTIANSON, Wei Sun",
+          "role": "director",
+          "appointed": "2026-01-01"
+        },
+        {
+          "name": "DUAN, Rachel",
+          "role": "director",
+          "appointed": "2021-09-01"
+        },
+        {
+          "name": "ELHEDERY, Georges Bahjat",
+          "role": "director",
+          "appointed": "2023-01-01"
+        },
+        {
+          "name": "FAIRBAIRN, Carolyn Julie, Dame",
+          "role": "director",
+          "appointed": "2021-09-01"
+        },
+        {
+          "name": "FORESE, James Anthony",
+          "role": "director",
+          "appointed": "2020-05-01"
+        },
+        {
+          "name": "GUGGENHEIMER, Steven Craig",
+          "role": "director",
+          "appointed": "2020-05-01"
+        },
+        {
+          "name": "KAUR, Manveen Pam, Ms.",
+          "role": "director",
+          "appointed": "2025-01-01"
+        },
+        {
+          "name": "MEADE KURIBRENA, Jose Antonio, Dr.",
+          "role": "director",
+          "appointed": "2019-03-01"
+        },
+        {
+          "name": "MEDDINGS, Richard Henry, Mr.",
+          "role": "director",
+          "appointed": "2026-05-08"
+        },
+        {
+          "name": "MORPARIA, Kalpana Jaisingh",
+          "role": "director",
+          "appointed": "2023-03-01"
+        }
+      ],
+      "latest_filing_date": "2026-05-30",
+      "latest_filing_description": "resolution",
+      "registered_office_address": "8 Canada Square, London, E14 5HQ",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00617987"
+    },
+    {
+      "slug": "standard-chartered",
+      "name": "Standard Chartered PLC",
+      "status": "ok",
+      "company_number": "00966425",
+      "incorporated": "1969-11-18",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "64999"
+      ],
+      "officers": [
+        {
+          "name": "CORRIGAN, Scott David",
+          "role": "secretary",
+          "appointed": "2025-11-14"
+        },
+        {
+          "name": "APTE, Shirish Moreshwar",
+          "role": "director",
+          "appointed": "2022-05-04"
+        },
+        {
+          "name": "HUNT, Jacqueline",
+          "role": "director",
+          "appointed": "2022-10-01"
+        },
+        {
+          "name": "JURGENS, Diane Enberg",
+          "role": "director",
+          "appointed": "2024-03-01"
+        },
+        {
+          "name": "LAWTHER, Robin Ann",
+          "role": "director",
+          "appointed": "2022-07-01"
+        },
+        {
+          "name": "LEONG, Lincoln Kwok Kuen",
+          "role": "director",
+          "appointed": "2024-11-02"
+        },
+        {
+          "name": "RAMOS, Maria Da Conceicao Das Neves Calha",
+          "role": "director",
+          "appointed": "2021-01-01"
+        },
+        {
+          "name": "RIVETT, Philip George",
+          "role": "director",
+          "appointed": "2020-05-06"
+        },
+        {
+          "name": "TANG, David",
+          "role": "director",
+          "appointed": "2019-06-12"
+        },
+        {
+          "name": "WINTERS, William Thomas",
+          "role": "director",
+          "appointed": "2015-06-10"
+        },
+        {
+          "name": "YUEH, Linda Yi-Chuang, Dr",
+          "role": "director",
+          "appointed": "2023-01-01"
+        }
+      ],
+      "latest_filing_date": "2026-05-26",
+      "latest_filing_description": "resolution",
+      "registered_office_address": "1 Basinghall Avenue, London, EC2V 5DD, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00966425"
+    },
+    {
+      "slug": "prudential-uk",
+      "name": "Prudential plc",
+      "status": "ok",
+      "company_number": "01397169",
+      "incorporated": "1978-11-01",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "CLARKSON, Thomas Stern",
+          "role": "secretary",
+          "appointed": "2019-08-19"
+        },
+        {
+          "name": "ANDERSON, Jeremy David Bruce",
+          "role": "director",
+          "appointed": "2020-01-01"
+        },
+        {
+          "name": "BASU, Arijit",
+          "role": "director",
+          "appointed": "2022-09-01"
+        },
+        {
+          "name": "CHUA, Sock Koong",
+          "role": "director",
+          "appointed": "2021-05-12"
+        },
+        {
+          "name": "FLINT, Douglas Jardine, Sir",
+          "role": "director",
+          "appointed": "2026-03-04"
+        },
+        {
+          "name": "FUERER, Guido, Dr",
+          "role": "director",
+          "appointed": "2025-07-01"
+        },
+        {
+          "name": "LU, Ming",
+          "role": "director",
+          "appointed": "2021-05-12"
+        },
+        {
+          "name": "SARTOREL, George",
+          "role": "director",
+          "appointed": "2022-01-14"
+        },
+        {
+          "name": "SAUNDERS, Mark Vincent Thomas",
+          "role": "director",
+          "appointed": "2024-04-01"
+        },
+        {
+          "name": "SUESSMUTH-DYCKERHOFF, Claudia",
+          "role": "director",
+          "appointed": "2023-01-01"
+        },
+        {
+          "name": "WADHWANI, Anil",
+          "role": "director",
+          "appointed": "2023-02-25"
+        },
+        {
+          "name": "WONG, Kai Yuan Jeanette",
+          "role": "director",
+          "appointed": "2021-05-12"
+        }
+      ],
+      "latest_filing_date": "2026-06-07",
+      "latest_filing_description": "capital-return-purchase-own-shares",
+      "registered_office_address": "5th Floor 10 Old Bailey, London, EC4M 7NG, England",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/01397169"
+    },
+    {
+      "slug": "vodafone-uk",
+      "name": "Vodafone Group Public Limited Company",
+      "status": "ok",
+      "company_number": "01833679",
+      "incorporated": "1984-07-17",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "61900",
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "DE BIE, Maaike Helena",
+          "role": "secretary",
+          "appointed": "2023-03-01"
+        },
+        {
+          "name": "CARTER, Stephen Andrew",
+          "role": "director",
+          "appointed": "2022-07-26"
+        },
+        {
+          "name": "DELLA VALLE, Margherita",
+          "role": "director",
+          "appointed": "2018-07-27"
+        },
+        {
+          "name": "DEMARE, Michel Roger",
+          "role": "director",
+          "appointed": "2018-02-01"
+        },
+        {
+          "name": "DINGEMANS, Simon",
+          "role": "director",
+          "appointed": "2025-01-01"
+        },
+        {
+          "name": "DOWIDAR, Hatem Mohamed Galal",
+          "role": "director",
+          "appointed": "2024-02-19"
+        },
+        {
+          "name": "ERNOTTE CUNCI, Delphine",
+          "role": "director",
+          "appointed": "2022-07-26"
+        },
+        {
+          "name": "KERR, Deborah",
+          "role": "director",
+          "appointed": "2022-03-01"
+        },
+        {
+          "name": "LOPEZ ALVAREZ, Maria Pilar",
+          "role": "director",
+          "appointed": "2025-12-01"
+        },
+        {
+          "name": "MORALEDA MARTINEZ, Maria Amparo",
+          "role": "director",
+          "appointed": "2017-06-01"
+        },
+        {
+          "name": "NESMES, Anne-Francoise",
+          "role": "director",
+          "appointed": "2025-07-29"
+        },
+        {
+          "name": "RAMON, Kandimathie Christine",
+          "role": "director",
+          "appointed": "2022-11-14"
+        }
+      ],
+      "latest_filing_date": "2026-05-19",
+      "latest_filing_description": "capital-return-purchase-own-shares-treasury-capital-date",
+      "registered_office_address": "Vodafone House, The Connection, Newbury, Berkshire, RG14 2FN",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/01833679"
+    },
+    {
+      "slug": "bt-group",
+      "name": "BT Group plc",
+      "status": "ok",
+      "company_number": "04190816",
+      "incorporated": "2001-03-30",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "61900"
+      ],
+      "officers": [
+        {
+          "name": "CHALMERS, Sabine",
+          "role": "secretary",
+          "appointed": "2021-09-01"
+        },
+        {
+          "name": "CAIRNIE, Linda Ruth",
+          "role": "director",
+          "appointed": "2023-04-06"
+        },
+        {
+          "name": "CHAN JONES, Maggie",
+          "role": "director",
+          "appointed": "2023-03-01"
+        },
+        {
+          "name": "CHISHOLM, Alex James, Sir",
+          "role": "director",
+          "appointed": "2024-09-16"
+        },
+        {
+          "name": "CROZIER, Adam Alexander",
+          "role": "director",
+          "appointed": "2021-11-01"
+        },
+        {
+          "name": "GUGGENHEIMER, Steven Craig",
+          "role": "director",
+          "appointed": "2022-10-01"
+        },
+        {
+          "name": "KEY, Matthew David",
+          "role": "director",
+          "appointed": "2018-10-25"
+        },
+        {
+          "name": "KIRKBY, Allison",
+          "role": "director",
+          "appointed": "2019-03-15"
+        },
+        {
+          "name": "KUBLER, Raphael, Dr",
+          "role": "director",
+          "appointed": "2024-01-30"
+        },
+        {
+          "name": "LOWTH, Simon Jonathan",
+          "role": "director",
+          "appointed": "2016-07-12"
+        },
+        {
+          "name": "MITTAL, Sunil Bharti",
+          "role": "director",
+          "appointed": "2025-09-15"
+        },
+        {
+          "name": "MORZARIA, Tushar",
+          "role": "director",
+          "appointed": "2024-05-07"
+        }
+      ],
+      "latest_filing_date": "2026-04-24",
+      "latest_filing_description": "confirmation-statement-with-no-updates",
+      "registered_office_address": "1 Braham Street, London, E1 8EE, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/04190816"
+    },
+    {
+      "slug": "sky-uk",
+      "name": "Sky Group Limited",
+      "status": "ok",
+      "company_number": "02247735",
+      "incorporated": "1988-04-25",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "SKY CORPORATE SECRETARY LIMITED",
+          "role": "corporate-secretary",
+          "appointed": "2019-06-14"
+        },
+        {
+          "name": "MILLS, Barnaby Tristan",
+          "role": "director",
+          "appointed": "2026-03-06"
+        },
+        {
+          "name": "WIDEMAN, Elizabeth",
+          "role": "director",
+          "appointed": "2023-07-25"
+        }
+      ],
+      "latest_filing_date": "2026-03-12",
+      "latest_filing_description": "termination-director-company-with-name-termination-date",
+      "registered_office_address": "Grant Way, Isleworth, Middlesex, TW7 5QD",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/02247735"
+    },
+    {
+      "slug": "itv",
+      "name": "ITV plc",
+      "status": "ok",
+      "company_number": "04967001",
+      "incorporated": "2003-11-18",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "82990"
+      ],
+      "officers": [
+        {
+          "name": "MULLINS, Kyla Lynne Anthea",
+          "role": "secretary",
+          "appointed": "2019-01-07"
+        },
+        {
+          "name": "ALLEN, Dawn Amanda",
+          "role": "director",
+          "appointed": "2023-10-02"
+        },
+        {
+          "name": "ASHTON, Helen Jane",
+          "role": "director",
+          "appointed": "2025-05-13"
+        },
+        {
+          "name": "BONHAM CARTER, Edward Henry",
+          "role": "director",
+          "appointed": "2018-10-11"
+        },
+        {
+          "name": "COOKE, Graham Christopher",
+          "role": "director",
+          "appointed": "2020-05-01"
+        },
+        {
+          "name": "COSSLETT, Andrew Peter",
+          "role": "director",
+          "appointed": "2022-06-01"
+        },
+        {
+          "name": "EWING, Margaret",
+          "role": "director",
+          "appointed": "2017-10-31"
+        },
+        {
+          "name": "KAPLAN, Marjorie Ellen",
+          "role": "director",
+          "appointed": "2023-09-01"
+        },
+        {
+          "name": "KATZ, Gidon Arieh",
+          "role": "director",
+          "appointed": "2022-07-18"
+        },
+        {
+          "name": "KENNEDY, Christopher John",
+          "role": "director",
+          "appointed": "2019-02-21"
+        },
+        {
+          "name": "MCCALL, Carolyn Julia, Dame",
+          "role": "director",
+          "appointed": "2018-01-08"
+        },
+        {
+          "name": "NEBHRAJANI, Sharmila",
+          "role": "director",
+          "appointed": "2020-12-10"
+        }
+      ],
+      "latest_filing_date": "2026-06-02",
+      "latest_filing_description": "resolution",
+      "registered_office_address": "Itv White City, 201 Wood Lane, London, W12 7RU, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/04967001"
+    },
+    {
+      "slug": "bbc",
+      "name": "British Broadcasting Corporation",
+      "status": "ok",
+      "company_number": "RC000776",
+      "incorporated": null,
+      "company_status": "active",
+      "company_type": "royal-charter",
+      "sic_codes": [],
+      "officers": [],
+      "latest_filing_date": null,
+      "latest_filing_description": null,
+      "registered_office_address": "",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/RC000776"
+    },
+    {
+      "slug": "britvic",
+      "name": "Britvic plc",
+      "status": "ok",
+      "company_number": "05604923",
+      "incorporated": "2005-10-27",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "11070",
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "BROWN, Jeremy Robert",
+          "role": "secretary",
+          "appointed": "2025-01-16"
+        },
+        {
+          "name": "BRINCK, Soren",
+          "role": "director",
+          "appointed": "2025-01-16"
+        },
+        {
+          "name": "BROWN, Jeremy Robert",
+          "role": "director",
+          "appointed": "2025-01-16"
+        },
+        {
+          "name": "DAVIES, Paul Thomas",
+          "role": "director",
+          "appointed": "2025-01-16"
+        },
+        {
+          "name": "GUNNARSSON LUNDGREN, Anna Cecilia",
+          "role": "director",
+          "appointed": "2025-01-16"
+        },
+        {
+          "name": "SMETHERS, Thomas Michael",
+          "role": "director",
+          "appointed": "2025-01-16"
+        }
+      ],
+      "latest_filing_date": "2025-10-30",
+      "latest_filing_description": "notification-of-a-person-with-significant-control",
+      "registered_office_address": "Breakspear Park, Breakspear Way, Hemel Hempstead, Hertfordshire, HP2 4TZ",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/05604923"
+    },
+    {
+      "slug": "diageo",
+      "name": "Diageo plc",
+      "status": "ok",
+      "company_number": "00023307",
+      "incorporated": "1886-10-21",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "INGBER, Randall David",
+          "role": "secretary",
+          "appointed": "2025-07-01"
+        },
+        {
+          "name": "BETHELL, Melissa, Lady",
+          "role": "director",
+          "appointed": "2020-06-30"
+        },
+        {
+          "name": "BLACKETT, Karen Tracey",
+          "role": "director",
+          "appointed": "2022-06-01"
+        },
+        {
+          "name": "BROWN, Julie Belita",
+          "role": "director",
+          "appointed": "2024-08-05"
+        },
+        {
+          "name": "CHAPOULAUD-FLOQUET, Valerie Marie Anne",
+          "role": "director",
+          "appointed": "2021-01-01"
+        },
+        {
+          "name": "JHANGIANI, Manik Hiru",
+          "role": "director",
+          "appointed": "2024-09-01"
+        },
+        {
+          "name": "KILSBY, Susan Saltzbart",
+          "role": "director",
+          "appointed": "2018-04-04"
+        },
+        {
+          "name": "LEWIS, David John, Sir",
+          "role": "director",
+          "appointed": "2026-01-01"
+        },
+        {
+          "name": "MANZONI, John Alexander, Sir",
+          "role": "director",
+          "appointed": "2020-10-01"
+        },
+        {
+          "name": "RISHTON, John Frederick",
+          "role": "director",
+          "appointed": "2025-11-01"
+        },
+        {
+          "name": "VITTAL, Ireena",
+          "role": "director",
+          "appointed": "2020-10-02"
+        }
+      ],
+      "latest_filing_date": "2026-05-27",
+      "latest_filing_description": "legacy",
+      "registered_office_address": "16 Great Marlborough Street, London, W1F 7HS, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00023307"
+    },
+    {
+      "slug": "glaxosmithkline",
+      "name": "GSK plc",
+      "status": "ok",
+      "company_number": "03888792",
+      "incorporated": "1999-12-06",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "WHYTE, Victoria Anne",
+          "role": "secretary",
+          "appointed": "2004-07-29"
+        },
+        {
+          "name": "ANDERSON, Elizabeth Mckee",
+          "role": "director",
+          "appointed": "2022-09-01"
+        },
+        {
+          "name": "BANCROFT, Charles",
+          "role": "director",
+          "appointed": "2020-05-01"
+        },
+        {
+          "name": "BARRON, Hal, Dr",
+          "role": "director",
+          "appointed": "2018-01-01"
+        },
+        {
+          "name": "BEAL, Anne, Dr",
+          "role": "director",
+          "appointed": "2021-05-06"
+        },
+        {
+          "name": "BECKER, Wendy Mira",
+          "role": "director",
+          "appointed": "2023-10-01"
+        },
+        {
+          "name": "BROWN, Julie Belita",
+          "role": "director",
+          "appointed": "2023-05-01"
+        },
+        {
+          "name": "DIETZ, Harry, Dr",
+          "role": "director",
+          "appointed": "2022-01-01"
+        },
+        {
+          "name": "LEE, Jeannie Tsun-Huei, Dr",
+          "role": "director",
+          "appointed": "2024-03-04"
+        },
+        {
+          "name": "MIELS, Luke Victor",
+          "role": "director",
+          "appointed": "2026-01-01"
+        },
+        {
+          "name": "SCREATON, Gavin Robert",
+          "role": "director",
+          "appointed": "2025-05-01"
+        },
+        {
+          "name": "SIKKA, Vishal, Dr",
+          "role": "director",
+          "appointed": "2022-07-18"
+        }
+      ],
+      "latest_filing_date": "2026-06-05",
+      "latest_filing_description": "capital-return-purchase-own-shares-treasury-capital-date",
+      "registered_office_address": "79 New Oxford Street, London, WC1A 1DG, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/03888792"
+    },
+    {
+      "slug": "astrazeneca",
+      "name": "AstraZeneca PLC",
+      "status": "ok",
+      "company_number": "02723534",
+      "incorporated": "1992-06-17",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "21100",
+        "21200",
+        "46460",
+        "72110"
+      ],
+      "officers": [
+        {
+          "name": "BOWDEN, Matthew Shaun",
+          "role": "secretary",
+          "appointed": "2025-05-01"
+        },
+        {
+          "name": "ASHLEY, Euan Angus",
+          "role": "director",
+          "appointed": "2020-10-01"
+        },
+        {
+          "name": "BROADLEY, Philip Arthur John",
+          "role": "director",
+          "appointed": "2017-04-27"
+        },
+        {
+          "name": "CONIX, Birgit",
+          "role": "director",
+          "appointed": "2025-02-01"
+        },
+        {
+          "name": "COSTELLO, Karen Elizabeth Knudsen",
+          "role": "director",
+          "appointed": "2025-04-11"
+        },
+        {
+          "name": "DEMARE, Michel Roger",
+          "role": "director",
+          "appointed": "2019-09-01"
+        },
+        {
+          "name": "LAYFIELD, Diana Louise Patricia",
+          "role": "director",
+          "appointed": "2020-11-01"
+        },
+        {
+          "name": "MANZ, Anna Olive Magdelene",
+          "role": "director",
+          "appointed": "2023-09-01"
+        },
+        {
+          "name": "MCCOY, Sherilyn Dawn",
+          "role": "director",
+          "appointed": "2017-10-01"
+        },
+        {
+          "name": "MOK, Tony Shu Kam",
+          "role": "director",
+          "appointed": "2019-01-01"
+        },
+        {
+          "name": "SARIN, Aradhana",
+          "role": "director",
+          "appointed": "2021-08-01"
+        },
+        {
+          "name": "SORIOT, Pascal Claude Roland",
+          "role": "director",
+          "appointed": "2012-10-01"
+        }
+      ],
+      "latest_filing_date": "2026-05-27",
+      "latest_filing_description": "confirmation-statement-with-updates",
+      "registered_office_address": "1 Francis Crick Avenue, Cambridge Biomedical Campus, Cambridge, CB2 0AA, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/02723534"
+    },
+    {
+      "slug": "reckitt-benckiser",
+      "name": "Reckitt Benckiser Group plc",
+      "status": "ok",
+      "company_number": "06270876",
+      "incorporated": "2007-06-06",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "O'ROURKE, Catheryn Ann",
+          "role": "secretary",
+          "appointed": "2022-02-11"
+        },
+        {
+          "name": "BONFIELD, Andrew Robert John",
+          "role": "director",
+          "appointed": "2018-07-01"
+        },
+        {
+          "name": "DARROCH, David Jeremy",
+          "role": "director",
+          "appointed": "2022-11-01"
+        },
+        {
+          "name": "DAWSON, Fiona Eleanor",
+          "role": "director",
+          "appointed": "2024-06-01"
+        },
+        {
+          "name": "EISENHARDT, Shannon Sue",
+          "role": "director",
+          "appointed": "2023-10-17"
+        },
+        {
+          "name": "HAYS, Marybeth",
+          "role": "director",
+          "appointed": "2024-02-01"
+        },
+        {
+          "name": "INGRAM, Tamara",
+          "role": "director",
+          "appointed": "2023-02-01"
+        },
+        {
+          "name": "KIRSCH, Harry",
+          "role": "director",
+          "appointed": "2026-04-01"
+        },
+        {
+          "name": "LICHT, Kristoffer Loe",
+          "role": "director",
+          "appointed": "2023-06-01"
+        },
+        {
+          "name": "NATH, Deepak",
+          "role": "director",
+          "appointed": "2026-04-01"
+        },
+        {
+          "name": "OSCHMANN, Stefan Joachim, Dr",
+          "role": "director",
+          "appointed": "2025-01-01"
+        },
+        {
+          "name": "STOCK, Elane",
+          "role": "director",
+          "appointed": "2018-09-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-03",
+      "latest_filing_description": "capital-sale-or-transfer-treasury-shares-with-date-currency-capital-figure",
+      "registered_office_address": "103-105 Bath Road, Slough, Berkshire, SL1 3UH",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/06270876"
+    },
+    {
+      "slug": "unilever-uk",
+      "name": "Unilever PLC",
+      "status": "ok",
+      "company_number": "00041424",
+      "incorporated": "1894-06-21",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "KAKKAD, Prakash",
+          "role": "secretary",
+          "appointed": "2026-03-01"
+        },
+        {
+          "name": "FERNANDEZ, Fernando",
+          "role": "director",
+          "appointed": "2024-01-01"
+        },
+        {
+          "name": "HENNAH, Adrian",
+          "role": "director",
+          "appointed": "2021-11-01"
+        },
+        {
+          "name": "KILSBY, Susan Saltzbart",
+          "role": "director",
+          "appointed": "2019-08-01"
+        },
+        {
+          "name": "LU, Rong",
+          "role": "director",
+          "appointed": "2021-11-01"
+        },
+        {
+          "name": "MCKENNA, Judith",
+          "role": "director",
+          "appointed": "2024-03-01"
+        },
+        {
+          "name": "MEAKINS, Ian Keith",
+          "role": "director",
+          "appointed": "2023-09-01"
+        },
+        {
+          "name": "PELTZ, Nelson",
+          "role": "director",
+          "appointed": "2022-07-20"
+        },
+        {
+          "name": "PHATAK, Srinivas",
+          "role": "director",
+          "appointed": "2025-09-15"
+        },
+        {
+          "name": "POTIER, Benoit Thierry",
+          "role": "director",
+          "appointed": "2025-01-01"
+        },
+        {
+          "name": "YUJNOVICH, Zoe",
+          "role": "director",
+          "appointed": "2025-03-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-07",
+      "latest_filing_description": "resolution",
+      "registered_office_address": "Port Sunlight, Wirral, Merseyside, CH62 4ZD",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00041424"
+    },
+    {
+      "slug": "kingfisher-uk",
+      "name": "Kingfisher plc",
+      "status": "ok",
+      "company_number": "01664812",
+      "incorporated": "1982-09-16",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "DUTTA, Sapna",
+          "role": "secretary",
+          "appointed": "2025-11-01"
+        },
+        {
+          "name": "ARNEY, Claudia Isobel",
+          "role": "director",
+          "appointed": "2018-11-01"
+        },
+        {
+          "name": "CARR, Jeffrey",
+          "role": "director",
+          "appointed": "2018-06-01"
+        },
+        {
+          "name": "DAINTITH, Stephen Wayne",
+          "role": "director",
+          "appointed": "2026-04-01"
+        },
+        {
+          "name": "GARNIER, Thierry Dominique Gerard",
+          "role": "director",
+          "appointed": "2019-09-25"
+        },
+        {
+          "name": "GASPERMENT, Sophie",
+          "role": "director",
+          "appointed": "2018-12-01"
+        },
+        {
+          "name": "LENNIE, William George",
+          "role": "director",
+          "appointed": "2022-05-01"
+        },
+        {
+          "name": "MCLEOD, Ian James Winward",
+          "role": "director",
+          "appointed": "2025-01-20"
+        },
+        {
+          "name": "MISTRY, Bhavesh",
+          "role": "director",
+          "appointed": "2025-01-13"
+        },
+        {
+          "name": "RICHES, Lucinda Jane",
+          "role": "director",
+          "appointed": "2025-01-01"
+        }
+      ],
+      "latest_filing_date": "2026-06-04",
+      "latest_filing_description": "capital-cancellation-shares",
+      "registered_office_address": "1 Paddington Square, London, W2 1GG, England",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/01664812"
+    },
+    {
+      "slug": "asda",
+      "name": "Asda Group Limited",
+      "status": "ok",
+      "company_number": "00464777",
+      "incorporated": "1949-02-19",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "47190"
+      ],
+      "officers": [
+        {
+          "name": "SELBY, Helen Kathryn",
+          "role": "secretary",
+          "appointed": "2020-04-06"
+        },
+        {
+          "name": "GLEESON, Michael",
+          "role": "director",
+          "appointed": "2023-05-24"
+        },
+        {
+          "name": "SELBY, Helen Kathryn",
+          "role": "director",
+          "appointed": "2025-05-23"
+        }
+      ],
+      "latest_filing_date": "2026-01-15",
+      "latest_filing_description": "mortgage-create-with-deed-with-charge-number-charge-creation-date",
+      "registered_office_address": "Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00464777"
+    },
+    {
+      "slug": "morrisons",
+      "name": "Wm Morrison Supermarkets Limited",
+      "status": "ok",
+      "company_number": "00358949",
+      "incorporated": "1940-01-22",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "47110"
+      ],
+      "officers": [
+        {
+          "name": "BURKE, Jonathan James",
+          "role": "secretary",
+          "appointed": "2017-02-15"
+        },
+        {
+          "name": "BAITIEH, Rami",
+          "role": "director",
+          "appointed": "2023-10-30"
+        },
+        {
+          "name": "GOFF, Joanna Louise",
+          "role": "director",
+          "appointed": "2022-04-08"
+        }
+      ],
+      "latest_filing_date": "2026-03-29",
+      "latest_filing_description": "mortgage-charge-part-release-with-charge-number",
+      "registered_office_address": "Hilmore House, Gain Lane, Bradford, West Yorkshire, BD3 7DL",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00358949"
+    },
+    {
+      "slug": "royal-mail",
+      "name": "Royal Mail plc",
+      "status": "ok",
+      "company_number": "08680755",
+      "incorporated": "2013-09-06",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "64209"
+      ],
+      "officers": [
+        {
+          "name": "NEWMAN, Matthew",
+          "role": "secretary",
+          "appointed": "2024-10-01"
+        },
+        {
+          "name": "ABLIN, Paul",
+          "role": "director",
+          "appointed": "2026-01-21"
+        },
+        {
+          "name": "BILEK, Jan",
+          "role": "director",
+          "appointed": "2025-06-09"
+        },
+        {
+          "name": "JANCA, Marek",
+          "role": "director",
+          "appointed": "2025-06-09"
+        },
+        {
+          "name": "KRETINSKY, Daniel",
+          "role": "director",
+          "appointed": "2025-06-09"
+        },
+        {
+          "name": "MARES, Daniel",
+          "role": "director",
+          "appointed": "2025-06-09"
+        },
+        {
+          "name": "MCDONALD, Dwain",
+          "role": "director",
+          "appointed": "2025-08-01"
+        },
+        {
+          "name": "SEIDENBERG, Martin",
+          "role": "director",
+          "appointed": "2021-04-01"
+        },
+        {
+          "name": "SILHA, Roman",
+          "role": "director",
+          "appointed": "2025-06-09"
+        },
+        {
+          "name": "ZRUST, Jiri",
+          "role": "director",
+          "appointed": "2025-06-25"
+        }
+      ],
+      "latest_filing_date": "2026-05-06",
+      "latest_filing_description": "change-to-a-person-with-significant-control",
+      "registered_office_address": "185 Farringdon Road, London, EC1A 1AA, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/08680755"
+    },
+    {
+      "slug": "smiths-group",
+      "name": "Smiths Group plc",
+      "status": "ok",
+      "company_number": "00137013",
+      "incorporated": "1914-07-15",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "DOWN, James",
+          "role": "secretary",
+          "appointed": "2026-04-10"
+        },
+        {
+          "name": "CARTER, Roland Henry Clyne",
+          "role": "director",
+          "appointed": "2024-03-26"
+        },
+        {
+          "name": "CHENG, Pam Poon",
+          "role": "director",
+          "appointed": "2020-03-01"
+        },
+        {
+          "name": "COWAN, Alister",
+          "role": "director",
+          "appointed": "2024-07-01"
+        },
+        {
+          "name": "DOWLING, Ann Patricia, Dame",
+          "role": "director",
+          "appointed": "2018-09-19"
+        },
+        {
+          "name": "FAGGE, Julian David Kenelm",
+          "role": "director",
+          "appointed": "2025-02-01"
+        },
+        {
+          "name": "HOWES, Richard David",
+          "role": "director",
+          "appointed": "2022-09-01"
+        },
+        {
+          "name": "PRYCE, Simon Charles Conrad",
+          "role": "director",
+          "appointed": "2025-02-01"
+        },
+        {
+          "name": "WILLIAMS, Steven Walter",
+          "role": "director",
+          "appointed": "2023-09-01"
+        }
+      ],
+      "latest_filing_date": "2026-05-20",
+      "latest_filing_description": "capital-cancellation-shares",
+      "registered_office_address": "Level 10 255 Blackfriars Road, London, SE1 9AX, England",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/00137013"
+    },
+    {
+      "slug": "rolls-royce",
+      "name": "Rolls-Royce Holdings plc",
+      "status": "ok",
+      "company_number": "07524813",
+      "incorporated": "2011-02-10",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "O'GRADY, Claire-Marie",
+          "role": "secretary",
+          "appointed": "2024-09-10"
+        },
+        {
+          "name": "BEHRENDT, Birgit",
+          "role": "director",
+          "appointed": "2023-05-11"
+        },
+        {
+          "name": "BRADIE, Stuart John Baxter",
+          "role": "director",
+          "appointed": "2023-05-11"
+        },
+        {
+          "name": "CULMER, Mark George",
+          "role": "director",
+          "appointed": "2020-01-02"
+        },
+        {
+          "name": "DE SOUZA E SILVA, Paulo Cesar",
+          "role": "director",
+          "appointed": "2023-09-01"
+        },
+        {
+          "name": "ERGINBILGIC, Tufan",
+          "role": "director",
+          "appointed": "2023-01-01"
+        },
+        {
+          "name": "FREW, Anita Margaret",
+          "role": "director",
+          "appointed": "2021-07-01"
+        },
+        {
+          "name": "GADHIA, Jitesh Kishorekumar, Lord",
+          "role": "director",
+          "appointed": "2022-04-01"
+        },
+        {
+          "name": "GOULET, Beverly Kenyon",
+          "role": "director",
+          "appointed": "2017-07-03"
+        },
+        {
+          "name": "LUFF, Nicholas Lawrence",
+          "role": "director",
+          "appointed": "2018-05-03"
+        },
+        {
+          "name": "MARS, Wendy Yvonne",
+          "role": "director",
+          "appointed": "2021-12-08"
+        },
+        {
+          "name": "MCCABE, Helen",
+          "role": "director",
+          "appointed": "2023-08-04"
+        }
+      ],
+      "latest_filing_date": "2026-06-01",
+      "latest_filing_description": "capital-cancellation-shares",
+      "registered_office_address": "Kings Place, 90 York Way, London, N1 9FX, United Kingdom",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/07524813"
+    },
+    {
+      "slug": "jaguar-land-rover",
+      "name": "Jaguar Land Rover Limited",
+      "status": "ok",
+      "company_number": "01672070",
+      "incorporated": "1982-10-15",
+      "company_status": "active",
+      "company_type": "ltd",
+      "sic_codes": [
+        "29100"
+      ],
+      "officers": [
+        {
+          "name": "BERRY, David Alexander Reddoch",
+          "role": "secretary",
+          "appointed": "2022-09-20"
+        },
+        {
+          "name": "WILKINSON, Nadine Helen",
+          "role": "secretary",
+          "appointed": "2025-01-14"
+        },
+        {
+          "name": "BALAJI, Pathamadai",
+          "role": "director",
+          "appointed": "2025-11-17"
+        },
+        {
+          "name": "MOLYNEUX, Richard John",
+          "role": "director",
+          "appointed": "2022-12-12"
+        },
+        {
+          "name": "RAMJI, Al-Noor Gulamali Abdulla",
+          "role": "director",
+          "appointed": "2026-03-31"
+        }
+      ],
+      "latest_filing_date": "2026-04-20",
+      "latest_filing_description": "appoint-person-director-company-with-name-date",
+      "registered_office_address": "Abbey Road, Whitley, Coventry, CV3 4LF",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/01672070"
+    },
+    {
+      "slug": "jet2",
+      "name": "Jet2 plc",
+      "status": "ok",
+      "company_number": "01295221",
+      "incorporated": "1977-01-21",
+      "company_status": "active",
+      "company_type": "plc",
+      "sic_codes": [
+        "70100"
+      ],
+      "officers": [
+        {
+          "name": "DAY, Ian Bruce",
+          "role": "secretary",
+          "appointed": "2014-04-29"
+        },
+        {
+          "name": "BREAKWELL, Simon John",
+          "role": "director",
+          "appointed": "2023-04-27"
+        },
+        {
+          "name": "BROWN, Gary James",
+          "role": "director",
+          "appointed": "2013-06-17"
+        },
+        {
+          "name": "GREEN, Rick",
+          "role": "director",
+          "appointed": "2018-09-06"
+        },
+        {
+          "name": "HEAPY, Stephen Paul",
+          "role": "director",
+          "appointed": "2013-06-17"
+        },
+        {
+          "name": "KENTLETON, Rachel Elizabeth",
+          "role": "director",
+          "appointed": "2024-03-18"
+        },
+        {
+          "name": "LUGER, Angela",
+          "role": "director",
+          "appointed": "2023-07-03"
+        },
+        {
+          "name": "TERRELL, Robin James",
+          "role": "director",
+          "appointed": "2020-04-14"
+        }
+      ],
+      "latest_filing_date": "2026-05-11",
+      "latest_filing_description": "capital-cancellation-shares",
+      "registered_office_address": "Low Fare Finder House, Leeds Bradford Airport, Yeadon, Leeds, West Yorkshire, LS19 7TU",
+      "source_url": "https://find-and-update.company-information.service.gov.uk/company/01295221"
+    },
+    {
+      "slug": "easyjet",
+      "name": "easyJet plc",
+      "company_number": "03155593",
+      "status": "error",
+      "error": "HTTP 404 Not Found for https://api.company-information.service.gov.uk/company/03155593\n{\"timestamp\":\"2026-06-07T20:53:39.985693387\",\"message\":\"404 NOT_FOUND \\\"Resource not found for company profile 03155593\\\"\",\"request_id\":\"NF5lr_GJnRZexq8c4IbO5fzp4LnL\"}"
+    }
+  ]
+}
