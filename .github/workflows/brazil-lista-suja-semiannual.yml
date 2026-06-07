@@ -1,0 +1,78 @@
+name: brazil-lista-suja-semiannual
+
+# Brazil "Lista Suja" — Ministry of Labor's forced-labor employer register.
+#
+# Runs twice a year (April 10 + October 10 at 05:00 UTC) — the MTE publishes
+# the Lista de Transparência sobre Trabalho Escravo on a semi-annual cadence
+# (typical release months: April + October). We schedule a week after the
+# expected release so the gov.br landing page is updated.
+#
+# The job fetches the latest list (gov.br → InPACTO fallback), writes the
+# snapshot to data/raw/brazil-lista-suja/<date>.json, merges into the augment
+# file at data/derived/brazil-lista-suja-augment.json, and opens an auto-PR.
+#
+# License: Brazilian public information (LAI 12527/2011, Ministério do
+# Trabalho e Emprego). See script docstrings.
+
+on:
+  schedule:
+    - cron: "0 5 10 4,10 *"  # 05:00 UTC on Apr 10 and Oct 10
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests (no network)
+        run: node --test scripts/brazil-lista-suja-fetch.test.mjs
+
+      - name: Fetch Lista Suja (gov.br → InPACTO fallback)
+        run: node scripts/brazil-lista-suja-fetch.mjs --apply
+
+      - name: Merge into augment file
+        run: node scripts/brazil-lista-suja-merge.mjs --apply
+
+      - name: Detect changes
+        id: changes
+        run: |
+          git add data/raw/brazil-lista-suja/ data/derived/brazil-lista-suja-augment.json
+          if git diff --quiet --staged; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR with fresh snapshot
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data/brazil-lista-suja-${{ github.run_id }}
+          base: main
+          title: "data(brazil-lista-suja): semi-annual forced-labor list refresh"
+          commit-message: "data(brazil-lista-suja): semi-annual refresh + merge [skip ci]"
+          body: |
+            Semi-annual refresh of Brazil's "Lista Suja" — the Ministry of Labor's
+            register of employers caught using slave-like labor conditions.
+
+            - Snapshot written to `data/raw/brazil-lista-suja/`
+            - Augment written to `data/derived/brazil-lista-suja-augment.json`
+            - Sources: gov.br (primary), InPACTO (fallback)
+            - License: Lei de Acesso à Informação (Brazil LAI 12527/2011)
+
+            v1 scope: direct + parent-map slug matches only. Supply-chain
+            inference (mapping listed farms/ranches to JBS/Marfrig/Cargill/BRF)
+            is tracked as v2 follow-up — see the `supplyChainBuckets` field on
+            the augment for the magnitude of potential exposure.
+          labels: |
+            data
+            automated
