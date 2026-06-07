@@ -1,0 +1,65 @@
+name: oecd-watch-quarterly
+
+# OECD Watch complaints database — quarterly mirror of the public case
+# index at https://complaints.oecdwatch.org
+#
+# Cases against multinationals filed under the OECD Guidelines for
+# Multinational Enterprises (~600+ cases globally). Strongest signal
+# for international supply-chain + human-rights work in regions where
+# US federal sources (DOL/EPA/SEC) have no visibility — Cambodia,
+# Vietnam, Nigeria, DRC, Brazil, etc.
+#
+# Runs 15th of Jan/Apr/Jul/Oct at 18:00 UTC. The mid-quarter date is
+# chosen so the cron does not collide with the calendar-quarter waves
+# of cruelty-free + leaping-bunny scrapes (which run on the 1st of the
+# same months).
+#
+# Step 1 (oecd-watch-fetch.mjs):
+#   - DEFAULT --dry: parses checked-in HTML fixtures + a vetted Top-50
+#     case table (no live HTTP to OECD Watch). This is what the
+#     workflow currently runs.
+#   - --live: real scrape, gated until OECD Watch confirms UA tolerance.
+#
+# Step 2 (oecd-watch-merge.mjs --write):
+#   - Writes enriched.supply_chain.oecd_watch.{complaint_count,
+#     recent_complaints, primary_issue, primary_region, last_updated}
+#     into each matching company JSON.
+#   - Honors slug-aliases + brand-parent-map.
+
+on:
+  schedule:
+    - cron: "0 18 15 1,4,7,10 *"   # 18:00 UTC on Jan/Apr/Jul/Oct 15
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit oecd-watch.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run OECD Watch fetcher (dry)
+        run: node scripts/oecd-watch-fetch.mjs
+
+      - name: Merge OECD Watch data into per-company JSON
+        run: node scripts/oecd-watch-merge.mjs --write
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/oecd-watch.json public/data/companies/
+          [ -f public/data/_meta/oecd-watch-merge-log.json ] && git add public/data/_meta/oecd-watch-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(oecd-watch): quarterly OECD Watch complaints refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

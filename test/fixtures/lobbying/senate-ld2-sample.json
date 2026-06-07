@@ -1,0 +1,160 @@
+{
+  "_comment": "Synthetic LD-2 sample. Approximates the shape of the Senate LD-2 REST API response at https://lda.senate.gov/api/v1/filings/ (paginated list). Only fields the fetcher consumes are populated. Three brands, four quarters each.",
+  "count": 24,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "filing_uuid": "f-pfizer-2026q1",
+      "filing_type": "Q1",
+      "filing_type_display": "1st Quarter - Report",
+      "filing_year": 2026,
+      "filing_period": "first_quarter",
+      "filing_period_display": "1st Quarter (Jan 1 - Mar 31)",
+      "income": "3200000",
+      "expenses": null,
+      "posted_by_name": "Pfizer Inc.",
+      "registrant": { "id": 100, "name": "Pfizer Inc.", "description": "Pharmaceutical manufacturer" },
+      "client": { "id": 200, "name": "Pfizer Inc.", "general_description": "Pharmaceutical manufacturer" },
+      "lobbying_activities": [
+        { "general_issue_code": "HCR", "general_issue_code_display": "Health Issues", "description": "Drug pricing; Inflation Reduction Act negotiation", "government_entities": [ { "name": "U.S. SENATE" }, { "name": "U.S. HOUSE OF REPRESENTATIVES" }, { "name": "Health & Human Services Dept (HHS)" } ] },
+        { "general_issue_code": "TAX", "general_issue_code_display": "Taxation/Internal Revenue Code", "description": "International tax provisions", "government_entities": [ { "name": "Treasury Dept" }, { "name": "U.S. SENATE" } ] },
+        { "general_issue_code": "TRD", "general_issue_code_display": "Trade (Domestic & Foreign)", "description": "Pharmaceutical trade", "government_entities": [ { "name": "U.S. Trade Representative (USTR)" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-pfizer-2025q4",
+      "filing_type": "Q4",
+      "filing_year": 2025,
+      "filing_period": "fourth_quarter",
+      "income": "2900000",
+      "expenses": null,
+      "registrant": { "id": 100, "name": "Pfizer Inc." },
+      "client": { "id": 200, "name": "Pfizer Inc." },
+      "lobbying_activities": [
+        { "general_issue_code": "HCR", "general_issue_code_display": "Health Issues", "description": "Medicare Part D", "government_entities": [ { "name": "Centers for Medicare & Medicaid Services (CMS)" }, { "name": "U.S. SENATE" } ] },
+        { "general_issue_code": "MMM", "general_issue_code_display": "Medicare/Medicaid", "description": "CMS rulemaking", "government_entities": [ { "name": "CMS" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-pfizer-2025q3",
+      "filing_type": "Q3",
+      "filing_year": 2025,
+      "income": "3100000",
+      "registrant": { "id": 100, "name": "Pfizer Inc." },
+      "client": { "id": 200, "name": "Pfizer Inc." },
+      "lobbying_activities": [
+        { "general_issue_code": "HCR", "general_issue_code_display": "Health Issues", "description": "FDA approval policy", "government_entities": [ { "name": "Food & Drug Administration (FDA)" }, { "name": "U.S. HOUSE OF REPRESENTATIVES" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-pfizer-2025q2",
+      "filing_type": "Q2",
+      "filing_year": 2025,
+      "income": "2750000",
+      "registrant": { "id": 100, "name": "Pfizer Inc." },
+      "client": { "id": 200, "name": "Pfizer Inc." },
+      "lobbying_activities": [
+        { "general_issue_code": "HCR", "general_issue_code_display": "Health Issues", "description": "Drug pricing reform", "government_entities": [ { "name": "U.S. SENATE" } ] },
+        { "general_issue_code": "TAX", "general_issue_code_display": "Taxation/Internal Revenue Code", "description": "R&D tax credit", "government_entities": [ { "name": "Treasury Dept" } ] }
+      ]
+    },
+
+    {
+      "filing_uuid": "f-google-2026q1",
+      "filing_type": "Q1",
+      "filing_year": 2026,
+      "income": "4100000",
+      "registrant": { "id": 110, "name": "Google LLC" },
+      "client": { "id": 210, "name": "Google LLC" },
+      "lobbying_activities": [
+        { "general_issue_code": "CPT", "general_issue_code_display": "Computer Industry", "description": "AI regulation; Section 230", "government_entities": [ { "name": "U.S. SENATE" }, { "name": "Federal Trade Commission (FTC)" }, { "name": "Federal Communications Commission (FCC)" } ] },
+        { "general_issue_code": "ANT", "general_issue_code_display": "Anti-Trust", "description": "DOJ antitrust matters", "government_entities": [ { "name": "Justice Dept (DOJ)" } ] },
+        { "general_issue_code": "TEC", "general_issue_code_display": "Telecommunications", "description": "Net neutrality", "government_entities": [ { "name": "FCC" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-google-2025q4",
+      "filing_type": "Q4",
+      "filing_year": 2025,
+      "income": "3950000",
+      "registrant": { "id": 110, "name": "Google LLC" },
+      "client": { "id": 210, "name": "Google LLC" },
+      "lobbying_activities": [
+        { "general_issue_code": "CPT", "general_issue_code_display": "Computer Industry", "description": "Privacy legislation", "government_entities": [ { "name": "U.S. SENATE" }, { "name": "U.S. HOUSE OF REPRESENTATIVES" } ] },
+        { "general_issue_code": "ANT", "general_issue_code_display": "Anti-Trust", "description": "Search antitrust", "government_entities": [ { "name": "DOJ" }, { "name": "FTC" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-google-2025q3",
+      "filing_type": "Q3",
+      "filing_year": 2025,
+      "income": "3700000",
+      "registrant": { "id": 110, "name": "Google LLC" },
+      "client": { "id": 210, "name": "Google LLC" },
+      "lobbying_activities": [
+        { "general_issue_code": "CPT", "general_issue_code_display": "Computer Industry", "description": "AI", "government_entities": [ { "name": "U.S. SENATE" }, { "name": "White House Office" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-google-2025q2",
+      "filing_type": "Q2",
+      "filing_year": 2025,
+      "income": "3850000",
+      "registrant": { "id": 110, "name": "Google LLC" },
+      "client": { "id": 210, "name": "Google LLC" },
+      "lobbying_activities": [
+        { "general_issue_code": "TEC", "general_issue_code_display": "Telecommunications", "description": "Spectrum", "government_entities": [ { "name": "FCC" } ] }
+      ]
+    },
+
+    {
+      "filing_uuid": "f-lockheed-2026q1",
+      "filing_type": "Q1",
+      "filing_year": 2026,
+      "income": "3800000",
+      "registrant": { "id": 120, "name": "Lockheed Martin Corporation" },
+      "client": { "id": 220, "name": "Lockheed Martin Corporation" },
+      "lobbying_activities": [
+        { "general_issue_code": "DEF", "general_issue_code_display": "Defense", "description": "FY26 NDAA; F-35 procurement", "government_entities": [ { "name": "U.S. SENATE" }, { "name": "U.S. HOUSE OF REPRESENTATIVES" }, { "name": "Defense Dept (DOD)" } ] },
+        { "general_issue_code": "BUD", "general_issue_code_display": "Budget/Appropriations", "description": "DoD appropriations", "government_entities": [ { "name": "U.S. SENATE" }, { "name": "Office of Management & Budget (OMB)" } ] },
+        { "general_issue_code": "AVI", "general_issue_code_display": "Aviation/Aircraft/Airlines", "description": "FAA airworthiness", "government_entities": [ { "name": "FAA" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-lockheed-2025q4",
+      "filing_type": "Q4",
+      "filing_year": 2025,
+      "income": "3600000",
+      "registrant": { "id": 120, "name": "Lockheed Martin Corporation" },
+      "client": { "id": 220, "name": "Lockheed Martin Corporation" },
+      "lobbying_activities": [
+        { "general_issue_code": "DEF", "general_issue_code_display": "Defense", "description": "Missile defense", "government_entities": [ { "name": "DOD" } ] },
+        { "general_issue_code": "FOR", "general_issue_code_display": "Foreign Relations", "description": "Foreign military sales", "government_entities": [ { "name": "State Dept" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-lockheed-2025q3",
+      "filing_type": "Q3",
+      "filing_year": 2025,
+      "income": "3500000",
+      "registrant": { "id": 120, "name": "Lockheed Martin Corporation" },
+      "client": { "id": 220, "name": "Lockheed Martin Corporation" },
+      "lobbying_activities": [
+        { "general_issue_code": "DEF", "general_issue_code_display": "Defense", "description": "Hypersonics R&D", "government_entities": [ { "name": "DOD" }, { "name": "U.S. SENATE" } ] }
+      ]
+    },
+    {
+      "filing_uuid": "f-lockheed-2025q2",
+      "filing_type": "Q2",
+      "filing_year": 2025,
+      "income": "3400000",
+      "registrant": { "id": 120, "name": "Lockheed Martin Corporation" },
+      "client": { "id": 220, "name": "Lockheed Martin Corporation" },
+      "lobbying_activities": [
+        { "general_issue_code": "DEF", "general_issue_code_display": "Defense", "description": "Army modernization", "government_entities": [ { "name": "DOD" } ] },
+        { "general_issue_code": "BUD", "general_issue_code_display": "Budget/Appropriations", "description": "Defense appropriations", "government_entities": [ { "name": "U.S. HOUSE OF REPRESENTATIVES" } ] }
+      ]
+    }
+  ]
+}

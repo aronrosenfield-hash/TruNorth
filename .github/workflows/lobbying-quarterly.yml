@@ -1,0 +1,53 @@
+name: lobbying-quarterly
+
+# B-data4 — Senate LD-2 lobbying disclosures + FARA foreign-agent registrations.
+# Runs ~30 days after each quarter closes (Jan 30, Apr 30, Jul 30, Oct 30),
+# the cadence at which the Senate publishes the prior quarter's LD-2 filings.
+#
+# Live mode requires no secrets. An optional LDA_API_TOKEN secret raises the
+# Senate LDA rate limit from ~15 to 120 req/min — recommended once available.
+# FARA is fully unauthenticated.
+
+on:
+  schedule:
+    # Minute 0, hour 18 UTC, on the 30th of Jan/Apr/Jul/Oct.
+    - cron: "0 18 30 1,4,7,10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch Senate LD-2 filings (live)
+        env:
+          LDA_API_TOKEN: ${{ secrets.LDA_API_TOKEN }}
+        run: node scripts/senate-ld2-fetch.mjs --live
+
+      - name: Fetch FARA active registrations (live)
+        run: node scripts/fara-fetch.mjs --live
+
+      - name: Merge lobbying data into per-company JSON
+        run: node scripts/lobbying-merge.mjs --live
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/senate-ld2.json public/data/fara.json public/data/companies/
+          [ -f public/data/_meta/lobbying-merge-log.json ] && git add public/data/_meta/lobbying-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(lobbying): quarterly LD-2 + FARA refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

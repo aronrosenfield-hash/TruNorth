@@ -1,0 +1,77 @@
+{
+  "_comment": "Synthetic FARA active-registrant sample. Approximates the shape of the public efile.fara.gov 'Active Registrants' / 'Active Foreign Principals' JSON exports. Only fields the fetcher consumes are populated.",
+  "items": [
+    {
+      "registration_number": "6789",
+      "registrant_name": "BGR Government Affairs, LLC",
+      "registration_date": "2014-03-15",
+      "termination_date": null,
+      "is_active": true,
+      "foreign_principal_name": "Saudi Aramco",
+      "foreign_principal_country": "Saudi Arabia",
+      "foreign_principal_type": "Foreign Government Corporation",
+      "us_party_name_hint": "Saudi Aramco",
+      "us_affiliates": ["Aramco Services Company"]
+    },
+    {
+      "registration_number": "6789",
+      "registrant_name": "BGR Government Affairs, LLC",
+      "registration_date": "2017-06-01",
+      "termination_date": null,
+      "is_active": true,
+      "foreign_principal_name": "Kingdom of Saudi Arabia - Embassy",
+      "foreign_principal_country": "Saudi Arabia",
+      "foreign_principal_type": "Foreign Government",
+      "us_party_name_hint": null,
+      "us_affiliates": []
+    },
+    {
+      "registration_number": "7011",
+      "registrant_name": "Covington & Burling LLP",
+      "registration_date": "2019-09-10",
+      "termination_date": null,
+      "is_active": true,
+      "foreign_principal_name": "ByteDance Ltd.",
+      "foreign_principal_country": "China",
+      "foreign_principal_type": "Foreign Private Corporation",
+      "us_party_name_hint": "TikTok Inc.",
+      "us_affiliates": ["TikTok Inc.", "ByteDance USA"]
+    },
+    {
+      "registration_number": "7042",
+      "registrant_name": "Mercury Public Affairs",
+      "registration_date": "2018-04-22",
+      "termination_date": null,
+      "is_active": true,
+      "foreign_principal_name": "Qatar Investment Authority",
+      "foreign_principal_country": "Qatar",
+      "foreign_principal_type": "Foreign Government Corporation",
+      "us_party_name_hint": null,
+      "us_affiliates": []
+    },
+    {
+      "registration_number": "7100",
+      "registrant_name": "Akin Gump Strauss Hauer & Feld",
+      "registration_date": "2020-11-03",
+      "termination_date": null,
+      "is_active": true,
+      "foreign_principal_name": "Toyota Motor Corporation",
+      "foreign_principal_country": "Japan",
+      "foreign_principal_type": "Foreign Private Corporation",
+      "us_party_name_hint": "Toyota Motor North America",
+      "us_affiliates": ["Toyota Motor North America"]
+    },
+    {
+      "registration_number": "7188",
+      "registrant_name": "Sidley Austin LLP",
+      "registration_date": "2021-08-15",
+      "termination_date": null,
+      "is_active": true,
+      "foreign_principal_name": "Samsung Electronics Co., Ltd.",
+      "foreign_principal_country": "South Korea",
+      "foreign_principal_type": "Foreign Private Corporation",
+      "us_party_name_hint": "Samsung Electronics America",
+      "us_affiliates": ["Samsung Electronics America"]
+    }
+  ]
+}

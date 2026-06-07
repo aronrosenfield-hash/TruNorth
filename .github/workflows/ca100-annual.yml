@@ -1,31 +1,32 @@
 name: ca100-annual
 
-# Climate Action 100+ — annual mirror of the investor-led initiative's
-# ~167 focus-company roster + Net Zero Company Benchmark disclosure
-# grades (A-D across the headline indicators: net zero ambition,
-# long/medium/short-term targets, decarbonisation strategy, capital
-# allocation, climate policy engagement, climate governance, just
-# transition, TCFD-aligned disclosure). Runs Dec 1 at 18:00 UTC (the
-# benchmark is typically released in late autumn).
+# Climate Action 100+ Net Zero Company Benchmark — annual mirror of the
+# investor-led initiative's 167 focus-company roster + benchmark scores
+# (0-5 across four headline pillars: disclosure, alignment, governance,
+# capital_allocation) + per-company net-zero target year + Scope 1+2
+# emissions (Mt CO2e). Runs Apr 15 at 17:00 UTC, ~one month after the
+# annual benchmark release in March.
 #
-# Step 1 (ca100-fetch.mjs):
+# Step 1 (ca100-fetch.mjs --live):
 #   - Pings the CA100+ home / companies / benchmark pages (1 req/sec)
-#   - Indexes the curated CA100+ mirror (re-verified annually against
+#   - Loads the curated fixture-shape JSON (re-verified annually against
 #     the Net Zero Company Benchmark release)
 #   - Checks top brands against the focus-company roster
 #   - Writes public/data/ca100.json
+#   - Caches the snapshot under public/data/_cache/ca100/<year>/
 #
-# Step 2 (ca100-merge.mjs):
-#   - Merges enriched.ca100 {isFocusCompany, disclosureGrade, year,
-#     sourceUrl, ...} into each matching company file
+# Step 2 (ca100-merge.mjs --apply):
+#   - Merges enriched.environment.ca100 {included, latest_benchmark_year,
+#     scores, net_zero_target_year, scope_1_2_emissions_mt_co2e,
+#     source_url, last_updated, source} into each matching company file
 #   - Honors slug-aliases + brand-parent-map
 #
-# Tier 3 governance / environment batch. Free, public data -- no auth
-# required. Total runtime ~1-2 minutes.
+# Tier 3 environment batch. Free, public data — no auth required.
+# Total runtime ~1-2 minutes.
 
 on:
   schedule:
-    - cron: "0 18 1 12 *"   # Dec 1, 18:00 UTC
+    - cron: "0 17 15 4 *"   # Apr 15, 17:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -41,20 +42,20 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Run Climate Action 100+ fetcher
-        run: node scripts/ca100-fetch.mjs
+      - name: Run Climate Action 100+ fetcher (live)
+        run: node scripts/ca100-fetch.mjs --live
 
       - name: Merge Climate Action 100+ data into per-company JSON
-        run: node scripts/ca100-merge.mjs
+        run: node scripts/ca100-merge.mjs --apply
 
       - name: Commit + push the data
         run: |
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/ca100.json public/data/companies/
+          git add public/data/ca100.json public/data/companies/ public/data/_cache/ca100/
           [ -f public/data/_meta/ca100-merge-log.json ] && git add public/data/_meta/ca100-merge-log.json
           git diff --quiet --staged && echo "No changes" && exit 0
-          git commit -m "data(ca100): annual Climate Action 100+ refresh [skip ci]"
+          git commit -m "data(ca100): annual Climate Action 100+ Net Zero Company Benchmark refresh [skip ci]"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin main && break
             echo "Push attempt $i failed, retrying…"

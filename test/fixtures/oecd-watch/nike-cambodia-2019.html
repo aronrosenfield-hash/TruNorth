@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+  OECD Watch complaint fixture — used by oecd-watch-fetch.mjs --dry mode
+  to exercise parsing without hitting complaints.oecdwatch.org.
+
+  Mirrors the real card markup seen on /case_detail pages: an h1 with
+  the case title, a metadata table (Filed / Company / Country / NCP /
+  Outcome), and a free-text "Issues" block we tokenize into the
+  controlled issues vocabulary.
+-->
+<html><head><title>Cambodian unions vs. Nike — OECD Watch</title></head>
+<body>
+  <article class="case">
+    <h1>Cambodian unions vs. Nike</h1>
+    <table class="case-meta">
+      <tr><th>Filed</th><td>16 May 2019</td></tr>
+      <tr><th>Company</th><td>Nike Inc.</td></tr>
+      <tr><th>Country of operation</th><td>Cambodia</td></tr>
+      <tr><th>Complainant</th><td>Coalition of Cambodian Apparel Workers Democratic Union (CCAWDU)</td></tr>
+      <tr><th>National Contact Point</th><td>US NCP</td></tr>
+      <tr><th>Outcome</th><td>Mediation accepted — partial agreement reached 2021</td></tr>
+    </table>
+    <section class="issues">
+      <h2>Issues alleged</h2>
+      <ul>
+        <li>Freedom of association / union-busting</li>
+        <li>Severance pay withheld after factory closure</li>
+        <li>Labor rights</li>
+      </ul>
+    </section>
+  </article>
+</body></html>

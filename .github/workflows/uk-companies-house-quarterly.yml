@@ -1,0 +1,64 @@
+name: uk-companies-house-quarterly
+
+# UK Companies House — quarterly ownership pull (B-data9).
+#
+# Pulls company profile + officers + latest filing for ~30 UK-registered
+# TruNorth brands (Tesco, Boots, BP, BAT-equivalents, AstraZeneca, etc.)
+# from the official Companies House public API. Free, no rate-limit
+# concerns at this volume (600 req / 5 min cap; we send ~90 req total at
+# 1 req/sec).
+#
+# Step 1 (uk-companies-house-fetch.mjs --live):
+#   - Hits api.company-information.service.gov.uk for each curated CH number
+#   - Pulls profile, officers (active only, capped at 12), latest filing
+#   - Writes public/data/uk-companies-house.json
+#
+# Step 2 (uk-companies-house-merge.mjs --write):
+#   - Merges enriched.ukOwnership {companyNumber, incorporated, status,
+#     sicCodes, officers, latestFilingDate, registeredOfficeAddress, ...}
+#     into each matching company file
+#   - Honors slug-aliases + brand-parent-map
+#
+# Runs 1st of Mar / Jun / Sep / Dec at 18:00 UTC. Ownership data is slow-
+# moving, so quarterly is plenty. Free public data — only the (free)
+# COMPANIES_HOUSE_API_KEY secret is required.
+
+on:
+  schedule:
+    - cron: "0 18 1 3,6,9,12 *"   # 1st of Mar/Jun/Sep/Dec, 18:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit uk-companies-house.json + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run UK Companies House fetcher (live)
+        env:
+          COMPANIES_HOUSE_API_KEY: ${{ secrets.COMPANIES_HOUSE_API_KEY }}
+        run: node scripts/uk-companies-house-fetch.mjs --live
+
+      - name: Merge UK Companies House data into per-company JSON
+        run: node scripts/uk-companies-house-merge.mjs --write
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/uk-companies-house.json public/data/companies/
+          [ -f public/data/_meta/uk-companies-house-merge-log.json ] && git add public/data/_meta/uk-companies-house-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(uk-companies-house): quarterly ownership refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

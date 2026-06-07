@@ -1,0 +1,67 @@
+name: state-campaign-finance-monthly
+
+# State-level campaign-finance integration (B-data11):
+#   - CA Secretary of State CalAccess (https://cal-access.sos.ca.gov/)
+#   - NY State Board of Elections    (https://publicreporting.elections.ny.gov/)
+#   - TX Ethics Commission           (https://www.ethics.state.tx.us/data/search/cf/)
+#
+# Sub-federal donations are massive ($billions annually in CA+NY+TX) and
+# not covered by FEC. Critical for state-focused industries (energy in CA,
+# finance in NY, oil in TX).
+#
+# Runs the 1st of each month at 05:00 UTC. The three states update on
+# different cadences (CA nightly, NY per cycle, TX nightly) so monthly is
+# the right compromise — frequent enough to catch most filings, sparse
+# enough to not hammer free public endpoints with multi-hundred-MB ZIPs.
+#
+# NOTE: This first cut runs in DRY mode — fixtures only. The live --live
+# path on each fetcher is intentionally unimplemented (the bulk ZIPs are
+# 250MB-1GB and need a dedicated runner). Follow-up: B-data11-live.
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # 1st of month, 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch CA CalAccess
+        run: node scripts/ca-calaccess-fetch.mjs
+
+      - name: Fetch NY State Board of Elections
+        run: node scripts/ny-elections-fetch.mjs
+
+      - name: Fetch TX Ethics Commission
+        run: node scripts/tx-ethics-fetch.mjs
+
+      - name: Merge state campaign-finance data into per-company JSON
+        run: node scripts/state-campaign-finance-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/ca-calaccess-donations.json \
+                  public/data/_raw/ny-elections-donations.json \
+                  public/data/_raw/tx-ethics-donations.json \
+                  public/data/companies/
+          [ -f public/data/_meta/state-campaign-finance-merge-log.json ] && \
+            git add public/data/_meta/state-campaign-finance-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(state-finance): monthly CA+NY+TX campaign-finance refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

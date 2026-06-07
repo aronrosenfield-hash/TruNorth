@@ -1,0 +1,49 @@
+name: usaspending-quarterly
+
+# USAspending.gov — federal contracts per recipient (quarterly)
+#
+# Runs on the 1st of Jan/Apr/Jul/Oct at 04:00 UTC. Fetches the last 5 years
+# of federal contract awards (>$25K) for the curated TruNorth target list
+# from api.usaspending.gov (free, no auth) and merges per-brand totals into
+# each company JSON under enriched.federalContracts.
+#
+# Honors a 1 req/sec courtesy throttle. Total wall time for the 50 target
+# brands at ~5 pages each is well under 10 minutes.
+
+on:
+  schedule:
+    - cron: "0 4 1 1,4,7,10 *"   # 04:00 UTC on Jan/Apr/Jul/Oct 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit usaspending-contracts.json + company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run USAspending fetcher (real API)
+        run: node scripts/usaspending-fetch.mjs --apply
+
+      - name: Merge USAspending data into per-company JSON
+        run: node scripts/usaspending-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/usaspending-contracts.json public/data/_cache/usaspending/ public/data/companies/
+          [ -f public/data/_meta/usaspending-merge-log.json ] && git add public/data/_meta/usaspending-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(usaspending): quarterly federal contracts refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

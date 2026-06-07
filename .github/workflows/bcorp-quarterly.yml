@@ -1,0 +1,58 @@
+name: bcorp-quarterly
+
+# B Lab "Find a B Corp" — quarterly mirror of the Certified B Corporation
+# directory. Runs the 15th of Mar/Jun/Sep/Dec at 02:00 UTC.
+#
+# Step 1 (bcorp-fetch.mjs --live):
+#   - Pages through bcorporation.net/find-a-b-corp/?page=N
+#   - 2s delay between requests (nonprofit, be polite)
+#   - Caches each HTML page to public/data/_cache/bcorp/page-NNN.html so a
+#     partial run can be resumed without re-hitting B Lab.
+#   - Writes public/data/_raw/bcorp.json
+#
+# Step 2 (bcorp-merge.mjs --apply):
+#   - Resolves each directory entry to a TruNorth slug (override → direct
+#     → slug-aliases → brand-parent-map)
+#   - Writes co.enriched.bcorp_certification on matched company files
+#   - Emits public/data/_meta/bcorp-merge-log.json + bcorp-unmatched.json
+#
+# B-data5 — B Corp Certification flag.
+
+on:
+  schedule:
+    - cron: "0 2 15 3,6,9,12 *"   # 02:00 UTC on Mar/Jun/Sep/Dec 15
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw + per-company file updates
+
+jobs:
+  fetch-and-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch B Corp directory (live)
+        run: node scripts/bcorp-fetch.mjs --live
+
+      - name: Merge into per-company files
+        run: node scripts/bcorp-merge.mjs --apply
+
+      - name: Commit + push the snapshot + enrichments
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/bcorp.json
+          git add public/data/_meta/bcorp-merge-log.json public/data/_meta/bcorp-unmatched.json
+          git add public/data/companies/
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(bcorp): quarterly B Corp directory refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

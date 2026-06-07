@@ -1,27 +1,37 @@
 #!/usr/bin/env node
 /**
- * Step 2 -- Merge ca100.json into per-company JSON.
+ * Step 2 — Merge ca100.json into per-company JSON. — B-Data8.
  *
  * Reads /public/data/ca100.json (produced annually by ca100-fetch.mjs)
  * and writes the structured `ca100` field into each matching company
- * file under enriched.ca100. Honors slug-aliases.json +
+ * file under enriched.environment.ca100. Honors slug-aliases.json +
  * brand-parent-map.json.
  *
- * Target schema (only set when status === "ok"):
- *   enriched.ca100: {
- *     isFocusCompany:    true,
- *     disclosureGrade:   string,    // "A" / "B" / "C" / "D"
- *     year:              number,    // benchmark publication year
- *     sourceUrl:         string,
- *     lastUpdated:       ISO string,
- *     source:            "climate-action-100"
+ * TARGET SCHEMA (only set when status === "ok"):
+ *   company.enriched.environment.ca100 = {
+ *     included: true,
+ *     latest_benchmark_year: number,
+ *     scores: {
+ *       disclosure: number,           // 0-5
+ *       alignment: number,            // 0-5
+ *       governance: number,           // 0-5
+ *       capital_allocation: number    // 0-5
+ *     },
+ *     net_zero_target_year: number | null,
+ *     scope_1_2_emissions_mt_co2e: number | null,
+ *     source_url: string,
+ *     last_updated: ISO string,
+ *     source: "climate-action-100"
  *   }
  *
- * Brands with no CA100+ match are skipped (the majority of the top-500
- * brand list is not on the focus-company roster -- CA100+ targets
- * ~167 systemically important emitters).
+ * DRY-RUN
+ *   Default. Computes everything, writes the merge log, but does NOT
+ *   touch per-company JSON. Pass --apply to actually write the per-
+ *   company files.
  *
- * Locally: node scripts/ca100-merge.mjs
+ * Locally:
+ *   node scripts/ca100-merge.mjs                # default --dry (no writes)
+ *   node scripts/ca100-merge.mjs --apply        # actually write changes
  */
 
 import fs from "node:fs/promises";
@@ -35,6 +45,9 @@ const CA100_FILE = path.join(ROOT, "public/data/ca100.json");
 const COMP_DIR   = path.join(ROOT, "public/data/companies");
 const META_DIR   = path.join(ROOT, "public/data/_meta");
 const LOG_FILE   = path.join(ROOT, "public/data/_meta/ca100-merge-log.json");
+
+const argv = new Set(process.argv.slice(2));
+const APPLY = argv.has("--apply");
 
 async function loadMaps() {
   const tryLoad = async (f) => {
@@ -56,7 +69,7 @@ function resolveSlug(slug, maps) {
   return { slug: null, routed_via: "orphan" };
 }
 
-async function mergeOne(brandEntry, maps, now) {
+async function mergeOne(brandEntry, maps, now, benchmarkYear) {
   if (brandEntry.status !== "ok") {
     return { brand: brandEntry.slug, status: "skipped", reason: brandEntry.status };
   }
@@ -69,48 +82,59 @@ async function mergeOne(brandEntry, maps, now) {
   catch (e) { return { brand: brandEntry.slug, target: targetSlug, status: "parse_error", error: e.message }; }
 
   if (!company.enriched || typeof company.enriched !== "object") company.enriched = {};
-  company.enriched.ca100 = {
-    isFocusCompany:   true,
-    disclosureGrade:  brandEntry.ca100_disclosure_grade,
-    year:             brandEntry.ca100_year,
-    sourceUrl:        brandEntry.source_url || null,
-    lastUpdated:      now,
-    source:           "climate-action-100",
+  if (!company.enriched.environment || typeof company.enriched.environment !== "object") {
+    company.enriched.environment = {};
+  }
+  const ca100Block = {
+    included: true,
+    latest_benchmark_year: benchmarkYear,
+    scores: brandEntry.scores ?? null,
+    net_zero_target_year: brandEntry.net_zero_target_year ?? null,
+    scope_1_2_emissions_mt_co2e: brandEntry.scope_1_2_emissions_mt_co2e ?? null,
+    source_url: brandEntry.source_url || "https://www.climateaction100.org/net-zero-company-benchmark/",
+    last_updated: now,
+    source: "climate-action-100",
   };
+  company.enriched.environment.ca100 = ca100Block;
 
   if (typeof company.dataLastUpdated !== "object" || company.dataLastUpdated === null) {
     company.dataLastUpdated = company.dataLastUpdated ? { legacy: company.dataLastUpdated } : {};
   }
   company.dataLastUpdated.ca100 = now;
 
-  await fs.writeFile(file, JSON.stringify(company));
+  if (APPLY) {
+    await fs.writeFile(file, JSON.stringify(company));
+  }
 
   return {
     brand:      brandEntry.slug,
     target:     targetSlug,
     routed_via,
-    status:     "merged",
-    grade:      brandEntry.ca100_disclosure_grade,
-    year:       brandEntry.ca100_year,
+    status:     APPLY ? "merged" : "would_merge",
+    scores:     ca100Block.scores,
+    net_zero_target_year: ca100Block.net_zero_target_year,
+    scope_1_2_emissions_mt_co2e: ca100Block.scope_1_2_emissions_mt_co2e,
+    year:       ca100Block.latest_benchmark_year,
   };
 }
 
 async function main() {
   const now = new Date().toISOString();
-  console.log("Climate Action 100+ merge starting...");
+  console.log(`Climate Action 100+ merge starting (mode: ${APPLY ? "APPLY" : "DRY-RUN (no writes)"})...`);
 
   const ca = JSON.parse(await fs.readFile(CA100_FILE, "utf-8"));
   const entries = ca.rankings || [];
-  console.log(`${entries.length} brand entries`);
+  const benchmarkYear = ca.benchmark_year ?? new Date().getFullYear();
+  console.log(`${entries.length} brand entries (benchmark year ${benchmarkYear})`);
 
   const maps = await loadMaps();
 
   const results = [];
   for (const e of entries) {
-    results.push(await mergeOne(e, maps, now));
+    results.push(await mergeOne(e, maps, now, benchmarkYear));
   }
 
-  const merged  = results.filter(r => r.status === "merged");
+  const merged  = results.filter(r => r.status === "merged" || r.status === "would_merge");
   const skipped = results.filter(r => r.status === "skipped");
   const orphans = results.filter(r => r.status === "orphan");
   const errors  = results.filter(r => r.status === "parse_error");
@@ -118,8 +142,9 @@ async function main() {
   await fs.mkdir(path.dirname(LOG_FILE), { recursive: true });
   await fs.writeFile(LOG_FILE, JSON.stringify({
     merged_at:       now,
+    mode:            APPLY ? "apply" : "dry",
     source_file:     "public/data/ca100.json",
-    benchmark_year:  ca.benchmark_year ?? null,
+    benchmark_year:  benchmarkYear,
     total_brands:    entries.length,
     merged_count:    merged.length,
     skipped_count:   skipped.length,
@@ -129,15 +154,19 @@ async function main() {
     ranked_list:     merged.map(r => ({
       brand:  r.brand,
       target: r.target,
-      grade:  r.grade,
+      routed_via: r.routed_via,
       year:   r.year,
+      scores: r.scores,
+      net_zero_target_year: r.net_zero_target_year,
+      scope_1_2_emissions_mt_co2e: r.scope_1_2_emissions_mt_co2e,
     })),
   }, null, 2));
 
-  console.log(`Merged: ${merged.length}`);
-  console.log(`   Skipped (no match): ${skipped.length}`);
-  console.log(`   Orphan slugs:       ${orphans.length}`);
-  console.log(`   Parse errors:       ${errors.length}`);
+  console.log(`${APPLY ? "Merged" : "Would merge"}: ${merged.length}`);
+  console.log(`   Skipped (no CA100 match):       ${skipped.length}`);
+  console.log(`   Orphan slugs (no company file): ${orphans.length}`);
+  console.log(`   Parse errors:                   ${errors.length}`);
+  if (!APPLY) console.log("\n(DRY-RUN — no per-company files written. Use --apply to commit changes.)");
 }
 
 main().catch(err => {

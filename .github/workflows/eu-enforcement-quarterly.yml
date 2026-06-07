@@ -1,0 +1,50 @@
+name: eu-enforcement-quarterly
+
+# European Commission enforcement (B-DATA10):
+#   - OLAF (European Anti-Fraud Office) annual-report case summaries
+#   - GDPR Enforcement Tracker (community-maintained DB of EU/EEA + UK fines)
+#
+# Runs the 1st of Feb / May / Aug / Nov at 07:00 UTC. Both sources are
+# low-volume + low-update — OLAF only publishes an annual report; ET adds
+# fines weekly but quarterly is plenty for our refresh cadence.
+
+on:
+  schedule:
+    - cron: "0 7 1 2,5,8,11 *"   # 1st of Feb/May/Aug/Nov, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw data + per-company merges
+
+jobs:
+  fetch-and-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run OLAF fetcher (live)
+        run: node scripts/olaf-fetch.mjs --live
+
+      - name: Run GDPR Enforcement Tracker fetcher (live)
+        run: node scripts/gdpr-enforcement-fetch.mjs --live
+
+      - name: Merge EU enforcement into per-company JSON (write all)
+        run: node scripts/eu-enforcement-merge.mjs --write --all
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/olaf-cases.json public/data/_raw/gdpr-fines.json public/data/companies/
+          [ -f public/data/_meta/eu-enforcement-merge-log.json ] && git add public/data/_meta/eu-enforcement-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(eu-enforcement): quarterly OLAF + GDPR refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

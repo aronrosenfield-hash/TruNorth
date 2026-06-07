@@ -1,0 +1,63 @@
+name: sustainability-certs-quarterly
+
+# Sustainability certifications — quarterly refresh (B-data7).
+# Runs 1st of Feb/May/Aug/Nov at 02:30 UTC — staggered 30m after Leaping
+# Bunny so we don't conflict with that quarterly job on Jan/Apr/Jul/Oct.
+#
+# Steps
+#   1. fair-trade-fetch.mjs --live
+#       - Paginated walk of fairtradecertified.org/products
+#       - 2s delay between requests
+#       - Writes public/data/_raw/fair-trade.json
+#   2. rainforest-alliance-fetch.mjs --live
+#       - Paginated walk of rainforest-alliance.org/find-certified/
+#       - 2s delay between requests
+#       - Writes public/data/_raw/rainforest-alliance.json
+#   3. sustainability-certs-merge.mjs --apply
+#       - Routes brands → TruNorth slugs (direct/alias/parent/override)
+#       - Writes co.enriched.supply_chain_certs on per-company JSON
+#       - Writes _meta/sustainability-certs-{merge-log,unmatched}.json
+#
+# B-data7 — Fair Trade USA + Rainforest Alliance supply-chain ethics signal.
+
+on:
+  schedule:
+    - cron: "30 2 1 2,5,8,11 *"   # 02:30 UTC on Feb/May/Aug/Nov 1
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw + per-company JSON
+
+jobs:
+  fetch-and-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch Fair Trade USA directory
+        run: node scripts/fair-trade-fetch.mjs --live
+
+      - name: Fetch Rainforest Alliance directory
+        run: node scripts/rainforest-alliance-fetch.mjs --live
+
+      - name: Merge into per-company JSON
+        run: node scripts/sustainability-certs-merge.mjs --apply
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_raw/fair-trade.json public/data/_raw/rainforest-alliance.json
+          git add public/data/_meta/sustainability-certs-merge-log.json public/data/_meta/sustainability-certs-unmatched.json
+          git add public/data/companies/
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(sustainability-certs): quarterly Fair Trade + Rainforest Alliance refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
