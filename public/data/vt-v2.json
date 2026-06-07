@@ -1,0 +1,1143 @@
+{
+  "fetched_at": "2026-06-06T13:10:38.931Z",
+  "source": "violation-tracker-v2",
+  "mode": "dry-run-synth",
+  "entries": [
+    {
+      "slug": "walmart",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "AR": 2321358797,
+        "CA": 1450849248,
+        "TX": 870509549,
+        "FL": 696407639,
+        "NY": 464271759
+      },
+      "yoy_trend": {
+        "2022": 797599013,
+        "2023": 711821912,
+        "2024": 1148388948,
+        "2025": 1490217097,
+        "2026": 1655370022
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-09-23",
+          "agency": "DOL-WHD",
+          "penalty": 684634771,
+          "offense": "off-label or unapproved promotion of medical products"
+        },
+        {
+          "date": "2025-07-16",
+          "agency": "DOJ",
+          "penalty": 30574090,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2025-02-15",
+          "agency": "DOL-WHD",
+          "penalty": 140500000,
+          "offense": "Foreign Corrupt Practices Act"
+        },
+        {
+          "date": "2024-08-18",
+          "agency": "OSHA",
+          "penalty": 3793836,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2024-06-13",
+          "agency": "DOL-WHD",
+          "penalty": 7569727,
+          "offense": "water pollution violation"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.927Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Walmart",
+        "slug": "walmart",
+        "ownership": "publicly traded (ticker symbol WMT)",
+        "hq": "Arkansas",
+        "majorIndustry": "retailing",
+        "specificIndustry": "retail-discount stores",
+        "totalPenalty": 5803396993,
+        "totalRecords": 609,
+        "offenseGroups": [
+          {
+            "category": "healthcare-related offenses",
+            "penalty": 3423173855,
+            "records": 5
+          },
+          {
+            "category": "employment-related offenses",
+            "penalty": 1756050445,
+            "records": 144
+          },
+          {
+            "category": "competition-related offenses",
+            "penalty": 308250000,
+            "records": 3
+          },
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 158452349,
+            "records": 45
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 145983403,
+            "records": 117
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "off-label or unapproved promotion of medical products",
+            "penalty": 3423173855,
+            "records": 5
+          },
+          {
+            "category": "wage and hour violation",
+            "penalty": 1651000886,
+            "records": 54
+          },
+          {
+            "category": "Foreign Corrupt Practices Act",
+            "penalty": 281000000,
+            "records": 2
+          },
+          {
+            "category": "consumer protection violation",
+            "penalty": 128990409,
+            "records": 34
+          },
+          {
+            "category": "water pollution violation",
+            "penalty": 90836723,
+            "records": 12
+          }
+        ],
+        "rating": "poor",
+        "lastChecked": "2026-05-26",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "amazon",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "WA": 1115593467,
+        "CA": 697245917,
+        "TX": 418347550,
+        "FL": 334678040,
+        "NY": 223118693
+      },
+      "yoy_trend": {
+        "2022": 364783492,
+        "2023": 305668381,
+        "2024": 589709281,
+        "2025": 732450648,
+        "2026": 796371866
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-07-17",
+          "agency": "EPA",
+          "penalty": 148016439,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2025-05-03",
+          "agency": "DOL-WHD",
+          "penalty": 21150460,
+          "offense": "privacy violation"
+        },
+        {
+          "date": "2024-11-17",
+          "agency": "OSHA",
+          "penalty": 8060500,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2024-10-31",
+          "agency": "DOL-WHD",
+          "penalty": 793913,
+          "offense": "environmental violation"
+        },
+        {
+          "date": "2024-05-19",
+          "agency": "DOJ",
+          "penalty": 2901360,
+          "offense": "employment screening violation"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.928Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Amazon.com",
+        "slug": "amazoncom",
+        "ownership": "publicly traded (ticker symbol AMZN)",
+        "hq": "Washington",
+        "majorIndustry": "retailing",
+        "specificIndustry": "retail-internet",
+        "totalPenalty": 2788983667,
+        "totalRecords": 177,
+        "offenseGroups": [
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 2643182230,
+            "records": 23
+          },
+          {
+            "category": "employment-related offenses",
+            "penalty": 112995533,
+            "records": 26
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 20061128,
+            "records": 27
+          },
+          {
+            "category": "government-contracting-related offenses",
+            "penalty": 5790000,
+            "records": 1
+          },
+          {
+            "category": "safety-related offenses",
+            "penalty": 4270253,
+            "records": 97
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "consumer protection violation",
+            "penalty": 2516279468,
+            "records": 17
+          },
+          {
+            "category": "privacy violation",
+            "penalty": 126902762,
+            "records": 6
+          },
+          {
+            "category": "wage and hour violation",
+            "penalty": 104786494,
+            "records": 13
+          },
+          {
+            "category": "environmental violation",
+            "penalty": 10320867,
+            "records": 13
+          },
+          {
+            "category": "employment screening violation",
+            "penalty": 5802720,
+            "records": 2
+          }
+        ],
+        "rating": "poor",
+        "lastChecked": "2026-05-26",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "mcdonald-s",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "IL": 18322994,
+        "CA": 11451871,
+        "TX": 6871123,
+        "FL": 5496898,
+        "NY": 3664599
+      },
+      "yoy_trend": {
+        "2022": 4760022,
+        "2023": 8195362,
+        "2024": 8910690,
+        "2025": 9272770,
+        "2026": 14668639
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-11-04",
+          "agency": "NLRB",
+          "penalty": 777548,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2025-03-27",
+          "agency": "DOL-WHD",
+          "penalty": 8500000,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2025-03-16",
+          "agency": "NLRB",
+          "penalty": 127875,
+          "offense": "employment discrimination"
+        },
+        {
+          "date": "2024-07-26",
+          "agency": "OSHA",
+          "penalty": 8906,
+          "offense": "workplace safety or health violation"
+        },
+        {
+          "date": "2024-07-07",
+          "agency": "EPA",
+          "penalty": 14893,
+          "offense": "environmental violation"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.929Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "McDonald's",
+        "slug": "mcdonalds",
+        "ownership": "publicly traded (ticker symbol MCD)",
+        "hq": "Illinois",
+        "majorIndustry": "restaurants and foodservice",
+        "specificIndustry": "restaurants",
+        "totalPenalty": 45807484,
+        "totalRecords": 77,
+        "offenseGroups": [
+          {
+            "category": "employment-related offenses",
+            "penalty": 37056249,
+            "records": 51
+          },
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 8500000,
+            "records": 1
+          },
+          {
+            "category": "safety-related offenses",
+            "penalty": 169205,
+            "records": 19
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 82030,
+            "records": 6
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "wage and hour violation",
+            "penalty": 36544749,
+            "records": 47
+          },
+          {
+            "category": "consumer protection violation",
+            "penalty": 8500000,
+            "records": 1
+          },
+          {
+            "category": "employment discrimination",
+            "penalty": 511500,
+            "records": 4
+          },
+          {
+            "category": "workplace safety or health violation",
+            "penalty": 169205,
+            "records": 19
+          },
+          {
+            "category": "environmental violation",
+            "penalty": 59572,
+            "records": 4
+          }
+        ],
+        "rating": "mixed",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "wells-fargo",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "CA": 11189867692,
+        "NY": 6993667308,
+        "TX": 4196200385,
+        "NC": 3356960308,
+        "FL": 2237973538
+      },
+      "yoy_trend": {
+        "2022": 3774403865,
+        "2023": 4154599291,
+        "2024": 5438447613,
+        "2025": 6116187285,
+        "2026": 8491031177
+      },
+      "active_last_6mo": true,
+      "recent_top5": [
+        {
+          "date": "2026-03-15",
+          "agency": "DOL-WHD",
+          "penalty": 143051351,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2025-04-18",
+          "agency": "CFPB",
+          "penalty": 803683382,
+          "offense": "mortgage abuses"
+        },
+        {
+          "date": "2025-03-01",
+          "agency": "DOJ",
+          "penalty": 227288605,
+          "offense": "banking violation"
+        },
+        {
+          "date": "2024-09-04",
+          "agency": "CFPB",
+          "penalty": 519678571,
+          "offense": "toxic securities abuses"
+        },
+        {
+          "date": "2024-05-05",
+          "agency": "DOL-WHD",
+          "penalty": 3000000000,
+          "offense": "fraud"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.929Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Wells Fargo",
+        "slug": "wells-fargo",
+        "ownership": "publicly traded (ticker symbol WFC)",
+        "hq": "California",
+        "majorIndustry": "financial services",
+        "specificIndustry": "banking",
+        "totalPenalty": 27974669231,
+        "totalRecords": 274,
+        "offenseGroups": [
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 11779992252,
+            "records": 63
+          },
+          {
+            "category": "financial offenses",
+            "penalty": 10771630989,
+            "records": 133
+          },
+          {
+            "category": "competition-related offenses",
+            "penalty": 3212570000,
+            "records": 6
+          },
+          {
+            "category": "government-contracting-related offenses",
+            "penalty": 1204046786,
+            "records": 2
+          },
+          {
+            "category": "employment-related offenses",
+            "penalty": 1006403204,
+            "records": 67
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "consumer protection violation",
+            "penalty": 6008156743,
+            "records": 42
+          },
+          {
+            "category": "mortgage abuses",
+            "penalty": 5625783671,
+            "records": 7
+          },
+          {
+            "category": "banking violation",
+            "penalty": 4091194886,
+            "records": 18
+          },
+          {
+            "category": "toxic securities abuses",
+            "penalty": 3637750000,
+            "records": 7
+          },
+          {
+            "category": "fraud",
+            "penalty": 3000000000,
+            "records": 1
+          }
+        ],
+        "rating": "poor",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "NY": 16068212884,
+        "CA": 10042633052,
+        "TX": 6025579831,
+        "NC": 4820463865,
+        "FL": 3213642577
+      },
+      "yoy_trend": {
+        "2022": 2679238281,
+        "2023": 7523517598,
+        "2024": 8416597025,
+        "2025": 9959188762,
+        "2026": 11591990543
+      },
+      "active_last_6mo": true,
+      "recent_top5": [
+        {
+          "date": "2026-03-17",
+          "agency": "CFPB",
+          "penalty": 1922826531,
+          "offense": "toxic securities abuses"
+        },
+        {
+          "date": "2025-06-11",
+          "agency": "OSHA",
+          "penalty": 76755652,
+          "offense": "investor protection violation"
+        },
+        {
+          "date": "2025-03-02",
+          "agency": "CFPB",
+          "penalty": 1072535000,
+          "offense": "mortgage abuses"
+        },
+        {
+          "date": "2024-09-20",
+          "agency": "CFPB",
+          "penalty": 288267667,
+          "offense": "banking violation"
+        },
+        {
+          "date": "2024-07-08",
+          "agency": "DOL-WHD",
+          "penalty": 72622782,
+          "offense": "consumer protection violation"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.929Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "JPMorgan Chase",
+        "slug": "jpmorgan-chase",
+        "ownership": "publicly traded (ticker symbol JPM)",
+        "hq": "New York",
+        "majorIndustry": "financial services",
+        "specificIndustry": "banking &amp; securities",
+        "totalPenalty": 40170532209,
+        "totalRecords": 284,
+        "offenseGroups": [
+          {
+            "category": "financial offenses",
+            "penalty": 27799554167,
+            "records": 128
+          },
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 8620148178,
+            "records": 66
+          },
+          {
+            "category": "competition-related offenses",
+            "penalty": 2610274791,
+            "records": 30
+          },
+          {
+            "category": "government-contracting-related offenses",
+            "penalty": 614000000,
+            "records": 1
+          },
+          {
+            "category": "employment-related offenses",
+            "penalty": 522448562,
+            "records": 50
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "toxic securities abuses",
+            "penalty": 13459785714,
+            "records": 7
+          },
+          {
+            "category": "investor protection violation",
+            "penalty": 6754497353,
+            "records": 88
+          },
+          {
+            "category": "mortgage abuses",
+            "penalty": 5362675000,
+            "records": 5
+          },
+          {
+            "category": "banking violation",
+            "penalty": 4900550341,
+            "records": 17
+          },
+          {
+            "category": "consumer protection violation",
+            "penalty": 3195402428,
+            "records": 44
+          }
+        ],
+        "rating": "poor",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "fedex",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "TN": 281963610,
+        "CA": 176227256,
+        "TX": 105736354,
+        "GA": 84589083,
+        "OH": 56392722
+      },
+      "yoy_trend": {
+        "2022": 101668269,
+        "2023": 94764033,
+        "2024": 115205988,
+        "2025": 165430925,
+        "2026": 227839810
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-07-21",
+          "agency": "DOL-WHD",
+          "penalty": 21230545,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2025-04-25",
+          "agency": "DOL-WHD",
+          "penalty": 4361597,
+          "offense": "employment discrimination"
+        },
+        {
+          "date": "2025-02-01",
+          "agency": "EEOC",
+          "penalty": 35300000,
+          "offense": "tax violations"
+        },
+        {
+          "date": "2024-10-29",
+          "agency": "EPA",
+          "penalty": 21500000,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2024-04-25",
+          "agency": "EPA",
+          "penalty": 13325000,
+          "offense": "benefit plan administrator violation"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.930Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "FedEx",
+        "slug": "fedex",
+        "ownership": "publicly traded (ticker symbol FDX)",
+        "hq": "Tennessee",
+        "majorIndustry": "freight and logistics",
+        "specificIndustry": "package delivery",
+        "totalPenalty": 704909025,
+        "totalRecords": 355,
+        "offenseGroups": [
+          {
+            "category": "employment-related offenses",
+            "penalty": 631365281,
+            "records": 56
+          },
+          {
+            "category": "financial offenses",
+            "penalty": 35300000,
+            "records": 1
+          },
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 21582550,
+            "records": 7
+          },
+          {
+            "category": "safety-related offenses",
+            "penalty": 9576912,
+            "records": 264
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 6159282,
+            "records": 23
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "wage and hour violation",
+            "penalty": 530763617,
+            "records": 25
+          },
+          {
+            "category": "employment discrimination",
+            "penalty": 82870342,
+            "records": 19
+          },
+          {
+            "category": "tax violations",
+            "penalty": 35300000,
+            "records": 1
+          },
+          {
+            "category": "consumer protection violation",
+            "penalty": 21500000,
+            "records": 1
+          },
+          {
+            "category": "benefit plan administrator violation",
+            "penalty": 13325000,
+            "records": 1
+          }
+        ],
+        "rating": "poor",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "ups",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "AL": 2800000,
+        "CA": 1750000,
+        "TX": 1050000,
+        "NY": 840000,
+        "FL": 560000
+      },
+      "yoy_trend": {
+        "2022": 533098,
+        "2023": 1225980,
+        "2024": 1169330,
+        "2025": 2138203,
+        "2026": 1933389
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-09-23",
+          "agency": "DOL-WHD",
+          "penalty": 7000000,
+          "offense": "False Claims Act and related"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.930Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Upstream Rehabilitation",
+        "slug": "upstream-rehabilitation",
+        "ownership": "privately held",
+        "hq": "Alabama",
+        "majorIndustry": "healthcare services",
+        "specificIndustry": "healthcare services",
+        "totalPenalty": 7000000,
+        "totalRecords": 1,
+        "offenseGroups": [
+          {
+            "category": "government-contracting-related offenses",
+            "penalty": 7000000,
+            "records": 1
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "False Claims Act and related",
+            "penalty": 7000000,
+            "records": 1
+          }
+        ],
+        "rating": "good",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "target",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "MN": 76966822,
+        "CA": 48104264,
+        "TX": 28862558,
+        "FL": 23090046,
+        "NY": 15393364
+      },
+      "yoy_trend": {
+        "2022": 18294386,
+        "2023": 35284770,
+        "2024": 33712296,
+        "2025": 54384569,
+        "2026": 50741033
+      },
+      "active_last_6mo": true,
+      "recent_top5": [
+        {
+          "date": "2026-02-19",
+          "agency": "DOL-WHD",
+          "penalty": 17766735,
+          "offense": "privacy violation"
+        },
+        {
+          "date": "2025-03-28",
+          "agency": "NLRB",
+          "penalty": 2459275,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2024-12-14",
+          "agency": "NLRB",
+          "penalty": 7534565,
+          "offense": "hazardous waste violation"
+        },
+        {
+          "date": "2024-11-20",
+          "agency": "DOL-WHD",
+          "penalty": 3326265,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2024-05-15",
+          "agency": "OSHA",
+          "penalty": 12437500,
+          "offense": "price-fixing or anti-competitive practices"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.930Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Target",
+        "slug": "target",
+        "ownership": "publicly traded (ticker symbol TGT)",
+        "hq": "Minnesota",
+        "majorIndustry": "retailing",
+        "specificIndustry": "retail-discount stores",
+        "totalPenalty": 192417054,
+        "totalRecords": 177,
+        "offenseGroups": [
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 91024528,
+            "records": 10
+          },
+          {
+            "category": "employment-related offenses",
+            "penalty": 47548904,
+            "records": 25
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 31421155,
+            "records": 27
+          },
+          {
+            "category": "competition-related offenses",
+            "penalty": 12437500,
+            "records": 1
+          },
+          {
+            "category": "government-contracting-related offenses",
+            "penalty": 6025000,
+            "records": 3
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "privacy violation",
+            "penalty": 71066939,
+            "records": 4
+          },
+          {
+            "category": "wage and hour violation",
+            "penalty": 27052020,
+            "records": 11
+          },
+          {
+            "category": "hazardous waste violation",
+            "penalty": 22603696,
+            "records": 3
+          },
+          {
+            "category": "consumer protection violation",
+            "penalty": 19957589,
+            "records": 6
+          },
+          {
+            "category": "price-fixing or anti-competitive practices",
+            "penalty": 12437500,
+            "records": 1
+          }
+        ],
+        "rating": "mixed",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "kroger",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "OH": 1313110984,
+        "CA": 820694365,
+        "TX": 492416619,
+        "FL": 393933295,
+        "NY": 262622197
+      },
+      "yoy_trend": {
+        "2022": 334531234,
+        "2023": 370352183,
+        "2024": 743740039,
+        "2025": 769846832,
+        "2026": 1064307174
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-10-29",
+          "agency": "EPA",
+          "penalty": 504000000,
+          "offense": "off-label or unapproved promotion of medical products"
+        },
+        {
+          "date": "2025-05-06",
+          "agency": "OSHA",
+          "penalty": 7339576,
+          "offense": "air pollution violation"
+        },
+        {
+          "date": "2025-01-20",
+          "agency": "OSHA",
+          "penalty": 70000000,
+          "offense": "fraud"
+        },
+        {
+          "date": "2024-08-22",
+          "agency": "DOL-WHD",
+          "penalty": 924649,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2024-06-10",
+          "agency": "NLRB",
+          "penalty": 2186182,
+          "offense": "employment discrimination"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.931Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Kroger",
+        "slug": "kroger",
+        "ownership": "publicly traded (ticker symbol KR)",
+        "hq": "Ohio",
+        "majorIndustry": "retailing",
+        "specificIndustry": "retail-supermarkets",
+        "totalPenalty": 3282777461,
+        "totalRecords": 320,
+        "offenseGroups": [
+          {
+            "category": "healthcare-related offenses",
+            "penalty": 3038871559,
+            "records": 10
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 103611643,
+            "records": 38
+          },
+          {
+            "category": "competition-related offenses",
+            "penalty": 70000000,
+            "records": 1
+          },
+          {
+            "category": "employment-related offenses",
+            "penalty": 53424278,
+            "records": 64
+          },
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 13875767,
+            "records": 9
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "off-label or unapproved promotion of medical products",
+            "penalty": 3024000000,
+            "records": 6
+          },
+          {
+            "category": "air pollution violation",
+            "penalty": 102754065,
+            "records": 14
+          },
+          {
+            "category": "fraud",
+            "penalty": 70000000,
+            "records": 1
+          },
+          {
+            "category": "wage and hour violation",
+            "penalty": 27739473,
+            "records": 30
+          },
+          {
+            "category": "employment discrimination",
+            "penalty": 24048000,
+            "records": 11
+          }
+        ],
+        "rating": "mixed",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    },
+    {
+      "slug": "starbucks",
+      "status": "ok_synth",
+      "violations_by_state": {
+        "WA": 36517196,
+        "CA": 22823248,
+        "TX": 13693949,
+        "FL": 10955159,
+        "NY": 7303439
+      },
+      "yoy_trend": {
+        "2022": 6570262,
+        "2023": 12680074,
+        "2024": 20773361,
+        "2025": 23482930,
+        "2026": 27786363
+      },
+      "active_last_6mo": false,
+      "recent_top5": [
+        {
+          "date": "2025-09-21",
+          "agency": "EEOC",
+          "penalty": 6565710,
+          "offense": "wage and hour violation"
+        },
+        {
+          "date": "2025-06-26",
+          "agency": "DOJ",
+          "penalty": 3750000,
+          "offense": "product safety violation"
+        },
+        {
+          "date": "2025-01-06",
+          "agency": "DOJ",
+          "penalty": 1305000,
+          "offense": "Fair Credit Reporting Act violation"
+        },
+        {
+          "date": "2024-10-04",
+          "agency": "DOJ",
+          "penalty": 225000,
+          "offense": "consumer protection violation"
+        },
+        {
+          "date": "2024-03-23",
+          "agency": "OSHA",
+          "penalty": 63833,
+          "offense": "labor relations violation"
+        }
+      ],
+      "fetched_at": "2026-06-06T13:10:38.931Z",
+      "note": "DRY-RUN SYNTH — review only, do not merge to production",
+      "v1": {
+        "source": "Violation Tracker",
+        "matchedName": "Starbucks",
+        "slug": "starbucks",
+        "ownership": "publicly traded (ticker symbol SBUX)",
+        "hq": "Washington",
+        "majorIndustry": "restaurants and foodservice",
+        "specificIndustry": "restaurants",
+        "totalPenalty": 91292991,
+        "totalRecords": 40,
+        "offenseGroups": [
+          {
+            "category": "employment-related offenses",
+            "penalty": 87005724,
+            "records": 19
+          },
+          {
+            "category": "safety-related offenses",
+            "penalty": 3916267,
+            "records": 17
+          },
+          {
+            "category": "consumer-protection-related offenses",
+            "penalty": 225000,
+            "records": 1
+          },
+          {
+            "category": "environment-related offenses",
+            "penalty": 146000,
+            "records": 3
+          }
+        ],
+        "primaryOffenses": [
+          {
+            "category": "wage and hour violation",
+            "penalty": 85354224,
+            "records": 13
+          },
+          {
+            "category": "product safety violation",
+            "penalty": 3750000,
+            "records": 1
+          },
+          {
+            "category": "Fair Credit Reporting Act violation",
+            "penalty": 1305000,
+            "records": 1
+          },
+          {
+            "category": "consumer protection violation",
+            "penalty": 225000,
+            "records": 1
+          },
+          {
+            "category": "labor relations violation",
+            "penalty": 191500,
+            "records": 3
+          }
+        ],
+        "rating": "mixed",
+        "lastChecked": "2026-05-27",
+        "fetchedAt": "2026-05-27T02:11:50.926Z"
+      }
+    }
+  ]
+}

@@ -2257,6 +2257,18 @@ function CategoryRow({ cat: k, enriched, profile }) {
           {!isUnknown ? (
             <>
               <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{sNarrative}</div>
+              {/* B-30: surface "active enforcement" badge on the labor row when
+                  VT v2 saw a penalty assessed in the last 6 months.  Render
+                  inline above the Signal line.  Silent if vt v2 isn't merged. */}
+              {k === "labor" && (() => {
+                const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
+                if (!vt?.active_last_6mo) return null;
+                return (
+                  <div style={{ marginTop:6, display:"inline-flex", alignItems:"center", gap:6, padding:"2px 8px", fontSize:11, borderRadius:20, background:T.rep, color:"#fff", fontWeight:600 }}>
+                    <i className="ti ti-flame" aria-hidden="true" /> Active enforcement in last 6 mo
+                  </div>
+                );
+              })()}
               {!isUnknown && disp?.label && (
                 <div style={{ marginTop:6, fontSize:11, color:T.txt3 }}>
                   Signal: <span style={{ color:T.txt2, fontWeight:600 }}>{disp.label}</span>
@@ -2431,18 +2443,39 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               (≥$5M in penalties), not the app's grade verdict. Lets users
               see the raw data and decide for themselves. */}
           {(() => {
-            const vt = enriched.violationTracker;
+            // B-30 (VT v2): VT lives at two paths historically — root and
+            // laborAPI.  Read both, prefer the richer one.
+            const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
             const hasSignificantPenalty = vt && vt.totalPenalty && vt.totalPenalty >= 5_000_000; // ≥$5M
             if (!hasSignificantPenalty) return null;
             const penFmt = vt.totalPenalty >= 1e9
               ? `$${(vt.totalPenalty/1e9).toFixed(2)}B`
               : `$${(vt.totalPenalty/1e6).toFixed(1)}M`;
             const topOffense = vt.primaryOffenses?.[0]?.category;
+            // B-30 NEW fields. All four are optional — UI degrades cleanly when
+            // any (or all) are absent, so v1-only brands render exactly as before.
+            const active = vt.active_last_6mo === true;
+            const byState = vt.violations_by_state && Object.keys(vt.violations_by_state).length
+              ? Object.entries(vt.violations_by_state).sort((a, b) => b[1] - a[1]).slice(0, 3)
+              : null;
+            const recent = Array.isArray(vt.recent_top5) ? vt.recent_top5.slice(0, 3) : null;
+            const yoy = vt.yoy_trend && typeof vt.yoy_trend === "object" ? vt.yoy_trend : null;
+            const fmtShort = (n) => n >= 1e9 ? `$${(n/1e9).toFixed(1)}B`
+                                : n >= 1e6 ? `$${(n/1e6).toFixed(1)}M`
+                                : n >= 1e3 ? `$${(n/1e3).toFixed(0)}K`
+                                : `$${n}`;
             return (
               <div style={{ background:"#2a0d0d", border:`1px solid ${T.rep}`, borderRadius:10, padding:"10px 12px", marginBottom:12, display:"flex", alignItems:"flex-start", gap:10 }}>
                 <i className="ti ti-alert-triangle" style={{ fontSize:18, color:T.rep, flexShrink:0, marginTop:1 }} aria-hidden="true" />
                 <div style={{ minWidth:0, flex:1 }}>
-                  <div style={{ fontSize:12, fontWeight:700, color:T.rep, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:2 }}>Federal penalties</div>
+                  <div style={{ fontSize:12, fontWeight:700, color:T.rep, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:2, display:"flex", alignItems:"center", gap:6 }}>
+                    Federal penalties
+                    {active && (
+                      <span title="A penalty was assessed within the last 6 months." style={{ fontSize:9, fontWeight:700, padding:"1px 6px", borderRadius:10, background:T.rep, color:"#fff", letterSpacing:"0.04em" }}>
+                        ACTIVE
+                      </span>
+                    )}
+                  </div>
                   <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.3 }}>
                     {penFmt} across {vt.totalRecords} record{vt.totalRecords === 1 ? "" : "s"}
                   </div>
@@ -2451,6 +2484,37 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                       Top offense: {topOffense}
                     </div>
                   )}
+                  {byState && (
+                    <div style={{ fontSize:11, color:T.txt3, marginTop:3, lineHeight:1.4 }}>
+                      Top states: {byState.map(([st, amt]) => `${st} ${fmtShort(amt)}`).join(" · ")}
+                    </div>
+                  )}
+                  {recent && recent.length > 0 && (
+                    <div style={{ fontSize:11, color:T.txt3, marginTop:5, lineHeight:1.4 }}>
+                      <div style={{ fontWeight:600, color:T.txt2, marginBottom:2 }}>Recent enforcement</div>
+                      {recent.map((r, i) => (
+                        <div key={i} style={{ display:"flex", gap:6, opacity:0.9 }}>
+                          <span style={{ minWidth:64 }}>{r.date}</span>
+                          <span>{r.agency}</span>
+                          <span style={{ marginLeft:"auto", color:T.txt2 }}>{fmtShort(r.penalty)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {yoy && Object.keys(yoy).length >= 2 && (() => {
+                    const years = Object.keys(yoy).map(Number).sort();
+                    const max = Math.max(...years.map(y => yoy[y] || 0)) || 1;
+                    return (
+                      <div style={{ marginTop:6 }}>
+                        <div style={{ fontSize:10, color:T.txt3, marginBottom:2 }}>5-yr trend</div>
+                        <div style={{ display:"flex", gap:2, alignItems:"flex-end", height:18 }}>
+                          {years.map(y => (
+                            <div key={y} title={`${y}: ${fmtShort(yoy[y]||0)}`} style={{ flex:1, height: `${Math.max(2, ((yoy[y]||0)/max)*18)}px`, background:T.rep, opacity:0.65, borderRadius:1 }} />
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             );
