@@ -110,7 +110,7 @@
 | Violation Tracker | https://violationtracker.goodjobsfirst.org | Monthly | Aggregates 50+ federal agency penalties |
 | Oxfam Behind The Brands | https://www.oxfam.org/en/research/behind-brands | Annual | Food-company worker rights |
 
-### Supply-chain & human rights (8)
+### Supply-chain & human rights (9)
 
 | Source | URL | Cadence | Notes |
 |---|---|---|---|
@@ -122,6 +122,7 @@
 | GoodWeave Certification | https://goodweave.org | Annual | Anti-child-labor certification for rugs/textiles |
 | Fair Trade USA | https://www.fairtradecertified.org | Annual | Fair Trade Certified consumer brands |
 | Rainforest Alliance | https://www.rainforest-alliance.org | Annual | Certified coffee, tea, cocoa, bananas, palm oil brands |
+| OECD Watch Complaints DB | https://complaints.oecdwatch.org | Quarterly | B-data12: ~600 NGO/union complaints filed under the OECD Guidelines for Multinational Enterprises. Strongest international supply-chain + human-rights signal in regions where US federal sources have no visibility (Cambodia, Vietnam, Nigeria, DRC, Brazil, ...). Fetcher: `scripts/oecd-watch-fetch.mjs` (`--dry` default, fixtures + vetted Top-50 case table; `--live` gated until UA whitelist confirmed). Merger: `scripts/oecd-watch-merge.mjs` writes `enriched.supply_chain.oecd_watch.{complaint_count, recent_complaints[], primary_issue, primary_region, last_updated}`. |
 
 ### DEI (3)
 
