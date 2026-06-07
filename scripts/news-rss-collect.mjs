@@ -213,7 +213,7 @@ function normalizeForMatch(s) {
 // appear in the title, the match is dropped regardless of context.
 // Expand as we discover more noise.
 const NEGATIVE_CONTEXT = {
-  mars:    ["spacex", "planet mars", "mars rover", "mars mission", "mars colony", "mars surface", "perseverance", "curiosity", "musk's mars", "to mars"],
+  mars:    ["spacex", "planet mars", "mars rover", "mars mission", "mars colony", "mars surface", "mars spacecraft", "perseverance", "curiosity", "musk's mars", "to mars", "nasa", "maven", "isro", "sari", "smiths" /* Smithsonian */, "spins out of control"],
   apple:   ["apple pie", "apple tree", "apple of his", "rotten apple", "candied apple"],
   target:  ["on target", "off target", "target audience", "target practice", "missile target", "easy target"],
   amazon:  ["amazon rainforest", "amazon river", "amazon basin", "amazon jungle", "amazon tribe"],
