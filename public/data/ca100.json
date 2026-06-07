@@ -1,0 +1,2932 @@
+{
+  "generated_at": "2026-06-07T19:37:43.637Z",
+  "source": "Climate Action 100+ Net Zero Company Benchmark",
+  "source_urls": [
+    "https://www.climateaction100.org",
+    "https://www.climateaction100.org/whos-involved/companies/",
+    "https://www.climateaction100.org/net-zero-company-benchmark/"
+  ],
+  "benchmark_year": 2026,
+  "mode": "live",
+  "brands_source": "top-500-brands.txt",
+  "portal_pings": [
+    {
+      "url": "https://www.climateaction100.org",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.climateaction100.org/whos-involved/companies/",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.climateaction100.org/net-zero-company-benchmark/",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "fixtures_used": {
+    "roster": "test/fixtures/ca100/focus-companies.html",
+    "scores": "test/fixtures/ca100/benchmark-scores.json",
+    "emissions": "test/fixtures/ca100/emissions-targets.json"
+  },
+  "focus_company_count": 49,
+  "brand_count": 528,
+  "matched_count": 17,
+  "no_match_count": 511,
+  "smoke": [
+    {
+      "slug": "exxon-mobil",
+      "status": "not_in_brand_list"
+    },
+    {
+      "slug": "chevron",
+      "status": "ok",
+      "focus": true,
+      "scores": {
+        "disclosure": 3,
+        "alignment": 1,
+        "governance": 2,
+        "capital_allocation": 1
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_mt": 56
+    },
+    {
+      "slug": "shell-usa",
+      "status": "not_in_brand_list"
+    },
+    {
+      "slug": "bp-usa",
+      "status": "not_in_brand_list"
+    },
+    {
+      "slug": "totalenergies-usa",
+      "status": "not_in_brand_list"
+    },
+    {
+      "slug": "nextera-energy",
+      "status": "not_in_brand_list"
+    },
+    {
+      "slug": "ford",
+      "status": "ok",
+      "focus": true,
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 3
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_mt": 3.1
+    }
+  ],
+  "rankings": [
+    {
+      "slug": "coca-cola",
+      "name": "Coca-Cola",
+      "status": "no_match"
+    },
+    {
+      "slug": "pepsi",
+      "name": "Pepsi",
+      "status": "no_match"
+    },
+    {
+      "slug": "sprite",
+      "name": "Sprite",
+      "status": "no_match"
+    },
+    {
+      "slug": "dr-pepper",
+      "name": "Dr Pepper",
+      "status": "no_match"
+    },
+    {
+      "slug": "mountain-dew",
+      "name": "Mountain Dew",
+      "status": "no_match"
+    },
+    {
+      "slug": "gatorade",
+      "name": "Gatorade",
+      "status": "no_match"
+    },
+    {
+      "slug": "red-bull",
+      "name": "Red Bull",
+      "status": "no_match"
+    },
+    {
+      "slug": "monster-energy",
+      "name": "Monster Energy",
+      "status": "no_match"
+    },
+    {
+      "slug": "budweiser",
+      "name": "Budweiser",
+      "status": "no_match"
+    },
+    {
+      "slug": "bud-light",
+      "name": "Bud Light",
+      "status": "no_match"
+    },
+    {
+      "slug": "coors-light",
+      "name": "Coors Light",
+      "status": "no_match"
+    },
+    {
+      "slug": "modelo",
+      "name": "Modelo",
+      "status": "no_match"
+    },
+    {
+      "slug": "corona",
+      "name": "Corona",
+      "status": "no_match"
+    },
+    {
+      "slug": "heineken",
+      "name": "Heineken",
+      "status": "no_match"
+    },
+    {
+      "slug": "stella-artois",
+      "name": "Stella Artois",
+      "status": "no_match"
+    },
+    {
+      "slug": "cheerios",
+      "name": "Cheerios",
+      "status": "no_match"
+    },
+    {
+      "slug": "froot-loops",
+      "name": "Froot Loops",
+      "status": "no_match"
+    },
+    {
+      "slug": "frosted-flakes",
+      "name": "Frosted Flakes",
+      "status": "no_match"
+    },
+    {
+      "slug": "lucky-charms",
+      "name": "Lucky Charms",
+      "status": "no_match"
+    },
+    {
+      "slug": "oreo",
+      "name": "Oreo",
+      "status": "no_match"
+    },
+    {
+      "slug": "chips-ahoy",
+      "name": "Chips Ahoy",
+      "status": "no_match"
+    },
+    {
+      "slug": "doritos",
+      "name": "Doritos",
+      "status": "no_match"
+    },
+    {
+      "slug": "cheetos",
+      "name": "Cheetos",
+      "status": "no_match"
+    },
+    {
+      "slug": "lays",
+      "name": "Lay's",
+      "status": "no_match"
+    },
+    {
+      "slug": "pringles",
+      "name": "Pringles",
+      "status": "no_match"
+    },
+    {
+      "slug": "cheez-its",
+      "name": "Cheez-Its",
+      "status": "no_match"
+    },
+    {
+      "slug": "goldfish",
+      "name": "Goldfish",
+      "status": "no_match"
+    },
+    {
+      "slug": "ritz",
+      "name": "Ritz",
+      "status": "no_match"
+    },
+    {
+      "slug": "hershey",
+      "name": "Hershey's",
+      "status": "no_match"
+    },
+    {
+      "slug": "mars",
+      "name": "Mars",
+      "status": "no_match"
+    },
+    {
+      "slug": "mms",
+      "name": "M&Ms",
+      "status": "no_match"
+    },
+    {
+      "slug": "snickers",
+      "name": "Snickers",
+      "status": "no_match"
+    },
+    {
+      "slug": "reeses",
+      "name": "Reese's",
+      "status": "no_match"
+    },
+    {
+      "slug": "kit-kat",
+      "name": "Kit Kat",
+      "status": "no_match"
+    },
+    {
+      "slug": "twix",
+      "name": "Twix",
+      "status": "no_match"
+    },
+    {
+      "slug": "heinz",
+      "name": "Heinz",
+      "status": "no_match"
+    },
+    {
+      "slug": "hellmanns",
+      "name": "Hellmann's",
+      "status": "no_match"
+    },
+    {
+      "slug": "kraft",
+      "name": "Kraft",
+      "status": "no_match"
+    },
+    {
+      "slug": "kellogg",
+      "name": "Kellogg's",
+      "status": "no_match"
+    },
+    {
+      "slug": "general-mills",
+      "name": "General Mills",
+      "status": "no_match"
+    },
+    {
+      "slug": "nestle",
+      "name": "Nestlé",
+      "status": "no_match"
+    },
+    {
+      "slug": "pepsico",
+      "name": "PepsiCo",
+      "status": "no_match"
+    },
+    {
+      "slug": "unilever",
+      "name": "Unilever",
+      "status": "no_match"
+    },
+    {
+      "slug": "mondelez",
+      "name": "Mondelez",
+      "status": "no_match"
+    },
+    {
+      "slug": "tyson-foods",
+      "name": "Tyson Foods",
+      "status": "no_match"
+    },
+    {
+      "slug": "hormel",
+      "name": "Hormel",
+      "status": "no_match"
+    },
+    {
+      "slug": "conagra",
+      "name": "Conagra",
+      "status": "no_match"
+    },
+    {
+      "slug": "campbells",
+      "name": "Campbell's",
+      "status": "no_match"
+    },
+    {
+      "slug": "del-monte",
+      "name": "Del Monte",
+      "status": "no_match"
+    },
+    {
+      "slug": "chobani",
+      "name": "Chobani",
+      "status": "no_match"
+    },
+    {
+      "slug": "yoplait",
+      "name": "Yoplait",
+      "status": "no_match"
+    },
+    {
+      "slug": "fairlife",
+      "name": "Fairlife",
+      "status": "no_match"
+    },
+    {
+      "slug": "oatly",
+      "name": "Oatly",
+      "status": "no_match"
+    },
+    {
+      "slug": "silk",
+      "name": "Silk",
+      "status": "no_match"
+    },
+    {
+      "slug": "clif-bar",
+      "name": "Clif Bar",
+      "status": "no_match"
+    },
+    {
+      "slug": "kind-snacks",
+      "name": "KIND Snacks",
+      "status": "no_match"
+    },
+    {
+      "slug": "rxbar",
+      "name": "RXBAR",
+      "status": "no_match"
+    },
+    {
+      "slug": "quaker",
+      "name": "Quaker",
+      "status": "no_match"
+    },
+    {
+      "slug": "post",
+      "name": "Post Consumer Brands",
+      "status": "no_match"
+    },
+    {
+      "slug": "tide",
+      "name": "Tide",
+      "status": "no_match"
+    },
+    {
+      "slug": "crest",
+      "name": "Crest",
+      "status": "no_match"
+    },
+    {
+      "slug": "charmin",
+      "name": "Charmin",
+      "status": "no_match"
+    },
+    {
+      "slug": "bounty",
+      "name": "Bounty",
+      "status": "no_match"
+    },
+    {
+      "slug": "pampers",
+      "name": "Pampers",
+      "status": "no_match"
+    },
+    {
+      "slug": "huggies",
+      "name": "Huggies",
+      "status": "no_match"
+    },
+    {
+      "slug": "dawn",
+      "name": "Dawn",
+      "status": "no_match"
+    },
+    {
+      "slug": "cascade",
+      "name": "Cascade",
+      "status": "no_match"
+    },
+    {
+      "slug": "clorox",
+      "name": "Clorox",
+      "status": "no_match"
+    },
+    {
+      "slug": "lysol",
+      "name": "Lysol",
+      "status": "no_match"
+    },
+    {
+      "slug": "febreze",
+      "name": "Febreze",
+      "status": "no_match"
+    },
+    {
+      "slug": "swiffer",
+      "name": "Swiffer",
+      "status": "no_match"
+    },
+    {
+      "slug": "dove",
+      "name": "Dove",
+      "status": "no_match"
+    },
+    {
+      "slug": "olay",
+      "name": "Olay",
+      "status": "no_match"
+    },
+    {
+      "slug": "pantene",
+      "name": "Pantene",
+      "status": "no_match"
+    },
+    {
+      "slug": "old-spice",
+      "name": "Old Spice",
+      "status": "no_match"
+    },
+    {
+      "slug": "gillette",
+      "name": "Gillette",
+      "status": "no_match"
+    },
+    {
+      "slug": "suave",
+      "name": "Suave",
+      "status": "no_match"
+    },
+    {
+      "slug": "axe",
+      "name": "Axe",
+      "status": "no_match"
+    },
+    {
+      "slug": "aveeno",
+      "name": "Aveeno",
+      "status": "no_match"
+    },
+    {
+      "slug": "neutrogena",
+      "name": "Neutrogena",
+      "status": "no_match"
+    },
+    {
+      "slug": "cetaphil",
+      "name": "Cetaphil",
+      "status": "no_match"
+    },
+    {
+      "slug": "cerave",
+      "name": "CeraVe",
+      "status": "no_match"
+    },
+    {
+      "slug": "lush",
+      "name": "Lush",
+      "status": "no_match"
+    },
+    {
+      "slug": "sephora",
+      "name": "Sephora",
+      "status": "no_match"
+    },
+    {
+      "slug": "ulta-beauty",
+      "name": "Ulta Beauty",
+      "status": "no_match"
+    },
+    {
+      "slug": "the-ordinary",
+      "name": "The Ordinary",
+      "status": "no_match"
+    },
+    {
+      "slug": "glossier",
+      "name": "Glossier",
+      "status": "no_match"
+    },
+    {
+      "slug": "fenty-beauty",
+      "name": "Fenty Beauty",
+      "status": "no_match"
+    },
+    {
+      "slug": "maybelline",
+      "name": "Maybelline",
+      "status": "no_match"
+    },
+    {
+      "slug": "loreal",
+      "name": "L'Oréal",
+      "status": "no_match"
+    },
+    {
+      "slug": "clinique",
+      "name": "Clinique",
+      "status": "no_match"
+    },
+    {
+      "slug": "estee-lauder",
+      "name": "Estée Lauder",
+      "status": "no_match"
+    },
+    {
+      "slug": "procter-gamble",
+      "name": "Procter & Gamble",
+      "status": "no_match"
+    },
+    {
+      "slug": "colgate-palmolive",
+      "name": "Colgate-Palmolive",
+      "status": "no_match"
+    },
+    {
+      "slug": "kimberly-clark",
+      "name": "Kimberly-Clark",
+      "status": "no_match"
+    },
+    {
+      "slug": "johnson-johnson",
+      "name": "Johnson & Johnson",
+      "status": "no_match"
+    },
+    {
+      "slug": "philip-morris",
+      "name": "Philip Morris",
+      "status": "no_match"
+    },
+    {
+      "slug": "altria",
+      "name": "Altria",
+      "status": "no_match"
+    },
+    {
+      "slug": "marlboro",
+      "name": "Marlboro",
+      "status": "no_match"
+    },
+    {
+      "slug": "camel",
+      "name": "Camel",
+      "status": "no_match"
+    },
+    {
+      "slug": "mcdonalds",
+      "name": "McDonald's",
+      "status": "no_match"
+    },
+    {
+      "slug": "burger-king",
+      "name": "Burger King",
+      "status": "no_match"
+    },
+    {
+      "slug": "wendys",
+      "name": "Wendy's",
+      "status": "no_match"
+    },
+    {
+      "slug": "chick-fil-a",
+      "name": "Chick-fil-A",
+      "status": "no_match"
+    },
+    {
+      "slug": "starbucks",
+      "name": "Starbucks",
+      "status": "no_match"
+    },
+    {
+      "slug": "dunkin",
+      "name": "Dunkin'",
+      "status": "no_match"
+    },
+    {
+      "slug": "subway",
+      "name": "Subway",
+      "status": "no_match"
+    },
+    {
+      "slug": "taco-bell",
+      "name": "Taco Bell",
+      "status": "no_match"
+    },
+    {
+      "slug": "kfc",
+      "name": "KFC",
+      "status": "no_match"
+    },
+    {
+      "slug": "pizza-hut",
+      "name": "Pizza Hut",
+      "status": "no_match"
+    },
+    {
+      "slug": "dominos",
+      "name": "Domino's",
+      "status": "no_match"
+    },
+    {
+      "slug": "papa-johns",
+      "name": "Papa John's",
+      "status": "no_match"
+    },
+    {
+      "slug": "chipotle",
+      "name": "Chipotle",
+      "status": "no_match"
+    },
+    {
+      "slug": "panera",
+      "name": "Panera Bread",
+      "status": "no_match"
+    },
+    {
+      "slug": "five-guys",
+      "name": "Five Guys",
+      "status": "no_match"
+    },
+    {
+      "slug": "shake-shack",
+      "name": "Shake Shack",
+      "status": "no_match"
+    },
+    {
+      "slug": "in-n-out",
+      "name": "In-N-Out Burger",
+      "status": "no_match"
+    },
+    {
+      "slug": "sweetgreen",
+      "name": "Sweetgreen",
+      "status": "no_match"
+    },
+    {
+      "slug": "panda-express",
+      "name": "Panda Express",
+      "status": "no_match"
+    },
+    {
+      "slug": "arbys",
+      "name": "Arby's",
+      "status": "no_match"
+    },
+    {
+      "slug": "dairy-queen",
+      "name": "Dairy Queen",
+      "status": "no_match"
+    },
+    {
+      "slug": "sonic",
+      "name": "Sonic",
+      "status": "no_match"
+    },
+    {
+      "slug": "cracker-barrel",
+      "name": "Cracker Barrel",
+      "status": "no_match"
+    },
+    {
+      "slug": "olive-garden",
+      "name": "Olive Garden",
+      "status": "no_match"
+    },
+    {
+      "slug": "applebees",
+      "name": "Applebee's",
+      "status": "no_match"
+    },
+    {
+      "slug": "chilis",
+      "name": "Chili's",
+      "status": "no_match"
+    },
+    {
+      "slug": "red-lobster",
+      "name": "Red Lobster",
+      "status": "no_match"
+    },
+    {
+      "slug": "texas-roadhouse",
+      "name": "Texas Roadhouse",
+      "status": "no_match"
+    },
+    {
+      "slug": "cheesecake-factory",
+      "name": "Cheesecake Factory",
+      "status": "no_match"
+    },
+    {
+      "slug": "walmart",
+      "name": "Walmart",
+      "status": "no_match"
+    },
+    {
+      "slug": "target",
+      "name": "Target",
+      "status": "no_match"
+    },
+    {
+      "slug": "costco",
+      "name": "Costco",
+      "status": "no_match"
+    },
+    {
+      "slug": "sams-club",
+      "name": "Sam's Club",
+      "status": "no_match"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "status": "no_match"
+    },
+    {
+      "slug": "home-depot",
+      "name": "The Home Depot",
+      "status": "no_match"
+    },
+    {
+      "slug": "lowes",
+      "name": "Lowe's",
+      "status": "no_match"
+    },
+    {
+      "slug": "best-buy",
+      "name": "Best Buy",
+      "status": "no_match"
+    },
+    {
+      "slug": "trader-joes",
+      "name": "Trader Joe's",
+      "status": "no_match"
+    },
+    {
+      "slug": "whole-foods",
+      "name": "Whole Foods Market",
+      "status": "no_match"
+    },
+    {
+      "slug": "wegmans",
+      "name": "Wegmans",
+      "status": "no_match"
+    },
+    {
+      "slug": "publix",
+      "name": "Publix",
+      "status": "no_match"
+    },
+    {
+      "slug": "heb",
+      "name": "H-E-B",
+      "status": "no_match"
+    },
+    {
+      "slug": "kroger",
+      "name": "Kroger",
+      "status": "no_match"
+    },
+    {
+      "slug": "safeway",
+      "name": "Safeway",
+      "status": "no_match"
+    },
+    {
+      "slug": "albertsons",
+      "name": "Albertsons",
+      "status": "no_match"
+    },
+    {
+      "slug": "food-lion",
+      "name": "Food Lion",
+      "status": "no_match"
+    },
+    {
+      "slug": "giant-eagle",
+      "name": "Giant Eagle",
+      "status": "no_match"
+    },
+    {
+      "slug": "sprouts",
+      "name": "Sprouts Farmers Market",
+      "status": "no_match"
+    },
+    {
+      "slug": "aldi",
+      "name": "Aldi",
+      "status": "no_match"
+    },
+    {
+      "slug": "lidl",
+      "name": "Lidl",
+      "status": "no_match"
+    },
+    {
+      "slug": "ikea",
+      "name": "IKEA",
+      "status": "no_match"
+    },
+    {
+      "slug": "wayfair",
+      "name": "Wayfair",
+      "status": "no_match"
+    },
+    {
+      "slug": "overstock",
+      "name": "Overstock",
+      "status": "no_match"
+    },
+    {
+      "slug": "qvc",
+      "name": "QVC",
+      "status": "no_match"
+    },
+    {
+      "slug": "hsn",
+      "name": "HSN",
+      "status": "no_match"
+    },
+    {
+      "slug": "dollar-general",
+      "name": "Dollar General",
+      "status": "no_match"
+    },
+    {
+      "slug": "dollar-tree",
+      "name": "Dollar Tree",
+      "status": "no_match"
+    },
+    {
+      "slug": "family-dollar",
+      "name": "Family Dollar",
+      "status": "no_match"
+    },
+    {
+      "slug": "five-below",
+      "name": "Five Below",
+      "status": "no_match"
+    },
+    {
+      "slug": "big-lots",
+      "name": "Big Lots",
+      "status": "no_match"
+    },
+    {
+      "slug": "tj-maxx",
+      "name": "TJ Maxx",
+      "status": "no_match"
+    },
+    {
+      "slug": "marshalls",
+      "name": "Marshalls",
+      "status": "no_match"
+    },
+    {
+      "slug": "ross",
+      "name": "Ross Dress for Less",
+      "status": "no_match"
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "status": "no_match"
+    },
+    {
+      "slug": "homegoods",
+      "name": "HomeGoods",
+      "status": "no_match"
+    },
+    {
+      "slug": "macys",
+      "name": "Macy's",
+      "status": "no_match"
+    },
+    {
+      "slug": "kohls",
+      "name": "Kohl's",
+      "status": "no_match"
+    },
+    {
+      "slug": "jcpenney",
+      "name": "JCPenney",
+      "status": "no_match"
+    },
+    {
+      "slug": "nordstrom",
+      "name": "Nordstrom",
+      "status": "no_match"
+    },
+    {
+      "slug": "bloomingdales",
+      "name": "Bloomingdale's",
+      "status": "no_match"
+    },
+    {
+      "slug": "saks",
+      "name": "Saks Fifth Avenue",
+      "status": "no_match"
+    },
+    {
+      "slug": "neiman-marcus",
+      "name": "Neiman Marcus",
+      "status": "no_match"
+    },
+    {
+      "slug": "nordstrom-rack",
+      "name": "Nordstrom Rack",
+      "status": "no_match"
+    },
+    {
+      "slug": "rei",
+      "name": "REI",
+      "status": "no_match"
+    },
+    {
+      "slug": "bass-pro-shops",
+      "name": "Bass Pro Shops",
+      "status": "no_match"
+    },
+    {
+      "slug": "cabelas",
+      "name": "Cabela's",
+      "status": "no_match"
+    },
+    {
+      "slug": "dicks-sporting-goods",
+      "name": "Dick's Sporting Goods",
+      "status": "no_match"
+    },
+    {
+      "slug": "academy",
+      "name": "Academy Sports",
+      "status": "no_match"
+    },
+    {
+      "slug": "petco",
+      "name": "Petco",
+      "status": "no_match"
+    },
+    {
+      "slug": "petsmart",
+      "name": "PetSmart",
+      "status": "no_match"
+    },
+    {
+      "slug": "gamestop",
+      "name": "GameStop",
+      "status": "no_match"
+    },
+    {
+      "slug": "barnes-noble",
+      "name": "Barnes & Noble",
+      "status": "no_match"
+    },
+    {
+      "slug": "office-depot",
+      "name": "Office Depot",
+      "status": "no_match"
+    },
+    {
+      "slug": "staples",
+      "name": "Staples",
+      "status": "no_match"
+    },
+    {
+      "slug": "autozone",
+      "name": "AutoZone",
+      "status": "no_match"
+    },
+    {
+      "slug": "oreilly-auto-parts",
+      "name": "O'Reilly Auto Parts",
+      "status": "no_match"
+    },
+    {
+      "slug": "advance-auto-parts",
+      "name": "Advance Auto Parts",
+      "status": "no_match"
+    },
+    {
+      "slug": "napa-auto-parts",
+      "name": "NAPA Auto Parts",
+      "status": "no_match"
+    },
+    {
+      "slug": "cvs",
+      "name": "CVS",
+      "status": "no_match"
+    },
+    {
+      "slug": "walgreens",
+      "name": "Walgreens",
+      "status": "no_match"
+    },
+    {
+      "slug": "rite-aid",
+      "name": "Rite Aid",
+      "status": "no_match"
+    },
+    {
+      "slug": "duane-reade",
+      "name": "Duane Reade",
+      "status": "no_match"
+    },
+    {
+      "slug": "7-eleven",
+      "name": "7-Eleven",
+      "status": "no_match"
+    },
+    {
+      "slug": "wawa",
+      "name": "Wawa",
+      "status": "no_match"
+    },
+    {
+      "slug": "sheetz",
+      "name": "Sheetz",
+      "status": "no_match"
+    },
+    {
+      "slug": "circle-k",
+      "name": "Circle K",
+      "status": "no_match"
+    },
+    {
+      "slug": "cumberland-farms",
+      "name": "Cumberland Farms",
+      "status": "no_match"
+    },
+    {
+      "slug": "goya",
+      "name": "Goya Foods",
+      "status": "no_match"
+    },
+    {
+      "slug": "nike",
+      "name": "Nike",
+      "status": "no_match"
+    },
+    {
+      "slug": "adidas",
+      "name": "Adidas",
+      "status": "no_match"
+    },
+    {
+      "slug": "under-armour",
+      "name": "Under Armour",
+      "status": "no_match"
+    },
+    {
+      "slug": "lululemon",
+      "name": "Lululemon",
+      "status": "no_match"
+    },
+    {
+      "slug": "puma",
+      "name": "Puma",
+      "status": "no_match"
+    },
+    {
+      "slug": "new-balance",
+      "name": "New Balance",
+      "status": "no_match"
+    },
+    {
+      "slug": "reebok",
+      "name": "Reebok",
+      "status": "no_match"
+    },
+    {
+      "slug": "asics",
+      "name": "ASICS",
+      "status": "no_match"
+    },
+    {
+      "slug": "brooks",
+      "name": "Brooks Running",
+      "status": "no_match"
+    },
+    {
+      "slug": "hoka",
+      "name": "Hoka",
+      "status": "no_match"
+    },
+    {
+      "slug": "levis",
+      "name": "Levi's",
+      "status": "no_match"
+    },
+    {
+      "slug": "gap",
+      "name": "Gap",
+      "status": "no_match"
+    },
+    {
+      "slug": "old-navy",
+      "name": "Old Navy",
+      "status": "no_match"
+    },
+    {
+      "slug": "banana-republic",
+      "name": "Banana Republic",
+      "status": "no_match"
+    },
+    {
+      "slug": "abercrombie",
+      "name": "Abercrombie & Fitch",
+      "status": "no_match"
+    },
+    {
+      "slug": "american-eagle",
+      "name": "American Eagle",
+      "status": "no_match"
+    },
+    {
+      "slug": "hollister",
+      "name": "Hollister",
+      "status": "no_match"
+    },
+    {
+      "slug": "hm",
+      "name": "H&M",
+      "status": "no_match"
+    },
+    {
+      "slug": "zara",
+      "name": "Zara",
+      "status": "no_match"
+    },
+    {
+      "slug": "uniqlo",
+      "name": "Uniqlo",
+      "status": "no_match"
+    },
+    {
+      "slug": "forever-21",
+      "name": "Forever 21",
+      "status": "no_match"
+    },
+    {
+      "slug": "shein",
+      "name": "Shein",
+      "status": "no_match"
+    },
+    {
+      "slug": "temu",
+      "name": "Temu",
+      "status": "no_match"
+    },
+    {
+      "slug": "fashion-nova",
+      "name": "Fashion Nova",
+      "status": "no_match"
+    },
+    {
+      "slug": "boohoo",
+      "name": "Boohoo",
+      "status": "no_match"
+    },
+    {
+      "slug": "asos",
+      "name": "ASOS",
+      "status": "no_match"
+    },
+    {
+      "slug": "victorias-secret",
+      "name": "Victoria's Secret",
+      "status": "no_match"
+    },
+    {
+      "slug": "patagonia",
+      "name": "Patagonia",
+      "status": "no_match"
+    },
+    {
+      "slug": "north-face",
+      "name": "The North Face",
+      "status": "no_match"
+    },
+    {
+      "slug": "columbia",
+      "name": "Columbia Sportswear",
+      "status": "no_match"
+    },
+    {
+      "slug": "arc-teryx",
+      "name": "Arc'teryx",
+      "status": "no_match"
+    },
+    {
+      "slug": "allbirds",
+      "name": "Allbirds",
+      "status": "no_match"
+    },
+    {
+      "slug": "toms",
+      "name": "TOMS",
+      "status": "no_match"
+    },
+    {
+      "slug": "warby-parker",
+      "name": "Warby Parker",
+      "status": "no_match"
+    },
+    {
+      "slug": "yeti",
+      "name": "Yeti",
+      "status": "no_match"
+    },
+    {
+      "slug": "canada-goose",
+      "name": "Canada Goose",
+      "status": "no_match"
+    },
+    {
+      "slug": "moncler",
+      "name": "Moncler",
+      "status": "no_match"
+    },
+    {
+      "slug": "ralph-lauren",
+      "name": "Ralph Lauren",
+      "status": "no_match"
+    },
+    {
+      "slug": "tommy-hilfiger",
+      "name": "Tommy Hilfiger",
+      "status": "no_match"
+    },
+    {
+      "slug": "calvin-klein",
+      "name": "Calvin Klein",
+      "status": "no_match"
+    },
+    {
+      "slug": "gucci",
+      "name": "Gucci",
+      "status": "no_match"
+    },
+    {
+      "slug": "louis-vuitton",
+      "name": "Louis Vuitton",
+      "status": "no_match"
+    },
+    {
+      "slug": "prada",
+      "name": "Prada",
+      "status": "no_match"
+    },
+    {
+      "slug": "chanel",
+      "name": "Chanel",
+      "status": "no_match"
+    },
+    {
+      "slug": "hermes",
+      "name": "Hermès",
+      "status": "no_match"
+    },
+    {
+      "slug": "coach",
+      "name": "Coach",
+      "status": "no_match"
+    },
+    {
+      "slug": "michael-kors",
+      "name": "Michael Kors",
+      "status": "no_match"
+    },
+    {
+      "slug": "kate-spade",
+      "name": "Kate Spade",
+      "status": "no_match"
+    },
+    {
+      "slug": "fossil",
+      "name": "Fossil",
+      "status": "no_match"
+    },
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "status": "no_match"
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "status": "no_match"
+    },
+    {
+      "slug": "google",
+      "name": "Google",
+      "status": "no_match"
+    },
+    {
+      "slug": "alphabet",
+      "name": "Alphabet",
+      "status": "no_match"
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "status": "no_match"
+    },
+    {
+      "slug": "facebook",
+      "name": "Facebook",
+      "status": "no_match"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "status": "no_match"
+    },
+    {
+      "slug": "whatsapp",
+      "name": "WhatsApp",
+      "status": "no_match"
+    },
+    {
+      "slug": "x-corp",
+      "name": "X",
+      "status": "no_match"
+    },
+    {
+      "slug": "amazon-web-services",
+      "name": "Amazon Web Services",
+      "status": "no_match"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "status": "no_match"
+    },
+    {
+      "slug": "salesforce",
+      "name": "Salesforce",
+      "status": "no_match"
+    },
+    {
+      "slug": "ibm",
+      "name": "IBM",
+      "status": "no_match"
+    },
+    {
+      "slug": "intel",
+      "name": "Intel",
+      "status": "no_match"
+    },
+    {
+      "slug": "amd",
+      "name": "AMD",
+      "status": "no_match"
+    },
+    {
+      "slug": "nvidia",
+      "name": "NVIDIA",
+      "status": "no_match"
+    },
+    {
+      "slug": "qualcomm",
+      "name": "Qualcomm",
+      "status": "no_match"
+    },
+    {
+      "slug": "cisco",
+      "name": "Cisco",
+      "status": "no_match"
+    },
+    {
+      "slug": "hp",
+      "name": "HP",
+      "status": "no_match"
+    },
+    {
+      "slug": "dell",
+      "name": "Dell",
+      "status": "no_match"
+    },
+    {
+      "slug": "lenovo",
+      "name": "Lenovo",
+      "status": "no_match"
+    },
+    {
+      "slug": "asus",
+      "name": "ASUS",
+      "status": "no_match"
+    },
+    {
+      "slug": "samsung",
+      "name": "Samsung",
+      "status": "no_match"
+    },
+    {
+      "slug": "lg",
+      "name": "LG",
+      "status": "no_match"
+    },
+    {
+      "slug": "sony",
+      "name": "Sony",
+      "status": "no_match"
+    },
+    {
+      "slug": "xiaomi",
+      "name": "Xiaomi",
+      "status": "no_match"
+    },
+    {
+      "slug": "oneplus",
+      "name": "OnePlus",
+      "status": "no_match"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "status": "no_match"
+    },
+    {
+      "slug": "gitlab",
+      "name": "GitLab",
+      "status": "no_match"
+    },
+    {
+      "slug": "atlassian",
+      "name": "Atlassian",
+      "status": "no_match"
+    },
+    {
+      "slug": "jira",
+      "name": "Jira",
+      "status": "no_match"
+    },
+    {
+      "slug": "slack",
+      "name": "Slack",
+      "status": "no_match"
+    },
+    {
+      "slug": "zoom",
+      "name": "Zoom",
+      "status": "no_match"
+    },
+    {
+      "slug": "teams",
+      "name": "Microsoft Teams",
+      "status": "no_match"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "status": "no_match"
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "status": "no_match"
+    },
+    {
+      "slug": "asana",
+      "name": "Asana",
+      "status": "no_match"
+    },
+    {
+      "slug": "clickup",
+      "name": "ClickUp",
+      "status": "no_match"
+    },
+    {
+      "slug": "monday",
+      "name": "Monday.com",
+      "status": "no_match"
+    },
+    {
+      "slug": "trello",
+      "name": "Trello",
+      "status": "no_match"
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "status": "no_match"
+    },
+    {
+      "slug": "figma",
+      "name": "Figma",
+      "status": "no_match"
+    },
+    {
+      "slug": "adobe",
+      "name": "Adobe",
+      "status": "no_match"
+    },
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "status": "no_match"
+    },
+    {
+      "slug": "shopify",
+      "name": "Shopify",
+      "status": "no_match"
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "status": "no_match"
+    },
+    {
+      "slug": "square",
+      "name": "Square",
+      "status": "no_match"
+    },
+    {
+      "slug": "block",
+      "name": "Block",
+      "status": "no_match"
+    },
+    {
+      "slug": "paypal",
+      "name": "PayPal",
+      "status": "no_match"
+    },
+    {
+      "slug": "venmo",
+      "name": "Venmo",
+      "status": "no_match"
+    },
+    {
+      "slug": "cash-app",
+      "name": "Cash App",
+      "status": "no_match"
+    },
+    {
+      "slug": "plaid",
+      "name": "Plaid",
+      "status": "no_match"
+    },
+    {
+      "slug": "twilio",
+      "name": "Twilio",
+      "status": "no_match"
+    },
+    {
+      "slug": "sendgrid",
+      "name": "SendGrid",
+      "status": "no_match"
+    },
+    {
+      "slug": "mailchimp",
+      "name": "Mailchimp",
+      "status": "no_match"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "status": "no_match"
+    },
+    {
+      "slug": "zendesk",
+      "name": "Zendesk",
+      "status": "no_match"
+    },
+    {
+      "slug": "intercom",
+      "name": "Intercom",
+      "status": "no_match"
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "status": "no_match"
+    },
+    {
+      "slug": "fastly",
+      "name": "Fastly",
+      "status": "no_match"
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "status": "no_match"
+    },
+    {
+      "slug": "netlify",
+      "name": "Netlify",
+      "status": "no_match"
+    },
+    {
+      "slug": "heroku",
+      "name": "Heroku",
+      "status": "no_match"
+    },
+    {
+      "slug": "digitalocean",
+      "name": "DigitalOcean",
+      "status": "no_match"
+    },
+    {
+      "slug": "linode",
+      "name": "Linode",
+      "status": "no_match"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "status": "no_match"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "status": "no_match"
+    },
+    {
+      "slug": "spotify",
+      "name": "Spotify",
+      "status": "no_match"
+    },
+    {
+      "slug": "apple-music",
+      "name": "Apple Music",
+      "status": "no_match"
+    },
+    {
+      "slug": "pandora",
+      "name": "Pandora",
+      "status": "no_match"
+    },
+    {
+      "slug": "soundcloud",
+      "name": "SoundCloud",
+      "status": "no_match"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "status": "no_match"
+    },
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "status": "no_match"
+    },
+    {
+      "slug": "hulu",
+      "name": "Hulu",
+      "status": "no_match"
+    },
+    {
+      "slug": "disney",
+      "name": "The Walt Disney Company",
+      "status": "no_match"
+    },
+    {
+      "slug": "disney-plus",
+      "name": "Disney+",
+      "status": "no_match"
+    },
+    {
+      "slug": "hbo-max",
+      "name": "HBO Max",
+      "status": "no_match"
+    },
+    {
+      "slug": "peacock",
+      "name": "Peacock",
+      "status": "no_match"
+    },
+    {
+      "slug": "paramount",
+      "name": "Paramount",
+      "status": "no_match"
+    },
+    {
+      "slug": "roku",
+      "name": "Roku",
+      "status": "no_match"
+    },
+    {
+      "slug": "firetv",
+      "name": "Amazon Fire TV",
+      "status": "no_match"
+    },
+    {
+      "slug": "twitch",
+      "name": "Twitch",
+      "status": "no_match"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "status": "no_match"
+    },
+    {
+      "slug": "tumblr",
+      "name": "Tumblr",
+      "status": "no_match"
+    },
+    {
+      "slug": "pinterest",
+      "name": "Pinterest",
+      "status": "no_match"
+    },
+    {
+      "slug": "snapchat",
+      "name": "Snapchat",
+      "status": "no_match"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "status": "no_match"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "status": "no_match"
+    },
+    {
+      "slug": "twitter",
+      "name": "Twitter",
+      "status": "no_match"
+    },
+    {
+      "slug": "threads",
+      "name": "Threads",
+      "status": "no_match"
+    },
+    {
+      "slug": "bluesky",
+      "name": "Bluesky",
+      "status": "no_match"
+    },
+    {
+      "slug": "mastodon",
+      "name": "Mastodon",
+      "status": "no_match"
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "status": "no_match"
+    },
+    {
+      "slug": "bank-of-america",
+      "name": "Bank of America",
+      "status": "no_match"
+    },
+    {
+      "slug": "wells-fargo",
+      "name": "Wells Fargo",
+      "status": "no_match"
+    },
+    {
+      "slug": "citi",
+      "name": "Citi",
+      "status": "no_match"
+    },
+    {
+      "slug": "us-bank",
+      "name": "U.S. Bank",
+      "status": "no_match"
+    },
+    {
+      "slug": "pnc",
+      "name": "PNC Bank",
+      "status": "no_match"
+    },
+    {
+      "slug": "truist",
+      "name": "Truist",
+      "status": "no_match"
+    },
+    {
+      "slug": "capital-one",
+      "name": "Capital One",
+      "status": "no_match"
+    },
+    {
+      "slug": "discover",
+      "name": "Discover",
+      "status": "no_match"
+    },
+    {
+      "slug": "american-express",
+      "name": "American Express",
+      "status": "no_match"
+    },
+    {
+      "slug": "visa",
+      "name": "Visa",
+      "status": "no_match"
+    },
+    {
+      "slug": "mastercard",
+      "name": "Mastercard",
+      "status": "no_match"
+    },
+    {
+      "slug": "fidelity",
+      "name": "Fidelity Investments",
+      "status": "no_match"
+    },
+    {
+      "slug": "vanguard",
+      "name": "Vanguard",
+      "status": "no_match"
+    },
+    {
+      "slug": "charles-schwab",
+      "name": "Charles Schwab",
+      "status": "no_match"
+    },
+    {
+      "slug": "robinhood",
+      "name": "Robinhood",
+      "status": "no_match"
+    },
+    {
+      "slug": "sofi",
+      "name": "SoFi",
+      "status": "no_match"
+    },
+    {
+      "slug": "chime",
+      "name": "Chime",
+      "status": "no_match"
+    },
+    {
+      "slug": "ally-bank",
+      "name": "Ally Bank",
+      "status": "no_match"
+    },
+    {
+      "slug": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "status": "no_match"
+    },
+    {
+      "slug": "morgan-stanley",
+      "name": "Morgan Stanley",
+      "status": "no_match"
+    },
+    {
+      "slug": "blackrock",
+      "name": "BlackRock",
+      "status": "no_match"
+    },
+    {
+      "slug": "state-farm",
+      "name": "State Farm",
+      "status": "no_match"
+    },
+    {
+      "slug": "geico",
+      "name": "GEICO",
+      "status": "no_match"
+    },
+    {
+      "slug": "progressive",
+      "name": "Progressive",
+      "status": "no_match"
+    },
+    {
+      "slug": "allstate",
+      "name": "Allstate",
+      "status": "no_match"
+    },
+    {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "status": "no_match"
+    },
+    {
+      "slug": "nationwide",
+      "name": "Nationwide",
+      "status": "no_match"
+    },
+    {
+      "slug": "farmers-insurance",
+      "name": "Farmers Insurance",
+      "status": "no_match"
+    },
+    {
+      "slug": "travelers",
+      "name": "Travelers",
+      "status": "no_match"
+    },
+    {
+      "slug": "metlife",
+      "name": "MetLife",
+      "status": "no_match"
+    },
+    {
+      "slug": "prudential",
+      "name": "Prudential",
+      "status": "no_match"
+    },
+    {
+      "slug": "aflac",
+      "name": "Aflac",
+      "status": "no_match"
+    },
+    {
+      "slug": "new-york-life",
+      "name": "New York Life",
+      "status": "no_match"
+    },
+    {
+      "slug": "massmutual",
+      "name": "MassMutual",
+      "status": "no_match"
+    },
+    {
+      "slug": "northwestern-mutual",
+      "name": "Northwestern Mutual",
+      "status": "no_match"
+    },
+    {
+      "slug": "att",
+      "name": "AT&T",
+      "status": "no_match"
+    },
+    {
+      "slug": "verizon",
+      "name": "Verizon",
+      "status": "no_match"
+    },
+    {
+      "slug": "t-mobile",
+      "name": "T-Mobile",
+      "status": "no_match"
+    },
+    {
+      "slug": "sprint",
+      "name": "Sprint",
+      "status": "no_match"
+    },
+    {
+      "slug": "us-cellular",
+      "name": "US Cellular",
+      "status": "no_match"
+    },
+    {
+      "slug": "mint-mobile",
+      "name": "Mint Mobile",
+      "status": "no_match"
+    },
+    {
+      "slug": "cricket-wireless",
+      "name": "Cricket Wireless",
+      "status": "no_match"
+    },
+    {
+      "slug": "xfinity",
+      "name": "Xfinity",
+      "status": "no_match"
+    },
+    {
+      "slug": "spectrum",
+      "name": "Spectrum",
+      "status": "no_match"
+    },
+    {
+      "slug": "cox",
+      "name": "Cox Communications",
+      "status": "no_match"
+    },
+    {
+      "slug": "optimum",
+      "name": "Optimum",
+      "status": "no_match"
+    },
+    {
+      "slug": "frontier",
+      "name": "Frontier Communications",
+      "status": "no_match"
+    },
+    {
+      "slug": "comcast",
+      "name": "Comcast",
+      "status": "no_match"
+    },
+    {
+      "slug": "charter",
+      "name": "Charter Communications",
+      "status": "no_match"
+    },
+    {
+      "slug": "exxonmobil",
+      "name": "ExxonMobil",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "exxonmobil",
+      "ca100_company_name": "ExxonMobil Corporation",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 1,
+        "governance": 2,
+        "capital_allocation": 1
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 113,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "chevron",
+      "name": "Chevron",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "chevron",
+      "ca100_company_name": "Chevron Corporation",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 1,
+        "governance": 2,
+        "capital_allocation": 1
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 56,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "shell",
+      "name": "Shell",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "shell",
+      "ca100_company_name": "Shell plc",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 60,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "bp",
+      "name": "BP",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "bp",
+      "ca100_company_name": "BP plc",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 35,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "conocophillips",
+      "name": "ConocoPhillips",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "conocophillips",
+      "ca100_company_name": "ConocoPhillips",
+      "scores": {
+        "disclosure": 2,
+        "alignment": 1,
+        "governance": 1,
+        "capital_allocation": 0
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 18,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "duke-energy",
+      "name": "Duke Energy",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "duke-energy",
+      "ca100_company_name": "Duke Energy Corporation",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 85,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "nextera",
+      "name": "NextEra Energy",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "nextera-energy",
+      "ca100_company_name": "NextEra Energy Inc.",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 4,
+        "governance": 3,
+        "capital_allocation": 4
+      },
+      "net_zero_target_year": 2045,
+      "scope_1_2_emissions_mt_co2e": 41,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "dominion-energy",
+      "name": "Dominion Energy",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "dominion-energy",
+      "ca100_company_name": "Dominion Energy Inc.",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 43,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "southern-company",
+      "name": "Southern Company",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "southern-company",
+      "ca100_company_name": "Southern Company",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 68,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "exelon",
+      "name": "Exelon",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "exelon",
+      "ca100_company_name": "Exelon Corporation",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 3
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 8,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "status": "no_match"
+    },
+    {
+      "slug": "ford",
+      "name": "Ford",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "ford",
+      "ca100_company_name": "Ford Motor Company",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 3
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 3.1,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "gm",
+      "name": "General Motors",
+      "status": "no_match"
+    },
+    {
+      "slug": "chevrolet",
+      "name": "Chevrolet",
+      "status": "no_match"
+    },
+    {
+      "slug": "chrysler",
+      "name": "Chrysler",
+      "status": "no_match"
+    },
+    {
+      "slug": "dodge",
+      "name": "Dodge",
+      "status": "no_match"
+    },
+    {
+      "slug": "jeep",
+      "name": "Jeep",
+      "status": "no_match"
+    },
+    {
+      "slug": "ram",
+      "name": "Ram",
+      "status": "no_match"
+    },
+    {
+      "slug": "stellantis",
+      "name": "Stellantis",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "stellantis",
+      "ca100_company_name": "Stellantis N.V.",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2038,
+      "scope_1_2_emissions_mt_co2e": 2,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "toyota",
+      "name": "Toyota",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "toyota",
+      "ca100_company_name": "Toyota Motor Corporation",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 2.8,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "honda",
+      "name": "Honda",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "honda",
+      "ca100_company_name": "Honda Motor Co. Ltd.",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 2
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 1.8,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "nissan",
+      "name": "Nissan",
+      "status": "no_match"
+    },
+    {
+      "slug": "hyundai",
+      "name": "Hyundai",
+      "status": "no_match"
+    },
+    {
+      "slug": "kia",
+      "name": "Kia",
+      "status": "no_match"
+    },
+    {
+      "slug": "mazda",
+      "name": "Mazda",
+      "status": "no_match"
+    },
+    {
+      "slug": "subaru",
+      "name": "Subaru",
+      "status": "no_match"
+    },
+    {
+      "slug": "mitsubishi",
+      "name": "Mitsubishi",
+      "status": "no_match"
+    },
+    {
+      "slug": "volkswagen",
+      "name": "Volkswagen",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "volkswagen",
+      "ca100_company_name": "Volkswagen AG",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 3
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 3.3,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "audi",
+      "name": "Audi",
+      "status": "no_match"
+    },
+    {
+      "slug": "bmw",
+      "name": "BMW",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "bmw",
+      "ca100_company_name": "Bayerische Motoren Werke AG",
+      "scores": {
+        "disclosure": 4,
+        "alignment": 3,
+        "governance": 3,
+        "capital_allocation": 3
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 1.5,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "status": "no_match"
+    },
+    {
+      "slug": "porsche",
+      "name": "Porsche",
+      "status": "no_match"
+    },
+    {
+      "slug": "volvo",
+      "name": "Volvo",
+      "status": "no_match"
+    },
+    {
+      "slug": "ferrari",
+      "name": "Ferrari",
+      "status": "no_match"
+    },
+    {
+      "slug": "lamborghini",
+      "name": "Lamborghini",
+      "status": "no_match"
+    },
+    {
+      "slug": "rivian",
+      "name": "Rivian",
+      "status": "no_match"
+    },
+    {
+      "slug": "lucid",
+      "name": "Lucid Motors",
+      "status": "no_match"
+    },
+    {
+      "slug": "polestar",
+      "name": "Polestar",
+      "status": "no_match"
+    },
+    {
+      "slug": "pfizer",
+      "name": "Pfizer",
+      "status": "no_match"
+    },
+    {
+      "slug": "moderna",
+      "name": "Moderna",
+      "status": "no_match"
+    },
+    {
+      "slug": "merck",
+      "name": "Merck",
+      "status": "no_match"
+    },
+    {
+      "slug": "abbvie",
+      "name": "AbbVie",
+      "status": "no_match"
+    },
+    {
+      "slug": "eli-lilly",
+      "name": "Eli Lilly",
+      "status": "no_match"
+    },
+    {
+      "slug": "bristol-myers-squibb",
+      "name": "Bristol Myers Squibb",
+      "status": "no_match"
+    },
+    {
+      "slug": "abbott",
+      "name": "Abbott",
+      "status": "no_match"
+    },
+    {
+      "slug": "unitedhealth",
+      "name": "UnitedHealth Group",
+      "status": "no_match"
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "status": "no_match"
+    },
+    {
+      "slug": "anthem",
+      "name": "Anthem",
+      "status": "no_match"
+    },
+    {
+      "slug": "elevance",
+      "name": "Elevance Health",
+      "status": "no_match"
+    },
+    {
+      "slug": "humana",
+      "name": "Humana",
+      "status": "no_match"
+    },
+    {
+      "slug": "cigna",
+      "name": "Cigna",
+      "status": "no_match"
+    },
+    {
+      "slug": "kaiser-permanente",
+      "name": "Kaiser Permanente",
+      "status": "no_match"
+    },
+    {
+      "slug": "medtronic",
+      "name": "Medtronic",
+      "status": "no_match"
+    },
+    {
+      "slug": "stryker",
+      "name": "Stryker",
+      "status": "no_match"
+    },
+    {
+      "slug": "quest-diagnostics",
+      "name": "Quest Diagnostics",
+      "status": "no_match"
+    },
+    {
+      "slug": "labcorp",
+      "name": "LabCorp",
+      "status": "no_match"
+    },
+    {
+      "slug": "hca-healthcare",
+      "name": "HCA Healthcare",
+      "status": "no_match"
+    },
+    {
+      "slug": "gilead",
+      "name": "Gilead Sciences",
+      "status": "no_match"
+    },
+    {
+      "slug": "amgen",
+      "name": "Amgen",
+      "status": "no_match"
+    },
+    {
+      "slug": "biogen",
+      "name": "Biogen",
+      "status": "no_match"
+    },
+    {
+      "slug": "novartis",
+      "name": "Novartis",
+      "status": "no_match"
+    },
+    {
+      "slug": "gsk",
+      "name": "GSK",
+      "status": "no_match"
+    },
+    {
+      "slug": "sanofi",
+      "name": "Sanofi",
+      "status": "no_match"
+    },
+    {
+      "slug": "astrazeneca",
+      "name": "AstraZeneca",
+      "status": "no_match"
+    },
+    {
+      "slug": "delta-airlines",
+      "name": "Delta Air Lines",
+      "status": "no_match"
+    },
+    {
+      "slug": "american-airlines",
+      "name": "American Airlines",
+      "status": "no_match"
+    },
+    {
+      "slug": "united-airlines",
+      "name": "United Airlines",
+      "status": "no_match"
+    },
+    {
+      "slug": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "status": "no_match"
+    },
+    {
+      "slug": "jetblue",
+      "name": "JetBlue",
+      "status": "no_match"
+    },
+    {
+      "slug": "alaska-airlines",
+      "name": "Alaska Airlines",
+      "status": "no_match"
+    },
+    {
+      "slug": "spirit-airlines",
+      "name": "Spirit Airlines",
+      "status": "no_match"
+    },
+    {
+      "slug": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "status": "no_match"
+    },
+    {
+      "slug": "marriott",
+      "name": "Marriott",
+      "status": "no_match"
+    },
+    {
+      "slug": "hilton",
+      "name": "Hilton",
+      "status": "no_match"
+    },
+    {
+      "slug": "hyatt",
+      "name": "Hyatt",
+      "status": "no_match"
+    },
+    {
+      "slug": "ihg",
+      "name": "IHG Hotels",
+      "status": "no_match"
+    },
+    {
+      "slug": "wyndham",
+      "name": "Wyndham",
+      "status": "no_match"
+    },
+    {
+      "slug": "best-western",
+      "name": "Best Western",
+      "status": "no_match"
+    },
+    {
+      "slug": "choice-hotels",
+      "name": "Choice Hotels",
+      "status": "no_match"
+    },
+    {
+      "slug": "airbnb",
+      "name": "Airbnb",
+      "status": "no_match"
+    },
+    {
+      "slug": "vrbo",
+      "name": "Vrbo",
+      "status": "no_match"
+    },
+    {
+      "slug": "booking",
+      "name": "Booking.com",
+      "status": "no_match"
+    },
+    {
+      "slug": "expedia",
+      "name": "Expedia",
+      "status": "no_match"
+    },
+    {
+      "slug": "priceline",
+      "name": "Priceline",
+      "status": "no_match"
+    },
+    {
+      "slug": "kayak",
+      "name": "Kayak",
+      "status": "no_match"
+    },
+    {
+      "slug": "trivago",
+      "name": "Trivago",
+      "status": "no_match"
+    },
+    {
+      "slug": "tripadvisor",
+      "name": "TripAdvisor",
+      "status": "no_match"
+    },
+    {
+      "slug": "uber",
+      "name": "Uber",
+      "status": "no_match"
+    },
+    {
+      "slug": "lyft",
+      "name": "Lyft",
+      "status": "no_match"
+    },
+    {
+      "slug": "hertz",
+      "name": "Hertz",
+      "status": "no_match"
+    },
+    {
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "status": "no_match"
+    },
+    {
+      "slug": "avis",
+      "name": "Avis",
+      "status": "no_match"
+    },
+    {
+      "slug": "budget",
+      "name": "Budget",
+      "status": "no_match"
+    },
+    {
+      "slug": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "status": "no_match"
+    },
+    {
+      "slug": "carnival",
+      "name": "Carnival",
+      "status": "no_match"
+    },
+    {
+      "slug": "norwegian-cruise",
+      "name": "Norwegian Cruise",
+      "status": "no_match"
+    },
+    {
+      "slug": "disney-cruise",
+      "name": "Disney Cruise",
+      "status": "no_match"
+    },
+    {
+      "slug": "hobby-lobby",
+      "name": "Hobby Lobby",
+      "status": "no_match"
+    },
+    {
+      "slug": "my-pillow",
+      "name": "MyPillow",
+      "status": "no_match"
+    },
+    {
+      "slug": "ben-jerrys",
+      "name": "Ben & Jerry's",
+      "status": "no_match"
+    },
+    {
+      "slug": "bumble",
+      "name": "Bumble",
+      "status": "no_match"
+    },
+    {
+      "slug": "truth-social",
+      "name": "Truth Social",
+      "status": "no_match"
+    },
+    {
+      "slug": "parler",
+      "name": "Parler",
+      "status": "no_match"
+    },
+    {
+      "slug": "gettr",
+      "name": "Gettr",
+      "status": "no_match"
+    },
+    {
+      "slug": "rumble",
+      "name": "Rumble",
+      "status": "no_match"
+    },
+    {
+      "slug": "sherwin-williams",
+      "name": "Sherwin-Williams",
+      "status": "no_match"
+    },
+    {
+      "slug": "benjamin-moore",
+      "name": "Benjamin Moore",
+      "status": "no_match"
+    },
+    {
+      "slug": "masterbrand",
+      "name": "MasterBrand Cabinets",
+      "status": "no_match"
+    },
+    {
+      "slug": "whirlpool",
+      "name": "Whirlpool",
+      "status": "no_match"
+    },
+    {
+      "slug": "ge-appliances",
+      "name": "GE Appliances",
+      "status": "no_match"
+    },
+    {
+      "slug": "kitchenaid",
+      "name": "KitchenAid",
+      "status": "no_match"
+    },
+    {
+      "slug": "keurig",
+      "name": "Keurig",
+      "status": "no_match"
+    },
+    {
+      "slug": "ninja",
+      "name": "Ninja",
+      "status": "no_match"
+    },
+    {
+      "slug": "breville",
+      "name": "Breville",
+      "status": "no_match"
+    },
+    {
+      "slug": "cuisinart",
+      "name": "Cuisinart",
+      "status": "no_match"
+    },
+    {
+      "slug": "vitamix",
+      "name": "Vitamix",
+      "status": "no_match"
+    },
+    {
+      "slug": "dyson",
+      "name": "Dyson",
+      "status": "no_match"
+    },
+    {
+      "slug": "roomba",
+      "name": "iRobot Roomba",
+      "status": "no_match"
+    },
+    {
+      "slug": "black-decker",
+      "name": "Black & Decker",
+      "status": "no_match"
+    },
+    {
+      "slug": "dewalt",
+      "name": "DeWalt",
+      "status": "no_match"
+    },
+    {
+      "slug": "craftsman",
+      "name": "Craftsman",
+      "status": "no_match"
+    },
+    {
+      "slug": "milwaukee-tools",
+      "name": "Milwaukee Tools",
+      "status": "no_match"
+    },
+    {
+      "slug": "makita",
+      "name": "Makita",
+      "status": "no_match"
+    },
+    {
+      "slug": "ryobi",
+      "name": "Ryobi",
+      "status": "no_match"
+    },
+    {
+      "slug": "husqvarna",
+      "name": "Husqvarna",
+      "status": "no_match"
+    },
+    {
+      "slug": "toro",
+      "name": "Toro",
+      "status": "no_match"
+    },
+    {
+      "slug": "john-deere",
+      "name": "John Deere",
+      "status": "ok",
+      "is_focus_company": true,
+      "ca100_company_id": "deere",
+      "ca100_company_name": "Deere & Company",
+      "scores": {
+        "disclosure": 3,
+        "alignment": 2,
+        "governance": 2,
+        "capital_allocation": 1
+      },
+      "net_zero_target_year": 2050,
+      "scope_1_2_emissions_mt_co2e": 0.5,
+      "source_url": "https://www.climateaction100.org/net-zero-company-benchmark/"
+    },
+    {
+      "slug": "lego",
+      "name": "LEGO",
+      "status": "no_match"
+    },
+    {
+      "slug": "hasbro",
+      "name": "Hasbro",
+      "status": "no_match"
+    },
+    {
+      "slug": "mattel",
+      "name": "Mattel",
+      "status": "no_match"
+    },
+    {
+      "slug": "fisher-price",
+      "name": "Fisher-Price",
+      "status": "no_match"
+    },
+    {
+      "slug": "nintendo",
+      "name": "Nintendo",
+      "status": "no_match"
+    },
+    {
+      "slug": "playstation",
+      "name": "PlayStation",
+      "status": "no_match"
+    },
+    {
+      "slug": "xbox",
+      "name": "Xbox",
+      "status": "no_match"
+    },
+    {
+      "slug": "ea",
+      "name": "Electronic Arts",
+      "status": "no_match"
+    },
+    {
+      "slug": "activision",
+      "name": "Activision Blizzard",
+      "status": "no_match"
+    },
+    {
+      "slug": "take-two",
+      "name": "Take-Two Interactive",
+      "status": "no_match"
+    },
+    {
+      "slug": "ubisoft",
+      "name": "Ubisoft",
+      "status": "no_match"
+    },
+    {
+      "slug": "square-enix",
+      "name": "Square Enix",
+      "status": "no_match"
+    }
+  ]
+}
