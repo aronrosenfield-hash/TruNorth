@@ -4,7 +4,32 @@
 >
 > **How to use:** Open this file → say "let's do **L-3**" or "work on the next item under PRE-LAUNCH" or "what's blocked?"
 >
-> **Last updated:** 2026-06-02 PM
+> **Last updated:** 2026-06-07 PM — Massive data sprint day. 13 PRs open. Coverage analysis at `/docs/data-coverage-analysis-2026-06-07.md`.
+
+---
+
+## 🎯 OPEN PRs READY FOR MERGE (13 total)
+
+**Tier-S waitlist (3 PRs, all 17 sources tested):**
+- **PR #1** `pr/dw-1-to-6` — SBTi, WBA Social, Forest 500, 50/50 WoB, USDA Organic, FSIS Recalls (36/36 tests pass, no API keys)
+- **PR #2** `pr/dw-7-to-12` — OFAC SDN, BIS Entity List, FERC, DOL WHD, Energy Star, 1% for the Planet (34/34 tests pass)
+- **PR #3** `pr/dw-13-to-17` — Disability:IN, CFTC, UK ICO, Singapore MAS, Canada CB (25/25 tests pass)
+
+**Today's brand-parent-map fix + 10 new sources (10 PRs):**
+- **PR #4** `feature/brand-parent-map-expansion` — 138 → 4,625 entries (33× growth, Wikidata SPARQL + curated, fixes Nabisco scanner gap)
+- **PR #5** `feature/usda-fooddata` — USDA FoodData Central 1.9M products, GTIN/UPC lookup (69% match rate on fixture)
+- **PR #6** `feature/opensanctions` — 220+ international sanctions sources via single FTM JSON API (CC-BY-NC, monetization-flagged)
+- **PR #7** `feature/wikirate` — 8M datapoints across 150k companies (CC BY 4.0, best license terms)
+- **PR #8** `feature/brazil-lista-suja` — Brazilian forced-labor employer list (Lei 12527/2011)
+- **PR #9** `feature/eu-transparency` — EU lobbying disclosures (24/29 fixture matches: Meta, MSFT, Google, ExxonMobil, Amazon, Shell, TotalEnergies)
+- **PR #10** `feature/naag-multistate` — Multistate AG settlements (6/6 fixture: Equifax, Google, J&J, McKesson, Cardinal Health, Intuit) ⚠️ Kasada bot wall
+- **PR #11** `feature/au-fair-work` — Australia FWO labor litigation (3/6 fixture: McD's, Domino's, 7-11) ⚠️ geo block in dev
+- **PR #12** `pr/un-bhr` — UN Working Group on Business & Human Rights communications (salvaged from content-filtered agent run)
+- **PR #13** `feature/ca-prop65` — California carcinogen-warning notices ✅ LIVE DATA — 7,395 notices in past 12 months, 18 companies (Amazon 785, Ross 574, Walmart 395)
+
+**Recommended merge order:** #4 (scanner fix) → #5 (UPC lookups) → #7, #8, #9, #13 (high-yield data) → #6, #10, #11, #12 (lower yield or scrape-fragile) → #1, #2, #3 (Tier-S DW-1-17 cleanup).
+
+**Decision pending:** PR #2 has -sdn/-enforcement/-violations slugs that coexist with older `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs`. Recommend kill-old + standardize on new pattern in a post-merge cleanup PR.
 
 ---
 
