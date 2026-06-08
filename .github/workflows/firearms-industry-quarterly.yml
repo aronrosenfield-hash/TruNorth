@@ -1,0 +1,74 @@
+name: firearms-industry-quarterly
+
+# Sprint C — guns. Refreshes the curated firearms-industry seed list and
+# (when an FEC_API_KEY secret is present) enriches with current-cycle
+# PAC contribution aggregates. Output is a derived augment under
+# data/derived/firearms-industry-augment.json — this workflow does NOT
+# write to per-company JSON; the company-build pipeline consumes the
+# augment separately so the data flow stays auditable.
+#
+# All inputs are public records (NSSF/NRA membership directories, ATF
+# FFL listings, FEC.gov disclosures). Language in the seed is
+# deliberately neutral (no "gun lobby", no "weapons dealer").
+
+on:
+  schedule:
+    # 7th of Jan/Apr/Jul/Oct at 06:00 UTC (offset from other quarterly
+    # workflows: lobbying runs the 30th, usaspending runs the 1st, this
+    # picks the 7th to spread API load).
+    - cron: "0 6 7 1,4,7,10 *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Hit live FEC API (otherwise dry seed only)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run fetch (curated seed + optional FEC enrichment)
+        env:
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.apply || 'true' }}" = "true" ]; then
+            node scripts/firearms-industry-fetch.mjs --apply
+          else
+            node scripts/firearms-industry-fetch.mjs
+          fi
+
+      - name: Build per-slug augment
+        run: node scripts/firearms-industry-merge.mjs
+
+      - name: Run tests (no network)
+        run: node --test scripts/firearms-industry-fetch.test.mjs
+
+      - name: Commit refresh
+        run: |
+          git config user.name  "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/firearms-industry/ data/derived/firearms-industry-augment.json
+          if git diff --quiet --staged; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data(firearms-industry): quarterly seed + FEC refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" \
+              && git push origin "HEAD:${GITHUB_REF_NAME}" \
+              && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
