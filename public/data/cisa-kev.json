@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-03T19:54:57.318Z",
-  "catalog_version": "2026.06.03",
-  "catalog_released": "2026-06-03T17:30:12.2205Z",
-  "total_cve_count": 1611,
+  "generated_at": "2026-06-08T14:40:49.763Z",
+  "catalog_version": "2026.06.05",
+  "catalog_released": "2026-06-05T17:00:14.652Z",
+  "total_cve_count": 1612,
   "vendor_count": 265,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
@@ -569,7 +569,7 @@
     {
       "vendor": "Google",
       "total_cve_count": 71,
-      "recent_12mo_count": 10,
+      "recent_12mo_count": 9,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -3091,6 +3091,113 @@
       ]
     },
     {
+      "vendor": "SolarWinds",
+      "total_cve_count": 11,
+      "recent_12mo_count": 4,
+      "ransomware_count": 1,
+      "product_breakdown": [
+        {
+          "label": "Web Help Desk",
+          "count": 5
+        },
+        {
+          "label": "Serv-U",
+          "count": 4
+        },
+        {
+          "label": "Orion",
+          "count": 1
+        },
+        {
+          "label": "Virtualization Manager",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-28318",
+          "product": "Serv-U",
+          "vulnerabilityName": "SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+          "dateAdded": "2026-06-05",
+          "dueDate": "2026-06-19",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SolarWinds Serv-U contains an uncontrolled resource consumption vulnerability that allows specially crafted POST requests using the Content-Encoding: deflate header to crash the Serv-U service without authentication.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28318"
+        },
+        {
+          "cveID": "CVE-2025-26399",
+          "product": "Web Help Desk",
+          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-03-09",
+          "dueDate": "2026-03-12",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SolarWinds Web Help Desk contain a deserialization of untrusted data vulnerability in AjaxProxy that could allow an attacker to run commands on the host machine.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
+        },
+        {
+          "cveID": "CVE-2025-40536",
+          "product": "Web Help Desk",
+          "vulnerabilityName": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
+          "dateAdded": "2026-02-12",
+          "dueDate": "2026-02-15",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SolarWinds Web Help Desk contains a security control bypass vulnerability that could allow an unauthenticated attacker to gain access to certain restricted functionality.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40536"
+        },
+        {
+          "cveID": "CVE-2025-40551",
+          "product": "Web Help Desk",
+          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-02-03",
+          "dueDate": "2026-02-06",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SolarWinds Web Help Desk contains a deserialization of untrusted data vulnerability that could lead to remote code execution, which would allow an attacker to run commands on the host machine. This could be exploited without authentication.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40551"
+        },
+        {
+          "cveID": "CVE-2024-28987",
+          "product": "Web Help Desk",
+          "vulnerabilityName": "SolarWinds Web Help Desk Hardcoded Credential Vulnerability",
+          "dateAdded": "2024-10-15",
+          "dueDate": "2024-11-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SolarWinds Web Help Desk contains a hardcoded credential vulnerability that could allow a remote, unauthenticated user to access internal functionality and modify data.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-28987"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2021-35211",
+          "product": "Serv-U",
+          "vulnerabilityName": "SolarWinds Serv-U Remote Code Execution Vulnerability",
+          "dateAdded": "2021-11-03",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-35211"
+        },
+        {
+          "cveID": "CVE-2026-28318",
+          "product": "Serv-U",
+          "vulnerabilityName": "SolarWinds Serv-U Uncontrolled Resource Consumption Vulnerability",
+          "dateAdded": "2026-06-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28318"
+        },
+        {
+          "cveID": "CVE-2025-26399",
+          "product": "Web Help Desk",
+          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-03-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
+        }
+      ]
+    },
+    {
       "vendor": "Roundcube",
       "total_cve_count": 11,
       "recent_12mo_count": 3,
@@ -3305,113 +3412,6 @@
           "dateAdded": "2022-04-11",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-2509"
-        }
-      ]
-    },
-    {
-      "vendor": "SolarWinds",
-      "total_cve_count": 10,
-      "recent_12mo_count": 3,
-      "ransomware_count": 1,
-      "product_breakdown": [
-        {
-          "label": "Web Help Desk",
-          "count": 5
-        },
-        {
-          "label": "Serv-U",
-          "count": 3
-        },
-        {
-          "label": "Orion",
-          "count": 1
-        },
-        {
-          "label": "Virtualization Manager",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2025-26399",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-03-09",
-          "dueDate": "2026-03-12",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SolarWinds Web Help Desk contain a deserialization of untrusted data vulnerability in AjaxProxy that could allow an attacker to run commands on the host machine.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
-        },
-        {
-          "cveID": "CVE-2025-40536",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
-          "dateAdded": "2026-02-12",
-          "dueDate": "2026-02-15",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SolarWinds Web Help Desk contains a security control bypass vulnerability that could allow an unauthenticated attacker to gain access to certain restricted functionality.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40536"
-        },
-        {
-          "cveID": "CVE-2025-40551",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-02-03",
-          "dueDate": "2026-02-06",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SolarWinds Web Help Desk contains a deserialization of untrusted data vulnerability that could lead to remote code execution, which would allow an attacker to run commands on the host machine. This could be exploited without authentication.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40551"
-        },
-        {
-          "cveID": "CVE-2024-28987",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Hardcoded Credential Vulnerability",
-          "dateAdded": "2024-10-15",
-          "dueDate": "2024-11-05",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SolarWinds Web Help Desk contains a hardcoded credential vulnerability that could allow a remote, unauthenticated user to access internal functionality and modify data.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-28987"
-        },
-        {
-          "cveID": "CVE-2024-28986",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2024-08-15",
-          "dueDate": "2024-09-05",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SolarWinds Web Help Desk contains a deserialization of untrusted data vulnerability that could allow for remote code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-28986"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2021-35211",
-          "product": "Serv-U",
-          "vulnerabilityName": "SolarWinds Serv-U Remote Code Execution Vulnerability",
-          "dateAdded": "2021-11-03",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-35211"
-        },
-        {
-          "cveID": "CVE-2025-26399",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-03-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
-        },
-        {
-          "cveID": "CVE-2025-40536",
-          "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
-          "dateAdded": "2026-02-12",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40536"
         }
       ]
     },

@@ -1,12 +1,25 @@
 {
-  "merged_at": "2026-06-03T19:54:57.407Z",
+  "merged_at": "2026-06-08T14:40:49.829Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 265,
-  "merged_count": 0,
+  "merged_count": 2,
   "skipped_count": 32,
-  "orphan_count": 233,
+  "orphan_count": 231,
   "error_count": 0,
-  "merged_vendors": [],
+  "merged_vendors": [
+    {
+      "vendor": "Quest",
+      "target": "simply-good-foods",
+      "routed_via": "parent",
+      "cves": 2
+    },
+    {
+      "vendor": "Alcatel",
+      "target": "nokia",
+      "routed_via": "parent",
+      "cves": 1
+    }
+  ],
   "top_orphans": [
     {
       "vendor": "Apache",
@@ -59,6 +72,11 @@
       "cves": 12
     },
     {
+      "vendor": "SolarWinds",
+      "vendor_slug": "solarwinds",
+      "cves": 11
+    },
+    {
       "vendor": "Roundcube",
       "vendor_slug": "roundcube",
       "cves": 11
@@ -67,11 +85,6 @@
       "vendor": "QNAP",
       "vendor_slug": "qnap",
       "cves": 11
-    },
-    {
-      "vendor": "SolarWinds",
-      "vendor_slug": "solarwinds",
-      "cves": 10
     },
     {
       "vendor": "Arm",
