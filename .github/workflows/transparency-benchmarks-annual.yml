@@ -1,0 +1,58 @@
+name: transparency-benchmarks-annual
+
+# Transparency benchmarks — annual refresh of the curated mirror of:
+#   - Ranking Digital Rights Corporate Accountability Index (RDR)
+#   - Transparency Pledge signatory list
+#   - Just Capital "Communicates Openly" issue scores
+#   - Corporate Human Rights Benchmark (CHRB / WBA)
+#   - Fashion Revolution Fashion Transparency Index
+#
+# Powers the NEW "transparency" scoring category. Composite 0–100 per
+# slug with per-benchmark sub-scores cited on the brand-detail card.
+#
+# Runs Feb 1 at 06:00 UTC — late enough that the prior-year CHRB and
+# Fashion Revolution editions have published. Free + open-licensed
+# data only (no API keys, no rate-limited endpoints). The fetcher
+# emits a deterministic snapshot from the in-script tables, so this
+# job is fast and self-contained — bumping data requires editing the
+# in-script tables and re-running.
+
+on:
+  schedule:
+    - cron: "0 6 1 2 *"   # Feb 1, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit the snapshot + derived augment
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Test fetcher + merger pure functions
+        run: node --test scripts/transparency-benchmarks-fetch.test.mjs
+
+      - name: Build transparency-benchmarks snapshot
+        run: node scripts/transparency-benchmarks-fetch.mjs --print-stats
+
+      - name: Merge into derived augment (slug-aliases + parent-rollup)
+        run: node scripts/transparency-benchmarks-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/transparency-benchmarks/ data/derived/transparency-benchmarks-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(transparency-benchmarks): annual refresh — RDR + Pledge + CHRB + JC + Fashion Rev [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
