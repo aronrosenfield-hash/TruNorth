@@ -1,0 +1,49 @@
+name: energy-star-quarterly
+
+# DW-11 — Energy Star certified buildings + products. Quarterly because
+# the building list is XLSX-only (production turns it into JSON in a
+# separate ETL); the products dataset refreshes daily but quarterly is
+# fine for the brand-attribution use case.
+
+on:
+  schedule:
+    - cron: "0 6 1 1,4,7,10 *"   # 06:00 UTC on Jan/Apr/Jul/Oct 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Optional free Socrata app token (raises 1k/hr anonymous limit to 10k/hr)
+      ENERGY_STAR_APP_TOKEN: ${{ secrets.ENERGY_STAR_APP_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch Energy Star
+        run: node scripts/energy-star-fetch.mjs
+
+      - name: Merge into augment
+        run: node scripts/energy-star-merge.mjs
+
+      - name: Run parser tests
+        run: node --test scripts/energy-star-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/energy-star/ data/derived/energy-star-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(energy-star): quarterly snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

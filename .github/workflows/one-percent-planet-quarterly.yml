@@ -1,0 +1,48 @@
+name: one-percent-planet-quarterly
+
+# DW-12 — 1% for the Planet member directory. The directory updates as
+# new businesses join (a few per week), so quarterly is plenty for the
+# "is this brand a verified climate-giver" flag.
+
+on:
+  schedule:
+    - cron: "0 7 15 1,4,7,10 *"   # 07:00 UTC on the 15th of Jan/Apr/Jul/Oct
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # Optional partner API token (request at partners@onepercentfortheplanet.org)
+      ONEPERCENT_API_TOKEN: ${{ secrets.ONEPERCENT_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch 1% for the Planet
+        run: node scripts/one-percent-planet-fetch.mjs --live
+
+      - name: Merge into augment
+        run: node scripts/one-percent-planet-merge.mjs
+
+      - name: Run parser tests
+        run: node --test scripts/one-percent-planet-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/one-percent-planet/ data/derived/one-percent-planet-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(one-percent-planet): quarterly snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

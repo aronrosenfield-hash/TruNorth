@@ -1,0 +1,43 @@
+{
+  "source": "ofac-sdn",
+  "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
+  "generated_at": "2026-06-07T19:49:32.953Z",
+  "snapshot_date": "2026-06-07",
+  "total_rows": 5,
+  "entity_rows": 4,
+  "individual_rows": 1,
+  "entities": [
+    {
+      "ent_num": "36019",
+      "name": "ROSNEFT OIL COMPANY",
+      "type": "entity",
+      "program": "UKRAINE-EO13662",
+      "remarks": "Linked To: ROSNEFTEGAZ; DOB 07 May 1993; Tax ID No. 7706107510 (Russia); a.k.a. 'ROSNEFT'.",
+      "sanction_date": null
+    },
+    {
+      "ent_num": "46221",
+      "name": "GAZPROMBANK JOINT STOCK COMPANY",
+      "type": "entity",
+      "program": "UKRAINE-EO13662",
+      "remarks": "Listing date 16 Mar 2022; alt name 'Gazprombank JSC'.",
+      "sanction_date": "2022-03-16"
+    },
+    {
+      "ent_num": "17254",
+      "name": "SBERBANK OF RUSSIA",
+      "type": "entity",
+      "program": "UKRAINE-EO13662",
+      "remarks": "Listing date 24 Feb 2022.",
+      "sanction_date": "2022-02-24"
+    },
+    {
+      "ent_num": "50001",
+      "name": "HUAWEI TECHNOLOGIES CO. LTD.",
+      "type": "entity",
+      "program": "FSE-IR",
+      "remarks": "a.k.a. 'HUAWEI'; Listing date 15 May 2019.",
+      "sanction_date": "2019-05-15"
+    }
+  ]
+}

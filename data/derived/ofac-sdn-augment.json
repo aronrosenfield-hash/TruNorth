@@ -1,0 +1,43 @@
+{
+  "source": "ofac-sdn",
+  "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
+  "generated_at": "2026-06-07T19:49:33.005Z",
+  "snapshot_date": "2026-06-07",
+  "matched_slug_count": 2,
+  "companies": {
+    "joint": {
+      "slug": "joint",
+      "is_sanctioned": true,
+      "programs": [
+        "UKRAINE-EO13662"
+      ],
+      "entities": [
+        {
+          "name": "GAZPROMBANK JOINT STOCK COMPANY",
+          "program": "UKRAINE-EO13662",
+          "sanction_date": "2022-03-16"
+        }
+      ],
+      "earliest_listing": "2022-03-16",
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "nolo": {
+      "slug": "nolo",
+      "is_sanctioned": true,
+      "programs": [
+        "FSE-IR"
+      ],
+      "entities": [
+        {
+          "name": "HUAWEI TECHNOLOGIES CO. LTD.",
+          "program": "FSE-IR",
+          "sanction_date": "2019-05-15"
+        }
+      ],
+      "earliest_listing": "2019-05-15",
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    }
+  }
+}
