@@ -1,0 +1,41 @@
+{
+  "_note": "Trimmed WikiRate Answer API response. Real shape from https://wikirate.org/Wikirate/api_documentation — the 'answer' array is the documented payload of /Wikirate.json?metric_name=...&view=answer_list. Each row mirrors a public WikiRate Answer card. CC BY 4.0 — WikiRate, https://wikirate.org. 30 rows spanning the 6 high-value metric families TruNorth ingests.",
+  "answer": [
+    { "id": 8814231, "metric": "Fashion Transparency Index+Score", "company": "Nike, Inc.", "year": 2023, "value": "57", "url": "https://wikirate.org/Nike_Inc~8814231" },
+    { "id": 8814232, "metric": "Fashion Transparency Index+Score", "company": "adidas AG", "year": 2023, "value": "76", "url": "https://wikirate.org/adidas_AG~8814232" },
+    { "id": 8814233, "metric": "Fashion Transparency Index+Score", "company": "H&M Hennes & Mauritz AB", "year": 2023, "value": "68", "url": "https://wikirate.org/HM_Hennes_Mauritz_AB~8814233" },
+    { "id": 8814234, "metric": "Fashion Transparency Index+Score", "company": "Industria de Diseno Textil Inditex SA", "year": 2023, "value": "70", "url": "https://wikirate.org/Industria_de_Diseno_Textil_Inditex_SA~8814234" },
+    { "id": 8814235, "metric": "Fashion Transparency Index+Score", "company": "Gap Inc.", "year": 2023, "value": "65", "url": "https://wikirate.org/Gap_Inc~8814235" },
+    { "id": 8814236, "metric": "Fashion Transparency Index+Score", "company": "Primark", "year": 2023, "value": "61", "url": "https://wikirate.org/Primark~8814236" },
+    { "id": 8814237, "metric": "Fashion Transparency Index+Score", "company": "Patagonia, Inc.", "year": 2023, "value": "55", "url": "https://wikirate.org/Patagonia_Inc~8814237" },
+    { "id": 8814238, "metric": "Fashion Transparency Index+Score", "company": "Levi Strauss & Co.", "year": 2023, "value": "70", "url": "https://wikirate.org/Levi_Strauss_Co~8814238" },
+
+    { "id": 9012001, "metric": "Clean Clothes Campaign+Living Wage Gap", "company": "Nike, Inc.", "year": 2022, "value": "45.2", "url": "https://wikirate.org/Nike_Inc~9012001" },
+    { "id": 9012002, "metric": "Clean Clothes Campaign+Living Wage Gap", "company": "adidas AG", "year": 2022, "value": "38.1", "url": "https://wikirate.org/adidas_AG~9012002" },
+    { "id": 9012003, "metric": "Clean Clothes Campaign+Living Wage Gap", "company": "H&M Hennes & Mauritz AB", "year": 2022, "value": "52.7", "url": "https://wikirate.org/HM_Hennes_Mauritz_AB~9012003" },
+    { "id": 9012004, "metric": "Clean Clothes Campaign+Living Wage Gap", "company": "Industria de Diseno Textil Inditex SA", "year": 2022, "value": "44.0", "url": "https://wikirate.org/Industria_de_Diseno_Textil_Inditex_SA~9012004" },
+
+    { "id": 7700101, "metric": "KnowTheChain+Apparel Benchmark Score", "company": "Nike, Inc.", "year": 2023, "value": "46", "url": "https://wikirate.org/Nike_Inc~7700101" },
+    { "id": 7700102, "metric": "KnowTheChain+Apparel Benchmark Score", "company": "adidas AG", "year": 2023, "value": "63", "url": "https://wikirate.org/adidas_AG~7700102" },
+    { "id": 7700103, "metric": "KnowTheChain+Apparel Benchmark Score", "company": "H&M Hennes & Mauritz AB", "year": 2023, "value": "61", "url": "https://wikirate.org/HM_Hennes_Mauritz_AB~7700103" },
+    { "id": 7700104, "metric": "KnowTheChain+ICT Benchmark Score", "company": "Apple Inc.", "year": 2023, "value": "53", "url": "https://wikirate.org/Apple_Inc~7700104" },
+    { "id": 7700105, "metric": "KnowTheChain+ICT Benchmark Score", "company": "Microsoft Corporation", "year": 2023, "value": "39", "url": "https://wikirate.org/Microsoft_Corporation~7700105" },
+    { "id": 7700106, "metric": "KnowTheChain+ICT Benchmark Score", "company": "Dell Technologies Inc.", "year": 2023, "value": "31", "url": "https://wikirate.org/Dell_Technologies_Inc~7700106" },
+    { "id": 7700107, "metric": "KnowTheChain+Food and Beverage Benchmark Score", "company": "Nestle S.A.", "year": 2022, "value": "48", "url": "https://wikirate.org/Nestle_SA~7700107" },
+    { "id": 7700108, "metric": "KnowTheChain+Food and Beverage Benchmark Score", "company": "Unilever PLC", "year": 2022, "value": "62", "url": "https://wikirate.org/Unilever_PLC~7700108" },
+
+    { "id": 6601201, "metric": "CDP+Climate Change Score", "company": "Apple Inc.", "year": 2023, "value": "A", "url": "https://wikirate.org/Apple_Inc~6601201" },
+    { "id": 6601202, "metric": "CDP+Climate Change Score", "company": "Microsoft Corporation", "year": 2023, "value": "A", "url": "https://wikirate.org/Microsoft_Corporation~6601202" },
+    { "id": 6601203, "metric": "CDP+Climate Change Score", "company": "Amazon.com, Inc.", "year": 2023, "value": "B", "url": "https://wikirate.org/Amazon_com_Inc~6601203" },
+    { "id": 6601204, "metric": "CDP+Climate Change Score", "company": "Walmart Inc.", "year": 2023, "value": "A-", "url": "https://wikirate.org/Walmart_Inc~6601204" },
+
+    { "id": 5500301, "metric": "Corporate Human Rights Benchmark+Overall Score", "company": "Nike, Inc.", "year": 2022, "value": "40.7", "url": "https://wikirate.org/Nike_Inc~5500301" },
+    { "id": 5500302, "metric": "Corporate Human Rights Benchmark+Overall Score", "company": "Apple Inc.", "year": 2022, "value": "33.1", "url": "https://wikirate.org/Apple_Inc~5500302" },
+    { "id": 5500303, "metric": "Corporate Human Rights Benchmark+Overall Score", "company": "Unilever PLC", "year": 2022, "value": "53.8", "url": "https://wikirate.org/Unilever_PLC~5500303" },
+
+    { "id": 4400401, "metric": "Transparency Pledge+Disclosure Score", "company": "Patagonia, Inc.", "year": 2023, "value": "85", "url": "https://wikirate.org/Patagonia_Inc~4400401" },
+    { "id": 4400402, "metric": "Transparency Pledge+Disclosure Score", "company": "Levi Strauss & Co.", "year": 2023, "value": "78", "url": "https://wikirate.org/Levi_Strauss_Co~4400402" },
+
+    { "id": 3300501, "metric": "Break Free From Plastic+Brand Audit Count", "company": "The Coca-Cola Company", "year": 2023, "value": "13834", "url": "https://wikirate.org/The_Coca_Cola_Company~3300501" }
+  ]
+}
