@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-06-07T00:00:00.000Z",
+  "source_category": "transparency",
+  "sources": {
+    "rdr": {
+      "name": "Ranking Digital Rights Corporate Accountability Index",
+      "license": "CC BY-SA 4.0",
+      "url": "https://rankingdigitalrights.org/index2024/",
+      "vintage": "2024"
+    },
+    "txnPledge": {
+      "name": "Transparency Pledge",
+      "license": "Public coalition signatory list",
+      "url": "https://transparencypledge.org/signatory-list/",
+      "vintage": "2025"
+    },
+    "chrb": {
+      "name": "Corporate Human Rights Benchmark — World Benchmarking Alliance",
+      "license": "CC BY 4.0",
+      "url": "https://www.worldbenchmarkingalliance.org/publication/chrb/",
+      "vintage": "2024"
+    },
+    "justCapital": {
+      "name": "Just Capital — Communicates Openly issue area",
+      "license": "Public (free tier)",
+      "url": "https://justcapital.com/rankings/",
+      "vintage": "2024"
+    },
+    "fashionRevTransparency": {
+      "name": "Fashion Revolution Fashion Transparency Index",
+      "license": "CC BY-NC 4.0 (NonCommercial — flag for paid tier)",
+      "url": "https://www.fashionrevolution.org/about/transparency/",
+      "vintage": "2024"
+    }
+  },
+  "company_count": 3,
+  "companies": [
+    {
+      "slug": "nike",
+      "compositeScore": 79,
+      "subScores": {
+        "rdr": null,
+        "txnPledge": 100,
+        "justCapital": null,
+        "chrb": 83,
+        "fashionRevTransparency": 53
+      },
+      "sourceUrls": [
+        "https://transparencypledge.org/signatory-list/",
+        "https://www.worldbenchmarkingalliance.org/publication/chrb/",
+        "https://www.fashionrevolution.org/about/transparency/"
+      ]
+    },
+    {
+      "slug": "microsoft",
+      "compositeScore": 69,
+      "subScores": {
+        "rdr": 53,
+        "txnPledge": null,
+        "justCapital": 95,
+        "chrb": 58,
+        "fashionRevTransparency": null
+      },
+      "sourceUrls": [
+        "https://rankingdigitalrights.org/index2024/",
+        "https://justcapital.com/rankings/",
+        "https://www.worldbenchmarkingalliance.org/publication/chrb/"
+      ]
+    },
+    {
+      "slug": "shein",
+      "compositeScore": 5,
+      "subScores": {
+        "rdr": null,
+        "txnPledge": 0,
+        "justCapital": null,
+        "chrb": 10,
+        "fashionRevTransparency": 4
+      },
+      "sourceUrls": [
+        "https://transparencypledge.org/signatory-list/",
+        "https://www.worldbenchmarkingalliance.org/publication/chrb/",
+        "https://www.fashionrevolution.org/about/transparency/"
+      ]
+    }
+  ]
+}
