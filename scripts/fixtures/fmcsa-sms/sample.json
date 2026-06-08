@@ -1,0 +1,239 @@
+{
+  "_doc": "12-row sample of the FMCSA SMS (Safety Measurement System) carrier-level snapshot. Modeled on the column shape of the monthly SMS_AQ_PassProperty.txt / SMS_AQ_CensusCarrierData.txt files distributed via FMCSA's Data Dissemination Program. Each row is one motor carrier (one USDOT number). Names include real parent-fleet fragments (Amazon Logistics, FedEx, UPS, Walmart Transportation, JB Hunt, Schneider, etc.) so the merger's slug-matcher can be exercised. BASIC percentile values 0-100 are illustrative — higher = WORSE relative to the safety-event-group peer set. dotNumber values are obfuscated to non-real ranges.",
+  "_license": "US Federal public-domain (49 USC 504, FMCSA Data Dissemination Program)",
+  "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/",
+  "sourceKind": "fixture",
+  "snapshotDate": "2026-05",
+  "fetchedAt": "2026-06-08T00:00:00.000Z",
+  "rowCount": 12,
+  "rows": [
+    {
+      "dotNumber": "900001",
+      "carrierName": "AMAZON LOGISTICS INC",
+      "parentName": "AMAZON COM INC",
+      "city": "SEATTLE",
+      "state": "WA",
+      "fleetSize": 22500,
+      "driverCount": 24800,
+      "outOfServiceRate": 8.4,
+      "basics": {
+        "unsafeDriving": 78,
+        "hoursOfService": 65,
+        "vehicleMaintenance": 91,
+        "controlledSubstances": 12,
+        "hazmat": null,
+        "crashIndicator": 82
+      },
+      "alertCount": 3
+    },
+    {
+      "dotNumber": "900002",
+      "carrierName": "FEDERAL EXPRESS CORPORATION",
+      "parentName": "FEDEX CORP",
+      "city": "MEMPHIS",
+      "state": "TN",
+      "fleetSize": 45000,
+      "driverCount": 55000,
+      "outOfServiceRate": 4.1,
+      "basics": {
+        "unsafeDriving": 35,
+        "hoursOfService": 28,
+        "vehicleMaintenance": 42,
+        "controlledSubstances": 8,
+        "hazmat": 21,
+        "crashIndicator": 33
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900003",
+      "carrierName": "UNITED PARCEL SERVICE INC",
+      "parentName": "UNITED PARCEL SERVICE INC",
+      "city": "ATLANTA",
+      "state": "GA",
+      "fleetSize": 119000,
+      "driverCount": 102000,
+      "outOfServiceRate": 3.8,
+      "basics": {
+        "unsafeDriving": 28,
+        "hoursOfService": 22,
+        "vehicleMaintenance": 31,
+        "controlledSubstances": 5,
+        "hazmat": 18,
+        "crashIndicator": 24
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900004",
+      "carrierName": "WALMART TRANSPORTATION LLC",
+      "parentName": "WALMART INC",
+      "city": "BENTONVILLE",
+      "state": "AR",
+      "fleetSize": 12100,
+      "driverCount": 13500,
+      "outOfServiceRate": 3.2,
+      "basics": {
+        "unsafeDriving": 18,
+        "hoursOfService": 14,
+        "vehicleMaintenance": 19,
+        "controlledSubstances": 3,
+        "hazmat": null,
+        "crashIndicator": 16
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900005",
+      "carrierName": "JB HUNT TRANSPORT INC",
+      "parentName": "J B HUNT TRANSPORT SERVICES INC",
+      "city": "LOWELL",
+      "state": "AR",
+      "fleetSize": 14800,
+      "driverCount": 16200,
+      "outOfServiceRate": 5.0,
+      "basics": {
+        "unsafeDriving": 44,
+        "hoursOfService": 38,
+        "vehicleMaintenance": 51,
+        "controlledSubstances": 9,
+        "hazmat": 27,
+        "crashIndicator": 41
+      },
+      "alertCount": 1
+    },
+    {
+      "dotNumber": "900006",
+      "carrierName": "SCHNEIDER NATIONAL CARRIERS INC",
+      "parentName": "SCHNEIDER NATIONAL INC",
+      "city": "GREEN BAY",
+      "state": "WI",
+      "fleetSize": 11200,
+      "driverCount": 12800,
+      "outOfServiceRate": 4.6,
+      "basics": {
+        "unsafeDriving": 39,
+        "hoursOfService": 33,
+        "vehicleMaintenance": 45,
+        "controlledSubstances": 7,
+        "hazmat": 24,
+        "crashIndicator": 36
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900007",
+      "carrierName": "KNIGHT TRANSPORTATION INC",
+      "parentName": "KNIGHT SWIFT TRANSPORTATION HOLDINGS INC",
+      "city": "PHOENIX",
+      "state": "AZ",
+      "fleetSize": 9800,
+      "driverCount": 10500,
+      "outOfServiceRate": 6.2,
+      "basics": {
+        "unsafeDriving": 52,
+        "hoursOfService": 47,
+        "vehicleMaintenance": 58,
+        "controlledSubstances": 11,
+        "hazmat": null,
+        "crashIndicator": 49
+      },
+      "alertCount": 1
+    },
+    {
+      "dotNumber": "900008",
+      "carrierName": "WERNER ENTERPRISES INC",
+      "parentName": "WERNER ENTERPRISES INC",
+      "city": "OMAHA",
+      "state": "NE",
+      "fleetSize": 7600,
+      "driverCount": 8200,
+      "outOfServiceRate": 5.4,
+      "basics": {
+        "unsafeDriving": 41,
+        "hoursOfService": 36,
+        "vehicleMaintenance": 48,
+        "controlledSubstances": 6,
+        "hazmat": 19,
+        "crashIndicator": 38
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900009",
+      "carrierName": "OLD DOMINION FREIGHT LINE INC",
+      "parentName": "OLD DOMINION FREIGHT LINE INC",
+      "city": "THOMASVILLE",
+      "state": "NC",
+      "fleetSize": 11000,
+      "driverCount": 12000,
+      "outOfServiceRate": 2.9,
+      "basics": {
+        "unsafeDriving": 22,
+        "hoursOfService": 18,
+        "vehicleMaintenance": 25,
+        "controlledSubstances": 2,
+        "hazmat": 11,
+        "crashIndicator": 19
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900010",
+      "carrierName": "XPO LOGISTICS FREIGHT INC",
+      "parentName": "XPO INC",
+      "city": "GREENWICH",
+      "state": "CT",
+      "fleetSize": 8400,
+      "driverCount": 9100,
+      "outOfServiceRate": 7.1,
+      "basics": {
+        "unsafeDriving": 61,
+        "hoursOfService": 54,
+        "vehicleMaintenance": 72,
+        "controlledSubstances": 13,
+        "hazmat": 33,
+        "crashIndicator": 57
+      },
+      "alertCount": 2
+    },
+    {
+      "dotNumber": "900011",
+      "carrierName": "RYDER TRUCK RENTAL INC",
+      "parentName": "RYDER SYSTEM INC",
+      "city": "MIAMI",
+      "state": "FL",
+      "fleetSize": 6200,
+      "driverCount": 6800,
+      "outOfServiceRate": 4.4,
+      "basics": {
+        "unsafeDriving": 31,
+        "hoursOfService": 27,
+        "vehicleMaintenance": 36,
+        "controlledSubstances": 5,
+        "hazmat": 16,
+        "crashIndicator": 29
+      },
+      "alertCount": 0
+    },
+    {
+      "dotNumber": "900012",
+      "carrierName": "LANDSTAR RANGER INC",
+      "parentName": "LANDSTAR SYSTEM INC",
+      "city": "JACKSONVILLE",
+      "state": "FL",
+      "fleetSize": 13500,
+      "driverCount": 12100,
+      "outOfServiceRate": 5.8,
+      "basics": {
+        "unsafeDriving": 48,
+        "hoursOfService": 42,
+        "vehicleMaintenance": 55,
+        "controlledSubstances": 8,
+        "hazmat": 22,
+        "crashIndicator": 44
+      },
+      "alertCount": 1
+    }
+  ]
+}
