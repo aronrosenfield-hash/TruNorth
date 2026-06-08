@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+  Hand-built fixture mirroring the structure of
+  https://www.nsfsport.com/certified-products/search-results.php
+
+  Each certified product appears as an <a> wrapping
+  a .listing__product-text block with:
+    - .results__product-name
+    - .results__company-name
+    - .results__product-total span.loadcount (variant count)
+
+  5 representative entries cover the parser's edge cases:
+    1. Brand that matches TruNorth directly       (Abbott)
+    2. Brand routed via supplement-alias         (Optimum Nutrition → glanbia)
+    3. Brand routed via supplement-alias         (Garden of Life → nestle)
+    4. Brand with trademark glyph                 (Thorne®)
+    5. Brand that should land as orphan          (Boutique Sport Co.)
+-->
+<html lang="en">
+<head><meta charset="utf-8" /><title>Certified Products | NSF Sport</title></head>
+<body>
+<main>
+<div class="listings__results">
+
+  <a class="plus" href="#">
+    <img src="/images/abbott.jpg" class="results__image" alt="" />
+    <div class="listing__product-text">
+      <p class="results__product-name">Ensure Plus</p>
+      <p class="results__company-name">Abbott</p>
+    </div>
+    <p class="results__product-total"><span class="loadcount">(3)</span></p>
+  </a>
+
+  <a class="plus" href="#">
+    <img src="/images/on.jpg" class="results__image" alt="" />
+    <div class="listing__product-text">
+      <p class="results__product-name">Gold Standard Whey</p>
+      <p class="results__company-name">Optimum Nutrition</p>
+    </div>
+    <p class="results__product-total"><span class="loadcount">(12)</span></p>
+  </a>
+
+  <a class="plus" href="#">
+    <img src="/images/gol.jpg" class="results__image" alt="" />
+    <div class="listing__product-text">
+      <p class="results__product-name">Sport Organic Plant-Based Protein</p>
+      <p class="results__company-name">Garden of Life</p>
+    </div>
+    <p class="results__product-total"><span class="loadcount">(4)</span></p>
+  </a>
+
+  <a class="plus" href="#">
+    <img src="/images/thorne.jpg" class="results__image" alt="" />
+    <div class="listing__product-text">
+      <p class="results__product-name">Creatine</p>
+      <p class="results__company-name">Thorne®</p>
+    </div>
+    <p class="results__product-total"><span class="loadcount">(2)</span></p>
+  </a>
+
+  <a class="plus" href="#">
+    <img src="/images/bsc.jpg" class="results__image" alt="" />
+    <div class="listing__product-text">
+      <p class="results__product-name">Boutique Blend</p>
+      <p class="results__company-name">Boutique Sport Co.</p>
+    </div>
+    <p class="results__product-total"><span class="loadcount">(1)</span></p>
+  </a>
+
+  <!-- A duplicate (brand, product) that the parser should dedupe -->
+  <a class="plus" href="#">
+    <div class="listing__product-text">
+      <p class="results__product-name">Ensure Plus</p>
+      <p class="results__company-name">Abbott</p>
+    </div>
+    <p class="results__product-total"><span class="loadcount">(3)</span></p>
+  </a>
+
+</div>
+</main>
+</body>
+</html>

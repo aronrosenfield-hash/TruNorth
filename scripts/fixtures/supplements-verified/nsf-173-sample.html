@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+  Hand-built fixture mirroring the structure of
+  https://info.nsf.org/Certified/Dietary/Listings.asp
+
+  Real page: a long flat stream of tables. Each company block:
+    <table>...<font size='+2'>Company Name</font>...</table>
+    <font size='+1'><strong>Facility : ...</strong></font>
+    <table> ... <tr>Trade Designation | Product ID | Form | Serving</tr>
+                <tr>colspan=4 — category bar</tr>
+                <tr><td>Product Name</td><td>id</td><td>form</td><td>serving</td></tr>
+                ...
+    </table>
+
+  Fixture has 2 companies × 2 products each + a section heading row
+  ("Dietary Supplements") that must NOT be treated as a company name.
+-->
+<html>
+<head><title>NSF 173 Listings</title></head>
+<body>
+
+<!-- Section heading we must SKIP -->
+<table><tr><td><font size="+2">Dietary Supplements</font></td></tr></table>
+
+<!-- Company 1: Abbott Laboratories Nutrition -->
+<table width="100%">
+  <tr>
+    <td align='left' width='50%'><font size='+2'>Abbott Laboratories Nutrition</font></td>
+    <td></td>
+  </tr>
+  <tr><td>625 Cleveland Ave</td></tr>
+  <tr><td>Columbus, OH 43215</td></tr>
+</table>
+<br>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td align="left" width="28%"><font size="2"><strong>Trade Designation</strong></font></td>
+    <td align="left" width="15%"><font size="2"><strong>Product ID</strong></font></td>
+    <td align="left" width="15%"><font size="2"><strong>Product Form</strong></font></td>
+    <td align="left" width="29%"><font size="2"><strong>Daily Serving Size</strong></font></td>
+  </tr>
+  <tr><td colspan="4"><strong>Adult Nutrition</strong></td></tr>
+  <tr>
+    <td>Ensure Original Vanilla</td>
+    <td>EN-001</td>
+    <td>Liquid</td>
+    <td>1 bottle</td>
+  </tr>
+  <tr>
+    <td>Glucerna Chocolate Shake</td>
+    <td>GL-002</td>
+    <td>Liquid</td>
+    <td>1 bottle</td>
+  </tr>
+</table>
+
+<!-- Company 2: Pure Encapsulations LLC -->
+<table>
+  <tr><td><font size='+2'>Pure Encapsulations LLC</font></td></tr>
+  <tr><td>490 Boston Post Rd</td></tr>
+</table>
+<table>
+  <tr>
+    <td><strong>Trade Designation</strong></td>
+    <td><strong>Product ID</strong></td>
+    <td><strong>Product Form</strong></td>
+    <td><strong>Serving</strong></td>
+  </tr>
+  <tr>
+    <td>Vitamin D3 1000 IU</td>
+    <td>VD3-1000</td>
+    <td>Capsule</td>
+    <td>1 capsule</td>
+  </tr>
+  <tr>
+    <td>Magnesium Glycinate</td>
+    <td>MG-GLY</td>
+    <td>Capsule</td>
+    <td>2 capsules</td>
+  </tr>
+</table>
+
+</body>
+</html>
