@@ -10,10 +10,24 @@
 
 ## 🔴 NEEDS YOUR DECISION — TODAY
 
-### 1. Ship Build 52 to TestFlight (only blocker between you and smoke testing)
-- **State:** Build 51 on phone; everything merged today (38 PRs incl. PR #63) is on `main` but not on your phone.
-- **Action:** `./scripts/ship-ios.sh` (5-10 min) → Build 52 lands in TestFlight ~10-15 min later.
-- **Then:** Smoke test tomorrow morning — focus on egregious banner appearance, scoring flags rendering (flag OFF default; flip Jun 16), barcode scanner against a couple of products.
+### 1. Build 53 — major scanner overhaul (in progress overnight)
+**Build 52 shipped to TestFlight tonight.** Smoke-test revealed:
+- ✅ Splash + quiz look good
+- 🐛 Search bug (focusedSlug locked) — **fix already committed `aa4c1a941`, ships with 53**
+- 🐛 Barcode scanner missing common US pantry items (Bush's Best, Oreos sometimes, etc.) — diagnosis: brand-parent-map gap, NOT Open Food Facts coverage
+- ✋ Scanner icon not prevalent enough
+
+**In flight tonight (overnight agents):**
+- Agent A → expand `brand-parent-map.json` with 500-1500 new top US grocery/household/personal-care brands
+- Agent E → build static `upc-to-slug.json` (3-5k UPCs baked into IPA for instant + offline lookup)
+
+**Tomorrow morning (Aron is asleep, Claude handles solo):**
+- Merge agent A + E PRs
+- Nav restructure: SCAN as bottom-nav middle slot · Account moves to top-right next to Upgrade
+- No-match fallback: when scanner can't resolve, show "Found: [Brand] — searching parent..." with one-tap Search
+- UPCitemdb fallback API (2nd tier when OFF returns nothing)
+- Integration test with Bush's Best UPC as canary
+- `./scripts/ship-ios.sh` → Build 53 to TestFlight by Tuesday afternoon
 
 ### 2. L-2 LinkedIn pinned post (5 min — Twitter pin is up; LinkedIn audience won't see it)
 - **Copy:** `/docs/producthunt/PROMO_COPY.md` → "Pinned LinkedIn post" section. Same vibe as your X pin.
@@ -167,6 +181,13 @@ Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 | **B-50** | Negative banner palette pinned to desat purple (`#5d54a6`/`#463f7d`) | — | Decided 2026-06-08 PM. Env-var override preserved. If you want to test another palette pre-launch, run `PURPLE=#xxx PURPLE_DEEP=#xxx node scripts/build-egregious-banners.mjs`. |
 | **B-51** | Chipotle facts entry shortened (`Chipotle Mexican Grill` → `Chipotle`) | ✅ done 2026-06-08 PM | Long name was overflowing iOS splash brand-identity area at font 140. Stat copy still names "Chipotle Mexican Grill" for legal identity. |
 | **B-52** | Auto-fit text in renderer for future long brand names | S | Defer post-launch. Quick template: `textLength + lengthAdjust="spacingAndGlyphs"` on the SVG brand-name `<text>`. Affects ~0 brands today (we shortened the one offender) but a future egregious add could hit this. |
+| ~~**B-53**~~ | ~~Search bug: focusedSlug stuck after openBrand~~ | ✅ fix committed 2026-06-08 PM (`aa4c1a941`) | Ships with Build 53. |
+| **B-54** | Scanner: expand brand-parent-map (+500-1500 entries) | L (agent A overnight) | Bush's Best confirmed missing; likely 100s more US groceries. PR landing tomorrow morning. |
+| **B-55** | Scanner: static UPC→slug cache (3-5k entries baked into IPA) | L (agent E overnight) | Instant + offline lookup. PR landing tomorrow morning + build script for monthly cron. |
+| **B-56** | Scanner: no-match fallback to brand-name search | M | "Found: [Brand] — searching parent..." with one-tap Search. Never show a dead-end (Yuka model). Ships in Build 53. |
+| **B-57** | Scanner: nav restructure — SCAN as bottom-nav middle slot | M | Account moves to top-right corner next to Upgrade. Big visual change, touches every screen. Ships in Build 53. |
+| **B-58** | Scanner: UPCitemdb fallback API | S | Free tier ~100/day, paid $10/mo. Hit when OFF returns nothing. Ships in Build 53. |
+| **B-59** | Coverage-correction call-out in docs/landing | S | My earlier "11k companies all have 7 scored categories" claim was misleading. Honest distribution: 84% have only 3-5 real public-records data points. Update talk tracks accordingly post-launch. |
 
 ### Scoring schema expansion
 
