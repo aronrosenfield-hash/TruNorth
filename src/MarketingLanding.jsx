@@ -164,7 +164,7 @@ const VALUE_PROPS = [
   },
   {
     icon:"⊘",
-    title:"No streaks. No outrage. Just journalism.",
+    title:"No streaks. No rage-bait. Just journalism.",
     body:"We deliberately don't ship engagement traps. No push spam, no daily-streak hooks, no rage-bait headlines. Open the app when you need it. Close it when you're done.",
   },
 ];
