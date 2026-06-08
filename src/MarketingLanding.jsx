@@ -160,7 +160,7 @@ const VALUE_PROPS = [
   {
     icon:"⌕",
     title:"Scan or search 11,000+ brands",
-    body:"Search by name or scan a product barcode in store. Subsidiaries roll up to parents — no more accidentally rewarding the holding company you were boycotting.",
+    body:"Search by name or scan a product barcode in store. Subsidiaries roll up to parents — no more accidentally rewarding the parent company behind a brand you scanned.",
   },
   {
     icon:"⊘",
