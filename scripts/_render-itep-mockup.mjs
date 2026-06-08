@@ -325,15 +325,15 @@ const HTML = `<!doctype html>
     <div class="tax-header">
       <div class="tax-icon"></div>
       <div class="tax-title">Tax Responsibility</div>
-      <div class="tax-grade-mini">FAIL</div>
+      <div class="tax-grade-mini">0% RATE</div>
     </div>
 
     <div class="big-stat"><span class="amount">$0</span> federal tax paid</div>
     <div class="sub-stat"><strong>5 of last 5 profitable years</strong> · Effective federal rate: <strong>0.0%</strong></div>
 
     <div class="why-matters">
-      <span class="label">Why this matters</span>
-      Tesla reported $4.4B in U.S. profits over the period but paid no federal income tax — shifting the public burden onto households and small businesses that can't.
+      <span class="label">The numbers</span>
+      Tesla reported $4.4B in U.S. profits over the 5-year period and paid $0 in federal income tax. The statutory federal corporate tax rate over this period was 21%.
     </div>
 
     <!-- Source citation -->
