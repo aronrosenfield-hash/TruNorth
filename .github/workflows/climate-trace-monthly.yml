@@ -1,0 +1,55 @@
+name: climate-trace-monthly
+
+# Climate TRACE — facility emissions + ultimate-owner mapping (monthly).
+#
+# Downloads per-sector ZIPs of co2e_100yr emissions, extracts the ownership
+# + emissions CSVs for ~7 emissions-intensive subsectors (electricity-
+# generation, aluminum, cement, chemicals, iron-and-steel, petrochemical-
+# steam-cracking, pulp-and-paper), aggregates equity-weighted per-parent
+# annual emissions, and slug-resolves to TruNorth brand parents.
+#
+# Cadence: monthly (15th at 04:00 UTC) — Climate TRACE refreshes monthly
+# with ~6-week lag, so the 15th catches the prior month's release.
+#
+# License: CC BY 4.0 — commercial use permitted with attribution.
+# https://climatetrace.org/terms
+
+on:
+  schedule:
+    - cron: "0 4 15 * *"   # 04:00 UTC on the 15th of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit data/raw/ + data/derived/ back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Ensure unzip is available
+        run: which unzip || sudo apt-get install -y unzip
+
+      - name: Run Climate TRACE fetcher (downloads ~65 MB of sector ZIPs)
+        run: node scripts/climate-trace-fetch.mjs --apply
+
+      - name: Merge Climate TRACE data into per-parent augment
+        run: node scripts/climate-trace-merge.mjs --top 20
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/climate-trace/ data/derived/climate-trace-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(climate-trace): monthly facility-emissions refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
