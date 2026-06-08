@@ -172,7 +172,7 @@ const HTML = `<!doctype html>
   .tax-grade-mini {
     margin-left: auto;
     padding: 3px 9px; border-radius: 999px;
-    background: #e24a4a; color: #fff;
+    background: #3a3a3a; color: #fff;
     font-size: 11px; font-weight: 700;
     letter-spacing: 0.3px;
   }
@@ -324,7 +324,7 @@ const HTML = `<!doctype html>
   <div class="tax-section">
     <div class="tax-header">
       <div class="tax-icon"></div>
-      <div class="tax-title">Tax Responsibility</div>
+      <div class="tax-title">Taxes</div>
       <div class="tax-grade-mini">0% RATE</div>
     </div>
 

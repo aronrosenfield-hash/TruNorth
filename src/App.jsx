@@ -1670,7 +1670,7 @@ function WhatsNewModal({ companyCount }) {
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Scan any barcode in-store.</b> Get the verdict before you pay.</span>
+            <span><b style={{ color:T.txt }}>Scan any barcode in-store.</b> See the receipt before you buy.</span>
           </li>
         </ul>
         <button onClick={dismiss} style={{ width:"100%", marginTop:18, padding:13, borderRadius:10, border:"none", background:T.accent2, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
