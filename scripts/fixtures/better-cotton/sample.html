@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+  Hand-built fixture mirroring bettercotton.org's Retailer & Brand Members
+  page. Eight representative members across two template variants:
+    - .member-card with .member-name + .member-country + "Member since YYYY"
+    - .bci-member with <h3> + .member-category
+  Includes one entity-encoded brand (Levi&#39;s) and one orphan
+  ("Zzz Cotton Co — Unknown Brand") used by tests to verify orphan routing.
+-->
+<html lang="en">
+<head><title>Members | Better Cotton</title></head>
+<body>
+  <main class="content">
+    <h1>Our Members</h1>
+
+    <section class="members-grid">
+
+      <li class="member-card">
+        <a class="member-name" href="/members/nike">Nike, Inc.</a>
+        <span class="member-country">United States</span>
+        <span class="member-category">Retailer &amp; Brand</span>
+        <p class="member-meta">Member since 2014</p>
+      </li>
+
+      <li class="member-card">
+        <a class="member-name" href="/members/adidas">Adidas AG</a>
+        <span class="member-country">Germany</span>
+        <span class="member-category">Retailer &amp; Brand</span>
+        <p class="member-meta">Member since 2012</p>
+      </li>
+
+      <li class="member-card">
+        <a class="member-name" href="/members/hm">H&amp;M</a>
+        <span class="member-country">Sweden</span>
+        <span class="member-category">Retailer &amp; Brand</span>
+        <p class="member-meta">Member since 2009</p>
+      </li>
+
+      <li class="member-card">
+        <a class="member-name" href="/members/levis">Levi&#39;s</a>
+        <span class="member-country">United States</span>
+        <span class="member-category">Retailer &amp; Brand</span>
+        <p class="member-meta">Joined 2010</p>
+      </li>
+
+      <div class="bci-member">
+        <h3>IKEA</h3>
+        <p class="member-country">Sweden</p>
+        <p class="member-category">Retailer &amp; Brand</p>
+        <p>Member since 2005</p>
+      </div>
+
+      <div class="bci-member">
+        <h3>Target</h3>
+        <p class="member-country">United States</p>
+        <p class="member-category">Retailer &amp; Brand</p>
+        <p>Member since 2013</p>
+      </div>
+
+      <div class="bci-member">
+        <h3>Gap Inc.</h3>
+        <p class="member-country">United States</p>
+        <p class="member-category">Retailer &amp; Brand</p>
+        <p>Member since 2014</p>
+      </div>
+
+      <div class="bci-member">
+        <h3>Zzz Cotton Co — Unknown Brand</h3>
+        <p class="member-country">Atlantis</p>
+        <p class="member-category">Retailer &amp; Brand</p>
+        <p>Member since 2024</p>
+      </div>
+
+    </section>
+
+    <!-- footer link that the parser should NOT pick up as a brand -->
+    <ul class="footer-links"><li><a href="/contact">Contact</a></li></ul>
+  </main>
+</body>
+</html>

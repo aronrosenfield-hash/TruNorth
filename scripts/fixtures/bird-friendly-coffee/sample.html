@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  Hand-built fixture for the Smithsonian Bird Friendly Coffee directory.
+  6 representative certified roasters across two template variants:
+    .roaster card with .name / .country and inline year
+    .bf-brand card with <strong> + region
+  Includes Birds & Beans (entity-encoded ampersand) and one orphan
+  ("Lost Songbird Roastery") used to verify orphan routing.
+-->
+<html lang="en">
+<head><title>Bird Friendly Coffee | Smithsonian National Zoo</title></head>
+<body>
+  <main>
+    <h1>Find Bird Friendly® Coffee</h1>
+
+    <section class="roaster-grid">
+
+      <li class="roaster">
+        <h3 class="name">Birds &amp; Beans</h3>
+        <span class="country">USA</span>
+        <a href="https://www.birdsandbeans.com">www.birdsandbeans.com</a>
+        <p>Certified 2005 — flagship Bird Friendly roaster.</p>
+      </li>
+
+      <li class="roaster">
+        <h3 class="name">Allegro Coffee</h3>
+        <span class="country">USA</span>
+        <a href="https://www.allegrocoffee.com">website</a>
+        <p>Certified since 2010.</p>
+      </li>
+
+      <li class="roaster">
+        <h3 class="name">Counter Culture Coffee</h3>
+        <span class="country">USA</span>
+        <a href="https://counterculturecoffee.com">website</a>
+        <p>Certified 2015.</p>
+      </li>
+
+      <div class="bf-brand">
+        <strong>Equal Exchange</strong>
+        <span class="region">USA / New England</span>
+        <p>Certified 2008.</p>
+      </div>
+
+      <div class="bf-brand">
+        <strong>Peet's Coffee</strong>
+        <span class="region">USA / Pacific</span>
+        <p>Certified 2020 (single-origin Bird Friendly line).</p>
+      </div>
+
+      <div class="bf-brand">
+        <strong>Lost Songbird Roastery</strong>
+        <span class="region">Atlantis</span>
+        <p>Certified 2024 (fictional — fixture orphan).</p>
+      </div>
+
+    </section>
+
+    <!-- footer link that the parser should NOT pick up -->
+    <ul class="footer-links"><li><a href="/contact">Contact</a></li></ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+name: bird-friendly-coffee-quarterly
+
+# Smithsonian Bird Friendly Coffee — certified roasters (DW-59).
+#
+# Scrapes https://nationalzoo.si.edu/migratory-birds/bird-friendly-coffee
+# once a quarter (the directory is small — a few dozen roasters) and merges
+# into a per-slug augment file. Source: Smithsonian Migratory Bird Center,
+# public certification list.
+#
+# Throttle: 1 request total; total wall time <10 sec.
+
+on:
+  schedule:
+    - cron: "30 6 2 1,4,7,10 *"   # 06:30 UTC on the 2nd of Jan/Apr/Jul/Oct
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run Bird Friendly Coffee fixture tests
+        run: node --test scripts/bird-friendly-coffee-fetch.test.mjs
+
+      - name: Run Bird Friendly Coffee fetcher (live scrape)
+        run: node scripts/bird-friendly-coffee-fetch.mjs
+
+      - name: Run Bird Friendly Coffee merger
+        run: node scripts/bird-friendly-coffee-merge.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(bird-friendly-coffee): quarterly refresh"
+          branch: "data/bird-friendly-coffee-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(bird-friendly-coffee): quarterly Smithsonian refresh"
+          body: |
+            Automated quarterly refresh of the Smithsonian Bird Friendly
+            Coffee certified-roaster directory.
+
+            Source: https://nationalzoo.si.edu/migratory-birds/bird-friendly-coffee
+            License: Public certification list; cited per row.
+          add-paths: |
+            data/raw/bird-friendly-coffee/**
+            data/derived/bird-friendly-coffee-augment.json

@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  Hand-built fixture for the Animal Welfare Approved (A Greener World)
+  certified-farm directory. 7 representative farms/brands across two
+  template variants:
+    <article class="farm-card"> with .farm-name + .state + .product-categories
+    <li class="awa-listing">   with <h3> + inline "Products: …"
+  Categories cover beef, dairy, eggs, pork, poultry, lamb.
+  Includes Niman Ranch (sub-brand fed by many AWA farms) and one orphan
+  ("Lost Hollow Farm").
+-->
+<html lang="en">
+<head><title>Find a Farm | A Greener World</title></head>
+<body>
+  <main>
+    <h1>Certified Animal Welfare Approved farms</h1>
+    <section class="farm-grid">
+
+      <article class="farm-card">
+        <h3 class="farm-name">Vital Farms</h3>
+        <span class="state">TX</span>
+        <span class="country">USA</span>
+        <p class="product-categories">eggs</p>
+      </article>
+
+      <article class="farm-card">
+        <h3 class="farm-name">Niman Ranch</h3>
+        <span class="state">IA</span>
+        <span class="country">USA</span>
+        <p class="product-categories">beef, pork, lamb</p>
+      </article>
+
+      <article class="farm-card">
+        <h3 class="farm-name">Applegate</h3>
+        <span class="state">NJ</span>
+        <span class="country">USA</span>
+        <p class="product-categories">beef, pork, poultry</p>
+      </article>
+
+      <article class="farm-card">
+        <h3 class="farm-name">Organic Valley</h3>
+        <span class="state">WI</span>
+        <span class="country">USA</span>
+        <p class="product-categories">dairy, eggs</p>
+      </article>
+
+      <li class="awa-listing">
+        <h3>White Oak Pastures</h3>
+        <span class="state">GA</span>
+        <p>Products: beef, poultry, lamb, pork.</p>
+      </li>
+
+      <li class="awa-listing">
+        <h3>Pete &amp; Gerry&#39;s Organic Eggs</h3>
+        <span class="state">NH</span>
+        <p>Products: eggs.</p>
+      </li>
+
+      <li class="awa-listing">
+        <h3>Lost Hollow Farm</h3>
+        <span class="state">Atlantis</span>
+        <p>Products: goat, dairy.</p>
+      </li>
+
+    </section>
+
+    <!-- footer link the parser should ignore -->
+    <ul class="footer-links"><li><a href="/contact">Contact</a></li></ul>
+  </main>
+</body>
+</html>
