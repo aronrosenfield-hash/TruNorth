@@ -99,7 +99,7 @@ function getSymbol(val) {
 //
 // Privacy: camera stream stays local. Open Food Facts lookup sends only the
 // barcode (UPC/EAN/etc.) — no PII. We never store the barcode.
-function BarcodeScanner({ onClose, onMatch, companies }) {
+function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
   const videoRef = React.useRef(null);
   const streamRef = React.useRef(null);
@@ -343,25 +343,45 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
         onMatch(co, { barcode: code, brand: cacheEntry.brand, name: cacheEntry.name, source: "upc-cache" });
         return;
       }
+      // Tier 2: Open Food Facts (free, ~2M products, US coverage variable)
+      let offBrand = null;
       try {
         const res = await fetch(`https://world.openfoodfacts.org/api/v0/product/${encodeURIComponent(code)}.json`);
         const data = await res.json();
         if (data?.status === 1 && data?.product) {
-          const brand = data.product.brands || data.product.brand_owner || data.product.product_name;
-          setLookupBrand(brand);
-          const match = resolveBrand(brand);
+          offBrand = data.product.brands || data.product.brand_owner || data.product.product_name;
+          if (offBrand) setLookupBrand(offBrand);
+          const match = resolveBrand(offBrand);
           if (match) {
-            onMatch(match, { barcode: code, brand });
+            onMatch(match, { barcode: code, brand: offBrand, source: "off" });
             return;
           }
-          setStatus("nomatch");
-        } else {
-          setStatus("nomatch");
         }
-      } catch (err) {
-        setStatus("error");
-        setError("Couldn't reach the product database. Check your connection.");
-      }
+      } catch { /* OFF unreachable — fall through to UPCitemdb */ }
+
+      // Tier 3 (Build 53): UPCitemdb trial API — 100 lookups/day per-IP, no key.
+      // Catches a lot of US grocery UPCs that Open Food Facts misses entirely.
+      // Wrapped in try/catch — non-blocking; if UPCitemdb fails we still get nomatch.
+      try {
+        const r2 = await fetch(`https://api.upcitemdb.com/prod/trial/lookup?upc=${encodeURIComponent(code)}`);
+        if (r2.ok) {
+          const j2 = await r2.json();
+          const item = Array.isArray(j2?.items) ? j2.items[0] : null;
+          if (item) {
+            const brand2 = item.brand || item.manufacturer || item.title || null;
+            if (brand2 && !offBrand) setLookupBrand(brand2);
+            const match2 = resolveBrand(brand2);
+            if (match2) {
+              onMatch(match2, { barcode: code, brand: brand2, source: "upcitemdb" });
+              return;
+            }
+          }
+        }
+      } catch { /* UPCitemdb unreachable or over daily limit — show nomatch */ }
+
+      // Final state: barcode found a brand somewhere but we couldn't map it,
+      // OR no source had the barcode at all. lookupBrand may or may not be set.
+      setStatus("nomatch");
     }
 
     start();
@@ -403,11 +423,33 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
             {status === "nomatch" && (
               <>
                 <i className="ti ti-package-off" style={{ fontSize:34, color:T.gold, marginBottom:10 }} aria-hidden="true" />
-                <div style={{ fontSize:15, fontWeight:600, marginBottom:6 }}>Not in our catalog yet</div>
-                <div style={{ fontSize:12, color:"rgba(255,255,255,0.7)", marginBottom:18, maxWidth:280, lineHeight:1.5 }}>
-                  Barcode {lastCode}{lookupBrand ? ` (${lookupBrand})` : ""} isn't tracked. Try another product or suggest it.
+                <div style={{ fontSize:15, fontWeight:600, marginBottom:6 }}>
+                  {lookupBrand ? `Found ${lookupBrand}` : "Not in our catalog yet"}
                 </div>
-                <button onClick={() => { setStatus("starting"); setLastCode(null); setLookupBrand(null); setError(null); setScanRound(n => n + 1); }} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:"#fff", color:"#000", fontSize:13, fontWeight:700, cursor:"pointer" }}>Scan another</button>
+                <div style={{ fontSize:12, color:"rgba(255,255,255,0.7)", marginBottom:18, maxWidth:280, lineHeight:1.5 }}>
+                  {lookupBrand
+                    ? `We recognized the brand but couldn't match a parent company. Search to grade it directly.`
+                    : `Barcode ${lastCode} isn't tracked yet. Try another product or suggest it.`}
+                </div>
+                <div style={{ display:"flex", flexDirection:"column", gap:10, width:"100%", maxWidth:280 }}>
+                  {/* Build 53 (B): no-match fallback — never show a dead-end. If
+                      OFF or UPCitemdb gave us a brand string, jump straight to a
+                      search prefilled with that brand. */}
+                  {lookupBrand && onSearch && (
+                    <button
+                      onClick={() => onSearch(lookupBrand)}
+                      style={{ padding:"11px 18px", borderRadius:10, border:"none", background:T.accent, color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44 }}
+                    >
+                      Search for "{lookupBrand}"
+                    </button>
+                  )}
+                  <button
+                    onClick={() => { setStatus("starting"); setLastCode(null); setLookupBrand(null); setError(null); setScanRound(n => n + 1); }}
+                    style={{ padding:"10px 18px", borderRadius:10, border:"none", background:lookupBrand ? "rgba(255,255,255,0.12)" : "#fff", color:lookupBrand ? "#fff" : "#000", fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44 }}
+                  >
+                    Scan another
+                  </button>
+                </div>
               </>
             )}
             {status === "error" && (
@@ -5337,10 +5379,22 @@ if (screen === "onboarding") {
           onClose={() => setShowScanner(false)}
           onMatch={(co, meta) => {
             setShowScanner(false);
-            track("scanner_match", { slug: co.slug || co.id, name: co.name, barcode: meta?.barcode });
+            track("scanner_match", { slug: co.slug || co.id, name: co.name, barcode: meta?.barcode, source: meta?.source });
             // Phase 5.aj: focus on exactly that one company — no list.
             // openBrand with clearFilters+clearQuery does the full reset.
             openBrand(co.slug || co.id, { clearFilters: true, clearQuery: true });
+          }}
+          onSearch={(brand) => {
+            // Build 53 (B): no-match fallback — close scanner, jump to Search tab
+            // with the OFF / UPCitemdb brand string pre-filled. Never shows a dead-end.
+            setShowScanner(false);
+            track("scanner_search_fallback", { brand });
+            setQuery(brand);
+            setTab("search");
+            // Release any focusedSlug from a prior openBrand so the search query
+            // is what filters the list (matches the Build 53 search bug fix at
+            // line ~4838).
+            setFocusedSlug(null);
           }}
         />
       )}

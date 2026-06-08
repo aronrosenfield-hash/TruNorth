@@ -89,17 +89,23 @@ test("entries are dedupe-clean (no duplicate UPC keys)", async () => {
   }
 });
 
-test("Bush's Best UPC resolves correctly (when bush-brothers slug exists)", async () => {
+test("Bush's Best UPCs resolve to bush-brothers (the canary from Build 52 smoke test)", async () => {
+  // Aron-reported Build 52 miss: Bush's Best baked beans not recognized.
+  // Build 53 fix expects: any Bush's Best UPC in the cache → bush-brothers.
+  // We don't pin to a specific UPC because OFF's popularity-sorted SKU set
+  // can shift between monthly rebuilds; the invariant is the slug mapping.
   const data = await readJson(UPC_JSON);
   const idx = await readJson(INDEX_JSON);
   const hasBush = idx.some(c => c.slug === "bush-brothers");
   if (!hasBush) {
-    // Coordinated test — the parallel agent expanding brand-parent-map is
-    // adding the bush-brothers entry. Until that lands, just skip.
     console.log("[upc-cache.test] SKIP: bush-brothers slug not yet in index.json");
     return;
   }
-  const target = data["039400016014"] || data["0039400016014"];
-  assert.ok(target, "Bush's Best UPC 039400016014 missing from cache");
-  assert.equal(target.slug, "bush-brothers", `expected bush-brothers, got ${target.slug}`);
+  const bushEntries = Object.entries(data)
+    .filter(([upc]) => upc !== "_doc")
+    .filter(([, v]) => (v.brand || "").toLowerCase().includes("bush"));
+  assert.ok(bushEntries.length >= 1, "expected at least 1 Bush's Best UPC in cache; got 0");
+  for (const [upc, v] of bushEntries) {
+    assert.equal(v.slug, "bush-brothers", `UPC ${upc} (${v.brand}) → ${v.slug}, expected bush-brothers`);
+  }
 });
