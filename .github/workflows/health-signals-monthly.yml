@@ -1,0 +1,51 @@
+name: health-signals-monthly
+
+# OpenFDA (drugs / devices / food / tobacco) + EPA TRI carcinogen rollups,
+# merged into data/derived/health-signals-augment.json (sprint J — health).
+#
+# Cron: monthly on the 1st at 05:00 UTC. OpenFDA refreshes weekly; once per
+# month is enough resolution for the health-category score and avoids hitting
+# the anonymous 240 req/min limit too often. EPA TRI Basic Data Files publish
+# annually (March), but the fetcher reuses the cache populated by
+# scripts/epa-tri-fetch.mjs (epa-emissions-annual.yml) so we don't re-download
+# the 100+ MB CSVs every month.
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write   # for committing data/derived/health-signals-augment.json
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch OpenFDA streams + EPA TRI carcinogen rows
+        run: node scripts/health-signals-fetch.mjs --live
+
+      - name: Merge into per-slug augment
+        run: node scripts/health-signals-merge.mjs --quiet
+
+      - name: Run fetcher unit tests
+        run: node --test scripts/health-signals-fetch.test.mjs
+
+      - name: Commit data
+        run: |
+          git config user.name  "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/health-signals/ data/derived/health-signals-augment.json public/data/_cache/epa-tri/ || true
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(health): monthly OpenFDA + EPA TRI carcinogen refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

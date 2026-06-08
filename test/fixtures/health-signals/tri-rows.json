@@ -1,0 +1,80 @@
+{
+  "_note": "Test fixture mirroring EPA TRI_FACILITY_FULL rows. Mix of carcinogen + non-carcinogen chemicals to exercise isCarcinogen() filter.",
+  "rows": [
+    {
+      "TRI_FACILITY_ID": "F-EXXON-BAYTOWN",
+      "FACILITY_NAME": "EXXONMOBIL BAYTOWN COMPLEX",
+      "PARENT_CO_NAME": "EXXON MOBIL CORPORATION",
+      "CHEMICAL": "Benzene",
+      "TOTAL_RELEASES": 88000,
+      "YEAR": 2023
+    },
+    {
+      "TRI_FACILITY_ID": "F-DOW-FREEPORT",
+      "FACILITY_NAME": "DOW FREEPORT TX OPERATIONS",
+      "PARENT_CO_NAME": "DOW INC",
+      "CHEMICAL": "1,3-Butadiene",
+      "TOTAL_RELEASES": 45000,
+      "YEAR": 2023
+    },
+    {
+      "TRI_FACILITY_ID": "F-3M-CORDOVA",
+      "FACILITY_NAME": "3M CORDOVA",
+      "PARENT_CO_NAME": "3M COMPANY",
+      "CHEMICAL": "Formaldehyde",
+      "TOTAL_RELEASES": 12000,
+      "YEAR": 2022
+    },
+    {
+      "TRI_FACILITY_ID": "F-DUPONT-CHAMBERS",
+      "FACILITY_NAME": "DUPONT CHAMBERS WORKS",
+      "PARENT_CO_NAME": "DUPONT DE NEMOURS INC",
+      "CHEMICAL": "Vinyl Chloride",
+      "TOTAL_RELEASES": 20000,
+      "YEAR": 2023
+    },
+    {
+      "TRI_FACILITY_ID": "F-IRRELEVANT",
+      "FACILITY_NAME": "ACME PLASTICS",
+      "PARENT_CO_NAME": "ACME PLASTICS INC",
+      "CHEMICAL": "Sodium Hydroxide (solution)",
+      "TOTAL_RELEASES": 999999,
+      "YEAR": 2023,
+      "_note_non_carcinogen": "this row should be skipped by isCarcinogen()"
+    },
+    {
+      "TRI_FACILITY_ID": "F-PFIZER-KZOO",
+      "FACILITY_NAME": "PFIZER KALAMAZOO PLANT",
+      "PARENT_CO_NAME": "PFIZER INC",
+      "CHEMICAL": "Dichloromethane",
+      "TOTAL_RELEASES": 8000,
+      "YEAR": 2023
+    },
+    {
+      "TRI_FACILITY_ID": "F-EXXON-BTRGE",
+      "FACILITY_NAME": "EXXONMOBIL BATON ROUGE",
+      "PARENT_CO_NAME": "EXXON MOBIL CORPORATION",
+      "CHEMICAL": "Ethylene Oxide",
+      "TOTAL_RELEASES": 30000,
+      "YEAR": 2024
+    },
+    {
+      "TRI_FACILITY_ID": "F-CHROMIUM-EDGE",
+      "FACILITY_NAME": "CHROMIUM EDGE CASE",
+      "PARENT_CO_NAME": "MERCK & CO INC",
+      "CHEMICAL": "Chromium (except chromium VI oxide)",
+      "TOTAL_RELEASES": 500,
+      "YEAR": 2023,
+      "_note_paren_qualifier": "exercises the () qualifier strip in isCarcinogen()"
+    },
+    {
+      "TRI_FACILITY_ID": "F-BLANK-PARENT",
+      "FACILITY_NAME": "NO PARENT NAME",
+      "PARENT_CO_NAME": "",
+      "CHEMICAL": "Benzene",
+      "TOTAL_RELEASES": 1000,
+      "YEAR": 2023,
+      "_note": "should be filtered out: no parent"
+    }
+  ]
+}
