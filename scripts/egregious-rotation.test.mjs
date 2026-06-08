@@ -22,10 +22,15 @@ import { getCurrentEgregious } from "./lib/egregious-rotation.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const FACTS_JSON = path.resolve(HERE, "../public/data/_meta/egregious-facts.json");
+const LOGO_CLASS_JSON = path.resolve(HERE, "../public/data/_meta/egregious-logo-classification.json");
 
 async function loadFacts() {
   const raw = JSON.parse(await fs.readFile(FACTS_JSON, "utf8"));
   return raw;
+}
+
+async function loadLogoClass() {
+  return JSON.parse(await fs.readFile(LOGO_CLASS_JSON, "utf8"));
 }
 
 test("egregious-facts.json has 30 entries with required fields", async () => {
@@ -120,4 +125,38 @@ test("polarity distribution: 20 negative, 10 positive", async () => {
   const pos = raw.facts.filter(f => f.polarity === "positive").length;
   assert.equal(neg, 20);
   assert.equal(pos, 10);
+});
+
+// --- Logo-classification map ---------------------------------------------
+
+test("egregious-logo-classification.json covers all 30 brands", async () => {
+  const raw = await loadFacts();
+  const cls = await loadLogoClass();
+  assert.ok(cls.brands, "classification file must have a 'brands' object");
+  for (const f of raw.facts) {
+    assert.equal(
+      typeof cls.brands[f.brandSlug], "boolean",
+      `classification missing or non-boolean for ${f.brandSlug}`
+    );
+  }
+});
+
+test("ExxonMobil is classified as wordmark (hasTextInLogo=true)", async () => {
+  // Renderer should omit the redundant 'Exxon Mobil' text label and
+  // enlarge the logo to occupy the brand-identity area.
+  const cls = await loadLogoClass();
+  assert.equal(cls.brands["exxon-mobil"], true);
+});
+
+test("Mark-only brands keep their text label (hasTextInLogo=false)", async () => {
+  // Mark-only logos contain no readable brand name on their own, so the
+  // text label must remain. Starbucks (siren) and Audi (four rings) are
+  // the canonical mark-only set after Aron's 2026-06-08 PM review flipped
+  // home-depot/amazon/chipotle/acura-usa/ben-and-jerry-s to wordmark
+  // (their cached PNGs contain the brand name even though the canonical
+  // brand identity is mark-first).
+  const cls = await loadLogoClass();
+  for (const slug of ["starbucks", "audi-usa", "google-alphabet"]) {
+    assert.equal(cls.brands[slug], false, `${slug} should be classified as mark-only`);
+  }
 });
