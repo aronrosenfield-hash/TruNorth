@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-06-08T16:35:40.153Z",
+  "totalCompanies": 11260,
+  "unchanged": 11259,
+  "drifted": 1,
+  "directionCount": {
+    "B->C": 1
+  },
+  "acceptanceThreshold": 200,
+  "withinThreshold": true,
+  "drifts": [
+    {
+      "slug": "fuerte-metals",
+      "name": "Fuerte Metals",
+      "cat": "Manufacturing",
+      "before": {
+        "score": 62,
+        "grade": "B"
+      },
+      "after": {
+        "score": 50,
+        "grade": "C"
+      },
+      "reason": [
+        {
+          "k": "charity",
+          "by": "notDisclosed"
+        },
+        {
+          "k": "dei",
+          "by": "notDisclosed"
+        },
+        {
+          "k": "guns",
+          "by": "na"
+        },
+        {
+          "k": "execPay",
+          "by": "notDisclosed"
+        }
+      ]
+    }
+  ]
+}
