@@ -1,0 +1,96 @@
+{
+  "merged_at": "2026-06-08T18:49:14.489Z",
+  "source_file": "public/data/fcc-complaints.json",
+  "dataset_limitation": "FCC CGB Consumer Complaints dataset 3xyp-aqkj has no company/carrier column; per-brand attribution is not possible. Industry aggregates are recorded for context.",
+  "total_brands": 528,
+  "merged_count": 0,
+  "skipped_count": 528,
+  "orphan_count": 0,
+  "error_count": 0,
+  "industry_total_complaints_24mo": 626705,
+  "industry_top_categories": [
+    {
+      "label": "Unwanted Calls",
+      "count": 255164
+    },
+    {
+      "label": "Billing",
+      "count": 136297
+    },
+    {
+      "label": "Availability",
+      "count": 43566
+    },
+    {
+      "label": "Equipment",
+      "count": 42314
+    },
+    {
+      "label": "Availability (including rural call completion)",
+      "count": 39493
+    },
+    {
+      "label": "Number Portability (keeping your number if you change providers)",
+      "count": 19024
+    },
+    {
+      "label": "Interference",
+      "count": 16254
+    },
+    {
+      "label": "Privacy",
+      "count": 14147
+    },
+    {
+      "label": "Indecency",
+      "count": 11847
+    },
+    {
+      "label": "Cramming (unauthorized charges on your phone bill)",
+      "count": 9228
+    }
+  ],
+  "industry_top_methods": [
+    {
+      "label": "Wireless (cell phone/other mobile device)",
+      "count": 328154
+    },
+    {
+      "label": "Internet (VOIP)",
+      "count": 73548
+    },
+    {
+      "label": "Cable",
+      "count": 54304
+    },
+    {
+      "label": "Wired",
+      "count": 50807
+    },
+    {
+      "label": "Wireless",
+      "count": 47938
+    },
+    {
+      "label": "",
+      "count": 22849
+    },
+    {
+      "label": "Fiber",
+      "count": 15493
+    },
+    {
+      "label": "Broadcast",
+      "count": 14688
+    },
+    {
+      "label": "Satellite",
+      "count": 5602
+    },
+    {
+      "label": "DSL",
+      "count": 4215
+    }
+  ],
+  "orphans": []
+}
