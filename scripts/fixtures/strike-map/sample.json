@@ -1,0 +1,124 @@
+{
+  "_note": "Hand-built fixture mirroring the strikemap.org /api/map response shape. Each feature is a GeoJSON-style record with a properties bag describing the strike action. Used for parser/merge tests only — no network calls.",
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.3321, 47.6062] },
+      "properties": {
+        "id": "demo-1",
+        "title": "Amazon Warehouse Walkout",
+        "organisation": "Amazon",
+        "organisationSlug": "amazon",
+        "location": "Seattle, WA, USA",
+        "startDate": "2025-11-12",
+        "endDate": "2025-11-12",
+        "workerCount": 320,
+        "reason": "Unsafe working conditions and unfair pay",
+        "status": "finished",
+        "verified": true,
+        "url": "https://strikemap.org/strikes/demo-1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9352, 40.7306] },
+      "properties": {
+        "id": "demo-2",
+        "title": "Starbucks Workers United Strike",
+        "organisation": "Starbucks Corporation",
+        "organisationSlug": "starbucks",
+        "location": "New York, NY, USA",
+        "startDate": "2025-11-14",
+        "endDate": "2025-11-17",
+        "workerCount": 145,
+        "reason": "Union recognition and bargaining",
+        "status": "finished",
+        "verified": true,
+        "url": "https://strikemap.org/strikes/demo-2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6298, 41.8781] },
+      "properties": {
+        "id": "demo-3",
+        "title": "UPS Drivers Wildcat Stoppage",
+        "organisation": "UPS",
+        "organisationSlug": "ups",
+        "location": "Chicago, IL, USA",
+        "startDate": "2025-10-30",
+        "endDate": "2025-10-30",
+        "workerCount": 60,
+        "reason": "Mandatory overtime",
+        "status": "finished",
+        "verified": false,
+        "url": "https://strikemap.org/strikes/demo-3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-97.7431, 30.2672] },
+      "properties": {
+        "id": "demo-4",
+        "title": "Amazon Delivery Walkout — Austin",
+        "organisation": "Amazon",
+        "organisationSlug": "amazon",
+        "location": "Austin, TX, USA",
+        "startDate": "2026-02-04",
+        "endDate": "2026-02-05",
+        "workerCount": 90,
+        "reason": "Productivity quotas",
+        "status": "finished",
+        "verified": true,
+        "url": "https://strikemap.org/strikes/demo-4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-122.4194, 37.7749] },
+      "properties": {
+        "id": "demo-5",
+        "title": "Uber Drivers Stoppage",
+        "organisation": "Uber Technologies",
+        "organisationSlug": "uber",
+        "location": "San Francisco, CA, USA",
+        "startDate": "2026-01-22",
+        "endDate": "2026-01-22",
+        "workerCount": 800,
+        "reason": "Deactivations and pay transparency",
+        "status": "finished",
+        "verified": false,
+        "url": "https://strikemap.org/strikes/demo-5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2437, 34.0522] },
+      "properties": {
+        "id": "demo-6",
+        "title": "Kroger Grocery Workers Picket",
+        "organisation": "The Kroger Co.",
+        "organisationSlug": "kroger",
+        "location": "Los Angeles, CA, USA",
+        "startDate": "2025-09-10",
+        "endDate": "2025-09-13",
+        "workerCount": 1500,
+        "reason": "Contract dispute, wages",
+        "status": "finished",
+        "verified": true,
+        "url": "https://strikemap.org/strikes/demo-6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.65, 41.85] },
+      "properties": {
+        "id": "demo-7",
+        "title": "Cluster of 23 walkouts",
+        "cluster": true,
+        "point_count": 23
+      }
+    }
+  ]
+}
