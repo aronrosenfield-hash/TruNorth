@@ -1,0 +1,122 @@
+{
+  "_license": "permissive, attribution required (strikemap.org)",
+  "_generated_at": "2026-06-08T16:11:08.879Z",
+  "_source_raw_file": "data/raw/strike-map/2026-06-08.json",
+  "_source_url": "https://strikemap.org/api/map",
+  "_matched_slugs": 5,
+  "_orphan_employers": [],
+  "_routing_counts": {
+    "source-slug": 6,
+    "direct": 0,
+    "alias": 0,
+    "brand-parent": 0,
+    "orphan": 0
+  },
+  "bySlug": {
+    "amazon": {
+      "labor": {
+        "strikeEvents": [
+          {
+            "date": "2026-02-04",
+            "endDate": "2026-02-05",
+            "location": "Austin, TX, USA",
+            "workerCount": 90,
+            "reason": "Productivity quotas",
+            "status": "finished",
+            "verified": true,
+            "sourceUrl": "https://strikemap.org/strikes/demo-4"
+          },
+          {
+            "date": "2025-11-12",
+            "endDate": "2025-11-12",
+            "location": "Seattle, WA, USA",
+            "workerCount": 320,
+            "reason": "Unsafe working conditions and unfair pay",
+            "status": "finished",
+            "verified": true,
+            "sourceUrl": "https://strikemap.org/strikes/demo-1"
+          }
+        ],
+        "totalStrikeEvents": 2,
+        "workerCountAggregate": 410,
+        "sourceUrl": "https://strikemap.org"
+      }
+    },
+    "uber": {
+      "labor": {
+        "strikeEvents": [
+          {
+            "date": "2026-01-22",
+            "endDate": "2026-01-22",
+            "location": "San Francisco, CA, USA",
+            "workerCount": 800,
+            "reason": "Deactivations and pay transparency",
+            "status": "finished",
+            "verified": false,
+            "sourceUrl": "https://strikemap.org/strikes/demo-5"
+          }
+        ],
+        "totalStrikeEvents": 1,
+        "workerCountAggregate": 800,
+        "sourceUrl": "https://strikemap.org"
+      }
+    },
+    "starbucks": {
+      "labor": {
+        "strikeEvents": [
+          {
+            "date": "2025-11-14",
+            "endDate": "2025-11-17",
+            "location": "New York, NY, USA",
+            "workerCount": 145,
+            "reason": "Union recognition and bargaining",
+            "status": "finished",
+            "verified": true,
+            "sourceUrl": "https://strikemap.org/strikes/demo-2"
+          }
+        ],
+        "totalStrikeEvents": 1,
+        "workerCountAggregate": 145,
+        "sourceUrl": "https://strikemap.org"
+      }
+    },
+    "ups": {
+      "labor": {
+        "strikeEvents": [
+          {
+            "date": "2025-10-30",
+            "endDate": "2025-10-30",
+            "location": "Chicago, IL, USA",
+            "workerCount": 60,
+            "reason": "Mandatory overtime",
+            "status": "finished",
+            "verified": false,
+            "sourceUrl": "https://strikemap.org/strikes/demo-3"
+          }
+        ],
+        "totalStrikeEvents": 1,
+        "workerCountAggregate": 60,
+        "sourceUrl": "https://strikemap.org"
+      }
+    },
+    "kroger": {
+      "labor": {
+        "strikeEvents": [
+          {
+            "date": "2025-09-10",
+            "endDate": "2025-09-13",
+            "location": "Los Angeles, CA, USA",
+            "workerCount": 1500,
+            "reason": "Contract dispute, wages",
+            "status": "finished",
+            "verified": true,
+            "sourceUrl": "https://strikemap.org/strikes/demo-6"
+          }
+        ],
+        "totalStrikeEvents": 1,
+        "workerCountAggregate": 1500,
+        "sourceUrl": "https://strikemap.org"
+      }
+    }
+  }
+}

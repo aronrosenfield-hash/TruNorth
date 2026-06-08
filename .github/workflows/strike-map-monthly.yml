@@ -1,0 +1,66 @@
+name: strike-map-monthly
+
+# Strike Map (strikemap.org) — worker-organising event tracker (monthly)
+#
+# Fetches crowdsourced + volunteer-verified strike, picket, and work-stoppage
+# events from strikemap.org's interactive /api/map endpoint, normalises each
+# event (employer, location, start/end date, worker count, reason, status),
+# and merges into data/derived/strike-map-augment.json keyed by TruNorth
+# brand slug.
+#
+# Signal: workers are actively organising AGAINST this employer — a leading
+# indicator weeks ahead of NLRB filings or news coverage.
+#
+# Runs the 8th of each month at 04:30 UTC (offset from other crons).
+# Wall time ~1 min in CI (tile fetches + merge).
+#
+# License: Strike Map is a crowd-sourced volunteer project; we treat the
+# data as "permissive, attribution required". The merge attributes every
+# row to strikemap.org via sourceUrl. If they object, this workflow can
+# be removed and the derived file regenerated empty.
+
+on:
+  schedule:
+    - cron: "30 4 8 * *"   # 04:30 UTC on the 8th of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run Strike Map fetcher (live with fixture fallback)
+        run: node scripts/strike-map-fetch.mjs
+
+      - name: Run Strike Map merger
+        run: node scripts/strike-map-merge.mjs
+
+      - name: Run Strike Map tests (fixture parser sanity)
+        run: node --test scripts/strike-map-fetch.test.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(strike-map): monthly worker-organising refresh"
+          branch: "data/strike-map-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(strike-map): monthly Strike Map refresh"
+          body: |
+            Automated monthly refresh from strikemap.org — crowdsourced
+            + volunteer-verified strike, picket, and work-stoppage
+            tracker.
+
+            Source: https://strikemap.org
+            License: permissive, attribution required (strikemap.org)
+          add-paths: |
+            data/raw/strike-map/**
+            data/derived/strike-map-augment.json
