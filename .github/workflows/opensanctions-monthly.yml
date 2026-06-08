@@ -1,0 +1,68 @@
+name: opensanctions-monthly
+
+# OpenSanctions consolidated sanctions — 220+ international enforcement
+# sources (UN, EU, UK, US OFAC, Switzerland, Canada, Australia, Japan,
+# Ukraine NSDC, Israel, Singapore, ... ) in one streaming FTM JSONL feed.
+#
+# Cadence: monthly. OpenSanctions republishes the bulk file ~4x/day, but
+# brand-level matches change slowly (months between new corporate
+# designations) — a monthly snapshot is plenty for TruNorth.
+#
+# License: CC-BY-NC 4.0 (non-commercial). TruNorth is free today, so this
+# is in bounds. If/when a paid Pro tier ships, the commercial license
+# (€500–2k/y) needs to be evaluated. The PR body and the merge output both
+# carry an explicit reminder.
+
+on:
+  schedule:
+    - cron: "0 6 7 * *"   # 7th of each month, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test scripts/opensanctions-fetch.test.mjs
+
+      - name: Fetch OpenSanctions bulk feed (filter to Company/Organization)
+        run: node scripts/opensanctions-fetch.mjs
+
+      - name: Build per-slug augment file
+        run: node scripts/opensanctions-merge.mjs
+
+      - name: Open PR if derived data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(opensanctions): monthly sanctions refresh"
+          title: "data(opensanctions): monthly refresh"
+          body: |
+            Automated monthly refresh of the OpenSanctions consolidated sanctions feed.
+
+            - 220+ international enforcement sources in a single FTM JSONL stream
+            - Filtered to Company / Organization / LegalEntity / PublicBody
+            - Raw snapshot:    `data/raw/opensanctions/<date>.jsonl`
+            - Derived augment: `data/derived/opensanctions-augment.json`
+
+            ### License caveat
+            OpenSanctions ships under **CC-BY-NC 4.0** (Creative Commons,
+            non-commercial). TruNorth is currently free, so we are in
+            bounds — but if/when the Pro tier monetizes, the commercial
+            license (€500–2k/year) must be evaluated before merging
+            subsequent refreshes. The `_license` field in the derived
+            JSON carries an inline reminder.
+          branch: data/opensanctions-monthly
+          add-paths: |
+            data/raw/opensanctions/**
+            data/derived/opensanctions-augment.json
+          delete-branch: true
