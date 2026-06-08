@@ -10,23 +10,20 @@
 
 ## 🔴 NEEDS YOUR DECISION — TODAY
 
-### 1. PR #63 — merge call
-- **URL:** https://github.com/aronrosenfield-hash/TruNorth/pull/63
-- **Round 2 just pushed** (commit `70457acbb`):
-  - Desat purple `#5d54a6` → `#463f7d` (you picked C from 4 swatches)
-  - 5 brands reclassified as wordmark (Home Depot · Amazon · Chipotle · Acura · Ben & Jerry's) — no more redundant text label under logo pill
-  - Chipotle display name shortened so it stops overflowing the iOS splash
-  - 11/11 tests pass · 120 PNGs re-rendered
-- **Action:** Eyeball the new PNGs in `/Users/aronrosenfield/Developer/trunorth/.claude/worktrees/agent-abd275fc6a9f8dbe8/docs/marketing/egregious/` (especially `contact-sheet-ios-splash.png`). Say "merge 63" and I'll land it on main.
+### 1. Ship Build 52 to TestFlight (only blocker between you and smoke testing)
+- **State:** Build 51 on phone; everything merged today (38 PRs incl. PR #63) is on `main` but not on your phone.
+- **Action:** `./scripts/ship-ios.sh` (5-10 min) → Build 52 lands in TestFlight ~10-15 min later.
+- **Then:** Smoke test tomorrow morning — focus on egregious banner appearance, scoring flags rendering (flag OFF default; flip Jun 16), barcode scanner against a couple of products.
 
-### 2. Build 51 → Build 52 ship
-- **State:** Build 51 is what's on your phone. Everything merged today (37 PRs + the design fixes on PR #63 when merged) is on `main` but **not on your phone yet**.
-- **Action:** After PR #63 merges → `./scripts/ship-ios.sh` → Build 52 lands in TestFlight in ~10-15 min for smoke testing.
-- **Recommendation:** Wait for #63 merge → ship Build 52 tonight → smoke test tomorrow.
+### 2. L-2 LinkedIn pinned post (5 min — Twitter pin is up; LinkedIn audience won't see it)
+- **Copy:** `/docs/producthunt/PROMO_COPY.md` → "Pinned LinkedIn post" section. Same vibe as your X pin.
+- **Where:** Your LinkedIn personal profile → Activity → Featured → + → Post → paste → pin.
 
 ### ✅ Resolved earlier today
-- ~~**PR #19 — Glassdoor employee ratings**~~ → **closed** 2026-06-08 per your call. Parked as F-5. Labor signal covered by Cornell ILR (#40) + NLRB voluntary recognition (#41).
-- ~~**MailerLite Vercel env var**~~ → **fixed days ago** (Aron confirmed 2026-06-08). `/api/subscribe` is healthy.
+- ~~**PR #63 — banner design fix**~~ → **merged** 2026-06-08 (commit `acf0649a1`). Round 1 + round 2 (desat purple + reclassify 5 + Chipotle name) all in.
+- ~~**PR #19 — Glassdoor**~~ → **closed** 2026-06-08, parked as F-5.
+- ~~**MailerLite Vercel env var**~~ → **fixed days ago** (Aron confirmed). `/api/subscribe` healthy.
+- ~~**L-1 Twitter pinned post**~~ → **done** 2026-06-08 PM with promo video.
 
 ---
 
@@ -53,7 +50,7 @@
 
 | ID | Item | Effort | Why |
 |---|---|---|---|
-| **L-1** | Pin Twitter tweet from `/docs/producthunt/PROMO_COPY.md` | 5 min | Hour-1 PH subscribers → launch-day votes |
+| ~~**L-1**~~ | ~~Pin Twitter tweet~~ | ✅ done 2026-06-08 PM | Live on @TruNorthapp with 0:23 promo video. |
 | **L-2** | LinkedIn pinned post from same doc | 5 min | B2B reach |
 | **L-3** | Personal email blast — 10-20 closest contacts | 30 min | Drafted at `/docs/L-3-email-blast-checklist.md` — recipients + tracker ready |
 | **L-7** | Activate Gmail Apps Script personalized auto-reply | 20 min | `/docs/gmail-personalized-autoreply-setup.md` — reduces email triage during launch |
