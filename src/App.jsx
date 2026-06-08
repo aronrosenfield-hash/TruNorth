@@ -5427,10 +5427,29 @@ if (screen === "onboarding") {
               Tru<span style={{ color:T.accent2 }}>North</span>
             </div>
           </div>
-          {isPaid
-            ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4, flexShrink:0 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
-            : <button onClick={()=>setTab("account")} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4, flexShrink:0, minHeight:32 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
-          }
+          {/* Build 53 (B-57): Account moved to top-right header so bottom-nav
+              middle slot can host the SCAN button — making the killer feature
+              the most prominent action in the UI. */}
+          <div style={{ display:"flex", alignItems:"center", gap:8, flexShrink:0 }}>
+            <button
+              onClick={()=>setTab("account")}
+              aria-label="Account"
+              style={{
+                width:32, height:32, borderRadius:"50%",
+                background: tab === "account" ? T.accentBg : "transparent",
+                border:`1px solid ${T.border}`,
+                color: tab === "account" ? T.accent2 : T.txt2,
+                display:"flex", alignItems:"center", justifyContent:"center",
+                cursor:"pointer", padding:0
+              }}
+            >
+              <i className="ti ti-user-circle" style={{ fontSize:18 }} aria-hidden="true" />
+            </button>
+            {isPaid
+              ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
+              : <button onClick={()=>setShowPaywall(true)} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4, minHeight:32 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
+            }
+          </div>
         </div>
         {tab !== "account" && (
           <div style={{ position:"relative" }}>
@@ -6682,21 +6701,43 @@ if (screen === "onboarding") {
           paddingBottom:env(safe-area-inset-bottom) fills the home indicator zone. */}
       <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 8px)" }}>
         {[
-          // Phase 5.am: bottom-nav had 4 icons but TABS array had 5 — that's
-          // why the new History tab from 5.al never appeared. Library tab
-          // now wraps Saved + History sub-tabs into one slot.
-          {id:"top",     icon:"ti-star",            label:"Top Picks"},
-          {id:"search",  icon:"ti-search",          label:"Search"},
-          {id:"browse",  icon:"ti-apps",            label:"Browse"},
-          {id:"library", icon:"ti-bookmarks",       label:"Library"},
-          {id:"account", icon:"ti-user",            label:"Account"},
-        ].map(t => (
-          <button key={t.id} onClick={()=>setTab(t.id)}
-            style={{ flex:1, padding:"10px 4px 8px", display:"flex", flexDirection:"column", alignItems:"center", gap:3, background:"none", border:"none", cursor:"pointer" }}>
-            <i className={`ti ${t.icon}`} style={{ fontSize:22, color:tab===t.id ? T.accent2 : T.txt3 }} aria-hidden="true" />
-            <span style={{ fontSize:10, color:tab===t.id ? T.accent2 : T.txt3, fontWeight:tab===t.id ? 600 : 400 }}>{t.label}</span>
-          </button>
-        ))}
+          // Build 53 (B-57): SCAN takes the middle slot — the killer in-store
+          // feature gets the most prominent UI position. Account moved out to
+          // the top-right header (next to Upgrade). Tapping SCAN opens the
+          // BarcodeScanner overlay; it's an ACTION, not a tab — so the active
+          // state never sticks to it.
+          {id:"top",     icon:"ti-star",      label:"Top Picks"},
+          {id:"search",  icon:"ti-search",    label:"Search"},
+          {id:"scan",    icon:"ti-scan",      label:"Scan",     action:"openScanner"},
+          {id:"browse",  icon:"ti-apps",      label:"Browse"},
+          {id:"library", icon:"ti-bookmarks", label:"Library"},
+        ].map(t => {
+          const isScan = t.action === "openScanner";
+          const isActive = !isScan && tab === t.id;
+          return (
+            <button
+              key={t.id}
+              onClick={() => isScan ? setShowScanner(true) : setTab(t.id)}
+              aria-label={isScan ? "Open barcode scanner" : t.label}
+              style={{ flex:1, padding:"10px 4px 8px", display:"flex", flexDirection:"column", alignItems:"center", gap:3, background:"none", border:"none", cursor:"pointer" }}
+            >
+              {isScan ? (
+                <div style={{
+                  width:44, height:44, borderRadius:"50%",
+                  background:T.accent, color:"#fff",
+                  display:"flex", alignItems:"center", justifyContent:"center",
+                  marginTop:-12, marginBottom:-2,
+                  boxShadow:"0 4px 12px rgba(124,109,250,0.45)"
+                }}>
+                  <i className="ti ti-scan" style={{ fontSize:24 }} aria-hidden="true" />
+                </div>
+              ) : (
+                <i className={`ti ${t.icon}`} style={{ fontSize:22, color: isActive ? T.accent2 : T.txt3 }} aria-hidden="true" />
+              )}
+              <span style={{ fontSize:10, color: isActive ? T.accent2 : (isScan ? T.accent2 : T.txt3), fontWeight: isActive || isScan ? 600 : 400 }}>{t.label}</span>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
