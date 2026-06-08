@@ -1,0 +1,414 @@
+{
+  "_license": "US public domain — SEC EDGAR",
+  "_source": "https://www.sec.gov/edgar",
+  "_generated_at": "2026-06-08T16:07:52.998Z",
+  "_source_file": "data/raw/sec-8k-events/2026-06-08.json",
+  "_stats": {
+    "raw_records": 20,
+    "matched_companies": 11,
+    "orphan_count": 0,
+    "skipped": 9,
+    "total_departures": 27,
+    "total_restatements": 0,
+    "top_shaken": [
+      {
+        "slug": "disney",
+        "departures": 6,
+        "restatements": 0,
+        "severance": true,
+        "score": 6
+      },
+      {
+        "slug": "walmart",
+        "departures": 4,
+        "restatements": 0,
+        "severance": true,
+        "score": 4
+      },
+      {
+        "slug": "coca-cola",
+        "departures": 3,
+        "restatements": 0,
+        "severance": false,
+        "score": 3
+      },
+      {
+        "slug": "nike",
+        "departures": 3,
+        "restatements": 0,
+        "severance": true,
+        "score": 3
+      },
+      {
+        "slug": "google-alphabet",
+        "departures": 2,
+        "restatements": 0,
+        "severance": false,
+        "score": 2
+      },
+      {
+        "slug": "google-cloud",
+        "departures": 2,
+        "restatements": 0,
+        "severance": false,
+        "score": 2
+      },
+      {
+        "slug": "meta-facebook",
+        "departures": 2,
+        "restatements": 0,
+        "severance": true,
+        "score": 2
+      },
+      {
+        "slug": "youtube-music",
+        "departures": 2,
+        "restatements": 0,
+        "severance": false,
+        "score": 2
+      },
+      {
+        "slug": "apple",
+        "departures": 1,
+        "restatements": 0,
+        "severance": false,
+        "score": 1
+      },
+      {
+        "slug": "apple-music",
+        "departures": 1,
+        "restatements": 0,
+        "severance": false,
+        "score": 1
+      }
+    ]
+  },
+  "companies": {
+    "apple": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2025-12-05",
+            "role": "CEO",
+            "action": "Retirement",
+            "personName": "Jennifer Newstead",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/320193/000114036125044561/ef20060722_8k.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "apple-music": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2025-12-05",
+            "role": "CEO",
+            "action": "Retirement",
+            "personName": "Jennifer Newstead",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/320193/000114036125044561/ef20060722_8k.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "coca-cola": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2024-12-16",
+            "role": "Officer",
+            "action": "Retirement",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/21344/000155278124000634/e24475_ko-8k.htm"
+          },
+          {
+            "filingDate": "2024-08-21",
+            "role": "Officer",
+            "action": "Termination",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/21344/000002134424000047/ko-20240821.htm"
+          },
+          {
+            "filingDate": "2024-07-23",
+            "role": "Officer",
+            "action": "Retirement",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/21344/000002134424000040/ko-20240719.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "disney": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2026-02-24",
+            "role": "President",
+            "action": "Termination",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000025/dis-20260220.htm"
+          },
+          {
+            "filingDate": "2026-02-03",
+            "role": "CEO",
+            "action": "Resignation",
+            "personName": "Employment Agreement",
+            "severanceDisclosed": true,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000022/dis-20260202.htm"
+          },
+          {
+            "filingDate": "2025-11-12",
+            "role": "CFO",
+            "action": "Termination",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1744489/000174448925000149/dis-20251110.htm"
+          },
+          {
+            "filingDate": "2025-11-07",
+            "role": "President",
+            "action": "Termination",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1744489/000174448925000147/dis-20251104.htm"
+          },
+          {
+            "filingDate": "2024-10-21",
+            "role": "Chair",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000262/dis-20241018.htm"
+          },
+          {
+            "filingDate": "2024-07-19",
+            "role": "Director",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000226/dis-20240718.htm"
+          }
+        ],
+        "severanceDisclosed": true
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "google-alphabet": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2026-04-10",
+            "role": "CFO",
+            "action": "Termination",
+            "personName": "The PSUs",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm"
+          },
+          {
+            "filingDate": "2026-04-02",
+            "role": "President",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000031/goog-20260330.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "google-cloud": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2026-04-10",
+            "role": "CFO",
+            "action": "Termination",
+            "personName": "The PSUs",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm"
+          },
+          {
+            "filingDate": "2026-04-02",
+            "role": "President",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000031/goog-20260330.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "jpmorgan-chase": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2025-12-08",
+            "role": "Officer",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/19617/000001961725001100/jpm-20251207.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "meta-facebook": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2026-01-16",
+            "role": "President",
+            "action": "Termination",
+            "personName": "Powell McCormick",
+            "severanceDisclosed": true,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026002429/meta-20260112.htm"
+          },
+          {
+            "filingDate": "2025-12-19",
+            "role": "President",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025058337/meta-20251219.htm"
+          }
+        ],
+        "severanceDisclosed": true
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "nike": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2025-12-02",
+            "role": "COO",
+            "action": "Resignation",
+            "personName": "Sharing Plan",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/320187/000032018725000115/nke-20251201.htm"
+          },
+          {
+            "filingDate": "2025-05-05",
+            "role": "President",
+            "action": "Termination",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/320187/000032018725000020/nke-20250505.htm"
+          },
+          {
+            "filingDate": "2024-09-19",
+            "role": "CEO",
+            "action": "Resignation",
+            "personName": "Hill On September",
+            "severanceDisclosed": true,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/320187/000032018724000053/nke-20240919.htm"
+          }
+        ],
+        "severanceDisclosed": true
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "walmart": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2026-01-30",
+            "role": "CEO",
+            "action": "Resignation",
+            "personName": "Kathryn McLay",
+            "severanceDisclosed": true,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000028/wmt-20260115.htm"
+          },
+          {
+            "filingDate": "2026-01-16",
+            "role": "CEO",
+            "action": "Termination",
+            "personName": "Effective Date",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000023/wmt-20260115.htm"
+          },
+          {
+            "filingDate": "2025-11-14",
+            "role": "CEO",
+            "action": "Termination",
+            "personName": "John R. Furner",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000172/wmt-20251111.htm"
+          },
+          {
+            "filingDate": "2025-10-22",
+            "role": "President",
+            "action": "Termination",
+            "personName": "David Chojnowski",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/104169/000010416925000168/wmt-20251022.htm"
+          }
+        ],
+        "severanceDisclosed": true
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    },
+    "youtube-music": {
+      "execPay": {
+        "recentExecDepartures": [
+          {
+            "filingDate": "2026-04-10",
+            "role": "CFO",
+            "action": "Termination",
+            "personName": "The PSUs",
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm"
+          },
+          {
+            "filingDate": "2026-04-02",
+            "role": "President",
+            "action": "Resignation",
+            "personName": null,
+            "severanceDisclosed": false,
+            "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000031/goog-20260330.htm"
+          }
+        ],
+        "severanceDisclosed": false
+      },
+      "governance": {
+        "recentRestatements": []
+      }
+    }
+  }
+}

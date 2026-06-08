@@ -1,0 +1,56 @@
+name: sec-8k-events-monthly
+
+# SEC 8-K Material Events — Items 5.02 (exec/board departures) +
+# 4.02 (accounting restatements). Monthly cadence: 8-K filings drip in
+# continuously, but waiting a month lets us batch and avoids hammering
+# EDGAR. Lookback is 24 months on every run.
+#
+# Walks the SEC's ticker→CIK map and pulls each TruNorth ticker's
+# recent 8-K filings, filters to items 5.02 and 4.02, and extracts the
+# role/action/severance (5.02) and restated periods (4.02).
+#
+# Throttled to the SEC's published ≤10 req/sec ceiling with a 110ms
+# inter-request sleep. Data license: SEC EDGAR data is US public domain.
+# The required identifying User-Agent is set inside the script itself.
+
+on:
+  schedule:
+    - cron: "0 7 5 * *"   # 07:00 UTC, 5th of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw output + augment + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests (offline; no network)
+        run: node --test scripts/sec-8k-events-fetch.test.mjs
+
+      - name: Fetch 8-K material events (real network, throttled ≤10 req/sec)
+        run: node scripts/sec-8k-events-fetch.mjs --apply
+
+      - name: Merge into augment + per-company files
+        run: node scripts/sec-8k-events-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/sec-8k-events/ data/derived/sec-8k-events-augment.json public/data/companies/ public/data/_cache/sec-def14a/
+          [ -f public/data/_meta/sec-8k-events-merge-log.json ] && git add public/data/_meta/sec-8k-events-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(sec-8k-events): monthly 5.02/4.02 material events refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
