@@ -22,6 +22,7 @@ const ROOT = path.resolve(__dirname, "..");
 
 const COMPANIES_DIR  = path.join(ROOT, "public/data/companies");
 const APPLICABILITY  = path.join(ROOT, "public/data/_meta/category-applicability.json");
+const OVERRIDES_PATH = path.join(ROOT, "public/data/_meta/category-applicability-overrides.json");
 const GIVING_PATH    = path.join(ROOT, "data/derived/corporate-giving-augment.json");
 const TRANSPARENCY_P = path.join(ROOT, "data/derived/transparency-benchmarks-augment.json");
 const WIKIRATE_P     = path.join(ROOT, "data/derived/wikirate-augment.json");
@@ -32,11 +33,18 @@ function safeJSON(p)     { try { return readJSON(p); } catch { return null; } }
 function readCompany(s)  { return readJSON(path.join(COMPANIES_DIR, `${s}.json`)); }
 
 const applicability  = readJSON(APPLICABILITY);
+const overrides      = safeJSON(OVERRIDES_PATH) || { overrides: {} };
 const giving         = safeJSON(GIVING_PATH)    || { companies: {} };
 const transparency   = safeJSON(TRANSPARENCY_P) || { data: {} };
 const wikirate       = safeJSON(WIKIRATE_P)     || { companies: {} };
 const carbon         = safeJSON(CARBON_P)       || { companies: {} };
-const LOOKUPS = buildLookups({ applicability, giving, transparency, wikirate, carbon });
+const LOOKUPS = buildLookups({ applicability, overrides, giving, transparency, wikirate, carbon });
+
+// Separate lookup WITHOUT overrides — used to assert that the override file is
+// what changes Walmart's behavior, not some unrelated change to cat-level rules.
+const LOOKUPS_NO_OVERRIDES = buildLookups({
+  applicability, overrides: { overrides: {} }, giving, transparency, wikirate, carbon,
+});
 
 // ─────────────────────── per-brand expectations ───────────────────────
 
@@ -49,21 +57,39 @@ test("Apple → guns na, health na, animals na, no execPay flag (has CIK/ticker)
   assert.equal(f.execPay, undefined, "execPay must NOT be flagged (Apple is public)");
 });
 
-test("Walmart → Retail flags: guns/health NA by industry, animals applicable, disclosed everywhere else", () => {
-  // Post-taxonomy-consolidation (Jun 2026): Retail's cat-level applicability
-  // marks guns + health NA at the industry tier. A handful of Retail brands
-  // (Walmart, Bass Pro, etc.) DO sell firearms — those are re-activated via
-  // public/data/_meta/category-applicability-overrides.json (consumed by a
-  // future PR). For now, Walmart hits the industry default.
+test("Walmart → guns applicable via override (NOT na), health NA by cat, disclosed everywhere else", () => {
+  // Retail's cat-level applicability marks guns NA at the industry tier.
+  // Walmart sells firearms, so public/data/_meta/category-applicability-overrides.json
+  // promotes guns to "applicable" — reflag removes the {na:true} so a real
+  // score gets computed downstream.
   const walmart = readCompany("walmart");
   const f = computeFlagsForCompany(walmart, LOOKUPS);
-  assert.deepEqual(f.guns,    { na: true }, "Retail cat default: guns NA (override pending)");
+  assert.equal(f.guns, undefined,
+    "override → guns must NOT be {na:true} for Walmart");
   assert.deepEqual(f.health,  { na: true }, "Retail cat default: health NA");
   assert.equal(f.animals, undefined,        "Retail has physical products — animals applicable");
   // Walmart is heavily-disclosed; explicit asserts pin the contract.
   assert.equal(f.execPay,      undefined, "Walmart is public — execPay disclosed");
   assert.equal(f.charity,      undefined, "Walmart is in corporate-giving augment");
   assert.equal(f.transparency, undefined, "Walmart is in transparency benchmarks");
+});
+
+test("Walmart → without override file, guns WOULD be {na:true} (sanity check)", () => {
+  // Locks the contract: it's specifically the override map that changes
+  // Walmart, not some unrelated tweak to the Retail cat applicability rule.
+  const walmart = readCompany("walmart");
+  const f = computeFlagsForCompany(walmart, LOOKUPS_NO_OVERRIDES);
+  assert.deepEqual(f.guns, { na: true },
+    "without overrides, Retail's cat-level rule must still mark guns NA");
+});
+
+test("Apple → guns still {na:true} (no override applies, cat-level rule wins)", () => {
+  // Apple has no override entry, so it follows Technology's cat-level NA list.
+  // This pins that overrides are surgical, not global.
+  const apple = readCompany("apple");
+  const f = computeFlagsForCompany(apple, LOOKUPS);
+  assert.deepEqual(f.guns, { na: true },
+    "Apple has no override; Technology cat-level guns NA must persist");
 });
 
 test("Patagonia → execPay notDisclosed (private), guns na, health na", () => {
@@ -111,9 +137,9 @@ test("small private brand → execPay/dei/charity/transparency notDisclosed", ()
 
 // ─────────────────────── corpus-wide invariants ───────────────────────
 
-test("all 11209 companies process without throwing; flags shape is canonical", () => {
+test("all 11260 companies process without throwing; flags shape is canonical", () => {
   const slugs = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
-  assert.equal(slugs.length, 11209, `expected 11209 companies, got ${slugs.length}`);
+  assert.equal(slugs.length, 11260, `expected 11260 companies, got ${slugs.length}`);
   let ok = 0;
   for (const file of slugs) {
     const co = readJSON(path.join(COMPANIES_DIR, file));
@@ -133,7 +159,7 @@ test("all 11209 companies process without throwing; flags shape is canonical", (
     }
     ok++;
   }
-  assert.equal(ok, 11209);
+  assert.equal(ok, 11260);
 });
 
 test("snapshot diff — sc.<cat> values unchanged before/after reflag (hash compare)", () => {
