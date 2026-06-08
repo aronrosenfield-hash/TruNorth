@@ -4832,6 +4832,12 @@ useEffect(() => {
   useEffect(() => { setVisibleLimit(VISIBLE_BATCH); }, [query, leanFilter, catFilters, flagFilters, sort, showSavedOnly, industryBucket]);
   const visibleFiltered = useMemo(() => filtered.slice(0, visibleLimit), [filtered, visibleLimit]);
 
+  // Bug fix (Build 53, Aron-reported): typing a new search query was not
+  // releasing focusedSlug, so the list stayed pinned to the previously-
+  // opened brand ("Showing 1 brand" → Campbells regardless of input).
+  // Clearing focusedSlug whenever query changes releases the filter.
+  useEffect(() => { if (focusedSlug) setFocusedSlug(null); }, [query]);
+
   // UX 4E: recent searches (last 5 distinct queries with at least one result)
   const [recentSearches, setRecentSearches] = useState(() => {
     try { return JSON.parse(localStorage.getItem("tn_recentSearches") || "[]"); }
