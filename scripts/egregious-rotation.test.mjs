@@ -150,10 +150,13 @@ test("ExxonMobil is classified as wordmark (hasTextInLogo=true)", async () => {
 
 test("Mark-only brands keep their text label (hasTextInLogo=false)", async () => {
   // Mark-only logos contain no readable brand name on their own, so the
-  // text label must remain. Acura (caliper "A"), Starbucks (siren), and
-  // Audi (four rings) are canonical examples.
+  // text label must remain. Starbucks (siren) and Audi (four rings) are
+  // the canonical mark-only set after Aron's 2026-06-08 PM review flipped
+  // home-depot/amazon/chipotle/acura-usa/ben-and-jerry-s to wordmark
+  // (their cached PNGs contain the brand name even though the canonical
+  // brand identity is mark-first).
   const cls = await loadLogoClass();
-  for (const slug of ["acura-usa", "starbucks", "audi-usa", "chipotle"]) {
+  for (const slug of ["starbucks", "audi-usa", "google-alphabet"]) {
     assert.equal(cls.brands[slug], false, `${slug} should be classified as mark-only`);
   }
 });

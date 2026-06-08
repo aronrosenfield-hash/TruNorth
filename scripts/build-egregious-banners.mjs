@@ -37,8 +37,14 @@ const LOGO_CLASS_JSON = path.join(ROOT, 'public/data/_meta/egregious-logo-classi
 const FONT_STACK = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
 
 // Brand palette
-const PURPLE = '#7c6dfa';
-const PURPLE_DEEP = '#5b4ed7';
+// Negative-polarity gradient. Picked 2026-06-08 PM after Aron reviewed 4 swatches
+// (deeper plum #4a3a8c / charcoal #1a1a2e / desat-purple #5d54a6 / burgundy #6b2737)
+// against the original neon #7c6dfa — desaturated purple won for keeping brand
+// continuity while taking down the video-game-y saturation.
+// Env-var overrides preserved for future preview rounds:
+//   PURPLE=<hex> PURPLE_DEEP=<hex> ONLY_SLUG=<slug> ONLY_SURFACE=<ios|website|social|email> node scripts/build-egregious-banners.mjs
+const PURPLE = process.env.PURPLE || '#5d54a6';
+const PURPLE_DEEP = process.env.PURPLE_DEEP || '#463f7d';
 const GREEN = '#4caf82';      // positive accent (matches app)
 const GREEN_DEEP = '#358a64';
 const DARK = '#0a0a0a';
@@ -455,9 +461,18 @@ async function buildContactSheet(paths, outPath, { cellW, cellH, cols = 5 }) {
   let wordmarkCount = 0;
   const noLogo = [];
 
+  // Optional filters for fast iteration on a single brand or surface
+  // (color preview, layout debugging). Examples:
+  //   ONLY_SLUG=exxon-mobil ONLY_SURFACE=ios PURPLE=#4a3a8c node scripts/build-egregious-banners.mjs
+  const ONLY_SLUG = process.env.ONLY_SLUG || '';
+  const ONLY_SLUGS = ONLY_SLUG ? new Set(ONLY_SLUG.split(',').map(s => s.trim())) : null;
+  const ONLY_SURFACE = process.env.ONLY_SURFACE || '';
+  const skipContactSheets = !!(ONLY_SLUGS || ONLY_SURFACE);
+
   for (let i = 0; i < facts.length; i++) {
     const f = facts[i];
     const slug = f.brandSlug;
+    if (ONLY_SLUGS && !ONLY_SLUGS.has(slug)) continue;
     const logoFound = await findLogoFile(slug);
     const logoPresent = !!logoFound;
     const hasTextInLogo = brandsMap[slug] === true;
@@ -468,33 +483,41 @@ async function buildContactSheet(paths, outPath, { cellW, cellH, cols = 5 }) {
     const socPath  = path.join(OUT_DIR, `social-${slug}.png`);
     const iosPath  = path.join(OUT_DIR, `ios-splash-${slug}.png`);
 
-    const webBox = websiteBannerLayout(opts).logoBox;
-    await renderWithLogo({
-      svg: websiteBannerSvg(f, opts),
-      outPath: webPath, width: 1280, height: 320,
-      slug, logoBox: webBox,
-    });
+    if (!ONLY_SURFACE || ONLY_SURFACE === 'website') {
+      const webBox = websiteBannerLayout(opts).logoBox;
+      await renderWithLogo({
+        svg: websiteBannerSvg(f, opts),
+        outPath: webPath, width: 1280, height: 320,
+        slug, logoBox: webBox,
+      });
+    }
 
-    const mailBox = emailBannerLayout(opts).logoBox;
-    await renderWithLogo({
-      svg: emailBannerSvg(f, opts),
-      outPath: mailPath, width: 600, height: 200,
-      slug, logoBox: mailBox,
-    });
+    if (!ONLY_SURFACE || ONLY_SURFACE === 'email') {
+      const mailBox = emailBannerLayout(opts).logoBox;
+      await renderWithLogo({
+        svg: emailBannerSvg(f, opts),
+        outPath: mailPath, width: 600, height: 200,
+        slug, logoBox: mailBox,
+      });
+    }
 
-    const socBox = socialCardLayout(opts).logoBox;
-    await renderWithLogo({
-      svg: socialCardSvg(f, opts),
-      outPath: socPath, width: 1200, height: 675,
-      slug, logoBox: socBox, darkBg: true,
-    });
+    if (!ONLY_SURFACE || ONLY_SURFACE === 'social') {
+      const socBox = socialCardLayout(opts).logoBox;
+      await renderWithLogo({
+        svg: socialCardSvg(f, opts),
+        outPath: socPath, width: 1200, height: 675,
+        slug, logoBox: socBox, darkBg: true,
+      });
+    }
 
-    const iosBox = iosSplashLayout(opts).logoBox;
-    await renderWithLogo({
-      svg: iosSplashSvg(f, opts),
-      outPath: iosPath, width: 1320, height: 2868,
-      slug, logoBox: iosBox, darkBg: true,
-    });
+    if (!ONLY_SURFACE || ONLY_SURFACE === 'ios') {
+      const iosBox = iosSplashLayout(opts).logoBox;
+      await renderWithLogo({
+        svg: iosSplashSvg(f, opts),
+        outPath: iosPath, width: 1320, height: 2868,
+        slug, logoBox: iosBox, darkBg: true,
+      });
+    }
 
     if (logoFound) logoOk++; else noLogo.push(slug);
     if (logoFound && hasTextInLogo) wordmarkCount++;
@@ -506,11 +529,13 @@ async function buildContactSheet(paths, outPath, { cellW, cellH, cols = 5 }) {
     console.log(`  [${i+1}/${facts.length}] ${slug} — ${f.brandName} (${f.statNumber}${f.statUnit||''}) ${tag}`);
   }
 
-  // Contact sheets (6 cols × 5 rows)
-  await buildContactSheet(all.website,   path.join(OUT_DIR, 'contact-sheet-website.png'),   { cellW: 320, cellH: 80,  cols: 6 });
-  await buildContactSheet(all.email,     path.join(OUT_DIR, 'contact-sheet-email.png'),     { cellW: 240, cellH: 80,  cols: 6 });
-  await buildContactSheet(all.social,    path.join(OUT_DIR, 'contact-sheet-social.png'),    { cellW: 320, cellH: 180, cols: 6 });
-  await buildContactSheet(all.iosSplash, path.join(OUT_DIR, 'contact-sheet-ios-splash.png'),{ cellW: 200, cellH: 434, cols: 6 });
+  // Contact sheets (6 cols × 5 rows) — skip when running with a slug/surface filter
+  if (!skipContactSheets) {
+    await buildContactSheet(all.website,   path.join(OUT_DIR, 'contact-sheet-website.png'),   { cellW: 320, cellH: 80,  cols: 6 });
+    await buildContactSheet(all.email,     path.join(OUT_DIR, 'contact-sheet-email.png'),     { cellW: 240, cellH: 80,  cols: 6 });
+    await buildContactSheet(all.social,    path.join(OUT_DIR, 'contact-sheet-social.png'),    { cellW: 320, cellH: 180, cols: 6 });
+    await buildContactSheet(all.iosSplash, path.join(OUT_DIR, 'contact-sheet-ios-splash.png'),{ cellW: 200, cellH: 434, cols: 6 });
+  }
 
   console.log(`Done. ${facts.length*4} banners + 4 contact sheets. ${logoOk}/${facts.length} brands with logos. ${wordmarkCount} rendered as wordmark-only (no redundant text label).`);
   if (noLogo.length) console.log(`  No logo (rendered without): ${noLogo.join(', ')}`);

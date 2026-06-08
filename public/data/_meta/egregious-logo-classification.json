@@ -1,15 +1,15 @@
 {
-  "_comment": "Per-brand classification for the Egregious Rotation banner renderer. If hasTextInLogo=true, the brand's logo already contains the brand name as a wordmark, so the separate text label is omitted to avoid redundancy and the logo is rendered larger. If false, the logo is a mark only (no readable brand name) and the text label is kept. Hand-curated 2026-06-08; consumed by scripts/build-egregious-banners.mjs.",
+  "_comment": "Per-brand classification for the Egregious Rotation banner renderer. If hasTextInLogo=true, the brand's logo already contains the brand name as a wordmark, so the separate text label is omitted to avoid redundancy and the logo is rendered larger. If false, the logo is a mark only (no readable brand name) and the text label is kept. Hand-curated 2026-06-08; consumed by scripts/build-egregious-banners.mjs. Revision 2026-06-08 PM: flipped home-depot/amazon/chipotle/acura-usa/ben-and-jerry-s to true after Aron review — their cached logo PNGs contain the wordmark even though the canonical mark is small (THE HOME DEPOT inside the orange tile, BEN & JERRY'S inside the badge, etc.), so the separate text label was redundant.",
   "brands": {
-    "home-depot": false,
-    "amazon": false,
+    "home-depot": true,
+    "amazon": true,
     "colgate-palmolive": true,
     "starbucks": false,
     "shein": true,
     "tesla": true,
     "walmart": true,
     "dollar-tree": true,
-    "chipotle": false,
+    "chipotle": true,
     "disney": true,
     "tyson-foods": true,
     "berkshire-hathaway": true,
@@ -26,9 +26,9 @@
     "audi-usa": false,
     "microsoft": true,
     "merck": true,
-    "acura-usa": false,
+    "acura-usa": true,
     "nvidia": true,
-    "ben-and-jerry-s": false,
+    "ben-and-jerry-s": true,
     "salesforce": true,
     "levi-strauss": true
   }
