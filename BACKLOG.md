@@ -10,24 +10,29 @@
 
 ## 🔴 NEEDS YOUR DECISION — TODAY
 
-### 1. Build 53 — major scanner overhaul (in progress overnight)
-**Build 52 shipped to TestFlight tonight.** Smoke-test revealed:
-- ✅ Splash + quiz look good
-- 🐛 Search bug (focusedSlug locked) — **fix already committed `aa4c1a941`, ships with 53**
-- 🐛 Barcode scanner missing common US pantry items (Bush's Best, Oreos sometimes, etc.) — diagnosis: brand-parent-map gap, NOT Open Food Facts coverage
-- ✋ Scanner icon not prevalent enough
+### 1. Build 53 — overnight progress report (Aron wakes up to this)
 
-**In flight tonight (overnight agents):**
-- Agent A → expand `brand-parent-map.json` with 500-1500 new top US grocery/household/personal-care brands
-- Agent E → build static `upc-to-slug.json` (3-5k UPCs baked into IPA for instant + offline lookup)
+**Build 52 still on your phone.** Build 53 is **75% ready** — needs your nav-restructure call + ship approval.
 
-**Tomorrow morning (Aron is asleep, Claude handles solo):**
-- Merge agent A + E PRs
-- Nav restructure: SCAN as bottom-nav middle slot · Account moves to top-right next to Upgrade
-- No-match fallback: when scanner can't resolve, show "Found: [Brand] — searching parent..." with one-tap Search
-- UPCitemdb fallback API (2nd tier when OFF returns nothing)
-- Integration test with Bush's Best UPC as canary
-- `./scripts/ship-ios.sh` → Build 53 to TestFlight by Tuesday afternoon
+**✅ DONE overnight (merged + pushed to main):**
+- PR #64 merged: brand-parent-map +1,980 entries (4,738 → 6,718). Bush's Best, Heinz, KitKat→Hershey (corrected), Planters→Hormel (corrected), Pop-Tarts, French's, etc. all resolve now.
+- PR #65 merged: static `upc-to-slug.json` cache with **3,937 UPCs** baked into the IPA. Bush's Best 53 SKUs included. Instant + offline lookup.
+- **B: No-match → Search fallback** — scanner overlay now shows "Search for [Brand]" button when OFF/UPCitemdb returns a brand but we can't map it. Never a dead-end. (commit `dcfa9dc5b`)
+- **D: UPCitemdb Tier-3 fallback** — when OFF returns nothing, fall through to UPCitemdb's free trial endpoint (100 lookups/day, no API key). Wrapped in try/catch.
+- **Search-bug fix** (`aa4c1a941`) — focusedSlug releases when query changes.
+- 7/7 scanner tests pass. `vite build` clean.
+- Build number persisted (47→52 was lost from git previously; now committed so next ship-ios bumps cleanly to 53).
+
+**⏸️ WAITING ON YOUR EYEBALL:**
+- **C: Nav restructure** — your spec was "SCAN as middle bottom-nav slot · Account top-right corner next to Upgrade with an icon." Need a 30-second eyeball on which icon for Account (likely `ti-user-circle` to match Upgrade's crown) + confirm I should swap the Account tab out of bottom nav. I held the change because it touches every screen.
+- **Build 53 ship** — once C lands, `./scripts/ship-ios.sh` fires.
+
+**🎯 Tuesday morning action when you wake up:**
+1. Read this section (you're here ✓)
+2. Approve nav-restructure execution (or tweak my plan)
+3. I implement C in 30 min
+4. You run `./scripts/ship-ios.sh` → Build 53 to TestFlight in 15 min
+5. Test Bush's Best UPC + a couple others to confirm the scanner is fixed
 
 ### 2. L-2 LinkedIn pinned post (5 min — Twitter pin is up; LinkedIn audience won't see it)
 - **Copy:** `/docs/producthunt/PROMO_COPY.md` → "Pinned LinkedIn post" section. Same vibe as your X pin.
@@ -181,12 +186,12 @@ Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 | **B-50** | Negative banner palette pinned to desat purple (`#5d54a6`/`#463f7d`) | — | Decided 2026-06-08 PM. Env-var override preserved. If you want to test another palette pre-launch, run `PURPLE=#xxx PURPLE_DEEP=#xxx node scripts/build-egregious-banners.mjs`. |
 | **B-51** | Chipotle facts entry shortened (`Chipotle Mexican Grill` → `Chipotle`) | ✅ done 2026-06-08 PM | Long name was overflowing iOS splash brand-identity area at font 140. Stat copy still names "Chipotle Mexican Grill" for legal identity. |
 | **B-52** | Auto-fit text in renderer for future long brand names | S | Defer post-launch. Quick template: `textLength + lengthAdjust="spacingAndGlyphs"` on the SVG brand-name `<text>`. Affects ~0 brands today (we shortened the one offender) but a future egregious add could hit this. |
-| ~~**B-53**~~ | ~~Search bug: focusedSlug stuck after openBrand~~ | ✅ fix committed 2026-06-08 PM (`aa4c1a941`) | Ships with Build 53. |
-| **B-54** | Scanner: expand brand-parent-map (+500-1500 entries) | L (agent A overnight) | Bush's Best confirmed missing; likely 100s more US groceries. PR landing tomorrow morning. |
-| **B-55** | Scanner: static UPC→slug cache (3-5k entries baked into IPA) | L (agent E overnight) | Instant + offline lookup. PR landing tomorrow morning + build script for monthly cron. |
-| **B-56** | Scanner: no-match fallback to brand-name search | M | "Found: [Brand] — searching parent..." with one-tap Search. Never show a dead-end (Yuka model). Ships in Build 53. |
-| **B-57** | Scanner: nav restructure — SCAN as bottom-nav middle slot | M | Account moves to top-right corner next to Upgrade. Big visual change, touches every screen. Ships in Build 53. |
-| **B-58** | Scanner: UPCitemdb fallback API | S | Free tier ~100/day, paid $10/mo. Hit when OFF returns nothing. Ships in Build 53. |
+| ~~**B-53**~~ | ~~Search bug: focusedSlug stuck after openBrand~~ | ✅ done 2026-06-08 PM (`aa4c1a941`) | Ships in Build 53. |
+| ~~**B-54**~~ | ~~Scanner: brand-parent-map expansion (+1,980 entries)~~ | ✅ done 2026-06-09 AM (PR #64, `15d8c4b6b`) | 4,738 → 6,718 entries. Bush's, Heinz, French's, Pop-Tarts, KitKat→Hershey (correction), Planters→Hormel (correction). |
+| ~~**B-55**~~ | ~~Scanner: static UPC→slug cache (3,937 entries)~~ | ✅ done 2026-06-09 AM (PR #65, `b8e610698`) | Baked into IPA. Bush's Best 53 SKUs included. Instant + offline lookup. Monthly cron via `scripts/build-upc-cache.mjs`. |
+| ~~**B-56**~~ | ~~Scanner: no-match fallback to brand-name search~~ | ✅ done 2026-06-09 AM (`dcfa9dc5b`) | When OFF/UPCitemdb returns a brand but no parent match, primary "Search for [Brand]" button pre-fills query + jumps to Search tab. Yuka-style no-dead-end. |
+| **B-57** | Scanner: nav restructure — SCAN as bottom-nav middle slot | M | Account moves to top-right corner next to Upgrade. Ships in Build 53 after Aron approves icon choice + execution plan. |
+| ~~**B-58**~~ | ~~Scanner: UPCitemdb Tier-3 fallback API~~ | ✅ done 2026-06-09 AM (`dcfa9dc5b`) | Free trial endpoint (100/day per-IP, no key). Hit when OFF returns nothing. Wrapped in try/catch — silent on failure. |
 | **B-59** | Coverage-correction call-out in docs/landing | S | My earlier "11k companies all have 7 scored categories" claim was misleading. Honest distribution: 84% have only 3-5 real public-records data points. Update talk tracks accordingly post-launch. |
 
 ### Scoring schema expansion
