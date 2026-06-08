@@ -1,14 +1,26 @@
-// Build all "5 Most Egregious" marketing assets from
+// Build all "Egregious Rotation" marketing assets from
 // public/data/_meta/egregious-facts.json.
 //
-// Outputs:
-//   docs/marketing/egregious/banner-website-{1..5}.png   (1280 x  320)
-//   docs/marketing/egregious/banner-email-{1..5}.png     ( 600 x  200)
-//   docs/marketing/egregious/social-{1..5}.png           (1200 x  675)
-//   docs/marketing/egregious/ios-splash-{1..5}.png       (1320 x 2868)
-//   docs/marketing/egregious/contact-sheet-website.png   (3 cols x 2 rows grid)
+// Outputs (one of each per fact):
+//   docs/marketing/egregious/banner-website-{slug}.png   (1280 x  320)
+//   docs/marketing/egregious/banner-email-{slug}.png     ( 600 x  200)
+//   docs/marketing/egregious/social-{slug}.png           (1200 x  675)
+//   docs/marketing/egregious/ios-splash-{slug}.png       (1320 x 2868)
+//   docs/marketing/egregious/contact-sheet-{surface}.png (grid for QA)
 //
-// Re-run any time the JSON changes. Type-driven, no clip-art, journalistic.
+// Brand logos (unmodified) are composited from
+//   docs/marketing/egregious/logos/<slug>.{svg,png}
+// produced by scripts/_fetch-brand-logos.mjs. If a logo isn't on disk,
+// we render the banner without it (graceful fallback).
+//
+// Design pass June 2026:
+//   - Brand name is co-equal hero with the stat number (~2.5× prior size).
+//   - Brand logo composited top-left/center, unmodified, ~40–60 px tall.
+//   - Nominative fair-use disclaimer on every surface.
+//   - Positive-polarity facts use a green accent; negative stays purple.
+//   - Type breathing room, layout hierarchy matched to the social card.
+//
+// No headless browser, no npm deps beyond sharp.
 
 import sharp from 'sharp';
 import fs from 'node:fs/promises';
@@ -18,6 +30,7 @@ import { fileURLToPath } from 'node:url';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
 const OUT_DIR = path.join(ROOT, 'docs/marketing/egregious');
+const LOGO_DIR = path.join(OUT_DIR, 'logos');
 const FACTS_JSON = path.join(ROOT, 'public/data/_meta/egregious-facts.json');
 
 const FONT_STACK = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
@@ -25,9 +38,14 @@ const FONT_STACK = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Ar
 // Brand palette
 const PURPLE = '#7c6dfa';
 const PURPLE_DEEP = '#5b4ed7';
+const GREEN = '#4caf82';      // positive accent (matches app)
+const GREEN_DEEP = '#358a64';
 const DARK = '#0a0a0a';
+const DARK_2 = '#141327';
 const TEXT = '#f2f2f2';
 const TEXT_DIM = '#a8a8a8';
+
+const DISCLAIMER = "Brand names and logos are trademarks of their respective owners. Used for editorial identification under nominative fair use.";
 
 const xml = (s) => String(s)
   .replace(/&/g, '&amp;')
@@ -36,144 +54,173 @@ const xml = (s) => String(s)
   .replace(/"/g, '&quot;')
   .replace(/'/g, '&apos;');
 
-// Shared SVG fragments ------------------------------------------------------
+function accent(fact) {
+  return fact.polarity === 'positive' ? GREEN : PURPLE;
+}
+function accentDeep(fact) {
+  return fact.polarity === 'positive' ? GREEN_DEEP : PURPLE_DEEP;
+}
 
-function gradientDefs(id = 'bg') {
+function gradientDefs(id, fact) {
+  const a = accent(fact);
+  const b = accentDeep(fact);
   return `<defs>
     <linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="${PURPLE}"/>
-      <stop offset="100%" stop-color="${PURPLE_DEEP}"/>
+      <stop offset="0%" stop-color="${a}"/>
+      <stop offset="100%" stop-color="${b}"/>
     </linearGradient>
     <linearGradient id="${id}-dark" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a0a0a"/>
-      <stop offset="100%" stop-color="#141327"/>
+      <stop offset="0%" stop-color="${DARK}"/>
+      <stop offset="100%" stop-color="${DARK_2}"/>
     </linearGradient>
   </defs>`;
 }
 
-// TruNorth wordmark+mark as inline SVG. `scale` 1 = ~ 22px tall.
-function logoLockup({ x, y, scale = 1, lightOnDark = true }) {
+// TruNorth wordmark+mark. scale 1 = ~28px mark.
+function logoLockup({ x, y, scale = 1, lightOnDark = true, fact }) {
   const s = scale;
+  const a = accent(fact);
   const markSize = 28 * s;
   const radius = 9 * s;
   const wordSize = 22 * s;
   const arrowSize = 18 * s;
   const tnFill = lightOnDark ? TEXT : '#101010';
-  const northFill = PURPLE;
   return `<g transform="translate(${x},${y})">
-    <rect x="0" y="0" width="${markSize}" height="${markSize}" rx="${radius}" ry="${radius}" fill="${PURPLE}"/>
+    <rect x="0" y="0" width="${markSize}" height="${markSize}" rx="${radius}" ry="${radius}" fill="${a}"/>
     <text x="${markSize/2}" y="${markSize/2 + arrowSize*0.36}" font-family="${FONT_STACK}" font-weight="800" font-size="${arrowSize}" fill="#ffffff" text-anchor="middle">↑</text>
-    <text x="${markSize + 8*s}" y="${markSize*0.72}" font-family="${FONT_STACK}" font-weight="800" font-size="${wordSize}" letter-spacing="-0.2" fill="${tnFill}">Tru<tspan fill="${northFill}">North</tspan></text>
+    <text x="${markSize + 8*s}" y="${markSize*0.72}" font-family="${FONT_STACK}" font-weight="800" font-size="${wordSize}" letter-spacing="-0.2" fill="${tnFill}">Tru<tspan fill="${a}">North</tspan></text>
   </g>`;
+}
+
+// --- Brand-logo composite helpers -----------------------------------------
+
+async function findLogoFile(slug) {
+  for (const ext of ['.png', '.svg']) {
+    const p = path.join(LOGO_DIR, `${slug}${ext}`);
+    try {
+      const st = await fs.stat(p);
+      if (st.size > 200) return { path: p, ext };
+    } catch { /* miss */ }
+  }
+  return null;
+}
+
+// Produce a transparent PNG buffer of the brand logo, fit into (maxW × maxH).
+async function renderLogoBuffer(slug, maxW, maxH) {
+  const found = await findLogoFile(slug);
+  if (!found) return null;
+  try {
+    return await sharp(found.path, { density: 300 })
+      .resize(maxW, maxH, { fit: 'inside', withoutEnlargement: false, background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .png()
+      .toBuffer({ resolveWithObject: true });
+  } catch (err) {
+    console.warn(`  ! logo render failed for ${slug}: ${err.message}`);
+    return null;
+  }
 }
 
 // --- WEBSITE banner: 1280 x 320 -------------------------------------------
 
-function websiteBannerSvg(fact) {
+function websiteBannerSvg(fact, logoMeta) {
   const W = 1280, H = 320;
   const padX = 56;
-  // Stat number: enormous, left
-  const statY = 230;
+
+  const LOGO_BOX_H = 56;
+  const LOGO_BOX_W = 160;
+  const logoTop = 36;
+  const brandNameY = logoTop + LOGO_BOX_H + 56;
+  const statY = H - 110;
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-    ${gradientDefs('g')}
+    ${gradientDefs('g', fact)}
     <rect width="${W}" height="${H}" fill="url(#g)"/>
-    <!-- subtle radial accent -->
-    <circle cx="${W-220}" cy="${H/2}" r="320" fill="#ffffff" opacity="0.04"/>
+    <circle cx="${W-220}" cy="${H/2}" r="320" fill="#ffffff" opacity="0.05"/>
 
-    <!-- Top row: lens chip + brand line -->
-    <text x="${padX}" y="58" font-family="${FONT_STACK}" font-weight="700" font-size="14" letter-spacing="2" fill="#ffffff" opacity="0.85">${xml(fact.lens.toUpperCase())}</text>
-    <text x="${padX}" y="92" font-family="${FONT_STACK}" font-weight="800" font-size="28" letter-spacing="-0.3" fill="#ffffff">${xml(fact.brandName)}</text>
+    <text x="${padX}" y="32" font-family="${FONT_STACK}" font-weight="700" font-size="12" letter-spacing="2" fill="#ffffff" opacity="0.85">${xml(fact.lens.toUpperCase())}</text>
 
-    <!-- HERO stat number -->
-    <text x="${padX}" y="${statY}" font-family="${FONT_STACK}" font-weight="900" font-size="170" letter-spacing="-6" fill="#ffffff">${xml(fact.statNumber)}<tspan font-size="100" font-weight="900" fill="#ffffff" opacity="0.85">${xml(fact.statUnit || '')}</tspan></text>
+    ${logoMeta ? `<rect x="${padX}" y="${logoTop}" width="${LOGO_BOX_W}" height="${LOGO_BOX_H}" fill="transparent"/>` : ''}
 
-    <!-- Right column: kicker + source + CTA -->
-    <text x="${W-padX}" y="120" text-anchor="end" font-family="${FONT_STACK}" font-weight="700" font-size="22" fill="#ffffff">${xml(fact.statKicker)}</text>
-    <text x="${W-padX}" y="158" text-anchor="end" font-family="${FONT_STACK}" font-weight="500" font-size="16" fill="#ffffff" opacity="0.82">${xml(fact.shortContext)}</text>
+    <text x="${padX}" y="${brandNameY}" font-family="${FONT_STACK}" font-weight="900" font-size="56" letter-spacing="-1.2" fill="#ffffff">${xml(fact.brandName)}</text>
 
-    <!-- CTA pill (visual only) -->
-    <g transform="translate(${W-padX-220},${H-110})">
-      <rect x="0" y="0" width="220" height="46" rx="23" ry="23" fill="#ffffff"/>
-      <text x="110" y="30" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="16" fill="${PURPLE_DEEP}">${xml(fact.cta)} →</text>
-    </g>
+    <text x="${W-padX}" y="${statY}" text-anchor="end" font-family="${FONT_STACK}" font-weight="900" font-size="120" letter-spacing="-4" fill="#ffffff">${xml(fact.statNumber)}<tspan font-size="76" font-weight="900" fill="#ffffff" opacity="0.85">${xml(fact.statUnit || '')}</tspan></text>
 
-    <!-- Source line -->
-    <text x="${W-padX}" y="${H-32}" text-anchor="end" font-family="${FONT_STACK}" font-weight="500" font-size="12" fill="#ffffff" opacity="0.7">Source: ${xml(fact.source)}</text>
+    <text x="${W-padX}" y="${statY+38}" text-anchor="end" font-family="${FONT_STACK}" font-weight="700" font-size="18" fill="#ffffff" opacity="0.95">${xml(fact.statKicker)}</text>
 
-    <!-- TruNorth wordmark, bottom-left -->
-    ${logoLockup({ x: padX, y: H-56, scale: 1 })}
+    <text x="${padX}" y="${H-46}" font-family="${FONT_STACK}" font-weight="500" font-size="11" fill="#ffffff" opacity="0.78">Source: ${xml(fact.source)}</text>
+    <text x="${padX}" y="${H-28}" font-family="${FONT_STACK}" font-weight="500" font-size="9" fill="#ffffff" opacity="0.55">${xml(DISCLAIMER)}</text>
+
+    ${logoLockup({ x: W-padX-160, y: H-44, scale: 0.62, fact })}
   </svg>`;
 }
 
 // --- EMAIL banner: 600 x 200 ----------------------------------------------
 
-function emailBannerSvg(fact) {
+function emailBannerSvg(fact, logoMeta) {
   const W = 600, H = 200;
-  const padX = 28;
+  const padX = 24;
+  const LOGO_BOX_H = 36;
+  const LOGO_BOX_W = 96;
+  const logoTop = 18;
+  const brandNameY = logoTop + LOGO_BOX_H + 30;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-    ${gradientDefs('g')}
+    ${gradientDefs('g', fact)}
     <rect width="${W}" height="${H}" fill="url(#g)"/>
 
-    <text x="${padX}" y="34" font-family="${FONT_STACK}" font-weight="700" font-size="10" letter-spacing="2" fill="#ffffff" opacity="0.85">${xml(fact.lens.toUpperCase())} · ${xml(fact.brandName.toUpperCase())}</text>
+    <text x="${padX}" y="14" font-family="${FONT_STACK}" font-weight="700" font-size="9" letter-spacing="2" fill="#ffffff" opacity="0.85">${xml(fact.lens.toUpperCase())}</text>
 
-    <!-- HERO stat -->
-    <text x="${padX}" y="128" font-family="${FONT_STACK}" font-weight="900" font-size="96" letter-spacing="-3" fill="#ffffff">${xml(fact.statNumber)}<tspan font-size="56" font-weight="900" opacity="0.85">${xml(fact.statUnit || '')}</tspan></text>
+    ${logoMeta ? `<rect x="${padX}" y="${logoTop}" width="${LOGO_BOX_W}" height="${LOGO_BOX_H}" fill="transparent"/>` : ''}
 
-    <!-- Right column wrap -->
-    <text x="${W-padX}" y="64" text-anchor="end" font-family="${FONT_STACK}" font-weight="700" font-size="14" fill="#ffffff">${xml(fact.statKicker)}</text>
-    <text x="${W-padX}" y="86" text-anchor="end" font-family="${FONT_STACK}" font-weight="500" font-size="11" fill="#ffffff" opacity="0.82">${xml(fact.brandName)}</text>
+    <text x="${padX}" y="${brandNameY}" font-family="${FONT_STACK}" font-weight="900" font-size="28" letter-spacing="-0.6" fill="#ffffff">${xml(fact.brandName)}</text>
 
-    <!-- CTA -->
-    <g transform="translate(${W-padX-150},${H-66})">
-      <rect width="150" height="34" rx="17" fill="#ffffff"/>
-      <text x="75" y="22" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="12" fill="${PURPLE_DEEP}">${xml(fact.cta)} →</text>
-    </g>
+    <text x="${W-padX}" y="${H-66}" text-anchor="end" font-family="${FONT_STACK}" font-weight="900" font-size="60" letter-spacing="-2" fill="#ffffff">${xml(fact.statNumber)}<tspan font-size="34" font-weight="900" opacity="0.85">${xml(fact.statUnit || '')}</tspan></text>
 
-    <text x="${W-padX}" y="${H-18}" text-anchor="end" font-family="${FONT_STACK}" font-weight="500" font-size="9" fill="#ffffff" opacity="0.7">Source: ${xml(fact.source)}</text>
+    <text x="${W-padX}" y="${H-44}" text-anchor="end" font-family="${FONT_STACK}" font-weight="700" font-size="11" fill="#ffffff" opacity="0.95">${xml(fact.statKicker)}</text>
 
-    <!-- Wordmark -->
-    ${logoLockup({ x: padX, y: H-44, scale: 0.72 })}
+    <text x="${padX}" y="${H-26}" font-family="${FONT_STACK}" font-weight="500" font-size="8" fill="#ffffff" opacity="0.78">Source: ${xml(fact.source)}</text>
+    <text x="${padX}" y="${H-12}" font-family="${FONT_STACK}" font-weight="500" font-size="7" fill="#ffffff" opacity="0.55">${xml(DISCLAIMER)}</text>
   </svg>`;
 }
 
 // --- SOCIAL card: 1200 x 675 ----------------------------------------------
 
-function socialCardSvg(fact) {
+function socialCardSvg(fact, logoMeta) {
   const W = 1200, H = 675;
   const padX = 72;
+  const a = accent(fact);
+  const LOGO_BOX_H = 90;
+  const LOGO_BOX_W = 280;
+  const logoTop = 96;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-    ${gradientDefs('g')}
+    ${gradientDefs('g', fact)}
     <rect width="${W}" height="${H}" fill="url(#g-dark)"/>
-    <!-- top accent band -->
-    <rect x="0" y="0" width="${W}" height="8" fill="${PURPLE}"/>
+    <rect x="0" y="0" width="${W}" height="${H}" fill="${DARK_2}" opacity="0.4"/>
+    <rect x="0" y="0" width="${W}" height="8" fill="${a}"/>
 
-    <!-- Lens + brand -->
-    <text x="${padX}" y="120" font-family="${FONT_STACK}" font-weight="700" font-size="16" letter-spacing="3" fill="${PURPLE}">${xml(fact.lens.toUpperCase())}</text>
-    <text x="${padX}" y="170" font-family="${FONT_STACK}" font-weight="800" font-size="40" letter-spacing="-0.5" fill="${TEXT}">${xml(fact.brandName)}</text>
+    <text x="${padX}" y="74" font-family="${FONT_STACK}" font-weight="700" font-size="16" letter-spacing="3" fill="${a}">${xml(fact.lens.toUpperCase())}</text>
 
-    <!-- HERO stat -->
-    <text x="${padX}" y="430" font-family="${FONT_STACK}" font-weight="900" font-size="280" letter-spacing="-10" fill="${TEXT}">${xml(fact.statNumber)}<tspan font-size="180" font-weight="900" fill="${PURPLE}">${xml(fact.statUnit || '')}</tspan></text>
+    ${logoMeta ? `<rect x="${padX}" y="${logoTop}" width="${LOGO_BOX_W}" height="${LOGO_BOX_H}" fill="transparent"/>` : ''}
 
-    <!-- Kicker -->
-    <text x="${padX}" y="495" font-family="${FONT_STACK}" font-weight="700" font-size="28" fill="${TEXT}">${xml(fact.statKicker)}</text>
-    <text x="${padX}" y="540" font-family="${FONT_STACK}" font-weight="500" font-size="22" fill="${TEXT_DIM}">${xml(fact.shortContext)}</text>
+    <text x="${padX}" y="${logoTop + LOGO_BOX_H + 56}" font-family="${FONT_STACK}" font-weight="900" font-size="56" letter-spacing="-1" fill="${TEXT}">${xml(fact.brandName)}</text>
 
-    <!-- Source -->
-    <text x="${padX}" y="${H-72}" font-family="${FONT_STACK}" font-weight="500" font-size="14" fill="${TEXT_DIM}">Source: ${xml(fact.source)}</text>
+    <text x="${padX}" y="450" font-family="${FONT_STACK}" font-weight="900" font-size="190" letter-spacing="-6" fill="${TEXT}">${xml(fact.statNumber)}<tspan font-size="130" font-weight="900" fill="${a}">${xml(fact.statUnit || '')}</tspan></text>
 
-    <!-- Wordmark, bottom-left -->
-    ${logoLockup({ x: padX, y: H-44, scale: 0.9 })}
+    <text x="${padX}" y="500" font-family="${FONT_STACK}" font-weight="700" font-size="24" fill="${TEXT}">${xml(fact.statKicker)}</text>
+    <text x="${padX}" y="535" font-family="${FONT_STACK}" font-weight="500" font-size="17" fill="${TEXT_DIM}">${xml(fact.shortContext)}</text>
 
-    <!-- PH callout, top-right -->
+    <text x="${padX}" y="${H-78}" font-family="${FONT_STACK}" font-weight="500" font-size="14" fill="${TEXT_DIM}">Source: ${xml(fact.source)}</text>
+    <text x="${padX}" y="${H-58}" font-family="${FONT_STACK}" font-weight="500" font-size="11" fill="${TEXT_DIM}" opacity="0.7">${xml(DISCLAIMER)}</text>
+
+    ${logoLockup({ x: padX, y: H-44, scale: 0.9, fact })}
+
     <g transform="translate(${W-padX-320},92)">
-      <rect width="320" height="64" rx="12" fill="${PURPLE}"/>
+      <rect width="320" height="64" rx="12" fill="${a}"/>
       <text x="160" y="28" text-anchor="middle" font-family="${FONT_STACK}" font-weight="700" font-size="12" letter-spacing="2" fill="#ffffff" opacity="0.9">LAUNCHING ON PRODUCT HUNT</text>
       <text x="160" y="52" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="18" fill="#ffffff">June 23, 2026</text>
     </g>
 
-    <!-- Bottom-right CTA -->
     <g transform="translate(${W-padX-260},${H-104})">
-      <rect width="260" height="56" rx="28" fill="${PURPLE}"/>
+      <rect width="260" height="56" rx="28" fill="${a}"/>
       <text x="130" y="36" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="18" fill="#ffffff">${xml(fact.cta)} →</text>
     </g>
   </svg>`;
@@ -181,61 +228,51 @@ function socialCardSvg(fact) {
 
 // --- iOS splash: 1320 x 2868 ----------------------------------------------
 
-function iosSplashSvg(fact) {
+function iosSplashSvg(fact, logoMeta) {
   const W = 1320, H = 2868;
-  const padX = 96;
+  const a = accent(fact);
+  const LOGO_BOX_H = 240;
+  const LOGO_BOX_W = 800;
+  const logoTop = 580;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-    ${gradientDefs('g')}
+    ${gradientDefs('g', fact)}
     <rect width="${W}" height="${H}" fill="${DARK}"/>
-    <!-- top purple band -->
     <rect x="0" y="0" width="${W}" height="${H*0.32}" fill="url(#g)"/>
-    <!-- soft fade -->
-    <rect x="0" y="${H*0.32 - 80}" width="${W}" height="160" fill="${DARK}" opacity="0.0"/>
 
-    <!-- Status-bar-ish spacer for the notch (just leaves room) -->
-
-    <!-- TruNorth wordmark, centered top -->
     <g transform="translate(${W/2 - 220},170)">
       <rect x="0" y="0" width="84" height="84" rx="27" fill="#ffffff" opacity="0.18"/>
-      <rect x="6" y="6" width="72" height="72" rx="22" fill="${PURPLE}"/>
+      <rect x="6" y="6" width="72" height="72" rx="22" fill="${a}"/>
       <text x="42" y="62" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="52" fill="#ffffff">↑</text>
       <text x="104" y="60" font-family="${FONT_STACK}" font-weight="800" font-size="56" letter-spacing="-0.6" fill="#ffffff">Tru<tspan fill="#ffffff" opacity="0.85">North</tspan></text>
     </g>
 
-    <!-- Lens chip -->
     <g transform="translate(${W/2 - 220},340)">
       <rect width="440" height="56" rx="28" fill="#ffffff" opacity="0.18"/>
       <text x="220" y="38" text-anchor="middle" font-family="${FONT_STACK}" font-weight="700" font-size="22" letter-spacing="2" fill="#ffffff">${xml(fact.lens.toUpperCase())}</text>
     </g>
 
-    <!-- Brand name -->
-    <text x="${W/2}" y="540" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="68" letter-spacing="-0.6" fill="#ffffff">${xml(fact.brandName)}</text>
+    ${logoMeta ? `<rect x="${(W-LOGO_BOX_W)/2}" y="${logoTop}" width="${LOGO_BOX_W}" height="${LOGO_BOX_H}" fill="transparent"/>` : ''}
 
-    <!-- HERO stat (massive, centered) -->
-    <text x="${W/2}" y="1340" text-anchor="middle" font-family="${FONT_STACK}" font-weight="900" font-size="520" letter-spacing="-22" fill="${TEXT}">${xml(fact.statNumber)}<tspan font-size="320" font-weight="900" fill="${PURPLE}">${xml(fact.statUnit || '')}</tspan></text>
+    <text x="${W/2}" y="${logoMeta ? 980 : 720}" text-anchor="middle" font-family="${FONT_STACK}" font-weight="900" font-size="140" letter-spacing="-2.5" fill="#ffffff">${xml(fact.brandName)}</text>
 
-    <!-- Kicker -->
-    ${wrapCenteredText(fact.statKicker, { cx: W/2, y: 1480, maxChars: 24, fontSize: 56, color: TEXT, weight: 700, lineGap: 1.15 })}
+    <text x="${W/2}" y="1500" text-anchor="middle" font-family="${FONT_STACK}" font-weight="900" font-size="460" letter-spacing="-18" fill="${TEXT}">${xml(fact.statNumber)}<tspan font-size="280" font-weight="900" fill="${a}">${xml(fact.statUnit || '')}</tspan></text>
 
-    <!-- Context, dim -->
-    ${wrapCenteredText(fact.context, { cx: W/2, y: 1720, maxChars: 36, fontSize: 38, color: TEXT_DIM, weight: 500, lineGap: 1.3 })}
+    ${wrapCenteredText(fact.statKicker, { cx: W/2, y: 1640, maxChars: 24, fontSize: 56, color: TEXT, weight: 700, lineGap: 1.15 })}
+    ${wrapCenteredText(fact.context, { cx: W/2, y: 1860, maxChars: 36, fontSize: 38, color: TEXT_DIM, weight: 500, lineGap: 1.3 })}
 
-    <!-- Source citation -->
-    <text x="${W/2}" y="2280" text-anchor="middle" font-family="${FONT_STACK}" font-weight="600" font-size="26" fill="${PURPLE}">Source</text>
+    <text x="${W/2}" y="2280" text-anchor="middle" font-family="${FONT_STACK}" font-weight="600" font-size="26" fill="${a}">Source</text>
     ${wrapCenteredText(fact.source, { cx: W/2, y: 2320, maxChars: 38, fontSize: 26, color: TEXT_DIM, weight: 500, lineGap: 1.3 })}
 
-    <!-- Tap to see receipt button -->
-    <g transform="translate(${(W-820)/2},2520)">
-      <rect width="820" height="120" rx="60" fill="${PURPLE}"/>
+    <g transform="translate(${(W-820)/2},2480)">
+      <rect width="820" height="120" rx="60" fill="${a}"/>
       <text x="410" y="78" text-anchor="middle" font-family="${FONT_STACK}" font-weight="800" font-size="44" fill="#ffffff">Tap to see the receipt →</text>
     </g>
 
-    <!-- Tiny footer -->
-    <text x="${W/2}" y="2780" text-anchor="middle" font-family="${FONT_STACK}" font-weight="500" font-size="22" fill="${TEXT_DIM}" opacity="0.7">TruNorth · 11,000+ brands · 100 public-records sources</text>
+    ${wrapCenteredText(DISCLAIMER, { cx: W/2, y: 2700, maxChars: 60, fontSize: 18, color: TEXT_DIM, weight: 500, lineGap: 1.3 })}
+    <text x="${W/2}" y="2820" text-anchor="middle" font-family="${FONT_STACK}" font-weight="500" font-size="20" fill="${TEXT_DIM}" opacity="0.7">TruNorth · 11,000+ brands · 100 public-records sources</text>
   </svg>`;
 }
 
-// Center-aligned, multi-line text helper (renders <tspan>s)
 function wrapCenteredText(text, { cx, y, maxChars, fontSize, color, weight = 600, lineGap = 1.2 }) {
   const words = String(text).split(/\s+/);
   const lines = [];
@@ -251,29 +288,88 @@ function wrapCenteredText(text, { cx, y, maxChars, fontSize, color, weight = 600
   }</text>`;
 }
 
-// --- Renderer --------------------------------------------------------------
+// --- Compose: SVG base + logo overlay --------------------------------------
 
-async function renderSvgToPng(svg, outPath, width, height) {
-  // Render SVG at exact pixel dims (sharp interprets the viewBox)
-  await sharp(Buffer.from(svg), { density: 144 })
-    .resize(width, height, { fit: 'fill' })
+// Build a "logo cartridge" — a rounded white panel sized to the logo box,
+// with the logo centered inside. Used on dark surfaces so brand logos in
+// any colour (including dark/brown) read clearly without being modified.
+// The logo itself is NOT recoloured or filtered.
+async function buildLogoCartridge(slug, boxW, boxH, padding = 12) {
+  const logo = await renderLogoBuffer(slug, boxW - padding * 2, boxH - padding * 2);
+  if (!logo) return null;
+  const cartridge = await sharp({
+    create: { width: boxW, height: boxH, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 1 } },
+  })
+    .composite([{
+      input: logo.data,
+      left: Math.round((boxW - logo.info.width) / 2),
+      top: Math.round((boxH - logo.info.height) / 2),
+    }])
     .png()
-    .toFile(outPath);
+    .toBuffer({ resolveWithObject: true });
+  // Round the corners by overlaying a mask.
+  const r = 12;
+  const mask = Buffer.from(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${boxW}" height="${boxH}"><rect x="0" y="0" width="${boxW}" height="${boxH}" rx="${r}" ry="${r}" fill="#fff"/></svg>`
+  );
+  const rounded = await sharp(cartridge.data)
+    .composite([{ input: mask, blend: 'dest-in' }])
+    .png()
+    .toBuffer({ resolveWithObject: true });
+  return rounded;
 }
 
-async function buildContactSheet(websitePaths, outPath) {
-  // 3 cols x 2 rows of 1280x320 tiles, scaled down to ~640x160, with 24px gutters.
-  const cell = { w: 640, h: 160 };
-  const gutter = 24;
-  const cols = 3, rows = 2;
-  const W = gutter + cols * (cell.w + gutter);
-  const H = gutter + rows * (cell.h + gutter);
+async function renderWithLogo({ svg, outPath, width, height, slug, logoBox, darkBg = false }) {
+  const baseBuf = await sharp(Buffer.from(svg), { density: 144 })
+    .resize(width, height, { fit: 'fill' })
+    .png()
+    .toBuffer();
+  if (!logoBox) {
+    await fs.writeFile(outPath, baseBuf);
+    return { logoComposited: false };
+  }
+  // On dark surfaces, wrap the logo in a white rounded cartridge so it
+  // reads regardless of the logo's native colour.
+  let composite;
+  if (darkBg) {
+    const cart = await buildLogoCartridge(slug, logoBox.w, logoBox.h, 12);
+    if (!cart) {
+      await fs.writeFile(outPath, baseBuf);
+      return { logoComposited: false };
+    }
+    composite = { input: cart.data, left: Math.round(logoBox.x), top: Math.round(logoBox.y) };
+  } else {
+    const logo = await renderLogoBuffer(slug, logoBox.w, logoBox.h);
+    if (!logo) {
+      await fs.writeFile(outPath, baseBuf);
+      return { logoComposited: false };
+    }
+    composite = {
+      input: logo.data,
+      left: Math.round(logoBox.x + (logoBox.w - logo.info.width) / 2),
+      top:  Math.round(logoBox.y + (logoBox.h - logo.info.height) / 2),
+    };
+  }
+  await sharp(baseBuf)
+    .composite([composite])
+    .png()
+    .toFile(outPath);
+  return { logoComposited: true };
+}
+
+// --- Contact sheets -------------------------------------------------------
+
+async function buildContactSheet(paths, outPath, { cellW, cellH, cols = 5 }) {
+  const gutter = 18;
+  const rows = Math.ceil(paths.length / cols);
+  const W = gutter + cols * (cellW + gutter);
+  const H = gutter + rows * (cellH + gutter);
   const composites = [];
-  for (let i = 0; i < websitePaths.length; i++) {
+  for (let i = 0; i < paths.length; i++) {
     const col = i % cols, row = Math.floor(i / cols);
-    const left = gutter + col * (cell.w + gutter);
-    const top  = gutter + row * (cell.h + gutter);
-    const buf = await sharp(websitePaths[i]).resize(cell.w, cell.h).png().toBuffer();
+    const left = gutter + col * (cellW + gutter);
+    const top  = gutter + row * (cellH + gutter);
+    const buf = await sharp(paths[i]).resize(cellW, cellH, { fit: 'contain', background: '#0a0a0a' }).png().toBuffer();
     composites.push({ input: buf, top, left });
   }
   await sharp({ create: { width: W, height: H, channels: 4, background: '#0a0a0a' } })
@@ -290,30 +386,64 @@ async function buildContactSheet(websitePaths, outPath) {
   const facts = raw.facts;
   console.log(`Rendering ${facts.length} facts → ${OUT_DIR}`);
 
-  const websitePaths = [];
+  const all = { website: [], email: [], social: [], iosSplash: [] };
+  let logoOk = 0;
+  const noLogo = [];
+
   for (let i = 0; i < facts.length; i++) {
     const f = facts[i];
-    const n = i + 1;
+    const slug = f.brandSlug;
+    const logoFound = await findLogoFile(slug);
 
-    const webPath   = path.join(OUT_DIR, `banner-website-${n}.png`);
-    const mailPath  = path.join(OUT_DIR, `banner-email-${n}.png`);
-    const socPath   = path.join(OUT_DIR, `social-${n}.png`);
-    const iosPath   = path.join(OUT_DIR, `ios-splash-${n}.png`);
+    const webPath  = path.join(OUT_DIR, `banner-website-${slug}.png`);
+    const mailPath = path.join(OUT_DIR, `banner-email-${slug}.png`);
+    const socPath  = path.join(OUT_DIR, `social-${slug}.png`);
+    const iosPath  = path.join(OUT_DIR, `ios-splash-${slug}.png`);
 
-    await renderSvgToPng(websiteBannerSvg(f), webPath,   1280,  320);
-    await renderSvgToPng(emailBannerSvg(f),   mailPath,   600,  200);
-    await renderSvgToPng(socialCardSvg(f),    socPath,   1200,  675);
-    await renderSvgToPng(iosSplashSvg(f),     iosPath,   1320, 2868);
+    const webBox = logoFound ? { x: 56, y: 36, w: 160, h: 56 } : null;
+    await renderWithLogo({
+      svg: websiteBannerSvg(f, webBox),
+      outPath: webPath, width: 1280, height: 320,
+      slug, logoBox: webBox,
+    });
 
-    websitePaths.push(webPath);
-    console.log(`  [${n}/${facts.length}] ${f.brandName} — ${f.statNumber}${f.statUnit || ''}`);
+    const mailBox = logoFound ? { x: 24, y: 18, w: 96, h: 36 } : null;
+    await renderWithLogo({
+      svg: emailBannerSvg(f, mailBox),
+      outPath: mailPath, width: 600, height: 200,
+      slug, logoBox: mailBox,
+    });
+
+    const socBox = logoFound ? { x: 72, y: 96, w: 280, h: 90 } : null;
+    await renderWithLogo({
+      svg: socialCardSvg(f, socBox),
+      outPath: socPath, width: 1200, height: 675,
+      slug, logoBox: socBox, darkBg: true,
+    });
+
+    const iosBox = logoFound ? { x: (1320 - 800) / 2, y: 580, w: 800, h: 240 } : null;
+    await renderWithLogo({
+      svg: iosSplashSvg(f, iosBox),
+      outPath: iosPath, width: 1320, height: 2868,
+      slug, logoBox: iosBox, darkBg: true,
+    });
+
+    if (logoFound) logoOk++; else noLogo.push(slug);
+    all.website.push(webPath);
+    all.email.push(mailPath);
+    all.social.push(socPath);
+    all.iosSplash.push(iosPath);
+    console.log(`  [${i+1}/${facts.length}] ${slug} — ${f.brandName} (${f.statNumber}${f.statUnit||''}) ${logoFound ? '+logo' : 'no-logo'}`);
   }
 
-  const sheetPath = path.join(OUT_DIR, 'contact-sheet-website.png');
-  await buildContactSheet(websitePaths, sheetPath);
-  console.log(`  contact sheet → ${sheetPath}`);
+  // Contact sheets (6 cols × 5 rows)
+  await buildContactSheet(all.website,   path.join(OUT_DIR, 'contact-sheet-website.png'),   { cellW: 320, cellH: 80,  cols: 6 });
+  await buildContactSheet(all.email,     path.join(OUT_DIR, 'contact-sheet-email.png'),     { cellW: 240, cellH: 80,  cols: 6 });
+  await buildContactSheet(all.social,    path.join(OUT_DIR, 'contact-sheet-social.png'),    { cellW: 320, cellH: 180, cols: 6 });
+  await buildContactSheet(all.iosSplash, path.join(OUT_DIR, 'contact-sheet-ios-splash.png'),{ cellW: 200, cellH: 434, cols: 6 });
 
-  console.log(`Done. ${facts.length * 4 + 1} files written to ${OUT_DIR}`);
+  console.log(`Done. ${facts.length*4} banners + 4 contact sheets. ${logoOk}/${facts.length} brands with logos.`);
+  if (noLogo.length) console.log(`  No logo (rendered without): ${noLogo.join(', ')}`);
 })().catch(err => {
   console.error(err);
   process.exit(1);
