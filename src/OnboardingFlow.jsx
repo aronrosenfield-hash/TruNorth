@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const COMPANIES = [
-  { emoji:"🛒", bg:"#1a1a2e", name:"Amazon",    meta:"Retail · E-commerce",  grade:"C", gradeStyle:{background:"#2e2a1a",color:"#fde68a"}, details:[{label:"🌿 Environment",pct:70,color:"#4ade80",grade:"B"},{label:"⚖️ Labor",pct:30,color:"#fca5a5",grade:"D"},{label:"🏳️ DEI",pct:72,color:"#a99ff7",grade:"B"}] },
-  { emoji:"🧥", bg:"#1a2e1a", name:"Patagonia", meta:"Outdoor · Apparel",    grade:"A", gradeStyle:{background:"#1a3a2a",color:"#4ade80"}, details:[{label:"🌿 Environment",pct:95,color:"#4ade80",grade:"A+"},{label:"⚖️ Labor",pct:88,color:"#4ade80",grade:"A"},{label:"❤️ Charity",pct:90,color:"#4ade80",grade:"A"}] },
-  { emoji:"⛽", bg:"#2e1a1a", name:"ExxonMobil",meta:"Energy · Oil & Gas",   grade:"D", gradeStyle:{background:"#2e1e1a",color:"#fca5a5"}, details:[{label:"🌿 Environment",pct:12,color:"#fca5a5",grade:"F"},{label:"⚖️ Labor",pct:40,color:"#fde68a",grade:"C"}] },
+  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"A", gradeStyle:{background:"#1a3a2a",color:"#4ade80"}, details:[{label:"⚖️ Labor",pct:90,color:"#4ade80",grade:"A"},{label:"🏳️ DEI",pct:82,color:"#4ade80",grade:"A-"},{label:"❤️ Charity",pct:78,color:"#4ade80",grade:"B+"}] },
+  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"C", gradeStyle:{background:"#2e2a1a",color:"#fde68a"}, details:[{label:"🌿 Environment",pct:78,color:"#4ade80",grade:"B+"},{label:"⚖️ Labor",pct:35,color:"#fca5a5",grade:"D"},{label:"🏳️ DEI",pct:48,color:"#fde68a",grade:"C"}] },
+  { emoji:"👗", bg:"#2e1a1a", name:"Shein",     meta:"Apparel · Fast Fashion", grade:"D", gradeStyle:{background:"#2e1e1a",color:"#fca5a5"}, details:[{label:"🌿 Environment",pct:15,color:"#fca5a5",grade:"F"},{label:"⚖️ Labor",pct:18,color:"#fca5a5",grade:"F"},{label:"🔒 Privacy",pct:35,color:"#fca5a5",grade:"D"}] },
 ];
 
 const CATEGORIES = [
