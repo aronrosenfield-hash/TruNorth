@@ -1,0 +1,52 @@
+name: corporate-giving-annual
+
+# Corporate charitable giving (annual)
+#
+# Refreshes the curated corporate-giving seed by hitting ProPublica's
+# Nonprofit Explorer API once per year for every seed entry with an EIN.
+# Most US corporate foundations file Form 990 by Feb 15 with extensions,
+# so Mar 1 catches the freshest disclosures while still being predictable.
+#
+# 1 req/sec courtesy throttle. The full ~300-EIN run takes <8 minutes.
+# Public records (IRS 990s); ProPublica adds value but does not restrict
+# reuse of the underlying data.
+
+on:
+  schedule:
+    - cron: "0 6 1 3 *"     # 06:00 UTC on March 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw + derived JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run corporate-giving fetcher (real ProPublica API)
+        run: node scripts/corporate-giving-fetch.mjs --apply
+
+      - name: Merge into data/derived/corporate-giving-augment.json
+        run: node scripts/corporate-giving-merge.mjs
+
+      - name: Run unit tests
+        run: node --test scripts/corporate-giving-fetch.test.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/corporate-giving/ data/derived/corporate-giving-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(corporate-giving): annual ProPublica 990 refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
