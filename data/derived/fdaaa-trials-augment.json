@@ -1,0 +1,6098 @@
+{
+  "_license": "Apache-2.0",
+  "_generated_at": "2026-06-08T16:09:40.929Z",
+  "_source": "https://fdaaa.trialstracker.net",
+  "_source_raw_file": "data/raw/fdaaa-trials/2026-06-08.json",
+  "_matched_slugs": 568,
+  "_routing_counts": {
+    "direct": 187,
+    "suffix": 361,
+    "alias": 46,
+    "brand-parent": 24,
+    "orphan": 9179
+  },
+  "_orphan_sponsors_top": [
+    {
+      "name": "BTL Industries Ltd.",
+      "slug": "btl-industries-ltd",
+      "due": 32,
+      "reported": 1,
+      "lateOrMissing": 31,
+      "compliancePct": 3
+    },
+    {
+      "name": "Jiangsu HengRui Medicine Co., Ltd.",
+      "slug": "jiangsu-hengrui-medicine-co-ltd",
+      "due": 14,
+      "reported": 1,
+      "lateOrMissing": 13,
+      "compliancePct": 7
+    },
+    {
+      "name": "InMode MD Ltd.",
+      "slug": "inmode-md-ltd",
+      "due": 20,
+      "reported": 8,
+      "lateOrMissing": 12,
+      "compliancePct": 40
+    },
+    {
+      "name": "Syneron Medical",
+      "slug": "syneron-medical",
+      "due": 15,
+      "reported": 4,
+      "lateOrMissing": 11,
+      "compliancePct": 26
+    },
+    {
+      "name": "AB Science",
+      "slug": "ab-science",
+      "due": 11,
+      "reported": 0,
+      "lateOrMissing": 11,
+      "compliancePct": 0
+    },
+    {
+      "name": "Sciton",
+      "slug": "sciton",
+      "due": 11,
+      "reported": 0,
+      "lateOrMissing": 11,
+      "compliancePct": 0
+    },
+    {
+      "name": "Optos, PLC.",
+      "slug": "optos-plc",
+      "due": 11,
+      "reported": 1,
+      "lateOrMissing": 10,
+      "compliancePct": 9
+    },
+    {
+      "name": "Kartos Therapeutics, Inc.",
+      "slug": "kartos-therapeutics-inc",
+      "due": 10,
+      "reported": 0,
+      "lateOrMissing": 10,
+      "compliancePct": 0
+    },
+    {
+      "name": "Sonova AG",
+      "slug": "sonova-ag",
+      "due": 27,
+      "reported": 19,
+      "lateOrMissing": 8,
+      "compliancePct": 70
+    },
+    {
+      "name": "Cynosure, Inc.",
+      "slug": "cynosure-inc",
+      "due": 23,
+      "reported": 15,
+      "lateOrMissing": 8,
+      "compliancePct": 65
+    },
+    {
+      "name": "Akeso",
+      "slug": "akeso",
+      "due": 9,
+      "reported": 1,
+      "lateOrMissing": 8,
+      "compliancePct": 11
+    },
+    {
+      "name": "Heron Therapeutics",
+      "slug": "heron-therapeutics",
+      "due": 20,
+      "reported": 13,
+      "lateOrMissing": 7,
+      "compliancePct": 65
+    },
+    {
+      "name": "InSightec",
+      "slug": "insightec",
+      "due": 13,
+      "reported": 6,
+      "lateOrMissing": 7,
+      "compliancePct": 46
+    },
+    {
+      "name": "Lumenis Be Ltd.",
+      "slug": "lumenis-be-ltd",
+      "due": 9,
+      "reported": 2,
+      "lateOrMissing": 7,
+      "compliancePct": 22
+    },
+    {
+      "name": "Repurposed Therapeutics, Inc.",
+      "slug": "repurposed-therapeutics-inc",
+      "due": 8,
+      "reported": 1,
+      "lateOrMissing": 7,
+      "compliancePct": 12
+    },
+    {
+      "name": "Therapeutics, Inc.",
+      "slug": "therapeutics-inc",
+      "due": 8,
+      "reported": 1,
+      "lateOrMissing": 7,
+      "compliancePct": 12
+    },
+    {
+      "name": "Sofwave Medical LTD",
+      "slug": "sofwave-medical-ltd",
+      "due": 7,
+      "reported": 0,
+      "lateOrMissing": 7,
+      "compliancePct": 0
+    },
+    {
+      "name": "Telios Pharma, Inc.",
+      "slug": "telios-pharma-inc",
+      "due": 7,
+      "reported": 0,
+      "lateOrMissing": 7,
+      "compliancePct": 0
+    },
+    {
+      "name": "Cara Therapeutics, Inc.",
+      "slug": "cara-therapeutics-inc",
+      "due": 15,
+      "reported": 9,
+      "lateOrMissing": 6,
+      "compliancePct": 60
+    },
+    {
+      "name": "Apnimed",
+      "slug": "apnimed",
+      "due": 12,
+      "reported": 6,
+      "lateOrMissing": 6,
+      "compliancePct": 50
+    },
+    {
+      "name": "Molnlycke Health Care AB",
+      "slug": "molnlycke-health-care-ab",
+      "due": 11,
+      "reported": 5,
+      "lateOrMissing": 6,
+      "compliancePct": 45
+    },
+    {
+      "name": "LIB Therapeutics LLC",
+      "slug": "lib-therapeutics-llc",
+      "due": 9,
+      "reported": 3,
+      "lateOrMissing": 6,
+      "compliancePct": 33
+    },
+    {
+      "name": "Hamad Medical Corporation",
+      "slug": "hamad-medical-corporation",
+      "due": 8,
+      "reported": 2,
+      "lateOrMissing": 6,
+      "compliancePct": 25
+    },
+    {
+      "name": "Sorrento Therapeutics, Inc.",
+      "slug": "sorrento-therapeutics-inc",
+      "due": 7,
+      "reported": 1,
+      "lateOrMissing": 6,
+      "compliancePct": 14
+    },
+    {
+      "name": "Allena Pharmaceuticals",
+      "slug": "allena-pharmaceuticals",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Ascentage Pharma Group Inc.",
+      "slug": "ascentage-pharma-group-inc",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Helius Medical Inc",
+      "slug": "helius-medical-inc",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Home Skinovations Ltd.",
+      "slug": "home-skinovations-ltd",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "LumiraDx UK Limited",
+      "slug": "lumiradx-uk-limited",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Otolith Labs",
+      "slug": "otolith-labs",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Qlaris Bio, Inc.",
+      "slug": "qlaris-bio-inc",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Sirnaomics",
+      "slug": "sirnaomics",
+      "due": 6,
+      "reported": 0,
+      "lateOrMissing": 6,
+      "compliancePct": 0
+    },
+    {
+      "name": "Veru Inc.",
+      "slug": "veru-inc",
+      "due": 9,
+      "reported": 4,
+      "lateOrMissing": 5,
+      "compliancePct": 44
+    },
+    {
+      "name": "Aeglea Biotherapeutics",
+      "slug": "aeglea-biotherapeutics",
+      "due": 8,
+      "reported": 3,
+      "lateOrMissing": 5,
+      "compliancePct": 37
+    },
+    {
+      "name": "Healthy.io Ltd.",
+      "slug": "healthyio-ltd",
+      "due": 7,
+      "reported": 2,
+      "lateOrMissing": 5,
+      "compliancePct": 28
+    },
+    {
+      "name": "Bolton Medical",
+      "slug": "bolton-medical",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "Criterium, Inc.",
+      "slug": "criterium-inc",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "DermBiont, Inc.",
+      "slug": "dermbiont-inc",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "EyeQue Corp.",
+      "slug": "eyeque-corp",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "NeuroRx, Inc.",
+      "slug": "neurorx-inc",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "Research Insight LLC",
+      "slug": "research-insight-llc",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "Revimmune",
+      "slug": "revimmune",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "SightGlass Vision, Inc.",
+      "slug": "sightglass-vision-inc",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "Spark Biomedical, Inc.",
+      "slug": "spark-biomedical-inc",
+      "due": 6,
+      "reported": 1,
+      "lateOrMissing": 5,
+      "compliancePct": 16
+    },
+    {
+      "name": "BioElectronics Corporation",
+      "slug": "bioelectronics-corporation",
+      "due": 5,
+      "reported": 0,
+      "lateOrMissing": 5,
+      "compliancePct": 0
+    },
+    {
+      "name": "Focus Medical, LLC",
+      "slug": "focus-medical-llc",
+      "due": 5,
+      "reported": 0,
+      "lateOrMissing": 5,
+      "compliancePct": 0
+    },
+    {
+      "name": "Innocrin Pharmaceutical",
+      "slug": "innocrin-pharmaceutical",
+      "due": 5,
+      "reported": 0,
+      "lateOrMissing": 5,
+      "compliancePct": 0
+    },
+    {
+      "name": "InventisBio Co., Ltd",
+      "slug": "inventisbio-co-ltd",
+      "due": 5,
+      "reported": 0,
+      "lateOrMissing": 5,
+      "compliancePct": 0
+    },
+    {
+      "name": "Invicta Medical Inc.",
+      "slug": "invicta-medical-inc",
+      "due": 5,
+      "reported": 0,
+      "lateOrMissing": 5,
+      "compliancePct": 0
+    },
+    {
+      "name": "Oneness Biotech Co., Ltd.",
+      "slug": "oneness-biotech-co-ltd",
+      "due": 5,
+      "reported": 0,
+      "lateOrMissing": 5,
+      "compliancePct": 0
+    }
+  ],
+  "bySlug": {
+    "23andme": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/23andme-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "60-degrees-pharmaceuticals": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/60-degrees-pharmaceuticals-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "abbvie": {
+      "health": {
+        "totalTrials": 338,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/abbvie/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sanofi": {
+      "health": {
+        "totalTrials": 310,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "acadia-pharmaceuticals": {
+      "health": {
+        "totalTrials": 31,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/acadia-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "merck-and-co": {
+      "health": {
+        "totalTrials": 447,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "accuray": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/accuray-incorporated/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "acerta-pharma": {
+      "health": {
+        "totalTrials": 21,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/acerta-pharma-bv/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "acer": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/acer-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "achieve-life-sciences": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/achieve-life-sciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aclaris-therapeutics": {
+      "health": {
+        "totalTrials": 26,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aclaris-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "actelion": {
+      "health": {
+        "totalTrials": 31,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/actelion/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "actuate-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/actuate-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "acurx-pharmaceuticals": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/acurx-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "adc-therapeutics-sa": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/adc-therapeutics-sa/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "estee-lauder-companies": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 88,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "agenus": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/agenus-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "agios-pharmaceuticals": {
+      "health": {
+        "totalTrials": 15,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/agios-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aim-immunotech": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aim-immunotech-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "akari-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/akari-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "akebia-therapeutics": {
+      "health": {
+        "totalTrials": 14,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/akebia-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alaunos-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alaunos-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aldeyra-therapeutics": {
+      "health": {
+        "totalTrials": 31,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aldeyra-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alector": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alector-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "astrazeneca": {
+      "health": {
+        "totalTrials": 554,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "align-technology": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/align-technology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alkermes": {
+      "health": {
+        "totalTrials": 21,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alkermes-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "allarity-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/allarity-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alnylam-pharmaceuticals": {
+      "health": {
+        "totalTrials": 32,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alnylam-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "altimmune": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/altimmune-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alzamend-neuro": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alzamend-neuro-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "amgen": {
+      "health": {
+        "totalTrials": 223,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/amgen/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "amneal-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/amneal-pharmaceuticals-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "amphastar-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/amphastar-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "an2-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/an2-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "anika-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/anika-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "annovis-bio": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/annovis-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "apellis-pharmaceuticals": {
+      "health": {
+        "totalTrials": 21,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/apellis-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "apple": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/apple-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aprea-therapeutics": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aprea-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "apyx-medical": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/apyx-medical/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aquestive-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aquestive-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "arcutis-biotherapeutics": {
+      "health": {
+        "totalTrials": 21,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/arcutis-biotherapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "arena-pharmaceuticals": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/arena-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "armata-pharmaceuticals": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/armata-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "arrowhead-pharmaceuticals": {
+      "health": {
+        "totalTrials": 29,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/arrowhead-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ars-pharmaceuticals": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ars-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "arvinas": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/arvinas-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "asana": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/asana-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "assembly-biosciences": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/assembly-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "atara-biotherapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/atara-biotherapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "atea-pharmaceuticals": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/atea-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "atossa-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/atossa-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nestl": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/atrium-medical-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aura-biosciences": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aura-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aurinia-pharmaceuticals": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aurinia-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "avalo-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/avalo-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "avenue-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/avenue-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "axogen": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/axogen-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "barinthus-biotherapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/barinthus-biotherapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bayer": {
+      "health": {
+        "totalTrials": 117,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bayer/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bioage-labs": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bioage-labs-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biocryst-pharmaceuticals": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biocryst-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biofrontera": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biofrontera-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biogen": {
+      "health": {
+        "totalTrials": 88,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biogen/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pfizer": {
+      "health": {
+        "totalTrials": 466,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biolinerx": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biolinerx-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biontech-se": {
+      "health": {
+        "totalTrials": 45,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biontech-se/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bioventus": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bioventus-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "boehringer-ingelheim-united-states": {
+      "health": {
+        "totalTrials": 162,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/boehringer-ingelheim/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bolt-biotherapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bolt-biotherapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "boston-scientific": {
+      "health": {
+        "totalTrials": 112,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/boston-scientific-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "brainstorm-cell-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/brainstorm-cell-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bristol-myers-squibb": {
+      "health": {
+        "totalTrials": 420,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 99,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "calcimedica": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/calcimedica-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cardiol-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cardiol-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cartesian-therapeutics": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cartesian-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "catalyst-pharmaceuticals": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/catalyst-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "catheter-precision": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/catheter-precision-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cel-sci": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cel-sci-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cerus": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cerus-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "check-cap": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/check-cap-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cingulate": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cingulate-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "clarus": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/clarus-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "clearside-biomedical": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/clearside-biomedical-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cogent-biosciences": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cogent-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cognition-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cognition-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "coherus-oncology": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/coherus-oncology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "context-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/context-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "contineum-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/contineum-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cormedix": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cormedix/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "corvus-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/corvus-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "crinetics-pharmaceuticals": {
+      "health": {
+        "totalTrials": 13,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/crinetics-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "crispr-therapeutics-ag": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/crispr-therapeutics-ag/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "croma": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/croma-pharma-gmbh/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "csl": {
+      "health": {
+        "totalTrials": 35,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/csl-behring/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cullinan-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cullinan-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cumberland-pharmaceuticals": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cumberland-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "curis": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/curis-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cvrx": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cvrx-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cyclerion-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cyclerion-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cytodyn": {
+      "health": {
+        "totalTrials": 14,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cytodyn-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cytokinetics": {
+      "health": {
+        "totalTrials": 16,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cytokinetics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cytosorbents": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cytosorbents-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "daiichi-sankyo": {
+      "health": {
+        "totalTrials": 67,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "dare-bioscience": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/dare-bioscience-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "disc-medicine": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/disc-medicine-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "dr-reddys-laboratories": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/dr-reddys-laboratories-limited/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eagle": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/eagle-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "edwards-lifesciences": {
+      "health": {
+        "totalTrials": 52,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/edwards-lifesciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "electrocore": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/electrocore-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eli-lilly": {
+      "health": {
+        "totalTrials": 400,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 99,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "emergent-biosolutions": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/emergent-biosolutions/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "enanta-pharmaceuticals": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/enanta-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "envoy-medical": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/envoy-medical-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "esperion-therapeutics": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/esperion-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "johnson-and-johnson": {
+      "health": {
+        "totalTrials": 424,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 99,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eupraxia-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/eupraxia-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "evolus": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/evolus-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "evommune": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/evommune-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "exelixis": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/exelixis/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "fate-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/fate-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ferring-pharmaceuticals": {
+      "health": {
+        "totalTrials": 24,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ferring-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "forte-biosciences": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/forte-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "fractyl-health": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/fractyl-health-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "coca-cola": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "fulcrum-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/fulcrum-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "galectin-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/galectin-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "galera-therapeutics": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/galera-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "genelux": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/genelux-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "geron": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/geron-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "gilead-sciences": {
+      "health": {
+        "totalTrials": 208,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "globus-medical": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/globus-medical-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "gyroscope": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/gyroscope-therapeutics-limited/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "haemonetics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/haemonetics-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "halozyme-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/halozyme-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "heartflow": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/heartflow-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "hepion-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/hepion-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "hinge-health": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/hinge-health-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "humacyte": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/humacyte-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "icecure-medical": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/icecure-medical-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "immuron": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/immuron-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "impact": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/impact-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "incyte": {
+      "health": {
+        "totalTrials": 146,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inmune-bio": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inmune-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inovio-pharmaceuticals": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inovio-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "insmed": {
+      "health": {
+        "totalTrials": 15,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/insmed-incorporated/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "instil-bio": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/instil-bio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "intellia-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/intellia-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "intensity-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/intensity-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ionis-pharmaceuticals": {
+      "health": {
+        "totalTrials": 45,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ionis-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "iovance-biotherapeutics": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/iovance-biotherapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ipsen": {
+      "health": {
+        "totalTrials": 35,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ipsen/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ironwood-pharmaceuticals": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ironwood-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "iterum-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/iterum-therapeutics-international-limited/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "journey-medical": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/journey-medical-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kalvista-pharmaceuticals": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kalvista-pharmaceuticals-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kazia-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kazia-therapeutics-limited/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "keros-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/keros-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kestra-medical-technologies": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kestra-medical-technologies-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kezar-life-sciences": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kezar-life-sciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kimberly-clark": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kimberly-clark-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kiora-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kiora-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kodiak-sciences": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kodiak-sciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kura-oncology": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kura-oncology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kyntra-bio": {
+      "health": {
+        "totalTrials": 18,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kyntra-bio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lakefront-biotherapeutics-nv": {
+      "health": {
+        "totalTrials": 16,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lakefront-biotherapeutics-nv/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lb-pharmaceuticals": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lb-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lenz-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lenz-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "leonabio": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/leonabio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lexicon-pharmaceuticals": {
+      "health": {
+        "totalTrials": 17,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lexicon-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lianbio": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lianbio-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lineage-cell-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lineage-cell-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lisata-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lisata-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lyra-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lyra-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "macrogenics": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/macrogenics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "madrigal-pharmaceuticals": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/madrigal-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mannkind": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mannkind-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "masimo": {
+      "health": {
+        "totalTrials": 51,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/masimo-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "medicenna-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/medicenna-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "medicure": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/medicure/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "merit-medical-systems": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/merit-medical-systems-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mesoblast": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "metro": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/metro-international-biotech-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "microbot-medical": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/microbot-medical-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "milestone-pharmaceuticals": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/milestone-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mimedx-group": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mimedx-group-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mineralys-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mineralys-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "minerva-neurosciences": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/minerva-neurosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mirum-pharmaceuticals": {
+      "health": {
+        "totalTrials": 20,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mirum-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "moderna": {
+      "health": {
+        "totalTrials": 62,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/modernatx-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "neumora-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/neumora-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "neurocrine-biosciences": {
+      "health": {
+        "totalTrials": 48,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/neurocrine-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nextcure": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nextcure-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "novartis": {
+      "health": {
+        "totalTrials": 538,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "novocure": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 60,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "novo-nordisk": {
+      "health": {
+        "totalTrials": 189,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/novo-nordisk-as/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nucana": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nucana-plc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "olema-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/olema-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "omeros": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/omeros-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "opko-health": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/opko-health-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "opthea": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/opthea-limited/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "oragenics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/oragenics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "outlook-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/outlook-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "palisade-bio": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/palisade-bio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "palvella-therapeutics": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/palvella-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "patagonia": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/patagonia-pharmaceuticals-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "phathom-pharmaceuticals": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/phathom-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pliant-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pliant-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "polaris": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/polaris-group/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "polypid": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/polypid-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "precision-biosciences": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/precision-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "procter-and-gamble": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 90,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "prokidney": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/prokidney/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ptc-therapeutics": {
+      "health": {
+        "totalTrials": 28,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ptc-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "puma-biotechnology": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/puma-biotechnology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "q32-bio": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/q32-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "quince-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/quince-therapeutics-spa/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rallybio": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rallybio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ra": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "recursion-pharmaceuticals": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/recursion-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "regeneron": {
+      "health": {
+        "totalTrials": 175,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/regeneron-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "relmada-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/relmada-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "revolution-medicines": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/revolution-medicines-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rezolute": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rezolute/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rhythm-pharmaceuticals": {
+      "health": {
+        "totalTrials": 19,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rhythm-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rxsight": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rxsight-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sab-biotherapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sab-biotherapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sage": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sage-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sagimet-biosciences": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sagimet-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sangamo-therapeutics": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sangamo-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sarepta-therapeutics": {
+      "health": {
+        "totalTrials": 20,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sarepta-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "savara": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/savara-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "scynexis": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/scynexis-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sellas-life-sciences-group": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sellas-life-sciences-group/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "semnur-pharmaceuticals": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/semnur-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sensei-biotherapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sensei-biotherapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "seres-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/seres-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "siga-technologies": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/siga-technologies/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "skye-bioscience": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/skye-bioscience-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "soligenix": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/soligenix/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "spectrum": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/spectrum-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "spero-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/spero-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "spruce-biosciences": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/spruce-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "staar-surgical": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/staar-surgical-company/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "summit-therapeutics": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/summit-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "supernus-pharmaceuticals": {
+      "health": {
+        "totalTrials": 34,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/supernus-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "syndax-pharmaceuticals": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/syndax-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "talphera": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/talphera-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tandem-diabetes-care": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tandem-diabetes-care-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tela-bio": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tela-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tempus-ai": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tempus-ai/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tenax-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tenax-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "deckers-outdoor": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/teva-pharmaceuticals-usa/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "titan": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/titan-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "unitedhealth-group": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/unitedhealth-group/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "united-therapeutics": {
+      "health": {
+        "totalTrials": 25,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/united-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-california-davis": {
+      "health": {
+        "totalTrials": 96,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-california-davis/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-minnesota": {
+      "health": {
+        "totalTrials": 171,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-minnesota/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "vertex-pharmaceuticals": {
+      "health": {
+        "totalTrials": 98,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/vertex-pharmaceuticals-incorporated/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "gsk": {
+      "health": {
+        "totalTrials": 324,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 99,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "vir-biotechnology": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/vir-biotechnology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "wockhardt": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": 100,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/wockhardt/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mayo-clinic": {
+      "health": {
+        "totalTrials": 624,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 99,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mayo-clinic/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-florida": {
+      "health": {
+        "totalTrials": 218,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 99,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-florida/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "coopervision": {
+      "health": {
+        "totalTrials": 81,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 98,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/coopervision-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "genentech": {
+      "health": {
+        "totalTrials": 73,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 98,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/genentech-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "jazz-pharmaceuticals": {
+      "health": {
+        "totalTrials": 59,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 97,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/jazz-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "immunitybio": {
+      "health": {
+        "totalTrials": 33,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 93,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/immunitybio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nektar-therapeutics": {
+      "health": {
+        "totalTrials": 17,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 93,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nektar-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "corcept-therapeutics": {
+      "health": {
+        "totalTrials": 18,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 91,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/corcept-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sight-sciences": {
+      "health": {
+        "totalTrials": 13,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 91,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sight-sciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-at-buffalo": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 90,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-at-buffalo/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "zimmer-biomet": {
+      "health": {
+        "totalTrials": 36,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 90,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/zimmer-biomet/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "atricure": {
+      "health": {
+        "totalTrials": 13,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 88,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/atricure-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eyepoint": {
+      "health": {
+        "totalTrials": 14,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 88,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/eyepoint-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ardelyx": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 87,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ardelyx/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bioxcel-therapeutics": {
+      "health": {
+        "totalTrials": 11,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 87,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bioxcel-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "novavax": {
+      "health": {
+        "totalTrials": 20,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 86,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/novavax/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "medicinova": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 85,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/medicinova/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "karyopharm-therapeutics": {
+      "health": {
+        "totalTrials": 21,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 84,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/karyopharm-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "avita-medical": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 83,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/avita-medical/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ge-healthcare": {
+      "health": {
+        "totalTrials": 22,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 83,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ge-healthcare/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lipocine": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 83,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lipocine-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rigel-pharmaceuticals": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 83,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rigel-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "axsome-therapeutics": {
+      "health": {
+        "totalTrials": 30,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 81,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/axsome-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "arizona-state-university": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 80,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/arizona-state-university/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "celldex-therapeutics": {
+      "health": {
+        "totalTrials": 13,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 80,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/celldex-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "penumbra": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 80,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/penumbra-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "processa-pharmaceuticals": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 80,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/processa-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "insulet": {
+      "health": {
+        "totalTrials": 16,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 77,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/insulet-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-arizona": {
+      "health": {
+        "totalTrials": 86,
+        "trialsLateOrMissing": 12,
+        "compliancePct": 76,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-arizona/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aardvark-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aardvark-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "artivion": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/artivion-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cardiff-oncology": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cardiff-oncology/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "celularity": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/celularity-incorporated/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "compass-pathways": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/compass-pathways/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inogen": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inogen-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ocugen": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ocugen/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ocular-therapeutix": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ocular-therapeutix-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pulse-biosciences": {
+      "health": {
+        "totalTrials": 13,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 75,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pulse-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sol-gel-technologies": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 72,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sol-gel-technologies-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "abeona-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/abeona-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "allurion-technologies": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/allurion-technologies/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "delcath-systems": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/delcath-systems-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "immunic": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/immunic-ag/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "imunon": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/imunon/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "invivyd": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/invivyd-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "marker-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "neuronetics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/neuronetics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "new-world": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/new-world-medical-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nuwellis": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nuwellis-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "procept-biorobotics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/procept-biorobotics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "soleno-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/soleno-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tarsus-pharmaceuticals": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tarsus-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-central-florida": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 66,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-central-florida/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "angiodynamics": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 60,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/angiodynamics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "beyondspring": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 60,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/beyondspring-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cytomx-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 60,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cytomx-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "praxis-precision-medicines": {
+      "health": {
+        "totalTrials": 14,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 60,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/praxis-precision-medicines/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-south-florida": {
+      "health": {
+        "totalTrials": 40,
+        "trialsLateOrMissing": 12,
+        "compliancePct": 60,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-south-florida/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "anaptysbio": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 57,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/anaptysbio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "adma-biologics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/adma-biologics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "allogene-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/allogene-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alto-neuroscience": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alto-neuroscience/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alumis": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alumis-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "briacell-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/briacell-therapeutics-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "casi-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/casi-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cg-oncology": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cg-oncology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "equillium": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/equillium/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "femasys": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/femasys-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "helix": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/helix-biopharma-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kiniksa-pharmaceuticals-international": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kiniksa-pharmaceuticals-international-plc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lucid-diagnostics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lucid-diagnostics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mediwound": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mediwound-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "outset-medical": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/outset-medical/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "parker-hannifin": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/parker-hannifin-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "provectus-biopharmaceuticals": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/provectus-biopharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pulmatrix": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pulmatrix-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pulmonx": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pulmonx-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "quantum": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/quantum-biopharma/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "regenxbio": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/regenxbio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "resmed": {
+      "health": {
+        "totalTrials": 13,
+        "trialsLateOrMissing": 6,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/resmed/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "synlogic": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/synlogic/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "terumo": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 50,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/terumo-medical-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "longeveron": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 40,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/longeveron-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "amylyx-pharmaceuticals": {
+      "health": {
+        "totalTrials": 10,
+        "trialsLateOrMissing": 5,
+        "compliancePct": 37,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/amylyx-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "glaukos": {
+      "health": {
+        "totalTrials": 31,
+        "trialsLateOrMissing": 13,
+        "compliancePct": 35,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/glaukos-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aethlon-medical": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 33,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aethlon-medical-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aeye": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 33,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aeye-health-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "annexon": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 33,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/annexon-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bioatla": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 33,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bioatla-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kaiser-permanente": {
+      "health": {
+        "totalTrials": 14,
+        "trialsLateOrMissing": 8,
+        "compliancePct": 33,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kaiser-permanente/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "neuropace": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 33,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/neuropace/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "intuitive-surgical": {
+      "health": {
+        "totalTrials": 14,
+        "trialsLateOrMissing": 7,
+        "compliancePct": 30,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/intuitive-surgical/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "avanos-medical": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 25,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/avanos-medical/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biovie": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 25,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biovie-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "protagonist-therapeutics": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 6,
+        "compliancePct": 25,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/protagonist-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "viking": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 25,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/viking-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "dexcom": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 8,
+        "compliancePct": 11,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/dexcom-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "colgate-palmolive": {
+      "health": {
+        "totalTrials": 35,
+        "trialsLateOrMissing": 18,
+        "compliancePct": 5,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/colgate-palmolive/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "actinium-pharmaceuticals": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/actinium-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "adagene": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/adagene-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aligos-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aligos-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alpha-tau-medical": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alpha-tau-medical-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "alterity-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/alterity-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "anavex-life-sciences": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/anavex-life-sciences-corp/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "apollo": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/apollo-therapeutics-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aptevo-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aptevo-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sainsbury-s": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/argos-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "beyond-air": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/beyond-air-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biocardia": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biocardia-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biomx": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bioxytran": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bioxytran-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "blue-note": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/blue-note-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "brainsway": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 7,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/brainsway/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cardinal-health": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cardinal-health/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "citius-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/citius-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "compugen": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/compugen-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "daxor": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/daxor-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "dermata-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 5,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/dermata-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "diamedica-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/diamedica-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "edgewell-personal-care": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/edge-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ehave": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ehave-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eikon-therapeutics": {
+      "health": {
+        "totalTrials": 7,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/eikon-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "anthem-elevance-health": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/elevance-health/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eloxx-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/eloxx-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "campbell-soup": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/emerald-health-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "encore-medical": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ensysce-biosciences": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ensysce-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "erasca": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/erasca-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "exicure": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/exicure-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "fitbit": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/fitbit-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "flex": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/flex-pharma-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mars": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "garmin": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/garmin-international/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "georgia-state-university": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/georgia-state-university/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "glucotrack": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/glucotrack/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "grail": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/grail-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "harrow": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/harrow-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "heartbeam": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/heartbeam-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "illumina": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/illumina-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "immuneering": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/immuneering-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inspiremd": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inspiremd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inspire-medical-systems": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inspire-medical-systems-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kamada": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kamada-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lemaitre-vascular": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lemaitre-vascular/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ligand-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ligand-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lipella-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lipella-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "livanova": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 4,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/livanova/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "monopar-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/monopar-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mustang-bio": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mustang-bio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "neurosense-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/neurosense-therapeutics-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "noah": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "north-carolina-state-university": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/north-carolina-state-university/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "northern-arizona-university": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/northern-arizona-university/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "northwest-biotherapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/northwest-biotherapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nyxoah-sa": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nyxoah-sa/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "palatin-technologies": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 5,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/palatin-technologies-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pavmed": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pavmed-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ricoh": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "profound-medical": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/profound-medical-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pulsenmore": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pulsenmore/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "regentis-biomaterials": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/regentis-biomaterials/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rein-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rein-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rocket-pharmaceuticals": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rocket-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "si-bone": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 3,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/si-bone-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "spire": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "stereotaxis": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/stereotaxis/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "unilever": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "syneos-health": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/syneos-health/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tango-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tango-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "target": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 1,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/target-health-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "teleflex": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 2,
+        "compliancePct": 0,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/teleflex/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "4d-molecular-therapeutics": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/4d-molecular-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "abcellera-biologics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/abcellera-biologics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ac-immune-sa": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ac-immune-sa/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "acrivon-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/acrivon-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "acumen-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/acumen-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "adient": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/adient-medical/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "adlai-nortye": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/adlai-nortye-biopharma-co-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "andros": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/andros-pharmaceuticals-co-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "apogee-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/apogee-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "apollomics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/apollomics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "aptose-biosciences": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/aptose-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "danone": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/rankings/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "arcus-biosciences": {
+      "health": {
+        "totalTrials": 8,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/arcus-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "artiva-biotherapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/artiva-biotherapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kellogg-s": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/austin-health/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "azitra": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/azitra-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "banner": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/banner-health/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "altria-group": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/basic-health-international-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "beam-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/beam-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "belite-bio": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/belite-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "beone-medicines": {
+      "health": {
+        "totalTrials": 17,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/beone-medicines/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bicara-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bicara-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biocorrx": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biocorrx-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biohaven": {
+      "health": {
+        "totalTrials": 12,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biohaven-therapeutics-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biomea-fusion": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biomea-fusion-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "biorestorative-therapies": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/biorestorative-therapies/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "black-diamond-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/black-diamond-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "bone-biologics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/bone-biologics-corp/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "burzynski-research-institute": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/burzynski-research-institute/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "c4-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/c4-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cabaletta-bio": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cabaletta-bio/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "candel-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/candel-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "caredx": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/caredx/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "celcuity": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/celcuity-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cellectar-biosciences": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cellectar-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ceribell": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ceribell-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "clearmind-medicine": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/clearmind-medicine-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "climb-bio": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/climb-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "cns-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/cns-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "compass-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/compass-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "conmed": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/conmed-corporation/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "coya-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/coya-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "denali-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/denali-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "design-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/design-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "dogwood-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/dogwood-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "dyne-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/dyne-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ebr-systems": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ebr-systems-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "edgewise-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/edgewise-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "editas-medicine": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/editas-medicine-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "eledon-pharmaceuticals": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/eledon-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "elicio-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/elicio-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "enlivex": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/enlivex-therapeutics-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "entrada-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/entrada-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "essilor": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/essilor-international/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "estrella": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/estrella-biopharma-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "fibrobiologics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/fibrobiologics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "gain-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/gain-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "generate-biomedicines": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/generate-biomedicines/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "genprex": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/genprex-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "greenwich-lifesciences": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/greenwich-lifesciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "guided-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/guided-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "haleon": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/haleon/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "abercrombie-and-fitch": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/hollister-incorporated/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "hoth-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/hoth-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "hyperfine": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/hyperfine/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "ideaya-biosciences": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/ideaya-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "immunome": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/immunome-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "in8bio": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/in8bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "incannex-healthcare": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/incannex-healthcare-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "indaptus-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/indaptus-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inhibikase-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inhibikase-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "inhibrx-biosciences": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/inhibrx-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "island-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/island-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "jade-biosciences": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/jade-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "jasper-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/jasper-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "koru-medical-systems": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/koru-medical-systems-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kymera-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kymera-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "kyverna-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/kyverna-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "larimar-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/larimar-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lexeo-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lexeo-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "lyell-immunopharma": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/lyell-immunopharma-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "maia-biotechnology": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/maia-biotechnology/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "maplight-therapeutics": {
+      "health": {
+        "totalTrials": 6,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/maplight-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "maze-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/maze-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mbx-biosciences": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mbx-biosciences/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "miller": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/miller-biosciences-llc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "mink-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/mink-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "monte-rosa-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/monte-rosa-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "moonlake-immunotherapeutics": {
+      "health": {
+        "totalTrials": 9,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/moonlake-immunotherapeutics-ag/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "natera": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/natera-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "neurogene": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/neurogene-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nkarta": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nkarta-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nurix-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nurix-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nuvalent": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nuvalent-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "nuvation-bio": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/nuvation-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "odyssey-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/odyssey-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "opus-genetics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/opus-genetics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "oric-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/oric-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "oruka-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/oruka-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "passage-bio": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/passage-bio-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pds-biotechnology": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pds-biotechnology-corp/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pepgen": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pepgen-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "perspective-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/perspective-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "plus-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/plus-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pmv-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pmv-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "polaryx-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/polaryx-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "polyrizon": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/polyrizon-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "precigen": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/precigen-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "prelude-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/prelude-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "prime-medicine": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/prime-medicine-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "profusa": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/profusa-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "protara-therapeutics": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/protara-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "pyxis-oncology": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/pyxis-oncology-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "qhslab": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/qhslab-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "quoin-pharmaceuticals": {
+      "health": {
+        "totalTrials": 4,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/quoin-pharmaceuticals/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "radiopharm-theranostics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/radiopharm-theranostics-ltd/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "rapport-therapeutics": {
+      "health": {
+        "totalTrials": 5,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/rapport-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "relay-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/relay-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "renovorx": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/renovorx/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "revelation-biosciences": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/revelation-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "satellos-bioscience": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/satellos-bioscience-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "seaport-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/seaport-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "silence-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/silence-therapeutics-plc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "sionna-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/sionna-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "solid-biosciences": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/solid-biosciences-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "spyre-therapeutics": {
+      "health": {
+        "totalTrials": 2,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/spyre-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "stoke-therapeutics": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/stoke-therapeutics-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "taysha-gene-therapies": {
+      "health": {
+        "totalTrials": 3,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/taysha-gene-therapies-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tectonic-therapeutic": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tectonic-therapeutic/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "telomir-pharmaceuticals": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/telomir-pharmaceuticals-inc/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tempest-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tempest-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "tenaya-therapeutics": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/tenaya-therapeutics/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "university-of-texas-rio-grande-valley": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/university-of-texas-rio-grande-valley/",
+        "_license": "Apache-2.0"
+      }
+    },
+    "r-j-reynolds-tobacco-company": {
+      "health": {
+        "totalTrials": 1,
+        "trialsLateOrMissing": 0,
+        "compliancePct": null,
+        "year": 2026,
+        "sourceUrl": "https://fdaaa.trialstracker.net/sponsor/winston-laboratories/",
+        "_license": "Apache-2.0"
+      }
+    }
+  }
+}
