@@ -1,0 +1,68 @@
+name: supplements-verified-quarterly
+
+# NSF Certified for Sport + NSF/ANSI 173 + USP Verified — dietary
+# supplements certification refresh (quarterly).
+#
+# Scrapes three public certification registries:
+#   - https://www.nsfsport.com/certified-products/search-results.php
+#   - https://info.nsf.org/Certified/Dietary/Listings.asp
+#   - https://www.usp.org/verification-services/program-participants
+#     (Akamai-protected; falls back to embedded brand list)
+#
+# Normalises to (product, brand, parent, cert type, cert date, source)
+# and merges per TruNorth slug into Healthcare + Food & Beverage signals.
+#
+# Runs at 06:30 UTC on the 12th of Jan/Apr/Jul/Oct.
+# Total wall time ~30 seconds; courteous 2 sec spacing between fetches.
+
+on:
+  schedule:
+    - cron: "30 6 12 1,4,7,10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps (cheerio is in package.json)
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Run supplements fetcher (live scrape)
+        run: node scripts/supplements-verified-fetch.mjs
+
+      - name: Run supplements merger
+        run: node scripts/supplements-verified-merge.mjs
+
+      - name: Run supplements parser tests (fixture sanity)
+        run: node --test scripts/supplements-verified-fetch.test.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(supplements-verified): quarterly NSF + USP refresh"
+          branch: "data/supplements-verified-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(supplements-verified): quarterly NSF + USP refresh"
+          body: |
+            Automated quarterly refresh from the NSF Certified for Sport,
+            NSF/ANSI 173, and USP Verified dietary-supplements registries.
+
+            Sources:
+              - https://www.nsfsport.com/certified-products/search-results.php
+              - https://info.nsf.org/Certified/Dietary/Listings.asp
+              - https://www.usp.org/verification-services/program-participants
+
+            License: Public certification registries — NSF + USP.
+          add-paths: |
+            data/raw/supplements-verified/**
+            data/derived/supplements-verified-augment.json
