@@ -1,0 +1,53 @@
+name: nlrb-voluntary-recognition-monthly
+
+# NLRB Voluntary Union Recognition refresh (POSITIVE labor signal — sprint G).
+#
+# Walks the NLRB CATS public search-results pages for representation cases
+# (RM/RC/UC) whose disposition matches voluntary-recognition keywords, writes
+# data/raw/nlrb-voluntary-recognition/<date>.json, then merges into
+# data/derived/nlrb-voluntary-recognition-augment.json keyed by company slug.
+#
+# Source: https://www.nlrb.gov/reports/agency-performance/election-reports
+# License: US Government work — public domain (17 U.S.C. § 105).
+#
+# Monthly cadence matches the natural NLRB monthly election-report drop.
+
+on:
+  schedule:
+    - cron: "0 7 3 * *"   # 07:00 UTC on the 3rd of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run NLRB voluntary-recognition fetcher (live)
+        run: node scripts/nlrb-voluntary-recognition-fetch.mjs
+
+      - name: Run unit tests against fixtures
+        run: node --test scripts/nlrb-voluntary-recognition-fetch.test.mjs
+
+      - name: Merge into derived augment file
+        run: node scripts/nlrb-voluntary-recognition-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/nlrb-voluntary-recognition/ data/derived/nlrb-voluntary-recognition-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(nlrb-vr): monthly voluntary-recognition refresh + augment [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
