@@ -1,0 +1,83 @@
+name: exec-political-donations-quarterly
+
+# Executive-level political donation lean (quarterly)
+#
+# For every public US company in public/data/companies/*.json (those with
+# isPublic=true or a ticker), this workflow:
+#
+#   1. Builds a ticker→CIK index from SEC EDGAR
+#      (https://www.sec.gov/files/company_tickers.json).
+#   2. For each public company, looks up recent Form 4 filings (Section 16
+#      reporters = executive officers / directors) at
+#      https://data.sec.gov/submissions/CIK<padded>.json.
+#   3. Queries FEC Open Data Schedule A
+#      (https://api.open.fec.gov/v1/schedules/schedule_a/) for itemized
+#      contributions where contributor_employer matches the company name,
+#      and aggregates Dem / Rep / Other totals + donor count.
+#   4. Classifies execDonationLean = "D+9" / "R+5" / "split" / "minimal"
+#      and writes the augment file the front-end loader merges into each
+#      company's political block.
+#
+# Honors:
+#   - SEC's published fair-use policy (descriptive User-Agent,
+#     ≤ 10 req/sec — we run at ~9 req/sec).
+#   - FEC Open Data 1 req/sec courtesy throttle.
+#
+# Neutrality:
+#   - The labels D+N / R+N / split / minimal are purely descriptive of the
+#     partisan margin. The merger never tags one direction as "good" or
+#     "bad" — the user's quiz preference applies the interpretation.
+#
+# Runs the 1st of Feb/May/Aug/Nov at 05:30 UTC (well clear of the other
+# quarterly crons — usaspending at 04:00 UTC on the 1st of Jan/Apr/Jul/Oct,
+# UK Companies House on the 1st of Jan/Apr/Jul/Oct, etc.).
+
+on:
+  schedule:
+    - cron: "30 5 1 2,5,8,11 *"   # 05:30 UTC on Feb/May/Aug/Nov 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit exec-political-donations.json + augment
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test scripts/exec-political-donations-fetch.test.mjs
+
+      - name: Run exec-political-donations fetcher (real API)
+        env:
+          # Optional — FEC accepts a public DEMO_KEY without registration,
+          # but a real key (free, https://api.open.fec.gov/developers/) lifts
+          # the throttle from 30/hr to 1000/hr. Falls back to DEMO_KEY when
+          # the secret isn't set.
+          FEC_API_KEY: ${{ secrets.FEC_API_KEY }}
+        run: node scripts/exec-political-donations-fetch.mjs --apply
+
+      - name: Merge exec-political-donations augment
+        run: node scripts/exec-political-donations-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/exec-political-donations.json \
+                  data/raw/exec-political-donations/ \
+                  data/derived/exec-political-donations-augment.json
+          [ -f public/data/_meta/exec-political-donations-merge-log.json ] && \
+            git add public/data/_meta/exec-political-donations-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(exec-political): quarterly exec donation lean refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

@@ -1,0 +1,56 @@
+{
+  "api_version": "1.0",
+  "pagination": {
+    "page": 1,
+    "per_page": 100,
+    "count": 5,
+    "pages": 1
+  },
+  "results": [
+    {
+      "contributor_name": "SMITH, JANE",
+      "contributor_employer": "MICROSOFT CORP",
+      "contribution_receipt_amount": 5000,
+      "contribution_receipt_date": "2024-06-12",
+      "committee_id": "C00012345",
+      "committee_name": "Democratic National Committee",
+      "committee": { "party": "DEM" }
+    },
+    {
+      "contributor_name": "SMITH ",
+      "contributor_employer": "Microsoft",
+      "contribution_receipt_amount": 3400,
+      "contribution_receipt_date": "2024-07-04",
+      "committee_id": "C00098765",
+      "committee_name": "Senate Majority PAC",
+      "committee": { "party": "DEM" }
+    },
+    {
+      "contributor_name": "JONES, ROBERT",
+      "contributor_employer": "MICROSOFT CORP",
+      "contribution_receipt_amount": 2800,
+      "contribution_receipt_date": "2024-05-20",
+      "committee_id": "C00045678",
+      "committee_name": "Republican National Committee",
+      "committee": { "party": "REP" }
+    },
+    {
+      "contributor_name": "JONES, ROBERT",
+      "contributor_employer": "MICROSOFT CORP",
+      "contribution_receipt_amount": 500,
+      "contribution_receipt_date": "2024-08-11",
+      "committee_id": "C00099999",
+      "committee_name": "NRSC",
+      "committee": { "party": "GOP" }
+    },
+    {
+      "contributor_name": "PATEL, ASHA",
+      "contributor_employer": "Microsoft Corp",
+      "contribution_receipt_amount": 250,
+      "contribution_receipt_date": "2024-09-01",
+      "committee_id": "C00077777",
+      "committee_name": "Independent PAC",
+      "committee": { "party": "IND" }
+    }
+  ]
+}
