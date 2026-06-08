@@ -39,6 +39,7 @@ const ROOT = path.resolve(__dirname, "..");
 
 const COMPANIES_DIR  = path.join(ROOT, "public/data/companies");
 const APPLICABILITY  = path.join(ROOT, "public/data/_meta/category-applicability.json");
+const OVERRIDES_PATH = path.join(ROOT, "public/data/_meta/category-applicability-overrides.json");
 const GIVING_PATH    = path.join(ROOT, "data/derived/corporate-giving-augment.json");
 const TRANSPARENCY_P = path.join(ROOT, "data/derived/transparency-benchmarks-augment.json");
 const WIKIRATE_P     = path.join(ROOT, "data/derived/wikirate-augment.json");
@@ -67,6 +68,7 @@ function safeReadJSON(p) {
 // Build the lookup sets the reflag uses for notDisclosed / _inferred decisions.
 export function buildLookups({
   applicability,
+  overrides,
   giving,
   transparency,
   wikirate,
@@ -76,24 +78,51 @@ export function buildLookups({
   for (const [cat, rec] of Object.entries(applicability?.industries || {})) {
     naByCat.set(cat, new Set(rec?.na || []));
   }
+  // Per-slug overrides take precedence over cat-level applicability.
+  // Shape: overrides[slug][category] = "applicable" | "na" | "notDisclosed".
+  const overridesBySlug = new Map();
+  for (const [slug, perCat] of Object.entries(overrides?.overrides || {})) {
+    if (!perCat || typeof perCat !== "object") continue;
+    overridesBySlug.set(slug, perCat);
+  }
   const giverSlugs = new Set(Object.keys(giving?.companies || {}));
   const transpSlugs = new Set(Object.keys(transparency?.data || {}));
   const wikiSlugs   = new Set(Object.keys(wikirate?.companies || {}));
   const carbonSlugs = new Set(Object.keys(carbon?.companies || {}));
-  return { naByCat, giverSlugs, transpSlugs, wikiSlugs, carbonSlugs };
+  return { naByCat, overridesBySlug, giverSlugs, transpSlugs, wikiSlugs, carbonSlugs };
 }
 
 // Decide the `flags` block for a single company, given the precomputed lookups.
 // Pure function — no I/O. Tested directly.
 export function computeFlagsForCompany(co, lookups) {
-  const { naByCat, giverSlugs, transpSlugs, wikiSlugs, carbonSlugs } = lookups;
+  const { naByCat, overridesBySlug, giverSlugs, transpSlugs, wikiSlugs, carbonSlugs } = lookups;
   const cat = co.cat || "Other";
   const naSet = naByCat.get(cat) || new Set();
+  const slugOverrides = (overridesBySlug && overridesBySlug.get(co.slug)) || null;
   const flags = {};
 
   // 1. Industry-driven NA — short-circuits everything else for that cat.
   for (const k of CATEGORIES) {
     if (naSet.has(k)) flags[k] = { na: true };
+  }
+
+  // 1b. Apply per-slug overrides (take precedence over cat-level applicability).
+  //     "applicable"   → remove any {na:true} for this cat so real disclosure /
+  //                      score logic can run downstream.
+  //     "na"           → force {na:true}.
+  //     "notDisclosed" → force {notDisclosed:true} (skip further notDisclosed
+  //                      checks below for that cat).
+  if (slugOverrides) {
+    for (const [k, mode] of Object.entries(slugOverrides)) {
+      if (!CATEGORIES.includes(k)) continue;
+      if (mode === "applicable") {
+        delete flags[k];
+      } else if (mode === "na") {
+        flags[k] = { na: true };
+      } else if (mode === "notDisclosed") {
+        flags[k] = { notDisclosed: true };
+      }
+    }
   }
 
   // 2. Per-company notDisclosed flags (only if NOT already NA).
@@ -143,12 +172,15 @@ async function main({ dryRun = false } = {}) {
   const t0 = Date.now();
 
   const applicability  = readJSON(APPLICABILITY);
+  const overrides      = safeReadJSON(OVERRIDES_PATH) || { overrides: {} };
   const giving         = safeReadJSON(GIVING_PATH)    || { companies: {} };
   const transparency   = safeReadJSON(TRANSPARENCY_P) || { data: {} };
   const wikirate       = safeReadJSON(WIKIRATE_P)     || { companies: {} };
   const carbon         = safeReadJSON(CARBON_P)       || { companies: {} };
 
-  const lookups = buildLookups({ applicability, giving, transparency, wikirate, carbon });
+  const lookups = buildLookups({ applicability, overrides, giving, transparency, wikirate, carbon });
+  const overrideSlugCount = Object.keys(overrides?.overrides || {}).length;
+  if (overrideSlugCount) console.log(`[reflag] loaded ${overrideSlugCount} per-slug applicability overrides`);
 
   const files = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
   console.log(`[reflag] reading ${files.length} company files`);

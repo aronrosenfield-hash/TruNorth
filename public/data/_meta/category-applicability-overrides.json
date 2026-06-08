@@ -1,0 +1,12 @@
+{
+  "_doc": "Per-slug applicability overrides. Takes precedence over the cat-level rules in category-applicability.json. Use sparingly — only when a SPECIFIC brand genuinely sells/operates in a category that its cat-level default excludes (e.g. Walmart sells firearms, even though the Retail cat marks guns NA by default). Values must be one of: 'applicable' (force category ON even if cat says NA — reflag removes any {na:true} flag and lets real disclosure/score logic run), 'na' (force OFF), 'notDisclosed' (force notDisclosed). Consumed by scripts/reflag-categories.mjs.",
+  "overrides": {
+    "walmart":               { "guns": "applicable" },
+    "bass-pro-shops":        { "guns": "applicable" },
+    "cabela-s-bass-pro":     { "guns": "applicable" },
+    "dick-s-sporting-goods": { "guns": "applicable" },
+    "academy-sports":        { "guns": "applicable" },
+    "kroger":                { "guns": "applicable" },
+    "costco":                { "guns": "applicable" }
+  }
+}
