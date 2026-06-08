@@ -1,0 +1,55 @@
+name: eeoc-dei-annual
+
+# EEOC EEO-1 + Fortune 1000 voluntary DEI disclosures (annual)
+#
+# Runs once a year on March 15 at 04:00 UTC. The EEOC typically publishes
+# the prior year's EEO-1 aggregate report in Feb/Mar, so mid-March gives
+# the new aggregate plenty of time to be live before we cite it.
+#
+# The fetcher curates ~250 large public companies with voluntary DEI
+# disclosures (Apple, Google, JPM, Walmart, etc.) and writes a single
+# augment file at data/derived/eeoc-dei-augment.json keyed by slug.
+#
+# Wall time: HEAD-checking ~250 URLs at 1 req/sec is < 10 min, well
+# under the 30-minute job timeout.
+
+on:
+  schedule:
+    - cron: "0 4 15 3 *"   # 04:00 UTC on March 15
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit the raw + augment JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test scripts/eeoc-dei-fetch.test.mjs
+
+      - name: Run EEOC + DEI fetcher (HEAD-check URLs)
+        run: node scripts/eeoc-dei-fetch.mjs --apply
+
+      - name: Merge into data/derived/eeoc-dei-augment.json
+        run: node scripts/eeoc-dei-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/eeoc-dei/ data/derived/eeoc-dei-augment.json
+          [ -f public/data/_meta/eeoc-dei-merge-log.json ] && git add public/data/_meta/eeoc-dei-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(eeoc-dei): annual DEI disclosures refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
