@@ -158,7 +158,7 @@ If they ask about background, mention: a year of solo development, mortgaged-the
 - **11,209 companies graded**
 - **113+ public-records data sources** (growing weekly)
 - **99 GitHub Actions cron jobs** keeping data fresh
-- **9 values categories** (politics, environment, labor, animal welfare, privacy, health, exec pay, charity, transparency)
+- **11 values categories** (political donations, charity, environment, labor, DEI, animal testing, firearms, data privacy, executive pay, transparency, health)
 - **0 ads, 0 trackers selling user data, 0 dollars from rated companies**
 - **$0/month** total infrastructure cost
 - **1 founder, 1 year, evenings and weekends**
