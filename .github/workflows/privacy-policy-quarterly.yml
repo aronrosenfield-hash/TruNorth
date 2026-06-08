@@ -1,0 +1,53 @@
+name: privacy-policy-quarterly
+
+# Privacy policy text fetch + ToS;DR rating mirror + rule-based scoring.
+#
+# Walks the top-2000 brands in our index, attempts to locate each one's
+# privacy policy URL (trying /privacy, /privacy-policy, /legal/privacy,
+# /privacy-statement), caches the HTML, pulls the ToS;DR community grade,
+# and produces data/derived/privacy-policy-augment.json.
+#
+# 1 req/sec courtesy throttle. Worst-case wall time for 2,000 brands is
+# ~35 minutes, comfortably inside the 60-minute job cap.
+
+on:
+  schedule:
+    - cron: "0 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit the raw + derived JSON
+
+jobs:
+  fetch-and-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run privacy-policy tests
+        run: node scripts/privacy-policy-fetch.test.mjs
+
+      - name: Fetch privacy policies + ToS;DR ratings (real network)
+        run: node scripts/privacy-policy-fetch.mjs --apply
+
+      - name: Score policies and produce augment file
+        run: node scripts/privacy-policy-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/privacy-policy/ \
+                  data/derived/privacy-policy-augment.json \
+                  public/data/_cache/privacy-policy/ || true
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(privacy): quarterly privacy-policy refresh + score [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
