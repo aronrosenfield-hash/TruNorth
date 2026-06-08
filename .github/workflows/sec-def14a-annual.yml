@@ -1,0 +1,57 @@
+name: sec-def14a-annual
+
+# SEC DEF14A — executive compensation (annual, post-proxy-season)
+#
+# Walks the SEC's ticker→CIK map and pulls each TruNorth ticker's most
+# recent DEF 14A proxy. Extracts CEO total comp / SCT columns / pay
+# ratio via XBRL companyfacts when available, falling back to HTML
+# regex on the primary filing document.
+#
+# Runs annually on July 10th — by then nearly all calendar-year filers
+# have filed their proxy (US proxy season is Mar–Jun). Throttled to the
+# SEC's published ≤10 req/sec ceiling with a 110ms inter-request sleep.
+#
+# Data license: SEC EDGAR data is US public domain. The required
+# identifying User-Agent is set inside the script itself.
+
+on:
+  schedule:
+    - cron: "0 6 10 7 *"   # 06:00 UTC, July 10
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to commit raw output + augment + per-company JSON
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests (offline; no network)
+        run: node --test scripts/sec-def14a-fetch.test.mjs
+
+      - name: Fetch DEF14A proxies (real network, throttled ≤10 req/sec)
+        run: node scripts/sec-def14a-fetch.mjs --apply
+
+      - name: Merge into augment + per-company files
+        run: node scripts/sec-def14a-merge.mjs --apply
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/sec-def14a/ data/derived/sec-def14a-augment.json public/data/companies/ public/data/_cache/sec-def14a/
+          [ -f public/data/_meta/sec-def14a-merge-log.json ] && git add public/data/_meta/sec-def14a-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(sec-def14a): annual executive compensation refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
