@@ -1,0 +1,141 @@
+<!--
+  Hand-crafted fixture mimicking the OHCHR Special Procedures
+  Communication-search "Latest reports" tabular layout
+  (spcommreports.ohchr.org/LatestReports/CommunicationSent).
+
+  Each <tr data-id="…"> sentinel row precedes a real <tr> containing
+  four <td> cells:
+    1. Date / Country / Type / Ref. no. (each wrapped in its own <ul>)
+    2. Mandates (list of <li>)
+    3. Summary (free text + named companies + "More details…" link)
+    4. Replies received (Rep_xxxx)
+
+  This fixture includes:
+    - Row 30001: a multi-company business case naming Chevron, Shell, and ExxonMobil
+    - Row 30002: a single-company case naming Glencore plc
+    - Row 30003: a state-only case (no business mention) — should be skipped
+    - Row 30004: a case naming Microsoft Corporation
+    - Row 30001 duplicate at the end — sanity for dedupe-by-id
+
+  We deliberately do NOT pull a live OHCHR page into the repo to keep
+  the fixture small and stable. Real OHCHR markup is more verbose
+  (extra whitespace, kendo wrapper divs) but the four <td> structure
+  is identical.
+-->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>fixture</title></head><body>
+<div class="container body-content">
+  3 communications found page 1 of 1
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr style="background-color:#f5f5f5">
+          <th>Date, Country, Type and ref. no.</th>
+          <th>Mandates</th>
+          <th>Summary</th>
+          <th>Replies received</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-id="30001"></tr>
+        <tr>
+          <td>
+            <ul>15 Jan 2026</ul>
+            <ul style="font-weight:700;word-wrap:break-word">Nigeria</ul>
+            <ul>JAL</ul>
+            <ul><a href="/TMResultsBase/DownLoadPublicCommunicationFile?gId=30001" target="Com_30001">NGA 1/2026</a></ul>
+          </td>
+          <td>
+            <ul>
+              <li>working group on the issue of human rights and transnational corporations and other business enterprises</li>
+              <li>environment</li>
+              <li>indigenous peoples</li>
+            </ul>
+          </td>
+          <td style="word-wrap: break-word;max-width:300px;">
+            Information received concerning alleged human rights violations in the Niger Delta linked to oil-and-gas operations of Chevron Corporation, Shell plc and ExxonMobil Corporation, including reported community displacement, water contamination and the use of private security against peaceful protesters. Alleged victims: communities in Bayelsa State.</br>
+            <a href="javascript:void(0)" onClick="ShowSummaryDetails(30001);">More details...</a>
+          </td>
+          <td>
+            <a href="/TMResultsBase/DownLoadFile?gId=40001" target="Rep_40001">02 Apr 2026</a> <br />
+          </td>
+        </tr>
+        <tr data-id="30002"></tr>
+        <tr>
+          <td>
+            <ul>03 Feb 2026</ul>
+            <ul style="font-weight:700;word-wrap:break-word">Switzerland</ul>
+            <ul>JAL</ul>
+            <ul><a href="/TMResultsBase/DownLoadPublicCommunicationFile?gId=30002" target="Com_30002">CHE 1/2026</a></ul>
+          </td>
+          <td>
+            <ul>
+              <li>working group on the issue of human rights and transnational corporations and other business enterprises</li>
+              <li>toxic waste</li>
+            </ul>
+          </td>
+          <td style="word-wrap: break-word;max-width:300px;">
+            Allegations concerning the activities of Glencore plc in the Democratic Republic of the Congo, including reported environmental harm at the Kamoto Copper Company mine, exposure of artisanal miners to cobalt dust and the use of force by company-contracted security personnel.</br>
+            <a href="javascript:void(0)" onClick="ShowSummaryDetails(30002);">More details...</a>
+          </td>
+          <td>
+            <a href="/TMResultsBase/DownLoadFile?gId=40002" target="Rep_40002">15 Apr 2026</a> <br />
+          </td>
+        </tr>
+        <tr data-id="30003"></tr>
+        <tr>
+          <td>
+            <ul>20 Feb 2026</ul>
+            <ul style="font-weight:700;word-wrap:break-word">Belarus</ul>
+            <ul>JUA</ul>
+            <ul><a href="/TMResultsBase/DownLoadPublicCommunicationFile?gId=30003" target="Com_30003">BLR 1/2026</a></ul>
+          </td>
+          <td>
+            <ul>
+              <li>freedom of opinion and expression</li>
+              <li>human rights defenders</li>
+            </ul>
+          </td>
+          <td style="word-wrap: break-word;max-width:300px;">
+            Information received concerning the arbitrary detention of journalists in Minsk. Alleged victims: three named individuals.</br>
+            <a href="javascript:void(0)" onClick="ShowSummaryDetails(30003);">More details...</a>
+          </td>
+          <td></td>
+        </tr>
+        <tr data-id="30004"></tr>
+        <tr>
+          <td>
+            <ul>10 Mar 2026</ul>
+            <ul style="font-weight:700;word-wrap:break-word">United States of America</ul>
+            <ul>JAL</ul>
+            <ul><a href="/TMResultsBase/DownLoadPublicCommunicationFile?gId=30004" target="Com_30004">USA 2/2026</a></ul>
+          </td>
+          <td>
+            <ul>
+              <li>working group on the issue of human rights and transnational corporations and other business enterprises</li>
+              <li>right to privacy</li>
+            </ul>
+          </td>
+          <td style="word-wrap: break-word;max-width:300px;">
+            Allegations concerning data-handling practices of Microsoft Corporation in relation to government surveillance requests affecting human rights defenders abroad.</br>
+            <a href="javascript:void(0)" onClick="ShowSummaryDetails(30004);">More details...</a>
+          </td>
+          <td></td>
+        </tr>
+        <tr data-id="30001"></tr>
+        <tr>
+          <td>
+            <ul>15 Jan 2026</ul>
+            <ul style="font-weight:700;word-wrap:break-word">Nigeria</ul>
+            <ul>JAL</ul>
+            <ul><a href="/TMResultsBase/DownLoadPublicCommunicationFile?gId=30001" target="Com_30001">NGA 1/2026</a></ul>
+          </td>
+          <td><ul><li>duplicate row</li></ul></td>
+          <td>Duplicate of 30001 - should be deduped.</br></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body></html>

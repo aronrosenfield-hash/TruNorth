@@ -1,0 +1,54 @@
+name: un-bhr-quarterly
+
+# UN Working Group on Business and Human Rights — Communications scraper.
+#
+# Runs quarterly. Scrapes the OHCHR /LatestReports/CommunicationSent paginated
+# table for Allegation Letters (AL/JAL) and Urgent Appeals (UA/JUA) that name
+# corporations. Adds them to data/derived/un-bhr-augment.json keyed by
+# company slug.
+#
+# Source: https://spcommreports.ohchr.org
+# License: UN public information
+
+on:
+  schedule:
+    - cron: "0 5 12 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 12th
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test scripts/un-bhr-fetch.test.mjs
+
+      - name: Fetch UN B&HR communications
+        run: node scripts/un-bhr-fetch.mjs --limit 200
+
+      - name: Merge into augment file
+        run: node scripts/un-bhr-merge.mjs
+
+      - name: Open auto-PR on data change
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(un-bhr): quarterly UN communications refresh [skip ci]"
+          title: "data(un-bhr): quarterly UN communications refresh"
+          body: |
+            Automated quarterly refresh of UN Working Group on Business and Human Rights communications.
+
+            Data sourced from https://spcommreports.ohchr.org — UN public information.
+          branch: data/un-bhr-quarterly-${{ github.run_number }}
+          delete-branch: true
+          add-paths: |
+            data/raw/un-bhr/
+            data/derived/un-bhr-augment.json
