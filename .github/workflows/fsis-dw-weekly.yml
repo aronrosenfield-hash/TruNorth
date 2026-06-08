@@ -1,0 +1,48 @@
+name: fsis-dw-weekly
+
+# USDA FSIS Recalls (Tier-S waitlist DW-6). Companion to the existing
+# fsis-weekly.yml; this pipeline keys aggregates by *normalized company
+# name* (DW-style augment) rather than by the top-500 brand list.
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # every Monday, 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: Fetch FSIS (live)
+        run: node scripts/fsis-dw-fetch.mjs --apply
+
+      - name: Build augment
+        run: node scripts/fsis-dw-merge.mjs
+
+      - name: Tests
+        run: node --test scripts/fsis-dw-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(fsis-dw): weekly meat/poultry recall refresh"
+          title: "data(fsis-dw): weekly refresh"
+          body: |
+            Automated USDA FSIS recall ingest (DW-6 pipeline).
+
+            - Raw: `data/raw/fsis-dw/`
+            - Derived: `data/derived/fsis-dw-augment.json`
+          branch: data/fsis-dw
+          add-paths: |
+            data/raw/fsis-dw/**
+            data/derived/fsis-dw-augment.json
+          delete-branch: true

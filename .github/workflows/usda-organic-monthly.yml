@@ -1,0 +1,47 @@
+name: usda-organic-monthly
+
+# USDA Organic Integrity Database — monthly refresh of certified-organic
+# operators (~45,000 entities). Public CSV bulk download, no auth.
+
+on:
+  schedule:
+    - cron: "0 8 8 * *"   # 8th of each month, 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: Fetch USDA OID (live)
+        run: node scripts/usda-organic-fetch.mjs --apply
+
+      - name: Build augment
+        run: node scripts/usda-organic-merge.mjs
+
+      - name: Tests
+        run: node --test scripts/usda-organic-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(usda-organic): monthly OID refresh"
+          title: "data(usda-organic): monthly refresh"
+          body: |
+            Automated USDA Organic Integrity Database refresh.
+
+            - Raw: `data/raw/usda-organic/`
+            - Derived: `data/derived/usda-organic-augment.json`
+          branch: data/usda-organic
+          add-paths: |
+            data/raw/usda-organic/**
+            data/derived/usda-organic-augment.json
+          delete-branch: true

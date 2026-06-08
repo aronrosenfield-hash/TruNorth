@@ -1,0 +1,286 @@
+{
+  "generated_at": "2026-06-07T19:52:07.075Z",
+  "source": "fsis-dw",
+  "source_url": "https://www.fsis.usda.gov/recalls",
+  "upstream_file": "data/raw/fsis-dw/2026-06-07.json",
+  "company_count": 9,
+  "companies": {
+    "tyson-foods": {
+      "display_name": "Tyson Foods Inc.",
+      "total_recalls": 1,
+      "recent_24mo_count": 0,
+      "class_I_count": 1,
+      "class_II_count": 0,
+      "class_III_count": 0,
+      "pounds_recalled_total": 29819,
+      "last_recall_date": "2024-03-15",
+      "top_reasons": [
+        {
+          "label": "Extraneous Material",
+          "count": 1
+        },
+        {
+          "label": "Foreign Matter Contamination",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "025-2024",
+          "date": "2024-03-15",
+          "risk_level": "Class I",
+          "reason": "Extraneous Material, Foreign Matter Contamination",
+          "product": "Frozen breaded chicken nuggets",
+          "pounds_recalled": 29819,
+          "states": "Nationwide",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/025-2024"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": false
+    },
+    "jbs-usa": {
+      "display_name": "JBS USA Holdings, Inc.",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 1,
+      "class_II_count": 0,
+      "class_III_count": 0,
+      "pounds_recalled_total": 16243,
+      "last_recall_date": "2024-06-22",
+      "top_reasons": [
+        {
+          "label": "E. coli O157:H7",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "031-2024",
+          "date": "2024-06-22",
+          "risk_level": "Class I",
+          "reason": "E. coli O157:H7",
+          "product": "Ground beef chubs",
+          "pounds_recalled": 16243,
+          "states": "CA, NV, AZ",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/031-2024"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "boar-s-head-provisions": {
+      "display_name": "Boar's Head Provisions Co., Inc.",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 1,
+      "class_II_count": 0,
+      "class_III_count": 0,
+      "pounds_recalled_total": 7194058,
+      "last_recall_date": "2024-07-26",
+      "top_reasons": [
+        {
+          "label": "Listeria monocytogenes",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "047-2024",
+          "date": "2024-07-26",
+          "risk_level": "Class I",
+          "reason": "Listeria monocytogenes",
+          "product": "Liverwurst and other deli products",
+          "pounds_recalled": 7194058,
+          "states": "Nationwide",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/047-2024"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "perdue-foods": {
+      "display_name": "Perdue Foods LLC",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 0,
+      "class_II_count": 1,
+      "class_III_count": 0,
+      "pounds_recalled_total": 167171,
+      "last_recall_date": "2024-08-13",
+      "top_reasons": [
+        {
+          "label": "Misbranding",
+          "count": 1
+        },
+        {
+          "label": "Unreported Allergens",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "052-2024",
+          "date": "2024-08-13",
+          "risk_level": "Class II",
+          "reason": "Misbranding, Unreported Allergens",
+          "product": "Frozen chicken tenderloins",
+          "pounds_recalled": 167171,
+          "states": "Nationwide",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/052-2024"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "cargill-meat-solutions": {
+      "display_name": "Cargill Meat Solutions Corporation",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 0,
+      "class_II_count": 0,
+      "class_III_count": 1,
+      "pounds_recalled_total": 8500,
+      "last_recall_date": "2024-09-30",
+      "top_reasons": [
+        {
+          "label": "Misbranding",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "058-2024",
+          "date": "2024-09-30",
+          "risk_level": "Class III",
+          "reason": "Misbranding",
+          "product": "Frozen beef patties",
+          "pounds_recalled": 8500,
+          "states": "TX, OK, KS",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/058-2024"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "hormel-foods": {
+      "display_name": "Hormel Foods Corporation",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 0,
+      "class_II_count": 1,
+      "class_III_count": 0,
+      "pounds_recalled_total": 11765,
+      "last_recall_date": "2024-10-12",
+      "top_reasons": [
+        {
+          "label": "Misbranding",
+          "count": 1
+        },
+        {
+          "label": "Unreported Allergens",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "061-2024",
+          "date": "2024-10-12",
+          "risk_level": "Class II",
+          "reason": "Misbranding, Unreported Allergens",
+          "product": "Microwaveable bowls",
+          "pounds_recalled": 11765,
+          "states": "Nationwide",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/061-2024"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "smithfield-packaged-meats": {
+      "display_name": "Smithfield Packaged Meats Corp.",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 1,
+      "class_II_count": 0,
+      "class_III_count": 0,
+      "pounds_recalled_total": 20213,
+      "last_recall_date": "2025-01-08",
+      "top_reasons": [
+        {
+          "label": "Extraneous Material",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "002-2025",
+          "date": "2025-01-08",
+          "risk_level": "Class I",
+          "reason": "Extraneous Material",
+          "product": "Pork sausage links",
+          "pounds_recalled": 20213,
+          "states": "Multiple",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/002-2025"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "pilgrim-s-pride": {
+      "display_name": "Pilgrim's Pride Corporation",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 1,
+      "class_II_count": 0,
+      "class_III_count": 0,
+      "pounds_recalled_total": 245366,
+      "last_recall_date": "2025-04-04",
+      "top_reasons": [
+        {
+          "label": "Extraneous Material",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "012-2025",
+          "date": "2025-04-04",
+          "risk_level": "Class I",
+          "reason": "Extraneous Material",
+          "product": "Breaded chicken strips",
+          "pounds_recalled": 245366,
+          "states": "Nationwide",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/012-2025"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    },
+    "butterball": {
+      "display_name": "Butterball, LLC",
+      "total_recalls": 1,
+      "recent_24mo_count": 1,
+      "class_I_count": 0,
+      "class_II_count": 1,
+      "class_III_count": 0,
+      "pounds_recalled_total": 31415,
+      "last_recall_date": "2025-05-19",
+      "top_reasons": [
+        {
+          "label": "Unreported Allergens",
+          "count": 1
+        },
+        {
+          "label": "Soy",
+          "count": 1
+        }
+      ],
+      "recent_recalls": [
+        {
+          "recall_number": "017-2025",
+          "date": "2025-05-19",
+          "risk_level": "Class II",
+          "reason": "Unreported Allergens, Soy",
+          "product": "Pre-cooked turkey breast",
+          "pounds_recalled": 31415,
+          "states": "Multiple",
+          "url": "https://www.fsis.usda.gov/recalls-alerts/017-2025"
+        }
+      ],
+      "hasMeatPoultryRecall24mo": true
+    }
+  }
+}
