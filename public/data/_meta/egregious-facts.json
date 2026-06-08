@@ -1,0 +1,82 @@
+{
+  "$schema": "Egregious-fact rotation source-of-truth. See docs/marketing/egregious/ROTATION.md.",
+  "rotationDays": 3,
+  "epoch": "1970-01-01",
+  "facts": [
+    {
+      "id": "home-depot-ceo-pay-ratio",
+      "brandSlug": "home-depot",
+      "brandName": "Home Depot",
+      "lens": "Pay equity",
+      "statNumber": "2,026",
+      "statUnit": "x",
+      "statKicker": "CEO-to-median pay",
+      "context": "Home Depot's CEO is paid 2,026 times the median employee.",
+      "shortContext": "CEO paid 2,026x the median employee.",
+      "source": "SEC DEF14A 2025 proxy",
+      "sourceUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000354950&type=DEF+14A",
+      "cta": "See the receipt",
+      "deeplink": "/brand/home-depot"
+    },
+    {
+      "id": "amazon-prop65-notices",
+      "brandSlug": "amazon",
+      "brandName": "Amazon",
+      "lens": "Health",
+      "statNumber": "785",
+      "statUnit": "",
+      "statKicker": "Prop 65 cancer-warning notices",
+      "context": "Amazon was hit with 785 California carcinogen-warning notices in the last 12 months.",
+      "shortContext": "785 California carcinogen notices in 12 months.",
+      "source": "California Prop 65 60-day notices (OEHHA + CA AG)",
+      "sourceUrl": "https://oag.ca.gov/prop65/60-day-notice-search",
+      "cta": "See the receipt",
+      "deeplink": "/brand/amazon"
+    },
+    {
+      "id": "colgate-trial-transparency",
+      "brandSlug": "colgate-palmolive",
+      "brandName": "Colgate-Palmolive",
+      "lens": "Health & transparency",
+      "statNumber": "18",
+      "statUnit": "/35",
+      "statKicker": "Clinical trials with unpublished results",
+      "context": "Colgate-Palmolive failed to publish results for 18 of 35 clinical trials (5% compliance).",
+      "shortContext": "Unpublished results for 18 of 35 clinical trials (5% compliance).",
+      "source": "FDAAA TrialsTracker",
+      "sourceUrl": "https://fdaaa.trialstracker.net/",
+      "cta": "See the receipt",
+      "deeplink": "/brand/colgate-palmolive"
+    },
+    {
+      "id": "starbucks-strikes",
+      "brandSlug": "starbucks",
+      "brandName": "Starbucks",
+      "lens": "Labor",
+      "statNumber": "269",
+      "statUnit": "",
+      "statKicker": "Strikes, protests & work stoppages",
+      "context": "Starbucks has had 269 labor actions — more than any other brand we track.",
+      "shortContext": "269 labor actions — most of any brand we track.",
+      "source": "Cornell ILR Labor Action Tracker (CC-BY)",
+      "sourceUrl": "https://striketracker.ilr.cornell.edu/",
+      "cta": "See the receipt",
+      "deeplink": "/brand/starbucks"
+    },
+    {
+      "id": "shein-transparency-score",
+      "brandSlug": "shein",
+      "brandName": "Shein",
+      "lens": "Transparency",
+      "statNumber": "5",
+      "statUnit": "/100",
+      "statKicker": "Supply-chain transparency score",
+      "context": "Shein scored 5 out of 100 on Fashion Revolution's transparency index.",
+      "shortContext": "5/100 on Fashion Revolution's transparency index.",
+      "source": "Fashion Revolution Transparency Index 2024 (via WikiRate)",
+      "sourceUrl": "https://www.fashionrevolution.org/about/transparency/",
+      "cta": "See the receipt",
+      "deeplink": "/brand/shein"
+    }
+  ]
+}
