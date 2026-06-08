@@ -4,32 +4,30 @@
 >
 > **How to use:** Open this file → say "let's do **L-3**" or "work on the next item under PRE-LAUNCH" or "what's blocked?"
 >
-> **Last updated:** 2026-06-07 PM — Massive data sprint day. 13 PRs open. Coverage analysis at `/docs/data-coverage-analysis-2026-06-07.md`.
+> **Last updated:** 2026-06-08 AM — **24 PRs merged**. Workflows: 99 → 122. Scripts: ~200 → 294. Biggest data day in project history.
 
 ---
 
-## 🎯 OPEN PRs READY FOR MERGE (13 total)
+## ✅ MERGED 2026-06-07 — 24 PRs
 
-**Tier-S waitlist (3 PRs, all 17 sources tested):**
-- **PR #1** `pr/dw-1-to-6` — SBTi, WBA Social, Forest 500, 50/50 WoB, USDA Organic, FSIS Recalls (36/36 tests pass, no API keys)
-- **PR #2** `pr/dw-7-to-12` — OFAC SDN, BIS Entity List, FERC, DOL WHD, Energy Star, 1% for the Planet (34/34 tests pass)
-- **PR #3** `pr/dw-13-to-17` — Disability:IN, CFTC, UK ICO, Singapore MAS, Canada CB (25/25 tests pass)
+**Tier-S waitlist (DW-1 through DW-17):** #1, #2, #25 (#3 superseded)
 
-**Today's brand-parent-map fix + 10 new sources (10 PRs):**
-- **PR #4** `feature/brand-parent-map-expansion` — 138 → 4,625 entries (33× growth, Wikidata SPARQL + curated, fixes Nabisco scanner gap)
-- **PR #5** `feature/usda-fooddata` — USDA FoodData Central 1.9M products, GTIN/UPC lookup (69% match rate on fixture)
-- **PR #6** `feature/opensanctions` — 220+ international sanctions sources via single FTM JSON API (CC-BY-NC, monetization-flagged)
-- **PR #7** `feature/wikirate` — 8M datapoints across 150k companies (CC BY 4.0, best license terms)
-- **PR #8** `feature/brazil-lista-suja` — Brazilian forced-labor employer list (Lei 12527/2011)
-- **PR #9** `feature/eu-transparency` — EU lobbying disclosures (24/29 fixture matches: Meta, MSFT, Google, ExxonMobil, Amazon, Shell, TotalEnergies)
-- **PR #10** `feature/naag-multistate` — Multistate AG settlements (6/6 fixture: Equifax, Google, J&J, McKesson, Cardinal Health, Intuit) ⚠️ Kasada bot wall
-- **PR #11** `feature/au-fair-work` — Australia FWO labor litigation (3/6 fixture: McD's, Domino's, 7-11) ⚠️ geo block in dev
-- **PR #12** `pr/un-bhr` — UN Working Group on Business & Human Rights communications (salvaged from content-filtered agent run)
-- **PR #13** `feature/ca-prop65` — California carcinogen-warning notices ✅ LIVE DATA — 7,395 notices in past 12 months, 18 companies (Amazon 785, Ross 574, Walmart 395)
+**Brand-parent-map + scanner fix:** #4 (138 → 4,625 entries)
 
-**Recommended merge order:** #4 (scanner fix) → #5 (UPC lookups) → #7, #8, #9, #13 (high-yield data) → #6, #10, #11, #12 (lower yield or scrape-fragile) → #1, #2, #3 (Tier-S DW-1-17 cleanup).
+**Tonight's data PRs:** #5 USDA FoodData · #6 OpenSanctions · #7 WikiRate · #8 Brazil Lista Suja · #9 EU Transparency · #10 NAAG · #11 AU Fair Work · #12 UN B&HR · #13 CA Prop 65 (LIVE: 7,395 notices) · #14 Privacy NLP · #15 Industry carbon intensity (100% coverage) · #16 Transparency benchmarks · #17 Animal welfare union · #18 Exec political donations (4,468 cos) · #20 Firearms industry · #21 SEC DEF14A (Home Depot 2,026:1 pay ratio) · #22 EEOC DEI · #23 OpenFDA + EPA TRI carcinogens · #24 Corporate giving ($56.6B disclosed)
 
-**Decision pending:** PR #2 has -sdn/-enforcement/-violations slugs that coexist with older `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs`. Recommend kill-old + standardize on new pattern in a post-merge cleanup PR.
+## 🟡 OPEN — needs decision
+
+- **#19 Employee ratings (Glassdoor)** — DORMANT. Awaiting decision on Common Crawl pivot or Glassdoor Enterprise API. ToS risk too high to activate scraping.
+
+## 🔜 SCHEDULED FOLLOW-UP — Jun 14
+
+- Verify 23 new crons each ran successfully at least once on schedule
+- Open cleanup PR retiring old `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs` (replaced by DW-7-12 new pattern). Confirmed safe: new + old pipelines write to different output files; coexist without conflict during the verification window.
+
+## 🎯 PRE-LAUNCH — SCORING ENGINE UX FLAGS
+
+3-PR sequence to ship `na` / `notDisclosed` / `_inferred` flags safely before Jun 23. See full plan at `/docs/pre-launch-scoring-flags-plan.md`. Target: PR-1 today, PR-2 Jun 10, PR-3 Jun 13. Flag toggle goes ON Jun 16 with 24hr stability watch before App Store final build cut Jun 17.
 
 ---
 
