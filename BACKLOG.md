@@ -1,86 +1,73 @@
 # TruNorth Backlog
 
-> **Single source of truth.** I (Claude) keep this up to date as we work. You can edit it directly anytime — I'll respect your edits.
+> **Single source of truth.** Claude keeps this current. You can edit it directly anytime — edits are respected.
 >
-> **How to use:** Open this file → say "let's do **L-3**" or "work on the next item under PRE-LAUNCH" or "what's blocked?"
+> **How to use:** Open this file → say "let's do **L-3**" or "what's blocked?" or "what's the next highest-leverage item?"
 >
-> **Last updated:** 2026-06-08 AM — **24 PRs merged**. Workflows: 99 → 122. Scripts: ~200 → 294. Biggest data day in project history.
+> **Last updated:** 2026-06-08 PM — **37 PRs merged today** (26 → 62) + PR #63 round 2 ready. Open PRs: **1** (#63). Workflows: **143** (+44 today). Scripts: **373** (+~79 today). TestFlight: **Build 51** in your hands. **15 days to launch.**
 
 ---
 
-## ✅ MERGED 2026-06-07 — 24 PRs
+## 🔴 NEEDS YOUR DECISION — TODAY
 
-**Tier-S waitlist (DW-1 through DW-17):** #1, #2, #25 (#3 superseded)
+### 1. PR #63 — merge call
+- **URL:** https://github.com/aronrosenfield-hash/TruNorth/pull/63
+- **Round 2 just pushed** (commit `70457acbb`):
+  - Desat purple `#5d54a6` → `#463f7d` (you picked C from 4 swatches)
+  - 5 brands reclassified as wordmark (Home Depot · Amazon · Chipotle · Acura · Ben & Jerry's) — no more redundant text label under logo pill
+  - Chipotle display name shortened so it stops overflowing the iOS splash
+  - 11/11 tests pass · 120 PNGs re-rendered
+- **Action:** Eyeball the new PNGs in `/Users/aronrosenfield/Developer/trunorth/.claude/worktrees/agent-abd275fc6a9f8dbe8/docs/marketing/egregious/` (especially `contact-sheet-ios-splash.png`). Say "merge 63" and I'll land it on main.
 
-**Brand-parent-map + scanner fix:** #4 (138 → 4,625 entries)
+### 2. Build 51 → Build 52 ship
+- **State:** Build 51 is what's on your phone. Everything merged today (37 PRs + the design fixes on PR #63 when merged) is on `main` but **not on your phone yet**.
+- **Action:** After PR #63 merges → `./scripts/ship-ios.sh` → Build 52 lands in TestFlight in ~10-15 min for smoke testing.
+- **Recommendation:** Wait for #63 merge → ship Build 52 tonight → smoke test tomorrow.
 
-**Tonight's data PRs:** #5 USDA FoodData · #6 OpenSanctions · #7 WikiRate · #8 Brazil Lista Suja · #9 EU Transparency · #10 NAAG · #11 AU Fair Work · #12 UN B&HR · #13 CA Prop 65 (LIVE: 7,395 notices) · #14 Privacy NLP · #15 Industry carbon intensity (100% coverage) · #16 Transparency benchmarks · #17 Animal welfare union · #18 Exec political donations (4,468 cos) · #20 Firearms industry · #21 SEC DEF14A (Home Depot 2,026:1 pay ratio) · #22 EEOC DEI · #23 OpenFDA + EPA TRI carcinogens · #24 Corporate giving ($56.6B disclosed)
-
-## 🟡 OPEN — needs decision
-
-- **#19 Employee ratings (Glassdoor)** — DORMANT. Awaiting decision on Common Crawl pivot or Glassdoor Enterprise API. ToS risk too high to activate scraping.
-
-## 🔜 SCHEDULED FOLLOW-UP — Jun 14
-
-- Verify 23 new crons each ran successfully at least once on schedule
-- Open cleanup PR retiring old `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs` (replaced by DW-7-12 new pattern). Confirmed safe: new + old pipelines write to different output files; coexist without conflict during the verification window.
-
-## 🎯 PRE-LAUNCH — SCORING ENGINE UX FLAGS
-
-3-PR sequence to ship `na` / `notDisclosed` / `_inferred` flags safely before Jun 23. See full plan at `/docs/pre-launch-scoring-flags-plan.md`. Target: PR-1 today, PR-2 Jun 10, PR-3 Jun 13. Flag toggle goes ON Jun 16 with 24hr stability watch before App Store final build cut Jun 17.
+### ✅ Resolved earlier today
+- ~~**PR #19 — Glassdoor employee ratings**~~ → **closed** 2026-06-08 per your call. Parked as F-5. Labor signal covered by Cornell ILR (#40) + NLRB voluntary recognition (#41).
+- ~~**MailerLite Vercel env var**~~ → **fixed days ago** (Aron confirmed 2026-06-08). `/api/subscribe` is healthy.
 
 ---
 
-## ⏰ NEXT MILESTONES
+## ⏰ COUNTDOWN TO LAUNCH
 
 | Date | Event |
 |---|---|
-| Tue, Jun 2 · 9 AM | SEO check-in reminder (Tuesday cadence) |
-| Fri, Jun 5 · 9 AM | SEO check-in reminder (Friday cadence) |
-| Mon, Jun 8 · 9 AM | SEO check-in reminder (Monday cadence) |
-| **Tue, Jun 16 · 9 AM** | PH 1-week-out prep reminder |
-| Tue, Jun 17 (target) | Submit to Apple App Store (gives ~5-day review buffer before launch) |
-| **Mon, Jun 22 · 7 PM** | PH launch-eve readiness reminder |
-| **Tue, Jun 23 · 2:01 AM CDT** | 🚀 **Product Hunt launch fires** |
-| Tue, Jul 7 (est.) | Earliest Android shipping window (Phase 6.a) |
+| **Tue Jun 9 · 9 AM CDT** | ITEP follow-up to Amy Hanauer (auto-reminder) |
+| **Tue Jun 9 · 1 PM CDT** | Egregious 15:15 polarity rebalance (auto-reminder) |
+| **Fri Jun 13** | Final `ship-ios.sh` → Build N for App Store submission |
+| **Sat Jun 14** | Submit Build N to App Review |
+| **Mon Jun 16 · 9 AM CDT** | (a) PH 1-week prep, (b) coverage measurement after Tier-S crons run (auto-reminder) |
+| **Mon Jun 16** | Toggle scoring-flags feature ON (24h stability watch) |
+| **Tue Jun 17** | Cut final App Store build if flags stable |
+| ~Jun 18-22 | Apple review (avg 24-48h, buffer for re-submit) |
+| **Mon Jun 22 · 7 PM** | PH launch eve reminder |
+| **Tue Jun 23 · 1:50 AM CDT** | Launch hour wake-up |
+| **Tue Jun 23 · 2:01 AM CDT** | 🚀 **Product Hunt launch fires** |
+| ~Jul 7 | Earliest Android shipping window (P-1) |
 
 ---
 
-## 🔥 ACTIVE — working on now
+## 🚀 PRE-LAUNCH — YOU MUST DO (manual)
 
-🚨 **CRITICAL PRE-LAUNCH BUG** discovered 2026-06-07: `/api/subscribe` returns `"mailerlite_not_configured"` on production. Means `MAILERLITE_API_KEY` is missing from Vercel runtime env (it's set in GitHub Actions but NOT in Vercel). Every email signup since the env var was lost has been silently dropped. The 2 subscribers we see in MailerLite signed up before this broke.
-
-**Fix (5 min, requires Aron)**:
-  1. Vercel → trunorthapp Project → Settings → Environment Variables
-  2. Add `MAILERLITE_API_KEY` (no `VITE_` prefix — server-side only) with the key from MailerLite → Integrations → Developer API
-  3. Add `MAILERLITE_GROUP_ID` (numeric group ID)
-  4. Redeploy (Vercel auto-redeploys on env change)
-  5. Verify: `curl -X POST https://www.trunorthapp.com/api/subscribe -H 'Content-Type: application/json' -H 'Origin: https://www.trunorthapp.com' -d '{"email":"test+v@trunorthapp.com","source":"qa"}'` should return `requiresVerification: true`
-
----
-
-## 🚀 PRE-LAUNCH — do BEFORE June 23
-
-8 items left, all on you. ~3 hours total work (+1-2 hr if you film the demo video).
-
-| ID | Item | Effort | Why it matters |
+| ID | Item | Effort | Why |
 |---|---|---|---|
 | **L-1** | Pin Twitter tweet from `/docs/producthunt/PROMO_COPY.md` | 5 min | Hour-1 PH subscribers → launch-day votes |
 | **L-2** | LinkedIn pinned post from same doc | 5 min | B2B reach |
-| **L-3** | Personal email blast to 10-20 closest contacts | 30 min | Warmest hour-1 voters |
-| ~~**L-5**~~ | ~~Pick + install ONE email signature in Mac Mail~~ | ✅ done 2026-06-03 | |
-| **L-7** | Activate Google Apps Script personalized auto-reply | 20 min | `/docs/gmail-personalized-autoreply-setup.md` — reduces email triage during launch |
-| **L-8** | Daily 10-min PH "warming" routine (upvote 5-10, comment on 1) | 10 min/day × 22 days | PH algo rewards engaged accounts |
-| **L-9** | Record 30-60 sec demo video for PH gallery | 1-2 hr | Demo videos boost PH conversion ~30% |
-| ~~**L-12**~~ | ~~Add `MAILERLITE_API_KEY` to GitHub Actions secrets~~ | ✅ done 2026-06-01 | All 3 secrets verified: `MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `POSTHOG_API_KEY` (the last for the trending cron, not Vercel). Names match what scripts read. |
-
-**Send-on-Jun-16:** L-10 trade press pitches (drafts ready at `/docs/trade-press-pitches.md`).
+| **L-3** | Personal email blast — 10-20 closest contacts | 30 min | Drafted at `/docs/L-3-email-blast-checklist.md` — recipients + tracker ready |
+| **L-7** | Activate Gmail Apps Script personalized auto-reply | 20 min | `/docs/gmail-personalized-autoreply-setup.md` — reduces email triage during launch |
+| **L-8** | Daily 10-min PH "warming" routine (upvote 5-10, comment on 1) | 10 min/day × 15 days | PH algo rewards engaged accounts |
+| **L-9** | Record 30-60s demo video for PH gallery | 1-2 hr | Pipeline at `~/.claude/.../teetime-bot-project.md` peer doc (`promo-video-pipeline.md`) — covers what to recapture when app screens change |
+| **L-10** | Trade press pitches — send Mon Jun 16 | 30 min | Drafts ready at `/docs/trade-press-pitches.md` |
+| ~~**L-5**~~ | ~~Pick + install ONE email signature~~ | ✅ done 2026-06-03 | `/docs/email-signature.html` installed |
+| ~~**L-12**~~ | ~~MailerLite key in GitHub Actions secrets~~ | ✅ done 2026-06-01 | (Vercel runtime env is a separate item — see Decision #4 above) |
 
 ---
 
-## 🎯 LAUNCH DAY — June 23 only
+## 🎯 LAUNCH DAY — June 23 ONLY (don't pre-fire)
 
-Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DAY_PLAYBOOK.md`.
+All scripted in `/docs/producthunt/LAUNCH_DAY_PLAYBOOK.md`.
 
 | ID | Item | When (CDT) |
 |---|---|---|
@@ -88,8 +75,8 @@ Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DA
 | **D-2** | Fire scheduled Twitter launch tweet | 2:05 AM |
 | **D-3** | Fire scheduled LinkedIn launch post | 2:05 AM |
 | **D-4** | Text 5 closest people the launch URL | 2:10 AM |
-| **D-4b** | Swap LinkedIn personal-profile headline to launch-day version (copy in `/docs/social-assets/LINKEDIN_PROFILE_GUIDE.md`) | 7 AM |
-| **D-5** | Reply to every PH comment within 5 minutes | 2-6 AM |
+| **D-4b** | Swap LinkedIn personal headline to launch-day version | 7 AM |
+| **D-5** | Reply to every PH comment within 5 min | 2-6 AM |
 | **D-6** | Indie Hackers post | 9 AM |
 | **D-7** | Hacker News "Show HN" post | 9 AM |
 | **D-8** | Reddit posts (r/SideProject, r/Anticonsumption) | 9 AM |
@@ -99,352 +86,366 @@ Don't touch these until launch day. All scripted in `/docs/producthunt/LAUNCH_DA
 
 ---
 
-## 📅 POST-LAUNCH — first 2 weeks after PH
-
-| ID | Item | Effort | Notes |
-|---|---|---|---|
-| **P-1** | Phase 6.a: Android launch via Capacitor | 7-9 hr + $25 | Plan at `/docs/ANDROID_LAUNCH_PLAN.md`. Blocked on iOS App Store launch. |
-| **P-2** | Thank-you DMs to top 10 PH commenters | 1 hr | Day 2 |
-| **P-3** | Results tweet ("Launched at #X on PH yesterday...") | 15 min | Day 2 |
-| **P-4** | "Featured on Product Hunt" badge added to trunorthapp.com | 10 min | Day 2 — embed code in PH dashboard |
-| **P-5** | Reach out to anyone who hit site with `?ref=producthunt` UTM | 30 min | Day 3-7 |
-| **P-6** | Post-launch retro — what worked, top requested features | 1 hr | End of week 1 |
-| **P-7** | Trade press follow-ups with launch results data | 1 hr | Week 2 |
-| **P-8** | Swap LinkedIn personal-profile headline to **1-week-after** version | 2 min | Day 7 (Jun 30) — copy in `/docs/social-assets/LINKEDIN_PROFILE_GUIDE.md` |
-| **P-9** | Swap LinkedIn personal-profile headline to **1-month-after** version | 2 min | Day ~30 (Jul 23) — copy in same guide |
-
----
-
 ## ⏸️ BLOCKED — waiting on external
 
 | ID | Item | Blocked on |
 |---|---|---|
-| **X-0** | Flip `PRO_WAITLIST_MODE = false` to enable real IAP | RevenueCat live + LLC + bank (X-2). When done: single constant flip in `src/App.jsx` + verify Apple receipt validation in `handleSubscribe`. Currently the paywall captures waitlist signups with founder pricing ($9/yr first 500). |
-| **X-1** | App Store URL in PH First Comment + landing CTA | Apple App Store approval (you submit, Apple reviews) |
+| **X-0** | Flip `PRO_WAITLIST_MODE = false` to enable real IAP | RevenueCat live + LLC + bank (X-2). Single constant flip in `src/App.jsx` once unblocked. |
+| **X-1** | App Store URL in PH First Comment + landing CTA | Apple App Store approval (target: Jun 17 submit, Jun 22 approve) |
 | **X-2** | RevenueCat / Stripe / Apple IAP integration | TruNorthApp LLC + business bank account. Plan at `/docs/payments-integration-plan.md`. |
-| **X-3** | Apify Indeed reviews scraper | $10/mo Apify subscription + `APIFY_API_TOKEN`. Code ready in hybrid-pipeline. |
-| **X-4** | MailerLite paid plan | >1k subscribers OR >12k emails/month. Free tier covers us until then. |
-| **X-5** | Annual + lifetime pricing tiers (UX 6C + 6D) | RevenueCat live (depends on X-2) |
+| **X-3** | Apify Indeed reviews scraper | $10/mo Apify subscription + `APIFY_API_TOKEN` |
+| **X-4** | MailerLite paid plan | >1k subscribers OR >12k emails/month |
+| **X-5** | Annual + lifetime pricing tiers | RevenueCat live (depends on X-2) |
 | **X-6** | Push notifications (iOS APNs + FCM Android) | iOS launch settled first |
+| **X-7** | ITEP citation approval | Sent to Amy Hanauer (`itep@itep.org`). Follow-up auto-reminder Tue Jun 9 · 9 AM CDT. |
+
+---
+
+## 📅 POST-LAUNCH — first 2 weeks
+
+| ID | Item | Effort | Notes |
+|---|---|---|---|
+| **P-1** | Phase 6.a: Android launch via Capacitor | 7-9 hr + $25 | `/docs/ANDROID_LAUNCH_PLAN.md`. Blocked on iOS App Store launch. |
+| **P-2** | Thank-you DMs to top 10 PH commenters | 1 hr | Day 2 |
+| **P-3** | Results tweet ("Launched at #X on PH yesterday…") | 15 min | Day 2 |
+| **P-4** | "Featured on PH" badge on trunorthapp.com | 10 min | Day 2 — embed code in PH dashboard |
+| **P-5** | Outreach to `?ref=producthunt` UTM visitors | 30 min | Day 3-7 |
+| **P-6** | Post-launch retro — what worked, top requests | 1 hr | End of week 1 |
+| **P-7** | Trade press follow-ups with launch results data | 1 hr | Week 2 |
+| **P-8** | Swap LinkedIn headline to **1-week-after** version | 2 min | Day 7 (Jun 30) |
+| **P-9** | Swap LinkedIn headline to **1-month-after** version | 2 min | Day ~30 (Jul 23) |
 
 ---
 
 ## 📋 BACKLOG — pick when relevant
 
-Sorted by category. Each has an effort tag (S = <1hr, M = 1-4hr, L = day+).
+Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 
-### Audit deferrals (after the Jun 1 25-agent audit)
+### Audit deferrals (from Jun 1 25-agent audit)
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| ~~**A-1**~~ | ~~H3: Unified `openBrand(slug)` helper~~ | ✅ done 2026-06-02 | 12 nav entry points → 1 canonical helper. Build green. |
-| ~~**A-2**~~ | ~~H5: Modal a11y~~ | ✅ done 2026-06-02 | `useModalA11y` shared hook → Paywall/Scanner/WhatsNew/Compare. Focus trap + ESC + focus return. |
-| ~~**A-3**~~ | ~~H13: Copy honesty + acronym pass~~ | ✅ done 2026-06-02 | FEC/EPA/OSHA/NLRB/SEC/BHRRC/DOL/HRC/EEOC expanded on first use. US qualifiers added to political labels. Marketing landing acronyms expanded. |
-| **A-4** | **H2: Backfill personalization signal for top 100 brands** | L · $15-60 | Procedure documented at `/docs/A-4-backfill-procedure.md`. Confirmed sample (2026-06-03): 24/41 top-100 brands with files have all-neutral scores. Run requires API budget approval. Pipeline at `/Users/aronrosenfield/Developer/hybrid-pipeline/`. |
-| **A-5** | **H15: Bundle splitting (2.5MB companies + 4MB Tabler font)** | L | Lazy-load companies dataset, swap Tabler webfont for a sprite subset of the ~30 icons actually used. Risky — break dynamic imports / asset paths. |
+| ~~**A-1**~~ | ~~Unified `openBrand(slug)` helper~~ | ✅ done 2026-06-02 | |
+| ~~**A-2**~~ | ~~Modal a11y (focus trap + ESC + return)~~ | ✅ done 2026-06-02 | |
+| ~~**A-3**~~ | ~~Copy honesty + acronym pass~~ | ✅ done 2026-06-02 | |
+| **A-4** | Backfill personalization signal for top 100 brands | L · $15-60 | Procedure at `/docs/A-4-backfill-procedure.md`. Sample (Jun 3): 24/41 top-100 brands have all-neutral scores. Run requires API budget approval. |
+| **A-5** | Bundle splitting (2.5MB companies + 4MB Tabler font) | L | Lazy-load companies dataset; swap Tabler webfont for sprite. Risky — could break dynamic imports/asset paths. |
 
 ### App / UX polish
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **B-1** | iPad tablet breakpoint | M-L | Plan at `/docs/tablet-breakpoint-plan.md`. iPhone-first is fine for launch. |
-| **B-2** | Browser/Safari extension (UX 7C) — grade badge overlay on Amazon/Target/Walmart | L | Primer at `/docs/TruNorth-Tier-C-Browser-Extension-Primer.docx` |
-| **B-4** | Break up App.jsx (UX 9A) — ~5,000 lines → component files | L | Refactor only; no user-facing change |
-| **B-5** | JSDoc `@typedef` for Company shape (UX 9C) | M | Dev autocomplete win, no behavior change |
-| ~~**B-31**~~ | ~~Account → Edit email (5.31.26 doc #7)~~ | ✅ done 2026-06-05 | Existing fontSize:11 underline-text "Edit" link was easy to miss — upgraded to a pill button with pencil icon, accent border, 32pt min-height tap target. Validates → writes local prefs → calls `subscribeEmail()` (which hits `/api/subscribe` → MailerLite upsert). Passes `previous_email` in metadata so we can audit duplicates if they accumulate. |
-| ~~**B-32**~~ | ~~Email signature HTML template (5.31.26 doc #15)~~ | ✅ done 2026-06-05 | `/docs/email-signature.html` — 80×80 logo + name + role + tagline + soft CTA, table-based layout (Outlook/Gmail/Mail compatible). Logo at `/public/email-signature-logo.png` (hosted on www.trunorthapp.com with 1-year cache). Install instructions inline at top of HTML file. To install: `open docs/email-signature.html`, copy box content, paste into Mail → Settings → Signatures, uncheck "Always match my default message font". |
-| ~~**B-33**~~ | ~~Sources tab — hide behind Pro (5.31.26 doc #14)~~ | ✅ done 2026-06-05 | Aron's call: hide behind Pro. Free users now see 10 household-name anchors (FEC, OSHA, EPA, SEC, NLRB, CFPB, NHTSA, CISA, OpenFDA, DOJ) + a locked "+ 90 more verified sources" tile. Per-grade citations remain free (that's the audit trail). The "100 sources" badge on landing still drives credibility — the recipe stays behind the wall. |
-| ~~**B-34**~~ | ~~Group ID 189038375757415926~~ | ✅ resolved 2026-06-05 | Aron doesn't know what it is — doc artifact, no action. If it later proves to be a TestFlight beta-group ID or App Store Connect group ID, we'll revisit. |
+| **B-1** | iPad tablet breakpoint | M-L | `/docs/tablet-breakpoint-plan.md`. iPhone-first is fine for launch. |
+| **B-2** | Browser/Safari extension — grade badge overlay on Amazon/Target/Walmart | L | Primer at `/docs/TruNorth-Tier-C-Browser-Extension-Primer.docx` |
+| **B-4** | Break up App.jsx (~5,000 lines → component files) | L | Refactor only |
+| **B-5** | JSDoc `@typedef` for Company shape | M | Dev autocomplete win |
+| ~~**B-31**~~ | ~~Account → Edit email~~ | ✅ done 2026-06-05 | |
+| ~~**B-32**~~ | ~~Email signature HTML template~~ | ✅ done 2026-06-05 | |
+| ~~**B-33**~~ | ~~Sources tab — hide behind Pro~~ | ✅ done 2026-06-05 | |
+| ~~**B-34**~~ | ~~Group ID 189038375757415926~~ | ✅ resolved (doc artifact) 2026-06-05 | |
 
-### Data / pipeline
+### Scoring / data
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **B-7** | Sources behind VT: As You Sow, UK Gender Pay Gap, CPA-Zicklin, GDELT, KnowTheChain | M each | `parked_vt_backfill.md` |
-| **B-8** | Quarterly full re-narrate of Tier 1 (top 1k) companies — Sonnet batch | S + $5-10 | `parked_update_cadence.md` |
-| **B-9** | Annual HRC CEI + CDP A-List re-ingest | S | Set a yearly reminder |
-| **B-10** | Drop Glassdoor source from any future planning | — | ToS forbids scraping, Cloudflare-blocked, prior lawsuits |
-| ~~**B-22**~~ | ~~Sub-brand → parent slug mapping~~ | ✅ done 2026-06-03 | `public/data/_meta/slug-aliases.json` + `brand-parent-map.json` — merger now resolves 112/278 orphans (42 alias, 70 parent). Remaining 166 are top-level brands missing files. |
-| **B-23** | **Scoring rebake from `recent_events[]`** | M-L | The news merge layer writes structured events but doesn't mutate scores. Need a scoring engine that reads `recent_events[]` (weighted by severity × magnitude × evidence_strength × bias) and re-derives `sc.*` values. Run weekly to keep grades fresh without per-article volatility. |
-| **B-24** | **AllSides outlet whitelist expansion** | S | Currently 33 outlets mapped. Many Tier-2 outlets (Axios, Politico, The Verge, Ars Technica) appear in high-signal results — add their bias ratings to `OUTLET_BIAS` in `news-rss-collect.mjs` for richer fact_driver coverage. |
-| ~~**B-25**~~ | ~~Option B — fix BBB scraper letter extraction~~ | ✅ done 2026-06-03 | 3-layer extraction: JSON-LD `aggregateRating` → body-text regex "BBB Rating: X" → original `.bds-body`. Workflow re-running to verify. |
-| ~~**B-26**~~ | ~~Option C — disambiguate CourtListener party search~~ | ✅ done 2026-06-03 | Combined `party:"BRAND"` with `suitNature:[400 TO 895]` range filter. Dawn dropped from 183,001 → ~2,700 commercial cases. Field was `suitNature` not `nature_of_suit`. |
-| ~~**B-27**~~ | ~~CA AG enforcement-actions scrape~~ | ✅ done 2026-06-06 | Shipped (commit f3d013526). 5-page pagination ≈ 24 months. Two-tier slug resolver handles 'Walmart Stores Inc.' → 'walmart'. 35/35 fixture tests pass. Cron monthly 06:00 UTC. Coverage est: 15-25 of top 100 brands. |
-| **B-28** | **Skip state AG complaint databases** | — | Surveyed 2026-06-03: CA/NY/IL/FL/TX have NO public per-company complaint records. NY/IL publish only "Top 10 industries" annual press releases (no company names). TX is "public" but PIA-request-gated (not automatable). FTC Sentinel is law-enforcement-only. Treat as resolved-not-feasible. |
-| **B-29** | **Skip FTC Sentinel + EEOC + ConsumerAffairs** | — | Surveyed 2026-06-03: FTC Sentinel is law-enforcement-only (public Data Books are aggregate). EEOC per-company charges are statutorily confidential under Title VII §709(e). ConsumerAffairs.com uses PerimeterX bot protection (paid proxy required ~$50-250/mo). All three: not buildable without paid infrastructure. |
-| ~~**B-30**~~ | ~~VT v2: per-state + YoY + recent_top5 + active flag~~ | ✅ done 2026-06-06 | Shipped (commit 36f5e44be). 4s req delay + 30-day cache. UI render in App.jsx: ACTIVE pill, top-3 states, 5-year sparkline, "active enforcement in last 6 mo" labor badge. DRY-RUN on 10 brands clean. Not cron'd yet — manual review first run. |
-| ~~**B-37**~~ | ~~ATF FFL entity-resolution rebuild~~ | ✅ done 2026-06-06 | Shipped (commit 42a7cee91). Allow-list (29 curated FFLs) + strict evidence-chain gate + 30-industry hard blocklist. Verifier `scripts/atf-verify-no-false-positives.mjs` reports PASS — 19 companies retain firearms_atf_ffl, all legitimate. 105 false positives removed today (57+28+20). Cron paused with `if: false` guard. Follow-up filed: atf-fetch.mjs schema rewrite before un-pause. |
-| ~~**B-30b**~~ | ~~UPS slug `upstream-rehabilitation`~~ | ✅ done 2026-06-07 | Added to slug-aliases.json (commit 6eece4bb2). |
-| ~~**B-37b**~~ | ~~Rewrite atf-fetch.mjs to new FFL schema~~ | ✅ done 2026-06-07 | Shipped (commit 0960e525b). New fetcher reads local CSVs from `public/data/_raw/atf-ffl/`, auto-detects pipe/comma/tab delimiters, emits the v2 schema. End-to-end DRY-RUN with synthetic fixture: 6/6 allow-list matches, 0 false positives. Cron still paused until real ATF CSVs are dropped + a manual verify run. |
-| **B-37c** | Auto-download ATF FFL CSVs (page scrape) | M | ATF download URLs change monthly; need robust page scraping. For now operator manually downloads from atf.gov → drops CSVs into `public/data/_raw/atf-ffl/`. |
-| ~~**B-38**~~ | ~~News-extract pipeline producing 0 high-signal items~~ | ✅ done 2026-06-06/07 | Shipped (commits 7a15103be + 6eece4bb2). v1: NEEDS_CONTEXT_BRANDS + NEGATIVE_CONTEXT for SpaceX-vs-Mars, lays-bare-vs-Lay's, etc. v2: added nasa/maven/isro for Mars-spacecraft articles. Live-run validation against 35,580 articles → 200 items_for_ai, dominantly real brand news (Heinz/Kool-Aid, Nestle infant formula recalls, McDonald's decarbonization, Starbucks union-busting, Walmart cheese-bread recall + executive departures). Pipeline UNFROZEN. |
-| ~~**B-36b**~~ | ~~Diagnose loadtest 94% failure rate~~ | ✅ done 2026-06-07 | Diagnosed (commit d67d534f0). Root cause: 1000 VUs from single GH Actions IP triggers Vercel per-IP rate limit + edge-fn concurrency cap. NOT a real-world failure mode — launch traffic comes from thousands of distinct IPs. Loadtest config reduced to 150 VUs (realistic single-IP threshold). Retest run `27094062094`: 78ms avg / 282ms p95 / 13% failure (per-IP throttle still partially active even at 150 VUs but durations prove infrastructure is healthy). |
-| **B-36c** | Distributed loadtest at 1000+ VUs (k6 Cloud / BlazeMeter) | M · $ | True 1000-concurrent stress test needs many IPs. Defer until post-launch — Vercel CDN handles static trivially and real-world traffic distributes across IPs naturally. |
+| ~~**B-22**~~ | ~~Sub-brand → parent slug mapping~~ | ✅ done 2026-06-03 | |
+| **B-23** | Scoring rebake from `recent_events[]` | M-L | News merge writes events; scoring engine doesn't consume yet. Weekly cron to keep grades fresh. **Partially unblocked by PR #51 (scoring flags now live, OFF by default).** |
+| **B-24** | AllSides outlet whitelist expansion | S | 33 outlets mapped today. Axios/Politico/The Verge/Ars Technica still missing. Add to `OUTLET_BIAS` in `news-rss-collect.mjs`. |
+| ~~**B-25**~~ | ~~BBB scraper letter extraction~~ | ✅ done 2026-06-03 | (Source itself retired in favor of CFPB.) |
+| ~~**B-26**~~ | ~~CourtListener party disambiguation~~ | ✅ done 2026-06-03 | |
+| ~~**B-27**~~ | ~~CA AG enforcement-actions scrape~~ | ✅ done 2026-06-06 | |
+| **B-28** | Skip state AG complaint DBs (CA/NY/IL/FL/TX) | — | Surveyed: no public per-company complaint records. Resolved-not-feasible. |
+| **B-29** | Skip FTC Sentinel + EEOC + ConsumerAffairs | — | Surveyed: law-enforcement-only / statutorily confidential / bot-protected. Not buildable without paid infra. |
+| ~~**B-30**~~ | ~~VT v2 (per-state + YoY + recent_top5 + active)~~ | ✅ done 2026-06-06 | |
+| ~~**B-30b**~~ | ~~UPS slug alias~~ | ✅ done 2026-06-07 | |
+| ~~**B-37**~~ | ~~ATF FFL entity-resolution rebuild~~ | ✅ done 2026-06-06 | |
+| ~~**B-37b**~~ | ~~Rewrite atf-fetch.mjs to v2 schema~~ | ✅ done 2026-06-07 | |
+| **B-37c** | Auto-download ATF FFL CSVs (page scrape) | M | URLs change monthly. Manual drop into `public/data/_raw/atf-ffl/` for now. |
+| ~~**B-38**~~ | ~~News-extract pipeline producing 0 high-signal items~~ | ✅ done 2026-06-07 | NEEDS_CONTEXT_BRANDS + NEGATIVE_CONTEXT logic. Pipeline UNFROZEN. |
+| ~~**B-43**~~ | ~~OUTLET_BIAS canonical sync (news-rss-collect.mjs)~~ | ✅ done 2026-06-08 | Commit 8f9bb0c6f. Methodology comment + 3 right-of-center additions (NR→0.7, Reason 0.75, Free Beacon 0.5). |
+| **B-44** | Re-render Tesla ITEP mockup after URL fix | S | Auto-task scheduled Tue Jun 9 · 9 AM. |
+| **B-45** | Egregious 15:15 polarity rebalance (1:1 mix) | S | Auto-task scheduled Tue Jun 9 · 1 PM. Currently 20 negative + 10 positive. |
+| **B-46** | Coverage measurement after Tier-S crons stabilize | S | Auto-task scheduled Mon Jun 16 · 9 AM. Writes `/docs/coverage-measurement-2026-06-16.md`. |
+| ~~**B-47**~~ | ~~Re-fetch cleaner mark-only logo PNGs for Starbucks + Acura~~ | ✅ resolved 2026-06-08 PM | Solved differently — Aron reclassified Acura as wordmark (the cached PNG IS the canonical brand-identity expression for him). Starbucks left as-is; it looks fine in contact sheet. |
+| **B-50** | Negative banner palette pinned to desat purple (`#5d54a6`/`#463f7d`) | — | Decided 2026-06-08 PM. Env-var override preserved. If you want to test another palette pre-launch, run `PURPLE=#xxx PURPLE_DEEP=#xxx node scripts/build-egregious-banners.mjs`. |
+| **B-51** | Chipotle facts entry shortened (`Chipotle Mexican Grill` → `Chipotle`) | ✅ done 2026-06-08 PM | Long name was overflowing iOS splash brand-identity area at font 140. Stat copy still names "Chipotle Mexican Grill" for legal identity. |
+| **B-52** | Auto-fit text in renderer for future long brand names | S | Defer post-launch. Quick template: `textLength + lengthAdjust="spacingAndGlyphs"` on the SVG brand-name `<text>`. Affects ~0 brands today (we shortened the one offender) but a future egregious add could hit this. |
 
 ### Scoring schema expansion
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **B-12** | Tax category (ITEP, Fair Tax Foundation, SEC 10-K parsing) | M | Decided to skip in Phase 1, reconsider post-launch |
-| **B-13** | Supply-chain labor extension (BHRRC + KnowTheChain) — separate score from domestic Labor | M | `planned_scoring_expansion.md` |
-| **B-14** | Cruelty-free / animal testing flags (Leaping Bunny, PETA) | S | Industry-conditional |
-| **B-15** | Gun industry / tobacco / fossil-fuel financing flags | S | Easy boolean adds once schema reopened |
-| **B-16** | BDS / Israeli military ties flags | M | Politically polarizing — skipped for v1 |
-| **B-17** | CEO behavior dimension (Musk/Tesla case) | M | Opt-in dimension under political category |
+| **B-12** | Tax category (ITEP, FTF, SEC 10-K parsing) | M | PR #34 shipped ITEP pipeline **dormant** pending license clarity. Activate when X-7 lands. |
+| **B-13** | Supply-chain labor extension (BHRRC + KnowTheChain) | M | Separate score from domestic Labor. `planned_scoring_expansion.md` |
+| ~~**B-14**~~ | ~~Cruelty-free / animal testing flags~~ | ✅ done 2026-06-08 | Bird Friendly + AWA shipped in PR #45. |
+| **B-15** | Tobacco / fossil-fuel financing flags | S | Easy boolean adds. (Firearms shipped in PR #20.) |
+| **B-16** | BDS / Israeli military ties flags | M | Politically polarizing — skipped for v1. |
+| **B-17** | CEO behavior dimension (Musk/Tesla case) | M | Opt-in dimension under political. SEC 8-K Items 5.02/4.02 (PR #36) lays groundwork. |
 
 ### Marketing / growth
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **B-18** | Reddit/HN "behind the scenes" post (data pipeline deep dive) | M | Best fired ~1 week after PH launch as follow-up content |
-| **B-20** | PostHog → daily KPI digest email | S | Built-in PH feature; just subscribe |
-| **B-21** | "Worst of the week" / "Best of the week" social content (auto-generated) | M | Use `/public/data/weekly_changes.json` from Sunday digest |
-| **B-27** | Set up Postiz self-hosted cross-poster | M | Deploy on Railway free tier. Connects X, LinkedIn, Threads, IG, FB, Bluesky. One-click cross-platform posting. ~30-60 min setup. Defer until post-launch traction warrants. https://github.com/gitroomhq/postiz-app |
-| ~~**B-28**~~ | ~~PostHog reverse proxy via Cloudflare Worker~~ | ✅ done 2026-06-04 | Vercel subdomain proxy works fine after using regex `/(.*)` instead of `:path*` (handles trailing slashes). `ph.trunorthapp.com` → `us.i.posthog.com` via host-based rewrite. Ad-blockers can't recognize it as PostHog. Earlier failure looked like CORS but was actually a stale `VITE_POSTHOG_KEY` in Vercel masking the proxy success. |
+| **B-18** | Reddit/HN "data pipeline deep dive" post | M | Fire ~1 week after PH launch as follow-up content |
+| **B-20** | PostHog → daily KPI digest email | S | Built-in PH feature; subscribe |
+| **B-21** | "Worst/Best of the week" auto-social content | M | Use `/public/data/weekly_changes.json` from Sunday digest |
+| **B-41** | Set up Postiz self-hosted cross-poster | M | Railway free tier. Cross-platform to X/LinkedIn/Threads/IG/FB/Bluesky. Defer until post-launch traction. **(renumbered from duplicate B-27)** |
+| ~~**B-42**~~ | ~~PostHog reverse proxy via subdomain~~ | ✅ done 2026-06-04 | `ph.trunorthapp.com` → `us.i.posthog.com`. **(renumbered from duplicate B-28)** |
 
 ### Infra / ops
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **B-24** | Privacy page review for CCPA/GDPR compliance pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts |
-| **B-25** | k6 loadtest run once we have real DAU baseline | S | Script at `/scripts/loadtest.js`, GH Action ready (manual dispatch) |
-| ~~**B-35**~~ | ~~Country-level geo-block (5.31.26 doc *** opener)~~ | ✅ done 2026-06-05 | Implemented in `middleware.js` (not Vercel dashboard WAF — code-controlled is auditable + portable). Blocks RU, BY, CN, KP, IR, SY, CU, VE → returns 451 Unavailable For Legal Reasons. Runs first in middleware so blocked traffic never hits compute. Matcher widened to cover landing + privacy + brand pages (still excludes `/api/`, `/assets/`, `/data/`, static files via negative lookahead). Googlebot (mostly US) unaffected. To add a country: edit `BLOCKED_COUNTRIES` Set in `middleware.js`. |
-| **B-36** | **Pre-launch load test** (from 5.31.26 doc item 16) | S | Aron's concern: "Can we test 1000 users at once?" Existing `/scripts/loadtest.js` + `loadtest.yml` GH Action ready, but never run. Trigger before launch day: simulate 1k concurrent landing visitors + 100 concurrent brand-page loads. Vercel free tier should handle it (static CDN + ~10 Edge fn invocations); confirms it. |
+| **B-39** | Privacy page review for CCPA/GDPR pre-1k users | S | Already at `/#privacy`; lawyer review nice-to-have once revenue starts. **(renumbered from duplicate B-24)** |
+| **B-40** | k6 loadtest run with real DAU baseline | S | Script + GH Action ready (manual dispatch). **(renumbered from duplicate B-25)** |
+| ~~**B-35**~~ | ~~Country-level geo-block (RU/BY/CN/KP/IR/SY/CU/VE → 451)~~ | ✅ done 2026-06-05 | `middleware.js`. |
+| ~~**B-36**~~ | ~~Pre-launch load test (single-IP)~~ | ✅ done 2026-06-07 | k6 reduced to 150 VUs (realistic single-IP). 78ms avg / 282ms p95. |
+| ~~**B-36b**~~ | ~~Diagnose loadtest 94% failure rate~~ | ✅ done 2026-06-07 | Root cause: per-IP rate limit from single GH Actions IP. Not real-world. |
+| **B-36c** | Distributed loadtest at 1000+ VUs (k6 Cloud / BlazeMeter) | M · $ | True 1000-concurrent stress needs many IPs. Defer until post-launch. |
+| **B-48** | Retire old `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs` | S | Replaced by DW-7-12 new pattern. Confirmed safe to coexist; cleanup PR after Jun 14 verification window. |
+| **B-49** | Verify 44 new crons (today) each ran successfully on schedule | S | Check Jun 14 — every workflow added Jun 7-8. |
 
 ---
 
-## 🎯 DATA DEPTH WAITLIST — 60 ranked candidates (research 2026-06-07)
+## 🎯 SCORING-FLAGS PRE-LAUNCH ROLLOUT — IN FLIGHT
 
-Surfaced by 4 parallel research agents on 2026-06-07. Ranked by coverage × ease. These STRENGTHEN existing categories instead of opening new ones. Pick the next wave based on which categories need depth most.
+3-PR sequence to ship `na` / `notDisclosed` / `_inferred` flags safely before Jun 23. Full plan at `/docs/pre-launch-scoring-flags-plan.md`.
 
-### Tier S — Quick wins (S effort, clean static CSV/JSON, huge coverage)
-
-| ID | Source | Category | Why |
-|---|---|---|---|
-| **DW-1** | SBTi Target Dashboard (XLSX, 10k companies) | Environment | Boolean "has 1.5°C-aligned target" — massive coverage of mid-cap brands CDP misses |
-| **DW-2** | WBA Social Benchmark (CSV/XLSX, 2,000 most-influential cos × 18 indicators) | Labor + Human Rights | **Doubles TruNorth's labor coverage instantly.** Biggest single human-rights data dump available. |
-| **DW-3** | Forest 500 (XLSX + 4 CSVs, 500 cos × deforestation drivers) | Environment | TruNorth has ZERO deforestation signal today — this is the standard |
-| **DW-4** | 50/50 Women on Boards Gender Diversity Index (Russell 3000, quarterly) | DEI | Board-level gender data for every US public consumer brand we track |
-| **DW-5** | USDA Organic Integrity Database (45k operations, monthly CSV) | Animals + product cert | Federal-backed organic gold standard, SKU-level scannable |
-| **DW-6** | USDA FSIS Recall API (JSON REST, real-time) | Animals + safety | Closes the meat/poultry/egg recall gap (Tyson, JBS, Smithfield, Hormel currently invisible to OpenFDA) |
-| **DW-7** | OFAC SDN + Consolidated Sanctions List (XML/JSON, continuous) | Political | Sanctions-exposure flag — Russia/Iran/cartel ties |
-| **DW-8** | BIS Entity List + Denied Persons (CSV, weekly) | Political | Export-control violators (Seagate, semiconductor diversions) |
-| **DW-9** | FERC Civil Penalties ($905M+ historical) | Environment + Political | Energy-sector enforcement — utilities, traders, pipelines |
-| **DW-10** | DOL WHD Compliance Actions (CSV, employer-named since FY05) | Labor | Direct "$X stolen from workers" per company |
-| **DW-11** | Energy Star Product Finder API (75k products, daily) | Environment + scanner UX | UPC lookup at barcode scan — appliances/electronics |
-| **DW-12** | 1% for the Planet Directory (~5,000 climate-giving businesses) | Environment | Instantly tags brand as verified climate-giving |
-| **DW-13** | Disability:IN Equality Index (655 cos, annual) | DEI | Picks up where retreating HRC CEI leaves off |
-| **DW-14** | CFTC Enforcement (via OpenSanctions JSON mirror) | Political + finance | $2.6B in FY24 penalties — energy traders, crypto, ag commodities |
-| **DW-15** | UK ICO Data Protection Enforcement (62 actions in 2024) | Privacy | Pairs with EU GDPR for full UK+EU post-Brexit coverage |
-| **DW-16** | Singapore MAS Enforcement (via OpenSanctions mirror) | Political + finance | JPM, Goldman, Credit Suisse Asia cases |
-| **DW-17** | Canada Competition Bureau Deceptive Marketing Cases | Privacy + DEI | Searchable since 2015 |
-
-### Tier A — Strategic plays (S/M effort, high differentiation)
-
-| ID | Source | Category | Why |
-|---|---|---|---|
-| **DW-18** | InfluenceMap / LobbyMap — anti-climate-policy lobbying scores | Environment + Political | **Catches greenwashers.** Orthogonal to CDP self-reported action. |
-| **DW-19** | Carbon Majors (122 producers × cumulative tCO2 since 1854) | Environment | "You cooked the planet" attribution dataset (NY Climate Superfund cites it) |
-| **DW-20** | EEOC Litigation Resolutions | DEI | **TruNorth's DEI category has ZERO enforcement signal today.** Federal lawsuit naming companies for discrimination = strongest possible signal. |
-| **DW-21** | IRS Form 990 / 990-PF / 990-T (via ProPublica API) | Charity | True charity-% calculation per Fortune 500 corporate foundation. **Currently ~5% coverage; this becomes ~50%+.** |
-| **DW-22** | KnowTheChain Forced Labor Benchmark (ICT 49, Apparel 65, F&B 43) | Labor + Supply chain | Samsung, HPE, Cisco, Apple, Nike, Adidas, Nestle |
-| **DW-23** | Corporate Human Rights Benchmark (WBA, biennial) | Human Rights | Toyota, VW, Glencore, Shell, BHP, Rio Tinto — deep non-US extractives + automotive |
-| **DW-24** | BHRRC API upgrade (50k stories, daily JSON) | Labor + Human Rights | We have static BHRRC; upgrade to API consumption for daily refresh |
-| **DW-25** | Mighty Earth Deforestation Trackers (Soy + Cattle + Palm) | Environment + Supply chain | Satellite-verified Cargill/JBS/Bunge/Wilmar attribution to consumer brand buyers |
-| **DW-26** | FMCSA Motor Carrier Safety (DOT# crashes/inspections) | Labor + Environment | Every trucking/logistics brand — Sysco, Amazon DSPs, Walmart fleet, FedEx Ground |
-| **DW-27** | PHMSA Pipeline Enforcement (incidents + civil penalties) | Environment | Enbridge, Energy Transfer, Kinder Morgan, Marathon — major fossil-industry upgrade |
-| **DW-28** | FTC Cases & Proceedings (JSON via legal-library API) | Privacy + DEI | Backbone US consumer-protection enforcer — Amazon, Meta, Epic, Drizly, Chegg |
-| **DW-29** | Coller FAIRR Protein Producer Index (60 largest meat/dairy/aquaculture) | Animals | Tyson, JBS, Hormel, Danone tier with animal welfare + antibiotics + climate scores |
-| **DW-30** | Australia ACCC + ASIC Enforcement | Environment + Privacy | **ACCC's 2026 priority is greenwashing enforcement** — unique signal |
-| **DW-31** | Banking on Climate Chaos (65 banks × 2,700 fossil clients × $ flows) | Environment | Bank-specific climate accountability — annual June refresh |
-| **DW-32** | Ranking Digital Rights Corporate Accountability Index (14 platforms × 58 indicators) | Privacy | None scored >50/100 in 2025 — Apple, Google, Meta, Samsung, Tencent, ByteDance |
-| **DW-33** | FDA Inspection Dashboard + Warning Letters (Form 483) | Animals + Labor | Pharma, cosmetics, supplements, infant formula brands |
-| **DW-34** | OCC + FDIC Enforcement Actions | Political + finance | Bank-specific enforcement Chase/Wells/Citi |
-| **DW-35** | FCC Enforcement Bureau Forfeitures | Privacy | Location-data + TCPA fines ($200M+ against carriers) |
-| **DW-36** | EWG Skin Deep (~100,000 product beauty/personal-care safety database) | Health + scanner UX | Massive UX win at barcode scan moment |
-| **DW-37** | EPEAT Registry (33,000+ electronics × 40 brands, daily) | Environment + scanner UX | Defining ecolabel for laptops/phones/displays |
-| **DW-38** | Non-GMO Project Verified (60k products, 3k brands) | Animals + product cert | Highest US consumer-recognition seal after USDA Organic |
-| **DW-39** | Certified Humane + Animal Welfare Approved (AGW) | Animals | Meat/egg/dairy gap-filler |
-| **DW-40** | OU/OK/Star-K Kosher Product Search (~1M+ SKUs) | Religious-dietary | Zero religious-dietary coverage today |
-| **DW-41** | V-Label Certified Products (70k+ vegan/vegetarian-certified) | Animals + scanner UX | International equivalent of Leaping Bunny |
-| **DW-42** | Cornell ILR Labor Action Tracker (303 US strikes in 2025) | Labor | Real-time strike map — catches Starbucks/Amazon/UAW weeks faster than NLRB |
-| **DW-43** | ICIJ Offshore Leaks Database (810k+ entities) | Governance | Panama/Pandora/Paradise Papers — flags governance opacity |
-| **DW-44** | RSPO Palm Oil Certified Holders (5,200 members, live) | Environment | Palm oil is in ~50% of supermarket SKUs |
-| **DW-45** | Regenerative Organic Certified Brand Directory (Patagonia Provisions, Dr. Bronner's tier) | Environment | Fastest-growing premium ag label (+22% YoY 2025) |
-| **DW-46** | Bonsucro Certified Entity Lookup (sugar buyers, daily) | Environment + Labor | Sugar is 2nd most ubiquitous commodity after palm |
-| **DW-47** | Climate Label (cradle-to-customer carbon, ~hundreds of brands) | Environment | Only consumer-facing carbon label |
-| **DW-48** | Cradle to Cradle Certified Products Registry (1,200 products) | Environment | Method, Steelcase, premium home goods |
-| **DW-49** | DOL List of Goods Produced by Child/Forced Labor (TVPRA, biennial) | Supply Chain + Human Rights | 204 goods × 82 countries — cross-reference brand ingredient origins |
-| **DW-50** | NLRB C-cases JSON mirror (labordata.bunkum.us) | Labor | Union-busting granularity beyond ALJ rulings — Starbucks, Amazon, Trader Joe's |
-
-### Tier B — Specialist depth (M effort, narrower coverage)
-
-DW-51 As You Sow Fund Lists (Carbon Underground 200, Coal Free, Deforestation Free, Weapon Free)
-DW-52 BaFin Securities Sanctions (Germany)
-DW-53 FCA Enforcement Final Notices (UK)
-DW-54 KFTC (Korea Fair Trade Commission)
-DW-55 India SEBI Orders + Debarred Entities
-DW-56 South Africa Competition Tribunal
-DW-57 Better Cotton Initiative members
-DW-58 Demeter Biodynamic Certified
-DW-59 Bird-Friendly Smithsonian coffee
-DW-60 Global Animal Partnership 5-Step Manufacturers
-
-### Recommendation
-
-**Next sprint (DW-1 through DW-17 = Tier S)** — 17 sources, mostly Low effort, fills the weakest categories (DEI, environment, animal welfare). Estimated 2-3 days of agent compute. Adds ~5,000-10,000 new data points across 9 categories.
-
----
-
-## 💤 PARKED / FUTURE — not on critical path
-
-| ID | Item | Why parked |
+| Step | What | State |
 |---|---|---|
-| **F-1** | Migrate to Supabase or any DB | Static JSON + Vercel covers 100k+ companies free. No reason to migrate. |
-| **F-2** | OpenCorporates / Crunchbase / D&B integrations | All paid; doesn't justify cost. |
-| **F-3** | Local Llama 3.1 8B narrative generation | ~89 hours/run for 10k. Haiku batch is cheaper + better quality. |
-| **F-4** | Multiple Claude sessions in worktrees for parallel work | Only relevant when work fans out across non-conflicting code paths. Used when needed. |
+| PR-1 (#?) | Scoring engine audit | ✅ merged |
+| PR-2 (#27) | Add `flags` field to data (no UI) | ✅ merged |
+| PR-3 (#51) | UI rendering + grade math behind feature flag | ✅ merged (flag OFF) |
+| **Toggle ON** | Flip `scoringFlagsEnabled` in `/data/_meta/feature-flags.json` | **Mon Jun 16** (24h stability watch) |
+| **App Store cut** | Final TestFlight + App Review submission | **Tue Jun 17** if flags stable |
 
 ---
 
-## ⏰ DATA-FRESHNESS CADENCE — full system map
+## 🎯 DATA-DEPTH WAITLIST — STATUS POST-JUN-8
 
-### Fully automated (GitHub Actions cron — runs without your involvement)
+The 60-source ranked candidates from Jun 7 research. **Tier S sprint is COMPLETE** (DW-1 through DW-17 all shipped 2026-06-08). Many Tier A items also shipped today (see ✅ below). Remaining items deferred to post-launch.
 
-| Job | File | Cadence | What it does |
-|---|---|---|---|
-| Trending refresh | `trending-refresh.yml` | Daily 06:00 UTC | PostHog → `trending.json` |
-| Sunday digest | `weekly-digest.yml` | Sunday 14:00 UTC | MailerLite weekly grade-changes campaign |
-| Loadtest | `loadtest.yml` | Manual dispatch | k6 stress test |
-| **News RSS + AI extract** | `news-rss-nightly.yml` | Daily 04:00 UTC | 528 brands → ~45k RSS → ~350 high-signal → Claude Sonnet → merge into `company.news` |
-| **CourtListener lawsuits** | `courtlistener-weekly.yml` | Sunday 17:00 UTC | Federal court records per brand |
-| **CFPB complaints** | `cfpb-weekly.yml` | Sunday 18:00 UTC | Consumer financial complaints + canonical-name resolution |
-| **NHTSA vehicle data** | `nhtsa-weekly.yml` | Sunday 19:00 UTC | Recalls + complaints across make × model × year |
-| **CPSC product recalls** | `cpsc-weekly.yml` | Sunday 20:00 UTC | SaferProducts recall API for non-vehicle products |
-| **DOJ press releases** | `doj-weekly.yml` | Sunday 21:00 UTC | Antitrust, fraud, criminal, civil-rights, environment, tax mentions (90-day window) |
-| **EPA ECHO** | `epa-echo-weekly.yml` | Sunday 22:00 UTC | Facility-level enforcement (granular than basic EPA endpoint) |
-| **SEC Litigation Releases** | `sec-litigation-weekly.yml` | Sunday 23:00 UTC | SEC enforcement actions naming defendant companies |
-| **CISA KEV catalog** | `cisa-kev-weekly.yml` | Monday 00:00 UTC | Known Exploited Vulnerabilities per vendor (tech-brand security signal) |
-| **GDELT global news** | `gdelt-weekly.yml` | Monday 02:00 UTC | International multilingual press per brand |
-| **GSA SAM exclusions** | `gsa-sam-monthly.yml` | 1st of month 00:00 UTC | Federal contractor blacklist (Target is on it ⚠️) |
-| **OSHA Severe Injury** | `osha-sir-monthly.yml` | 1st of month 01:00 UTC | Per-establishment severe injuries (amputations + hospitalizations) |
-| **CDC FoodNet outbreaks** | `cdc-foodnet-monthly.yml` | 1st of month 02:00 UTC | Multistate foodborne outbreaks per brand |
-| **HHS OIG enforcement** | `hhs-oig-monthly.yml` | 1st of month 03:00 UTC | Healthcare fraud cases + LEIE exclusions |
-| **OpenStates legislation** | `openstates-monthly.yml` | 1st of month 04:00 UTC | State-level bills mentioning each brand (requires `OPENSTATES_API_KEY`) |
+### Tier S — Quick wins → **ALL SHIPPED 2026-06-08**
 
-### Human-action reminders (scheduled — you'll get pinged)
-
-| Date | Reminder | What |
+| ID | Source | PR |
 |---|---|---|
-| Jun 2, 5, 8 · 9 AM CDT | SEO check-ins | Google Search Console + sitemap status |
-| **Jun 16 · 9 AM** | PH 1-week prep | Subscriber count + outreach + demo video |
-| **Jun 22 · 7 PM** | PH launch eve | Pre-schedule social posts |
-| **Jun 23 · 1:50 AM** | PH launch hour ☕ | Wake-up + 4-hour battle plan |
-| **Jul 1 + monthly** | Cron health check | Verify GH Actions actually ran, no silent failures |
-| **Sept 1 + quarterly** | Tier-1 re-narrate | Top-100 brand narratives refresh via Sonnet batch (~$10) |
-| **Nov 15 + yearly** | HRC CEI re-ingest | Annual DEI scoring list (HRC publishes Nov-Dec) |
-| **Feb 15 + yearly** | CDP A-List re-ingest | Annual climate disclosure list (CDP publishes Feb) |
+| ✅ DW-1 | SBTi Target Dashboard | (merged) |
+| ✅ DW-2 | WBA Social Benchmark | (merged) |
+| ✅ DW-3 | Forest 500 | (merged) |
+| ✅ DW-4 | 50/50 Women on Boards | (merged) |
+| ✅ DW-5 | USDA Organic Integrity DB | (merged) |
+| ✅ DW-6 | USDA FSIS Recall API | (merged) |
+| ✅ DW-7..12 | OFAC SDN, BIS Entity List, FERC, DOL WHD, Energy Star, 1% for the Planet | #2 + augments |
+| ✅ DW-13..17 | Disability:IN, CFTC, UK ICO, Singapore MAS, Canada Competition Bureau | #25 |
 
-Manage in sidebar under "Scheduled".
+### Tier A — Shipped today
 
----
+| ID | Source | PR |
+|---|---|---|
+| ✅ DW-19 | Carbon Majors (via Climate TRACE) | #48 |
+| ✅ DW-26 | FMCSA Motor Carrier Safety | #42 |
+| ✅ DW-29 | (covered by IIHS + FSIS combo) | #35 + ✅DW-6 |
+| ✅ DW-33 | (groundwork — FDAAA Trials) | #43 |
+| ✅ DW-39 | Certified Humane + AWA | #45 |
+| ✅ DW-42 | Cornell ILR Labor Action Tracker | #40 |
+| ✅ DW-44 | WWF Sustainable Palm Oil (RSPO partial) | #37 |
+| ✅ DW-50 | NLRB voluntary recognition (positive labor) | #41 |
+| ✅ DW-57 | Better Cotton Initiative | #45 |
 
-## ✅ RECENTLY SHIPPED (rolling, last 20)
+### Tier A — Still open (defer to post-launch unless quick win)
 
-Most recent at top.
+| ID | Source | Effort | Why hold |
+|---|---|---|---|
+| DW-18 | InfluenceMap / LobbyMap anti-climate-policy scores | M | High-value greenwasher detection. Worth a sprint week 2. |
+| DW-20 | EEOC Litigation Resolutions | S | TruNorth DEI has zero enforcement signal today. **High-leverage post-launch.** |
+| DW-21 | IRS Form 990 (via ProPublica API) | M | Bumps charity % coverage from ~5% to ~50%. |
+| DW-22 | KnowTheChain Forced Labor Benchmark | M | Apparel + ICT depth |
+| DW-23 | Corporate Human Rights Benchmark | M | Non-US extractives + auto |
+| DW-24 | BHRRC API upgrade (50k stories daily) | S | We have static; live API is daily refresh |
+| DW-25 | Mighty Earth Deforestation Trackers (Soy + Cattle + Palm) | M | Satellite-verified Cargill/JBS/Bunge attribution |
+| DW-27 | PHMSA Pipeline Enforcement | S | Note: data(phmsa) snapshot is already running daily — wire it up. |
+| DW-28 | FTC Cases & Proceedings | M | US consumer-protection backbone |
+| DW-30 | Australia ACCC + ASIC | M | 2026 ACCC priority = greenwashing enforcement |
+| DW-31 | Banking on Climate Chaos | S | Annual June refresh |
+| DW-32 | Ranking Digital Rights | S | 14 platforms; rare to score >50/100 |
+| DW-34 | OCC + FDIC Enforcement | S | Chase/Wells/Citi enforcement |
+| DW-35 | FCC Enforcement Bureau Forfeitures | S | TCPA + location-data fines |
+| DW-36 | EWG Skin Deep beauty DB | M | Scanner UX win |
+| DW-37 | EPEAT Registry | S | Scanner UX for electronics |
+| DW-38 | Non-GMO Project Verified | S | Highest US seal after Organic |
+| DW-40 | OU/OK/Star-K Kosher Search | M | Zero religious-dietary today |
+| DW-41 | V-Label Certified (vegan/vegetarian) | M | International Leaping Bunny equivalent |
+| DW-43 | ICIJ Offshore Leaks DB | M | Panama/Pandora/Paradise governance opacity |
+| DW-45 | Regenerative Organic Certified | S | +22% YoY 2025 |
+| DW-46 | Bonsucro (sugar) | S | Sugar is 2nd most ubiquitous commodity |
+| DW-47 | Climate Label | S | Only consumer-facing carbon label |
+| DW-48 | Cradle to Cradle Certified | S | Premium home goods |
+| DW-49 | DOL TVPRA list (204 goods × 82 countries) | M | Cross-reference ingredient origins |
 
-1. **2026-06-03** — **Massive data-source expansion (11 new sources in one day):** CFPB Complaint Database, NHTSA Vehicle Recalls + Complaints, CPSC Product Recalls, DOJ press releases (antitrust/fraud/criminal/etc.), EPA ECHO facility-level enforcement, SEC Litigation Releases, CISA KEV catalog, GSA SAM federal exclusions (Target debarred by EPA in 2006 ⚠️), OSHA Severe Injury Reports, CDC FoodNet outbreaks, HHS OIG enforcement, OpenStates legislation, GDELT global news. Built via 11 parallel agents in isolated git worktrees. Total sources: **46** (was ~20). Sources tab redesigned to show per-source cadence chips (Daily/Weekly/Monthly/Quarterly/Annual). Marketing landing updated.
-2. **2026-06-03** — **Walmart scoring fix:** computeScore + "Why hurt most" picker now exclude categories where `d.s` says "No public record found" — even when `sc.<k>` has an AI-synthesized value. Walmart's grade no longer dragged by no-record DEI. Shipped as TestFlight Build 41.
-3. **2026-06-03** — **Spectrum-dot fixes (3 iterations):** centered when no data, repositioned to true value but with honest text ("Signal inferred from corporate behavior...") when sc has value but detail says no public record.
-4. **2026-06-03** — **BBB scrape dropped → CFPB replacement.** BBB was Cloudflare-blocked from GitHub runners ("Just a moment..." on every request). CFPB Consumer Complaint Database is the official US gov API replacement — works for financial brands (Chase 168k, BofA 179k complaints).
-5. **2026-06-03** — **State AG research:** surveyed CA/NY/TX/FL/IL + federal Sentinel/EEOC/ConsumerAffairs. Only NHTSA viable as new source (built). State AGs publish "Top 10 industries" press releases only — no per-company data. Documented in B-27/B-28/B-29.
-6. **2026-06-03** — **brand-parent-map expanded from 65 → 137 entries** via second-pass agent. Covers Anheuser-Busch family, all major auto manufacturers, hotel chains, tech subsidiaries (LinkedIn/GitHub→Microsoft, Hulu/Twitch→Amazon, etc.).
-7. **2026-06-03** — **A-1, A-2, A-3 all shipped** (the 3 audit deferrals): unified openBrand helper (12 nav entry points → 1), `useModalA11y` hook applied to Paywall/Scanner/WhatsNew/Compare, full acronym + US-centric framing pass.
-8. **2026-06-02** — **Option A News pipeline LIVE end-to-end**: nightly cron pulls 528-brand Google News RSS (~45k articles) → keyword + AllSides-bias filter → Claude Sonnet AI extraction (~350 high-signal items/night, ~$0.50-1/run) → merge layer writes per-company `news[]` + `recent_events[]` (180-day TTL, 50-item cap). Score values NOT mutated automatically — separate scoring rebake consumes `recent_events[]`.
-2. **2026-06-02** — **Option B (BBB scrape) + Option C (CourtListener) workflows shipped**: weekly Playwright scrape of BBB ratings + weekly CourtListener API pull for lawsuit counts. Outputs: `/public/data/bbb-ratings.json`, `/public/data/lawsuits.json`.
-3. **2026-06-02** — **Critical security incident handled**: 3 leaked API keys (Anthropic TruNorth Pipeline + PostHog Claude Diagnostic + Anthropic Conscious Consumer) revoked + rotated. Leak source `docs/API Key and Tokens.docx` scrubbed from git history via `git-filter-repo` + force-pushed clean main. `.gitignore` tightened so all `.env*` files blocked except `*.example`. Rotation verified end-to-end via manual workflow dispatch on 3 dependent crons.
-4. **2026-06-02** — **528 hand-curated top-brand list** at `public/data/top-500-brands.txt` (14 tiers: CPG / household / restaurants / retail / apparel / tech / banking / telecom / auto / healthcare / travel / controversy / home / misc). Drives Options A/B/C scrapers.
-5. **2026-06-01** — **25-agent audit shipped**: 343 raw findings synthesized → 5 critical / 15 high / 35 medium / 20 low / 15 wins. Full doc at `/docs/full-audit-2026-06-01.md`.
-2. **2026-06-01** — **All 4 fixable critical bugs fixed** (5th = real IAP, blocked on LLC):
-   • `__skipMarketing` ReferenceError white-screen fixed; root ErrorBoundary added
-   • `tn_isPaid` localStorage persistence (Pro state survives relaunch)
-   • Free-tier detail panel unlocked (removed `isPaid` gate); orphaned `tn_freeViewed` wipe killed
-   • MailerLite write key moved off the client bundle into new `/api/subscribe` edge function
-3. **2026-06-01** — **Waitlist pivot**: `PRO_WAITLIST_MODE` constant; paywall now captures founder-pricing email signups ($9/yr first 500) instead of fake-charging. App-Store-safe + intent-capturing. Flip the constant when real IAP lands.
-4. **2026-06-01** — Marketing landing: founder pricing chip below hero CTA
-5. **2026-06-01** — Account: "Delete my data" button (GDPR/CCPA-grade — wipes all `tn_*` keys + PostHog opt-out). Sign-out also clears email + user_hash + isPaid.
-6. **2026-06-01** — Quiz retake hydrates from existing profile (audit H10)
-7. **2026-06-01** — Paywall cooldown: sessionStorage → localStorage, 4h → 7d (audit H1)
-8. **2026-06-01** — Email validation regex tightened; submit button disabled until valid (H8)
-9. **2026-06-01** — `/privacy` 404 fixed (vercel rewrite + SPA path normalization, audit H12)
-10. **2026-06-01** — `/api/submit` per-IP rate limit (5/min, 429+Retry-After, audit H14)
-11. **2026-06-01** — Sources tab: removed dead "Live update" promise (H11)
-12. **2026-06-01** — 7 small tap targets bumped to 44×44 minimum + Library `<select>` fontSize 12→16 (H4)
-13. **2026-06-01** — L-12: GitHub Actions secrets verified (`MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `POSTHOG_API_KEY`)
-2. **2026-06-01** — Scroll-to-top on tab change (user-reported UX bug)
-2. **2026-06-01** — PostHog env var rename `POSTHOG_API_KEY` → `VITE_POSTHOG_KEY` (was silently disabled)
-3. **2026-06-01** — Vercel env vars audited; all critical keys verified (L-11)
-4. **2026-06-01** — iOS Universal Links shipped end-to-end (Build 33): AASA + entitlements + manual provisioning + `appUrlOpen` handler + ship script hardened
-5. **2026-06-01** — `ship-ios.sh` rewritten: bumps both Info.plist + pbxproj, re-injects entitlements after every `cap sync`, manual signing with explicit profile
-6. **2026-06-01** — `formatCompanyCount()` helper — all "11,209" displays now "11,000+"
-7. **2026-06-01** — Trending Now chips wired to nightly `/data/trending.json` (was hardcoded)
-8. **2026-06-01** — OG image regenerated at correct 1200×630 (was 1500×500, every social share broken)
-9. **2026-06-01** — Grade scale legend in Account (UX 5D) — answers "what does A/B/C/D/F mean" question
-10. **2026-06-01** — Paywall Free vs Pro comparison table (UX 6B)
-11. **2026-06-01** — App Store cutover playbook (B-26) + submission metadata doc
-12. **2026-06-01** — Weekly digest opt-in card on Account (B-3)
-13. **2026-06-01** — Failed-search "notify me when added" with brand-tagged MailerLite signup (B-11)
-14. **2026-06-01** — Soft email ask after quiz completion (B-6) — highest-intent capture moment
-15. **2026-06-01** — Locked picks: v1 Browse + v4 ProfileStrip + 1-free paywall; stripped unused variants
+### Tier B — Specialist (DW-51..60) — defer indefinitely or pick selectively
 
-### Earlier this session (compressed)
+DW-51 As You Sow Fund Lists · DW-52 BaFin (Germany) · DW-53 FCA (UK) · DW-54 KFTC (Korea) · DW-55 SEBI (India) · DW-56 S. Africa Competition Tribunal · DW-58 Demeter Biodynamic · DW-59 Bird-Friendly Smithsonian coffee · DW-60 GAP 5-Step Manufacturers.
 
-- **2026-06-01** — Trade press pitches (L-10), MailerLite welcome drip (B-19), TikTok scripts (B-22) — all drafted in `/docs/`
-- **2026-06-01** — Bug batch: Reveal "you" overflow, Privacy scroll, Splash 11,000+ rounding, Browse→Search empty, paywall first-tap, Brand of Day above Top Picks, paid Sources paragraph
-- **2026-06-01** — OG/Twitter card copy sharpened ("public records" in first 10 words)
-- **2026-06-01** — ProductHunt Coming Soon chip on marketing landing (L-6)
-- **2026-06-01** — Email signatures regenerated with correct `Aron@trunorthapp.com` (L-4)
-- **2026-06-01** — Master BACKLOG.md created · all 3 PH launch reminders scheduled
-- **2026-05-31** — SEO foundation: sitemap (11,211 URLs), robots.txt, per-company SEO HTML with JSON-LD, Google Search Console + Bing verified
-- **2026-05-31** — Resend DNS fully verified (SPF + DKIM + MX + DMARC PASS)
-- **2026-05-31** — Capacitor switched to bundled dist/ (App Store ready) + ~16 TestFlight builds shipped (5-33)
-- **2026-05-31** — Day-7 reflection · Values Fingerprint · Saved-brand badges · editorial Brand of Day · ConfirmModal · inline typeahead · Top Picks rearrange · email capture wiring
-- **2026-05-28** — 6,050-company expansion + full neutrality overhaul shipped
+**Recommendation:** Don't add anything else pre-launch. Lock the source list at 143 workflows for stability. Resume DW-18, DW-20, DW-21 the week after launch.
 
 ---
 
-## 📌 META — about this file
+## 💤 PARKED — not on critical path
 
-**Update protocol:**
-- I update this file at the end of every working session when something ships, gets parked, or changes state.
-- Completed items move to **RECENTLY SHIPPED** (capped at 15 latest) and drop from the active sections.
-- New items get a fresh ID and land in the right section.
-- IDs are stable — once assigned (e.g. `B-12`), they stay forever so old chat references survive.
+| ID | Item | Why |
+|---|---|---|
+| **F-1** | Migrate to Supabase / any DB | Static JSON + Vercel covers 100k+ free |
+| **F-2** | OpenCorporates / Crunchbase / D&B | All paid, doesn't justify cost |
+| **F-3** | Local Llama 3.1 8B narrative gen | ~89 hr per 10k brands; Haiku batch is cheaper + better |
+| **F-4** | Multiple Claude sessions in worktrees | Only when work fans out across non-conflicting paths |
+| **F-5** | Glassdoor employee ratings | ToS forbids scraping; Cloudflare-blocked; prior lawsuits. (PR #19 is the open vehicle — recommend close.) |
+
+---
+
+## 🤖 OPEN BACKGROUND AGENTS
+
+| Agent | Status | Notes |
+|---|---|---|
+| Banner design fix: logo redundancy + gradient boundary | ✅ complete (round 1 + round 2) | PR #63 ready to merge — round 2 applied desat purple + reclassified 5 brands + Chipotle name fix |
+| (No other agents in flight) | | |
+
+---
+
+## ⏰ DATA-FRESHNESS CADENCE — 143 workflows now
+
+### Daily (UTC)
+News RSS (04:00) · Trending refresh (06:00) · OFAC SDN snapshot · MSHA refresh · PHMSA refresh · BIS Entity List · trending augments
+
+### Weekly (Sunday UTC)
+CourtListener (17:00) · CFPB (18:00) · NHTSA (19:00) · CPSC (20:00) · DOJ (21:00) · EPA ECHO (22:00) · SEC Litigation (23:00) · CISA KEV (Mon 00:00) · GDELT (Mon 02:00)
+
+### Monthly (1st UTC)
+GSA SAM exclusions · OSHA Severe Injury · CDC FoodNet · HHS OIG · OpenStates · CA AG · Climate TRACE · Net Zero Tracker · IIHS · NHTSA 5-Star · Strike Map · Cornell ILR · FMCSA SMS · DOL OFLC · WWF Palm Oil · TCO Certified · NSF/USP · Textile Exchange · EPA Green Vehicle · EPA SmartWay · NLRB voluntary recognition · SEC 8-K · FDAAA Trials · 50+ more added today
+
+### Annual / quarterly (manual reminders)
+Tier-1 re-narrate (quarterly Sept 1) · HRC CEI (Nov 15) · CDP A-List (Feb 15) · Banking on Climate Chaos (Jun) · 1% for the Planet sweep
+
+### Human-action reminders (auto-scheduled)
+- Jun 9 · 9 AM CDT — ITEP follow-up
+- Jun 9 · 1 PM CDT — Egregious polarity rebalance
+- Jun 16 · 9 AM CDT — Coverage measurement + PH 1-week prep
+- Jun 22 · 7 PM CDT — PH launch eve
+- Jun 23 · 1:50 AM CDT — Launch hour wake-up
+- Jul 1 (+monthly) — Cron health check
+
+---
+
+## ✅ SHIPPED 2026-06-08 — 37 PRs (BIGGEST DAY)
+
+### Scoring + neutrality (the critical pre-launch sweep)
+- ✅ **#27** PR-2 Scoring flags — `flags` field in data
+- ✅ **#51** PR-3 Scoring flags — UI rendering + grade math (flag OFF by default)
+- ✅ **#28** Category taxonomy 34 → 18 (no <20, no Other)
+- ✅ **#50** Category override map for firearm-retailing Retail brands
+- ✅ **#54** Neutrality audit: marketing-PNG renderers (4 MAJOR fixed)
+- ✅ **#55** Neutrality audit: derived augments + merge scripts (0 critical/major)
+- ✅ **#56** Neutrality audit: outreach + user-facing docs
+- ✅ **#57** Neutrality audit: marketing-site (2 CRITICAL fixed)
+- ✅ **#58** Neutrality audit: rewrite biased UI strings in src/
+- ✅ **#59** Neutrality audit: scoring-engine scan
+- ✅ **#60** Neutrality audit: per-company narrative text
+- ✅ **#62** Apply 6 human-approved fixes from audit sweep
+- ✅ **8f9bb0c6f** OUTLET_BIAS canonical sync (news-rss-collect.mjs)
+
+### Egregious rotation
+- ✅ **#52** "5 Most Egregious" rotation engine + initial banners
+- ✅ **#53** ITEP citation mockup for Amy Hanauer outreach
+- ✅ **#61** Egregious 5 → 30 brands + design pass + brand logos
+- ✅ **5defd6826** ITEP mockup: remove biased copy, neutral fact-only framing
+
+### Data pipelines (33 new sources)
+- ✅ **#1** DW-1..6 Tier-S waitlist (SBTi, WBA, Forest 500, 50/50, USDA Organic, USDA FSIS)
+- ✅ **#2** DW-7..12 Tier-S (OFAC, BIS, FERC, DOL WHD, Energy Star, 1% for the Planet)
+- ✅ **#25** DW-13..17 Tier-S (Disability:IN, CFTC, UK ICO, Singapore MAS, Canada Competition)
+- ✅ **#6** OpenSanctions consolidated feed
+- ✅ **#8** Brazil Lista Suja (forced-labor employers)
+- ✅ **#10** NAAG Multistate Settlements (replaces 50 state AGs)
+- ✅ **#11** Australia Fair Work Ombudsman
+- ✅ **#12** UN B&HR communications scraper
+- ✅ **#14** Privacy policy rule-based scoring at scale
+- ✅ **#17** Animal welfare watchdog union
+- ✅ **#20** Firearms industry corporate signals
+- ✅ **#23** Full OpenFDA + EPA TRI carcinogen signals
+- ✅ **#26** EU Transparency JSON→XML fix
+- ✅ **#29** EPA SmartWay clean trucking
+- ✅ **#31** Textile Exchange (RCS/GRS/RWS/RDS/RMS — 5 apparel certs)
+- ✅ **#32** Net Zero Tracker
+- ✅ **#33** EPA Green Vehicle + ZEV
+- ✅ **#34** ITEP Corporate Tax Avoidance (dormant, license-pending)
+- ✅ **#35** IIHS Top Safety Pick+
+- ✅ **#36** SEC 8-K Items 5.02 + 4.02 (exec departures + restatements)
+- ✅ **#37** WWF Sustainable Palm Oil Buyer Scorecard
+- ✅ **#38** TCO Certified electronics sustainability
+- ✅ **#39** NSF + USP supplements verification
+- ✅ **#40** Cornell ILR Labor Action Tracker
+- ✅ **#41** NLRB voluntary union recognition
+- ✅ **#42** FMCSA SMS carrier safety
+- ✅ **#43** FDAAA TrialsTracker (~5k pharma sponsors)
+- ✅ **#44** Blue-chip coverage gap 84% → 97%
+- ✅ **#45** Better Cotton + Bird Friendly + AWA
+- ✅ **#46** DOL OFLC LCA H1B
+- ✅ **#47** Strike Map USA
+- ✅ **#48** Climate TRACE facility emissions
+- ✅ **#49** NHTSA 5-Star Safety Ratings
+
+---
+
+## ✅ SHIPPED 2026-06-07 — 24 PRs (prior big day)
+
+**Tier-S waitlist (DW-1..17 sub-PRs):** #4 brand-parent-map (138 → 4,625) · #5 USDA FoodData · #6 OpenSanctions · #7 WikiRate · #8 Brazil Lista Suja · #9 EU Transparency · #10 NAAG · #11 AU Fair Work · #12 UN B&HR · #13 CA Prop 65 (7,395 notices) · #14 Privacy NLP · #15 Industry carbon intensity (100% coverage) · #16 Transparency benchmarks · #17 Animal welfare union · #18 Exec political donations (4,468 cos) · #20 Firearms industry · #21 SEC DEF14A (Home Depot 2,026:1 pay ratio) · #22 EEOC DEI · #23 OpenFDA + EPA TRI carcinogens · #24 Corporate giving ($56.6B disclosed)
+
+---
+
+## ✅ EARLIER MILESTONES (compressed)
+
+- **2026-06-03 — Massive data day**: 11 new sources in parallel agents (CFPB, NHTSA, CPSC, DOJ, EPA ECHO, SEC Litigation, CISA KEV, GSA SAM, OSHA SIR, CDC FoodNet, HHS OIG, OpenStates, GDELT). Total sources 20 → 46.
+- **2026-06-03 — Walmart scoring fix**: computeScore + "Why hurt most" exclude no-record categories. Build 41.
+- **2026-06-03 — A-1/A-2/A-3 audit deferrals shipped.**
+- **2026-06-02 — Option A News pipeline LIVE end-to-end** (528-brand RSS → Claude Sonnet extraction → per-company `news[]` + `recent_events[]`).
+- **2026-06-02 — Critical security incident**: 3 leaked API keys revoked + rotated; leak doc scrubbed from git history via `git-filter-repo`.
+- **2026-06-02 — 528 hand-curated top-brand list** at `public/data/top-500-brands.txt`.
+- **2026-06-01 — 25-agent audit shipped** (343 findings → 5 critical / 15 high / 35 medium fixed).
+- **2026-06-01 — 4 critical bugs fixed** (white-screen `__skipMarketing`, `tn_isPaid` persistence, free-tier detail unlock, MailerLite key off bundle).
+- **2026-06-01 — Waitlist pivot** (`PRO_WAITLIST_MODE` constant, founder pricing capture).
+- **2026-06-01 — GDPR/CCPA delete button**, **quiz retake hydration**, **paywall cooldown** 4h → 7d, **email validation**, **/privacy 404 fix**, **/api/submit rate limit**, **tap-target a11y**.
+- **2026-06-01 — iOS Universal Links** end-to-end (Build 33).
+- **2026-05-31 — SEO foundation** (11,211-URL sitemap, JSON-LD, GSC + Bing verified).
+- **2026-05-31 — Resend DNS** fully verified (SPF + DKIM + MX + DMARC PASS).
+- **2026-05-31 — Capacitor bundled dist/** App-Store-ready + ~16 TestFlight builds.
+- **2026-05-28 — 6,050-company expansion** + full neutrality overhaul.
+
+---
+
+## 📌 META
+
+**ID hygiene cleanup (2026-06-08):** The doc had duplicate IDs from cross-section reuse. Resolved as:
+- `B-24` data (AllSides) kept; infra Privacy moved → `B-39`
+- `B-25` data (BBB, done) kept; infra k6 loadtest moved → `B-40`
+- `B-27` data (CA AG, done) kept; marketing Postiz moved → `B-41`
+- `B-28` data (Skip state AG) kept; infra PostHog proxy moved → `B-42`
+- Added `F-5` for Glassdoor parking
+
+**Update protocol:** Claude updates this file at the end of every working session.
 
 **Resume phrases:**
 - "Open the backlog" → I summarize the top sections
-- "What's in PRE-LAUNCH?" / "What's BLOCKED?" → I summarize that section
+- "What needs a decision?" → I list the 🔴 section
 - "Work on **L-3**" → I start that specific item
-- "What's next?" → I look at ACTIVE → PRE-LAUNCH → BACKLOG (in that order) and suggest the highest-leverage item
-- "Park **B-12**" → I move it to PARKED with a reason
-- "Add task: [description]" → I add it with a fresh ID
+- "What's blocked?" → I summarize ⏸️
+- "Add task: [description]" → I add with a fresh ID
 
-**Source files this consolidates (kept on disk for deep history):**
-- `~/.claude/projects/.../memory/roadmap.md` — master 6-phase plan
-- `~/.claude/projects/.../memory/parked_ux_perf_list.md` — original 9-section UX list 1A–9D
-- `~/.claude/projects/.../memory/parked_vt_backfill.md` — data pipeline
-- `~/.claude/projects/.../memory/parked_scale_to_10k.md` — 12-step zero-cost plan
-- `~/.claude/projects/.../memory/parked_update_cadence.md` — tiered cron refresh
-- `~/.claude/projects/.../memory/parked_analytics_marketing.md` — PostHog/MailerLite/Resend
-- `~/.claude/projects/.../memory/planned_scoring_expansion.md` — new categories/flags
-- `~/.claude/projects/.../memory/launch_2026_05_28.md` — launch notes archive
-- `/docs/ANDROID_LAUNCH_PLAN.md`
-- `/docs/SEO_STRATEGY.md`
-- `/docs/payments-integration-plan.md`
-- `/docs/tablet-breakpoint-plan.md`
-- `/docs/app-store-submission.md`
-- `/docs/app-store-cutover.md`
-- `/docs/trade-press-pitches.md`
-- `/docs/mailerlite-welcome-drip.md`
-- `/docs/tiktok-reels-content-scripts.md`
+**Source files this consolidates:**
+- `~/.claude/projects/.../memory/MEMORY.md` + linked roadmap/launch/parked docs
+- `/docs/pre-launch-scoring-flags-plan.md`, `/docs/scoring-engine-audit.md`
+- `/docs/data-coverage-analysis-2026-06-07.md`, `/docs/cron-quality-audit-2026-06-07.md`
+- `/docs/L-3-email-blast-checklist.md`, `/docs/trade-press-pitches.md`
+- `/docs/neutrality-audit/*` (7 audit reports)
+- `/docs/research/*` (4 research dossiers)
 - `/docs/producthunt/LAUNCH_DAY_PLAYBOOK.md` + `/docs/producthunt/PROMO_COPY.md`
+- `/docs/ANDROID_LAUNCH_PLAN.md`, `/docs/payments-integration-plan.md`
+- `/docs/TruNorth-TestFlight-Setup.docx`, `/docs/app-store-submission.md`
