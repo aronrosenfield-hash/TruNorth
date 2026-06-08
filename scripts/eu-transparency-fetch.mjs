@@ -11,18 +11,20 @@
  *   - Annual EU lobbying expenditure (EUR, banded or precise)
  *   - Number of accredited lobbyists with EP access passes
  *
- * ~14,000+ registrants. Free reuse under the EU PSI Directive
+ * ~17,000+ registrants. Free reuse under the EU PSI Directive
  * (© European Union, attribution required).
  *
  *   Site:        https://transparency-register.europa.eu
- *   Search API:  https://transparency-register.europa.eu/api/2/organisations
- *   Bulk dump:   https://transparency-register.europa.eu/download/full?type=json
+ *   Bulk dump:   https://ec.europa.eu/transparencyregister/public/files/ODP/download/XML/latest
  *
- * NOTE: The exact download URL evolves (the public site front-ends a Drupal
- * CMS — the underlying JSON dump path has changed between site refreshes).
- * The URL above is the documented one. If/when it moves, override at
- * runtime with EU_TRANSPARENCY_BULK_URL=<url>. The fetcher otherwise treats
- * a non-200 response as a fatal error in --live mode.
+ * NOTE: The EU retired the JSON bulk dump some time before 2026-06. Only
+ * the XML dump is now published (refreshes daily, ~106 MB, 17,266 orgs as
+ * of 2026-06-07). This fetcher parses that XML and emits the same
+ * downstream JSON shape as the prior JSON-based fetcher, so the merger
+ * (scripts/eu-transparency-merge.mjs) does NOT need to change.
+ *
+ * Override the URL at runtime with EU_TRANSPARENCY_BULK_URL=<url> if it
+ * moves again.
  *
  * DIFFERENCES vs. US Senate LD-2:
  *   - LD-2 is filing-centric (one row per quarter per filing).
@@ -46,18 +48,20 @@
  *
  * Flags:
  *   --dry        (default) — no network. Reads the 30-org fixture at
- *                            scripts/fixtures/eu-transparency/sample.json
- *                            and emits the same shape the live path emits.
+ *                            scripts/fixtures/eu-transparency/sample.xml
+ *                            (or sample.json — backward compat) and emits
+ *                            the same shape the live path emits.
+ *   --fixture              — alias for --dry, explicit.
  *   --live                 — actually fetches the bulk dump.
- *   --limit N              — stop after N entries (post-filter). Useful
- *                            for smoke tests.
+ *   --limit N              — stop after N kept entries (post-filter).
+ *                            Useful for smoke tests.
  *   --out PATH             — override output path (otherwise the dated
  *                            file under data/raw/eu-transparency/).
  *
  * Standalone:
  *   node scripts/eu-transparency-fetch.mjs                            # dry
  *   node scripts/eu-transparency-fetch.mjs --live                     # live
- *   node scripts/eu-transparency-fetch.mjs --limit 500 --out /tmp/eu.json
+ *   node scripts/eu-transparency-fetch.mjs --limit 500 --live
  */
 
 import fs from "node:fs/promises";
@@ -67,11 +71,12 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "data/raw/eu-transparency");
-const FIXTURE = path.join(ROOT, "scripts/fixtures/eu-transparency/sample.json");
+const FIXTURE_XML = path.join(ROOT, "scripts/fixtures/eu-transparency/sample.xml");
+const FIXTURE_JSON = path.join(ROOT, "scripts/fixtures/eu-transparency/sample.json");
 
 const DEFAULT_BULK_URL =
   process.env.EU_TRANSPARENCY_BULK_URL ||
-  "https://transparency-register.europa.eu/download/full?type=json";
+  "https://ec.europa.eu/transparencyregister/public/files/ODP/download/XML/latest";
 
 const UA = "TruNorth-EUTransparency/1.0 (+https://www.trunorthapp.com)";
 
@@ -85,7 +90,7 @@ function opt(name) {
   return i >= 0 ? argv[i + 1] : null;
 }
 const LIVE = flag("--live");
-const DRY = !LIVE;
+const DRY = !LIVE; // --dry / --fixture / default
 const LIMIT = opt("--limit") ? Math.max(1, Number(opt("--limit"))) : null;
 const OUT_OVERRIDE = opt("--out");
 
@@ -95,10 +100,22 @@ const OUT_OVERRIDE = opt("--out");
 // Other registrant categories (NGOs, think-tanks, law firms, academic,
 // religious) are dropped — they don't match against our 11k consumer-brand
 // index and add noise.
+//
+// EU 2026 XML categories observed:
+//   Companies & groups
+//   Trade and business associations
+//   Trade unions and professional associations
+//   Non-governmental organisations, platforms and networks and similar (drop)
+//   Professional consultancies (drop)
+//   Law firms (drop)
+//   Academic institutions (drop)
+//   Think tanks and research institutions (drop)
+//   ... etc.
 const KEEP_CATEGORIES = new Set([
   // Section II categories per EU register taxonomy
   "Company",
   "Companies",
+  "Companies & groups",
   "In-house lobbyists and trade/business/professional associations",
   "Trade and business associations",
   "Trade and business organisations",
@@ -115,7 +132,7 @@ const KEEP_CATEGORIES = new Set([
 export function parseSpendEur(raw) {
   if (raw == null) return null;
   if (typeof raw === "number" && Number.isFinite(raw)) return Math.round(raw);
-  const s = String(raw).replace(/[ \s]/g, "").replace(/€|EUR/gi, "");
+  const s = String(raw).replace(/[ \s]/g, "").replace(/€|EUR/gi, "");
   if (!s) return null;
   // Pure number
   const n = Number(s.replace(/,/g, ""));
@@ -145,12 +162,13 @@ export function parseInt0(raw) {
   return Number.isFinite(n) ? Math.round(n) : 0;
 }
 
-/* ------------------------ shaping ------------------------
+/* ------------------------ shaping (JSON path) ------------------------
  * Normalise one registrant into the compact record the merger reads.
  * We tolerate the (many) field-name variations the EU register has
  * shipped across schema revisions — the keys observed in published v2
  * dumps include both camelCase ("registrationNumber") and snake_case
- * ("registration_number"); both are read.
+ * ("registration_number"); both are read. Used by tests / backward-
+ * compat JSON fixture path.
  */
 export function shape(entry) {
   const get = (...keys) => {
@@ -236,8 +254,201 @@ export function shape(entry) {
   };
 }
 
-/* ------------------------ extraction ------------------------ */
-// The EU bulk JSON has shipped under a few top-level shapes. Be permissive.
+/* ------------------------ XML parsing (new path) ------------------------
+ *
+ * The 2026 XML dump is ~106 MB. Each <interestRepresentative> block is
+ * ~1-5 KB and the XML uses no inner namespaces (xmlns="" on resultList),
+ * so a simple block-iterator + per-block tag regex is robust and uses
+ * no external XML dependency.
+ *
+ * If the dump ever grows past comfortably-in-memory (say >500 MB), swap
+ * iterXmlBlocks for a streaming reader using fs.createReadStream and
+ * incrementally splicing the buffer at "</interestRepresentative>".
+ */
+
+const XML_ENTITY_MAP = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+};
+
+export function decodeXmlEntities(s) {
+  if (s == null) return s;
+  return String(s).replace(/&(#x?[0-9a-fA-F]+|[a-zA-Z]+);/g, (m, ent) => {
+    if (ent[0] === "#") {
+      const hex = ent[1] === "x" || ent[1] === "X";
+      const n = parseInt(ent.slice(hex ? 2 : 1), hex ? 16 : 10);
+      if (!Number.isFinite(n)) return m;
+      try { return String.fromCodePoint(n); } catch { return m; }
+    }
+    return XML_ENTITY_MAP[ent] ?? m;
+  });
+}
+
+// First match of <tag>...</tag> within block. Non-greedy. Returns inner
+// text, entity-decoded, trimmed; or null when missing/empty.
+function tagText(block, tag) {
+  const re = new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`);
+  const m = block.match(re);
+  if (!m) return null;
+  const t = decodeXmlEntities(m[1]).trim();
+  return t || null;
+}
+
+// Return the inner XML of the first <tag>...</tag> (no decode).
+function tagInner(block, tag) {
+  const re = new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`);
+  const m = block.match(re);
+  return m ? m[1] : null;
+}
+
+// EU XML reports country names in upper-case ("BELGIUM", "UNITED STATES").
+// The JSON-fixture path uses title-case ("Belgium", "United States"). Normalize.
+function titleCase(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/\b([a-z])/g, (_, c) => c.toUpperCase());
+}
+
+/**
+ * Parse one <interestRepresentative> block (inner XML, surrounding tags
+ * stripped) into the downstream shape. Returns null when there is no
+ * id/name (drop).
+ */
+export function shapeXmlBlock(block) {
+  const registrationId = (tagText(block, "identificationCode") || "").trim();
+  if (!registrationId) return null;
+
+  // name lives at <name><originalName>...</originalName></name>
+  const nameNode = tagInner(block, "name");
+  const name = (nameNode
+    ? (tagText(nameNode, "originalName") || decodeXmlEntities(nameNode).trim())
+    : ""
+  ).replace(/\s+/g, " ").trim();
+  if (!name) return null;
+
+  const category = (tagText(block, "registrationCategory") || "").trim();
+
+  // headOffice/country
+  const headOfficeInner = tagInner(block, "headOffice");
+  let headquartersCountry = null;
+  if (headOfficeInner) {
+    const c = tagText(headOfficeInner, "country");
+    headquartersCountry = c ? titleCase(c) : null;
+  }
+
+  // interests -> <interest><name>...</name></interest>
+  const interestsInner = tagInner(block, "interests") || "";
+  const fields = [];
+  const seen = new Set();
+  const interestRe = /<interest\b[^>]*>([\s\S]*?)<\/interest>/g;
+  let im;
+  while ((im = interestRe.exec(interestsInner)) !== null) {
+    const t = tagText(im[1], "name");
+    if (!t) continue;
+    const k = t.toLowerCase();
+    if (seen.has(k)) continue;
+    seen.add(k);
+    fields.push(t);
+  }
+
+  // Annual spend: prefer financialData/closedYear/costs/range (min/max).
+  // Fall back to currentYear/costs/range. The element is:
+  //   <costs type="CostRange" currency="€">
+  //     <range><min>N</min><max>M</max></range>
+  //   </costs>
+  // Sometimes only <max> appears (e.g. "<10000" -> max=10000).
+  // Sometimes a precise <amount>N</amount> (rare; older dumps).
+  // CAREFUL: <intermediaries> contains <representationCosts> elements
+  // with the same range shape — we must NOT count those as the
+  // registrant's own annual spend, so strip intermediaries first.
+  const financialInner = tagInner(block, "financialData") || "";
+  let annualSpendEur = null;
+  const closedInner = tagInner(financialInner, "closedYear") || "";
+  const currentInner = tagInner(financialInner, "currentYear") || "";
+  for (const section of [closedInner, currentInner]) {
+    if (!section) continue;
+    const sectionNoInt = section.replace(/<intermediaries\b[\s\S]*?<\/intermediaries>/g, "");
+    const costsInner = tagInner(sectionNoInt, "costs");
+    if (!costsInner) continue;
+    const rangeInner = tagInner(costsInner, "range");
+    if (rangeInner) {
+      const minT = tagText(rangeInner, "min");
+      const maxT = tagText(rangeInner, "max");
+      const lo = minT != null ? Number(minT) : null;
+      const hi = maxT != null ? Number(maxT) : null;
+      if (Number.isFinite(lo) && Number.isFinite(hi)) {
+        annualSpendEur = Math.round((lo + hi) / 2);
+      } else if (Number.isFinite(hi) && !Number.isFinite(lo)) {
+        // <max=N> only -> "< N" band, midpoint = N/2
+        annualSpendEur = Math.round(hi / 2);
+      } else if (Number.isFinite(lo) && !Number.isFinite(hi)) {
+        // <min=N> only -> ">= N" band, treat as lower bound
+        annualSpendEur = Math.round(lo);
+      }
+      if (annualSpendEur != null) break;
+    }
+    // Fallback: amount node (older dumps)
+    const amt = tagText(costsInner, "amount");
+    if (amt != null) {
+      const n = Number(amt);
+      if (Number.isFinite(n)) {
+        annualSpendEur = Math.round(n);
+        break;
+      }
+    }
+  }
+
+  const accreditedLobbyists = parseInt0(tagText(block, "EPAccreditedNumber"));
+
+  // EU XML lastUpdateDate is an ISO timestamp; downstream expects YYYY-MM-DD.
+  const lastUpdateRaw = tagText(block, "lastUpdateDate");
+  const lastUpdated = lastUpdateRaw ? lastUpdateRaw.slice(0, 10) : null;
+
+  const sourceUrl =
+    `https://transparency-register.europa.eu/searchregister-or-update/organisation-details_en?id=${encodeURIComponent(registrationId)}`;
+
+  return {
+    registrationId,
+    name,
+    category,
+    headquartersCountry,
+    fields,
+    annualSpendEur, // EUR midpoint, or null
+    accreditedLobbyists,
+    lastUpdated,
+    sourceUrl,
+  };
+}
+
+/**
+ * Iterate over all <interestRepresentative> blocks in an XML string.
+ * Yields the raw block content (just the inner XML, no surrounding tags).
+ */
+export function* iterXmlBlocks(xml) {
+  const re = /<interestRepresentative\b[^>]*>([\s\S]*?)<\/interestRepresentative>/g;
+  let m;
+  while ((m = re.exec(xml)) !== null) {
+    yield m[1];
+  }
+}
+
+/**
+ * Parse a full XML payload and return shaped records (no filtering).
+ * Exposed for tests.
+ */
+export function parseXmlPayload(xml) {
+  const out = [];
+  for (const block of iterXmlBlocks(xml)) {
+    const shaped = shapeXmlBlock(block);
+    if (shaped) out.push(shaped);
+  }
+  return out;
+}
+
+/* ------------------------ extraction (JSON path) ------------------------ */
 function extractEntries(payload) {
   if (Array.isArray(payload)) return payload;
   if (Array.isArray(payload?.results)) return payload.results;
@@ -247,21 +458,40 @@ function extractEntries(payload) {
   return [];
 }
 
+function matchesKeepCategory(cat) {
+  if (!cat) return true; // unknown — don't drop
+  return (
+    KEEP_CATEGORIES.has(cat) ||
+    /compan(y|ies)/i.test(cat) ||
+    /trade.*(business|association)/i.test(cat) ||
+    /business.*association/i.test(cat)
+  );
+}
+
 export function filterAndShape(entries, { limit = null } = {}) {
   const out = [];
   for (const raw of entries) {
     const shaped = shape(raw);
     if (!shaped) continue;
     if (KEEP_CATEGORIES.size && shaped.category) {
-      const cat = shaped.category;
-      const matched =
-        KEEP_CATEGORIES.has(cat) ||
-        /compan(y|ies)/i.test(cat) ||
-        /trade.*(business|association)/i.test(cat) ||
-        /business.*association/i.test(cat);
-      if (!matched) continue;
+      if (!matchesKeepCategory(shaped.category)) continue;
     }
     out.push(shaped);
+    if (limit && out.length >= limit) break;
+  }
+  return out;
+}
+
+/**
+ * Same filter rules as filterAndShape, but consumes already-shaped XML
+ * records (skips the JSON `shape()` step).
+ */
+export function filterShapedXml(records, { limit = null } = {}) {
+  const out = [];
+  for (const r of records) {
+    if (!r) continue;
+    if (r.category && !matchesKeepCategory(r.category)) continue;
+    out.push(r);
     if (limit && out.length >= limit) break;
   }
   return out;
@@ -274,28 +504,44 @@ async function fetchBulkLive() {
   const res = await fetch(url, {
     headers: {
       "User-Agent": UA,
-      Accept: "application/json",
+      Accept: "application/xml, text/xml;q=0.9, */*;q=0.5",
     },
     redirect: "follow",
   });
   if (!res.ok) {
     throw new Error(`HTTP ${res.status} ${res.statusText} for ${url}`);
   }
-  // ~20MB is small enough to JSON.parse in one shot.
   const text = await res.text();
   console.log(`  ${(text.length / 1024 / 1024).toFixed(1)} MB downloaded`);
-  let payload;
-  try { payload = JSON.parse(text); }
-  catch (e) { throw new Error(`Bulk dump is not valid JSON: ${e.message}`); }
-  return payload;
+  // Detect content: XML (current) vs JSON (defensive — if EU ever revives
+  // the JSON dump, or the override URL points at a JSON endpoint).
+  const head = text.trimStart().slice(0, 8);
+  if (head.startsWith("<?xml") || head.startsWith("<")) {
+    return { kind: "xml", text };
+  }
+  if (head.startsWith("{") || head.startsWith("[")) {
+    return { kind: "json", text };
+  }
+  throw new Error(`Unrecognized bulk-dump format (starts with ${JSON.stringify(head)})`);
 }
 
 async function fetchBulkDry() {
+  // Prefer the XML fixture (matches new live shape). Fall back to JSON for
+  // backward compat (older fixtures or downstream tooling that still
+  // exercises the JSON code path).
   try {
-    const text = await fs.readFile(FIXTURE, "utf-8");
-    return JSON.parse(text);
+    const xml = await fs.readFile(FIXTURE_XML, "utf-8");
+    return { kind: "xml", text: xml };
   } catch (e) {
-    throw new Error(`Missing fixture ${FIXTURE}: ${e.message}`);
+    if (e.code !== "ENOENT") throw e;
+  }
+  try {
+    const text = await fs.readFile(FIXTURE_JSON, "utf-8");
+    return { kind: "json", text };
+  } catch (e) {
+    throw new Error(
+      `Missing fixture (looked for ${FIXTURE_XML} and ${FIXTURE_JSON}): ${e.message}`,
+    );
   }
 }
 
@@ -307,12 +553,27 @@ function todayUTC() {
 async function main() {
   const mode = DRY ? "DRY (fixture)" : "LIVE";
   console.log(`EU Transparency Register fetcher — mode: ${mode}`);
+  console.log(`EU TR fetcher mode: XML (was JSON in prior versions)`);
 
-  const payload = DRY ? await fetchBulkDry() : await fetchBulkLive();
-  const entries = extractEntries(payload);
-  console.log(`Bulk entries:        ${entries.length}`);
+  const { kind, text } = DRY ? await fetchBulkDry() : await fetchBulkLive();
+  console.log(`Payload format: ${kind.toUpperCase()}`);
 
-  const shaped = filterAndShape(entries, { limit: LIMIT });
+  let totalBulk = 0;
+  let shaped;
+  if (kind === "xml") {
+    const all = parseXmlPayload(text);
+    totalBulk = all.length;
+    console.log(`Bulk entries:        ${totalBulk}`);
+    shaped = filterShapedXml(all, { limit: LIMIT });
+  } else {
+    let payload;
+    try { payload = JSON.parse(text); }
+    catch (e) { throw new Error(`Bulk dump is not valid JSON: ${e.message}`); }
+    const entries = extractEntries(payload);
+    totalBulk = entries.length;
+    console.log(`Bulk entries:        ${totalBulk}`);
+    shaped = filterAndShape(entries, { limit: LIMIT });
+  }
   console.log(`After category filter: ${shaped.length} (companies + trade assocs)`);
 
   // Top spenders log (helps catch obvious schema drift)
@@ -335,8 +596,9 @@ async function main() {
         mode: DRY ? "dry" : "live",
         source: "EU Transparency Register",
         source_url: DEFAULT_BULK_URL,
+        source_format: kind,
         license: "EU PSI Directive — © European Union, 2026",
-        total_bulk: entries.length,
+        total_bulk: totalBulk,
         kept: shaped.length,
         registrants: shaped,
       },
