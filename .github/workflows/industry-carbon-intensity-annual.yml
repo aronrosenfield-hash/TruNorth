@@ -1,0 +1,65 @@
+name: industry-carbon-intensity-annual
+
+# Industry-sector carbon-intensity fallback (Sprint I — environment).
+#
+# For each company in public/data/index.json, infers an environment tier
+# from its `cat` field via a NAICS → kg CO2e/$ lookup synthesized from
+# OWiD (CC BY 4.0), EPA CEDA (US public domain), EXIOBASE summary tables,
+# and EIA MECS. Output is `data/derived/industry-carbon-intensity-augment.json`
+# keyed by slug, with `_inferred: true` on every record so the UI can
+# render it as "industry typical" rather than a per-company measurement.
+#
+# OWiD refreshes the underlying sector emissions data ~yearly; EPA CEDA and
+# EXIOBASE update less often than that. So once a year is the right cadence.
+#
+# Runs Feb 1 06:00 UTC (after OWiD's late-January annual refresh window).
+
+on:
+  schedule:
+    - cron: "0 6 1 2 *"   # Feb 1 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Verify upstream sources are reachable (HEAD ping only — no data download)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write   # required to commit the augment JSON
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run fetcher (build NAICS lookup snapshot)
+        run: |
+          if [ "${{ github.event.inputs.live }}" = "true" ]; then
+            node scripts/industry-carbon-intensity-fetch.mjs --live
+          else
+            node scripts/industry-carbon-intensity-fetch.mjs
+          fi
+
+      - name: Run tests
+        run: node --test scripts/industry-carbon-intensity-fetch.test.mjs
+
+      - name: Merge into augment file
+        run: node scripts/industry-carbon-intensity-merge.mjs --print
+
+      - name: Commit + push
+        run: |
+          git config user.name  "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/industry-carbon-intensity/ data/derived/industry-carbon-intensity-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(industry-carbon-intensity): annual sector-proxy refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done
