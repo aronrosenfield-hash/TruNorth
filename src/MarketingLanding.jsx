@@ -102,9 +102,9 @@ function Lead({ children, style }) {
 
 // ─── demo brands (mirrors OnboardingFlow slide 1) ───────────────────────────
 const DEMO_BRANDS = [
-  { name:"Patagonia",  meta:"Outdoor · Apparel",    grade:"A", color:C.good, bg:"#1a3a2a", emoji:"🧥" },
-  { name:"Amazon",     meta:"Retail · E-commerce",  grade:"C", color:C.warn, bg:"#2e2a1a", emoji:"🛒" },
-  { name:"ExxonMobil", meta:"Energy · Oil & Gas",   grade:"D", color:C.bad,  bg:"#2e1e1a", emoji:"⛽" },
+  { name:"Costco",  meta:"Retail · Warehouse",    grade:"A", color:C.good, bg:"#1a3a2a", emoji:"🛍️" },
+  { name:"Tesla",   meta:"Automotive · EVs",      grade:"C", color:C.warn, bg:"#2e2a1a", emoji:"🚗" },
+  { name:"Shein",   meta:"Apparel · Fast Fashion", grade:"D", color:C.bad,  bg:"#2e1e1a", emoji:"👗" },
 ];
 
 function DemoCard() {
@@ -149,8 +149,8 @@ function DemoCard() {
 const VALUE_PROPS = [
   {
     icon:"◉",
-    title:"Real data, not opinions",
-    body:"Scores pulled from FEC, EPA, OSHA, OpenFDA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, and 90+ more public-records sources — 100 in total across federal regulators, courts, certifications, and international enforcement. No vibes. No spin. Just receipts.",
+    title:"Citations attached",
+    body:"Scores pulled from FEC, EPA, OSHA, OpenFDA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, and 90+ more public-records sources — 100 in total across federal regulators, courts, certifications, and international enforcement. Sourced, not synthesized.",
   },
   {
     icon:"✦",
@@ -345,7 +345,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
       <Section style={{ padding:"32px 24px 56px" }}>
         <div className="tn-hero-grid">
           <div className="tn-fade-in">
-            <Eyebrow>Conscious shopping, made simple</Eyebrow>
+            <Eyebrow>Values-based shopping, made simple</Eyebrow>
             <h1 style={{
               fontSize:"clamp(34px, 6vw, 54px)", fontWeight:800, lineHeight:1.04,
               letterSpacing:-1.5, marginBottom:18, color:C.text,
@@ -428,7 +428,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
         <Eyebrow>Why TruNorth</Eyebrow>
         <H2>Built for people who actually want answers.</H2>
         <Lead style={{ marginBottom:36, marginLeft:"auto", marginRight:"auto", textAlign:"center" }}>
-          Most “ethical shopping” tools are vibes-based. We pull from the same primary sources investigative journalists use.
+          Most consumer-values apps don't show their work. We pull from the same primary sources investigative journalists use.
         </Lead>
         <div className="tn-vp-grid" style={{ textAlign:"left" }}>
           {VALUE_PROPS.map((v) => <ValueCard key={v.title} {...v} />)}
