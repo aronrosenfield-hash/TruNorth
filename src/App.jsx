@@ -9,7 +9,7 @@ import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadFeatureFlags, featureFlagsEnabled } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled } from "./lib/dataSource";
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
@@ -131,10 +131,18 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
   // that is. Without this fallback the scanner shows "no match" on very
   // recognizable products and looks broken in-store.
   const [brandParentMap, setBrandParentMap] = useState({});
+  // Static UPC → { slug, brand, name } cache. Built monthly by
+  // scripts/build-upc-cache.mjs from Open Food Facts US data and shipped
+  // inside the IPA so the most common in-store scans resolve instantly,
+  // even on weak cell. Falls back to the live OFF API on miss.
+  const [upcCache, setUpcCache] = useState({});
   useEffect(() => {
     let cancelled = false;
     loadBrandParentMap().then(map => {
       if (!cancelled) setBrandParentMap(map || {});
+    });
+    loadUpcCache().then(cache => {
+      if (!cancelled) setUpcCache(cache || {});
     });
     return () => { cancelled = true; };
   }, []);
@@ -322,6 +330,19 @@ function BarcodeScanner({ onClose, onMatch, companies }) {
 
     async function lookup(code) {
       setStatus("lookup");
+      // ── Static cache fast path ─────────────────────────────────────────
+      // upc-to-slug.json ships in the IPA and covers the top ~3-5k US
+      // grocery/household UPCs. If we have a hit we resolve in <1ms with
+      // zero network — critical for an in-store experience where cell
+      // signal is unreliable. Falls through to the OFF API on miss.
+      // The _doc key in the JSON is metadata, not a UPC, so guard for it.
+      const cacheEntry = upcCache && code && upcCache[code];
+      if (cacheEntry && cacheEntry.slug && slugIndex.has(cacheEntry.slug)) {
+        const co = slugIndex.get(cacheEntry.slug);
+        setLookupBrand(cacheEntry.brand || cacheEntry.name || "");
+        onMatch(co, { barcode: code, brand: cacheEntry.brand, name: cacheEntry.name, source: "upc-cache" });
+        return;
+      }
       try {
         const res = await fetch(`https://world.openfoodfacts.org/api/v0/product/${encodeURIComponent(code)}.json`);
         const data = await res.json();

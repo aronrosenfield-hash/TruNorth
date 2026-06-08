@@ -127,6 +127,7 @@ export function featureFlagsEnabled() {
 }
 
 let brandParentPromise = null;
+let upcCachePromise = null;
 
 /**
  * Load the brand → parent-slug fallback map. Used by the in-store barcode
@@ -146,4 +147,24 @@ export async function loadBrandParentMap() {
       .catch(() => ({}));
   }
   return brandParentPromise;
+}
+
+/**
+ * Load the static UPC → parent-slug cache shipped with the app. Used by the
+ * in-store barcode scanner so the most common ~3-5k US grocery / household
+ * UPCs resolve INSTANTLY, with no network round-trip to Open Food Facts.
+ * In-store cell reception is unreliable, and a cached hit also makes the
+ * scanner feel snappier than the ~300-800 ms OFF API call.
+ *
+ * Shape: { [upc: string]: { slug: "<parent-slug>", brand: "<OFF brand>", name: "<product>" } }
+ * Built by scripts/build-upc-cache.mjs (monthly). Returns {} on fetch failure
+ * so callers degrade gracefully back to the live OFF lookup.
+ */
+export async function loadUpcCache() {
+  if (!upcCachePromise) {
+    upcCachePromise = fetch("/data/_meta/upc-to-slug.json")
+      .then(r => r.ok ? r.json() : {})
+      .catch(() => ({}));
+  }
+  return upcCachePromise;
 }
