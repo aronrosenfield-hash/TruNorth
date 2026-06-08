@@ -1,0 +1,58 @@
+name: epa-green-vehicle-annual
+
+# EPA Green Vehicle Guide + ZEV eligibility (~40k vehicle variants going
+# back to 1984). The EPA / DOE refresh the fueleconomy.gov bulk CSV once
+# a year alongside the model-year release cycle, so an annual cadence
+# is plenty. Runs Feb 1 at 06:00 UTC (after the new model year landed
+# in the upstream CSV) plus on-demand via workflow_dispatch.
+#
+# Step 1 — epa-green-vehicle-fetch.mjs:
+#   GET https://www.fueleconomy.gov/feg/epadata/vehicles.csv
+#   normalize 40k rows -> data/raw/epa-green-vehicle/<date>.json
+#   (filters to last 5 model years by default)
+#
+# Step 2 — epa-green-vehicle-merge.mjs:
+#   roll up per-automaker (using a curated MAKE_TO_SLUG map) into
+#   data/derived/epa-green-vehicle-augment.json
+#
+# License: US public domain (EPA / DOE). No API key required.
+
+on:
+  schedule:
+    - cron: "0 6 1 2 *"   # 06:00 UTC, Feb 1
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run parser tests (no network)
+        run: node --test scripts/epa-green-vehicle-fetch.test.mjs
+
+      - name: Fetch EPA Green Vehicle CSV
+        run: node scripts/epa-green-vehicle-fetch.mjs
+
+      - name: Aggregate per-automaker augment
+        run: node scripts/epa-green-vehicle-merge.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/epa-green-vehicle/ data/derived/epa-green-vehicle-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(epa-green-vehicle): annual snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
