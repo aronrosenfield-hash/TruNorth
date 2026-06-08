@@ -1,0 +1,525 @@
+{
+  "source": "epa-green-vehicle",
+  "source_url": "https://www.fueleconomy.gov/feg/download.shtml",
+  "license": "US public domain (EPA / DOE fueleconomy.gov)",
+  "generated_at": "2026-06-08T16:05:56.443Z",
+  "snapshot_date": "2026-06-08",
+  "automaker_count": 25,
+  "vehicle_count": 7700,
+  "unmatched_make_count": 13,
+  "unmatched_makes": [
+    {
+      "make": "mclaren automotive",
+      "count": 11
+    },
+    {
+      "make": "bugatti",
+      "count": 10
+    },
+    {
+      "make": "vinfast",
+      "count": 10
+    },
+    {
+      "make": "lotus",
+      "count": 8
+    },
+    {
+      "make": "ineos automotive",
+      "count": 6
+    },
+    {
+      "make": "bugatti rimac",
+      "count": 4
+    },
+    {
+      "make": "fisker",
+      "count": 3
+    },
+    {
+      "make": "karma",
+      "count": 2
+    },
+    {
+      "make": "roush performance",
+      "count": 2
+    },
+    {
+      "make": "kandi",
+      "count": 1
+    },
+    {
+      "make": "lordstown",
+      "count": 1
+    },
+    {
+      "make": "pagani",
+      "count": 1
+    },
+    {
+      "make": "ruf automobile",
+      "count": 1
+    }
+  ],
+  "automakers": {
+    "kia": {
+      "environment": {
+        "avgMpgE": 42.1,
+        "zevEligibleCount": 42,
+        "evCount": 42,
+        "evPctOfFleet": 0.169,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 14,
+      "hybridCount": 38,
+      "electrifiedPct": 0.378,
+      "vehicleCount": 249,
+      "makeMatched": [
+        "Kia"
+      ],
+      "_orphan": true
+    },
+    "jaguar-land-rover": {
+      "environment": {
+        "avgMpgE": 21.3,
+        "zevEligibleCount": 5,
+        "evCount": 5,
+        "evPctOfFleet": 0.021,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 7,
+      "hybridCount": 105,
+      "electrifiedPct": 0.481,
+      "vehicleCount": 243,
+      "makeMatched": [
+        "Jaguar",
+        "Land Rover"
+      ],
+      "_orphan": true
+    },
+    "volkswagen": {
+      "environment": {
+        "avgMpgE": 35,
+        "zevEligibleCount": 103,
+        "evCount": 103,
+        "evPctOfFleet": 0.182,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 25,
+      "hybridCount": 131,
+      "electrifiedPct": 0.457,
+      "vehicleCount": 567,
+      "makeMatched": [
+        "Audi",
+        "Bentley",
+        "Lamborghini",
+        "Volkswagen"
+      ],
+      "_orphan": true
+    },
+    "hyundai-motor": {
+      "environment": {
+        "avgMpgE": 42.8,
+        "zevEligibleCount": 81,
+        "evCount": 81,
+        "evPctOfFleet": 0.204,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 9,
+      "hybridCount": 57,
+      "electrifiedPct": 0.37,
+      "vehicleCount": 397,
+      "makeMatched": [
+        "Genesis",
+        "Hyundai"
+      ],
+      "_orphan": true
+    },
+    "general-motors": {
+      "environment": {
+        "avgMpgE": 24.7,
+        "zevEligibleCount": 82,
+        "evCount": 82,
+        "evPctOfFleet": 0.075,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 0,
+      "hybridCount": 4,
+      "electrifiedPct": 0.079,
+      "vehicleCount": 1092,
+      "makeMatched": [
+        "Buick",
+        "Cadillac",
+        "Chevrolet",
+        "GMC"
+      ]
+    },
+    "bmw": {
+      "environment": {
+        "avgMpgE": 35.2,
+        "zevEligibleCount": 146,
+        "evCount": 146,
+        "evPctOfFleet": 0.174,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 40,
+      "hybridCount": 155,
+      "electrifiedPct": 0.405,
+      "vehicleCount": 841,
+      "makeMatched": [
+        "BMW",
+        "MINI",
+        "Mini",
+        "Rolls-Royce"
+      ],
+      "_orphan": true
+    },
+    "honda-motor-co": {
+      "environment": {
+        "avgMpgE": 32.6,
+        "zevEligibleCount": 16,
+        "evCount": 16,
+        "evPctOfFleet": 0.059,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 1,
+      "hybridCount": 34,
+      "electrifiedPct": 0.19,
+      "vehicleCount": 269,
+      "makeMatched": [
+        "Acura",
+        "Honda"
+      ]
+    },
+    "toyota-motor": {
+      "environment": {
+        "avgMpgE": 34.2,
+        "zevEligibleCount": 51,
+        "evCount": 51,
+        "evPctOfFleet": 0.071,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 19,
+      "hybridCount": 237,
+      "electrifiedPct": 0.426,
+      "vehicleCount": 721,
+      "makeMatched": [
+        "Lexus",
+        "Toyota"
+      ],
+      "_orphan": true
+    },
+    "subaru": {
+      "environment": {
+        "avgMpgE": 34.5,
+        "zevEligibleCount": 13,
+        "evCount": 13,
+        "evPctOfFleet": 0.095,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 2,
+      "hybridCount": 3,
+      "electrifiedPct": 0.131,
+      "vehicleCount": 137,
+      "makeMatched": [
+        "Subaru"
+      ],
+      "_orphan": true
+    },
+    "volvo-cars": {
+      "environment": {
+        "avgMpgE": 44.9,
+        "zevEligibleCount": 35,
+        "evCount": 35,
+        "evPctOfFleet": 0.263,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 30,
+      "hybridCount": 38,
+      "electrifiedPct": 0.774,
+      "vehicleCount": 133,
+      "makeMatched": [
+        "Volvo"
+      ],
+      "_orphan": true
+    },
+    "mercedes-benz": {
+      "environment": {
+        "avgMpgE": 31.1,
+        "zevEligibleCount": 66,
+        "evCount": 66,
+        "evPctOfFleet": 0.14,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 14,
+      "hybridCount": 227,
+      "electrifiedPct": 0.649,
+      "vehicleCount": 473,
+      "makeMatched": [
+        "Mercedes-Benz"
+      ],
+      "_orphan": true
+    },
+    "nissan": {
+      "environment": {
+        "avgMpgE": 34.7,
+        "zevEligibleCount": 40,
+        "evCount": 40,
+        "evPctOfFleet": 0.136,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 0,
+      "hybridCount": 0,
+      "electrifiedPct": 0.136,
+      "vehicleCount": 295,
+      "makeMatched": [
+        "Infiniti",
+        "Nissan"
+      ],
+      "_orphan": true
+    },
+    "ferrari-n-v": {
+      "environment": {
+        "avgMpgE": 16.1,
+        "zevEligibleCount": 0,
+        "evCount": 0,
+        "evPctOfFleet": 0,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 18,
+      "hybridCount": 1,
+      "electrifiedPct": 0.333,
+      "vehicleCount": 57,
+      "makeMatched": [
+        "Ferrari"
+      ]
+    },
+    "jeep": {
+      "environment": {
+        "avgMpgE": 22.9,
+        "zevEligibleCount": 6,
+        "evCount": 6,
+        "evPctOfFleet": 0.031,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 11,
+      "hybridCount": 11,
+      "electrifiedPct": 0.144,
+      "vehicleCount": 195,
+      "makeMatched": [
+        "Jeep"
+      ]
+    },
+    "mazda": {
+      "environment": {
+        "avgMpgE": 28.6,
+        "zevEligibleCount": 2,
+        "evCount": 2,
+        "evPctOfFleet": 0.016,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 5,
+      "hybridCount": 12,
+      "electrifiedPct": 0.151,
+      "vehicleCount": 126,
+      "makeMatched": [
+        "Mazda"
+      ],
+      "_orphan": true
+    },
+    "aston-martin": {
+      "environment": {
+        "avgMpgE": 17.2,
+        "zevEligibleCount": 0,
+        "evCount": 0,
+        "evPctOfFleet": 0,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 1,
+      "hybridCount": 0,
+      "electrifiedPct": 0.03,
+      "vehicleCount": 33,
+      "makeMatched": [
+        "Aston Martin"
+      ],
+      "_orphan": true
+    },
+    "chrysler": {
+      "environment": {
+        "avgMpgE": 24.9,
+        "zevEligibleCount": 14,
+        "evCount": 14,
+        "evPctOfFleet": 0.059,
+        "year": 2027,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 8,
+      "hybridCount": 33,
+      "electrifiedPct": 0.23,
+      "vehicleCount": 239,
+      "makeMatched": [
+        "Alfa Romeo",
+        "Chrysler",
+        "Fiat",
+        "Maserati",
+        "Ram"
+      ]
+    },
+    "polestar": {
+      "environment": {
+        "avgMpgE": 92.7,
+        "zevEligibleCount": 34,
+        "evCount": 34,
+        "evPctOfFleet": 0.971,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 1,
+      "hybridCount": 0,
+      "electrifiedPct": 1,
+      "vehicleCount": 35,
+      "makeMatched": [
+        "Polestar"
+      ],
+      "_orphan": true
+    },
+    "ford-motor": {
+      "environment": {
+        "avgMpgE": 28.2,
+        "zevEligibleCount": 56,
+        "evCount": 56,
+        "evPctOfFleet": 0.097,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 13,
+      "hybridCount": 41,
+      "electrifiedPct": 0.19,
+      "vehicleCount": 578,
+      "makeMatched": [
+        "Ford",
+        "Lincoln"
+      ]
+    },
+    "dodge": {
+      "environment": {
+        "avgMpgE": 29.3,
+        "zevEligibleCount": 19,
+        "evCount": 19,
+        "evPctOfFleet": 0.167,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 2,
+      "hybridCount": 0,
+      "electrifiedPct": 0.184,
+      "vehicleCount": 114,
+      "makeMatched": [
+        "Dodge"
+      ]
+    },
+    "porsche": {
+      "environment": {
+        "avgMpgE": 31.4,
+        "zevEligibleCount": 90,
+        "evCount": 90,
+        "evPctOfFleet": 0.189,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 31,
+      "hybridCount": 0,
+      "electrifiedPct": 0.254,
+      "vehicleCount": 477,
+      "makeMatched": [
+        "Porsche"
+      ]
+    },
+    "tesla": {
+      "environment": {
+        "avgMpgE": 112.8,
+        "zevEligibleCount": 86,
+        "evCount": 86,
+        "evPctOfFleet": 1,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 0,
+      "hybridCount": 0,
+      "electrifiedPct": 1,
+      "vehicleCount": 86,
+      "makeMatched": [
+        "Tesla"
+      ]
+    },
+    "mitsubishi-motors": {
+      "environment": {
+        "avgMpgE": 28.4,
+        "zevEligibleCount": 0,
+        "evCount": 0,
+        "evPctOfFleet": 0,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 6,
+      "hybridCount": 2,
+      "electrifiedPct": 0.123,
+      "vehicleCount": 65,
+      "makeMatched": [
+        "Mitsubishi"
+      ],
+      "_orphan": true
+    },
+    "rivian": {
+      "environment": {
+        "avgMpgE": 76.1,
+        "zevEligibleCount": 161,
+        "evCount": 161,
+        "evPctOfFleet": 1,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 0,
+      "hybridCount": 0,
+      "electrifiedPct": 1,
+      "vehicleCount": 161,
+      "makeMatched": [
+        "Rivian"
+      ],
+      "_orphan": true
+    },
+    "lucid-motors": {
+      "environment": {
+        "avgMpgE": 116.4,
+        "zevEligibleCount": 57,
+        "evCount": 57,
+        "evPctOfFleet": 1,
+        "year": 2026,
+        "sourceUrl": "https://www.fueleconomy.gov/feg/download.shtml"
+      },
+      "phevCount": 0,
+      "hybridCount": 0,
+      "electrifiedPct": 1,
+      "vehicleCount": 57,
+      "makeMatched": [
+        "Lucid"
+      ]
+    }
+  }
+}
