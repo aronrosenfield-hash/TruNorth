@@ -1,0 +1,59 @@
+name: net-zero-tracker-quarterly
+
+# Net Zero Tracker (https://zerotracker.net) — quarterly mirror of corporate
+# net-zero pledges + 4-pillar quality grading (plan / reporting / scope 3 /
+# carbon credits). Covers ~2,000 of the world's largest publicly listed
+# companies (Forbes Global 2000) — strong overlap with Fortune 500.
+#
+# Step 1 (net-zero-tracker-fetch.mjs --apply):
+#   - Scrapes zerotracker.net landing page for the latest CSV/XLSX export
+#   - Falls back to test/fixtures/net-zero-tracker/sample.csv on UI changes
+#   - Normalizes status, traffic-light pillars, and derives A–F grade
+#   - Writes data/raw/net-zero-tracker/<YYYY-MM-DD>.json
+#
+# Step 2 (net-zero-tracker-merge.mjs):
+#   - Slug-matches against TruNorth's company corpus
+#   - Writes data/derived/net-zero-tracker-augment.json keyed by slug with
+#     value {environment: {netZeroPledge: {targetYear, qualityGrade, status, sourceUrl}}}
+#
+# Tier 1 environmental signal. Free public data with attribution.
+
+on:
+  schedule:
+    - cron: "0 6 1 1,4,7,10 *"   # 06:00 UTC on Jan/Apr/Jul/Oct 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests against fixture
+        run: node --test scripts/net-zero-tracker-fetch.test.mjs
+
+      - name: Run Net Zero Tracker fetcher (live)
+        run: node scripts/net-zero-tracker-fetch.mjs --apply
+
+      - name: Merge into derived augment file
+        run: node scripts/net-zero-tracker-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/net-zero-tracker/ data/derived/net-zero-tracker-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(net-zero-tracker): quarterly corporate net-zero pledge refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
