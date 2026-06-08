@@ -1,0 +1,4 @@
+{
+  "scoringFlagsEnabled": false,
+  "_doc": "Remote kill-switch for the PR-3 scoring-flags UI (na / notDisclosed / _inferred chip rendering + grade math). Flip to true and redeploy to enable on iOS WITHOUT a new App Store build — the app fetches this file at runtime from the static bundle the user installed. Web also honors the VITE_SCORING_FLAGS_ENABLED env var (build-time), which takes precedence when set to 'true'. Effective flag = (env === 'true') OR (scoringFlagsEnabled === true). Default is OFF so behavior matches today's app until we deliberately flip."
+}

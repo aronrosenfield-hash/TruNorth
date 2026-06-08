@@ -76,6 +76,56 @@ export function warmDetailCache(slugs, limit = 6) {
   slugs.slice(0, limit).forEach(s => { loadCompanyDetail(s).catch(() => {}); });
 }
 
+// ─── Feature flags (PR-3) ────────────────────────────────────────────────────
+// Two layers of control so we can roll back at any speed:
+//   1. VITE_SCORING_FLAGS_ENABLED (env, build-time) — set on Vercel, redeploy.
+//      Best for web (one click in Vercel UI, ~2 min to propagate). Cannot
+//      reach iOS once a build is in Apple's review queue.
+//   2. /data/_meta/feature-flags.json (runtime fetch) — bundled into the iOS
+//      app at build time but FETCHED FRESH on each launch from the bundle
+//      assets, so a Vercel redeploy of public/data/_meta/feature-flags.json
+//      can flip iOS WITHOUT a new App Store submission… provided the user's
+//      installed build already includes this fetch path. Once 1.0.1 is in
+//      everyone's hands, this is the only iOS kill switch we have.
+//
+// Effective flag = (env === 'true') OR (runtime.scoringFlagsEnabled === true).
+// Default is OFF: unset env + JSON value `false` ⇒ flag off ⇒ pixel-identical
+// to today's UI.
+
+const ENV_SCORING_FLAGS = String(import.meta.env?.VITE_SCORING_FLAGS_ENABLED ?? "")
+  .toLowerCase() === "true";
+
+let featureFlagsPromise = null;
+// Cached resolved value so synchronous code (computeScore is called 280K+
+// times per Top Picks render) doesn't pay a Promise tax.
+let featureFlagsResolved = { scoringFlagsEnabled: false };
+
+/** Lazy-load /data/_meta/feature-flags.json. Returns {} on fetch failure. */
+export async function loadFeatureFlags() {
+  if (!featureFlagsPromise) {
+    featureFlagsPromise = fetch("/data/_meta/feature-flags.json")
+      .then(r => (r.ok ? r.json() : {}))
+      .catch(() => ({}))
+      .then(json => {
+        // Strip the _doc key (it's documentation, not a flag).
+        const flags = { ...(json || {}) };
+        delete flags._doc;
+        featureFlagsResolved = { ...featureFlagsResolved, ...flags };
+        return featureFlagsResolved;
+      });
+  }
+  return featureFlagsPromise;
+}
+
+/**
+ * Synchronous check used by the scoring engine (computeScore is hot).
+ * Returns true iff either the env-var OR the cached runtime flag is on.
+ * Safe to call before loadFeatureFlags() resolves — defaults to OFF.
+ */
+export function featureFlagsEnabled() {
+  return ENV_SCORING_FLAGS || featureFlagsResolved.scoringFlagsEnabled === true;
+}
+
 let brandParentPromise = null;
 
 /**

@@ -9,7 +9,8 @@ import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadFeatureFlags, featureFlagsEnabled } from "./lib/dataSource";
+import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
@@ -640,7 +641,13 @@ function computeScore(co, profile) {
   // those badges are informational only — they don't contribute to the grade.
   let weightedSum  = 0;
   let weightUsed   = 0;
+  // PR-3: when the scoring-flags feature is on, exclude categories explicitly
+  // marked `flags.<cat>.na` or `flags.<cat>.notDisclosed`. `_inferred` scores
+  // still count. When the flag is OFF, this resolves to `false` for every
+  // category and the loop behaves byte-identically to before PR-3.
+  const flagsOn = featureFlagsEnabled();
   for (const k of CAT_KEYS) {
+    if (isCategoryExcludedByFlags(co.flags, k, flagsOn)) continue;
     const v = co.sc[k];
     if (getDataState(k, v) === "unknown") continue;
     const lv = String(v || "").toLowerCase();
@@ -2298,6 +2305,15 @@ function CategoryRow({ cat: k, enriched, profile }) {
   const uiType = CATEGORY_UI_TYPE[k] || "slider";
   const isBadge = uiType === "badge";
 
+  // PR-3: per-category render decision based on the `flags` block written by
+  // scripts/reflag-categories.mjs. Gated on the global scoring-flags feature
+  // flag — when OFF this is always `{kind: "default"}` and the component
+  // renders exactly today's UI.
+  const flagRender = getCategoryFlagRender(enriched.flags, k, featureFlagsEnabled());
+  const isFlagNa            = flagRender.kind === "na";
+  const isFlagNotDisclosed  = flagRender.kind === "notDisclosed";
+  const isFlagInferred      = flagRender.kind === "inferred";
+
   // For badge categories, "unknown" is just one of the displayable states —
   // we always render the badge row so the user can see all possible values.
   // For sliders, "unknown" means we draw a muted bar with a dashed dot.
@@ -2326,7 +2342,12 @@ function CategoryRow({ cat: k, enriched, profile }) {
   // 2026-06-03 (Option B): for categorical categories we render a CategoryBadgeRow
   // instead of a slider. The badge row always shows ALL possible states so
   // the user understands the axis at a glance; the active state is colored.
-  const rowDimmed = isUnknown || (isBadge && badgeIsUnknown);
+  // PR-3: na/notDisclosed visually collapse to the same greyed treatment as
+  // existing "No data" rows — they're functionally the same thing (no score
+  // circle, dimmed) but carry richer copy in the inline label.
+  const isFlagSuppressed = isFlagNa || isFlagNotDisclosed;
+  const rowDimmed = isUnknown || (isBadge && badgeIsUnknown) || isFlagSuppressed;
+  const flagInlineLabel = isFlagSuppressed ? flagRender.label : null;
   return (
     <div style={{ marginBottom:10, paddingBottom:10, borderBottom:`1px solid ${T.border}`, opacity: rowDimmed ? 0.7 : 1 }}>
       <button
@@ -2337,11 +2358,29 @@ function CategoryRow({ cat: k, enriched, profile }) {
         <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
           <i className={`ti ${CAT_ICONS[k]}`} style={{ fontSize:16, color:T.txt3, width:18, flexShrink:0 }} aria-hidden="true" />
           <div style={{ fontSize:13, fontWeight:600, color:T.txt2, letterSpacing:0.2, flex:1, minWidth:0 }}>{CAT_FULL[k]}</div>
-          {rowDimmed && <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:6 }}>No data</span>}
+          {/* PR-3: prefer flag-driven copy ("Not Applicable for this Industry",
+              "Private company — exec comp not publicly disclosed", etc.) over
+              the generic "No data" pill when a flag is set. */}
+          {flagInlineLabel ? (
+            <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:6 }}>{flagInlineLabel}</span>
+          ) : rowDimmed ? (
+            <span style={{ fontSize:11, color:T.txt3, fontStyle:"italic", marginRight:6 }}>No data</span>
+          ) : isFlagInferred ? (
+            <span
+              title={`Industry typical — based on ${flagRender.basis || "sector"}`}
+              aria-label={`Industry typical — based on ${flagRender.basis || "sector"}`}
+              style={{ fontSize:11, color:T.txt3, marginRight:6, cursor:"help" }}
+            >
+              <i className="ti ti-info-circle" aria-hidden="true" /> Industry typical
+            </span>
+          ) : null}
           <i className={`ti ${expanded ? "ti-chevron-up" : "ti-chevron-down"}`} style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
         </div>
         <div style={{ paddingLeft:28, paddingRight:4 }}>
-          {isBadge ? (
+          {/* PR-3: flag-suppressed rows render NO score circle / no spectrum —
+              they're factually "not applicable" or "no disclosure", so showing
+              a position bar would be misleading. */}
+          {isFlagSuppressed ? null : isBadge ? (
             <CategoryBadgeRow cat={k} company={enriched} />
           ) : isUnknown ? (
             <CategorySpectrum pos={0.5} leftLabel={labels?.lo || ""} rightLabel={labels?.hi || ""} axisType={labels?.axisType || "stance"} unknown />
@@ -2352,7 +2391,11 @@ function CategoryRow({ cat: k, enriched, profile }) {
       </button>
       {expanded && (
         <div style={{ paddingTop:8, paddingLeft:28 }}>
-          {!isUnknown ? (
+          {isFlagSuppressed ? (
+            <div style={{ fontSize:11, color:T.txt3, fontStyle:"italic" }}>
+              {flagRender.label} — this category is excluded from the overall grade.
+            </div>
+          ) : !isUnknown ? (
             <>
               <div style={{ fontSize:13, color:T.txt2, lineHeight:1.6 }}>{sNarrative}</div>
               {/* B-30: surface "active enforcement" badge on the labor row when
@@ -4510,6 +4553,16 @@ useEffect(() => {
 
   // Analytics — init once, then track key funnel events
   useEffect(() => { initAnalytics(); }, []);
+
+  // PR-3: warm the feature-flag cache as early as possible so the FIRST
+  // computeScore() call honors the runtime flag (otherwise iOS would always
+  // see flag=off for the first paint, then flicker when the JSON resolves).
+  // Triggers a state bump on resolution so any already-mounted CategoryRows
+  // re-render with the correct flag state.
+  const [, setFeatureFlagsTick] = useState(0);
+  useEffect(() => {
+    loadFeatureFlags().then(() => setFeatureFlagsTick(t => t + 1)).catch(() => {});
+  }, []);
 
   // B-23 (2026-06-01): Universal Link handler. When iOS opens the app via
   // a tapped https://www.trunorthapp.com/company/<slug> link from iMessage /
