@@ -33,8 +33,27 @@ const ROOT = path.resolve(__dirname, "..");
 const BRANDS_FILE = path.join(ROOT, "public/data/top-500-brands.txt");
 const OUT_DIR = path.join(ROOT, "public/data/news");
 
-// AllSides bias ratings — used to annotate every article we pull so the
-// AI extraction layer can apply diversity requirements.
+// AllSides bias ratings + outlet weighting.
+//
+// NEUTRALITY METHODOLOGY (pre-launch audit, 2026-06-08):
+// Weights reflect INVESTIGATIVE JOURNALISM QUALITY (Pulitzer wins, fact-check
+// accuracy rates, source rigor per NewsGuard + MediaBiasFactCheck.com), NOT
+// political lean. Bias label is informational only — used by the AI extraction
+// layer to enforce source-diversity requirements per finding.
+//
+// Tier guide:
+//   1.00 — Wire services + central-tier outlets (Reuters, AP, Bloomberg)
+//   0.90 — Investigative powerhouses (ProPublica, NYT, WSJ — left, right, center)
+//   0.80 — Quality reporting with some opinion overlap (Atlantic, Politico, Forbes)
+//   0.70 — Opinion-dominant with quality investigative work (Mother Jones,
+//          National Review, Reason — left, right, libertarian)
+//   0.50 — Mixed quality (Free Beacon, NY Post, Washington Times)
+//   0.30 — Opinion-heavy with weaker fact-check track record (Daily Caller,
+//          Salon, Huffpost)
+//   0.20 — Sites with documented fabrication issues (Breitbart, etc.)
+//
+// Both left- AND right-of-center outlets are weighted at each tier. Asymmetry
+// would constitute a structural thumb on the scale.
 const OUTLET_BIAS = {
   // CENTER — fact-driving outlets
   "reuters.com":          { bias: "center", weight: 1.0, fact_driver: true },
@@ -89,7 +108,9 @@ const OUTLET_BIAS = {
   "nypost.com":           { bias: "right", weight: 0.5, fact_driver: false },
   "dailycaller.com":      { bias: "right", weight: 0.3, fact_driver: false },
   "breitbart.com":        { bias: "right", weight: 0.2, fact_driver: false },
-  "nationalreview.com":   { bias: "right", weight: 0.6, fact_driver: false },
+  "nationalreview.com":   { bias: "right", weight: 0.7, fact_driver: false },
+  "reason.com":           { bias: "lean-right", weight: 0.75, fact_driver: true },
+  "freebeacon.com":       { bias: "right", weight: 0.5, fact_driver: false },
   "washingtontimes.com":  { bias: "right", weight: 0.5, fact_driver: false },
 
   // Trade press — usually fact-heavy but topic-specific
