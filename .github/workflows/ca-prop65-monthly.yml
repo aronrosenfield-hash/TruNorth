@@ -1,0 +1,59 @@
+name: ca-prop65-monthly
+
+# California Proposition 65 — chemical list (OEHHA) + 60-day enforcement
+# notices (CA OAG search). Runs on the 5th of each month at 07:00 UTC.
+#
+# The chemical list is the canonical ~900-chemical set; the 60-day notices
+# are the enforcement signal (defendant company + chemical + product type).
+# We filter notices to the past 12 months and only emit slugs with 2+
+# notices to keep noise low.
+#
+# License: California public records, free use.
+
+on:
+  schedule:
+    - cron: "0 7 5 * *"   # 5th of month, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run CA Prop 65 fetcher
+        run: node scripts/ca-prop65-fetch.mjs
+
+      - name: Merge CA Prop 65 notices into augment
+        run: node scripts/ca-prop65-merge.mjs
+
+      - name: Open auto-PR with refreshed data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="data/ca-prop65-${DATE}"
+
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+
+          git checkout -b "$BRANCH"
+          git add data/raw/ca-prop65/ data/derived/ca-prop65-augment.json
+          git diff --quiet --staged && echo "No changes — skipping PR" && exit 0
+
+          git commit -m "data(ca-prop65): monthly chemical-list + 60-day notice refresh [skip ci]"
+          git push --set-upstream origin "$BRANCH"
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "data(ca-prop65): monthly refresh ${DATE}" \
+            --body "Automated monthly refresh of California Prop 65 data: OEHHA chemical list + CA OAG 60-day enforcement notices (past 12 months, ≥2-notice noise threshold). License: Public, California OEHHA / OAG."
