@@ -49,12 +49,17 @@ test("Apple → guns na, health na, animals na, no execPay flag (has CIK/ticker)
   assert.equal(f.execPay, undefined, "execPay must NOT be flagged (Apple is public)");
 });
 
-test("Walmart → no `na` flags (Retail sells everything; cat applicable to all 11)", () => {
+test("Walmart → Retail flags: guns/health NA by industry, animals applicable, disclosed everywhere else", () => {
+  // Post-taxonomy-consolidation (Jun 2026): Retail's cat-level applicability
+  // marks guns + health NA at the industry tier. A handful of Retail brands
+  // (Walmart, Bass Pro, etc.) DO sell firearms — those are re-activated via
+  // public/data/_meta/category-applicability-overrides.json (consumed by a
+  // future PR). For now, Walmart hits the industry default.
   const walmart = readCompany("walmart");
   const f = computeFlagsForCompany(walmart, LOOKUPS);
-  assert.equal(f.guns,    undefined, "Retail can sell guns — must NOT be NA");
-  assert.equal(f.health,  undefined, "Retail can sell food/health — must NOT be NA");
-  assert.equal(f.animals, undefined, "Retail has physical products — must NOT be NA");
+  assert.deepEqual(f.guns,    { na: true }, "Retail cat default: guns NA (override pending)");
+  assert.deepEqual(f.health,  { na: true }, "Retail cat default: health NA");
+  assert.equal(f.animals, undefined,        "Retail has physical products — animals applicable");
   // Walmart is heavily-disclosed; explicit asserts pin the contract.
   assert.equal(f.execPay,      undefined, "Walmart is public — execPay disclosed");
   assert.equal(f.charity,      undefined, "Walmart is in corporate-giving augment");
