@@ -1,0 +1,93 @@
+name: fmcsa-sms-monthly
+
+# FMCSA SMS — Safety Measurement System (monthly).
+#
+# Every USDOT-registered motor carrier's per-month safety scorecard. Captures
+# the seven BASIC percentiles (Unsafe Driving, Hours-of-Service, Vehicle
+# Maintenance, Controlled Substances, HazMat, Crash Indicator), the out-of-
+# service rate, fleet size, and parent-carrier roll-up. Powers the labor
+# signal on big-fleet brands: Amazon Logistics, FedEx, UPS, Walmart
+# Transportation, JB Hunt, Schneider, Knight-Swift, XPO, Ryder, and dozens
+# of CPG distributors.
+#
+# Runs on the 12th of each month at 06:00 UTC — FMCSA refreshes the SMS
+# monthly snapshot on or about the 2nd Friday of the month; the 12th is a
+# safe lower bound that gives us one weekend slack.
+#
+# License: US Federal public-domain (49 USC 504, FMCSA Data Dissemination
+# Program). See script docstrings.
+
+on:
+  schedule:
+    - cron: "0 6 12 * *"   # 06:00 UTC on the 12th of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests (no network)
+        run: node --test scripts/fmcsa-sms-fetch.test.mjs
+
+      - name: Fetch monthly FMCSA SMS snapshot (Pass/Property + Census)
+        # Large download (~300MB ZIP). The script streams parse so peak RAM
+        # stays under a few hundred MB even on the full ~1.2GB extracted TXT.
+        run: node scripts/fmcsa-sms-fetch.mjs --apply
+
+      - name: Merge into augment file
+        run: node scripts/fmcsa-sms-merge.mjs --apply
+
+      - name: Detect changes
+        id: changes
+        run: |
+          git add data/raw/fmcsa-sms/ data/derived/fmcsa-sms-augment.json
+          if git diff --quiet --staged; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR with fresh snapshot
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data/fmcsa-sms-${{ github.run_id }}
+          base: main
+          title: "data(fmcsa-sms): monthly carrier safety refresh"
+          commit-message: "data(fmcsa-sms): monthly refresh + merge [skip ci]"
+          body: |
+            Monthly refresh of the FMCSA SMS (Safety Measurement System) carrier
+            safety snapshot.
+
+            - Snapshot written to `data/raw/fmcsa-sms/<YYYY-MM>.json`
+            - Augment written to `data/derived/fmcsa-sms-augment.json`
+            - Source: FMCSA Data Dissemination Program (Pass/Property +
+              Census Carrier Data ZIPs)
+            - License: US Federal public-domain (49 USC 504)
+
+            Each matched slug gets:
+            - `labor.fmcsaSafetyScores.{unsafeDriving, hoursOfService,
+              vehicleMaintenance, controlledSubstances, hazmat, crashIndicator}`
+              — 0-100 percentile, fleet-weighted across the brand's USDOT
+              carriers. HIGHER = WORSE relative to the carrier's
+              safety-event-group peer set.
+            - `labor.outOfServiceRate` — fleet-weighted % of roadside
+              inspections resulting in an out-of-service order.
+            - `labor.fleetSize` / `driverCount` / `alertCount` — summed
+              across the brand's USDOT carriers.
+            - `labor.worstCarrier` — single carrier with the highest BASIC,
+              for the per-DOT overview deep link.
+            - `labor.sourceUrl` — links to that carrier's FMCSA SMS overview.
+          labels: |
+            data
+            automated

@@ -1,0 +1,366 @@
+{
+  "_license": "US Federal public-domain (49 USC 504, FMCSA Data Dissemination Program)",
+  "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/",
+  "sourceKind": "synthetic",
+  "snapshotDate": "2026-06",
+  "generatedAt": "2026-06-08T16:08:55.043Z",
+  "matchCount": 11,
+  "orphanCount": 1,
+  "routeCounts": {
+    "direct": 10,
+    "alias": 1,
+    "parent-map": 0
+  },
+  "amazon": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 78,
+        "hoursOfService": 65,
+        "vehicleMaintenance": 91,
+        "controlledSubstances": 12,
+        "hazmat": null,
+        "crashIndicator": 82
+      },
+      "outOfServiceRate": 8.4,
+      "fleetSize": 22500,
+      "driverCount": 24800,
+      "alertCount": 3,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900001",
+          "name": "AMAZON LOGISTICS INC",
+          "parent": "AMAZON COM INC",
+          "city": "SEATTLE",
+          "state": "WA"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900001",
+        "name": "AMAZON LOGISTICS INC",
+        "basicMax": 91
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900001/Overview.aspx"
+    }
+  },
+  "fedex": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 35,
+        "hoursOfService": 28,
+        "vehicleMaintenance": 42,
+        "controlledSubstances": 8,
+        "hazmat": 21,
+        "crashIndicator": 33
+      },
+      "outOfServiceRate": 4.1,
+      "fleetSize": 45000,
+      "driverCount": 55000,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900002",
+          "name": "FEDERAL EXPRESS CORPORATION",
+          "parent": "FEDEX CORP",
+          "city": "MEMPHIS",
+          "state": "TN"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900002",
+        "name": "FEDERAL EXPRESS CORPORATION",
+        "basicMax": 42
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900002/Overview.aspx"
+    }
+  },
+  "ups": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 28,
+        "hoursOfService": 22,
+        "vehicleMaintenance": 31,
+        "controlledSubstances": 5,
+        "hazmat": 18,
+        "crashIndicator": 24
+      },
+      "outOfServiceRate": 3.8,
+      "fleetSize": 119000,
+      "driverCount": 102000,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900003",
+          "name": "UNITED PARCEL SERVICE INC",
+          "parent": "UNITED PARCEL SERVICE INC",
+          "city": "ATLANTA",
+          "state": "GA"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900003",
+        "name": "UNITED PARCEL SERVICE INC",
+        "basicMax": 31
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900003/Overview.aspx"
+    }
+  },
+  "walmart": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 18,
+        "hoursOfService": 14,
+        "vehicleMaintenance": 19,
+        "controlledSubstances": 3,
+        "hazmat": null,
+        "crashIndicator": 16
+      },
+      "outOfServiceRate": 3.2,
+      "fleetSize": 12100,
+      "driverCount": 13500,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900004",
+          "name": "WALMART TRANSPORTATION LLC",
+          "parent": "WALMART INC",
+          "city": "BENTONVILLE",
+          "state": "AR"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900004",
+        "name": "WALMART TRANSPORTATION LLC",
+        "basicMax": 19
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900004/Overview.aspx"
+    }
+  },
+  "j-b-hunt": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 44,
+        "hoursOfService": 38,
+        "vehicleMaintenance": 51,
+        "controlledSubstances": 9,
+        "hazmat": 27,
+        "crashIndicator": 41
+      },
+      "outOfServiceRate": 5,
+      "fleetSize": 14800,
+      "driverCount": 16200,
+      "alertCount": 1,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900005",
+          "name": "JB HUNT TRANSPORT INC",
+          "parent": "J B HUNT TRANSPORT SERVICES INC",
+          "city": "LOWELL",
+          "state": "AR"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900005",
+        "name": "JB HUNT TRANSPORT INC",
+        "basicMax": 51
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900005/Overview.aspx"
+    }
+  },
+  "schneider-national": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 39,
+        "hoursOfService": 33,
+        "vehicleMaintenance": 45,
+        "controlledSubstances": 7,
+        "hazmat": 24,
+        "crashIndicator": 36
+      },
+      "outOfServiceRate": 4.6,
+      "fleetSize": 11200,
+      "driverCount": 12800,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900006",
+          "name": "SCHNEIDER NATIONAL CARRIERS INC",
+          "parent": "SCHNEIDER NATIONAL INC",
+          "city": "GREEN BAY",
+          "state": "WI"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900006",
+        "name": "SCHNEIDER NATIONAL CARRIERS INC",
+        "basicMax": 45
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900006/Overview.aspx"
+    }
+  },
+  "werner-enterprises": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 41,
+        "hoursOfService": 36,
+        "vehicleMaintenance": 48,
+        "controlledSubstances": 6,
+        "hazmat": 19,
+        "crashIndicator": 38
+      },
+      "outOfServiceRate": 5.4,
+      "fleetSize": 7600,
+      "driverCount": 8200,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900008",
+          "name": "WERNER ENTERPRISES INC",
+          "parent": "WERNER ENTERPRISES INC",
+          "city": "OMAHA",
+          "state": "NE"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900008",
+        "name": "WERNER ENTERPRISES INC",
+        "basicMax": 48
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900008/Overview.aspx"
+    }
+  },
+  "old-dominion-freight-line": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 22,
+        "hoursOfService": 18,
+        "vehicleMaintenance": 25,
+        "controlledSubstances": 2,
+        "hazmat": 11,
+        "crashIndicator": 19
+      },
+      "outOfServiceRate": 2.9,
+      "fleetSize": 11000,
+      "driverCount": 12000,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900009",
+          "name": "OLD DOMINION FREIGHT LINE INC",
+          "parent": "OLD DOMINION FREIGHT LINE INC",
+          "city": "THOMASVILLE",
+          "state": "NC"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900009",
+        "name": "OLD DOMINION FREIGHT LINE INC",
+        "basicMax": 25
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900009/Overview.aspx"
+    }
+  },
+  "xpo-logistics": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 61,
+        "hoursOfService": 54,
+        "vehicleMaintenance": 72,
+        "controlledSubstances": 13,
+        "hazmat": 33,
+        "crashIndicator": 57
+      },
+      "outOfServiceRate": 7.1,
+      "fleetSize": 8400,
+      "driverCount": 9100,
+      "alertCount": 2,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900010",
+          "name": "XPO LOGISTICS FREIGHT INC",
+          "parent": "XPO INC",
+          "city": "GREENWICH",
+          "state": "CT"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900010",
+        "name": "XPO LOGISTICS FREIGHT INC",
+        "basicMax": 72
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900010/Overview.aspx"
+    }
+  },
+  "ryder-system": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 31,
+        "hoursOfService": 27,
+        "vehicleMaintenance": 36,
+        "controlledSubstances": 5,
+        "hazmat": 16,
+        "crashIndicator": 29
+      },
+      "outOfServiceRate": 4.4,
+      "fleetSize": 6200,
+      "driverCount": 6800,
+      "alertCount": 0,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900011",
+          "name": "RYDER TRUCK RENTAL INC",
+          "parent": "RYDER SYSTEM INC",
+          "city": "MIAMI",
+          "state": "FL"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900011",
+        "name": "RYDER TRUCK RENTAL INC",
+        "basicMax": 36
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900011/Overview.aspx"
+    }
+  },
+  "landstar-system": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 48,
+        "hoursOfService": 42,
+        "vehicleMaintenance": 55,
+        "controlledSubstances": 8,
+        "hazmat": 22,
+        "crashIndicator": 44
+      },
+      "outOfServiceRate": 5.8,
+      "fleetSize": 13500,
+      "driverCount": 12100,
+      "alertCount": 1,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900012",
+          "name": "LANDSTAR RANGER INC",
+          "parent": "LANDSTAR SYSTEM INC",
+          "city": "JACKSONVILLE",
+          "state": "FL"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900012",
+        "name": "LANDSTAR RANGER INC",
+        "basicMax": 55
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900012/Overview.aspx"
+    }
+  }
+}
