@@ -67,7 +67,7 @@ Examples:
 - **FEC** for political donations (corporate PACs, executive donations)
 - **EPA** for environmental enforcement (TRI, GHGRP, ECHO)
 - **OSHA** for workplace safety citations
-- **NLRB** for union-busting cases
+- **NLRB** for unfair labor practice cases
 - **OpenFDA** for product recalls
 - **SEC** for exec pay and litigation
 - **USAspending.gov** for federal contract dollars
@@ -84,7 +84,7 @@ Every grade has a "Why this grade?" view that lists the exact citations. If the 
 
 Goodguide and Yuka grade based on ingredients (sugar, saturated fat). That's nutrition.
 
-Buycott aggregates campaigns ("boycott Koch Industries"). That's activism.
+Buycott aggregates campaigns ("boycott this company, support that one"). That's activism.
 
 Ethical Consumer uses paid editorial researchers. That's opinion.
 
