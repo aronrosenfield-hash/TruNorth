@@ -1,0 +1,53 @@
+name: dol-oflc-lca-quarterly
+
+# DOL OFLC LCA H-1B disclosures. Quarterly XLSX from the Foreign Labor
+# Performance page. ~600K rows per quarter, streamed via xlsx-mini through
+# `unzip -p` (pre-installed on ubuntu-latest). Per-employer aggregation
+# stays in-memory; we never persist raw rows.
+#
+# DOL.gov is fronted by Akamai which sometimes 403s programmatic requests
+# from new IPs. If that happens, pin a known-good URL by setting the
+# DOL_LCA_XLSX_URL repo variable (Settings → Secrets and variables →
+# Actions → Variables).
+
+on:
+  schedule:
+    - cron: "0 6 5 1,4,7,10 *"   # 06:00 UTC on the 5th of Jan/Apr/Jul/Oct
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DOL_LCA_XLSX_URL: ${{ vars.DOL_LCA_XLSX_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run parser tests
+        run: node --test scripts/dol-oflc-lca-fetch.test.mjs
+
+      - name: Fetch DOL OFLC LCA snapshot
+        run: node --max-old-space-size=4096 scripts/dol-oflc-lca-fetch.mjs
+
+      - name: Merge into augment
+        run: node scripts/dol-oflc-lca-merge.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/dol-oflc-lca/ data/derived/dol-oflc-lca-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(dol-oflc-lca): quarterly H-1B LCA snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
