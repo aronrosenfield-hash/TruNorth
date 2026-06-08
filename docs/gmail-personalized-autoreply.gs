@@ -340,7 +340,7 @@ var TEMPLATE_PRESS = [
   'Quickest path: book a 20-min call at ' + CALENDLY_URL + ' and pick whatever slot works. I can do nights and weekends too — just reply and I\'ll send options.',
   '',
   'Quick backgrounder in case it helps you prep:',
-  "TruNorth is a values-first shopping app — over 6,000 brands scored across politics, labor, DEI, charity, and environment so consumers can spend in line with what they actually care about. I built it solo after getting tired of spreadsheets and 47-tab research sessions every time I wanted to buy toothpaste. We launched publicly earlier this year and the data pipeline is fully open.",
+  "TruNorth is a values-first shopping app — 11,000+ brands scored across nine categories (politics, environment, labor, animal welfare, privacy, health, exec pay, charity, transparency) using only public records, so consumers can spend in line with what they actually care about. I built it solo after getting tired of spreadsheets and 47-tab research sessions every time I wanted to buy toothpaste. We launched publicly earlier this year and the data pipeline is fully open.",
   '',
   "Happy to share metrics, screenshots, founder story, or get into the methodology — whatever serves your piece. Just let me know the angle.",
   '',

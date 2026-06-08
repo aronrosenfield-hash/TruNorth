@@ -124,7 +124,7 @@ Every grade traces back to a specific filing. Users can verify any of them again
 
 iOS app, free forever. Launching on Product Hunt June 23 — currently in TestFlight.
 
-Possible MJ angle: a "here's how to use it" piece that runs your kind of corporate accountability reporting alongside the tool that lets readers act on it. Or, more journalism-y: which brand in our database has the most damning public-record story right now? (Right now I'd nominate [X]. Real data, happy to walk you through it.)
+Possible MJ angle: a "here's how to use it" piece that runs your kind of corporate accountability reporting alongside the tool that lets readers act on it. Or, more journalism-y: which brand in our database has the most notable public-record paper trail right now? (Happy to walk you through a few candidates and the underlying filings.)
 
 Happy to send TestFlight, share the database, or set up a call.
 

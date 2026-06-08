@@ -154,7 +154,7 @@ Not yet — keeping the data pipeline private during early launch. The data SOUR
 | 2 AM | Stay awake — algorithm weights hour 1-2 highest |
 | 4 AM | Quick sleep if needed |
 | 7 AM | Wake. Reply to overnight comments. Send personal launch text to broader network. |
-| 9 AM | Indie Hackers post + Reddit post (r/SideProject, r/Anticonsumption — be authentic) |
+| 9 AM | Indie Hackers post + Reddit post (r/SideProject, r/iosapps, r/apps — be authentic) |
 | 12 PM | Midday check — what's your daily rank? Adjust strategy. |
 | 3 PM | Slack/Discord communities. DM specific supporters who haven't seen it. |
 | 6 PM | Final push — anyone in your network who hasn't engaged → ping them |
