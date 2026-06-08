@@ -1,0 +1,68 @@
+name: tco-certified-quarterly
+
+# TCO Certified — sustainable IT product certification registry (quarterly).
+#
+# Scrapes / pulls the TCO Certified product-finder (~3,500 certified
+# laptops, displays, mobile devices, desktops, data center products),
+# normalizes the per-product records, and merges them into a per-slug
+# brand augment that downstream `environment.tcoCertifiedCount` consumes.
+#
+# The live endpoint is currently behind a client-rendered SPA — the
+# fetcher auto-falls-back to a bundled fixture so the pipeline + tests
+# stay green. See scripts/tco-certified-fetch.mjs `fetchLive()` TODO for
+# activation steps.
+#
+# Quarterly (1st of Jan/Apr/Jul/Oct at 06:30 UTC) — TCO certificates
+# are valid for 2 years and refresh in cycles, monthly is overkill.
+
+on:
+  schedule:
+    - cron: "30 6 1 1,4,7,10 *"   # 06:30 UTC on Jan/Apr/Jul/Oct 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Run TCO Certified fetcher
+        # Once the live endpoint is wired up in fetchLive(), drop the
+        # --fixture flag so quarterly runs hit the real registry.
+        run: node scripts/tco-certified-fetch.mjs --fixture
+
+      - name: Run TCO Certified merger
+        run: node scripts/tco-certified-merge.mjs
+
+      - name: Run TCO Certified tests
+        run: node --test scripts/tco-certified-fetch.test.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(tco-certified): quarterly TCO registry refresh"
+          branch: "data/tco-certified-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(tco-certified): quarterly TCO Certified refresh"
+          body: |
+            Automated quarterly refresh from the TCO Certified product
+            finder — sustainable IT certifications across laptops,
+            displays, mobile devices, desktops, and data center products.
+
+            Source: https://tcocertified.com/product-finder/
+            License: Public certification registry — attribution provided
+            via `_source_url` field in every record.
+          add-paths: |
+            data/raw/tco-certified/**
+            data/derived/tco-certified-augment.json
