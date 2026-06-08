@@ -1,0 +1,53 @@
+name: animal-welfare-union-quarterly
+
+# Animal Welfare Watchdog Union (Sprint F — animals category)
+#
+# Fans out across six independent corporate animal-welfare watchdog lists
+# (CFI Leaping Bunny, Choose Cruelty Free, Vegan Society Trademark, Humane
+# League pledge tracker, CIWF Business Benchmark, Open Wing Alliance) and
+# folds them into one normalized snapshot, then merges that snapshot with the
+# already-shipped Leaping Bunny + PETA BWB raw files to build a derived per-
+# company augment file with mixed-portfolio reconciliation.
+#
+# Sources are all public certification / pledge lists; no auth required.
+# Each source is courtesy-throttled at 2s between requests in the fetcher.
+
+on:
+  schedule:
+    - cron: "0 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st (offset 1h from usaspending)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run animal-welfare union fetcher (live)
+        run: node scripts/animal-welfare-union-fetch.mjs
+
+      - name: Run unit tests against fixtures
+        run: node --test scripts/animal-welfare-union-fetch.test.mjs
+
+      - name: Merge into derived augment file
+        run: node scripts/animal-welfare-union-merge.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/animal-welfare-union/ data/derived/animal-welfare-union-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(animal-welfare-union): quarterly watchdog refresh + augment [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
