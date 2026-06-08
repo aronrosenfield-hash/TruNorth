@@ -1,0 +1,97 @@
+name: itep-tax-annual
+
+# ITEP — Institute on Taxation and Economic Policy "Corporate Tax Avoidance"
+# report (https://itep.org/corporate-tax-avoidance-report).
+#
+# Annual refresh: ITEP publishes the multi-year audit once per year (typical
+# release window: Feb–March, sometimes slipping to summer). We run on May 15
+# at 05:00 UTC — late enough that any spring release is out, early enough
+# that the data is fresh in the app for the next year.
+#
+# ⚠️ LICENSE-PENDING — this pipeline is dormant by default.
+#
+# Until ITEP grants explicit reuse permission (email outreach pending) the
+# job:
+#   1. always runs the unit tests + merge against the bundled fixture, so
+#      we keep CI green and surface regressions in the shape mapper.
+#   2. only hits the live ITEP landing page when the repo variable
+#      ITEP_INTEGRATION_ENABLED is set to "true".
+#   3. The merge script stamps `_dormant: true` on the augment unless the
+#      env gate is open — the app loader is expected to skip dormant
+#      augments so the data never reaches end users prematurely.
+#
+# To activate: set repo Variable ITEP_INTEGRATION_ENABLED=true (Settings →
+# Secrets and variables → Actions → Variables) once the permission email
+# is confirmed.
+
+on:
+  schedule:
+    - cron: "0 5 15 5 *"  # 05:00 UTC on May 15
+  workflow_dispatch:
+    inputs:
+      force_live:
+        description: "Force a live fetch (requires ITEP_INTEGRATION_ENABLED=true)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ITEP_INTEGRATION_ENABLED: ${{ vars.ITEP_INTEGRATION_ENABLED || 'false' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests (no network)
+        run: node --test scripts/itep-tax-fetch.test.mjs
+
+      - name: Fetch ITEP corporate-tax data (fixture by default)
+        run: node scripts/itep-tax-fetch.mjs --apply
+
+      - name: Merge into augment file
+        run: node scripts/itep-tax-merge.mjs --apply
+
+      - name: Detect changes
+        id: changes
+        run: |
+          git add data/raw/itep-tax/ data/derived/itep-tax-augment.json
+          if git diff --quiet --staged; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR with fresh snapshot
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data/itep-tax-${{ github.run_id }}
+          base: main
+          title: "data(itep-tax): annual corporate-tax-avoidance refresh"
+          commit-message: "data(itep-tax): annual refresh + merge [skip ci]"
+          body: |
+            Annual refresh of the ITEP Corporate Tax Avoidance dataset.
+
+            - Snapshot: `data/raw/itep-tax/`
+            - Augment:  `data/derived/itep-tax-augment.json`
+            - Source:   https://itep.org/corporate-tax-avoidance-report
+
+            ⚠️ License-pending — this augment is shipped with `_dormant: true`
+            until ITEP grants reuse permission. The app loader is expected to
+            skip dormant augments.
+
+            To activate: set the repo Variable `ITEP_INTEGRATION_ENABLED=true`
+            (Settings → Secrets and variables → Actions → Variables) after
+            the permission email is confirmed.
+          labels: |
+            data
+            automated
+            license-pending
