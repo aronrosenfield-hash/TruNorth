@@ -1,0 +1,51 @@
+name: nhtsa-safety-quarterly
+
+# NHTSA 5-Star Safety Ratings — Automotive category signal.
+#
+# Pulled quarterly from api.nhtsa.gov/SafetyRatings (free, no auth,
+# US Federal Government public domain). Walks model years 2018..2026
+# across every US-sold make/model, then routes per-make rollups to
+# TruNorth automaker parent slugs.
+#
+# Wall-time budget: ~50 min for the full 9-year sweep at the default
+# 75ms throttle (~13 req/s, well under any documented NHTSA limit).
+
+on:
+  schedule:
+    - cron: "0 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run parser tests (fixtures only — no network)
+        run: node --test scripts/nhtsa-safety-fetch.test.mjs
+
+      - name: Fetch NHTSA Safety Ratings (live API, 2018..2026)
+        run: node scripts/nhtsa-safety-fetch.mjs --throttle 75
+
+      - name: Merge into per-slug augment
+        run: node scripts/nhtsa-safety-merge.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/nhtsa-safety/ data/derived/nhtsa-safety-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(nhtsa-safety): quarterly 5-star ratings refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
