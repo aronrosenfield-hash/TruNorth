@@ -1,0 +1,33 @@
+{
+  "head": { "vars": ["item", "itemLabel", "gd", "ind", "employees", "founded", "hqCountryLabel"] },
+  "results": {
+    "bindings": [
+      {
+        "item":        { "type": "uri",     "value": "http://www.wikidata.org/entity/Q483551" },
+        "itemLabel":   { "type": "literal", "value": "Walmart" },
+        "gd":          { "type": "literal", "value": "715" },
+        "ind":         { "type": "literal", "value": "walmart" },
+        "employees":   { "type": "literal", "value": "2100000" },
+        "founded":     { "type": "literal", "value": "1962-07-02T00:00:00Z" },
+        "hqCountryLabel": { "type": "literal", "value": "United States of America" }
+      },
+      {
+        "item":        { "type": "uri",     "value": "http://www.wikidata.org/entity/Q483551" },
+        "itemLabel":   { "type": "literal", "value": "Walmart" },
+        "gd":          { "type": "literal", "value": "715" }
+      },
+      {
+        "item":        { "type": "uri",     "value": "http://www.wikidata.org/entity/Q2283" },
+        "itemLabel":   { "type": "literal", "value": "Microsoft" },
+        "gd":          { "type": "literal", "value": "1651" },
+        "ind":         { "type": "literal", "value": "microsoft" },
+        "employees":   { "type": "literal", "value": "221000" }
+      },
+      {
+        "item":        { "type": "uri",     "value": "http://www.wikidata.org/entity/Q9999999" },
+        "itemLabel":   { "type": "literal", "value": "Nonexistent Co" },
+        "ind":         { "type": "literal", "value": "nonexistent-co" }
+      }
+    ]
+  }
+}

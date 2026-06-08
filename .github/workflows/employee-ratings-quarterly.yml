@@ -1,0 +1,71 @@
+name: employee-ratings-quarterly
+
+# Employee Ratings — Glassdoor + Indeed + AmbitionBox + Wikidata (quarterly)
+#
+# ⚠️ TOS WARNING ⚠️
+# Glassdoor + Indeed explicitly forbid scraping. By default this workflow
+# runs with the live scrapers DISABLED (EMPLOYEE_RATINGS_LIVE not set), so
+# only the Wikidata SPARQL query — which is CC0-licensed and explicitly
+# allowed — is exercised. This produces a "has-public-employee-rating-page"
+# signal for every company with a Wikidata GD/Indeed property (~3k brands).
+#
+# To enable the live Glassdoor/Indeed/AmbitionBox scrape, set the repo
+# variable EMPLOYEE_RATINGS_LIVE=1 AFTER Legal review. Even then expect
+# significant block rates (anonymous-IP GitHub Actions runners → Cloudflare).
+#
+# Runs on the 15th of Jan/Apr/Jul/Oct at 05:00 UTC. Staggered from the
+# other quarterly crons to avoid concurrent commit conflicts.
+
+on:
+  schedule:
+    - cron: "0 5 15 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 15th
+  workflow_dispatch:
+    inputs:
+      live_scrape:
+        description: "Enable live Glassdoor/Indeed/AmbitionBox scrape (REQUIRES TOS SIGN-OFF)"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # Live scrape is OFF by default. Toggle to "1" only after Legal
+      # approves. The repo can also set the EMPLOYEE_RATINGS_LIVE_DEFAULT
+      # variable; if absent we hard-default OFF.
+      EMPLOYEE_RATINGS_LIVE: ${{ (github.event.inputs.live_scrape == 'true' || vars.EMPLOYEE_RATINGS_LIVE_DEFAULT == '1') && '1' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests (no network)
+        run: node --test scripts/employee-ratings-fetch.test.mjs
+
+      - name: Run fetcher (Wikidata always; live scrape gated)
+        run: |
+          echo "Live scrape: ${EMPLOYEE_RATINGS_LIVE:-DISABLED}"
+          node scripts/employee-ratings-fetch.mjs --apply
+
+      - name: Merge into augment file
+        run: node scripts/employee-ratings-merge.mjs --apply
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data/_cache/employee-ratings/ data/raw/employee-ratings/ data/derived/employee-ratings-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(employee-ratings): quarterly refresh + merge [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
