@@ -2062,7 +2062,7 @@ const SPECTRUM_LABELS = {
   political:   { lo: "Left",         hi: "Right",          axisType: "stance"    },
   charity:     { lo: "No record",    hi: "Active giving",  axisType: "stance"    },
   environment: { lo: "Violations",   hi: "Certified",      axisType: "universal" },
-  labor:       { lo: "Violations",   hi: "Clean record",   axisType: "universal" },
+  labor:       { lo: "Violations",   hi: "No violations",  axisType: "universal" },
   dei:         { lo: "Limited",      hi: "Active",         axisType: "stance"    },
   animals:     { lo: "Tests",        hi: "Cruelty-free",   axisType: "stance"    },
   guns:        { lo: "Makes guns",   hi: "No guns",        axisType: "stance"    },
@@ -5796,7 +5796,7 @@ if (screen === "onboarding") {
                   This week
                 </div>
                 <div style={{ fontSize:10, color:T.txt3 }}>
-                  {weeklyChanges.stats?.gradeChanges || 0} grade · {weeklyChanges.stats?.newScandals || 0} scandal · {weeklyChanges.stats?.newRecalls || 0} recall
+                  {weeklyChanges.stats?.gradeChanges || 0} grade · {weeklyChanges.stats?.newScandals || 0} news flag · {weeklyChanges.stats?.newRecalls || 0} recall
                 </div>
               </div>
               <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
@@ -6526,7 +6526,7 @@ if (screen === "onboarding") {
               { grade:"B", range:"80–89",  desc:"Above average — clearly more positive than negative signals",          color:"#8bc34a", bg:"#1a2810", border:"#2e3e1e" },
               { grade:"C", range:"70–79",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#f0a030", bg:"#2a2210", border:"#3e321e" },
               { grade:"D", range:"60–69",  desc:"Below average — clear negative signals outweigh the positives",         color:"#ff7043", bg:"#2a1810", border:"#3e2818" },
-              { grade:"F", range:"0–59",   desc:"Severe issues across most categories with public-record evidence",      color:"#e24a4a", bg:"#2a0d0d", border:"#3e1e1e" },
+              { grade:"F", range:"0–59",   desc:"Substantial negative signals across most categories with public-record evidence", color:"#e24a4a", bg:"#2a0d0d", border:"#3e1e1e" },
             ].map((r) => (
               <div key={r.grade} style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0" }}>
                 <div style={{ width:34, height:34, borderRadius:8, background:r.bg, border:`1px solid ${r.border}`, color:r.color, fontSize:16, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>{r.grade}</div>

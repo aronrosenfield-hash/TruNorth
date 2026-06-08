@@ -28,7 +28,7 @@ const ARCHETYPES = [
     id: "climate-first",
     name: "The Climate-First Shopper",
     primaryAxis: "climate",
-    blurb: "You'd skip a deal to skip a polluter. Environment is your top filter.",
+    blurb: "Environment is your top filter. EPA enforcement and emissions records weigh heavier than price.",
   },
   {
     id: "climate-pragmatist",
@@ -46,7 +46,7 @@ const ARCHETYPES = [
     id: "quiet-boycotter",
     name: "The Quiet Boycotter",
     primaryAxis: "workers",
-    blurb: "You don't post about it, but you quietly route around bad-actor brands.",
+    blurb: "You don't post about it, but you quietly route around brands with poor records on the categories you care about.",
   },
   {
     id: "animal-defender",
@@ -70,13 +70,13 @@ const ARCHETYPES = [
     id: "progressive-conscious",
     name: "The Progressive Consumer",
     primaryAxis: "politics-left",
-    blurb: "Progressive politics drives your shopping — environment, labor, and DEI all rank high.",
+    blurb: "Your shopping aligns with left-leaning priorities — corporate donations, lobbying disclosures, and policy positions all factor into your grades.",
   },
   {
     id: "conservative-conscious",
     name: "The Conservative Consumer",
     primaryAxis: "politics-right",
-    blurb: "You prioritize American jobs, faith-friendly brands, and traditional values.",
+    blurb: "Your shopping aligns with right-leaning priorities — corporate donations, lobbying disclosures, and policy positions all factor into your grades.",
   },
 ];
 
