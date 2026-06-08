@@ -32,6 +32,7 @@ console.log(`[bundle-index] reading ${files.length} company files`);
 
 const entries = [];
 let withExcl = 0;
+let withFlags = 0;
 for (const file of files) {
   const slug = file.slice(0, -5); // strip .json
   let co;
@@ -47,8 +48,22 @@ for (const file of files) {
   const excl = CATEGORIES.filter(k => NO_REC_RE.test(String(co[k]?.s || "")));
   if (excl.length) withExcl++;
 
+  // PR-2: per-category flags (na / notDisclosed / _inferred). Authored in
+  // detail JSON by scripts/reflag-categories.mjs, mirrored into the bundle
+  // here for the same reason `excl` is — so the collapsed-row and the
+  // expanded-row use identical inputs (no grade flicker on detail open).
+  // Compact: omit the field entirely when there are no flags so the bundle
+  // stays small. Nothing reads `flags` yet — PR-3 wires the UI.
+  let flags;
+  if (co.flags && typeof co.flags === "object") {
+    if (Object.keys(co.flags).length > 0) {
+      flags = co.flags;
+      withFlags++;
+    }
+  }
+
   // Compact bundle entry shape. Includes everything App.jsx renders from the
-  // index for Top Picks / Search results / typeahead — plus the new `excl`.
+  // index for Top Picks / Search results / typeahead — plus `excl` and `flags`.
   entries.push({
     id:             co.id || slug,
     slug,
@@ -61,7 +76,8 @@ for (const file of files) {
     ab:             co.ab,
     ac:             co.ac,
     sc:             co.sc,
-    excl,                                  // NEW — for parity with detail
+    excl,                                  // narrative-driven exclusion (parity with detail)
+    flags,                                 // PR-2 NEW — per-category na/notDisclosed/_inferred
     foreignOwned:   co.foreignOwned,
     foreignCountry: co.foreignCountry,
     antitrust:      co.antitrust,
@@ -81,3 +97,4 @@ entries.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
 fs.writeFileSync(OUT_PATH, JSON.stringify(entries));
 console.log(`[bundle-index] wrote ${entries.length} entries to ${OUT_PATH}`);
 console.log(`[bundle-index] ${withExcl} have at least one excluded category`);
+console.log(`[bundle-index] ${withFlags} have at least one PR-2 flag`);
