@@ -110,13 +110,13 @@ const OUTLET_BIAS = {
   // frequently in news scrapes for enforcement, security incidents, and recalls
   // — adding them as fact_drivers lets their signal actually move scores.
   "arstechnica.com":      { bias: "center", weight: 0.85, fact_driver: true },
-  "techcrunch.com":       { bias: "center", weight: 0.7,  fact_driver: true },
+  "techcrunch.com":       { bias: "center", weight: 0.8,  fact_driver: true },
   "bleepingcomputer.com": { bias: "center", weight: 0.9,  fact_driver: true },
   "krebsonsecurity.com":  { bias: "center", weight: 0.95, fact_driver: true },
   "thehill.com":          { bias: "center", weight: 0.8,  fact_driver: true },
   "semafor.com":          { bias: "center", weight: 0.85, fact_driver: true },
   "404media.co":          { bias: "lean-left", weight: 0.8, fact_driver: true },
-  "theverge.com":         { bias: "lean-left", weight: 0.75, fact_driver: true },
+  "theverge.com":         { bias: "lean-left", weight: 0.8, fact_driver: true },
   "wired.com":            { bias: "lean-left", weight: 0.75, fact_driver: true },
 
   // LEAN LEFT — fact-driving when news, not opinion
@@ -153,14 +153,13 @@ const OUTLET_BIAS = {
   "freebeacon.com":       { bias: "right", weight: 0.5, fact_driver: false },
   "washingtontimes.com":  { bias: "right", weight: 0.5, fact_driver: false },
 
-  // Trade press — usually fact-heavy but topic-specific
+  // Trade press — fact-heavy but topic-specific. 2026-06-09: removed silent
+  // duplicates of techcrunch/theverge/wired/arstechnica (already defined in
+  // the center/lean-left blocks above; JS object-literal later-wins was
+  // overriding the earlier weights without anyone noticing).
   "trec.com":             { bias: "center", weight: 0.7, fact_driver: true },
   "retaildive.com":       { bias: "center", weight: 0.85, fact_driver: true },
   "modernretail.co":      { bias: "center", weight: 0.85, fact_driver: true },
-  "techcrunch.com":       { bias: "center", weight: 0.8, fact_driver: true },
-  "theverge.com":         { bias: "lean-left", weight: 0.8, fact_driver: true },
-  "wired.com":            { bias: "lean-left", weight: 0.75, fact_driver: true },
-  "arstechnica.com":      { bias: "center", weight: 0.85, fact_driver: true },
   "esgtoday.com":         { bias: "center", weight: 0.85, fact_driver: true },
 };
 
