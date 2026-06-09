@@ -1,0 +1,64 @@
+name: cms-care-compare-monthly
+
+# CMS Hospital Care Compare — overall hospital quality star ratings.
+#
+# Source:  https://data.cms.gov/provider-data/dataset/xubh-q36u
+# License: U.S. Government Work (https://www.usa.gov/government-works)
+#
+# CMS publishes hospital ratings updates quarterly, with the dataset
+# refreshed monthly with admin metadata changes. We pull on the 10th of
+# each month to stay aligned with the rest of the data fleet.
+
+on:
+  schedule:
+    - cron: "45 5 10 * *"   # 05:45 UTC on the 10th of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Run unit tests
+        run: node --test scripts/cms-care-compare.test.mjs
+
+      - name: Fetch CMS Care Compare hospital ratings
+        run: node scripts/cms-care-compare-fetch.mjs
+
+      - name: Merge into per-slug augment
+        run: node scripts/cms-care-compare-merge.mjs
+
+      - name: Apply augments to per-company narratives
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(cms-care-compare): monthly hospital ratings refresh"
+          branch: "data/cms-care-compare-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(cms-care-compare): monthly hospital quality refresh"
+          body: |
+            Automated monthly refresh of CMS Hospital Care Compare
+            (5,400+ Medicare-certified hospitals; overall star rating
+            plus safety + readmission measure counts) rolled up to
+            TruNorth hospital-system parent slugs.
+
+            Source: https://data.cms.gov/provider-data/dataset/xubh-q36u
+            License: U.S. Government Work
+          add-paths: |
+            data/raw/cms-care-compare/**
+            data/derived/cms-care-compare-augment.json
+            public/data/companies/**
