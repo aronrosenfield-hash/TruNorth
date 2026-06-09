@@ -891,6 +891,52 @@ const WRITERS = [
       }];
     },
   },
+  // ─── Investigative journalism corpus (Round 4) ────────────────────────
+  // Curated landmark corporate-accountability investigations from 28 outlets
+  // (ProPublica, Reuters, Bloomberg, BBC, Guardian, NYT, WSJ, Mother Jones,
+  // Intercept, Inside Climate News, ICIJ leaks, OCCRP, Toxic Docs, Climate
+  // Files, etc.). Conservative severity: a SINGLE outlet stays "mixed"; only
+  // ≥2 distinct outlets in the same category escalate to "poor"; ≥3 to
+  // "very_poor". Writes ONE narrative PER affected category (multi-cat
+  // brands like Boeing emit both labor + privacy hits where applicable).
+  {
+    name: "investigative-journalism",
+    write: (e) => {
+      const byCat = e.by_category || {};
+      const out = [];
+      for (const [cat, bc] of Object.entries(byCat)) {
+        if (!bc || !bc.latest) continue;
+        const oc = bc.outlet_count || 0;
+        const ic = bc.investigation_count || 0;
+        const outletsList = (bc.outlets || []).slice(0, 3).join(", ");
+        const sev = oc >= 3 ? "very_poor" : oc >= 2 ? "poor" : "mixed";
+        const sc = sev;
+        const lead = oc >= 2
+          ? `${ic} investigative reports across ${oc} outlets (${outletsList}${bc.outlets.length > 3 ? ", …" : ""}).`
+          : `Investigative report (${bc.latest.outletLabel || bc.latest.outlet}, ${bc.latest.date}).`;
+        const tail = bc.latest.headline
+          ? ` "${clip(bc.latest.headline, 140)}"${bc.latest.abstract ? ` — ${clip(bc.latest.abstract, 180)}` : ""}`
+          : "";
+        const narrative = `${lead}${tail}`.trim();
+        // Cross-citation suffix: only when ≥2 outlets cover the same category.
+        // Appended to existing narratives so landmark brands like Boeing /
+        // Exxon / Wells Fargo show "+ N independent investigative reports
+        // across M outlets" alongside Violation Tracker etc.
+        const crossCiteSuffix = oc >= 2
+          ? `Cross-cited by ${oc} investigative outlets (${outletsList}${bc.outlets.length > 3 ? ", …" : ""}): "${clip(bc.latest.headline, 120)}" (${bc.latest.outletLabel || bc.latest.outlet}, ${bc.latest.date}).`
+          : null;
+        out.push({
+          category: cat,
+          narrative,
+          sc,
+          severity: "negative",
+          mergeCrossCite: oc >= 2,
+          crossCiteSuffix,
+        });
+      }
+      return out;
+    },
+  },
 ];
 
 function clip(s, n) {
@@ -983,15 +1029,21 @@ for (const f of compFiles) {
       const existingPositive = existingSources.some(s => POSITIVE_MERGE_SOURCES.has(s));
       const isNoRecord = !existingS || NO_RECORD.test(existingS);
 
-      // Three cases:
+      // Four cases:
       //  1) No existing → write fresh.
       //  2) Existing positive merge-source AND this writer is mergePositive →
       //     append narrative + add source (multi-source enrichment).
-      //  3) Existing non-no-record → skip (first wins).
+      //  3) Existing non-no-record AND this writer is mergeCrossCite (e.g.
+      //     investigative-journalism with ≥2 outlets) → append a compact
+      //     editorial-cross-citation suffix; never overwrite.
+      //  4) Existing non-no-record → skip (first wins).
       if (isNoRecord) {
         d[w.category] = { ...existing, s: w.narrative, sources: [...existingSources, name] };
       } else if (w.mergePositive && existingPositive && !existingS.includes(w.narrative)) {
         const merged = `${existingS.replace(/\s+$/, "")} ${w.narrative}`;
+        d[w.category] = { ...existing, s: merged, sources: [...existingSources, name] };
+      } else if (w.mergeCrossCite && w.crossCiteSuffix && !existingS.includes(w.crossCiteSuffix)) {
+        const merged = `${existingS.replace(/\s+$/, "")} ${w.crossCiteSuffix}`;
         d[w.category] = { ...existing, s: merged, sources: [...existingSources, name] };
       } else {
         if (TRACE_SLUGS.has(slug)) patagoniaTrace[slug].push(`  ${w.category}: SKIP (already filled by earlier source)`);
