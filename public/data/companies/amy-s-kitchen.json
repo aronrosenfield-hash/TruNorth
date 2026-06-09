@@ -10,10 +10,11 @@
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
-    "animals": "neutral",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "good"
   },
   "political": {
     "s": "No public record found.",
@@ -47,9 +48,10 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Non-GMO Project Verified across most frozen + canned SKUs. [Non-GMO Project Verified]",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "farm-welfare"
     ]
   },
   "guns": {
@@ -133,5 +135,11 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "Non-GMO Project Verified across most frozen + canned SKUs. [Non-GMO Project Verified]",
+    "sources": [
+      "farm-welfare"
+    ]
+  }
 }

@@ -289,6 +289,38 @@ const WRITERS = [
       }];
     },
   },
+  // ─── Farm-animal welfare + sustainable agriculture (consolidated) ───
+  // Pulls BBFAW, FAIRR, GAP, CIWF, Open Wing Alliance, Real Organic,
+  // Regenerative Organic, Demeter, Non-GMO, MSC, ASC, Bonsucro, Fair Wear.
+  // Writes up to 4 categories (animals / environment / labor / health)
+  // depending on which sources had a hit for the slug.
+  {
+    name: "farm-welfare",
+    write: (e) => {
+      const out = [];
+      const CATS = ["animals", "environment", "labor", "health"];
+      const SEVERITY_TO_SC = {
+        animals:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        environment: { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        labor:       { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        health:      { leader: "good",     positive: "good",     mixed: "mixed", concern: "poor" },
+      };
+      for (const cat of CATS) {
+        const b = e[cat];
+        if (!b || !b.narrative) continue;
+        const certs = Array.isArray(b.certifications) && b.certifications.length
+          ? ` [${b.certifications.join(" · ")}]`
+          : "";
+        const narrative = `${b.narrative}${certs}`;
+        const sc = SEVERITY_TO_SC[cat]?.[b.bestStatus];
+        const severity = b.bestStatus === "concern" ? "negative"
+          : b.bestStatus === "mixed"  ? "mixed"
+          : "positive";
+        out.push({ category: cat, narrative, sc, severity });
+      }
+      return out;
+    },
+  },
   // ─── Industry carbon intensity (sector inferred) ──────────────────────
   {
     name: "industry-carbon-intensity",

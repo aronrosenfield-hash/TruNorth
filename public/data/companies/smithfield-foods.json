@@ -8,10 +8,10 @@
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "neutral",
-    "labor": "neutral",
+    "environment": "negative",
+    "labor": "negative",
     "dei": "neutral",
-    "animals": "neutral",
+    "animals": "negative",
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
@@ -41,14 +41,18 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "FAIRR Index: High risk on emissions + worker rights despite gestation-crate phase-out progress. [FAIRR High risk]",
     "rating": "Mixed",
-    "sources": []
+    "sources": [
+      "farm-welfare"
+    ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "FAIRR Index: High risk on emissions + worker rights despite gestation-crate phase-out progress. [FAIRR High risk]",
     "rating": "Poor",
-    "sources": []
+    "sources": [
+      "farm-welfare"
+    ]
   },
   "dei": {
     "s": "No public record found.",
@@ -58,10 +62,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "FAIRR Index: High risk on emissions + worker rights despite gestation-crate phase-out progress. [FAIRR High risk]",
     "verdict": "Tests on Animals",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "farm-welfare"
     ]
   },
   "guns": {
