@@ -585,6 +585,36 @@ const WRITERS = [
       return out;
     },
   },
+  // ─── Health + pharma + food-safety + medical (round 3) ─────────────
+  // Pulls DOJ False Claims healthcare, DEA enforcement, opioid master
+  // settlements, FDA drug shortages, FDA MAUDE, CMS Nursing Home Compare,
+  // Leapfrog Hospital Safety Grade, USDA FSIS recalls, CDC antibiotic-
+  // resistance meat-industry callouts, CSPI Xtreme Eating, Public Citizen
+  // Worst Pills, Truth Initiative tobacco/vape.
+  //
+  // Writes into the "health" category. Severity "concern" → "poor",
+  // "mixed" → "mixed", "positive" → "good", "leader" → "good".
+  {
+    name: "health-pharma-r3",
+    write: (e) => {
+      const b = e.health;
+      if (!b || !b.narrative) return [];
+      const SC = { leader: "good", positive: "good", mixed: "mixed", concern: "poor" };
+      const sc = SC[b.bestStatus];
+      if (!sc) return [];
+      const severity = b.bestStatus === "concern" ? "negative"
+        : b.bestStatus === "mixed"  ? "mixed"
+        : "positive";
+      const srcLabel = b.sources && b.sources.length
+        ? ` Sources: ${b.sources.join(", ")}.`
+        : "";
+      return [{
+        category: "health",
+        narrative: `${b.narrative}${srcLabel}`,
+        sc, severity,
+      }];
+    },
+  },
   // ─── Industry carbon intensity (sector inferred) ──────────────────────
   {
     name: "industry-carbon-intensity",

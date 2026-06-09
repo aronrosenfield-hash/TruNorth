@@ -1,0 +1,3537 @@
+{
+  "_license": "Public health, pharma, food-safety + medical records — DOJ press releases, DEA admin court, FDA openFDA, CMS provider data, USDA FSIS, CDC public reports, Leapfrog Hospital Safety Grade, Center for Science in the Public Interest, Public Citizen Health Research Group, Truth Initiative. Cite original source URLs.",
+  "_source_file": "data/raw/health-pharma-r3/2026-06-09.json",
+  "_source_urls": {
+    "doj-fca-healthcare": "https://www.justice.gov/civil/false-claims-act-cases",
+    "dea-enforcement": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+    "opioid-settlements": "https://www.naag.org/issues/opioids/",
+    "fda-drug-shortages": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+    "fda-maude-mfr": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+    "cms-nh-compare": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+    "leapfrog-hospital-safety": "https://www.hospitalsafetygrade.org/",
+    "usda-fsis-recalls": "https://www.fsis.usda.gov/recalls",
+    "cdc-ar-meat": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+    "csp-iworst-eating": "https://www.cspinet.org/xtreme-eating-awards",
+    "public-citizen-worst-pills": "https://www.worstpills.org/",
+    "truth-initiative-tobacco": "https://truthinitiative.org/"
+  },
+  "_generated_at": "2026-06-09T18:48:07.434Z",
+  "_stats": {
+    "raw_entries": 272,
+    "matched_companies": 67,
+    "route_counts": {
+      "slugHint": 51,
+      "direct": 4,
+      "hpAlias": 15,
+      "alias": 0,
+      "parent": 0,
+      "suffix": 19,
+      "orphan": 183
+    },
+    "orphans": 183
+  },
+  "companies": {
+    "biogen": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Biogen pays $900M to resolve FCA allegations of kickbacks to neurologists",
+            "year": 2022,
+            "amountUsd": 900000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 900000000,
+        "narrative": "Biogen pays $900M to resolve FCA allegations of kickbacks to neurologists ($900M)."
+      }
+    },
+    "indivior-pharmaceuticals": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Indivior $600M global resolution over Suboxone film marketing",
+            "year": 2020,
+            "amountUsd": 600000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 600000000,
+        "narrative": "Indivior $600M global resolution over Suboxone film marketing ($600M)."
+      }
+    },
+    "novartis": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare",
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Novartis $729M to resolve speaker-program kickback FCA case",
+            "year": 2020,
+            "amountUsd": 729000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          },
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 38 active shortages attributed to Sandoz Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          },
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 4 active shortages attributed to Novartis Pharmaceuticals Corporation",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare",
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 729000000,
+        "narrative": "Novartis $729M to resolve speaker-program kickback FCA case ($729M). FDA Drug Shortages: 38 active shortages attributed to Sandoz Inc.. Plus 1 other public-record finding across 2 sources."
+      }
+    },
+    "gilead-sciences": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare",
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Gilead $97M FCA settlement — Letairis copay-charity kickback",
+            "year": 2020,
+            "amountUsd": 97000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          },
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 3 active shortages attributed to Gilead Sciences, Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare",
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 97000000,
+        "narrative": "Gilead $97M FCA settlement — Letairis copay-charity kickback ($97M). FDA Drug Shortages: 3 active shortages attributed to Gilead Sciences, Inc.."
+      }
+    },
+    "walgreens": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "dea-enforcement",
+        "doj-fca-healthcare",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Walgreens $106.8M FCA settlement — billing for never-dispensed prescriptions",
+            "year": 2024,
+            "amountUsd": 106800000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          },
+          {
+            "source": "dea-enforcement",
+            "severity": "concern",
+            "title": "Walgreens $80M DEA settlement — historic opioid distribution lapses",
+            "year": 2013,
+            "amountUsd": 80000000,
+            "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html"
+          },
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "Walgreens opioid settlement (~$5.7B over 15 years)",
+            "year": 2023,
+            "amountUsd": 5700000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          }
+        ],
+        "sources": [
+          "dea-enforcement",
+          "doj-fca-healthcare",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 5886800000,
+        "narrative": "Walgreens opioid settlement (~$5.7B over 15 years) ($5.70B). Walgreens $106.8M FCA settlement — billing for never-dispensed prescriptions ($107M). Plus 1 other public-record finding across 3 sources."
+      }
+    },
+    "cvs-health": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "dea-enforcement",
+        "doj-fca-healthcare",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "CVS / Omnicare $18M FCA case — long-term-care kickbacks",
+            "year": 2024,
+            "amountUsd": 18000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          },
+          {
+            "source": "dea-enforcement",
+            "severity": "concern",
+            "title": "CVS pharmacies $5M DEA civil penalty — controlled-substance dispensing recordkeeping",
+            "year": 2020,
+            "amountUsd": 5000000,
+            "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html"
+          },
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "CVS opioid settlement (~$5B over 10 years)",
+            "year": 2023,
+            "amountUsd": 5000000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          }
+        ],
+        "sources": [
+          "dea-enforcement",
+          "doj-fca-healthcare",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 5023000000,
+        "narrative": "CVS opioid settlement (~$5B over 10 years) ($5.00B). CVS / Omnicare $18M FCA case — long-term-care kickbacks ($18M). Plus 1 other public-record finding across 3 sources."
+      }
+    },
+    "hca-healthcare": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare",
+        "leapfrog-hospital-safety"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "HCA-affiliate physician practice $60M FCA settlement (oncology billing)",
+            "year": 2024,
+            "amountUsd": 60000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          },
+          {
+            "source": "leapfrog-hospital-safety",
+            "severity": "mixed",
+            "title": "Leapfrog Spring 2025: HCA chain mixed grades",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.hospitalsafetygrade.org/"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare",
+          "leapfrog-hospital-safety"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 60000000,
+        "narrative": "HCA-affiliate physician practice $60M FCA settlement (oncology billing) ($60M). Leapfrog Spring 2025: HCA chain mixed grades."
+      }
+    },
+    "centene": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Centene multistate $165M+ Medicaid PBM settlement",
+            "year": 2022,
+            "amountUsd": 165000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 165000000,
+        "narrative": "Centene multistate $165M+ Medicaid PBM settlement ($165M)."
+      }
+    },
+    "cigna": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Cigna $172.3M FCA settlement — Medicare Advantage risk-adjustment fraud",
+            "year": 2023,
+            "amountUsd": 172300000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 172300000,
+        "narrative": "Cigna $172.3M FCA settlement — Medicare Advantage risk-adjustment fraud ($172M)."
+      }
+    },
+    "humana": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "doj-fca-healthcare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "doj-fca-healthcare",
+            "severity": "concern",
+            "title": "Humana $90M FCA settlement — Medicare Part D bid-process misrepresentation",
+            "year": 2024,
+            "amountUsd": 90000000,
+            "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases"
+          }
+        ],
+        "sources": [
+          "doj-fca-healthcare"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 90000000,
+        "narrative": "Humana $90M FCA settlement — Medicare Part D bid-process misrepresentation ($90M)."
+      }
+    },
+    "mckesson": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "dea-enforcement",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "dea-enforcement",
+            "severity": "concern",
+            "title": "McKesson $150M DEA civil penalty — failure to report suspicious opioid orders",
+            "year": 2017,
+            "amountUsd": 150000000,
+            "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html"
+          },
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "McKesson — Big-3 distributor opioid settlement (~$7.9B)",
+            "year": 2022,
+            "amountUsd": 7900000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          }
+        ],
+        "sources": [
+          "dea-enforcement",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 8050000000,
+        "narrative": "McKesson — Big-3 distributor opioid settlement (~$7.9B) ($7.90B). McKesson $150M DEA civil penalty — failure to report suspicious opioid orders ($150M)."
+      }
+    },
+    "cardinal-health": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "dea-enforcement",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "dea-enforcement",
+            "severity": "concern",
+            "title": "Cardinal Health $44M DEA settlement — opioid distribution diversion controls",
+            "year": 2016,
+            "amountUsd": 44000000,
+            "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html"
+          },
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "Cardinal Health — Big-3 distributor opioid settlement",
+            "year": 2022,
+            "amountUsd": 6400000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          }
+        ],
+        "sources": [
+          "dea-enforcement",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 6444000000,
+        "narrative": "Cardinal Health — Big-3 distributor opioid settlement ($6.40B). Cardinal Health $44M DEA settlement — opioid distribution diversion controls ($44M)."
+      }
+    },
+    "walmart": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "dea-enforcement",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "dea-enforcement",
+            "severity": "concern",
+            "title": "Walmart pharmacies — DOJ/DEA civil filings over opioid prescription handling",
+            "year": 2024,
+            "amountUsd": 7500000,
+            "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html"
+          },
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "Walmart opioid settlement (~$3.1B)",
+            "year": 2022,
+            "amountUsd": 3100000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          }
+        ],
+        "sources": [
+          "dea-enforcement",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 3107500000,
+        "narrative": "Walmart opioid settlement (~$3.1B) ($3.10B). Walmart pharmacies — DOJ/DEA civil filings over opioid prescription handling ($8M)."
+      }
+    },
+    "johnson-and-johnson": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "J&J — national opioid settlement (~$5B over 9 years)",
+            "year": 2022,
+            "amountUsd": 5000000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          },
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 28,561 medical-device adverse-event reports (24mo) — ETHICON INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 5000000000,
+        "narrative": "J&J — national opioid settlement (~$5B over 9 years) ($5.00B). FDA MAUDE: 28,561 medical-device adverse-event reports (24mo) — ETHICON INC.."
+      }
+    },
+    "abbvie": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages",
+        "opioid-settlements"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "opioid-settlements",
+            "severity": "concern",
+            "title": "Allergan / AbbVie $2.37B opioid settlement",
+            "year": 2022,
+            "amountUsd": 2370000000,
+            "sourceUrl": "https://www.naag.org/issues/opioids/"
+          },
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 10 active shortages attributed to AbbVie Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages",
+          "opioid-settlements"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": 2370000000,
+        "narrative": "Allergan / AbbVie $2.37B opioid settlement ($2.37B). FDA Drug Shortages: 10 active shortages attributed to AbbVie Inc.."
+      }
+    },
+    "tenet-healthcare": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "leapfrog-hospital-safety"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "leapfrog-hospital-safety",
+            "severity": "mixed",
+            "title": "Leapfrog Spring 2025: Tenet chain mixed grades",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.hospitalsafetygrade.org/"
+          }
+        ],
+        "sources": [
+          "leapfrog-hospital-safety"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "Leapfrog Spring 2025: Tenet chain mixed grades."
+      }
+    },
+    "community-health-systems": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "leapfrog-hospital-safety"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "leapfrog-hospital-safety",
+            "severity": "concern",
+            "title": "Leapfrog Spring 2025: CHS chain — multiple D/F grades",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.hospitalsafetygrade.org/"
+          }
+        ],
+        "sources": [
+          "leapfrog-hospital-safety"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "Leapfrog Spring 2025: CHS chain — multiple D/F grades."
+      }
+    },
+    "universal-health-services": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "leapfrog-hospital-safety"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "leapfrog-hospital-safety",
+            "severity": "mixed",
+            "title": "Leapfrog Spring 2025: UHS chain mixed grades",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.hospitalsafetygrade.org/"
+          }
+        ],
+        "sources": [
+          "leapfrog-hospital-safety"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "Leapfrog Spring 2025: UHS chain mixed grades."
+      }
+    },
+    "mayo-clinic": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "leapfrog-hospital-safety"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "leapfrog-hospital-safety",
+            "severity": "leader",
+            "title": "Leapfrog Spring 2025: Mayo Clinic — Grade A across reporting hospitals",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.hospitalsafetygrade.org/"
+          }
+        ],
+        "sources": [
+          "leapfrog-hospital-safety"
+        ],
+        "bestStatus": "leader",
+        "totalPenaltyUsd": null,
+        "narrative": "Leapfrog Spring 2025: Mayo Clinic — Grade A across reporting hospitals."
+      }
+    },
+    "cleveland-clinic": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "leapfrog-hospital-safety"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "leapfrog-hospital-safety",
+            "severity": "leader",
+            "title": "Leapfrog Spring 2025: Cleveland Clinic — Grade A",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.hospitalsafetygrade.org/"
+          }
+        ],
+        "sources": [
+          "leapfrog-hospital-safety"
+        ],
+        "bestStatus": "leader",
+        "totalPenaltyUsd": null,
+        "narrative": "Leapfrog Spring 2025: Cleveland Clinic — Grade A."
+      }
+    },
+    "brookdale-senior-living": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cms-nh-compare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "cms-nh-compare",
+            "severity": "mixed",
+            "title": "CMS Nursing Home Compare: Brookdale SNF subset — mixed",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome"
+          },
+          {
+            "source": "cms-nh-compare",
+            "severity": "positive",
+            "title": "CMS Nursing Home Compare: Brookdale Senior Living — 14 facilities, avg 3.57/5 overall",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome"
+          }
+        ],
+        "sources": [
+          "cms-nh-compare"
+        ],
+        "bestStatus": "positive",
+        "totalPenaltyUsd": null,
+        "narrative": "CMS Nursing Home Compare: Brookdale SNF subset — mixed. CMS Nursing Home Compare: Brookdale Senior Living — 14 facilities, avg 3.57/5 overall."
+      }
+    },
+    "ensign-group": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cms-nh-compare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "cms-nh-compare",
+            "severity": "positive",
+            "title": "CMS Nursing Home Compare: Ensign Group — above-average chain",
+            "year": 2025,
+            "amountUsd": null,
+            "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome"
+          }
+        ],
+        "sources": [
+          "cms-nh-compare"
+        ],
+        "bestStatus": "positive",
+        "totalPenaltyUsd": null,
+        "narrative": "CMS Nursing Home Compare: Ensign Group — above-average chain."
+      }
+    },
+    "tyson-foods": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cdc-ar-meat",
+        "usda-fsis-recalls"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "usda-fsis-recalls",
+            "severity": "concern",
+            "title": "FSIS Class-I recalls — multiple in past 24 months (foreign material, Listeria, undeclared allergen)",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.fsis.usda.gov/recalls"
+          },
+          {
+            "source": "cdc-ar-meat",
+            "severity": "mixed",
+            "title": "CDC AR Threats: Tyson reintroduced antibiotics in chicken (2023)",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/"
+          }
+        ],
+        "sources": [
+          "cdc-ar-meat",
+          "usda-fsis-recalls"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FSIS Class-I recalls — multiple in past 24 months (foreign material, Listeria, undeclared allergen). CDC AR Threats: Tyson reintroduced antibiotics in chicken (2023)."
+      }
+    },
+    "conagra-brands": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "usda-fsis-recalls"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "usda-fsis-recalls",
+            "severity": "concern",
+            "title": "FSIS Class-I recalls — Banquet chicken strips (plastic) + ready-to-eat items",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.fsis.usda.gov/recalls"
+          }
+        ],
+        "sources": [
+          "usda-fsis-recalls"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FSIS Class-I recalls — Banquet chicken strips (plastic) + ready-to-eat items."
+      }
+    },
+    "jbs-n-v": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cdc-ar-meat",
+        "usda-fsis-recalls"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "usda-fsis-recalls",
+            "severity": "concern",
+            "title": "FSIS Class-I recalls — JBS / Swift ground beef (E. coli) multiple events",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.fsis.usda.gov/recalls"
+          },
+          {
+            "source": "cdc-ar-meat",
+            "severity": "concern",
+            "title": "CDC AR Threats: JBS — high use of medically-important antibiotics in cattle",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/"
+          }
+        ],
+        "sources": [
+          "cdc-ar-meat",
+          "usda-fsis-recalls"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FSIS Class-I recalls — JBS / Swift ground beef (E. coli) multiple events. CDC AR Threats: JBS — high use of medically-important antibiotics in cattle."
+      }
+    },
+    "cargill": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cdc-ar-meat"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "cdc-ar-meat",
+            "severity": "mixed",
+            "title": "CDC AR Threats: Cargill — mid-tier antibiotic stewardship",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/"
+          }
+        ],
+        "sources": [
+          "cdc-ar-meat"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "CDC AR Threats: Cargill — mid-tier antibiotic stewardship."
+      }
+    },
+    "chick-fil-a": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cdc-ar-meat"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "cdc-ar-meat",
+            "severity": "mixed",
+            "title": "CDC AR Threats: Chick-fil-A backed off 'No Antibiotics Ever' in 2024",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/"
+          }
+        ],
+        "sources": [
+          "cdc-ar-meat"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "CDC AR Threats: Chick-fil-A backed off 'No Antibiotics Ever' in 2024."
+      }
+    },
+    "cheesecake-factory": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "csp-iworst-eating"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "csp-iworst-eating",
+            "severity": "concern",
+            "title": "CSPI Xtreme Eating: Cheesecake Factory — recurring honors",
+            "year": 2023,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards"
+          }
+        ],
+        "sources": [
+          "csp-iworst-eating"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "CSPI Xtreme Eating: Cheesecake Factory — recurring honors."
+      }
+    },
+    "applebee-s": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "csp-iworst-eating"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "csp-iworst-eating",
+            "severity": "concern",
+            "title": "CSPI Xtreme Eating: Applebee's classic combos cited",
+            "year": 2023,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards"
+          }
+        ],
+        "sources": [
+          "csp-iworst-eating"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "CSPI Xtreme Eating: Applebee's classic combos cited."
+      }
+    },
+    "buffalo-wild-wings": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "csp-iworst-eating"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "csp-iworst-eating",
+            "severity": "concern",
+            "title": "CSPI Xtreme Eating: Buffalo Wild Wings — high-calorie shareables",
+            "year": 2023,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards"
+          }
+        ],
+        "sources": [
+          "csp-iworst-eating"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "CSPI Xtreme Eating: Buffalo Wild Wings — high-calorie shareables."
+      }
+    },
+    "texas-roadhouse": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "csp-iworst-eating"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "csp-iworst-eating",
+            "severity": "concern",
+            "title": "CSPI Xtreme Eating: Texas Roadhouse cited",
+            "year": 2022,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards"
+          }
+        ],
+        "sources": [
+          "csp-iworst-eating"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "CSPI Xtreme Eating: Texas Roadhouse cited."
+      }
+    },
+    "sonic-drive-in": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "csp-iworst-eating"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "csp-iworst-eating",
+            "severity": "mixed",
+            "title": "CSPI: Sonic shake-line label-misleading callout",
+            "year": 2022,
+            "amountUsd": null,
+            "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards"
+          }
+        ],
+        "sources": [
+          "csp-iworst-eating"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "CSPI: Sonic shake-line label-misleading callout."
+      }
+    },
+    "pfizer": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages",
+        "public-citizen-worst-pills"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "public-citizen-worst-pills",
+            "severity": "mixed",
+            "title": "Public Citizen 'Do Not Use' list — Chantix (varenicline) flagged",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.worstpills.org/"
+          },
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 206 active shortages attributed to Hospira, Inc., a Pfizer Company",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          },
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 91 active shortages attributed to Pfizer Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages",
+          "public-citizen-worst-pills"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 206 active shortages attributed to Hospira, Inc., a Pfizer Company. FDA Drug Shortages: 91 active shortages attributed to Pfizer Inc.. Plus 1 other public-record finding across 2 sources."
+      }
+    },
+    "gsk": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "public-citizen-worst-pills"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "public-citizen-worst-pills",
+            "severity": "mixed",
+            "title": "Public Citizen 'Do Not Use' list — Avandia (rosiglitazone) — historic",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.worstpills.org/"
+          }
+        ],
+        "sources": [
+          "public-citizen-worst-pills"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "Public Citizen 'Do Not Use' list — Avandia (rosiglitazone) — historic."
+      }
+    },
+    "boehringer-ingelheim-united-states": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "public-citizen-worst-pills"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "public-citizen-worst-pills",
+            "severity": "mixed",
+            "title": "Public Citizen 'Do Not Use' — Pradaxa monitoring concerns flagged",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.worstpills.org/"
+          }
+        ],
+        "sources": [
+          "public-citizen-worst-pills"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "Public Citizen 'Do Not Use' — Pradaxa monitoring concerns flagged."
+      }
+    },
+    "bayer": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "public-citizen-worst-pills"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "public-citizen-worst-pills",
+            "severity": "mixed",
+            "title": "Public Citizen — Xarelto (rivaroxaban) bleeding-risk flagged",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://www.worstpills.org/"
+          }
+        ],
+        "sources": [
+          "public-citizen-worst-pills"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "Public Citizen — Xarelto (rivaroxaban) bleeding-risk flagged."
+      }
+    },
+    "altria-group": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "truth-initiative-tobacco"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "truth-initiative-tobacco",
+            "severity": "concern",
+            "title": "Truth Initiative: Altria — historic youth-marketing + Juul investment",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://truthinitiative.org/"
+          }
+        ],
+        "sources": [
+          "truth-initiative-tobacco"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "Truth Initiative: Altria — historic youth-marketing + Juul investment."
+      }
+    },
+    "british-american-tobacco-p-l-c": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "truth-initiative-tobacco"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "truth-initiative-tobacco",
+            "severity": "concern",
+            "title": "Truth Initiative: BAT — kid-flavor Vuse / R.J. Reynolds menthol concerns",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://truthinitiative.org/"
+          }
+        ],
+        "sources": [
+          "truth-initiative-tobacco"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "Truth Initiative: BAT — kid-flavor Vuse / R.J. Reynolds menthol concerns."
+      }
+    },
+    "philip-morris-international": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "truth-initiative-tobacco"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "truth-initiative-tobacco",
+            "severity": "concern",
+            "title": "Truth Initiative: PMI heat-not-burn marketing concerns",
+            "year": 2024,
+            "amountUsd": null,
+            "sourceUrl": "https://truthinitiative.org/"
+          }
+        ],
+        "sources": [
+          "truth-initiative-tobacco"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "Truth Initiative: PMI heat-not-burn marketing concerns."
+      }
+    },
+    "fresenius-kabi-united-states": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 172 active shortages attributed to Fresenius Kabi USA, LLC",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 172 active shortages attributed to Fresenius Kabi USA, LLC."
+      }
+    },
+    "baxter-international": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages",
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 64 active shortages attributed to Baxter Healthcare",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          },
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 23,776 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages",
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 64 active shortages attributed to Baxter Healthcare. FDA MAUDE: 23,776 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION."
+      }
+    },
+    "amneal-pharmaceuticals": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 19 active shortages attributed to Amneal Pharmaceuticals",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 19 active shortages attributed to Amneal Pharmaceuticals."
+      }
+    },
+    "novo-nordisk": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 17 active shortages attributed to Novo Nordisk, Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 17 active shortages attributed to Novo Nordisk, Inc.."
+      }
+    },
+    "sanofi": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 11 active shortages attributed to Sanofi-Aventis U.S. LLC",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 11 active shortages attributed to Sanofi-Aventis U.S. LLC."
+      }
+    },
+    "vertical": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 11 active shortages attributed to Vertical Pharmaceuticals, LLC",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 11 active shortages attributed to Vertical Pharmaceuticals, LLC."
+      }
+    },
+    "amgen": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 3 active shortages attributed to Amgen Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 3 active shortages attributed to Amgen Inc.."
+      }
+    },
+    "genentech": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 3 active shortages attributed to Genentech, Inc",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 3 active shortages attributed to Genentech, Inc."
+      }
+    },
+    "journey-medical": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 3 active shortages attributed to Journey Medical Corporation",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 3 active shortages attributed to Journey Medical Corporation."
+      }
+    },
+    "bristol-myers-squibb": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 2 active shortages attributed to Bristol Myers Squibb Co.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 2 active shortages attributed to Bristol Myers Squibb Co.."
+      }
+    },
+    "dr-reddys-laboratories": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 2 active shortages attributed to Dr. Reddy's Laboratories, Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 2 active shortages attributed to Dr. Reddy's Laboratories, Inc.."
+      }
+    },
+    "merck-and-co": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 2 active shortages attributed to Merck Sharp & Dohme LLC",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 2 active shortages attributed to Merck Sharp & Dohme LLC."
+      }
+    },
+    "glaukos": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 1 active shortage attributed to Glaukos Corporation",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 1 active shortage attributed to Glaukos Corporation."
+      }
+    },
+    "neurocrine-biosciences": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 1 active shortage attributed to Neurocrine Biosciences, Inc.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 1 active shortage attributed to Neurocrine Biosciences, Inc.."
+      }
+    },
+    "organon": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 1 active shortage attributed to Organon",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 1 active shortage attributed to Organon."
+      }
+    },
+    "dexcom": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "concern",
+            "title": "FDA MAUDE: 716,899 medical-device adverse-event reports (24mo) — DEXCOM, INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 716,899 medical-device adverse-event reports (24mo) — DEXCOM, INC.."
+      }
+    },
+    "tandem-diabetes-care": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "concern",
+            "title": "FDA MAUDE: 494,195 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 494,195 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE."
+      }
+    },
+    "medtronic": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "concern",
+            "title": "FDA MAUDE: 349,135 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          },
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 51,033 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 349,135 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.. FDA MAUDE: 51,033 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.."
+      }
+    },
+    "insulet": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "concern",
+            "title": "FDA MAUDE: 128,182 medical-device adverse-event reports (24mo) — INSULET CORPORATION",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 128,182 medical-device adverse-event reports (24mo) — INSULET CORPORATION."
+      }
+    },
+    "boston-scientific": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "concern",
+            "title": "FDA MAUDE: 126,236 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 126,236 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION."
+      }
+    },
+    "abbott-laboratories": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "concern",
+            "title": "FDA MAUDE: 122,361 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          },
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 62,981 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "concern",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 122,361 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC. FDA MAUDE: 62,981 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD."
+      }
+    },
+    "intuitive-surgical": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "hpAlias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 85,014 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 85,014 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC."
+      }
+    },
+    "beta-bionics": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 37,335 medical-device adverse-event reports (24mo) — BETA BIONICS INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          },
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 10,044 medical-device adverse-event reports (24mo) — BETA BIONICS, INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 37,335 medical-device adverse-event reports (24mo) — BETA BIONICS INC.. FDA MAUDE: 10,044 medical-device adverse-event reports (24mo) — BETA BIONICS, INC.."
+      }
+    },
+    "edwards-lifesciences": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 16,590 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 16,590 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES."
+      }
+    },
+    "zimmer-biomet": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 16,146 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 16,146 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.."
+      }
+    },
+    "smith-and-nephew": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 12,338 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 12,338 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.."
+      }
+    },
+    "icu-medical": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-maude-mfr"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-maude-mfr",
+            "severity": "mixed",
+            "title": "FDA MAUDE: 10,481 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
+          }
+        ],
+        "sources": [
+          "fda-maude-mfr"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA MAUDE: 10,481 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.."
+      }
+    },
+    "kindred-healthcare": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "cms-nh-compare"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:48:07.434Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "cms-nh-compare",
+            "severity": "mixed",
+            "title": "CMS Nursing Home Compare: Kindred Healthcare — 4 facilities, avg 3.00/5 overall",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome"
+          }
+        ],
+        "sources": [
+          "cms-nh-compare"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "CMS Nursing Home Compare: Kindred Healthcare — 4 facilities, avg 3.00/5 overall."
+      }
+    }
+  },
+  "orphans": [
+    {
+      "brand": "Mallinckrodt",
+      "source": "doj-fca-healthcare",
+      "severity": "concern",
+      "year": 2022,
+      "title": "Mallinckrodt $260M FCA settlement — H.P. Acthar Gel kickbacks + Medicaid underpayment"
+    },
+    {
+      "brand": "Booz Allen Hamilton",
+      "source": "doj-fca-healthcare",
+      "severity": "concern",
+      "year": 2023,
+      "title": "Booz Allen $377.5M FCA settlement — commercial cost mischarging"
+    },
+    {
+      "brand": "AmerisourceBergen",
+      "source": "dea-enforcement",
+      "severity": "concern",
+      "year": 2017,
+      "title": "AmerisourceBergen $16M DEA + state settlements — opioid distribution"
+    },
+    {
+      "brand": "Mallinckrodt",
+      "source": "dea-enforcement",
+      "severity": "concern",
+      "year": 2017,
+      "title": "Mallinckrodt $35M DEA settlement — failure to report suspicious oxycodone orders"
+    },
+    {
+      "brand": "AmerisourceBergen",
+      "source": "opioid-settlements",
+      "severity": "concern",
+      "year": 2022,
+      "title": "AmerisourceBergen — Big-3 distributor opioid settlement"
+    },
+    {
+      "brand": "Teva Pharmaceutical",
+      "source": "opioid-settlements",
+      "severity": "concern",
+      "year": 2022,
+      "title": "Teva $4.25B opioid settlement (cash + naloxone supply)"
+    },
+    {
+      "brand": "Endo Health",
+      "source": "opioid-settlements",
+      "severity": "concern",
+      "year": 2024,
+      "title": "Endo $600M+ opioid settlement (Ch. 11 reorganization)"
+    },
+    {
+      "brand": "Genesis Healthcare",
+      "source": "cms-nh-compare",
+      "severity": "concern",
+      "year": 2025,
+      "title": "CMS Nursing Home Compare: Genesis Healthcare — below-average chain"
+    },
+    {
+      "brand": "ProMedica / Manor Care",
+      "source": "cms-nh-compare",
+      "severity": "mixed",
+      "year": 2025,
+      "title": "CMS Nursing Home Compare: ProMedica/ManorCare — mixed grades"
+    },
+    {
+      "brand": "Boar's Head",
+      "source": "usda-fsis-recalls",
+      "severity": "concern",
+      "year": 2024,
+      "title": "FSIS Class-I recall — 7M+ lbs deli meat (Jarratt, VA) tied to multi-state Listeria outbreak (9 deaths)"
+    },
+    {
+      "brand": "BrucePac",
+      "source": "usda-fsis-recalls",
+      "severity": "concern",
+      "year": 2024,
+      "title": "FSIS Class-I recall — 11.7M lbs RTE meat + poultry (Durant OK) Listeria"
+    },
+    {
+      "brand": "Perdue Foods",
+      "source": "usda-fsis-recalls",
+      "severity": "concern",
+      "year": 2024,
+      "title": "FSIS Class-I recall — Perdue chicken nuggets/tenders (metal wire)"
+    },
+    {
+      "brand": "Perdue Farms",
+      "source": "cdc-ar-meat",
+      "severity": "leader",
+      "year": 2024,
+      "title": "CDC AR Threats: Perdue antibiotic-free chicken leader"
+    },
+    {
+      "brand": "Juul Labs",
+      "source": "truth-initiative-tobacco",
+      "severity": "concern",
+      "year": 2023,
+      "title": "Truth Initiative + multistate: Juul $1.7B settlements over youth marketing"
+    },
+    {
+      "brand": "Teva Pharmaceuticals USA, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 117 active shortages attributed to Teva Pharmaceuticals USA, Inc."
+    },
+    {
+      "brand": "Hikma Pharmaceuticals USA, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 97 active shortages attributed to Hikma Pharmaceuticals USA, Inc."
+    },
+    {
+      "brand": "Eugia US LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 42 active shortages attributed to Eugia US LLC"
+    },
+    {
+      "brand": "Accord Healthcare Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 28 active shortages attributed to Accord Healthcare Inc."
+    },
+    {
+      "brand": "Sun Pharmaceutical Industries, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 25 active shortages attributed to Sun Pharmaceutical Industries, Inc."
+    },
+    {
+      "brand": "Otsuka ICU Medical LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 24 active shortages attributed to Otsuka ICU Medical LLC"
+    },
+    {
+      "brand": "Gland Pharma Limited",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 23 active shortages attributed to Gland Pharma Limited"
+    },
+    {
+      "brand": "EMD Serono, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 22 active shortages attributed to EMD Serono, Inc."
+    },
+    {
+      "brand": "Upsher-Smith Laboratories, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 21 active shortages attributed to Upsher-Smith Laboratories, LLC"
+    },
+    {
+      "brand": "Elite Laboratories, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 20 active shortages attributed to Elite Laboratories, Inc."
+    },
+    {
+      "brand": "Endo Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 20 active shortages attributed to Endo Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Aurobindo Pharma USA",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 19 active shortages attributed to Aurobindo Pharma USA"
+    },
+    {
+      "brand": "B. Braun Medical Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 19 active shortages attributed to B. Braun Medical Inc."
+    },
+    {
+      "brand": "Mylan Pharmaceuticals Inc., a Viatris Company",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 19 active shortages attributed to Mylan Pharmaceuticals Inc., a Viatris Company"
+    },
+    {
+      "brand": "Lannett Company, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 18 active shortages attributed to Lannett Company, Inc."
+    },
+    {
+      "brand": "SpecGx LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 18 active shortages attributed to SpecGx LLC"
+    },
+    {
+      "brand": "Takeda Pharmaceuticals USA Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 18 active shortages attributed to Takeda Pharmaceuticals USA Inc."
+    },
+    {
+      "brand": "Mylan Institutional, a Viatris Company",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 17 active shortages attributed to Mylan Institutional, a Viatris Company"
+    },
+    {
+      "brand": "Torrent Pharmaceuticals Limited",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 16 active shortages attributed to Torrent Pharmaceuticals Limited"
+    },
+    {
+      "brand": "Torrent Pharma Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 15 active shortages attributed to Torrent Pharma Inc."
+    },
+    {
+      "brand": "Eli Lilly and Co.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 14 active shortages attributed to Eli Lilly and Co."
+    },
+    {
+      "brand": "Actavis Pharma, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 13 active shortages attributed to Actavis Pharma, Inc."
+    },
+    {
+      "brand": "Alvogen",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Alvogen"
+    },
+    {
+      "brand": "Avet Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Avet Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Chartwell Molecular Holdings LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Chartwell Molecular Holdings LLC"
+    },
+    {
+      "brand": "Sagent Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Sagent Pharmaceuticals"
+    },
+    {
+      "brand": "Apotex Corp.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Apotex Corp."
+    },
+    {
+      "brand": "Epic Pharma, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Epic Pharma, LLC"
+    },
+    {
+      "brand": "Rubicon Research Private Limited",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Rubicon Research Private Limited"
+    },
+    {
+      "brand": "Solco Healthcare US, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Solco Healthcare US, LLC"
+    },
+    {
+      "brand": "Kindos Pharmaceuticals Co. Ltd.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 10 active shortages attributed to Kindos Pharmaceuticals Co. Ltd."
+    },
+    {
+      "brand": "Somerset Therapeutics, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 10 active shortages attributed to Somerset Therapeutics, LLC"
+    },
+    {
+      "brand": "Caplin Steriles, Ltd.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Caplin Steriles, Ltd."
+    },
+    {
+      "brand": "Ingenus Pharmaceuticals LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Ingenus Pharmaceuticals LLC"
+    },
+    {
+      "brand": "Meitheal Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Meitheal Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Fresenius Medical Care North America",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Fresenius Medical Care North America"
+    },
+    {
+      "brand": "InfoRLife SA",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to InfoRLife SA"
+    },
+    {
+      "brand": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co., Ltd."
+    },
+    {
+      "brand": "Prinston Pharmaceutical, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Prinston Pharmaceutical, Inc."
+    },
+    {
+      "brand": "Teyro Labs",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Teyro Labs"
+    },
+    {
+      "brand": "Assertio Specialty Pharmaceuticals, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Assertio Specialty Pharmaceuticals, LLC"
+    },
+    {
+      "brand": "Granules Pharmaceuticals Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Granules Pharmaceuticals Inc."
+    },
+    {
+      "brand": "Janssen Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Janssen Pharmaceuticals"
+    },
+    {
+      "brand": "Lupin Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Lupin Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Padagis US LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Padagis US LLC"
+    },
+    {
+      "brand": "Rhodes Pharmaceuticals L.P.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Rhodes Pharmaceuticals L.P."
+    },
+    {
+      "brand": "Sunrise Pharmaceutical, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Sunrise Pharmaceutical, Inc."
+    },
+    {
+      "brand": "Trigen Laboratories, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Trigen Laboratories, LLC"
+    },
+    {
+      "brand": "XGen Pharmaceuticals DJB, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to XGen Pharmaceuticals DJB, Inc."
+    },
+    {
+      "brand": "Amphastar Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Amphastar Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)"
+    },
+    {
+      "brand": "Novadoz Pharmaceuticals LLC",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Novadoz Pharmaceuticals LLC"
+    },
+    {
+      "brand": "Par Health, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Par Health, Inc."
+    },
+    {
+      "brand": "Advanz Pharma (US) Corp.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 5 active shortages attributed to Advanz Pharma (US) Corp."
+    },
+    {
+      "brand": "Oryza Pharmaceuticals Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 5 active shortages attributed to Oryza Pharmaceuticals Inc."
+    },
+    {
+      "brand": "Azurity Pharmaceuticals, Inc",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Azurity Pharmaceuticals, Inc"
+    },
+    {
+      "brand": "EDW Pharma, Inc. (formerly Italfarmaco Pharma, Inc.)",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to EDW Pharma, Inc. (formerly Italfarmaco Pharma, Inc.)"
+    },
+    {
+      "brand": "HQ Specialty Pharma",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to HQ Specialty Pharma"
+    },
+    {
+      "brand": "MSN Laboratories Private Limited",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to MSN Laboratories Private Limited"
+    },
+    {
+      "brand": "Milla Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Milla Pharmaceuticals"
+    },
+    {
+      "brand": "Noven Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Noven Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Par Health, USA LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Par Health, USA LLC"
+    },
+    {
+      "brand": "Piramal Critical Care Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Piramal Critical Care Inc."
+    },
+    {
+      "brand": "Rising Pharma Holdings, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Rising Pharma Holdings, Inc."
+    },
+    {
+      "brand": "Ailex Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Ailex Pharmaceuticals"
+    },
+    {
+      "brand": "Alembic Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Alembic Pharmaceuticals"
+    },
+    {
+      "brand": "American Regent, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to American Regent, Inc."
+    },
+    {
+      "brand": "Cheplapharm Arzneimittel GmbH",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Cheplapharm Arzneimittel GmbH"
+    },
+    {
+      "brand": "Exela Pharma Sciences, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Exela Pharma Sciences, LLC"
+    },
+    {
+      "brand": "Ferring",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Ferring"
+    },
+    {
+      "brand": "Watson Pharma Private Limited",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Watson Pharma Private Limited"
+    },
+    {
+      "brand": "AstraZeneca AB",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to AstraZeneca AB"
+    },
+    {
+      "brand": "Avyxa Pharma, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Avyxa Pharma, LLC"
+    },
+    {
+      "brand": "Genus Lifesciences",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Genus Lifesciences"
+    },
+    {
+      "brand": "Intercept Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Intercept Pharmaceuticals"
+    },
+    {
+      "brand": "Janssen Research and Development",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Janssen Research and Development"
+    },
+    {
+      "brand": "Medefil, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Medefil, Inc."
+    },
+    {
+      "brand": "Merck Sharp & Dohme Corp.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Merck Sharp & Dohme Corp."
+    },
+    {
+      "brand": "Mullan Pharmaceutical Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Mullan Pharmaceutical Inc."
+    },
+    {
+      "brand": "Nephron Pharmaceuticals Corporation",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Nephron Pharmaceuticals Corporation"
+    },
+    {
+      "brand": "Prasco Laboratories",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Prasco Laboratories"
+    },
+    {
+      "brand": "Slayback Pharma",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Slayback Pharma"
+    },
+    {
+      "brand": "SteriMax, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to SteriMax, Inc."
+    },
+    {
+      "brand": "Swedish Orphan Biovitrum AB",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Swedish Orphan Biovitrum AB"
+    },
+    {
+      "brand": "WG Critical Care",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to WG Critical Care"
+    },
+    {
+      "brand": "pharmaand GmbH (pharma&)",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to pharmaand GmbH (pharma&)"
+    },
+    {
+      "brand": "Armas Pharmaceuticals Inc",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Armas Pharmaceuticals Inc"
+    },
+    {
+      "brand": "BTG International Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to BTG International Inc."
+    },
+    {
+      "brand": "Chiesi USA, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Chiesi USA, Inc."
+    },
+    {
+      "brand": "Cipla Limited",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Cipla Limited"
+    },
+    {
+      "brand": "Cumberland Pharmaceuticals Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Cumberland Pharmaceuticals Inc."
+    },
+    {
+      "brand": "Curium US LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Curium US LLC"
+    },
+    {
+      "brand": "ESTEVE PHARMACEUTICALS, S.A.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to ESTEVE PHARMACEUTICALS, S.A."
+    },
+    {
+      "brand": "Epizyme, Inc. (An Ipsen Company)",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Epizyme, Inc. (An Ipsen Company)"
+    },
+    {
+      "brand": "Fera Pharmaceuticals",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Fera Pharmaceuticals"
+    },
+    {
+      "brand": "Hainan Poly Pharm. Co., Ltd.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Hainan Poly Pharm. Co., Ltd."
+    },
+    {
+      "brand": "Harrow Eye, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Harrow Eye, LLC"
+    },
+    {
+      "brand": "Huons Co., Ltd",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Huons Co., Ltd"
+    },
+    {
+      "brand": "Huons Co., Ltd. (South Korea)",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Huons Co., Ltd. (South Korea)"
+    },
+    {
+      "brand": "Laboratorios Atral",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Laboratorios Atral"
+    },
+    {
+      "brand": "Leadiant Biosciences, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Leadiant Biosciences, Inc."
+    },
+    {
+      "brand": "Lifsa Drugs LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Lifsa Drugs LLC"
+    },
+    {
+      "brand": "Long Grove Pharmaceuticals LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Long Grove Pharmaceuticals LLC"
+    },
+    {
+      "brand": "Medexus",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Medexus"
+    },
+    {
+      "brand": "Micro Labs LTD",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Micro Labs LTD"
+    },
+    {
+      "brand": "Mylan Specialty, a Viatris Company",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Mylan Specialty, a Viatris Company"
+    },
+    {
+      "brand": "Pyros Pharmaceuticals, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Pyros Pharmaceuticals, Inc."
+    },
+    {
+      "brand": "Ritedose Pharmaceuticals, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Ritedose Pharmaceuticals, LLC"
+    },
+    {
+      "brand": "Salix Pharmaceuticals, a division of Bausch Health US, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Salix Pharmaceuticals, a division of Bausch Health US, LLC"
+    },
+    {
+      "brand": "Sichuan Kelun Pharmaceutical Co., Ltd",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Sichuan Kelun Pharmaceutical Co., Ltd"
+    },
+    {
+      "brand": "Spectra Medical Devices, LLC",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Spectra Medical Devices, LLC"
+    },
+    {
+      "brand": "Strides Pharma Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Strides Pharma Inc."
+    },
+    {
+      "brand": "Sun Pharmaceutical Industries Limited",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Sun Pharmaceutical Industries Limited"
+    },
+    {
+      "brand": "ViiV Healthcare Company",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to ViiV Healthcare Company"
+    },
+    {
+      "brand": "INSTITUT STRAUMANN AG",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 453,609 medical-device adverse-event reports (24mo) — INSTITUT STRAUMANN AG"
+    },
+    {
+      "brand": "NOBEL BIOCARE AB GÖTEBORG",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 432,329 medical-device adverse-event reports (24mo) — NOBEL BIOCARE AB GÖTEBORG"
+    },
+    {
+      "brand": "RESPIRONICS, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 150,459 medical-device adverse-event reports (24mo) — RESPIRONICS, INC."
+    },
+    {
+      "brand": "JJGC S.A.",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 125,058 medical-device adverse-event reports (24mo) — JJGC S.A."
+    },
+    {
+      "brand": "MIS IMPLANTS TECHNOLOGIES LTD.",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 118,998 medical-device adverse-event reports (24mo) — MIS IMPLANTS TECHNOLOGIES LTD."
+    },
+    {
+      "brand": "MEDTRONIC MINIMED",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 118,293 medical-device adverse-event reports (24mo) — MEDTRONIC MINIMED"
+    },
+    {
+      "brand": "AIZU OLYMPUS CO., LTD.",
+      "source": "fda-maude-mfr",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 103,096 medical-device adverse-event reports (24mo) — AIZU OLYMPUS CO., LTD."
+    },
+    {
+      "brand": "NOBEL BIOCARE AB",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 84,652 medical-device adverse-event reports (24mo) — NOBEL BIOCARE AB"
+    },
+    {
+      "brand": "CAREFUSION 303, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 78,567 medical-device adverse-event reports (24mo) — CAREFUSION 303, INC."
+    },
+    {
+      "brand": "DENTSPLY IMPLANTS MANUFACTURING GMBH",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 74,688 medical-device adverse-event reports (24mo) — DENTSPLY IMPLANTS MANUFACTURING GMBH"
+    },
+    {
+      "brand": "CAREFUSION SD",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 61,420 medical-device adverse-event reports (24mo) — CAREFUSION SD"
+    },
+    {
+      "brand": "SHIRAKAWA OLYMPUS CO., LTD.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 57,834 medical-device adverse-event reports (24mo) — SHIRAKAWA OLYMPUS CO., LTD."
+    },
+    {
+      "brand": "UNOMEDICAL A/S",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 48,817 medical-device adverse-event reports (24mo) — UNOMEDICAL A/S"
+    },
+    {
+      "brand": "ALLERGAN (COSTA RICA)",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 44,704 medical-device adverse-event reports (24mo) — ALLERGAN (COSTA RICA)"
+    },
+    {
+      "brand": "BIOHORIZONS INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 41,369 medical-device adverse-event reports (24mo) — BIOHORIZONS INC."
+    },
+    {
+      "brand": "ST. JUDE MEDICAL, INC.(CRM-SYLMAR)",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 39,126 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL, INC.(CRM-SYLMAR)"
+    },
+    {
+      "brand": "MPRI",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 36,607 medical-device adverse-event reports (24mo) — MPRI"
+    },
+    {
+      "brand": "MEDTRONIC PUERTO RICO VILLALBA",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 35,573 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO VILLALBA"
+    },
+    {
+      "brand": "ABBOTT MEDICAL",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 33,264 medical-device adverse-event reports (24mo) — ABBOTT MEDICAL"
+    },
+    {
+      "brand": "ALTATEC GMBH",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 30,535 medical-device adverse-event reports (24mo) — ALTATEC GMBH"
+    },
+    {
+      "brand": "MENTOR TEXAS",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 28,582 medical-device adverse-event reports (24mo) — MENTOR TEXAS"
+    },
+    {
+      "brand": "S.I.N. IMPLANT SYSTEM",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 28,171 medical-device adverse-event reports (24mo) — S.I.N. IMPLANT SYSTEM"
+    },
+    {
+      "brand": "SYNTHES GMBH",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 24,955 medical-device adverse-event reports (24mo) — SYNTHES GMBH"
+    },
+    {
+      "brand": "ZOLL MANUFACTURING CORPORATION",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 24,553 medical-device adverse-event reports (24mo) — ZOLL MANUFACTURING CORPORATION"
+    },
+    {
+      "brand": "ANTHOGYR",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 24,462 medical-device adverse-event reports (24mo) — ANTHOGYR"
+    },
+    {
+      "brand": "DEPUY ORTHOPAEDICS INC US",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 24,314 medical-device adverse-event reports (24mo) — DEPUY ORTHOPAEDICS INC US"
+    },
+    {
+      "brand": "ABIOMED, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,818 medical-device adverse-event reports (24mo) — ABIOMED, INC."
+    },
+    {
+      "brand": "PHILIPS MEDICAL SYSTEMS NEDERLAND B.V.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 21,856 medical-device adverse-event reports (24mo) — PHILIPS MEDICAL SYSTEMS NEDERLAND B.V."
+    },
+    {
+      "brand": "ABBOTT VASCULAR INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 21,840 medical-device adverse-event reports (24mo) — ABBOTT VASCULAR INC."
+    },
+    {
+      "brand": "UNOMEDICAL DEVICES S.A DE C.V",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 20,694 medical-device adverse-event reports (24mo) — UNOMEDICAL DEVICES S.A DE C.V"
+    },
+    {
+      "brand": "C.R. BARD, INC. (BASD) -3006260740",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 19,859 medical-device adverse-event reports (24mo) — C.R. BARD, INC. (BASD) -3006260740"
+    },
+    {
+      "brand": "MEDTRONIC SINGAPORE OPERATIONS",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 19,307 medical-device adverse-event reports (24mo) — MEDTRONIC SINGAPORE OPERATIONS"
+    },
+    {
+      "brand": "ETHICON ENDO-SURGERY, LLC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 18,835 medical-device adverse-event reports (24mo) — ETHICON ENDO-SURGERY, LLC."
+    },
+    {
+      "brand": "ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 18,037 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)"
+    },
+    {
+      "brand": "DATEX-OHMEDA, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 17,711 medical-device adverse-event reports (24mo) — DATEX-OHMEDA, INC."
+    },
+    {
+      "brand": "OLYMPUS WINTER & IBE GMBH",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 17,426 medical-device adverse-event reports (24mo) — OLYMPUS WINTER & IBE GMBH"
+    },
+    {
+      "brand": "BOSTON SCIENTIFIC NEUROMODULATION CORPORATION",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 15,186 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC NEUROMODULATION CORPORATION"
+    },
+    {
+      "brand": "THORATEC CORPORATION",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 14,946 medical-device adverse-event reports (24mo) — THORATEC CORPORATION"
+    },
+    {
+      "brand": "UNOMEDICAL DEVICES S.A. DE C.V.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 14,208 medical-device adverse-event reports (24mo) — UNOMEDICAL DEVICES S.A. DE C.V."
+    },
+    {
+      "brand": "DATASCOPE CORP.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 13,605 medical-device adverse-event reports (24mo) — DATASCOPE CORP."
+    },
+    {
+      "brand": "ARTHREX, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 13,317 medical-device adverse-event reports (24mo) — ARTHREX, INC."
+    },
+    {
+      "brand": "SMITHS MEDICAL ASD, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 12,696 medical-device adverse-event reports (24mo) — SMITHS MEDICAL ASD, INC."
+    },
+    {
+      "brand": "ADIN DENTAL IMPLANT SYSTEMS LTD",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 12,589 medical-device adverse-event reports (24mo) — ADIN DENTAL IMPLANT SYSTEMS LTD"
+    },
+    {
+      "brand": "BIOTRONIK SE & CO. KG",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 12,366 medical-device adverse-event reports (24mo) — BIOTRONIK SE & CO. KG"
+    },
+    {
+      "brand": "MEDTRONIC IRELAND",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,344 medical-device adverse-event reports (24mo) — MEDTRONIC IRELAND"
+    },
+    {
+      "brand": "DEPUY IRELAND - 9616671",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,283 medical-device adverse-event reports (24mo) — DEPUY IRELAND - 9616671"
+    },
+    {
+      "brand": "UNOMEDICAL UM-D",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,157 medical-device adverse-event reports (24mo) — UNOMEDICAL UM-D"
+    },
+    {
+      "brand": "HOYA CORPORATION PENTAX TOKYO OFFICE",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,001 medical-device adverse-event reports (24mo) — HOYA CORPORATION PENTAX TOKYO OFFICE"
+    },
+    {
+      "brand": "C.R. BARD INC. (COVINGTON) -1018233",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,832 medical-device adverse-event reports (24mo) — C.R. BARD INC. (COVINGTON) -1018233"
+    },
+    {
+      "brand": "MEDTRONIC HEART VALVES DIVISION",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,699 medical-device adverse-event reports (24mo) — MEDTRONIC HEART VALVES DIVISION"
+    },
+    {
+      "brand": "STRAIGHT SMILE, LLC",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,530 medical-device adverse-event reports (24mo) — STRAIGHT SMILE, LLC"
+    },
+    {
+      "brand": "ALCON RESEARCH, LLC - HOUSTON",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,520 medical-device adverse-event reports (24mo) — ALCON RESEARCH, LLC - HOUSTON"
+    },
+    {
+      "brand": "MEDTRONIC EUROPE SARL",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,387 medical-device adverse-event reports (24mo) — MEDTRONIC EUROPE SARL"
+    },
+    {
+      "brand": "Life Care Centers of America",
+      "source": "cms-nh-compare",
+      "severity": "positive",
+      "year": 2026,
+      "title": "CMS Nursing Home Compare: Life Care Centers of America — 132 facilities, avg 3.55/5 overall"
+    },
+    {
+      "brand": "Genesis Healthcare",
+      "source": "cms-nh-compare",
+      "severity": "concern",
+      "year": 2026,
+      "title": "CMS Nursing Home Compare: Genesis Healthcare — 8 facilities, avg 2.38/5 overall"
+    }
+  ],
+  "orphan_total": 183
+}

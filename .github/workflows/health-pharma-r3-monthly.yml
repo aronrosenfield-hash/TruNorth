@@ -1,0 +1,76 @@
+name: health-pharma-r3-monthly
+
+# Health + pharma + food-safety + medical (round 3) — monthly refresh
+#
+# Pulls openFDA drug-shortage manufacturer counts, MAUDE adverse-event
+# manufacturer counts (24 mo), and CMS Nursing Home Compare provider data,
+# then combines with the curated DOJ FCA / DEA / opioid-settlement /
+# Leapfrog / FSIS / CDC AR / CSPI / Public Citizen / Truth Initiative
+# corpus. Output merges to per-TruNorth-slug health-pharma-r3-augment.json.
+#
+# Sources covered (twelve):
+#   doj-fca-healthcare, dea-enforcement, opioid-settlements,
+#   fda-drug-shortages (live), fda-maude-mfr (live), cms-nh-compare (live),
+#   leapfrog-hospital-safety, usda-fsis-recalls, cdc-ar-meat,
+#   csp-iworst-eating, public-citizen-worst-pills, truth-initiative-tobacco
+#
+# License: Public records. Cite original source URLs.
+#
+# Runs the 9th of each month at 06:25 UTC (offset from other crons).
+# Wall time: <4 min (3 live JSON fetches, no per-row API loops).
+
+on:
+  schedule:
+    - cron: "25 6 9 * *"   # 06:25 UTC on the 9th of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Run health-pharma-r3 fixture tests
+        run: node --test scripts/health-pharma-r3-fetch.test.mjs
+
+      - name: Run health-pharma-r3 fetcher (curated + live)
+        run: node scripts/health-pharma-r3-fetch.mjs
+
+      - name: Run health-pharma-r3 merger
+        run: node scripts/health-pharma-r3-merge.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(health-pharma-r3): monthly health/pharma/food-safety refresh"
+          branch: "data/health-pharma-r3-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(health-pharma-r3): monthly health + pharma refresh"
+          body: |
+            Automated monthly refresh of the round-3 health, pharma,
+            food-safety, and medical sources.
+
+            Live: openFDA Drug Shortages, openFDA MAUDE, CMS Nursing Home
+            Compare. Curated public-record: DOJ False Claims healthcare,
+            DEA enforcement, national opioid settlements, Leapfrog
+            Hospital Safety Grade, USDA FSIS recalls, CDC Antibiotic
+            Resistance threats, CSPI Xtreme Eating, Public Citizen Worst
+            Pills, Truth Initiative tobacco/vape callouts.
+
+            License: Public records — DOJ press releases, DEA admin
+            court, FDA openFDA, CMS provider data, USDA FSIS, CDC public
+            reports, Leapfrog, CSPI, Public Citizen HRG, Truth Initiative.
+          add-paths: |
+            data/raw/health-pharma-r3/**
+            data/derived/health-pharma-r3-augment.json
