@@ -1160,109 +1160,101 @@ const WRITERS = [
       }];
     },
   },
-  // ─── Product-safety / ingredient certifications (round 4) ─────────────
-  // Routes EWG VERIFIED, Made Safe, Good Housekeeping Seal, NSF,
-  // GREENGUARD, WaterSense, GoodGuide (archived), Certified Vegan
-  // (vegan.org) and Vegan Society into the right value category.
-  {
-    name: "product-safety-deep",
-    write: (e) => {
-      const certs = Array.isArray(e.certifications) ? e.certifications : [];
-      if (!certs.length) return [];
-      const out = [];
-      // Pretty per-cert blurb factory
-      const blurb = (c) => {
-        const label = c.label || c.source;
-        const ct = c.product_count ? ` (${c.product_count} certified product${c.product_count === 1 ? "" : "s"})` : "";
-        const score = c.avg_score ? ` — GoodGuide avg ${c.avg_score.toFixed(1)}/10` : "";
-        return `${label}${ct}${score}.`;
-      };
-      const inCats = new Set(e.categories || ["health"]);
-      // Health (most certs)
-      const healthCerts = certs.filter(c => ["ewg-verified","made-safe","good-housekeeping-seal","goodguide","nsf","greenguard","vegan-org","vegan-society"].includes(c.source));
-      if (healthCerts.length && inCats.has("health")) {
-        out.push({
-          category: "health",
-          narrative: healthCerts.map(blurb).join(" "),
-          sc: "positive",
-          severity: "positive",
-          mergePositive: true,
-        });
-      }
-      // Environment (GREENGUARD + WaterSense)
-      const envCerts = certs.filter(c => ["greenguard","watersense"].includes(c.source));
-      if (envCerts.length && inCats.has("environment")) {
-        out.push({
-          category: "environment",
-          narrative: envCerts.map(blurb).join(" "),
-          sc: "positive",
-          severity: "positive",
-          mergePositive: true,
-        });
-      }
-      // Animals (vegan certifications)
-      const animalsCerts = certs.filter(c => ["vegan-org","vegan-society"].includes(c.source));
-      if (animalsCerts.length && inCats.has("animals")) {
-        out.push({
-          category: "animals",
-          narrative: animalsCerts.map(blurb).join(" "),
-          sc: "positive",
-          severity: "positive",
-          mergePositive: true,
-        });
-      }
-      return out;
-    },
-  },
-  // ─── EWG Skin Deep cosmetics hazard rollup ────────────────────────────
-  {
-    name: "ewg-skin-deep",
-    write: (e) => {
-      if (!e.ewg_product_count || e.ewg_product_count < 1) return [];
-      const sev = e.severity || "neutral";
-      const sc = sev === "positive" ? "positive"
-             : sev === "negative" ? "negative"
-             : sev === "mixed"    ? "mixed"
-             : "neutral";
-      const flaggedPct = Math.round((e.ewg_pct_flagged || 0) * 100);
-      const verdict = sev === "negative"
-        ? `${flaggedPct}% of ${e.ewg_product_count} products scored high-hazard (≥7/10)`
-        : sev === "positive"
-          ? `All ${e.ewg_product_count} products score low-hazard (avg ${e.ewg_avg_score}/10)`
-          : `${e.ewg_product_count} products scored — avg ${e.ewg_avg_score}/10, worst ${e.ewg_worst_score}/10, ${flaggedPct}% flagged`;
-      return [{
-        category: "health",
-        narrative: `EWG Skin Deep cosmetics hazard rating: ${verdict}.`,
-        sc,
-        severity: sev === "neutral" ? "neutral" : sev,
-      }];
-    },
-  },
-  // ─── EWG Food Scores rollup ───────────────────────────────────────────
-  {
-    name: "ewg-food",
-    write: (e) => {
-      if (!e.food_product_count || e.food_product_count < 1) return [];
-      const sev = e.severity || "neutral";
-      const sc = sev === "positive" ? "positive"
-             : sev === "negative" ? "negative"
-             : sev === "mixed"    ? "mixed"
-             : "neutral";
-      const flaggedPct = Math.round((e.food_pct_flagged || 0) * 100);
-      const verdict = sev === "negative"
-        ? `${flaggedPct}% of ${e.food_product_count} products scored high-concern (≥7/10)`
-        : sev === "positive"
-          ? `${e.food_product_count} products score low-concern (avg ${e.food_avg_score}/10)`
-          : `${e.food_product_count} products scored — avg ${e.food_avg_score}/10, worst ${e.food_worst_score}/10, ${flaggedPct}% flagged`;
-      return [{
-        category: "health",
-        narrative: `EWG Food Scores nutrition / ingredient / processing rating: ${verdict}.`,
-        sc,
-        severity: sev === "neutral" ? "neutral" : sev,
-      }];
-    },
-  },
+  // ─── Foreign regulators round 4 (curated kernel) ───────────────────────
+  // Compact writers for the curated euro/latam/asia + Ireland DPC sources.
+  // Each entry below produces one narrative for its category. The kernel
+  // augments are keyed { slug: { case_count, total_fines_<ccy>, summary,
+  // latest_year, url } } — see scripts/euro-regulators-r4-seed.mjs etc.
+  ...foreignR4Writers(),
 ];
+
+// Compact factory for foreign-regulator-r4 writers. Each maps to a single
+// category (political / privacy / execPay) based on the regulator type.
+function foreignR4Writers() {
+  // tier: poor cutoff for total fines (in source currency)
+  const SPECS = [
+    // ── Europe: privacy / data-protection authorities ─────────────────────
+    { name: "bfdi-germany",            label: "BfDI (German federal DPA)",          cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "aepd-spain",              label: "AEPD (Spanish DPA)",                  cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "datatilsynet-norway",     label: "Datatilsynet (Norwegian DPA)",        cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "imy-sweden",              label: "IMY (Swedish DPA)",                   cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "datatilsynet-denmark",    label: "Datatilsynet (Danish DPA)",           cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "tietosuoja-finland",      label: "Tietosuojavaltuutettu (Finnish DPA)", cat: "privacy",   ccy: "eur", poorAt: 1_000_000 },
+    { name: "apd-belgium",             label: "Belgian DPA (APD/GBA)",               cat: "privacy",   ccy: "eur", poorAt: 1_000_000 },
+    { name: "fdpic-switzerland",       label: "FDPIC (Swiss DPA)",                   cat: "privacy",   ccy: "eur", poorAt: 1 },
+    { name: "ireland-dpc",             label: "Ireland DPC (Irish DPA, EU lead authority for Big Tech)", cat: "privacy", ccy: "eur", poorAt: 100_000_000 },
+    // ── Europe: financial supervisory → execPay (financial-conduct signal)
+    { name: "bafin-r4",                label: "BaFin (German financial supervisory)", cat: "execPay",  ccy: "eur", poorAt: 10_000_000 },
+    { name: "amf-france",              label: "AMF (French financial markets)",       cat: "execPay",  ccy: "eur", poorAt: 10_000_000 },
+    { name: "consob-italy",            label: "CONSOB (Italian financial markets)",   cat: "execPay",  ccy: "eur", poorAt: 5_000_000 },
+    { name: "afm-netherlands",         label: "AFM (Dutch financial markets)",        cat: "execPay",  ccy: "eur", poorAt: 100_000_000 },
+    { name: "finansinspektionen-sweden", label: "Finansinspektionen (Swedish FSA)",   cat: "execPay",  ccy: "eur", poorAt: 50_000_000 },
+    { name: "finma-switzerland",       label: "FINMA (Swiss financial-market supervisory)", cat: "execPay", ccy: "eur", poorAt: 1 },
+    // ── Europe: antitrust / competition / consumer → political ────────────
+    { name: "agcm-italy",              label: "AGCM (Italian antitrust)",             cat: "political", ccy: "eur", poorAt: 100_000_000 },
+    { name: "cnmc-spain",              label: "CNMC (Spanish competition)",           cat: "political", ccy: "eur", poorAt: 5_000_000 },
+    { name: "acm-netherlands",         label: "ACM (Dutch consumer + competition)",   cat: "political", ccy: "eur", poorAt: 25_000_000 },
+    { name: "forbrukertilsynet-norway", label: "Forbrukertilsynet (Norwegian consumer)", cat: "political", ccy: null,  poorAt: 1 },
+    { name: "weko-switzerland",        label: "WEKO/COMCO (Swiss competition)",       cat: "political", ccy: "chf", poorAt: 50_000_000 },
+    // ── LatAm: COFECE/IFT/CNDC/FNE/SIC/INDECOPI → political ───────────────
+    { name: "cofece-r4",               label: "COFECE (Mexican antitrust)",           cat: "political", ccy: "mxn", poorAt: 50_000_000 },
+    { name: "ift-mexico",              label: "IFT (Mexican telecom regulator)",      cat: "political", ccy: "mxn", poorAt: 1_000_000_000 },
+    { name: "cndc-argentina",          label: "CNDC (Argentine competition)",         cat: "political", ccy: null,  poorAt: 1 },
+    { name: "fne-chile",               label: "FNE (Chilean competition prosecutor)", cat: "political", ccy: null,  poorAt: 1 },
+    { name: "sic-colombia",            label: "SIC (Colombian industry + commerce)",  cat: "political", ccy: null,  poorAt: 1 },
+    { name: "indecopi-peru",           label: "INDECOPI (Peruvian competition)",      cat: "political", ccy: null,  poorAt: 1 },
+    // ── Asia: SAMR/MIIT/NDRC/FTC + KFTC retry → political ─────────────────
+    { name: "samr-china",              label: "SAMR (Chinese antitrust)",             cat: "political", ccy: "cny", poorAt: 1_000_000_000 },
+    { name: "miit-china",              label: "MIIT (Chinese app-compliance)",        cat: "privacy",   ccy: null,  poorAt: 1 },
+    { name: "ndrc-china",              label: "NDRC (Chinese antitrust legacy)",      cat: "political", ccy: "cny", poorAt: 1_000_000_000 },
+    { name: "taiwan-ftc",              label: "Taiwan Fair Trade Commission",         cat: "political", ccy: "twd", poorAt: 10_000_000_000 },
+    { name: "israel-competition",      label: "Israel Competition Authority",         cat: "political", ccy: null,  poorAt: 1 },
+    { name: "kftc-r4",                 label: "KFTC (Korean antitrust)",              cat: "political", ccy: "krw", poorAt: 100_000_000_000 },
+    // ── Asia: HK SFC → execPay; OJK Indonesia → execPay ────────────────────
+    { name: "hk-sfc",                  label: "HK SFC (Hong Kong securities)",        cat: "execPay",   ccy: "hkd", poorAt: 100_000_000 },
+    { name: "ojk-indonesia",           label: "OJK (Indonesian financial services)",  cat: "execPay",   ccy: null,  poorAt: 1 },
+  ];
+
+  const CCY_SYM = { eur: "€", chf: "CHF ", mxn: "MXN ", cny: "CNY ", twd: "TWD ", krw: "KRW ", hkd: "HK$" };
+
+  function formatAmt(total, ccy) {
+    if (!total || !ccy) return "";
+    const sym = CCY_SYM[ccy] || "";
+    if (ccy === "eur" || ccy === "chf" || ccy === "hkd") {
+      return total >= 1e9 ? `${sym}${(total / 1e9).toFixed(2)}B`
+        : total >= 1e6 ? `${sym}${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `${sym}${Math.round(total / 1e3)}K`
+        : "";
+    }
+    // Larger denominations
+    return total >= 1e9 ? `${sym}${(total / 1e9).toFixed(2)}B`
+      : total >= 1e6 ? `${sym}${(total / 1e6).toFixed(1)}M`
+      : "";
+  }
+
+  return SPECS.map(spec => ({
+    name: spec.name,
+    write: (e) => {
+      const cnt = Number(e.case_count || e.action_count || 0);
+      if (!cnt) return [];
+      const totalKey = spec.ccy ? `total_fines_${spec.ccy}` : null;
+      const total = totalKey ? Number(e[totalKey] || e.total_fines_eur || 0) : 0;
+      const amtStr = formatAmt(total, spec.ccy);
+      // Year/date: prefer explicit latest_year, fall back to year from latest_action ISO date
+      const yearStr = e.latest_year || (e.latest_action ? String(e.latest_action).slice(0, 4) : "");
+      const head = cnt === 1
+        ? `${spec.label} action${yearStr ? ` (${yearStr})` : ""}.`
+        : `${cnt} ${spec.label} actions${yearStr ? ` (latest ${yearStr})` : ""}.`;
+      const tail = amtStr ? ` ${amtStr} in fines.` : "";
+      // Detail: kernel sources use top-level `summary`; aggregator merges
+      // (e.g. ireland-dpc) put summary inside actions[0].
+      const summary = e.summary || (Array.isArray(e.actions) && e.actions[0]?.summary) || "";
+      const detail = summary ? ` ${clip(summary, 240)}` : "";
+      const sc = (spec.poorAt && total >= spec.poorAt) || cnt >= 3 ? "poor" : "mixed";
+      return [{ category: spec.cat, narrative: `${head}${tail}${detail}`.trim(), sc, severity: "negative" }];
+    },
+  }));
+}
 
 function clip(s, n) {
   if (!s) return "";
