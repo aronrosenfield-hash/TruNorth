@@ -1,137 +1,292 @@
 {
-  "generated_at": "2026-06-09T13:52:11.770Z",
+  "generated_at": "2026-06-09T22:52:58.743Z",
   "source": "forest500",
   "source_url": "https://forest500.org",
   "upstream_file": "data/raw/forest500/2026-06-09.json",
-  "company_count": 15,
-  "companies": {
-    "cargill": {
-      "display_name": "Cargill Inc",
+  "company_count": 82,
+  "routing": {
+    "slugHint": 36,
+    "direct": 51,
+    "alias": 0,
+    "parent": 0,
+    "orphan": 44
+  },
+  "orphan_total": 44,
+  "orphans": [
+    {
+      "company": "Ferrero",
+      "country": "Italy",
+      "score": 60
+    },
+    {
+      "company": "Bunge Limited",
       "country": "United States",
-      "sector": "Trader/Processor",
+      "score": 38
+    },
+    {
+      "company": "Louis Dreyfus Company",
+      "country": "Netherlands",
+      "score": 32
+    },
+    {
+      "company": "COFCO International",
+      "country": "Switzerland",
+      "score": 30
+    },
+    {
+      "company": "Wilmar International",
+      "country": "Singapore",
+      "score": 65
+    },
+    {
+      "company": "Olam International",
+      "country": "Singapore",
+      "score": 55
+    },
+    {
+      "company": "Sime Darby Plantation",
+      "country": "Malaysia",
+      "score": 72
+    },
+    {
+      "company": "IOI Corporation",
+      "country": "Malaysia",
+      "score": 60
+    },
+    {
+      "company": "Golden Agri-Resources",
+      "country": "Singapore",
+      "score": 55
+    },
+    {
+      "company": "Indofood Agri Resources",
+      "country": "Indonesia",
+      "score": 18
+    },
+    {
+      "company": "Astra Agro Lestari",
+      "country": "Indonesia",
+      "score": 22
+    },
+    {
+      "company": "Felda Global Ventures",
+      "country": "Malaysia",
+      "score": 32
+    },
+    {
+      "company": "Royal Golden Eagle (RGE)",
+      "country": "Singapore",
+      "score": 18
+    },
+    {
+      "company": "Asia Pulp & Paper (Sinar Mas)",
+      "country": "Indonesia",
+      "score": 18
+    },
+    {
+      "company": "Minerva S.A.",
+      "country": "Brazil",
+      "score": 18
+    },
+    {
+      "company": "Amaggi",
+      "country": "Brazil",
+      "score": 28
+    },
+    {
+      "company": "SLC Agrícola",
+      "country": "Brazil",
+      "score": 30
+    },
+    {
+      "company": "Bracell",
+      "country": "Singapore",
+      "score": 22
+    },
+    {
+      "company": "Stora Enso",
+      "country": "Finland",
+      "score": 65
+    },
+    {
+      "company": "UPM-Kymmene",
+      "country": "Finland",
+      "score": 62
+    },
+    {
+      "company": "SCA (Svenska Cellulosa)",
+      "country": "Sweden",
+      "score": 60
+    },
+    {
+      "company": "Domtar",
+      "country": "United States",
+      "score": 28
+    },
+    {
+      "company": "Mondi PLC",
+      "country": "United Kingdom",
+      "score": 55
+    },
+    {
+      "company": "Sappi",
+      "country": "South Africa",
+      "score": 45
+    },
+    {
+      "company": "Empresas CMPC",
+      "country": "Chile",
+      "score": 38
+    },
+    {
+      "company": "Klabin S.A.",
+      "country": "Brazil",
+      "score": 45
+    },
+    {
+      "company": "Sodexo",
+      "country": "France",
+      "score": 55
+    },
+    {
+      "company": "PVH Corp",
+      "country": "United States",
+      "score": 22
+    },
+    {
+      "company": "HSBC Holdings",
+      "country": "United Kingdom",
+      "score": 38
+    },
+    {
+      "company": "BNP Paribas",
+      "country": "France",
+      "score": 38
+    },
+    {
+      "company": "Société Générale",
+      "country": "France",
+      "score": 28
+    },
+    {
+      "company": "Rabobank",
+      "country": "Netherlands",
+      "score": 55
+    },
+    {
+      "company": "UBS Group",
+      "country": "Switzerland",
+      "score": 25
+    },
+    {
+      "company": "Mizuho Financial Group",
+      "country": "Japan",
+      "score": 15
+    },
+    {
+      "company": "Sumitomo Mitsui Financial Group",
+      "country": "Japan",
+      "score": 12
+    },
+    {
+      "company": "Mitsubishi UFJ Financial Group",
+      "country": "Japan",
+      "score": 12
+    },
+    {
+      "company": "ICBC",
+      "country": "China",
+      "score": 5
+    },
+    {
+      "company": "Bank of China",
+      "country": "China",
+      "score": 5
+    },
+    {
+      "company": "China Construction Bank",
+      "country": "China",
+      "score": 5
+    },
+    {
+      "company": "Allianz SE",
+      "country": "Germany",
+      "score": 32
+    },
+    {
+      "company": "AXA Group",
+      "country": "France",
+      "score": 42
+    },
+    {
+      "company": "Aviva",
+      "country": "United Kingdom",
+      "score": 38
+    },
+    {
+      "company": "Royal Bank of Canada",
+      "country": "Canada",
+      "score": 15
+    },
+    {
+      "company": "Scotiabank",
+      "country": "Canada",
+      "score": 10
+    }
+  ],
+  "companies": {
+    "unilever": {
+      "display_name": "Unilever PLC",
+      "country": "United Kingdom",
+      "sector": "Manufacturer",
       "entity_type": "company",
-      "overall_score": 42,
+      "overall_score": 80,
       "score_year": 2024,
       "commodity_scores": {
-        "soy": 55,
-        "palm": 40,
-        "beef": 30,
-        "timber": null,
-        "pulp": null
+        "soy": 80,
+        "palm": 90,
+        "beef": null,
+        "timber": 65,
+        "pulp": 80
       },
       "commodities_exposed": [
         "soy",
         "palm",
-        "beef"
+        "timber",
+        "pulp"
       ],
-      "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
-    "bunge": {
-      "display_name": "Bunge Limited",
-      "country": "United States",
-      "sector": "Trader/Processor",
-      "entity_type": "company",
-      "overall_score": 38,
-      "score_year": 2024,
-      "commodity_scores": {
-        "soy": 60,
-        "palm": null,
-        "beef": 25,
-        "timber": null,
-        "pulp": null
-      },
-      "commodities_exposed": [
-        "soy",
-        "beef"
-      ],
-      "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
-    },
-    "wilmar-international": {
-      "display_name": "Wilmar International",
-      "country": "Singapore",
-      "sector": "Trader/Processor",
-      "entity_type": "company",
-      "overall_score": 55,
-      "score_year": 2024,
-      "commodity_scores": {
-        "soy": null,
-        "palm": 75,
-        "beef": null,
-        "timber": null,
-        "pulp": null
-      },
-      "commodities_exposed": [
-        "palm"
-      ],
-      "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
-    },
-    "archer-daniels-midland": {
-      "display_name": "Archer Daniels Midland",
-      "country": "United States",
-      "sector": "Trader/Processor",
-      "entity_type": "company",
-      "overall_score": 40,
-      "score_year": 2024,
-      "commodity_scores": {
-        "soy": 50,
-        "palm": null,
-        "beef": 35,
-        "timber": null,
-        "pulp": null
-      },
-      "commodities_exposed": [
-        "soy",
-        "beef"
-      ],
-      "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
-    },
-    "jbs-s-a": {
-      "display_name": "JBS S.A.",
-      "country": "Brazil",
-      "sector": "Producer",
-      "entity_type": "company",
-      "overall_score": 18,
-      "score_year": 2024,
-      "commodity_scores": {
-        "soy": null,
-        "palm": null,
-        "beef": 18,
-        "timber": null,
-        "pulp": null
-      },
-      "commodities_exposed": [
-        "beef"
-      ],
-      "forest500Tier": "laggard",
-      "hasDeforestationExposure": true
-    },
-    "marfrig": {
-      "display_name": "Marfrig",
-      "country": "Brazil",
-      "sector": "Producer",
-      "entity_type": "company",
-      "overall_score": 22,
-      "score_year": 2024,
-      "commodity_scores": {
-        "soy": null,
-        "palm": null,
-        "beef": 22,
-        "timber": null,
-        "pulp": null
-      },
-      "commodities_exposed": [
-        "beef"
-      ],
-      "forest500Tier": "laggard",
-      "hasDeforestationExposure": true
-    },
-    "nestle-s-a": {
+    "nestl": {
       "display_name": "Nestlé S.A.",
       "country": "Switzerland",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 72,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 75,
+        "palm": 80,
+        "beef": 55,
+        "timber": 65,
+        "pulp": 75
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "mars": {
+      "display_name": "Mars Incorporated",
+      "country": "United States",
       "sector": "Manufacturer",
       "entity_type": "company",
       "overall_score": 68,
@@ -150,29 +305,79 @@
         "pulp"
       ],
       "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
-    "unilever": {
-      "display_name": "Unilever PLC",
+    "reckitt": {
+      "display_name": "Reckitt Benckiser",
       "country": "United Kingdom",
       "sector": "Manufacturer",
       "entity_type": "company",
-      "overall_score": 75,
+      "overall_score": 70,
       "score_year": 2024,
       "commodity_scores": {
-        "soy": 80,
-        "palm": 85,
+        "soy": null,
+        "palm": 80,
         "beef": null,
-        "timber": null,
-        "pulp": 75
+        "timber": 60,
+        "pulp": 70
+      },
+      "commodities_exposed": [
+        "palm",
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "mondelez-international": {
+      "display_name": "Mondelez International",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 55,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 65,
+        "beef": null,
+        "timber": 55,
+        "pulp": 55
       },
       "commodities_exposed": [
         "soy",
         "palm",
+        "timber",
         "pulp"
       ],
-      "forest500Tier": "leader",
-      "hasDeforestationExposure": true
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "pepsico": {
+      "display_name": "PepsiCo Inc",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 50,
+        "palm": 65,
+        "beef": 45,
+        "timber": null,
+        "pulp": 50
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
     "procter-and-gamble": {
       "display_name": "Procter & Gamble",
@@ -185,8 +390,8 @@
         "soy": null,
         "palm": 65,
         "beef": null,
-        "timber": 50,
-        "pulp": 50
+        "timber": 55,
+        "pulp": 55
       },
       "commodities_exposed": [
         "palm",
@@ -194,7 +399,146 @@
         "pulp"
       ],
       "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "colgate-palmolive": {
+      "display_name": "Colgate-Palmolive",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 55,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 70,
+        "beef": null,
+        "timber": null,
+        "pulp": 55
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "danone": {
+      "display_name": "Danone",
+      "country": "France",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 55,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 65,
+        "beef": null,
+        "timber": null,
+        "pulp": 55
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "general-mills": {
+      "display_name": "General Mills",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 42,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 45,
+        "palm": 55,
+        "beef": 30,
+        "timber": null,
+        "pulp": 42
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "kellogg-s": {
+      "display_name": "Kellanova",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 40,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 45,
+        "palm": 55,
+        "beef": null,
+        "timber": null,
+        "pulp": 40
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "conagra-brands": {
+      "display_name": "Conagra Brands",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 30,
+        "palm": 35,
+        "beef": 25,
+        "timber": null,
+        "pulp": 25
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "hershey": {
+      "display_name": "Hershey Company",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 70,
+        "beef": null,
+        "timber": null,
+        "pulp": 45
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
     "kraft-heinz": {
       "display_name": "Kraft Heinz",
@@ -216,7 +560,358 @@
         "beef"
       ],
       "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "tyson-foods": {
+      "display_name": "Tyson Foods",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 15,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": 15,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "beef"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "henkel": {
+      "display_name": "Henkel AG & Co",
+      "country": "Germany",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 55,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 70,
+        "beef": null,
+        "timber": null,
+        "pulp": 55
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "l-or-al": {
+      "display_name": "L'Oréal",
+      "country": "France",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 75,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 85,
+        "beef": null,
+        "timber": null,
+        "pulp": 65
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "beiersdorf": {
+      "display_name": "Beiersdorf AG",
+      "country": "Germany",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 65,
+        "beef": null,
+        "timber": null,
+        "pulp": 50
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "estee-lauder-companies": {
+      "display_name": "Estée Lauder",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 40,
+        "beef": null,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "johnson-and-johnson": {
+      "display_name": "Johnson & Johnson",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 42,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 55,
+        "beef": null,
+        "timber": null,
+        "pulp": 45
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "cargill": {
+      "display_name": "Cargill Inc",
+      "country": "United States",
+      "sector": "Trader/Processor",
+      "entity_type": "company",
+      "overall_score": 42,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 40,
+        "beef": 30,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "archer-daniels-midland": {
+      "display_name": "Archer Daniels Midland",
+      "country": "United States",
+      "sector": "Trader/Processor",
+      "entity_type": "company",
+      "overall_score": 40,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 50,
+        "palm": null,
+        "beef": 35,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "soy",
+        "beef"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "jbs-n-v": {
+      "display_name": "JBS S.A.",
+      "country": "Brazil",
+      "sector": "Producer",
+      "entity_type": "company",
+      "overall_score": 18,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": 18,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "beef"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "marfrig-global-foods-s-a": {
+      "display_name": "Marfrig Global Foods",
+      "country": "Brazil",
+      "sector": "Producer",
+      "entity_type": "company",
+      "overall_score": 22,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": 22,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "beef"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "adecoagro-s-a": {
+      "display_name": "Adecoagro",
+      "country": "Argentina",
+      "sector": "Producer",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 35,
+        "palm": null,
+        "beef": 25,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "soy",
+        "beef"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "suzano-s-a": {
+      "display_name": "Suzano S.A.",
+      "country": "Brazil",
+      "sector": "Producer",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": 55,
+        "pulp": 55
+      },
+      "commodities_exposed": [
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "international-paper": {
+      "display_name": "International Paper",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": 30,
+        "pulp": 32
+      },
+      "commodities_exposed": [
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "weyerhaeuser": {
+      "display_name": "Weyerhaeuser",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": 28,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "timber"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "smurfit-westrock": {
+      "display_name": "Smurfit Kappa",
+      "country": "Ireland",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 45,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": 42,
+        "pulp": 45
+      },
+      "commodities_exposed": [
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "ikea": {
+      "display_name": "IKEA (Inter IKEA Group)",
+      "country": "Netherlands",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 72,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 75,
+        "beef": null,
+        "timber": 72,
+        "pulp": 72
+      },
+      "commodities_exposed": [
+        "palm",
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
     },
     "mcdonald-s": {
       "display_name": "McDonald's Corporation",
@@ -237,7 +932,259 @@
         "pulp"
       ],
       "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "restaurant-brands-international": {
+      "display_name": "Restaurant Brands International",
+      "country": "Canada",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 30,
+        "beef": 25,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "burger-king": {
+      "display_name": "Burger King (RBI)",
+      "country": "Canada",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 30,
+        "beef": 25,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "kfc": {
+      "display_name": "Yum! Brands",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 32,
+        "beef": 28,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "pizza-hut": {
+      "display_name": "Pizza Hut (Yum!)",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 32,
+        "beef": 28,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "subway": {
+      "display_name": "Subway IP LLC",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 18,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 18,
+        "beef": 18,
+        "timber": null,
+        "pulp": 18
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "chipotle": {
+      "display_name": "Chipotle Mexican Grill",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 38,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": 38,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "beef"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "starbucks": {
+      "display_name": "Starbucks Corporation",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 55,
+        "beef": null,
+        "timber": 50,
+        "pulp": 52
+      },
+      "commodities_exposed": [
+        "palm",
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "domino-s-pizza": {
+      "display_name": "Domino's Pizza",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 18,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 18,
+        "beef": null,
+        "timber": null,
+        "pulp": 18
+      },
+      "commodities_exposed": [
+        "palm",
+        "pulp"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "wendy-s": {
+      "display_name": "Wendy's Company",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 22,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": 22,
+        "timber": null,
+        "pulp": 22
+      },
+      "commodities_exposed": [
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "compass": {
+      "display_name": "Compass Group PLC",
+      "country": "United Kingdom",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 60,
+        "beef": 45,
+        "timber": null,
+        "pulp": 52
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "aramark": {
+      "display_name": "Aramark",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 35,
+        "palm": 38,
+        "beef": 28,
+        "timber": null,
+        "pulp": 30
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
     "walmart": {
       "display_name": "Walmart Inc",
@@ -259,7 +1206,460 @@
         "pulp"
       ],
       "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "costco": {
+      "display_name": "Costco Wholesale",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 38,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 38,
+        "beef": 30,
+        "timber": null,
+        "pulp": 38
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "kroger": {
+      "display_name": "Kroger Co",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": 32,
+        "beef": 25,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "ahold-delhaize": {
+      "display_name": "Ahold Delhaize",
+      "country": "Netherlands",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 55,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 62,
+        "beef": 48,
+        "timber": null,
+        "pulp": 52
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "tesco": {
+      "display_name": "Tesco PLC",
+      "country": "United Kingdom",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 72,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 75,
+        "palm": 80,
+        "beef": 68,
+        "timber": null,
+        "pulp": 72
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "sainsbury-s": {
+      "display_name": "J Sainsbury",
+      "country": "United Kingdom",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 75,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 80,
+        "palm": 82,
+        "beef": 70,
+        "timber": null,
+        "pulp": 75
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "marks-and-spencers": {
+      "display_name": "Marks & Spencer",
+      "country": "United Kingdom",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 82,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 85,
+        "palm": 90,
+        "beef": 75,
+        "timber": null,
+        "pulp": 82
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "leader",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "carrefour": {
+      "display_name": "Carrefour",
+      "country": "France",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 55,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 60,
+        "beef": 45,
+        "timber": null,
+        "pulp": 55
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "aldi": {
+      "display_name": "Aldi Süd",
+      "country": "Germany",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 48,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 52,
+        "palm": 55,
+        "beef": 42,
+        "timber": null,
+        "pulp": 48
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "whole-foods-market": {
+      "display_name": "Whole Foods Market",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 55,
+        "palm": 60,
+        "beef": 45,
+        "timber": null,
+        "pulp": 52
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "target": {
+      "display_name": "Target Corporation",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 38,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 38,
+        "palm": 42,
+        "beef": 32,
+        "timber": null,
+        "pulp": 38
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "trader-joe-s": {
+      "display_name": "Trader Joe's",
+      "country": "United States",
+      "sector": "Retailer/Restaurant",
+      "entity_type": "company",
+      "overall_score": 18,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": 18,
+        "palm": 22,
+        "beef": 18,
+        "timber": null,
+        "pulp": 18
+      },
+      "commodities_exposed": [
+        "soy",
+        "palm",
+        "beef",
+        "pulp"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "zara-inditex": {
+      "display_name": "Inditex (Zara)",
+      "country": "Spain",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 62,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 68
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "handm": {
+      "display_name": "H&M Hennes & Mauritz",
+      "country": "Sweden",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 58,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 62
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "nike": {
+      "display_name": "Nike Inc",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 32
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "adidas": {
+      "display_name": "Adidas AG",
+      "country": "Germany",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 42,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 45
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "lvmh": {
+      "display_name": "LVMH",
+      "country": "France",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 38,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 38
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "kering": {
+      "display_name": "Kering",
+      "country": "France",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 52,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": 55,
+        "pulp": 52
+      },
+      "commodities_exposed": [
+        "timber",
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "hermes-international": {
+      "display_name": "Hermès International",
+      "country": "France",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "gap-inc": {
+      "display_name": "Gap Inc",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 28,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 28
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "tapestry": {
+      "display_name": "Tapestry Inc",
+      "country": "United States",
+      "sector": "Manufacturer",
+      "entity_type": "company",
+      "overall_score": 22,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": 22
+      },
+      "commodities_exposed": [
+        "pulp"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
     "blackrock": {
       "display_name": "BlackRock Inc",
@@ -279,9 +1679,52 @@
         "all (via portfolio)"
       ],
       "forest500Tier": "laggard",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
     },
-    "jpmorgan-chase-and": {
+    "vanguard": {
+      "display_name": "Vanguard Group",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 8,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "state-street": {
+      "display_name": "State Street Corporation",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 18,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "jpmorgan-chase": {
       "display_name": "JPMorgan Chase & Co",
       "country": "United States",
       "sector": "Financial Institution",
@@ -299,11 +1742,201 @@
         "all (via portfolio)"
       ],
       "forest500Tier": "laggard",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
     },
-    "hsbc": {
-      "display_name": "HSBC Holdings",
+    "citigroup": {
+      "display_name": "Citigroup",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 15,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "bank-of-america": {
+      "display_name": "Bank of America",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 12,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "wells-fargo": {
+      "display_name": "Wells Fargo",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 8,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "goldman-sachs": {
+      "display_name": "Goldman Sachs Group",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 12,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "morgan-stanley": {
+      "display_name": "Morgan Stanley",
+      "country": "United States",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 10,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "barclays": {
+      "display_name": "Barclays PLC",
       "country": "United Kingdom",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 32,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "credit-agricole-s-a": {
+      "display_name": "Crédit Agricole",
+      "country": "France",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 30,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "deutsche-bank-aktiengesellschaft": {
+      "display_name": "Deutsche Bank",
+      "country": "Germany",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 25,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "ing-groep-nv": {
+      "display_name": "ING Group",
+      "country": "Netherlands",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 42,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "midpack",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "santander-uk": {
+      "display_name": "Santander",
+      "country": "Spain",
       "sector": "Financial Institution",
       "entity_type": "financial_institution",
       "overall_score": 28,
@@ -319,7 +1952,113 @@
         "all (via portfolio)"
       ],
       "forest500Tier": "midpack",
-      "hasDeforestationExposure": true
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "credit-suisse-ag": {
+      "display_name": "Credit Suisse (UBS)",
+      "country": "Switzerland",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 18,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
+    },
+    "agricultural-bank-of-china": {
+      "display_name": "Agricultural Bank of China",
+      "country": "China",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 5,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "prudential": {
+      "display_name": "Prudential plc",
+      "country": "United Kingdom",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 15,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "manulife-financial": {
+      "display_name": "Manulife Financial",
+      "country": "Canada",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 12,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "direct"
+    },
+    "bank-of-nova-scotia": {
+      "display_name": "TD Bank Group",
+      "country": "Canada",
+      "sector": "Financial Institution",
+      "entity_type": "financial_institution",
+      "overall_score": 12,
+      "score_year": 2024,
+      "commodity_scores": {
+        "soy": null,
+        "palm": null,
+        "beef": null,
+        "timber": null,
+        "pulp": null
+      },
+      "commodities_exposed": [
+        "all (via portfolio)"
+      ],
+      "forest500Tier": "laggard",
+      "hasDeforestationExposure": true,
+      "_routedVia": "slugHint"
     }
   }
 }

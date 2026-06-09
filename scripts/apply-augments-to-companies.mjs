@@ -43,6 +43,11 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "climate-coalitions",
   // Round-4 labor-deep additions:
   "fair-labor-association", "ccc-transparency-pledge",
+  // Round-5 environment-deep additions — Forest 500 leaders only.
+  // (Forest 500 mid/laggard records write negative narratives via the
+  //  writer; the merge-flag only matters for "leader" tier hits that
+  //  should aggregate with other positives.)
+  "forest500",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -798,6 +803,138 @@ const WRITERS = [
         out.push({ category: cat, narrative, sc, severity });
       }
       return out;
+    },
+  },
+  // ─── Forest 500 — tropical deforestation policy + commodity scores ───
+  // Global Canopy's annual scorecard. Score 0-100 across soy, palm oil,
+  // beef, timber, pulp-and-paper. Tier rule (from forest500-merge):
+  //   leader  >= 70, laggard <= 25, midpack in between.
+  //
+  // Writes:
+  //   - "environment" always (policy on deforestation is an env signal)
+  //   - "labor" if supply-chain risk implied (laggard producer/trader
+  //     in soy/palm/beef where forced-labor + indigenous-rights overlap
+  //     is documented)
+  //
+  // Categories scoring:
+  //   leader  → sc "good",     severity "positive"
+  //   midpack → sc "mixed",    severity "mixed"
+  //   laggard → sc "poor"      (very_poor if score <= 10), severity "negative"
+  //
+  // Financial institutions (BlackRock, JPMorgan, etc.) score deforestation-
+  // policy exposure via portfolio; their narrative is framed accordingly.
+  {
+    name: "forest500",
+    write: (e) => {
+      const tier = e.forest500Tier;
+      if (!tier) return [];
+      const score = e.overall_score;
+      const isFI = e.entity_type === "financial_institution";
+      const commodities = Array.isArray(e.commodities_exposed) && e.commodities_exposed.length
+        ? e.commodities_exposed.join(", ") : "";
+      const commodityStr = commodities ? ` Exposed to ${commodities}.` : "";
+      const channel = isFI ? "portfolio financing" : "supply-chain";
+      const yr = e.score_year || 2024;
+
+      const headline =
+        tier === "leader"  ? `Forest 500 ${yr} leader (score ${score}/100) — strong tropical deforestation policy + implementation on commodity ${channel}.`
+        : tier === "laggard" ? `Forest 500 ${yr} laggard (score ${score}/100) — weak or no published tropical deforestation policy on ${channel}.`
+        :                    `Forest 500 ${yr}: score ${score}/100 — partial deforestation policy / implementation gaps on ${channel}.`;
+
+      // Pick out the weakest commodity score to highlight when laggard.
+      let pivot = "";
+      if (tier === "laggard" && e.commodity_scores) {
+        const cs = e.commodity_scores;
+        const labelMap = { soy: "soy", palm: "palm oil", beef: "beef", timber: "timber", pulp: "pulp & paper" };
+        let worst = null;
+        for (const k of Object.keys(labelMap)) {
+          const v = cs[k];
+          if (v == null) continue;
+          if (worst == null || v < worst.v) worst = { k, v };
+        }
+        if (worst) pivot = ` Weakest commodity: ${labelMap[worst.k]} (${worst.v}/100).`;
+      }
+
+      const env = {
+        category: "environment",
+        narrative: `${headline}${commodityStr}${pivot}`,
+        sc: tier === "leader" ? "good"
+          : tier === "laggard" && score != null && score <= 10 ? "very_poor"
+          : tier === "laggard" ? "poor"
+          : "mixed",
+        severity: tier === "leader" ? "positive"
+          : tier === "laggard" ? "negative"
+          : "mixed",
+        mergePositive: tier === "leader",
+      };
+
+      const out = [env];
+
+      // Supply-chain labor signal: laggard producers/traders in soy/palm/beef
+      // sit alongside documented forced-labor / indigenous-rights pressure.
+      const laborCommoditiesHit =
+        Array.isArray(e.commodities_exposed) &&
+        e.commodities_exposed.some(c => /soy|palm|beef|timber/.test(c));
+      if (tier === "laggard" && !isFI && laborCommoditiesHit) {
+        out.push({
+          category: "labor",
+          narrative: `Forest 500 ${yr} flags weak supply-chain due-diligence on ${commodities} — sectors with documented forced-labor and indigenous-rights exposure.`,
+          sc: "mixed",
+          severity: "negative",
+        });
+      }
+      return out;
+    },
+  },
+  // ─── BHRRC Transition Minerals Tracker — human-rights allegations on
+  // mining cos producing the 6 transition minerals (cobalt, copper,
+  // lithium, manganese, nickel, zinc) tied to EV batteries + renewables.
+  //
+  // Writes both "labor" (worker rights, community displacement) and
+  // "environment" (water, tailings, biodiversity). Severity scales with
+  // allegation count:
+  //   1-4 = mixed   (sc "mixed"   / severity "mixed")
+  //   5-14 = poor   (sc "poor"    / severity "negative")
+  //   15+  = very_poor (sc "very_poor" / severity "negative")
+  {
+    name: "bhrrc-transition-minerals",
+    write: (e) => {
+      const count = Number(e.allegation_count || 0);
+      if (!count) return [];
+      const minerals = (e.minerals || []).join(", ");
+      const countries = (e.countries || []).slice(0, 4).join(", ");
+      const period = e.period || "2010-2024";
+      const types = (e.allegation_types || []).slice(0, 4).join(", ");
+
+      const sc = count >= 15 ? "very_poor" : count >= 5 ? "poor" : "mixed";
+      const severity = count >= 5 ? "negative" : "mixed";
+
+      const lead = count === 1
+        ? "1 documented human-rights allegation"
+        : `${count} documented human-rights allegations`;
+      const mineralPhrase = minerals ? ` in transition-mineral mining (${minerals})` : " in transition-mineral mining";
+      const countryPhrase = countries ? `; locations: ${countries}` : "";
+      const typePhrase = types ? `; allegation types: ${types}` : "";
+
+      const labor = {
+        category: "labor",
+        narrative: `BHRRC Transition Minerals Tracker (${period}): ${lead}${mineralPhrase}${countryPhrase}${typePhrase}. Categories tracked include worker safety, forced/child labor, and community displacement.`,
+        sc,
+        severity,
+      };
+
+      // Environment side — same allegation pool but framed via tailings,
+      // water, biodiversity. Slightly softer severity since some allegations
+      // are labor-only; we still surface as a concern when count >= 5.
+      const envSc = count >= 15 ? "poor" : count >= 5 ? "mixed" : "mixed";
+      const env = {
+        category: "environment",
+        narrative: `BHRRC Transition Minerals Tracker: ${count} allegation${count === 1 ? "" : "s"} tied to ${minerals || "transition-mineral"} mining operations (${period}). Environmental concerns include tailings, water contamination, and biodiversity loss in mining communities.`,
+        sc: envSc,
+        severity: count >= 5 ? "negative" : "mixed",
+      };
+
+      return [labor, env];
     },
   },
   // ─── Health + pharma + food-safety + medical (round 3) ─────────────
