@@ -41,6 +41,8 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "net-zero-tracker", "textile-exchange", "epa-smartway", "epa-green-vehicle",
   "nlrb-voluntary-recognition", "corporate-giving",
   "climate-coalitions",
+  // Round-4 product-safety / verified-mark sources
+  "product-safety-deep", "ewg-skin-deep", "ewg-food",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -888,6 +890,108 @@ const WRITERS = [
         narrative,
         sc,
         severity: "negative",
+      }];
+    },
+  },
+  // ─── Product-safety / ingredient certifications (round 4) ─────────────
+  // Routes EWG VERIFIED, Made Safe, Good Housekeeping Seal, NSF,
+  // GREENGUARD, WaterSense, GoodGuide (archived), Certified Vegan
+  // (vegan.org) and Vegan Society into the right value category.
+  {
+    name: "product-safety-deep",
+    write: (e) => {
+      const certs = Array.isArray(e.certifications) ? e.certifications : [];
+      if (!certs.length) return [];
+      const out = [];
+      // Pretty per-cert blurb factory
+      const blurb = (c) => {
+        const label = c.label || c.source;
+        const ct = c.product_count ? ` (${c.product_count} certified product${c.product_count === 1 ? "" : "s"})` : "";
+        const score = c.avg_score ? ` — GoodGuide avg ${c.avg_score.toFixed(1)}/10` : "";
+        return `${label}${ct}${score}.`;
+      };
+      const inCats = new Set(e.categories || ["health"]);
+      // Health (most certs)
+      const healthCerts = certs.filter(c => ["ewg-verified","made-safe","good-housekeeping-seal","goodguide","nsf","greenguard","vegan-org","vegan-society"].includes(c.source));
+      if (healthCerts.length && inCats.has("health")) {
+        out.push({
+          category: "health",
+          narrative: healthCerts.map(blurb).join(" "),
+          sc: "positive",
+          severity: "positive",
+          mergePositive: true,
+        });
+      }
+      // Environment (GREENGUARD + WaterSense)
+      const envCerts = certs.filter(c => ["greenguard","watersense"].includes(c.source));
+      if (envCerts.length && inCats.has("environment")) {
+        out.push({
+          category: "environment",
+          narrative: envCerts.map(blurb).join(" "),
+          sc: "positive",
+          severity: "positive",
+          mergePositive: true,
+        });
+      }
+      // Animals (vegan certifications)
+      const animalsCerts = certs.filter(c => ["vegan-org","vegan-society"].includes(c.source));
+      if (animalsCerts.length && inCats.has("animals")) {
+        out.push({
+          category: "animals",
+          narrative: animalsCerts.map(blurb).join(" "),
+          sc: "positive",
+          severity: "positive",
+          mergePositive: true,
+        });
+      }
+      return out;
+    },
+  },
+  // ─── EWG Skin Deep cosmetics hazard rollup ────────────────────────────
+  {
+    name: "ewg-skin-deep",
+    write: (e) => {
+      if (!e.ewg_product_count || e.ewg_product_count < 1) return [];
+      const sev = e.severity || "neutral";
+      const sc = sev === "positive" ? "positive"
+             : sev === "negative" ? "negative"
+             : sev === "mixed"    ? "mixed"
+             : "neutral";
+      const flaggedPct = Math.round((e.ewg_pct_flagged || 0) * 100);
+      const verdict = sev === "negative"
+        ? `${flaggedPct}% of ${e.ewg_product_count} products scored high-hazard (≥7/10)`
+        : sev === "positive"
+          ? `All ${e.ewg_product_count} products score low-hazard (avg ${e.ewg_avg_score}/10)`
+          : `${e.ewg_product_count} products scored — avg ${e.ewg_avg_score}/10, worst ${e.ewg_worst_score}/10, ${flaggedPct}% flagged`;
+      return [{
+        category: "health",
+        narrative: `EWG Skin Deep cosmetics hazard rating: ${verdict}.`,
+        sc,
+        severity: sev === "neutral" ? "neutral" : sev,
+      }];
+    },
+  },
+  // ─── EWG Food Scores rollup ───────────────────────────────────────────
+  {
+    name: "ewg-food",
+    write: (e) => {
+      if (!e.food_product_count || e.food_product_count < 1) return [];
+      const sev = e.severity || "neutral";
+      const sc = sev === "positive" ? "positive"
+             : sev === "negative" ? "negative"
+             : sev === "mixed"    ? "mixed"
+             : "neutral";
+      const flaggedPct = Math.round((e.food_pct_flagged || 0) * 100);
+      const verdict = sev === "negative"
+        ? `${flaggedPct}% of ${e.food_product_count} products scored high-concern (≥7/10)`
+        : sev === "positive"
+          ? `${e.food_product_count} products score low-concern (avg ${e.food_avg_score}/10)`
+          : `${e.food_product_count} products scored — avg ${e.food_avg_score}/10, worst ${e.food_worst_score}/10, ${flaggedPct}% flagged`;
+      return [{
+        category: "health",
+        narrative: `EWG Food Scores nutrition / ingredient / processing rating: ${verdict}.`,
+        sc,
+        severity: sev === "neutral" ? "neutral" : sev,
       }];
     },
   },

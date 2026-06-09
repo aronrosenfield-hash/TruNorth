@@ -1,0 +1,466 @@
+{
+  "source": "ewg-food",
+  "source_url": "https://www.ewg.org/foodscores/",
+  "generated_at": "2026-06-09T19:24:59.249Z",
+  "snapshot_date": "2026-06-09",
+  "raw_product_count": 68,
+  "matched_product_count": 64,
+  "unmatched_product_count": 4,
+  "matched_slug_count": 18,
+  "severity_histogram": {
+    "positive": 0,
+    "mixed": 1,
+    "neutral": 9,
+    "negative": 8
+  },
+  "flag_threshold": 7,
+  "min_sample_for_opinion": 3,
+  "companies": {
+    "lay-s": {
+      "slug": "lay-s",
+      "food_avg_score": 7.33,
+      "food_worst_score": 8,
+      "food_pct_flagged": 1,
+      "food_product_count": 3,
+      "food_flagged_count": 3,
+      "sample_products": [
+        {
+          "product": "Lay's Sour Cream & Onion",
+          "score": 8
+        },
+        {
+          "product": "Lay's Classic Potato Chips",
+          "score": 7
+        },
+        {
+          "product": "Lay's Wavy Original",
+          "score": 7
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "doritos": {
+      "slug": "doritos",
+      "food_avg_score": 8.33,
+      "food_worst_score": 9,
+      "food_pct_flagged": 1,
+      "food_product_count": 3,
+      "food_flagged_count": 3,
+      "sample_products": [
+        {
+          "product": "Doritos Spicy Sweet Chili",
+          "score": 9
+        },
+        {
+          "product": "Doritos Nacho Cheese",
+          "score": 8
+        },
+        {
+          "product": "Doritos Cool Ranch",
+          "score": 8
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "cheetos": {
+      "slug": "cheetos",
+      "food_avg_score": 8.5,
+      "food_worst_score": 9,
+      "food_pct_flagged": 1,
+      "food_product_count": 2,
+      "food_flagged_count": 2,
+      "sample_products": [
+        {
+          "product": "Cheetos Flamin' Hot",
+          "score": 9
+        },
+        {
+          "product": "Cheetos Crunchy",
+          "score": 8
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "general-mills": {
+      "slug": "general-mills",
+      "food_avg_score": 4.5,
+      "food_worst_score": 8,
+      "food_pct_flagged": 0.286,
+      "food_product_count": 14,
+      "food_flagged_count": 4,
+      "sample_products": [
+        {
+          "product": "Lucky Charms",
+          "score": 8
+        },
+        {
+          "product": "Trix Cereal",
+          "score": 8
+        },
+        {
+          "product": "Cinnamon Toast Crunch",
+          "score": 8
+        },
+        {
+          "product": "Yoplait Whips!",
+          "score": 7
+        },
+        {
+          "product": "Honey Nut Cheerios",
+          "score": 6
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "amy-s-kitchen": {
+      "slug": "amy-s-kitchen",
+      "food_avg_score": 2.5,
+      "food_worst_score": 3,
+      "food_pct_flagged": 0,
+      "food_product_count": 4,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Amy's Cheese Pizza",
+          "score": 3
+        },
+        {
+          "product": "Amy's Vegetable Lasagna",
+          "score": 3
+        },
+        {
+          "product": "Amy's Organic Lentil Soup",
+          "score": 2
+        },
+        {
+          "product": "Amy's Black Bean Vegetable Enchilada",
+          "score": 2
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "kraft-heinz": {
+      "slug": "kraft-heinz",
+      "food_avg_score": 7.71,
+      "food_worst_score": 9,
+      "food_pct_flagged": 0.857,
+      "food_product_count": 7,
+      "food_flagged_count": 6,
+      "sample_products": [
+        {
+          "product": "Oscar Mayer Lunchables Turkey & Cheddar",
+          "score": 9
+        },
+        {
+          "product": "Oscar Mayer Wieners",
+          "score": 9
+        },
+        {
+          "product": "Kraft Velveeta Cheese Sauce",
+          "score": 8
+        },
+        {
+          "product": "Oscar Mayer Classic Bologna",
+          "score": 8
+        },
+        {
+          "product": "Kraft Macaroni & Cheese Original",
+          "score": 7
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "kellogg-s": {
+      "slug": "kellogg-s",
+      "food_avg_score": 6.75,
+      "food_worst_score": 9,
+      "food_pct_flagged": 0.5,
+      "food_product_count": 4,
+      "food_flagged_count": 2,
+      "sample_products": [
+        {
+          "product": "Kellogg's Pop-Tarts Frosted Strawberry",
+          "score": 9
+        },
+        {
+          "product": "Kellogg's Frosted Flakes",
+          "score": 7
+        },
+        {
+          "product": "Kellogg's Special K Original",
+          "score": 6
+        },
+        {
+          "product": "Kellogg's Corn Flakes",
+          "score": 5
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "nature-valley": {
+      "slug": "nature-valley",
+      "food_avg_score": 5.5,
+      "food_worst_score": 6,
+      "food_pct_flagged": 0,
+      "food_product_count": 2,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Nature Valley Sweet & Salty Peanut",
+          "score": 6
+        },
+        {
+          "product": "Nature Valley Crunchy Oats 'n Honey",
+          "score": 5
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "rxbar": {
+      "slug": "rxbar",
+      "food_avg_score": 2,
+      "food_worst_score": 2,
+      "food_pct_flagged": 0,
+      "food_product_count": 2,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "RXBAR Chocolate Sea Salt",
+          "score": 2
+        },
+        {
+          "product": "RXBAR Peanut Butter",
+          "score": 2
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "coca-cola": {
+      "slug": "coca-cola",
+      "food_avg_score": 8.33,
+      "food_worst_score": 9,
+      "food_pct_flagged": 1,
+      "food_product_count": 3,
+      "food_flagged_count": 3,
+      "sample_products": [
+        {
+          "product": "Coca-Cola Classic",
+          "score": 9
+        },
+        {
+          "product": "Diet Coke",
+          "score": 8
+        },
+        {
+          "product": "Coca-Cola Zero Sugar",
+          "score": 8
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "pepsi": {
+      "slug": "pepsi",
+      "food_avg_score": 8.67,
+      "food_worst_score": 9,
+      "food_pct_flagged": 1,
+      "food_product_count": 3,
+      "food_flagged_count": 3,
+      "sample_products": [
+        {
+          "product": "Pepsi",
+          "score": 9
+        },
+        {
+          "product": "Pepsi Wild Cherry",
+          "score": 9
+        },
+        {
+          "product": "Diet Pepsi",
+          "score": 8
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "lactalis": {
+      "slug": "lactalis",
+      "food_avg_score": 1.5,
+      "food_worst_score": 2,
+      "food_pct_flagged": 0,
+      "food_product_count": 2,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Stonyfield Organic Whole Milk Yogurt",
+          "score": 2
+        },
+        {
+          "product": "Stonyfield Organic Greek Yogurt Plain",
+          "score": 1
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "chobani": {
+      "slug": "chobani",
+      "food_avg_score": 3.5,
+      "food_worst_score": 5,
+      "food_pct_flagged": 0,
+      "food_product_count": 2,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Chobani Flip Almond Coco Loco",
+          "score": 5
+        },
+        {
+          "product": "Chobani Greek Yogurt Plain",
+          "score": 2
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "nestl": {
+      "slug": "nestl",
+      "food_avg_score": 8.5,
+      "food_worst_score": 9,
+      "food_pct_flagged": 1,
+      "food_product_count": 4,
+      "food_flagged_count": 4,
+      "sample_products": [
+        {
+          "product": "Hot Pockets Pepperoni Pizza",
+          "score": 9
+        },
+        {
+          "product": "Hot Pockets Philly Steak & Cheese",
+          "score": 9
+        },
+        {
+          "product": "DiGiorno Rising Crust Pepperoni Pizza",
+          "score": 8
+        },
+        {
+          "product": "DiGiorno Crispy Pan Pizza Three Meat",
+          "score": 8
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "hellmann-s": {
+      "slug": "hellmann-s",
+      "food_avg_score": 6.5,
+      "food_worst_score": 7,
+      "food_pct_flagged": 0.5,
+      "food_product_count": 2,
+      "food_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Hellmann's Light Mayonnaise",
+          "score": 7
+        },
+        {
+          "product": "Hellmann's Real Mayonnaise",
+          "score": 6
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "heinz": {
+      "slug": "heinz",
+      "food_avg_score": 4.5,
+      "food_worst_score": 6,
+      "food_pct_flagged": 0,
+      "food_product_count": 2,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Heinz Tomato Ketchup",
+          "score": 6
+        },
+        {
+          "product": "Heinz Yellow Mustard",
+          "score": 3
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "campbells": {
+      "slug": "campbells",
+      "food_avg_score": 6.67,
+      "food_worst_score": 7,
+      "food_pct_flagged": 0.667,
+      "food_product_count": 3,
+      "food_flagged_count": 2,
+      "sample_products": [
+        {
+          "product": "Campbell's Chicken Noodle Soup",
+          "score": 7
+        },
+        {
+          "product": "Campbell's Cream of Mushroom",
+          "score": 7
+        },
+        {
+          "product": "Campbell's Tomato Soup",
+          "score": 6
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    },
+    "kashi": {
+      "slug": "kashi",
+      "food_avg_score": 3.5,
+      "food_worst_score": 4,
+      "food_pct_flagged": 0,
+      "food_product_count": 2,
+      "food_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Kashi 7 Whole Grain Honey Puffs",
+          "score": 4
+        },
+        {
+          "product": "Kashi GoLean Crunch! Cereal",
+          "score": 3
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-food",
+      "source_url": "https://www.ewg.org/foodscores/"
+    }
+  }
+}

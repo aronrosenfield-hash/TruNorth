@@ -1,0 +1,98 @@
+{
+  "_doc": "Fixture for ewg-skin-deep-fetch — per-product hazard scores (1-10, lower=safer). EWG flags any score >=7 as a high-hazard product. Brand-level rollup computes pct_flagged, avg_score, worst_score. Records here mirror the shape returned by EWG's public product pages.",
+  "_source_url": "https://www.ewg.org/skindeep/",
+  "products": [
+    { "product": "Olay Regenerist Micro-Sculpting Cream", "brand": "Olay",     "score": 4, "concerns": ["allergies","contamination"] },
+    { "product": "Olay Total Effects 7-in-1 Anti-Aging",  "brand": "Olay",     "score": 5, "concerns": ["allergies"] },
+    { "product": "Olay Pro-X Anti-Aging Eye Cream",       "brand": "Olay",     "score": 6, "concerns": ["fragrance-undisclosed"] },
+    { "product": "Olay Body Wash Ultra Moisture",         "brand": "Olay",     "score": 7, "concerns": ["fragrance-undisclosed","preservatives"] },
+
+    { "product": "Pantene Pro-V Daily Moisture Renewal Shampoo", "brand": "Pantene", "score": 5 },
+    { "product": "Pantene Pro-V Conditioner",                    "brand": "Pantene", "score": 6 },
+    { "product": "Pantene 3 Minute Miracle Deep Conditioner",    "brand": "Pantene", "score": 7 },
+    { "product": "Pantene Pro-V Smooth & Sleek Hairspray",       "brand": "Pantene", "score": 8 },
+
+    { "product": "Maybelline Great Lash Mascara",   "brand": "Maybelline", "score": 4 },
+    { "product": "Maybelline Fit Me Foundation",    "brand": "Maybelline", "score": 6 },
+    { "product": "Maybelline SuperStay Matte Ink",  "brand": "Maybelline", "score": 7 },
+    { "product": "Maybelline Color Sensational Lipstick", "brand": "Maybelline", "score": 7 },
+
+    { "product": "L'Oreal Revitalift Triple Power",       "brand": "L'Oreal Paris", "score": 5 },
+    { "product": "L'Oreal Voluminous Mascara",            "brand": "L'Oreal Paris", "score": 6 },
+    { "product": "L'Oreal True Match Foundation",         "brand": "L'Oreal Paris", "score": 7 },
+    { "product": "L'Oreal Elvive Total Repair 5 Shampoo", "brand": "L'Oreal Paris", "score": 5 },
+
+    { "product": "Dove Beauty Bar",          "brand": "Dove", "score": 3 },
+    { "product": "Dove Deep Moisture Body Wash", "brand": "Dove", "score": 4 },
+    { "product": "Dove Sensitive Skin Bar",  "brand": "Dove", "score": 2 },
+    { "product": "Dove Antiperspirant Deodorant", "brand": "Dove", "score": 6 },
+
+    { "product": "Tom's of Maine Anticavity Toothpaste", "brand": "Tom's of Maine", "score": 2 },
+    { "product": "Tom's of Maine Deodorant",             "brand": "Tom's of Maine", "score": 1 },
+    { "product": "Tom's of Maine Body Wash",             "brand": "Tom's of Maine", "score": 2 },
+    { "product": "Tom's of Maine Soap Bar",              "brand": "Tom's of Maine", "score": 1 },
+
+    { "product": "Burt's Bees Lip Balm",     "brand": "Burt's Bees", "score": 1 },
+    { "product": "Burt's Bees Hand Salve",   "brand": "Burt's Bees", "score": 1 },
+    { "product": "Burt's Bees Beeswax Lip Balm Tin", "brand": "Burt's Bees", "score": 2 },
+    { "product": "Burt's Bees Tinted Lip Balm",      "brand": "Burt's Bees", "score": 2 },
+
+    { "product": "Dr. Bronner's Pure-Castile Liquid Soap", "brand": "Dr. Bronner's", "score": 1 },
+    { "product": "Dr. Bronner's Sugar Soap",       "brand": "Dr. Bronner's", "score": 1 },
+    { "product": "Dr. Bronner's Toothpaste",       "brand": "Dr. Bronner's", "score": 1 },
+
+    { "product": "Garnier Fructis Sleek & Shine Shampoo", "brand": "Garnier", "score": 6 },
+    { "product": "Garnier Fructis Conditioner",           "brand": "Garnier", "score": 6 },
+    { "product": "Garnier SkinActive Micellar Water",     "brand": "Garnier", "score": 5 },
+    { "product": "Garnier Nutrisse Hair Color",           "brand": "Garnier", "score": 8 },
+
+    { "product": "Neutrogena Hydro Boost Water Gel",    "brand": "Neutrogena", "score": 4 },
+    { "product": "Neutrogena Naturals Face Cleanser",   "brand": "Neutrogena", "score": 3 },
+    { "product": "Neutrogena Rapid Wrinkle Repair",     "brand": "Neutrogena", "score": 5 },
+    { "product": "Neutrogena Ultra Sheer Sunscreen SPF 70", "brand": "Neutrogena", "score": 7 },
+
+    { "product": "CoverGirl LashBlast Mascara",        "brand": "CoverGirl", "score": 5 },
+    { "product": "CoverGirl Outlast All-Day Lipstick", "brand": "CoverGirl", "score": 6 },
+    { "product": "CoverGirl TruBlend Foundation",      "brand": "CoverGirl", "score": 6 },
+
+    { "product": "Revlon ColorStay Foundation",  "brand": "Revlon", "score": 6 },
+    { "product": "Revlon Super Lustrous Lipstick", "brand": "Revlon", "score": 7 },
+    { "product": "Revlon Volume + Length Magnified Mascara", "brand": "Revlon", "score": 6 },
+
+    { "product": "Aveeno Daily Moisturizing Lotion", "brand": "Aveeno", "score": 3 },
+    { "product": "Aveeno Positively Radiant Cleanser", "brand": "Aveeno", "score": 4 },
+    { "product": "Aveeno Active Naturals Shampoo",     "brand": "Aveeno", "score": 3 },
+
+    { "product": "Pacifica Beauty Coconut Power Lip Trio", "brand": "Pacifica Beauty", "score": 2 },
+    { "product": "Pacifica Solar Sensitive Mineral Sunscreen", "brand": "Pacifica Beauty", "score": 1 },
+    { "product": "Pacifica Vegan Mascara",                 "brand": "Pacifica Beauty", "score": 2 },
+
+    { "product": "Beautycounter Countertime Tripeptide Radiance Serum", "brand": "Beautycounter", "score": 1 },
+    { "product": "Beautycounter Countermatch Recovery Sleeping Cream", "brand": "Beautycounter", "score": 1 },
+    { "product": "Beautycounter Counter+ Charcoal Bar Soap", "brand": "Beautycounter", "score": 1 },
+
+    { "product": "Estee Lauder Advanced Night Repair Serum", "brand": "Estee Lauder", "score": 6 },
+    { "product": "Estee Lauder Pure Color Envy Lipstick",    "brand": "Estee Lauder", "score": 7 },
+    { "product": "Estee Lauder Double Wear Foundation",      "brand": "Estee Lauder", "score": 6 },
+
+    { "product": "Clinique Dramatically Different Moisturizing Lotion", "brand": "Clinique", "score": 5 },
+    { "product": "Clinique High Impact Mascara",                        "brand": "Clinique", "score": 5 },
+    { "product": "Clinique Almost Lipstick",                            "brand": "Clinique", "score": 6 },
+
+    { "product": "MAC Studio Fix Powder Plus Foundation", "brand": "MAC Cosmetics", "score": 6 },
+    { "product": "MAC Lipstick Ruby Woo",                 "brand": "MAC Cosmetics", "score": 7 },
+    { "product": "MAC Pro Longwear Eyeshadow",            "brand": "MAC Cosmetics", "score": 6 },
+
+    { "product": "NYX Professional Makeup Lip Lingerie",   "brand": "NYX", "score": 5 },
+    { "product": "NYX Epic Smoke Liner",                   "brand": "NYX", "score": 6 },
+    { "product": "NYX Bare With Me Tinted Skin Veil",      "brand": "NYX", "score": 5 },
+
+    { "product": "Bath & Body Works Japanese Cherry Blossom Body Lotion", "brand": "Bath & Body Works", "score": 7 },
+    { "product": "Bath & Body Works Warm Vanilla Sugar Fine Fragrance Mist", "brand": "Bath & Body Works", "score": 8 },
+    { "product": "Bath & Body Works PocketBac Hand Sanitizer", "brand": "Bath & Body Works", "score": 6 },
+
+    { "product": "Suave Essentials Tropical Coconut Shampoo", "brand": "Suave", "score": 6 },
+    { "product": "Suave Professionals Almond + Shea Butter Conditioner", "brand": "Suave", "score": 6 },
+    { "product": "Suave 24-Hour Protection Deodorant",        "brand": "Suave", "score": 7 }
+  ]
+}
