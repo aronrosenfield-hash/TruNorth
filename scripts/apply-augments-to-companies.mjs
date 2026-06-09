@@ -563,6 +563,83 @@ const WRITERS = [
       return [{ category: "political", narrative, sc: enum_ }];
     },
   },
+  // ─── USAspending federal contracts (FY2024) ──────────────────────────
+  // Augment shape per slug: { usd, agency, category, original_slug }.
+  // Federal contracting alone is neutral — many contracts are essential
+  // goods/services (TRICARE, VA pharmacy, etc.). Narrative reports the
+  // dollar figure factually; sc stays unset so the exec-political-donations
+  // writer (which knows partisan lean) gets first crack at the political
+  // category enum. If no other political writer fires, the category falls
+  // through to default neutral.
+  {
+    name: "usaspending-contracts",
+    write: (e) => {
+      if (!e || !e.usd) return [];
+      const usdStr = e.usd >= 1e9
+        ? `$${(e.usd / 1e9).toFixed(1)}B`
+        : `$${(e.usd / 1e6).toFixed(0)}M`;
+      const agencyStr = e.agency ? ` (primarily ${e.agency})` : "";
+      const narrative =
+        `USAspending.gov: ~${usdStr} in federal contract obligations in FY2024${agencyStr}.`;
+      return [{ category: "political", narrative, severity: "neutral" }];
+    },
+  },
+  // ─── Senate LDA federal lobbying (CY2024) ────────────────────────────
+  // Augment shape per slug: { usd, issues, sc, original_slug }.
+  // Heavy federal lobbying is a yellow flag for the political category but
+  // not directional. sc=bipartisan is the right neutral-but-engaged label
+  // (the lobbying $ alone tells us the company actively influences DC
+  // policy in both directions). The exec-political-donations writer takes
+  // precedence when both fire because it knows actual partisan lean.
+  {
+    name: "senate-lda",
+    write: (e) => {
+      if (!e || !e.usd) return [];
+      const usdStr = e.usd >= 1e6
+        ? `$${(e.usd / 1e6).toFixed(1)}M`
+        : `$${Math.round(e.usd / 1e3)}K`;
+      const issuesStr = Array.isArray(e.issues) && e.issues.length
+        ? ` Top issues: ${e.issues.slice(0, 3).join(", ")}.`
+        : "";
+      const narrative =
+        `Senate LDA: ~${usdStr} in federal lobbying spend in 2024.${issuesStr}`;
+      return [{ category: "political", narrative, sc: "bipartisan", severity: "neutral" }];
+    },
+  },
+  // ─── FARA foreign-agent registrations (DOJ) ──────────────────────────
+  // Augment shape per slug: { registrations[], countries[], match_via,
+  // registration_count }. Match was made via either the US registrant
+  // (a Big-Law/PR firm doing lobbying on behalf of a foreign government)
+  // or the foreign principal itself (e.g. TikTok, Huawei). Each is a
+  // STRONG signal for political category.
+  //
+  // Severity is "negative" only when the registration represents a foreign
+  // state actor under US sanctions/scrutiny (PRC, Russia, etc.). Otherwise
+  // neutral — many FARA registrations are routine (UK trade reps, Japan
+  // tourism boards, etc.).
+  {
+    name: "fara",
+    write: (e) => {
+      if (!e || !e.registration_count) return [];
+      const countries = (e.countries || []).slice(0, 3).join(", ");
+      const cntStr = e.registration_count === 1
+        ? "one active DOJ FARA registration"
+        : `${e.registration_count} active DOJ FARA registrations`;
+      const matchStr = e.match_via === "principal" ? " as foreign principal"
+        : e.match_via === "registrant" ? " as US registrant for a foreign government / entity"
+        : "";
+      const HIGH_RISK = /CHINA|RUSSIA|IRAN|NORTH KOREA|SYRIA|BELARUS|VENEZUELA|MYANMAR|CUBA/i;
+      const highRisk = (e.countries || []).some(c => HIGH_RISK.test(c));
+      const narrative =
+        `Foreign Agents Registration Act: ${cntStr}${matchStr}` +
+        `${countries ? ` (countries: ${countries})` : ""}.`;
+      return [{
+        category: "political",
+        narrative,
+        severity: highRisk ? "negative" : "neutral",
+      }];
+    },
+  },
   // ─── Firearms industry ────────────────────────────────────────────────
   {
     name: "firearms-industry",
