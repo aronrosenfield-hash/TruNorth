@@ -1,0 +1,2481 @@
+{
+  "_license": "Public certification, scorecard, and corporate-commitment records (Humane Farm Animal Care, AWI, American Grassfed Association, BAP/GSA, Salmon-Safe, Bee Better, Audubon, Soil Association, Naturland, Seafood Watch, FishWise, Mercy For Animals, The Humane League, Animal Equality, World Animal Protection, CIWF ChickenTrack, NRDC, Pew, Food Empowerment Project, Slave Free Chocolate, Cocoa Barometer, Toxic-Free Future, CEH, PFAS Project Lab, Green Seal, UL EcoLogo, Cradle to Cradle, EWG). Cite original source URLs.",
+  "_source_file": "data/raw/animal-welfare-ag-r3/2026-06-09.json",
+  "_source_urls": {
+    "certified-humane": "https://certifiedhumane.org/find-a-product/",
+    "awi-cert": "https://awionline.org/farm-animals",
+    "ag-grassfed": "https://www.americangrassfed.org/aga-membership/aga-approved-producers/",
+    "bap": "https://www.bapcertification.org/",
+    "salmon-safe": "https://salmonsafe.org/find/",
+    "bee-better": "https://beebettercertified.org/products/",
+    "audubon-beef": "https://www.audubon.org/conservation/ranching",
+    "soil-association": "https://www.soilassociation.org/",
+    "naturland": "https://www.naturland.de/",
+    "seafood-watch": "https://www.seafoodwatch.org/businesses-organizations/our-business-partners",
+    "fishwise": "https://fishwise.org/about/partners-clients/",
+    "mfa": "https://mercyforanimals.org/our-work/corporate-policy/",
+    "thl": "https://thehumaneleague.org/our-work/corporate-relations",
+    "animal-equality": "https://animalequality.org/",
+    "wap": "https://www.worldanimalprotection.org/",
+    "ciwf-chicken-track": "https://www.chickenwatch.org/",
+    "nrdc-chain": "https://www.nrdc.org/resources/chain-reaction",
+    "pew-abx": "https://www.pewtrusts.org/",
+    "fep-chocolate": "https://foodispower.org/access-food/chocolate-list/",
+    "slave-free-choc": "https://www.slavefreechocolate.org/",
+    "cocoa-barometer": "https://cocoabarometer.org/",
+    "tff-scorecard": "https://toxicfreefuture.org/mind-the-store/",
+    "ceh-alerts": "https://ceh.org/",
+    "pfas-project": "https://pfasproject.com/",
+    "greenseal": "https://greenseal.org/find-products-services/",
+    "ecologo": "https://www.ul.com/services/ecologo-certifications",
+    "c2c": "https://www.c2ccertified.org/products/registry",
+    "ewg-skindeep": "https://www.ewg.org/skindeep/"
+  },
+  "_generated_at": "2026-06-09T18:43:46.402Z",
+  "_stats": {
+    "raw_entries": 157,
+    "matched_companies": 69,
+    "routed_slugHint": 112,
+    "routed_direct": 1,
+    "routed_alias": 2,
+    "routed_parent": 1,
+    "orphans": 41
+  },
+  "companies": {
+    "hormel-foods": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "certified-humane"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Certified Humane"
+        ],
+        "sources": [
+          "certified-humane"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Certified Humane across most natural + organic meat SKUs (Hormel sub-brand)."
+      },
+      "health": {
+        "certifications": [
+          "Certified Humane"
+        ],
+        "sources": [
+          "certified-humane"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Certified Humane across most natural + organic meat SKUs (Hormel sub-brand)."
+      }
+    },
+    "organic-valley": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ag-grassfed",
+        "certified-humane"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Certified Humane",
+          "American Grassfed"
+        ],
+        "sources": [
+          "certified-humane",
+          "ag-grassfed"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Certified Humane across pasture-based dairy + egg cooperatives. Organic Valley Grassmilk line AGA-certified 100% grass-fed."
+      },
+      "health": {
+        "certifications": [
+          "Certified Humane"
+        ],
+        "sources": [
+          "certified-humane"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Certified Humane across pasture-based dairy + egg cooperatives."
+      },
+      "environment": {
+        "certifications": [
+          "American Grassfed"
+        ],
+        "sources": [
+          "ag-grassfed"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Organic Valley Grassmilk line AGA-certified 100% grass-fed."
+      }
+    },
+    "whole-foods-market": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "awi-cert",
+        "ceh-alerts",
+        "seafood-watch",
+        "wap"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "AWI recommended",
+          "Seafood Watch partner",
+          "WAP Leader"
+        ],
+        "sources": [
+          "awi-cert",
+          "seafood-watch",
+          "wap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "AWI guide endorses Whole Foods GAP Step rating policy for meat counter. Seafood Watch business partner — all wild + farmed seafood at Whole Foods counter must be Green or Yellow rated."
+      },
+      "environment": {
+        "certifications": [
+          "Seafood Watch partner",
+          "CEH BPA alert"
+        ],
+        "sources": [
+          "seafood-watch",
+          "ceh-alerts"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Seafood Watch business partner — all wild + farmed seafood at Whole Foods counter must be Green or Yellow rated. CEH historical alert: BPA in canned-food liners (lawsuit settled — Whole Foods agreed to disclosure)."
+      },
+      "health": {
+        "certifications": [
+          "CEH BPA alert"
+        ],
+        "sources": [
+          "ceh-alerts"
+        ],
+        "bestStatus": "concern",
+        "narrative": "CEH historical alert: BPA in canned-food liners (lawsuit settled — Whole Foods agreed to disclosure)."
+      }
+    },
+    "walmart": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "bap",
+        "tff-scorecard",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "BAP certified",
+          "THL behind"
+        ],
+        "sources": [
+          "bap",
+          "thl"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Walmart farmed-seafood sourcing requires BAP 2-star minimum across private label. The Humane League: Walmart Great Value cage-free milestone delayed."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified",
+          "Mind The Store B+"
+        ],
+        "sources": [
+          "bap",
+          "tff-scorecard"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Walmart farmed-seafood sourcing requires BAP 2-star minimum across private label. Toxic-Free Future Mind The Store retail scorecard 2024: B+ — PFAS phase-out progressing across private label."
+      },
+      "health": {
+        "certifications": [
+          "Mind The Store B+"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: B+ — PFAS phase-out progressing across private label."
+      }
+    },
+    "kroger": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "bap",
+        "tff-scorecard",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "BAP certified",
+          "THL behind"
+        ],
+        "sources": [
+          "bap",
+          "thl"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Kroger farmed-shrimp + salmon sourcing requires BAP certification across private label. The Humane League: Kroger Simple Truth cage-free milestone partial."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified",
+          "Mind The Store C+"
+        ],
+        "sources": [
+          "bap",
+          "tff-scorecard"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Kroger farmed-shrimp + salmon sourcing requires BAP certification across private label. Toxic-Free Future Mind The Store retail scorecard 2024: C+ — improving PFAS phase-out in store-brand cosmetics."
+      },
+      "health": {
+        "certifications": [
+          "Mind The Store C+"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: C+ — improving PFAS phase-out in store-brand cosmetics."
+      }
+    },
+    "costco": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "animal-equality",
+        "bap",
+        "ceh-alerts",
+        "tff-scorecard",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 5,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "BAP certified",
+          "THL behind",
+          "Animal Equality target"
+        ],
+        "sources": [
+          "bap",
+          "thl",
+          "animal-equality"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Costco farmed-salmon and shrimp sourcing requires BAP 4-star (best practices) certification. The Humane League: Costco Kirkland Signature cage-free shell-egg milestone delayed."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified",
+          "Mind The Store B-",
+          "CEH PFAS warning"
+        ],
+        "sources": [
+          "bap",
+          "tff-scorecard",
+          "ceh-alerts"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Costco farmed-salmon and shrimp sourcing requires BAP 4-star (best practices) certification. Toxic-Free Future Mind The Store retail scorecard 2024: B- — PFAS phase-out commitment across Kirkland Signature."
+      },
+      "health": {
+        "certifications": [
+          "Mind The Store B-",
+          "CEH PFAS warning"
+        ],
+        "sources": [
+          "tff-scorecard",
+          "ceh-alerts"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: B- — PFAS phase-out commitment across Kirkland Signature. CEH consumer alert: PFAS detected in Kirkland Signature dental floss (per CEH 2024 testing)."
+      }
+    },
+    "sysco": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "bap"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "BAP certified"
+        ],
+        "sources": [
+          "bap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Sysco farmed-seafood lines require BAP certification."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified"
+        ],
+        "sources": [
+          "bap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Sysco farmed-seafood lines require BAP certification."
+      }
+    },
+    "aramark": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "bap",
+        "seafood-watch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "BAP certified",
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "bap",
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Aramark seafood sourcing policy includes BAP-certified farmed seafood. Aramark sources only Seafood Watch Best Choice / Good Alternative / certified responsibly farmed seafood."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified",
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "bap",
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Aramark seafood sourcing policy includes BAP-certified farmed seafood. Aramark sources only Seafood Watch Best Choice / Good Alternative / certified responsibly farmed seafood."
+      }
+    },
+    "red-lobster": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "bap"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "BAP certified"
+        ],
+        "sources": [
+          "bap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Red Lobster farmed-shrimp + salmon sourcing requires BAP certification."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified"
+        ],
+        "sources": [
+          "bap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Red Lobster farmed-shrimp + salmon sourcing requires BAP certification."
+      }
+    },
+    "patagonia": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "c2c",
+        "salmon-safe"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Salmon-Safe",
+          "C2C Silver"
+        ],
+        "sources": [
+          "salmon-safe",
+          "c2c"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at Ventura, CA campus (urban site). Cradle to Cradle Certified Silver across selected outerwear (recycled-fiber line)."
+      },
+      "animals": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at Ventura, CA campus (urban site)."
+      }
+    },
+    "adobe": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "salmon-safe"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at multiple Pacific Northwest offices."
+      },
+      "animals": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at multiple Pacific Northwest offices."
+      }
+    },
+    "nike": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "salmon-safe"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at world HQ (Beaverton, OR)."
+      },
+      "animals": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at world HQ (Beaverton, OR)."
+      }
+    },
+    "microsoft": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "salmon-safe"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at Redmond, WA campus."
+      },
+      "animals": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at Redmond, WA campus."
+      }
+    },
+    "rei": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ceh-alerts",
+        "salmon-safe"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Salmon-Safe",
+          "CEH PFAS settlement"
+        ],
+        "sources": [
+          "salmon-safe",
+          "ceh-alerts"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Salmon-Safe certified at Kent, WA HQ. CEH 2024 settlement: REI committed to PFAS-free outerwear timeline; included in CEH-led industry action."
+      },
+      "animals": {
+        "certifications": [
+          "Salmon-Safe"
+        ],
+        "sources": [
+          "salmon-safe"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Salmon-Safe certified at Kent, WA HQ."
+      },
+      "health": {
+        "certifications": [
+          "CEH PFAS settlement"
+        ],
+        "sources": [
+          "ceh-alerts"
+        ],
+        "bestStatus": "concern",
+        "narrative": "CEH 2024 settlement: REI committed to PFAS-free outerwear timeline; included in CEH-led industry action."
+      }
+    },
+    "general-mills": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "audubon-beef",
+        "bee-better"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Bee Better",
+          "Audubon Bird-Friendly Beef"
+        ],
+        "sources": [
+          "bee-better",
+          "audubon-beef"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Häagen-Dazs vanilla + strawberry SKUs sourced from Bee Better Certified almond + strawberry farms (General Mills sub-brand). General Mills funds Bee Better Certified pollinator-habitat conversion across California almond + strawberry suppliers."
+      },
+      "animals": {
+        "certifications": [
+          "Bee Better",
+          "Audubon Bird-Friendly Beef"
+        ],
+        "sources": [
+          "bee-better",
+          "audubon-beef"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Häagen-Dazs vanilla + strawberry SKUs sourced from Bee Better Certified almond + strawberry farms (General Mills sub-brand). General Mills funds Bee Better Certified pollinator-habitat conversion across California almond + strawberry suppliers."
+      }
+    },
+    "unilever": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ciwf-chicken-track",
+        "greenseal",
+        "soil-association"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Soil Association organic",
+          "Green Seal"
+        ],
+        "sources": [
+          "soil-association",
+          "greenseal"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Soil Association certified organic herbal tea (Unilever sub-brand). Green Seal certified cleaning + paper products (Unilever sub-brand)."
+      },
+      "health": {
+        "certifications": [
+          "Soil Association organic"
+        ],
+        "sources": [
+          "soil-association"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Soil Association certified organic herbal tea (Unilever sub-brand)."
+      },
+      "animals": {
+        "certifications": [
+          "Soil Association organic",
+          "CIWF ChickenTrack on track"
+        ],
+        "sources": [
+          "soil-association",
+          "ciwf-chicken-track"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Soil Association certified organic herbal tea (Unilever sub-brand). CIWF ChickenTrack: Unilever EU Better Chicken Commitment progress reported."
+      }
+    },
+    "clipper": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "soil-association"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "Soil Association organic"
+        ],
+        "sources": [
+          "soil-association"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Soil Association certified organic tea."
+      },
+      "health": {
+        "certifications": [
+          "Soil Association organic"
+        ],
+        "sources": [
+          "soil-association"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Soil Association certified organic tea."
+      },
+      "animals": {
+        "certifications": [
+          "Soil Association organic"
+        ],
+        "sources": [
+          "soil-association"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Soil Association certified organic tea."
+      }
+    },
+    "disney": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "seafood-watch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Disney Parks + Resorts seafood sourcing aligned to Seafood Watch Best Choice / Good Alternative."
+      },
+      "environment": {
+        "certifications": [
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Disney Parks + Resorts seafood sourcing aligned to Seafood Watch Best Choice / Good Alternative."
+      }
+    },
+    "hyatt": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "seafood-watch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Hyatt food + beverage sourcing aligned to Seafood Watch ratings."
+      },
+      "environment": {
+        "certifications": [
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Hyatt food + beverage sourcing aligned to Seafood Watch ratings."
+      }
+    },
+    "marriott": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "greenseal",
+        "seafood-watch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Seafood Watch partner"
+        ],
+        "sources": [
+          "seafood-watch"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Marriott sustainable-seafood policy aligned to Seafood Watch ratings."
+      },
+      "environment": {
+        "certifications": [
+          "Seafood Watch partner",
+          "Green Seal"
+        ],
+        "sources": [
+          "seafood-watch",
+          "greenseal"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Marriott sustainable-seafood policy aligned to Seafood Watch ratings. Green Seal certified at multiple Marriott US properties (cleaning + waste programs)."
+      }
+    },
+    "hilton": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "fishwise",
+        "greenseal"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "FishWise partner"
+        ],
+        "sources": [
+          "fishwise"
+        ],
+        "bestStatus": "leader",
+        "narrative": "FishWise advised Hilton on responsible-seafood sourcing across global F&B."
+      },
+      "environment": {
+        "certifications": [
+          "FishWise partner",
+          "Green Seal"
+        ],
+        "sources": [
+          "fishwise",
+          "greenseal"
+        ],
+        "bestStatus": "leader",
+        "narrative": "FishWise advised Hilton on responsible-seafood sourcing across global F&B. Green Seal certified at multiple Hilton US properties."
+      }
+    },
+    "target": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "fishwise",
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "FishWise partner"
+        ],
+        "sources": [
+          "fishwise"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Target sustainable-seafood policy developed with FishWise — covers MSC + ASC + Seafood Watch alignment."
+      },
+      "environment": {
+        "certifications": [
+          "FishWise partner",
+          "Mind The Store A"
+        ],
+        "sources": [
+          "fishwise",
+          "tff-scorecard"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Target sustainable-seafood policy developed with FishWise — covers MSC + ASC + Seafood Watch alignment. Toxic-Free Future Mind The Store retail scorecard 2024: A — leader on PFAS phase-out + chemical transparency."
+      },
+      "health": {
+        "certifications": [
+          "Mind The Store A"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: A — leader on PFAS phase-out + chemical transparency."
+      }
+    },
+    "albertsons": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "fishwise"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "FishWise partner"
+        ],
+        "sources": [
+          "fishwise"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Albertsons responsible-seafood sourcing developed with FishWise."
+      },
+      "environment": {
+        "certifications": [
+          "FishWise partner"
+        ],
+        "sources": [
+          "fishwise"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Albertsons responsible-seafood sourcing developed with FishWise."
+      }
+    },
+    "burger-king": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ciwf-chicken-track",
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA on track",
+          "CIWF ChickenTrack on track",
+          "NRDC Chain Reaction C"
+        ],
+        "sources": [
+          "mfa",
+          "ciwf-chicken-track",
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Mercy For Animals tracker — Burger King cage-free + Better Chicken Commitment progress on track. CIWF ChickenTrack: Burger King EU Better Chicken Commitment milestones reported."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction C"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "NRDC Chain Reaction: C — antibiotic-stewardship policy for chicken; weaker on beef + pork."
+      }
+    },
+    "wendy-s": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA behind",
+          "NRDC Chain Reaction C-"
+        ],
+        "sources": [
+          "mfa",
+          "nrdc-chain"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Mercy For Animals tracker — Wendy's has not adopted Better Chicken Commitment standards (gap vs peers). NRDC Chain Reaction: C- — partial antibiotic-stewardship policy for chicken only."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction C-"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "NRDC Chain Reaction: C- — partial antibiotic-stewardship policy for chicken only."
+      }
+    },
+    "domino-s": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA no commitment",
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "mfa",
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Mercy For Animals: Domino's Pizza has not adopted Better Chicken Commitment despite advocacy campaign. NRDC Chain Reaction: F — no public antibiotic-stewardship policy across meat sourcing."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy across meat sourcing."
+      }
+    },
+    "papa-john-s": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA no commitment",
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "mfa",
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Mercy For Animals: Papa John's has not committed to Better Chicken Commitment standards. NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      }
+    },
+    "olive-garden": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA behind",
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "mfa",
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Mercy For Animals: Olive Garden (Darden) Better Chicken Commitment progress behind schedule. NRDC Chain Reaction: F — no public antibiotic-stewardship policy (Darden)."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy (Darden)."
+      }
+    },
+    "cracker-barrel": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA on track"
+        ],
+        "sources": [
+          "mfa"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Mercy For Animals: Cracker Barrel cage-free + broiler welfare commitments on track."
+      }
+    },
+    "chipotle": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA fulfilled",
+          "NRDC Chain Reaction A"
+        ],
+        "sources": [
+          "mfa",
+          "nrdc-chain"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Mercy For Animals: Chipotle Better Chicken Commitment + cage-free + crate-free all reported as fulfilled. NRDC Chain Reaction: A grade for medically important antibiotic-free meat policy across chicken + pork + beef."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction A"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "leader",
+        "narrative": "NRDC Chain Reaction: A grade for medically important antibiotic-free meat policy across chicken + pork + beef."
+      }
+    },
+    "panera-bread": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "mfa",
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "MFA fulfilled",
+          "NRDC Chain Reaction A"
+        ],
+        "sources": [
+          "mfa",
+          "nrdc-chain"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Mercy For Animals: Panera Better Chicken Commitment milestones reported on schedule. NRDC Chain Reaction: A grade — comprehensive antibiotic-stewardship policy across all menu meats."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction A"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "leader",
+        "narrative": "NRDC Chain Reaction: A grade — comprehensive antibiotic-stewardship policy across all menu meats."
+      }
+    },
+    "mcdonald-s": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ciwf-chicken-track",
+        "nrdc-chain",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "THL on track",
+          "CIWF ChickenTrack behind",
+          "NRDC Chain Reaction C+"
+        ],
+        "sources": [
+          "thl",
+          "ciwf-chicken-track",
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "The Humane League tracker — McDonald's US cage-free progress on track for 2025 deadline; broiler welfare lagging. CIWF ChickenTrack: McDonald's Europe Better Chicken Commitment progress behind schedule."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction C+"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "NRDC Chain Reaction: C+ — antibiotic-stewardship policy for chicken but limited progress on beef + pork."
+      }
+    },
+    "subway": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "THL on track",
+          "NRDC Chain Reaction B+"
+        ],
+        "sources": [
+          "thl",
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "The Humane League tracker — Subway cage-free transition on track in US. NRDC Chain Reaction: B+ — strong antibiotic-stewardship policy across protein lines."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction B+"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "NRDC Chain Reaction: B+ — strong antibiotic-stewardship policy across protein lines."
+      }
+    },
+    "starbucks": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "THL fulfilled"
+        ],
+        "sources": [
+          "thl"
+        ],
+        "bestStatus": "leader",
+        "narrative": "The Humane League tracker — Starbucks 100% cage-free globally reported."
+      }
+    },
+    "taco-bell": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "THL fulfilled",
+          "NRDC Chain Reaction B+"
+        ],
+        "sources": [
+          "thl",
+          "nrdc-chain"
+        ],
+        "bestStatus": "leader",
+        "narrative": "The Humane League: Taco Bell 100% cage-free eggs across US menu since 2017. NRDC Chain Reaction: B+ — antibiotic-stewardship policy across chicken + beef."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction B+"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "NRDC Chain Reaction: B+ — antibiotic-stewardship policy across chicken + beef."
+      }
+    },
+    "sonic-drive-in": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain",
+        "thl"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "THL behind",
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "thl",
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "The Humane League: Sonic Drive-In Better Chicken Commitment progress behind. NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      }
+    },
+    "amazon": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "animal-equality",
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Animal Equality target"
+        ],
+        "sources": [
+          "animal-equality"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Animal Equality campaign on Amazon Whole Foods + private-label egg sourcing transparency."
+      },
+      "health": {
+        "certifications": [
+          "Mind The Store C-"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: C- — limited PFAS phase-out across private label."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store C-"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: C- — limited PFAS phase-out across private label."
+      }
+    },
+    "petco": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "wap"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "WAP Mixed"
+        ],
+        "sources": [
+          "wap"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "World Animal Protection 'Pets in the Wild' — Petco mixed on exotic-pet sourcing transparency."
+      }
+    },
+    "petsmart": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "wap"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "WAP Behind"
+        ],
+        "sources": [
+          "wap"
+        ],
+        "bestStatus": "concern",
+        "narrative": "World Animal Protection 'Pets in the Wild' scorecard flagged PetSmart on exotic-animal sourcing."
+      }
+    },
+    "nestl": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ciwf-chicken-track",
+        "cocoa-barometer",
+        "fep-chocolate",
+        "slave-free-choc"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "CIWF ChickenTrack on track"
+        ],
+        "sources": [
+          "ciwf-chicken-track"
+        ],
+        "bestStatus": "positive",
+        "narrative": "CIWF ChickenTrack: Nestlé EU Better Chicken Commitment annual progress reported."
+      },
+      "labor": {
+        "certifications": [
+          "FEP Not Recommended",
+          "Slave Free Chocolate Watch List",
+          "Cocoa Barometer 3/5 transparency"
+        ],
+        "sources": [
+          "fep-chocolate",
+          "slave-free-choc",
+          "cocoa-barometer"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Food Empowerment Project Chocolate List — Not Recommended; cocoa from West African regions with documented slavery + child labor risk. Slave Free Chocolate Watch List — Nestlé cocoa supply chain implicated in West African child-labor reports (also subject of US Supreme Court Nestlé USA v. Doe 2021)."
+      }
+    },
+    "aldi": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ciwf-chicken-track"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "CIWF ChickenTrack fulfilled"
+        ],
+        "sources": [
+          "ciwf-chicken-track"
+        ],
+        "bestStatus": "leader",
+        "narrative": "CIWF ChickenTrack: Aldi UK + Germany Better Chicken Commitment leadership tier."
+      }
+    },
+    "kfc": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "NRDC Chain Reaction B-"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "NRDC Chain Reaction: B- — antibiotic-stewardship policy for US chicken; limited int'l rollout."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction B-"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "positive",
+        "narrative": "NRDC Chain Reaction: B- — antibiotic-stewardship policy for US chicken; limited int'l rollout."
+      }
+    },
+    "pizza-hut": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "NRDC Chain Reaction D+"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: D+ — limited antibiotic-stewardship policy (chicken only)."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction D+"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: D+ — limited antibiotic-stewardship policy (chicken only)."
+      }
+    },
+    "applebee-s": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      }
+    },
+    "ihop": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      }
+    },
+    "jack-in-the-box": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      }
+    },
+    "arby-s": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "nrdc-chain"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      },
+      "health": {
+        "certifications": [
+          "NRDC Chain Reaction F"
+        ],
+        "sources": [
+          "nrdc-chain"
+        ],
+        "bestStatus": "concern",
+        "narrative": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy."
+      }
+    },
+    "tyson-foods": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "pew-abx"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Pew antibiotic-free chicken"
+        ],
+        "sources": [
+          "pew-abx"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Pew Charitable Trusts: Tyson eliminated medically important antibiotics from chicken production (2017); beef + pork still pending."
+      },
+      "health": {
+        "certifications": [
+          "Pew antibiotic-free chicken"
+        ],
+        "sources": [
+          "pew-abx"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Pew Charitable Trusts: Tyson eliminated medically important antibiotics from chicken production (2017); beef + pork still pending."
+      }
+    },
+    "chick-fil-a": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "pew-abx"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "animals": {
+        "certifications": [
+          "Pew antibiotic-free partial"
+        ],
+        "sources": [
+          "pew-abx"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Pew tracker: Chick-fil-A No Antibiotics Important to Human Medicine policy (revised from 'No Antibiotics Ever' in 2024)."
+      },
+      "health": {
+        "certifications": [
+          "Pew antibiotic-free partial"
+        ],
+        "sources": [
+          "pew-abx"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Pew tracker: Chick-fil-A No Antibiotics Important to Human Medicine policy (revised from 'No Antibiotics Ever' in 2024)."
+      }
+    },
+    "hershey": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "cocoa-barometer",
+        "fep-chocolate",
+        "slave-free-choc"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "labor": {
+        "certifications": [
+          "FEP Not Recommended",
+          "Slave Free Chocolate Watch List",
+          "Cocoa Barometer 2/5 transparency"
+        ],
+        "sources": [
+          "fep-chocolate",
+          "slave-free-choc",
+          "cocoa-barometer"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Food Empowerment Project Chocolate List — Not Recommended; cocoa from West African regions with documented slavery + child labor risk. Slave Free Chocolate Watch List — Hershey cocoa supply chain implicated in West African child-labor reports."
+      }
+    },
+    "mars": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "cocoa-barometer",
+        "fep-chocolate",
+        "slave-free-choc"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "labor": {
+        "certifications": [
+          "FEP Not Recommended",
+          "Slave Free Chocolate Watch List",
+          "Cocoa Barometer 2/5 transparency"
+        ],
+        "sources": [
+          "fep-chocolate",
+          "slave-free-choc",
+          "cocoa-barometer"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Food Empowerment Project Chocolate List — Not Recommended; cocoa from West African regions with documented slavery + child labor risk. Slave Free Chocolate Watch List — Mars cocoa supply chain implicated in West African child-labor reports."
+      }
+    },
+    "mondelez-international": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "cocoa-barometer",
+        "fep-chocolate",
+        "slave-free-choc"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "labor": {
+        "certifications": [
+          "FEP Not Recommended",
+          "Slave Free Chocolate Watch List",
+          "Cocoa Barometer 2/5 transparency"
+        ],
+        "sources": [
+          "fep-chocolate",
+          "slave-free-choc",
+          "cocoa-barometer"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Food Empowerment Project Chocolate List — Not Recommended; Cadbury / Milka cocoa sourcing concerns. Slave Free Chocolate Watch List — Mondelez cocoa supply chain (Cadbury / Milka) under West African child-labor scrutiny."
+      }
+    },
+    "lindt": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "cocoa-barometer",
+        "fep-chocolate"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "labor": {
+        "certifications": [
+          "FEP Not Recommended",
+          "Cocoa Barometer 3/5 transparency"
+        ],
+        "sources": [
+          "fep-chocolate",
+          "cocoa-barometer"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Food Empowerment Project Chocolate List — Not Recommended; limited supply-chain transparency. Cocoa Barometer 2024 — Farming Program covers Ghana sourcing; limited Ivory Coast disclosure."
+      }
+    },
+    "apple": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "Mind The Store A-"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: A- — strong chemical management policy."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store A-"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: A- — strong chemical management policy."
+      }
+    },
+    "cvs-health": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "Mind The Store B"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: B — chemical-management progress on store-brand cosmetics."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store B"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: B — chemical-management progress on store-brand cosmetics."
+      }
+    },
+    "sephora": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "tff-scorecard"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "Mind The Store B-"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: B- — Clean at Sephora program covers PFAS + phthalates."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store B-"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: B- — Clean at Sephora program covers PFAS + phthalates."
+      }
+    },
+    "ulta-beauty": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "Mind The Store C"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: C — limited public chemical management policy."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store C"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: C — limited public chemical management policy."
+      }
+    },
+    "dollar-tree": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "Mind The Store F"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: F — no public chemical management policy."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store F"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: F — no public chemical management policy."
+      }
+    },
+    "dollar-general": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "tff-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "Mind The Store F"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: F — no public chemical management policy."
+      },
+      "environment": {
+        "certifications": [
+          "Mind The Store F"
+        ],
+        "sources": [
+          "tff-scorecard"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Toxic-Free Future Mind The Store retail scorecard 2024: F — no public chemical management policy."
+      }
+    },
+    "lululemon": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ceh-alerts"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "CEH PFAS settlement"
+        ],
+        "sources": [
+          "ceh-alerts"
+        ],
+        "bestStatus": "concern",
+        "narrative": "CEH 2024 settlement: Lululemon agreed to phase out PFAS from leggings + other apparel by 2025."
+      },
+      "environment": {
+        "certifications": [
+          "CEH PFAS settlement"
+        ],
+        "sources": [
+          "ceh-alerts"
+        ],
+        "bestStatus": "concern",
+        "narrative": "CEH 2024 settlement: Lululemon agreed to phase out PFAS from leggings + other apparel by 2025."
+      }
+    },
+    "dupont": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "pfas-project"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "PFAS Manufacturer (legacy PFAS)"
+        ],
+        "sources": [
+          "pfas-project"
+        ],
+        "bestStatus": "concern",
+        "narrative": "PFAS Project Lab: DuPont classified as major historical PFAS manufacturer; multibillion-dollar litigation settlements ongoing."
+      },
+      "environment": {
+        "certifications": [
+          "PFAS Manufacturer (legacy PFAS)"
+        ],
+        "sources": [
+          "pfas-project"
+        ],
+        "bestStatus": "concern",
+        "narrative": "PFAS Project Lab: DuPont classified as major historical PFAS manufacturer; multibillion-dollar litigation settlements ongoing."
+      }
+    },
+    "chemours": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "pfas-project"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "PFAS Manufacturer (active)"
+        ],
+        "sources": [
+          "pfas-project"
+        ],
+        "bestStatus": "concern",
+        "narrative": "PFAS Project Lab: Chemours active manufacturer of fluoropolymers (DuPont spinoff); GenX contamination documented at Fayetteville, NC."
+      },
+      "environment": {
+        "certifications": [
+          "PFAS Manufacturer (active)"
+        ],
+        "sources": [
+          "pfas-project"
+        ],
+        "bestStatus": "concern",
+        "narrative": "PFAS Project Lab: Chemours active manufacturer of fluoropolymers (DuPont spinoff); GenX contamination documented at Fayetteville, NC."
+      }
+    },
+    "procter-and-gamble": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ecologo",
+        "ewg-skindeep"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "UL EcoLogo"
+        ],
+        "sources": [
+          "ecologo"
+        ],
+        "bestStatus": "leader",
+        "narrative": "UL EcoLogo certified across several P&G institutional cleaning + paper SKUs (Cascade Pure Essentials etc.)."
+      },
+      "health": {
+        "certifications": [
+          "EWG Skin Deep Mixed"
+        ],
+        "sources": [
+          "ewg-skindeep"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "EWG Skin Deep: P&G beauty + personal-care portfolio mixed — Olay regenerist series rated low hazard; many fragranced products rated moderate hazard."
+      }
+    },
+    "kimberly-clark": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ecologo"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "UL EcoLogo"
+        ],
+        "sources": [
+          "ecologo"
+        ],
+        "bestStatus": "leader",
+        "narrative": "UL EcoLogo certified across Scott Essential + Kleenex Professional commercial tissue + towel lines."
+      }
+    },
+    "clorox-co": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ecologo"
+      ],
+      "_routedVia": "parent",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "UL EcoLogo"
+        ],
+        "sources": [
+          "ecologo"
+        ],
+        "bestStatus": "leader",
+        "narrative": "UL EcoLogo certified across CloroxPro Eco-Active line."
+      }
+    },
+    "levi-strauss": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "c2c"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "C2C Bronze"
+        ],
+        "sources": [
+          "c2c"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Cradle to Cradle Certified Bronze across selected denim lines (Water<Less programme)."
+      }
+    },
+    "ralph-lauren": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "c2c"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "environment": {
+        "certifications": [
+          "C2C Gold"
+        ],
+        "sources": [
+          "c2c"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Cradle to Cradle Certified Gold on the Earth Polo (recycled-fiber line)."
+      }
+    },
+    "l-or-al": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ewg-skindeep"
+      ],
+      "_routedVia": "alias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "EWG Skin Deep Mixed"
+        ],
+        "sources": [
+          "ewg-skindeep"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "EWG Skin Deep: L'Oréal portfolio mixed; many SKUs flagged moderate-to-high hazard for fragrance / preservative use."
+      }
+    },
+    "est-e-lauder": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "ewg-skindeep"
+      ],
+      "_routedVia": "alias",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "health": {
+        "certifications": [
+          "EWG Skin Deep Mixed"
+        ],
+        "sources": [
+          "ewg-skindeep"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "EWG Skin Deep: Estée Lauder portfolio mixed; Origins + Aveda lines lower-hazard, mainstream cosmetics flagged on fragrance allergens."
+      }
+    }
+  },
+  "orphans": [
+    {
+      "brand": "Vital Farms",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Pete and Gerry's",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Nellie's Free Range",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Stonyfield Farm",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Niman Ranch",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Maple Hill Creamery",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Coleman Natural",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Bell & Evans",
+      "source": "certified-humane",
+      "tier": "Certified Humane"
+    },
+    {
+      "brand": "Niman Ranch",
+      "source": "awi-cert",
+      "tier": "AWI Food Label Recommended"
+    },
+    {
+      "brand": "Maple Hill Creamery",
+      "source": "ag-grassfed",
+      "tier": "AGA Certified"
+    },
+    {
+      "brand": "Alexandre Family Farm",
+      "source": "ag-grassfed",
+      "tier": "AGA Certified"
+    },
+    {
+      "brand": "Thousand Hills Lifetime Grazed",
+      "source": "ag-grassfed",
+      "tier": "AGA Certified"
+    },
+    {
+      "brand": "White Oak Pastures",
+      "source": "ag-grassfed",
+      "tier": "AGA Certified"
+    },
+    {
+      "brand": "Force of Nature",
+      "source": "ag-grassfed",
+      "tier": "AGA Certified"
+    },
+    {
+      "brand": "US Foods",
+      "source": "bap",
+      "tier": "BAP foodservice partner"
+    },
+    {
+      "brand": "Niman Ranch",
+      "source": "audubon-beef",
+      "tier": "Audubon Bird-Friendly"
+    },
+    {
+      "brand": "Force of Nature",
+      "source": "audubon-beef",
+      "tier": "Audubon Bird-Friendly"
+    },
+    {
+      "brand": "Yeo Valley",
+      "source": "soil-association",
+      "tier": "Soil Association certified organic"
+    },
+    {
+      "brand": "Riverford",
+      "source": "soil-association",
+      "tier": "Soil Association certified organic"
+    },
+    {
+      "brand": "Alnatura",
+      "source": "naturland",
+      "tier": "Naturland certified"
+    },
+    {
+      "brand": "Followfish",
+      "source": "naturland",
+      "tier": "Naturland Wildfisch / Aquakultur"
+    },
+    {
+      "brand": "Lebensbaum",
+      "source": "naturland",
+      "tier": "Naturland certified"
+    },
+    {
+      "brand": "Compass Group",
+      "source": "seafood-watch",
+      "tier": "Seafood Watch partner"
+    },
+    {
+      "brand": "Sodexo",
+      "source": "seafood-watch",
+      "tier": "Seafood Watch partner"
+    },
+    {
+      "brand": "Sodexo",
+      "source": "mfa",
+      "tier": "Fulfilled"
+    },
+    {
+      "brand": "Perdue Farms",
+      "source": "pew-abx",
+      "tier": "Antibiotic-free Leader"
+    },
+    {
+      "brand": "Equal Exchange",
+      "source": "fep-chocolate",
+      "tier": "Recommended"
+    },
+    {
+      "brand": "Alter Eco",
+      "source": "fep-chocolate",
+      "tier": "Recommended"
+    },
+    {
+      "brand": "Theo Chocolate",
+      "source": "fep-chocolate",
+      "tier": "Recommended"
+    },
+    {
+      "brand": "Endangered Species Chocolate",
+      "source": "fep-chocolate",
+      "tier": "Recommended"
+    },
+    {
+      "brand": "Divine Chocolate",
+      "source": "fep-chocolate",
+      "tier": "Recommended"
+    },
+    {
+      "brand": "Tony's Chocolonely",
+      "source": "slave-free-choc",
+      "tier": "Scorecard Leader"
+    },
+    {
+      "brand": "Tony's Chocolonely",
+      "source": "cocoa-barometer",
+      "tier": "5/5 transparency"
+    },
+    {
+      "brand": "Ferrero",
+      "source": "cocoa-barometer",
+      "tier": "2/5 transparency"
+    },
+    {
+      "brand": "3M",
+      "source": "pfas-project",
+      "tier": "Manufacturer (legacy PFAS)"
+    },
+    {
+      "brand": "Wolverine Worldwide",
+      "source": "pfas-project",
+      "tier": "Product PFAS use"
+    },
+    {
+      "brand": "Method",
+      "source": "greenseal",
+      "tier": "Green Seal certified"
+    },
+    {
+      "brand": "Method",
+      "source": "c2c",
+      "tier": "C2C Gold"
+    },
+    {
+      "brand": "Beautycounter",
+      "source": "ewg-skindeep",
+      "tier": "EWG Verified"
+    },
+    {
+      "brand": "Dr. Bronner's",
+      "source": "ewg-skindeep",
+      "tier": "EWG Verified"
+    },
+    {
+      "brand": "Burt's Bees",
+      "source": "ewg-skindeep",
+      "tier": "EWG Verified — selected SKUs"
+    }
+  ],
+  "orphan_total": 41
+}

@@ -11,10 +11,11 @@
     "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "negative",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "FEC: $178K in executive political donations; partisan lean split across 8 executive donors.",
@@ -56,10 +57,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "NRDC Chain Reaction: D+ — limited antibiotic-stewardship policy (chicken only). [NRDC Chain Reaction D+]",
     "verdict": "N/A",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "animal-welfare-ag-r3"
     ]
   },
   "guns": {
@@ -295,5 +297,10 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "realCats": 3
+  "health": {
+    "s": "NRDC Chain Reaction: D+ — limited antibiotic-stewardship policy (chicken only). [NRDC Chain Reaction D+]",
+    "sources": [
+      "animal-welfare-ag-r3"
+    ]
+  }
 }

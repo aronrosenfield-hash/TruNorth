@@ -7,13 +7,14 @@
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "neutral",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "good"
   },
   "political": {
     "s": "FEC: $346K in executive political donations; partisan lean split across 15 executive donors.",
@@ -36,9 +37,10 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Soil Association certified organic tea. [Soil Association organic]",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "animal-welfare-ag-r3"
     ]
   },
   "dei": {
@@ -48,9 +50,10 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Soil Association certified organic tea. [Soil Association organic]",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "animal-welfare-ag-r3"
     ]
   },
   "guns": {
@@ -113,5 +116,10 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:43:05.564Z",
-  "realCats": 1
+  "health": {
+    "s": "Soil Association certified organic tea. [Soil Association organic]",
+    "sources": [
+      "animal-welfare-ag-r3"
+    ]
+  }
 }

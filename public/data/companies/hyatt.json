@@ -8,10 +8,10 @@
   "sc": {
     "political": "neutral",
     "charity": "positive",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "mixed",
     "dei": "pro_dei",
-    "animals": "na",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
@@ -35,11 +35,12 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Hyatt food + beverage sourcing aligned to Seafood Watch ratings. [Seafood Watch partner]",
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "animal-welfare-ag-r3"
     ]
   },
   "labor": {
@@ -60,10 +61,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Hyatt food + beverage sourcing aligned to Seafood Watch ratings. [Seafood Watch partner]",
     "verdict": "N/A",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "animal-welfare-ag-r3"
     ]
   },
   "guns": {
