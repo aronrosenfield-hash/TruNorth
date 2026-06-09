@@ -8,13 +8,14 @@
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "neutral",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "good"
   },
   "political": {
     "s": "No public record found.",
@@ -33,10 +34,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Real Organic Project certified across pasture-based dairy and egg operations. [Real Organic Project certified]",
     "rating": "Excellent",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "farm-welfare"
     ]
   },
   "labor": {
@@ -54,10 +56,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Real Organic Project certified across pasture-based dairy and egg operations. Non-GMO Project Verified dairy + egg lines. [Real Organic Project certified · Non-GMO Project Verified]",
     "verdict": "Cruelty-Free",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "farm-welfare"
     ]
   },
   "guns": {
@@ -168,5 +171,11 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "Real Organic Project certified across pasture-based dairy and egg operations. Non-GMO Project Verified dairy + egg lines. [Real Organic Project certified · Non-GMO Project Verified]",
+    "sources": [
+      "farm-welfare"
+    ]
+  }
 }

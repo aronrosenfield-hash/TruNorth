@@ -7,14 +7,15 @@
   "ticker": null,
   "sc": {
     "political": "neutral",
-    "charity": "positive",
-    "environment": "positive",
-    "labor": "positive",
-    "dei": "pro_dei",
-    "animals": "neutral",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "neutral"
+    "execPay": "neutral",
+    "health": "good"
   },
   "political": {
     "s": "No public record found.",
@@ -57,9 +58,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Non-GMO Project Verified across US ice cream pints (Unilever sub-brand). [Non-GMO Project Verified]",
     "verdict": "Cruelty-Free",
-    "sources": []
+    "sources": [
+      "farm-welfare"
+    ]
   },
   "guns": {
     "s": "No public record found.",
@@ -176,5 +179,11 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "Non-GMO Project Verified across US ice cream pints (Unilever sub-brand). [Non-GMO Project Verified]",
+    "sources": [
+      "farm-welfare"
+    ]
+  }
 }

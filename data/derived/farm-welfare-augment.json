@@ -1,0 +1,1265 @@
+{
+  "_license": "Public certification + benchmark records (BBFAW, FAIRR, GAP, CIWF, Open Wing Alliance, Real Organic Project, Regenerative Organic Alliance, Demeter, Non-GMO Project, MSC, ASC, Bonsucro, Fair Wear Foundation). Cite original source URLs.",
+  "_source_file": "data/raw/farm-welfare/2026-06-09.json",
+  "_source_urls": {
+    "bbfaw": "https://www.bbfaw.com/publications/benchmark-report/",
+    "fairr": "https://www.fairr.org/tools/protein-producer-index",
+    "gap": "https://globalanimalpartnership.org/find-products",
+    "ciwf": "https://www.compassioninfoodbusiness.com/awards/",
+    "owa": "https://openwingalliance.org/",
+    "real-organic": "https://www.realorganicproject.org/farms/",
+    "regen-organic": "https://regenorganic.org/find-roc-products/",
+    "demeter": "https://www.demeter-usa.org/find-biodynamic-products/",
+    "non-gmo": "https://www.nongmoproject.org/find-non-gmo-products/",
+    "msc": "https://www.msc.org/",
+    "asc": "https://www.asc-aqua.org/",
+    "bonsucro": "https://bonsucro.com/our-members/",
+    "fairwear": "https://www.fairwear.org/brands"
+  },
+  "_generated_at": "2026-06-09T17:54:31.227Z",
+  "_stats": {
+    "raw_entries": 93,
+    "matched_companies": 34,
+    "routed_slugHint": 63,
+    "routed_direct": 1,
+    "routed_alias": 0,
+    "routed_parent": 1,
+    "orphans": 28
+  },
+  "companies": {
+    "tyson-foods": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "fairr"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 6",
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "bbfaw",
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "No published farm-animal welfare policy or reporting per BBFAW 2024. FAIRR Protein Producer Index: High risk on antibiotic stewardship, climate disclosure, and worker safety."
+      },
+      "labor": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Protein Producer Index: High risk on antibiotic stewardship, climate disclosure, and worker safety."
+      },
+      "environment": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Protein Producer Index: High risk on antibiotic stewardship, climate disclosure, and worker safety."
+      }
+    },
+    "jbs-n-v": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "fairr"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 6",
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "bbfaw",
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Bottom-tier BBFAW 2024 — no evidence of group-wide farm-animal welfare policy. FAIRR Protein Producer Index: High risk across animal welfare, deforestation, antibiotic stewardship, and worker rights."
+      },
+      "labor": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Protein Producer Index: High risk across animal welfare, deforestation, antibiotic stewardship, and worker rights."
+      },
+      "environment": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Protein Producer Index: High risk across animal welfare, deforestation, antibiotic stewardship, and worker rights."
+      }
+    },
+    "cal-maine-foods": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "fairr"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 6",
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "bbfaw",
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "BBFAW 2024 bottom tier — largest US egg producer with no published cage-free transition plan. FAIRR Index: High risk on animal welfare (cage-free transition) and worker safety."
+      },
+      "labor": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk on animal welfare (cage-free transition) and worker safety."
+      },
+      "environment": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk on animal welfare (cage-free transition) and worker safety."
+      }
+    },
+    "hormel-foods": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "fairr",
+        "gap"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 5",
+          "FAIRR Medium risk",
+          "GAP Step 3"
+        ],
+        "sources": [
+          "bbfaw",
+          "fairr",
+          "gap"
+        ],
+        "bestStatus": "positive",
+        "narrative": "BBFAW 2024 Tier 5 — limited public farm-animal welfare reporting. FAIRR Index: Medium risk with documented antibiotic-reduction targets."
+      }
+    },
+    "kraft-heinz": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 4"
+        ],
+        "sources": [
+          "bbfaw"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "BBFAW 2024 Tier 4 — policy established but limited audited progress disclosure."
+      }
+    },
+    "costco": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "asc",
+        "bbfaw",
+        "msc",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 5",
+          "Cage-free at risk",
+          "MSC certified",
+          "ASC certified"
+        ],
+        "sources": [
+          "bbfaw",
+          "owa",
+          "msc",
+          "asc"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "BBFAW 2024 Tier 5 — limited disclosure of farm-animal welfare programmes. Open Wing Alliance: At risk — Kirkland Signature US shell-egg cage-free transition behind schedule."
+      },
+      "environment": {
+        "certifications": [
+          "MSC certified",
+          "ASC certified"
+        ],
+        "sources": [
+          "msc",
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "MSC retail partner — Kirkland canned + frozen wild seafood MSC-certified. ASC-certified farmed salmon (Kirkland Signature) + shrimp."
+      }
+    },
+    "burger-king": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 4",
+          "Cage-free on track"
+        ],
+        "sources": [
+          "bbfaw",
+          "owa"
+        ],
+        "bestStatus": "positive",
+        "narrative": "BBFAW 2024 Tier 4 (via Restaurant Brands International) — animal welfare policy published, audited progress limited. Open Wing Alliance: cage-free transition on track for US shell-egg use."
+      }
+    },
+    "mcdonald-s": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "msc",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 3",
+          "Cage-free on track",
+          "MSC certified"
+        ],
+        "sources": [
+          "bbfaw",
+          "owa",
+          "msc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 3 — established management approach across species; gaps in pork gestation-crate phase-out reporting. Open Wing Alliance: ~80% cage-free progress reported toward 2025 US deadline."
+      },
+      "environment": {
+        "certifications": [
+          "MSC certified"
+        ],
+        "sources": [
+          "msc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "MSC-certified Filet-O-Fish (all global markets, wild Alaska pollock)."
+      }
+    },
+    "starbucks": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "ciwf",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 3",
+          "CIWF Award",
+          "Cage-free fulfilled"
+        ],
+        "sources": [
+          "bbfaw",
+          "ciwf",
+          "owa"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 3 — global cage-free egg + crate-free pork commitments with annual progress reporting. CIWF Good Egg Award — 100% cage-free egg policy met globally."
+      }
+    },
+    "nestl": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "bonsucro",
+        "ciwf"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 3",
+          "CIWF Award"
+        ],
+        "sources": [
+          "bbfaw",
+          "ciwf"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 3 — group-wide farm-animal welfare policy with audited annual progress. CIWF Good Chicken Award (Europe) + Good Egg Award (global)."
+      },
+      "environment": {
+        "certifications": [
+          "Bonsucro member"
+        ],
+        "sources": [
+          "bonsucro"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Bonsucro member with majority-certified sugarcane volume."
+      }
+    },
+    "unilever": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw",
+        "bonsucro",
+        "ciwf"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 2",
+          "CIWF Award"
+        ],
+        "sources": [
+          "bbfaw",
+          "ciwf"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 2 — among leading multinationals on policy + reporting. CIWF Good Egg + Good Dairy Awards (Ben & Jerry's Caring Dairy programme)."
+      },
+      "environment": {
+        "certifications": [
+          "Bonsucro member"
+        ],
+        "sources": [
+          "bonsucro"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Bonsucro member — sustainable sugar sourcing across ice cream + condiments."
+      }
+    },
+    "danone": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bbfaw"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 2"
+        ],
+        "sources": [
+          "bbfaw"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 2 — leading dairy commitments and on-farm welfare assessment programmes."
+      }
+    },
+    "whole-foods-market": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "asc",
+        "bbfaw",
+        "ciwf",
+        "gap",
+        "msc",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 6,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 2",
+          "GAP Step 1+ (in-store)",
+          "CIWF Award",
+          "Cage-free fulfilled",
+          "MSC certified",
+          "ASC certified"
+        ],
+        "sources": [
+          "bbfaw",
+          "gap",
+          "ciwf",
+          "owa",
+          "msc",
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 2 — meat counter standards require GAP Step rating for all fresh meat sold. All fresh meat sold at Whole Foods must carry a GAP Step rating; many SKUs are Step 4+ (pasture-centred)."
+      },
+      "environment": {
+        "certifications": [
+          "MSC certified",
+          "ASC certified"
+        ],
+        "sources": [
+          "msc",
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "MSC retail partner — all wild seafood at counter is MSC-certified or Seafood Watch best-choice. ASC-certified farmed salmon + shrimp across seafood counter."
+      }
+    },
+    "aldi": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "asc",
+        "bbfaw",
+        "ciwf",
+        "msc",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 5,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "BBFAW Tier 3",
+          "CIWF Award",
+          "Cage-free fulfilled",
+          "MSC certified",
+          "ASC certified"
+        ],
+        "sources": [
+          "bbfaw",
+          "ciwf",
+          "owa",
+          "msc",
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "BBFAW 2024 Tier 3 — Aldi Süd / US division publishes farm-animal welfare policy with cage-free milestone reporting. CIWF Good Egg Award (US private label) — 100% cage-free shell-egg commitment."
+      },
+      "environment": {
+        "certifications": [
+          "MSC certified",
+          "ASC certified"
+        ],
+        "sources": [
+          "msc",
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "MSC retail partner — most private-label wild seafood MSC certified. ASC-certified farmed salmon + shrimp across private label."
+      }
+    },
+    "pilgrims-pride": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "fairr"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk (JBS subsidiary) on worker rights and antibiotic disclosure."
+      },
+      "labor": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk (JBS subsidiary) on worker rights and antibiotic disclosure."
+      },
+      "environment": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk (JBS subsidiary) on worker rights and antibiotic disclosure."
+      }
+    },
+    "smithfield-foods": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "fairr"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk on emissions + worker rights despite gestation-crate phase-out progress."
+      },
+      "labor": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk on emissions + worker rights despite gestation-crate phase-out progress."
+      },
+      "environment": {
+        "certifications": [
+          "FAIRR High risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "concern",
+        "narrative": "FAIRR Index: High risk on emissions + worker rights despite gestation-crate phase-out progress."
+      }
+    },
+    "cargill": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "fairr"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "FAIRR Medium risk"
+        ],
+        "sources": [
+          "fairr"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "FAIRR Index: Medium risk overall — public emission-reduction targets but limited animal welfare disclosure."
+      }
+    },
+    "ikea": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "asc",
+        "ciwf"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "CIWF Award",
+          "ASC certified"
+        ],
+        "sources": [
+          "ciwf",
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "CIWF Good Chicken Award (Europe) — Better Chicken Commitment compliant. ASC-certified farmed salmon across global menu."
+      },
+      "environment": {
+        "certifications": [
+          "ASC certified"
+        ],
+        "sources": [
+          "asc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "ASC-certified farmed salmon across global menu."
+      }
+    },
+    "chipotle": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "non-gmo",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free fulfilled",
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "owa",
+          "non-gmo"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Open Wing Alliance: 100% cage-free shell + liquid eggs, reported. Non-GMO ingredient policy — all menu items free of GMO ingredients per company disclosure."
+      },
+      "health": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO ingredient policy — all menu items free of GMO ingredients per company disclosure."
+      }
+    },
+    "trader-joe-s": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "msc",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free fulfilled",
+          "MSC certified"
+        ],
+        "sources": [
+          "owa",
+          "msc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "100% cage-free shell-egg pledge fulfilled in US private label. MSC + Seafood Watch sustainable-sourcing policy across frozen + canned."
+      },
+      "environment": {
+        "certifications": [
+          "MSC certified"
+        ],
+        "sources": [
+          "msc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "MSC + Seafood Watch sustainable-sourcing policy across frozen + canned."
+      }
+    },
+    "walmart": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "msc",
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free at risk",
+          "MSC certified"
+        ],
+        "sources": [
+          "owa",
+          "msc"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "Open Wing Alliance: At risk — Great Value cage-free milestone not yet reported. MSC retail partner — Great Value canned tuna + wild-catch lines MSC-certified."
+      },
+      "environment": {
+        "certifications": [
+          "MSC certified"
+        ],
+        "sources": [
+          "msc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "MSC retail partner — Great Value canned tuna + wild-catch lines MSC-certified."
+      }
+    },
+    "kroger": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free at risk"
+        ],
+        "sources": [
+          "owa"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Open Wing Alliance: At risk — Simple Truth cage-free milestone partially reported."
+      }
+    },
+    "panera-bread": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free fulfilled"
+        ],
+        "sources": [
+          "owa"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Open Wing Alliance: 100% cage-free across menu since 2020."
+      }
+    },
+    "subway": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free on track"
+        ],
+        "sources": [
+          "owa"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Open Wing Alliance: cage-free transition on track."
+      }
+    },
+    "wendy-s": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "owa"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Cage-free on track"
+        ],
+        "sources": [
+          "owa"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Open Wing Alliance: cage-free egg transition on track for US breakfast menu."
+      }
+    },
+    "organic-valley": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "non-gmo",
+        "real-organic"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Real Organic Project certified",
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "real-organic",
+          "non-gmo"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Real Organic Project certified across pasture-based dairy and egg operations. Non-GMO Project Verified dairy + egg lines."
+      },
+      "environment": {
+        "certifications": [
+          "Real Organic Project certified"
+        ],
+        "sources": [
+          "real-organic"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Real Organic Project certified across pasture-based dairy and egg operations."
+      },
+      "health": {
+        "certifications": [
+          "Real Organic Project certified",
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "real-organic",
+          "non-gmo"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Real Organic Project certified across pasture-based dairy and egg operations. Non-GMO Project Verified dairy + egg lines."
+      }
+    },
+    "patagonia": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "regen-organic"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Regenerative Organic Certified (ROC Gold)"
+        ],
+        "sources": [
+          "regen-organic"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Regenerative Organic Certified Gold — apparel cotton + food line."
+      },
+      "environment": {
+        "certifications": [
+          "Regenerative Organic Certified (ROC Gold)"
+        ],
+        "sources": [
+          "regen-organic"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Regenerative Organic Certified Gold — apparel cotton + food line."
+      },
+      "health": {
+        "certifications": [
+          "Regenerative Organic Certified (ROC Gold)"
+        ],
+        "sources": [
+          "regen-organic"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Regenerative Organic Certified Gold — apparel cotton + food line."
+      }
+    },
+    "amy-s-kitchen": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "non-gmo"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across most frozen + canned SKUs."
+      },
+      "health": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across most frozen + canned SKUs."
+      }
+    },
+    "ben-and-jerry-s": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "non-gmo"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across US ice cream pints (Unilever sub-brand)."
+      },
+      "health": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across US ice cream pints (Unilever sub-brand)."
+      }
+    },
+    "silk-whitewave": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "non-gmo"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across plant-milk line."
+      },
+      "health": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across plant-milk line."
+      }
+    },
+    "chobani": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "non-gmo"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "animals": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across core yogurt line."
+      },
+      "health": {
+        "certifications": [
+          "Non-GMO Project Verified"
+        ],
+        "sources": [
+          "non-gmo"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Non-GMO Project Verified across core yogurt line."
+      }
+    },
+    "coca-cola": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bonsucro"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "environment": {
+        "certifications": [
+          "Bonsucro member"
+        ],
+        "sources": [
+          "bonsucro"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Bonsucro member with 60%+ sugarcane volume Bonsucro-certified (2024 disclosure)."
+      }
+    },
+    "pepsico": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bonsucro"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "environment": {
+        "certifications": [
+          "Bonsucro member"
+        ],
+        "sources": [
+          "bonsucro"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Bonsucro member with ~40% sugarcane volume Bonsucro-certified (2024 disclosure)."
+      }
+    },
+    "mars": {
+      "_sources": [
+        "farm-welfare"
+      ],
+      "_innerSources": [
+        "bonsucro"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T17:54:31.227Z",
+      "environment": {
+        "certifications": [
+          "Bonsucro member"
+        ],
+        "sources": [
+          "bonsucro"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Bonsucro member — sustainable sugar sourcing target across confectionery."
+      }
+    }
+  },
+  "orphans": [
+    {
+      "brand": "Niman Ranch",
+      "source": "gap",
+      "tier": "Step 4"
+    },
+    {
+      "brand": "Mary's Free-Range Chicken",
+      "source": "gap",
+      "tier": "Step 5+"
+    },
+    {
+      "brand": "Vital Farms",
+      "source": "gap",
+      "tier": "Step 5+"
+    },
+    {
+      "brand": "Sodexo",
+      "source": "ciwf",
+      "tier": null
+    },
+    {
+      "brand": "Maple Hill Creamery",
+      "source": "real-organic",
+      "tier": null
+    },
+    {
+      "brand": "Vital Farms",
+      "source": "real-organic",
+      "tier": null
+    },
+    {
+      "brand": "Alexandre Family Farm",
+      "source": "real-organic",
+      "tier": null
+    },
+    {
+      "brand": "Dr. Bronner's",
+      "source": "regen-organic",
+      "tier": "ROC"
+    },
+    {
+      "brand": "Lundberg Family Farms",
+      "source": "regen-organic",
+      "tier": "ROC"
+    },
+    {
+      "brand": "Nature's Path",
+      "source": "regen-organic",
+      "tier": "ROC"
+    },
+    {
+      "brand": "Guayakí",
+      "source": "regen-organic",
+      "tier": "ROC"
+    },
+    {
+      "brand": "Alec's Ice Cream",
+      "source": "regen-organic",
+      "tier": "ROC"
+    },
+    {
+      "brand": "Stonyfield Farm",
+      "source": "demeter",
+      "tier": null
+    },
+    {
+      "brand": "Eden Foods",
+      "source": "demeter",
+      "tier": null
+    },
+    {
+      "brand": "Frey Vineyards",
+      "source": "demeter",
+      "tier": null
+    },
+    {
+      "brand": "Lakewood Organic",
+      "source": "demeter",
+      "tier": null
+    },
+    {
+      "brand": "Annie's Homegrown",
+      "source": "non-gmo",
+      "tier": null
+    },
+    {
+      "brand": "Nature's Path",
+      "source": "non-gmo",
+      "tier": null
+    },
+    {
+      "brand": "Stonyfield Farm",
+      "source": "non-gmo",
+      "tier": null
+    },
+    {
+      "brand": "Pacific Foods",
+      "source": "non-gmo",
+      "tier": null
+    },
+    {
+      "brand": "Starkist",
+      "source": "msc",
+      "tier": "Brand"
+    },
+    {
+      "brand": "Bumble Bee Foods",
+      "source": "msc",
+      "tier": "Brand"
+    },
+    {
+      "brand": "Nudie Jeans",
+      "source": "fairwear",
+      "tier": null
+    },
+    {
+      "brand": "Acne Studios",
+      "source": "fairwear",
+      "tier": null
+    },
+    {
+      "brand": "Stanley/Stella",
+      "source": "fairwear",
+      "tier": null
+    },
+    {
+      "brand": "Vaude",
+      "source": "fairwear",
+      "tier": null
+    },
+    {
+      "brand": "Schöffel",
+      "source": "fairwear",
+      "tier": null
+    },
+    {
+      "brand": "Mud Jeans",
+      "source": "fairwear",
+      "tier": null
+    }
+  ],
+  "orphan_total": 28
+}

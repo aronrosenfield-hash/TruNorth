@@ -50,6 +50,7 @@ const SOURCES = [
   "better-cotton",
   "bird-friendly-coffee",
   "awa",
+  "farm-welfare",
   "wwf-palm-oil",
   "tco-certified",
   "nsf-usp-supplements",

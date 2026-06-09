@@ -7,10 +7,10 @@
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "neutral",
-    "labor": "very_poor",
+    "environment": "negative",
+    "labor": "negative",
     "dei": "neutral",
-    "animals": "neutral",
+    "animals": "negative",
     "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
@@ -24,10 +24,10 @@
     ]
   },
   "labor": {
-    "s": "KnowTheChain Forced-Labor Benchmark (2024): 9/100 (Food & Beverage). Below sector average — gaps in supplier disclosure, worker voice, or grievance remedy.",
+    "s": "FAIRR Index: High risk (JBS subsidiary) on worker rights and antibiotic disclosure. [FAIRR High risk]",
     "sources": [
       "Claude AI synthesis",
-      "knowthechain"
+      "farm-welfare"
     ]
   },
   "dataLastUpdated": "2026-05-28",
@@ -38,9 +38,10 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "FAIRR Index: High risk (JBS subsidiary) on worker rights and antibiotic disclosure. [FAIRR High risk]",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "farm-welfare"
     ]
   },
   "dei": {
@@ -50,9 +51,10 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "FAIRR Index: High risk (JBS subsidiary) on worker rights and antibiotic disclosure. [FAIRR High risk]",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "farm-welfare"
     ]
   },
   "guns": {
