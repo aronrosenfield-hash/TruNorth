@@ -2,7 +2,7 @@
   "name": "Ford",
   "cat": "Automotive",
   "init": "FORD",
-  "overall": 44.5,
+  "overall": 38,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -12,8 +12,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $9K PAC donations; 72% to Republican, 28% to Democratic committees.",
@@ -64,7 +65,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 4568 on record (100 in past 12mo); 99% timely response rate.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -235,5 +236,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T23:49:31.975Z"
+  "lastUpdated": "2026-05-30T23:49:31.975Z",
+  "health": {
+    "s": "47 CPSC recalls on record; sample hazard: a wire inside the charger can detach and touch the side of the charger."
+  }
 }

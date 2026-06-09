@@ -2,19 +2,20 @@
   "name": "PetSmart",
   "cat": "Retail",
   "init": "PS",
-  "overall": 97,
+  "overall": 65.7,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "neutral",
     "charity": "positive",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -41,7 +42,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 17 since 2015.",
     "rating": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -210,5 +211,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-17T23:59:59.000Z"
+  "lastUpdated": "2026-05-17T23:59:59.000Z",
+  "health": {
+    "s": "8 CPSC recalls on record; sample hazard: the glass fish bowls can crack."
+  }
 }

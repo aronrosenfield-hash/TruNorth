@@ -2,7 +2,7 @@
   "name": "Dell",
   "cat": "Technology",
   "init": "DELL",
-  "overall": 55.5,
+  "overall": 53.2,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,8 +12,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $35K PAC donations; 44% to Republican, 56% to Democratic committees.",
@@ -64,7 +65,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 2 CVEs on record (1 in past 12mo); affected products include RecoverPoint for Virtual Machines (RP4VMs), dbutil Driver.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -236,5 +237,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T22:57:15.428Z"
+  "lastUpdated": "2026-05-30T22:57:15.428Z",
+  "health": {
+    "s": "16 CPSC recalls on record; sample hazard: the hybrid power adapter casing can break and detach."
+  }
 }

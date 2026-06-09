@@ -2,7 +2,7 @@
   "name": "Volkswagen USA",
   "cat": "Automotive",
   "init": "VW",
-  "overall": 21.5,
+  "overall": 35.8,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -69,7 +70,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 38 on record (25 in past 12mo); 0% timely response rate.",
     "grade": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -264,5 +265,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "18 CPSC recalls on record; sample hazard: fire & fire-related burn."
+  }
 }

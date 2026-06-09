@@ -8,12 +8,13 @@
     "political": "right",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $247K in executive political donations; partisan lean Republican +54 across 7 executive donors.",
@@ -22,7 +23,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 5 since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -55,7 +56,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 29 on record (5 in past 12mo); 90% timely response rate.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -118,5 +119,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-31T01:57:23.102Z"
+  "lastUpdated": "2026-05-31T01:57:23.102Z",
+  "health": {
+    "s": "3 CPSC recalls on record; sample hazard: a small silicone valve in caps sold with the podium and peak fitness water bottl."
+  }
 }

@@ -2,7 +2,7 @@
   "name": "Avis",
   "cat": "Automotive",
   "init": "ABG",
-  "overall": 41.4,
+  "overall": 46,
   "isPublic": true,
   "ticker": "CAR",
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No FEC PAC data found.",
@@ -76,7 +77,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 73 on record (19 in past 12mo); 88% timely response rate.",
     "grade": "Poor",
     "sources": []
   },
@@ -331,5 +332,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "5 CPSC recalls (1 in past 24 months); latest hazard: choking."
+  }
 }

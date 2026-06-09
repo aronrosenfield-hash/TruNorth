@@ -2,19 +2,20 @@
   "name": "Discover Financial",
   "cat": "Financial Services",
   "init": "DFS",
-  "overall": 50,
+  "overall": 41.6,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "right",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
-    "dei": "pro_dei",
+    "labor": "mixed",
+    "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $8K PAC donations; 75% to Republican, 25% to Democratic committees.",
@@ -48,7 +49,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "4 OSHA severe-injury reports in past 2y (0 amputations); 26 since 2015.",
     "rating": "Below Average",
     "sources": [
       "Claude AI synthesis"
@@ -74,7 +75,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 44655 on record (100 in past 12mo); 100% timely response rate.",
     "grade": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -208,5 +209,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "14 CPSC recalls on record; sample hazard: the vacuum's electric cord plug prong can detach and remain in an electrical out."
+  }
 }

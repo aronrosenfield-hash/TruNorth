@@ -2,18 +2,19 @@
   "name": "Big Lots",
   "cat": "Retail",
   "init": "BIGL",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "neutral"
+    "execPay": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -34,7 +35,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 40 since 2015.",
     "sources": [
       "Public records research"
     ]
@@ -141,5 +142,8 @@
     "lastUpdated": "2026-06-08T17:00:56.767Z",
     "source": "phmsa",
     "sourceUrl": "https://primis.phmsa.dot.gov/enforcement-data/operators?search=Big%20Lots"
+  },
+  "health": {
+    "s": "25 CPSC recalls on record; sample hazard: electrocution/electric shock."
   }
 }

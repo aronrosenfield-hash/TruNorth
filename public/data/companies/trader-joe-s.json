@@ -9,13 +9,14 @@
     "political": "neutral",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "cruelty_free",
     "guns": "neutral",
     "privacy": "na",
     "execPay": "na",
-    "animals.na": "Not applicable; grocery retailer with no animal testing or Leaping Bunny certification relevance."
+    "animals.na": "Not applicable; grocery retailer with no animal testing or Leaping Bunny certification relevance.",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -42,7 +43,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "2 OSHA severe-injury reports in past 2y (0 amputations); 12 since 2015.",
     "rating": "Below Average",
     "sources": [
       "Claude AI synthesis"
@@ -252,5 +253,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "1 CPSC recall (1 in past 24 months); latest hazard: the candle flame can spread from the wick to the wax causing a larger than expec."
+  }
 }

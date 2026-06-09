@@ -2,7 +2,7 @@
   "name": "Apple",
   "cat": "Technology",
   "init": "APL",
-  "overall": 59.3,
+  "overall": 48.8,
   "isPublic": true,
   "ticker": "AAPL",
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $25K PAC donations; 68% to Republican, 32% to Democratic committees.",
@@ -78,7 +79,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 93 CVEs on record (11 in past 12mo); affected products include Multiple Products, iOS, iPadOS, and macOS.",
     "grade": "Good",
     "sources": []
   },
@@ -435,5 +436,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "16 CPSC recalls on record; sample hazard: an internal short can cause the battery cells to overheat."
+  }
 }

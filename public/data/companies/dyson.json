@@ -2,18 +2,19 @@
   "name": "Dyson",
   "cat": "Consumer Goods",
   "init": "DYSO",
-  "overall": null,
+  "overall": 50,
   "isPublic": false,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "neutral"
+    "execPay": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -34,7 +35,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "3 OSHA severe-injury reports since 2015.",
     "sources": [
       "Public records research"
     ]
@@ -168,5 +169,8 @@
       "source": "msha",
       "sourceUrl": "https://www.msha.gov/data-reports"
     }
+  },
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: the heaters can develop an electrical short and overheat."
   }
 }

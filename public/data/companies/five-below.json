@@ -2,18 +2,19 @@
   "name": "FIVE BELOW",
   "cat": "Retail",
   "init": "FIVE",
-  "overall": 65,
+  "overall": 47,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "FEC: $288K in executive political donations; partisan lean split across 10 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 6 since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -169,5 +170,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T21:21:24.919Z"
+  "lastUpdated": "2026-05-27T21:21:24.919Z",
+  "health": {
+    "s": "4 CPSC recalls (2 in past 24 months); latest hazard: alcohol fuel can splash or leak out of the fire pit reservoir during use and/or ."
+  }
 }

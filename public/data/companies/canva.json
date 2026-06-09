@@ -2,18 +2,19 @@
   "name": "Canva",
   "cat": "Technology",
   "init": "CANV",
-  "overall": null,
+  "overall": 50,
   "isPublic": false,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "neutral"
+    "execPay": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -34,7 +35,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 5 since 2015.",
     "sources": [
       "Public records research"
     ]
@@ -93,5 +94,8 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "health": {
+    "s": "3 CPSC recalls on record; sample hazard: the inclined sleeper is a banned hazardous product under the safe sleep for babi."
   }
 }

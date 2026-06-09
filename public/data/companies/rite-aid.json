@@ -2,18 +2,19 @@
   "name": "Rite Aid",
   "cat": "Retail",
   "init": "RITE",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "neutral"
+    "execPay": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -34,7 +35,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "30 OSHA severe-injury reports since 2015.",
     "sources": [
       "Public records research"
     ]
@@ -87,5 +88,8 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "health": {
+    "s": "12 CPSC recalls on record; sample hazard: fire & fire-related burn."
   }
 }

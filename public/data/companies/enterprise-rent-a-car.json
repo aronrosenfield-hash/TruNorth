@@ -2,19 +2,20 @@
   "name": "Enterprise Rent-A-Car",
   "cat": "Automotive",
   "init": "ERC",
-  "overall": null,
+  "overall": 17,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "poor",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "No public record found.",
@@ -40,7 +41,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "106 OSHA severe-injury reports in past 2y (31 amputations); 852 since 2015.",
     "rating": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -66,7 +67,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 3437 on record (100 in past 12mo); 82% timely response rate.",
     "grade": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -165,5 +166,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-17T23:59:59.000Z"
+  "lastUpdated": "2026-05-17T23:59:59.000Z",
+  "health": {
+    "s": "123 CPSC recalls (2 in past 24 months); latest hazard: fire & fire-related burn."
+  }
 }

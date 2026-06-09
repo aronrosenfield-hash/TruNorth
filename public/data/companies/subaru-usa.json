@@ -2,19 +2,20 @@
   "name": "Subaru USA",
   "cat": "Automotive",
   "init": "SUB",
-  "overall": 80,
+  "overall": 60,
   "isPublic": true,
   "ticker": null,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $437K in executive political donations; partisan lean split across 11 executive donors.",
@@ -41,7 +42,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "4 OSHA severe-injury reports since 2015.",
     "rating": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -130,5 +131,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: the fuel tank can leak."
+  }
 }

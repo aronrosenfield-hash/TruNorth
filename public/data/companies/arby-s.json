@@ -9,12 +9,13 @@
     "political": "neutral",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -41,7 +42,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 5 since 2015.",
     "rating": "Below Average",
     "sources": [
       "Claude AI synthesis"
@@ -246,5 +247,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: choking."
+  }
 }

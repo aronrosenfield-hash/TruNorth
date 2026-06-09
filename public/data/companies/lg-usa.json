@@ -2,7 +2,7 @@
   "name": "LG USA",
   "cat": "Consumer Goods",
   "init": "LGU",
-  "overall": 38,
+  "overall": 33.2,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "No public record found.",
@@ -69,7 +70,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 1 CVE on record (0 in past 12mo); affected products include N1A1 NAS.",
     "grade": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -205,5 +206,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "67 CPSC recalls (3 in past 24 months); latest hazard: choking."
+  }
 }

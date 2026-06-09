@@ -2,7 +2,7 @@
   "name": "Abbott Laboratories",
   "cat": "Healthcare",
   "init": "ABT",
-  "overall": 44.5,
+  "overall": 38,
   "isPublic": true,
   "ticker": "ABT",
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "No FEC PAC contributions on record.",
@@ -77,7 +78,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 77 on record (12 in past 12mo); 87% timely response rate.",
     "grade": "Mixed",
     "sources": []
   },
@@ -365,5 +366,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "HHS Office of Inspector General: 1 OIG exclusion (Medicare/Medicaid debarment)."
+  }
 }

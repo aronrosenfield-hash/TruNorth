@@ -2,18 +2,19 @@
   "name": "Gillette",
   "cat": "Consumer Goods",
   "init": "GILL",
-  "overall": 67.1,
+  "overall": 58,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $110K in executive political donations; partisan lean split across 8 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -134,5 +135,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T16:38:16.427Z"
+  "lastUpdated": "2026-05-27T16:38:16.427Z",
+  "health": {
+    "s": "2 CPSC recalls on record; sample hazard: a problem during manufacturing resulted in the misalignment of the blades in the."
+  }
 }

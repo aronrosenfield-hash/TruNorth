@@ -2,18 +2,19 @@
   "name": "Old Navy",
   "cat": "Apparel & Fashion",
   "init": "OLDN",
-  "overall": null,
+  "overall": 50,
   "isPublic": false,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "neutral"
+    "execPay": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -34,7 +35,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "3 OSHA severe-injury reports since 2015.",
     "sources": [
       "Public records research"
     ]
@@ -91,5 +92,8 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "health": {
+    "s": "4 CPSC recalls on record; sample hazard: this style of aqua socks has less traction when worn on wet or smooth surfaces s."
   }
 }
