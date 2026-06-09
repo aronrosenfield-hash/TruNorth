@@ -2897,6 +2897,13 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         // Phase 5.y "Why this grade?" — surface the 1–2 categories
                         // that moved the needle most on this user's score, derived
                         // from |scoreCat − 50| × weight. Plain English, no judgment.
+                        //
+                        // B-60/B-62 (2026-06-09, Aron-reported): ALSO surface
+                        // dealbreaker penalties. Previously a user could see "F
+                        // — Why: Political helped most" with no idea their
+                        // foreign-ownership dealbreaker silently dropped the
+                        // brand 30 points. Now penalties are first-class
+                        // citizens in the explanation.
                         const baseW = {
                           political:profile.weights?.political||3, charity:profile.weights?.charity||2,
                           environment:profile.weights?.environment||3, labor:profile.weights?.labor||3,
@@ -2909,35 +2916,76 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                           if (getDataState(k, v) === "unknown") return null;
                           const lv = String(v||"").toLowerCase();
                           if (lv === "neutral" || lv === "na" || lv === "n/a") return null;
-                          // 2026-06-03: same fix as computeScore — if the
-                          // detail card says "No public record found." we
-                          // shouldn't cite this category as a reason the
-                          // grade moved. The bar may still position to
-                          // show the categorical signal, but it's not a
-                          // grading factor.
                           const detailObj = enriched[k] || {};
                           if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) return null;
                           const sc = scoreCat(k, v, profile);
                           const delta = sc - 50;
                           return { k, sc, delta, impact: Math.abs(delta) * baseW[k] };
                         }).filter(Boolean).sort((a,b) => b.impact - a.impact);
+
+                        // B-60: compute dealbreaker penalties the way computeScore
+                        // does (App.jsx ~line 790). Surface any that fired.
+                        const dealbreakers = profile.dealBreakers || [];
+                        const penalties = [];
+                        for (const db of dealbreakers) {
+                          if (["environment","labor","privacy","execPay","animals","guns","charity"].includes(db)) {
+                            const v = (enriched.sc?.[db] || "").toLowerCase();
+                            const bad = ["negative","poor","very poor","below average","tests_animals","sells_guns","makes_guns"];
+                            if (bad.includes(v)) penalties.push({ db, label: `${CAT_LABELS[db]} dealbreaker`, points: -20 });
+                          } else if (db === "forcedLabor" && (enriched.sc?.labor||"").toLowerCase() === "poor") {
+                            penalties.push({ db, label: "Forced-labor dealbreaker", points: -25 });
+                          } else if (db === "taxAvoidance" && (enriched.sc?.execPay||"").toLowerCase() === "poor") {
+                            penalties.push({ db, label: "Tax-avoidance dealbreaker", points: -15 });
+                          } else if (db === "predatoryPrice" && (enriched.sc?.labor||"").toLowerCase() === "poor") {
+                            penalties.push({ db, label: "Predatory-pricing dealbreaker", points: -15 });
+                          } else if (db === "darkPatterns" && (enriched.sc?.privacy||"").toLowerCase() === "poor") {
+                            penalties.push({ db, label: "Dark-patterns dealbreaker", points: -20 });
+                          } else if (db === "foreignOwn" && enriched.foreignOwned) {
+                            penalties.push({ db, label: `Foreign-owned (${enriched.foreignCountry || "non-US"})`, points: -30 });
+                          } else if (db === "monopoly" && enriched.antitrust) {
+                            penalties.push({ db, label: "Antitrust history", points: -25 });
+                          } else if (db === "childLabor" && enriched.childLabor) {
+                            penalties.push({ db, label: "Child-labor history", points: -30 });
+                          }
+                        }
+                        if (profile.animalTesting === "dealbreaker" && enriched.sc?.animals === "tests_animals") {
+                          penalties.push({ db: "animalTesting", label: "Animal-testing dealbreaker", points: -40 });
+                        }
+                        penalties.sort((a,b) => a.points - b.points); // most-negative first
+
                         const top = impacts.slice(0, 2);
-                        if (!top.length) return null;
+                        if (!top.length && !penalties.length) return null;
                         const reasonFor = (it) => {
                           const cat = CAT_LABELS[it.k];
                           const goodOrBad = it.delta > 0 ? "helped" : "hurt";
                           return `${cat} ${goodOrBad}`;
                         };
                         return (
-                          <div style={{ marginTop:8, fontSize:11, color:T.txt2, lineHeight:1.4 }}>
-                            <span style={{ color:T.txt3 }}>Why: </span>
-                            {top.map((it, i) => (
-                              <span key={it.k}>
-                                {i > 0 && ", "}
-                                <span style={{ color: it.delta > 0 ? "#4caf82" : "#e24a4a", fontWeight:600 }}>{reasonFor(it)}</span>
-                              </span>
-                            ))}
-                            {top[0] && <span style={{ color:T.txt3 }}> most</span>}
+                          <div style={{ marginTop:8, fontSize:11, color:T.txt2, lineHeight:1.5 }}>
+                            {top.length > 0 && (
+                              <div>
+                                <span style={{ color:T.txt3 }}>Why: </span>
+                                {top.map((it, i) => (
+                                  <span key={it.k}>
+                                    {i > 0 && ", "}
+                                    <span style={{ color: it.delta > 0 ? "#4caf82" : "#e24a4a", fontWeight:600 }}>{reasonFor(it)}</span>
+                                  </span>
+                                ))}
+                                {top[0] && <span style={{ color:T.txt3 }}> most</span>}
+                              </div>
+                            )}
+                            {penalties.length > 0 && (
+                              <div style={{ marginTop:4 }}>
+                                <span style={{ color:T.txt3 }}>Dealbreakers: </span>
+                                {penalties.map((p, i) => (
+                                  <span key={p.db}>
+                                    {i > 0 && ", "}
+                                    <span style={{ color:"#e24a4a", fontWeight:600 }}>{p.label}</span>
+                                    <span style={{ color:T.txt3 }}> ({p.points})</span>
+                                  </span>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         );
                       })()}
