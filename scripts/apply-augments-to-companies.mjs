@@ -600,106 +600,71 @@ const WRITERS = [
       }];
     },
   },
-  // ─── HIBP breach database (privacy/cyber, strongest signal) ───────────
-  // Ordered ABOVE the other privacy writers so the most concrete public
-  // record (an actual confirmed breach) wins the narrative slot when
-  // multiple tech/privacy sources are present for one slug.
+  // ─── USTR Notorious Markets (counterfeit/piracy IP concerns) ──────────
+  // Flagged as a privacy/trust concern — these platforms knowingly host
+  // counterfeit goods or pirated content per USTR's annual review.
   {
-    name: "hibp-breaches",
+    name: "ustr-notorious-markets",
     write: (e) => {
-      if (!e || !e.breach_count) return [];
-      const total = e.total_pwned || 0;
-      const totalStr = total >= 1e9 ? `${(total / 1e9).toFixed(1)}B`
-        : total >= 1e6 ? `${(total / 1e6).toFixed(0)}M`
-        : total >= 1e3 ? `${(total / 1e3).toFixed(0)}K`
-        : `${total}`;
-      const yrs = [];
-      if (e.first_breach) yrs.push(e.first_breach.slice(0, 4));
-      if (e.last_breach && e.last_breach !== e.first_breach) yrs.push(e.last_breach.slice(0, 4));
-      const span = yrs.length ? ` (${yrs.join("–")})` : "";
-      const sc = e.sensitive_count > 0 || total >= 100_000_000 ? "poor"
-        : total >= 1_000_000 || e.breach_count >= 2 ? "mixed"
-        : "mixed";
-      const sample = e.sample_breaches?.[0];
-      const extra = sample ? ` Most recent: ${sample.title} (${sample.date?.slice(0, 4)}).` : "";
+      const p = e.privacy;
+      if (!p || !p.ustrNotoriousMarket) return [];
+      const concernStr = p.concern || "counterfeit goods or piracy";
+      const ops = p.operator ? ` (operator: ${p.operator})` : "";
       return [{
         category: "privacy",
-        narrative: `${e.breach_count} publicly-disclosed data breach${e.breach_count > 1 ? "es" : ""} per Have I Been Pwned${span} — ${totalStr} accounts compromised.${extra}`,
-        sc, severity: "negative",
+        narrative: `USTR ${p.listYear || ""} Notorious Markets List: flagged for ${concernStr} via ${p.marketName}${ops}.`.replace(/\s+/g, " ").trim(),
+        sc: "poor",
+        severity: "negative",
       }];
     },
   },
-  // ─── Mozilla *Privacy Not Included* ───────────────────────────────────
+  // ─── Common Sense Privacy ─────────────────────────────────────────────
+  // Worst tier across all flagship products of a corporate slug. Warning
+  // = "fails minimum Common Sense safeguards"; Pass is rare and salient.
   {
-    name: "mozilla-pni",
+    name: "common-sense-privacy",
     write: (e) => {
-      if (!e || !e.rating) return [];
-      const sc = e.rating === "warning" || e.rating === "poor" ? "poor"
-        : e.rating === "good" ? "good"
-        : "mixed";
-      const product = e.sample_product ? ` ${e.sample_product}` : "";
-      const sec = e.meets_min_security === false ? " Fails Mozilla's minimum security standards." : "";
-      return [{
-        category: "privacy",
-        narrative: `Mozilla *Privacy Not Included rating: ${e.rating}${product ? ` for${product}` : ""}.${sec}${e.note ? ` ${e.note}` : ""}`.trim(),
-        sc, severity: sc === "poor" ? "negative" : sc === "good" ? "positive" : "neutral",
-      }];
+      const p = e.privacy;
+      if (!p || !p.csPrivacyWorstTier) return [];
+      const prods = Array.isArray(p.csPrivacyProducts) ? p.csPrivacyProducts : [];
+      if (!prods.length) return [];
+      const tier = p.csPrivacyWorstTier;
+      const names = prods.map(x => x.product).slice(0, 3).join(", ")
+        + (prods.length > 3 ? ` (+${prods.length - 3} more)` : "");
+      let narrative, sc, sev;
+      if (tier === "fail") {
+        narrative = `Common Sense Privacy: Fail rating across ${prods.length} product(s) (${names}) — fails minimum data-protection safeguards.`;
+        sc = "poor"; sev = "negative";
+      } else if (tier === "warning") {
+        narrative = `Common Sense Privacy: Warning rating across ${prods.length} product(s) (${names}) — does not meet minimum data-protection safeguards.`;
+        sc = "poor"; sev = "negative";
+      } else if (tier === "pass") {
+        narrative = `Common Sense Privacy: Pass rating on ${prods.length} product(s) (${names}) — meets data-protection safeguards.`;
+        sc = "good"; sev = "positive";
+      } else {
+        return [];
+      }
+      return [{ category: "privacy", narrative, sc, severity: sev }];
     },
   },
-  // ─── EFF Who Has Your Back? ───────────────────────────────────────────
+  // ─── Consumer Reports Auto Brand Report Card ──────────────────────────
+  // Reliability ranking drives a quality-of-product signal that maps to
+  // the health category (closest semantic: consumer safety + reliability).
   {
-    name: "eff-whyb",
+    name: "cr-auto-reliability",
     write: (e) => {
-      if (e == null || e.stars == null) return [];
-      const sc = e.stars >= 4 ? "good" : e.stars >= 2 ? "mixed" : "poor";
+      const h = e.health;
+      if (!h || !h.crBrandRank) return [];
+      const tier = h.crTier || "midpack";
+      const sc = tier === "top10" ? "good" : tier === "bottom5" ? "poor" : "mixed";
+      const sev = tier === "top10" ? "positive" : tier === "bottom5" ? "negative" : "neutral";
+      const rel = h.crReliabilityRank
+        ? ` and #${h.crReliabilityRank} for reliability`
+        : "";
       return [{
-        category: "privacy",
-        narrative: `EFF *Who Has Your Back?* ${e.year}: ${e.stars}/5 stars on government data-request transparency (${e.tier}).`,
-        sc, severity: sc === "good" ? "positive" : sc === "poor" ? "negative" : "neutral",
-      }];
-    },
-  },
-  // ─── Ranking Digital Rights Big Tech Scorecard ────────────────────────
-  {
-    name: "rdr-bigtech",
-    write: (e) => {
-      if (e == null || e.composite == null) return [];
-      const sc = e.composite >= 60 ? "good" : e.composite >= 40 ? "mixed" : "poor";
-      return [{
-        category: "privacy",
-        narrative: `Ranking Digital Rights ${e.year}: ${e.composite}/100 composite (governance ${e.governance}, expression ${e.expression}, privacy ${e.privacy}).`,
-        sc, severity: sc === "poor" ? "negative" : sc === "good" ? "positive" : "neutral",
-      }];
-    },
-  },
-  // ─── The Markup investigations ────────────────────────────────────────
-  {
-    name: "markup-investigations",
-    write: (e) => {
-      if (!e || !e.investigation_count) return [];
-      const sample = e.sample_investigations?.[0];
-      const themes = Array.isArray(e.themes) ? e.themes.join(", ") : "";
-      const sc = e.investigation_count >= 3 ? "poor" : "mixed";
-      const head = sample ? ` Most recent: "${sample.headline}" (${sample.date?.slice(0, 4)}).` : "";
-      return [{
-        category: "privacy",
-        narrative: `${e.investigation_count} investigation${e.investigation_count > 1 ? "s" : ""} by The Markup${themes ? ` (themes: ${themes})` : ""}.${head}`,
-        sc, severity: "negative",
-      }];
-    },
-  },
-  // ─── FTC Tech Reports / 6(b) studies ──────────────────────────────────
-  {
-    name: "ftc-tech-reports",
-    write: (e) => {
-      if (!e || !e.mention_count) return [];
-      const sc = e.adverse_count >= 1 ? "poor" : "mixed";
-      const study = e.studies?.[0];
-      const cite = study ? ` ${study.title} (${study.year})${study.finding_class === "adverse_finding" ? " — adverse finding" : ""}.` : "";
-      return [{
-        category: "privacy",
-        narrative: `Named in ${e.mention_count} FTC 6(b)/tech report${e.mention_count > 1 ? "s" : ""}${e.adverse_count ? `, ${e.adverse_count} with adverse findings` : ""}.${cite}`,
-        sc, severity: e.adverse_count ? "negative" : "neutral",
+        category: "health",
+        narrative: `Consumer Reports ${h.seedYear || ""} Brand Report Card: ranked #${h.crBrandRank} of ~26 auto brands${rel}.`.replace(/\s+/g, " ").trim(),
+        sc, severity: sev,
       }];
     },
   },
