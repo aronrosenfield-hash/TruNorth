@@ -1,0 +1,4274 @@
+{
+  "generated_at": "2026-06-09T19:21:47.384Z",
+  "source": "divestment-impact-funds",
+  "source_url": "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+  "source_urls": {
+    "norway-gpfg": "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+    "divestment-commitments": "https://gofossilfree.org/divestment/commitments/",
+    "fossil-free-funds": "https://fossilfreefunds.org/",
+    "tobacco-free-funds": "https://tobaccofreefunds.org/",
+    "weapons-free-funds": "https://weaponfreefunds.org/",
+    "deforestation-free-funds": "https://deforestationfreefunds.org/",
+    "prison-free-funds": "https://prisonfreefunds.org/",
+    "gender-equality-funds": "https://genderequalityfunds.org/",
+    "trillium": "https://www.trilliuminvest.com/",
+    "calvert": "https://www.calvert.com/",
+    "domini": "https://www.domini.com/",
+    "parnassus": "https://www.parnassus.com/",
+    "pax-world": "https://impaxam.com/",
+    "tiaa-social-choice": "https://www.tiaa.org/",
+    "vanguard-esg": "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+    "ishares-esg": "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf",
+    "bds-boycott": "https://bdsmovement.net/",
+    "methodist-pension": "https://www.wespath.com/",
+    "episcopal-church": "https://www.cpg.org/"
+  },
+  "license": "Public/open institutional disclosures (sovereign wealth fund exclusion lists, mutual-fund top-holding filings, divestment commitment registries). Each record cites a per-source URL.",
+  "upstream_file": "data/raw/divestment-impact-funds/2026-06-09.json",
+  "company_count": 129,
+  "unmatched_count": 0,
+  "companies": {
+    "lockheed-martin": {
+      "display_name": "Lockheed Martin",
+      "sources": [
+        "episcopal-church",
+        "norway-gpfg",
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 3,
+          "reasons": [
+            "Production of nuclear weapons",
+            "Highest military-prime exposure across US mutual funds (Weapons Free Funds screen)",
+            "Episcopal Church SRI screen — military weapons systems"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://weaponfreefunds.org/",
+            "https://www.cpg.org/"
+          ],
+          "sources": [
+            "episcopal-church",
+            "norway-gpfg",
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons"
+        ],
+        "decision_years": [
+          2007
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 3,
+      "informational_fund_count": 0
+    },
+    "boeing": {
+      "display_name": "Boeing",
+      "sources": [
+        "norway-gpfg",
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of nuclear weapons",
+            "High military-prime exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "northrop-grumman": {
+      "display_name": "Northrop Grumman",
+      "sources": [
+        "norway-gpfg",
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of nuclear weapons",
+            "High military-prime exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "honeywell": {
+      "display_name": "Honeywell International",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Production of nuclear weapons"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "bae-systems-usa": {
+      "display_name": "BAE Systems",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Production of nuclear weapons"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "general-dynamics": {
+      "display_name": "General Dynamics",
+      "sources": [
+        "norway-gpfg",
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of cluster munitions (key components)",
+            "High military-prime exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of cluster munitions (key components)"
+        ],
+        "decision_years": [
+          2008
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "textron": {
+      "display_name": "Textron",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Production of cluster munitions"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of cluster munitions"
+        ],
+        "decision_years": [
+          2008
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "hanwha": {
+      "display_name": "Hanwha",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Production of cluster munitions"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of cluster munitions"
+        ],
+        "decision_years": [
+          2007
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "raytheon-technologies": {
+      "display_name": "Raytheon",
+      "sources": [
+        "norway-gpfg",
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 3,
+          "reasons": [
+            "Production of cluster munitions / nuclear weapons components",
+            "High military-prime exposure (Weapons Free Funds screen — RTX Corp)",
+            "High military-prime exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of cluster munitions / nuclear weapons components"
+        ],
+        "decision_years": [
+          2005
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "walmart": {
+      "display_name": "Walmart",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "labor": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Serious violations of human rights — labour rights (subsequently reinstated 2019 after engagement)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Serious violations of human rights — labour rights (subsequently reinstated 2019 after engagement)"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "philip-morris-international": {
+      "display_name": "Philip Morris International",
+      "sources": [
+        "episcopal-church",
+        "norway-gpfg",
+        "tobacco-free-funds"
+      ],
+      "category_signals": {
+        "health": {
+          "polarity": "negative",
+          "count": 3,
+          "reasons": [
+            "Production of tobacco",
+            "Top tobacco exposure across US mutual funds (Tobacco Free Funds screen)",
+            "Episcopal Church SRI screen — tobacco"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://tobaccofreefunds.org/",
+            "https://www.cpg.org/"
+          ],
+          "sources": [
+            "episcopal-church",
+            "norway-gpfg",
+            "tobacco-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of tobacco"
+        ],
+        "decision_years": [
+          2010
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 3,
+      "informational_fund_count": 0
+    },
+    "altria-group": {
+      "display_name": "Altria",
+      "sources": [
+        "episcopal-church",
+        "norway-gpfg",
+        "tobacco-free-funds"
+      ],
+      "category_signals": {
+        "health": {
+          "polarity": "negative",
+          "count": 3,
+          "reasons": [
+            "Production of tobacco",
+            "Top tobacco exposure across US mutual funds (Tobacco Free Funds screen)",
+            "Episcopal Church SRI screen — tobacco"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://tobaccofreefunds.org/",
+            "https://www.cpg.org/"
+          ],
+          "sources": [
+            "episcopal-church",
+            "norway-gpfg",
+            "tobacco-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of tobacco"
+        ],
+        "decision_years": [
+          2010
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 3,
+      "informational_fund_count": 0
+    },
+    "british-american-tobacco-p-l-c": {
+      "display_name": "British American Tobacco",
+      "sources": [
+        "norway-gpfg",
+        "tobacco-free-funds"
+      ],
+      "category_signals": {
+        "health": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of tobacco",
+            "Top tobacco exposure across global mutual funds (Tobacco Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://tobaccofreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "tobacco-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of tobacco"
+        ],
+        "decision_years": [
+          2010
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "imperial-brands": {
+      "display_name": "Imperial Brands",
+      "sources": [
+        "norway-gpfg",
+        "tobacco-free-funds"
+      ],
+      "category_signals": {
+        "health": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of tobacco",
+            "Top tobacco exposure across mutual funds (Tobacco Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://tobaccofreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "tobacco-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of tobacco"
+        ],
+        "decision_years": [
+          2010
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "japan-tobacco": {
+      "display_name": "Japan Tobacco",
+      "sources": [
+        "norway-gpfg",
+        "tobacco-free-funds"
+      ],
+      "category_signals": {
+        "health": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of tobacco",
+            "Top tobacco exposure across mutual funds (Tobacco Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://tobaccofreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "tobacco-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of tobacco"
+        ],
+        "decision_years": [
+          2010
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "reynolds-american": {
+      "display_name": "Reynolds American",
+      "sources": [
+        "norway-gpfg",
+        "tobacco-free-funds"
+      ],
+      "category_signals": {
+        "health": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of tobacco",
+            "Top tobacco exposure across mutual funds (Tobacco Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://tobaccofreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "tobacco-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of tobacco"
+        ],
+        "decision_years": [
+          2010
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "glencore-plc": {
+      "display_name": "Glencore",
+      "sources": [
+        "divestment-commitments",
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Coal-based power generation / mining (threshold criterion)",
+            "Coal divestment target — global mining/trading major"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments",
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation / mining (threshold criterion)"
+        ],
+        "decision_years": [
+          2020
+        ]
+      },
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "rwe": {
+      "display_name": "RWE",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2019
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "duke-energy": {
+      "display_name": "Duke Energy",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2016
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "aes": {
+      "display_name": "AES Corporation",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2016
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "sasol": {
+      "display_name": "Sasol",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2020
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "vedanta-resources": {
+      "display_name": "Vedanta Resources",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (Korba aluminium and Niyamgiri operations)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (Korba aluminium and Niyamgiri operations)"
+        ],
+        "decision_years": [
+          2007
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "freeport-mcmoran": {
+      "display_name": "Freeport-McMoRan",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (Grasberg mine tailings)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (Grasberg mine tailings)"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "rio-tinto": {
+      "display_name": "Rio Tinto",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (Grasberg joint venture; later reinstated)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (Grasberg joint venture; later reinstated)"
+        ],
+        "decision_years": [
+          2008
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "wal-mart-de-mexico": {
+      "display_name": "Wal-Mart de Mexico",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "labor": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Serious violations of human rights — labour rights"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Serious violations of human rights — labour rights"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "zte": {
+      "display_name": "ZTE",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Gross corruption"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Gross corruption"
+        ],
+        "decision_years": [
+          2016
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "wisdom-marine-lines": {
+      "display_name": "Wisdom Marine Lines",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (ship breaking on South Asian beaches)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (ship breaking on South Asian beaches)"
+        ],
+        "decision_years": [
+          2018
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "evergreen-marine": {
+      "display_name": "Evergreen Marine",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (ship breaking on South Asian beaches)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (ship breaking on South Asian beaches)"
+        ],
+        "decision_years": [
+          2022
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "korea-line": {
+      "display_name": "Korea Line Corporation",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (ship breaking on South Asian beaches)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (ship breaking on South Asian beaches)"
+        ],
+        "decision_years": [
+          2018
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "eletrobras": {
+      "display_name": "Eletrobras",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "labor": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Serious violations of human rights — Indigenous peoples (Belo Monte / São Manoel hydro)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Serious violations of human rights — Indigenous peoples (Belo Monte / São Manoel hydro)"
+        ],
+        "decision_years": [
+          2018
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "posco": {
+      "display_name": "Posco",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (Pohang steel mill)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (Pohang steel mill)"
+        ],
+        "decision_years": [
+          2015
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "daewoo-international": {
+      "display_name": "Daewoo International",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (associated with Posco)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (associated with Posco)"
+        ],
+        "decision_years": [
+          2015
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "bharat-heavy-electricals": {
+      "display_name": "Bharat Heavy Electricals",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2019
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "china-shenhua-energy": {
+      "display_name": "China Shenhua Energy",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal mining (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal mining (threshold criterion)"
+        ],
+        "decision_years": [
+          2020
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "coal-india": {
+      "display_name": "Coal India",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal mining (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal mining (threshold criterion)"
+        ],
+        "decision_years": [
+          2019
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "whitehaven-coal": {
+      "display_name": "Whitehaven Coal",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal mining (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal mining (threshold criterion)"
+        ],
+        "decision_years": [
+          2019
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "adani-enterprises": {
+      "display_name": "Adani Power",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2022
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "eskom": {
+      "display_name": "Eskom",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2020
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "petrobras-petroleo-brasileiro-sa": {
+      "display_name": "Petrobras",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Gross corruption (Operation Car Wash) — under observation"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Gross corruption (Operation Car Wash) — under observation"
+        ],
+        "decision_years": [
+          2018
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "airbus": {
+      "display_name": "Airbus",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Production of nuclear weapons (associated with EADS legacy)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons (associated with EADS legacy)"
+        ],
+        "decision_years": [
+          2005
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "elbit-systems": {
+      "display_name": "Elbit Systems",
+      "sources": [
+        "bds-boycott",
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Sale of weapons / services to entities responsible for serious violations"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        },
+        "political": {
+          "polarity": "informational",
+          "count": 1,
+          "reasons": [
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Sale of weapons / services to entities responsible for serious violations"
+        ],
+        "decision_years": [
+          2009
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 1
+    },
+    "motorola-solutions": {
+      "display_name": "Motorola Solutions",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Activities in occupied Palestinian territory contributing to violations"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Activities in occupied Palestinian territory contributing to violations"
+        ],
+        "decision_years": [
+          2024
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "l3harris-technologies": {
+      "display_name": "L3Harris Technologies",
+      "sources": [
+        "norway-gpfg",
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Production of nuclear weapons components",
+            "Military-prime exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "norway-gpfg",
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "very_poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Production of nuclear weapons components"
+        ],
+        "decision_years": [
+          2006
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "leonardo-drs": {
+      "display_name": "Leonardo",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Sale of military materiel to Myanmar"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Sale of military materiel to Myanmar"
+        ],
+        "decision_years": [
+          2009
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "wec-energy": {
+      "display_name": "WEC Energy Group",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal-based power generation (threshold criterion)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Coal-based power generation (threshold criterion)"
+        ],
+        "decision_years": [
+          2016
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "caterpillar": {
+      "display_name": "Caterpillar",
+      "sources": [
+        "bds-boycott",
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Under observation — equipment used in demolitions of homes in occupied territory",
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott",
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Under observation — equipment used in demolitions of homes in occupied territory"
+        ],
+        "decision_years": [
+          2024
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 1
+    },
+    "heidelberg-materials": {
+      "display_name": "Heidelberg Materials",
+      "sources": [
+        "norway-gpfg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Severe environmental damage (Cement Roadstone Holdings legacy quarrying)"
+          ],
+          "source_urls": [
+            "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+          ],
+          "sources": [
+            "norway-gpfg"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": {
+        "excluded": true,
+        "reasons": [
+          "Severe environmental damage (Cement Roadstone Holdings legacy quarrying)"
+        ],
+        "decision_years": [
+          2009
+        ]
+      },
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "exxon-mobil": {
+      "display_name": "ExxonMobil",
+      "sources": [
+        "divestment-commitments",
+        "episcopal-church",
+        "fossil-free-funds",
+        "methodist-pension"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 4,
+          "reasons": [
+            "Most commonly divested fossil-fuel brand across 250+ university endowments",
+            "Highest fossil-fuel exposure across S&P-500 ESG mutual funds (Fossil Free Funds screen)",
+            "Wespath / United Methodist Pension Fund excluded (fossil-fuel screen)",
+            "Episcopal Church SRI screen — fossil-fuel divestment"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/",
+            "https://fossilfreefunds.org/",
+            "https://www.wespath.com/",
+            "https://www.cpg.org/"
+          ],
+          "sources": [
+            "divestment-commitments",
+            "episcopal-church",
+            "fossil-free-funds",
+            "methodist-pension"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 4,
+      "informational_fund_count": 0
+    },
+    "chevron": {
+      "display_name": "Chevron",
+      "sources": [
+        "divestment-commitments",
+        "episcopal-church",
+        "fossil-free-funds",
+        "methodist-pension"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 4,
+          "reasons": [
+            "Top fossil-fuel divestment target — Harvard, Stanford, UC, Yale, Oxford",
+            "High fossil-fuel exposure across S&P-500 ESG mutual funds (Fossil Free Funds screen)",
+            "Wespath / United Methodist Pension Fund excluded (fossil-fuel screen)",
+            "Episcopal Church SRI screen — fossil-fuel divestment"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/",
+            "https://fossilfreefunds.org/",
+            "https://www.wespath.com/",
+            "https://www.cpg.org/"
+          ],
+          "sources": [
+            "divestment-commitments",
+            "episcopal-church",
+            "fossil-free-funds",
+            "methodist-pension"
+          ]
+        }
+      },
+      "pattern_severity": "poor",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 4,
+      "informational_fund_count": 0
+    },
+    "bp-usa": {
+      "display_name": "BP",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Top fossil-fuel divestment target — UK universities, Norwegian pension funds"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "shell-usa": {
+      "display_name": "Shell",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Top fossil-fuel divestment target — Dutch, UK universities and pension funds"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "totalenergies-usa": {
+      "display_name": "TotalEnergies",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Top fossil-fuel divestment target — French and EU institutions"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "conocophillips": {
+      "display_name": "ConocoPhillips",
+      "sources": [
+        "divestment-commitments",
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Frequent fossil-fuel divestment target — US endowments",
+            "High fossil-fuel exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/",
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "divestment-commitments",
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "saudi-aramco": {
+      "display_name": "Saudi Aramco",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Largest single oil-and-gas producer — fossil divestment lists"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "petrochina": {
+      "display_name": "PetroChina",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — global lists"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "sinopec": {
+      "display_name": "Sinopec",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — global lists"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "equinor": {
+      "display_name": "Equinor",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — Norwegian and Nordic university divestments"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "eni": {
+      "display_name": "Eni",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — Italian/EU pension funds"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "repsol": {
+      "display_name": "Repsol",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "marathon-petroleum": {
+      "display_name": "Marathon Petroleum",
+      "sources": [
+        "divestment-commitments",
+        "methodist-pension"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 2,
+          "reasons": [
+            "Fossil-fuel divestment target — US refining major",
+            "Wespath / United Methodist Pension Fund excluded (fossil-fuel screen)"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/",
+            "https://www.wespath.com/"
+          ],
+          "sources": [
+            "divestment-commitments",
+            "methodist-pension"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "valero": {
+      "display_name": "Valero",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — US refining major"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "berkshire-hathaway": {
+      "display_name": "Phillips 66",
+      "sources": [
+        "divestment-commitments",
+        "ishares-esg",
+        "methodist-pension"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 3,
+          "reasons": [
+            "Fossil-fuel divestment target — US refining major",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding",
+            "Wespath / United Methodist Pension Fund excluded (fossil-fuel screen)"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf",
+            "https://www.wespath.com/"
+          ],
+          "sources": [
+            "divestment-commitments",
+            "ishares-esg",
+            "methodist-pension"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 1,
+      "negative_fund_count": 2,
+      "informational_fund_count": 0
+    },
+    "suncor-energy": {
+      "display_name": "Suncor Energy",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — Canadian oil-sands"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "canadian-natural-resources": {
+      "display_name": "Canadian Natural Resources",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — Canadian oil-sands"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "exxonmobil": {
+      "display_name": "Imperial Oil",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Fossil-fuel divestment target — Canadian oil-sands (ExxonMobil subsidiary)"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "peabody-energy": {
+      "display_name": "Peabody Energy",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal divestment target — universities and pension funds"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "arch-resources": {
+      "display_name": "Arch Resources",
+      "sources": [
+        "divestment-commitments"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Coal divestment target"
+          ],
+          "source_urls": [
+            "https://gofossilfree.org/divestment/commitments/"
+          ],
+          "sources": [
+            "divestment-commitments"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": true,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "occidental-petroleum": {
+      "display_name": "Occidental Petroleum",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "High fossil-fuel exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "eog-resources": {
+      "display_name": "EOG Resources",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "High fossil-fuel exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "pioneer-natural-resources": {
+      "display_name": "Pioneer Natural Resources",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "High fossil-fuel exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "marathon-oil": {
+      "display_name": "Marathon Oil",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "High fossil-fuel exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "devon-energy": {
+      "display_name": "Devon Energy",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "High fossil-fuel exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "williams-companies": {
+      "display_name": "Williams Companies",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Natural-gas pipeline exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "kinder-morgan": {
+      "display_name": "Kinder Morgan",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Natural-gas pipeline exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "enterprise-products-partners": {
+      "display_name": "Enterprise Products Partners",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Natural-gas pipeline exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "halliburton": {
+      "display_name": "Halliburton",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Oil-services exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "schlumberger": {
+      "display_name": "Schlumberger",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Oil-services exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "baker-hughes": {
+      "display_name": "Baker Hughes",
+      "sources": [
+        "fossil-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Oil-services exposure (Fossil Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://fossilfreefunds.org/"
+          ],
+          "sources": [
+            "fossil-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "smith-and-wesson-brands": {
+      "display_name": "Smith & Wesson",
+      "sources": [
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Civilian-firearm exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "sturm-ruger-and-co": {
+      "display_name": "Sturm Ruger",
+      "sources": [
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Civilian-firearm exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "vista-outdoor": {
+      "display_name": "Vista Outdoor",
+      "sources": [
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Civilian-firearm + ammunition exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "olin-corporation": {
+      "display_name": "Olin",
+      "sources": [
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Ammunition (Winchester) exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "jbs-n-v": {
+      "display_name": "JBS",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Highest deforestation-linked exposure in US mutual funds (Amazon cattle, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "marfrig-global-foods-s-a": {
+      "display_name": "Marfrig",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (Amazon cattle, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "minerva": {
+      "display_name": "Minerva",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (Amazon cattle, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "wilmar-international": {
+      "display_name": "Wilmar International",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (palm oil, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "bunge-global-sa": {
+      "display_name": "Bunge",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (soy supply chain, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "cargill": {
+      "display_name": "Cargill",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (soy + cattle supply chain, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "archer-daniels-midland": {
+      "display_name": "Archer Daniels Midland",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (soy, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "ioi": {
+      "display_name": "IOI Corporation",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (palm oil, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "sime-darby-plantation": {
+      "display_name": "Sime Darby Plantation",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (palm oil, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "golden-agri-resources": {
+      "display_name": "Golden Agri-Resources",
+      "sources": [
+        "deforestation-free-funds"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Deforestation-linked exposure (palm oil, Deforestation Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://deforestationfreefunds.org/"
+          ],
+          "sources": [
+            "deforestation-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "corecivic": {
+      "display_name": "CoreCivic",
+      "sources": [
+        "prison-free-funds"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Private-prison operator — highest exposure in US mutual funds (Prison Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://prisonfreefunds.org/"
+          ],
+          "sources": [
+            "prison-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "general-motors": {
+      "display_name": "GEO Group",
+      "sources": [
+        "prison-free-funds"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Private-prison + immigration-detention operator — high exposure (Prison Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://prisonfreefunds.org/"
+          ],
+          "sources": [
+            "prison-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "management-and-training": {
+      "display_name": "Management & Training Corporation",
+      "sources": [
+        "prison-free-funds"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "Private-prison operator (Prison Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://prisonfreefunds.org/"
+          ],
+          "sources": [
+            "prison-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "microsoft": {
+      "display_name": "Microsoft",
+      "sources": [
+        "calvert",
+        "domini",
+        "gender-equality-funds",
+        "ishares-esg",
+        "parnassus",
+        "pax-world",
+        "tiaa-social-choice",
+        "trillium",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score — board diversity, equal-pay policy, family leave"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 8,
+          "reasons": [
+            "Top Trillium ESG-screened holding",
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Domini Impact Equity Fund holding",
+            "Top Parnassus Core Equity Fund (PRBLX) holding — long-standing ESG benchmark",
+            "Top Pax Sustainable Allocation Fund holding"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/",
+            "https://www.calvert.com/",
+            "https://www.domini.com/",
+            "https://www.parnassus.com/",
+            "https://impaxam.com/"
+          ],
+          "sources": [
+            "calvert",
+            "domini",
+            "ishares-esg",
+            "parnassus",
+            "pax-world",
+            "tiaa-social-choice",
+            "trillium",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "positive",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 9,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "salesforce": {
+      "display_name": "Salesforce",
+      "sources": [
+        "gender-equality-funds",
+        "pax-world"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score — equal-pay reviews and inclusive policies"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Pax Ellevate Global Women's Leadership Fund holding"
+          ],
+          "source_urls": [
+            "https://impaxam.com/"
+          ],
+          "sources": [
+            "pax-world"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "apple": {
+      "display_name": "Apple",
+      "sources": [
+        "calvert",
+        "domini",
+        "gender-equality-funds",
+        "ishares-esg",
+        "pax-world",
+        "tiaa-social-choice",
+        "trillium",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score — pay-equity disclosure"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 7,
+          "reasons": [
+            "Top Trillium ESG-screened holding",
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Domini Impact Equity Fund holding",
+            "Top Pax Sustainable Allocation Fund holding",
+            "Top TIAA-CREF Social Choice Equity Fund holding (ESG-screened)"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/",
+            "https://www.calvert.com/",
+            "https://www.domini.com/",
+            "https://impaxam.com/",
+            "https://www.tiaa.org/"
+          ],
+          "sources": [
+            "calvert",
+            "domini",
+            "ishares-esg",
+            "pax-world",
+            "tiaa-social-choice",
+            "trillium",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "positive",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 8,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "adobe": {
+      "display_name": "Adobe",
+      "sources": [
+        "domini",
+        "gender-equality-funds",
+        "pax-world",
+        "trillium"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score — board diversity, equal-pay policy"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 3,
+          "reasons": [
+            "Top Trillium ESG-screened holding",
+            "Top Domini Impact Equity Fund holding",
+            "Top Pax Sustainable Allocation Fund holding"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/",
+            "https://www.domini.com/",
+            "https://impaxam.com/"
+          ],
+          "sources": [
+            "domini",
+            "pax-world",
+            "trillium"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 4,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "mastercard": {
+      "display_name": "Mastercard",
+      "sources": [
+        "calvert",
+        "domini",
+        "gender-equality-funds",
+        "ishares-esg",
+        "parnassus",
+        "pax-world",
+        "tiaa-social-choice",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 7,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Domini Impact Equity Fund holding",
+            "Top Parnassus Core Equity Fund (PRBLX) holding",
+            "Top Pax Sustainable Allocation Fund holding",
+            "Top TIAA-CREF Social Choice Equity Fund holding (ESG-screened)"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://www.domini.com/",
+            "https://www.parnassus.com/",
+            "https://impaxam.com/",
+            "https://www.tiaa.org/"
+          ],
+          "sources": [
+            "calvert",
+            "domini",
+            "ishares-esg",
+            "parnassus",
+            "pax-world",
+            "tiaa-social-choice",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "positive",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 8,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "bank-of-america": {
+      "display_name": "Bank of America",
+      "sources": [
+        "gender-equality-funds"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "citigroup": {
+      "display_name": "Citigroup",
+      "sources": [
+        "gender-equality-funds"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "accenture": {
+      "display_name": "Accenture",
+      "sources": [
+        "gender-equality-funds"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score — public 50/50 gender goal"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "estee-lauder-companies": {
+      "display_name": "Estée Lauder",
+      "sources": [
+        "gender-equality-funds",
+        "trillium"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Trillium ESG-screened holding"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/"
+          ],
+          "sources": [
+            "trillium"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "procter-and-gamble": {
+      "display_name": "Procter & Gamble",
+      "sources": [
+        "calvert",
+        "domini",
+        "gender-equality-funds",
+        "tiaa-social-choice",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "dei": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top-tier Gender Equality Funds score"
+          ],
+          "source_urls": [
+            "https://genderequalityfunds.org/"
+          ],
+          "sources": [
+            "gender-equality-funds"
+          ]
+        },
+        "environment": {
+          "polarity": "positive",
+          "count": 4,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Domini Impact Equity Fund holding",
+            "Top TIAA-CREF Social Choice Equity Fund holding (ESG-screened)",
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://www.domini.com/",
+            "https://www.tiaa.org/",
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv"
+          ],
+          "sources": [
+            "calvert",
+            "domini",
+            "tiaa-social-choice",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "positive",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 5,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "costco": {
+      "display_name": "Costco",
+      "sources": [
+        "calvert",
+        "parnassus",
+        "trillium",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 4,
+          "reasons": [
+            "Top Trillium Asset Management ESG-screened holding (sustainable equity strategy)",
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Parnassus Core Equity Fund (PRBLX) holding",
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/",
+            "https://www.calvert.com/",
+            "https://www.parnassus.com/",
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv"
+          ],
+          "sources": [
+            "calvert",
+            "parnassus",
+            "trillium",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 4,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "autodesk": {
+      "display_name": "Autodesk",
+      "sources": [
+        "trillium"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Trillium ESG-screened holding"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/"
+          ],
+          "sources": [
+            "trillium"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "hasbro": {
+      "display_name": "Hasbro",
+      "sources": [
+        "trillium"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Trillium ESG-screened holding"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/"
+          ],
+          "sources": [
+            "trillium"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "anheuser-busch": {
+      "display_name": "Patagonia",
+      "sources": [
+        "trillium"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Trillium ESG-screened holding (long-standing ESG benchmark brand)"
+          ],
+          "source_urls": [
+            "https://www.trilliuminvest.com/"
+          ],
+          "sources": [
+            "trillium"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "google-alphabet": {
+      "display_name": "Alphabet",
+      "sources": [
+        "calvert",
+        "domini",
+        "ishares-esg",
+        "parnassus",
+        "pax-world",
+        "tiaa-social-choice",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 7,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Domini Impact Equity Fund holding",
+            "Top Parnassus Core Equity Fund (PRBLX) holding",
+            "Top Pax Sustainable Allocation Fund holding",
+            "Top TIAA-CREF Social Choice Equity Fund holding (ESG-screened)"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://www.domini.com/",
+            "https://www.parnassus.com/",
+            "https://impaxam.com/",
+            "https://www.tiaa.org/"
+          ],
+          "sources": [
+            "calvert",
+            "domini",
+            "ishares-esg",
+            "parnassus",
+            "pax-world",
+            "tiaa-social-choice",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "positive",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 7,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "amazon": {
+      "display_name": "Amazon",
+      "sources": [
+        "calvert",
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 3,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "calvert",
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 3,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "visa": {
+      "display_name": "Visa",
+      "sources": [
+        "calvert",
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 3,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "calvert",
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 3,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "eli-lilly": {
+      "display_name": "Eli Lilly",
+      "sources": [
+        "calvert",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv"
+          ],
+          "sources": [
+            "calvert",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "home-depot": {
+      "display_name": "Home Depot",
+      "sources": [
+        "calvert",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Calvert US Large Cap Core Responsible Index holding",
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding"
+          ],
+          "source_urls": [
+            "https://www.calvert.com/",
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv"
+          ],
+          "sources": [
+            "calvert",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "cisco-systems": {
+      "display_name": "Cisco Systems",
+      "sources": [
+        "domini",
+        "parnassus"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Domini Impact Equity Fund holding",
+            "Top Parnassus Core Equity Fund (PRBLX) holding"
+          ],
+          "source_urls": [
+            "https://www.domini.com/",
+            "https://www.parnassus.com/"
+          ],
+          "sources": [
+            "domini",
+            "parnassus"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "asml": {
+      "display_name": "ASML",
+      "sources": [
+        "domini"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Domini Impact International Equity Fund holding"
+          ],
+          "source_urls": [
+            "https://www.domini.com/"
+          ],
+          "sources": [
+            "domini"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "roche": {
+      "display_name": "Roche",
+      "sources": [
+        "domini"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Domini Impact International Equity Fund holding"
+          ],
+          "source_urls": [
+            "https://www.domini.com/"
+          ],
+          "sources": [
+            "domini"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "linde": {
+      "display_name": "Linde",
+      "sources": [
+        "parnassus"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Parnassus Core Equity Fund (PRBLX) holding"
+          ],
+          "source_urls": [
+            "https://www.parnassus.com/"
+          ],
+          "sources": [
+            "parnassus"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "s-and-p-global": {
+      "display_name": "S&P Global",
+      "sources": [
+        "parnassus"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Parnassus Core Equity Fund (PRBLX) holding"
+          ],
+          "source_urls": [
+            "https://www.parnassus.com/"
+          ],
+          "sources": [
+            "parnassus"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "deere-and": {
+      "display_name": "Deere & Company",
+      "sources": [
+        "parnassus"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 1,
+          "reasons": [
+            "Top Parnassus Core Equity Fund (PRBLX) holding"
+          ],
+          "source_urls": [
+            "https://www.parnassus.com/"
+          ],
+          "sources": [
+            "parnassus"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 1,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "nvidia": {
+      "display_name": "Nvidia",
+      "sources": [
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "meta-platforms": {
+      "display_name": "Meta",
+      "sources": [
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "tesla": {
+      "display_name": "Tesla",
+      "sources": [
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "jpmorgan-chase": {
+      "display_name": "JPMorgan Chase",
+      "sources": [
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "unitedhealth-group": {
+      "display_name": "UnitedHealth Group",
+      "sources": [
+        "ishares-esg",
+        "vanguard-esg"
+      ],
+      "category_signals": {
+        "environment": {
+          "polarity": "positive",
+          "count": 2,
+          "reasons": [
+            "Top Vanguard ESG U.S. Stock ETF (ESGV) holding",
+            "Top iShares ESG MSCI USA ETF (ESGU) holding"
+          ],
+          "source_urls": [
+            "https://investor.vanguard.com/investment-products/etfs/profile/esgv",
+            "https://www.ishares.com/us/products/286007/ishares-esg-msci-usa-etf"
+          ],
+          "sources": [
+            "ishares-esg",
+            "vanguard-esg"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 2,
+      "negative_fund_count": 0,
+      "informational_fund_count": 0
+    },
+    "hewlett-packard-enterprise": {
+      "display_name": "HP Inc.",
+      "sources": [
+        "bds-boycott"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "informational",
+          "count": 2,
+          "reasons": [
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 0,
+      "informational_fund_count": 1
+    },
+    "puma": {
+      "display_name": "Puma",
+      "sources": [
+        "bds-boycott"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "informational",
+          "count": 1,
+          "reasons": [
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 0,
+      "informational_fund_count": 1
+    },
+    "axa": {
+      "display_name": "AXA",
+      "sources": [
+        "bds-boycott"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "informational",
+          "count": 1,
+          "reasons": [
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 0,
+      "informational_fund_count": 1
+    },
+    "carrefour": {
+      "display_name": "Carrefour",
+      "sources": [
+        "bds-boycott"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "informational",
+          "count": 1,
+          "reasons": [
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 0,
+      "informational_fund_count": 1
+    }
+  }
+}

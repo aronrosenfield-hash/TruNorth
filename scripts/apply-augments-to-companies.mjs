@@ -41,6 +41,7 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "net-zero-tracker", "textile-exchange", "epa-smartway", "epa-green-vehicle",
   "nlrb-voluntary-recognition", "corporate-giving",
   "climate-coalitions",
+  "divestment-impact-funds",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -889,6 +890,96 @@ const WRITERS = [
         sc,
         severity: "negative",
       }];
+    },
+  },
+  // ─── Divestment lists + impact-fund holdings (round 4) ────────────────
+  // One unified augment that consolidates:
+  //   * Norway GPFG (~$1.6T sovereign-wealth-fund corporate exclusion list)
+  //   * Global Fossil-Fuel Divestment Commitments database (350.org / gofossilfree)
+  //   * As You Sow brand-screen portals (fossil/tobacco/weapons/deforestation/prison/gender)
+  //   * Top holdings of US ESG/SRI mutual funds (Trillium, Calvert, Domini,
+  //     Parnassus, Pax World, TIAA Social Choice, Vanguard ESGV, iShares ESGU)
+  //   * Methodist Pension + Episcopal Church SRI screens
+  //   * BDS Movement targets — INFORMATIONAL only, never scored negative
+  //
+  // The merger pre-computes a conservative pattern_severity. Single-fund
+  // exclusion alone is NOT negative; a multi-source pattern is. The
+  // writer routes the per-category signals into TruNorth's category
+  // narratives. Positive holdings mergePositive-stack onto existing
+  // positive narratives (so a brand on Vanguard ESGV + B Corp shows up
+  // as a single rich line, not two competing first-wins narratives).
+  {
+    name: "divestment-impact-funds",
+    write: (e) => {
+      const sigs = e.category_signals || {};
+      const out  = [];
+      const norway = e.norway_gpfg;
+
+      for (const [cat, sig] of Object.entries(sigs)) {
+        if (!sig || !sig.polarity) continue;
+        const sources = Array.isArray(sig.sources) ? sig.sources : [];
+        if (sources.length === 0) continue;
+
+        if (sig.polarity === "informational") {
+          // BDS-only sources land here. We still surface a one-line note
+          // but mark sc=neutral so the score isn't moved.
+          const reason = (sig.reasons && sig.reasons[0]) || "Listed for boycott consideration";
+          out.push({
+            category: cat,
+            narrative: `${reason} (informational; not scored).`,
+            sc: "neutral",
+            severity: "neutral",
+          });
+          continue;
+        }
+
+        if (sig.polarity === "negative") {
+          const reasonLead = sig.reasons && sig.reasons[0] ? sig.reasons[0] : "Excluded by ESG-screened funds";
+          const lead = norway && sources.includes("norway-gpfg")
+            ? `Norway Government Pension Fund Global ($1.6T sovereign wealth fund) excluded this company`
+            : sources.includes("divestment-commitments")
+              ? `Target of fossil-fuel divestment commitments (350.org / gofossilfree)`
+              : `Excluded from ${sources.length} ESG-screened ${sources.length === 1 ? "fund" : "funds"}`;
+          const sevMap = {
+            very_poor: "very_poor",
+            poor:      "poor",
+            mixed:     "mixed",
+            neutral:   "neutral",
+            positive:  "mixed",     // a brand can have positive overall sev but a neg signal in this cat
+          };
+          const sc = sevMap[e.pattern_severity] || "mixed";
+          const reasonText = norway && sources.includes("norway-gpfg")
+            ? ` — ${reasonLead}.`
+            : ` — ${reasonLead}.`;
+          const tail = sources.length > 1
+            ? ` Also flagged by: ${sources.filter(s => s !== "norway-gpfg").join(", ")}.`
+            : "";
+          out.push({
+            category: cat,
+            narrative: `${lead}${reasonText}${tail}`.replace(/\s+/g, " "),
+            sc,
+            severity: "negative",
+          });
+          continue;
+        }
+
+        if (sig.polarity === "positive") {
+          const fundList = sources.slice(0, 6).join(", ");
+          const more = sources.length > 6 ? ` +${sources.length - 6} more` : "";
+          // Positive mapping per category. Gender-equality-funds → pro_dei.
+          const sc = cat === "dei" ? "pro_dei" : "positive";
+          out.push({
+            category: cat,
+            narrative: `Held by ${sources.length} ESG/SRI fund(s) (${fundList}${more}) — investor-screen positive signal.`,
+            sc,
+            severity: "positive",
+            mergePositive: true,
+          });
+          continue;
+        }
+      }
+
+      return out;
     },
   },
 ];
