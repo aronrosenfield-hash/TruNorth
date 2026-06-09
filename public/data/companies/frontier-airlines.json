@@ -15,7 +15,8 @@
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na",
-    "governance": "neutral"
+    "governance": "neutral",
+    "health": "very_poor"
   },
   "political": {
     "s": "FEC: $3K PAC donations; 64% to Republican, 36% to Democratic committees.",
@@ -172,11 +173,17 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Republic Airways Holdings; HQ Denver. (Wikidata Q1139541)",
     "sources": [
       "wikidata"
+    ]
+  },
+  "health": {
+    "s": "Frontier Airlines: DOT 2025 ATCR — 70.1% on-time arrivals, 6.98 complaints per 100K passengers, 4.8 mishandled bags per 1K. 1 DOT enforcement action (~$2.2M in penalties).",
+    "sources": [
+      "aviation-deep"
     ]
   }
 }

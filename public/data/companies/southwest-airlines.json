@@ -2,7 +2,7 @@
   "name": "Southwest Airlines",
   "cat": "Hospitality",
   "init": "SW",
-  "overall": 66.4,
+  "overall": 63.7,
   "isPublic": true,
   "ticker": "LUV",
   "sc": {
@@ -17,7 +17,8 @@
     "execPay": "na",
     "violations": "poor",
     "violations.s": "$262.9M in penalties across 318 federal records; largest: $143.7M aviation consumer protection violation.",
-    "governance": "neutral"
+    "governance": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $15K PAC donations; 72% to Republican, 28% to Democratic committees.",
@@ -353,11 +354,17 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Dallas. (Wikidata Q503308)",
     "sources": [
       "wikidata"
+    ]
+  },
+  "health": {
+    "s": "Southwest Airlines: DOT 2025 ATCR — 76.3% on-time arrivals, 0.91 complaints per 100K passengers, 4.2 mishandled bags per 1K. 1 DOT enforcement action (~$35.0M in penalties). 2022 holiday cancellation crisis triggered the largest DOT consumer-protection action against any single carrier. No Part 121 fatalities.",
+    "sources": [
+      "aviation-deep"
     ]
   }
 }

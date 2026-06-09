@@ -2,7 +2,7 @@
   "name": "UnitedHealth Group",
   "cat": "Healthcare",
   "init": "UHG",
-  "overall": 33.7,
+  "overall": 48.4,
   "isPublic": true,
   "ticker": "UNH",
   "sc": {
@@ -15,7 +15,8 @@
     "guns": "neutral",
     "privacy": "poor",
     "execPay": "na",
-    "governance": "neutral"
+    "governance": "neutral",
+    "health": "very_poor"
   },
   "political": {
     "s": "FEC: $17K PAC donations; 32% to Republican, 68% to Democratic committees.",
@@ -350,11 +351,17 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 4,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by Dow Jones Industrial Average; HQ Minnetonka. (Wikidata Q2103926)",
     "sources": [
       "wikidata"
+    ]
+  },
+  "health": {
+    "s": "NAIC Complaint Index 1.51 (well above the 1.00 US peer average). 2 regulator actions; HHS OCR: Change Healthcare (UnitedHealth subsidiary) Feb-Mar 2024 ransomware attack affected ~190M Americans; OCR opened investigation, multi-state AG actions pending.",
+    "sources": [
+      "insurance-deep"
     ]
   }
 }

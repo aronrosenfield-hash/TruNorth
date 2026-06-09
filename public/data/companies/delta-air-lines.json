@@ -2,7 +2,7 @@
   "name": "Delta Air Lines",
   "cat": "Hospitality",
   "init": "DAL",
-  "overall": 63.7,
+  "overall": 60,
   "isPublic": true,
   "ticker": "DAL",
   "sc": {
@@ -15,7 +15,8 @@
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na",
-    "governance": "poor"
+    "governance": "poor",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $58K PAC donations; 57% to Republican, 43% to Democratic committees.",
@@ -362,11 +363,17 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 7,
   "governance": {
     "s": "Wikipedia \"Litigation\" section: Delta Air Lines v. CrowdStrike is a legal dispute stemming from a massive global outage on July 19, 2024, caused by a faulty software update from CrowdStrike, which crashed Microsoft Windows systems…",
     "sources": [
       "wikipedia-controversies"
+    ]
+  },
+  "health": {
+    "s": "Delta Air Lines: DOT 2025 ATCR — 83.5% on-time arrivals, 1.84 complaints per 100K passengers, 5.8 mishandled bags per 1K. 1 DOT enforcement action. No fatal Part 121 accidents 2020-2025; multiple non-fatal runway/taxi incidents in NTSB database.",
+    "sources": [
+      "aviation-deep"
     ]
   }
 }
