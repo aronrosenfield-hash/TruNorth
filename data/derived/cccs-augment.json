@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-09T18:42:24.495Z",
+  "source": "cccs",
+  "source_url": "https://www.cccs.gov.sg/cases-and-commitments",
+  "input": "data/raw/cccs/2026-06-09.json",
+  "company_count": 3,
+  "orphan_count": 7,
+  "companies": {
+    "uber": {
+      "normalized_name": "uber singapore technology",
+      "raw_name": "Uber Singapore Technology Pte Ltd",
+      "routed_via": "seed",
+      "total_penalty_sgd": 6580000,
+      "action_count": 1,
+      "latest_action": "2018-09-24",
+      "action_types": [
+        "Anti-competitive merger - Grab"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Anti-competitive merger - Grab",
+          "date": "2018-09-24",
+          "penalty_sgd": 6580000,
+          "url": "https://www.cccs.gov.sg/media-and-consultation/newsroom/media-releases/grab-uber-id-2018"
+        }
+      ],
+      "source": "cccs",
+      "source_url": "https://www.cccs.gov.sg/cases-and-commitments"
+    },
+    "hitachi": {
+      "normalized_name": "hitachi asia",
+      "raw_name": "Hitachi Asia Ltd",
+      "routed_via": "seed",
+      "total_penalty_sgd": 4076000,
+      "action_count": 1,
+      "latest_action": "2017-06-30",
+      "action_types": [
+        "Cartel - capacitors"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Cartel - capacitors",
+          "date": "2017-06-30",
+          "penalty_sgd": 4076000,
+          "url": "https://www.cccs.gov.sg/media-and-consultation/newsroom/media-releases/capacitors-id-2017"
+        }
+      ],
+      "source": "cccs",
+      "source_url": "https://www.cccs.gov.sg/cases-and-commitments"
+    },
+    "panasonic-usa": {
+      "normalized_name": "panasonic industrial devices sunx singapore",
+      "raw_name": "Panasonic Industrial Devices SUNX Singapore Pte Ltd",
+      "routed_via": "seed",
+      "total_penalty_sgd": 2370000,
+      "action_count": 1,
+      "latest_action": "2017-06-30",
+      "action_types": [
+        "Cartel - capacitors"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Cartel - capacitors",
+          "date": "2017-06-30",
+          "penalty_sgd": 2370000,
+          "url": "https://www.cccs.gov.sg/media-and-consultation/newsroom/media-releases/capacitors-id-2017"
+        }
+      ],
+      "source": "cccs",
+      "source_url": "https://www.cccs.gov.sg/cases-and-commitments"
+    }
+  }
+}

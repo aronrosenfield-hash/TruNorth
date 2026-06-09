@@ -1,52 +1,164 @@
 {
-  "generated_at": "2026-06-09T16:30:12.387Z",
+  "generated_at": "2026-06-09T18:42:24.263Z",
   "source": "uk-cma",
   "source_url": "https://www.gov.uk/cma-cases",
-  "company_count": 6,
-  "skipped_unresolved": 0,
+  "input": "data/raw/uk-cma/2026-06-09.json",
+  "company_count": 7,
+  "orphan_count": 5,
   "companies": {
     "meta-platforms": {
-      "raw_name": "Meta Platforms Inc. (Giphy)",
-      "case_count": 1,
-      "latest_year": 2022,
-      "summary": "CMA blocked Meta/Giphy merger (Oct 2022) and ordered Meta to sell Giphy — first time CMA unwound a completed Big Tech deal.",
-      "url": "https://www.gov.uk/government/news/cma-orders-facebook-to-sell-giphy"
+      "normalized_name": "meta platforms",
+      "raw_name": "Meta Platforms Inc.",
+      "routed_via": "direct",
+      "total_penalty_gbp": 0,
+      "action_count": 1,
+      "latest_action": "2021-11-30",
+      "action_types": [
+        "Merger investigation"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Merger investigation",
+          "outcome": "Divestment ordered (Giphy)",
+          "date": "2021-11-30",
+          "penalty_gbp": 0,
+          "url": "https://www.gov.uk/cma-cases/facebook-inc-slash-giphy-inc-merger-inquiry"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
     },
     "microsoft": {
+      "normalized_name": "microsoft",
       "raw_name": "Microsoft Corporation",
-      "case_count": 1,
-      "latest_year": 2023,
-      "summary": "CMA initially blocked Microsoft–Activision Blizzard merger (Apr 2023) over cloud gaming; cleared restructured deal (Oct 2023).",
-      "url": "https://www.gov.uk/government/news/cma-blocks-microsofts-takeover-of-activision-over-concerns-for-cloud-gaming-competition"
-    },
-    "google-alphabet": {
-      "raw_name": "Google LLC",
-      "case_count": 1,
-      "latest_year": 2024,
-      "summary": "CMA market investigations into mobile browser engines and ad-tech (ongoing); Google designated for Strategic Market Status review under DMCC Act 2024.",
-      "url": "https://www.gov.uk/cma-cases/mobile-browsers-and-cloud-gaming-market-investigation"
-    },
-    "apple": {
-      "raw_name": "Apple Inc.",
-      "case_count": 1,
-      "latest_year": 2024,
-      "summary": "CMA market investigation (2024) — Apple/WebKit restrictions found anti-competitive; designated for Strategic Market Status review.",
-      "url": "https://www.gov.uk/cma-cases/mobile-browsers-and-cloud-gaming-market-investigation"
+      "routed_via": "direct",
+      "total_penalty_gbp": 0,
+      "action_count": 1,
+      "latest_action": "2023-10-13",
+      "action_types": [
+        "Merger investigation"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Merger investigation",
+          "outcome": "Cleared with remedies (Activision)",
+          "date": "2023-10-13",
+          "penalty_gbp": 0,
+          "url": "https://www.gov.uk/cma-cases/microsoft-slash-activision-blizzard-merger-inquiry"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
     },
     "amazon": {
+      "normalized_name": "amazon com",
       "raw_name": "Amazon.com Inc.",
-      "case_count": 1,
-      "latest_year": 2023,
-      "summary": "CMA Amazon UK marketplace investigation closed (Nov 2023) with binding commitments on Buy Box, third-party seller data, and Prime eligibility.",
-      "url": "https://www.gov.uk/cma-cases/investigation-into-amazons-marketplace"
+      "routed_via": "seed",
+      "total_penalty_gbp": 0,
+      "action_count": 1,
+      "latest_action": "2023-11-03",
+      "action_types": [
+        "Market investigation"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Market investigation",
+          "outcome": "Commitments accepted (Marketplace)",
+          "date": "2023-11-03",
+          "penalty_gbp": 0,
+          "url": "https://www.gov.uk/cma-cases/investigation-into-amazon-s-marketplace"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
+    },
+    "google-alphabet": {
+      "normalized_name": "google",
+      "raw_name": "Google LLC",
+      "routed_via": "parent",
+      "total_penalty_gbp": 0,
+      "action_count": 1,
+      "latest_action": "2022-02-11",
+      "action_types": [
+        "Market investigation"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Market investigation",
+          "outcome": "Commitments accepted (Privacy Sandbox)",
+          "date": "2022-02-11",
+          "penalty_gbp": 0,
+          "url": "https://www.gov.uk/cma-cases/investigation-into-google-s-privacy-sandbox-browser-changes"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
+    },
+    "apple": {
+      "normalized_name": "apple",
+      "raw_name": "Apple Inc.",
+      "routed_via": "direct",
+      "total_penalty_gbp": 0,
+      "action_count": 1,
+      "latest_action": "2023-11-22",
+      "action_types": [
+        "Market investigation"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Market investigation",
+          "outcome": "Mobile browsers and cloud gaming reference",
+          "date": "2023-11-22",
+          "penalty_gbp": 0,
+          "url": "https://www.gov.uk/cma-cases/mobile-browsers-and-cloud-gaming"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
     },
     "pfizer": {
+      "normalized_name": "pfizer",
       "raw_name": "Pfizer Inc.",
-      "total_fines_gbp": 70000000,
-      "case_count": 1,
-      "latest_year": 2022,
-      "summary": "£70M CMA fine for charging the NHS unfairly high prices for phenytoin sodium anti-epilepsy capsules.",
-      "url": "https://www.gov.uk/cma-cases/pfizer-flynn-pharma-investigation-into-unfair-pricing-in-respect-of-the-supply-of-phenytoin-sodium-capsules"
+      "routed_via": "direct",
+      "total_penalty_gbp": 84200000,
+      "action_count": 1,
+      "latest_action": "2016-12-07",
+      "action_types": [
+        "Cartel/Price abuse"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Cartel/Price abuse",
+          "outcome": "Fine (phenytoin)",
+          "date": "2016-12-07",
+          "penalty_gbp": 84200000,
+          "url": "https://www.gov.uk/cma-cases/pharmaceutical-sector-anti-competitive-agreement-and-conduct"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
+    },
+    "sainsbury-s": {
+      "normalized_name": "sainsbury's supermarkets",
+      "raw_name": "Sainsbury's Supermarkets Ltd",
+      "routed_via": "seed",
+      "total_penalty_gbp": 1850000,
+      "action_count": 1,
+      "latest_action": "2003-08-01",
+      "action_types": [
+        "Cartel"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Cartel",
+          "outcome": "Fine (replica football kit)",
+          "date": "2003-08-01",
+          "penalty_gbp": 1850000,
+          "url": "https://www.gov.uk/cma-cases/replica-football-kit-price-fixing"
+        }
+      ],
+      "source": "uk-cma",
+      "source_url": "https://www.gov.uk/cma-cases"
     }
   }
 }

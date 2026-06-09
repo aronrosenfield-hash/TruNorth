@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-09T18:42:24.531Z",
+  "source": "nz-comcom",
+  "source_url": "https://comcom.govt.nz/news-and-media/media-releases",
+  "input": "data/raw/nz-comcom/2026-06-09.json",
+  "company_count": 1,
+  "orphan_count": 9,
+  "companies": {
+    "briscoe": {
+      "normalized_name": "briscoe",
+      "raw_name": "Briscoe Group Ltd",
+      "routed_via": "direct",
+      "total_penalty_nzd": 400000,
+      "action_count": 1,
+      "latest_action": "2018-09-13",
+      "action_types": [
+        "Misleading sale advertising"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Misleading sale advertising",
+          "date": "2018-09-13",
+          "penalty_nzd": 400000,
+          "url": "https://comcom.govt.nz/news-and-media/media-releases/2018/briscoes-fined"
+        }
+      ],
+      "source": "nz-comcom",
+      "source_url": "https://comcom.govt.nz/news-and-media/media-releases"
+    }
+  }
+}
