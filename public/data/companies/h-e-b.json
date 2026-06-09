@@ -2,18 +2,19 @@
   "name": "H-E-B",
   "cat": "Grocery",
   "init": "HEB",
-  "overall": 80,
+  "overall": 55,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "poor",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $336K in executive political donations; partisan lean split across 12 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "21 OSHA severe-injury reports in past 2y (11 amputations); 79 since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -152,5 +153,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T17:39:51.941Z"
+  "lastUpdated": "2026-05-27T17:39:51.941Z",
+  "health": {
+    "s": "10 CPSC recalls (1 in past 24 months); latest hazard: the green glow stick bracelet within the 12-pack container can leak."
+  }
 }

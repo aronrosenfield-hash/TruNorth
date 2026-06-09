@@ -2,7 +2,7 @@
   "name": "Heineken USA",
   "cat": "Food & Beverage",
   "init": "HU",
-  "overall": 65,
+  "overall": 46,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -16,7 +16,8 @@
     "privacy": "na",
     "execPay": "na",
     "violations": "neutral",
-    "violations.s": "Federal record: $2.5M tax penalties; no labor, environmental, or safety violations on file."
+    "violations.s": "Federal record: $2.5M tax penalties; no labor, environmental, or safety violations on file.",
+    "health": "poor"
   },
   "political": {
     "s": "FEC: $15K PAC donations; 53% to Republican, 47% to Democratic committees.",
@@ -222,5 +223,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "HHS Office of Inspector General: 1 OIG exclusion (Medicare/Medicaid debarment)."
+  }
 }

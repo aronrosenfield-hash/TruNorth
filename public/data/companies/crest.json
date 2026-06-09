@@ -2,18 +2,19 @@
   "name": "Crest",
   "cat": "Consumer Goods",
   "init": "CRES",
-  "overall": 67.1,
+  "overall": 58,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $138K in executive political donations; partisan lean split across 7 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "7 OSHA severe-injury reports in past 2y (2 amputations); 84 since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -135,5 +136,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T22:52:21.944Z"
+  "lastUpdated": "2026-05-30T22:52:21.944Z",
+  "health": {
+    "s": "6 CPSC recalls on record; sample hazard: the bread maker's lid can become energized."
+  }
 }

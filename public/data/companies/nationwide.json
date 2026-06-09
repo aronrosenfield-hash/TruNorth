@@ -2,7 +2,7 @@
   "name": "Nationwide",
   "cat": "Financial Services",
   "init": "NW",
-  "overall": 45,
+  "overall": 38.6,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $35K PAC donations; 76% to Republican, 24% to Democratic committees.",
@@ -77,7 +78,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 2151 on record (100 in past 12mo); 95% timely response rate.",
     "grade": "Mixed",
     "sources": []
   },
@@ -319,5 +320,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "2 CPSC recalls on record; sample hazard: the recalled dietary supplements contain iron which must be in child-resistant p."
+  }
 }

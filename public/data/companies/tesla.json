@@ -2,7 +2,7 @@
   "name": "Tesla",
   "cat": "Automotive",
   "init": "TSL",
-  "overall": 54,
+  "overall": 45.3,
   "isPublic": true,
   "ticker": "TSLA",
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "neutral"
+    "privacy": "poor",
+    "execPay": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $427K in executive political donations; partisan lean split across 14 executive donors.",
@@ -71,7 +72,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 664 on record (100 in past 12mo); 67% timely response rate.",
     "grade": "Poor",
     "sources": []
   },
@@ -410,5 +411,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "2 CPSC recalls (1 in past 24 months); latest hazard: the lithium-ion battery cells in certain powerwall 2 systems can cause the unit ."
+  }
 }

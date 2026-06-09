@@ -2,18 +2,19 @@
   "name": "Optimum",
   "cat": "Retail",
   "init": "OPTI",
-  "overall": 80,
+  "overall": 46,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "FEC: $18K PAC donations; 57% to Republican, 43% to Democratic committees.",
@@ -24,7 +25,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 7 since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -161,5 +162,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-31T01:43:06.619Z"
+  "lastUpdated": "2026-05-31T01:43:06.619Z",
+  "health": {
+    "s": "HHS Office of Inspector General: 3 OIG exclusions (Medicare/Medicaid debarment); 1 recent OIG enforcement action (past 24mo)."
+  }
 }

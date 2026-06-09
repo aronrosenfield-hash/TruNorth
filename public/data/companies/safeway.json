@@ -8,12 +8,13 @@
     "political": "left",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "cruelty_free",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $16K PAC donations; 29% to Republican, 71% to Democratic committees.",
@@ -24,7 +25,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "19 OSHA severe-injury reports since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -182,5 +183,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-31T02:12:50.056Z"
+  "lastUpdated": "2026-05-31T02:12:50.056Z",
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: electrical wiring in the lights can overheat."
+  }
 }

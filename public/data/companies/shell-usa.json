@@ -2,19 +2,20 @@
   "name": "Shell USA",
   "cat": "Energy",
   "init": "SU",
-  "overall": 50,
+  "overall": 39.5,
   "isPublic": true,
   "ticker": "SHEL",
   "sc": {
     "political": "right",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
-    "dei": "pro_dei",
+    "labor": "mixed",
+    "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $651K in executive political donations; partisan lean Republican +58 across 17 executive donors.",
@@ -39,7 +40,7 @@
     "sources": []
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "2 OSHA severe-injury reports in past 2y (0 amputations); 29 since 2015.",
     "rating": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -65,7 +66,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 18270 on record (100 in past 12mo); 100% timely response rate.",
     "grade": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -205,5 +206,8 @@
       "source": "ferc",
       "sourceUrl": "https://www.ferc.gov/enforcement-legal/enforcement/civil-penalty-actions"
     }
+  },
+  "health": {
+    "s": "5 CPSC recalls (1 in past 24 months); latest hazard: the hook of one boot can catch on the lace of the other boot."
   }
 }

@@ -2,19 +2,20 @@
   "name": "Walgreens",
   "cat": "Retail",
   "init": "WBA",
-  "overall": 50,
+  "overall": 45.7,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
-    "dei": "pro_dei",
-    "animals": "tests_animals",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $17K PAC donations; 38% to Republican, 62% to Democratic committees.",
@@ -48,7 +49,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "15 OSHA severe-injury reports in past 2y (2 amputations); 69 since 2015.",
     "rating": "Below Average",
     "sources": [
       "Claude AI synthesis"
@@ -263,5 +264,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "18 CPSC recalls on record; sample hazard: fire & fire-related burn."
+  }
 }

@@ -2,7 +2,7 @@
   "name": "Cisco",
   "cat": "Technology",
   "init": "CISC",
-  "overall": 55,
+  "overall": 44.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,8 +12,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $21K PAC donations; 59% to Republican, 41% to Democratic committees.",
@@ -64,7 +65,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 90 CVEs on record (14 in past 12mo, 6 used in ransomware); affected products include IOS and IOS XE Software, Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD).",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -233,5 +234,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T22:42:01.175Z"
+  "lastUpdated": "2026-05-30T22:42:01.175Z",
+  "health": {
+    "s": "26 CPSC recalls on record; sample hazard: fire & fire-related burn."
+  }
 }

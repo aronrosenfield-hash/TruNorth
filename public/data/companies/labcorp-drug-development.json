@@ -2,18 +2,19 @@
   "name": "Labcorp Drug Development",
   "cat": "Healthcare",
   "init": "LABC",
-  "overall": 80,
+  "overall": 60,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $589K in executive political donations; partisan lean split across 17 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "3 OSHA severe-injury reports since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -121,5 +122,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-31T00:40:16.146Z"
+  "lastUpdated": "2026-05-31T00:40:16.146Z",
+  "health": {
+    "s": "HHS Office of Inspector General: 1 recent OIG enforcement action (past 24mo)."
+  }
 }

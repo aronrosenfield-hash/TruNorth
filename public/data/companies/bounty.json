@@ -2,18 +2,19 @@
   "name": "Bounty",
   "cat": "Retail",
   "init": "BOUN",
-  "overall": 67.1,
+  "overall": 58,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $323K in executive political donations; partisan lean split across 13 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "3 OSHA severe-injury reports since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -113,5 +114,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T22:12:00.399Z"
+  "lastUpdated": "2026-05-30T22:12:00.399Z",
+  "health": {
+    "s": "1 CPSC recall on record."
+  }
 }

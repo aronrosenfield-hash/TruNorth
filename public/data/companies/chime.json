@@ -2,7 +2,7 @@
   "name": "Chime",
   "cat": "Financial Services",
   "init": "CHIM",
-  "overall": null,
+  "overall": 29,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -66,7 +67,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 24766 on record (100 in past 12mo); 100% timely response rate.",
     "grade": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -143,5 +144,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "2 CPSC recalls on record; sample hazard: the wind chime toy can be pulled apart exposing sharp metal rods."
+  }
 }

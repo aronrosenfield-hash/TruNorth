@@ -9,12 +9,13 @@
     "political": "left",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "fair"
+    "privacy": "mixed",
+    "execPay": "fair",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $801K in executive political donations; partisan lean Democratic +54 across 21 executive donors.",
@@ -41,7 +42,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "2 OSHA severe-injury reports since 2015.",
     "rating": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -65,7 +66,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 71 CVEs on record (9 in past 12mo); affected products include Chromium V8, Chromium.",
     "grade": "Poor",
     "sources": []
   },
@@ -166,5 +167,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: the computer's charger can overheat and melt."
+  }
 }

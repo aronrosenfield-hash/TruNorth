@@ -2,18 +2,19 @@
   "name": "Lysol",
   "cat": "Consumer Goods",
   "init": "LYSO",
-  "overall": null,
+  "overall": 50,
   "isPublic": false,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -22,7 +23,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -116,5 +117,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: hot water mixed with lysol can forcefully spurt out and rupture the housing unit."
+  }
 }

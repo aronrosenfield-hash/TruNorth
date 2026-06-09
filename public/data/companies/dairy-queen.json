@@ -2,18 +2,19 @@
   "name": "Dairy Queen",
   "cat": "Food & Beverage",
   "init": "DAIR",
-  "overall": 65,
+  "overall": 57.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $316K in executive political donations; partisan lean split across 12 executive donors.",
@@ -23,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "2 OSHA severe-injury reports since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -113,5 +114,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T22:54:22.755Z"
+  "lastUpdated": "2026-05-30T22:54:22.755Z",
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: choking."
+  }
 }

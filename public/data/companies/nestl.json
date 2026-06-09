@@ -2,19 +2,20 @@
   "name": "Nestlé",
   "cat": "Food & Beverage",
   "init": "NES",
-  "overall": 65,
+  "overall": 57.5,
   "isPublic": true,
   "ticker": "NESN",
   "sc": {
     "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $11K PAC donations; 59% to Republican, 41% to Democratic committees.",
@@ -48,7 +49,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "6 OSHA severe-injury reports in past 2y (3 amputations); 56 since 2015.",
     "rating": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -179,5 +180,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "4 CPSC recalls on record; sample hazard: if microwaved or filled with extremely hot liquid."
+  }
 }

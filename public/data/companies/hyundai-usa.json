@@ -2,19 +2,20 @@
   "name": "Hyundai USA",
   "cat": "Automotive",
   "init": "HMA",
-  "overall": null,
+  "overall": 50,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -40,7 +41,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "5 OSHA severe-injury reports in past 2y (1 amputations); 31 since 2015.",
     "rating": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -134,5 +135,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": null
+  "lastUpdated": null,
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: electrocution/electric shock."
+  }
 }

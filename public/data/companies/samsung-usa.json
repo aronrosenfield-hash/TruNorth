@@ -2,7 +2,7 @@
   "name": "Samsung USA",
   "cat": "Technology",
   "init": "SEM",
-  "overall": 42.4,
+  "overall": 45.6,
   "isPublic": true,
   "ticker": null,
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $828K in executive political donations; partisan lean Democratic +49 across 24 executive donors.",
@@ -70,7 +71,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 15 CVEs on record (3 in past 12mo); affected products include Mobile Devices, MagicINFO 9 Server.",
     "grade": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -244,5 +245,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "9 CPSC recalls (1 in past 24 months); latest hazard: front-mounted knobs on the ranges can be activated by accidental contact by huma."
+  }
 }

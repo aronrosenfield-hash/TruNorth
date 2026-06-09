@@ -9,12 +9,13 @@
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -41,7 +42,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "2 OSHA severe-injury reports in past 2y (0 amputations); 26 since 2015.",
     "rating": "Poor",
     "sources": [
       "Claude AI synthesis"
@@ -174,5 +175,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "22 CPSC recalls (1 in past 24 months); latest hazard: the lithium-ion battery packs can overheat."
+  }
 }

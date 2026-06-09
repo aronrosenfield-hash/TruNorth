@@ -2,7 +2,7 @@
   "name": "IBM",
   "cat": "Technology",
   "init": "IBM",
-  "overall": 35.8,
+  "overall": 40.5,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,8 +12,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $791K in executive political donations; partisan lean Democratic +54 across 29 executive donors.",
@@ -62,7 +63,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CISA Known Exploited Vulns: 7 CVEs on record (0 in past 12mo, 2 used in ransomware); affected products include Data Risk Manager, Aspera Faspex.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -226,5 +227,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-31T00:13:05.150Z"
+  "lastUpdated": "2026-05-31T00:13:05.150Z",
+  "health": {
+    "s": "9 CPSC recalls on record; sample hazard: the monitor's circuit board can overheat and smoke."
+  }
 }

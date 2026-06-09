@@ -9,12 +9,13 @@
     "political": "left",
     "charity": "mixed",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $48K PAC donations; 19% to Republican, 81% to Democratic committees.",
@@ -48,7 +49,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "11 OSHA severe-injury reports since 2015.",
     "rating": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -191,5 +192,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "2 CPSC recalls on record; sample hazard: the recalled children's nightgowns violate the federal flammability regulations ."
+  }
 }

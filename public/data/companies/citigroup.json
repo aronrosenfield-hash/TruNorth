@@ -2,7 +2,7 @@
   "name": "Citigroup",
   "cat": "Financial Services",
   "init": "CGP",
-  "overall": 44.5,
+  "overall": 38,
   "isPublic": true,
   "ticker": "C",
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No FEC PAC contributions on record.",
@@ -77,7 +78,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 153921 on record (100 in past 12mo); 100% timely response rate.",
     "grade": "Mixed",
     "sources": []
   },
@@ -352,5 +353,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "2 CPSC recalls on record; sample hazard: the bulbs can overheat during use."
+  }
 }

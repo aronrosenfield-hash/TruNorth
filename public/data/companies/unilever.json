@@ -2,7 +2,7 @@
   "name": "Unilever",
   "cat": "Consumer Goods",
   "init": "UNL",
-  "overall": 46,
+  "overall": 47.4,
   "isPublic": true,
   "ticker": "UL",
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $570K in executive political donations; partisan lean Republican +56 across 12 executive donors.",
@@ -71,7 +72,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 70 on record (36 in past 12mo); 99% timely response rate.",
     "grade": "Good",
     "sources": [
       "Claude AI synthesis"
@@ -372,5 +373,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "4 CPSC recalls on record; sample hazard: the controller of the freezer is incompatible with the unit and can overheat and."
+  }
 }

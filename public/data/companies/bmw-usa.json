@@ -2,7 +2,7 @@
   "name": "BMW USA",
   "cat": "Automotive",
   "init": "BMW",
-  "overall": 42.5,
+  "overall": 35.8,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "poor",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -69,7 +70,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 3173 on record (100 in past 12mo); 100% timely response rate.",
     "grade": "Mixed",
     "sources": [
       "Claude AI synthesis"
@@ -263,5 +264,8 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-27T02:11:50.926Z"
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "1 CPSC recall on record; sample hazard: the front column of the scooter does not meet impact resistance standards."
+  }
 }
