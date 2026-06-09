@@ -10,10 +10,10 @@
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na"
   },
   "political": {
@@ -73,10 +73,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "California Privacy Protection Agency action (2025-01-15). Named in CPPA's January 2025 connected-TV investigative sweep; agency identified non-compliant privacy disclosures across smart-TV apps.",
     "grade": "Poor",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "cppa-enforcement"
     ]
   },
   "execPay": {
@@ -175,6 +176,5 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 1
+  "lastUpdated": "2026-05-17T23:59:59.000Z"
 }

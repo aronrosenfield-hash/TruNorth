@@ -1,0 +1,106 @@
+{
+  "source": "citizen-lab",
+  "source_url": "https://citizenlab.ca/category/research/targeted-threats/",
+  "license": "Citizen Lab research — public reports (CC BY 4.0)",
+  "fetched_at": "2026-06-09T18:41:09.424Z",
+  "mode": "dry",
+  "record_count": 12,
+  "records": [
+    {
+      "vendor": "NSO Group",
+      "product": "Pegasus spyware",
+      "first_reported": "2016-08-24",
+      "severity": "severe",
+      "summary": "Citizen Lab named NSO Group's Pegasus as the spyware behind targeted attacks on journalists, activists, and heads of state in 45+ countries.",
+      "report_url": "https://citizenlab.ca/2018/09/hide-and-seek-tracking-nso-groups-pegasus-spyware-to-operations-in-45-countries/"
+    },
+    {
+      "vendor": "Candiru / Saito Tech",
+      "product": "DevilsTongue",
+      "first_reported": "2021-07-15",
+      "severity": "severe",
+      "summary": "Israeli spyware vendor Candiru linked to attacks on journalists + civil society; sanctioned by US Commerce in Nov 2021.",
+      "report_url": "https://citizenlab.ca/2021/07/hooking-candiru-another-mercenary-spyware-vendor-comes-into-focus/"
+    },
+    {
+      "vendor": "QuaDream",
+      "product": "REIGN spyware",
+      "first_reported": "2023-04-11",
+      "severity": "severe",
+      "summary": "Israeli spyware vendor QuaDream's REIGN tool used to target journalists, opposition figures in 5+ countries.",
+      "report_url": "https://citizenlab.ca/2023/04/spyware-vendor-quadream-exploits-victims-customers/"
+    },
+    {
+      "vendor": "Cytrox / Intellexa Consortium",
+      "product": "Predator spyware",
+      "first_reported": "2021-12-16",
+      "severity": "severe",
+      "summary": "Predator spyware sold by North Macedonia's Cytrox + Intellexa group; deployed against journalists in Greece, Egypt.",
+      "report_url": "https://citizenlab.ca/2021/12/pegasus-vs-predator-dissidents-doubly-infected-iphones-reveal-cytrox-mercenary-spyware/"
+    },
+    {
+      "vendor": "Hacking Team",
+      "product": "Remote Control System",
+      "first_reported": "2014-02-17",
+      "severity": "severe",
+      "summary": "Italian Hacking Team (now Memento Labs) sold spyware to governments documented attacking journalists/activists in 21 countries.",
+      "report_url": "https://citizenlab.ca/2014/02/mapping-hacking-teams-untraceable-spyware/"
+    },
+    {
+      "vendor": "FinFisher / Lench IT / Gamma Group",
+      "product": "FinSpy",
+      "first_reported": "2012-07-25",
+      "severity": "severe",
+      "summary": "Anglo-German Gamma Group's FinSpy commercial spyware documented in 25+ countries targeting opposition figures.",
+      "report_url": "https://citizenlab.ca/2012/07/from-bahrain-with-love-finfishers-spy-kit-exposed/"
+    },
+    {
+      "vendor": "Paragon Solutions",
+      "product": "Graphite spyware",
+      "first_reported": "2025-01-31",
+      "severity": "severe",
+      "summary": "Citizen Lab + WhatsApp identified Israeli Paragon Solutions' Graphite spyware targeting journalists in Italy + others.",
+      "report_url": "https://citizenlab.ca/2025/06/first-known-victims-of-paragon-mercenary-spyware-speak-out/"
+    },
+    {
+      "vendor": "Sandvine",
+      "product": "PacketLogic DPI",
+      "first_reported": "2018-03-09",
+      "severity": "high",
+      "summary": "Canadian DPI vendor Sandvine's devices used by Turkey + Egypt to inject malware into HTTP traffic; sold to ProcessUnity 2024.",
+      "report_url": "https://citizenlab.ca/2018/03/bad-traffic-sandvines-packetlogic-devices-deploy-government-spyware-turkey-syria/"
+    },
+    {
+      "vendor": "Blue Coat Systems / Symantec",
+      "product": "Filtering + DPI hardware",
+      "first_reported": "2013-01-15",
+      "severity": "high",
+      "summary": "Blue Coat devices found censoring Internet in Syria, Burma, China; now part of Symantec/Broadcom.",
+      "report_url": "https://citizenlab.ca/2013/01/planet-blue-coat-redux/"
+    },
+    {
+      "vendor": "TikTok / ByteDance",
+      "product": "TikTok mobile app",
+      "first_reported": "2021-03-22",
+      "severity": "moderate",
+      "summary": "Citizen Lab found TikTok's data-collection broadly comparable to other big social platforms; no obvious covert channel — but flagged its centralized-PRC ownership as a structural risk.",
+      "report_url": "https://citizenlab.ca/2021/03/tiktok-vs-douyin-a-security-and-privacy-analysis/"
+    },
+    {
+      "vendor": "Tencent / WeChat",
+      "product": "WeChat messenger",
+      "first_reported": "2020-05-07",
+      "severity": "high",
+      "summary": "WeChat international-user content surveilled for keyword analysis used to censor PRC accounts; Citizen Lab documented cross-account surveillance.",
+      "report_url": "https://citizenlab.ca/2020/05/we-chat-they-watch/"
+    },
+    {
+      "vendor": "Zoom Video Communications",
+      "product": "Zoom client",
+      "first_reported": "2020-04-03",
+      "severity": "moderate",
+      "summary": "Zoom's claim of end-to-end encryption was incorrect; meeting keys routed via PRC servers in some calls (since remediated).",
+      "report_url": "https://citizenlab.ca/2020/04/move-fast-roll-your-own-crypto-a-quick-look-at-the-confidentiality-of-zoom-meetings/"
+    }
+  ]
+}
