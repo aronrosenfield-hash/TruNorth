@@ -92,7 +92,7 @@ export default function PrivacyPolicy({ onBack }) {
           marginBottom:8,
         }}>How we handle your data</h1>
         <div style={{ fontSize:13, color:C.textMute, marginBottom:24 }}>
-          Last updated: June 1, 2026
+          Last updated: June 9, 2026
         </div>
 
         <H2>Intro</H2>
@@ -121,7 +121,7 @@ export default function PrivacyPolicy({ onBack }) {
 
         <H2>Sharing — we don't sell your data</H2>
         <P>
-          We do not sell, rent, or trade your personal information to anyone. We do not run third-party ad networks. The only third parties that touch your data are the service providers we use to operate the app:
+          We do not sell, rent, or trade your personal information to anyone. We do not "share" your personal information for cross-context behavioral advertising as those terms are defined under the California Consumer Privacy Act (CCPA/CPRA). We do not run third-party ad networks. The only third parties that touch your data are the service providers we use to operate the app:
         </P>
         <UL>
           <li><strong>PostHog</strong> — anonymized product analytics.</li>
@@ -154,6 +154,12 @@ export default function PrivacyPolicy({ onBack }) {
           <li><strong>Portability</strong> — request a copy of your data in a machine-readable format.</li>
         </UL>
         <P>To exercise any of these, email <a href="mailto:Aron@trunorthapp.com" style={{ color:C.accent }}>Aron@trunorthapp.com</a>. We aim to respond within 30 days.</P>
+        <P>
+          <strong>EU/UK users:</strong> our legal basis for processing your email is <em>consent</em> (you opted in); for anonymous analytics, <em>legitimate interest</em> (improving the product). You have the right to lodge a complaint with your local data protection authority — find yours at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" style={{ color:C.accent }} target="_blank" rel="noopener noreferrer">edpb.europa.eu</a> or, in the UK, the <a href="https://ico.org.uk/" style={{ color:C.accent }} target="_blank" rel="noopener noreferrer">ICO</a>. We do not have a designated Data Protection Officer (we're small enough that the legal threshold doesn't apply) — Aron handles privacy requests directly.
+        </P>
+        <P>
+          <strong>California users:</strong> you have the right to know what we collect, request deletion, correct inaccuracies, opt out of any "sale" or "sharing" (we don't do either), and limit use of sensitive personal information (we don't collect any). To exercise these rights, email the address above. We will not discriminate against you for exercising your rights.
+        </P>
 
         <H2>Data retention</H2>
         <P>
