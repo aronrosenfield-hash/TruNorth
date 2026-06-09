@@ -6,10 +6,10 @@
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -35,9 +35,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2018 (B Impact score 84.4/200).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "environment": {
@@ -48,9 +49,12 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2018 (B Impact score 84.4/200). HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {

@@ -7,10 +7,10 @@
   "ticker": "ETSY",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
-    "environment": "neutral",
-    "labor": "neutral",
-    "dei": "neutral",
+    "charity": "positive",
+    "environment": "positive",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -26,33 +26,38 @@
     ]
   },
   "charity": {
-    "s": "$7M reported corporate giving in 2024 (~0.24% of revenue).",
+    "s": "$7M reported corporate giving in 2024 (~0.24% of revenue). Certified B Corporation since 2012 (B Impact score 105/200).",
     "amt": "Millions annually",
     "focus": "Small business, disaster relief, environmental causes",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 105/200).",
     "rating": "Positive",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 105/200).",
     "rating": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 105/200). HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "hrc-cei"
     ]
   },
   "animals": {

@@ -8,9 +8,9 @@
   "sc": {
     "political": "bipartisan",
     "charity": "positive",
-    "environment": "neutral",
-    "labor": "neutral",
-    "dei": "neutral",
+    "environment": "positive",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -26,33 +26,38 @@
     ]
   },
   "charity": {
-    "s": "$28M reported corporate giving in 2024 (~4.20% of revenue).",
+    "s": "$28M reported corporate giving in 2024 (~4.20% of revenue). Certified B Corporation since 2011 (B Impact score 80.7/200).",
     "amt": "15M+ pairs donated",
     "focus": "Vision access, global health",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2011 (B Impact score 80.7/200).",
     "rating": "Positive",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2011 (B Impact score 80.7/200).",
     "rating": "Positive",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2011 (B Impact score 80.7/200). HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "hrc-cei"
     ]
   },
   "animals": {

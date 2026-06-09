@@ -6,10 +6,10 @@
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
-    "environment": "neutral",
-    "labor": "neutral",
-    "dei": "neutral",
+    "charity": "positive",
+    "environment": "positive",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
@@ -23,27 +23,36 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 89.4/200). Fair Trade Certified partner (personal care) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "fair-trade"
     ]
   },
   "dataLastUpdated": "2026-05-28",
   "charity": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 89.4/200).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits. Certified B Corporation since 2012 (B Impact score 89.4/200). Climate Neutral Certified (2022) — third-party verified measurement, offsetting, and reduction of full-business carbon footprint. Fair Trade Certified partner (personal care) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "one-percent-planet",
+      "bcorp",
+      "climate-neutral",
+      "fair-trade"
     ]
   },
   "dei": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Certified B Corporation since 2012 (B Impact score 89.4/200).",
+    "sources": [
+      "bcorp"
+    ]
   },
   "animals": {
     "s": "No public record found.",

@@ -6,10 +6,10 @@
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "neutral",
-    "environment": "neutral",
+    "charity": "positive",
+    "environment": "positive",
     "labor": "mixed",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -35,22 +35,31 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "$25M reported corporate giving in 2024 (~0.04% of revenue) via NVIDIA Foundation.",
+    "s": "$25M reported corporate giving in 2024 (~0.04% of revenue) via NVIDIA Foundation. JUST Capital JUST 100 — ranked #1 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #4 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #4 (2024).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #1 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital",
+      "cdp-a-list"
     ]
   },
   "dei": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "JUST Capital JUST 100 — ranked #1 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
+    "sources": [
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
+    ]
   },
   "animals": {
     "s": "No public record found.",

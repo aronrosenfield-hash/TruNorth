@@ -8,8 +8,8 @@
     "political": "left-leaning",
     "charity": "positive",
     "environment": "positive",
-    "labor": "neutral",
-    "dei": "neutral",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
@@ -23,32 +23,37 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2016 (B Impact score 90.4/200).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "dataLastUpdated": "2026-05-28",
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "$3M reported corporate giving in 2024 (~1.42% of revenue).",
+    "s": "$3M reported corporate giving in 2024 (~1.42% of revenue). Certified B Corporation since 2016 (B Impact score 90.4/200).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits.",
+    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits. Certified B Corporation since 2016 (B Impact score 90.4/200). Climate Neutral Certified (2020) — third-party verified measurement, offsetting, and reduction of full-business carbon footprint.",
     "sources": [
       "Claude AI synthesis",
-      "one-percent-planet"
+      "one-percent-planet",
+      "bcorp",
+      "climate-neutral"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2016 (B Impact score 90.4/200).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "animals": {

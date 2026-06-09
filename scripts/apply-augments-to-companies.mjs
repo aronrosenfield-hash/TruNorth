@@ -31,6 +31,25 @@ const COMP_DIR = path.join(ROOT, "public/data/companies");
 
 const NO_RECORD = /^\s*no public record found\.?\s*$/i;
 
+// Sources whose narratives can be combined into a multi-source positive
+// summary. When a brand sits on multiple of these lists we concatenate the
+// narratives instead of letting "first wins" hide later evidence.
+const POSITIVE_MERGE_SOURCES = new Set([
+  "bcorp", "just-capital", "drucker-250", "fortune-admired", "forbes-employers",
+  "hrc-cei", "bloomberg-gei", "cdp-a-list", "climate-neutral", "fair-trade",
+  "newsweek-trust", "one-percent-planet", "disability-in", "sbti",
+  "net-zero-tracker", "textile-exchange", "epa-smartway", "epa-green-vehicle",
+  "nlrb-voluntary-recognition", "corporate-giving",
+]);
+
+const NEGATIVE_OR_NEUTRAL_SCS = new Set([
+  "neutral", "na", "mixed", "unknown", undefined, null, "",
+]);
+
+const TRACE_SLUGS = new Set([
+  "patagonia", "ben-and-jerry-s", "microsoft", "salesforce", "costco",
+]);
+
 function loadAugment(name) {
   const p = path.join(AUG_DIR, `${name}-augment.json`);
   if (!fs.existsSync(p)) return null;
@@ -84,22 +103,7 @@ const WRITERS = [
       severity: "positive",
     }],
   },
-  // ─── B Corp certification (multi-category) ────────────────────────────
-  {
-    name: "bcorp",
-    write: (e) => {
-      const out = [];
-      const score = e.score || e.totalScore || e.overallScore;
-      const yr = e.certifiedSince || e.year;
-      const baseline = score
-        ? `Certified B Corporation${yr ? ` since ${yr}` : ""}, B Impact score ${score}/200.`
-        : `Certified B Corporation${yr ? ` since ${yr}` : ""}.`;
-      out.push({ category: "labor", narrative: baseline, sc: "positive" });
-      out.push({ category: "environment", narrative: baseline, sc: "positive" });
-      out.push({ category: "dei", narrative: baseline, sc: "pro_dei" });
-      return out;
-    },
-  },
+  // (bcorp writer moved below — multi-category positive with merge support)
   // ─── SBTi (Science-Based Targets) ────────────────────────────────────
   {
     name: "sbti",
@@ -145,15 +149,134 @@ const WRITERS = [
   {
     name: "disability-in",
     write: (e) => {
-      const score = e.score || e.index;
+      const score = e.score || e.index || e.dei_score;
       if (score == null) return [];
       const sc = score >= 90 ? "pro_dei" : score >= 70 ? "pro_dei" : "mixed";
       return [{
         category: "dei",
         narrative: `Disability:IN Equality Index score ${score}/100.`,
-        sc, severity: "positive",
+        sc, severity: "positive", mergePositive: true,
       }];
     },
+  },
+  // ─── B Corp Directory (multi-cat: labor + environment + dei) ──────────
+  {
+    name: "bcorp",
+    write: (e) => {
+      const score = e.score;
+      const yr = e.certifiedSince;
+      const baseline = score
+        ? `Certified B Corporation${yr ? ` since ${yr}` : ""} (B Impact score ${score}/200).`
+        : `Certified B Corporation${yr ? ` since ${yr}` : ""}.`;
+      return [
+        { category: "labor",       narrative: baseline, sc: "positive",  mergePositive: true },
+        { category: "environment", narrative: baseline, sc: "positive",  mergePositive: true },
+        { category: "dei",         narrative: baseline, sc: "pro_dei",   mergePositive: true },
+        { category: "charity",     narrative: baseline, sc: "positive",  mergePositive: true },
+      ];
+    },
+  },
+  // ─── JUST Capital JUST 100 (multi-dimensional positive) ───────────────
+  {
+    name: "just-capital",
+    write: (e) => {
+      const baseline = `JUST Capital JUST 100 — ranked #${e.rank} of Russell 1000 (${e.year}) for treatment of workers, customers, communities, environment.`;
+      return [
+        { category: "labor",       narrative: baseline, sc: "positive", mergePositive: true },
+        { category: "environment", narrative: baseline, sc: "positive", mergePositive: true },
+        { category: "dei",         narrative: baseline, sc: "pro_dei",  mergePositive: true },
+        { category: "charity",     narrative: baseline, sc: "positive", mergePositive: true },
+      ];
+    },
+  },
+  // ─── Drucker Institute Management Top 250 ─────────────────────────────
+  {
+    name: "drucker-250",
+    write: (e) => {
+      const baseline = `Drucker Institute Management Top 250 — ranked #${e.rank} (${e.year}) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength.`;
+      return [
+        { category: "labor",       narrative: baseline, sc: "positive", mergePositive: true },
+        { category: "charity",     narrative: baseline, sc: "positive", mergePositive: true },
+      ];
+    },
+  },
+  // ─── Fortune World's Most Admired ─────────────────────────────────────
+  {
+    name: "fortune-admired",
+    write: (e) => {
+      const baseline = `Fortune World's Most Admired Companies — ranked #${e.rank} (${e.year}).`;
+      return [
+        { category: "labor",   narrative: baseline, sc: "positive", mergePositive: true },
+        { category: "charity", narrative: baseline, sc: "positive", mergePositive: true },
+      ];
+    },
+  },
+  // ─── Forbes World's Best Employers ────────────────────────────────────
+  {
+    name: "forbes-employers",
+    write: (e) => {
+      const baseline = `Forbes World's Best Employers — ranked #${e.rank} (${e.year}) by employee survey.`;
+      return [
+        { category: "labor", narrative: baseline, sc: "positive", mergePositive: true },
+      ];
+    },
+  },
+  // ─── HRC Corporate Equality Index ─────────────────────────────────────
+  {
+    name: "hrc-cei",
+    write: (e) => [{
+      category: "dei",
+      narrative: `HRC Corporate Equality Index ${e.cei_score}/100 (${e.year}) — top-tier LGBTQ+ workplace equality rating.`,
+      sc: "pro_dei", mergePositive: true,
+    }],
+  },
+  // ─── Bloomberg Gender-Equality Index ──────────────────────────────────
+  {
+    name: "bloomberg-gei",
+    write: (e) => [{
+      category: "dei",
+      narrative: `Bloomberg Gender-Equality Index member (${e.year}) — transparent on female leadership, equal pay, inclusive culture.`,
+      sc: "pro_dei", mergePositive: true,
+    }],
+  },
+  // ─── CDP A-List (Climate) ─────────────────────────────────────────────
+  {
+    name: "cdp-a-list",
+    write: (e) => [{
+      category: "environment",
+      narrative: `CDP A-List (${e.year}) — top tier for climate disclosure and emissions-reduction action.`,
+      sc: "positive", mergePositive: true,
+    }],
+  },
+  // ─── Climate Neutral Certified ────────────────────────────────────────
+  {
+    name: "climate-neutral",
+    write: (e) => [{
+      category: "environment",
+      narrative: `Climate Neutral Certified${e.year ? ` (${e.year})` : ""} — third-party verified measurement, offsetting, and reduction of full-business carbon footprint.`,
+      sc: "positive", mergePositive: true,
+    }],
+  },
+  // ─── Fair Trade Certified ─────────────────────────────────────────────
+  {
+    name: "fair-trade",
+    write: (e) => {
+      const what = e.products ? ` (${e.products})` : "";
+      const baseline = `Fair Trade Certified partner${what} — sources through cooperatives guaranteeing minimum prices and community premiums.`;
+      return [
+        { category: "labor",       narrative: baseline, sc: "positive", mergePositive: true },
+        { category: "environment", narrative: baseline, sc: "positive", mergePositive: true },
+      ];
+    },
+  },
+  // ─── Newsweek Most Trustworthy Companies ──────────────────────────────
+  {
+    name: "newsweek-trust",
+    write: (e) => [{
+      category: "charity",
+      narrative: `Newsweek Most Trustworthy Companies in America — ranked #${e.rank} (${e.year}).`,
+      sc: "positive", mergePositive: true,
+    }],
   },
   // ─── EPA SmartWay (clean trucking) ────────────────────────────────────
   {
@@ -321,7 +444,8 @@ const compFiles = fs.readdirSync(COMP_DIR).filter(f => f.endsWith(".json"));
 let companyHits = 0;
 let categoryWrites = 0;
 const perCategoryHits = {};
-const patagoniaTrace = [];
+const patagoniaTrace = {};
+for (const s of TRACE_SLUGS) patagoniaTrace[s] = [];
 
 for (const f of compFiles) {
   const filePath = path.join(COMP_DIR, f);
@@ -339,20 +463,38 @@ for (const f of compFiles) {
       if (!w || !w.category) continue;
       const existing = d[w.category] || {};
       const existingS = String(existing.s || "");
-      // First non-no-record narrative wins (Aron's rule).
-      if (existingS && !NO_RECORD.test(existingS)) {
-        if (slug === "patagonia") patagoniaTrace.push(`  ${w.category}: SKIP (already filled by earlier source)`);
+      const existingSources = existing.sources || [];
+      const existingPositive = existingSources.some(s => POSITIVE_MERGE_SOURCES.has(s));
+      const isNoRecord = !existingS || NO_RECORD.test(existingS);
+
+      // Three cases:
+      //  1) No existing → write fresh.
+      //  2) Existing positive merge-source AND this writer is mergePositive →
+      //     append narrative + add source (multi-source enrichment).
+      //  3) Existing non-no-record → skip (first wins).
+      if (isNoRecord) {
+        d[w.category] = { ...existing, s: w.narrative, sources: [...existingSources, name] };
+      } else if (w.mergePositive && existingPositive && !existingS.includes(w.narrative)) {
+        const merged = `${existingS.replace(/\s+$/, "")} ${w.narrative}`;
+        d[w.category] = { ...existing, s: merged, sources: [...existingSources, name] };
+      } else {
+        if (TRACE_SLUGS.has(slug)) patagoniaTrace[slug].push(`  ${w.category}: SKIP (already filled by earlier source)`);
         continue;
       }
-      d[w.category] = { ...existing, s: w.narrative, sources: [...(existing.sources || []), name] };
       if (w.sc) {
         d.sc = d.sc || {};
-        d.sc[w.category] = w.sc;
+        // Upgrade sc only when going from no-record OR when current sc is
+        // negative/neutral and new is positive. Never downgrade an existing
+        // explicit positive.
+        const cur = d.sc[w.category];
+        if (!cur || NEGATIVE_OR_NEUTRAL_SCS.has(cur) || isNoRecord) {
+          d.sc[w.category] = w.sc;
+        }
       }
       touched = true;
       categoryWrites++;
       perCategoryHits[w.category] = (perCategoryHits[w.category] || 0) + 1;
-      if (slug === "patagonia") patagoniaTrace.push(`  ${w.category} ← ${name}: "${w.narrative.slice(0, 80)}" (sc=${w.sc || "-"})`);
+      if (TRACE_SLUGS.has(slug)) patagoniaTrace[slug].push(`  ${w.category} ← ${name}: "${w.narrative.slice(0, 80)}" (sc=${w.sc || "-"})`);
     }
   }
 
@@ -371,5 +513,7 @@ for (const [c, n] of Object.entries(perCategoryHits)) {
   console.log(`    ${c.padEnd(13)} ${n}`);
 }
 console.log("");
-console.log(`=== Patagonia trace ===`);
-patagoniaTrace.forEach(l => console.log(l));
+for (const s of TRACE_SLUGS) {
+  console.log(`=== ${s} trace ===`);
+  for (const l of patagoniaTrace[s]) console.log(l);
+}

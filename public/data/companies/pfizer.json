@@ -8,9 +8,9 @@
   "sc": {
     "political": "bipartisan",
     "charity": "positive",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -32,20 +32,26 @@
     }
   },
   "charity": {
-    "s": "$1.40B reported corporate giving in 2024 (~2.37% of revenue) via Pfizer Foundation.",
+    "s": "$1.40B reported corporate giving in 2024 (~2.37% of revenue) via Pfizer Foundation. JUST Capital JUST 100 — ranked #12 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #9 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #25 (2024). Newsweek Most Trustworthy Companies in America — ranked #58 (2024).",
     "amt": "$40M+ documented (COVID response); ongoing matching gifts and foundation programs",
     "focus": "Healthcare access, infectious disease, health equity, scientific research",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #12 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital",
+      "cdp-a-list"
     ]
   },
   "labor": {
@@ -58,10 +64,14 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Disability:IN Equality Index score 100/100. JUST Capital JUST 100 — ranked #12 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "disability-in",
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {

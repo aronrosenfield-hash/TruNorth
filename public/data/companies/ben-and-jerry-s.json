@@ -7,10 +7,10 @@
   "ticker": null,
   "sc": {
     "political": "neutral",
-    "charity": "mixed",
-    "environment": "neutral",
-    "labor": "neutral",
-    "dei": "neutral",
+    "charity": "positive",
+    "environment": "positive",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
@@ -23,31 +23,38 @@
     "sources": []
   },
   "charity": {
-    "s": "$4M reported corporate giving in 2024 (~0.90% of revenue) via Ben & Jerry's Foundation.",
+    "s": "$4M reported corporate giving in 2024 (~0.90% of revenue) via Ben & Jerry's Foundation. Certified B Corporation since 2012 (B Impact score 109/200).",
     "amt": "$2.6-2.8 million annually",
     "focus": "Social justice, environmental justice, racial equity, voter rights, immigration reform, grassroots organizing",
     "sources": [
-      "corporate-giving"
+      "corporate-giving",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 109/200). Fair Trade Certified partner (ice cream ingredients (cocoa, vanilla, sugar, banana, coffee)) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "rating": "Good",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "fair-trade"
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 109/200). Fair Trade Certified partner (ice cream ingredients (cocoa, vanilla, sugar, banana, coffee)) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "rating": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "fair-trade"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2012 (B Impact score 109/200).",
     "stance": "Pro-DEI",
-    "sources": []
+    "sources": [
+      "bcorp"
+    ]
   },
   "animals": {
     "s": "No public record found.",

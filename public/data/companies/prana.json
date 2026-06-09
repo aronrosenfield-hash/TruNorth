@@ -6,10 +6,10 @@
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "neutral",
-    "environment": "neutral",
-    "labor": "neutral",
-    "dei": "neutral",
+    "charity": "positive",
+    "environment": "positive",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
@@ -23,29 +23,37 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2014 (B Impact score 91.3/200). Fair Trade Certified partner (apparel) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "fair-trade"
     ]
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "$3M reported corporate giving in 2024 (~0.09% of revenue).",
+    "s": "$3M reported corporate giving in 2024 (~0.09% of revenue). Certified B Corporation since 2014 (B Impact score 91.3/200).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits. Certified B Corporation since 2014 (B Impact score 91.3/200). Climate Neutral Certified (2021) — third-party verified measurement, offsetting, and reduction of full-business carbon footprint. Fair Trade Certified partner (apparel) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "one-percent-planet",
+      "bcorp",
+      "climate-neutral",
+      "fair-trade"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2014 (B Impact score 91.3/200).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp"
     ]
   },
   "animals": {

@@ -7,10 +7,10 @@
   "ticker": "KO",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -25,12 +25,15 @@
     ]
   },
   "charity": {
-    "s": "$165M reported corporate giving in 2024 (~0.36% of revenue) via Coca-Cola Foundation.",
+    "s": "$165M reported corporate giving in 2024 (~0.36% of revenue) via Coca-Cola Foundation. Drucker Institute Management Top 250 — ranked #13 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #19 (2024). Newsweek Most Trustworthy Companies in America — ranked #5 (2024).",
     "amt": "$1.7 billion (cumulative over 40 years)",
     "focus": "Water stewardship, watershed conservation, recycling value chains, disaster preparedness, education, economic prosperity",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
@@ -51,10 +54,12 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {

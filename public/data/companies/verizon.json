@@ -7,10 +7,10 @@
   "ac": "#9b8ff0",
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
-    "environment": "neutral",
+    "charity": "positive",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -23,20 +23,23 @@
     "sources": []
   },
   "charity": {
-    "s": "$38M reported corporate giving in 2024 (~0.03% of revenue) via Verizon Foundation.",
+    "s": "$38M reported corporate giving in 2024 (~0.03% of revenue) via Verizon Foundation. JUST Capital JUST 100 — ranked #35 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
     "amt": "N/A",
     "focus": "N/A",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #35 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital",
+      "cdp-a-list"
     ]
   },
   "labor": {
@@ -49,9 +52,13 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #35 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Neutral",
-    "sources": []
+    "sources": [
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
+    ]
   },
   "animals": {
     "s": "No public record found.",

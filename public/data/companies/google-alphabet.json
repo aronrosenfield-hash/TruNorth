@@ -7,10 +7,10 @@
   "ticker": "GOOGL",
   "sc": {
     "political": "left",
-    "charity": "mixed",
-    "environment": "neutral",
-    "labor": "neutral",
-    "dei": "neutral",
+    "charity": "positive",
+    "environment": "positive",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -25,32 +25,45 @@
     ]
   },
   "charity": {
-    "s": "$350M reported corporate giving in 2024 (~0.11% of revenue) via Google.org.",
+    "s": "$350M reported corporate giving in 2024 (~0.11% of revenue) via Google.org. JUST Capital JUST 100 — ranked #6 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #5 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #9 (2024).",
     "amt": "$100M+ annually",
     "focus": "Education, economic opportunity, inclusion, crisis response, climate",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #6 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "rating": "Good",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "cdp-a-list"
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #6 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #5 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #9 (2024). Forbes World's Best Employers — ranked #5 (2024) by employee survey.",
     "rating": "Poor",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "forbes-employers"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #6 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Anti-DEI",
-    "sources": []
+    "sources": [
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
+    ]
   },
   "animals": {
     "s": "No public record found.",

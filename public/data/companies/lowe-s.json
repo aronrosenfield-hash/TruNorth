@@ -7,10 +7,10 @@
   "ticker": "LOW",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -25,12 +25,14 @@
     ]
   },
   "charity": {
-    "s": "$145M reported corporate giving in 2024 (~0.17% of revenue) via Lowe's Charitable & Educational Foundation.",
+    "s": "$145M reported corporate giving in 2024 (~0.17% of revenue) via Lowe's Charitable & Educational Foundation. JUST Capital JUST 100 — ranked #84 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Newsweek Most Trustworthy Companies in America — ranked #52 (2024).",
     "amt": "~$100M+ (Hometowns program over 5 years; $250M Foundation commitment over 10 years)",
     "focus": "Skilled trades workforce development, community revitalization, affordable housing, disaster relief",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "newsweek-trust"
     ]
   },
   "environment": {
@@ -51,10 +53,12 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #84 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Anti-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei"
     ]
   },
   "animals": {

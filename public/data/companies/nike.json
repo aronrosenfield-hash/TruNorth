@@ -7,10 +7,10 @@
   "ticker": "NKE",
   "sc": {
     "political": "neutral",
-    "charity": "mixed",
-    "environment": "neutral",
+    "charity": "positive",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
@@ -32,20 +32,26 @@
     }
   },
   "charity": {
-    "s": "$220M reported corporate giving in 2024 (~0.42% of revenue) via Nike Foundation.",
+    "s": "$220M reported corporate giving in 2024 (~0.42% of revenue) via Nike Foundation. JUST Capital JUST 100 — ranked #41 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #21 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #15 (2024). Newsweek Most Trustworthy Companies in America — ranked #31 (2024).",
     "amt": "~$8.6M+ annually (2024)",
     "focus": "Youth sport access, racial equity, community development, girls' empowerment",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #41 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital",
+      "cdp-a-list"
     ]
   },
   "labor": {
@@ -58,10 +64,13 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #41 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {
