@@ -10,7 +10,7 @@
     "environment": "positive",
     "labor": "positive",
     "dei": "pro_dei",
-    "animals": "neutral",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
@@ -23,10 +23,11 @@
     ]
   },
   "labor": {
-    "s": "Certified B Corporation since 2016 (B Impact score 90.4/200).",
+    "s": "Certified B Corporation since 2016 (B Impact score 90.4/200). DoneGood marketplace — featured for carbon-labeled footwear + B Corp status. Good On You Good — carbon-footprint labels + B Corp + natural materials. [donegood · goodonyou]",
     "sources": [
       "Claude AI synthesis",
-      "bcorp"
+      "bcorp",
+      "consumer-scorecards"
     ]
   },
   "dataLastUpdated": "2026-05-28",
@@ -41,13 +42,14 @@
     ]
   },
   "environment": {
-    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits. Certified B Corporation since 2016 (B Impact score 90.4/200). Climate Neutral Certified (2020) — third-party verified measurement, offsetting, and reduction of full-business carbon footprint. Climate-commitment coalition member: We Mean Business Coalition (since 2020). We Mean Business Coalition member — net-zero commitment + climate policy advocacy.",
+    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits. Certified B Corporation since 2016 (B Impact score 90.4/200). Climate Neutral Certified (2020) — third-party verified measurement, offsetting, and reduction of full-business carbon footprint. Climate-commitment coalition member: We Mean Business Coalition (since 2020). We Mean Business Coalition member — net-zero commitment + climate policy advocacy. DoneGood marketplace — featured for carbon-labeled footwear + B Corp status. Good On You Good — carbon-footprint labels + B Corp + natural materials. [donegood · goodonyou]",
     "sources": [
       "Claude AI synthesis",
       "one-percent-planet",
       "bcorp",
       "climate-neutral",
-      "climate-coalitions"
+      "climate-coalitions",
+      "consumer-scorecards"
     ]
   },
   "dei": {
@@ -58,8 +60,10 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Good On You Good — carbon-footprint labels + B Corp + natural materials. [goodonyou]",
+    "sources": [
+      "consumer-scorecards"
+    ]
   },
   "guns": {
     "s": "No public record found.",
