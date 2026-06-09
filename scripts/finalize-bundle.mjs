@@ -75,30 +75,28 @@ function indexEntryFromCompanyFile(slug, d) {
 }
 
 console.log("[finalize-bundle] scanning…");
-const indexJson = JSON.parse(fs.readFileSync(INDEX_OUT, "utf8"));
-const indexedSlugs = new Set(indexJson.map(c => c.slug));
 
+// Build 55: re-derive ENTIRE index from per-company files. The old behavior
+// of reading existing index.json and adding orphans missed cases where the
+// company file's `overall` / `sc.*` / `flags` changed after a rebake. Now
+// we treat the company files as the source of truth and regenerate every
+// entry. Drops stale entries for files that no longer exist.
 const allFiles = fs.readdirSync(COMP).filter(f => f.endsWith(".json"));
-const orphans = [];
+const merged = [];
+let resyncedFromFiles = 0;
 for (const f of allFiles) {
   const slug = f.replace(/\.json$/, "");
-  if (indexedSlugs.has(slug)) continue;
   try {
     const d = JSON.parse(fs.readFileSync(path.join(COMP, f), "utf8"));
     if (!d.name) continue;
-    orphans.push(indexEntryFromCompanyFile(slug, d));
+    merged.push(indexEntryFromCompanyFile(slug, d));
+    resyncedFromFiles++;
   } catch (err) {
     console.warn(`[finalize-bundle] skipping malformed ${f}: ${err.message}`);
   }
 }
-console.log(`[finalize-bundle] found ${orphans.length} orphans not in index.json`);
-if (orphans.length > 0) {
-  console.log(`  examples: ${orphans.slice(0, 8).map(o => o.slug).join(", ")}${orphans.length > 8 ? " …" : ""}`);
-}
-
-const merged = [...indexJson, ...orphans].sort((a, b) =>
-  (a.name || "").localeCompare(b.name || "")
-);
+console.log(`[finalize-bundle] re-derived ${resyncedFromFiles} index entries from company files`);
+merged.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
 fs.writeFileSync(INDEX_OUT, JSON.stringify(merged));
 console.log(`[finalize-bundle] wrote ${INDEX_OUT}: ${merged.length} entries`);
 

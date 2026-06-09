@@ -1,1 +1,209 @@
-{"name":"Dow Chemical","cat":"Manufacturing","init":"DOW","overall":50,"isPublic":true,"ticker":"DOW","sc":{"political":"right","charity":"neutral","environment":"neutral","labor":"neutral","dei":"pro_dei","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $9K PAC donations; 100% to Republican, 0% to Democratic committees.","amt":"$20 PAC (1998 cycle)","lean":"Right","sources":["FEC.gov"],"fecData":{"committeeId":"C00034124","repTotal":9000,"demTotal":0,"totalRaised":20,"lastFiling":"1998-07-06"}},"charity":{"s":"No public record found.","amt":"$20-30M annually (estimated)","focus":"STEM education, community development, disaster relief","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Very Poor","sources":[]},"labor":{"s":"No public record found.","rating":"Mixed","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Not disclosed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"100+:1","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-03-15","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Dow%20Chemical&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#2a0d0d","ac":"#e24a4a","dataLastUpdated":"2026-05-28","competitors":["lyondellbasell","huntsman","eastman-chemical","celanese"],"wiki":{"founded":"1897-00-00","hq":"Midland","employees":null,"revenue":"42951000000","parent":"DuPont, Dow Inc.","industry":"chemical industry","products":null,"keyPeople":"Herbert Henry Dow","website":"http://www.dow.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dow_Chemical_Company_logo.svg/330px-Dow_Chemical_Company_logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Dow_Chemical_Company","extract":"The Dow Chemical Company is an American multinational corporation headquartered in Midland, Michigan, United States. The company was among the three largest chemical producers in the world in 2021. It is the operating subsidiary of Dow Inc., a publicly traded holding company incorporated under Delaware law."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/mi/midland/profile/chemicals/the-dow-chemical-company-0372-90023632/addressId/224082"},"secComplaints":{"count":8,"sample":[{"adsh":"0001751788-25-000009","date":"2025-02-03","filer":"DOW INC.  (DOW)  (CIK 0001751788)","form":"8-K"},{"adsh":"0001666700-25-000035","date":"2025-08-04","filer":"DuPont de Nemours, Inc.  (DD)  (CIK 0001666700)","form":"8-K"},{"adsh":"0001104659-25-073336","date":"2025-08-04","filer":"Chemours Co  (CC)  (CIK 0001627223)","form":"8-K"}]},"payRatio":{"ratio":207,"ratioDisplay":"207:1","ceoPay":19078777,"medianWorkerPay":91995,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-02-27","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1751788/000119312526082583/dow-20260227.htm"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Dow%20Chemical%20logo.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"disability_in","score":100,"year":2024,"sourceUrl":"https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"}],"slug":"dow-chemical","news":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":{"source":"FEC API","committeeId":"C00034124","committeeName":"DOW EASTERN EMPLOYEES POLITICAL ACTION COMMITTEE OF THE DOW CHEMICAL COMPANY (DEEPAC)","lean":"right","repTotal":9000,"demTotal":0,"totalRaised":20,"totalRaisedFmt":"$20","lastFilingDate":"1998-07-06","cycle":1998,"fetchedAt":"2026-05-17T23:59:59.000Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-15","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Dow%20Chemical&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-17T23:59:59.000Z"}
+{
+  "name": "Dow Chemical",
+  "cat": "Manufacturing",
+  "init": "DOW",
+  "overall": 50,
+  "isPublic": true,
+  "ticker": "DOW",
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "pro_dei",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $9K PAC donations; 100% to Republican, 0% to Democratic committees.",
+    "amt": "$20 PAC (1998 cycle)",
+    "lean": "Right",
+    "sources": [
+      "FEC.gov"
+    ],
+    "fecData": {
+      "committeeId": "C00034124",
+      "repTotal": 9000,
+      "demTotal": 0,
+      "totalRaised": 20,
+      "lastFiling": "1998-07-06"
+    }
+  },
+  "charity": {
+    "s": "$20M reported corporate giving in 2024 (~0.05% of revenue) via The Dow Chemical Company Foundation.",
+    "amt": "$20-30M annually (estimated)",
+    "focus": "STEM education, community development, disaster relief",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Very Poor",
+    "sources": []
+  },
+  "labor": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "100+:1",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-03-15",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Dow%20Chemical&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "lyondellbasell",
+    "huntsman",
+    "eastman-chemical",
+    "celanese"
+  ],
+  "wiki": {
+    "founded": "1897-00-00",
+    "hq": "Midland",
+    "employees": null,
+    "revenue": "42951000000",
+    "parent": "DuPont, Dow Inc.",
+    "industry": "chemical industry",
+    "products": null,
+    "keyPeople": "Herbert Henry Dow",
+    "website": "http://www.dow.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dow_Chemical_Company_logo.svg/330px-Dow_Chemical_Company_logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dow_Chemical_Company",
+    "extract": "The Dow Chemical Company is an American multinational corporation headquartered in Midland, Michigan, United States. The company was among the three largest chemical producers in the world in 2021. It is the operating subsidiary of Dow Inc., a publicly traded holding company incorporated under Delaware law."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/mi/midland/profile/chemicals/the-dow-chemical-company-0372-90023632/addressId/224082"
+  },
+  "secComplaints": {
+    "count": 8,
+    "sample": [
+      {
+        "adsh": "0001751788-25-000009",
+        "date": "2025-02-03",
+        "filer": "DOW INC.  (DOW)  (CIK 0001751788)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001666700-25-000035",
+        "date": "2025-08-04",
+        "filer": "DuPont de Nemours, Inc.  (DD)  (CIK 0001666700)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-25-073336",
+        "date": "2025-08-04",
+        "filer": "Chemours Co  (CC)  (CIK 0001627223)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "payRatio": {
+    "ratio": 207,
+    "ratioDisplay": "207:1",
+    "ceoPay": 19078777,
+    "medianWorkerPay": 91995,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-02-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1751788/000119312526082583/dow-20260227.htm"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Dow%20Chemical%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "disability_in",
+      "score": 100,
+      "year": 2024,
+      "sourceUrl": "https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"
+    }
+  ],
+  "slug": "dow-chemical",
+  "news": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00034124",
+    "committeeName": "DOW EASTERN EMPLOYEES POLITICAL ACTION COMMITTEE OF THE DOW CHEMICAL COMPANY (DEEPAC)",
+    "lean": "right",
+    "repTotal": 9000,
+    "demTotal": 0,
+    "totalRaised": 20,
+    "totalRaisedFmt": "$20",
+    "lastFilingDate": "1998-07-06",
+    "cycle": 1998,
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-15",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Dow%20Chemical&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-17T23:59:59.000Z"
+}

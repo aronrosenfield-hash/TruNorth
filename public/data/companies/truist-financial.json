@@ -1,1 +1,311 @@
-{"name":"Truist Financial","cat":"Financial Services","init":"TF","overall":42,"isPublic":true,"ticker":"TFC","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"pro_dei","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"No FEC PAC contributions on record.","amt":"$162K PAC (2026 cycle)","lean":"Mixed","sources":["FEC.gov"],"fecData":{"committeeId":"C00009639","repTotal":0,"demTotal":0,"totalRaised":161530,"lastFiling":"2026-04-17"}},"charity":{"s":"No public record found.","amt":"$99 million (2023)","focus":"Economic mobility, small business development, workforce training, affordable housing, community development","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Good","sources":["EPA","Violation Tracker"]},"labor":{"s":"60 federal penalties totaling $1.7B since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Mixed","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Poor","sources":[]},"execPay":{"s":"No public record found.","ratio":"Not disclosed","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-03-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Truist%20Financial&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#2a1a05","ac":"#f0a030","dataLastUpdated":"2026-05-28","laborAPI":{"violationTracker":{"slug":"truist-financial","matchedName":"Truist Financial","totalPenalty":1748203907,"totalRecords":60,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":894112112,"records":14},{"category":"government-contracting-related offenses","penalty":501000000,"records":2},{"category":"financial offenses","penalty":321017090,"records":33},{"category":"employment-related offenses","penalty":32074705,"records":11}],"primaryOffenses":[{"category":"consumer protection violation","penalty":569926112,"records":9},{"category":"False Claims Act and related","penalty":501000000,"records":2},{"category":"mortgage abuses","penalty":320050000,"records":3},{"category":"banking violation","penalty":191666522,"records":6},{"category":"toxic securities abuses","penalty":65000000,"records":1}],"rating":"mixed"}},"competitors":["bank-of-america","wells-fargo","jpmorgan-chase","citigroup","u-s-bancorp"],"wiki":{"founded":"1872-01-01","hq":"Winston-Salem, Charlotte","employees":"30000","revenue":null,"parent":null,"industry":"financial services","products":null,"keyPeople":null,"website":"https://www.truist.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Truist_Center_Sign.jpg/330px-Truist_Center_Sign.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Truist","extract":"Truist Financial Corporation is an American bank holding company headquartered in Charlotte, North Carolina. The company was formed in December 2019 as the result of the merger of BB&T and SunTrust. Its bank operates 1,928 branches in 15 states and Washington, D.C., offering consumer, commercial, and investment banking, securities brokerage, asset management, mortgage, and insurance products and services. It is the tenth-largest bank in the United States, with $523 billion in assets."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ga/atlanta/profile/bank/truist-financial-corporation-0443-8730/addressId/11425"},"payRatio":{"ratio":137,"ratioDisplay":"137:1","ceoPay":14302389,"medianWorkerPay":104397,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-03-16","sourceUrl":"https://www.sec.gov/Archives/edgar/data/92230/000119312526107144/d12240ddef14a.htm"},"deiBadges":[{"scoreType":"hrc_cei","score":100,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"truist-financial","secComplaints":null,"news":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Truist Financial","slug":"truist-financial","ownership":"publicly traded (ticker symbol TFC)","hq":"North Carolina","majorIndustry":"financial services","specificIndustry":"banking","totalPenalty":1748203907,"totalRecords":60,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":894112112,"records":14},{"category":"government-contracting-related offenses","penalty":501000000,"records":2},{"category":"financial offenses","penalty":321017090,"records":33},{"category":"employment-related offenses","penalty":32074705,"records":11}],"primaryOffenses":[{"category":"consumer protection violation","penalty":569926112,"records":9},{"category":"False Claims Act and related","penalty":501000000,"records":2},{"category":"mortgage abuses","penalty":320050000,"records":3},{"category":"banking violation","penalty":191666522,"records":6},{"category":"toxic securities abuses","penalty":65000000,"records":1}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":{"source":"FEC API","committeeId":"C00009639","committeeName":"TRUIST FINANCIAL CORPORATION FEDERAL, STATE & LOCAL POLITICAL ACTION COMMITTEE (FORMERLY SUNTRUST BANKS, INC. MAIN STREET BANKERS PAC)","lean":"mixed","repTotal":0,"demTotal":0,"totalRaised":161530,"totalRaisedFmt":"$162K","lastFilingDate":"2026-04-17","cycle":2026,"fetchedAt":"2026-05-16T23:59:59.000Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Truist%20Financial&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Truist Financial",
+  "cat": "Financial Services",
+  "init": "TF",
+  "overall": 39.1,
+  "isPublic": true,
+  "ticker": "TFC",
+  "sc": {
+    "political": "neutral",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No FEC PAC contributions on record.",
+    "amt": "$162K PAC (2026 cycle)",
+    "lean": "Mixed",
+    "sources": [
+      "FEC.gov"
+    ],
+    "fecData": {
+      "committeeId": "C00009639",
+      "repTotal": 0,
+      "demTotal": 0,
+      "totalRaised": 161530,
+      "lastFiling": "2026-04-17"
+    }
+  },
+  "charity": {
+    "s": "$72M reported corporate giving in 2024 (~0.24% of revenue) via Truist Foundation.",
+    "amt": "$99 million (2023)",
+    "focus": "Economic mobility, small business development, workforce training, affordable housing, community development",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Good",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "60 federal penalties totaling $1.7B since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Poor",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-03-13",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Truist%20Financial&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#2a1a05",
+  "ac": "#f0a030",
+  "dataLastUpdated": "2026-05-28",
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "truist-financial",
+      "matchedName": "Truist Financial",
+      "totalPenalty": 1748203907,
+      "totalRecords": 60,
+      "offenseGroups": [
+        {
+          "category": "consumer-protection-related offenses",
+          "penalty": 894112112,
+          "records": 14
+        },
+        {
+          "category": "government-contracting-related offenses",
+          "penalty": 501000000,
+          "records": 2
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 321017090,
+          "records": 33
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 32074705,
+          "records": 11
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "consumer protection violation",
+          "penalty": 569926112,
+          "records": 9
+        },
+        {
+          "category": "False Claims Act and related",
+          "penalty": 501000000,
+          "records": 2
+        },
+        {
+          "category": "mortgage abuses",
+          "penalty": 320050000,
+          "records": 3
+        },
+        {
+          "category": "banking violation",
+          "penalty": 191666522,
+          "records": 6
+        },
+        {
+          "category": "toxic securities abuses",
+          "penalty": 65000000,
+          "records": 1
+        }
+      ],
+      "rating": "mixed"
+    }
+  },
+  "competitors": [
+    "bank-of-america",
+    "wells-fargo",
+    "jpmorgan-chase",
+    "citigroup",
+    "u-s-bancorp"
+  ],
+  "wiki": {
+    "founded": "1872-01-01",
+    "hq": "Winston-Salem, Charlotte",
+    "employees": "30000",
+    "revenue": null,
+    "parent": null,
+    "industry": "financial services",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.truist.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Truist_Center_Sign.jpg/330px-Truist_Center_Sign.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Truist",
+    "extract": "Truist Financial Corporation is an American bank holding company headquartered in Charlotte, North Carolina. The company was formed in December 2019 as the result of the merger of BB&T and SunTrust. Its bank operates 1,928 branches in 15 states and Washington, D.C., offering consumer, commercial, and investment banking, securities brokerage, asset management, mortgage, and insurance products and services. It is the tenth-largest bank in the United States, with $523 billion in assets."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ga/atlanta/profile/bank/truist-financial-corporation-0443-8730/addressId/11425"
+  },
+  "payRatio": {
+    "ratio": 137,
+    "ratioDisplay": "137:1",
+    "ceoPay": 14302389,
+    "medianWorkerPay": 104397,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-03-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/92230/000119312526107144/d12240ddef14a.htm"
+  },
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 100,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "truist-financial",
+  "secComplaints": null,
+  "news": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Truist Financial",
+    "slug": "truist-financial",
+    "ownership": "publicly traded (ticker symbol TFC)",
+    "hq": "North Carolina",
+    "majorIndustry": "financial services",
+    "specificIndustry": "banking",
+    "totalPenalty": 1748203907,
+    "totalRecords": 60,
+    "offenseGroups": [
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 894112112,
+        "records": 14
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 501000000,
+        "records": 2
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 321017090,
+        "records": 33
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 32074705,
+        "records": 11
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "consumer protection violation",
+        "penalty": 569926112,
+        "records": 9
+      },
+      {
+        "category": "False Claims Act and related",
+        "penalty": 501000000,
+        "records": 2
+      },
+      {
+        "category": "mortgage abuses",
+        "penalty": 320050000,
+        "records": 3
+      },
+      {
+        "category": "banking violation",
+        "penalty": 191666522,
+        "records": 6
+      },
+      {
+        "category": "toxic securities abuses",
+        "penalty": 65000000,
+        "records": 1
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00009639",
+    "committeeName": "TRUIST FINANCIAL CORPORATION FEDERAL, STATE & LOCAL POLITICAL ACTION COMMITTEE (FORMERLY SUNTRUST BANKS, INC. MAIN STREET BANKERS PAC)",
+    "lean": "mixed",
+    "repTotal": 0,
+    "demTotal": 0,
+    "totalRaised": 161530,
+    "totalRaisedFmt": "$162K",
+    "lastFilingDate": "2026-04-17",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-13",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Truist%20Financial&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

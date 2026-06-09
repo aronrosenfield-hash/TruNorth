@@ -1,1 +1,268 @@
-{"name":"Volkswagen USA","cat":"Automotive","init":"VW","overall":40,"isPublic":false,"ticker":null,"sc":{"political":"neutral","charity":"neutral","environment":"poor","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"No public record found.","amt":"$3.23M (2024 lobbying)","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"$10M (2013 estimate)","focus":"Education, disaster relief, youth mentorship, veterans support, disability advocacy","sources":["Claude AI synthesis"]},"environment":{"s":"air pollution violation: $21.6B in federal penalties (Violation Tracker).","rating":"Very Poor","sources":["EPA","Violation Tracker"]},"labor":{"s":"119 federal penalties totaling $26.3B since 2000 (Violation Tracker).","rating":"Poor","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Mixed","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Poor","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Not disclosed","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","laborAPI":{"violationTracker":{"slug":"volkswagen","matchedName":"Volkswagen","totalPenalty":26293327955,"totalRecords":119,"offenseGroups":[{"category":"environment-related offenses","penalty":21738941695,"records":71},{"category":"consumer-protection-related offenses","penalty":4103512000,"records":7},{"category":"safety-related offenses","penalty":333436088,"records":21},{"category":"financial offenses","penalty":56250000,"records":2},{"category":"government-contracting-related offenses","penalty":50000000,"records":1}],"primaryOffenses":[{"category":"air pollution violation","penalty":21624427075,"records":32},{"category":"consumer protection violation","penalty":4100012000,"records":6},{"category":"product safety violation","penalty":332250000,"records":7},{"category":"fuel economy (CAFE) violation","penalty":60394436,"records":28},{"category":"investor protection violation","penalty":56250000,"records":2}],"rating":"mixed"}},"competitors":["toyota-usa","honda-usa","ford-motor","general-motors","hyundai-usa"],"wiki":{"founded":"1955-00-00","hq":"Herndon","employees":null,"revenue":null,"parent":"Volkswagen Group","industry":"automotive industry","products":null,"keyPeople":null,"website":"https://www.volkswagengroupofamerica.com/en-us/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Volkswagen_Group_of_America","extract":"Volkswagen Group of America, Inc., is the North American operational headquarters, and subsidiary of the Volkswagen Group of automobile companies of Germany. VWoA is responsible for six marques: Audi, Bentley, Lamborghini, and Volkswagen, and in addition is the exclusive importer and distributor of Bugatti and Rimac cars in the U.S. It also controls VW Credit, Inc., Volkswagen's financial services and credit operations. The company is headquartered in Reston, Virginia."},"slug":"volkswagen-usa","bbb":null,"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Volkswagen","slug":"volkswagen","ownership":"publicly traded","hq":"Germany","majorIndustry":"motor vehicles","specificIndustry":"motor vehicles","totalPenalty":26293327955,"totalRecords":119,"offenseGroups":[{"category":"environment-related offenses","penalty":21738941695,"records":71},{"category":"consumer-protection-related offenses","penalty":4103512000,"records":7},{"category":"safety-related offenses","penalty":333436088,"records":21},{"category":"financial offenses","penalty":56250000,"records":2},{"category":"government-contracting-related offenses","penalty":50000000,"records":1}],"primaryOffenses":[{"category":"air pollution violation","penalty":21624427075,"records":32},{"category":"consumer protection violation","penalty":4100012000,"records":6},{"category":"product safety violation","penalty":332250000,"records":7},{"category":"fuel economy (CAFE) violation","penalty":60394436,"records":28},{"category":"investor protection violation","penalty":56250000,"records":2}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Volkswagen USA",
+  "cat": "Automotive",
+  "init": "VW",
+  "overall": 20,
+  "isPublic": false,
+  "ticker": null,
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "$3.23M (2024 lobbying)",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "$10M (2013 estimate)",
+    "focus": "Education, disaster relief, youth mentorship, veterans support, disability advocacy",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $21.6B in federal penalties (Violation Tracker).",
+    "rating": "Very Poor",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "119 federal penalties totaling $26.3B since 2000 (Violation Tracker).",
+    "rating": "Poor",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Poor",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "volkswagen",
+      "matchedName": "Volkswagen",
+      "totalPenalty": 26293327955,
+      "totalRecords": 119,
+      "offenseGroups": [
+        {
+          "category": "environment-related offenses",
+          "penalty": 21738941695,
+          "records": 71
+        },
+        {
+          "category": "consumer-protection-related offenses",
+          "penalty": 4103512000,
+          "records": 7
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 333436088,
+          "records": 21
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 56250000,
+          "records": 2
+        },
+        {
+          "category": "government-contracting-related offenses",
+          "penalty": 50000000,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "air pollution violation",
+          "penalty": 21624427075,
+          "records": 32
+        },
+        {
+          "category": "consumer protection violation",
+          "penalty": 4100012000,
+          "records": 6
+        },
+        {
+          "category": "product safety violation",
+          "penalty": 332250000,
+          "records": 7
+        },
+        {
+          "category": "fuel economy (CAFE) violation",
+          "penalty": 60394436,
+          "records": 28
+        },
+        {
+          "category": "investor protection violation",
+          "penalty": 56250000,
+          "records": 2
+        }
+      ],
+      "rating": "mixed"
+    }
+  },
+  "competitors": [
+    "toyota-usa",
+    "honda-usa",
+    "ford-motor",
+    "general-motors",
+    "hyundai-usa"
+  ],
+  "wiki": {
+    "founded": "1955-00-00",
+    "hq": "Herndon",
+    "employees": null,
+    "revenue": null,
+    "parent": "Volkswagen Group",
+    "industry": "automotive industry",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.volkswagengroupofamerica.com/en-us/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Volkswagen_Group_of_America",
+    "extract": "Volkswagen Group of America, Inc., is the North American operational headquarters, and subsidiary of the Volkswagen Group of automobile companies of Germany. VWoA is responsible for six marques: Audi, Bentley, Lamborghini, and Volkswagen, and in addition is the exclusive importer and distributor of Bugatti and Rimac cars in the U.S. It also controls VW Credit, Inc., Volkswagen's financial services and credit operations. The company is headquartered in Reston, Virginia."
+  },
+  "slug": "volkswagen-usa",
+  "bbb": null,
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Volkswagen",
+    "slug": "volkswagen",
+    "ownership": "publicly traded",
+    "hq": "Germany",
+    "majorIndustry": "motor vehicles",
+    "specificIndustry": "motor vehicles",
+    "totalPenalty": 26293327955,
+    "totalRecords": 119,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 21738941695,
+        "records": 71
+      },
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 4103512000,
+        "records": 7
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 333436088,
+        "records": 21
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 56250000,
+        "records": 2
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 50000000,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "air pollution violation",
+        "penalty": 21624427075,
+        "records": 32
+      },
+      {
+        "category": "consumer protection violation",
+        "penalty": 4100012000,
+        "records": 6
+      },
+      {
+        "category": "product safety violation",
+        "penalty": 332250000,
+        "records": 7
+      },
+      {
+        "category": "fuel economy (CAFE) violation",
+        "penalty": 60394436,
+        "records": 28
+      },
+      {
+        "category": "investor protection violation",
+        "penalty": 56250000,
+        "records": 2
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

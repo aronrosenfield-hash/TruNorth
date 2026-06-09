@@ -1,1 +1,288 @@
-{"name":"SpaceX","cat":"Technology","init":"SP","overall":50,"ab":"#2a0d0d","ac":"#e24a4a","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"No public record found.","amt":"N/A","lean":"Neutral","sources":[]},"charity":{"s":"No public record found.","amt":"N/A","focus":"N/A","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["EPA","Violation Tracker"]},"labor":{"s":"18 federal penalties totaling $155.2M since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":[]},"execPay":{"s":"No public record found.","ratio":"N/A","sources":["Claude AI synthesis"]},"laborAPI":{"violationTracker":{"slug":"space-exploration-technologies-spacex","matchedName":"Space Exploration Technologies (SpaceX)","totalPenalty":155168525,"totalRecords":18,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":150000000,"records":1},{"category":"employment-related offenses","penalty":3975000,"records":1},{"category":"safety-related offenses","penalty":991495,"records":10},{"category":"environment-related offenses","penalty":102030,"records":5},{"category":"financial offenses","penalty":100000,"records":1}],"primaryOffenses":[{"category":"privacy violation","penalty":150000000,"records":1},{"category":"wage and hour violation","penalty":3975000,"records":1},{"category":"aviation safety violation","penalty":808009,"records":2},{"category":"workplace safety or health violation","penalty":183486,"records":8},{"category":"campaign finance violation","penalty":100000,"records":1}],"rating":"good"}},"dataLastUpdated":"2026-05-28","competitors":["blue-origin","rocket-lab","relativity-space","virgin-galactic"],"wiki":{"founded":"2002-03-14","hq":"Hawthorne, Brownsville, Starbase","employees":"160","revenue":"18674000000","parent":"Elon Musk","industry":"space industry","products":null,"keyPeople":"Elon Musk","website":"https://spacex.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/USA_-_Texas_-_Boca_Chica_-_Starbase_%2851285307187%29.jpg/330px-USA_-_Texas_-_Boca_Chica_-_Starbase_%2851285307187%29.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/SpaceX","extract":"Space Exploration Technologies Corporation, doing business as SpaceX, is a private American spaceflight, telecommunications, and artificial intelligence company headquartered at the Starbase development site in Starbase, Texas. Since its founding in 2002, the company has made numerous advances in rocket propulsion, reusable launch vehicles, human spaceflight and satellite constellation technology. As of 2026, SpaceX conducts more orbital launches annually than any other launch provider, including private competitors and national programs like the Chinese space program. SpaceX, NASA, and the Un"},"bbb":{"rating":"B","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/tx/brownsville/profile/aerospace-industry/spacex-0915-90064209/addressId/187137"},"secComplaints":{"count":3,"sample":[{"adsh":"0001104659-24-127843","date":"2024-12-12","filer":"Archer Aviation Inc.  (ACHR, ACHR-WT)  (CIK 0001824502)","form":"8-K"},{"adsh":"0001415404-26-000006","date":"2026-03-19","filer":"EchoStar CORP  (SATS)  (CIK 0001415404)","form":"8-K"},{"adsh":"0001062993-25-017388","date":"2025-12-18","filer":"Starfighters Space, Inc.  (FJET)  (CIK 0001947016)","form":"8-K"}]},"slug":"spacex","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Space Exploration Technologies (SpaceX)","slug":"space-exploration-technologies-spacex","ownership":"privately held","hq":"California","majorIndustry":"aerospace and military contracting","specificIndustry":"aerospace &amp; military contracting","totalPenalty":155168525,"totalRecords":18,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":150000000,"records":1},{"category":"employment-related offenses","penalty":3975000,"records":1},{"category":"safety-related offenses","penalty":991495,"records":10},{"category":"environment-related offenses","penalty":102030,"records":5},{"category":"financial offenses","penalty":100000,"records":1}],"primaryOffenses":[{"category":"privacy violation","penalty":150000000,"records":1},{"category":"wage and hour violation","penalty":3975000,"records":1},{"category":"aviation safety violation","penalty":808009,"records":2},{"category":"workplace safety or health violation","penalty":183486,"records":8},{"category":"campaign finance violation","penalty":100000,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "SpaceX",
+  "cat": "Technology",
+  "init": "SP",
+  "overall": 20,
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "lean": "Neutral",
+    "sources": []
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "focus": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "18 federal penalties totaling $155.2M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "space-exploration-technologies-spacex",
+      "matchedName": "Space Exploration Technologies (SpaceX)",
+      "totalPenalty": 155168525,
+      "totalRecords": 18,
+      "offenseGroups": [
+        {
+          "category": "consumer-protection-related offenses",
+          "penalty": 150000000,
+          "records": 1
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 3975000,
+          "records": 1
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 991495,
+          "records": 10
+        },
+        {
+          "category": "environment-related offenses",
+          "penalty": 102030,
+          "records": 5
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 100000,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "privacy violation",
+          "penalty": 150000000,
+          "records": 1
+        },
+        {
+          "category": "wage and hour violation",
+          "penalty": 3975000,
+          "records": 1
+        },
+        {
+          "category": "aviation safety violation",
+          "penalty": 808009,
+          "records": 2
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 183486,
+          "records": 8
+        },
+        {
+          "category": "campaign finance violation",
+          "penalty": 100000,
+          "records": 1
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "blue-origin",
+    "rocket-lab",
+    "relativity-space",
+    "virgin-galactic"
+  ],
+  "wiki": {
+    "founded": "2002-03-14",
+    "hq": "Hawthorne, Brownsville, Starbase",
+    "employees": "160",
+    "revenue": "18674000000",
+    "parent": "Elon Musk",
+    "industry": "space industry",
+    "products": null,
+    "keyPeople": "Elon Musk",
+    "website": "https://spacex.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/USA_-_Texas_-_Boca_Chica_-_Starbase_%2851285307187%29.jpg/330px-USA_-_Texas_-_Boca_Chica_-_Starbase_%2851285307187%29.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/SpaceX",
+    "extract": "Space Exploration Technologies Corporation, doing business as SpaceX, is a private American spaceflight, telecommunications, and artificial intelligence company headquartered at the Starbase development site in Starbase, Texas. Since its founding in 2002, the company has made numerous advances in rocket propulsion, reusable launch vehicles, human spaceflight and satellite constellation technology. As of 2026, SpaceX conducts more orbital launches annually than any other launch provider, including private competitors and national programs like the Chinese space program. SpaceX, NASA, and the Un"
+  },
+  "bbb": {
+    "rating": "B",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/tx/brownsville/profile/aerospace-industry/spacex-0915-90064209/addressId/187137"
+  },
+  "secComplaints": {
+    "count": 3,
+    "sample": [
+      {
+        "adsh": "0001104659-24-127843",
+        "date": "2024-12-12",
+        "filer": "Archer Aviation Inc.  (ACHR, ACHR-WT)  (CIK 0001824502)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001415404-26-000006",
+        "date": "2026-03-19",
+        "filer": "EchoStar CORP  (SATS)  (CIK 0001415404)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001062993-25-017388",
+        "date": "2025-12-18",
+        "filer": "Starfighters Space, Inc.  (FJET)  (CIK 0001947016)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "slug": "spacex",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Space Exploration Technologies (SpaceX)",
+    "slug": "space-exploration-technologies-spacex",
+    "ownership": "privately held",
+    "hq": "California",
+    "majorIndustry": "aerospace and military contracting",
+    "specificIndustry": "aerospace &amp; military contracting",
+    "totalPenalty": 155168525,
+    "totalRecords": 18,
+    "offenseGroups": [
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 150000000,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 3975000,
+        "records": 1
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 991495,
+        "records": 10
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 102030,
+        "records": 5
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 100000,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "privacy violation",
+        "penalty": 150000000,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 3975000,
+        "records": 1
+      },
+      {
+        "category": "aviation safety violation",
+        "penalty": 808009,
+        "records": 2
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 183486,
+        "records": 8
+      },
+      {
+        "category": "campaign finance violation",
+        "penalty": 100000,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

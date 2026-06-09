@@ -1,1 +1,250 @@
-{"name":"DIAGEO","cat":"Food & Beverage","init":"DIAG","overall":45,"isPublic":true,"sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"neutral","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"FEC: $17K PAC donations; 68% to Republican, 32% to Democratic committees.","amt":"$69K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"17 federal penalties totaling $22.5M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","ab":"#2a0d0d","ac":"#e24a4a","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"air pollution violation: $195K in federal penalties (Violation Tracker).","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":["jack-daniel-s-brown-forman","maker-s-mark-beam-suntory","bacardi"],"antitrust":true,"wiki":{"founded":"1997-12-17","hq":"London","employees":"29860","revenue":"27964000000","parent":"Capital Group Companies, BlackRock, MFS Investment Management","industry":"beverage industry","products":null,"keyPeople":null,"website":"http://www.diageo.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Diageo_Plc_Logo.svg/330px-Diageo_Plc_Logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Diageo","extract":"Diageo plc is a British multinational alcoholic beverage company headquartered in London, England. It operates from 132 sites in nearly 180 countries. With brands such as Guinness, Johnnie Walker and Smirnoff, it is a major distributor of Scotch whisky and other spirits, with distilleries producing 40% of all Scotch whisky with over 24 brands. Diageo is a publicly traded company listed on both the London Stock Exchange where it is a constituent of the FTSE 100 Index, and the New York Stock Exchange as American depositary receipts."},"bbb":{"rating":"B-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/fl/miami/profile/wholesale-liquor/diageo-0633-90068000"},"secComplaints":{"count":3,"sample":[{"adsh":"0001213900-26-003622","date":"2026-01-13","filer":"Inflection Point Acquisition Corp. III  (IPCX, IPCXR, IPCXU)  (CIK 0002012318)","form":"8-K"},{"adsh":"0001213900-24-096786","date":"2024-11-12","filer":"Rumble Inc.  (RUM, RUMBW)  (CIK 0001830081)","form":"8-K"},{"adsh":"0001628280-25-020711","date":"2025-04-29","filer":"MGP INGREDIENTS INC  (MGPI)  (CIK 0000835011)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Diageo%20-%20logo%20(United%20Kingdom%2C%201997).svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"disability_in","score":80,"year":2024,"sourceUrl":"https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"},{"scoreType":"bloomberg_gei","score":100,"year":2023,"sourceUrl":"https://assets.bbhub.io/company/sites/46/2023/01/GEI-MemberList.pdf"}],"slug":"diageo","news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Diageo","slug":"diageo","ownership":"publicly traded","hq":"United Kingdom","majorIndustry":"beverages","specificIndustry":"beverages","totalPenalty":22533403,"totalRecords":17,"offenseGroups":[{"category":"competition-related offenses","penalty":16527153,"records":2},{"category":"financial offenses","penalty":5750000,"records":3},{"category":"environment-related offenses","penalty":212700,"records":6},{"category":"safety-related offenses","penalty":43550,"records":6}],"primaryOffenses":[{"category":"Foreign Corrupt Practices Act","penalty":16373820,"records":1},{"category":"investor protection violation","penalty":5000000,"records":1},{"category":"tax violations","penalty":750000,"records":2},{"category":"air pollution violation","penalty":195000,"records":5},{"category":"price-fixing or anti-competitive practices","penalty":153333,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T20:19:15.408Z"},"fec":{"source":"FEC API","committeeId":"C00034470","committeeName":"DIAGEO NORTH AMERICA, INC. EMPLOYEES' POLITICAL PARTICIPATION COMMITTEE (DIAGEO PAC)","lean":"right","repTotal":11778,"demTotal":5500,"totalRaised":69178,"totalRaisedFmt":"$69K","lastFilingDate":"2026-05-20","cycle":2026,"fetchedAt":"2026-05-27T20:19:11.997Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-11-22","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=DIAGEO&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T20:19:13.379Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T20:19:15.408Z"}
+{
+  "name": "DIAGEO",
+  "cat": "Food & Beverage",
+  "init": "DIAG",
+  "overall": 35.4,
+  "isPublic": true,
+  "sc": {
+    "political": "neutral",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "neutral",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $17K PAC donations; 68% to Republican, 32% to Democratic committees.",
+    "amt": "$69K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "17 federal penalties totaling $22.5M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "charity": {
+    "s": "$35M reported corporate giving in 2024 (~0.21% of revenue) via Diageo North America Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $195K in federal penalties (Violation Tracker).",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "competitors": [
+    "jack-daniel-s-brown-forman",
+    "maker-s-mark-beam-suntory",
+    "bacardi"
+  ],
+  "antitrust": true,
+  "wiki": {
+    "founded": "1997-12-17",
+    "hq": "London",
+    "employees": "29860",
+    "revenue": "27964000000",
+    "parent": "Capital Group Companies, BlackRock, MFS Investment Management",
+    "industry": "beverage industry",
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.diageo.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Diageo_Plc_Logo.svg/330px-Diageo_Plc_Logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Diageo",
+    "extract": "Diageo plc is a British multinational alcoholic beverage company headquartered in London, England. It operates from 132 sites in nearly 180 countries. With brands such as Guinness, Johnnie Walker and Smirnoff, it is a major distributor of Scotch whisky and other spirits, with distilleries producing 40% of all Scotch whisky with over 24 brands. Diageo is a publicly traded company listed on both the London Stock Exchange where it is a constituent of the FTSE 100 Index, and the New York Stock Exchange as American depositary receipts."
+  },
+  "bbb": {
+    "rating": "B-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/fl/miami/profile/wholesale-liquor/diageo-0633-90068000"
+  },
+  "secComplaints": {
+    "count": 3,
+    "sample": [
+      {
+        "adsh": "0001213900-26-003622",
+        "date": "2026-01-13",
+        "filer": "Inflection Point Acquisition Corp. III  (IPCX, IPCXR, IPCXU)  (CIK 0002012318)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001213900-24-096786",
+        "date": "2024-11-12",
+        "filer": "Rumble Inc.  (RUM, RUMBW)  (CIK 0001830081)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001628280-25-020711",
+        "date": "2025-04-29",
+        "filer": "MGP INGREDIENTS INC  (MGPI)  (CIK 0000835011)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Diageo%20-%20logo%20(United%20Kingdom%2C%201997).svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "disability_in",
+      "score": 80,
+      "year": 2024,
+      "sourceUrl": "https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"
+    },
+    {
+      "scoreType": "bloomberg_gei",
+      "score": 100,
+      "year": 2023,
+      "sourceUrl": "https://assets.bbhub.io/company/sites/46/2023/01/GEI-MemberList.pdf"
+    }
+  ],
+  "slug": "diageo",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Diageo",
+    "slug": "diageo",
+    "ownership": "publicly traded",
+    "hq": "United Kingdom",
+    "majorIndustry": "beverages",
+    "specificIndustry": "beverages",
+    "totalPenalty": 22533403,
+    "totalRecords": 17,
+    "offenseGroups": [
+      {
+        "category": "competition-related offenses",
+        "penalty": 16527153,
+        "records": 2
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 5750000,
+        "records": 3
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 212700,
+        "records": 6
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 43550,
+        "records": 6
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "Foreign Corrupt Practices Act",
+        "penalty": 16373820,
+        "records": 1
+      },
+      {
+        "category": "investor protection violation",
+        "penalty": 5000000,
+        "records": 1
+      },
+      {
+        "category": "tax violations",
+        "penalty": 750000,
+        "records": 2
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 195000,
+        "records": 5
+      },
+      {
+        "category": "price-fixing or anti-competitive practices",
+        "penalty": 153333,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T20:19:15.408Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00034470",
+    "committeeName": "DIAGEO NORTH AMERICA, INC. EMPLOYEES' POLITICAL PARTICIPATION COMMITTEE (DIAGEO PAC)",
+    "lean": "right",
+    "repTotal": 11778,
+    "demTotal": 5500,
+    "totalRaised": 69178,
+    "totalRaisedFmt": "$69K",
+    "lastFilingDate": "2026-05-20",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-27T20:19:11.997Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-11-22",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=DIAGEO&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T20:19:13.379Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T20:19:15.408Z"
+}

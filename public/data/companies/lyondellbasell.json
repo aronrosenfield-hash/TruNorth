@@ -1,1 +1,302 @@
-{"name":"LyondellBasell","cat":"Energy","init":"LYB","overall":42,"isPublic":true,"ticker":"LYB","sc":{"political":"neutral","charity":"neutral","environment":"poor","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No public record found.","amt":"$6.81 million (2024 lobbying); $231,733 (2024 PAC/candidate contributions)","lean":"Right-leaning","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"Approximately $1.1 million annual giving (as of 2015); significant employee matching programs","focus":"Education, environment, health, first responders, community development","sources":["Claude AI synthesis"]},"environment":{"s":"environmental violation: $309.4M in federal penalties (Violation Tracker).","rating":"Very Poor","sources":["EPA","Violation Tracker"]},"labor":{"s":"284 federal penalties totaling $375.5M since 2000 (Violation Tracker).","rating":"Below Average","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Approximately 120-130:1","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-04-07","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=LyondellBasell&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","laborAPI":{"violationTracker":{"slug":"lyondellbasell-industries","matchedName":"LyondellBasell Industries","totalPenalty":375466555,"totalRecords":284,"offenseGroups":[{"category":"environment-related offenses","penalty":373623825,"records":227},{"category":"employment-related offenses","penalty":1239744,"records":4},{"category":"safety-related offenses","penalty":563336,"records":52},{"category":"competition-related offenses","penalty":39650,"records":1}],"primaryOffenses":[{"category":"environmental violation","penalty":309382894,"records":199},{"category":"air pollution violation","penalty":60196851,"records":24},{"category":"MTBE violation","penalty":4000000,"records":1},{"category":"workplace whistleblower retaliation","penalty":764444,"records":1},{"category":"wage and hour violation","penalty":391300,"records":1}],"rating":"good"}},"competitors":["reliance","exxonmobil"],"foreignOwned":true,"foreignCountry":"Netherlands","wiki":{"founded":"1985-01-01","hq":"Houston","employees":null,"revenue":"48183000000","parent":null,"industry":null,"products":null,"keyPeople":null,"website":"https://www.lyondellbasell.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Logo_of_LyondellBasell_%282023%29.svg/330px-Logo_of_LyondellBasell_%282023%29.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/LyondellBasell","extract":"LyondellBasell Industries N.V. is an American multinational chemical company, incorporated in the Netherlands with U.S. operations headquartered in Houston, Texas and offices in London, UK. The company is the largest licensor of polyethylene and polypropylene technologies. It also produces ethylene, propylene, polyolefins, and oxyfuels."},"secComplaints":{"count":6,"sample":[{"adsh":"0001104659-25-119690","date":"2025-12-09","filer":"Constellation Energy Corp  (CEG)  (CIK 0001868275)","form":"8-K"},{"adsh":"0001104659-25-119690","date":"2025-12-09","filer":"Constellation Energy Corp  (CEG)  (CIK 0001868275)","form":"8-K"},{"adsh":"0001193125-24-275581","date":"2024-12-11","filer":"GENESIS ENERGY LP  (GEL, GELPP)  (CIK 0001022321)","form":"8-K"}]},"payRatio":{"ratio":141,"ratioDisplay":"141:1","ceoPay":null,"medianWorkerPay":null,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-04-10","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1489393/000130817926000250/lyb014791-def14a.htm"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20LyondellBasell%20(2023).svg","logoSource":"wikidata_p154","slug":"lyondellbasell","bbb":null,"news":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"LyondellBasell Industries","slug":"lyondellbasell-industries","ownership":"publicly traded (ticker symbol LYB)","hq":"Netherlands","majorIndustry":"chemicals","specificIndustry":"chemicals","totalPenalty":375466555,"totalRecords":284,"offenseGroups":[{"category":"environment-related offenses","penalty":373623825,"records":227},{"category":"employment-related offenses","penalty":1239744,"records":4},{"category":"safety-related offenses","penalty":563336,"records":52},{"category":"competition-related offenses","penalty":39650,"records":1}],"primaryOffenses":[{"category":"environmental violation","penalty":309382894,"records":199},{"category":"air pollution violation","penalty":60196851,"records":24},{"category":"MTBE violation","penalty":4000000,"records":1},{"category":"workplace whistleblower retaliation","penalty":764444,"records":1},{"category":"wage and hour violation","penalty":391300,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-04-07","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=LyondellBasell&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "LyondellBasell",
+  "cat": "Energy",
+  "init": "LYB",
+  "overall": 20,
+  "isPublic": true,
+  "ticker": "LYB",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "$6.81 million (2024 lobbying); $231,733 (2024 PAC/candidate contributions)",
+    "lean": "Right-leaning",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "Approximately $1.1 million annual giving (as of 2015); significant employee matching programs",
+    "focus": "Education, environment, health, first responders, community development",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "environmental violation: $309.4M in federal penalties (Violation Tracker).",
+    "rating": "Very Poor",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "284 federal penalties totaling $375.5M since 2000 (Violation Tracker).",
+    "rating": "Below Average",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Approximately 120-130:1",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-04-07",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=LyondellBasell&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "lyondellbasell-industries",
+      "matchedName": "LyondellBasell Industries",
+      "totalPenalty": 375466555,
+      "totalRecords": 284,
+      "offenseGroups": [
+        {
+          "category": "environment-related offenses",
+          "penalty": 373623825,
+          "records": 227
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 1239744,
+          "records": 4
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 563336,
+          "records": 52
+        },
+        {
+          "category": "competition-related offenses",
+          "penalty": 39650,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "environmental violation",
+          "penalty": 309382894,
+          "records": 199
+        },
+        {
+          "category": "air pollution violation",
+          "penalty": 60196851,
+          "records": 24
+        },
+        {
+          "category": "MTBE violation",
+          "penalty": 4000000,
+          "records": 1
+        },
+        {
+          "category": "workplace whistleblower retaliation",
+          "penalty": 764444,
+          "records": 1
+        },
+        {
+          "category": "wage and hour violation",
+          "penalty": 391300,
+          "records": 1
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "competitors": [
+    "reliance",
+    "exxonmobil"
+  ],
+  "foreignOwned": true,
+  "foreignCountry": "Netherlands",
+  "wiki": {
+    "founded": "1985-01-01",
+    "hq": "Houston",
+    "employees": null,
+    "revenue": "48183000000",
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.lyondellbasell.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Logo_of_LyondellBasell_%282023%29.svg/330px-Logo_of_LyondellBasell_%282023%29.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/LyondellBasell",
+    "extract": "LyondellBasell Industries N.V. is an American multinational chemical company, incorporated in the Netherlands with U.S. operations headquartered in Houston, Texas and offices in London, UK. The company is the largest licensor of polyethylene and polypropylene technologies. It also produces ethylene, propylene, polyolefins, and oxyfuels."
+  },
+  "secComplaints": {
+    "count": 6,
+    "sample": [
+      {
+        "adsh": "0001104659-25-119690",
+        "date": "2025-12-09",
+        "filer": "Constellation Energy Corp  (CEG)  (CIK 0001868275)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-25-119690",
+        "date": "2025-12-09",
+        "filer": "Constellation Energy Corp  (CEG)  (CIK 0001868275)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-24-275581",
+        "date": "2024-12-11",
+        "filer": "GENESIS ENERGY LP  (GEL, GELPP)  (CIK 0001022321)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "payRatio": {
+    "ratio": 141,
+    "ratioDisplay": "141:1",
+    "ceoPay": null,
+    "medianWorkerPay": null,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-04-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1489393/000130817926000250/lyb014791-def14a.htm"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20LyondellBasell%20(2023).svg",
+  "logoSource": "wikidata_p154",
+  "slug": "lyondellbasell",
+  "bbb": null,
+  "news": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "LyondellBasell Industries",
+    "slug": "lyondellbasell-industries",
+    "ownership": "publicly traded (ticker symbol LYB)",
+    "hq": "Netherlands",
+    "majorIndustry": "chemicals",
+    "specificIndustry": "chemicals",
+    "totalPenalty": 375466555,
+    "totalRecords": 284,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 373623825,
+        "records": 227
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 1239744,
+        "records": 4
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 563336,
+        "records": 52
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 39650,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "environmental violation",
+        "penalty": 309382894,
+        "records": 199
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 60196851,
+        "records": 24
+      },
+      {
+        "category": "MTBE violation",
+        "penalty": 4000000,
+        "records": 1
+      },
+      {
+        "category": "workplace whistleblower retaliation",
+        "penalty": 764444,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 391300,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-04-07",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=LyondellBasell&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

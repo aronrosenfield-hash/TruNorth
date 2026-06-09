@@ -1,1 +1,287 @@
-{"name":"Hyatt","cat":"Hospitality","init":"HY","overall":50,"ab":"#0d2318","ac":"#4caf82","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"No public record found.","amt":"N/A","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"N/A","focus":"N/A","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["EPA","Violation Tracker"]},"labor":{"s":"24 federal penalties totaling $4.5M since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":[]},"execPay":{"s":"No public record found.","ratio":"N/A","sources":["Claude AI synthesis"]},"laborAPI":{"violationTracker":{"slug":"hyatt-hotels","matchedName":"Hyatt Hotels","totalPenalty":4457136,"totalRecords":24,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":2815100,"records":2},{"category":"employment-related offenses","penalty":1466066,"records":11},{"category":"safety-related offenses","penalty":175970,"records":11}],"primaryOffenses":[{"category":"privacy violation","penalty":1565100,"records":1},{"category":"wage and hour violation","penalty":1255674,"records":5},{"category":"consumer protection violation","penalty":1250000,"records":1},{"category":"workplace safety or health violation","penalty":175970,"records":11},{"category":"labor relations violation","penalty":110392,"records":5}],"rating":"good"}},"dataLastUpdated":"2026-05-28","competitors":["marriott-international","hilton-worldwide","wyndham-hotels"],"wiki":{"founded":"1957-09-27","hq":"Chicago","employees":null,"revenue":null,"parent":null,"industry":"hospitality industry","products":null,"keyPeople":"Jack D. Crouch","website":"https://www.hyatt.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/150_North_Riverside%2C_Wolf_Point%2C_Chicago.jpg/330px-150_North_Riverside%2C_Wolf_Point%2C_Chicago.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Hyatt","extract":"Hyatt Hotels Corporation, commonly known as Hyatt Hotels & Resorts, is an American multinational hospitality company headquartered in the Riverside Plaza area of Chicago that manages and franchises luxury and business hotels, resorts, and vacation properties. Hyatt Hotels & Resorts is one of the businesses managed by the Pritzker family. Hyatt has more than 1350 hotels and all-inclusive properties in 69 countries, across North America, South America, Europe, Asia, Africa and Australia."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/il/chicago/profile/hotels/hyatt-hotels-corp-0654-27003727/addressId/30286"},"secComplaints":{"count":100,"sample":[{"adsh":"0000891482-26-000004","date":"2026-03-05","filer":"FULL HOUSE RESORTS INC  (FLL)  (CIK 0000891482)","form":"8-K"},{"adsh":"0001558370-25-006388","date":"2025-05-06","filer":"Sunstone Hotel Investors, Inc.  (SHO, SHO-PH, SHO-PI)  (CIK 0001295810)","form":"8-K"},{"adsh":"0001558370-25-010406","date":"2025-08-06","filer":"Sunstone Hotel Investors, Inc.  (SHO, SHO-PH, SHO-PI)  (CIK 0001295810)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Hyatt%20Logo.svg","logoSource":"wikidata_p154","storeFootprint":{"usStoreCount":41,"byState":{"CA":12,"FL":5,"IL":4,"TX":3,"NY":2,"TN":2,"AL":2,"WA":1,"MO":1,"KY":1,"DC":1,"OK":1,"NV":1}},"slug":"hyatt","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Hyatt Hotels","slug":"hyatt-hotels","ownership":"publicly traded (ticker symbol H)","hq":"Illinois","majorIndustry":"hotels","specificIndustry":"hotels","totalPenalty":4457136,"totalRecords":24,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":2815100,"records":2},{"category":"employment-related offenses","penalty":1466066,"records":11},{"category":"safety-related offenses","penalty":175970,"records":11}],"primaryOffenses":[{"category":"privacy violation","penalty":1565100,"records":1},{"category":"wage and hour violation","penalty":1255674,"records":5},{"category":"consumer protection violation","penalty":1250000,"records":1},{"category":"workplace safety or health violation","penalty":175970,"records":11},{"category":"labor relations violation","penalty":110392,"records":5}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Hyatt",
+  "cat": "Hospitality",
+  "init": "HY",
+  "overall": 50,
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "sc": {
+    "political": "neutral",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "$12M reported corporate giving in 2024 (~0.19% of revenue).",
+    "amt": "N/A",
+    "focus": "N/A",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "24 federal penalties totaling $4.5M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "hyatt-hotels",
+      "matchedName": "Hyatt Hotels",
+      "totalPenalty": 4457136,
+      "totalRecords": 24,
+      "offenseGroups": [
+        {
+          "category": "consumer-protection-related offenses",
+          "penalty": 2815100,
+          "records": 2
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 1466066,
+          "records": 11
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 175970,
+          "records": 11
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "privacy violation",
+          "penalty": 1565100,
+          "records": 1
+        },
+        {
+          "category": "wage and hour violation",
+          "penalty": 1255674,
+          "records": 5
+        },
+        {
+          "category": "consumer protection violation",
+          "penalty": 1250000,
+          "records": 1
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 175970,
+          "records": 11
+        },
+        {
+          "category": "labor relations violation",
+          "penalty": 110392,
+          "records": 5
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "marriott-international",
+    "hilton-worldwide",
+    "wyndham-hotels"
+  ],
+  "wiki": {
+    "founded": "1957-09-27",
+    "hq": "Chicago",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "hospitality industry",
+    "products": null,
+    "keyPeople": "Jack D. Crouch",
+    "website": "https://www.hyatt.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/150_North_Riverside%2C_Wolf_Point%2C_Chicago.jpg/330px-150_North_Riverside%2C_Wolf_Point%2C_Chicago.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Hyatt",
+    "extract": "Hyatt Hotels Corporation, commonly known as Hyatt Hotels & Resorts, is an American multinational hospitality company headquartered in the Riverside Plaza area of Chicago that manages and franchises luxury and business hotels, resorts, and vacation properties. Hyatt Hotels & Resorts is one of the businesses managed by the Pritzker family. Hyatt has more than 1350 hotels and all-inclusive properties in 69 countries, across North America, South America, Europe, Asia, Africa and Australia."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/il/chicago/profile/hotels/hyatt-hotels-corp-0654-27003727/addressId/30286"
+  },
+  "secComplaints": {
+    "count": 100,
+    "sample": [
+      {
+        "adsh": "0000891482-26-000004",
+        "date": "2026-03-05",
+        "filer": "FULL HOUSE RESORTS INC  (FLL)  (CIK 0000891482)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001558370-25-006388",
+        "date": "2025-05-06",
+        "filer": "Sunstone Hotel Investors, Inc.  (SHO, SHO-PH, SHO-PI)  (CIK 0001295810)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001558370-25-010406",
+        "date": "2025-08-06",
+        "filer": "Sunstone Hotel Investors, Inc.  (SHO, SHO-PH, SHO-PI)  (CIK 0001295810)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyatt%20Logo.svg",
+  "logoSource": "wikidata_p154",
+  "storeFootprint": {
+    "usStoreCount": 41,
+    "byState": {
+      "CA": 12,
+      "FL": 5,
+      "IL": 4,
+      "TX": 3,
+      "NY": 2,
+      "TN": 2,
+      "AL": 2,
+      "WA": 1,
+      "MO": 1,
+      "KY": 1,
+      "DC": 1,
+      "OK": 1,
+      "NV": 1
+    }
+  },
+  "slug": "hyatt",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Hyatt Hotels",
+    "slug": "hyatt-hotels",
+    "ownership": "publicly traded (ticker symbol H)",
+    "hq": "Illinois",
+    "majorIndustry": "hotels",
+    "specificIndustry": "hotels",
+    "totalPenalty": 4457136,
+    "totalRecords": 24,
+    "offenseGroups": [
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 2815100,
+        "records": 2
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 1466066,
+        "records": 11
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 175970,
+        "records": 11
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "privacy violation",
+        "penalty": 1565100,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 1255674,
+        "records": 5
+      },
+      {
+        "category": "consumer protection violation",
+        "penalty": 1250000,
+        "records": 1
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 175970,
+        "records": 11
+      },
+      {
+        "category": "labor relations violation",
+        "penalty": 110392,
+        "records": 5
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

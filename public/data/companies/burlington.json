@@ -1,1 +1,308 @@
-{"name":"Burlington","cat":"Apparel & Fashion","init":"BU","overall":45,"ab":"#0d2318","ac":"#4caf82","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No public record found.","amt":"N/A","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"N/A","focus":"N/A","sources":["Claude AI synthesis"]},"environment":{"s":"air pollution violation: $25K in federal penalties (Violation Tracker).","rating":"Mixed","sources":["EPA","Violation Tracker"]},"labor":{"s":"30 federal penalties totaling $44.5M since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"N/A","sources":["Claude AI synthesis"]},"laborAPI":{"violationTracker":{"slug":"burlington-stores","matchedName":"Burlington Stores","totalPenalty":44453559,"totalRecords":30,"offenseGroups":[{"category":"employment-related offenses","penalty":42648796,"records":9},{"category":"safety-related offenses","penalty":1754763,"records":19},{"category":"environment-related offenses","penalty":50000,"records":2}],"primaryOffenses":[{"category":"wage and hour violation","penalty":42638795,"records":8},{"category":"product safety violation","penalty":1500000,"records":1},{"category":"workplace safety or health violation","penalty":254763,"records":18},{"category":"lead violation","penalty":25000,"records":1},{"category":"air pollution violation","penalty":25000,"records":1}],"rating":"mixed"}},"dataLastUpdated":"2026-05-28","competitors":["ross-stores","five-below","mars"],"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nj/mount-holly/profile/bookkeeping-services/burlington-business-solutions-0221-90093101"},"wiki":{"founded":"1972-00-00","hq":"Florence","employees":null,"revenue":null,"parent":null,"industry":"retail","products":null,"keyPeople":null,"website":"https://www.burlington.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Burlington_San_Antonio_-_Culebra_Market.jpg/330px-Burlington_San_Antonio_-_Culebra_Market.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Burlington_(department_store)","extract":"Burlington, formerly known as Burlington Coat Factory, is an American national off-price retailer, and a division of Burlington Coat Factory Warehouse Corporation with more than 1,138 stores in 46 states and Puerto Rico, with its corporate headquarters located in Burlington Township, New Jersey. In 2007, it was acquired by Bain Capital in a transaction and in 2008, Tom Kingsbury became president and CEO. The company went public again in 2013. Burlington is the third largest off-price retailer after TJX and Ross Stores."},"payRatio":{"ratio":1584,"ratioDisplay":"1584:1","ceoPay":17149564,"medianWorkerPay":10827,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-04-02","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1579298/000119312526140144/burl-20260402.htm"},"logoUrl":"https://icons.duckduckgo.com/ip3/burlington.com.ico","logoSource":"ddg_favicon_heuristic","storeFootprint":{"usStoreCount":753,"byState":{"CA":69,"TX":69,"FL":51,"NY":42,"IL":39,"PA":32,"NJ":26,"OH":23,"MI":20,"MD":18,"VA":18,"AZ":17,"GA":17,"MA":16,"NC":15,"IN":13,"CO":13,"WA":12,"SC":10,"CT":10,"NV":9,"MN":8,"UT":8,"MO":8,"WI":7,"OR":6,"KY":6,"OK":6,"LA":6,"AR":6,"TN":5,"NH":5,"KS":5,"AL":5,"IA":3,"RI":3,"DE":3,"NM":3,"NE":2,"ME":2,"ID":2,"SD":1,"DC":1,"ND":1,"MS":1}},"slug":"burlington","secComplaints":null,"news":null,"deiBadges":null,"animalCerts":null,"products":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Burlington Stores","slug":"burlington-stores","ownership":"publicly traded (ticker symbol BURL)","hq":"New Jersey","majorIndustry":"retailing","specificIndustry":"retail-apparel","totalPenalty":44453559,"totalRecords":30,"offenseGroups":[{"category":"employment-related offenses","penalty":42648796,"records":9},{"category":"safety-related offenses","penalty":1754763,"records":19},{"category":"environment-related offenses","penalty":50000,"records":2}],"primaryOffenses":[{"category":"wage and hour violation","penalty":42638795,"records":8},{"category":"product safety violation","penalty":1500000,"records":1},{"category":"workplace safety or health violation","penalty":254763,"records":18},{"category":"lead violation","penalty":25000,"records":1},{"category":"air pollution violation","penalty":25000,"records":1}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Burlington",
+  "cat": "Apparel & Fashion",
+  "init": "BU",
+  "overall": 29.6,
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "$5M reported corporate giving in 2024 (~0.05% of revenue).",
+    "amt": "N/A",
+    "focus": "N/A",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $25K in federal penalties (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "30 federal penalties totaling $44.5M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "burlington-stores",
+      "matchedName": "Burlington Stores",
+      "totalPenalty": 44453559,
+      "totalRecords": 30,
+      "offenseGroups": [
+        {
+          "category": "employment-related offenses",
+          "penalty": 42648796,
+          "records": 9
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 1754763,
+          "records": 19
+        },
+        {
+          "category": "environment-related offenses",
+          "penalty": 50000,
+          "records": 2
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "wage and hour violation",
+          "penalty": 42638795,
+          "records": 8
+        },
+        {
+          "category": "product safety violation",
+          "penalty": 1500000,
+          "records": 1
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 254763,
+          "records": 18
+        },
+        {
+          "category": "lead violation",
+          "penalty": 25000,
+          "records": 1
+        },
+        {
+          "category": "air pollution violation",
+          "penalty": 25000,
+          "records": 1
+        }
+      ],
+      "rating": "mixed"
+    }
+  },
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "ross-stores",
+    "five-below",
+    "mars"
+  ],
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nj/mount-holly/profile/bookkeeping-services/burlington-business-solutions-0221-90093101"
+  },
+  "wiki": {
+    "founded": "1972-00-00",
+    "hq": "Florence",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "retail",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.burlington.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Burlington_San_Antonio_-_Culebra_Market.jpg/330px-Burlington_San_Antonio_-_Culebra_Market.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Burlington_(department_store)",
+    "extract": "Burlington, formerly known as Burlington Coat Factory, is an American national off-price retailer, and a division of Burlington Coat Factory Warehouse Corporation with more than 1,138 stores in 46 states and Puerto Rico, with its corporate headquarters located in Burlington Township, New Jersey. In 2007, it was acquired by Bain Capital in a transaction and in 2008, Tom Kingsbury became president and CEO. The company went public again in 2013. Burlington is the third largest off-price retailer after TJX and Ross Stores."
+  },
+  "payRatio": {
+    "ratio": 1584,
+    "ratioDisplay": "1584:1",
+    "ceoPay": 17149564,
+    "medianWorkerPay": 10827,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-04-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1579298/000119312526140144/burl-20260402.htm"
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/burlington.com.ico",
+  "logoSource": "ddg_favicon_heuristic",
+  "storeFootprint": {
+    "usStoreCount": 753,
+    "byState": {
+      "CA": 69,
+      "TX": 69,
+      "FL": 51,
+      "NY": 42,
+      "IL": 39,
+      "PA": 32,
+      "NJ": 26,
+      "OH": 23,
+      "MI": 20,
+      "MD": 18,
+      "VA": 18,
+      "AZ": 17,
+      "GA": 17,
+      "MA": 16,
+      "NC": 15,
+      "IN": 13,
+      "CO": 13,
+      "WA": 12,
+      "SC": 10,
+      "CT": 10,
+      "NV": 9,
+      "MN": 8,
+      "UT": 8,
+      "MO": 8,
+      "WI": 7,
+      "OR": 6,
+      "KY": 6,
+      "OK": 6,
+      "LA": 6,
+      "AR": 6,
+      "TN": 5,
+      "NH": 5,
+      "KS": 5,
+      "AL": 5,
+      "IA": 3,
+      "RI": 3,
+      "DE": 3,
+      "NM": 3,
+      "NE": 2,
+      "ME": 2,
+      "ID": 2,
+      "SD": 1,
+      "DC": 1,
+      "ND": 1,
+      "MS": 1
+    }
+  },
+  "slug": "burlington",
+  "secComplaints": null,
+  "news": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Burlington Stores",
+    "slug": "burlington-stores",
+    "ownership": "publicly traded (ticker symbol BURL)",
+    "hq": "New Jersey",
+    "majorIndustry": "retailing",
+    "specificIndustry": "retail-apparel",
+    "totalPenalty": 44453559,
+    "totalRecords": 30,
+    "offenseGroups": [
+      {
+        "category": "employment-related offenses",
+        "penalty": 42648796,
+        "records": 9
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 1754763,
+        "records": 19
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 50000,
+        "records": 2
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "wage and hour violation",
+        "penalty": 42638795,
+        "records": 8
+      },
+      {
+        "category": "product safety violation",
+        "penalty": 1500000,
+        "records": 1
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 254763,
+        "records": 18
+      },
+      {
+        "category": "lead violation",
+        "penalty": 25000,
+        "records": 1
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 25000,
+        "records": 1
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

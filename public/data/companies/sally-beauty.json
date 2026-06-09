@@ -1,1 +1,309 @@
-{"name":"Sally Beauty","cat":"Retail","init":"SBH","overall":50,"isPublic":true,"ticker":"SBH","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"neutral","dei":"pro_dei","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No public record found.","amt":"$4,355 (2024 contributions)","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"$200,000+ annually (estimated)","focus":"Domestic violence prevention, breast cancer research, community support","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Good","sources":["EPA","Violation Tracker"]},"labor":{"s":"5 federal penalties totaling $162K since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"Tests on Animals","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Not disclosed","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-12-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Sally%20Beauty&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","laborAPI":{"violationTracker":{"slug":"sally-beauty","matchedName":"Sally Beauty","totalPenalty":161637,"totalRecords":5,"offenseGroups":[{"category":"employment-related offenses","penalty":103000,"records":2},{"category":"safety-related offenses","penalty":30536,"records":2},{"category":"environment-related offenses","penalty":28101,"records":1}],"primaryOffenses":[{"category":"wage and hour violation","penalty":103000,"records":2},{"category":"workplace safety or health violation","penalty":30536,"records":2},{"category":"pesticide violation","penalty":28101,"records":1}],"rating":"good"}},"competitors":["ulta-beauty","stem"],"wiki":{"founded":"1964-00-00","hq":"Denton","employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":"https://www.sallybeauty.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sally_Beauty_Supply%2C_Gran_Plaza_Mazatl%C3%A1n%2C_8_de_julio_de_2023.jpg/330px-Sally_Beauty_Supply%2C_Gran_Plaza_Mazatl%C3%A1n%2C_8_de_julio_de_2023.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Sally_Beauty_Holdings","extract":"Sally Beauty Holdings, Inc. is an American international specialty retailer and distributor of professional beauty supplies with revenues of more than $3.9 billion annually."},"bbb":{"rating":"D-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/va/vienna/profile/beauty-supplies/sally-beauty-0241-191734826/addressId/175592"},"payRatio":{"ratio":534,"ratioDisplay":"534:1","ceoPay":9112619,"medianWorkerPay":17080,"year":"2025","sourceForm":"DEF 14A","filedDate":"2025-12-10","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1368458/000119312525313464/sbh-20251209.htm"},"storeFootprint":{"usStoreCount":1133,"byState":{"TX":49,"AZ":34,"CA":32,"IL":28,"OH":27,"PA":25,"FL":18,"NY":13,"CO":13,"VA":13,"MD":11,"WA":11,"WI":11,"OR":10,"NV":10,"IN":10,"MO":7,"NC":7,"UT":7,"OK":7,"MN":6,"TN":6,"SC":5,"NJ":5,"KS":5,"AR":4,"DE":4,"MI":4,"NH":4,"GA":4,"AL":4,"KY":3,"IA":3,"NM":3,"ME":3,"ID":3,"LA":3,"MA":3,"NE":3,"MS":2,"WY":1,"WV":1,"VT":1,"CT":1,"MT":1}},"deiBadges":[{"scoreType":"hrc_cei","score":100,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"sally-beauty","secComplaints":null,"news":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Sally Beauty","slug":"sally-beauty","ownership":"publicly traded (ticker symbol SBH)","hq":"Texas","majorIndustry":"retailing","specificIndustry":"retail-cosmetics","totalPenalty":161637,"totalRecords":5,"offenseGroups":[{"category":"employment-related offenses","penalty":103000,"records":2},{"category":"safety-related offenses","penalty":30536,"records":2},{"category":"environment-related offenses","penalty":28101,"records":1}],"primaryOffenses":[{"category":"wage and hour violation","penalty":103000,"records":2},{"category":"workplace safety or health violation","penalty":30536,"records":2},{"category":"pesticide violation","penalty":28101,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-12-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Sally%20Beauty&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Sally Beauty",
+  "cat": "Retail",
+  "init": "SBH",
+  "overall": 22,
+  "isPublic": true,
+  "ticker": "SBH",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "$4,355 (2024 contributions)",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "$200,000+ annually (estimated)",
+    "focus": "Domestic violence prevention, breast cancer research, community support",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Good",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "5 federal penalties totaling $162K since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "Tests on Animals",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-12-13",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Sally%20Beauty&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "sally-beauty",
+      "matchedName": "Sally Beauty",
+      "totalPenalty": 161637,
+      "totalRecords": 5,
+      "offenseGroups": [
+        {
+          "category": "employment-related offenses",
+          "penalty": 103000,
+          "records": 2
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 30536,
+          "records": 2
+        },
+        {
+          "category": "environment-related offenses",
+          "penalty": 28101,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "wage and hour violation",
+          "penalty": 103000,
+          "records": 2
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 30536,
+          "records": 2
+        },
+        {
+          "category": "pesticide violation",
+          "penalty": 28101,
+          "records": 1
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "competitors": [
+    "ulta-beauty",
+    "stem"
+  ],
+  "wiki": {
+    "founded": "1964-00-00",
+    "hq": "Denton",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.sallybeauty.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sally_Beauty_Supply%2C_Gran_Plaza_Mazatl%C3%A1n%2C_8_de_julio_de_2023.jpg/330px-Sally_Beauty_Supply%2C_Gran_Plaza_Mazatl%C3%A1n%2C_8_de_julio_de_2023.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Sally_Beauty_Holdings",
+    "extract": "Sally Beauty Holdings, Inc. is an American international specialty retailer and distributor of professional beauty supplies with revenues of more than $3.9 billion annually."
+  },
+  "bbb": {
+    "rating": "D-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/va/vienna/profile/beauty-supplies/sally-beauty-0241-191734826/addressId/175592"
+  },
+  "payRatio": {
+    "ratio": 534,
+    "ratioDisplay": "534:1",
+    "ceoPay": 9112619,
+    "medianWorkerPay": 17080,
+    "year": "2025",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2025-12-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1368458/000119312525313464/sbh-20251209.htm"
+  },
+  "storeFootprint": {
+    "usStoreCount": 1133,
+    "byState": {
+      "TX": 49,
+      "AZ": 34,
+      "CA": 32,
+      "IL": 28,
+      "OH": 27,
+      "PA": 25,
+      "FL": 18,
+      "NY": 13,
+      "CO": 13,
+      "VA": 13,
+      "MD": 11,
+      "WA": 11,
+      "WI": 11,
+      "OR": 10,
+      "NV": 10,
+      "IN": 10,
+      "MO": 7,
+      "NC": 7,
+      "UT": 7,
+      "OK": 7,
+      "MN": 6,
+      "TN": 6,
+      "SC": 5,
+      "NJ": 5,
+      "KS": 5,
+      "AR": 4,
+      "DE": 4,
+      "MI": 4,
+      "NH": 4,
+      "GA": 4,
+      "AL": 4,
+      "KY": 3,
+      "IA": 3,
+      "NM": 3,
+      "ME": 3,
+      "ID": 3,
+      "LA": 3,
+      "MA": 3,
+      "NE": 3,
+      "MS": 2,
+      "WY": 1,
+      "WV": 1,
+      "VT": 1,
+      "CT": 1,
+      "MT": 1
+    }
+  },
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 100,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "sally-beauty",
+  "secComplaints": null,
+  "news": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Sally Beauty",
+    "slug": "sally-beauty",
+    "ownership": "publicly traded (ticker symbol SBH)",
+    "hq": "Texas",
+    "majorIndustry": "retailing",
+    "specificIndustry": "retail-cosmetics",
+    "totalPenalty": 161637,
+    "totalRecords": 5,
+    "offenseGroups": [
+      {
+        "category": "employment-related offenses",
+        "penalty": 103000,
+        "records": 2
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 30536,
+        "records": 2
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 28101,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "wage and hour violation",
+        "penalty": 103000,
+        "records": 2
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 30536,
+        "records": 2
+      },
+      {
+        "category": "pesticide violation",
+        "penalty": 28101,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-12-13",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Sally%20Beauty&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

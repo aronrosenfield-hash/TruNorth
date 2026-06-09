@@ -1,1 +1,306 @@
-{"name":"Baxter International","cat":"Healthcare","init":"BA","overall":45,"ab":"#0d2318","ac":"#4caf82","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"pro_dei","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"No public record found.","amt":"N/A","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"N/A","focus":"N/A","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["EPA","Violation Tracker"]},"labor":{"s":"37 federal penalties totaling $682.7M since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"N/A","sources":["Claude AI synthesis"]},"laborAPI":{"violationTracker":{"slug":"baxter-international","matchedName":"Baxter International","totalPenalty":682708079,"totalRecords":37,"offenseGroups":[{"category":"government-contracting-related offenses","penalty":539390333,"records":12},{"category":"competition-related offenses","penalty":103715384,"records":4},{"category":"safety-related offenses","penalty":18270731,"records":8},{"category":"financial offenses","penalty":18000000,"records":1},{"category":"employment-related offenses","penalty":2730776,"records":3}],"primaryOffenses":[{"category":"False Claims Act and related","penalty":539390333,"records":12},{"category":"price-fixing or anti-competitive practices","penalty":103715384,"records":4},{"category":"drug or medical equipment safety violation","penalty":18158000,"records":1},{"category":"accounting fraud or deficiencies","penalty":18000000,"records":1},{"category":"wage and hour violation","penalty":2730776,"records":3}],"rating":"good"}},"dataLastUpdated":"2026-05-28","competitors":["becton-dickinson","cardinal-health","medtronic"],"antitrust":true,"wiki":{"founded":"1931-01-01","hq":"Deerfield","employees":"61500","revenue":"11263000000","parent":null,"industry":"medical equipment","products":null,"keyPeople":null,"website":"http://www.baxter.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Baxter_International","extract":"Baxter International Inc. is an American multinational healthcare company with headquarters in Deerfield, Illinois."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/md/baltimore/profile/surgical-instruments/baxter-international-0011-90291245"},"secComplaints":{"count":12,"sample":[{"adsh":"0001193125-26-214680","date":"2026-05-08","filer":"BAXTER INTERNATIONAL INC  (BAX)  (CIK 0000010456)","form":"8-K"},{"adsh":"0000805928-25-000062","date":"2025-05-08","filer":"Axogen, Inc.  (AXGN)  (CIK 0000805928)","form":"8-K"},{"adsh":"0000805928-25-000146","date":"2025-12-05","filer":"Axogen, Inc.  (AXGN)  (CIK 0000805928)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Baxter.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":60,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"},{"scoreType":"disability_in","score":90,"year":2021,"sourceUrl":"https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"}],"slug":"baxter-international","news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Baxter International","slug":"baxter-international","ownership":"publicly traded (ticker symbol BAX)","hq":"Illinois","majorIndustry":"medical equipment and supplies","specificIndustry":"medical supplies","totalPenalty":682708079,"totalRecords":37,"offenseGroups":[{"category":"government-contracting-related offenses","penalty":539390333,"records":12},{"category":"competition-related offenses","penalty":103715384,"records":4},{"category":"safety-related offenses","penalty":18270731,"records":8},{"category":"financial offenses","penalty":18000000,"records":1},{"category":"employment-related offenses","penalty":2730776,"records":3}],"primaryOffenses":[{"category":"False Claims Act and related","penalty":539390333,"records":12},{"category":"price-fixing or anti-competitive practices","penalty":103715384,"records":4},{"category":"drug or medical equipment safety violation","penalty":18158000,"records":1},{"category":"accounting fraud or deficiencies","penalty":18000000,"records":1},{"category":"wage and hour violation","penalty":2730776,"records":3}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z"}
+{
+  "name": "Baxter International",
+  "cat": "Healthcare",
+  "init": "BA",
+  "overall": 35,
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "sc": {
+    "political": "neutral",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "$18M reported corporate giving in 2024 (~0.13% of revenue) via Baxter International Foundation.",
+    "amt": "N/A",
+    "focus": "N/A",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "37 federal penalties totaling $682.7M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "baxter-international",
+      "matchedName": "Baxter International",
+      "totalPenalty": 682708079,
+      "totalRecords": 37,
+      "offenseGroups": [
+        {
+          "category": "government-contracting-related offenses",
+          "penalty": 539390333,
+          "records": 12
+        },
+        {
+          "category": "competition-related offenses",
+          "penalty": 103715384,
+          "records": 4
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 18270731,
+          "records": 8
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 18000000,
+          "records": 1
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 2730776,
+          "records": 3
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "False Claims Act and related",
+          "penalty": 539390333,
+          "records": 12
+        },
+        {
+          "category": "price-fixing or anti-competitive practices",
+          "penalty": 103715384,
+          "records": 4
+        },
+        {
+          "category": "drug or medical equipment safety violation",
+          "penalty": 18158000,
+          "records": 1
+        },
+        {
+          "category": "accounting fraud or deficiencies",
+          "penalty": 18000000,
+          "records": 1
+        },
+        {
+          "category": "wage and hour violation",
+          "penalty": 2730776,
+          "records": 3
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "becton-dickinson",
+    "cardinal-health",
+    "medtronic"
+  ],
+  "antitrust": true,
+  "wiki": {
+    "founded": "1931-01-01",
+    "hq": "Deerfield",
+    "employees": "61500",
+    "revenue": "11263000000",
+    "parent": null,
+    "industry": "medical equipment",
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.baxter.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Baxter_International",
+    "extract": "Baxter International Inc. is an American multinational healthcare company with headquarters in Deerfield, Illinois."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/md/baltimore/profile/surgical-instruments/baxter-international-0011-90291245"
+  },
+  "secComplaints": {
+    "count": 12,
+    "sample": [
+      {
+        "adsh": "0001193125-26-214680",
+        "date": "2026-05-08",
+        "filer": "BAXTER INTERNATIONAL INC  (BAX)  (CIK 0000010456)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000805928-25-000062",
+        "date": "2025-05-08",
+        "filer": "Axogen, Inc.  (AXGN)  (CIK 0000805928)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000805928-25-000146",
+        "date": "2025-12-05",
+        "filer": "Axogen, Inc.  (AXGN)  (CIK 0000805928)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Baxter.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 60,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    },
+    {
+      "scoreType": "disability_in",
+      "score": 90,
+      "year": 2021,
+      "sourceUrl": "https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"
+    }
+  ],
+  "slug": "baxter-international",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Baxter International",
+    "slug": "baxter-international",
+    "ownership": "publicly traded (ticker symbol BAX)",
+    "hq": "Illinois",
+    "majorIndustry": "medical equipment and supplies",
+    "specificIndustry": "medical supplies",
+    "totalPenalty": 682708079,
+    "totalRecords": 37,
+    "offenseGroups": [
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 539390333,
+        "records": 12
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 103715384,
+        "records": 4
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 18270731,
+        "records": 8
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 18000000,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 2730776,
+        "records": 3
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "False Claims Act and related",
+        "penalty": 539390333,
+        "records": 12
+      },
+      {
+        "category": "price-fixing or anti-competitive practices",
+        "penalty": 103715384,
+        "records": 4
+      },
+      {
+        "category": "drug or medical equipment safety violation",
+        "penalty": 18158000,
+        "records": 1
+      },
+      {
+        "category": "accounting fraud or deficiencies",
+        "penalty": 18000000,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 2730776,
+        "records": 3
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z"
+}

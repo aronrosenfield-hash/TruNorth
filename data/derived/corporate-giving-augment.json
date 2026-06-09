@@ -1,15 +1,15 @@
 {
   "_license": "Public domain — IRS Form 990 + corporate citizenship disclosures",
   "_source": "data/raw/corporate-giving/<date>.json",
-  "_source_file": "data/raw/corporate-giving/2026-06-08.json",
-  "_generated_at": "2026-06-08T00:36:52.862Z",
+  "_source_file": "data/raw/corporate-giving/2026-06-09.json",
+  "_generated_at": "2026-06-09T13:52:11.901Z",
   "_stats": {
     "raw_records": 598,
-    "matched": 511,
-    "via_direct": 485,
-    "via_parent": 9,
+    "matched": 576,
+    "via_direct": 486,
+    "via_parent": 73,
     "via_alias": 8,
-    "orphans": 52,
+    "orphans": 55,
     "skipped": 0
   },
   "orphans": [
@@ -20,7 +20,6 @@
     "m-and-m-s",
     "snickers-bar",
     "m-m-s",
-    "bcg",
     "lego",
     "3m",
     "meijer",
@@ -29,12 +28,14 @@
     "bain",
     "thrivent",
     "tjx",
-    "newmans-own",
     "jo-malone-london",
     "wegmans",
     "new-york-life",
+    "bud-light",
+    "stella-artois",
     "northwestern-mutual",
     "kraft-singles",
+    "chips-ahoy",
     "yum-brands",
     "booz-allen-hamilton",
     "mass-mutual",
@@ -52,9 +53,11 @@
     "instacart",
     "pseg",
     "giant-eagle",
+    "coors-light",
     "miller-high-life",
     "yankee-candle",
     "crowdstrike",
+    "royal-caribbean",
     "dr-horton",
     "seventh-generation",
     "panera-bread-company",
@@ -1014,6 +1017,18 @@
         "sourceUrl": "https://www.capitalone.com/about/responsibility/",
         "foundationName": "Capital One Foundation",
         "ein": "54-1719851",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
+    "tyson-foods": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.tysonfoods.com/sustainability",
+        "foundationName": "Tyson Foods Charitable Giving",
+        "ein": null,
         "source": "corporate-disclosure"
       },
       "routedVia": "direct"
@@ -1984,6 +1999,18 @@
       },
       "routedVia": "direct"
     },
+    "newmans-own": {
+      "charity": {
+        "totalGivingUsd": 35000000,
+        "pctRevenue": 0.1,
+        "year": 2024,
+        "sourceUrl": "https://newmansownfoundation.org/",
+        "foundationName": "Newman's Own Foundation",
+        "ein": "06-1606588",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
     "airbnb": {
       "charity": {
         "totalGivingUsd": 35000000,
@@ -2232,18 +2259,6 @@
         "sourceUrl": "https://www.kellanova.com/en_US/global-better-days-promise.html",
         "foundationName": "Kellogg's Corporate Citizenship Fund",
         "ein": "38-1875130",
-        "source": "corporate-disclosure"
-      },
-      "routedVia": "direct"
-    },
-    "tyson-foods": {
-      "charity": {
-        "totalGivingUsd": 30000000,
-        "pctRevenue": 0.0005,
-        "year": 2024,
-        "sourceUrl": "https://www.tysonfoods.com/sustainability",
-        "foundationName": "Tyson Foods Charitable Giving",
-        "ein": null,
         "source": "corporate-disclosure"
       },
       "routedVia": "direct"
@@ -4857,18 +4872,6 @@
       },
       "routedVia": "direct"
     },
-    "royal-caribbean-cruises": {
-      "charity": {
-        "totalGivingUsd": 5000000,
-        "pctRevenue": 0.0004,
-        "year": 2024,
-        "sourceUrl": "https://www.royalcaribbeangroup.com/sustainability/",
-        "foundationName": null,
-        "ein": null,
-        "source": "corporate-disclosure"
-      },
-      "routedVia": "direct"
-    },
     "fluor": {
       "charity": {
         "totalGivingUsd": 5000000,
@@ -5164,6 +5167,18 @@
         "pctRevenue": 0.0005,
         "year": 2024,
         "sourceUrl": "https://www.ice.com/about/corporate-responsibility",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
+    "royal-caribbean-cruises": {
+      "charity": {
+        "totalGivingUsd": 5000000,
+        "pctRevenue": 0.0004,
+        "year": 2024,
+        "sourceUrl": "https://www.royalcaribbeangroup.com/sustainability/",
         "foundationName": null,
         "ein": null,
         "source": "corporate-disclosure"
@@ -6108,6 +6123,136 @@
       },
       "routedVia": "direct"
     },
+    "acuvue": {
+      "charity": {
+        "totalGivingUsd": 880000000,
+        "pctRevenue": 0.0102,
+        "year": 2024,
+        "sourceUrl": "https://www.jnj.com/our-impact",
+        "foundationName": "Johnson & Johnson Foundation",
+        "ein": "59-1730960",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "johnson-and-johnson"
+    },
+    "arco": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0001,
+        "year": 2024,
+        "sourceUrl": "https://www.marathonpetroleum.com/Community/Our-Approach/",
+        "foundationName": "Marathon Petroleum Foundation",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "marathon-petroleum"
+    },
+    "bang": {
+      "charity": {
+        "totalGivingUsd": 5000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.monsterbevcorp.com/sustainability",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "monster-beverage"
+    },
+    "bertolli": {
+      "charity": {
+        "totalGivingUsd": 60000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.unilever.com/sustainability/social/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "unilever"
+    },
+    "blackhawk": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.stanleyblackanddecker.com/our-impact",
+        "foundationName": "Stanley Black & Decker Foundation",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "stanley-black-and-decker"
+    },
+    "brightdrop": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
+    },
+    "brouwmeester": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0014,
+        "year": 2024,
+        "sourceUrl": "https://corporate.aldi.us/en/responsibility/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "aldi"
+    },
+    "bumble": {
+      "charity": {
+        "totalGivingUsd": 35000000,
+        "pctRevenue": 0.0021,
+        "year": 2024,
+        "sourceUrl": "https://www.elcompanies.com/en/our-commitments/social-investments",
+        "foundationName": "Estée Lauder Charitable Foundation",
+        "ein": "13-4358700",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "estee-lauder-companies"
+    },
+    "calm": {
+      "charity": {
+        "totalGivingUsd": 9000000,
+        "pctRevenue": 0.0011,
+        "year": 2024,
+        "sourceUrl": "https://www.thecloroxcompany.com/corporate-responsibility/",
+        "foundationName": "Clorox Company Foundation",
+        "ein": "94-2895541",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "clorox-co"
+    },
+    "campbells": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://www.campbellsoupcompany.com/our-impact/",
+        "foundationName": "Campbell Soup Foundation",
+        "ein": "23-2529821",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "campbell-soup"
+    },
     "carefree": {
       "charity": {
         "totalGivingUsd": 880000000,
@@ -6134,6 +6279,123 @@
       "routedVia": "parent",
       "parentSlug": "kraft-heinz"
     },
+    "conoco": {
+      "charity": {
+        "totalGivingUsd": 28000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.conocophillips.com/sustainability/social-engagement/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "conocophillips"
+    },
+    "converse": {
+      "charity": {
+        "totalGivingUsd": 220000000,
+        "pctRevenue": 0.0042,
+        "year": 2024,
+        "sourceUrl": "https://about.nike.com/en/impact",
+        "foundationName": "Nike Foundation",
+        "ein": "31-1639618",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "nike"
+    },
+    "craftsman": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.stanleyblackanddecker.com/our-impact",
+        "foundationName": "Stanley Black & Decker Foundation",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "stanley-black-and-decker"
+    },
+    "dashmart": {
+      "charity": {
+        "totalGivingUsd": 18000000,
+        "pctRevenue": 0.0018,
+        "year": 2024,
+        "sourceUrl": "https://www.doordashimpact.com/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "doordash"
+    },
+    "dewalt": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.stanleyblackanddecker.com/our-impact",
+        "foundationName": "Stanley Black & Decker Foundation",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "stanley-black-and-decker"
+    },
+    "dexron": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
+    },
+    "dillons": {
+      "charity": {
+        "totalGivingUsd": 240000000,
+        "pctRevenue": 0.0016,
+        "year": 2024,
+        "sourceUrl": "https://www.thekrogerco.com/community/zero-hunger-zero-waste/",
+        "foundationName": "Kroger Co. Foundation",
+        "ein": "23-7406425",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kroger"
+    },
+    "dkny": {
+      "charity": {
+        "totalGivingUsd": 35000000,
+        "pctRevenue": 0.0021,
+        "year": 2024,
+        "sourceUrl": "https://www.elcompanies.com/en/our-commitments/social-investments",
+        "foundationName": "Estée Lauder Charitable Foundation",
+        "ein": "13-4358700",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "estee-lauder-companies"
+    },
+    "duracell": {
+      "charity": {
+        "totalGivingUsd": 800000000,
+        "pctRevenue": 0.0019,
+        "year": 2024,
+        "sourceUrl": "https://www.berkshirehathaway.com/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "berkshire-hathaway"
+    },
     "extra": {
       "charity": {
         "totalGivingUsd": 90000000,
@@ -6146,6 +6408,71 @@
       },
       "routedVia": "parent",
       "parentSlug": "mars"
+    },
+    "extramile": {
+      "charity": {
+        "totalGivingUsd": 245000000,
+        "pctRevenue": 0.0011,
+        "year": 2024,
+        "sourceUrl": "https://www.chevron.com/sustainability/social",
+        "foundationName": "Chevron Humankind",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "chevron"
+    },
+    "flora": {
+      "charity": {
+        "totalGivingUsd": 60000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.unilever.com/sustainability/social/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "unilever"
+    },
+    "gardenburger": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0023,
+        "year": 2024,
+        "sourceUrl": "https://www.kellanova.com/en_US/global-better-days-promise.html",
+        "foundationName": "Kellogg's Corporate Citizenship Fund",
+        "ein": "38-1875130",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kellogg-s"
+    },
+    "geo": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
+    },
+    "hummer": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
     },
     "iams": {
       "charity": {
@@ -6160,6 +6487,58 @@
       "routedVia": "parent",
       "parentSlug": "procter-and-gamble"
     },
+    "innocent": {
+      "charity": {
+        "totalGivingUsd": 165000000,
+        "pctRevenue": 0.0036,
+        "year": 2024,
+        "sourceUrl": "https://www.coca-colacompany.com/sustainability/the-coca-cola-foundation",
+        "foundationName": "Coca-Cola Foundation",
+        "ein": "58-6001147",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "coca-cola"
+    },
+    "ishares": {
+      "charity": {
+        "totalGivingUsd": 130000000,
+        "pctRevenue": 0.0067,
+        "year": 2024,
+        "sourceUrl": "https://www.blackrock.com/corporate/about-us/social-impact",
+        "foundationName": "BlackRock Foundation",
+        "ein": "85-0594571",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "blackrock"
+    },
+    "ivory": {
+      "charity": {
+        "totalGivingUsd": 70000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://us.pg.com/community-impact/",
+        "foundationName": "P&G Fund",
+        "ein": "31-1392951",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "procter-and-gamble"
+    },
+    "jet": {
+      "charity": {
+        "totalGivingUsd": 18000000,
+        "pctRevenue": 0.0001,
+        "year": 2024,
+        "sourceUrl": "https://www.phillips66.com/sustainability/community",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "phillips-66"
+    },
     "kashi": {
       "charity": {
         "totalGivingUsd": 30000000,
@@ -6172,6 +6551,136 @@
       },
       "routedVia": "parent",
       "parentSlug": "kellogg-s"
+    },
+    "kettle": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://www.campbellsoupcompany.com/our-impact/",
+        "foundationName": "Campbell Soup Foundation",
+        "ein": "23-2529821",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "campbell-soup"
+    },
+    "keurig": {
+      "charity": {
+        "totalGivingUsd": 15000000,
+        "pctRevenue": 0.0011,
+        "year": 2024,
+        "sourceUrl": "https://www.keurigdrpepper.com/our-company/our-corporate-responsibility/",
+        "foundationName": "Keurig Dr Pepper Foundation",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "keurig-dr-pepper"
+    },
+    "kleenex": {
+      "charity": {
+        "totalGivingUsd": 15000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.kimberly-clark.com/en/responsibility",
+        "foundationName": "Kimberly-Clark Foundation",
+        "ein": "23-7006556",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kimberly-clark"
+    },
+    "kotex": {
+      "charity": {
+        "totalGivingUsd": 15000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.kimberly-clark.com/en/responsibility",
+        "foundationName": "Kimberly-Clark Foundation",
+        "ein": "23-7006556",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kimberly-clark"
+    },
+    "krave": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0023,
+        "year": 2024,
+        "sourceUrl": "https://www.kellanova.com/en_US/global-better-days-promise.html",
+        "foundationName": "Kellogg's Corporate Citizenship Fund",
+        "ein": "38-1875130",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kellogg-s"
+    },
+    "leffe": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.ab-inbev.com/our-stories/community/",
+        "foundationName": "Anheuser-Busch Foundation",
+        "ein": "23-7442415",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "anheuser-busch"
+    },
+    "marabou": {
+      "charity": {
+        "totalGivingUsd": 25000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.mondelezinternational.com/snacking-made-right",
+        "foundationName": "Mondelez International Foundation",
+        "ein": "36-4676065",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "mondelez-international"
+    },
+    "marmot": {
+      "charity": {
+        "totalGivingUsd": 6000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.newellbrands.com/sustainability",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "newell-brands"
+    },
+    "marquette": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
+    },
+    "miller": {
+      "charity": {
+        "totalGivingUsd": 6000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.molsoncoors.com/responsibility",
+        "foundationName": "Molson Coors Foundation",
+        "ein": "51-0184719",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "molson-coors-beverage"
     },
     "modelo": {
       "charity": {
@@ -6186,6 +6695,45 @@
       "routedVia": "parent",
       "parentSlug": "anheuser-busch"
     },
+    "morningstar": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0023,
+        "year": 2024,
+        "sourceUrl": "https://www.kellanova.com/en_US/global-better-days-promise.html",
+        "foundationName": "Kellogg's Corporate Citizenship Fund",
+        "ein": "38-1875130",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kellogg-s"
+    },
+    "officemax": {
+      "charity": {
+        "totalGivingUsd": 4000000,
+        "pctRevenue": 0.0004,
+        "year": 2024,
+        "sourceUrl": "https://www.theodpcorp.com/our-company/csr",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "office-depot"
+    },
+    "oldsmobile": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
+    },
     "orbit": {
       "charity": {
         "totalGivingUsd": 90000000,
@@ -6198,6 +6746,97 @@
       },
       "routedVia": "parent",
       "parentSlug": "mars"
+    },
+    "pepsodent": {
+      "charity": {
+        "totalGivingUsd": 60000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.unilever.com/sustainability/social/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "unilever"
+    },
+    "playskool": {
+      "charity": {
+        "totalGivingUsd": 16000000,
+        "pctRevenue": 0.003,
+        "year": 2024,
+        "sourceUrl": "https://csr.hasbro.com/",
+        "foundationName": "Hasbro Children's Fund",
+        "ein": "04-3217733",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "hasbro"
+    },
+    "prana": {
+      "charity": {
+        "totalGivingUsd": 3000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.columbia.com/our-commitment.html",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "columbia-sportswear"
+    },
+    "proactiv": {
+      "charity": {
+        "totalGivingUsd": 60000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.unilever.com/sustainability/social/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "unilever"
+    },
+    "ralphs": {
+      "charity": {
+        "totalGivingUsd": 240000000,
+        "pctRevenue": 0.0016,
+        "year": 2024,
+        "sourceUrl": "https://www.thekrogerco.com/community/zero-hunger-zero-waste/",
+        "foundationName": "Kroger Co. Foundation",
+        "ein": "23-7406425",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kroger"
+    },
+    "river": {
+      "charity": {
+        "totalGivingUsd": 30000000,
+        "pctRevenue": 0.0014,
+        "year": 2024,
+        "sourceUrl": "https://corporate.aldi.us/en/responsibility/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "aldi"
+    },
+    "royal": {
+      "charity": {
+        "totalGivingUsd": 25000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.mondelezinternational.com/snacking-made-right",
+        "foundationName": "Mondelez International Foundation",
+        "ein": "36-4676065",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "mondelez-international"
     },
     "ruffles": {
       "charity": {
@@ -6212,7 +6851,215 @@
       "routedVia": "parent",
       "parentSlug": "pepsi"
     },
+    "sanka": {
+      "charity": {
+        "totalGivingUsd": 25000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.kraftheinzcompany.com/esg/communities.html",
+        "foundationName": "Kraft Heinz Foundation",
+        "ein": "36-4676060",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kraft-heinz"
+    },
+    "scott": {
+      "charity": {
+        "totalGivingUsd": 15000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.kimberly-clark.com/en/responsibility",
+        "foundationName": "Kimberly-Clark Foundation",
+        "ein": "23-7006556",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "kimberly-clark"
+    },
+    "sos": {
+      "charity": {
+        "totalGivingUsd": 9000000,
+        "pctRevenue": 0.0011,
+        "year": 2024,
+        "sourceUrl": "https://www.thecloroxcompany.com/corporate-responsibility/",
+        "foundationName": "Clorox Company Foundation",
+        "ein": "94-2895541",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "clorox-co"
+    },
+    "starry": {
+      "charity": {
+        "totalGivingUsd": 90000000,
+        "pctRevenue": 0.001,
+        "year": 2024,
+        "sourceUrl": "https://www.pepsico.com/our-impact/esg-topics-a-z/pepsico-foundation",
+        "foundationName": "PepsiCo Foundation",
+        "ein": "13-3285632",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "pepsico"
+    },
+    "supertarget": {
+      "charity": {
+        "totalGivingUsd": 230000000,
+        "pctRevenue": 0.0021,
+        "year": 2024,
+        "sourceUrl": "https://corporate.target.com/sustainability-governance/social",
+        "foundationName": "Target Foundation",
+        "ein": "41-1857553",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "target"
+    },
+    "swanson": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://www.campbellsoupcompany.com/our-impact/",
+        "foundationName": "Campbell Soup Foundation",
+        "ein": "23-2529821",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "campbell-soup"
+    },
+    "tesco": {
+      "charity": {
+        "totalGivingUsd": 130000000,
+        "pctRevenue": 0.0067,
+        "year": 2024,
+        "sourceUrl": "https://www.blackrock.com/corporate/about-us/social-impact",
+        "foundationName": "BlackRock Foundation",
+        "ein": "85-0594571",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "blackrock"
+    },
+    "texaco": {
+      "charity": {
+        "totalGivingUsd": 245000000,
+        "pctRevenue": 0.0011,
+        "year": 2024,
+        "sourceUrl": "https://www.chevron.com/sustainability/social",
+        "foundationName": "Chevron Humankind",
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "chevron"
+    },
+    "tonka": {
+      "charity": {
+        "totalGivingUsd": 16000000,
+        "pctRevenue": 0.003,
+        "year": 2024,
+        "sourceUrl": "https://csr.hasbro.com/",
+        "foundationName": "Hasbro Children's Fund",
+        "ein": "04-3217733",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "hasbro"
+    },
+    "travismathew": {
+      "charity": {
+        "totalGivingUsd": 3000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://www.callawaygolf.com/about-us",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "callaway-golf"
+    },
+    "tresemm": {
+      "charity": {
+        "totalGivingUsd": 60000000,
+        "pctRevenue": 0.0009,
+        "year": 2024,
+        "sourceUrl": "https://www.unilever.com/sustainability/social/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "unilever"
+    },
+    "tuc": {
+      "charity": {
+        "totalGivingUsd": 25000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.mondelezinternational.com/snacking-made-right",
+        "foundationName": "Mondelez International Foundation",
+        "ein": "36-4676065",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "mondelez-international"
+    },
+    "viking": {
+      "charity": {
+        "totalGivingUsd": 50000000,
+        "pctRevenue": 0.0003,
+        "year": 2024,
+        "sourceUrl": "https://www.gm.com/commitments/community-engagement",
+        "foundationName": "General Motors Foundation",
+        "ein": "23-7071797",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "general-motors"
+    },
+    "vons": {
+      "charity": {
+        "totalGivingUsd": 280000000,
+        "pctRevenue": 0.0036,
+        "year": 2024,
+        "sourceUrl": "https://www.albertsonscompanies.com/our-impact/our-communities/",
+        "foundationName": "Albertsons Companies Foundation",
+        "ein": "20-4529433",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "albertsons"
+    },
+    "walkers": {
+      "charity": {
+        "totalGivingUsd": 90000000,
+        "pctRevenue": 0.001,
+        "year": 2024,
+        "sourceUrl": "https://www.pepsico.com/our-impact/esg-topics-a-z/pepsico-foundation",
+        "foundationName": "PepsiCo Foundation",
+        "ein": "13-3285632",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "pepsico"
+    },
     "whiskas": {
+      "charity": {
+        "totalGivingUsd": 90000000,
+        "pctRevenue": 0.0019,
+        "year": 2024,
+        "sourceUrl": "https://www.mars.com/sustainability-plan",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "mars"
+    },
+    "winterfresh": {
       "charity": {
         "totalGivingUsd": 90000000,
         "pctRevenue": 0.0019,

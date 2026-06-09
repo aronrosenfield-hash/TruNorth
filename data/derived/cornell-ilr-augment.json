@@ -2,9 +2,9 @@
   "_license": "CC-BY — Cornell ILR",
   "_citation": "Kallas, J., Iyer, D. K., & Friedman, E. (2024). \"Labor Action Tracker.\" Cornell University ILR School & University of Illinois LER School. Retrieved from striketracker.ilr.cornell.edu",
   "_source_url": "https://striketracker.ilr.cornell.edu",
-  "_generated_at": "2026-06-08T16:08:04.643Z",
-  "_source_raw_file": "data/raw/cornell-ilr/2026-06-08.json",
-  "_matched_slugs": 290,
+  "_generated_at": "2026-06-09T13:52:12.221Z",
+  "_source_raw_file": "data/raw/cornell-ilr/2026-06-09.json",
+  "_matched_slugs": 294,
   "_orphan_employers": [
     {
       "name": "The US Federal Government",
@@ -260,8 +260,8 @@
   "_routing_counts": {
     "direct": 1163,
     "alias": 112,
-    "brand-parent": 81,
-    "orphan": 3337
+    "brand-parent": 89,
+    "orphan": 3329
   },
   "bySlug": {
     "conagra-brands": {
@@ -25889,6 +25889,57 @@
       "labor": {
         "laborActions": [
           {
+            "actionId": 3437,
+            "actionType": "protest",
+            "startDate": "2024-10-21",
+            "endDate": "2024-10-21",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "UNITE HERE"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Allow a fair process for unionization"
+            ],
+            "city": "Arlington",
+            "state": "Virginia",
+            "sourceUrl": "https://x.com/DCLabor/status/1844065484372885919",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3437",
+            "notes": ""
+          },
+          {
+            "actionId": 2008,
+            "actionType": "protest",
+            "startDate": "2023-05-31",
+            "endDate": "2023-05-31",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Auto Workers (UAW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Job Security",
+              "Keeping facility open"
+            ],
+            "city": "Milwaukee",
+            "state": "Wisconsin",
+            "sourceUrl": "https://spectrumnews1.com/wi/milwaukee/news/2023/05/31/uaw-and-master-lock-employees-rally-in-solidarity-after-announcement-of-manufacturing-facility-closure",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2008",
+            "notes": ""
+          },
+          {
             "actionId": 1468,
             "actionType": "strike",
             "startDate": "2022-09-26",
@@ -25999,8 +26050,8 @@
             "notes": ""
           }
         ],
-        "actionCount": 4,
-        "totalWorkersInvolved": 2840,
+        "actionCount": 6,
+        "totalWorkersInvolved": 2940,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -36025,6 +36076,42 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "instant-brands": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3391,
+            "actionType": "protest",
+            "startDate": "2024-09-20",
+            "endDate": "2024-09-20",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Steelworkers (USW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Job Security",
+              "Halt plant shutdown"
+            ],
+            "city": "Charleroi",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://penncapital-star.com/economy/charleroi-workers-rally-to-try-to-save-glass-manufacturing-plant/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3391",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 100,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "cargill": {
       "labor": {
         "laborActions": [
@@ -36192,6 +36279,43 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 900,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "corona-constellation-brands": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3488,
+            "actionType": "strike",
+            "startDate": "2024-10-30",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 70,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Auto Workers (UAW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Seniority"
+            ],
+            "city": "Lithonia",
+            "state": "Georgia",
+            "sourceUrl": "https://uaw.org/uaw-members-at-woodbridge-corp-walk-out-on-strike/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3488",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 70,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -36387,6 +36511,71 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 2,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "tjx-companies": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4051,
+            "actionType": "protest",
+            "startDate": "2025-06-24",
+            "endDate": "2025-06-24",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "California Nurses Association (CNA) - NNU"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Staffing",
+              "Job Security",
+              "Healthcare",
+              "scheduling"
+            ],
+            "city": "Templeton",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20250625141832/https://www.ksby.com/news/local-news/nurses-picket-at-two-san-luis-obispo-county-hospitals",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4051",
+            "notes": ""
+          },
+          {
+            "actionId": 3576,
+            "actionType": "strike",
+            "startDate": "2024-12-24",
+            "endDate": "2025-01-02",
+            "durationDays": 10,
+            "authorized": true,
+            "numWorkers": 20,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Steelworkers (USW)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Health and safety",
+              "First contract",
+              "Staffing"
+            ],
+            "city": "Cheyenne",
+            "state": "Wyoming",
+            "sourceUrl": "https://www.bloomberglaw.com/product/labor/document/XB9S0414000000?criteria_id=8e7c149a872d6f1a74a6b25112a50912&searchGuid=ace717ca-f738-42d3-acce-2905201d4eed",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3576",
+            "notes": ""
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 20,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -36782,6 +36971,31 @@
       "labor": {
         "laborActions": [
           {
+            "actionId": 4695,
+            "actionType": "strike",
+            "startDate": "2026-03-23",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 40,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Grandview",
+            "state": "Washington",
+            "sourceUrl": "http://web.archive.org/web/20260326204455/https://kimatv.com/news/local/workers-strike-at-welchs-plant-in-grandview-over-first-year-wages",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4695",
+            "notes": ""
+          },
+          {
             "actionId": 3931,
             "actionType": "strike",
             "startDate": "2025-05-08",
@@ -36834,8 +37048,8 @@
             "notes": ""
           }
         ],
-        "actionCount": 2,
-        "totalWorkersInvolved": 950,
+        "actionCount": 3,
+        "totalWorkersInvolved": 990,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -36985,6 +37199,44 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 125,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "lufthansa-group": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4030,
+            "actionType": "protest",
+            "startDate": "2025-06-13",
+            "endDate": "2025-06-13",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "International Association of Machinists and Aerospace Workers (IAM)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "First contract",
+              "Healthcare",
+              "scheduling",
+              "Pay"
+            ],
+            "city": "Aguadilla",
+            "state": "Puerto Rico",
+            "sourceUrl": "https://web.archive.org/web/20250618193250/https://www.goiam.org/news/imail/lufthansa-technik-puerto-rico-workers-and-allies-hold-solidarity-rally-demanding-a-fair-contract/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4030",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
