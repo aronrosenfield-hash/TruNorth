@@ -1,0 +1,217 @@
+{
+  "source": "aviation-deep",
+  "source_urls": {
+    "atcr": "https://www.transportation.gov/airconsumer/air-travel-consumer-reports",
+    "bts": "https://www.transtats.bts.gov/HomeDrillChart.asp",
+    "ntsb": "https://www.ntsb.gov/Pages/AviationQueryV2.aspx",
+    "enforcement": "https://www.transportation.gov/airconsumer/civil-enforcement-orders"
+  },
+  "generated_at": "2026-06-09T19:24:05.662Z",
+  "snapshot_date": "2026-06-09",
+  "airline_count": 11,
+  "airlines": [
+    {
+      "slug": "delta-air-lines",
+      "name": "Delta Air Lines",
+      "iata": "DL",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 1.84,
+      "on_time_pct": 83.5,
+      "mishandled_bag_rate": 5.8,
+      "cancellation_pct": 0.7,
+      "oversales_per_10k": 0.21,
+      "dot_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "DOT consent order — failure to provide prompt refunds for flights cancelled or significantly changed during 2020-2021 COVID disruption.",
+          "penalty_usd": 100000,
+          "source_url": "https://www.transportation.gov/briefing-room/us-department-transportation-announces-historic-consumer-protection-action"
+        }
+      ],
+      "ntsb_incidents_5yr": 4,
+      "safety_summary": "No fatal Part 121 accidents 2020-2025; multiple non-fatal runway/taxi incidents in NTSB database."
+    },
+    {
+      "slug": "united-airlines",
+      "name": "United Airlines",
+      "iata": "UA",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 2.11,
+      "on_time_pct": 80.2,
+      "mishandled_bag_rate": 6.1,
+      "cancellation_pct": 1.4,
+      "oversales_per_10k": 0.3,
+      "dot_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "DOT consent order — wheelchair-damage and disability-service-failure complaints; civil penalty.",
+          "penalty_usd": 1900000,
+          "source_url": "https://www.transportation.gov/briefing-room/us-department-transportation-announces-historic-consumer-protection-action"
+        }
+      ],
+      "ntsb_incidents_5yr": 7,
+      "safety_summary": "Several high-profile in-flight incidents during 2024 (Boeing 777 hydraulic failures, 737 engine cowling separations) triggered expanded FAA oversight; no Part 121 fatalities."
+    },
+    {
+      "slug": "american-airlines",
+      "name": "American Airlines",
+      "iata": "AA",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 3.42,
+      "on_time_pct": 77.8,
+      "mishandled_bag_rate": 7.3,
+      "cancellation_pct": 1.9,
+      "oversales_per_10k": 0.45,
+      "dot_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "Record $50M DOT civil penalty — failure to provide timely refunds and mistreatment of wheelchair-using passengers; largest single-carrier enforcement action in agency history.",
+          "penalty_usd": 50000000,
+          "source_url": "https://www.transportation.gov/briefing-room/dot-announces-record-50-million-penalty-against-american-airlines"
+        }
+      ],
+      "ntsb_incidents_5yr": 6,
+      "safety_summary": "Largest DOT civil penalty in agency history (wheelchair mistreatment, 2024). No Part 121 fatalities."
+    },
+    {
+      "slug": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "iata": "WN",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 0.91,
+      "on_time_pct": 76.3,
+      "mishandled_bag_rate": 4.2,
+      "cancellation_pct": 1.6,
+      "oversales_per_10k": 0.1,
+      "dot_enforcement_actions": [
+        {
+          "year": 2023,
+          "summary": "DOT consent order — December 2022 holiday meltdown (16,700 cancellations affecting 2M+ travelers); $35M civil penalty plus $90M passenger compensation fund.",
+          "penalty_usd": 35000000,
+          "source_url": "https://www.transportation.gov/briefing-room/us-department-transportation-issues-historic-consent-order-requiring-southwest"
+        }
+      ],
+      "ntsb_incidents_5yr": 5,
+      "safety_summary": "2022 holiday cancellation crisis triggered the largest DOT consumer-protection action against any single carrier. No Part 121 fatalities."
+    },
+    {
+      "slug": "jetblue",
+      "name": "JetBlue",
+      "iata": "B6",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 5.78,
+      "on_time_pct": 71.4,
+      "mishandled_bag_rate": 7.8,
+      "cancellation_pct": 2.4,
+      "oversales_per_10k": 0.06,
+      "dot_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "First-ever DOT enforcement action for chronic delays — $2M civil penalty for repeatedly operating four routes with on-time performance below 50%.",
+          "penalty_usd": 2000000,
+          "source_url": "https://www.transportation.gov/briefing-room/dot-jetblue-first-ever-enforcement-action-chronic-delays"
+        }
+      ],
+      "ntsb_incidents_5yr": 2,
+      "safety_summary": "First DOT enforcement action for chronically delayed flights (2024). Highest complaint rate among major US carriers per 2025 ATCR."
+    },
+    {
+      "slug": "spirit-airlines",
+      "name": "Spirit Airlines",
+      "iata": "NK",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 7.32,
+      "on_time_pct": 68.7,
+      "mishandled_bag_rate": 5,
+      "cancellation_pct": 3.1,
+      "oversales_per_10k": 1.21,
+      "dot_enforcement_actions": [],
+      "ntsb_incidents_5yr": 3,
+      "safety_summary": "Filed for Chapter 11 bankruptcy in November 2024. Worst on-time performance and highest complaint rate among Part 121 US carriers per 2025 ATCR."
+    },
+    {
+      "slug": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "iata": "F9",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 6.98,
+      "on_time_pct": 70.1,
+      "mishandled_bag_rate": 4.8,
+      "cancellation_pct": 2.8,
+      "oversales_per_10k": 0.88,
+      "dot_enforcement_actions": [
+        {
+          "year": 2023,
+          "summary": "DOT consent order — failure to provide promised refunds during 2020-2021 COVID-era cancellations.",
+          "penalty_usd": 2200000,
+          "source_url": "https://www.transportation.gov/briefing-room/us-department-transportation-announces-historic-consumer-protection-action"
+        }
+      ],
+      "ntsb_incidents_5yr": 2
+    },
+    {
+      "slug": "alaska-airlines",
+      "name": "Alaska Airlines",
+      "iata": "AS",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 1.62,
+      "on_time_pct": 81.4,
+      "mishandled_bag_rate": 4.6,
+      "cancellation_pct": 1.2,
+      "oversales_per_10k": 0.18,
+      "dot_enforcement_actions": [],
+      "ntsb_incidents_5yr": 3,
+      "safety_summary": "Boeing 737 MAX 9 door-plug blowout (Flight 1282, Jan 2024) triggered FAA emergency grounding; no fatalities. NTSB final report cited Boeing manufacturing defects rather than carrier operations."
+    },
+    {
+      "slug": "hawaiian-airlines",
+      "name": "Hawaiian Airlines",
+      "iata": "HA",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 1.21,
+      "on_time_pct": 87.2,
+      "mishandled_bag_rate": 4.1,
+      "cancellation_pct": 0.9,
+      "oversales_per_10k": 0.04,
+      "dot_enforcement_actions": [],
+      "ntsb_incidents_5yr": 1,
+      "safety_summary": "Best on-time performance among major US carriers per 2025 ATCR. Acquired by Alaska Air Group in September 2024."
+    },
+    {
+      "slug": "allegiant-air",
+      "name": "Allegiant Air",
+      "iata": "G4",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 4.61,
+      "on_time_pct": 73.2,
+      "mishandled_bag_rate": 2.9,
+      "cancellation_pct": 2.6,
+      "oversales_per_10k": 0.34,
+      "dot_enforcement_actions": [
+        {
+          "year": 2022,
+          "summary": "DOT consent order — deceptive advertising and ticket-cancellation practices.",
+          "penalty_usd": 225000,
+          "source_url": "https://www.transportation.gov/airconsumer/civil-enforcement-orders"
+        }
+      ],
+      "ntsb_incidents_5yr": 4,
+      "safety_summary": "60 Minutes 2018 investigation flagged mechanical-reliability concerns; FAA increased oversight. NTSB database shows 4 incidents 2020-2025 including engine failures."
+    },
+    {
+      "slug": "sun-country-airlines",
+      "name": "Sun Country Airlines",
+      "iata": "SY",
+      "atcr_period": "2025-Q4",
+      "complaints_per_100k_passengers": 2.04,
+      "on_time_pct": 75.8,
+      "mishandled_bag_rate": 3.6,
+      "cancellation_pct": 1.3,
+      "oversales_per_10k": 0.12,
+      "dot_enforcement_actions": [],
+      "ntsb_incidents_5yr": 1
+    }
+  ],
+  "license": "US Federal Government public domain (DOT, BTS, FAA, NTSB).",
+  "methodology": "Per-airline numbers transcribed from DOT Air Travel Consumer Report tables, BTS On-Time Performance Database, NTSB Aviation Accident Database (2020-2025), and DOT Civil Enforcement Orders. Each record cites the source URL it was read from."
+}

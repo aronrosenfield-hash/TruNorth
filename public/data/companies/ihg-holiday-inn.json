@@ -8,13 +8,14 @@
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
-    "environment": "neutral",
-    "labor": "neutral",
+    "environment": "positive",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $307K in executive political donations; partisan lean split across 14 executive donors.",
@@ -34,17 +35,19 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Green Key Global registry: 21 certified properties under the IHG / Holiday Inn flag.",
     "rating": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "hotel-deep"
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "UNITE HERE: 1 hospitality-worker dispute 2022-2025. Crowne Plaza Times Square Manhattan and InterContinental Mark Hopkins SF struck during multi-city UNITE HERE walkout.",
     "rating": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "hotel-deep"
     ]
   },
   "dei": {
@@ -137,5 +140,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 1
+  "realCats": 1,
+  "health": {
+    "s": "CDC NORS database attributes 5 norovirus/foodborne outbreaks to IHG / Holiday Inn properties 2020-2025.",
+    "sources": [
+      "hotel-deep"
+    ]
+  }
 }

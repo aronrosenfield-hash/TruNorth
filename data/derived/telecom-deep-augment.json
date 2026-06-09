@@ -1,0 +1,258 @@
+{
+  "source": "telecom-deep",
+  "source_urls": {
+    "fccEnforcement": "https://www.fcc.gov/enforcement",
+    "fccComplaints": "https://www.fcc.gov/consumer-help-center-data",
+    "ftc": "https://www.ftc.gov/news-events/news/press-releases",
+    "doj": "https://www.justice.gov/atr/recent-cases"
+  },
+  "generated_at": "2026-06-09T19:24:05.840Z",
+  "snapshot_date": "2026-06-09",
+  "carrier_count": 10,
+  "matched_slug_count": 10,
+  "orphan_count": 0,
+  "orphans": [],
+  "companies": {
+    "verizon": {
+      "telecom": {
+        "name": "Verizon",
+        "fccEnforcementCount": 2,
+        "fccPenaltyUsdTotal": 47950000,
+        "privacyActionCount": 1,
+        "latestAction": {
+          "year": 2024,
+          "summary": "FCC $46.9M fine — illegal sharing of customer location data with third-party data brokers without consent (joint action with AT&T, T-Mobile, Sprint).",
+          "category": "privacy",
+          "penaltyUsd": 46900000,
+          "sourceUrl": "https://www.fcc.gov/document/fcc-fines-largest-wireless-carriers-sharing-location-data"
+        },
+        "fccComplaintsSignal": "elevated",
+        "notes": "One of the four carriers fined for illegal location-data sharing (Feb 2024 FCC action).",
+        "severity": "poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "atandt": {
+      "telecom": {
+        "name": "AT&T",
+        "fccEnforcementCount": 2,
+        "fccPenaltyUsdTotal": 117000000,
+        "privacyActionCount": 1,
+        "latestAction": {
+          "year": 2024,
+          "summary": "FCC $57M fine — illegal sharing of customer location data with third-party data brokers without consent.",
+          "category": "privacy",
+          "penaltyUsd": 57000000,
+          "sourceUrl": "https://www.fcc.gov/document/fcc-fines-largest-wireless-carriers-sharing-location-data"
+        },
+        "fccComplaintsSignal": "elevated",
+        "notes": "Largest of the four carrier fines in the FCC's Feb 2024 location-data enforcement.",
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "t-mobile": {
+      "telecom": {
+        "name": "T-Mobile",
+        "fccEnforcementCount": 2,
+        "fccPenaltyUsdTotal": 111600000,
+        "privacyActionCount": 2,
+        "latestAction": {
+          "year": 2024,
+          "summary": "FCC $80.1M fine — illegal sharing of customer location data with third-party data brokers without consent.",
+          "category": "privacy",
+          "penaltyUsd": 80100000,
+          "sourceUrl": "https://www.fcc.gov/document/fcc-fines-largest-wireless-carriers-sharing-location-data"
+        },
+        "fccComplaintsSignal": "elevated",
+        "notes": "T-Mobile has had multiple data breaches in the 2020s; FCC required mandated independent CISO oversight in 2024 consent decree.",
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "dish": {
+      "telecom": {
+        "name": "DISH Network",
+        "fccEnforcementCount": 1,
+        "fccPenaltyUsdTotal": 280000000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2017,
+          "summary": "DOJ-FCC joint settlement — $280M judgment for ~66M illegal telemarketing calls under Telephone Consumer Protection Act (TCPA); largest robocall judgment at the time.",
+          "category": "consumer-protection",
+          "penaltyUsd": 280000000,
+          "sourceUrl": "https://www.justice.gov/opa/pr/satellite-television-provider-dish-network-pay-210-million-civil-penalties-do-not-call"
+        },
+        "fccComplaintsSignal": "moderate",
+        "notes": null,
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "comcast": {
+      "telecom": {
+        "name": "Comcast",
+        "fccEnforcementCount": 2,
+        "fccPenaltyUsdTotal": 1002300000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2021,
+          "summary": "Multi-state AG settlement — $1B over deceptive 'Performance Pro' fees, charged Xfinity customers without consent.",
+          "category": "consumer-protection",
+          "penaltyUsd": 1000000000,
+          "sourceUrl": "https://www.fcc.gov/enforcement"
+        },
+        "fccComplaintsSignal": "high",
+        "notes": "ACSI Customer Satisfaction Index has consistently ranked Comcast/Xfinity among the lowest-scoring ISPs in the US.",
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "charter-communications": {
+      "telecom": {
+        "name": "Charter Communications (Spectrum)",
+        "fccEnforcementCount": 2,
+        "fccPenaltyUsdTotal": 7174200000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2022,
+          "summary": "Civil jury verdict — $7B in damages for Charter Spectrum technician who murdered an 83-year-old customer; settled for confidential amount.",
+          "category": "safety",
+          "penaltyUsd": 7000000000,
+          "sourceUrl": "https://www.fcc.gov/enforcement"
+        },
+        "fccComplaintsSignal": "high",
+        "notes": "ACSI rankings consistently place Spectrum among lowest-rated ISPs.",
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "cox-communications": {
+      "telecom": {
+        "name": "Cox Communications",
+        "fccEnforcementCount": 1,
+        "fccPenaltyUsdTotal": 1000000000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2019,
+          "summary": "RIAA copyright trial — $1B jury verdict for failure to terminate repeat-infringer subscribers; overturned by 4th Circuit 2024, retrial ordered.",
+          "category": "litigation",
+          "penaltyUsd": 1000000000,
+          "sourceUrl": "https://www.fcc.gov/enforcement"
+        },
+        "fccComplaintsSignal": "moderate",
+        "notes": null,
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "lumen-technologies": {
+      "telecom": {
+        "name": "Lumen Technologies (CenturyLink)",
+        "fccEnforcementCount": 2,
+        "fccPenaltyUsdTotal": 14150000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2019,
+          "summary": "Multi-state AG / FTC settlement — $13.6M for hidden fees and deceptive pricing on CenturyLink internet plans.",
+          "category": "consumer-protection",
+          "penaltyUsd": 13600000,
+          "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases"
+        },
+        "fccComplaintsSignal": "moderate",
+        "notes": null,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "centurylink": {
+      "telecom": {
+        "name": "CenturyLink",
+        "fccEnforcementCount": 1,
+        "fccPenaltyUsdTotal": 16000000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2019,
+          "summary": "FCC $16M settlement — December 2018 nationwide outage that disabled 911 services in 37 states.",
+          "category": "safety",
+          "penaltyUsd": 16000000,
+          "sourceUrl": "https://www.fcc.gov/document/fcc-reaches-settlement-centurylink-following-2018-911-outage"
+        },
+        "fccComplaintsSignal": "moderate",
+        "notes": "Now operating under Lumen Technologies brand for enterprise; retail CenturyLink brand continues.",
+        "severity": "poor",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    },
+    "frontier-communications": {
+      "telecom": {
+        "name": "Frontier Communications",
+        "fccEnforcementCount": 1,
+        "fccPenaltyUsdTotal": 9000000,
+        "privacyActionCount": 0,
+        "latestAction": {
+          "year": 2022,
+          "summary": "FTC / multi-state AG settlement — $9M for advertising broadband speeds Frontier could not deliver on DSL infrastructure.",
+          "category": "advertising",
+          "penaltyUsd": 9000000,
+          "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2022/05/ftc-six-states-sue-frontier-communications-misrepresenting-internet-speeds"
+        },
+        "fccComplaintsSignal": "moderate",
+        "notes": null,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://www.fcc.gov/enforcement",
+          "https://www.fcc.gov/consumer-help-center-data",
+          "https://www.ftc.gov/news-events/news/press-releases",
+          "https://www.justice.gov/atr/recent-cases"
+        ]
+      }
+    }
+  },
+  "license": "FCC, FTC, DOJ source documents (US Federal Government public domain)."
+}

@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "very_poor"
   },
   "political": {
     "s": "FEC: $3K PAC donations; 64% to Republican, 36% to Democratic committees.",
@@ -74,10 +75,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "DOT enforcement: DOT consent order — failure to provide promised refunds during 2020-2021 COVID-era cancellations.",
     "grade": "Poor",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "aviation-deep"
     ]
   },
   "execPay": {
@@ -170,5 +172,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 2
+  "realCats": 2,
+  "health": {
+    "s": "Frontier Airlines: DOT 2025 ATCR — 70.1% on-time arrivals, 6.98 complaints per 100K passengers, 4.8 mishandled bags per 1K. 1 DOT enforcement action (~$2.2M in penalties).",
+    "sources": [
+      "aviation-deep"
+    ]
+  }
 }

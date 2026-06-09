@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "usaa",
+    "name": "USAA",
+    "lines": ["Auto", "Home", "Life"],
+    "naic_complaint_index": 0.42,
+    "am_best_rating": "A++",
+    "enforcement_actions": []
+  },
+  {
+    "slug": "unitedhealth-group",
+    "name": "UnitedHealth Group",
+    "lines": ["Health", "Pharmacy"],
+    "naic_complaint_index": 1.51,
+    "am_best_rating": "A+",
+    "enforcement_actions": [
+      {
+        "year": 2024,
+        "regulator": "HHS OCR",
+        "summary": "Change Healthcare ransomware attack — ~190M affected.",
+        "penalty_usd": 0,
+        "source_url": "https://www.hhs.gov/about/news/index.html"
+      }
+    ]
+  }
+]

@@ -836,6 +836,196 @@ const WRITERS = [
       }];
     },
   },
+  // ─── Aviation deep (DOT ATCR + DOT enforcement + NTSB) ─────────────────
+  // Maps to "health" (safety/quality-of-service is closest user-facing
+  // category for airlines) and adds a "privacy" narrative when the DOT
+  // enforcement penalty was for refund/disability-service violations.
+  {
+    name: "aviation-deep",
+    write: (e) => {
+      const a = e.aviation;
+      if (!a) return [];
+      const writes = [];
+      const refundFlag = a.dotLatestAction?.summary?.match(/refund|wheelchair|disability/i);
+      const head = `${a.name}: DOT 2025 ATCR — ${a.onTimePct}% on-time arrivals, ` +
+        `${a.complaintsPer100k} complaints per 100K passengers, ` +
+        `${a.mishandledBagRate} mishandled bags per 1K.`;
+      const enforcement = a.dotEnforcementCount
+        ? ` ${a.dotEnforcementCount} DOT enforcement action${a.dotEnforcementCount > 1 ? "s" : ""}` +
+          (a.dotPenaltyUsdTotal >= 1e9 ? ` (~$${(a.dotPenaltyUsdTotal/1e9).toFixed(1)}B in penalties).`
+           : a.dotPenaltyUsdTotal >= 1e6 ? ` (~$${(a.dotPenaltyUsdTotal/1e6).toFixed(1)}M in penalties).`
+           : ".")
+        : "";
+      const safety = a.safetySummary ? ` ${a.safetySummary}` : "";
+      const narrative = `${head}${enforcement}${safety}`.trim();
+      const sc = a.severity === "very_poor" ? "very_poor"
+        : a.severity === "poor" ? "poor"
+        : a.severity === "mixed" ? "mixed"
+        : a.severity === "positive" ? "positive"
+        : "neutral";
+      writes.push({ category: "health", narrative, sc, severity: sc === "positive" ? "positive" : (sc === "neutral" ? "neutral" : "negative") });
+      if (refundFlag) {
+        writes.push({
+          category: "privacy",
+          narrative: `DOT enforcement: ${clip(a.dotLatestAction.summary, 220)}`,
+          sc: a.dotPenaltyUsdTotal >= 1e7 ? "poor" : "mixed",
+          severity: "negative",
+        });
+      }
+      return writes;
+    },
+  },
+  // ─── Hotel deep (UNITE HERE + CDC NORS + DOJ ADA + Green Key) ──────────
+  // Multi-category: labor (strikes), health (outbreaks), privacy (ADA = accessibility,
+  // closest user-facing analog), environment (Green Key certified count → positive).
+  {
+    name: "hotel-deep",
+    write: (e) => {
+      const h = e.hotel;
+      if (!h) return [];
+      const writes = [];
+      const disputes = h.uniteHereDisputes || [];
+      if (disputes.length) {
+        const latest = disputes[0];
+        writes.push({
+          category: "labor",
+          narrative: `UNITE HERE: ${disputes.length} hospitality-worker dispute${disputes.length > 1 ? "s" : ""} 2022-2025. ${clip(latest.summary, 220)}`,
+          sc: "mixed",
+          severity: "negative",
+        });
+      }
+      if ((h.cdcOutbreaks5yr || 0) >= 4) {
+        writes.push({
+          category: "health",
+          narrative: `CDC NORS database attributes ${h.cdcOutbreaks5yr} norovirus/foodborne outbreaks to ${h.name} properties 2020-2025.`,
+          sc: h.cdcOutbreaks5yr >= 8 ? "poor" : "mixed",
+          severity: "negative",
+        });
+      }
+      if ((h.adaConsentDecrees || []).length) {
+        const ada = h.adaConsentDecrees[0];
+        writes.push({
+          category: "privacy",
+          narrative: `DOJ ADA Title III: ${clip(ada.summary, 220)}`,
+          sc: "mixed",
+          severity: "negative",
+        });
+      }
+      if ((h.greenCertifiedPropertyCount || 0) >= 10) {
+        writes.push({
+          category: "environment",
+          narrative: `Green Key Global registry: ${h.greenCertifiedPropertyCount} certified properties under the ${h.name} flag.`,
+          sc: "positive",
+          severity: "positive",
+        });
+      }
+      return writes;
+    },
+  },
+  // ─── Telecom deep (FCC Enforcement + FTC + DOJ) ────────────────────────
+  // Maps to "privacy" by default — most major FCC enforcement actions in
+  // the 2020s have been privacy / data-broker / breach related.
+  {
+    name: "telecom-deep",
+    write: (e) => {
+      const t = e.telecom;
+      if (!t) return [];
+      const latest = t.latestAction;
+      if (!latest) return [];
+      const amt = t.fccPenaltyUsdTotal >= 1e9 ? `~$${(t.fccPenaltyUsdTotal/1e9).toFixed(1)}B`
+        : t.fccPenaltyUsdTotal >= 1e6 ? `~$${(t.fccPenaltyUsdTotal/1e6).toFixed(0)}M`
+        : "";
+      const head = t.fccEnforcementCount === 1
+        ? `FCC/FTC enforcement: ${clip(latest.summary, 220)}`
+        : `${t.fccEnforcementCount} FCC/FTC enforcement actions${amt ? ` (${amt} in penalties)` : ""}. ${clip(latest.summary, 200)}`;
+      const category = (latest.category === "privacy" || (t.privacyActionCount || 0) > 0) ? "privacy" : "health";
+      const sc = t.severity === "very_poor" ? "very_poor"
+        : t.severity === "poor" ? "poor"
+        : t.severity === "mixed" ? "mixed" : "mixed";
+      return [{ category, narrative: head.trim(), sc, severity: "negative" }];
+    },
+  },
+  // ─── Banking deep (OCC + CRA + FDIC + Fed) ─────────────────────────────
+  // Maps regulator enforcement to "execPay" (closest user-facing analog of
+  // executive accountability for a bank). CRA grade contributes a positive
+  // (A) or negative (C/D) signal to "charity" (community reinvestment is
+  // the CRA's purpose).
+  {
+    name: "banking-deep",
+    write: (e) => {
+      const b = e.banking;
+      if (!b) return [];
+      const writes = [];
+      if (b.latestAction) {
+        const amt = b.penaltyUsdTotal >= 1e9 ? `~$${(b.penaltyUsdTotal/1e9).toFixed(1)}B`
+          : b.penaltyUsdTotal >= 1e6 ? `~$${(b.penaltyUsdTotal/1e6).toFixed(0)}M`
+          : "";
+        const head = b.enforcementCount === 1
+          ? `Federal banking regulator action (${b.latestAction.regulator}): ${clip(b.latestAction.summary, 220)}`
+          : `${b.enforcementCount} federal banking regulator actions${amt ? ` (${amt} in penalties)` : ""}. ${clip(b.latestAction.summary, 200)}`;
+        const sc = b.severity === "very_poor" ? "very_poor"
+          : b.severity === "poor" ? "poor"
+          : b.severity === "mixed" ? "mixed" : "mixed";
+        writes.push({ category: "execPay", narrative: head.trim(), sc, severity: "negative" });
+      }
+      if (b.craGrade === "A") {
+        writes.push({
+          category: "charity",
+          narrative: `Community Reinvestment Act (FFIEC, ${b.craYear}): Outstanding rating — top ~3% of US banks for low/moderate-income community lending and services.`,
+          sc: "positive",
+          severity: "positive",
+        });
+      } else if (b.craGrade === "C" || b.craGrade === "D") {
+        writes.push({
+          category: "charity",
+          narrative: `Community Reinvestment Act (FFIEC, ${b.craYear}): ${b.craGrade === "C" ? "Needs to Improve" : "Substantial Noncompliance"} — below-peer performance on low/moderate-income community lending obligations.`,
+          sc: b.craGrade === "D" ? "very_poor" : "poor",
+          severity: "negative",
+        });
+      }
+      return writes;
+    },
+  },
+  // ─── Insurance deep (NAIC + AM Best + state DOIs + DOJ) ────────────────
+  // Maps to "health" for health insurers, "execPay" for everyone else
+  // (consumer-protection enforcement = governance signal).
+  {
+    name: "insurance-deep",
+    write: (e) => {
+      const ins = e.insurance;
+      if (!ins) return [];
+      const isHealth = (ins.lines || []).some(l => /health|pharmacy/i.test(l));
+      const writes = [];
+      const idx = ins.naicComplaintIndex;
+      const amt = ins.penaltyUsdTotal >= 1e9 ? `~$${(ins.penaltyUsdTotal/1e9).toFixed(1)}B`
+        : ins.penaltyUsdTotal >= 1e6 ? `~$${(ins.penaltyUsdTotal/1e6).toFixed(0)}M`
+        : "";
+      const naicBit = idx != null
+        ? `NAIC Complaint Index ${idx.toFixed(2)} (${idx >= 1.20 ? "well above"
+                                                  : idx >= 1.00 ? "above"
+                                                  : idx >= 0.80 ? "near"
+                                                  : "well below"} the 1.00 US peer average).`
+        : "";
+      const enf = ins.latestAction
+        ? ` ${ins.enforcementCount > 1 ? `${ins.enforcementCount} regulator actions${amt ? ` (${amt} in penalties)` : ""}; ` : ""}` +
+          `${ins.latestAction.regulator}: ${clip(ins.latestAction.summary, 200)}`
+        : "";
+      const narrative = `${naicBit}${enf}`.trim();
+      if (!narrative) return [];
+      const sc = ins.severity === "very_poor" ? "very_poor"
+        : ins.severity === "poor" ? "poor"
+        : ins.severity === "mixed" ? "mixed"
+        : ins.severity === "positive" ? "positive"
+        : "neutral";
+      writes.push({
+        category: isHealth ? "health" : "execPay",
+        narrative,
+        sc,
+        severity: sc === "positive" ? "positive" : (sc === "neutral" ? "neutral" : "negative"),
+      });
+      return writes;
+    },
+  },
   // ─── State regulators round 3: CA AG, CPPA, FL AG, IL AG, WA AG, OH AG,
   //     PA AG, NJ AG, GA AG, NC AG — same shape as round 2. Mapped to
   //     "privacy" for consumer-protection (same rationale as round 2) so
