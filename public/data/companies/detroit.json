@@ -7,13 +7,14 @@
   "sc": {
     "political": "right-leaning",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "mixed",
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $480K in executive political donations; partisan lean Republican +26 across 16 executive donors.",
@@ -39,10 +40,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Climate\" section: Detroit and the rest of southeastern Michigan have a hot-summer humid continental climate (Köppen: Dfa) which is influenced by the Great Lakes like other places in the state; the city and close-in…",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "wikipedia-controversies"
     ]
   },
   "dei": {
@@ -180,5 +182,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:59:54.328Z",
-  "realCats": 2
+  "realCats": 2,
+  "governance": {
+    "s": "Wikidata: owned by Rust Belt; HQ Detroit. (Wikidata Q12439)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

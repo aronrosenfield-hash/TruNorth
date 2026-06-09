@@ -10,10 +10,11 @@
     "environment": "positive",
     "labor": "neutral",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "mixed",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "mixed"
+    "execPay": "mixed",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $9K PAC donations; 63% to Republican, 37% to Democratic committees.",
@@ -54,9 +55,10 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Animal welfare\" section: Tesco has received criticism for supplying meat from intensive animal farms. In September 2019, footage from a farm supplying Tesco showed birds being kicked and hurled into crates. The following…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "guns": {
@@ -174,5 +176,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T16:45:40.743Z",
-  "realCats": 6
+  "realCats": 6,
+  "governance": {
+    "s": "Wikidata: owned by Deutsche Bank; HQ Welwyn Garden City. (Wikidata Q487494)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

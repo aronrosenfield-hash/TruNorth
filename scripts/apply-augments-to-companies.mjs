@@ -1256,47 +1256,49 @@ const WRITERS = [
       }];
     },
   },
-  // ─── Investigative journalism corpus (Round 4) ────────────────────────
-  // Curated landmark corporate-accountability investigations from 28 outlets
-  // (ProPublica, Reuters, Bloomberg, BBC, Guardian, NYT, WSJ, Mother Jones,
-  // Intercept, Inside Climate News, ICIJ leaks, OCCRP, Toxic Docs, Climate
-  // Files, etc.). Conservative severity: a SINGLE outlet stays "mixed"; only
-  // ≥2 distinct outlets in the same category escalate to "poor"; ≥3 to
-  // "very_poor". Writes ONE narrative PER affected category (multi-cat
-  // brands like Boeing emit both labor + privacy hits where applicable).
+  // ─── Wikidata mass-mining (P793 events, P166 awards, P463 coalitions) ─
+  // Lowest-priority writers: dedicated regulators / certifiers above
+  // produce stronger signals; Wikidata fills in long-tail brands that no
+  // curated source covers. Per the prompt's hard rule, we mark "negative"
+  // only when the merger flagged severity="negative" (which requires 2+
+  // significant_events in the same category).
   {
-    name: "investigative-journalism",
+    name: "wikidata",
     write: (e) => {
-      const byCat = e.by_category || {};
+      if (!e?.narratives) return [];
       const out = [];
-      for (const [cat, bc] of Object.entries(byCat)) {
-        if (!bc || !bc.latest) continue;
-        const oc = bc.outlet_count || 0;
-        const ic = bc.investigation_count || 0;
-        const outletsList = (bc.outlets || []).slice(0, 3).join(", ");
-        const sev = oc >= 3 ? "very_poor" : oc >= 2 ? "poor" : "mixed";
-        const sc = sev;
-        const lead = oc >= 2
-          ? `${ic} investigative reports across ${oc} outlets (${outletsList}${bc.outlets.length > 3 ? ", …" : ""}).`
-          : `Investigative report (${bc.latest.outletLabel || bc.latest.outlet}, ${bc.latest.date}).`;
-        const tail = bc.latest.headline
-          ? ` "${clip(bc.latest.headline, 140)}"${bc.latest.abstract ? ` — ${clip(bc.latest.abstract, 180)}` : ""}`
-          : "";
-        const narrative = `${lead}${tail}`.trim();
-        // Cross-citation suffix: only when ≥2 outlets cover the same category.
-        // Appended to existing narratives so landmark brands like Boeing /
-        // Exxon / Wells Fargo show "+ N independent investigative reports
-        // across M outlets" alongside Violation Tracker etc.
-        const crossCiteSuffix = oc >= 2
-          ? `Cross-cited by ${oc} investigative outlets (${outletsList}${bc.outlets.length > 3 ? ", …" : ""}): "${clip(bc.latest.headline, 120)}" (${bc.latest.outletLabel || bc.latest.outlet}, ${bc.latest.date}).`
-          : null;
+      for (const [cat, n] of Object.entries(e.narratives)) {
+        if (!n?.text) continue;
         out.push({
           category: cat,
-          narrative,
-          sc,
-          severity: "negative",
-          mergeCrossCite: oc >= 2,
-          crossCiteSuffix,
+          narrative: `${clip(n.text, 200)} (Wikidata Q${e.qid?.replace(/^Q/, "")})`,
+          sc: n.sc,
+          severity: n.sc === "positive" ? "positive"
+                  : n.sc === "negative" || n.sc === "poor" ? "negative"
+                  : "mixed",
+        });
+      }
+      return out;
+    },
+  },
+  // ─── Wikipedia controversies-section scraper ─────────────────────────
+  // Editorial source; treat conservatively. The merger already enforces
+  // "≥3 external sources + 2 hard keywords" before marking severity
+  // negative, so we trust the merger's `sc` here.
+  {
+    name: "wikipedia-controversies",
+    write: (e) => {
+      if (!e?.narratives) return [];
+      const out = [];
+      for (const [cat, n] of Object.entries(e.narratives)) {
+        if (!n?.text) continue;
+        out.push({
+          category: cat,
+          narrative: clip(n.text, 240),
+          sc: n.sc,
+          severity: n.sc === "positive" ? "positive"
+                  : n.sc === "poor" ? "negative"
+                  : "mixed",
         });
       }
       return out;

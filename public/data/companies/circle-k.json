@@ -11,10 +11,11 @@
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "positive",
     "guns": "na",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $11K PAC donations; 91% to Republican, 9% to Democratic committees.",
@@ -61,10 +62,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Animal welfare\" section: In 2018, Couche-Tard committed to stop sourcing battery cage eggs in its corporate-owned Circle K stores in North America and Europe by 2025. In 2023, the company expanded this goal to include…",
     "verdict": "N/A",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "guns": {
@@ -287,5 +289,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "realCats": 2
+  "realCats": 2,
+  "governance": {
+    "s": "Wikidata: owned by Alimentation Couche-Tard; HQ Laval. (Wikidata Q3268010)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

@@ -10,10 +10,11 @@
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "positive",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $1K PAC donations; 0% to Republican, 100% to Democratic committees.",
@@ -56,9 +57,10 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Animal welfare\" section: In 2016, Ahold Delhaize USA stated that it would stop sourcing eggs from hens confined in battery cages and pork from crated pigs by the end of 2025. In December 2024, it extended the target dates,…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "guns": {
@@ -251,5 +253,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:35:05.710Z",
-  "realCats": 3
+  "realCats": 3,
+  "governance": {
+    "s": "Wikidata: owned by BlackRock; HQ Zaandam. (Wikidata Q20539261)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

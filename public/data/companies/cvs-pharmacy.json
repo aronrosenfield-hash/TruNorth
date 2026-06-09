@@ -7,13 +7,14 @@
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "mixed",
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "mixed"
   },
   "political": {
     "s": "FEC: $349K in executive political donations; partisan lean split across 13 executive donors.",
@@ -36,9 +37,10 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Environmental record\" section: In 2005, CVS participated in a program to reduce the pollution of Maine's waterways. CVS agreed to accept drugs for disposal so that people would not dispose of them in ways that reach rivers and…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "dei": {
@@ -150,5 +152,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:53:59.925Z",
-  "realCats": 2
+  "realCats": 2,
+  "governance": {
+    "s": "Wikipedia \"Controversies\" section: CVS Health has adopted a vertical integration strategy, combining its retail pharmacy business with other sectors of the healthcare industry, such as insurance and pharmacy benefit management (PBM).…",
+    "sources": [
+      "wikipedia-controversies"
+    ]
+  }
 }

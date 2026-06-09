@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "poor",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $160K in executive political donations; partisan lean Democratic +28 across 12 executive donors.",
@@ -72,10 +73,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikidata records a notable event: BigBrotherAwards. (Wikidata Q188326)",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikidata"
     ]
   },
   "execPay": {
@@ -300,5 +302,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 3
+  "realCats": 3,
+  "governance": {
+    "s": "Wikidata: owned by Ramsbury Invest; HQ Stockholm. (Wikidata Q188326)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

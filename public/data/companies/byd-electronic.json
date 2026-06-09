@@ -8,12 +8,13 @@
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "positive",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "No public record found.",
@@ -22,9 +23,10 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Supply chain\" section: rechargeable AA battery BYD is characterized by its vertical supply chain system, originating as a battery company in 1995 before venturing into cars (via BYD Auto) in 2003. At the same time, BYD…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "dataLastUpdated": "2026-05-28",
@@ -118,5 +120,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 0
+  "realCats": 0,
+  "governance": {
+    "s": "Wikidata: owned by BlackRock; HQ Shenzhen. (Wikidata Q2608329)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

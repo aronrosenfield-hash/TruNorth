@@ -13,8 +13,9 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "USAspending.gov: ~$4.3B in federal contract obligations in FY2024 (primarily Department of Defense).",
@@ -71,9 +72,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikidata records a notable event: Deloitte 2017 data breach. (Wikidata Q491748)",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "wikidata"
+    ]
   },
   "execPay": {
     "s": "No public record found.",
@@ -277,5 +280,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 3
+  "realCats": 3,
+  "governance": {
+    "s": "Wikidata: owned by Big Four; HQ New York City. (Wikidata Q491748)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

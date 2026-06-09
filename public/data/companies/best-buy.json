@@ -13,9 +13,10 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na",
-    "health": "mixed"
+    "health": "mixed",
+    "governance": "poor"
   },
   "political": {
     "s": "FEC: $52K PAC donations; 54% to Republican, 46% to Democratic committees.",
@@ -84,10 +85,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Privacy\" section: On October 20, 2023, CBC News released the results of a Marketplace investigation which found that Best Buy technicians had viewed private files, such as intimate photos, on customer devices. One…",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "execPay": {
@@ -398,5 +400,11 @@
   "health": {
     "s": "13 CPSC recalls on record; sample hazard: fire & fire-related burn."
   },
-  "realCats": 6
+  "realCats": 6,
+  "governance": {
+    "s": "Wikipedia \"Controversies\" section: In 2000, two Florida consumers brought a lawsuit against the company, alleging that it engaged in fraudulent business practices related to the sale of extended warranties (or, more accurately,…",
+    "sources": [
+      "wikipedia-controversies"
+    ]
+  }
 }
