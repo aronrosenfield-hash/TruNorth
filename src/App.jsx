@@ -935,14 +935,13 @@ function getDisplay(k, val, profile) {
 
 // Score text grade
 function scoreGrade(n, realCats) {
-  // Build 56 (signal-count cap): A requires ≥3 contributing signals, B ≥2.
-  // Single-signal brands max out at C even with 80+ score — a bipartisan-PAC-
-  // only brand can't earn an A without breadth elsewhere.
+  // Build 57 (S2 + signal-count cap): A≥65 ∧ ≥3 sig, B≥55 ∧ ≥2 sig.
+  // Single-signal brands max out at C regardless of score.
   // Must stay in sync with scripts/rebake-scoring.mjs gradeFromOverall and
   // scripts/finalize-bundle.mjs scoreGrade.
   let g;
-  if (n >= 70) g = "A";
-  else if (n >= 60) g = "B";
+  if (n >= 65) g = "A";
+  else if (n >= 55) g = "B";
   else if (n >= 45) g = "C";
   else if (n >= 30) g = "D";
   else g = "F";
@@ -951,6 +950,34 @@ function scoreGrade(n, realCats) {
     else if (realCats < 3 && g === "A") g = "B";
   }
   return g;
+}
+
+// S3: user-relevant signal count for personalized grades.
+// When the user has actively boosted (>1.0) categories in their profile,
+// the cap should reflect what THEY care about — not just total signal
+// breadth. A user who explicitly weights environment + animals + labor
+// shouldn't be blocked from an A on a brand that has rock-solid data
+// in those 3 cats but lacks privacy/guns/execPay coverage they never
+// asked about.
+//
+// Rule: count cats that BOTH (a) have a real (non-neutral) signal on this
+// brand AND (b) are actively boosted by the user (profile[cat] > 1.0).
+// Use the larger of that count and the brand's total realCats — i.e.
+// personalization is generous, never stricter than the base cap.
+// If there's no profile, fall back to base realCats unchanged.
+const CAT_KEYS_FOR_REL = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay","health"];
+function userRelevantRealCats(co, profile) {
+  if (!profile || !co) return co?.realCats ?? null;
+  const sc = co.sc || {};
+  let boostedFilled = 0;
+  for (const k of CAT_KEYS_FOR_REL) {
+    const w = profile[k];
+    if (typeof w !== "number" || w <= 1.0) continue; // only actively boosted
+    const v = sc[k];
+    if (!v || v === "neutral" || v === "na" || v === "unknown") continue;
+    boostedFilled++;
+  }
+  return Math.max(boostedFilled, co.realCats ?? 0);
 }
 
 // ─── SVG ICONS ────────────────────────────────────────────────────────────────
@@ -1513,7 +1540,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
     const co = deduped.find(c => (c.slug || c.id) === story.slug);
     if (co) {
       const pickScore = computeScore(co, profile);
-      const pickGrade = scoreGrade(pickScore, co.realCats);
+      const pickGrade = scoreGrade(pickScore, userRelevantRealCats(co, profile));
       const flavor = {
         A: { color:"#4caf82", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0d2318" },
         B: { color:"#8bc34a", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#1a2810" },
@@ -1556,7 +1583,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
   if (!wellKnown.length) return null;
   const pick = wellKnown[day % wellKnown.length];
   const pickScore = computeScore(pick, profile);
-  const pickGrade = scoreGrade(pickScore, pick.realCats);
+  const pickGrade = scoreGrade(pickScore, userRelevantRealCats(pick, profile));
   const flavorByGrade = {
     A: { tag: "Worth knowing", color: "#4caf82", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
     B: { tag: "Worth knowing", color: "#8bc34a", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
@@ -1950,7 +1977,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:14 }}>
               {resolved.map(co => {
                 const ps = computeScore(co, profile);
-                const grade = scoreGrade(ps, co.realCats);
+                const grade = scoreGrade(ps, userRelevantRealCats(co, profile));
                 return (
                   <div key={co.slug} style={{ background:T.bg2, borderRadius:12, padding:12, border:`1px solid ${T.border}`, position:"relative" }}>
                     <button onClick={()=>onRemove(co.slug)} style={{ position:"absolute", top:6, right:6, width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer" }} aria-label="Remove">×</button>
@@ -2588,7 +2615,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   // the per-company JSON and merge it in. Use `enriched` everywhere below.
   const enriched = detail || company;
   const ps = computeScore(enriched, profile);
-  const grade = scoreGrade(ps, enriched.realCats);
+  const grade = scoreGrade(ps, userRelevantRealCats(enriched, profile));
 
   const handleTap = () => {
     // 2026-06-01 (user pick): 1 free company view per week, then paywall.
@@ -2846,7 +2873,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   </div>
                   <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
                     {display.map(({ co: alt, score: altScore }) => {
-                      const altGrade = scoreGrade(altScore, alt.realCats);
+                      const altGrade = scoreGrade(altScore, userRelevantRealCats(alt, profile));
                       return (
                         <button
                           key={alt.slug || alt.id}
@@ -5319,7 +5346,7 @@ if (screen === "onboarding") {
                     grade, not always green. With sparse-data profiles the
                     winner could legitimately be a B or C — don't lie. */}
                 {(() => {
-                  const wg = scoreGrade(winner.score, winner.co.realCats);
+                  const wg = scoreGrade(winner.score, userRelevantRealCats(winner.co, profile));
                   const palette = {
                     A: { bg:"#0d2318", border:"#1e3e2e", text:"#4caf82" },
                     B: { bg:"#1a2810", border:"#2e3e1e", text:"#8bc34a" },
@@ -5347,7 +5374,7 @@ if (screen === "onboarding") {
                       >
                         <CompanyLogo company={co} size={28} />
                         <div style={{ flex:1, minWidth:0, fontSize:13, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
-                        <div style={{ fontSize:13, fontWeight:700, color:"#8bc34a" }}>{scoreGrade(score, co.realCats)}</div>
+                        <div style={{ fontSize:13, fontWeight:700, color:"#8bc34a" }}>{scoreGrade(score, userRelevantRealCats(co, profile))}</div>
                       </div>
                     ))}
                   </div>
@@ -6233,7 +6260,7 @@ if (screen === "onboarding") {
                   </div>
                 ) : savedCos.map(co => {
                   const ps = computeScore(co, profile);
-                  const g = scoreGrade(ps, co.realCats);
+                  const g = scoreGrade(ps, userRelevantRealCats(co, profile));
                   const colors = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a", "?":T.txt3 };
                   // Phase 5.au (QA #12): "Updates since you saved" badge.
                   // Counts weekly_changes entries for this brand. Promotes
@@ -6332,7 +6359,7 @@ if (screen === "onboarding") {
                         </div>
                         {fullCo && (() => {
                           const ps = computeScore(fullCo, profile);
-                          const g = scoreGrade(ps, fullCo.realCats);
+                          const g = scoreGrade(ps, userRelevantRealCats(fullCo, profile));
                           const colors = { A:"#4caf82", B:"#8bc34a", C:"#f0a030", D:"#ff7043", F:"#e24a4a", "?":T.txt3 };
                           return <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>;
                         })()}

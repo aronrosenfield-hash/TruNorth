@@ -183,14 +183,17 @@ const tjSlug = "trader-joe-s";
 const traces = { [wendySlug]: null, [tjSlug]: null };
 
 function gradeFromOverall(n, realCats) {
-  // Build 56 (signal-count cap): A requires ≥3 contributing signals, B ≥2.
-  // Single-signal brands max out at C — a bipartisan-PAC-only brand can't
-  // earn an A without breadth elsewhere. Must stay in sync with
+  // Build 57 (S2 + signal-count cap):
+  //   - A requires score ≥65 AND ≥3 contributing signals
+  //   - B requires score ≥55 AND ≥2 contributing signals
+  //   - Single-signal brands max out at C regardless of score (S-56 cap)
+  // Thresholds lowered from 70/60 to 65/55 so the 3+ signal cohort can
+  // earn honest A/B at a realistic rate. Must stay in sync with
   // src/App.jsx scoreGrade and scripts/finalize-bundle.mjs scoreGrade.
   if (n == null) return "?";
   let g;
-  if (n >= 70) g = "A";
-  else if (n >= 60) g = "B";
+  if (n >= 65) g = "A";
+  else if (n >= 55) g = "B";
   else if (n >= 45) g = "C";
   else if (n >= 30) g = "D";
   else g = "F";

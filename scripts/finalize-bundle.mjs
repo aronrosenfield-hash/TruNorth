@@ -39,12 +39,13 @@ const SEARCH_OUT = path.join(DATA, "search-index.json");
 const META_OUT = path.join(DATA, "meta.json");
 
 function scoreGrade(n, realCats) {
-  // Build 56 (signal-count cap): A requires ≥3 signals, B ≥2. Must stay in
-  // sync with src/App.jsx scoreGrade and rebake-scoring.mjs gradeFromOverall.
+  // Build 57 (S2 + signal-count cap): A≥65 ∧ ≥3 sig, B≥55 ∧ ≥2 sig.
+  // Must stay in sync with src/App.jsx scoreGrade and
+  // scripts/rebake-scoring.mjs gradeFromOverall.
   if (n == null) return "?";
   let g;
-  if (n >= 70) g = "A";
-  else if (n >= 60) g = "B";
+  if (n >= 65) g = "A";
+  else if (n >= 55) g = "B";
   else if (n >= 45) g = "C";
   else if (n >= 30) g = "D";
   else g = "F";
