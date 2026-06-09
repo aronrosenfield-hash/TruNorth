@@ -585,25 +585,19 @@ const WRITERS = [
       return out;
     },
   },
-  // ─── Animal welfare + agricultural accountability ROUND 3 ─────────────
-  // Same per-bucket shape as farm-welfare (animals / environment / labor /
-  // health + bestStatus + certifications + narrative). Sources covered:
-  // Certified Humane, AWI, AGA, BAP, Salmon-Safe, Bee Better, Audubon,
-  // Soil Association, Naturland, Seafood Watch, FishWise, MFA, THL, Animal
-  // Equality, World Animal Protection, CIWF ChickenTrack, NRDC Chain Reaction,
-  // Pew, Food Empowerment Project, Slave Free Chocolate, Cocoa Barometer,
-  // Toxic-Free Future, CEH, PFAS Project Lab, Green Seal, UL EcoLogo,
-  // Cradle to Cradle, EWG Skin Deep.
+  // ─── DEI / board diversity / executive compensation (consolidated) ─
+  // Pulls Equilar 100, SpencerStuart, Catalyst, DiversityInc, Working
+  // Mother, Paradigm-Parity, Lean In, NAACP, AFL-CIO Paywatch,
+  // As You Sow Most Overpaid, SEC §953(b), supplier-diversity reports.
+  // Writes "dei" and/or "labor" depending on which buckets fired.
   {
-    name: "animal-welfare-ag-r3",
+    name: "dei-board",
     write: (e) => {
       const out = [];
-      const CATS = ["animals", "environment", "labor", "health"];
+      const CATS = ["dei", "labor"];
       const SEVERITY_TO_SC = {
-        animals:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        environment: { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        labor:       { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        health:      { leader: "good",     positive: "good",     mixed: "mixed", concern: "poor" },
+        dei:   { leader: "pro_dei",   positive: "pro_dei",  mixed: "mixed", concern: "anti_dei" },
+        labor: { leader: "good",      positive: "good",     mixed: "mixed", concern: "poor"     },
       };
       for (const cat of CATS) {
         const b = e[cat];

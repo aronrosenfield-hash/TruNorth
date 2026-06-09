@@ -1,0 +1,1601 @@
+{
+  "_license": "Public DEI / board diversity / executive compensation scorecards: Equilar 100, SpencerStuart US Board Index, Catalyst Women on Corporate Boards, DiversityInc Top 50, Seramount Working Mother 100 Best, Paradigm for Parity, Lean In / McKinsey Women in the Workplace, NAACP Black Workforce Diversity Scorecard, AFL-CIO Executive Paywatch, As You Sow Most Overpaid CEOs, SEC §953(b) pay-ratio disclosures, aggregated NMSDC/WBENC/NGLCC supplier-diversity spend disclosures. Cite original source URLs.",
+  "_source_file": "data/raw/dei-board/2026-06-09.json",
+  "_source_urls": {
+    "equilar-100": "https://www.equilar.com/reports/95-equilar-100.html",
+    "spencerstuart": "https://www.spencerstuart.com/research-and-insight/us-board-index",
+    "catalyst-wob": "https://www.catalyst.org/research/women-on-corporate-boards/",
+    "diversityinc": "https://www.diversityinc.com/the-2024-top-50-companies-for-diversity/",
+    "working-mother": "https://seramount.com/research-insights/100-best-companies/",
+    "paradigm-parity": "https://www.paradigm4parity.com/our-coalition",
+    "leanin-wiw": "https://leanin.org/women-in-the-workplace",
+    "naacp-scorecard": "https://naacp.org/resources/black-workforce-diversity-report",
+    "paywatch": "https://aflcio.org/paywatch",
+    "ays-overpaid": "https://www.asyousow.org/reports/the-100-most-overpaid-ceos",
+    "sec-payratio": "https://www.sec.gov/edgar",
+    "supplier-div": "https://nmsdc.org/"
+  },
+  "_generated_at": "2026-06-09T18:43:15.535Z",
+  "_stats": {
+    "raw_entries": 125,
+    "matched_companies": 58,
+    "routed_slugHint": 125,
+    "routed_direct": 0,
+    "routed_alias": 0,
+    "routed_parent": 0,
+    "orphans": 0
+  },
+  "_parked_sources": [
+    {
+      "key": "black-women-boards",
+      "reason": "No public corporate-level list; only honoree names."
+    },
+    {
+      "key": "iss-qualityscore",
+      "reason": "Paid only; no free tier with company-level data."
+    },
+    {
+      "key": "cglytics",
+      "reason": "Paid only; trial UI shows partial scores but ToS forbids extraction."
+    },
+    {
+      "key": "diversity-best-practices",
+      "reason": "Membership-only; Inclusion Index scorecard not public."
+    },
+    {
+      "key": "boardroom-insiders",
+      "reason": "Paid only."
+    },
+    {
+      "key": "nbic-multicultural-women",
+      "reason": "Press release only; no published ranking table."
+    },
+    {
+      "key": "aajc",
+      "reason": "Advocacy reports, not corporate scorecard."
+    },
+    {
+      "key": "lcda-scorecard",
+      "reason": "Membership-only."
+    },
+    {
+      "key": "out-equal-outies",
+      "reason": "Scattered across press releases; partial coverage only."
+    },
+    {
+      "key": "catalyst-marc",
+      "reason": "Program no longer publishes annual sponsor list."
+    },
+    {
+      "key": "glassdoor-diversity",
+      "reason": "ToS prohibits scraping/redistribution."
+    },
+    {
+      "key": "comparably-di",
+      "reason": "ToS prohibits scraping/redistribution."
+    },
+    {
+      "key": "afl-cio-pension-power",
+      "reason": "Fund-level voting records, not corporate-level signal."
+    }
+  ],
+  "companies": {
+    "broadcom": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "equilar-100"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #1",
+          "As You Sow Most Overpaid CEO (Top 10)"
+        ],
+        "sources": [
+          "equilar-100",
+          "ays-overpaid"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #1: CEO Hock Tan total comp $162.0M (2023 fiscal year, equity-heavy). As You Sow 100 Most Overpaid CEOs (2024): Broadcom CEO Hock Tan flagged for pay-vs-performance divergence."
+      }
+    },
+    "palantir-technologies": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #2"
+        ],
+        "sources": [
+          "equilar-100"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #2: CEO Alex Karp total comp $1.1B (2023 — driven by one-time stock award)."
+      }
+    },
+    "apple": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100",
+        "sec-payratio",
+        "spencerstuart"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #3",
+          "SEC pay ratio 672:1"
+        ],
+        "sources": [
+          "equilar-100",
+          "sec-payratio"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #3: CEO Tim Cook total comp $63.2M (2023 fiscal year). SEC §953(b) disclosure: CEO-to-median-worker pay ratio 672:1 (Tim Cook $63.2M vs $94,100 median Apple employee, FY2023)."
+      },
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted"
+        ],
+        "sources": [
+          "spencerstuart"
+        ],
+        "bestStatus": "positive",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for board refreshment + 50% women directors."
+      }
+    },
+    "coca-cola": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100",
+        "paradigm-parity",
+        "paywatch",
+        "spencerstuart",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 5,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #6",
+          "AFL-CIO Paywatch 1,594:1"
+        ],
+        "sources": [
+          "equilar-100",
+          "paywatch"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #6: CEO James Quincey total comp $25.1M (2023). AFL-CIO Paywatch: CEO-to-median-worker pay ratio 1,594:1 (James Quincey $25.1M vs $15,720 median worker, 2023)."
+      },
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Paradigm for Parity signatory",
+          "Supplier diversity $1B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "spencerstuart",
+          "paradigm-parity",
+          "supplier-div"
+        ],
+        "bestStatus": "positive",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for diversity + audit-committee independence. Paradigm for Parity coalition signatory — CEO pledge for gender-balanced senior leadership by 2030."
+      }
+    },
+    "jpmorgan-chase": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100",
+        "paradigm-parity",
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #7",
+          "AFL-CIO Paywatch 326:1"
+        ],
+        "sources": [
+          "equilar-100",
+          "paywatch"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #7: CEO Jamie Dimon total comp $36.0M (2023 — includes special retention award). AFL-CIO Paywatch: CEO-to-median-worker pay ratio 326:1 (Jamie Dimon $36.0M vs $110,406 median JPM employee, 2023)."
+      },
+      "dei": {
+        "certifications": [
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "paradigm-parity"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Paradigm for Parity coalition signatory — CEO pledge for gender-balanced senior leadership by 2030."
+      }
+    },
+    "wells-fargo": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "diversityinc",
+        "equilar-100"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #10",
+          "As You Sow Most Overpaid CEO (Top 25)"
+        ],
+        "sources": [
+          "equilar-100",
+          "ays-overpaid"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #10: CEO Charlie Scharf total comp $29.0M (2023). As You Sow 100 Most Overpaid CEOs (2024): Wells Fargo CEO Charlie Scharf flagged for pay-vs-performance divergence."
+      },
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50"
+        ],
+        "sources": [
+          "diversityinc"
+        ],
+        "bestStatus": "positive",
+        "narrative": "DiversityInc Top 50 (2024) — banking-sector workforce diversity commitments."
+      }
+    },
+    "goldman-sachs": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100",
+        "paradigm-parity"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #11"
+        ],
+        "sources": [
+          "equilar-100"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #11: CEO David Solomon total comp $31.0M (2023)."
+      },
+      "dei": {
+        "certifications": [
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "paradigm-parity"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Paradigm for Parity coalition signatory — CEO pledge for gender-balanced senior leadership by 2030."
+      }
+    },
+    "disney": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "equilar-100",
+        "naacp-scorecard",
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #13",
+          "AFL-CIO Paywatch 538:1",
+          "As You Sow Most Overpaid CEO (Top 50)"
+        ],
+        "sources": [
+          "equilar-100",
+          "paywatch",
+          "ays-overpaid"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #13: CEO Bob Iger total comp $31.6M (FY2023 — return engagement). AFL-CIO Paywatch: CEO-to-median-worker pay ratio 538:1 (Bob Iger $31.6M vs $58,759 median Disney employee, FY2023)."
+      },
+      "dei": {
+        "certifications": [
+          "NAACP Scorecard Grade B"
+        ],
+        "sources": [
+          "naacp-scorecard"
+        ],
+        "bestStatus": "positive",
+        "narrative": "NAACP Media Diversity Scorecard: Grade B — above-median Black workforce share + supplier-diversity programs."
+      }
+    },
+    "microsoft": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100",
+        "leanin-wiw",
+        "sec-payratio",
+        "spencerstuart"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #17",
+          "SEC pay ratio 248:1"
+        ],
+        "sources": [
+          "equilar-100",
+          "sec-payratio"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #17: CEO Satya Nadella total comp $48.5M (FY2023). SEC §953(b) disclosure: CEO-to-median-worker pay ratio 248:1 (Satya Nadella $48.5M vs $195,547 median Microsoft employee, FY2023)."
+      },
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Lean In Women in the Workplace partner"
+        ],
+        "sources": [
+          "spencerstuart",
+          "leanin-wiw"
+        ],
+        "bestStatus": "positive",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for board diversity (gender + race) above S&P 500 median. Lean In / McKinsey Women in the Workplace 2024 — reporting partner submitting annual representation data."
+      }
+    },
+    "google-alphabet": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100",
+        "spencerstuart"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #19"
+        ],
+        "sources": [
+          "equilar-100"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #19: CEO Sundar Pichai total comp $8.8M base + ~$218M every-3-years equity (2022)."
+      },
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted"
+        ],
+        "sources": [
+          "spencerstuart"
+        ],
+        "bestStatus": "positive",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for board diversity above sector benchmark."
+      }
+    },
+    "caesars-entertainment": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "equilar-100"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #21"
+        ],
+        "sources": [
+          "equilar-100"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #21: CEO Tom Reeg total comp $24.7M (2023)."
+      }
+    },
+    "live-nation-entertainment": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "equilar-100",
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #24",
+          "AFL-CIO Paywatch 5,415:1",
+          "As You Sow Most Overpaid CEO #1"
+        ],
+        "sources": [
+          "equilar-100",
+          "paywatch",
+          "ays-overpaid"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #24: CEO Michael Rapino total comp $24.0M (2023). AFL-CIO Paywatch: CEO-to-median-worker pay ratio 5,415:1 (Michael Rapino $139M vs $25,673 median worker, 2023)."
+      }
+    },
+    "hilton-worldwide": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "equilar-100",
+        "naacp-scorecard",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #28"
+        ],
+        "sources": [
+          "equilar-100"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #28: CEO Chris Nassetta total comp $26.0M (2023)."
+      },
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #2",
+          "NAACP Scorecard Grade A",
+          "Supplier diversity $1B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "diversityinc",
+          "naacp-scorecard",
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #2 (2024) — leadership representation + ERG programs. NAACP Hospitality Diversity Scorecard: Grade A — highest-scoring hotelier on Black workforce + leadership representation."
+      }
+    },
+    "pfizer": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "equilar-100"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Equilar 100 #31",
+          "As You Sow Most Overpaid CEO (Top 25)"
+        ],
+        "sources": [
+          "equilar-100",
+          "ays-overpaid"
+        ],
+        "bestStatus": "concern",
+        "narrative": "Equilar 100 #31: CEO Albert Bourla total comp $21.6M (2023). As You Sow 100 Most Overpaid CEOs (2024): Pfizer CEO Albert Bourla flagged for pay-vs-performance divergence."
+      }
+    },
+    "salesforce": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "leanin-wiw",
+        "spencerstuart"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Lean In Women in the Workplace partner"
+        ],
+        "sources": [
+          "spencerstuart",
+          "leanin-wiw"
+        ],
+        "bestStatus": "positive",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for board refreshment (~3yr median tenure). Lean In / McKinsey Women in the Workplace 2024 — reporting partner submitting annual representation data."
+      }
+    },
+    "procter-and-gamble": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "diversityinc",
+        "paradigm-parity",
+        "spencerstuart",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 5,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Catalyst 30%+ Coalition",
+          "DiversityInc Top 50",
+          "Working Mother 100 Best",
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "spencerstuart",
+          "catalyst-wob",
+          "diversityinc",
+          "working-mother",
+          "paradigm-parity"
+        ],
+        "bestStatus": "leader",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for gender + racial diversity above S&P 500 benchmark. Catalyst 30%+ Coalition member — corporate signatory committed to 30%+ women on boards."
+      }
+    },
+    "pepsico": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "spencerstuart"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Catalyst 30%+ Coalition"
+        ],
+        "sources": [
+          "spencerstuart",
+          "catalyst-wob"
+        ],
+        "bestStatus": "leader",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for gender + race diversity above sector benchmark. Catalyst 30%+ Coalition member — corporate signatory committed to 30%+ women on boards."
+      }
+    },
+    "citigroup": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "spencerstuart",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Catalyst champion",
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "spencerstuart",
+          "catalyst-wob",
+          "working-mother"
+        ],
+        "bestStatus": "leader",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for female CEO + above-median board diversity. Catalyst champion — Citigroup board exceeds 40% women + first female CEO of a major US bank."
+      }
+    },
+    "general-motors": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "naacp-scorecard",
+        "spencerstuart",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Catalyst 30%+ Coalition",
+          "NAACP Scorecard Grade B",
+          "Supplier diversity $3B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "spencerstuart",
+          "catalyst-wob",
+          "naacp-scorecard",
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted — female CEO + Chair, above-median board diversity. Catalyst 30%+ Coalition member — board parity commitment + female CEO Mary Barra."
+      }
+    },
+    "bank-of-america": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "leanin-wiw",
+        "paradigm-parity",
+        "spencerstuart",
+        "supplier-div",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 6,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted",
+          "Catalyst 30%+ Coalition",
+          "Working Mother 100 Best",
+          "Paradigm for Parity signatory",
+          "Lean In Women in the Workplace partner",
+          "Supplier diversity $2B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "spencerstuart",
+          "catalyst-wob",
+          "working-mother",
+          "paradigm-parity",
+          "leanin-wiw",
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for gender + racial diversity. Catalyst 30%+ Coalition member — corporate signatory committed to 30%+ women on boards."
+      }
+    },
+    "caterpillar": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "spencerstuart"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "SpencerStuart Board Index highlighted"
+        ],
+        "sources": [
+          "spencerstuart"
+        ],
+        "bestStatus": "positive",
+        "narrative": "SpencerStuart 2024 Board Index: highlighted for industrial-sector board refreshment."
+      }
+    },
+    "johnson-and-johnson": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "diversityinc",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Catalyst 30%+ Coalition",
+          "DiversityInc Top 50",
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "catalyst-wob",
+          "diversityinc",
+          "working-mother"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Catalyst 30%+ Coalition member — corporate signatory committed to 30%+ women on boards. DiversityInc Top 50 (2024) — health-sector workforce + leadership diversity."
+      }
+    },
+    "unilever": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Catalyst champion"
+        ],
+        "sources": [
+          "catalyst-wob"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Catalyst champion — Unilever board exceeds 50% women directors."
+      }
+    },
+    "accenture": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob",
+        "diversityinc",
+        "paradigm-parity"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Catalyst champion",
+          "DiversityInc Top 50 #10",
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "catalyst-wob",
+          "diversityinc",
+          "paradigm-parity"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Catalyst champion — Accenture board exceeds 50% women, female CEO Julie Sweet. DiversityInc Top 50 #10 (2024) — workforce + supplier diversity scorecard."
+      }
+    },
+    "best-buy": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Catalyst champion"
+        ],
+        "sources": [
+          "catalyst-wob"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Catalyst champion — Best Buy female CEO Corie Barry + above-median board diversity."
+      }
+    },
+    "macy-s": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "catalyst-wob"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Catalyst champion"
+        ],
+        "sources": [
+          "catalyst-wob"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Catalyst champion — Macy's board with above-median gender + racial diversity."
+      }
+    },
+    "marriott-international": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "naacp-scorecard",
+        "supplier-div",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #1",
+          "Working Mother 100 Best",
+          "NAACP Scorecard Grade B",
+          "Supplier diversity $2B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother",
+          "naacp-scorecard",
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #1 (2024) — leader in workforce + supplier diversity. Seramount Working Mother 100 Best (2024) — paid parental + adoption assistance."
+      }
+    },
+    "ey": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #3",
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #3 (2024) — workforce diversity + executive accountability. Seramount Working Mother 100 Best (2024) — paid parental + family-care leave + return coaching."
+      }
+    },
+    "eli-lilly": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #4",
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #4 (2024) — supplier diversity + leadership pipeline. Seramount Working Mother 100 Best (2024) — paid parental + adoption-assistance programs."
+      }
+    },
+    "atandt": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "diversityinc",
+        "naacp-scorecard",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 4,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #5",
+          "NAACP Scorecard Grade B",
+          "Supplier diversity $16B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "diversityinc",
+          "naacp-scorecard",
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #5 (2024) — supplier diversity ($16B+ Tier-1 spend reported). NAACP Telecom Diversity Scorecard: Grade B — $16B+ supplier-diversity spend + workforce diversity programs."
+      },
+      "labor": {
+        "certifications": [
+          "As You Sow Most Overpaid CEO (Top 50)"
+        ],
+        "sources": [
+          "ays-overpaid"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "As You Sow 100 Most Overpaid CEOs (2024): AT&T CEO John Stankey flagged for pay-vs-performance divergence."
+      }
+    },
+    "cox-communications": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #6"
+        ],
+        "sources": [
+          "diversityinc"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #6 (2024) — leadership diversity + community investment."
+      }
+    },
+    "kpmg": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #8",
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #8 (2024) — workforce diversity + partner-track equity. Seramount Working Mother 100 Best (2024) — paid parental + flexible-schedule programs."
+      }
+    },
+    "mastercard": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "paradigm-parity",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50 #9",
+          "Working Mother 100 Best",
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother",
+          "paradigm-parity"
+        ],
+        "bestStatus": "leader",
+        "narrative": "DiversityInc Top 50 #9 (2024) — leadership pipeline + global ERG network. Seramount Working Mother 100 Best (2024) — 16-week paid parental + return coaching."
+      }
+    },
+    "pwc": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "paradigm-parity",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50",
+          "Working Mother 100 Best",
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother",
+          "paradigm-parity"
+        ],
+        "bestStatus": "positive",
+        "narrative": "DiversityInc Top 50 (2024) — workforce diversity + partner pipeline. Seramount Working Mother 100 Best (2024) — paid parental + flexible-schedule programs."
+      }
+    },
+    "toyota-usa": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50",
+          "Supplier diversity $3B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "diversityinc",
+          "supplier-div"
+        ],
+        "bestStatus": "positive",
+        "narrative": "DiversityInc Top 50 (2024) — supplier diversity + workforce representation programs. $3B+ Tier-1 diverse-supplier spend (NMSDC + WBENC + NGLCC) per Toyota North America ESG 2024."
+      }
+    },
+    "deloitte": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "diversityinc",
+        "paradigm-parity",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 3,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "DiversityInc Top 50",
+          "Working Mother 100 Best",
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "diversityinc",
+          "working-mother",
+          "paradigm-parity"
+        ],
+        "bestStatus": "positive",
+        "narrative": "DiversityInc Top 50 (2024) — workforce diversity + partner-track equity programs. Seramount Working Mother 100 Best (2024) — 16-week paid parental leave + family-care benefits."
+      }
+    },
+    "abbott-laboratories": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "working-mother"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Seramount Working Mother 100 Best (2024) — paid parental leave + flexible work programs."
+      }
+    },
+    "american-express": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paradigm-parity",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Working Mother 100 Best",
+          "Paradigm for Parity signatory"
+        ],
+        "sources": [
+          "working-mother",
+          "paradigm-parity"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Seramount Working Mother 100 Best (2024) — 20-week paid parental leave + return-from-leave coaching. Paradigm for Parity coalition signatory — CEO pledge for gender-balanced senior leadership by 2030."
+      }
+    },
+    "bristol-myers-squibb": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Working Mother 100 Best"
+        ],
+        "sources": [
+          "working-mother"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Seramount Working Mother 100 Best (2024) — paid parental + family-care leave programs."
+      }
+    },
+    "ibm": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "leanin-wiw",
+        "working-mother"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Working Mother 100 Best",
+          "Lean In Women in the Workplace partner"
+        ],
+        "sources": [
+          "working-mother",
+          "leanin-wiw"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Seramount Working Mother 100 Best (2024) — paid parental + dependent-care subsidies. Lean In / McKinsey Women in the Workplace 2024 — reporting partner submitting annual representation data."
+      }
+    },
+    "cisco-systems": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "leanin-wiw",
+        "paradigm-parity"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Paradigm for Parity signatory",
+          "Lean In Women in the Workplace partner"
+        ],
+        "sources": [
+          "paradigm-parity",
+          "leanin-wiw"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Paradigm for Parity coalition signatory — CEO pledge for gender-balanced senior leadership by 2030. Lean In / McKinsey Women in the Workplace 2024 — reporting partner submitting annual representation data."
+      }
+    },
+    "adobe": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "leanin-wiw"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Lean In Women in the Workplace partner"
+        ],
+        "sources": [
+          "leanin-wiw"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Lean In / McKinsey Women in the Workplace 2024 — reporting partner submitting annual representation data."
+      }
+    },
+    "intel": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "leanin-wiw"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "Lean In Women in the Workplace partner"
+        ],
+        "sources": [
+          "leanin-wiw"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Lean In / McKinsey Women in the Workplace 2024 — reporting partner submitting annual representation data."
+      }
+    },
+    "comcast": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid",
+        "naacp-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "NAACP Scorecard Grade C"
+        ],
+        "sources": [
+          "naacp-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "NAACP Media Diversity Scorecard: Grade C — limited Black executive representation despite supplier-diversity progress."
+      },
+      "labor": {
+        "certifications": [
+          "As You Sow Most Overpaid CEO (Top 50)"
+        ],
+        "sources": [
+          "ays-overpaid"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "As You Sow 100 Most Overpaid CEOs (2024): Comcast CEO Brian Roberts flagged for pay-vs-performance divergence."
+      }
+    },
+    "verizon": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "naacp-scorecard",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "NAACP Scorecard Grade B",
+          "Supplier diversity $6B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "naacp-scorecard",
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "NAACP Telecom Diversity Scorecard: Grade B — supplier-diversity spend + workforce representation programs. $6B+ diverse-supplier spend (NMSDC + WBENC + NGLCC) per Verizon ESG report 2024."
+      }
+    },
+    "hyatt": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "naacp-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "NAACP Scorecard Grade C"
+        ],
+        "sources": [
+          "naacp-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "NAACP Hospitality Diversity Scorecard: Grade C — workforce diversity programs but lagging on Black executive representation."
+      }
+    },
+    "ford-motor": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "naacp-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "dei": {
+        "certifications": [
+          "NAACP Scorecard Grade C"
+        ],
+        "sources": [
+          "naacp-scorecard"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "NAACP Automotive Diversity Scorecard: Grade C — supplier-diversity programs but lagging on Black executive representation."
+      }
+    },
+    "amazon": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch 6,474:1"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "concern",
+        "narrative": "AFL-CIO Paywatch: CEO-to-median-worker pay ratio 6,474:1 (Andy Jassy $212.7M vs $32,855 median Amazon worker, 2023)."
+      }
+    },
+    "starbucks": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch 1,675:1"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "concern",
+        "narrative": "AFL-CIO Paywatch: CEO-to-median-worker pay ratio 1,675:1 (Laxman Narasimhan $14.6M vs $8,720 median Starbucks worker, FY2023)."
+      }
+    },
+    "walmart": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch",
+        "supplier-div"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch 976:1"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "AFL-CIO Paywatch: CEO-to-median-worker pay ratio 976:1 (Doug McMillon $26.9M vs $27,549 median Walmart associate, FY2023)."
+      },
+      "dei": {
+        "certifications": [
+          "Supplier diversity $13B+ diverse-supplier spend"
+        ],
+        "sources": [
+          "supplier-div"
+        ],
+        "bestStatus": "leader",
+        "narrative": "$13B+ Tier-1 diverse-supplier spend (NMSDC + WBENC + NGLCC) per Walmart ESG report 2024."
+      }
+    },
+    "mcdonald-s": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch 1,212:1"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "concern",
+        "narrative": "AFL-CIO Paywatch: CEO-to-median-worker pay ratio 1,212:1 (Chris Kempczinski $19.2M vs $15,832 median McDonald's worker, 2023)."
+      }
+    },
+    "target": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch 719:1"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "AFL-CIO Paywatch: CEO-to-median-worker pay ratio 719:1 (Brian Cornell $19.1M vs $26,588 median Target team-member, FY2023)."
+      }
+    },
+    "nike": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch 1,935:1"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "concern",
+        "narrative": "AFL-CIO Paywatch: CEO-to-median-worker pay ratio 1,935:1 (John Donahoe $32.8M vs $16,956 median Nike worker, FY2023 — includes overseas supply-chain workers)."
+      }
+    },
+    "tesla": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "paywatch"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "AFL-CIO Paywatch flagged"
+        ],
+        "sources": [
+          "paywatch"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "AFL-CIO Paywatch: Elon Musk $0 base salary; reinstated 2018 pay package valued ~$50B+ would yield unprecedented ratio."
+      }
+    },
+    "norwegian-cruise-line": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "ays-overpaid"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "As You Sow Most Overpaid CEO #2"
+        ],
+        "sources": [
+          "ays-overpaid"
+        ],
+        "bestStatus": "concern",
+        "narrative": "As You Sow 100 Most Overpaid CEOs (2024) #2: NCL CEO flagged for pay-vs-performance divergence."
+      }
+    },
+    "costco": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "sec-payratio"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "SEC pay ratio 247:1"
+        ],
+        "sources": [
+          "sec-payratio"
+        ],
+        "bestStatus": "mixed",
+        "narrative": "SEC §953(b) disclosure: CEO-to-median-worker pay ratio 247:1 (Ron Vachris ~$11.5M vs ~$46,400 median Costco employee, FY2024) — among lowest in big-box retail."
+      }
+    },
+    "berkshire-hathaway": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "sec-payratio"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "SEC pay ratio 5:1"
+        ],
+        "sources": [
+          "sec-payratio"
+        ],
+        "bestStatus": "leader",
+        "narrative": "SEC §953(b) disclosure: CEO-to-median-worker pay ratio 5:1 (Warren Buffett $405K vs $73,374 median employee, 2023) — outlier low ratio for an S&P 500 CEO."
+      }
+    },
+    "patagonia": {
+      "_sources": [
+        "dei-board"
+      ],
+      "_innerSources": [
+        "sec-payratio"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T18:43:15.535Z",
+      "labor": {
+        "certifications": [
+          "Pay-ratio disclosure: Private (not required)"
+        ],
+        "sources": [
+          "sec-payratio"
+        ],
+        "bestStatus": "positive",
+        "narrative": "Patagonia is privately-held (not subject to SEC §953(b)) — public statements report CEO-to-median pay ratio near 4:1."
+      }
+    }
+  },
+  "orphans": [],
+  "orphan_total": 0
+}
