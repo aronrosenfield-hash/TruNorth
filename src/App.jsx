@@ -562,12 +562,18 @@ const QUIZ_STEPS_ALT_B = [
       // their answers are theater. "Mixed" now uses v:"mixed" → halves
       // the political weight rather than zeroing it; the scoring engine
       // treats unrecognized values as neutral so this remains safe.
+      // Build 54 (Aron call): switch quiz labels from ideology framing
+      // ("Progressive/Conservative") to party framing ("Democrat/Republican")
+      // to match the FEC donation data we actually display. Internal enum
+      // values stay "left"/"right"/"mixed"/"neutral" so no data needs to
+      // change. Added "Independent" as the new middle option to replace
+      // "Mixed", which read as "no opinion" rather than a real third stance.
       { id:"politicalLean", title:"Politics",
         opts:[
-          {v:"left",   l:"Progressive",   icon:"dem"},
-          {v:"right",  l:"Conservative",  icon:"rep"},
-          {v:"mixed",  l:"Mixed",         icon:null},
-          {v:"neutral",l:"No preference", icon:null},
+          {v:"left",   l:"Democrat",       icon:"dem"},
+          {v:"right",  l:"Republican",     icon:"rep"},
+          {v:"mixed",  l:"Independent",    icon:null},
+          {v:"neutral",l:"No preference",  icon:null},
         ]},
     ]},
   // ── Screen 4: dealbreakers — peak-end commitment ─────────────────────
@@ -2759,8 +2765,16 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             if (!comps.length || !allCompanies?.length) return null;
             const lookup = new Map(allCompanies.map(c => [c.slug || c.id, c]));
             const competitorsResolved = comps.map(slug => lookup.get(slug)).filter(Boolean);
-            // Branch on profile + grade.
-            const isBadGrade = profile && ["C","D","F"].includes(grade);
+            // Build 54 (Aron call): show "Better for your values" on EVERY
+            // brand-detail card when meaningfully-better alternatives exist —
+            // not just C/D/F. Even an A-grade brand might have an A+ competitor
+            // for this user. If no alternatives beat ps+7, fall through to the
+            // neutral "Direct competitors" chips (still useful for browsing).
+            const hasBetterAlts = profile
+              ? competitorsResolved
+                  .map(c => ({ co: c, score: computeScore(c, profile) }))
+                  .filter(x => x.score >= ps + 7).length > 0
+              : false;
             const display = profile
               ? competitorsResolved
                   .map(c => ({ co: c, score: computeScore(c, profile) }))
@@ -2769,9 +2783,10 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   .slice(0, 3)
               : competitorsResolved.slice(0, 4).map(c => ({ co: c, score: c.overall }));
             if (!display.length) return null;
-            // Bad-grade users get the prominent green "Better for your values"
-            // call-to-switch. Everyone else gets neutral competitor chips.
-            if (isBadGrade) {
+            // Profile + at-least-one-better-alt → green "Better for your values"
+            // panel. Otherwise (no profile, or this brand IS the local best) →
+            // neutral "Direct competitors" chips.
+            if (hasBetterAlts) {
               return (
                 <div style={{ background:"rgba(76,175,130,0.08)", border:"1.5px solid rgba(76,175,130,0.4)", borderRadius:12, padding:"12px 14px", marginBottom:14 }}>
                   <div style={{ fontSize:11, fontWeight:700, color:"#4caf82", textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
