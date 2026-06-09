@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-06-09T17:53:47.940Z",
+  "source": "mozilla-pni",
+  "source_url": "https://foundation.mozilla.org/en/privacynotincluded/",
+  "input": "data/raw/mozilla-pni/2026-06-09.json",
+  "company_count": 34,
+  "companies": {
+    "amazon": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 11,
+      "sample_product": "Amazon Echo / Ring",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/amazon-echo/",
+      "note": "Flagged *Privacy Not Included for Echo + Ring; sweeping data collection, sharing with law enforcement.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "meta-platforms": {
+      "rating": "warning",
+      "meets_min_security": true,
+      "product_count": 4,
+      "sample_product": "Facebook / Instagram / WhatsApp / Meta Quest",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/facebook/",
+      "note": "Facebook + Meta Quest flagged *Privacy Not Included; behavioral ad targeting at unprecedented scale.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "meta-facebook": {
+      "rating": "warning",
+      "meets_min_security": true,
+      "product_count": 4,
+      "sample_product": "Facebook / Instagram / WhatsApp / Meta Quest",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/facebook/",
+      "note": "Facebook + Meta Quest flagged *Privacy Not Included; behavioral ad targeting at unprecedented scale.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "google-alphabet": {
+      "rating": "warning",
+      "meets_min_security": true,
+      "product_count": 5,
+      "sample_product": "Fitbit Versa / Charge",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/fitbit-versa/",
+      "note": "*Privacy Not Included after Google acquisition — health data flows into Google account.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "alphabet": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 12,
+      "sample_product": "Google Nest / Pixel / Search",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/google-nest/",
+      "note": "Mixed — strong security baseline but extensive data collection across Search/Ads/Nest.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "google": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 12,
+      "sample_product": "Google Nest / Pixel / Search",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/google-nest/",
+      "note": "Mixed — strong security baseline but extensive data collection across Search/Ads/Nest.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "apple": {
+      "rating": "good",
+      "meets_min_security": true,
+      "product_count": 8,
+      "sample_product": "iPhone / Apple Watch / HomePod",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/apple-iphone/",
+      "note": "Best-in-class among Big Tech; on-device processing + App Tracking Transparency.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "microsoft": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 6,
+      "sample_product": "Xbox / Windows / Cortana",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/microsoft-xbox/",
+      "note": "Generally meets security minimums; broad telemetry collection in Windows + Xbox.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "tiktok": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 1,
+      "sample_product": "TikTok",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/tiktok/",
+      "note": "Flagged *Privacy Not Included; opaque algorithm + extensive device fingerprinting.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "bytedance": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 1,
+      "sample_product": "TikTok",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/tiktok/",
+      "note": "Flagged *Privacy Not Included; opaque algorithm + extensive device fingerprinting.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "snap": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 2,
+      "sample_product": "Snapchat / Spectacles",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/snapchat/",
+      "note": "Meets minimum security; broad data collection but tighter retention than peers.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "snap-inc": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 2,
+      "sample_product": "Snapchat / Spectacles",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/snapchat/",
+      "note": "Meets minimum security; broad data collection but tighter retention than peers.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "discord": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 1,
+      "sample_product": "Discord",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/discord/",
+      "note": "Mixed — encrypted DMs not default; extensive metadata logging.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "zoom": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 1,
+      "sample_product": "Zoom Meetings",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/zoom/",
+      "note": "Improved post-2020 (E2EE added); legal department use of meeting data flagged.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "slack": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 1,
+      "sample_product": "Slack",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/slack/",
+      "note": "Strong workspace controls; controversial AI training opt-out flow.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "salesforce": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 1,
+      "sample_product": "Slack",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/slack/",
+      "note": "Strong workspace controls; controversial AI training opt-out flow.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "pinterest": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 1,
+      "sample_product": "Pinterest",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/pinterest/",
+      "note": "Behavioral profiling for ad targeting.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "x-corp": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 1,
+      "sample_product": "X (formerly Twitter)",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/twitter/",
+      "note": "Flagged after policy rollbacks in 2023; weakened 2FA and data-export limits.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "twitter": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 1,
+      "sample_product": "X (formerly Twitter)",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/twitter/",
+      "note": "Flagged after policy rollbacks in 2023; weakened 2FA and data-export limits.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "fitbit": {
+      "rating": "warning",
+      "meets_min_security": true,
+      "product_count": 5,
+      "sample_product": "Fitbit Versa / Charge",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/fitbit-versa/",
+      "note": "*Privacy Not Included after Google acquisition — health data flows into Google account.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "garmin": {
+      "rating": "good",
+      "meets_min_security": true,
+      "product_count": 4,
+      "sample_product": "Garmin Forerunner",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/garmin/",
+      "note": "Among the better-rated fitness wearables — on-device processing, optional cloud sync.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "peloton": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 2,
+      "sample_product": "Peloton Bike / Tread",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/peloton/",
+      "note": "Meets minimum security; broad workout + biometric data collection.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "tesla": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 3,
+      "sample_product": "Tesla Model S/3/X/Y",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/tesla/",
+      "note": "Flagged *Privacy Not Included; in-cabin cameras + leaked footage incidents.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "irobot": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 2,
+      "sample_product": "iRobot Roomba j7+",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/irobot-roomba/",
+      "note": "Floor-plan + camera data shared with Amazon during attempted acquisition.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "samsung": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 9,
+      "sample_product": "Galaxy / Smart TV / SmartThings",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/samsung/",
+      "note": "Smart TV ad-tracking flagged; Galaxy line meets minimum security.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "samsung-electronics": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 9,
+      "sample_product": "Galaxy / Smart TV / SmartThings",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/samsung/",
+      "note": "Smart TV ad-tracking flagged; Galaxy line meets minimum security.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "lg": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 5,
+      "sample_product": "LG OLED TV / ThinQ",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/lg-tv/",
+      "note": "Smart TV ACR (automatic content recognition) tracking.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "lg-electronics": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 5,
+      "sample_product": "LG OLED TV / ThinQ",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/lg-tv/",
+      "note": "Smart TV ACR (automatic content recognition) tracking.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "sonos": {
+      "rating": "good",
+      "meets_min_security": true,
+      "product_count": 3,
+      "sample_product": "Sonos Beam / Era",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/sonos/",
+      "note": "One of the better-rated smart audio brands.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "anker": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 4,
+      "sample_product": "eufy Security Camera",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/eufy-camera/",
+      "note": "Flagged after 2022 incident where 'local-only' cameras uploaded thumbnails to cloud.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "eufy": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 4,
+      "sample_product": "eufy Security Camera",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/eufy-camera/",
+      "note": "Flagged after 2022 incident where 'local-only' cameras uploaded thumbnails to cloud.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "roku": {
+      "rating": "warning",
+      "meets_min_security": true,
+      "product_count": 2,
+      "sample_product": "Roku Streaming Stick",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/roku/",
+      "note": "Forced ToS update + ACR ad-targeting after March 2024 lockout.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "openai": {
+      "rating": "mixed",
+      "meets_min_security": true,
+      "product_count": 1,
+      "sample_product": "ChatGPT",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/chatgpt/",
+      "note": "Default training on user prompts; opt-out exists but is buried.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    },
+    "replika": {
+      "rating": "warning",
+      "meets_min_security": false,
+      "product_count": 1,
+      "sample_product": "Replika AI Companion",
+      "review_url": "https://foundation.mozilla.org/en/privacynotincluded/products/replika/",
+      "note": "Flagged *Privacy Not Included; intimate conversation data with weak protections.",
+      "source": "mozilla-pni",
+      "source_url": "https://foundation.mozilla.org/en/privacynotincluded/"
+    }
+  }
+}
