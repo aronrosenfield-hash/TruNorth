@@ -1,0 +1,3844 @@
+{
+  "generated_at": "2026-06-09T12:30:24.009Z",
+  "smoke_mode": false,
+  "brand_count": 528,
+  "with_enforcement_count": 0,
+  "no_bank_count": 483,
+  "edos_unreachable_count": 45,
+  "bankfind_error_count": 0,
+  "actions": [
+    {
+      "slug": "coca-cola",
+      "name": "Coca-Cola",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pepsi",
+      "name": "Pepsi",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sprite",
+      "name": "Sprite",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dr-pepper",
+      "name": "Dr Pepper",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mountain-dew",
+      "name": "Mountain Dew",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gatorade",
+      "name": "Gatorade",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "red-bull",
+      "name": "Red Bull",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "monster-energy",
+      "name": "Monster Energy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "budweiser",
+      "name": "Budweiser",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bud-light",
+      "name": "Bud Light",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "coors-light",
+      "name": "Coors Light",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "modelo",
+      "name": "Modelo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "corona",
+      "name": "Corona",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "heineken",
+      "name": "Heineken",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "stella-artois",
+      "name": "Stella Artois",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cheerios",
+      "name": "Cheerios",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "froot-loops",
+      "name": "Froot Loops",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "frosted-flakes",
+      "name": "Frosted Flakes",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lucky-charms",
+      "name": "Lucky Charms",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "oreo",
+      "name": "Oreo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chips-ahoy",
+      "name": "Chips Ahoy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "doritos",
+      "name": "Doritos",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cheetos",
+      "name": "Cheetos",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lays",
+      "name": "Lay's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pringles",
+      "name": "Pringles",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cheez-its",
+      "name": "Cheez-Its",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "goldfish",
+      "name": "Goldfish",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ritz",
+      "name": "Ritz",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hershey",
+      "name": "Hershey's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mars",
+      "name": "Mars",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        7910
+      ],
+      "bank_names": [
+        {
+          "cert": 7910,
+          "name": "Mars Bank",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "mms",
+      "name": "M&Ms",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "snickers",
+      "name": "Snickers",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "reeses",
+      "name": "Reese's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kit-kat",
+      "name": "Kit Kat",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "twix",
+      "name": "Twix",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "heinz",
+      "name": "Heinz",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hellmanns",
+      "name": "Hellmann's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kraft",
+      "name": "Kraft",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kellogg",
+      "name": "Kellogg's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "general-mills",
+      "name": "General Mills",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nestle",
+      "name": "Nestlé",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pepsico",
+      "name": "PepsiCo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "unilever",
+      "name": "Unilever",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mondelez",
+      "name": "Mondelez",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tyson-foods",
+      "name": "Tyson Foods",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hormel",
+      "name": "Hormel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "conagra",
+      "name": "Conagra",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "campbells",
+      "name": "Campbell's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "del-monte",
+      "name": "Del Monte",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chobani",
+      "name": "Chobani",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "yoplait",
+      "name": "Yoplait",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fairlife",
+      "name": "Fairlife",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "oatly",
+      "name": "Oatly",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "silk",
+      "name": "Silk",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "clif-bar",
+      "name": "Clif Bar",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kind-snacks",
+      "name": "KIND Snacks",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "rxbar",
+      "name": "RXBAR",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "quaker",
+      "name": "Quaker",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        28272
+      ],
+      "bank_names": [
+        {
+          "cert": 28272,
+          "name": "Quaker City Bank",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "SL"
+        }
+      ]
+    },
+    {
+      "slug": "post",
+      "name": "Post Consumer Brands",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tide",
+      "name": "Tide",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "crest",
+      "name": "Crest",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        28818,
+        34585,
+        26325
+      ],
+      "bank_names": [
+        {
+          "cert": 28818,
+          "name": "Crest Savings Bank",
+          "state": "NJ",
+          "active": 1,
+          "bkclass": "SI"
+        },
+        {
+          "cert": 34585,
+          "name": "Pacific Crest Bank",
+          "state": "WA",
+          "active": 1,
+          "bkclass": "SI"
+        },
+        {
+          "cert": 26325,
+          "name": "Pacific Crest Bank",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "charmin",
+      "name": "Charmin",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bounty",
+      "name": "Bounty",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pampers",
+      "name": "Pampers",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "huggies",
+      "name": "Huggies",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dawn",
+      "name": "Dawn",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cascade",
+      "name": "Cascade",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        28823
+      ],
+      "bank_names": [
+        {
+          "cert": 28823,
+          "name": "Cascade Bank",
+          "state": "WA",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "clorox",
+      "name": "Clorox",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lysol",
+      "name": "Lysol",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "febreze",
+      "name": "Febreze",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "swiffer",
+      "name": "Swiffer",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dove",
+      "name": "Dove",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        16758
+      ],
+      "bank_names": [
+        {
+          "cert": 16758,
+          "name": "Community Bank-Dove Creek",
+          "state": "CO",
+          "active": 0,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "olay",
+      "name": "Olay",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pantene",
+      "name": "Pantene",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "old-spice",
+      "name": "Old Spice",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gillette",
+      "name": "Gillette",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        21798,
+        22755,
+        23425
+      ],
+      "bank_names": [
+        {
+          "cert": 21798,
+          "name": "Norwest Bank Wyoming Gillette, National Association",
+          "state": "WY",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 22755,
+          "name": "Key Bank of Wyoming - Seventh and Douglas Highway, Gillette, Wyoming 827",
+          "state": "WY",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 23425,
+          "name": "First Interstate Bank of Gillette",
+          "state": "WY",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "suave",
+      "name": "Suave",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "axe",
+      "name": "Axe",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "aveeno",
+      "name": "Aveeno",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "neutrogena",
+      "name": "Neutrogena",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cetaphil",
+      "name": "Cetaphil",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cerave",
+      "name": "CeraVe",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lush",
+      "name": "Lush",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sephora",
+      "name": "Sephora",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ulta-beauty",
+      "name": "Ulta Beauty",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "the-ordinary",
+      "name": "The Ordinary",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "glossier",
+      "name": "Glossier",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fenty-beauty",
+      "name": "Fenty Beauty",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "maybelline",
+      "name": "Maybelline",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "loreal",
+      "name": "L'Oréal",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "clinique",
+      "name": "Clinique",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "estee-lauder",
+      "name": "Estée Lauder",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "procter-gamble",
+      "name": "Procter & Gamble",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "colgate-palmolive",
+      "name": "Colgate-Palmolive",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kimberly-clark",
+      "name": "Kimberly-Clark",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "johnson-johnson",
+      "name": "Johnson & Johnson",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "philip-morris",
+      "name": "Philip Morris",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "altria",
+      "name": "Altria",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "marlboro",
+      "name": "Marlboro",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "camel",
+      "name": "Camel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mcdonalds",
+      "name": "McDonald's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "burger-king",
+      "name": "Burger King",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "wendys",
+      "name": "Wendy's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chick-fil-a",
+      "name": "Chick-fil-A",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "starbucks",
+      "name": "Starbucks",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dunkin",
+      "name": "Dunkin'",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "subway",
+      "name": "Subway",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "taco-bell",
+      "name": "Taco Bell",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kfc",
+      "name": "KFC",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pizza-hut",
+      "name": "Pizza Hut",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dominos",
+      "name": "Domino's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "papa-johns",
+      "name": "Papa John's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chipotle",
+      "name": "Chipotle",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "panera",
+      "name": "Panera Bread",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "five-guys",
+      "name": "Five Guys",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "shake-shack",
+      "name": "Shake Shack",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "in-n-out",
+      "name": "In-N-Out Burger",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sweetgreen",
+      "name": "Sweetgreen",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "panda-express",
+      "name": "Panda Express",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "arbys",
+      "name": "Arby's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dairy-queen",
+      "name": "Dairy Queen",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sonic",
+      "name": "Sonic",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cracker-barrel",
+      "name": "Cracker Barrel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "olive-garden",
+      "name": "Olive Garden",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "applebees",
+      "name": "Applebee's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chilis",
+      "name": "Chili's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "red-lobster",
+      "name": "Red Lobster",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "texas-roadhouse",
+      "name": "Texas Roadhouse",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cheesecake-factory",
+      "name": "Cheesecake Factory",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "walmart",
+      "name": "Walmart",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "target",
+      "name": "Target",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "costco",
+      "name": "Costco",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sams-club",
+      "name": "Sam's Club",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "home-depot",
+      "name": "The Home Depot",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lowes",
+      "name": "Lowe's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "best-buy",
+      "name": "Best Buy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "trader-joes",
+      "name": "Trader Joe's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "whole-foods",
+      "name": "Whole Foods Market",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "wegmans",
+      "name": "Wegmans",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "publix",
+      "name": "Publix",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "heb",
+      "name": "H-E-B",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kroger",
+      "name": "Kroger",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "safeway",
+      "name": "Safeway",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "albertsons",
+      "name": "Albertsons",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "food-lion",
+      "name": "Food Lion",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "giant-eagle",
+      "name": "Giant Eagle",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sprouts",
+      "name": "Sprouts Farmers Market",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "aldi",
+      "name": "Aldi",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lidl",
+      "name": "Lidl",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ikea",
+      "name": "IKEA",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "wayfair",
+      "name": "Wayfair",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "overstock",
+      "name": "Overstock",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "qvc",
+      "name": "QVC",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hsn",
+      "name": "HSN",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dollar-general",
+      "name": "Dollar General",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dollar-tree",
+      "name": "Dollar Tree",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "family-dollar",
+      "name": "Family Dollar",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "five-below",
+      "name": "Five Below",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "big-lots",
+      "name": "Big Lots",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tj-maxx",
+      "name": "TJ Maxx",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "marshalls",
+      "name": "Marshalls",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ross",
+      "name": "Ross Dress for Less",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        9261
+      ],
+      "bank_names": [
+        {
+          "cert": 9261,
+          "name": "Burlington Bank",
+          "state": "IL",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "homegoods",
+      "name": "HomeGoods",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "macys",
+      "name": "Macy's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kohls",
+      "name": "Kohl's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "jcpenney",
+      "name": "JCPenney",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nordstrom",
+      "name": "Nordstrom",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bloomingdales",
+      "name": "Bloomingdale's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "saks",
+      "name": "Saks Fifth Avenue",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "neiman-marcus",
+      "name": "Neiman Marcus",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nordstrom-rack",
+      "name": "Nordstrom Rack",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "rei",
+      "name": "REI",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bass-pro-shops",
+      "name": "Bass Pro Shops",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cabelas",
+      "name": "Cabela's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dicks-sporting-goods",
+      "name": "Dick's Sporting Goods",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "academy",
+      "name": "Academy Sports",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "petco",
+      "name": "Petco",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "petsmart",
+      "name": "PetSmart",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gamestop",
+      "name": "GameStop",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "barnes-noble",
+      "name": "Barnes & Noble",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "office-depot",
+      "name": "Office Depot",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "staples",
+      "name": "Staples",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "autozone",
+      "name": "AutoZone",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "oreilly-auto-parts",
+      "name": "O'Reilly Auto Parts",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "advance-auto-parts",
+      "name": "Advance Auto Parts",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "napa-auto-parts",
+      "name": "NAPA Auto Parts",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cvs",
+      "name": "CVS",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "walgreens",
+      "name": "Walgreens",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "rite-aid",
+      "name": "Rite Aid",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "duane-reade",
+      "name": "Duane Reade",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "7-eleven",
+      "name": "7-Eleven",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "wawa",
+      "name": "Wawa",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sheetz",
+      "name": "Sheetz",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "circle-k",
+      "name": "Circle K",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cumberland-farms",
+      "name": "Cumberland Farms",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "goya",
+      "name": "Goya Foods",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nike",
+      "name": "Nike",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "adidas",
+      "name": "Adidas",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "under-armour",
+      "name": "Under Armour",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lululemon",
+      "name": "Lululemon",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "puma",
+      "name": "Puma",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "new-balance",
+      "name": "New Balance",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "reebok",
+      "name": "Reebok",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "asics",
+      "name": "ASICS",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "brooks",
+      "name": "Brooks Running",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hoka",
+      "name": "Hoka",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        17101
+      ],
+      "bank_names": [
+        {
+          "cert": 17101,
+          "name": "Americana State Bank of Hokah",
+          "state": "MN",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "levis",
+      "name": "Levi's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gap",
+      "name": "Gap",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "old-navy",
+      "name": "Old Navy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "banana-republic",
+      "name": "Banana Republic",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "abercrombie",
+      "name": "Abercrombie & Fitch",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "american-eagle",
+      "name": "American Eagle",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        31581,
+        57359,
+        58514
+      ],
+      "bank_names": [
+        {
+          "cert": 31581,
+          "name": "American Eagle Savings Bank",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "SB"
+        },
+        {
+          "cert": 57359,
+          "name": "American Eagle Bank",
+          "state": "IL",
+          "active": 1,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 58514,
+          "name": "American Eagle Bank of Chicago",
+          "state": "IL",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "hollister",
+      "name": "Hollister",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hm",
+      "name": "H&M",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "zara",
+      "name": "Zara",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "uniqlo",
+      "name": "Uniqlo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "forever-21",
+      "name": "Forever 21",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "shein",
+      "name": "Shein",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "temu",
+      "name": "Temu",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fashion-nova",
+      "name": "Fashion Nova",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "boohoo",
+      "name": "Boohoo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "asos",
+      "name": "ASOS",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "victorias-secret",
+      "name": "Victoria's Secret",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "patagonia",
+      "name": "Patagonia",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "north-face",
+      "name": "The North Face",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "columbia",
+      "name": "Columbia Sportswear",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "arc-teryx",
+      "name": "Arc'teryx",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "allbirds",
+      "name": "Allbirds",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "toms",
+      "name": "TOMS",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        6499
+      ],
+      "bank_names": [
+        {
+          "cert": 6499,
+          "name": "The First National Bank of Toms River, N.J.",
+          "state": "NJ",
+          "active": 0,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "warby-parker",
+      "name": "Warby Parker",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "yeti",
+      "name": "Yeti",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "canada-goose",
+      "name": "Canada Goose",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "moncler",
+      "name": "Moncler",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ralph-lauren",
+      "name": "Ralph Lauren",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tommy-hilfiger",
+      "name": "Tommy Hilfiger",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "calvin-klein",
+      "name": "Calvin Klein",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gucci",
+      "name": "Gucci",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "louis-vuitton",
+      "name": "Louis Vuitton",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "prada",
+      "name": "Prada",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chanel",
+      "name": "Chanel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hermes",
+      "name": "Hermès",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "coach",
+      "name": "Coach",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "michael-kors",
+      "name": "Michael Kors",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kate-spade",
+      "name": "Kate Spade",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fossil",
+      "name": "Fossil",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        16068,
+        21520
+      ],
+      "bank_names": [
+        {
+          "cert": 16068,
+          "name": "Apple Bank",
+          "state": "NY",
+          "active": 1,
+          "bkclass": "SI"
+        },
+        {
+          "cert": 21520,
+          "name": "Marquette Bank Apple Valley",
+          "state": "MN",
+          "active": 0,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "google",
+      "name": "Google",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "alphabet",
+      "name": "Alphabet",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "facebook",
+      "name": "Facebook",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "whatsapp",
+      "name": "WhatsApp",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "x-corp",
+      "name": "X",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "amazon-web-services",
+      "name": "Amazon Web Services",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "salesforce",
+      "name": "Salesforce",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ibm",
+      "name": "IBM",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "intel",
+      "name": "Intel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "amd",
+      "name": "AMD",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nvidia",
+      "name": "NVIDIA",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "qualcomm",
+      "name": "Qualcomm",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cisco",
+      "name": "Cisco",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hp",
+      "name": "HP",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dell",
+      "name": "Dell",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lenovo",
+      "name": "Lenovo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "asus",
+      "name": "ASUS",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "samsung",
+      "name": "Samsung",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lg",
+      "name": "LG",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sony",
+      "name": "Sony",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "xiaomi",
+      "name": "Xiaomi",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "oneplus",
+      "name": "OnePlus",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gitlab",
+      "name": "GitLab",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "atlassian",
+      "name": "Atlassian",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "jira",
+      "name": "Jira",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "slack",
+      "name": "Slack",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "zoom",
+      "name": "Zoom",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "teams",
+      "name": "Microsoft Teams",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "asana",
+      "name": "Asana",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "clickup",
+      "name": "ClickUp",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "monday",
+      "name": "Monday.com",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "trello",
+      "name": "Trello",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "figma",
+      "name": "Figma",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "adobe",
+      "name": "Adobe",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        31692
+      ],
+      "bank_names": [
+        {
+          "cert": 31692,
+          "name": "Adobe Savings Bank",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "SL"
+        }
+      ]
+    },
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "shopify",
+      "name": "Shopify",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "square",
+      "name": "Square",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        21353,
+        32334
+      ],
+      "bank_names": [
+        {
+          "cert": 21353,
+          "name": "Norwest Bank Buckingham Square, National Association",
+          "state": "CO",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 32334,
+          "name": "Madison Square Federal Savings Bank",
+          "state": "MD",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "block",
+      "name": "Block",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        58124
+      ],
+      "bank_names": [
+        {
+          "cert": 58124,
+          "name": "H&R Block Bank, National Association",
+          "state": "MO",
+          "active": 0,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "paypal",
+      "name": "PayPal",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "venmo",
+      "name": "Venmo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cash-app",
+      "name": "Cash App",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "plaid",
+      "name": "Plaid",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "twilio",
+      "name": "Twilio",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sendgrid",
+      "name": "SendGrid",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mailchimp",
+      "name": "Mailchimp",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "zendesk",
+      "name": "Zendesk",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "intercom",
+      "name": "Intercom",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fastly",
+      "name": "Fastly",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "netlify",
+      "name": "Netlify",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "heroku",
+      "name": "Heroku",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "digitalocean",
+      "name": "DigitalOcean",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "linode",
+      "name": "Linode",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "spotify",
+      "name": "Spotify",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "apple-music",
+      "name": "Apple Music",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pandora",
+      "name": "Pandora",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "soundcloud",
+      "name": "SoundCloud",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hulu",
+      "name": "Hulu",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "disney",
+      "name": "The Walt Disney Company",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "disney-plus",
+      "name": "Disney+",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hbo-max",
+      "name": "HBO Max",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "peacock",
+      "name": "Peacock",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "paramount",
+      "name": "Paramount",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        32217
+      ],
+      "bank_names": [
+        {
+          "cert": 32217,
+          "name": "Paramount Bank, F.S.B.",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "roku",
+      "name": "Roku",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "firetv",
+      "name": "Amazon Fire TV",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "twitch",
+      "name": "Twitch",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tumblr",
+      "name": "Tumblr",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pinterest",
+      "name": "Pinterest",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "snapchat",
+      "name": "Snapchat",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "twitter",
+      "name": "Twitter",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "threads",
+      "name": "Threads",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bluesky",
+      "name": "Bluesky",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mastodon",
+      "name": "Mastodon",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        628,
+        21761
+      ],
+      "bank_names": [
+        {
+          "cert": 628,
+          "name": "JPMorgan Chase Bank, National Association",
+          "state": "OH",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 21761,
+          "name": "JPMorgan Chase Bank, Dearborn",
+          "state": "MI",
+          "active": 1,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "bank-of-america",
+      "name": "Bank of America",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        3510,
+        25178,
+        17300,
+        14997,
+        12466,
+        10600,
+        32906,
+        27595,
+        4768,
+        9575,
+        17438
+      ],
+      "bank_names": [
+        {
+          "cert": 3510,
+          "name": "Bank of America, National Association",
+          "state": "NC",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 25178,
+          "name": "Bank of America California, National Association",
+          "state": "CA",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 17300,
+          "name": "Bank of America, National Association",
+          "state": "NV",
+          "active": 0,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 14997,
+          "name": "Sun Security Bank of America",
+          "state": "MO",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 12466,
+          "name": "First Sun Bank of America",
+          "state": "MO",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 10600,
+          "name": "Sun Security Bank of America",
+          "state": "MO",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 32906,
+          "name": "Bank of America Community Development Bank",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 27595,
+          "name": "Bank of America, National Association (USA)",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 4768,
+          "name": "UMB National Bank of America",
+          "state": "KS",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 9575,
+          "name": "Bank of America Utah, National Association",
+          "state": "UT",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 17438,
+          "name": "First National Bank of America",
+          "state": "MI",
+          "active": 1,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "wells-fargo",
+      "name": "Wells Fargo",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        27389,
+        3511,
+        25890,
+        24344,
+        13718,
+        5146,
+        26839,
+        1230,
+        26983,
+        27930,
+        14533,
+        18694,
+        13849,
+        16309,
+        16853,
+        19501,
+        27076,
+        3011,
+        33966,
+        4448,
+        5208,
+        5457,
+        2843,
+        2210,
+        15277
+      ],
+      "bank_names": [
+        {
+          "cert": 27389,
+          "name": "Wells Fargo National Bank West",
+          "state": "NV",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 3511,
+          "name": "Wells Fargo Bank, National Association",
+          "state": "SD",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 25890,
+          "name": "Wells Fargo Limited",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 24344,
+          "name": "Wells Fargo Bank Texas, National Association",
+          "state": "TX",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 13718,
+          "name": "Wells Fargo Trust Company, National Association",
+          "state": "UT",
+          "active": 0,
+          "bkclass": "NC"
+        },
+        {
+          "cert": 5146,
+          "name": "Wells Fargo Bank South Central, National Association",
+          "state": "TX",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 26839,
+          "name": "Wells Fargo Central Bank",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 1230,
+          "name": "Wells Fargo Bank, National Association",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 26983,
+          "name": "Wells Fargo Financial Bank",
+          "state": "SD",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 27930,
+          "name": "Wells Fargo Bank Nevada, National Association",
+          "state": "NV",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 14533,
+          "name": "Wells Fargo Bank Texas, National Association",
+          "state": "TX",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 18694,
+          "name": "Wells Fargo Bank Wisconsin, National Association",
+          "state": "WI",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 13849,
+          "name": "Wells Fargo Bank Indiana, National Association",
+          "state": "IN",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 16309,
+          "name": "Wells Fargo Bank Montana, National Association",
+          "state": "MT",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 16853,
+          "name": "Wells Fargo Bank Alaska, National Association",
+          "state": "AK",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 19501,
+          "name": "Wells Fargo Bank Arizona, National Association",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 27076,
+          "name": "Wells Fargo Bank Southwest, National Association",
+          "state": "NV",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 3011,
+          "name": "Wells Fargo Bank West, National Association",
+          "state": "CO",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 33966,
+          "name": "Wells Fargo Bank South, National Association",
+          "state": "TX",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 4448,
+          "name": "Wells Fargo Bank Iowa, National Association",
+          "state": "IA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 5208,
+          "name": "Wells Fargo Bank Minnesota,  National Association",
+          "state": "MN",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 5457,
+          "name": "Wells Fargo Bank Nebraska,  National Association",
+          "state": "NE",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 2843,
+          "name": "Wells Fargo Bank of Arizona, National Association",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 2210,
+          "name": "Wells Fargo Bank Wyoming, National Association",
+          "state": "WY",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 15277,
+          "name": "Wells Fargo Bank South Dakota, National Association",
+          "state": "SD",
+          "active": 0,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "citi",
+      "name": "Citi",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        7213
+      ],
+      "bank_names": [
+        {
+          "cert": 7213,
+          "name": "Citibank, National Association",
+          "state": "SD",
+          "active": 1,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "us-bank",
+      "name": "U.S. Bank",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        6548,
+        5134,
+        1304,
+        26441,
+        23922,
+        34590,
+        1277,
+        2268,
+        2976,
+        2162
+      ],
+      "bank_names": [
+        {
+          "cert": 6548,
+          "name": "U.S. Bank National Association",
+          "state": "OH",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 5134,
+          "name": "U.S. Bank National Association",
+          "state": "MN",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 1304,
+          "name": "U.S. Bank of California",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 26441,
+          "name": "U.S. Bank of Utah",
+          "state": "UT",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 23922,
+          "name": "U.S. Bank National Association OR",
+          "state": "OR",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 34590,
+          "name": "U.S. Bank National Association ND",
+          "state": "ND",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 1277,
+          "name": "U.S. Bank of Washington, National Association",
+          "state": "WA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 2268,
+          "name": "U.S. Bank of Utah",
+          "state": "UT",
+          "active": 0,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 2976,
+          "name": "U.S. Bank of Idaho, National Association",
+          "state": "ID",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 2162,
+          "name": "U.S. Bank National Association MT",
+          "state": "MT",
+          "active": 0,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "pnc",
+      "name": "PNC Bank",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        23717,
+        32271,
+        6384,
+        27266,
+        24868,
+        679,
+        34425,
+        7740,
+        742,
+        7944,
+        10513,
+        31435,
+        2688
+      ],
+      "bank_names": [
+        {
+          "cert": 23717,
+          "name": "PNC National Bank of Delaware",
+          "state": "DE",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 32271,
+          "name": "PNC Converted Bank, National Association",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 6384,
+          "name": "PNC Bank, National Association",
+          "state": "DE",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 27266,
+          "name": "PNC Bank, New Jersey, National Association",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 24868,
+          "name": "PNC Advisors, National Association",
+          "state": "MA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 679,
+          "name": "PNC Bank, Delaware",
+          "state": "DE",
+          "active": 0,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 34425,
+          "name": "PNC National Bank",
+          "state": "DE",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 7740,
+          "name": "PNC Bank, Northeast PA",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 742,
+          "name": "PNC Bank, Ohio, National Association",
+          "state": "OH",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 7944,
+          "name": "PNC Bank, National Association",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 10513,
+          "name": "PNC Bank, Kentucky, Inc.",
+          "state": "KY",
+          "active": 0,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 31435,
+          "name": "PNC Mortgage Bank, National Association",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 2688,
+          "name": "PNC Bank, Northern Kentucky, National Association",
+          "state": "OH",
+          "active": 0,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "truist",
+      "name": "Truist",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        9846
+      ],
+      "bank_names": [
+        {
+          "cert": 9846,
+          "name": "Truist Bank",
+          "state": "NC",
+          "active": 1,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "capital-one",
+      "name": "Capital One",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        4297,
+        33954,
+        34191
+      ],
+      "bank_names": [
+        {
+          "cert": 4297,
+          "name": "Capital One, National Association",
+          "state": "VA",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 33954,
+          "name": "Capital One Bank (USA), National Association",
+          "state": "VA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 34191,
+          "name": "Capital One, F.S.B.",
+          "state": "VA",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "discover",
+      "name": "Discover",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "american-express",
+      "name": "American Express",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        27471,
+        35328
+      ],
+      "bank_names": [
+        {
+          "cert": 27471,
+          "name": "American Express National  Bank",
+          "state": "UT",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 35328,
+          "name": "American Express Bank,  FSB.",
+          "state": "UT",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "visa",
+      "name": "Visa",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mastercard",
+      "name": "Mastercard",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fidelity",
+      "name": "Fidelity Investments",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "vanguard",
+      "name": "Vanguard",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        32527
+      ],
+      "bank_names": [
+        {
+          "cert": 32527,
+          "name": "BayVanguard Bank",
+          "state": "MD",
+          "active": 1,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "charles-schwab",
+      "name": "Charles Schwab",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        57450
+      ],
+      "bank_names": [
+        {
+          "cert": 57450,
+          "name": "Charles Schwab Bank, SSB",
+          "state": "TX",
+          "active": 1,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "robinhood",
+      "name": "Robinhood",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sofi",
+      "name": "SoFi",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chime",
+      "name": "Chime",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ally-bank",
+      "name": "Ally Bank",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        57803
+      ],
+      "bank_names": [
+        {
+          "cert": 57803,
+          "name": "Ally Bank",
+          "state": "UT",
+          "active": 1,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        33124,
+        57485
+      ],
+      "bank_names": [
+        {
+          "cert": 33124,
+          "name": "Goldman Sachs Bank USA",
+          "state": "NY",
+          "active": 1,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 57485,
+          "name": "Goldman Sachs Bank USA",
+          "state": "UT",
+          "active": 0,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "morgan-stanley",
+      "name": "Morgan Stanley",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        34221,
+        32992
+      ],
+      "bank_names": [
+        {
+          "cert": 34221,
+          "name": "Morgan Stanley Private Bank, National Association",
+          "state": "NY",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 32992,
+          "name": "Morgan Stanley Bank, National Association",
+          "state": "UT",
+          "active": 1,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "blackrock",
+      "name": "BlackRock",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "state-farm",
+      "name": "State Farm",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        34617
+      ],
+      "bank_names": [
+        {
+          "cert": 34617,
+          "name": "State Farm Bank, F.S.B.",
+          "state": "IL",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "geico",
+      "name": "GEICO",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "progressive",
+      "name": "Progressive",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        24443,
+        31488,
+        22139
+      ],
+      "bank_names": [
+        {
+          "cert": 24443,
+          "name": "Progressive National Bank",
+          "state": "LA",
+          "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 31488,
+          "name": "Progressive Ozark Bank",
+          "state": "MO",
+          "active": 1,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 22139,
+          "name": "Progressive Bank",
+          "state": "LA",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "allstate",
+      "name": "Allstate",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        34782
+      ],
+      "bank_names": [
+        {
+          "cert": 34782,
+          "name": "Allstate Bank",
+          "state": "IL",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nationwide",
+      "name": "Nationwide",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        34710,
+        29640
+      ],
+      "bank_names": [
+        {
+          "cert": 34710,
+          "name": "Nationwide Trust Company, FSB",
+          "state": "OH",
+          "active": 1,
+          "bkclass": "SB"
+        },
+        {
+          "cert": 29640,
+          "name": "First Nationwide Bank, A FSB",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "farmers-insurance",
+      "name": "Farmers Insurance",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "travelers",
+      "name": "Travelers",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "metlife",
+      "name": "MetLife",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "prudential",
+      "name": "Prudential",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        30011
+      ],
+      "bank_names": [
+        {
+          "cert": 30011,
+          "name": "Prudential Bank",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "SI"
+        }
+      ]
+    },
+    {
+      "slug": "aflac",
+      "name": "Aflac",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "new-york-life",
+      "name": "New York Life",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        35491
+      ],
+      "bank_names": [
+        {
+          "cert": 35491,
+          "name": "New York Life Trust Company, FSB",
+          "state": "NJ",
+          "active": 0,
+          "bkclass": "NC"
+        }
+      ]
+    },
+    {
+      "slug": "massmutual",
+      "name": "MassMutual",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        35394
+      ],
+      "bank_names": [
+        {
+          "cert": 35394,
+          "name": "MassMutual Private Wealth & Trust, FSB",
+          "state": "CT",
+          "active": 1,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "northwestern-mutual",
+      "name": "Northwestern Mutual",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        57093
+      ],
+      "bank_names": [
+        {
+          "cert": 57093,
+          "name": "Northwestern Mutual Wealth Management",
+          "state": "WI",
+          "active": 1,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "att",
+      "name": "AT&T",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "verizon",
+      "name": "Verizon",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "t-mobile",
+      "name": "T-Mobile",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sprint",
+      "name": "Sprint",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "us-cellular",
+      "name": "US Cellular",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mint-mobile",
+      "name": "Mint Mobile",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cricket-wireless",
+      "name": "Cricket Wireless",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "xfinity",
+      "name": "Xfinity",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "spectrum",
+      "name": "Spectrum",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cox",
+      "name": "Cox Communications",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "optimum",
+      "name": "Optimum",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "frontier",
+      "name": "Frontier Communications",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "comcast",
+      "name": "Comcast",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "charter",
+      "name": "Charter Communications",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "exxonmobil",
+      "name": "ExxonMobil",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chevron",
+      "name": "Chevron",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "shell",
+      "name": "Shell",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bp",
+      "name": "BP",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        26508
+      ],
+      "bank_names": [
+        {
+          "cert": 26508,
+          "name": "BPD Bank",
+          "state": "NY",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "conocophillips",
+      "name": "ConocoPhillips",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "duke-energy",
+      "name": "Duke Energy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nextera",
+      "name": "NextEra Energy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dominion-energy",
+      "name": "Dominion Energy",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "southern-company",
+      "name": "Southern Company",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "exelon",
+      "name": "Exelon",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ford",
+      "name": "Ford",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        19567
+      ],
+      "bank_names": [
+        {
+          "cert": 19567,
+          "name": "Cole Taylor Bank/Ford City",
+          "state": "IL",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "gm",
+      "name": "General Motors",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chevrolet",
+      "name": "Chevrolet",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "chrysler",
+      "name": "Chrysler",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dodge",
+      "name": "Dodge",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        19792,
+        4655
+      ],
+      "bank_names": [
+        {
+          "cert": 19792,
+          "name": "Colony Bank of Dodge County",
+          "state": "GA",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 4655,
+          "name": "First National Bank and Trust Company in Dodge City",
+          "state": "KS",
+          "active": 0,
+          "bkclass": "N"
+        }
+      ]
+    },
+    {
+      "slug": "jeep",
+      "name": "Jeep",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ram",
+      "name": "Ram",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "stellantis",
+      "name": "Stellantis",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "toyota",
+      "name": "Toyota",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "honda",
+      "name": "Honda",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nissan",
+      "name": "Nissan",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hyundai",
+      "name": "Hyundai",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kia",
+      "name": "Kia",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mazda",
+      "name": "Mazda",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "subaru",
+      "name": "Subaru",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mitsubishi",
+      "name": "Mitsubishi",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        26621,
+        19553
+      ],
+      "bank_names": [
+        {
+          "cert": 26621,
+          "name": "Mitsubishi UFJ Trust & Banking Corporation (U.S.A.)",
+          "state": "NY",
+          "active": 0,
+          "bkclass": "NC"
+        },
+        {
+          "cert": 19553,
+          "name": "Bank of Tokyo-Mitsubishi UFJ Trust Company",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "NC"
+        }
+      ]
+    },
+    {
+      "slug": "volkswagen",
+      "name": "Volkswagen",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "audi",
+      "name": "Audi",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        24516
+      ],
+      "bank_names": [
+        {
+          "cert": 24516,
+          "name": "Interaudi Bank",
+          "state": "NY",
+          "active": 1,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "bmw",
+      "name": "BMW",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "porsche",
+      "name": "Porsche",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "volvo",
+      "name": "Volvo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ferrari",
+      "name": "Ferrari",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lamborghini",
+      "name": "Lamborghini",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "rivian",
+      "name": "Rivian",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lucid",
+      "name": "Lucid Motors",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "polestar",
+      "name": "Polestar",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "pfizer",
+      "name": "Pfizer",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "moderna",
+      "name": "Moderna",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "merck",
+      "name": "Merck",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "abbvie",
+      "name": "AbbVie",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "eli-lilly",
+      "name": "Eli Lilly",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bristol-myers-squibb",
+      "name": "Bristol Myers Squibb",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "abbott",
+      "name": "Abbott",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "unitedhealth",
+      "name": "UnitedHealth Group",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "anthem",
+      "name": "Anthem",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "elevance",
+      "name": "Elevance Health",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "humana",
+      "name": "Humana",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cigna",
+      "name": "Cigna",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kaiser-permanente",
+      "name": "Kaiser Permanente",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "medtronic",
+      "name": "Medtronic",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "stryker",
+      "name": "Stryker",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "quest-diagnostics",
+      "name": "Quest Diagnostics",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "labcorp",
+      "name": "LabCorp",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hca-healthcare",
+      "name": "HCA Healthcare",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gilead",
+      "name": "Gilead Sciences",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "amgen",
+      "name": "Amgen",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "biogen",
+      "name": "Biogen",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "novartis",
+      "name": "Novartis",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gsk",
+      "name": "GSK",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sanofi",
+      "name": "Sanofi",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "astrazeneca",
+      "name": "AstraZeneca",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "delta-airlines",
+      "name": "Delta Air Lines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "american-airlines",
+      "name": "American Airlines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "united-airlines",
+      "name": "United Airlines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "jetblue",
+      "name": "JetBlue",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "alaska-airlines",
+      "name": "Alaska Airlines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "spirit-airlines",
+      "name": "Spirit Airlines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "marriott",
+      "name": "Marriott",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hilton",
+      "name": "Hilton",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        66
+      ],
+      "bank_names": [
+        {
+          "cert": 66,
+          "name": "First Alabama Bank of Chilton County",
+          "state": "AL",
+          "active": 0,
+          "bkclass": "NM"
+        }
+      ]
+    },
+    {
+      "slug": "hyatt",
+      "name": "Hyatt",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ihg",
+      "name": "IHG Hotels",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "wyndham",
+      "name": "Wyndham",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "best-western",
+      "name": "Best Western",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "choice-hotels",
+      "name": "Choice Hotels",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "airbnb",
+      "name": "Airbnb",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "vrbo",
+      "name": "Vrbo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "booking",
+      "name": "Booking.com",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "expedia",
+      "name": "Expedia",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "priceline",
+      "name": "Priceline",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kayak",
+      "name": "Kayak",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "trivago",
+      "name": "Trivago",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "tripadvisor",
+      "name": "TripAdvisor",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "uber",
+      "name": "Uber",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "lyft",
+      "name": "Lyft",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hertz",
+      "name": "Hertz",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        27237,
+        11539,
+        33380
+      ],
+      "bank_names": [
+        {
+          "cert": 27237,
+          "name": "Enterprise Bank & Trust",
+          "state": "MO",
+          "active": 1,
+          "bkclass": "SM"
+        },
+        {
+          "cert": 11539,
+          "name": "Enterprise Bank of South Carolina",
+          "state": "SC",
+          "active": 1,
+          "bkclass": "NM"
+        },
+        {
+          "cert": 33380,
+          "name": "Enterprise Bank",
+          "state": "NE",
+          "active": 1,
+          "bkclass": "SM"
+        }
+      ]
+    },
+    {
+      "slug": "avis",
+      "name": "Avis",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "budget",
+      "name": "Budget",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "carnival",
+      "name": "Carnival",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "norwegian-cruise",
+      "name": "Norwegian Cruise",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "disney-cruise",
+      "name": "Disney Cruise",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hobby-lobby",
+      "name": "Hobby Lobby",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "my-pillow",
+      "name": "MyPillow",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ben-jerrys",
+      "name": "Ben & Jerry's",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "bumble",
+      "name": "Bumble",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "truth-social",
+      "name": "Truth Social",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "parler",
+      "name": "Parler",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "gettr",
+      "name": "Gettr",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "rumble",
+      "name": "Rumble",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "sherwin-williams",
+      "name": "Sherwin-Williams",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "benjamin-moore",
+      "name": "Benjamin Moore",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "masterbrand",
+      "name": "MasterBrand Cabinets",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "whirlpool",
+      "name": "Whirlpool",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ge-appliances",
+      "name": "GE Appliances",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "kitchenaid",
+      "name": "KitchenAid",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "keurig",
+      "name": "Keurig",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ninja",
+      "name": "Ninja",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "breville",
+      "name": "Breville",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "cuisinart",
+      "name": "Cuisinart",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "vitamix",
+      "name": "Vitamix",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dyson",
+      "name": "Dyson",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "roomba",
+      "name": "iRobot Roomba",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "black-decker",
+      "name": "Black & Decker",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "dewalt",
+      "name": "DeWalt",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "craftsman",
+      "name": "Craftsman",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "milwaukee-tools",
+      "name": "Milwaukee Tools",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "makita",
+      "name": "Makita",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ryobi",
+      "name": "Ryobi",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "husqvarna",
+      "name": "Husqvarna",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "toro",
+      "name": "Toro",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "john-deere",
+      "name": "John Deere",
+      "status": "edos_unreachable",
+      "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
+      "bank_cert_numbers": [
+        35237
+      ],
+      "bank_names": [
+        {
+          "cert": 35237,
+          "name": "John Deere Financial, f.s.b.",
+          "state": "WI",
+          "active": 1,
+          "bkclass": "SB"
+        }
+      ]
+    },
+    {
+      "slug": "lego",
+      "name": "LEGO",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "hasbro",
+      "name": "Hasbro",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "mattel",
+      "name": "Mattel",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "fisher-price",
+      "name": "Fisher-Price",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "nintendo",
+      "name": "Nintendo",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "playstation",
+      "name": "PlayStation",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "xbox",
+      "name": "Xbox",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ea",
+      "name": "Electronic Arts",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "activision",
+      "name": "Activision Blizzard",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "take-two",
+      "name": "Take-Two Interactive",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "ubisoft",
+      "name": "Ubisoft",
+      "status": "no_bank_found"
+    },
+    {
+      "slug": "square-enix",
+      "name": "Square Enix",
+      "status": "no_bank_found"
+    }
+  ]
+}
