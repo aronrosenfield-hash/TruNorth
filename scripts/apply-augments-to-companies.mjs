@@ -40,6 +40,7 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "newsweek-trust", "one-percent-planet", "disability-in", "sbti",
   "net-zero-tracker", "textile-exchange", "epa-smartway", "epa-green-vehicle",
   "nlrb-voluntary-recognition", "corporate-giving",
+  "climate-coalitions",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -256,6 +257,45 @@ const WRITERS = [
         narrative: `Science Based Targets initiative: ${status}${temp}. Emissions reduction targets independently validated.`,
         sc: "positive",
         severity: "positive",
+      }];
+    },
+  },
+  // ─── Climate coalitions (RE100, EV100, EP100, FMC, WMBC, LEAF) ──────
+  // Multi-coalition memberships consolidated into one environment
+  // narrative. Conservative severity: only "positive" (verified
+  // commitment) — never negative; absence from this list is not signal.
+  {
+    name: "climate-coalitions",
+    write: (e) => {
+      const ms = Array.isArray(e.memberships) ? e.memberships : [];
+      if (!ms.length) return [];
+      // Sort memberships by source to give stable output. Compose a
+      // one-line summary like:
+      //   "Member of RE100 (joined 2016, 100% renewables by 2030) and
+      //    First Movers Coalition (low-carbon aluminum, shipping)."
+      const sorted = [...ms].sort((a, b) => (a.source || "").localeCompare(b.source || ""));
+      const phrases = sorted.map((m) => {
+        const label = m.sourceLabel || m.source;
+        const yr = m.joinedYear ? ` (since ${m.joinedYear}` : "";
+        const target = m.targetYear ? `${yr ? "; " : " ("}target ${m.targetYear}` : "";
+        const close = (yr || target) ? ")" : "";
+        return `${label}${yr}${target}${close}`;
+      });
+      const list = phrases.length === 1
+        ? phrases[0]
+        : phrases.length === 2
+          ? `${phrases[0]} and ${phrases[1]}`
+          : `${phrases.slice(0, -1).join(", ")}, and ${phrases[phrases.length - 1]}`;
+      // First commitment becomes the supporting detail to keep narrative
+      // concrete without bloating it.
+      const lead = ms.find((m) => m.commitment)?.commitment;
+      const narrative = `Climate-commitment coalition member: ${list}.${lead ? ` ${lead}` : ""}`;
+      return [{
+        category: "environment",
+        narrative,
+        sc: "positive",
+        severity: "positive",
+        mergePositive: true,
       }];
     },
   },
