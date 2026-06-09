@@ -41,7 +41,8 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "net-zero-tracker", "textile-exchange", "epa-smartway", "epa-green-vehicle",
   "nlrb-voluntary-recognition", "corporate-giving",
   "climate-coalitions",
-  "consumer-scorecards",
+  // Round-4 labor-deep additions:
+  "fair-labor-association", "ccc-transparency-pledge",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -492,6 +493,102 @@ const WRITERS = [
       sc: "positive",
       severity: "positive",
     }],
+  },
+  // ─── Fair Labor Association — member affiliation (positive) ──────────
+  // Augment shape: { status, raw_type, source_url, memberName, routedVia }.
+  // Treated as positive: voluntary uptake of independent monitoring.
+  {
+    name: "fair-labor-association",
+    write: (e) => {
+      // Older bundled shape used { affiliateSince, status }; new shape lacks
+      // a year. Render gracefully in both cases.
+      const status = e.status || "member";
+      const since = e.affiliateSince ? ` (member since ${e.affiliateSince})` : "";
+      const label = status === "accredited" ? "Fair Labor Association-accredited"
+        : status === "participating" ? "Fair Labor Association participating company"
+        : status === "single-factory-supplier" ? "Fair Labor Association single-factory supplier"
+        : "Fair Labor Association affiliate";
+      return [{
+        category: "labor",
+        narrative: `${label}${since} — commits to FLA Code of Conduct + independent factory monitoring.`,
+        sc: "positive",
+        severity: "positive",
+      }];
+    },
+  },
+  // ─── WRC factory investigations (negative supply-chain) ──────────────
+  // Augment shape: { labor: { wrcInvestigations: [...], count, sourceUrl, signal } }.
+  // Conservative: only flag negative when count ≥ 1 — every record by
+  // construction is a documented finding (procedural notices are excluded
+  // at the curation layer).
+  {
+    name: "wrc-investigations",
+    write: (e) => {
+      const inv = e.labor?.wrcInvestigations;
+      if (!Array.isArray(inv) || inv.length === 0) return [];
+      const sample = inv[0];
+      const ctx = sample.country ? ` (${sample.country})` : "";
+      const yr = sample.year ? `${sample.year}: ` : "";
+      const more = inv.length > 1 ? ` Worker Rights Consortium documented ${inv.length} brand-named investigations.` : "";
+      return [{
+        category: "labor",
+        narrative: `WRC supply-chain investigation${ctx} — ${yr}${(sample.finding || "documented worker-rights findings").slice(0, 220)}.${more}`,
+        sc: inv.length >= 3 ? "poor" : "mixed",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── CCC Transparency Pledge signatory (positive) ────────────────────
+  // Augment shape: { labor: { transparencyPledge: [{ signed_year, source_url }], count } }.
+  {
+    name: "ccc-transparency-pledge",
+    write: (e) => {
+      const sigs = e.labor?.transparencyPledge;
+      if (!Array.isArray(sigs) || sigs.length === 0) return [];
+      const yr = sigs[0].signed_year ? ` (signed ${sigs[0].signed_year})` : "";
+      return [{
+        category: "labor",
+        narrative: `Clean Clothes Campaign Transparency Pledge signatory${yr} — committed to publishing tier-1 supplier list.`,
+        sc: "positive",
+        severity: "positive",
+      }];
+    },
+  },
+  // ─── HRW corporate accountability (negative) ─────────────────────────
+  // Augment shape: { labor: { hrwReports: [{ year, title, source_url, severity }], count } }.
+  {
+    name: "hrw-corporate",
+    write: (e) => {
+      const reps = e.labor?.hrwReports;
+      if (!Array.isArray(reps) || reps.length === 0) return [];
+      const r0 = reps[0];
+      const yr = r0.year ? `${r0.year}: ` : "";
+      const more = reps.length > 1 ? ` ${reps.length} HRW reports total cite this brand.` : "";
+      return [{
+        category: "labor",
+        narrative: `Human Rights Watch — ${yr}${(r0.title || "labor / human-rights findings").slice(0, 240)}.${more}`,
+        sc: reps.length >= 3 ? "poor" : "mixed",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── ILRF corporate target campaigns (negative) ──────────────────────
+  // Augment shape: { labor: { ilrfCampaigns: [{ year, campaign, source_url, severity }], count } }.
+  {
+    name: "ilrf-campaigns",
+    write: (e) => {
+      const camps = e.labor?.ilrfCampaigns;
+      if (!Array.isArray(camps) || camps.length === 0) return [];
+      const c0 = camps[0];
+      const yr = c0.year ? `${c0.year}: ` : "";
+      const more = camps.length > 1 ? ` ${camps.length} ILRF campaigns target this brand.` : "";
+      return [{
+        category: "labor",
+        narrative: `International Labor Rights Forum — ${yr}${(c0.campaign || "documented worker-rights campaign").slice(0, 240)}.${more}`,
+        sc: camps.length >= 3 ? "poor" : "mixed",
+        severity: "negative",
+      }];
+    },
   },
   // ─── Cornell ILR labor strike tracker (negative labor) ────────────────
   {
@@ -1333,6 +1430,11 @@ const SUPPLY_CHAIN_SOURCES = new Set([
   "uk-modern-slavery",
   "au-modern-slavery",
   "eiti",
+  // Round-4 labor-deep:
+  "wrc-investigations",
+  "ccc-transparency-pledge",
+  "hrw-corporate",
+  "ilrf-campaigns",
 ]);
 
 function buildSupplyChainSummary(hits) {
@@ -1341,11 +1443,16 @@ function buildSupplyChainSummary(hits) {
     if (name === "knowthechain") labels.push(`KnowTheChain ${w._raw?.score ?? "?"}/100`);
     else if (name === "chrb") labels.push(`CHRB ${w._raw?.score ?? "?"}/26`);
     else if (name === "fashion-revolution") labels.push(`Fashion Rev ${w._raw?.score ?? "?"}%`);
-    else if (name === "fair-labor-association") labels.push(`FLA affiliate`);
+    else if (name === "fair-labor-association") labels.push(`FLA ${w._raw?.status || "affiliate"}`);
     else if (name === "dol-tvpra") labels.push(`TVPRA exposure`);
     else if (name === "uk-modern-slavery") labels.push(w._raw?.status === "weak-or-non-compliant" ? "UK MS gap" : "UK MS statement");
     else if (name === "au-modern-slavery") labels.push("AU MS statement");
     else if (name === "eiti") labels.push("EITI supporter");
+    // Round-4 labor-deep:
+    else if (name === "wrc-investigations") labels.push(`WRC ${w._raw?.labor?.count || ""} investigation${(w._raw?.labor?.count || 0) === 1 ? "" : "s"}`.trim());
+    else if (name === "ccc-transparency-pledge") labels.push("CCC transparency pledge");
+    else if (name === "hrw-corporate") labels.push(`HRW ${w._raw?.labor?.count || ""} report${(w._raw?.labor?.count || 0) === 1 ? "" : "s"}`.trim());
+    else if (name === "ilrf-campaigns") labels.push(`ILRF ${w._raw?.labor?.count || ""} campaign${(w._raw?.labor?.count || 0) === 1 ? "" : "s"}`.trim());
   }
   return labels.length ? ` Supply-chain signals: ${labels.join("; ")}.` : "";
 }

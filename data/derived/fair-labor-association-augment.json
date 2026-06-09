@@ -1,54 +1,269 @@
 {
-  "generated_at": "2026-06-09T16:31:07.850Z",
+  "generated_at": "2026-06-09T19:27:31.745Z",
   "source": "fair-labor-association",
-  "source_url": "https://www.fairlabor.org/affiliates",
-  "citation": "Fair Labor Association — affiliated participating/accredited companies (2024 list).",
+  "source_url": "https://www.fairlabor.org/members/",
+  "citation": "Fair Labor Association — affiliated company roster.",
   "company_count": 11,
-  "companies": {
-    "nike": {
-      "affiliateSince": 1999,
+  "fla_signal": "positive",
+  "routing_counts": {
+    "direct": 8,
+    "alias": 3,
+    "parent": 0,
+    "orphan": 43
+  },
+  "orphan_count": 43,
+  "orphans": [
+    {
+      "name": "’47 Brand LLC",
       "status": "accredited"
     },
-    "adidas": {
-      "affiliateSince": 1999,
-      "status": "accredited"
-    },
-    "patagonia": {
-      "affiliateSince": 2001,
-      "status": "accredited"
-    },
-    "under-armour": {
-      "affiliateSince": 2014,
-      "status": "accredited"
-    },
-    "lululemon": {
-      "affiliateSince": 2020,
+    {
+      "name": "ALO",
       "status": "participating"
+    },
+    {
+      "name": "Amer Sports",
+      "status": "participating"
+    },
+    {
+      "name": "Antigua Group, Inc.",
+      "status": "participating"
+    },
+    {
+      "name": "Arena",
+      "status": "accredited"
+    },
+    {
+      "name": "BALSU",
+      "status": "participating"
+    },
+    {
+      "name": "Barbour",
+      "status": "participating"
+    },
+    {
+      "name": "Bella+Canvas",
+      "status": "accredited"
+    },
+    {
+      "name": "Brooks Running",
+      "status": "participating"
+    },
+    {
+      "name": "Burton Snowboards",
+      "status": "accredited"
+    },
+    {
+      "name": "Colosseum",
+      "status": "accredited"
+    },
+    {
+      "name": "Delta Galil Industries, Ltd.",
+      "status": "participating"
+    },
+    {
+      "name": "Durak Hazelnuts",
+      "status": "participating"
+    },
+    {
+      "name": "Fenix Outdoor",
+      "status": "accredited"
+    },
+    {
+      "name": "Gymshark",
+      "status": "participating"
+    },
+    {
+      "name": "HUGO BOSS",
+      "status": "accredited"
+    },
+    {
+      "name": "L2 Brands",
+      "status": "accredited"
+    },
+    {
+      "name": "Lakeshirts/Blue84",
+      "status": "accredited"
+    },
+    {
+      "name": "LTP Group",
+      "status": "participating"
+    },
+    {
+      "name": "Mainland Headwear Holdings Limited",
+      "status": "accredited"
+    },
+    {
+      "name": "Maxport Limited",
+      "status": "accredited"
+    },
+    {
+      "name": "MEC Mountain Equipment Company Ltd",
+      "status": "accredited"
+    },
+    {
+      "name": "Momentec Brands",
+      "status": "participating"
+    },
+    {
+      "name": "Nestlé Nespresso",
+      "status": "participating"
+    },
+    {
+      "name": "New Balance",
+      "status": "accredited"
+    },
+    {
+      "name": "New Era Cap, LLC",
+      "status": "accredited"
+    },
+    {
+      "name": "Next Level Apparel",
+      "status": "participating"
+    },
+    {
+      "name": "Outerstuff",
+      "status": "accredited"
+    },
+    {
+      "name": "PopSockets",
+      "status": "accredited"
+    },
+    {
+      "name": "Pou Chen Group",
+      "status": "accredited"
+    },
+    {
+      "name": "PUMA SE",
+      "status": "accredited"
+    },
+    {
+      "name": "Reformation",
+      "status": "participating"
+    },
+    {
+      "name": "Roots",
+      "status": "participating"
+    },
+    {
+      "name": "S&S Activewear",
+      "status": "participating"
+    },
+    {
+      "name": "Sabirlar Hazelnut",
+      "status": "participating"
+    },
+    {
+      "name": "SanMar Corporation",
+      "status": "accredited"
+    },
+    {
+      "name": "SITKA Gear",
+      "status": "accredited"
+    },
+    {
+      "name": "TIMTAS",
+      "status": "participating"
+    },
+    {
+      "name": "Unrivaled Teamwear",
+      "status": "participating"
+    },
+    {
+      "name": "Voicevale Group",
+      "status": "participating"
+    },
+    {
+      "name": "Yavuz Gida",
+      "status": "participating"
+    },
+    {
+      "name": "Yavuzkan",
+      "status": "participating"
+    },
+    {
+      "name": "Yee Tung",
+      "status": "accredited"
+    }
+  ],
+  "fetch_mode": "live-rest-api",
+  "companies": {
+    "adidas": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/adidas/",
+      "routedVia": "direct",
+      "memberName": "adidas"
+    },
+    "fanatics-inc": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/fanatics/",
+      "routedVia": "alias",
+      "memberName": "Fanatics"
     },
     "fast-retailing": {
-      "affiliateSince": 2020,
-      "status": "participating"
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/fast-retailing/",
+      "routedVia": "direct",
+      "memberName": "Fast Retailing"
     },
-    "levi-strauss": {
-      "affiliateSince": 2002,
-      "status": "accredited"
+    "gildan-activewear": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/gildan-activewear-inc/",
+      "routedVia": "direct",
+      "memberName": "Gildan Activewear Inc."
     },
-    "burberry": {
-      "affiliateSince": 2018,
-      "status": "accredited"
+    "l-or-al": {
+      "status": "participating",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/loreal/",
+      "routedVia": "alias",
+      "memberName": "L’Oréal"
     },
-    "columbia-sportswear": {
-      "affiliateSince": 2017,
-      "status": "participating"
+    "lululemon": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/lululemon/",
+      "routedVia": "direct",
+      "memberName": "lululemon"
     },
-    "nestl": {
-      "affiliateSince": 2011,
-      "status": "accredited"
+    "nike": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/nike/",
+      "routedVia": "direct",
+      "memberName": "Nike"
     },
-    "primark": {
-      "affiliateSince": 2024,
-      "status": "participating"
+    "outerknown-llc": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/outerknown/",
+      "routedVia": "alias",
+      "memberName": "Outerknown"
+    },
+    "patagonia": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/patagonia/",
+      "routedVia": "direct",
+      "memberName": "Patagonia"
+    },
+    "skims": {
+      "status": "participating",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/skims/",
+      "routedVia": "direct",
+      "memberName": "SKIMS"
+    },
+    "under-armour": {
+      "status": "accredited",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/under-armour/",
+      "routedVia": "direct",
+      "memberName": "Under Armour"
     }
-  },
-  "dropped_count": 8
+  }
 }

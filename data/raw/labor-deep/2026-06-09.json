@@ -1,0 +1,2112 @@
+{
+  "_license": "Aggregated under fair-use — each record cites its primary public source URL.",
+  "_generated_at": "2026-06-09T19:25:34.873Z",
+  "_doc": "Labor-deep enrichment round 4. Combines live FLA REST API + curated brand-named callouts from WRC, CCC, HRW, ILRF.",
+  "_sources": {
+    "fla": {
+      "url": "https://www.fairlabor.org/members/all-members/",
+      "api_base": "https://www.fairlabor.org/wp-json/fla/v1/members",
+      "count": 205,
+      "fetched": true,
+      "signal": "positive",
+      "pages": [
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=1",
+          "status": "ok",
+          "count": 20,
+          "page": 1
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=2",
+          "status": "ok",
+          "count": 20,
+          "page": 2
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=3",
+          "status": "ok",
+          "count": 20,
+          "page": 3
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=4",
+          "status": "ok",
+          "count": 20,
+          "page": 4
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=5",
+          "status": "ok",
+          "count": 20,
+          "page": 5
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=6",
+          "status": "ok",
+          "count": 20,
+          "page": 6
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=7",
+          "status": "ok",
+          "count": 20,
+          "page": 7
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=8",
+          "status": "ok",
+          "count": 20,
+          "page": 8
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=9",
+          "status": "ok",
+          "count": 20,
+          "page": 9
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=10",
+          "status": "ok",
+          "count": 20,
+          "page": 10
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=11",
+          "status": "ok",
+          "count": 5,
+          "page": 11
+        },
+        {
+          "url": "https://www.fairlabor.org/wp-json/fla/v1/members?page=12",
+          "status": "empty",
+          "count": 0,
+          "page": 12
+        }
+      ]
+    },
+    "wrc": {
+      "url": "https://www.workersrights.org/factory-investigations/",
+      "count": 12,
+      "mode": "curated",
+      "signal": "negative"
+    },
+    "ccc": {
+      "url": "https://cleanclothes.org/file-repository/transparency-transparency-pledge",
+      "count": 32,
+      "mode": "curated",
+      "signal": "positive"
+    },
+    "hrw": {
+      "url": "https://www.hrw.org/business",
+      "count": 22,
+      "mode": "curated",
+      "signal": "negative"
+    },
+    "ilrf": {
+      "url": "https://laborrights.org/",
+      "count": 19,
+      "mode": "curated",
+      "signal": "negative"
+    }
+  },
+  "fla_members": [
+    {
+      "name": "’47 Brand LLC",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/47-brand/"
+    },
+    {
+      "name": "adidas",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/adidas/"
+    },
+    {
+      "name": "ALO",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/alo/"
+    },
+    {
+      "name": "Amer Sports",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/amer-sports/"
+    },
+    {
+      "name": "American University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/american-university/"
+    },
+    {
+      "name": "Angelo State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/angelo-state-university/"
+    },
+    {
+      "name": "Antigua Group, Inc.",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/antigua-group-inc/"
+    },
+    {
+      "name": "Arena",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/arena/"
+    },
+    {
+      "name": "Arisa",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/arisa/"
+    },
+    {
+      "name": "Arizona State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/arizona-state-university/"
+    },
+    {
+      "name": "Azusa Pacific University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/azusa-pacific-university/"
+    },
+    {
+      "name": "Ball State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/ball-state-university/"
+    },
+    {
+      "name": "BALSU",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/balsu/"
+    },
+    {
+      "name": "Barbour",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/barbour/"
+    },
+    {
+      "name": "Baylor University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/baylor-university/"
+    },
+    {
+      "name": "Bella+Canvas",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/bella-canvas/"
+    },
+    {
+      "name": "Bentley University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/bentley-university/"
+    },
+    {
+      "name": "Boise State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/boise-state-university/"
+    },
+    {
+      "name": "Boston College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/boston-college/"
+    },
+    {
+      "name": "Boston University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/boston-university/"
+    },
+    {
+      "name": "Bowdoin College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/bowdoin-college/"
+    },
+    {
+      "name": "Brooks Running",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/brooks-running/"
+    },
+    {
+      "name": "Brown University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/brown-university/"
+    },
+    {
+      "name": "Burton Snowboards",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/burton-snowboards/"
+    },
+    {
+      "name": "California State University, Fresno",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/california-state-university-fresno/"
+    },
+    {
+      "name": "California State University, Long Beach",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/california-state-university-long-beach/"
+    },
+    {
+      "name": "Carnegie Mellon University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/carnegie-mellon-university/"
+    },
+    {
+      "name": "Cividep India",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/cividep-india/"
+    },
+    {
+      "name": "Colby College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/colby-college/"
+    },
+    {
+      "name": "Colgate University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/colgate-university/"
+    },
+    {
+      "name": "College of Charleston",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/college-of-charleston/"
+    },
+    {
+      "name": "Colorado State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/colorado-state-university/"
+    },
+    {
+      "name": "Colosseum",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/colosseum/"
+    },
+    {
+      "name": "Columbia University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/columbia-university/"
+    },
+    {
+      "name": "Cornell University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/cornell-university/"
+    },
+    {
+      "name": "Dalhousie University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/dalhousie-university/"
+    },
+    {
+      "name": "Dartmouth College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/dartmouth-college/"
+    },
+    {
+      "name": "Dawson College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/dawson-college/"
+    },
+    {
+      "name": "Delta Galil Industries, Ltd.",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/delta-galil-industries-ltd/"
+    },
+    {
+      "name": "Duke University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/duke-university/"
+    },
+    {
+      "name": "Durak Hazelnuts",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/durak-hazelnuts/"
+    },
+    {
+      "name": "Educators for Socially-Responsible Apparel Practices",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/educators-for-socially-responsible-apparel-business/"
+    },
+    {
+      "name": "Elon University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/elon-university/"
+    },
+    {
+      "name": "Emory University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/emory-university/"
+    },
+    {
+      "name": "Fanatics",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/fanatics/"
+    },
+    {
+      "name": "Fast Retailing",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/fast-retailing/"
+    },
+    {
+      "name": "Fenix Outdoor",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/fenix-outdoor/"
+    },
+    {
+      "name": "Florida State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/florida-state-university/"
+    },
+    {
+      "name": "Furman University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/furman-university/"
+    },
+    {
+      "name": "George Mason University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/george-mason-university/"
+    },
+    {
+      "name": "Georgia Institute of Technology",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/georgia-institute-of-technology/"
+    },
+    {
+      "name": "Gildan Activewear Inc.",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/gildan-activewear-inc/"
+    },
+    {
+      "name": "Global Fairness Initiative",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/global-fairness-initiative/"
+    },
+    {
+      "name": "GoodWeave International",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/goodweave-international/"
+    },
+    {
+      "name": "Grand Canyon University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/grand-canyon-university/"
+    },
+    {
+      "name": "Gustavus Adolphus College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/gustavus-adolphus-college/"
+    },
+    {
+      "name": "Gymshark",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/gymshark/"
+    },
+    {
+      "name": "Harvard University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/harvard-university/"
+    },
+    {
+      "name": "HUGO BOSS",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/hugo-boss/"
+    },
+    {
+      "name": "ICRW Advisors",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/icrw-advisors/"
+    },
+    {
+      "name": "Illinois State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/illinois-state-university/"
+    },
+    {
+      "name": "Indiana University of Pennsylvania",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/indiana-university-of-pennsylvania/"
+    },
+    {
+      "name": "Initiative for Women’s Empowerment",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/initiative-for-womens-empowerment/"
+    },
+    {
+      "name": "International Corporate Accountability Roundtable",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/international-corporate-accountability-roundtable/"
+    },
+    {
+      "name": "Johns Hopkins University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/johns-hopkins-university/"
+    },
+    {
+      "name": "Kansas State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/kansas-state-university/"
+    },
+    {
+      "name": "Kennesaw State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/kennesaw-state-university/"
+    },
+    {
+      "name": "L’Oréal",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/loreal/"
+    },
+    {
+      "name": "L2 Brands",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/l2-brands/"
+    },
+    {
+      "name": "Lakeshirts/Blue84",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/lakeshirts-blue84/"
+    },
+    {
+      "name": "Lehigh University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/lehigh-university/"
+    },
+    {
+      "name": "LTP Group",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/ltp-group/"
+    },
+    {
+      "name": "lululemon",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/lululemon/"
+    },
+    {
+      "name": "Mainland Headwear Holdings Limited",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/mainland-headwear-holdings-limited/"
+    },
+    {
+      "name": "Marquette University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/marquette-university/"
+    },
+    {
+      "name": "Maxport Limited",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/maxport-limited/"
+    },
+    {
+      "name": "McGill University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/mcgill-university/"
+    },
+    {
+      "name": "MEC Mountain Equipment Company Ltd",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/mec-mountain-equipment-co/"
+    },
+    {
+      "name": "Mercyhurst University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/mercyhurst-university/"
+    },
+    {
+      "name": "Michigan State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/michigan-state-university/"
+    },
+    {
+      "name": "Michigan Technological University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/michigan-technological-university/"
+    },
+    {
+      "name": "Millersville University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/millersville-university/"
+    },
+    {
+      "name": "Momentec Brands",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/founder-sport-group/"
+    },
+    {
+      "name": "National Consumers League",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/national-consumers-league/"
+    },
+    {
+      "name": "Nestlé Nespresso",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/nestle-nespresso/"
+    },
+    {
+      "name": "New Balance",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/new-balance/"
+    },
+    {
+      "name": "New Era Cap, LLC",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/new-era-cap-co-inc/"
+    },
+    {
+      "name": "New York University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/new-york-university/"
+    },
+    {
+      "name": "Next Level Apparel",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/next-level-apparel/"
+    },
+    {
+      "name": "Nike",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/nike/"
+    },
+    {
+      "name": "North Carolina State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/north-carolina-state-university/"
+    },
+    {
+      "name": "Northwestern University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/northwestern-university/"
+    },
+    {
+      "name": "NYU Stern Center for Business and Human Rights",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/nyu-stern-center-for-business-and-human-rights/"
+    },
+    {
+      "name": "Oregon State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/oregon-state-university/"
+    },
+    {
+      "name": "Our Journey",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/our-journey/"
+    },
+    {
+      "name": "Outerknown",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/outerknown/"
+    },
+    {
+      "name": "Outerstuff",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/outerstuff/"
+    },
+    {
+      "name": "Oxfam America",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/oxfam-america/"
+    },
+    {
+      "name": "Öz İplik İş",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/oz-iplik-is/"
+    },
+    {
+      "name": "Pakistan Textile, Garments, and Leather Workers’ Federation",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/pakistan-textile-garments-and-leather-workers-federation/"
+    },
+    {
+      "name": "Patagonia",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/patagonia/"
+    },
+    {
+      "name": "Penn State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/penn-state-university/"
+    },
+    {
+      "name": "People’s Courage International",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/peoples-courage-international/"
+    },
+    {
+      "name": "Phillips Academy",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/phillips-academy/"
+    },
+    {
+      "name": "PopSockets",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/popsockets/"
+    },
+    {
+      "name": "Pou Chen Group",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/pou-chen-group/"
+    },
+    {
+      "name": "Princeton University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/princeton-university/"
+    },
+    {
+      "name": "Project Liber8",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/project-liber8/"
+    },
+    {
+      "name": "PUMA SE",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/puma-se/"
+    },
+    {
+      "name": "Purdue University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/purdue-university/"
+    },
+    {
+      "name": "Reformation",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/reformation/"
+    },
+    {
+      "name": "Rochester Institute of Technology",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/rochester-institute-of-technology/"
+    },
+    {
+      "name": "Roots",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/roots/"
+    },
+    {
+      "name": "Rutgers University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/rutgers-university/"
+    },
+    {
+      "name": "S&S Activewear",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/ss-activewear/"
+    },
+    {
+      "name": "Sabirlar Hazelnut",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/sabirlar-hazelnut/"
+    },
+    {
+      "name": "Saint Joseph’s University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/saint-josephs-university/"
+    },
+    {
+      "name": "Saint Mary’s University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/saint-marys-university/"
+    },
+    {
+      "name": "Saint Michael’s College",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/saint-michaels-college/"
+    },
+    {
+      "name": "San Diego State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/san-diego-state-university/"
+    },
+    {
+      "name": "SanMar Corporation",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/sanmar-corporation/"
+    },
+    {
+      "name": "Save the Children",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/save-the-children/"
+    },
+    {
+      "name": "Seattle University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/seattle-university/"
+    },
+    {
+      "name": "SITKA Gear",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/gore-wear/"
+    },
+    {
+      "name": "SKIMS",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/skims/"
+    },
+    {
+      "name": "Slippery Rock University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/slippery-rock-university/"
+    },
+    {
+      "name": "St. John’s University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/st-johns-university/"
+    },
+    {
+      "name": "Stanford University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/stanford-university/"
+    },
+    {
+      "name": "Stony Brook University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/stony-brook-university/"
+    },
+    {
+      "name": "Syracuse University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/syracuse-university/"
+    },
+    {
+      "name": "Temple University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/temple-university/"
+    },
+    {
+      "name": "Textile, Knitting, Clothing, and Leather Industry Workers’ Union of Türkiye",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/textile-knitting-clothing-and-leather-industry-workers-union-of-turkey/"
+    },
+    {
+      "name": "The New School",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-new-school/"
+    },
+    {
+      "name": "The Ohio State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-ohio-state-university/"
+    },
+    {
+      "name": "The State University of New York at Cortland",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/state-university-of-new-york-cortland/"
+    },
+    {
+      "name": "The University of Alabama",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-alabama/"
+    },
+    {
+      "name": "The University of Georgia",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-georgia/"
+    },
+    {
+      "name": "The University of Iowa",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-iowa/"
+    },
+    {
+      "name": "The University of Maine",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-maine-at-orono/"
+    },
+    {
+      "name": "The University of North Carolina at Chapel Hill",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-north-carolina-at-chapel-hill/"
+    },
+    {
+      "name": "The University of North Carolina, Greensboro",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-north-carolina-greensboro/"
+    },
+    {
+      "name": "The University of Vermont",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/the-university-of-vermont/"
+    },
+    {
+      "name": "Threading Change",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/threading-change/"
+    },
+    {
+      "name": "TIMTAS",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/timtas/"
+    },
+    {
+      "name": "Toronto Metropolitan University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/toronto-metropolitan-university/"
+    },
+    {
+      "name": "Towson University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/towson-university/"
+    },
+    {
+      "name": "Tufts University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/tufts-university/"
+    },
+    {
+      "name": "Under Armour",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/under-armour/"
+    },
+    {
+      "name": "United States Marine Corps",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/united-states-marine-corps/"
+    },
+    {
+      "name": "Université de Sherbrooke",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/universite-de-sherbrooke/"
+    },
+    {
+      "name": "University at Albany, The State University of New York",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-at-albany-state-university-of-new-york/"
+    },
+    {
+      "name": "University at Buffalo, The State University of New York",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-buffalo-suny/"
+    },
+    {
+      "name": "University of Alberta",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-alberta/"
+    },
+    {
+      "name": "University of Calgary",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-calgary/"
+    },
+    {
+      "name": "University of California, Berkeley",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-berkeley/"
+    },
+    {
+      "name": "University of California, Davis",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-davis/"
+    },
+    {
+      "name": "University of California, Irvine",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-irvine/"
+    },
+    {
+      "name": "University of California, Los Angeles",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-los-angeles/"
+    },
+    {
+      "name": "University of California, Merced",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-merced/"
+    },
+    {
+      "name": "University of California, Riverside",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-riverside/"
+    },
+    {
+      "name": "University of California, San Diego",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-san-diego/"
+    },
+    {
+      "name": "University of California, San Francisco",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-californa-san-francisco/"
+    },
+    {
+      "name": "University of California, Santa Barbara",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-santa-barbara/"
+    },
+    {
+      "name": "University of California, Santa Cruz",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-california-santa-cruz/"
+    },
+    {
+      "name": "University of Colorado",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-colorado/"
+    },
+    {
+      "name": "University of Connecticut",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-connecticut/"
+    },
+    {
+      "name": "University of Dayton",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-dayton/"
+    },
+    {
+      "name": "University of Delaware",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-delaware/"
+    },
+    {
+      "name": "University of Detroit Mercy",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-detroit-mercy/"
+    },
+    {
+      "name": "University of Florida",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-florida/"
+    },
+    {
+      "name": "University of Guelph",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-guelph/"
+    },
+    {
+      "name": "University of Illinois at Chicago",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-illinois-at-chicago/"
+    },
+    {
+      "name": "University of Illinois at Urbana-Champaign",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-illinois-at-urbana-champaign/"
+    },
+    {
+      "name": "University of Kansas",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-kansas/"
+    },
+    {
+      "name": "University of Manitoba",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-manitoba/"
+    },
+    {
+      "name": "University of Maryland",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-maryland/"
+    },
+    {
+      "name": "University of Massachusetts",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-massachusetts/"
+    },
+    {
+      "name": "University of Michigan",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-michigan/"
+    },
+    {
+      "name": "University of New Hampshire",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-new-hampshire/"
+    },
+    {
+      "name": "University of Notre Dame",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-notre-dame/"
+    },
+    {
+      "name": "University of Pennsylvania",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-pennsylvania/"
+    },
+    {
+      "name": "University of Pittsburgh",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-pittsburgh/"
+    },
+    {
+      "name": "University of South Carolina",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-south-carolina/"
+    },
+    {
+      "name": "University of South Florida",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-south-florida/"
+    },
+    {
+      "name": "University of Texas at Austin",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-texas-at-austin/"
+    },
+    {
+      "name": "University of Toronto",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-toronto/"
+    },
+    {
+      "name": "University of Virginia",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-virginia/"
+    },
+    {
+      "name": "University of Washington",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-washington/"
+    },
+    {
+      "name": "University of Wisconsin, Milwaukee",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/university-of-wisconsin-milwaukee/"
+    },
+    {
+      "name": "Unrivaled Teamwear",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/unrivaled-teamwear/"
+    },
+    {
+      "name": "Utah State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/utah-state-university/"
+    },
+    {
+      "name": "Vanderbilt University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/vanderbilt-university/"
+    },
+    {
+      "name": "Villanova University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/villanova-university/"
+    },
+    {
+      "name": "Voicevale Group",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/voicevale-group/"
+    },
+    {
+      "name": "Washington State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/washington-state-university/"
+    },
+    {
+      "name": "Washington University in St. Louis",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/washington-university-in-st-louis/"
+    },
+    {
+      "name": "Weber State University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/weber-state-university/"
+    },
+    {
+      "name": "West Virginia University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/west-virginia-university/"
+    },
+    {
+      "name": "WORK",
+      "status": "civil-society",
+      "category": "civil-society",
+      "raw_type": "Civil Society Organization",
+      "source_url": "https://www.fairlabor.org/member/work/"
+    },
+    {
+      "name": "Xavier University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/xavier-university/"
+    },
+    {
+      "name": "Yale University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/yale-university/"
+    },
+    {
+      "name": "Yavuz Gida",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/yavuz-gida/"
+    },
+    {
+      "name": "Yavuzkan",
+      "status": "participating",
+      "category": "company",
+      "raw_type": "Participating Company",
+      "source_url": "https://www.fairlabor.org/member/yavuzkan/"
+    },
+    {
+      "name": "Yee Tung",
+      "status": "accredited",
+      "category": "company",
+      "raw_type": "Fair Labor Accredited, Participating Company",
+      "source_url": "https://www.fairlabor.org/member/yee-tung/"
+    },
+    {
+      "name": "York University",
+      "status": "university",
+      "category": "education",
+      "raw_type": "College/University",
+      "source_url": "https://www.fairlabor.org/member/york-university/"
+    }
+  ],
+  "wrc_findings": [
+    {
+      "brand": "Nike",
+      "factory": "Hong Seng Knitting / Cambodia & multiple",
+      "country": "Cambodia / Thailand",
+      "year": 2020,
+      "finding": "WRC investigation found supplier factories underpaid pandemic-era severance owed to dismissed workers; Nike committed to remediation following sustained pressure.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Adidas",
+      "factory": "Hong Seng Knitting",
+      "country": "Thailand",
+      "year": 2020,
+      "finding": "WRC documented unpaid severance to 1,200+ dismissed workers at supplier factory; brand subsequently contributed to remediation pool.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "PVH",
+      "factory": "Multiple Cambodian suppliers",
+      "country": "Cambodia",
+      "year": 2020,
+      "finding": "WRC investigation linking PVH (Calvin Klein / Tommy Hilfiger) to supplier severance gaps during COVID-19 layoffs.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "VF Corporation",
+      "factory": "Multiple",
+      "country": "Bangladesh / Cambodia",
+      "year": 2021,
+      "finding": "WRC findings on supplier-factory severance shortfalls; remediation negotiated through brand engagement.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Gap Inc",
+      "factory": "Hulu Garment",
+      "country": "Cambodia",
+      "year": 2020,
+      "finding": "WRC documented mass dismissals without statutory severance at Gap supplier; brand contributed to back-pay settlement after WRC pressure.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "H&M",
+      "factory": "Myanmar suppliers",
+      "country": "Myanmar",
+      "year": 2022,
+      "finding": "WRC reporting on supplier labour-rights violations under military rule; H&M subsequently announced phased exit from Myanmar production.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Inditex",
+      "factory": "Myanmar suppliers",
+      "country": "Myanmar",
+      "year": 2022,
+      "finding": "WRC documented worker-rights deterioration at Inditex (Zara) supplier sites; brand committed to enhanced monitoring.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Fanatics",
+      "factory": "Multiple collegiate licensee factories",
+      "country": "Honduras / Pakistan",
+      "year": 2022,
+      "finding": "WRC investigations under the Designated Suppliers Program found unresolved compliance gaps at Fanatics-licensed collegiate apparel factories.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Under Armour",
+      "factory": "Jerzees Choloma",
+      "country": "Honduras",
+      "year": 2018,
+      "finding": "WRC investigation found anti-union retaliation at supplier factory producing Under Armour collegiate apparel.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Champion (Hanesbrands)",
+      "factory": "Jerzees de Honduras",
+      "country": "Honduras",
+      "year": 2019,
+      "finding": "WRC documented systematic union-busting at Hanesbrands-supplier factory; collegiate licensees forced to withdraw orders pending remediation.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Walmart",
+      "factory": "Multiple suppliers",
+      "country": "Bangladesh / Cambodia",
+      "year": 2020,
+      "finding": "WRC findings on supplier-factory severance gaps and unsafe conditions at Walmart-sourced facilities.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    },
+    {
+      "brand": "Carter's",
+      "factory": "Multiple",
+      "country": "Bangladesh",
+      "year": 2021,
+      "finding": "WRC reporting on Carter's supplier compliance issues including unpaid severance.",
+      "source_url": "https://www.workersrights.org/factory-investigations/",
+      "severity": "negative"
+    }
+  ],
+  "ccc_signatories": [
+    {
+      "brand": "Adidas",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Asics",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "C&A",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Esprit",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "G-Star RAW",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "H&M",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Levi Strauss",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Lindex",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Marks & Spencer",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "New Look",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Nike",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Patagonia",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Tchibo",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Mountain Equipment Co-op",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Cotton On Group",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Hanesbrands",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Target Australia",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Kmart Australia",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "ALDI",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Lidl",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Decathlon",
+      "pledge_signed_year": 2019,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Primark",
+      "pledge_signed_year": 2019,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "River Island",
+      "pledge_signed_year": 2020,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "ASOS",
+      "pledge_signed_year": 2017,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Champion (Hanesbrands)",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Outerknown",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Eileen Fisher",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Everlane",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Pact",
+      "pledge_signed_year": 2018,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Burberry",
+      "pledge_signed_year": 2019,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Gap Inc",
+      "pledge_signed_year": 2019,
+      "source_url": "https://cleanclothes.org/transparency"
+    },
+    {
+      "brand": "Lululemon",
+      "pledge_signed_year": 2020,
+      "source_url": "https://cleanclothes.org/transparency"
+    }
+  ],
+  "hrw_reports": [
+    {
+      "brand": "Amazon",
+      "year": 2022,
+      "title": "Workers Disposable: Surveillance and the Pandemic at Amazon Warehouses",
+      "source_url": "https://www.hrw.org/news/2022/03/04/amazon-workers-pandemic-conditions",
+      "severity": "negative"
+    },
+    {
+      "brand": "Apple",
+      "year": 2019,
+      "title": "Cobalt supply-chain labour concerns — child mining in DRC supply",
+      "source_url": "https://www.hrw.org/topic/business/supply-chains",
+      "severity": "negative"
+    },
+    {
+      "brand": "Tesla",
+      "year": 2019,
+      "title": "Cobalt supply-chain labour concerns — child mining in DRC supply",
+      "source_url": "https://www.hrw.org/topic/business/supply-chains",
+      "severity": "negative"
+    },
+    {
+      "brand": "Samsung",
+      "year": 2019,
+      "title": "Cobalt supply-chain labour concerns — child mining in DRC supply",
+      "source_url": "https://www.hrw.org/topic/business/supply-chains",
+      "severity": "negative"
+    },
+    {
+      "brand": "Microsoft",
+      "year": 2019,
+      "title": "Cobalt supply-chain labour concerns — child mining in DRC supply",
+      "source_url": "https://www.hrw.org/topic/business/supply-chains",
+      "severity": "negative"
+    },
+    {
+      "brand": "Glencore",
+      "year": 2019,
+      "title": "Cobalt mine labour conditions in DRC",
+      "source_url": "https://www.hrw.org/topic/business/supply-chains",
+      "severity": "negative"
+    },
+    {
+      "brand": "Nestle",
+      "year": 2019,
+      "title": "Child labour in cocoa supply chain — Ivory Coast",
+      "source_url": "https://www.hrw.org/topic/business/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Mars",
+      "year": 2019,
+      "title": "Child labour in cocoa supply chain — Ivory Coast",
+      "source_url": "https://www.hrw.org/topic/business/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Mondelez",
+      "year": 2019,
+      "title": "Child labour in cocoa supply chain — Ivory Coast",
+      "source_url": "https://www.hrw.org/topic/business/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Hershey",
+      "year": 2019,
+      "title": "Child labour in cocoa supply chain — Ivory Coast",
+      "source_url": "https://www.hrw.org/topic/business/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Unilever",
+      "year": 2020,
+      "title": "Worker rights concerns in palm-oil supply chain",
+      "source_url": "https://www.hrw.org/news/2019/11/21/indonesia-palm-oil-workers-abused",
+      "severity": "negative"
+    },
+    {
+      "brand": "Procter & Gamble",
+      "year": 2020,
+      "title": "Worker rights concerns in palm-oil supply chain",
+      "source_url": "https://www.hrw.org/news/2019/11/21/indonesia-palm-oil-workers-abused",
+      "severity": "negative"
+    },
+    {
+      "brand": "Cargill",
+      "year": 2020,
+      "title": "Worker rights concerns in palm-oil supply chain",
+      "source_url": "https://www.hrw.org/news/2019/11/21/indonesia-palm-oil-workers-abused",
+      "severity": "negative"
+    },
+    {
+      "brand": "JBS",
+      "year": 2019,
+      "title": "Brazilian beef supply chain — Indigenous land rights and labour conditions",
+      "source_url": "https://www.hrw.org/news/2019/10/02/brazil-failed-protections-against-amazon-destruction",
+      "severity": "negative"
+    },
+    {
+      "brand": "Walmart",
+      "year": 2019,
+      "title": "Brazilian beef supply chain — Indigenous land rights and labour conditions",
+      "source_url": "https://www.hrw.org/news/2019/10/02/brazil-failed-protections-against-amazon-destruction",
+      "severity": "negative"
+    },
+    {
+      "brand": "Tyson Foods",
+      "year": 2020,
+      "title": "US meatpacking worker COVID-19 protections — failure to safeguard workers",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    },
+    {
+      "brand": "Smithfield Foods",
+      "year": 2020,
+      "title": "US meatpacking worker COVID-19 protections — failure to safeguard workers",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    },
+    {
+      "brand": "JBS USA",
+      "year": 2020,
+      "title": "US meatpacking worker COVID-19 protections — failure to safeguard workers",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    },
+    {
+      "brand": "McDonald's",
+      "year": 2019,
+      "title": "Workplace harassment and worker safety",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    },
+    {
+      "brand": "Tesla",
+      "year": 2022,
+      "title": "Worker safety and racial discrimination concerns at US factory",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    },
+    {
+      "brand": "Shein",
+      "year": 2024,
+      "title": "Supply-chain transparency and labour-rights concerns",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    },
+    {
+      "brand": "Temu",
+      "year": 2024,
+      "title": "Supply-chain transparency and labour-rights concerns",
+      "source_url": "https://www.hrw.org/topic/business/workers-rights",
+      "severity": "negative"
+    }
+  ],
+  "ilrf_campaigns": [
+    {
+      "brand": "Nestle",
+      "campaign": "Cocoa child-labour accountability (Ivory Coast / Ghana)",
+      "year": 2021,
+      "source_url": "https://laborrights.org/issues/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Mars",
+      "campaign": "Cocoa child-labour accountability (Ivory Coast / Ghana)",
+      "year": 2021,
+      "source_url": "https://laborrights.org/issues/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Hershey",
+      "campaign": "Cocoa child-labour accountability (Ivory Coast / Ghana)",
+      "year": 2021,
+      "source_url": "https://laborrights.org/issues/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Mondelez",
+      "campaign": "Cocoa child-labour accountability (Ivory Coast / Ghana)",
+      "year": 2021,
+      "source_url": "https://laborrights.org/issues/child-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Walmart",
+      "campaign": "Shrimp/seafood supply-chain forced-labour campaign (SE Asia)",
+      "year": 2020,
+      "source_url": "https://laborrights.org/issues/forced-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Costco",
+      "campaign": "Shrimp/seafood supply-chain forced-labour campaign (SE Asia)",
+      "year": 2020,
+      "source_url": "https://laborrights.org/issues/forced-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Red Lobster",
+      "campaign": "Shrimp/seafood supply-chain forced-labour campaign (SE Asia)",
+      "year": 2020,
+      "source_url": "https://laborrights.org/issues/forced-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Whole Foods",
+      "campaign": "Shrimp/seafood supply-chain forced-labour campaign (SE Asia)",
+      "year": 2020,
+      "source_url": "https://laborrights.org/issues/forced-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Amazon",
+      "campaign": "Warehouse worker safety and union-busting",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/freedom-association",
+      "severity": "negative"
+    },
+    {
+      "brand": "Starbucks",
+      "campaign": "Union-busting allegations following Workers United organising drive",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/freedom-association",
+      "severity": "negative"
+    },
+    {
+      "brand": "Trader Joe's",
+      "campaign": "Union-busting allegations after Trader Joe's United organising",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/freedom-association",
+      "severity": "negative"
+    },
+    {
+      "brand": "REI",
+      "campaign": "Union-busting allegations following retail workers organising",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/freedom-association",
+      "severity": "negative"
+    },
+    {
+      "brand": "Apple",
+      "campaign": "Retail store union-busting allegations",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/freedom-association",
+      "severity": "negative"
+    },
+    {
+      "brand": "Activision Blizzard",
+      "campaign": "Union-busting allegations following game-studio organising",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/freedom-association",
+      "severity": "negative"
+    },
+    {
+      "brand": "Shein",
+      "campaign": "Garment supply-chain transparency and wage theft",
+      "year": 2023,
+      "source_url": "https://laborrights.org/issues/forced-labor",
+      "severity": "negative"
+    },
+    {
+      "brand": "Forever 21",
+      "campaign": "Wage-theft accountability in Los Angeles garment supply chain",
+      "year": 2019,
+      "source_url": "https://laborrights.org/issues/wage-theft",
+      "severity": "negative"
+    },
+    {
+      "brand": "Ross Dress for Less",
+      "campaign": "Wage-theft accountability in Los Angeles garment supply chain",
+      "year": 2019,
+      "source_url": "https://laborrights.org/issues/wage-theft",
+      "severity": "negative"
+    },
+    {
+      "brand": "TJ Maxx",
+      "campaign": "Wage-theft accountability in Los Angeles garment supply chain",
+      "year": 2019,
+      "source_url": "https://laborrights.org/issues/wage-theft",
+      "severity": "negative"
+    },
+    {
+      "brand": "Marshalls",
+      "campaign": "Wage-theft accountability in Los Angeles garment supply chain",
+      "year": 2019,
+      "source_url": "https://laborrights.org/issues/wage-theft",
+      "severity": "negative"
+    }
+  ]
+}
