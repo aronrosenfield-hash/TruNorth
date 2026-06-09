@@ -1256,54 +1256,47 @@ const WRITERS = [
       }];
     },
   },
-  // ─── Consumer scorecards + boycott databases (round 4) ────────────────
-  // Consolidated NGO / journalist / activist scorecards: Goods Unite Us,
-  // Ethical Consumer, DoneGood, Good On You, Buycott, As You Sow Invest
-  // Your Values, Fossil Free Funds, ADL Online Hate Index, Project
-  // Drawdown. Each per-category sub-object carries badges, bestStatus,
-  // narrative, and (where applicable) a TruNorth sc enum.
-  //
-  // Categories written: political, environment, labor, animals, guns,
-  // privacy, health, dei.
+  // ─── Investigative journalism corpus (Round 4) ────────────────────────
+  // Curated landmark corporate-accountability investigations from 28 outlets
+  // (ProPublica, Reuters, Bloomberg, BBC, Guardian, NYT, WSJ, Mother Jones,
+  // Intercept, Inside Climate News, ICIJ leaks, OCCRP, Toxic Docs, Climate
+  // Files, etc.). Conservative severity: a SINGLE outlet stays "mixed"; only
+  // ≥2 distinct outlets in the same category escalate to "poor"; ≥3 to
+  // "very_poor". Writes ONE narrative PER affected category (multi-cat
+  // brands like Boeing emit both labor + privacy hits where applicable).
   {
-    name: "consumer-scorecards",
+    name: "investigative-journalism",
     write: (e) => {
-      const SC_FROM_SEVERITY = {
-        environment: { leader: "positive", positive: "positive", mixed: "mixed",       concern: "very_poor" },
-        labor:       { leader: "positive", positive: "positive", mixed: "mixed",       concern: "poor" },
-        animals:     { leader: "positive", positive: "positive", mixed: "mixed",       concern: "poor" },
-        health:      { leader: "good",     positive: "good",     mixed: "mixed",       concern: "poor" },
-        privacy:     { leader: "good",     positive: "good",     mixed: "mixed",       concern: "poor" },
-        guns:        { leader: "neutral",  positive: "neutral",  mixed: "sells_guns",  concern: "sells_guns" },
-        dei:         { leader: "pro_dei",  positive: "pro_dei",  mixed: "neutral",     concern: "anti_dei" },
-        political:   { leader: "left",     positive: "left",     mixed: "bipartisan",  neutral: "bipartisan", concern: "controversial" },
-      };
-      const SEVERITY = {
-        environment: { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        labor:       { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        animals:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        health:      { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        privacy:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        guns:        { leader: "neutral",  positive: "neutral",  mixed: "mixed", concern: "negative" },
-        dei:         { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
-        political:   { leader: "neutral",  positive: "neutral",  mixed: "mixed", neutral: "neutral", concern: "negative" },
-      };
-      const CATEGORIES = ["political","environment","labor","animals","guns","privacy","health","dei"];
+      const byCat = e.by_category || {};
       const out = [];
-      for (const cat of CATEGORIES) {
-        const b = e[cat];
-        if (!b || !b.narrative) continue;
-        const sc = b.sc || SC_FROM_SEVERITY[cat]?.[b.bestStatus];
-        if (!sc) continue;
-        const sources = Array.isArray(b.sources) && b.sources.length
-          ? ` [${b.sources.join(" · ")}]`
+      for (const [cat, bc] of Object.entries(byCat)) {
+        if (!bc || !bc.latest) continue;
+        const oc = bc.outlet_count || 0;
+        const ic = bc.investigation_count || 0;
+        const outletsList = (bc.outlets || []).slice(0, 3).join(", ");
+        const sev = oc >= 3 ? "very_poor" : oc >= 2 ? "poor" : "mixed";
+        const sc = sev;
+        const lead = oc >= 2
+          ? `${ic} investigative reports across ${oc} outlets (${outletsList}${bc.outlets.length > 3 ? ", …" : ""}).`
+          : `Investigative report (${bc.latest.outletLabel || bc.latest.outlet}, ${bc.latest.date}).`;
+        const tail = bc.latest.headline
+          ? ` "${clip(bc.latest.headline, 140)}"${bc.latest.abstract ? ` — ${clip(bc.latest.abstract, 180)}` : ""}`
           : "";
+        const narrative = `${lead}${tail}`.trim();
+        // Cross-citation suffix: only when ≥2 outlets cover the same category.
+        // Appended to existing narratives so landmark brands like Boeing /
+        // Exxon / Wells Fargo show "+ N independent investigative reports
+        // across M outlets" alongside Violation Tracker etc.
+        const crossCiteSuffix = oc >= 2
+          ? `Cross-cited by ${oc} investigative outlets (${outletsList}${bc.outlets.length > 3 ? ", …" : ""}): "${clip(bc.latest.headline, 120)}" (${bc.latest.outletLabel || bc.latest.outlet}, ${bc.latest.date}).`
+          : null;
         out.push({
           category: cat,
-          narrative: `${b.narrative}${sources}`,
+          narrative,
           sc,
-          severity: SEVERITY[cat]?.[b.bestStatus] || "mixed",
-          mergePositive: b.bestStatus === "leader" || b.bestStatus === "positive",
+          severity: "negative",
+          mergeCrossCite: oc >= 2,
+          crossCiteSuffix,
         });
       }
       return out;
@@ -1499,15 +1492,21 @@ for (const f of compFiles) {
       const existingPositive = existingSources.some(s => POSITIVE_MERGE_SOURCES.has(s));
       const isNoRecord = !existingS || NO_RECORD.test(existingS);
 
-      // Three cases:
+      // Four cases:
       //  1) No existing → write fresh.
       //  2) Existing positive merge-source AND this writer is mergePositive →
       //     append narrative + add source (multi-source enrichment).
-      //  3) Existing non-no-record → skip (first wins).
+      //  3) Existing non-no-record AND this writer is mergeCrossCite (e.g.
+      //     investigative-journalism with ≥2 outlets) → append a compact
+      //     editorial-cross-citation suffix; never overwrite.
+      //  4) Existing non-no-record → skip (first wins).
       if (isNoRecord) {
         d[w.category] = { ...existing, s: w.narrative, sources: [...existingSources, name] };
       } else if (w.mergePositive && existingPositive && !existingS.includes(w.narrative)) {
         const merged = `${existingS.replace(/\s+$/, "")} ${w.narrative}`;
+        d[w.category] = { ...existing, s: merged, sources: [...existingSources, name] };
+      } else if (w.mergeCrossCite && w.crossCiteSuffix && !existingS.includes(w.crossCiteSuffix)) {
+        const merged = `${existingS.replace(/\s+$/, "")} ${w.crossCiteSuffix}`;
         d[w.category] = { ...existing, s: merged, sources: [...existingSources, name] };
       } else {
         if (TRACE_SLUGS.has(slug)) patagoniaTrace[slug].push(`  ${w.category}: SKIP (already filled by earlier source)`);
