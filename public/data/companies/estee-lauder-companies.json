@@ -7,9 +7,9 @@
   "sc": {
     "political": "bipartisan",
     "charity": "mixed",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
@@ -41,15 +41,18 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Held by 1 ESG/SRI fund(s) (trillium) — investor-screen positive signal.",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "divestment-impact-funds"
     ]
   },
   "dei": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Held by 1 ESG/SRI fund(s) (gender-equality-funds) — investor-screen positive signal.",
+    "sources": [
+      "divestment-impact-funds"
+    ]
   },
   "animals": {
     "s": "No public record found.",

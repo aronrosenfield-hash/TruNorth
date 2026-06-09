@@ -1,0 +1,51 @@
+{
+  "_doc": "Fixture for divestment-impact-funds-fetch.mjs. Mirrors a tiny subset of the curated table so the test/CI path runs end-to-end with no network.",
+  "records": [
+    {
+      "source": "norway-gpfg",
+      "brand": "Lockheed Martin",
+      "category": "guns",
+      "polarity": "negative",
+      "reason": "Production of nuclear weapons",
+      "decision_year": 2007,
+      "source_url": "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+    },
+    {
+      "source": "norway-gpfg",
+      "brand": "Walmart",
+      "category": "labor",
+      "polarity": "negative",
+      "reason": "Serious violations of human rights — labour rights",
+      "decision_year": 2006,
+      "source_url": "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/"
+    },
+    {
+      "source": "divestment-commitments",
+      "brand": "ExxonMobil",
+      "category": "environment",
+      "polarity": "negative",
+      "reason": "Fossil-fuel divestment by Harvard, Stanford, UC, Yale and others",
+      "decision_year": 2021,
+      "institution_count": 250,
+      "source_url": "https://gofossilfree.org/divestment/commitments/"
+    },
+    {
+      "source": "vanguard-esg",
+      "brand": "Microsoft",
+      "category": "environment",
+      "polarity": "positive",
+      "reason": "Vanguard ESG U.S. Stock ETF (ESGV) top holding",
+      "decision_year": 2024,
+      "source_url": "https://investor.vanguard.com/investment-products/etfs/profile/esgv"
+    },
+    {
+      "source": "trillium",
+      "brand": "Costco",
+      "category": "environment",
+      "polarity": "positive",
+      "reason": "Trillium Asset Management ESG-screened holding",
+      "decision_year": 2024,
+      "source_url": "https://www.trilliuminvest.com/"
+    }
+  ]
+}
