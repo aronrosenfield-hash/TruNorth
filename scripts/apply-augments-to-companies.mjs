@@ -104,7 +104,147 @@ const WRITERS = [
       severity: "positive",
     }],
   },
-  // (bcorp writer moved below — multi-category positive with merge support)
+  // ─── Carbon Majors (Heede 2024) — highest-priority NEGATIVE env signal.
+  // Placed before SBTi/Net-Zero Tracker so historic top emitters don't get
+  // greenwashed by their forward-looking pledges. ~22% of all industrial
+  // GHG since 1854 traces to ~25 companies in this list.
+  {
+    name: "carbon-majors",
+    write: (e) => {
+      if (e.share_total_pct == null) return [];
+      const commodities = (e.primary_commodities || []).join(" / ");
+      const ownership = e.ownership === "State-Owned" ? "state-owned" : "investor-owned";
+      const narrative = `Carbon Majors database (Heede 2024): ${ownership} ${commodities} producer responsible for ${e.share_total_pct.toFixed(2)}% of all industrial GHG emissions since 1854 (${e.share_since_1988_pct.toFixed(2)}% since 1988).`;
+      return [{
+        category: "environment",
+        narrative,
+        sc: "very_poor",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── Banking on Climate Chaos — fossil-fuel financing 2016-2023 ──────
+  {
+    name: "banking-on-climate-chaos",
+    write: (e) => {
+      if (e.fossil_usd_b == null) return [];
+      const usd = `$${e.fossil_usd_b.toFixed(1)}B`;
+      const rk = e.rank ? ` (#${e.rank} globally)` : "";
+      return [{
+        category: "environment",
+        narrative: `Banking on Climate Chaos 2024: ${usd} in fossil-fuel financing ${e.period || "2016-2023"}${rk}.`,
+        sc: e.rank <= 10 ? "very_poor" : "poor",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── Toxic 100 Air / Water (UMass PERI) ──────────────────────────────
+  {
+    name: "toxic-100",
+    write: (e) => {
+      const ranks = [];
+      if (e.air_rank) ranks.push(`#${e.air_rank} Toxic 100 Air Polluters`);
+      if (e.water_rank) ranks.push(`#${e.water_rank} Toxic 100 Water Polluters`);
+      if (!ranks.length) return [];
+      const worst = Math.min(e.air_rank || 99, e.water_rank || 99);
+      return [{
+        category: "environment",
+        narrative: `UMass PERI ranks this company ${ranks.join(" and ")} (toxicity-weighted US releases).`,
+        sc: worst <= 15 ? "very_poor" : "poor",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── EPA GHGRP — facility-level CO2e rolled to parent ────────────────
+  {
+    name: "epa-ghgrp",
+    write: (e) => {
+      if (!e.latest_mt_co2e) return [];
+      const mt = (e.latest_mt_co2e / 1e6).toFixed(2);
+      const facilities = e.facility_count ? ` across ${e.facility_count} EPA-reporting facilit${e.facility_count === 1 ? "y" : "ies"}` : "";
+      const tier = e.latest_mt_co2e >= 10e6 ? "very_poor" : e.latest_mt_co2e >= 1e6 ? "poor" : "mixed";
+      return [{
+        category: "environment",
+        narrative: `EPA GHGRP ${e.latest_year}: ${mt} Mt CO2e direct emissions${facilities} reported under federal greenhouse-gas reporting program.`,
+        sc: tier,
+        severity: tier === "very_poor" || tier === "poor" ? "negative" : "neutral",
+      }];
+    },
+  },
+  // ─── InfluenceMap LobbyMap — corporate climate-policy lobbying ───────
+  {
+    name: "influence-map",
+    write: (e) => {
+      if (!e.grade) return [];
+      let envSc, label;
+      switch (e.grade) {
+        case "A": envSc = "positive";  label = "actively advocates for ambitious climate policy"; break;
+        case "B": envSc = "positive";  label = "broadly supports ambitious climate policy"; break;
+        case "C": envSc = "mixed";     label = "mixed climate-policy engagement"; break;
+        case "D": envSc = "poor";      label = "opposes major elements of climate policy"; break;
+        case "E": envSc = "very_poor"; label = "strategically opposes ambitious climate policy"; break;
+        case "F": envSc = "very_poor"; label = "actively obstructs climate policy"; break;
+        default:  envSc = "mixed";     label = `LobbyMap grade ${e.grade}`;
+      }
+      return [{
+        category: "environment",
+        narrative: `InfluenceMap LobbyMap grade ${e.grade}: ${label} (${e.engagement || "tracked"} engagement, ${e.topline || "unknown"} topline).`,
+        sc: envSc,
+        severity: envSc === "positive" ? "positive" : envSc === "mixed" ? "neutral" : "negative",
+      }];
+    },
+  },
+  // ─── Climate Action 100+ benchmark ───────────────────────────────────
+  {
+    name: "ca100",
+    write: (e) => {
+      if (!e.scores) return [];
+      const s = e.scores;
+      const avg = e.avg_score;
+      let sc;
+      if (avg >= 3.5) sc = "positive";
+      else if (avg >= 2.5) sc = "mixed";
+      else if (avg >= 1.5) sc = "poor";
+      else sc = "very_poor";
+      return [{
+        category: "environment",
+        narrative: `Climate Action 100+ ${e.benchmark_year || ""} Net Zero Benchmark — disclosure ${s.disclosure}/5, alignment ${s.alignment}/5, governance ${s.governance}/5, capital allocation ${s.capital_allocation}/5.`,
+        sc,
+        severity: sc === "positive" ? "positive" : sc === "mixed" ? "neutral" : "negative",
+      }];
+    },
+  },
+  // ─── GFANZ / NZAM signatories (positive financial-sector signal) ─────
+  {
+    name: "gfanz",
+    write: (e) => {
+      if (!e.alliance) return [];
+      const status = e.active ? "active member" : `withdrew ${e.withdrew}`;
+      const sc = e.active ? "positive" : "mixed";
+      return [{
+        category: "environment",
+        narrative: `${e.alliance} ${status} (signed ${e.since}) under Glasgow Financial Alliance for Net Zero (GFANZ) umbrella.`,
+        sc,
+        severity: sc === "positive" ? "positive" : "neutral",
+      }];
+    },
+  },
+  // ─── B Corp certification (multi-category) ────────────────────────────
+  {
+    name: "bcorp",
+    write: (e) => {
+      const out = [];
+      const score = e.score || e.totalScore || e.overallScore;
+      const yr = e.certifiedSince || e.year;
+      const baseline = score
+        ? `Certified B Corporation${yr ? ` since ${yr}` : ""}, B Impact score ${score}/200.`
+        : `Certified B Corporation${yr ? ` since ${yr}` : ""}.`;
+      out.push({ category: "labor", narrative: baseline, sc: "positive" });
+      out.push({ category: "environment", narrative: baseline, sc: "positive" });
+      out.push({ category: "dei", narrative: baseline, sc: "pro_dei" });
+      return out;
+    },
+  },
   // ─── SBTi (Science-Based Targets) ────────────────────────────────────
   {
     name: "sbti",
