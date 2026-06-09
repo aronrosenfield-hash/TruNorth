@@ -2,12 +2,12 @@
   "name": "COLGATE PALMOLIVE",
   "cat": "Consumer Goods",
   "init": "COLG",
-  "overall": 54.5,
+  "overall": 64.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "poor",
     "dei": "neutral",
     "animals": "neutral",
@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -43,10 +46,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "The Climate Pledge signatory (since 2020-06) — committed to net-zero carbon by 2040, 10 years ahead of the Paris Agreement target.",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "the-climate-pledge"
     ]
   },
   "dei": {
@@ -246,5 +250,15 @@
   "health": {
     "s": "2 CPSC recalls on record; sample hazard: the recalled products can contain pseudomonas species bacteria."
   },
-  "realCats": 4
+  "realCats": 5,
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 24,
+      "score": 85.1,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
+  }
 }

@@ -43,6 +43,8 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "climate-coalitions",
   // Round-4 labor-deep additions:
   "fair-labor-association", "ccc-transparency-pledge",
+  // 2026-06-09 (lock-in-200 push):
+  "the-climate-pledge",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -1350,6 +1352,25 @@ const WRITERS = [
         narrative,
         sc,
         severity: civ >= 10_000_000 ? "negative" : "mixed",
+      }];
+    },
+  },
+
+  // ─── The Climate Pledge → environment (positive merge) ────────────────
+  // Amazon-led net-zero-by-2040 commitment (10 years ahead of Paris).
+  // 550+ signatories across all sectors. Signatory status = verified
+  // public commitment, eligible for POSITIVE_MERGE_SOURCES stacking with
+  // other climate signals (RE100/EV100/CDP A-List).
+  {
+    name: "the-climate-pledge",
+    write: (e) => {
+      if (!e?.isSignatory) return [];
+      const joined = e.joined ? ` (since ${e.joined})` : "";
+      return [{
+        category: "environment",
+        narrative: `The Climate Pledge signatory${joined} — committed to net-zero carbon by 2040, 10 years ahead of the Paris Agreement target.`,
+        sc: "positive",
+        severity: "positive",
       }];
     },
   },

@@ -82,7 +82,7 @@ Examples:
 - **SEC** for exec pay and litigation
 - **USAspending.gov** for federal contract dollars
 - **Senate LD-2** and **FARA** for lobbying disclosures
-- ...and 175+ more
+- ...and 200+ more
 
 Every grade has a "Why this grade?" view that lists the exact citations. If the government records change, our grades change. If a company gets sued or fined or wins an award, we know within a week.
 
@@ -98,7 +98,7 @@ Buycott aggregates campaigns ("boycott this company, support that one"). That's 
 
 Ethical Consumer uses paid editorial researchers. That's opinion.
 
-TruNorth uses 175+ public-records data sources with traceable citations. We grade the parent company, not the product, so scanning an Oreo gives you a verdict on Mondelez. And the grading methodology is published.
+TruNorth uses 200+ public-records data sources with traceable citations. We grade the parent company, not the product, so scanning an Oreo gives you a verdict on Mondelez. And the grading methodology is published.
 
 ---
 
@@ -166,7 +166,7 @@ If they ask about background, mention: a year of solo development, mortgaged-the
 ## Quick numbers to memorize
 
 - **11,209 companies graded**
-- **175+ public-records data sources** (growing weekly)
+- **200+ public-records data sources** (growing weekly)
 - **143 GitHub Actions cron jobs** keeping data fresh
 - **11 values categories** (political donations, charity, environment, labor, DEI, animal testing, firearms, data privacy, executive pay, transparency, health)
 - **0 ads, 0 trackers selling user data, 0 dollars from rated companies**
