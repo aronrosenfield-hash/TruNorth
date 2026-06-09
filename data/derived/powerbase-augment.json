@@ -1,0 +1,516 @@
+{
+  "_license": "CC BY-SA 3.0 — Powerbase (Spinwatch), https://powerbase.info",
+  "_source": "https://powerbase.info",
+  "_generated_at": "2026-06-09T22:59:40.815Z",
+  "_source_file": "data/raw/powerbase/2026-06-09.json",
+  "_stats": {
+    "raw_pages": 37,
+    "matched_companies": 22,
+    "by_category": {
+      "political": 20,
+      "environment": 2
+    },
+    "by_severity": {
+      "poor": 3,
+      "mixed": 19
+    }
+  },
+  "companies": {
+    "exxonmobil": {
+      "title": "Exxon Mobil",
+      "page_url": "https://powerbase.info/index.php/Exxon_Mobil",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — fossil fuel, mining industry, tax avoidance.",
+          "sc": "poor",
+          "severity": "negative",
+          "source_url": "https://powerbase.info/index.php/Exxon_Mobil"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Fracking",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Mining Industry",
+          "signal": "mining_industry",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Mining Industry Tax Avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Mining and Metals",
+          "signal": "mining_industry",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Oil Industry",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Tax avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 2
+    },
+    "goldman-sachs": {
+      "title": "Goldman Sachs Group",
+      "page_url": "https://powerbase.info/index.php/Goldman_Sachs_Group",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, revolving door. Goldman Sachs Group, founded in 1869, describes itself as a \"leading global investment banking, securities and investment management firm that provides a wide range of services worldwide to a…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Goldman_Sachs_Group"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 1
+    },
+    "jpmorgan-chase": {
+      "title": "JP Morgan Chase and Co.",
+      "page_url": "https://powerbase.info/index.php/JP_Morgan_Chase_and_Co.",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — revolving door, revolving door. JP Morgan Chase & Co. is one of the oldest financial services firms in the world. The company, headquartered in New York City, is one of the leaders in investment banking, financial services, asset…",
+          "sc": "poor",
+          "severity": "negative",
+          "source_url": "https://powerbase.info/index.php/JP_Morgan_Chase_and_Co."
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 2
+    },
+    "citigroup": {
+      "title": "Citigroup",
+      "page_url": "https://powerbase.info/index.php/Citigroup",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — revolving door, lobbying, revolving door. Citibank was founded in 1812, and is now one of the world's leading financial services companies. The Citigroup has over 200 million customer accounts in more than 100 countries. Other major brand…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Citigroup"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 1
+    },
+    "morgan-stanley": {
+      "title": "Morgan Stanley",
+      "page_url": "https://powerbase.info/index.php/Morgan_Stanley",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — revolving door, revolving door. Image:Morgan_Stanley_.png|300px|right|thumb|Morgan Stanley, Source: Morgan Stanley Morgan Stanley is a global financial services firm specialised in securities, asset management and credit services.…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Morgan_Stanley"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 1
+    },
+    "wells-fargo": {
+      "title": "Wells Fargo",
+      "page_url": "https://powerbase.info/index.php/Wells_Fargo",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — revolving door, revolving door. Wells Fargo is a financial services company founded in 1852 and headquartered in San Francisco, California. Wells Fargo acquired Wachovia in 2008.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Wells_Fargo"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "bank-of-america": {
+      "title": "Bank of America Corporation",
+      "page_url": "https://powerbase.info/index.php/Bank_of_America_Corporation",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, revolving door, lobbying. Bank of America Corporation is a financial services company with 243,075 employees. On Fortune Global 500, they ranked 52 in 2005, 37 in 2006, 21 in 2007, 28 in 2008, and 37 in 2009.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Bank_of_America_Corporation"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:EU Lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 1
+    },
+    "barclays": {
+      "title": "Barclays",
+      "page_url": "https://powerbase.info/index.php/Barclays",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, revolving door, lobbying. Barclays plc is a major global financial services company. In 2008 it was ranked as the 25th largest company in the world according to Forbes Global 2000. On Fortune Global 500, it ranked 103 in…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Barclays"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Finance Lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Fracking",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Tax avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 1
+    },
+    "blackrock": {
+      "title": "BlackRock",
+      "page_url": "https://powerbase.info/index.php/BlackRock",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, revolving door. In 2015 appointed Rupert Harrison, former special adviser to chancellor of the exchequer George Osborne. Category:Financial sector lobbying Category:Revolving Door",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/BlackRock"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "pfizer": {
+      "title": "Pfizer",
+      "page_url": "https://powerbase.info/index.php/Pfizer",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Pfizer is one of the world's largest pharmaceutical companies. Based in the United States, it manufactures some of the most widely used prescription drugs in the world including Viagra.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Pfizer"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "astrazeneca": {
+      "title": "AstraZeneca",
+      "page_url": "https://powerbase.info/index.php/AstraZeneca",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying. AstraZeneca Plc is a pharmaceutical and biotechnology giant. Astra (UK-based) and Zeneca (Sweden-based) merged in 1998 in one of the largest European mergers ever. AstraZeneca is UK-based and is…",
+          "sc": "poor",
+          "severity": "negative",
+          "source_url": "https://powerbase.info/index.php/AstraZeneca"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:EU Lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 3
+    },
+    "bayer": {
+      "title": "Bayer",
+      "page_url": "https://powerbase.info/index.php/Bayer",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Bayer AG is a massive German-based chemicals and pharmaceuticals manufacturer. It has operations in most countries worldwide and had global sales for 2000 of over €30 billion. Its operations are…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Bayer"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "pepsico": {
+      "title": "Pepsico",
+      "page_url": "https://powerbase.info/index.php/Pepsico",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Pepsico is an American multinational food and beverage corporation headquartered in New York. The company has 22 brands that help to generate more than $1 billion each in annual retail sales, with…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Pepsico"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 1
+    },
+    "google-alphabet": {
+      "title": "Google",
+      "page_url": "https://powerbase.info/index.php/Google",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Google, the American multinational technology company, is best known for the Google Internet search engine. Its full year revenue for 2014 was $66 billion. Most of its profits come from its online…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Google"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 2
+    },
+    "boeing": {
+      "title": "Boeing",
+      "page_url": "https://powerbase.info/index.php/Boeing",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. The Boeing Company is a US aerospace company. It is the world's largest manufacturer of commercial jetliners and military aircraft. Boeing also designs and manufactures rotorcraft, electronic and…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Boeing"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 1
+    },
+    "lockheed-martin": {
+      "title": "Lockheed Martin",
+      "page_url": "https://powerbase.info/index.php/Lockheed_Martin",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. The 1995 merger of Lockheed and Martin Marietta, two aeroplane manufacturers, created the global company Lockheed Martin, which today is best known for its production and development of high…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Lockheed_Martin"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "rio-tinto": {
+      "title": "Rio Tinto",
+      "page_url": "https://powerbase.info/index.php/Rio_Tinto",
+      "narratives": {
+        "environment": {
+          "text": "Powerbase wiki — mining industry, mining industry, mining industry. Rio Tinto is a multinational mining and resources group founded originally in 1873. The group is one of the world's largest mining companies, with a pre-tax profit of approximately US$10.2 billion…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Rio_Tinto"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Mining Industry",
+          "signal": "mining_industry",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Mining and Metals",
+          "signal": "mining_industry",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Mining and Metals: Transnational Corporations",
+          "signal": "mining_industry",
+          "cat": "environment"
+        }
+      ],
+      "external_link_count": 7
+    },
+    "halliburton": {
+      "title": "Halliburton",
+      "page_url": "https://powerbase.info/index.php/Halliburton",
+      "narratives": {
+        "environment": {
+          "text": "Powerbase wiki — fossil fuel.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Halliburton"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Fracking",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "abbott-laboratories": {
+      "title": "Abbott Laboratories",
+      "page_url": "https://powerbase.info/index.php/Abbott_Laboratories",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — tax avoidance.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Abbott_Laboratories"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Tax avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "cisco": {
+      "title": "Cisco",
+      "page_url": "https://powerbase.info/index.php/Cisco",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Cisco Systems, or Cisco is a global technology firm, with its interests concentrated on computer networking and hardware. It is one of the most prominent commercial actors in educational technology,…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Cisco"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "ibm": {
+      "title": "IBM",
+      "page_url": "https://powerbase.info/index.php/IBM",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. IBM (International Business Machines Corporation) is a multinational computer technology and consulting corporation headquartered in Armonk, New York, USA. IBM manufactures and sells computer…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/IBM"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 2
+    },
+    "johnson-and-johnson": {
+      "title": "Johnson & Johnson",
+      "page_url": "https://powerbase.info/index.php/Johnson_%26_Johnson",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. The pharmaceutical company Johnson & Johnson was founded in 1886 and expanded on an international level in 1919. It encompasses a family of 250 companies in 57 countries, and employs 120,500 people…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Johnson_%26_Johnson"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 1
+    }
+  }
+}

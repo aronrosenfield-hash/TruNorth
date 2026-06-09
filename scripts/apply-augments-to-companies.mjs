@@ -1305,6 +1305,44 @@ const WRITERS = [
     },
   },
 
+  // ─── LA County restaurant inspections (round-5) → health ────────────
+  // Outlet-level A/B/C grades aggregated per chain. Severity already set
+  // by the merger based on % B-or-worse outlets and C-grade count.
+  {
+    name: "la-county-restaurants",
+    write: (e) => {
+      if (!e?.narrative) return [];
+      return [{
+        category: "health",
+        narrative: clip(e.narrative, 280),
+        sc: e.sc,
+        severity: e.severity,
+      }];
+    },
+  },
+
+  // ─── Powerbase wiki (round-5) → political / environment / dei ───────
+  // Editorial wiki; merger already gates "poor" on ≥2 external citations
+  // AND negative keyword cue. Default is "mixed". Per-category narratives
+  // are emitted as a {category: {text, sc, severity, source_url}} map.
+  {
+    name: "powerbase",
+    write: (e) => {
+      if (!e?.narratives) return [];
+      const out = [];
+      for (const [cat, n] of Object.entries(e.narratives)) {
+        if (!n?.text) continue;
+        out.push({
+          category: cat,
+          narrative: clip(n.text, 280),
+          sc: n.sc,
+          severity: n.sc === "poor" ? "negative" : "mixed",
+        });
+      }
+      return out;
+    },
+  },
+
   // ─── B-48 follow-up (2026-06-09): wire the 3 DW-7..12 augments that have
   // been producing data into augment files but weren't being applied to
   // per-company narratives. Catches up the "data on disk but not in bundle"
