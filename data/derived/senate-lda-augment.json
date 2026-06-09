@@ -1,0 +1,1102 @@
+{
+  "source": "senate-lda",
+  "source_url": "https://lda.senate.gov/system/public/",
+  "note": "Calendar-year 2024 federal lobbying totals from Senate Lobbying Disclosure Act filings (LD-2) and OpenSecrets summaries of those same filings. Tiered into 'megadonor' (≥$20M/yr), 'active-donor' (≥$5M/yr), 'bipartisan' (≥$1M/yr).",
+  "generated_at": "2026-06-09T19:26:23.948Z",
+  "matched_slug_count": 105,
+  "unmatched_count": 14,
+  "unmatched_sample": [
+    "us-chamber-of-commerce",
+    "national-association-of-realtors",
+    "pharmaceutical-research-and-manufacturers-of-america",
+    "american-hospital-association",
+    "american-petroleum-institute",
+    "occidental-petroleum",
+    "ncta-the-internet-and-television-association",
+    "instacart",
+    "american-bankers-association",
+    "securities-industry-and-financial-markets-association",
+    "3m",
+    "syngenta",
+    "berkshire-hathaway-energy",
+    "edison-electric-institute"
+  ],
+  "bySlug": {
+    "meta-facebook": {
+      "slug": "meta-facebook",
+      "usd": 27900000,
+      "issues": [
+        "tech regulation",
+        "antitrust",
+        "privacy"
+      ],
+      "original_slug": "meta-facebook",
+      "sc": "megadonor"
+    },
+    "amazon": {
+      "slug": "amazon",
+      "usd": 22300000,
+      "issues": [
+        "antitrust",
+        "labor",
+        "tax"
+      ],
+      "original_slug": "amazon",
+      "sc": "megadonor"
+    },
+    "boeing": {
+      "slug": "boeing",
+      "usd": 16800000,
+      "issues": [
+        "defense",
+        "aviation",
+        "trade"
+      ],
+      "original_slug": "boeing",
+      "sc": "active-donor"
+    },
+    "google-alphabet": {
+      "slug": "google-alphabet",
+      "usd": 14300000,
+      "issues": [
+        "antitrust",
+        "privacy",
+        "AI"
+      ],
+      "original_slug": "google-alphabet",
+      "sc": "active-donor"
+    },
+    "comcast": {
+      "slug": "comcast",
+      "usd": 13800000,
+      "issues": [
+        "telecom",
+        "broadband",
+        "media"
+      ],
+      "original_slug": "comcast",
+      "sc": "active-donor"
+    },
+    "microsoft": {
+      "slug": "microsoft",
+      "usd": 10500000,
+      "issues": [
+        "antitrust",
+        "tech regulation",
+        "AI"
+      ],
+      "original_slug": "microsoft",
+      "sc": "active-donor"
+    },
+    "lockheed-martin": {
+      "slug": "lockheed-martin",
+      "usd": 12800000,
+      "issues": [
+        "defense",
+        "aerospace"
+      ],
+      "original_slug": "lockheed-martin",
+      "sc": "active-donor"
+    },
+    "rtx": {
+      "slug": "rtx",
+      "usd": 12500000,
+      "issues": [
+        "defense",
+        "aerospace"
+      ],
+      "original_slug": "rtx",
+      "sc": "active-donor"
+    },
+    "raytheon-technologies": {
+      "slug": "raytheon-technologies",
+      "usd": 12500000,
+      "issues": [
+        "defense",
+        "aerospace"
+      ],
+      "original_slug": "raytheon-technologies",
+      "sc": "active-donor"
+    },
+    "general-dynamics": {
+      "slug": "general-dynamics",
+      "usd": 9400000,
+      "issues": [
+        "defense",
+        "shipbuilding"
+      ],
+      "original_slug": "general-dynamics",
+      "sc": "active-donor"
+    },
+    "northrop-grumman": {
+      "slug": "northrop-grumman",
+      "usd": 9900000,
+      "issues": [
+        "defense",
+        "aerospace"
+      ],
+      "original_slug": "northrop-grumman",
+      "sc": "active-donor"
+    },
+    "general-mills": {
+      "slug": "blue-cross-blue-shield",
+      "usd": 26200000,
+      "issues": [
+        "healthcare",
+        "insurance"
+      ],
+      "original_slug": "blue-cross-blue-shield",
+      "sc": "megadonor"
+    },
+    "pfizer": {
+      "slug": "pfizer",
+      "usd": 14500000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "pfizer",
+      "sc": "active-donor"
+    },
+    "eli-lilly": {
+      "slug": "eli-lilly",
+      "usd": 9300000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "eli-lilly",
+      "sc": "active-donor"
+    },
+    "johnson-and-johnson": {
+      "slug": "johnson-and-johnson",
+      "usd": 6400000,
+      "issues": [
+        "pharmaceutical",
+        "medical devices"
+      ],
+      "original_slug": "johnson-and-johnson",
+      "sc": "active-donor"
+    },
+    "merck": {
+      "slug": "merck",
+      "usd": 7900000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "merck",
+      "sc": "active-donor"
+    },
+    "abbvie": {
+      "slug": "abbvie",
+      "usd": 6800000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "abbvie",
+      "sc": "active-donor"
+    },
+    "bristol-myers-squibb": {
+      "slug": "bristol-myers-squibb",
+      "usd": 4300000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "bristol-myers-squibb",
+      "sc": "bipartisan"
+    },
+    "novartis": {
+      "slug": "novartis-usa",
+      "usd": 4200000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "novartis-usa",
+      "sc": "bipartisan"
+    },
+    "amgen": {
+      "slug": "amgen",
+      "usd": 5900000,
+      "issues": [
+        "pharmaceutical",
+        "drug pricing"
+      ],
+      "original_slug": "amgen",
+      "sc": "active-donor"
+    },
+    "gilead-sciences": {
+      "slug": "gilead-sciences",
+      "usd": 3300000,
+      "issues": [
+        "pharmaceutical",
+        "HIV/AIDS"
+      ],
+      "original_slug": "gilead-sciences",
+      "sc": "bipartisan"
+    },
+    "moderna": {
+      "slug": "moderna",
+      "usd": 3400000,
+      "issues": [
+        "pharmaceutical",
+        "vaccines"
+      ],
+      "original_slug": "moderna",
+      "sc": "bipartisan"
+    },
+    "unitedhealth-group": {
+      "slug": "unitedhealth-group",
+      "usd": 12600000,
+      "issues": [
+        "healthcare",
+        "Medicare"
+      ],
+      "original_slug": "unitedhealth-group",
+      "sc": "active-donor"
+    },
+    "anthem-elevance-health": {
+      "slug": "anthem-elevance-health",
+      "usd": 6300000,
+      "issues": [
+        "healthcare",
+        "insurance"
+      ],
+      "original_slug": "anthem-elevance-health",
+      "sc": "active-donor"
+    },
+    "cvs-health": {
+      "slug": "cvs-health",
+      "usd": 9400000,
+      "issues": [
+        "healthcare",
+        "pharmacy",
+        "Medicare"
+      ],
+      "original_slug": "cvs-health",
+      "sc": "active-donor"
+    },
+    "humana": {
+      "slug": "humana",
+      "usd": 4500000,
+      "issues": [
+        "healthcare",
+        "Medicare"
+      ],
+      "original_slug": "humana",
+      "sc": "bipartisan"
+    },
+    "centene": {
+      "slug": "centene",
+      "usd": 3700000,
+      "issues": [
+        "healthcare",
+        "Medicaid"
+      ],
+      "original_slug": "centene",
+      "sc": "bipartisan"
+    },
+    "exxon-mobil": {
+      "slug": "exxon-mobil",
+      "usd": 14400000,
+      "issues": [
+        "energy",
+        "climate",
+        "tax"
+      ],
+      "original_slug": "exxon-mobil",
+      "sc": "active-donor"
+    },
+    "chevron": {
+      "slug": "chevron",
+      "usd": 11900000,
+      "issues": [
+        "energy",
+        "climate",
+        "tax"
+      ],
+      "original_slug": "chevron",
+      "sc": "active-donor"
+    },
+    "shell-usa": {
+      "slug": "shell-usa",
+      "usd": 5200000,
+      "issues": [
+        "energy",
+        "climate"
+      ],
+      "original_slug": "shell-usa",
+      "sc": "active-donor"
+    },
+    "bp-usa": {
+      "slug": "bp",
+      "usd": 3500000,
+      "issues": [
+        "energy",
+        "climate"
+      ],
+      "original_slug": "bp",
+      "sc": "bipartisan"
+    },
+    "marathon-petroleum": {
+      "slug": "marathon-petroleum",
+      "usd": 3400000,
+      "issues": [
+        "energy",
+        "tax"
+      ],
+      "original_slug": "marathon-petroleum",
+      "sc": "bipartisan"
+    },
+    "phillips-66": {
+      "slug": "phillips-66",
+      "usd": 2800000,
+      "issues": [
+        "energy",
+        "tax"
+      ],
+      "original_slug": "phillips-66",
+      "sc": "bipartisan"
+    },
+    "conocophillips": {
+      "slug": "conocophillips",
+      "usd": 6900000,
+      "issues": [
+        "energy",
+        "tax",
+        "drilling"
+      ],
+      "original_slug": "conocophillips",
+      "sc": "active-donor"
+    },
+    "atandt": {
+      "slug": "atandt",
+      "usd": 13200000,
+      "issues": [
+        "telecom",
+        "broadband",
+        "spectrum"
+      ],
+      "original_slug": "atandt",
+      "sc": "active-donor"
+    },
+    "verizon": {
+      "slug": "verizon",
+      "usd": 9700000,
+      "issues": [
+        "telecom",
+        "broadband",
+        "spectrum"
+      ],
+      "original_slug": "verizon",
+      "sc": "active-donor"
+    },
+    "t-mobile-us": {
+      "slug": "t-mobile-us",
+      "usd": 6900000,
+      "issues": [
+        "telecom",
+        "spectrum"
+      ],
+      "original_slug": "t-mobile-us",
+      "sc": "active-donor"
+    },
+    "charter-communications": {
+      "slug": "charter-communications",
+      "usd": 11400000,
+      "issues": [
+        "telecom",
+        "broadband"
+      ],
+      "original_slug": "charter-communications",
+      "sc": "active-donor"
+    },
+    "ge-aerospace": {
+      "slug": "ge-aerospace",
+      "usd": 6700000,
+      "issues": [
+        "defense",
+        "aerospace"
+      ],
+      "original_slug": "ge-aerospace",
+      "sc": "active-donor"
+    },
+    "general-electric": {
+      "slug": "general-electric",
+      "usd": 6700000,
+      "issues": [
+        "defense",
+        "aerospace"
+      ],
+      "original_slug": "general-electric",
+      "sc": "active-donor"
+    },
+    "ibm": {
+      "slug": "ibm",
+      "usd": 6500000,
+      "issues": [
+        "tech regulation",
+        "AI",
+        "cybersecurity"
+      ],
+      "original_slug": "ibm",
+      "sc": "active-donor"
+    },
+    "oracle-cloud": {
+      "slug": "oracle",
+      "usd": 8400000,
+      "issues": [
+        "tech regulation",
+        "cloud"
+      ],
+      "original_slug": "oracle",
+      "sc": "active-donor"
+    },
+    "bytedance": {
+      "slug": "tiktok",
+      "usd": 9200000,
+      "issues": [
+        "tech regulation",
+        "national security"
+      ],
+      "original_slug": "tiktok",
+      "sc": "active-donor"
+    },
+    "intel": {
+      "slug": "intel",
+      "usd": 5900000,
+      "issues": [
+        "semiconductors",
+        "CHIPS Act"
+      ],
+      "original_slug": "intel",
+      "sc": "active-donor"
+    },
+    "nvidia": {
+      "slug": "nvidia",
+      "usd": 4600000,
+      "issues": [
+        "AI",
+        "semiconductors",
+        "export controls"
+      ],
+      "original_slug": "nvidia",
+      "sc": "bipartisan"
+    },
+    "qualcomm": {
+      "slug": "qualcomm",
+      "usd": 9400000,
+      "issues": [
+        "telecom",
+        "patents"
+      ],
+      "original_slug": "qualcomm",
+      "sc": "active-donor"
+    },
+    "salesforce": {
+      "slug": "salesforce",
+      "usd": 3400000,
+      "issues": [
+        "tech regulation",
+        "AI"
+      ],
+      "original_slug": "salesforce",
+      "sc": "bipartisan"
+    },
+    "uber": {
+      "slug": "uber",
+      "usd": 3300000,
+      "issues": [
+        "transportation",
+        "labor",
+        "gig workers"
+      ],
+      "original_slug": "uber",
+      "sc": "bipartisan"
+    },
+    "lyft": {
+      "slug": "lyft",
+      "usd": 1300000,
+      "issues": [
+        "transportation",
+        "labor"
+      ],
+      "original_slug": "lyft",
+      "sc": "bipartisan"
+    },
+    "airbnb": {
+      "slug": "airbnb",
+      "usd": 2600000,
+      "issues": [
+        "short-term rental",
+        "tax"
+      ],
+      "original_slug": "airbnb",
+      "sc": "bipartisan"
+    },
+    "doordash": {
+      "slug": "doordash",
+      "usd": 2900000,
+      "issues": [
+        "gig workers",
+        "delivery"
+      ],
+      "original_slug": "doordash",
+      "sc": "bipartisan"
+    },
+    "walmart": {
+      "slug": "walmart",
+      "usd": 7200000,
+      "issues": [
+        "retail",
+        "labor",
+        "trade"
+      ],
+      "original_slug": "walmart",
+      "sc": "active-donor"
+    },
+    "target": {
+      "slug": "target",
+      "usd": 3900000,
+      "issues": [
+        "retail",
+        "tax",
+        "trade"
+      ],
+      "original_slug": "target",
+      "sc": "bipartisan"
+    },
+    "home-depot": {
+      "slug": "home-depot",
+      "usd": 3300000,
+      "issues": [
+        "retail",
+        "tax"
+      ],
+      "original_slug": "home-depot",
+      "sc": "bipartisan"
+    },
+    "lowe-s": {
+      "slug": "lowes",
+      "usd": 2900000,
+      "issues": [
+        "retail",
+        "tax"
+      ],
+      "original_slug": "lowes",
+      "sc": "bipartisan"
+    },
+    "costco": {
+      "slug": "costco",
+      "usd": 1800000,
+      "issues": [
+        "retail",
+        "trade"
+      ],
+      "original_slug": "costco",
+      "sc": "bipartisan"
+    },
+    "best-buy": {
+      "slug": "best-buy",
+      "usd": 1400000,
+      "issues": [
+        "retail",
+        "trade"
+      ],
+      "original_slug": "best-buy",
+      "sc": "bipartisan"
+    },
+    "kroger": {
+      "slug": "kroger",
+      "usd": 3400000,
+      "issues": [
+        "food",
+        "antitrust"
+      ],
+      "original_slug": "kroger",
+      "sc": "bipartisan"
+    },
+    "albertsons": {
+      "slug": "albertsons",
+      "usd": 3300000,
+      "issues": [
+        "food",
+        "antitrust"
+      ],
+      "original_slug": "albertsons",
+      "sc": "bipartisan"
+    },
+    "tyson-foods": {
+      "slug": "tyson-foods",
+      "usd": 2400000,
+      "issues": [
+        "agriculture",
+        "labor",
+        "trade"
+      ],
+      "original_slug": "tyson-foods",
+      "sc": "bipartisan"
+    },
+    "jbs-n-v": {
+      "slug": "jbs-usa",
+      "usd": 3100000,
+      "issues": [
+        "agriculture",
+        "labor"
+      ],
+      "original_slug": "jbs-usa",
+      "sc": "bipartisan"
+    },
+    "cargill": {
+      "slug": "cargill",
+      "usd": 3400000,
+      "issues": [
+        "agriculture",
+        "trade"
+      ],
+      "original_slug": "cargill",
+      "sc": "bipartisan"
+    },
+    "archer-daniels-midland": {
+      "slug": "archer-daniels-midland",
+      "usd": 3300000,
+      "issues": [
+        "agriculture",
+        "trade",
+        "ethanol"
+      ],
+      "original_slug": "archer-daniels-midland",
+      "sc": "bipartisan"
+    },
+    "smithfield-foods": {
+      "slug": "smithfield-foods",
+      "usd": 1800000,
+      "issues": [
+        "agriculture",
+        "labor"
+      ],
+      "original_slug": "smithfield-foods",
+      "sc": "bipartisan"
+    },
+    "pepsico": {
+      "slug": "pepsico",
+      "usd": 5400000,
+      "issues": [
+        "food",
+        "tax",
+        "trade"
+      ],
+      "original_slug": "pepsico",
+      "sc": "active-donor"
+    },
+    "coca-cola": {
+      "slug": "coca-cola-co",
+      "usd": 4300000,
+      "issues": [
+        "food",
+        "tax",
+        "trade"
+      ],
+      "original_slug": "coca-cola-co",
+      "sc": "bipartisan"
+    },
+    "nestl": {
+      "slug": "nestle",
+      "usd": 3300000,
+      "issues": [
+        "food",
+        "trade"
+      ],
+      "original_slug": "nestle",
+      "sc": "bipartisan"
+    },
+    "kraft-heinz": {
+      "slug": "kraft-heinz",
+      "usd": 2400000,
+      "issues": [
+        "food",
+        "tax"
+      ],
+      "original_slug": "kraft-heinz",
+      "sc": "bipartisan"
+    },
+    "mondelez-international": {
+      "slug": "mondelez-international",
+      "usd": 3300000,
+      "issues": [
+        "food",
+        "tax"
+      ],
+      "original_slug": "mondelez-international",
+      "sc": "bipartisan"
+    },
+    "anheuser-busch": {
+      "slug": "anheuser-busch-inbev",
+      "usd": 4200000,
+      "issues": [
+        "alcohol",
+        "tax",
+        "trade"
+      ],
+      "original_slug": "anheuser-busch-inbev",
+      "sc": "bipartisan"
+    },
+    "altria-group": {
+      "slug": "altria-group",
+      "usd": 11300000,
+      "issues": [
+        "tobacco",
+        "tax"
+      ],
+      "original_slug": "altria-group",
+      "sc": "active-donor"
+    },
+    "philip-morris-international": {
+      "slug": "philip-morris-international",
+      "usd": 4700000,
+      "issues": [
+        "tobacco",
+        "trade"
+      ],
+      "original_slug": "philip-morris-international",
+      "sc": "bipartisan"
+    },
+    "general-motors": {
+      "slug": "general-motors",
+      "usd": 9400000,
+      "issues": [
+        "automotive",
+        "EV credits",
+        "trade"
+      ],
+      "original_slug": "general-motors",
+      "sc": "active-donor"
+    },
+    "ford": {
+      "slug": "ford",
+      "usd": 8900000,
+      "issues": [
+        "automotive",
+        "EV credits",
+        "trade"
+      ],
+      "original_slug": "ford",
+      "sc": "active-donor"
+    },
+    "stellantis": {
+      "slug": "stellantis",
+      "usd": 6900000,
+      "issues": [
+        "automotive",
+        "EV credits",
+        "trade"
+      ],
+      "original_slug": "stellantis",
+      "sc": "active-donor"
+    },
+    "toyota-usa": {
+      "slug": "toyota-usa",
+      "usd": 5900000,
+      "issues": [
+        "automotive",
+        "EV credits",
+        "trade"
+      ],
+      "original_slug": "toyota-usa",
+      "sc": "active-donor"
+    },
+    "tesla": {
+      "slug": "tesla",
+      "usd": 2700000,
+      "issues": [
+        "EVs",
+        "energy",
+        "transportation"
+      ],
+      "original_slug": "tesla",
+      "sc": "bipartisan"
+    },
+    "honda-usa": {
+      "slug": "honda-usa",
+      "usd": 2400000,
+      "issues": [
+        "automotive",
+        "trade"
+      ],
+      "original_slug": "honda-usa",
+      "sc": "bipartisan"
+    },
+    "volkswagen-usa": {
+      "slug": "volkswagen-usa",
+      "usd": 2300000,
+      "issues": [
+        "automotive",
+        "EV credits"
+      ],
+      "original_slug": "volkswagen-usa",
+      "sc": "bipartisan"
+    },
+    "blackrock": {
+      "slug": "blackrock",
+      "usd": 3100000,
+      "issues": [
+        "finance",
+        "ESG"
+      ],
+      "original_slug": "blackrock",
+      "sc": "bipartisan"
+    },
+    "jpmorgan-chase": {
+      "slug": "jpmorgan-chase",
+      "usd": 5900000,
+      "issues": [
+        "finance",
+        "banking"
+      ],
+      "original_slug": "jpmorgan-chase",
+      "sc": "active-donor"
+    },
+    "bank-of-america": {
+      "slug": "bank-of-america",
+      "usd": 4200000,
+      "issues": [
+        "finance",
+        "banking"
+      ],
+      "original_slug": "bank-of-america",
+      "sc": "bipartisan"
+    },
+    "wells-fargo": {
+      "slug": "wells-fargo",
+      "usd": 3900000,
+      "issues": [
+        "finance",
+        "banking"
+      ],
+      "original_slug": "wells-fargo",
+      "sc": "bipartisan"
+    },
+    "citigroup": {
+      "slug": "citi",
+      "usd": 4900000,
+      "issues": [
+        "finance",
+        "banking"
+      ],
+      "original_slug": "citi",
+      "sc": "bipartisan"
+    },
+    "goldman-sachs": {
+      "slug": "goldman-sachs",
+      "usd": 4200000,
+      "issues": [
+        "finance",
+        "banking"
+      ],
+      "original_slug": "goldman-sachs",
+      "sc": "bipartisan"
+    },
+    "morgan-stanley": {
+      "slug": "morgan-stanley",
+      "usd": 3600000,
+      "issues": [
+        "finance",
+        "banking"
+      ],
+      "original_slug": "morgan-stanley",
+      "sc": "bipartisan"
+    },
+    "fedex": {
+      "slug": "fedex",
+      "usd": 7300000,
+      "issues": [
+        "logistics",
+        "labor",
+        "trade"
+      ],
+      "original_slug": "fedex",
+      "sc": "active-donor"
+    },
+    "ups": {
+      "slug": "ups",
+      "usd": 6700000,
+      "issues": [
+        "logistics",
+        "labor"
+      ],
+      "original_slug": "ups",
+      "sc": "active-donor"
+    },
+    "delta-air-lines": {
+      "slug": "delta-air-lines",
+      "usd": 6400000,
+      "issues": [
+        "aviation",
+        "labor"
+      ],
+      "original_slug": "delta-air-lines",
+      "sc": "active-donor"
+    },
+    "american-airlines": {
+      "slug": "american-airlines",
+      "usd": 4300000,
+      "issues": [
+        "aviation"
+      ],
+      "original_slug": "american-airlines",
+      "sc": "bipartisan"
+    },
+    "united-airlines": {
+      "slug": "united-airlines",
+      "usd": 4900000,
+      "issues": [
+        "aviation"
+      ],
+      "original_slug": "united-airlines",
+      "sc": "bipartisan"
+    },
+    "southwest-airlines": {
+      "slug": "southwest-airlines",
+      "usd": 2800000,
+      "issues": [
+        "aviation",
+        "labor"
+      ],
+      "original_slug": "southwest-airlines",
+      "sc": "bipartisan"
+    },
+    "carnival-corp": {
+      "slug": "carnival-corp",
+      "usd": 2300000,
+      "issues": [
+        "cruise",
+        "labor"
+      ],
+      "original_slug": "carnival-corp",
+      "sc": "bipartisan"
+    },
+    "royal-caribbean-cruises": {
+      "slug": "royal-caribbean-cruises",
+      "usd": 2600000,
+      "issues": [
+        "cruise",
+        "labor"
+      ],
+      "original_slug": "royal-caribbean-cruises",
+      "sc": "bipartisan"
+    },
+    "honeywell": {
+      "slug": "honeywell",
+      "usd": 6900000,
+      "issues": [
+        "defense",
+        "industrial"
+      ],
+      "original_slug": "honeywell",
+      "sc": "active-donor"
+    },
+    "caterpillar": {
+      "slug": "caterpillar",
+      "usd": 3300000,
+      "issues": [
+        "industrial",
+        "trade"
+      ],
+      "original_slug": "caterpillar",
+      "sc": "bipartisan"
+    },
+    "deere-and-company": {
+      "slug": "deere-and-company",
+      "usd": 2400000,
+      "issues": [
+        "agriculture",
+        "trade"
+      ],
+      "original_slug": "deere-and-company",
+      "sc": "bipartisan"
+    },
+    "dupont": {
+      "slug": "dupont",
+      "usd": 3100000,
+      "issues": [
+        "chemicals",
+        "PFAS"
+      ],
+      "original_slug": "dupont",
+      "sc": "bipartisan"
+    },
+    "dow-chemical": {
+      "slug": "dow-chemical",
+      "usd": 6700000,
+      "issues": [
+        "chemicals",
+        "trade"
+      ],
+      "original_slug": "dow-chemical",
+      "sc": "active-donor"
+    },
+    "bayer": {
+      "slug": "bayer",
+      "usd": 6900000,
+      "issues": [
+        "agriculture",
+        "pesticides"
+      ],
+      "original_slug": "bayer",
+      "sc": "active-donor"
+    },
+    "corteva": {
+      "slug": "corteva",
+      "usd": 3300000,
+      "issues": [
+        "agriculture",
+        "biotech"
+      ],
+      "original_slug": "corteva",
+      "sc": "bipartisan"
+    },
+    "duke-energy": {
+      "slug": "duke-energy",
+      "usd": 4300000,
+      "issues": [
+        "energy",
+        "utilities"
+      ],
+      "original_slug": "duke-energy",
+      "sc": "bipartisan"
+    },
+    "nextera-energy": {
+      "slug": "nextera-energy",
+      "usd": 4100000,
+      "issues": [
+        "energy",
+        "renewables"
+      ],
+      "original_slug": "nextera-energy",
+      "sc": "bipartisan"
+    },
+    "southern-company": {
+      "slug": "southern-company",
+      "usd": 9900000,
+      "issues": [
+        "energy",
+        "utilities"
+      ],
+      "original_slug": "southern-company",
+      "sc": "active-donor"
+    },
+    "edison-international": {
+      "slug": "edison-international",
+      "usd": 3700000,
+      "issues": [
+        "energy",
+        "utilities"
+      ],
+      "original_slug": "edison-international",
+      "sc": "bipartisan"
+    }
+  }
+}

@@ -6,7 +6,7 @@
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "poor",
     "labor": "poor",
@@ -18,10 +18,12 @@
     "health": "very_poor"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "Senate LDA: ~$13.8M in federal lobbying spend in 2024. Top issues: telecom, broadband, media.",
     "amt": "N/A",
     "lean": "Neutral",
-    "sources": []
+    "sources": [
+      "senate-lda"
+    ]
   },
   "charity": {
     "s": "$200M reported corporate giving in 2024 (~0.17% of revenue) via Comcast NBCUniversal Foundation.",

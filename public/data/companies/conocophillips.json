@@ -6,7 +6,7 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "poor",
     "labor": "poor",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "Senate LDA: ~$6.9M in federal lobbying spend in 2024. Top issues: energy, tax, drilling.",
     "amt": "N/A",
     "lean": "Neutral",
-    "sources": []
+    "sources": [
+      "senate-lda"
+    ]
   },
   "charity": {
     "s": "$28M reported corporate giving in 2024 (~0.05% of revenue).",

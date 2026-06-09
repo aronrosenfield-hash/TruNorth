@@ -1,0 +1,542 @@
+{
+  "source": "usaspending-contracts",
+  "source_url": "https://www.usaspending.gov/",
+  "note": "FY2024 federal contract obligations per USAspending.gov per-recipient rollups. Conservative public-record amounts (rounded down). Federal contracting alone is neutral — flag only when combined with other concerns.",
+  "generated_at": "2026-06-09T19:26:23.946Z",
+  "matched_slug_count": 74,
+  "unmatched_count": 12,
+  "unmatched_sample": [
+    "booz-allen-hamilton",
+    "amentum",
+    "peraton",
+    "mantech-international",
+    "v2x",
+    "perspecta",
+    "hpe",
+    "boston-consulting-group",
+    "guidehouse",
+    "amerisourcebergen",
+    "siemens-usa",
+    "us-foods"
+  ],
+  "bySlug": {
+    "lockheed-martin": {
+      "slug": "lockheed-martin",
+      "usd": 72500000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "lockheed-martin"
+    },
+    "rtx": {
+      "slug": "rtx",
+      "usd": 31400000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "rtx"
+    },
+    "raytheon-technologies": {
+      "slug": "raytheon-technologies",
+      "usd": 31400000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "raytheon-technologies"
+    },
+    "general-dynamics": {
+      "slug": "general-dynamics",
+      "usd": 27300000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "general-dynamics"
+    },
+    "boeing": {
+      "slug": "boeing",
+      "usd": 25600000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "boeing"
+    },
+    "northrop-grumman": {
+      "slug": "northrop-grumman",
+      "usd": 21200000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "northrop-grumman"
+    },
+    "humana": {
+      "slug": "humana",
+      "usd": 19100000000,
+      "agency": "Department of Defense (TRICARE)",
+      "category": "health",
+      "original_slug": "humana"
+    },
+    "l3harris-technologies": {
+      "slug": "l3harris-technologies",
+      "usd": 10200000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "l3harris-technologies"
+    },
+    "leidos": {
+      "slug": "leidos",
+      "usd": 9800000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "leidos"
+    },
+    "bae-systems-usa": {
+      "slug": "bae-systems-usa",
+      "usd": 7400000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "bae-systems-usa"
+    },
+    "saic": {
+      "slug": "saic",
+      "usd": 6700000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "saic"
+    },
+    "huntington-ingalls-industries": {
+      "slug": "huntington-ingalls-industries",
+      "usd": 6500000000,
+      "agency": "Department of the Navy",
+      "category": "defense",
+      "original_slug": "huntington-ingalls-industries"
+    },
+    "general-electric": {
+      "slug": "general-electric",
+      "usd": 5200000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "general-electric"
+    },
+    "ge-aerospace": {
+      "slug": "ge-aerospace",
+      "usd": 4900000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "ge-aerospace"
+    },
+    "caci-international-inc": {
+      "slug": "caci-international-inc",
+      "usd": 4800000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "caci-international-inc"
+    },
+    "honeywell": {
+      "slug": "honeywell",
+      "usd": 4400000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "honeywell"
+    },
+    "textron": {
+      "slug": "textron",
+      "usd": 4100000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "textron"
+    },
+    "leonardo-drs": {
+      "slug": "leonardo-drs",
+      "usd": 1800000000,
+      "agency": "Department of Defense",
+      "category": "defense",
+      "original_slug": "leonardo-drs"
+    },
+    "kbr": {
+      "slug": "kbr",
+      "usd": 3800000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "kbr"
+    },
+    "amazon": {
+      "slug": "amazon",
+      "usd": 4200000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "amazon"
+    },
+    "microsoft": {
+      "slug": "microsoft",
+      "usd": 3800000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "microsoft"
+    },
+    "oracle-cloud": {
+      "slug": "oracle",
+      "usd": 3300000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "oracle"
+    },
+    "google-alphabet": {
+      "slug": "google-alphabet",
+      "usd": 900000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "google-alphabet"
+    },
+    "apple": {
+      "slug": "apple",
+      "usd": 450000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "apple"
+    },
+    "ibm": {
+      "slug": "ibm",
+      "usd": 2400000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "ibm"
+    },
+    "salesforce": {
+      "slug": "salesforce",
+      "usd": 750000000,
+      "agency": "General Services Administration",
+      "category": "tech",
+      "original_slug": "salesforce"
+    },
+    "palantir-technologies": {
+      "slug": "palantir-technologies",
+      "usd": 1300000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "palantir-technologies"
+    },
+    "dell": {
+      "slug": "dell",
+      "usd": 3100000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "dell"
+    },
+    "hp": {
+      "slug": "hp",
+      "usd": 1100000000,
+      "agency": "General Services Administration",
+      "category": "tech",
+      "original_slug": "hp"
+    },
+    "cisco": {
+      "slug": "cisco",
+      "usd": 1400000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "cisco"
+    },
+    "intel": {
+      "slug": "intel",
+      "usd": 1200000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "intel"
+    },
+    "nvidia": {
+      "slug": "nvidia",
+      "usd": 280000000,
+      "agency": "Department of Defense",
+      "category": "tech",
+      "original_slug": "nvidia"
+    },
+    "verizon": {
+      "slug": "verizon",
+      "usd": 3300000000,
+      "agency": "Department of Defense",
+      "category": "telco",
+      "original_slug": "verizon"
+    },
+    "atandt": {
+      "slug": "atandt",
+      "usd": 2900000000,
+      "agency": "Department of Defense",
+      "category": "telco",
+      "original_slug": "atandt"
+    },
+    "t-mobile-us": {
+      "slug": "t-mobile-us",
+      "usd": 450000000,
+      "agency": "Department of Defense",
+      "category": "telco",
+      "original_slug": "t-mobile-us"
+    },
+    "accenture": {
+      "slug": "accenture",
+      "usd": 3700000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "accenture"
+    },
+    "deloitte": {
+      "slug": "deloitte",
+      "usd": 4300000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "deloitte"
+    },
+    "kpmg": {
+      "slug": "kpmg",
+      "usd": 980000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "kpmg"
+    },
+    "ey": {
+      "slug": "ey",
+      "usd": 920000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "ey"
+    },
+    "pwc": {
+      "slug": "pwc",
+      "usd": 1100000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "pwc"
+    },
+    "mckinsey-and-company": {
+      "slug": "mckinsey-and-company",
+      "usd": 280000000,
+      "agency": "Department of Defense",
+      "category": "consulting",
+      "original_slug": "mckinsey-and-company"
+    },
+    "centene": {
+      "slug": "centene",
+      "usd": 6400000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "centene"
+    },
+    "mckesson": {
+      "slug": "mckesson",
+      "usd": 4300000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "mckesson"
+    },
+    "cardinal-health": {
+      "slug": "cardinal-health",
+      "usd": 3100000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "cardinal-health"
+    },
+    "unitedhealth-group": {
+      "slug": "unitedhealth-group",
+      "usd": 2800000000,
+      "agency": "Department of Defense",
+      "category": "health",
+      "original_slug": "unitedhealth-group"
+    },
+    "anthem-elevance-health": {
+      "slug": "anthem-elevance-health",
+      "usd": 1400000000,
+      "agency": "Department of Defense",
+      "category": "health",
+      "original_slug": "anthem-elevance-health"
+    },
+    "cvs-health": {
+      "slug": "cvs-health",
+      "usd": 980000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "cvs-health"
+    },
+    "walgreens": {
+      "slug": "walgreens",
+      "usd": 560000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "walgreens"
+    },
+    "pfizer": {
+      "slug": "pfizer",
+      "usd": 3500000000,
+      "agency": "Department of Health and Human Services",
+      "category": "health",
+      "original_slug": "pfizer"
+    },
+    "moderna": {
+      "slug": "moderna",
+      "usd": 4300000000,
+      "agency": "Department of Health and Human Services",
+      "category": "health",
+      "original_slug": "moderna"
+    },
+    "merck": {
+      "slug": "merck",
+      "usd": 850000000,
+      "agency": "Department of Health and Human Services",
+      "category": "health",
+      "original_slug": "merck"
+    },
+    "gilead-sciences": {
+      "slug": "gilead-sciences",
+      "usd": 560000000,
+      "agency": "Department of Health and Human Services",
+      "category": "health",
+      "original_slug": "gilead-sciences"
+    },
+    "johnson-and-johnson": {
+      "slug": "johnson-and-johnson",
+      "usd": 980000000,
+      "agency": "Department of Defense",
+      "category": "health",
+      "original_slug": "johnson-and-johnson"
+    },
+    "abbott-laboratories": {
+      "slug": "abbott-laboratories",
+      "usd": 640000000,
+      "agency": "Department of Defense",
+      "category": "health",
+      "original_slug": "abbott-laboratories"
+    },
+    "medtronic": {
+      "slug": "medtronic",
+      "usd": 540000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "medtronic"
+    },
+    "becton-dickinson": {
+      "slug": "becton-dickinson",
+      "usd": 420000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "health",
+      "original_slug": "becton-dickinson"
+    },
+    "valero-energy": {
+      "slug": "valero-energy",
+      "usd": 2100000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "valero-energy"
+    },
+    "marathon-petroleum": {
+      "slug": "marathon-petroleum",
+      "usd": 1800000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "marathon-petroleum"
+    },
+    "exxon-mobil": {
+      "slug": "exxon-mobil",
+      "usd": 480000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "exxon-mobil"
+    },
+    "chevron": {
+      "slug": "chevron",
+      "usd": 520000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "chevron"
+    },
+    "shell-usa": {
+      "slug": "shell-usa",
+      "usd": 420000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "shell-usa"
+    },
+    "phillips-66": {
+      "slug": "phillips-66",
+      "usd": 980000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "phillips-66"
+    },
+    "bp-usa": {
+      "slug": "bp",
+      "usd": 410000000,
+      "agency": "Defense Logistics Agency",
+      "category": "energy",
+      "original_slug": "bp"
+    },
+    "caterpillar": {
+      "slug": "caterpillar",
+      "usd": 1400000000,
+      "agency": "Department of Defense",
+      "category": "industrial",
+      "original_slug": "caterpillar"
+    },
+    "deere-and-company": {
+      "slug": "deere-and-company",
+      "usd": 280000000,
+      "agency": "Department of Defense",
+      "category": "industrial",
+      "original_slug": "deere-and-company"
+    },
+    "ford": {
+      "slug": "ford",
+      "usd": 410000000,
+      "agency": "Department of Defense",
+      "category": "industrial",
+      "original_slug": "ford"
+    },
+    "general-motors": {
+      "slug": "general-motors",
+      "usd": 540000000,
+      "agency": "Department of Defense",
+      "category": "industrial",
+      "original_slug": "general-motors"
+    },
+    "fedex": {
+      "slug": "fedex",
+      "usd": 4900000000,
+      "agency": "U.S. Postal Service / Department of Defense",
+      "category": "logistics",
+      "original_slug": "fedex"
+    },
+    "ups": {
+      "slug": "ups",
+      "usd": 1300000000,
+      "agency": "U.S. Postal Service",
+      "category": "logistics",
+      "original_slug": "ups"
+    },
+    "walmart": {
+      "slug": "walmart",
+      "usd": 540000000,
+      "agency": "Department of Veterans Affairs",
+      "category": "retail",
+      "original_slug": "walmart"
+    },
+    "tyson-foods": {
+      "slug": "tyson-foods",
+      "usd": 380000000,
+      "agency": "Defense Logistics Agency",
+      "category": "food",
+      "original_slug": "tyson-foods"
+    },
+    "pepsico": {
+      "slug": "pepsico",
+      "usd": 270000000,
+      "agency": "Defense Logistics Agency",
+      "category": "food",
+      "original_slug": "pepsico"
+    },
+    "coca-cola": {
+      "slug": "coca-cola-co",
+      "usd": 180000000,
+      "agency": "Defense Logistics Agency",
+      "category": "food",
+      "original_slug": "coca-cola-co"
+    },
+    "sysco": {
+      "slug": "sysco",
+      "usd": 1900000000,
+      "agency": "Defense Logistics Agency",
+      "category": "food",
+      "original_slug": "sysco"
+    }
+  }
+}

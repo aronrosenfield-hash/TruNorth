@@ -1,0 +1,92 @@
+{
+  "source": "fara",
+  "source_url": "https://efile.fara.gov/",
+  "note": "DOJ Foreign Agents Registration Act — active registrations grouped by US registrant or named foreign principal. Generated from public/data/fara.json (FARA bulk CSV).",
+  "generated_at": "2026-06-09T19:26:23.956Z",
+  "fara_snapshot": "2026-06-07T19:48:55.472Z",
+  "fara_total_active": 543,
+  "matched_slug_count": 4,
+  "unmatched_count": 479,
+  "bySlug": {
+    "huawei-technologies": {
+      "slug": "huawei-technologies",
+      "registrations": [
+        {
+          "registration_number": "6840",
+          "registrant_name": "Ruder Finn, Inc.",
+          "foreign_principal_name": "Huawei Technologies Co., Ltd.",
+          "foreign_principal_country": "CHINA",
+          "registration_date": "02/26/2026",
+          "match_via": "principal"
+        },
+        {
+          "registration_number": "7593",
+          "registrant_name": "Sitrick Group, LLC",
+          "foreign_principal_name": "Huawei Technologies Co. Ltd",
+          "foreign_principal_country": "CHINA",
+          "registration_date": "05/16/2025",
+          "match_via": "principal"
+        }
+      ],
+      "countries": [
+        "CHINA"
+      ],
+      "match_via": "principal",
+      "registration_count": 2
+    },
+    "ihi-corporation": {
+      "slug": "ihi-corporation",
+      "registrations": [
+        {
+          "registration_number": "7673",
+          "registrant_name": "Samuel Group Inc.",
+          "foreign_principal_name": "IHI Corporation",
+          "foreign_principal_country": "JAPAN",
+          "registration_date": "12/01/2025",
+          "match_via": "principal"
+        }
+      ],
+      "countries": [
+        "JAPAN"
+      ],
+      "match_via": "principal",
+      "registration_count": 1
+    },
+    "ogilvy": {
+      "slug": "ogilvy",
+      "registrations": [
+        {
+          "registration_number": "6797",
+          "registrant_name": "Ogilvy Group LLC",
+          "foreign_principal_name": "United Arab Emirates. Department of Culture and Tourism - Abu Dhabi",
+          "foreign_principal_country": "UNITED ARAB EMIRATES",
+          "registration_date": "11/13/2024",
+          "match_via": "registrant"
+        }
+      ],
+      "countries": [
+        "UNITED ARAB EMIRATES"
+      ],
+      "match_via": "registrant",
+      "registration_count": 1
+    },
+    "brunswick": {
+      "slug": "brunswick",
+      "registrations": [
+        {
+          "registration_number": "6826",
+          "registrant_name": "Brunswick Group LLC",
+          "foreign_principal_name": "University College London",
+          "foreign_principal_country": "UNITED KINGDOM",
+          "registration_date": "10/09/2024",
+          "match_via": "registrant"
+        }
+      ],
+      "countries": [
+        "UNITED KINGDOM"
+      ],
+      "match_via": "registrant",
+      "registration_count": 1
+    }
+  }
+}
