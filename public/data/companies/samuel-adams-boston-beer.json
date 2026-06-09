@@ -2,11 +2,11 @@
   "name": "Samuel Adams / Boston Beer",
   "cat": "Food & Beverage",
   "init": "BBC",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "SAM",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $319K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "$139,062 (contributions) + $120,000 (lobbying) in 2024",
     "lean": "Bipartisan",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "No public record found.",

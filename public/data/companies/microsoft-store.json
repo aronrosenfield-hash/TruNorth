@@ -2,11 +2,11 @@
   "name": "Microsoft Store",
   "cat": "Technology",
   "init": "MS",
-  "overall": 20,
+  "overall": 37.5,
   "isPublic": true,
   "ticker": "MSFT",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "neutral"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $352K in executive political donations; partisan lean split across 13 executive donors.",
     "amt": "Millions annually (exact figures vary by cycle)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

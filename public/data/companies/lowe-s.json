@@ -2,11 +2,11 @@
   "name": "Lowe's",
   "cat": "Retail",
   "init": "LOW",
-  "overall": 30,
+  "overall": 36.3,
   "isPublic": true,
   "ticker": "LOW",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "poor",
     "labor": "poor",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $116K in executive political donations; partisan lean split across 9 executive donors.",
     "amt": "~$3.3M (PAC + lobbying, 2024 cycle)",
     "lean": "Right-leaning",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "$145M reported corporate giving in 2024 (~0.17% of revenue) via Lowe's Charitable & Educational Foundation.",

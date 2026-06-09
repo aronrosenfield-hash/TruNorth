@@ -2,11 +2,11 @@
   "name": "Smirnoff / Diageo",
   "cat": "Food & Beverage",
   "init": "DGE",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "DEO",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $325K in executive political donations; partisan lean split across 12 executive donors.",
     "amt": "$1.57-2.71 million annually",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

@@ -2,11 +2,11 @@
   "name": "Ross Stores",
   "cat": "Retail",
   "init": "RS",
-  "overall": 39.1,
+  "overall": 43.3,
   "isPublic": true,
   "ticker": "ROST",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $358K in executive political donations; partisan lean split across 12 executive donors.",
     "amt": "$42,018 (2024 cycle)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

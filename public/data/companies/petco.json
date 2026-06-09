@@ -2,11 +2,11 @@
   "name": "Petco",
   "cat": "Retail",
   "init": "PCO",
-  "overall": 50,
+  "overall": 52.5,
   "isPublic": true,
   "ticker": "WOOF",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $278K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "$52,341 (2024 PAC contributions); $160,000 (2022 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

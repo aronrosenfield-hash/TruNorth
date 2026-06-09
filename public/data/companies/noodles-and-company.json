@@ -2,11 +2,11 @@
   "name": "Noodles & Company",
   "cat": "Food & Beverage",
   "init": "NC",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "NDLS",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $298K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "Not disclosed",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

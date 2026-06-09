@@ -2,11 +2,11 @@
   "name": "Jack in the Box",
   "cat": "Food & Beverage",
   "init": "JACK",
-  "overall": 35,
+  "overall": 41.7,
   "isPublic": true,
   "ticker": "JACK",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $178K in executive political donations; partisan lean split across 9 executive donors.",
     "amt": "$9,583 (2024)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

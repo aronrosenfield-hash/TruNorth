@@ -2,11 +2,11 @@
   "name": "Pottery Barn / Williams-Sonoma",
   "cat": "Retail",
   "init": "WSM",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "WSM",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $339K in executive political donations; partisan lean split across 15 executive donors.",
     "amt": "$88,847 (2024 cycle)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

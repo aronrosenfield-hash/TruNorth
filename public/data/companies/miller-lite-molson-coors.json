@@ -2,11 +2,11 @@
   "name": "Miller Lite / Molson Coors",
   "cat": "Food & Beverage",
   "init": "MC",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "TAP",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $310K in executive political donations; partisan lean split across 13 executive donors.",
     "amt": "$2.2 million (2024 lobbying); $61,104 PAC contributions (2023-2024)",
     "lean": "Bipartisan",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "No public record found.",

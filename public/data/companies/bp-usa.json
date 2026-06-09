@@ -1,1 +1,312 @@
-{"name":"BP USA","cat":"Energy","init":"BP","overall":40,"isPublic":true,"ticker":"BP","sc":{"political":"neutral","charity":"neutral","environment":"poor","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No public record found.","amt":"$4.27 million (2024 combined contributions and lobbying)","lean":"Right","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"$6.5 million+ annually (matching gifts; foundation over $296 million since 2006)","focus":"STEM education, disaster relief, humanitarian aid, employee matching","sources":["Claude AI synthesis"]},"environment":{"s":"air pollution violation: $1.4B in federal penalties (Violation Tracker).","rating":"Very Poor","sources":["EPA","Violation Tracker"]},"labor":{"s":"442 federal penalties totaling $36.5B since 2000 (Violation Tracker).","rating":"Poor","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Not disclosed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Approximately 15-27:1 CEO to worker","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":{"legacy":"2026-05-28","ferc":"2026-06-09T13:48:16.996Z"},"laborAPI":{"violationTracker":{"slug":"bp","matchedName":"BP","totalPenalty":36493357157,"totalRecords":442,"offenseGroups":[{"category":"environment-related offenses","penalty":34588857765,"records":310},{"category":"consumer-protection-related offenses","penalty":669467567,"records":6},{"category":"financial offenses","penalty":525000000,"records":1},{"category":"competition-related offenses","penalty":408000000,"records":8},{"category":"government-contracting-related offenses","penalty":160001800,"records":5}],"primaryOffenses":[{"category":"oil spill","penalty":32622146081,"records":10},{"category":"air pollution violation","penalty":1402861518,"records":68},{"category":"consumer protection violation","penalty":669315000,"records":4},{"category":"investor protection violation","penalty":525000000,"records":1},{"category":"price-fixing or anti-competitive practices","penalty":390250000,"records":6}],"rating":"mixed"}},"competitors":["exxonmobil","chevron","shell-usa","conocophillips","valero-energy"],"antitrust":true,"wiki":{"founded":null,"hq":null,"employees":null,"revenue":null,"parent":"British Petroleum","industry":"Petroleum","products":null,"keyPeople":null,"website":"https://www.bp.com/en_ca/canada/home.html bp.com/canada","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Bp_logo1961.png","wikipediaUrl":"https://en.wikipedia.org/wiki/BP_Canada","extract":"BP Canada was a Canadian petroleum company and subsidiary of British Petroleum that existed between 1955 and 1992. The name refers to a group of companies that engaged in various segments of the petroleum industry lifecycle. BP entered the Canadian market in October 1953, when it purchased a 23 percent stake in the Triad Oil Company. In 1955, BP formed a Canadian subsidiary, based in Montreal, called BP Canada Limited. The company began acquiring retail stations in Ontario and Quebec and in 1957 started construction on a refinery in Montreal. By the end of the 1950s BP Canada was a fully-integ"},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ga/norcross/profile/credit-cards-and-plans/corpay-0443-7005062/addressId/34140"},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Bp_logo1961.png","logoSource":"wiki_infobox","slug":"bp-usa","secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"BP","slug":"bp","ownership":"publicly traded","hq":"United Kingdom","majorIndustry":"oil and gas","specificIndustry":"oil &amp; gas","totalPenalty":36493357157,"totalRecords":442,"offenseGroups":[{"category":"environment-related offenses","penalty":34588857765,"records":310},{"category":"consumer-protection-related offenses","penalty":669467567,"records":6},{"category":"financial offenses","penalty":525000000,"records":1},{"category":"competition-related offenses","penalty":408000000,"records":8},{"category":"government-contracting-related offenses","penalty":160001800,"records":5}],"primaryOffenses":[{"category":"oil spill","penalty":32622146081,"records":10},{"category":"air pollution violation","penalty":1402861518,"records":68},{"category":"consumer protection violation","penalty":669315000,"records":4},{"category":"investor protection violation","penalty":525000000,"records":1},{"category":"price-fixing or anti-competitive practices","penalty":390250000,"records":6}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z","enriched":{"ferc":{"totalEnforcementActions5y":1,"totalEnforcementActionsAll":1,"totalCivilPenaltiesUsd":20160000,"topViolations":[{"label":"Anti-Manipulation Rule (18 C.F.R. § 1c.1)","count":1},{"label":"Natural gas market manipulation at Houston Ship Channel","count":1}],"sampleActions":[{"date":"2021-12-16","caption":"BP America Inc., et al.","docket":"IN13-15-000","penaltyUsd":20160000,"violations":["Anti-Manipulation Rule (18 C.F.R. § 1c.1)","Natural gas market manipulation at Houston Ship Channel"],"summary":"Final order on remand assessing civil penalty against BP for natural gas market manipulation at Houston Ship Channel in 2008.","url":"https://www.ferc.gov/enforcement-legal/enforcement/civil-penalty-actions"}],"lastUpdated":"2026-06-09T13:48:16.996Z","source":"ferc","sourceUrl":"https://www.ferc.gov/enforcement-legal/enforcement/civil-penalty-actions"}}}
+{
+  "name": "BP USA",
+  "cat": "Energy",
+  "init": "BP",
+  "overall": 30,
+  "isPublic": true,
+  "ticker": "BP",
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $626K in executive political donations; partisan lean Republican +58 across 11 executive donors.",
+    "amt": "$4.27 million (2024 combined contributions and lobbying)",
+    "lean": "Right",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "$6.5 million+ annually (matching gifts; foundation over $296 million since 2006)",
+    "focus": "STEM education, disaster relief, humanitarian aid, employee matching",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $1.4B in federal penalties (Violation Tracker).",
+    "rating": "Very Poor",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "442 federal penalties totaling $36.5B since 2000 (Violation Tracker).",
+    "rating": "Poor",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Approximately 15-27:1 CEO to worker",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "ferc": "2026-06-09T13:48:16.996Z"
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "bp",
+      "matchedName": "BP",
+      "totalPenalty": 36493357157,
+      "totalRecords": 442,
+      "offenseGroups": [
+        {
+          "category": "environment-related offenses",
+          "penalty": 34588857765,
+          "records": 310
+        },
+        {
+          "category": "consumer-protection-related offenses",
+          "penalty": 669467567,
+          "records": 6
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 525000000,
+          "records": 1
+        },
+        {
+          "category": "competition-related offenses",
+          "penalty": 408000000,
+          "records": 8
+        },
+        {
+          "category": "government-contracting-related offenses",
+          "penalty": 160001800,
+          "records": 5
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "oil spill",
+          "penalty": 32622146081,
+          "records": 10
+        },
+        {
+          "category": "air pollution violation",
+          "penalty": 1402861518,
+          "records": 68
+        },
+        {
+          "category": "consumer protection violation",
+          "penalty": 669315000,
+          "records": 4
+        },
+        {
+          "category": "investor protection violation",
+          "penalty": 525000000,
+          "records": 1
+        },
+        {
+          "category": "price-fixing or anti-competitive practices",
+          "penalty": 390250000,
+          "records": 6
+        }
+      ],
+      "rating": "mixed"
+    }
+  },
+  "competitors": [
+    "exxonmobil",
+    "chevron",
+    "shell-usa",
+    "conocophillips",
+    "valero-energy"
+  ],
+  "antitrust": true,
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": "British Petroleum",
+    "industry": "Petroleum",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.bp.com/en_ca/canada/home.html bp.com/canada",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bp_logo1961.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/BP_Canada",
+    "extract": "BP Canada was a Canadian petroleum company and subsidiary of British Petroleum that existed between 1955 and 1992. The name refers to a group of companies that engaged in various segments of the petroleum industry lifecycle. BP entered the Canadian market in October 1953, when it purchased a 23 percent stake in the Triad Oil Company. In 1955, BP formed a Canadian subsidiary, based in Montreal, called BP Canada Limited. The company began acquiring retail stations in Ontario and Quebec and in 1957 started construction on a refinery in Montreal. By the end of the 1950s BP Canada was a fully-integ"
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ga/norcross/profile/credit-cards-and-plans/corpay-0443-7005062/addressId/34140"
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Bp_logo1961.png",
+  "logoSource": "wiki_infobox",
+  "slug": "bp-usa",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "BP",
+    "slug": "bp",
+    "ownership": "publicly traded",
+    "hq": "United Kingdom",
+    "majorIndustry": "oil and gas",
+    "specificIndustry": "oil &amp; gas",
+    "totalPenalty": 36493357157,
+    "totalRecords": 442,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 34588857765,
+        "records": 310
+      },
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 669467567,
+        "records": 6
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 525000000,
+        "records": 1
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 408000000,
+        "records": 8
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 160001800,
+        "records": 5
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "oil spill",
+        "penalty": 32622146081,
+        "records": 10
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 1402861518,
+        "records": 68
+      },
+      {
+        "category": "consumer protection violation",
+        "penalty": 669315000,
+        "records": 4
+      },
+      {
+        "category": "investor protection violation",
+        "penalty": 525000000,
+        "records": 1
+      },
+      {
+        "category": "price-fixing or anti-competitive practices",
+        "penalty": 390250000,
+        "records": 6
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "enriched": {
+    "ferc": {
+      "totalEnforcementActions5y": 1,
+      "totalEnforcementActionsAll": 1,
+      "totalCivilPenaltiesUsd": 20160000,
+      "topViolations": [
+        {
+          "label": "Anti-Manipulation Rule (18 C.F.R. § 1c.1)",
+          "count": 1
+        },
+        {
+          "label": "Natural gas market manipulation at Houston Ship Channel",
+          "count": 1
+        }
+      ],
+      "sampleActions": [
+        {
+          "date": "2021-12-16",
+          "caption": "BP America Inc., et al.",
+          "docket": "IN13-15-000",
+          "penaltyUsd": 20160000,
+          "violations": [
+            "Anti-Manipulation Rule (18 C.F.R. § 1c.1)",
+            "Natural gas market manipulation at Houston Ship Channel"
+          ],
+          "summary": "Final order on remand assessing civil penalty against BP for natural gas market manipulation at Houston Ship Channel in 2008.",
+          "url": "https://www.ferc.gov/enforcement-legal/enforcement/civil-penalty-actions"
+        }
+      ],
+      "lastUpdated": "2026-06-09T13:48:16.996Z",
+      "source": "ferc",
+      "sourceUrl": "https://www.ferc.gov/enforcement-legal/enforcement/civil-penalty-actions"
+    }
+  }
+}

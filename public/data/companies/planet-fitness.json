@@ -2,11 +2,11 @@
   "name": "Planet Fitness",
   "cat": "Hospitality",
   "init": "PF",
-  "overall": 22,
+  "overall": 40.9,
   "isPublic": true,
   "ticker": "PLNT",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $313K in executive political donations; partisan lean split across 13 executive donors.",
     "amt": "$28,318 contributions + $206,000 lobbying (2024)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

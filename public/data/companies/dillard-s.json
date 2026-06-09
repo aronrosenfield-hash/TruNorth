@@ -2,11 +2,11 @@
   "name": "Dillard's",
   "cat": "Retail",
   "init": "DDS",
-  "overall": 20,
+  "overall": 37.5,
   "isPublic": true,
   "ticker": "DDS",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $339K in executive political donations; partisan lean split across 16 executive donors.",
     "amt": "$130,091 (2024 cycle, employee contributions)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

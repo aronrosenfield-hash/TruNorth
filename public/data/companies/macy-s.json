@@ -2,11 +2,11 @@
   "name": "Macy's",
   "cat": "Retail",
   "init": "MYS",
-  "overall": 35,
+  "overall": 41.7,
   "isPublic": true,
   "ticker": "M",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $333K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "$835,357 (2024 cycle)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

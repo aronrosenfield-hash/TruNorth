@@ -2,11 +2,11 @@
   "name": "Free People / URBN",
   "cat": "Apparel & Fashion",
   "init": "FP",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "URBN",
   "sc": {
-    "political": "neutral",
+    "political": "left-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $193K in executive political donations; partisan lean Democratic +22 across 12 executive donors.",
     "amt": "$43,960 (2024 cycle, from individuals)",
     "lean": "Right",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

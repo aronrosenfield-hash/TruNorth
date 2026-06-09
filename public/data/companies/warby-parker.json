@@ -2,11 +2,11 @@
   "name": "Warby Parker",
   "cat": "Retail",
   "init": "WRBY",
-  "overall": 85,
+  "overall": 70,
   "isPublic": true,
   "ticker": "WRBY",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $285K in executive political donations; partisan lean split across 16 executive donors.",
     "lean": "Left",
     "amt": "No corporate PAC",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

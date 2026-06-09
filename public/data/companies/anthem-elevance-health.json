@@ -2,11 +2,11 @@
   "name": "Anthem / Elevance Health",
   "cat": "Healthcare",
   "init": "ELV",
-  "overall": 50,
+  "overall": 52.9,
   "isPublic": true,
   "ticker": "ELV",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -14,13 +14,15 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "poor"
+    "execPay": "neutral"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $264K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "$60,000 Q4 2024 federal lobbying disclosed; $1.06M 2021-2022 federal PAC contributions",
     "lean": "Bipartisan",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "$110M reported corporate giving in 2024 (~0.07% of revenue) via Elevance Health Foundation.",

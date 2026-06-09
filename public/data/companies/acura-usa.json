@@ -2,11 +2,11 @@
   "name": "Acura USA",
   "cat": "Automotive",
   "init": "AUS",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "NYSE:HMC",
   "sc": {
-    "political": "neutral",
+    "political": "right-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $418K in executive political donations; partisan lean Republican +22 across 12 executive donors.",
     "amt": "Not disclosed as separate entity",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

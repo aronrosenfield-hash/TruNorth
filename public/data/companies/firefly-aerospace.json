@@ -2,11 +2,11 @@
   "name": "Firefly Aerospace",
   "cat": "Manufacturing",
   "init": "FFA",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "FLY",
   "sc": {
-    "political": "neutral",
+    "political": "right",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $757K in executive political donations; partisan lean Republican +49 across 18 executive donors.",
     "amt": "$280,000 (2024 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

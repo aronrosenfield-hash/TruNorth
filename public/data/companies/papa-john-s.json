@@ -2,11 +2,11 @@
   "name": "Papa John's",
   "cat": "Food & Beverage",
   "init": "PJ",
-  "overall": 35,
+  "overall": 41.7,
   "isPublic": true,
   "ticker": "PZZA",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $299K in executive political donations; partisan lean split across 15 executive donors.",
     "amt": "Minimal / <$50,000 recent cycles",
     "lean": "Right-leaning",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "$3M reported corporate giving in 2024 (~0.14% of revenue).",

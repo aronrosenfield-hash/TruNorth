@@ -2,11 +2,11 @@
   "name": "GameStop",
   "cat": "Retail",
   "init": "GME",
-  "overall": 50,
+  "overall": 51.8,
   "isPublic": true,
   "ticker": "GME",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "mixed",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $368K in executive political donations; partisan lean split across 16 executive donors.",
     "amt": "$5,456 (2024 cycle contributions)",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

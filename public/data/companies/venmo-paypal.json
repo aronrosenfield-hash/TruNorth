@@ -2,11 +2,11 @@
   "name": "Venmo / PayPal",
   "cat": "Financial Services",
   "init": "PYPL",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "PYPL",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $757K in executive political donations; partisan lean split across 18 executive donors.",
     "amt": "$800,000+ (H1 2024)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

@@ -2,11 +2,11 @@
   "name": "Moderna",
   "cat": "Healthcare",
   "init": "MNA",
-  "overall": 38,
+  "overall": 44.2,
   "isPublic": true,
   "ticker": "MRNA",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $626K in executive political donations; partisan lean split across 17 executive donors.",
     "amt": "$1.25M (2025 lobbying)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

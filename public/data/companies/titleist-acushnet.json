@@ -2,11 +2,11 @@
   "name": "Titleist / Acushnet",
   "cat": "Apparel & Fashion",
   "init": "ACH",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "GOLF",
   "sc": {
-    "political": "neutral",
+    "political": "left",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $157K in executive political donations; partisan lean Democratic +43 across 10 executive donors.",
     "amt": "Not disclosed",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

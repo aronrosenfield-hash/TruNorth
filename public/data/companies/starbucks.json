@@ -2,11 +2,11 @@
   "name": "Starbucks",
   "cat": "Food & Beverage",
   "init": "SBX",
-  "overall": 35,
+  "overall": 40,
   "isPublic": true,
   "ticker": "SBUX",
   "sc": {
-    "political": "neutral",
+    "political": "right-leaning",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,10 +17,12 @@
     "execPay": "neutral"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $166K in executive political donations; partisan lean Republican +23 across 8 executive donors.",
     "amt": "~$2M (contributions + lobbying, 2024 cycle)",
     "lean": "Bipartisan",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "$45M reported corporate giving in 2024 (~0.12% of revenue) via Starbucks Foundation.",

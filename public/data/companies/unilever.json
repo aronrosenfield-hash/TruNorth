@@ -2,11 +2,11 @@
   "name": "Unilever",
   "cat": "Consumer Goods",
   "init": "UNL",
-  "overall": 39.1,
+  "overall": 42,
   "isPublic": true,
   "ticker": "UL",
   "sc": {
-    "political": "neutral",
+    "political": "right",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $570K in executive political donations; partisan lean Republican +56 across 12 executive donors.",
     "amt": "$610,000 (2024 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

@@ -2,11 +2,11 @@
   "name": "Chili's",
   "cat": "Food & Beverage",
   "init": "EAT",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "EAT",
   "sc": {
-    "political": "neutral",
+    "political": "right-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $175K in executive political donations; partisan lean Republican +27 across 11 executive donors.",
     "amt": "~$41,483 total cycle contributions (2024)",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

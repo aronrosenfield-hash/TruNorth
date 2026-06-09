@@ -2,11 +2,11 @@
   "name": "Pizza Hut",
   "cat": "Food & Beverage",
   "init": "PH",
-  "overall": 50,
+  "overall": 52.5,
   "isPublic": true,
   "ticker": "YUM",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $178K in executive political donations; partisan lean split across 8 executive donors.",
     "amt": "~$1.46M (Yum! Brands lobbying, 2024); $93K (franchise PAC candidate contributions, 2023–2024 cycle)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

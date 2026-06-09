@@ -2,11 +2,11 @@
   "name": "Praxair / Linde",
   "cat": "Energy",
   "init": "LIN",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "LIN",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $103K in executive political donations; partisan lean split across 4 executive donors.",
     "amt": "$610,000 lobbying + $68,156 PAC contributions (2024)",
     "lean": "Bipartisan",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "No public record found.",

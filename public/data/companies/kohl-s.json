@@ -2,11 +2,11 @@
   "name": "Kohl's",
   "cat": "Retail",
   "init": "KSS",
-  "overall": 32.9,
+  "overall": 40.9,
   "isPublic": true,
   "ticker": "KSS",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $310K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "$120,000 (2024 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

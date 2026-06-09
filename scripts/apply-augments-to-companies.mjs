@@ -219,21 +219,44 @@ const WRITERS = [
     },
   },
   // ─── Exec political donations (FEC) ───────────────────────────────────
+  // Actual augment shape: { political: { execDonationLean: "D+31", totalUsd,
+  // donorCount, year, sources } }. The lean string uses PVI-style notation:
+  //   D+X = X percentage points more Democratic than Republican
+  //   R+X = X percentage points more Republican than Democratic
+  // Translation to our enum:
+  //   D+30+ or R+30+  → strong lean (left / right)
+  //   D+10..29 / R+10..29 → moderate lean (left-leaning / right-leaning)
+  //   D/R +0..9          → mixed (donates to both sides)
   {
     name: "exec-political-donations",
     write: (e) => {
-      const total = e.totalUsd || e.total || 0;
-      const lean = e.lean || e.partisanLean;
-      if (!total || !lean) return [];
-      const pct = e.percentRight != null ? `${Math.round(e.percentRight * 100)}% Republican` : "";
-      const enum_ = lean === "right" || lean === "right-leaning" ? "right"
-        : lean === "left" || lean === "left-leaning" ? "left"
-          : lean === "bipartisan" || lean === "mixed" ? "bipartisan" : "neutral";
-      return [{
-        category: "political",
-        narrative: `FEC: $${total >= 1e6 ? (total / 1e6).toFixed(1) + "M" : total >= 1e3 ? (total / 1e3).toFixed(0) + "K" : total} in PAC donations${pct ? `; ${pct}` : ""}.`,
-        sc: enum_,
-      }];
+      const p = e.political || e;
+      const lean = p.execDonationLean || p.lean || p.partisanLean;
+      const total = p.totalUsd || p.total || 0;
+      const donors = p.donorCount || null;
+      if (!lean) return [];
+      const m = /^([DR])\+(\d+)$/i.exec(String(lean));
+      let enum_ = "bipartisan";
+      let label = lean;
+      if (m) {
+        const dir = m[1].toUpperCase();
+        const margin = parseInt(m[2], 10);
+        if (margin >= 30)      enum_ = dir === "D" ? "left" : "right";
+        else if (margin >= 10) enum_ = dir === "D" ? "left-leaning" : "right-leaning";
+        else                   enum_ = "bipartisan";
+        label = `${dir === "D" ? "Democratic" : "Republican"} +${margin}`;
+      } else if (/bipartisan|mixed/i.test(lean)) {
+        enum_ = "bipartisan";
+      }
+      const totalStr = total >= 1e6 ? `$${(total / 1e6).toFixed(2)}M`
+        : total >= 1e3 ? `$${Math.round(total / 1e3)}K`
+        : total > 0 ? `$${total}` : "";
+      const donorStr = donors ? ` across ${donors} executive donors` : "";
+      const parts = [];
+      if (totalStr) parts.push(`${totalStr} in executive political donations`);
+      parts.push(`partisan lean ${label}`);
+      const narrative = `FEC: ${parts.join("; ")}${donorStr}.`;
+      return [{ category: "political", narrative, sc: enum_ }];
     },
   },
   // ─── Firearms industry ────────────────────────────────────────────────

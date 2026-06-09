@@ -2,11 +2,11 @@
   "name": "Amazon Logistics",
   "cat": "Retail",
   "init": "AL",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "AMZN",
   "sc": {
-    "political": "neutral",
+    "political": "right",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $242K in executive political donations; partisan lean Republican +35 across 9 executive donors.",
     "amt": "$8.2M (contributions), $19.1M (lobbying, 2024); $18.9M (lobbying, 2025)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

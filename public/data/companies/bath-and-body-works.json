@@ -2,11 +2,11 @@
   "name": "Bath & Body Works",
   "cat": "Consumer Goods",
   "init": "BBW",
-  "overall": 35,
+  "overall": 41.7,
   "isPublic": true,
   "ticker": "BBWI",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $114K in executive political donations; partisan lean split across 4 executive donors.",
     "amt": "$372,887 (2024 cycle)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

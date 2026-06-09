@@ -2,11 +2,11 @@
   "name": "Hormel Foods",
   "cat": "Food & Beverage",
   "init": "HRL",
-  "overall": 35,
+  "overall": 40,
   "isPublic": true,
   "ticker": "HRL",
   "sc": {
-    "political": "neutral",
+    "political": "right",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $463K in executive political donations; partisan lean Republican +31 across 15 executive donors.",
     "amt": "$490,000 (2024 lobbying)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

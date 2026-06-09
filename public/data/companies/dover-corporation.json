@@ -2,11 +2,11 @@
   "name": "Dover Corporation",
   "cat": "Manufacturing",
   "init": "DOV",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "DOV",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $138K in executive political donations; partisan lean split across 4 executive donors.",
     "amt": "$139,125 (PAC contributions $9,125 + lobbying $130,000 in 2024)",
     "lean": "Neutral",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "No public record found.",

@@ -2,11 +2,11 @@
   "name": "Philips USA",
   "cat": "Consumer Goods",
   "init": "PHU",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "PHG",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $121K in executive political donations; partisan lean split across 8 executive donors.",
     "amt": "$2.2-2.3 million annually in lobbying; $446,554 in 2024 PAC contributions",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

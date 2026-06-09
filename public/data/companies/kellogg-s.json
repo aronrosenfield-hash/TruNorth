@@ -2,11 +2,11 @@
   "name": "Kellogg's",
   "cat": "Food & Beverage",
   "init": "KLG",
-  "overall": 50,
+  "overall": 52.5,
   "isPublic": true,
   "ticker": "K (Kellanov)/WKK (WK Kellogg Co)",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $132K in executive political donations; partisan lean split across 8 executive donors.",
     "amt": "$350,000-$640,000 annually (recent years)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

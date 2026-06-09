@@ -2,11 +2,11 @@
   "name": "Zipcar / Avis",
   "cat": "Automotive",
   "init": "ABG",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "CAR",
   "sc": {
-    "political": "neutral",
+    "political": "right-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $490K in executive political donations; partisan lean Republican +24 across 13 executive donors.",
     "amt": "$60,000-$70,000 annually (pre-2013 Zipcar data)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

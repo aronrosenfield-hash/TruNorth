@@ -2,11 +2,11 @@
   "name": "VRBO",
   "cat": "Hospitality",
   "init": "VRB",
-  "overall": null,
+  "overall": 55,
   "isPublic": false,
   "ticker": "EXPE",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $267K in executive political donations; partisan lean split across 8 executive donors.",
     "amt": "$193,121 (2024 campaign payments)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

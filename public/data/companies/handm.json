@@ -2,11 +2,11 @@
   "name": "H&M",
   "cat": "Apparel & Fashion",
   "init": "HM",
-  "overall": 20,
+  "overall": 35,
   "isPublic": true,
   "ticker": "HM.B",
   "sc": {
-    "political": "neutral",
+    "political": "left-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $160K in executive political donations; partisan lean Democratic +28 across 12 executive donors.",
     "amt": "~$1.6-1.8 million annually in lobbying",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

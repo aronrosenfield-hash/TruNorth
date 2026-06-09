@@ -2,11 +2,11 @@
   "name": "AMC Networks",
   "cat": "Entertainment & Media",
   "init": "AMCX",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "AMCX",
   "sc": {
-    "political": "neutral",
+    "political": "left",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $398K in executive political donations; partisan lean Democratic +81 across 14 executive donors.",
     "amt": "~$103,912 (2024: $23,912 contributions + $80,000 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

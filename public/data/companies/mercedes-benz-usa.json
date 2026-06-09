@@ -2,11 +2,11 @@
   "name": "Mercedes-Benz USA",
   "cat": "Automotive",
   "init": "MB",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "MBG",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $119K in executive political donations; partisan lean split across 6 executive donors.",
     "amt": "$1,530,000 (lobbying 2024); $63,709 (PAC contributions 2024)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

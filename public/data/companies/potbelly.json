@@ -2,11 +2,11 @@
   "name": "Potbelly",
   "cat": "Food & Beverage",
   "init": "POT",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "PBPB",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $166K in executive political donations; partisan lean split across 7 executive donors.",
     "amt": "Less than $15,000 (2012 data)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

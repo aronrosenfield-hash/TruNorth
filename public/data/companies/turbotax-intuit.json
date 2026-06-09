@@ -2,11 +2,11 @@
   "name": "TurboTax / Intuit",
   "cat": "Financial Services",
   "init": "INT",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "INTU",
   "sc": {
-    "political": "neutral",
+    "political": "right-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $811K in executive political donations; partisan lean Republican +25 across 24 executive donors.",
     "amt": "$3.9 million (2025 lobbying)",
     "lean": "Right",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

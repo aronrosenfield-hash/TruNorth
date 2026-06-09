@@ -2,11 +2,11 @@
   "name": "Sherwin-Williams",
   "cat": "Manufacturing",
   "init": "SHW",
-  "overall": 39.1,
+  "overall": 43.3,
   "isPublic": true,
   "ticker": "SHW",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $133K in executive political donations; partisan lean split across 3 executive donors.",
     "amt": "$890,000 (2023 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

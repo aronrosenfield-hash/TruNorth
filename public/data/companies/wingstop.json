@@ -2,11 +2,11 @@
   "name": "Wingstop",
   "cat": "Food & Beverage",
   "init": "WS",
-  "overall": 22,
+  "overall": 38,
   "isPublic": true,
   "ticker": "WING",
   "sc": {
-    "political": "neutral",
+    "political": "right",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $158K in executive political donations; partisan lean Republican +33 across 8 executive donors.",
     "amt": "Not disclosed / negligible",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

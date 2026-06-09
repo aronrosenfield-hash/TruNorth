@@ -2,11 +2,11 @@
   "name": "Coinbase",
   "cat": "Financial Services",
   "init": "COIN",
-  "overall": 20,
+  "overall": 37.5,
   "isPublic": true,
   "ticker": "COIN",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $126K in executive political donations; partisan lean split across 7 executive donors.",
     "lean": "Right",
     "amt": "$75M (Fairshake PAC, 2024)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

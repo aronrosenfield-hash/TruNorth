@@ -2,11 +2,11 @@
   "name": "Jeep / Stellantis",
   "cat": "Automotive",
   "init": "STA",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "STLA",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $494K in executive political donations; partisan lean split across 12 executive donors.",
     "amt": "$2.71 million (2024 PAC + lobbying)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

@@ -2,26 +2,27 @@
   "name": "Estée Lauder",
   "cat": "Consumer Goods",
   "init": "EL",
-  "overall": 50,
+  "overall": 52.5,
   "isPublic": true,
   "ticker": "EL",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
-    "animals": "tests_animals",
+    "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $115K in executive political donations; partisan lean split across 4 executive donors.",
     "amt": "$400,000 lobbying (2024); ~$3.9M PAC contributions",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

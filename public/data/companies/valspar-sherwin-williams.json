@@ -2,11 +2,11 @@
   "name": "Valspar / Sherwin-Williams",
   "cat": "Manufacturing",
   "init": "SW",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "SHW",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $107K in executive political donations; partisan lean split across 4 executive donors.",
     "amt": "$890,000 (2023 federal lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

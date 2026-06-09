@@ -2,11 +2,11 @@
   "name": "Duluth Trading Company",
   "cat": "Apparel & Fashion",
   "init": "DTC",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "DLTH",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $132K in executive political donations; partisan lean split across 6 executive donors.",
     "amt": "Not disclosed",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

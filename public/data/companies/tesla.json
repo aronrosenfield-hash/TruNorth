@@ -2,11 +2,11 @@
   "name": "Tesla",
   "cat": "Automotive",
   "init": "TSL",
-  "overall": 39.1,
+  "overall": 43.3,
   "isPublic": true,
   "ticker": "TSLA",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "poor",
@@ -17,10 +17,12 @@
     "execPay": "neutral"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $427K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "~$1M/yr federal lobbying (Tesla corporate); Musk personally $277M+ via America PAC (2024)",
     "lean": "Right",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "$10M reported corporate giving in 2024 (~0.01% of revenue).",

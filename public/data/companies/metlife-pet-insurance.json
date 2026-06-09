@@ -2,11 +2,11 @@
   "name": "MetLife Pet Insurance",
   "cat": "Financial Services",
   "init": "MPI",
-  "overall": 35,
+  "overall": 41.7,
   "isPublic": true,
   "ticker": "MET",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $610K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "~$1.42M lobbying + ~$747K PAC contributions (2024)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

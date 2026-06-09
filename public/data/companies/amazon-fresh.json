@@ -2,11 +2,11 @@
   "name": "Amazon Fresh",
   "cat": "Grocery",
   "init": "AF",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "AMZN",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $368K in executive political donations; partisan lean split across 10 executive donors.",
     "amt": "$31.3M (2024 parent company)",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

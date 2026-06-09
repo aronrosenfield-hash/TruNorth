@@ -2,11 +2,11 @@
   "name": "Allegiant Air",
   "cat": "Hospitality",
   "init": "ALG",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "ALGT",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $228K in executive political donations; partisan lean split across 13 executive donors.",
     "amt": "$615,000 lobbying (2024)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

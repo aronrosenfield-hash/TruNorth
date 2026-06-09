@@ -2,15 +2,15 @@
   "name": "CarMax",
   "cat": "Automotive",
   "init": "CMX",
-  "overall": 50,
+  "overall": 51.1,
   "isPublic": true,
   "ticker": "KMX",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "mixed",
-    "dei": "pro_dei",
+    "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "mixed",
@@ -19,11 +19,12 @@
     "violations.s": "22 federal violations totaling $5.0M in penalties; $2.8M consumer protection violation, $1.6M hazardous waste violation."
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $538K in executive political donations; partisan lean split across 16 executive donors.",
     "amt": "$143,359 (2024)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

@@ -2,11 +2,11 @@
   "name": "Anthropologie / URBN",
   "cat": "Apparel & Fashion",
   "init": "ANG",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "URBN",
   "sc": {
-    "political": "neutral",
+    "political": "left",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $185K in executive political donations; partisan lean Democratic +43 across 6 executive donors.",
     "amt": "Not disclosed",
     "lean": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

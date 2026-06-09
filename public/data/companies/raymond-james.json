@@ -2,11 +2,11 @@
   "name": "Raymond James",
   "cat": "Financial Services",
   "init": "RJ",
-  "overall": 32.9,
+  "overall": 40.9,
   "isPublic": true,
   "ticker": "RJF",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,10 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $138K in executive political donations; partisan lean split across 9 executive donors.",
     "amt": "$520,898 (2024 contributions)",
     "lean": "Bipartisan",
-    "sources": []
+    "sources": [
+      "exec-political-donations"
+    ]
   },
   "charity": {
     "s": "$5M reported corporate giving in 2024 (~0.04% of revenue) via Raymond James Cares Foundation.",

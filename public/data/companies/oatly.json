@@ -2,11 +2,11 @@
   "name": "Oatly",
   "cat": "Food & Beverage",
   "init": "OAT",
-  "overall": 50,
+  "overall": 52.5,
   "isPublic": true,
   "ticker": "OTLY",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $284K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "$330,000 (2024 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

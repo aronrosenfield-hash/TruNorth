@@ -2,11 +2,11 @@
   "name": "Blue Buffalo / General Mills",
   "cat": "Food & Beverage",
   "init": "BB",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "GIS",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $296K in executive political donations; partisan lean split across 9 executive donors.",
     "amt": "$367,366 (2024 PAC contributions); $1,270,000 (2024 lobbying)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

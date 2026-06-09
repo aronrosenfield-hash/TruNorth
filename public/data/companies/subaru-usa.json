@@ -2,11 +2,11 @@
   "name": "Subaru USA",
   "cat": "Automotive",
   "init": "SUB",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": null,
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $437K in executive political donations; partisan lean split across 11 executive donors.",
     "amt": "$180,000 (2024 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

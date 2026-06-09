@@ -2,11 +2,11 @@
   "name": "Potlatch Deltic",
   "cat": "Manufacturing",
   "init": "PCH",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "PCH",
   "sc": {
-    "political": "neutral",
+    "political": "right",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $277K in executive political donations; partisan lean Republican +37 across 11 executive donors.",
     "amt": "$440,000 (2024 PAC/lobbying)",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

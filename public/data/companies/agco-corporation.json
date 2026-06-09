@@ -2,11 +2,11 @@
   "name": "AGCO Corporation",
   "cat": "Manufacturing",
   "init": "AGC",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "AGCO",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $120K in executive political donations; partisan lean split across 6 executive donors.",
     "amt": "Not disclosed",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

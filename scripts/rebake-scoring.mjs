@@ -85,10 +85,14 @@ function baseScoreCat(k, v) {
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
   if (k === "political") {
-    // No user preference → bipartisan is the "good" signal (politically
-    // balanced, donates to both sides), left/right are scored neutrally
-    // (no objective right or wrong direction).
-    if (["bipartisan", "mixed"].includes(val)) return 75;
+    // Non-personalized political score: ALL three states cluster near the
+    // mid-band (50) because political alignment is a preference axis, not
+    // an objective good/bad signal. With user quiz weighting applied,
+    // computeScore in App.jsx shifts these dramatically. The base scores
+    // here just keep brands from defaulting to "?" when their only signal
+    // is political. Tuned down from 75 (was triggering accidental A's
+    // for single-signal bipartisan brands per Aron's 2026-06-09 review).
+    if (["bipartisan", "mixed"].includes(val)) return 55;
     if (["left", "left-leaning", "right", "right-leaning"].includes(val)) return 50;
     return null;
   }

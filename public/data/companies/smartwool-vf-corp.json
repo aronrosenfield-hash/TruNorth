@@ -2,11 +2,11 @@
   "name": "Smartwool / VF Corp",
   "cat": "Apparel & Fashion",
   "init": "VFC",
-  "overall": null,
+  "overall": 50,
   "isPublic": true,
   "ticker": "VFC",
   "sc": {
-    "political": "neutral",
+    "political": "left-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $180K in executive political donations; partisan lean Democratic +26 across 9 executive donors.",
     "amt": "$340,000 lobbying (2024)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

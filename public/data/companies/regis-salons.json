@@ -2,11 +2,11 @@
   "name": "Regis Salons",
   "cat": "Retail",
   "init": "RGS",
-  "overall": 20.9,
+  "overall": 33.3,
   "isPublic": true,
   "ticker": "RGS",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $362K in executive political donations; partisan lean split across 13 executive donors.",
     "amt": "$56,522 (2024 cycle)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

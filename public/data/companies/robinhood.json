@@ -2,11 +2,11 @@
   "name": "Robinhood",
   "cat": "Financial Services",
   "init": "HOOD",
-  "overall": 35,
+  "overall": 40,
   "isPublic": true,
   "ticker": "HOOD",
   "sc": {
-    "political": "neutral",
+    "political": "right-leaning",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $796K in executive political donations; partisan lean Republican +23 across 24 executive donors.",
     "lean": "Bipartisan",
     "amt": "Small PAC",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

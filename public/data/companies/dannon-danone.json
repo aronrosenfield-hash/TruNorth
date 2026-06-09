@@ -2,11 +2,11 @@
   "name": "Dannon / Danone",
   "cat": "Food & Beverage",
   "init": "DAN",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "BN",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $316K in executive political donations; partisan lean split across 10 executive donors.",
     "amt": "$1,150,000 (2024 lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

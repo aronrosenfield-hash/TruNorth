@@ -2,11 +2,11 @@
   "name": "Bristol-Myers Squibb",
   "cat": "Healthcare",
   "init": "BMS",
-  "overall": 35,
+  "overall": 41.7,
   "isPublic": true,
   "ticker": "BMY",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "poor",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $570K in executive political donations; partisan lean split across 20 executive donors.",
     "amt": "$10,080,000 (2025 lobbying)",
     "lean": "Bipartisan",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

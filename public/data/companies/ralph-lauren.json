@@ -2,11 +2,11 @@
   "name": "Ralph Lauren",
   "cat": "Apparel & Fashion",
   "init": "RL",
-  "overall": 50,
+  "overall": 51.7,
   "isPublic": true,
   "ticker": "RL",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
     "environment": "neutral",
     "labor": "mixed",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $131K in executive political donations; partisan lean split across 5 executive donors.",
     "amt": "$60,058 (2024)",
     "lean": "Left-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

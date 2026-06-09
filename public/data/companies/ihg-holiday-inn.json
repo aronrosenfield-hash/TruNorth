@@ -2,11 +2,11 @@
   "name": "IHG / Holiday Inn",
   "cat": "Hospitality",
   "init": "IHG",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "IHG",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $307K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "Under $100,000 annually",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {

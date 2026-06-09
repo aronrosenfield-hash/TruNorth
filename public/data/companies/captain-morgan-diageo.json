@@ -2,11 +2,11 @@
   "name": "Captain Morgan / Diageo",
   "cat": "Food & Beverage",
   "init": "DGE",
-  "overall": null,
+  "overall": 55,
   "isPublic": true,
   "ticker": "DEO",
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "neutral",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "FEC: $313K in executive political donations; partisan lean split across 15 executive donors.",
     "amt": "$1,782,385 (2024 contributions + lobbying)",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "exec-political-donations"
     ]
   },
   "charity": {
