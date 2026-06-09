@@ -289,6 +289,124 @@ const WRITERS = [
       }];
     },
   },
+  // ─── KnowTheChain forced-labor benchmark (ICT/Apparel/F&B) ───────────
+  {
+    name: "knowthechain",
+    write: (e) => {
+      const score = e.score;
+      if (score == null) return [];
+      const sector = e.sector || "industry";
+      const year = e.year || "";
+      // KTC bands: <40 poor; 40–60 mid; >60 strong
+      let sc, severity;
+      if (score >= 60) { sc = "positive"; severity = "positive"; }
+      else if (score < 25) { sc = "very_poor"; severity = "negative"; }
+      else if (score < 40) { sc = "poor"; severity = "negative"; }
+      else { sc = "mixed"; severity = "mixed"; }
+      const narrative = `KnowTheChain Forced-Labor Benchmark${year ? ` (${year})` : ""}: ${score}/100 (${sector}). ${score >= 60 ? "Among sector leaders for supply-chain due diligence." : score < 40 ? "Below sector average — gaps in supplier disclosure, worker voice, or grievance remedy." : "Mid-pack on supply-chain disclosure and remedy."}`;
+      return [{ category: "labor", narrative, sc, severity }];
+    },
+  },
+  // ─── Fashion Revolution Transparency Index ────────────────────────────
+  {
+    name: "fashion-revolution",
+    write: (e) => {
+      const score = e.score;
+      if (score == null) return [];
+      let sc, severity;
+      if (score >= 60) { sc = "positive"; severity = "positive"; }
+      else if (score >= 30) { sc = "mixed"; severity = "mixed"; }
+      else if (score >= 10) { sc = "poor"; severity = "negative"; }
+      else { sc = "very_poor"; severity = "negative"; }
+      const narrative = `Fashion Revolution Transparency Index: ${score}% disclosure across supply chain, policies, governance, and impact. ${score >= 60 ? "Top-tier disclosure for an apparel brand." : score >= 30 ? "Mid-pack apparel transparency." : "Among the least-transparent major apparel brands."}`;
+      return [{ category: "labor", narrative, sc, severity }];
+    },
+  },
+  // ─── Corporate Human Rights Benchmark (CHRB / WBA) ────────────────────
+  {
+    name: "chrb",
+    write: (e) => {
+      const score = e.score;
+      if (score == null) return [];
+      const sector = e.sector ? ` (${e.sector})` : "";
+      // CHRB scale 0–26: leader ≥16, mid 8–15.9, laggard <8
+      let sc, severity;
+      if (score >= 16) { sc = "positive"; severity = "positive"; }
+      else if (score >= 8) { sc = "mixed"; severity = "mixed"; }
+      else { sc = "poor"; severity = "negative"; }
+      const narrative = `Corporate Human Rights Benchmark${sector}: ${score}/26 on UN Guiding Principles assessment (policy, due diligence, remedy, and serious-allegation response).`;
+      return [{ category: "labor", narrative, sc, severity }];
+    },
+  },
+  // ─── DOL TVPRA Goods List supply-chain exposure ───────────────────────
+  {
+    name: "dol-tvpra",
+    write: (e) => {
+      const goods = Array.isArray(e.goods) ? e.goods : [];
+      if (!goods.length) return [];
+      const sev = e.severity || "medium";
+      const sc = sev === "high" ? "very_poor" : "poor";
+      const narrative = `DOL TVPRA exposure — supply chain includes ${goods.join(", ")} from countries on the US Department of Labor's List of Goods Produced by Child Labor or Forced Labor.`;
+      return [{ category: "labor", narrative, sc, severity: "negative" }];
+    },
+  },
+  // ─── Fair Labor Association affiliate ─────────────────────────────────
+  {
+    name: "fair-labor-association",
+    write: (e) => {
+      const status = e.status || "participating";
+      const since = e.affiliateSince;
+      const narrative = `Fair Labor Association ${status === "accredited" ? "accredited" : "participating"} affiliate${since ? ` since ${since}` : ""} — publicly discloses Tier-1 suppliers, accepts independent factory audits, and remediates findings.`;
+      return [{ category: "labor", narrative, sc: "positive", severity: "positive" }];
+    },
+  },
+  // ─── UK Modern Slavery Statement registry ─────────────────────────────
+  // Presence = compliance baseline (neutral positive). Only used when no
+  // stronger labor signal exists.
+  {
+    name: "uk-modern-slavery",
+    write: (e) => {
+      const yr = e.latestYear;
+      if (e.status === "weak-or-non-compliant") {
+        return [{
+          category: "labor",
+          narrative: `No public UK Modern Slavery Act statement on the Home Office registry — Section 54 compliance gap.`,
+          sc: "poor", severity: "negative",
+        }];
+      }
+      if (!yr) return [];
+      return [{
+        category: "labor",
+        narrative: `Publishes UK Modern Slavery Act Section 54 statement${yr ? ` (latest ${yr})` : ""} — discloses supply-chain due-diligence steps.`,
+        sc: "neutral", severity: "positive",
+      }];
+    },
+  },
+  // ─── Australia Modern Slavery Register ────────────────────────────────
+  {
+    name: "au-modern-slavery",
+    write: (e) => {
+      const yr = e.latestYear;
+      if (!yr) return [];
+      return [{
+        category: "labor",
+        narrative: `Publishes Australia Modern Slavery Act statement${yr ? ` (latest ${yr})` : ""} — annual disclosure of supply-chain modern-slavery risk + remediation.`,
+        sc: "neutral", severity: "positive",
+      }];
+    },
+  },
+  // ─── EITI extractive transparency supporter ───────────────────────────
+  {
+    name: "eiti",
+    write: (e) => {
+      const since = e.supporterSince;
+      return [{
+        category: "labor",
+        narrative: `EITI (Extractive Industries Transparency Initiative) supporting company${since ? ` since ${since}` : ""} — publicly discloses payments to host governments and beneficial-ownership data.`,
+        sc: "positive", severity: "positive",
+      }];
+    },
+  },
   // ─── Industry carbon intensity (sector inferred) ──────────────────────
   {
     name: "industry-carbon-intensity",
@@ -317,9 +435,41 @@ for (const w of WRITERS) {
   console.log(`[load] ${w.name}: ${augmentsLoaded[w.name].length} entries`);
 }
 
+// Supply-chain & labor-rights sources — when a brand has 3+ of these
+// hits in the "labor" category, we append a richer combined sentence to
+// the existing narrative (rather than skipping under "first wins").
+// This honours the rule: "If a brand has data from 3+ sources, write a
+// richer combined narrative; don't truncate."
+const SUPPLY_CHAIN_SOURCES = new Set([
+  "knowthechain",
+  "fashion-revolution",
+  "chrb",
+  "dol-tvpra",
+  "fair-labor-association",
+  "uk-modern-slavery",
+  "au-modern-slavery",
+  "eiti",
+]);
+
+function buildSupplyChainSummary(hits) {
+  const labels = [];
+  for (const [name, w] of hits) {
+    if (name === "knowthechain") labels.push(`KnowTheChain ${w._raw?.score ?? "?"}/100`);
+    else if (name === "chrb") labels.push(`CHRB ${w._raw?.score ?? "?"}/26`);
+    else if (name === "fashion-revolution") labels.push(`Fashion Rev ${w._raw?.score ?? "?"}%`);
+    else if (name === "fair-labor-association") labels.push(`FLA affiliate`);
+    else if (name === "dol-tvpra") labels.push(`TVPRA exposure`);
+    else if (name === "uk-modern-slavery") labels.push(w._raw?.status === "weak-or-non-compliant" ? "UK MS gap" : "UK MS statement");
+    else if (name === "au-modern-slavery") labels.push("AU MS statement");
+    else if (name === "eiti") labels.push("EITI supporter");
+  }
+  return labels.length ? ` Supply-chain signals: ${labels.join("; ")}.` : "";
+}
+
 const compFiles = fs.readdirSync(COMP_DIR).filter(f => f.endsWith(".json"));
 let companyHits = 0;
 let categoryWrites = 0;
+let supplyChainAppends = 0;
 const perCategoryHits = {};
 const patagoniaTrace = [];
 
@@ -329,6 +479,20 @@ for (const f of compFiles) {
   try { d = JSON.parse(fs.readFileSync(filePath, "utf8")); } catch { continue; }
   const slug = d.slug || f.replace(/\.json$/, "");
   let touched = false;
+
+  // First pass: collect supply-chain hits keyed by source name, with the raw entry attached
+  const supplyChainHits = [];
+  for (const [name, entries] of Object.entries(augmentsLoaded)) {
+    if (!SUPPLY_CHAIN_SOURCES.has(name)) continue;
+    const hit = entries.find(([k]) => k === slug);
+    if (!hit) continue;
+    const writes = writerMap[name].write(hit[1], slug);
+    for (const w of writes) {
+      if (w?.category === "labor") {
+        supplyChainHits.push([name, { ...w, _raw: hit[1] }]);
+      }
+    }
+  }
 
   for (const [name, entries] of Object.entries(augmentsLoaded)) {
     const hit = entries.find(([k]) => k === slug);
@@ -356,6 +520,26 @@ for (const f of compFiles) {
     }
   }
 
+  // ─── Supply-chain combined sentence: ≥3 sources hit on labor ────────
+  if (supplyChainHits.length >= 3) {
+    const existing = d.labor || {};
+    const existingS = String(existing.s || "");
+    const summary = buildSupplyChainSummary(supplyChainHits);
+    if (summary && !existingS.includes("Supply-chain signals")) {
+      const newS = existingS && !NO_RECORD.test(existingS)
+        ? `${existingS.trim()}${summary}`
+        : summary.trim();
+      const newSources = Array.from(new Set([
+        ...(existing.sources || []),
+        ...supplyChainHits.map(([n]) => n),
+      ]));
+      d.labor = { ...existing, s: newS, sources: newSources };
+      supplyChainAppends++;
+      touched = true;
+      if (slug === "patagonia") patagoniaTrace.push(`  labor APPEND: supply-chain (${supplyChainHits.length} sources)`);
+    }
+  }
+
   if (touched) {
     fs.writeFileSync(filePath, JSON.stringify(d, null, 2));
     companyHits++;
@@ -366,6 +550,7 @@ console.log("");
 console.log(`=== APPLY DONE ===`);
 console.log(`  Companies touched: ${companyHits} / ${compFiles.length}`);
 console.log(`  Total category narratives written: ${categoryWrites}`);
+console.log(`  Supply-chain combined-summary appends: ${supplyChainAppends}`);
 console.log(`  Per-category:`);
 for (const [c, n] of Object.entries(perCategoryHits)) {
   console.log(`    ${c.padEnd(13)} ${n}`);
