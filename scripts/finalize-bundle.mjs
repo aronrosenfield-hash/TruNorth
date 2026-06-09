@@ -38,15 +38,21 @@ const INDEX_OUT = path.join(DATA, "index.json");
 const SEARCH_OUT = path.join(DATA, "search-index.json");
 const META_OUT = path.join(DATA, "meta.json");
 
-function scoreGrade(n) {
-  // Build 55 (Aron's Excel-rebuild): thresholds lowered. Must stay in sync
-  // with src/App.jsx scoreGrade and scripts/rebake-scoring.mjs gradeFromOverall.
+function scoreGrade(n, realCats) {
+  // Build 56 (signal-count cap): A requires ≥3 signals, B ≥2. Must stay in
+  // sync with src/App.jsx scoreGrade and rebake-scoring.mjs gradeFromOverall.
   if (n == null) return "?";
-  if (n >= 70) return "A";
-  if (n >= 60) return "B";
-  if (n >= 45) return "C";
-  if (n >= 30) return "D";
-  return "F";
+  let g;
+  if (n >= 70) g = "A";
+  else if (n >= 60) g = "B";
+  else if (n >= 45) g = "C";
+  else if (n >= 30) g = "D";
+  else g = "F";
+  if (typeof realCats === "number") {
+    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
+    else if (realCats < 3 && g === "A") g = "B";
+  }
+  return g;
 }
 
 function indexEntryFromCompanyFile(slug, d) {
@@ -57,9 +63,10 @@ function indexEntryFromCompanyFile(slug, d) {
     name:    d.name,
     cat:     d.cat,
     init:    d.init,
-    grade:   scoreGrade(d.overall),
+    grade:   scoreGrade(d.overall, d.realCats),
     score:   d.overall,
     overall: d.overall,
+    realCats: typeof d.realCats === "number" ? d.realCats : null,
     ab:      d.ab,
     ac:      d.ac,
     sc:      d.sc || {},

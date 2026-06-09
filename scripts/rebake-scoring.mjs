@@ -182,14 +182,23 @@ const wendySlug = "wendy-s";
 const tjSlug = "trader-joe-s";
 const traces = { [wendySlug]: null, [tjSlug]: null };
 
-function gradeFromOverall(n) {
-  // Build 55 (Aron's Excel-rebuild): thresholds lowered.
+function gradeFromOverall(n, realCats) {
+  // Build 56 (signal-count cap): A requires ≥3 contributing signals, B ≥2.
+  // Single-signal brands max out at C — a bipartisan-PAC-only brand can't
+  // earn an A without breadth elsewhere. Must stay in sync with
+  // src/App.jsx scoreGrade and scripts/finalize-bundle.mjs scoreGrade.
   if (n == null) return "?";
-  if (n >= 70) return "A";
-  if (n >= 60) return "B";
-  if (n >= 45) return "C";
-  if (n >= 30) return "D";
-  return "F";
+  let g;
+  if (n >= 70) g = "A";
+  else if (n >= 60) g = "B";
+  else if (n >= 45) g = "C";
+  else if (n >= 30) g = "D";
+  else g = "F";
+  if (typeof realCats === "number") {
+    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
+    else if (realCats < 3 && g === "A") g = "B";
+  }
+  return g;
 }
 
 for (const f of files) {
@@ -199,7 +208,7 @@ for (const f of files) {
   const slug = d.slug || f.replace(/\.json$/, "");
 
   const sc = { ...(d.sc || {}) };
-  const trace = { slug, name: d.name, oldOverall: d.overall, oldGrade: gradeFromOverall(d.overall), categories: [], realCount: 0, weightedSum: 0, weightUsed: 0 };
+  const trace = { slug, name: d.name, oldOverall: d.overall, oldGrade: gradeFromOverall(d.overall, d.realCats), categories: [], realCount: 0, weightedSum: 0, weightUsed: 0 };
 
   // Pass 1: align sc.* with detail.* (zero out orphan labels)
   for (const k of CAT_KEYS) {
@@ -255,7 +264,7 @@ for (const f of files) {
     ? Math.round((trace.weightedSum / trace.weightUsed) * 10) / 10
     : null;
   trace.newOverall = newOverall;
-  trace.newGrade = gradeFromOverall(newOverall);
+  trace.newGrade = gradeFromOverall(newOverall, signalCount);
 
   const oldG = trace.oldGrade;
   const newG = trace.newGrade;
@@ -266,8 +275,10 @@ for (const f of files) {
   // Capture trace for the two example brands.
   if (slug === wendySlug || slug === tjSlug) traces[slug] = trace;
 
-  if (d.overall !== newOverall || JSON.stringify(d.sc) !== JSON.stringify(sc)) {
+  // Persist realCats so the UI + index can apply the signal-count cap.
+  if (d.overall !== newOverall || d.realCats !== signalCount || JSON.stringify(d.sc) !== JSON.stringify(sc)) {
     d.overall = newOverall;
+    d.realCats = signalCount;
     fs.writeFileSync(filePath, JSON.stringify(d, null, 2));
     updated++;
   }
