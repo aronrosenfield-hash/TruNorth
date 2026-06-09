@@ -8,14 +8,13 @@
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "neutral",
     "dei": "neutral",
     "animals": "cruelty_free",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
-    "health": "mixed"
+    "execPay": "na"
   },
   "political": {
     "s": "No FEC PAC data found.",
@@ -41,10 +40,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Climate-commitment coalition member: RE100 (since 2016; target 2025) and We Mean Business Coalition (since 2019). 100% renewable electricity at all operational sites by 2025; achieved across US, Canada, UK.",
     "rating": "Good",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "climate-coalitions"
     ]
   },
   "labor": {
@@ -192,11 +192,5 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "health": {
-    "s": "EWG Skin Deep: L'Oréal portfolio mixed; many SKUs flagged moderate-to-high hazard for fragrance / preservative use. [EWG Skin Deep Mixed]",
-    "sources": [
-      "animal-welfare-ag-r3"
-    ]
-  }
+  "lastUpdated": "2026-05-16T23:59:59.000Z"
 }
