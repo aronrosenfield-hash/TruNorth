@@ -2,19 +2,18 @@
   "name": "Paramount+",
   "cat": "Entertainment & Media",
   "init": "PARA",
-  "overall": 38.8,
+  "overall": 50,
   "isPublic": true,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "mixed",
-    "dei": "neutral",
+    "labor": "neutral",
+    "dei": "anti_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "poor",
-    "execPay": "na",
-    "health": "mixed"
+    "privacy": "neutral",
+    "execPay": "na"
   },
   "political": {
     "s": "FEC: $34K PAC donations; 34% to Republican, 66% to Democratic committees.",
@@ -25,7 +24,7 @@
     ]
   },
   "labor": {
-    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 11 since 2015.",
+    "s": "No public record found.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -44,9 +43,10 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "GLAAD streamer scorecard: Insufficient (2024) — 27% inclusive slate — insufficient LGBTQ+ representation.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "glaad-sri"
     ]
   },
   "animals": {
@@ -60,7 +60,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "CFPB consumer complaints: 3379 on record (100 in past 12mo); 100% timely response rate.",
+    "s": "No public record found.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -169,8 +169,5 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-31T01:45:21.901Z",
-  "health": {
-    "s": "5 CPSC recalls on record; sample hazard: electrical arcing can cause the units to catch fire."
-  }
+  "lastUpdated": "2026-05-31T01:45:21.901Z"
 }

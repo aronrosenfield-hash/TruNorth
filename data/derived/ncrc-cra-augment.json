@@ -1,0 +1,282 @@
+{
+  "_license": "Public — FFIEC CRA Performance Evaluations are public records",
+  "_generated_at": "2026-06-09T16:33:21.305Z",
+  "_source_raw_file": "data/raw/ncrc-cra/2026-06-09.json",
+  "_source_url": "https://www.ffiec.gov/craratings/default.aspx",
+  "_vintage": "2024",
+  "_matched_slugs": 25,
+  "_routing_counts": {
+    "direct": 2,
+    "alias": 23,
+    "orphan": 8
+  },
+  "_orphans": [
+    {
+      "name": "TD Bank, N.A.",
+      "attempted": "td-bank-n-a",
+      "rating": "Needs to Improve"
+    },
+    {
+      "name": "M&T Bank",
+      "attempted": "m-and-t-bank",
+      "rating": "Outstanding"
+    },
+    {
+      "name": "Comerica Bank",
+      "attempted": "comerica-bank",
+      "rating": "Satisfactory"
+    },
+    {
+      "name": "Zions Bancorporation, N.A.",
+      "attempted": "zions-bancorporation-n-a",
+      "rating": "Satisfactory"
+    },
+    {
+      "name": "HSBC Bank USA, N.A.",
+      "attempted": "hsbc-bank-usa-n-a",
+      "rating": "Satisfactory"
+    },
+    {
+      "name": "Bank of the West",
+      "attempted": "bank-of-west",
+      "rating": "Outstanding"
+    },
+    {
+      "name": "First Republic Bank",
+      "attempted": "first-republic-bank",
+      "rating": "Substantial Noncompliance"
+    },
+    {
+      "name": "Signature Bank",
+      "attempted": "signature-bank",
+      "rating": "Substantial Noncompliance"
+    }
+  ],
+  "bySlug": {
+    "bank-of-america": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "Bank of America, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "jpmorgan-chase": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "JPMorgan Chase Bank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "wells-fargo": {
+      "cra": {
+        "rating": "Needs to Improve",
+        "exam_year": 2023,
+        "bank_entity": "Wells Fargo Bank, N.A.",
+        "note": "Downgraded following 2022 CFPB $3.7B consumer-protection settlement",
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "citibank-n-a": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "Citibank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "first-us-bancshares": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "U.S. Bank National Association",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "pnc-financial": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "PNC Bank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "truist-financial": {
+      "cra": {
+        "rating": "Satisfactory",
+        "exam_year": 2023,
+        "bank_entity": "Truist Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "capital-one": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "Capital One, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "goldman-sachs": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "Goldman Sachs Bank USA",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "morgan-stanley": {
+      "cra": {
+        "rating": "Satisfactory",
+        "exam_year": 2023,
+        "bank_entity": "Morgan Stanley Bank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "charles-schwab": {
+      "cra": {
+        "rating": "Satisfactory",
+        "exam_year": 2024,
+        "bank_entity": "Charles Schwab Bank, SSB",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "american-express": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "American Express National Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "discover-financial": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "Discover Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "synchrony-financial": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "Synchrony Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "ally-financial": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "Ally Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "citizens": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "Citizens Bank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "fifth-third-bank": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "Fifth Third Bank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "keycorp": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "KeyBank N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "regions-financial": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2023,
+        "bank_entity": "Regions Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "huntington-bancshares-inc": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "Huntington National Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "first-horizon": {
+      "cra": {
+        "rating": "Satisfactory",
+        "exam_year": 2023,
+        "bank_entity": "First Horizon Bank",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "banco-santander-s-a": {
+      "cra": {
+        "rating": "Satisfactory",
+        "exam_year": 2024,
+        "bank_entity": "Santander Bank, N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "deutsche-bank-aktiengesellschaft": {
+      "cra": {
+        "rating": "Satisfactory",
+        "exam_year": 2024,
+        "bank_entity": "Deutsche Bank Trust Company Americas",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "bank-of-montreal": {
+      "cra": {
+        "rating": "Outstanding",
+        "exam_year": 2024,
+        "bank_entity": "BMO Bank N.A.",
+        "note": null,
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    },
+    "silicon-valley-bank": {
+      "cra": {
+        "rating": "Substantial Noncompliance",
+        "exam_year": 2023,
+        "bank_entity": "Silicon Valley Bank",
+        "note": "Pre-collapse exam; bank closed March 2023",
+        "sourceUrl": "https://www.ffiec.gov/craratings/default.aspx"
+      }
+    }
+  }
+}

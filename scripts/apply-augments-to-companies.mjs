@@ -57,9 +57,10 @@ function loadAugment(name) {
 }
 
 function entriesOf(aug) {
-  // Augments can be either { slug: data } or { companies: { slug: data } }
+  // Augments can be { slug: data }, { companies: { slug: data } },
+  // or { bySlug: { slug: data } } depending on age of the merger.
   if (!aug) return [];
-  const root = aug.companies || aug;
+  const root = aug.bySlug || aug.companies || aug;
   return Object.entries(root).filter(([k]) => !k.startsWith("_"));
 }
 
@@ -409,6 +410,121 @@ const WRITERS = [
         category: "health",
         narrative: `FDAAA TrialsTracker: ${lateCount} of ${total} clinical trial results late or unreported (per federal disclosure requirements).`,
         sc, severity: lateCount > 0 ? "negative" : "positive",
+      }];
+    },
+  },
+  // ─── HRC Corporate Equality Index — LGBTQ+ workplace policy ──────────
+  {
+    name: "hrc-cei",
+    write: (e) => {
+      const l = e.lgbtq;
+      if (!l || typeof l.score !== "number") return [];
+      const yr = l.vintage ? ` (${l.vintage})` : "";
+      let narrative, sc;
+      if (l.score >= 100) {
+        narrative = `HRC Corporate Equality Index: 100/100 — Equality 100 Leader${yr}. Top-rated LGBTQ+ workplace policies, benefits, and culture.`;
+        sc = "pro_dei";
+      } else if (l.score >= 80) {
+        narrative = `HRC Corporate Equality Index: ${l.score}/100${yr} — strong LGBTQ+ workplace policies with minor deductions.`;
+        sc = "pro_dei";
+      } else if (l.score >= 60) {
+        narrative = `HRC Corporate Equality Index: ${l.score}/100${yr} — partial LGBTQ+ workplace policy coverage; gaps remain.`;
+        sc = "neutral";
+      } else {
+        narrative = `HRC Corporate Equality Index: ${l.score}/100${yr} — lapsed / non-responsive to LGBTQ+ workplace policy survey.`;
+        sc = "anti_dei";
+      }
+      return [{ category: "dei", narrative, sc, severity: l.score >= 80 ? "positive" : "negative" }];
+    },
+  },
+  // ─── CDP Climate Change disclosure score ─────────────────────────────
+  {
+    name: "cdp-climate",
+    write: (e) => {
+      const d = e.climateDisclosure;
+      if (!d || !d.score) return [];
+      const yr = d.vintage ? ` (${d.vintage})` : "";
+      let narrative, sc;
+      if (d.score === "A" || d.score === "A-") {
+        narrative = `CDP Climate Change: ${d.score}${yr} — leadership-band environmental disclosure with validated targets.`;
+        sc = "good";
+      } else if (d.score === "B" || d.score === "B-") {
+        narrative = `CDP Climate Change: ${d.score}${yr} — management-band disclosure; discloses emissions data but limited target ambition.`;
+        sc = "mixed";
+      } else if (d.score === "C" || d.score === "C-") {
+        narrative = `CDP Climate Change: ${d.score}${yr} — awareness-band only; minimal target-setting.`;
+        sc = "mixed";
+      } else if (d.score === "F") {
+        narrative = `CDP Climate Change: F${yr} — declined to disclose despite investor request${d.note ? ` (${d.note})` : ""}.`;
+        sc = "poor";
+      } else {
+        narrative = `CDP Climate Change: ${d.score}${yr}.`;
+        sc = "mixed";
+      }
+      return [{ category: "environment", narrative, sc, severity: sc === "good" ? "positive" : sc === "poor" ? "negative" : "neutral" }];
+    },
+  },
+  // ─── NCRC / FFIEC CRA bank ratings ───────────────────────────────────
+  {
+    name: "ncrc-cra",
+    write: (e) => {
+      const c = e.cra;
+      if (!c || !c.rating) return [];
+      const yr = c.exam_year ? ` (${c.exam_year} exam)` : "";
+      const noteSfx = c.note ? ` — ${c.note}` : "";
+      let narrative, sc, severity;
+      if (c.rating === "Outstanding") {
+        narrative = `Community Reinvestment Act rating: Outstanding${yr} — exceeds expectations for serving low- and moderate-income communities.${noteSfx}`;
+        sc = "good"; severity = "positive";
+      } else if (c.rating === "Satisfactory") {
+        narrative = `Community Reinvestment Act rating: Satisfactory${yr} — meets baseline expectations for community lending and services.${noteSfx}`;
+        sc = "mixed"; severity = "neutral";
+      } else if (c.rating === "Needs to Improve") {
+        narrative = `Community Reinvestment Act rating: Needs to Improve${yr}${noteSfx}.`;
+        sc = "poor"; severity = "negative";
+      } else {
+        narrative = `Community Reinvestment Act rating: Substantial Noncompliance${yr}${noteSfx}.`;
+        sc = "poor"; severity = "negative";
+      }
+      // CRA is a labor/community-impact signal — route to labor since
+      // TruNorth doesn't yet have a dedicated 'community' category.
+      return [{ category: "labor", narrative, sc, severity }];
+    },
+  },
+  // ─── GLAAD Studio Responsibility Index — LGBTQ+ media content ────────
+  {
+    name: "glaad-sri",
+    write: (e) => {
+      const g = e.lgbtqMedia;
+      if (!g || !g.grade) return [];
+      const yr = g.vintage ? ` (${g.vintage})` : "";
+      const pct = g.inclusivePct != null ? ` — ${g.inclusivePct}% inclusive slate` : "";
+      let narrative, sc;
+      if (g.grade === "Excellent" || g.grade === "Good") {
+        narrative = `GLAAD ${g.category || "studio"} scorecard: ${g.grade}${yr}${pct}. Strong LGBTQ+ representation in published slate.`;
+        sc = "pro_dei";
+      } else if (g.grade === "Fair") {
+        narrative = `GLAAD ${g.category || "studio"} scorecard: Fair${yr}${pct} — partial LGBTQ+ representation.`;
+        sc = "neutral";
+      } else {
+        narrative = `GLAAD ${g.category || "studio"} scorecard: ${g.grade}${yr}${pct} — insufficient LGBTQ+ representation.`;
+        sc = "anti_dei";
+      }
+      return [{ category: "dei", narrative, sc, severity: sc === "pro_dei" ? "positive" : sc === "anti_dei" ? "negative" : "neutral" }];
+    },
+  },
+  // ─── Mind Share Partners — workplace-mental-health pledge ────────────
+  {
+    name: "mind-share-partners",
+    write: (e) => {
+      const m = e.mentalHealth;
+      if (!m || !m.program) return [];
+      const since = m.since ? ` (since ${m.since})` : "";
+      return [{
+        category: "labor",
+        narrative: `${m.program} signatory${since}: public commitment to gold-standard workplace mental-health policy, C-suite accountability, and measurable outcomes.`,
+        sc: "good",
+        severity: "positive",
       }];
     },
   },
