@@ -1,0 +1,1282 @@
+{
+  "generated_at": "2026-06-09T17:48:25.378Z",
+  "source": "hibp-breaches",
+  "source_url": "https://haveibeenpwned.com/PwnedWebsites",
+  "input": "data/raw/hibp-breaches/2026-06-09.json",
+  "company_count": 56,
+  "companies": {
+    "yahoo": {
+      "breach_count": 1,
+      "total_pwned": 3000000000,
+      "first_breach": "2013-08-01",
+      "last_breach": "2013-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Yahoo",
+          "date": "2013-08-01",
+          "accounts": 3000000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords",
+            "Names",
+            "Phone numbers",
+            "DOBs",
+            "Security questions"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "adobe": {
+      "breach_count": 1,
+      "total_pwned": 152445165,
+      "first_breach": "2013-10-04",
+      "last_breach": "2013-10-04",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Adobe",
+          "date": "2013-10-04",
+          "accounts": 152445165,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Password hints",
+            "Passwords",
+            "Usernames"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "linkedin": {
+      "breach_count": 1,
+      "total_pwned": 164611595,
+      "first_breach": "2012-05-05",
+      "last_breach": "2012-05-05",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "LinkedIn",
+          "date": "2012-05-05",
+          "accounts": 164611595,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "microsoft": {
+      "breach_count": 1,
+      "total_pwned": 164611595,
+      "first_breach": "2012-05-05",
+      "last_breach": "2012-05-05",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "LinkedIn",
+          "date": "2012-05-05",
+          "accounts": 164611595,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "myfitnesspal": {
+      "breach_count": 1,
+      "total_pwned": 143606147,
+      "first_breach": "2018-02-01",
+      "last_breach": "2018-02-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "MyFitnessPal",
+          "date": "2018-02-01",
+          "accounts": 143606147,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "IP addresses",
+            "Passwords",
+            "Usernames"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "under-armour": {
+      "breach_count": 2,
+      "total_pwned": 287212294,
+      "first_breach": "2018-02-01",
+      "last_breach": "2018-02-25",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Under Armour",
+          "date": "2018-02-25",
+          "accounts": 143606147,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords",
+            "Usernames"
+          ]
+        },
+        {
+          "title": "MyFitnessPal",
+          "date": "2018-02-01",
+          "accounts": 143606147,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "IP addresses",
+            "Passwords",
+            "Usernames"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "marriott": {
+      "breach_count": 1,
+      "total_pwned": 383000000,
+      "first_breach": "2018-09-10",
+      "last_breach": "2018-09-10",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Marriott (Starwood)",
+          "date": "2018-09-10",
+          "accounts": 383000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Passport numbers",
+            "Phone numbers",
+            "Travel data"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "marriott-international": {
+      "breach_count": 1,
+      "total_pwned": 383000000,
+      "first_breach": "2018-09-10",
+      "last_breach": "2018-09-10",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Marriott (Starwood)",
+          "date": "2018-09-10",
+          "accounts": 383000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Passport numbers",
+            "Phone numbers",
+            "Travel data"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "meta-platforms": {
+      "breach_count": 1,
+      "total_pwned": 509458528,
+      "first_breach": "2019-08-01",
+      "last_breach": "2019-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Facebook",
+          "date": "2019-08-01",
+          "accounts": 509458528,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "Genders",
+            "Locations"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "meta-facebook": {
+      "breach_count": 1,
+      "total_pwned": 509458528,
+      "first_breach": "2019-08-01",
+      "last_breach": "2019-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Facebook",
+          "date": "2019-08-01",
+          "accounts": 509458528,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "Genders",
+            "Locations"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "facebook": {
+      "breach_count": 1,
+      "total_pwned": 509458528,
+      "first_breach": "2019-08-01",
+      "last_breach": "2019-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Facebook",
+          "date": "2019-08-01",
+          "accounts": 509458528,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "Genders",
+            "Locations"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "twitter": {
+      "breach_count": 1,
+      "total_pwned": 211524284,
+      "first_breach": "2021-01-01",
+      "last_breach": "2021-01-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Twitter (200M)",
+          "date": "2021-01-01",
+          "accounts": 211524284,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Screen names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "x-corp": {
+      "breach_count": 1,
+      "total_pwned": 211524284,
+      "first_breach": "2021-01-01",
+      "last_breach": "2021-01-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Twitter (200M)",
+          "date": "2021-01-01",
+          "accounts": 211524284,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Screen names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "t-mobile": {
+      "breach_count": 1,
+      "total_pwned": 47000000,
+      "first_breach": "2021-08-17",
+      "last_breach": "2021-08-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "T-Mobile",
+          "date": "2021-08-17",
+          "accounts": 47000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "SSNs",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "tmobile": {
+      "breach_count": 1,
+      "total_pwned": 47000000,
+      "first_breach": "2021-08-17",
+      "last_breach": "2021-08-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "T-Mobile",
+          "date": "2021-08-17",
+          "accounts": 47000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "SSNs",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "t-mobile-us": {
+      "breach_count": 1,
+      "total_pwned": 47000000,
+      "first_breach": "2021-08-17",
+      "last_breach": "2021-08-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "T-Mobile",
+          "date": "2021-08-17",
+          "accounts": 47000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "SSNs",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "equifax": {
+      "breach_count": 1,
+      "total_pwned": 147000000,
+      "first_breach": "2017-07-29",
+      "last_breach": "2017-07-29",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Equifax",
+          "date": "2017-07-29",
+          "accounts": 147000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Names",
+            "SSNs",
+            "DOBs",
+            "Addresses",
+            "Driver's licenses"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "target": {
+      "breach_count": 1,
+      "total_pwned": 70000000,
+      "first_breach": "2013-11-27",
+      "last_breach": "2013-11-27",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Target",
+          "date": "2013-11-27",
+          "accounts": 70000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Email addresses",
+            "Names",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "home-depot": {
+      "breach_count": 1,
+      "total_pwned": 56000000,
+      "first_breach": "2014-09-02",
+      "last_breach": "2014-09-02",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Home Depot",
+          "date": "2014-09-02",
+          "accounts": 56000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Email addresses"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "ebay": {
+      "breach_count": 1,
+      "total_pwned": 145000000,
+      "first_breach": "2014-02-01",
+      "last_breach": "2014-02-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "eBay",
+          "date": "2014-02-01",
+          "accounts": 145000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "DOBs",
+            "Passwords",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "ebay-inc": {
+      "breach_count": 1,
+      "total_pwned": 145000000,
+      "first_breach": "2014-02-01",
+      "last_breach": "2014-02-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "eBay",
+          "date": "2014-02-01",
+          "accounts": 145000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "DOBs",
+            "Passwords",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "dropbox": {
+      "breach_count": 1,
+      "total_pwned": 68648009,
+      "first_breach": "2012-07-01",
+      "last_breach": "2012-07-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Dropbox",
+          "date": "2012-07-01",
+          "accounts": 68648009,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "uber": {
+      "breach_count": 1,
+      "total_pwned": 57000000,
+      "first_breach": "2016-10-13",
+      "last_breach": "2016-10-13",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Uber",
+          "date": "2016-10-13",
+          "accounts": 57000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "uber-technologies": {
+      "breach_count": 1,
+      "total_pwned": 57000000,
+      "first_breach": "2016-10-13",
+      "last_breach": "2016-10-13",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Uber",
+          "date": "2016-10-13",
+          "accounts": 57000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "sony": {
+      "breach_count": 1,
+      "total_pwned": 77000000,
+      "first_breach": "2011-04-19",
+      "last_breach": "2011-04-19",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Sony PSN",
+          "date": "2011-04-19",
+          "accounts": 77000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords",
+            "Names",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "sony-group": {
+      "breach_count": 1,
+      "total_pwned": 77000000,
+      "first_breach": "2011-04-19",
+      "last_breach": "2011-04-19",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Sony PSN",
+          "date": "2011-04-19",
+          "accounts": 77000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords",
+            "Names",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "capital-one": {
+      "breach_count": 1,
+      "total_pwned": 106000000,
+      "first_breach": "2019-03-22",
+      "last_breach": "2019-03-22",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Capital One",
+          "date": "2019-03-22",
+          "accounts": 106000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Names",
+            "SSNs",
+            "Addresses",
+            "Bank account numbers",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "tjx": {
+      "breach_count": 1,
+      "total_pwned": 94000000,
+      "first_breach": "2007-01-17",
+      "last_breach": "2007-01-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "TJX Companies",
+          "date": "2007-01-17",
+          "accounts": 94000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "tjx-companies": {
+      "breach_count": 1,
+      "total_pwned": 94000000,
+      "first_breach": "2007-01-17",
+      "last_breach": "2007-01-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "TJX Companies",
+          "date": "2007-01-17",
+          "accounts": 94000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "tj-maxx": {
+      "breach_count": 1,
+      "total_pwned": 94000000,
+      "first_breach": "2007-01-17",
+      "last_breach": "2007-01-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "TJX Companies",
+          "date": "2007-01-17",
+          "accounts": 94000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "marshalls": {
+      "breach_count": 1,
+      "total_pwned": 94000000,
+      "first_breach": "2007-01-17",
+      "last_breach": "2007-01-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "TJX Companies",
+          "date": "2007-01-17",
+          "accounts": 94000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "homegoods": {
+      "breach_count": 1,
+      "total_pwned": 94000000,
+      "first_breach": "2007-01-17",
+      "last_breach": "2007-01-17",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "TJX Companies",
+          "date": "2007-01-17",
+          "accounts": 94000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards",
+            "Names"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "att": {
+      "breach_count": 1,
+      "total_pwned": 73000000,
+      "first_breach": "2024-03-30",
+      "last_breach": "2024-03-30",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "AT&T",
+          "date": "2024-03-30",
+          "accounts": 73000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "SSNs",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "at-t": {
+      "breach_count": 1,
+      "total_pwned": 73000000,
+      "first_breach": "2024-03-30",
+      "last_breach": "2024-03-30",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "AT&T",
+          "date": "2024-03-30",
+          "accounts": 73000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "SSNs",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "att-inc": {
+      "breach_count": 1,
+      "total_pwned": 73000000,
+      "first_breach": "2024-03-30",
+      "last_breach": "2024-03-30",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "AT&T",
+          "date": "2024-03-30",
+          "accounts": 73000000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "SSNs",
+            "DOBs"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "anthem": {
+      "breach_count": 1,
+      "total_pwned": 78800000,
+      "first_breach": "2015-01-29",
+      "last_breach": "2015-01-29",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Anthem",
+          "date": "2015-01-29",
+          "accounts": 78800000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "SSNs",
+            "DOBs",
+            "Employment data"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "anthem-elevance-health": {
+      "breach_count": 1,
+      "total_pwned": 78800000,
+      "first_breach": "2015-01-29",
+      "last_breach": "2015-01-29",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Anthem",
+          "date": "2015-01-29",
+          "accounts": 78800000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "SSNs",
+            "DOBs",
+            "Employment data"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "elevance-health": {
+      "breach_count": 1,
+      "total_pwned": 78800000,
+      "first_breach": "2015-01-29",
+      "last_breach": "2015-01-29",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Anthem",
+          "date": "2015-01-29",
+          "accounts": 78800000,
+          "is_sensitive": true,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "SSNs",
+            "DOBs",
+            "Employment data"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "jpmorgan-chase": {
+      "breach_count": 1,
+      "total_pwned": 76000000,
+      "first_breach": "2014-08-01",
+      "last_breach": "2014-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "JPMorgan Chase",
+          "date": "2014-08-01",
+          "accounts": 76000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Addresses",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "jpmorgan": {
+      "breach_count": 1,
+      "total_pwned": 76000000,
+      "first_breach": "2014-08-01",
+      "last_breach": "2014-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "JPMorgan Chase",
+          "date": "2014-08-01",
+          "accounts": 76000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Addresses",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "chase": {
+      "breach_count": 1,
+      "total_pwned": 76000000,
+      "first_breach": "2014-08-01",
+      "last_breach": "2014-08-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "JPMorgan Chase",
+          "date": "2014-08-01",
+          "accounts": 76000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Addresses",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "wendys": {
+      "breach_count": 1,
+      "total_pwned": 1025,
+      "first_breach": "2016-01-01",
+      "last_breach": "2016-01-01",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Wendy's",
+          "date": "2016-01-01",
+          "accounts": 1025,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "wendy-s": {
+      "breach_count": 1,
+      "total_pwned": 1025,
+      "first_breach": "2016-01-01",
+      "last_breach": "2016-01-01",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Wendy's",
+          "date": "2016-01-01",
+          "accounts": 1025,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "chipotle": {
+      "breach_count": 1,
+      "total_pwned": 2250,
+      "first_breach": "2017-03-24",
+      "last_breach": "2017-03-24",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Chipotle",
+          "date": "2017-03-24",
+          "accounts": 2250,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "chipotle-mexican-grill": {
+      "breach_count": 1,
+      "total_pwned": 2250,
+      "first_breach": "2017-03-24",
+      "last_breach": "2017-03-24",
+      "sensitive_count": 1,
+      "sample_breaches": [
+        {
+          "title": "Chipotle",
+          "date": "2017-03-24",
+          "accounts": 2250,
+          "is_sensitive": true,
+          "data_classes": [
+            "Credit cards"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "doordash": {
+      "breach_count": 1,
+      "total_pwned": 4900000,
+      "first_breach": "2019-05-04",
+      "last_breach": "2019-05-04",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "DoorDash",
+          "date": "2019-05-04",
+          "accounts": 4900000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "Hashed passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "robinhood": {
+      "breach_count": 1,
+      "total_pwned": 7000000,
+      "first_breach": "2021-11-03",
+      "last_breach": "2021-11-03",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Robinhood",
+          "date": "2021-11-03",
+          "accounts": 7000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "twitch": {
+      "breach_count": 1,
+      "total_pwned": 125000000,
+      "first_breach": "2021-10-06",
+      "last_breach": "2021-10-06",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Twitch",
+          "date": "2021-10-06",
+          "accounts": 125000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Streamer payouts",
+            "Source code",
+            "Encrypted passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "amazon": {
+      "breach_count": 1,
+      "total_pwned": 125000000,
+      "first_breach": "2021-10-06",
+      "last_breach": "2021-10-06",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Twitch",
+          "date": "2021-10-06",
+          "accounts": 125000000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Streamer payouts",
+            "Source code",
+            "Encrypted passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "slack": {
+      "breach_count": 1,
+      "total_pwned": 5230893,
+      "first_breach": "2015-02-01",
+      "last_breach": "2015-02-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Slack",
+          "date": "2015-02-01",
+          "accounts": 5230893,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "Hashed passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "salesforce": {
+      "breach_count": 1,
+      "total_pwned": 5230893,
+      "first_breach": "2015-02-01",
+      "last_breach": "2015-02-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Slack",
+          "date": "2015-02-01",
+          "accounts": 5230893,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers",
+            "Hashed passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "zoom": {
+      "breach_count": 1,
+      "total_pwned": 530000,
+      "first_breach": "2020-04-01",
+      "last_breach": "2020-04-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Zoom",
+          "date": "2020-04-01",
+          "accounts": 530000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Passwords"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "discord": {
+      "breach_count": 1,
+      "total_pwned": 760000,
+      "first_breach": "2023-08-14",
+      "last_breach": "2023-08-14",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Discord",
+          "date": "2023-08-14",
+          "accounts": 760000,
+          "is_sensitive": false,
+          "data_classes": [
+            "Email addresses",
+            "Names",
+            "Phone numbers"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "snap": {
+      "breach_count": 1,
+      "total_pwned": 4609621,
+      "first_breach": "2014-01-01",
+      "last_breach": "2014-01-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Snapchat",
+          "date": "2014-01-01",
+          "accounts": 4609621,
+          "is_sensitive": false,
+          "data_classes": [
+            "Phone numbers",
+            "Usernames"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "snapchat": {
+      "breach_count": 1,
+      "total_pwned": 4609621,
+      "first_breach": "2014-01-01",
+      "last_breach": "2014-01-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Snapchat",
+          "date": "2014-01-01",
+          "accounts": 4609621,
+          "is_sensitive": false,
+          "data_classes": [
+            "Phone numbers",
+            "Usernames"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    },
+    "snap-inc": {
+      "breach_count": 1,
+      "total_pwned": 4609621,
+      "first_breach": "2014-01-01",
+      "last_breach": "2014-01-01",
+      "sensitive_count": 0,
+      "sample_breaches": [
+        {
+          "title": "Snapchat",
+          "date": "2014-01-01",
+          "accounts": 4609621,
+          "is_sensitive": false,
+          "data_classes": [
+            "Phone numbers",
+            "Usernames"
+          ]
+        }
+      ],
+      "source": "hibp-breaches",
+      "source_url": "https://haveibeenpwned.com/PwnedWebsites"
+    }
+  }
+}

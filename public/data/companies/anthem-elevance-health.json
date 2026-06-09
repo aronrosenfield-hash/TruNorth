@@ -13,9 +13,8 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "mixed",
-    "health": "mixed"
+    "privacy": "poor",
+    "execPay": "neutral"
   },
   "political": {
     "s": "FEC: $264K in executive political donations; partisan lean split across 14 executive donors.",
@@ -65,9 +64,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "1 publicly-disclosed data breach per Have I Been Pwned (2015) — 79M accounts compromised. Most recent: Anthem (2015).",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "hibp-breaches"
+    ]
   },
   "execPay": {
     "s": "SEC litigation releases: 1 on record (insider trading, accounting fraud, or disclosure violations).",

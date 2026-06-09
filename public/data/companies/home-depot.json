@@ -13,9 +13,8 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na",
-    "health": "mixed"
+    "privacy": "poor",
+    "execPay": "na"
   },
   "political": {
     "s": "FEC: $65K PAC donations; 92% to Republican, 8% to Democratic committees.",
@@ -84,9 +83,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "1 publicly-disclosed data breach per Have I Been Pwned (2014) — 56M accounts compromised. Most recent: Home Depot (2014).",
     "grade": "Poor",
-    "sources": []
+    "sources": [
+      "hibp-breaches"
+    ]
   },
   "execPay": {
     "s": "No public record found.",

@@ -14,8 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na",
-    "health": "mixed"
+    "execPay": "na"
   },
   "political": {
     "s": "FEC: $126K in executive political donations; partisan lean split across 8 executive donors.",
@@ -72,9 +71,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "CFPB consumer complaints: 25 on record (3 in past 12mo); 60% timely response rate.",
+    "s": "1 publicly-disclosed data breach per Have I Been Pwned (2020) — 530K accounts compromised. Most recent: Zoom (2020).",
     "grade": "Poor",
-    "sources": []
+    "sources": [
+      "hibp-breaches"
+    ]
   },
   "execPay": {
     "s": "No public record found.",

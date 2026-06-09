@@ -13,8 +13,8 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "poor",
-    "execPay": "poor"
+    "privacy": "mixed",
+    "execPay": "neutral"
   },
   "political": {
     "s": "FEC: $59K PAC donations; 94% to Republican, 6% to Democratic committees.",
@@ -82,9 +82,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "CFPB consumer complaints: 168413 on record (100 in past 12mo); 100% timely response rate.",
+    "s": "1 publicly-disclosed data breach per Have I Been Pwned (2014) — 76M accounts compromised. Most recent: JPMorgan Chase (2014).",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "hibp-breaches"
+    ]
   },
   "execPay": {
     "s": "SEC litigation releases: 8 on record (insider trading, accounting fraud, or disclosure violations).",

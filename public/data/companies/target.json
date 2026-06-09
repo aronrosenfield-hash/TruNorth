@@ -13,9 +13,8 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "mixed",
-    "execPay": "na",
-    "health": "poor"
+    "privacy": "poor",
+    "execPay": "na"
   },
   "political": {
     "s": "FEC: $47K PAC donations; 54% to Republican, 46% to Democratic committees.",
@@ -83,9 +82,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "CFPB consumer complaints: 35 on record (11 in past 12mo); 97% timely response rate.",
+    "s": "1 publicly-disclosed data breach per Have I Been Pwned (2013) — 70M accounts compromised. Most recent: Target (2013).",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "hibp-breaches"
+    ]
   },
   "execPay": {
     "s": "No public record found.",
