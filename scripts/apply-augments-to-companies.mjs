@@ -600,6 +600,124 @@ const WRITERS = [
       }];
     },
   },
+  // ─── HHS OCR HIPAA breaches (privacy + health) ────────────────────────
+  {
+    name: "hhs-ocr-breaches",
+    write: (e) => {
+      const n = Number(e.total_individuals || 0);
+      if (!n) return [];
+      const sizeStr = n >= 1e6 ? `${(n / 1e6).toFixed(1)}M`
+        : n >= 1e3 ? `${Math.round(n / 1e3)}K`
+        : `${n}`;
+      const cnt = e.breach_count || 1;
+      const last = e.last_breach ? ` Most recent: ${e.last_breach}.` : "";
+      const samp = e.largest_breach?.description ? ` ${clip(e.largest_breach.description, 200)}` : "";
+      const narrative = cnt === 1
+        ? `HHS OCR HIPAA breach: ${sizeStr} individuals affected.${last}${samp}`
+        : `${cnt} HHS OCR HIPAA breaches reported; ${sizeStr} individuals affected total.${last}${samp}`;
+      const sc = n >= 1e6 || cnt >= 3 ? "poor" : "mixed";
+      return [{ category: "privacy", narrative, sc, severity: "negative" }];
+    },
+  },
+  // ─── CPPA enforcement (California Privacy Protection Agency) ──────────
+  {
+    name: "cppa-enforcement",
+    write: (e) => {
+      const cnt = e.action_count || 0;
+      if (!cnt) return [];
+      const total = Number(e.total_penalty_usd || 0);
+      const amtStr = total >= 1e6 ? `~$${(total / 1e6).toFixed(2)}M total`
+        : total >= 1e3 ? `$${Math.round(total / 1e3)}K total`
+        : "";
+      const latest = e.actions?.[0];
+      const head = cnt === 1
+        ? `California Privacy Protection Agency action (${latest?.date || ""}).`
+        : `${cnt} California Privacy Protection Agency / CCPA actions.`;
+      const tail = amtStr ? ` ${amtStr} in penalties.` : "";
+      const detail = latest?.summary ? ` ${clip(latest.summary, 200)}` : "";
+      return [{
+        category: "privacy",
+        narrative: `${head}${tail}${detail}`.trim(),
+        sc: total >= 1e6 || cnt >= 2 ? "poor" : "mixed",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── CNIL French DPA sanctions ────────────────────────────────────────
+  {
+    name: "cnil-enforcement",
+    write: (e) => {
+      const cnt = e.action_count || 0;
+      if (!cnt) return [];
+      const total = Number(e.total_fines_eur || 0);
+      const amtStr = total >= 1e6 ? `€${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `€${Math.round(total / 1e3)}K`
+        : "";
+      const latest = e.actions?.[0];
+      const head = cnt === 1
+        ? `CNIL (French DPA) sanction${latest?.date ? ` (${latest.date})` : ""}.`
+        : `${cnt} CNIL (French DPA) sanctions.`;
+      const tail = amtStr ? ` ${amtStr} in fines.` : "";
+      const detail = latest?.issue ? ` ${clip(latest.issue, 120)}.` : "";
+      return [{
+        category: "privacy",
+        narrative: `${head}${tail}${detail}`.trim(),
+        sc: total >= 50e6 || cnt >= 3 ? "poor" : "mixed",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── Citizen Lab surveillance / mercenary spyware ─────────────────────
+  {
+    name: "citizen-lab",
+    write: (e) => {
+      const cnt = e.report_count || 0;
+      if (!cnt) return [];
+      const sev = e.severity_max || "moderate";
+      const first = e.reports?.[0];
+      const head = `Citizen Lab investigation: ${first?.product || "platform"} flagged for ${clip(first?.summary || "documented privacy/surveillance concern", 200)}`;
+      const sc = sev === "severe" ? "poor" : sev === "high" ? "mixed" : "mixed";
+      return [{ category: "privacy", narrative: head, sc, severity: "negative" }];
+    },
+  },
+  // ─── Child-safety tech scorecard (privacy + health) ───────────────────
+  {
+    name: "child-safety-tech",
+    write: (e) => {
+      const cnt = e.issue_count || 0;
+      if (!cnt) return [];
+      const orgs = (e.source_orgs || []).slice(0, 3).join("; ");
+      const issue = e.issues?.[0];
+      const head = `Child-safety concerns flagged by ${orgs || "regulators / advocates"}.`;
+      const tail = issue?.summary ? ` ${clip(issue.summary, 200)}` : "";
+      const sc = e.rating === "poor" ? "poor" : "mixed";
+      const narrative = `${head}${tail}`.trim();
+      return [
+        { category: "privacy", narrative, sc, severity: "negative" },
+        { category: "health",  narrative, sc, severity: "negative" },
+      ];
+    },
+  },
+  // ─── Krebs on Security named-breach investigations ────────────────────
+  {
+    name: "krebs-investigations",
+    write: (e) => {
+      const cnt = e.investigation_count || 0;
+      if (!cnt) return [];
+      const n = Number(e.total_individuals || 0);
+      const sizeStr = n >= 1e6 ? `${(n / 1e6).toFixed(0)}M`
+        : n >= 1e3 ? `${Math.round(n / 1e3)}K`
+        : n > 0 ? `${n}`
+        : "";
+      const latest = e.investigations?.[0];
+      const head = cnt === 1
+        ? `Krebs on Security: ${clip(latest?.summary || "named-breach investigation", 220)}`
+        : `${cnt} Krebs on Security investigations${sizeStr ? `; ~${sizeStr} individuals affected total` : ""}. ${clip(latest?.summary || "", 160)}`;
+      const sev = e.severity_max || "moderate";
+      const sc = sev === "severe" || cnt >= 2 ? "poor" : "mixed";
+      return [{ category: "privacy", narrative: head.trim(), sc, severity: "negative" }];
+    },
+  },
   // ─── State regulators: AG consumer-protection + NYDFS financial ───────
   // Maps to "privacy" for consumer-protection (deceptive practices, data
   // misuse) and adds a "labor" narrative if AG action explicitly involved
