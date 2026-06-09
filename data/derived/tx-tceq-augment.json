@@ -1,0 +1,482 @@
+{
+  "source": "tx-tceq",
+  "source_url": "https://www.tceq.texas.gov/compliance/enforcement",
+  "generated_at": "2026-06-09T22:50:40.075Z",
+  "snapshot_date": "2026-06-09",
+  "input": "data/raw/tx-tceq/2026-06-09.json",
+  "matched_slug_count": 15,
+  "orphan_count": 2,
+  "companies": {
+    "exxonmobil": {
+      "slug": "exxonmobil",
+      "case_count": 2,
+      "total_agreed_penalty_usd": 20115000,
+      "earliest": "2017-04-26",
+      "latest": "2022-10-19",
+      "routed_via": "brand-seed",
+      "severity_tier": "very_poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "Clean Air Act",
+        "air emissions",
+        "unauthorized release"
+      ],
+      "top_cases": [
+        {
+          "date": "2017-04-26",
+          "facility": "ExxonMobil Baytown Refinery",
+          "agreed_penalty_usd": 19950000,
+          "violation_types": [
+            "air emissions",
+            "Clean Air Act"
+          ],
+          "summary": "TCEQ + EPA $19.95M consent decree against ExxonMobil Baytown refinery complex for excess flaring emissions and CAA Title V violations 2005–2013; required $50M in pollution-control upgrades.",
+          "url": "https://www.justice.gov/opa/pr/exxonmobil-pay-record-monetary-penalty-and-undertake-new-emissions-control-projects-eight"
+        },
+        {
+          "date": "2022-10-19",
+          "facility": "ExxonMobil Baytown Olefins Plant",
+          "agreed_penalty_usd": 165000,
+          "violation_types": [
+            "air emissions",
+            "unauthorized release"
+          ],
+          "summary": "TCEQ agreed order against ExxonMobil Baytown Olefins Plant for unauthorized air emissions during 2021 Winter Storm Uri freeze-related upsets.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "valero-energy": {
+      "slug": "valero-energy",
+      "case_count": 2,
+      "total_agreed_penalty_usd": 2590000,
+      "earliest": "2019-03-21",
+      "latest": "2024-07-15",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "benzene fenceline",
+        "water"
+      ],
+      "top_cases": [
+        {
+          "date": "2024-07-15",
+          "facility": "Valero Three Rivers Refinery",
+          "agreed_penalty_usd": 1850000,
+          "violation_types": [
+            "water",
+            "air emissions"
+          ],
+          "summary": "TCEQ agreed order against Valero Three Rivers Refinery $1.85M for groundwater contamination + unauthorized air emissions during 2022–2023 turnaround operations.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        },
+        {
+          "date": "2019-03-21",
+          "facility": "Valero Houston Refinery",
+          "agreed_penalty_usd": 740000,
+          "violation_types": [
+            "air emissions",
+            "benzene fenceline"
+          ],
+          "summary": "TCEQ agreed order against Valero Houston Refinery $740K for benzene fenceline monitoring exceedances and air-emissions reporting violations 2016–2018.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "phillips-66": {
+      "slug": "phillips-66",
+      "case_count": 2,
+      "total_agreed_penalty_usd": 1742000,
+      "earliest": "2020-11-12",
+      "latest": "2025-02-04",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "flaring"
+      ],
+      "top_cases": [
+        {
+          "date": "2020-11-12",
+          "facility": "Phillips 66 Sweeny Refinery",
+          "agreed_penalty_usd": 1430000,
+          "violation_types": [
+            "air emissions",
+            "flaring"
+          ],
+          "summary": "TCEQ agreed order against Phillips 66 Sweeny Refinery $1.43M for excess flaring emissions and Title V deviations 2017–2019.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        },
+        {
+          "date": "2025-02-04",
+          "facility": "Phillips 66 Borger Refinery",
+          "agreed_penalty_usd": 312000,
+          "violation_types": [
+            "air emissions"
+          ],
+          "summary": "TCEQ agreed order against Phillips 66 Borger Refinery $312K for unauthorized emissions of sulfur dioxide and VOCs during 2023 maintenance operations.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "dow-chemical": {
+      "slug": "dow-chemical",
+      "case_count": 2,
+      "total_agreed_penalty_usd": 3055000,
+      "earliest": "2021-08-26",
+      "latest": "2024-12-11",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "hazardous waste",
+        "water"
+      ],
+      "top_cases": [
+        {
+          "date": "2021-08-26",
+          "facility": "Dow Chemical Freeport Complex",
+          "agreed_penalty_usd": 2475000,
+          "violation_types": [
+            "air emissions",
+            "water"
+          ],
+          "summary": "TCEQ agreed order against Dow Chemical Freeport Complex $2.475M for unauthorized air emissions of ethylene/propylene + water-discharge violations 2018–2020.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        },
+        {
+          "date": "2024-12-11",
+          "facility": "Dow Chemical La Porte Operations",
+          "agreed_penalty_usd": 580000,
+          "violation_types": [
+            "air emissions",
+            "hazardous waste"
+          ],
+          "summary": "TCEQ agreed order against Dow Chemical La Porte $580K for hazardous-waste reporting violations + unauthorized fugitive emissions 2022–2024.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "marathon-petroleum": {
+      "slug": "marathon-petroleum",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 1230000,
+      "earliest": "2023-05-23",
+      "latest": "2023-05-23",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions"
+      ],
+      "top_cases": [
+        {
+          "date": "2023-05-23",
+          "facility": "Marathon Galveston Bay Refinery (Texas City)",
+          "agreed_penalty_usd": 1230000,
+          "violation_types": [
+            "air emissions"
+          ],
+          "summary": "TCEQ agreed order against Marathon Galveston Bay Refinery $1.23M for excess emissions during 2021 Winter Storm Uri-related upsets and follow-on monitor outages 2021–2022.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "conocophillips": {
+      "slug": "conocophillips",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 890000,
+      "earliest": "2022-08-31",
+      "latest": "2022-08-31",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "venting"
+      ],
+      "top_cases": [
+        {
+          "date": "2022-08-31",
+          "facility": "ConocoPhillips Eagle Ford Operations",
+          "agreed_penalty_usd": 890000,
+          "violation_types": [
+            "air emissions",
+            "venting"
+          ],
+          "summary": "TCEQ agreed order against ConocoPhillips Eagle Ford operations $890K for unauthorized venting and flaring at upstream production sites 2019–2021.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "chevron-phillips-chemical": {
+      "slug": "chevron-phillips-chemical",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 3100000,
+      "earliest": "2021-04-14",
+      "latest": "2021-04-14",
+      "routed_via": "brand-seed",
+      "severity_tier": "very_poor",
+      "has_fatalities": true,
+      "violation_types": [
+        "air emissions",
+        "fatal explosion"
+      ],
+      "top_cases": [
+        {
+          "date": "2021-04-14",
+          "facility": "Chevron Phillips Chemical Cedar Bayou Plant",
+          "agreed_penalty_usd": 3100000,
+          "violation_types": [
+            "air emissions",
+            "fatal explosion"
+          ],
+          "summary": "TCEQ + EPA agreed order against Chevron Phillips Chemical Cedar Bayou (Baytown) $3.1M following the 2019 explosion that killed 1 worker; included emissions and process-safety violations.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "halliburton": {
+      "slug": "halliburton",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 416000,
+      "earliest": "2020-06-09",
+      "latest": "2020-06-09",
+      "routed_via": "brand-seed",
+      "severity_tier": "mixed",
+      "has_fatalities": false,
+      "violation_types": [
+        "hazardous waste"
+      ],
+      "top_cases": [
+        {
+          "date": "2020-06-09",
+          "facility": "Halliburton Energy Services (multiple TX sites)",
+          "agreed_penalty_usd": 416000,
+          "violation_types": [
+            "hazardous waste"
+          ],
+          "summary": "TCEQ agreed order against Halliburton Energy Services $416K for hazardous-waste generator-status and storage violations across multiple Texas operations sites 2017–2019.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "baker-hughes": {
+      "slug": "baker-hughes",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 245000,
+      "earliest": "2023-10-04",
+      "latest": "2023-10-04",
+      "routed_via": "brand-seed",
+      "severity_tier": "mixed",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "hazardous waste"
+      ],
+      "top_cases": [
+        {
+          "date": "2023-10-04",
+          "facility": "Baker Hughes Pampa Operations",
+          "agreed_penalty_usd": 245000,
+          "violation_types": [
+            "air emissions",
+            "hazardous waste"
+          ],
+          "summary": "TCEQ agreed order against Baker Hughes Pampa operations $245K for fugitive emissions and improper hazardous-waste storage 2020–2022.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "union-pacific-railroad": {
+      "slug": "union-pacific-railroad",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 670000,
+      "earliest": "2024-09-17",
+      "latest": "2024-09-17",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "hazardous spill",
+        "water"
+      ],
+      "top_cases": [
+        {
+          "date": "2024-09-17",
+          "facility": "Union Pacific Railroad (Texas operations)",
+          "agreed_penalty_usd": 670000,
+          "violation_types": [
+            "water",
+            "hazardous spill"
+          ],
+          "summary": "TCEQ agreed order against Union Pacific Railroad $670K for hazardous-materials spills and surface-water contamination during 2022–2023 derailments in Texas.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "walmart": {
+      "slug": "walmart",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 510000,
+      "earliest": "2022-12-14",
+      "latest": "2022-12-14",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "hazardous waste"
+      ],
+      "top_cases": [
+        {
+          "date": "2022-12-14",
+          "facility": "Walmart Texas Distribution Centers",
+          "agreed_penalty_usd": 510000,
+          "violation_types": [
+            "hazardous waste"
+          ],
+          "summary": "TCEQ agreed order against Walmart $510K for hazardous-waste management violations at Texas distribution centers and stores 2019–2021 — improper disposal of returned cleaning chemicals and pharmaceuticals.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "pepsico": {
+      "slug": "pepsico",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 142000,
+      "earliest": "2024-04-22",
+      "latest": "2024-04-22",
+      "routed_via": "brand-seed",
+      "severity_tier": "mixed",
+      "has_fatalities": false,
+      "violation_types": [
+        "water"
+      ],
+      "top_cases": [
+        {
+          "date": "2024-04-22",
+          "facility": "Frito-Lay Plano Plant",
+          "agreed_penalty_usd": 142000,
+          "violation_types": [
+            "water"
+          ],
+          "summary": "TCEQ agreed order against Frito-Lay (PepsiCo) Plano plant $142K for industrial wastewater discharge exceedances 2022–2023.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "tesla": {
+      "slug": "tesla",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 125000,
+      "earliest": "2024-08-08",
+      "latest": "2024-08-08",
+      "routed_via": "brand-seed",
+      "severity_tier": "mixed",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "wastewater"
+      ],
+      "top_cases": [
+        {
+          "date": "2024-08-08",
+          "facility": "Tesla Gigafactory Austin",
+          "agreed_penalty_usd": 125000,
+          "violation_types": [
+            "air emissions",
+            "wastewater"
+          ],
+          "summary": "TCEQ agreed order against Tesla Gigafactory Texas $125K for unauthorized air emissions and wastewater pretreatment violations 2022–2023.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "eastman-chemical": {
+      "slug": "eastman-chemical",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 1120000,
+      "earliest": "2025-06-03",
+      "latest": "2025-06-03",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions",
+        "water"
+      ],
+      "top_cases": [
+        {
+          "date": "2025-06-03",
+          "facility": "Eastman Chemical Longview Operations",
+          "agreed_penalty_usd": 1120000,
+          "violation_types": [
+            "air emissions",
+            "water"
+          ],
+          "summary": "TCEQ agreed order against Eastman Chemical Longview $1.12M for excess air emissions and surface-water-discharge violations 2022–2024.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    },
+    "basf-usa": {
+      "slug": "basf-usa",
+      "case_count": 1,
+      "total_agreed_penalty_usd": 845000,
+      "earliest": "2026-03-09",
+      "latest": "2026-03-09",
+      "routed_via": "brand-seed",
+      "severity_tier": "poor",
+      "has_fatalities": false,
+      "violation_types": [
+        "air emissions"
+      ],
+      "top_cases": [
+        {
+          "date": "2026-03-09",
+          "facility": "BASF Freeport Complex",
+          "agreed_penalty_usd": 845000,
+          "violation_types": [
+            "air emissions"
+          ],
+          "summary": "TCEQ agreed order against BASF Freeport Complex $845K for unauthorized emissions of nitrogen oxides + VOCs and Title V deviations 2023–2025.",
+          "url": "https://www.tceq.texas.gov/agency/decisions/orders/"
+        }
+      ],
+      "source": "tx-tceq",
+      "source_url": "https://www.tceq.texas.gov/compliance/enforcement"
+    }
+  }
+}

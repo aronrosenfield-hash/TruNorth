@@ -1,0 +1,44 @@
+name: ca-dlse-monthly
+
+# R5-1 — California DLSE wage-theft citations. Walks DIR press-release
+# index for new landmark citations; merges into augment.
+
+on:
+  schedule:
+    - cron: "20 5 3 * *"   # 05:20 UTC on the 3rd of every month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch CA DLSE (live + kernel)
+        run: node scripts/ca-dlse-fetch.mjs --refresh
+
+      - name: Merge into augment
+        run: node scripts/ca-dlse-merge.mjs
+
+      - name: Run parser tests
+        run: node --test scripts/ca-dlse-fetch.test.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/ca-dlse/ data/derived/ca-dlse-augment.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ca-dlse): monthly snapshot + augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
