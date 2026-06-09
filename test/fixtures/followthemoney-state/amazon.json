@@ -1,0 +1,16 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for Amazon.com Inc. cycles 2022-2024.",
+  "slug": "amazon",
+  "name": "Amazon.com Inc.",
+  "entity_ids": ["FIXTURE-AMAZON-1"],
+  "records": [
+    { "state": "WA", "cycle": 2024, "total":  610000, "dem": 420000, "rep": 165000, "other":  25000 },
+    { "state": "CA", "cycle": 2024, "total":  395000, "dem": 280000, "rep": 100000, "other":  15000 },
+    { "state": "TX", "cycle": 2024, "total":  225000, "dem":  90000, "rep": 125000, "other":  10000 },
+    { "state": "VA", "cycle": 2024, "total":  180000, "dem":  95000, "rep":  80000, "other":   5000 },
+    { "state": "NY", "cycle": 2024, "total":  165000, "dem": 125000, "rep":  35000, "other":   5000 },
+    { "state": "IL", "cycle": 2024, "total":   95000, "dem":  60000, "rep":  32000, "other":   3000 },
+    { "state": "WA", "cycle": 2022, "total":  540000, "dem": 380000, "rep": 140000, "other":  20000 },
+    { "state": "CA", "cycle": 2022, "total":  320000, "dem": 230000, "rep":  82000, "other":   8000 }
+  ]
+}

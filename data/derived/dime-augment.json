@@ -1,0 +1,133 @@
+{
+  "_license": "Stanford DIME v4.0 — free for academic research and journalism (Bonica)",
+  "_source": "Bonica, Adam. 2024. Database on Ideology, Money in Politics, and Elections: Public version 4.0",
+  "_source_url": "https://data.stanford.edu/dime",
+  "_generated_at": "2026-06-09T22:53:21.745Z",
+  "_cycle_window": "2022-2026",
+  "_dry_run": true,
+  "_stats": {
+    "rows": 28,
+    "kept": 25,
+    "dropped": 3,
+    "employers": 15,
+    "matched": 12,
+    "unmatched": 3,
+    "capped_to": 6
+  },
+  "companies": {
+    "koch-inc": {
+      "political": {
+        "totalUsd": 11000,
+        "donorCount": 3,
+        "contributionCount": 3,
+        "pctToDem": 0,
+        "pctToRep": 1,
+        "pctToOther": 0,
+        "avgCfscore": 0.717,
+        "lastCycleYear": 2024,
+        "employersMatched": [
+          "KOCH INDUSTRIES",
+          "KOCH IND"
+        ],
+        "sources": [
+          "https://data.stanford.edu/dime"
+        ]
+      }
+    },
+    "walmart": {
+      "political": {
+        "totalUsd": 4350,
+        "donorCount": 5,
+        "contributionCount": 5,
+        "pctToDem": 0.023,
+        "pctToRep": 0.977,
+        "pctToOther": 0,
+        "avgCfscore": 0.584,
+        "lastCycleYear": 2024,
+        "employersMatched": [
+          "WALMART",
+          "WALMART STORES",
+          "WAL-MART"
+        ],
+        "sources": [
+          "https://data.stanford.edu/dime"
+        ]
+      }
+    },
+    "meta-platforms": {
+      "political": {
+        "totalUsd": 4250,
+        "donorCount": 4,
+        "contributionCount": 4,
+        "pctToDem": 1,
+        "pctToRep": 0,
+        "pctToOther": 0,
+        "avgCfscore": -0.524,
+        "lastCycleYear": 2024,
+        "employersMatched": [
+          "META PLATFORMS",
+          "FACEBOOK"
+        ],
+        "sources": [
+          "https://data.stanford.edu/dime"
+        ]
+      }
+    },
+    "tesla": {
+      "political": {
+        "totalUsd": 2650,
+        "donorCount": 3,
+        "contributionCount": 3,
+        "pctToDem": 0,
+        "pctToRep": 1,
+        "pctToOther": 0,
+        "avgCfscore": 0.686,
+        "lastCycleYear": 2024,
+        "employersMatched": [
+          "TESLA",
+          "TESLA MOTORS"
+        ],
+        "sources": [
+          "https://data.stanford.edu/dime"
+        ]
+      }
+    },
+    "apple": {
+      "political": {
+        "totalUsd": 1800,
+        "donorCount": 4,
+        "contributionCount": 4,
+        "pctToDem": 1,
+        "pctToRep": 0,
+        "pctToOther": 0,
+        "avgCfscore": -0.596,
+        "lastCycleYear": 2024,
+        "employersMatched": [
+          "APPLE"
+        ],
+        "sources": [
+          "https://data.stanford.edu/dime"
+        ]
+      }
+    },
+    "x-corp": {
+      "political": {
+        "totalUsd": 1000,
+        "donorCount": 2,
+        "contributionCount": 2,
+        "pctToDem": 0.4,
+        "pctToRep": 0.6,
+        "pctToOther": 0,
+        "avgCfscore": 0.112,
+        "lastCycleYear": 2024,
+        "employersMatched": [
+          "XAI CORP",
+          "X CORP"
+        ],
+        "sources": [
+          "https://data.stanford.edu/dime"
+        ]
+      }
+    }
+  }
+}

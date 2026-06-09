@@ -704,6 +704,81 @@ const WRITERS = [
       return [{ category: "political", narrative, sc: "bipartisan", severity: "neutral" }];
     },
   },
+  // ─── Stanford DIME (Bonica) — employer-level CFscore + party split ────
+  // Augment shape per slug: { political: { totalUsd, donorCount, pctToDem,
+  // pctToRep, avgCfscore, lastCycleYear, employersMatched } }.
+  //
+  // DIME aggregates the actual EMPLOYEES of a company (not the corporate
+  // PAC) — that's a meaningfully different signal from FEC PAC totals.
+  // Walmart's PAC tilts R; Walmart's RANK-AND-FILE often tilts D.
+  //
+  // We register this writer with `mergeCrossCite` so it appends a short
+  // cross-citation suffix when another political writer already filled
+  // the narrative (rather than being silently hidden by first-wins).
+  // When NO existing political narrative exists, the writer drops a
+  // primary narrative instead.
+  //
+  // Severity stays unset — DIME tells us magnitude + lean, not whether
+  // it's "good" or "bad". The exec-political-donations writer is still
+  // the canonical source for the sc enum.
+  {
+    name: "dime",
+    write: (e) => {
+      const p = e.political || e;
+      const total = p.totalUsd || 0;
+      if (!total) return [];
+      const donors = p.donorCount || 0;
+      const dem = p.pctToDem || 0;
+      const rep = p.pctToRep || 0;
+      const lean = dem > rep + 0.1 ? "D" : rep > dem + 0.1 ? "R" : "split";
+      const margin = Math.round(Math.abs(dem - rep) * 100);
+      const totalStr = total >= 1e6 ? `$${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `$${Math.round(total / 1e3)}K`
+        : `$${Math.round(total)}`;
+      const leanLabel = lean === "split"
+        ? "evenly split"
+        : `${lean === "D" ? "Democratic" : "Republican"} +${margin}`;
+      const narrative =
+        `Stanford DIME: ~${totalStr} in employee political contributions last 4 cycles across ${donors} donors; lean ${leanLabel}.`;
+      return [{
+        category: "political",
+        narrative,
+        mergeCrossCite: true,
+        crossCiteSuffix: " [Stanford DIME (Bonica) corroborates.]",
+      }];
+    },
+  },
+  // ─── FollowTheMoney.org — state-level corporate-donor totals ─────────
+  // Augment shape per slug: { political: { totalUsd, stateCount,
+  // topStates[5], pctToDem, pctToRep, lastCycleYear, entityIds } }.
+  //
+  // OpenSecrets is federal-only. FTM covers the 50 states + DC and is
+  // where the biggest single-state corporate-donor signal lives (Walmart
+  // in AR, Koch in KS, AT&T in TX, etc.). We treat this writer the same
+  // way as DIME — cross-cite an existing political narrative rather than
+  // overwrite it.
+  {
+    name: "followthemoney-state",
+    write: (e) => {
+      const p = e.political || e;
+      const total = p.totalUsd || 0;
+      if (!total) return [];
+      const states = p.stateCount || 0;
+      const topStates = Array.isArray(p.topStates) ? p.topStates : [];
+      const totalStr = total >= 1e6 ? `$${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `$${Math.round(total / 1e3)}K`
+        : `$${Math.round(total)}`;
+      const topStr = topStates.slice(0, 3).map(s => s.state).join(", ");
+      const narrative =
+        `FollowTheMoney.org: ~${totalStr} in state-level political contributions across ${states} state${states === 1 ? "" : "s"}${topStr ? ` (top: ${topStr})` : ""}.`;
+      return [{
+        category: "political",
+        narrative,
+        mergeCrossCite: true,
+        crossCiteSuffix: " [FollowTheMoney.org adds state-level totals.]",
+      }];
+    },
+  },
   // ─── FARA foreign-agent registrations (DOJ) ──────────────────────────
   // Augment shape per slug: { registrations[], countries[], match_via,
   // registration_count }. Match was made via either the US registrant

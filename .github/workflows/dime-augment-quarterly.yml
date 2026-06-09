@@ -1,0 +1,66 @@
+name: dime-augment-quarterly
+
+# Stanford DIME v4.0 — slug-keyed augment refresh (Bonica).
+#
+# This is the narrative-augment pipeline. The structured-detail pipeline
+# (bonica-dime-fetch + bonica-dime-merge) runs annually on Jan-15; this
+# one runs QUARTERLY so the user-visible political narrative stays
+# closer to current state between Stanford releases.
+#
+# Cadence: Jan 20 / Apr 20 / Jul 20 / Oct 20, 05:00 UTC.
+#   - Annual DIME snapshot lands ~mid-Jan; we run 5 days later.
+#   - Quarterly refreshes don't need new Stanford data to be useful —
+#     re-running the slug-resolution pass picks up new TruNorth slugs
+#     (the company universe grows monthly).
+#
+# Requires DIME_CSV_URL secret pointing at the current Stanford
+# release CSV URL. If unset, fetch fails fast (no fake data ever lands
+# on main).
+
+on:
+  schedule:
+    - cron: "0 5 20 1,4,7,10 *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Apply augments to per-company JSONs (false → fetcher only)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DIME_CSV_URL: ${{ secrets.DIME_CSV_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch + aggregate DIME (live)
+        run: node scripts/dime-augment-fetch.mjs --apply
+
+      - name: Apply augments to per-company JSONs
+        if: ${{ github.event.inputs.apply != 'false' }}
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/derived/dime-augment.json
+          if [ "${{ github.event.inputs.apply }}" != "false" ]; then
+            git add public/data/companies/
+          fi
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(dime): quarterly Stanford DIME augment refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

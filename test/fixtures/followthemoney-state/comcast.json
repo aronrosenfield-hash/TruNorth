@@ -1,0 +1,15 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for Comcast cycles 2022-2024.",
+  "slug": "comcast",
+  "name": "Comcast Corp.",
+  "entity_ids": ["FIXTURE-COMCAST-1"],
+  "records": [
+    { "state": "PA", "cycle": 2024, "total":  395000, "dem": 195000, "rep": 190000, "other":  10000 },
+    { "state": "CA", "cycle": 2024, "total":  230000, "dem": 150000, "rep":  72000, "other":   8000 },
+    { "state": "FL", "cycle": 2024, "total":  185000, "dem":  55000, "rep": 125000, "other":   5000 },
+    { "state": "CO", "cycle": 2024, "total":  115000, "dem":  65000, "rep":  47000, "other":   3000 },
+    { "state": "WA", "cycle": 2024, "total":   95000, "dem":  62000, "rep":  30000, "other":   3000 },
+    { "state": "GA", "cycle": 2024, "total":   80000, "dem":  35000, "rep":  43000, "other":   2000 },
+    { "state": "PA", "cycle": 2022, "total":  360000, "dem": 180000, "rep": 170000, "other":  10000 }
+  ]
+}
