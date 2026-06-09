@@ -57,6 +57,91 @@ function ratingPercentile(score) {
   return (n / 20).toFixed(1); // 0-100 → 0-5
 }
 
+// ── GEO helpers ────────────────────────────────────────────────────────────
+// TruNorth's canonical self-description — keep in sync with /llms.txt and the
+// homepage Organization JSON-LD in index.html.
+const TRUNORTH_ORG = {
+  "@type": "Organization",
+  "@id": `${BASE}/#org`,
+  name: "TruNorth",
+  url: BASE,
+  sameAs: ["https://x.com/TruNorthapp"],
+};
+
+// Sources that are NOT public records. We must never present these as
+// citations — doing so would undercut the "only public records" positioning
+// (and the neutrality/honesty work, BACKLOG B-59). They can still inform the
+// narrative, but provenance/quotable lines only ever name real records.
+const NON_RECORD_SOURCE = /claude|synthesis|\bai\b|gpt|\bllm\b|inferred|editorial|internal/i;
+
+// Display labels for common internal source IDs → human/citable names.
+const SOURCE_LABELS = {
+  "fec.gov": "FEC", "fec": "FEC", "epa": "EPA", "osha": "OSHA", "sec": "SEC",
+  "cfpb": "CFPB", "nlrb": "NLRB", "doj": "DOJ", "nhtsa": "NHTSA", "cpsc": "CPSC",
+  "cisa": "CISA", "courtlistener": "CourtListener", "irs990": "IRS Form 990",
+  "bcorp": "B Lab", "hrc-cei": "HRC Corporate Equality Index",
+  "fair-trade": "Fair Trade USA", "corporate-giving": "corporate giving disclosures",
+  "fashion-revolution": "Fashion Revolution", "fair-labor-association": "Fair Labor Association",
+  "uk-modern-slavery": "UK Modern Slavery registry", "one-percent-planet": "1% for the Planet",
+};
+function sourceLabel(id) {
+  const k = String(id || "").toLowerCase().trim();
+  return SOURCE_LABELS[k] || id;
+}
+function realSources(arr) {
+  return Array.isArray(arr)
+    ? [...new Set(arr.filter(s => s && !NON_RECORD_SOURCE.test(String(s))).map(sourceLabel))]
+    : [];
+}
+
+function fmtDate(d) {
+  if (!d) return null;
+  const dt = new Date(d);
+  if (isNaN(dt.getTime())) return null;
+  return dt.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+// One self-contained, quotable, attributed sentence-set. LLMs preferentially
+// lift sentences that carry a number + a named source + a date.
+function buildQuotable(company, name, overallG, overall, when) {
+  const parts = [];
+  parts.push(
+    `As of ${when}, TruNorth grades ${name} ${
+      overallG && overallG !== "—" ? `an overall ${overallG} (${overall}/100)` : "from public records"
+    } across nine values categories.`
+  );
+  const cand = [];
+  for (const key of ["labor", "environment", "political", "privacy", "charity", "dei"]) {
+    const c = company[key];
+    if (!c || !c.s || /no public record/i.test(c.s)) continue;
+    const srcs = realSources(c.sources);
+    if (!srcs.length) continue; // only facts backed by a real public record
+    const first = c.s.trim().split(/(?<=[.!?])\s/)[0];
+    cand.push({ s: first, src: srcs[0], numeric: /\d/.test(first) ? 1 : 0 });
+  }
+  cand.sort((a, b) => b.numeric - a.numeric);
+  for (const f of cand.slice(0, 2)) parts.push(`${f.s} (source: ${f.src}).`);
+  return parts.join(" ").replace(/\s+/g, " ").slice(0, 400).trim();
+}
+
+// Machine-readable per-category claims with provenance, as schema.org
+// PropertyValue nodes. measurementTechnique names the public record(s).
+function provenanceProps(company, labels) {
+  const out = [];
+  for (const [key, label] of Object.entries(labels)) {
+    const c = company[key];
+    if (!c || !c.s || /no public record/i.test(c.s)) continue;
+    const srcs = realSources(c.sources);
+    out.push({
+      "@type": "PropertyValue",
+      name: label,
+      value: c.s,
+      ...(srcs.length ? { measurementTechnique: "Public records: " + srcs.join(", ") } : {}),
+    });
+  }
+  return out;
+}
+
 export default async function handler(req) {
   const url = new URL(req.url);
   // The vercel rewrite passes the slug via either pathname or query
@@ -108,25 +193,52 @@ export default async function handler(req) {
   const description = buildDesc();
   const title = `${name} — ${overallG ? overallG + " grade · " : ""}${cat || "Consumer values"} | TruNorth`;
 
-  // JSON-LD structured data
+  // Freshness + quotable summary (used in both JSON-LD and the visible body)
+  const lastUpdated = company.lastUpdated || company.dataLastUpdated || null;
+  const updatedLabel = fmtDate(lastUpdated) || fmtDate(new Date().toISOString());
+  const quotable = buildQuotable(company, name, overallG, overall, updatedLabel);
+
+  // Link the brand entity to its own canonical web presence (strong GEO/entity
+  // signal — lets engines resolve "<brand>" to the real-world company).
+  const brandSameAs = [];
+  if (company.wiki?.website) brandSameAs.push(company.wiki.website);
+  if (company.wiki?.wikipediaUrl) brandSameAs.push(company.wiki.wikipediaUrl);
+
+  // JSON-LD structured data. The page is TruNorth's sourced assessment OF the
+  // brand: an Organization (the brand) carrying per-category claims with
+  // provenance + a Review authored & published by TruNorth. This replaces the
+  // old self-referential AggregateRating (ratingCount:1 read as self-serving).
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": canonical + "#subject",
     name,
     url: canonical,
     image: company.logoUrl || ogImage,
-    ...(company.wiki?.website ? { sameAs: [company.wiki.website] } : {}),
+    ...(cat ? { industry: cat } : {}),
+    ...(brandSameAs.length ? { sameAs: brandSameAs } : {}),
+    additionalProperty: provenanceProps(company, CATEGORY_LABELS),
+    subjectOf: {
+      "@type": "Review",
+      name: `TruNorth public-records assessment of ${name}`,
+      author: TRUNORTH_ORG,
+      publisher: TRUNORTH_ORG,
+      reviewBody: quotable,
+      ...(lastUpdated ? { datePublished: lastUpdated, dateModified: lastUpdated } : {}),
+      itemReviewed: { "@type": "Organization", name },
+      ...(overall != null
+        ? {
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: ratingPercentile(overall),
+              bestRating: "5",
+              worstRating: "1",
+              ...(overallG && overallG !== "—" ? { alternateName: `Grade ${overallG}` } : {}),
+            },
+          }
+        : {}),
+    },
   };
-  if (overall != null) {
-    jsonLd["aggregateRating"] = {
-      "@type": "AggregateRating",
-      ratingValue: ratingPercentile(overall),
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "1",
-      reviewCount: "1",
-    };
-  }
 
   // 2026-06-05 (PageSpeed Tier 2): the SEO body used to live inside
   // <noscript>, which meant JS-enabled browsers (i.e. every real visitor)
@@ -148,15 +260,19 @@ export default async function handler(req) {
       <h1 style="font-size:32px;margin:0 0 8px;font-weight:800">${esc(name)}</h1>
       <div style="color:#a8a8a8;font-size:14px">${esc(cat)}</div>
       ${overallG && overallG !== "—" ? `<div style="margin-top:14px;font-size:18px;color:#f2f2f2"><strong>Overall: ${overallG}</strong> · ${overall}/100</div>` : ""}
+      <p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#cfcfcf">${esc(quotable)}</p>
+      <div style="margin-top:10px;font-size:12px;color:#7a7a7a">Last updated ${esc(updatedLabel)} · TruNorth (trunorthapp.com)</div>
     </header>
     <main style="padding:0 24px 48px;max-width:720px;margin:0 auto;color:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
       ${Object.entries(CATEGORY_LABELS).map(([key, label]) => {
         const c = company[key];
         if (!c || !c.s) return "";
+        const srcs = realSources(c.sources);
         return `
           <section style="border-top:1px solid #2a2a2a;padding:18px 0">
             <h2 style="font-size:16px;margin:0 0 6px;color:#fff;font-weight:700">${esc(label)}</h2>
             <p style="font-size:14px;line-height:1.6;color:#a8a8a8;margin:0">${esc(c.s)}</p>
+            ${srcs.length ? `<div style="font-size:12px;color:#6f6f6f;margin-top:6px">Source: ${esc(srcs.join(" · "))}</div>` : ""}
           </section>
         `;
       }).join("")}

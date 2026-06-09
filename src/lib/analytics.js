@@ -6,6 +6,35 @@ import posthog from 'posthog-js';
 
 let initialized = false;
 
+// GEO measurement — detect when a visit was referred by an AI answer engine
+// (ChatGPT, Perplexity, Gemini, Claude, Copilot, etc.). Registered as super
+// properties so every event is filterable by `ai_referrer` / `ai_engine` in
+// PostHog — that's our "is GEO sending traffic?" KPI. Heuristic, best-effort:
+// many engines strip the referrer, so this is a floor, not a full count.
+const AI_REFERRERS = [
+  { host: /(^|\.)chatgpt\.com$/i,            engine: 'chatgpt' },
+  { host: /(^|\.)openai\.com$/i,             engine: 'chatgpt' },
+  { host: /(^|\.)perplexity\.ai$/i,          engine: 'perplexity' },
+  { host: /(^|\.)gemini\.google\.com$/i,     engine: 'gemini' },
+  { host: /(^|\.)bard\.google\.com$/i,       engine: 'gemini' },
+  { host: /(^|\.)claude\.ai$/i,              engine: 'claude' },
+  { host: /(^|\.)copilot\.microsoft\.com$/i, engine: 'copilot' },
+  { host: /(^|\.)you\.com$/i,                engine: 'you' },
+  { host: /(^|\.)phind\.com$/i,              engine: 'phind' },
+  { host: /(^|\.)poe\.com$/i,                engine: 'poe' },
+];
+
+function detectAiReferrer() {
+  try {
+    const ref = document.referrer;
+    if (!ref) return null;
+    const host = new URL(ref).hostname;
+    const match = AI_REFERRERS.find(r => r.host.test(host));
+    if (match) return { ai_referrer: true, ai_engine: match.engine, ai_referrer_host: host };
+  } catch {}
+  return null;
+}
+
 export function initAnalytics() {
   if (initialized) return;
   const key = import.meta.env.VITE_POSTHOG_KEY;
@@ -29,9 +58,14 @@ export function initAnalytics() {
     capture_pageview: true,
     disable_session_recording: false,
     loaded: (ph) => {
+      const ai = detectAiReferrer();
+      if (ai) {
+        ph.register(ai);            // attach to every subsequent event
+        ph.capture('ai_referral', ai); // explicit landing event for funnels
+      }
       if (import.meta.env.DEV) {
         // eslint-disable-next-line no-console
-        console.log('[analytics] PostHog ready', ph.get_distinct_id?.(), 'via', apiHost);
+        console.log('[analytics] PostHog ready', ph.get_distinct_id?.(), 'via', apiHost, ai ? `· AI referral: ${ai.ai_engine}` : '');
       }
     },
   });

@@ -11,6 +11,8 @@
       "destination": "https://us.i.posthog.com/$1" },
     { "source": "/company/:slug", "destination": "/api/company-seo?slug=:slug" },
     { "source": "/c/:slug",       "destination": "/api/company-seo?slug=:slug" },
+    { "source": "/alternatives/:slug", "destination": "/api/alternatives-seo?slug=:slug" },
+    { "source": "/compare/:slug",      "destination": "/api/compare-seo?slug=:slug" },
     { "source": "/privacy",       "destination": "/index.html" }
   ],
   "headers": [

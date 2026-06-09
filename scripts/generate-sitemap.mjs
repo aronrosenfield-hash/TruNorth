@@ -44,8 +44,46 @@ async function main() {
   }
 
   const index = JSON.parse(fs.readFileSync(INDEX_PATH, "utf8"));
-  // index is array of { slug, name, cat, init, ab, ac, ... }
+  // index is array of { slug, name, cat, init, ab, ac, overall, competitors, ... }
   const lastmod = new Date().toISOString().slice(0, 10);
+
+  // ── GEO landing URLs ──────────────────────────────────────────────────────
+  // /alternatives/<slug>: only for brands that (a) grade below B (<65) and
+  // (b) have at least one higher-graded same-category peer — i.e. the brands
+  // users actually seek alternatives to. /compare/<a>-vs-<b>: from each brand's
+  // listed competitors, as canonical alphabetical pairs, deduped.
+  const slugOf = (co) => co.slug || co.id;
+  const overallOf = (co) => Number(co.overall ?? co.score);
+  const valid = new Set(index.map(slugOf).filter(Boolean).map(String));
+
+  const byCat = new Map();
+  for (const co of index) {
+    const c = co.cat || "";
+    if (!byCat.has(c)) byCat.set(c, []);
+    byCat.get(c).push(co);
+  }
+
+  const altSlugs = [];
+  for (const co of index) {
+    const o = overallOf(co);
+    if (!isFinite(o) || o >= 65) continue; // B and above don't need an alternatives page
+    const peers = byCat.get(co.cat || "") || [];
+    if (peers.some(p => slugOf(p) !== slugOf(co) && overallOf(p) > o)) {
+      altSlugs.push(String(slugOf(co)));
+    }
+  }
+
+  const comparePairs = new Set();
+  for (const co of index) {
+    const a = String(slugOf(co) || "");
+    if (!a) continue;
+    for (const comp of co.competitors || []) {
+      const b = String(comp || "").toLowerCase();
+      if (!b || !valid.has(b) || b === a) continue;
+      const [x, y] = [a, b].sort();
+      comparePairs.add(`${x}-vs-${y}`);
+    }
+  }
 
   const urls = [
     ...HARDCODED_PAGES.map(p => `
@@ -62,6 +100,20 @@ async function main() {
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>`).join(""),
+    ...altSlugs.map(s => `
+  <url>
+    <loc>${BASE}/alternatives/${esc(s)}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>`).join(""),
+    ...[...comparePairs].map(pair => `
+  <url>
+    <loc>${BASE}/compare/${esc(pair)}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>`).join(""),
   ].join("");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -70,8 +122,9 @@ async function main() {
 `;
 
   fs.writeFileSync(OUT_PATH, xml);
+  const total = HARDCODED_PAGES.length + index.length + altSlugs.length + comparePairs.size;
   console.log(`✅ Wrote ${OUT_PATH}`);
-  console.log(`   ${HARDCODED_PAGES.length} static pages + ${index.length} companies = ${HARDCODED_PAGES.length + index.length} URLs`);
+  console.log(`   ${HARDCODED_PAGES.length} static + ${index.length} companies + ${altSlugs.length} alternatives + ${comparePairs.size} comparisons = ${total} URLs`);
 }
 
 main().catch(err => {

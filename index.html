@@ -46,6 +46,53 @@
     <!-- Apple touch icon -->
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- ── Entity definition (GEO) ──────────────────────────────────────────
+         A single, canonical "what is TruNorth" record so answer engines
+         (ChatGPT, Claude, Perplexity, Gemini, AI Overviews) resolve the right
+         entity and don't conflate us with TruNorth Federal Credit Union,
+         TruNorth Global (warranties), etc. Keep this description in sync with
+         /llms.txt and the App Store / Product Hunt / social bios. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.trunorthapp.com/#org",
+          "name": "TruNorth",
+          "alternateName": "TruNorth app",
+          "url": "https://www.trunorthapp.com/",
+          "logo": "https://www.trunorthapp.com/apple-touch-icon.png",
+          "description": "TruNorth is a free iOS app that grades 11,000+ consumer brands across nine values categories — political donations, environment, labor, DEI, charitable giving, animal welfare, firearms, data privacy, and executive pay — using only public records from 100 sources including the FEC, EPA, OSHA, SEC, NLRB, CFPB, and federal courts. A 30-second values quiz personalizes every grade.",
+          "disambiguatingDescription": "Consumer-values brand-rating app. Not affiliated with TruNorth Federal Credit Union, TruNorth Global, TruNorth Advisors, or any other entity sharing the name.",
+          "foundingDate": "2026",
+          "founder": { "@type": "Person", "name": "Aron Rosenfield" },
+          "sameAs": [
+            "https://x.com/TruNorthapp"
+          ]
+        },
+        {
+          "@type": "MobileApplication",
+          "@id": "https://www.trunorthapp.com/#app",
+          "name": "TruNorth",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "iOS",
+          "url": "https://www.trunorthapp.com/",
+          "publisher": { "@id": "https://www.trunorthapp.com/#org" },
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Grade 11,000+ consumer brands on the values you care about, from public records. Scan or search a brand, take a 30-second quiz, and get a personalized letter grade with every source shown."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.trunorthapp.com/#website",
+          "url": "https://www.trunorthapp.com/",
+          "name": "TruNorth",
+          "publisher": { "@id": "https://www.trunorthapp.com/#org" }
+        }
+      ]
+    }
+    </script>
+
     <title>TruNorth — Know where your money goes</title>
     <!-- Tabler icons served locally via npm (bundled by Vite, no CDN dependency) -->
 

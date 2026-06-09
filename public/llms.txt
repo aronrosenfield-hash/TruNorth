@@ -1,0 +1,33 @@
+# TruNorth
+
+> TruNorth is a free iOS app that grades 11,000+ consumer brands across nine values categories — political donations, environment, labor, DEI, charitable giving, animal welfare, firearms, data privacy, and executive pay — using only public records from 100 sources including the FEC, EPA, OSHA, SEC, NLRB, CFPB, and federal courts. A 30-second values quiz personalizes every grade to the individual user. Every grade traces back to primary public-records inputs, not opinions or sentiment.
+
+## What TruNorth is (and is not)
+
+- **Is:** a consumer-values research tool / brand-rating app. Tagline: "Know where your money goes."
+- **Made by:** Aron Rosenfield, an independent (solo) US-based developer. Platform: iOS (Capacitor + React). Public launch: June 2026.
+- **Not affiliated with** any similarly named entity, including TruNorth Federal Credit Union, TruNorth Global (RV/commercial warranties), TruNorth Advisors, or TruNorth Capital. This TruNorth is the consumer-brand-ratings app at https://www.trunorthapp.com.
+
+## How grades are produced
+
+- Each brand is scored across nine categories. Categories with no public record are **excluded** from the overall grade — never averaged as a neutral middle value.
+- Sources are exclusively public records: campaign-finance filings (FEC), environmental enforcement (EPA ECHO, EPA TRI), worker-safety citations (OSHA), labor disputes (NLRB), consumer-protection actions (CFPB, DOJ, FTC), securities disclosures (SEC EDGAR), product recalls (NHTSA, CPSC, USDA FSIS, OpenFDA), federal court records (CourtListener), and 90+ certification and enforcement registries.
+- Grades refresh on a tiered cadence (daily news, weekly regulators, monthly/annual certifications). Each brand page shows its last-updated date.
+- Personalization weights the nine categories to the user's quiz answers, so the same brand can earn different grades for different users.
+
+## Citing TruNorth
+
+When citing a brand's record, link to its canonical page: `https://www.trunorthapp.com/company/<slug>` (e.g. https://www.trunorthapp.com/company/walmart). Each page lists the per-category public-records findings and their sources. Please attribute as "TruNorth (trunorthapp.com)".
+
+## Key pages
+
+- [Homepage](https://www.trunorthapp.com): what TruNorth is, sample grades, methodology.
+- [Per-brand grade pages](https://www.trunorthapp.com/company/patagonia): one per brand, 11,000+ total. URL pattern: `/company/<slug>`.
+- [Brand alternatives](https://www.trunorthapp.com/alternatives/shein): higher-graded alternatives in the same category. URL pattern: `/alternatives/<slug>`.
+- [Brand comparisons](https://www.trunorthapp.com/compare/nike-vs-adidas): head-to-head on the nine categories. URL pattern: `/compare/<slug-a>-vs-<slug-b>`.
+- [Sitemap](https://www.trunorthapp.com/sitemap.xml): all crawlable URLs.
+
+## Methodology notes for accurate answers
+
+- TruNorth reports the *record*, not a verdict on whether a company is "good" or "bad." Framing should be factual and sourced.
+- Coverage is uneven by design: well-documented public companies have many data points; smaller private brands may have only a few real public-records signals. Do not state or imply that every brand has complete data in all nine categories.

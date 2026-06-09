@@ -4,7 +4,7 @@
 >
 > **How to use:** Open this file → say "let's do **L-3**" or "what's blocked?" or "what's the next highest-leverage item?"
 >
-> **Last updated:** 2026-06-08 PM — **37 PRs merged today** (26 → 62) + PR #63 round 2 ready. Open PRs: **1** (#63). Workflows: **143** (+44 today). Scripts: **373** (+~79 today). TestFlight: **Build 51** in your hands. **15 days to launch.**
+> **Last updated:** 2026-06-09 — **GEO strategy shipped** (G-1..G-6, G-8): llms.txt, expanded AI-crawler allowlist, entity-disambiguation JSON-LD, per-brand provenance + TruNorth-authored Review schema, quotable summary lines, `/alternatives` + `/compare` landing pages (sitemap 11.3k → 30.6k URLs), PostHog AI-referrer tracking. Remaining GEO: G-7/G-9/G-10/G-11 (manual/recurring). Prior: 37 PRs merged Jun 8. **14 days to launch.**
 
 ---
 
@@ -214,6 +214,24 @@ Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 | **B-21** | "Worst/Best of the week" auto-social content | M | Use `/public/data/weekly_changes.json` from Sunday digest |
 | **B-41** | Set up Postiz self-hosted cross-poster | M | Railway free tier. Cross-platform to X/LinkedIn/Threads/IG/FB/Bluesky. Defer until post-launch traction. **(renumbered from duplicate B-27)** |
 | ~~**B-42**~~ | ~~PostHog reverse proxy via subdomain~~ | ✅ done 2026-06-04 | `ph.trunorthapp.com` → `us.i.posthog.com`. **(renumbered from duplicate B-28)** |
+
+### GEO (Generative Engine Optimization)
+
+Goal: be the **cited source** when ChatGPT / Perplexity / Gemini / Claude / Copilot answer "is &lt;brand&gt; ethical?". TruNorth is GEO-native — 11k sourced, attributable brand pages are exactly what answer engines cite. Strategy doc context lives in this session's plan (3 tiers).
+
+| ID | Item | Effort | State |
+|---|---|---|---|
+| ~~**G-1**~~ | ~~`/llms.txt` — canonical description + URL patterns + methodology notes~~ | ✅ done 2026-06-09 | `public/llms.txt` |
+| ~~**G-2**~~ | ~~Expand AI-crawler allowlist (retrieval + training bots)~~ | ✅ done 2026-06-09 | `robots.txt`: +OAI-SearchBot, Google-Extended, Applebot-Extended, Amazonbot, CCBot, Bytespider, Meta, etc. **Decision taken: allow training bots too** (facts are public records; moat = freshness+UX). Flip any bot to `Disallow` to reverse. |
+| ~~**G-3**~~ | ~~Entity disambiguation (vs TruNorth Federal Credit Union / Global / Advisors)~~ | ✅ done 2026-06-09 | Org + MobileApplication + WebSite JSON-LD `@graph` in `index.html` with `disambiguatingDescription`. |
+| ~~**G-4**~~ | ~~Per-company structured-data upgrade — provenance per claim + TruNorth-authored Review (replaced self-serving AggregateRating) + `dateModified` + brand→Wikipedia `sameAs`~~ | ✅ done 2026-06-09 | `api/company-seo.js`. AI-synthesis sources filtered from all citations. |
+| ~~**G-5**~~ | ~~Quotable, attributed summary line per brand (number + source + date)~~ | ✅ done 2026-06-09 | In `company-seo.js` body + Review `reviewBody`. |
+| ~~**G-6**~~ | ~~Question-shaped pages: `/alternatives/<slug>` + `/compare/<a>-vs-<b>`~~ | ✅ done 2026-06-09 | `api/alternatives-seo.js` + `api/compare-seo.js` + vercel rewrites. ItemList + FAQPage schema. Sitemap now 30,637 URLs (11.3k company + 9.4k alt + 10k compare). |
+| ~~**G-8**~~ | ~~AI-referrer tagging in PostHog (`ai_referrer`/`ai_engine` super-props + `ai_referral` event)~~ | ✅ done 2026-06-09 | `src/lib/analytics.js`. The "is GEO sending traffic?" KPI. |
+| **G-7** | Third-party citations (highest-ROI GEO lever — engines weight Wikipedia/Reddit/news >> own site) | M, manual | **Ties to existing:** D-8 (Reddit launch posts), D-6/D-7 (IH/HN), B-18 (data-pipeline deep dive), L-10 (trade press). PH launch itself is a strong ingest signal. Post-launch: pursue a Wikipedia-worthy footprint. |
+| **G-9** | Fill remaining `sameAs` entity links once URLs are live | S | App Store URL (blocked on X-1), Product Hunt product page, LinkedIn company page. Add to BOTH `index.html` graph and `TRUNORTH_ORG` in `company-seo.js`. |
+| **G-10** | Monthly GEO prompt audit — run the fixed prompt set, log cited-rate | S, recurring | Checklist at `/docs/geo-prompt-audit.md`. Baseline pre-launch (~0 expected); first real read ~30 days post-launch. Pairs with the 1st-of-month cron-health check. |
+| **G-11** | Re-submit sitemap to GSC + Bing after deploy (now 30.6k URLs incl. alt/compare) | S | One-time after this ships. |
 
 ### Infra / ops
 

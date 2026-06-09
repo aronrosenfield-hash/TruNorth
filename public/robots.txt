@@ -2,19 +2,49 @@ User-agent: *
 Allow: /
 Allow: /company/
 Allow: /c/
+Allow: /alternatives/
+Allow: /compare/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /*?utm_*
 Disallow: /*?fbclid=*
 
-# Be friendly to AI crawlers — TruNorth's data IS the content
-User-agent: GPTBot
-Allow: /
+# ---------------------------------------------------------------------------
+# AI crawlers — TruNorth's public-records data IS the content, and we WANT to
+# be the cited source when an assistant answers "is <brand> ethical?". We allow
+# both retrieval/search bots (the citation channel) and training bots. The
+# moat is freshness + personalization in-app, not the raw public-records facts.
+# Each bot gets an explicit Allow even though * already permits (some bots only
+# honor their own user-agent group).
+# ---------------------------------------------------------------------------
 
-User-agent: ClaudeBot
-Allow: /
-
+# Live-retrieval / answer-engine bots (cite us in real time)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
 User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: DuckAssistBot
+User-agent: Amazonbot
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Google-Extended
 Allow: /
 
+# Training / dataset bots (ingest us into model knowledge)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: cohere-ai
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+User-agent: Diffbot
+User-agent: Timpibot
+User-agent: YouBot
+Allow: /
+
+# AI agents: see /llms.txt for a concise description of TruNorth + URL patterns.
 Sitemap: https://www.trunorthapp.com/sitemap.xml
