@@ -1,0 +1,73 @@
+name: state-regulators-r3-monthly
+
+# Round-3 US state-regulator enforcement scraper. Covers 10 sources:
+#   CA AG, CalPrivacy (CPPA), FL AG, IL AG, WA AG, OH AG, PA AG,
+#   NJ AG, GA AG, NC AG.
+# See scripts/state-regulators-r3-fetch.mjs for the full list of probed
+# sources and which states bot-wall (MA, MI, VA, CARB, TCEQ, etc.).
+#
+# Cadence: monthly (3rd of the month at 07:00 UTC) — offset by 2 days from
+# round 2 so the two refreshes don't open simultaneous PRs.
+# Politeness: 1.5s between requests, honest UA, retry once on 5xx.
+
+on:
+  schedule:
+    - cron: "0 7 3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run parser tests
+        run: node scripts/state-regulators-r3-fetch.test.mjs
+
+      - name: Fetch round-3 state-regulator enforcement (live)
+        run: node scripts/state-regulators-r3-fetch.mjs --limit 250
+
+      - name: Build derived augment
+        run: node scripts/state-regulators-r3-merge.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(state-regulators-r3): monthly enforcement refresh"
+          title: "data(state-regulators-r3): monthly enforcement refresh"
+          body: |
+            Automated state-regulator (round 3 — CA/FL/IL/WA/OH/PA/NJ/GA/NC AG + CalPrivacy) refresh.
+
+            - Raw:       `data/raw/state-regulators-r3/<date>.json`
+            - Derived:   `data/derived/state-regulators-r3-augment.json`
+            - Unmatched: `data/derived/state-regulators-r3-unmatched.json`
+
+            Sources:
+              - https://oag.ca.gov/news
+              - https://cppa.ca.gov/announcements/
+              - https://www.myfloridalegal.com/newsreleases
+              - https://illinoisattorneygeneral.gov/news-room/
+              - https://www.atg.wa.gov/news/news-releases-rss
+              - https://www.ohioattorneygeneral.gov/Media/News-Releases
+              - https://www.attorneygeneral.gov/taking-action/
+              - https://www.njoag.gov/feed/
+              - https://law.georgia.gov/press-releases
+              - https://ncdoj.gov/category/news-releases/
+            License: public records.
+          branch: data/state-regulators-r3
+          add-paths: |
+            data/raw/state-regulators-r3/**
+            data/derived/state-regulators-r3-augment.json
+            data/derived/state-regulators-r3-unmatched.json
+          delete-branch: true
