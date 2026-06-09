@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TruNorth X/Twitter header — 1500×500</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+
+  /* X/Twitter header: 1500×500 (3:1). The profile avatar overlaps the
+     BOTTOM-LEFT (~200px circle), and mobile crops top/bottom slightly.
+     So the hero is pulled UP and slightly RIGHT of dead-center to clear
+     the avatar, and nothing essential sits in the bottom-left corner. */
+  .header {
+    width: 1500px;
+    height: 500px;
+    background: linear-gradient(135deg, #1a1330 0%, #2820a8 52%, #7c6dfa 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .hero { z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 18px; padding-left: 90px; }
+
+  .brand-row { display: flex; align-items: center; gap: 20px; }
+  .logo-mark {
+    width: 76px; height: 76px;
+    background: #fff; border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  }
+  .arrow { width: 42px; height: 42px; }
+  .arrow polygon { fill: #2820a8; }
+  .wordmark { font-size: 62px; font-weight: 800; letter-spacing: -1.2px; line-height: 1; }
+  .wordmark .tru { color: #ffffff; }
+  .wordmark .north { color: #c4baff; }
+
+  .tagline { font-size: 26px; color: rgba(255,255,255,0.92); letter-spacing: 0.2px; font-weight: 500; }
+  .stat-strip {
+    font-size: 15px; color: rgba(255,255,255,0.72);
+    letter-spacing: 1.1px; font-weight: 600; text-transform: uppercase;
+  }
+  .stat-strip strong { color: #fff; }
+
+  .pills { display: flex; gap: 13px; align-items: center; margin-top: 4px; }
+  .pill {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 15px; padding: 10px 15px;
+    display: flex; align-items: center; gap: 11px; backdrop-filter: blur(8px);
+  }
+  .pill .name { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; }
+  .pill .grade {
+    width: 33px; height: 33px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 19px;
+  }
+  .grade-a { background: rgba(74, 222, 128, 0.22); color: #4ade80; }
+  .grade-c { background: rgba(253, 230, 138, 0.22); color: #fde68a; }
+  .grade-d { background: rgba(252, 165, 165, 0.22); color: #fca5a5; }
+
+  .header::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 84% 28%, rgba(255,255,255,0.06) 0%, transparent 42%),
+      radial-gradient(circle at 14% 84%, rgba(170, 59, 255, 0.14) 0%, transparent 50%);
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="hero">
+    <div class="brand-row">
+      <div class="logo-mark">
+        <svg class="arrow" viewBox="0 0 48 48" aria-hidden="true">
+          <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30"/>
+        </svg>
+      </div>
+      <div class="wordmark"><span class="tru">Tru</span><span class="north">North</span></div>
+    </div>
+    <div class="tagline">Know where your money goes</div>
+    <div class="stat-strip"><strong>100</strong> public-records sources · <strong>11,000+</strong> brands · grades you can trace</div>
+    <div class="pills">
+      <div class="pill"><span class="name">Patagonia</span><span class="grade grade-a">A</span></div>
+      <div class="pill"><span class="name">Amazon</span><span class="grade grade-c">C</span></div>
+      <div class="pill"><span class="name">ExxonMobil</span><span class="grade grade-d">D</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

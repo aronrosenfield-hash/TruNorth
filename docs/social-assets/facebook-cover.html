@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TruNorth Facebook cover — 1640×624</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; margin: 0; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+
+  /* Facebook Page cover: displays 820×312 desktop, 640×360 mobile.
+     Upload at 2× = 1640×624. Mobile crops the left/right edges, so the
+     hero block is centered and the "mobile-safe" zone (~1024px wide,
+     centered) holds everything essential. */
+  .cover {
+    width: 1640px;
+    height: 624px;
+    background: linear-gradient(135deg, #1a1330 0%, #2820a8 52%, #7c6dfa 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+
+  /* mobile-safe guide (not rendered visibly — just for reference) */
+
+  .hero { z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+
+  .brand-row { display: flex; align-items: center; gap: 24px; }
+  .logo-mark {
+    width: 92px; height: 92px;
+    background: #fff;
+    border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  }
+  .arrow { width: 50px; height: 50px; }
+  .arrow polygon { fill: #2820a8; }
+  .wordmark {
+    font-size: 76px; font-weight: 800; letter-spacing: -1.5px; line-height: 1;
+  }
+  .wordmark .tru { color: #ffffff; }
+  .wordmark .north { color: #c4baff; }
+
+  .tagline {
+    font-size: 30px; color: rgba(255,255,255,0.92);
+    letter-spacing: 0.2px; font-weight: 500;
+  }
+  .stat-strip {
+    font-size: 17px; color: rgba(255,255,255,0.7);
+    letter-spacing: 1.2px; font-weight: 600; text-transform: uppercase;
+  }
+  .stat-strip strong { color: #fff; }
+
+  .pills { display: flex; gap: 16px; align-items: center; margin-top: 6px; }
+  .pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 18px;
+    padding: 13px 18px;
+    display: flex; align-items: center; gap: 13px;
+    backdrop-filter: blur(8px);
+  }
+  .pill .name { font-size: 19px; font-weight: 600; letter-spacing: -0.2px; }
+  .pill .grade {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 23px;
+  }
+  .grade-a { background: rgba(74, 222, 128, 0.22); color: #4ade80; }
+  .grade-c { background: rgba(253, 230, 138, 0.22); color: #fde68a; }
+  .grade-d { background: rgba(252, 165, 165, 0.22); color: #fca5a5; }
+
+  .cover::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 82% 30%, rgba(255,255,255,0.06) 0%, transparent 42%),
+      radial-gradient(circle at 18% 82%, rgba(170, 59, 255, 0.14) 0%, transparent 52%);
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="hero">
+    <div class="brand-row">
+      <div class="logo-mark">
+        <svg class="arrow" viewBox="0 0 48 48" aria-hidden="true">
+          <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30"/>
+        </svg>
+      </div>
+      <div class="wordmark"><span class="tru">Tru</span><span class="north">North</span></div>
+    </div>
+    <div class="tagline">Know where your money goes</div>
+    <div class="stat-strip"><strong>100</strong> public-records sources · <strong>11,000+</strong> brands · grades you can trace</div>
+    <div class="pills">
+      <div class="pill"><span class="name">Patagonia</span><span class="grade grade-a">A</span></div>
+      <div class="pill"><span class="name">Amazon</span><span class="grade grade-c">C</span></div>
+      <div class="pill"><span class="name">ExxonMobil</span><span class="grade grade-d">D</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

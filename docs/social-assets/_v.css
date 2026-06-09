@@ -1,0 +1,16 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;}
+.slide{width:1080px;height:1920px;background:linear-gradient(160deg,#1a1330 0%,#2820a8 55%,#7c6dfa 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;}
+.slide::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.06),transparent 42%),radial-gradient(circle at 18% 85%,rgba(170,59,255,.16),transparent 52%);pointer-events:none;}
+.stage{z-index:2;display:flex;flex-direction:column;align-items:center;gap:36px;padding:0 80px;margin-bottom:140px;}
+.cap{position:absolute;bottom:120px;left:70px;right:70px;z-index:3;font-size:44px;font-weight:600;line-height:1.35;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45);}
+.logo{width:140px;height:140px;background:#fff;border-radius:32px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.35);}
+.logo svg{width:76px;height:76px;}.logo polygon{fill:#2820a8;}
+.wm{font-size:104px;font-weight:800;letter-spacing:-2px;}.wm .a{color:#fff;}.wm .b{color:#c4baff;}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:18px 26px;display:flex;align-items:center;gap:18px;}
+.pill .n{font-size:32px;font-weight:600;}.pill .g{width:54px;height:54px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:32px;}
+.ga{background:rgba(74,222,128,.22);color:#4ade80;}.gc{background:rgba(253,230,138,.22);color:#fde68a;}.gd{background:rgba(252,165,165,.22);color:#fca5a5;}
+.phone{width:560px;height:1212px;border-radius:52px;overflow:hidden;border:10px solid rgba(255,255,255,.16);box-shadow:0 30px 90px rgba(0,0,0,.55);}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.big{font-size:230px;font-weight:800;line-height:.95;letter-spacing:-5px;}
+.srcs{font-size:38px;line-height:1.95;text-align:left;opacity:.94;}
+.steps{font-size:46px;line-height:2;text-align:left;font-weight:500;}

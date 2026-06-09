@@ -155,8 +155,12 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
     return m;
   }, [companies]);
 
-  const resolveBrand = (rawBrand) => {
+  const resolveBrand = (rawBrand, mapOverride = null) => {
     if (!rawBrand) return null;
+    // Build 54: accept a freshly-loaded brandParentMap from lookup() to
+    // defeat the race condition where the useState value hasn't propagated
+    // yet on first scan after opening the scanner.
+    const bpMap = mapOverride || brandParentMap;
     // Try each brand token in the comma/pipe-separated list, prefer first match
     const candidates = rawBrand.split(/[,|;\/]/).map(s => s.trim()).filter(Boolean);
     for (const cand of candidates) {
@@ -169,7 +173,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
       // Brand-parent-map fallback: e.g. "Nabisco" or "Oreo" → mondelez-international
       // This is what makes the scanner work for sub-brands that aren't
       // themselves top-level companies.
-      const mapped = brandParentMap[k];
+      const mapped = bpMap[k];
       if (mapped?.parent && slugIndex.has(mapped.parent)) {
         return slugIndex.get(mapped.parent);
       }
@@ -330,6 +334,20 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
 
     async function lookup(code) {
       setStatus("lookup");
+      // Build 54: defend against scanner race condition. Aron reported
+      // NESCAFÉ → "couldn't match parent" even though the map has the entry.
+      // The cause: brandParentMap useState was still {} when the scan
+      // completed because loadBrandParentMap() hadn't resolved yet. Await
+      // it here and pass the live map into every resolveBrand call so the
+      // resolution is correct regardless of how fast the user scanned.
+      let liveMap = brandParentMap;
+      try {
+        const fresh = await loadBrandParentMap();
+        if (fresh && Object.keys(fresh).length > 0) {
+          liveMap = fresh;
+          if (Object.keys(brandParentMap || {}).length === 0) setBrandParentMap(fresh);
+        }
+      } catch { /* fall through — resolveBrand still has the brandIndex */ }
       // ── Static cache fast path ─────────────────────────────────────────
       // upc-to-slug.json ships in the IPA and covers the top ~3-5k US
       // grocery/household UPCs. If we have a hit we resolve in <1ms with
@@ -351,7 +369,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
         if (data?.status === 1 && data?.product) {
           offBrand = data.product.brands || data.product.brand_owner || data.product.product_name;
           if (offBrand) setLookupBrand(offBrand);
-          const match = resolveBrand(offBrand);
+          const match = resolveBrand(offBrand, liveMap);
           if (match) {
             onMatch(match, { barcode: code, brand: offBrand, source: "off" });
             return;
@@ -370,7 +388,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
           if (item) {
             const brand2 = item.brand || item.manufacturer || item.title || null;
             if (brand2 && !offBrand) setLookupBrand(brand2);
-            const match2 = resolveBrand(brand2);
+            const match2 = resolveBrand(brand2, liveMap);
             if (match2) {
               onMatch(match2, { barcode: code, brand: brand2, source: "upcitemdb" });
               return;
@@ -4521,7 +4539,10 @@ useEffect(() => {
     const q = (query || "").trim();
     if (!q || !searchIndex) return null;
     try {
-      const results = searchIndex.search(q, { boost: { name: 2 }, prefix: true, fuzzy: 0.2 });
+      // Build 54: match the server-side build-tuned options. combineWith:AND
+      // means multi-word queries ("General Mills") only return companies with
+      // BOTH tokens (was returning 290 fuzzy matches before).
+      const results = searchIndex.search(q, { boost: { name: 5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" });
       return new Set(results.map(r => r.slug || r.id));
     } catch (err) {
       console.warn("[search-index] search failed:", err);
@@ -4895,11 +4916,13 @@ useEffect(() => {
   useEffect(() => { setVisibleLimit(VISIBLE_BATCH); }, [query, leanFilter, catFilters, flagFilters, sort, showSavedOnly, industryBucket]);
   const visibleFiltered = useMemo(() => filtered.slice(0, visibleLimit), [filtered, visibleLimit]);
 
-  // Bug fix (Build 53, Aron-reported): typing a new search query was not
-  // releasing focusedSlug, so the list stayed pinned to the previously-
-  // opened brand ("Showing 1 brand" → Campbells regardless of input).
-  // Clearing focusedSlug whenever query changes releases the filter.
-  useEffect(() => { if (focusedSlug) setFocusedSlug(null); }, [query]);
+  // Build 54: previously this was a useEffect([query]) → setFocusedSlug(null).
+  // That fired every time query changed — INCLUDING when openBrand sets the
+  // query programmatically (e.g. Brand of the Day tap, scanner match), which
+  // immediately cleared the focused-detail state and dumped the user into a
+  // fuzzy-search list with their brand way down the page. The fix: release
+  // focusedSlug ONLY on real user typing, which we do in the input's onChange
+  // handler below (search for "setFocusedSlug(null)" in the input element).
 
   // UX 4E: recent searches (last 5 distinct queries with at least one result)
   const [recentSearches, setRecentSearches] = useState(() => {
@@ -5456,7 +5479,14 @@ if (screen === "onboarding") {
             <div style={{ background:T.bg3, borderRadius:16, padding:"0 14px", display:"flex", alignItems:"center", gap:10, border:`1px solid ${T.border}` }}>
               <i className="ti ti-search" style={{ fontSize:18, color:T.txt3 }} aria-hidden="true" />
               <label htmlFor="tn-search" className="sr-only">Search companies</label>
-              <input id="tn-search" value={queryRaw} onChange={e=>{setQueryRaw(e.target.value);setTab("search");}} placeholder={`Search ${formatCompanyCount(deduped.length)} companies...`}
+              <input id="tn-search" value={queryRaw} onChange={e=>{
+                  setQueryRaw(e.target.value);
+                  setTab("search");
+                  // Build 54: release focusedSlug only on real user typing —
+                  // never on programmatic query changes (openBrand, deep-link,
+                  // scanner match) so detail panels stay open when navigated to.
+                  if (focusedSlug) setFocusedSlug(null);
+                }} placeholder={`Search ${formatCompanyCount(deduped.length)} companies...`}
                 autoComplete="off"
                 onFocus={() => setShowSearchDropdown(true)}
                 onBlur={() => setTimeout(() => setShowSearchDropdown(false), 200)}

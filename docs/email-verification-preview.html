@@ -1,0 +1,157 @@
+<!doctype html>
+<!--
+  Preview of the MailerLite double opt-in confirmation email.
+
+  ⚠️  This file is for PREVIEW ONLY. The actual email gets sent by
+  MailerLite when our /api/subscribe.js posts status:"unconfirmed".
+  To change what users actually see in their inbox, edit it in:
+
+    app.mailerlite.com → Subscribers → Forms / Sign-up forms
+    → Settings → Double opt-in email
+
+  HOW TO USE THIS PREVIEW:
+    1. Open this file in any browser
+    2. Top half shows MailerLite's DEFAULT (boring, low conversion)
+    3. Bottom half shows RECOMMENDED branded version
+    4. Pick the branded one — copy its HTML into MailerLite's editor
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TruNorth — Email verification preview</title>
+    <style>
+      body {
+        background: #f5f5f7;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 32px 16px;
+        color: #1a1a1a;
+      }
+      .container { max-width: 640px; margin: 0 auto; }
+      h1 { font-size: 18px; margin: 0 0 6px; color: #1a1a1a; }
+      .subtitle { font-size: 13px; color: #666; margin: 0 0 16px; }
+      .label-bad { display: inline-block; background: #fee; color: #c00; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; margin-right: 6px; }
+      .label-good { display: inline-block; background: #e6f5ec; color: #0a7a3a; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; margin-right: 6px; }
+      .mock { background: #fff; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 40px; }
+      .mock-header { background: #f7f7f8; padding: 12px 16px; border-bottom: 1px solid #e0e0e0; font-size: 11px; color: #666; font-family: ui-monospace, Menlo, monospace; }
+      .mock-body { padding: 28px 32px; }
+      hr.section { border: none; border-top: 2px dashed #ccc; margin: 32px 0; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- ─────────────────────────────────────────────────────────── -->
+      <!-- DEFAULT — what MailerLite sends out of the box              -->
+      <!-- ─────────────────────────────────────────────────────────── -->
+      <span class="label-bad">DEFAULT</span>
+      <h1>What MailerLite sends out of the box</h1>
+      <p class="subtitle">Generic. No brand. Looks like a phishing email to a lot of people.</p>
+
+      <div class="mock">
+        <div class="mock-header">
+          <strong>From:</strong> noreply@email.mailerlite.com<br />
+          <strong>Subject:</strong> Please confirm your subscription
+        </div>
+        <div class="mock-body" style="font-family: Arial, sans-serif; color: #333; line-height: 1.5;">
+          <p>Hello,</p>
+          <p>Please confirm your subscription by clicking the link below:</p>
+          <p style="margin: 24px 0;">
+            <a href="#" style="background: #777; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Confirm subscription</a>
+          </p>
+          <p style="font-size: 12px; color: #999;">If you did not subscribe, you can ignore this email.</p>
+        </div>
+      </div>
+
+      <hr class="section" />
+
+      <!-- ─────────────────────────────────────────────────────────── -->
+      <!-- RECOMMENDED — branded version                                -->
+      <!-- ─────────────────────────────────────────────────────────── -->
+      <span class="label-good">RECOMMENDED</span>
+      <h1>The branded version (paste this into MailerLite)</h1>
+      <p class="subtitle">TruNorth branding, clear value prop, friendly CTA, sender = aron@trunorthapp.com.</p>
+
+      <div class="mock">
+        <div class="mock-header">
+          <strong>From:</strong> Aron at TruNorth &lt;aron@trunorthapp.com&gt;<br />
+          <strong>Subject:</strong> One click to start seeing where your money goes
+        </div>
+
+        <!-- ════════════════════════════════════════════════════════════
+             THIS IS THE EMAIL — copy from here down to "END EMAIL"
+             ════════════════════════════════════════════════════════════ -->
+        <div style="background: #0f0f0f; padding: 0; margin: 0;">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: #0f0f0f; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+            <tr>
+              <td align="center" style="padding: 40px 24px 32px;">
+                <!-- Logo -->
+                <img src="https://www.trunorthapp.com/email-signature-logo.png" width="64" height="64" alt="TruNorth" style="display:block; border:0; margin: 0 auto 16px;" />
+                <div style="font-size: 22px; font-weight: 800; color: #f2f2f2; letter-spacing: -0.3px;">TruNorth</div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 24px;">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background: #1a1a1a; border-radius: 16px; max-width: 480px; margin: 0 auto;">
+                  <tr>
+                    <td style="padding: 32px 28px;">
+                      <h2 style="font-size: 22px; font-weight: 800; color: #f2f2f2; margin: 0 0 14px; line-height: 1.3;">
+                        One click and you're in. 👇
+                      </h2>
+                      <p style="font-size: 15px; color: #a8a8a8; line-height: 1.55; margin: 0 0 24px;">
+                        Click the button below to confirm <strong style="color:#f2f2f2;">{$email}</strong> and start getting:
+                      </p>
+
+                      <ul style="font-size: 14px; color: #a8a8a8; line-height: 1.75; margin: 0 0 28px; padding-left: 18px;">
+                        <li>The <strong style="color:#f2f2f2;">Sunday digest</strong> — biggest brand grade movements of the week</li>
+                        <li>Launch-day access when we hit the App Store</li>
+                        <li>Pro founder pricing ($0.99/mo, first 500 only)</li>
+                      </ul>
+
+                      <!-- CTA -->
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                          <td align="center">
+                            <a href="{$confirmation_link}" style="display:inline-block; background:#7c6dfa; color:#fff; padding:14px 32px; border-radius:10px; font-weight:700; text-decoration:none; font-size:15px;">
+                              Confirm my email →
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <p style="font-size: 12px; color: #6c6c72; line-height: 1.55; margin: 28px 0 0; text-align: center;">
+                        Or paste this link into your browser:<br />
+                        <a href="{$confirmation_link}" style="color: #9d91ff; word-break: break-all; text-decoration: none;">{$confirmation_link}</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 32px 24px 16px;" align="center">
+                <p style="font-size: 12px; color: #6c6c72; line-height: 1.55; margin: 0 0 8px; max-width: 420px;">
+                  Didn't sign up? You can safely ignore this — without confirming, you'll never hear from us again.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 16px 24px 32px; border-top: 1px solid #2a2a2a;">
+                <p style="font-size: 11px; color: #6c6c72; margin: 12px 0 4px;">
+                  Sent by TruNorthApp LLC · <a href="https://www.trunorthapp.com" style="color: #9d91ff; text-decoration: none;">www.trunorthapp.com</a>
+                </p>
+                <p style="font-size: 11px; color: #6c6c72; margin: 0;">
+                  Reply to this email — it goes straight to me. — Aron
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- ════════════════════════════════════════════════════════════
+             END EMAIL
+             ════════════════════════════════════════════════════════════ -->
+      </div>
+
+    </div>
+  </body>
+</html>
