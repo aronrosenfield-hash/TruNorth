@@ -1,1 +1,233 @@
-{"name":"EQUIFAX","cat":"Financial Services","init":"EQUI","overall":35,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"FEC: $27K PAC donations; 92% to Republican, 8% to Democratic committees.","amt":"$102K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"19 federal penalties totaling $1.2B since 2000 (Violation Tracker).","rating":"mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","ab":"#2a0d0d","ac":"#e24a4a","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":[]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":["fair-isaac"],"wiki":{"founded":"1899-00-00","hq":"Atlanta","employees":"9500","revenue":"3144000000","parent":null,"industry":null,"products":null,"keyPeople":null,"website":"https://www.equifax.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Equifax_HQ.jpg/330px-Equifax_HQ.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Equifax","extract":"Equifax Inc. is an American multinational consumer credit reporting agency headquartered in Atlanta, Georgia and is one of the three largest consumer credit reporting agencies, along with Experian and TransUnion. Equifax collects and aggregates information on more than 800 million individual consumers and more than 88 million businesses worldwide. In addition to credit and demographic data and services to business, Equifax sells credit monitoring and fraud prevention services directly to consumers."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ga/norcross/profile/credit-reporting-agencies/equifax-inc-0443-3443/addressId/40795"},"secComplaints":{"count":9,"sample":[{"adsh":"0000950103-25-004366","date":"2025-04-03","filer":"MONEYLION INC.  (ML, ML-WT)  (CIK 0001807846)","form":"8-K"},{"adsh":"0000950170-25-036249","date":"2025-03-10","filer":"FINANCIAL INSTITUTIONS INC  (FISI, FIISO, FIISP)  (CIK 0000862831)","form":"8-K"},{"adsh":"0001213900-24-087281","date":"2024-10-11","filer":"La Rosa Holdings Corp.  (LRHC)  (CIK 0001879403)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Equifax.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":85,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"equifax","news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Equifax","slug":"equifax","ownership":"publicly traded (ticker symbol EFX)","hq":"Georgia","majorIndustry":"miscellaneous services","specificIndustry":"credit rating services","totalPenalty":1157351883,"totalRecords":19,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":1148094470,"records":16},{"category":"employment-related offenses","penalty":6757413,"records":2},{"category":"financial offenses","penalty":2500000,"records":1}],"primaryOffenses":[{"category":"privacy violation","penalty":594700000,"records":5},{"category":"consumer protection violation","penalty":553394470,"records":11},{"category":"employment screening violation","penalty":6750000,"records":1},{"category":"accounting fraud or deficiencies","penalty":2500000,"records":1},{"category":"wage and hour violation","penalty":7413,"records":1}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T21:07:23.804Z"},"fec":{"source":"FEC API","committeeId":"C00143867","committeeName":"EQUIFAX INC. POLITICAL ACTION COMMITTEE","lean":"right","repTotal":24500,"demTotal":2000,"totalRaised":101867,"totalRaisedFmt":"$102K","lastFilingDate":"2026-05-15","cycle":2026,"fetchedAt":"2026-05-27T21:07:20.260Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-22","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=EQUIFAX&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T21:07:21.645Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T21:07:23.804Z"}
+{
+  "name": "EQUIFAX",
+  "cat": "Financial Services",
+  "init": "EQUI",
+  "overall": 42.5,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $27K PAC donations; 92% to Republican, 8% to Democratic committees.",
+    "amt": "$102K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "19 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
+    "rating": "mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "competitors": [
+    "fair-isaac"
+  ],
+  "wiki": {
+    "founded": "1899-00-00",
+    "hq": "Atlanta",
+    "employees": "9500",
+    "revenue": "3144000000",
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.equifax.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Equifax_HQ.jpg/330px-Equifax_HQ.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Equifax",
+    "extract": "Equifax Inc. is an American multinational consumer credit reporting agency headquartered in Atlanta, Georgia and is one of the three largest consumer credit reporting agencies, along with Experian and TransUnion. Equifax collects and aggregates information on more than 800 million individual consumers and more than 88 million businesses worldwide. In addition to credit and demographic data and services to business, Equifax sells credit monitoring and fraud prevention services directly to consumers."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ga/norcross/profile/credit-reporting-agencies/equifax-inc-0443-3443/addressId/40795"
+  },
+  "secComplaints": {
+    "count": 9,
+    "sample": [
+      {
+        "adsh": "0000950103-25-004366",
+        "date": "2025-04-03",
+        "filer": "MONEYLION INC.  (ML, ML-WT)  (CIK 0001807846)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000950170-25-036249",
+        "date": "2025-03-10",
+        "filer": "FINANCIAL INSTITUTIONS INC  (FISI, FIISO, FIISP)  (CIK 0000862831)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001213900-24-087281",
+        "date": "2024-10-11",
+        "filer": "La Rosa Holdings Corp.  (LRHC)  (CIK 0001879403)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Equifax.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 85,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "equifax",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Equifax",
+    "slug": "equifax",
+    "ownership": "publicly traded (ticker symbol EFX)",
+    "hq": "Georgia",
+    "majorIndustry": "miscellaneous services",
+    "specificIndustry": "credit rating services",
+    "totalPenalty": 1157351883,
+    "totalRecords": 19,
+    "offenseGroups": [
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 1148094470,
+        "records": 16
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 6757413,
+        "records": 2
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 2500000,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "privacy violation",
+        "penalty": 594700000,
+        "records": 5
+      },
+      {
+        "category": "consumer protection violation",
+        "penalty": 553394470,
+        "records": 11
+      },
+      {
+        "category": "employment screening violation",
+        "penalty": 6750000,
+        "records": 1
+      },
+      {
+        "category": "accounting fraud or deficiencies",
+        "penalty": 2500000,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 7413,
+        "records": 1
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T21:07:23.804Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00143867",
+    "committeeName": "EQUIFAX INC. POLITICAL ACTION COMMITTEE",
+    "lean": "right",
+    "repTotal": 24500,
+    "demTotal": 2000,
+    "totalRaised": 101867,
+    "totalRaisedFmt": "$102K",
+    "lastFilingDate": "2026-05-15",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-27T21:07:20.260Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-22",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=EQUIFAX&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T21:07:21.645Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T21:07:23.804Z"
+}

@@ -39,11 +39,13 @@ const SEARCH_OUT = path.join(DATA, "search-index.json");
 const META_OUT = path.join(DATA, "meta.json");
 
 function scoreGrade(n) {
+  // Build 55 (Aron's Excel-rebuild): thresholds lowered. Must stay in sync
+  // with src/App.jsx scoreGrade and scripts/rebake-scoring.mjs gradeFromOverall.
   if (n == null) return "?";
-  if (n >= 75) return "A";
-  if (n >= 62) return "B";
-  if (n >= 48) return "C";
-  if (n >= 35) return "D";
+  if (n >= 70) return "A";
+  if (n >= 60) return "B";
+  if (n >= 45) return "C";
+  if (n >= 30) return "D";
   return "F";
 }
 

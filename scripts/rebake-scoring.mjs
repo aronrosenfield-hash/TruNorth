@@ -84,67 +84,61 @@ function baseScoreCat(k, v) {
   const val = String(v || "").toLowerCase();
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
+  // Build 55 (Aron's Excel-rebuild 2026-06-09): values aligned with
+  // docs/scoring-calculator.xlsx → scoreCat sheet at user-stance "neutral".
   if (k === "political") {
-    // Non-personalized political score: ALL three states cluster near the
-    // mid-band (50) because political alignment is a preference axis, not
-    // an objective good/bad signal. With user quiz weighting applied,
-    // computeScore in App.jsx shifts these dramatically. The base scores
-    // here just keep brands from defaulting to "?" when their only signal
-    // is political. Tuned down from 75 (was triggering accidental A's
-    // for single-signal bipartisan brands per Aron's 2026-06-09 review).
-    if (["bipartisan", "mixed"].includes(val)) return 55;
+    if (["bipartisan", "mixed"].includes(val)) return 80;
     if (["left", "left-leaning", "right", "right-leaning"].includes(val)) return 50;
     return null;
   }
   if (k === "dei") {
-    // Without user preference, both pro_dei and anti_dei are political
-    // signals (not objective good/bad). Don't move the base score.
-    if (["pro_dei", "anti_dei"].includes(val)) return 50;
-    if (val === "mixed") return 55;
+    // Preference axis; non-personalized = neutral baseline.
+    if (["pro_dei", "anti_dei", "mixed"].includes(val)) return 50;
     return null;
   }
   if (k === "animals") {
-    if (val === "cruelty_free") return 80;
-    if (val === "some_testing") return 30;
-    if (val === "tests_animals") return 10;
+    if (["cruelty_free", "some_testing", "tests_animals"].includes(val)) return 50;
     return null;
   }
   if (k === "guns") {
-    // Politically charged — neutral baseline.
-    if (val === "no_guns") return 55;
-    if (["sells_guns", "makes_guns"].includes(val)) return 45;
+    if (["no_guns", "sells_guns", "makes_guns"].includes(val)) return 50;
     return null;
   }
   if (k === "labor") {
-    if (["positive", "excellent", "strong", "good"].includes(val)) return 85;
+    if (["positive", "excellent", "strong", "good"].includes(val)) return 97;
     if (val === "mixed") return 50;
-    if (["negative", "poor", "below average"].includes(val)) return 20;
-    if (val === "very poor") return 5;
+    if (["negative", "poor", "below average"].includes(val)) return 35;
+    if (val === "very poor") return 8;
     return null;
   }
   if (k === "privacy") {
-    if (val === "good") return 90;
+    if (val === "good") return 97;
     if (val === "mixed") return 50;
-    if (val === "poor") return 15;
+    if (val === "poor") return 8;
     return null;
   }
   if (k === "execPay") {
-    if (["fair", "good"].includes(val)) return 85;
-    if (val === "mixed") return 55;
-    if (val === "poor") return 15;
+    if (["fair", "good"].includes(val)) return 97;
+    if (val === "mixed") return 50;
+    if (val === "poor") return 8;
     return null;
   }
   if (k === "health") {
-    if (["good", "positive"].includes(val)) return 85;
+    if (["good", "positive"].includes(val)) return 100;
     if (val === "mixed") return 50;
-    if (["poor", "negative"].includes(val)) return 15;
+    if (["poor", "negative"].includes(val)) return 8;
     return null;
   }
-  // charity, environment, fallback
-  if (["positive", "excellent", "strong", "good"].includes(val)) return 85;
+  if (k === "environment") {
+    if (["positive", "excellent", "strong", "good"].includes(val)) return 100;
+    if (val === "mixed") return 50;
+    if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
+    return null;
+  }
+  // charity (and fallback)
+  if (["positive", "excellent", "strong", "good"].includes(val)) return 97;
   if (val === "mixed") return 50;
-  if (["negative", "poor", "below average"].includes(val)) return 20;
-  if (val === "very poor") return 5;
+  if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
   return null;
 }
 
@@ -189,11 +183,12 @@ const tjSlug = "trader-joe-s";
 const traces = { [wendySlug]: null, [tjSlug]: null };
 
 function gradeFromOverall(n) {
+  // Build 55 (Aron's Excel-rebuild): thresholds lowered.
   if (n == null) return "?";
-  if (n >= 75) return "A";
-  if (n >= 62) return "B";
-  if (n >= 48) return "C";
-  if (n >= 35) return "D";
+  if (n >= 70) return "A";
+  if (n >= 60) return "B";
+  if (n >= 45) return "C";
+  if (n >= 30) return "D";
   return "F";
 }
 

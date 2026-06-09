@@ -637,60 +637,76 @@ function getDataState(k, v) {
 }
 
 function scoreCat(k, v, profile) {
+  // Build 55 (Aron's Excel-rebuild): scores normalized to {8, 50, 97, 100}
+  // ranges. Wider separation between match and mismatch, cleaner mental model.
+  // Source of truth: docs/scoring-calculator.xlsx · scoreCat sheet.
   const val = (v || "").toLowerCase();
 
   if (k === "political") {
     const lean = profile?.lean || "neutral";
-    if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 97; if (["bipartisan","mixed"].includes(val)) return 62; if (val==="neutral") return 48; return 8; }
-    if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 97; if (["bipartisan","mixed"].includes(val)) return 62; if (val==="neutral") return 48; return 8; }
-    if (["bipartisan","mixed"].includes(val)) return 80; if (val==="neutral") return 72; return 52;
+    if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["right","right-leaning"].includes(val)) return 8; return 50; }
+    if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["left","left-leaning"].includes(val)) return 8; return 50; }
+    // neutral / no lean
+    if (["bipartisan","mixed","neutral"].includes(val)) return 80;
+    return 50;
   }
 
   if (k === "dei") {
     const deiLean = profile?.deiLean || "neutral";
-    if (deiLean === "pro")  { if (val==="pro_dei") return 97; if (val==="mixed") return 52; if (val==="neutral") return 45; return 5; }
-    if (deiLean === "anti") { if (val==="anti_dei") return 97; if (val==="mixed") return 52; if (val==="neutral") return 45; return 5; }
-    return 62;
+    if (deiLean === "pro")  { if (val==="pro_dei") return 100; if (val==="anti_dei") return 8; return 50; }
+    if (deiLean === "anti") { if (val==="anti_dei") return 100; if (val==="pro_dei") return 8; return 50; }
+    return 50;
   }
 
   if (k === "animals") {
     const pref = profile?.animalTesting || "neutral";
-    if (pref === "dealbreaker") { if (val==="cruelty_free") return 97; if (val==="some_testing") return 15; if (val==="tests_animals") return 0; return 50; }
-    if (pref === "prefer_not")  { if (val==="cruelty_free") return 92; if (val==="some_testing") return 52; if (val==="tests_animals") return 20; return 50; }
-    return 62;
+    if (pref === "dealbreaker") { if (val==="cruelty_free") return 100; if (val==="some_testing") return 15; if (val==="tests_animals") return 0; return 50; }
+    if (pref === "prefer_not")  { if (val==="cruelty_free") return 97; if (val==="some_testing") return 50; if (val==="tests_animals") return 20; return 50; }
+    return 50;
   }
 
   if (k === "guns") {
     const pref = profile?.guns || "neutral";
-    if (pref === "avoid")   { if (val==="no_guns") return 97; if (val==="sells_guns") return 8; if (val==="makes_guns") return 3; return 45; }
-    if (pref === "support") { if (["sells_guns","makes_guns"].includes(val)) return 97; if (val==="no_guns") return 35; return 58; }
-    return 62;
+    if (pref === "avoid")   { if (val==="no_guns") return 100; if (["sells_guns","makes_guns"].includes(val)) return 8; return 50; }
+    if (pref === "support") { if (val==="no_guns") return 35; if (["sells_guns","makes_guns"].includes(val)) return 100; return 50; }
+    return 50;
   }
 
   if (k === "labor") {
     const union = profile?.unionSupport || "neutral";
-    const base = ["positive","excellent","strong","good"].includes(val) ? 88
-      : val==="mixed" ? 55 : val==="neutral" ? 50
-      : ["negative","poor","below average"].includes(val) ? 15 : val==="very poor" ? 5 : 50;
-    // Union preference modifies labor score
-    if (union === "pro")  { if (["positive","excellent","strong","good"].includes(val)) return Math.min(base + 8, 97); if (["negative","poor"].includes(val)) return Math.max(base - 15, 3); }
-    if (union === "anti") { if (["positive","excellent","strong","good"].includes(val)) return Math.max(base - 15, 30); if (["negative","poor"].includes(val)) return Math.min(base + 20, 80); if (val==="mixed") return 65; }
-    return base;
+    if (union === "pro")  { if (["positive","excellent","strong","good"].includes(val)) return 97; if (val==="mixed") return 50; if (["negative","poor","below average","very poor"].includes(val)) return 8; return 50; }
+    if (union === "anti") { if (["positive","excellent","strong","good"].includes(val)) return 73; if (val==="mixed") return 65; if (["negative","poor","below average"].includes(val)) return 35; if (val==="very poor") return 8; return 50; }
+    // neutral
+    if (["positive","excellent","strong","good"].includes(val)) return 97;
+    if (val==="mixed") return 50;
+    if (val==="very poor") return 8;
+    if (["negative","poor","below average"].includes(val)) return 35;
+    return 50;
   }
 
   if (k === "privacy") {
-    if (val==="good") return 92; if (val==="mixed") return 52; if (val==="poor") return 10; return 50;
+    if (val==="good") return 97; if (val==="mixed") return 50; if (val==="poor") return 8; return 50;
   }
 
   if (k === "execPay") {
-    if (["fair","good"].includes(val)) return 88; if (val==="mixed") return 58; if (val==="poor") return 15; return 50;
+    if (["fair","good"].includes(val)) return 97; if (val==="mixed") return 50; if (val==="poor") return 8; return 50;
   }
 
-  // charity, environment
-  if (["positive","excellent","strong","good"].includes(val)) return 88;
-  if (val==="mixed") return 52; if (val==="neutral") return 48;
-  if (["negative","poor","below average"].includes(val)) return 15;
-  if (val==="very poor") return 3;
+  if (k === "health") {
+    if (["good","positive"].includes(val)) return 100; if (val==="mixed") return 50; if (["poor","negative"].includes(val)) return 8; return 50;
+  }
+
+  if (k === "environment") {
+    if (["positive","excellent","strong","good"].includes(val)) return 100;
+    if (val==="mixed" || val==="neutral") return 50;
+    if (["negative","poor","below average","very poor"].includes(val)) return 8;
+    return 50;
+  }
+
+  // charity (and fallback)
+  if (["positive","excellent","strong","good"].includes(val)) return 97;
+  if (val==="mixed" || val==="neutral") return 50;
+  if (["negative","poor","below average","very poor"].includes(val)) return 8;
   return 50;
 }
 
@@ -713,21 +729,26 @@ function computeScore(co, profile) {
   // they picked. Previously only guns and union got boosts which created an
   // implicit bias toward letting labor + environment dominate everyone else.
   // Now political and DEI also boost when the user has a clear stance.
-  const politicalBoost = profile.lean         && profile.lean         !== "neutral" ? 2 : 1;
-  const deiBoost       = profile.deiLean      && profile.deiLean      !== "neutral" ? 2 : 1;
-  const animalBoost    = profile.animalTesting && profile.animalTesting !== "neutral" ? 2 : 1;
-  const gunBoost       = profile.guns         && profile.guns         !== "neutral" ? 4 : 1;
-  const unionBoost     = profile.unionSupport && profile.unionSupport !== "neutral" ? 2 : 1;
+  // Build 55 (Aron's Excel-rebuild): all boosts normalized to 1.5×, default
+  // weights flattened to 1.0/1.2. Less variance between categories →
+  // grade is less dominated by any single high-weight axis.
+  // Source: docs/scoring-calculator.xlsx · Weights sheet.
+  const politicalBoost = profile.lean         && profile.lean         !== "neutral" ? 1.5 : 1;
+  const deiBoost       = profile.deiLean      && profile.deiLean      !== "neutral" ? 1.5 : 1;
+  const animalBoost    = profile.animalTesting && profile.animalTesting !== "neutral" ? 1.5 : 1;
+  const gunBoost       = profile.guns         && profile.guns         !== "neutral" ? 1.5 : 1;
+  const unionBoost     = profile.unionSupport && profile.unionSupport !== "neutral" ? 1.5 : 1;
   const baseWeights = {
-    political:    (profile.weights?.political    || 3) * politicalBoost,
-    charity:      profile.weights?.charity      || 2,
-    environment:  profile.weights?.environment  || 3,
-    labor:        (profile.weights?.labor       || 3) * unionBoost,
-    dei:          (profile.weights?.dei          || 3) * deiBoost,
-    animals:      (profile.weights?.animals      || 2) * animalBoost,
-    guns:         (profile.weights?.guns        || 2) * gunBoost,
-    privacy:      profile.weights?.privacy      || 2,
-    execPay:      profile.weights?.execPay      || 2,
+    political:    (profile.weights?.political    || 1.2) * politicalBoost,
+    charity:      profile.weights?.charity      || 1.0,
+    environment:  (profile.weights?.environment  || 1.2),
+    labor:        (profile.weights?.labor       || 1.2) * unionBoost,
+    dei:          (profile.weights?.dei          || 1.2) * deiBoost,
+    animals:      (profile.weights?.animals      || 1.0) * animalBoost,
+    guns:         (profile.weights?.guns        || 1.0) * gunBoost,
+    privacy:      profile.weights?.privacy      || 1.0,
+    execPay:      profile.weights?.execPay      || 1.0,
+    health:       profile.weights?.health       || 1.0,
   };
   // Phase 5.ac — "neutral" enum means NO DATA SIGNAL for that category and is
   // ALWAYS excluded from the weighted score. (Previously we kept it when the
@@ -787,25 +808,29 @@ function computeScore(co, profile) {
   // If nothing scored, fall back to the overall (un-personalized) score so the
   // app doesn't show a misleading "50" for companies with no data at all.
   const ws = weightUsed > 0 ? weightedSum / weightUsed : (co.overall || 50);
+  // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
+  // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
+  // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.
   const pen = (profile.dealBreakers || []).reduce((p, db) => {
-    // Standard category dealbreakers
+    // Soft category dealbreakers (-10): user said "this category matters enough
+    // that I want a penalty if it's bad" — small, additive.
     if (["environment","labor","privacy","execPay","animals","guns","charity"].includes(db)) {
       const v = (co.sc[db] || "").toLowerCase();
       const bad = ["negative","poor","very poor","below average","tests_animals","sells_guns","makes_guns"];
-      return bad.includes(v) ? p + 20 : p;
+      return bad.includes(v) ? p + 10 : p;
     }
-    // Extended dealbreakers — penalize if company has known issues
-    if (db === "forcedLabor"    && (co.sc.labor||"").toLowerCase() === "poor") return p + 25;
-    if (db === "taxAvoidance"   && (co.sc.execPay||"").toLowerCase() === "poor") return p + 15;
-    if (db === "predatoryPrice" && (co.sc.labor||"").toLowerCase() === "poor") return p + 15;
+    // Hard dealbreakers (-20): structural — about the company, not a single category
+    if (db === "forcedLabor"    && (co.sc.labor||"").toLowerCase() === "poor") return p + 20;
+    if (db === "taxAvoidance"   && (co.sc.execPay||"").toLowerCase() === "poor") return p + 20;
+    if (db === "predatoryPrice" && (co.sc.labor||"").toLowerCase() === "poor") return p + 20;
     if (db === "darkPatterns"   && (co.sc.privacy||"").toLowerCase() === "poor") return p + 20;
-    if (db === "foreignOwn"     && co.foreignOwned) return p + 30;
-    if (db === "monopoly"       && co.antitrust) return p + 25;
-    if (db === "childLabor"     && co.childLabor) return p + 30;
+    if (db === "foreignOwn"     && co.foreignOwned) return p + 20;
+    if (db === "monopoly"       && co.antitrust) return p + 20;
+    if (db === "childLabor"     && co.childLabor) return p + 20;
     return p;
   }, 0);
-  // Animal testing dealbreaker
-  if (profile.animalTesting === "dealbreaker" && (co.sc.animals === "tests_animals")) return Math.max(0, Math.min(ws - 40, 30));
+  // Animal-testing dealbreaker special-case: penalty -20 (was -40)
+  if (profile.animalTesting === "dealbreaker" && (co.sc.animals === "tests_animals")) return Math.max(0, Math.min(ws - 20, 30));
   return Math.max(0, Math.min(100, Math.round(ws - pen)));
 }
 
@@ -910,10 +935,13 @@ function getDisplay(k, val, profile) {
 
 // Score text grade
 function scoreGrade(n) {
-  if (n >= 75) return "A";
-  if (n >= 62) return "B";
-  if (n >= 48) return "C";
-  if (n >= 35) return "D";
+  // Build 55 (Aron's Excel-rebuild): thresholds lowered. A is achievable for
+  // more brands without becoming meaningless; F is reserved for truly bad.
+  // Source: docs/scoring-calculator.xlsx · Grade Thresholds sheet.
+  if (n >= 70) return "A";
+  if (n >= 60) return "B";
+  if (n >= 45) return "C";
+  if (n >= 30) return "D";
   return "F";
 }
 
