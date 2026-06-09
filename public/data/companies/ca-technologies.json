@@ -7,13 +7,14 @@
   "sc": {
     "political": "left",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "mixed",
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $819K in executive political donations; partisan lean Democratic +60 across 24 executive donors.",
@@ -39,10 +40,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Sustainability\" section: In 2010, CA was listed among the greenest companies by Newsweek's Green rankings. CA has been named a component of the Dow Jones Sustainability Indexes (DJSI) for seven years, from 2012 to 2018. In…",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "wikipedia-controversies"
     ]
   },
   "dei": {
@@ -188,5 +190,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:16:17.261Z",
-  "realCats": 2
+  "realCats": 2,
+  "governance": {
+    "s": "Wikidata: owned by Nasdaq-100; HQ Islandia. (Wikidata Q600624)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

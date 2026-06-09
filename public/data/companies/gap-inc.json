@@ -13,9 +13,10 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "mixed",
     "execPay": "na",
-    "health": "mixed"
+    "health": "mixed",
+    "governance": "mixed"
   },
   "political": {
     "s": "FEC: $22K PAC donations; 36% to Republican, 64% to Democratic committees.",
@@ -84,10 +85,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikidata records a notable event: Gap Inc. 2007 data breach. (Wikidata Q420822)",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikidata"
     ]
   },
   "execPay": {
@@ -341,5 +343,11 @@
   "health": {
     "s": "11 CPSC recalls (1 in past 24 months); latest hazard: the detachable tissue box toy can come apart."
   },
-  "realCats": 5
+  "realCats": 5,
+  "governance": {
+    "s": "Wikidata records a notable event: Public Eye Jury Award. (Wikidata Q420822)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

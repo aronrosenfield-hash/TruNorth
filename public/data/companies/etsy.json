@@ -13,8 +13,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $121K in executive political donations; partisan lean split across 4 executive donors.",
@@ -73,10 +74,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Privacy\" section: In 2011, in an effort to add social networking features to Etsy, the company implemented features that allowed users to search other users' buying histories and to trace their purchasing…",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "execPay": {
@@ -164,5 +166,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5
+  "realCats": 5,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ New York. (Wikidata Q1353939)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

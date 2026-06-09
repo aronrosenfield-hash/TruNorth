@@ -12,8 +12,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $819K in executive political donations; partisan lean Republican +23 across 22 executive donors.",
@@ -64,9 +65,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikidata records a notable event: Fidelity National Information Services 2007 data breach. (Wikidata Q1411295)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikidata"
     ]
   },
   "execPay": {
@@ -232,5 +234,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T21:18:23.683Z",
-  "realCats": 2
+  "realCats": 2,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Jacksonville. (Wikidata Q1411295)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

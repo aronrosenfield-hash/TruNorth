@@ -7,13 +7,14 @@
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "mixed",
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "No public record found.",
@@ -37,9 +38,10 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Sustainability\" section: In 2024, Albert Heijn reported its methane emissions in its 2024 sustainability report, becoming the world's first retailer to publicly disclose its methane emissions. The company committed to a 45%…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "dei": {
@@ -131,5 +133,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 0
+  "realCats": 0,
+  "governance": {
+    "s": "Wikidata: owned by Ahold Delhaize; HQ Zaandam. (Wikidata Q1653985)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

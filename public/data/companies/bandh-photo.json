@@ -7,14 +7,15 @@
   "ticker": null,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "poor"
   },
   "political": {
     "s": "No public record found.",
@@ -25,11 +26,12 @@
     ]
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Philanthropy\" section: In 2013, the B&H Wilderness Photo Competition awarded two prizes, one based on a professionally judged vote and one from a popular choice vote. The competition included categories such as land…",
     "amt": "Not disclosed",
     "focus": "Photography education, arts/culture, healthcare recognition",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "environment": {
@@ -136,5 +138,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 0
+  "realCats": 0,
+  "governance": {
+    "s": "Wikipedia \"Controversies\" section: In October 2007, it was reported that B&H Photo agreed to a US$4.3 million settlement in response to claims of discrimination against Hispanic workers. In November 2009, B&H Photo faced a lawsuit,…",
+    "sources": [
+      "wikipedia-controversies"
+    ]
+  }
 }

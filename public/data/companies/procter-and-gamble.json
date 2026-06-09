@@ -11,11 +11,12 @@
     "environment": "neutral",
     "labor": "poor",
     "dei": "pro_dei",
-    "animals": "neutral",
+    "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
     "execPay": "na",
-    "health": "mixed"
+    "health": "mixed",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $27K PAC donations; 36% to Republican, 64% to Democratic committees.",
@@ -75,10 +76,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Animal testing\" section: Procter & Gamble has received criticism from animal advocacy group PETA for the practice of testing on animals. On June 30, 1999, Procter & Gamble announced that it would limit its animal testing…",
     "verdict": "Some Testing",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "guns": {
@@ -370,5 +372,11 @@
   "health": {
     "s": "4 CPSC recalls (1 in past 24 months); latest hazard: the handheld hair dryers lack an immersion protection device."
   },
-  "realCats": 7
+  "realCats": 7,
+  "governance": {
+    "s": "Wikidata: owned by The Vanguard Group; HQ Ohio. (Wikidata Q212405)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

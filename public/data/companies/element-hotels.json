@@ -8,12 +8,13 @@
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
-    "execPay": "na"
+    "privacy": "negative",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "No public record found.",
@@ -22,9 +23,10 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Wikidata records a notable event: 2018 Marriott Hotels strike. (Wikidata Q1141173)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikidata"
     ]
   },
   "dataLastUpdated": "2026-05-31",
@@ -57,9 +59,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikidata significant events: experienced data breach — Marriott International 2018 privacy data breach; Big Brother Award (privacy violation) — BigBrotherAwards. (Wikidata Q1141173)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikidata"
     ]
   },
   "execPay": {
@@ -105,5 +108,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 0
+  "realCats": 0,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Bethesda. (Wikidata Q1141173)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

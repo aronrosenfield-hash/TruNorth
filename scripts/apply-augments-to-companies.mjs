@@ -891,6 +891,54 @@ const WRITERS = [
       }];
     },
   },
+  // ─── Wikidata mass-mining (P793 events, P166 awards, P463 coalitions) ─
+  // Lowest-priority writers: dedicated regulators / certifiers above
+  // produce stronger signals; Wikidata fills in long-tail brands that no
+  // curated source covers. Per the prompt's hard rule, we mark "negative"
+  // only when the merger flagged severity="negative" (which requires 2+
+  // significant_events in the same category).
+  {
+    name: "wikidata",
+    write: (e) => {
+      if (!e?.narratives) return [];
+      const out = [];
+      for (const [cat, n] of Object.entries(e.narratives)) {
+        if (!n?.text) continue;
+        out.push({
+          category: cat,
+          narrative: `${clip(n.text, 200)} (Wikidata Q${e.qid?.replace(/^Q/, "")})`,
+          sc: n.sc,
+          severity: n.sc === "positive" ? "positive"
+                  : n.sc === "negative" || n.sc === "poor" ? "negative"
+                  : "mixed",
+        });
+      }
+      return out;
+    },
+  },
+  // ─── Wikipedia controversies-section scraper ─────────────────────────
+  // Editorial source; treat conservatively. The merger already enforces
+  // "≥3 external sources + 2 hard keywords" before marking severity
+  // negative, so we trust the merger's `sc` here.
+  {
+    name: "wikipedia-controversies",
+    write: (e) => {
+      if (!e?.narratives) return [];
+      const out = [];
+      for (const [cat, n] of Object.entries(e.narratives)) {
+        if (!n?.text) continue;
+        out.push({
+          category: cat,
+          narrative: clip(n.text, 240),
+          sc: n.sc,
+          severity: n.sc === "positive" ? "positive"
+                  : n.sc === "poor" ? "negative"
+                  : "mixed",
+        });
+      }
+      return out;
+    },
+  },
 ];
 
 function clip(s, n) {

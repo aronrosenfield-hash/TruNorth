@@ -13,8 +13,9 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $846K in executive political donations; partisan lean Democratic +49 across 26 executive donors.",
@@ -78,10 +79,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Data breach\" section: In August 2021, Accenture confirmed a data breach resulting from a ransomware attack, which reportedly led to the theft of approximately six terabytes of data.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "execPay": {
@@ -278,5 +280,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5
+  "realCats": 5,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Dublin. (Wikidata Q338825)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

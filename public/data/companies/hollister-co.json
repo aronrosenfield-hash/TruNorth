@@ -12,8 +12,9 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "FEC: $45K PAC donations; 72% to Republican, 28% to Democratic committees.",
@@ -63,9 +64,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Privacy concerns\" section: TechCrunch reported that the Hollister mobile app in the iOS App Store was using session-replay functionality to record users' activities and send the data to Israeli firm Glassbox without the…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "execPay": {
@@ -191,5 +193,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T00:08:53.604Z",
-  "realCats": 2
+  "realCats": 2,
+  "governance": {
+    "s": "Wikidata: owned by Abercrombie & Fitch; HQ New Albany. (Wikidata Q1257477)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

@@ -6,14 +6,15 @@
   "isPublic": false,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "governance": "neutral"
   },
   "political": {
     "s": "No public record found.",
@@ -29,9 +30,10 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Philanthropy\" section: The Chicken Salad Chick Foundation was founded by the company in August 2014 and is a partner with the American Cancer Society. The foundation also partners with food banks in communities with…",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "wikipedia-controversies"
     ]
   },
   "environment": {
@@ -119,5 +121,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 0
+  "realCats": 0,
+  "governance": {
+    "s": "Wikidata: owned by Brentwood Associates; HQ Atlanta. (Wikidata Q19720749)",
+    "sources": [
+      "wikidata"
+    ]
+  }
 }

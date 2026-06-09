@@ -13,9 +13,10 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
-    "health": "mixed"
+    "health": "mixed",
+    "governance": "mixed"
   },
   "political": {
     "s": "FEC: $17K PAC donations; 41% to Republican, 59% to Democratic committees.",
@@ -77,9 +78,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Wikipedia \"Data breach\" section: On December 20, 2019, Wawa's CEO Chris Gheysens announced that the company had found malicious software on its payment processing servers that affected every location across the country, according…",
     "grade": "Poor",
-    "sources": []
+    "sources": [
+      "wikipedia-controversies"
+    ]
   },
   "execPay": {
     "s": "No public record found.",
@@ -394,5 +397,11 @@
   "health": {
     "s": "1 CPSC recall (1 in past 24 months); latest hazard: the metal straw inside the tumbler can cut your mouth and/or fingers."
   },
-  "realCats": 4
+  "realCats": 4,
+  "governance": {
+    "s": "Wikipedia \"Controversies\" section: Wawa's expansion efforts have sometimes met with controversy from local communities. In Coral Gables, Florida, land which was planned to be used for affordable housing was instead approved as a new…",
+    "sources": [
+      "wikipedia-controversies"
+    ]
+  }
 }
