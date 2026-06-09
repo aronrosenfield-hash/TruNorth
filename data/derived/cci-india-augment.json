@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-06-09T18:42:24.456Z",
+  "source": "cci-india",
+  "source_url": "https://www.cci.gov.in/antitrust/orders",
+  "input": "data/raw/cci-india/2026-06-09.json",
+  "company_count": 4,
+  "orphan_count": 6,
+  "companies": {
+    "google-alphabet": {
+      "normalized_name": "google",
+      "raw_name": "Google LLC",
+      "routed_via": "parent",
+      "total_penalty_inr": 22740000000,
+      "action_count": 2,
+      "latest_action": "2022-10-25",
+      "action_types": [
+        "Abuse of dominance - Android",
+        "Abuse of dominance - Play Store"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Abuse of dominance - Play Store",
+          "date": "2022-10-25",
+          "penalty_inr": 9360000000,
+          "url": "https://www.cci.gov.in/antitrust/orders/details/1208/0"
+        },
+        {
+          "action_type": "Abuse of dominance - Android",
+          "date": "2022-10-20",
+          "penalty_inr": 13380000000,
+          "url": "https://www.cci.gov.in/antitrust/orders/details/1207/0"
+        }
+      ],
+      "source": "cci-india",
+      "source_url": "https://www.cci.gov.in/antitrust/orders"
+    },
+    "amazon": {
+      "normalized_name": "amazon com investment",
+      "raw_name": "Amazon.com NV Investment Holdings LLC",
+      "routed_via": "seed",
+      "total_penalty_inr": 2020000000,
+      "action_count": 1,
+      "latest_action": "2021-12-17",
+      "action_types": [
+        "Failure to disclose - Future Group"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Failure to disclose - Future Group",
+          "date": "2021-12-17",
+          "penalty_inr": 2020000000,
+          "url": "https://www.cci.gov.in/combination/orders/details/925/0"
+        }
+      ],
+      "source": "cci-india",
+      "source_url": "https://www.cci.gov.in/antitrust/orders"
+    },
+    "hyundai-usa": {
+      "normalized_name": "hyundai motor india",
+      "raw_name": "Hyundai Motor India Ltd",
+      "routed_via": "seed",
+      "total_penalty_inr": 870000000,
+      "action_count": 1,
+      "latest_action": "2017-06-14",
+      "action_types": [
+        "Resale price maintenance"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Resale price maintenance",
+          "date": "2017-06-14",
+          "penalty_inr": 870000000,
+          "url": "https://www.cci.gov.in/antitrust/orders/details/836/0"
+        }
+      ],
+      "source": "cci-india",
+      "source_url": "https://www.cci.gov.in/antitrust/orders"
+    },
+    "meta-platforms": {
+      "normalized_name": "whatsapp",
+      "raw_name": "Whatsapp Inc.",
+      "routed_via": "parent",
+      "total_penalty_inr": 0,
+      "action_count": 1,
+      "latest_action": "2024-11-18",
+      "action_types": [
+        "Privacy policy - data sharing"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Privacy policy - data sharing",
+          "date": "2024-11-18",
+          "penalty_inr": 0,
+          "url": "https://www.cci.gov.in/antitrust/orders/details/1280/0"
+        }
+      ],
+      "source": "cci-india",
+      "source_url": "https://www.cci.gov.in/antitrust/orders"
+    }
+  }
+}

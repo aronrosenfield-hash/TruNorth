@@ -836,6 +836,173 @@ const WRITERS = [
       }];
     },
   },
+  // ─── International regulators (round 3) ──────────────────────────────
+  // All antitrust authorities map to "political" (regulatory misconduct
+  // surface). Financial-conduct authorities map to "execPay" (financial-
+  // services dishonesty correlates with exec-pay / governance). Workplace
+  // safety prosecutions map to "labor". Conservative severity: a single
+  // enforcement action stays "mixed"; multiple or >£10M / A$10M / equivalent
+  // pushes to "poor". Greenwashing actions tag "environment" as "poor".
+  {
+    name: "uk-cma",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_penalty_gbp || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []).slice(0, 3).join(", ");
+      const amt = total >= 1e8 ? `£${(total/1e6).toFixed(0)}M`
+        : total >= 1e6 ? `£${(total/1e6).toFixed(1)}M`
+        : total > 0 ? `£${Math.round(total/1e3)}K`
+        : "";
+      const lead = e.action_count === 1
+        ? `UK CMA: 1 enforcement action (${types || "case"})${latest ? ` (${latest})` : ""}.`
+        : `UK CMA: ${e.action_count} actions (${types || "various"})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ~${amt} in penalties.` : "";
+      const sc = total >= 1e7 || e.action_count >= 3 ? "poor" : "mixed";
+      return [{ category: "political", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
+  {
+    name: "uk-fca",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_fines_gbp || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []).slice(0, 2).join(", ");
+      const amt = total >= 1e8 ? `£${(total/1e6).toFixed(0)}M`
+        : total >= 1e6 ? `£${(total/1e6).toFixed(1)}M`
+        : total > 0 ? `£${Math.round(total/1e3)}K`
+        : "";
+      const lead = e.action_count === 1
+        ? `UK FCA fine for ${types || "regulatory failures"}${latest ? ` (${latest})` : ""}.`
+        : `${e.action_count} UK FCA enforcement actions (${types || "regulatory failures"})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in fines.` : "";
+      const sc = total >= 1e8 || e.action_count >= 2 ? "poor" : "mixed";
+      return [{ category: "execPay", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
+  {
+    name: "uk-hse",
+    write: (e) => {
+      if (!e.prosecution_count) return [];
+      const total = e.total_fines_gbp || 0;
+      const latest = e.latest_action || "";
+      const offence = (e.offences || [])[0] || "workplace safety failures";
+      const amt = total >= 1e6 ? `£${(total/1e6).toFixed(1)}M`
+        : total > 0 ? `£${Math.round(total/1e3)}K`
+        : "";
+      const lead = e.prosecution_count === 1
+        ? `UK HSE prosecution: ${offence}${latest ? ` (${latest})` : ""}.`
+        : `${e.prosecution_count} UK HSE prosecutions (${offence}+)${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in fines.` : "";
+      const sc = total >= 1e6 || e.prosecution_count >= 2 ? "poor" : "mixed";
+      return [{ category: "labor", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
+  {
+    name: "asic",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_penalty_aud || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []);
+      const isGreenwashing = types.some(t => /greenwash/i.test(t));
+      const summary = types.slice(0, 2).join(", ") || "regulatory failures";
+      const amt = total >= 1e9 ? `A$${(total/1e9).toFixed(2)}B`
+        : total >= 1e6 ? `A$${(total/1e6).toFixed(1)}M`
+        : total > 0 ? `A$${Math.round(total/1e3)}K`
+        : "";
+      const lead = e.action_count === 1
+        ? `ASIC enforcement: ${summary}${latest ? ` (${latest})` : ""}.`
+        : `${e.action_count} ASIC enforcement actions (${summary})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in penalties.` : "";
+      const sc = total >= 1e8 || e.action_count >= 2 ? "poor" : "mixed";
+      const out = [{ category: "execPay", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+      if (isGreenwashing) {
+        out.push({
+          category: "environment",
+          narrative: `ASIC greenwashing finding${latest ? ` (${latest})` : ""}. ${amt ? `${amt} in penalties.` : ""}`.trim(),
+          sc: "poor",
+          severity: "negative",
+        });
+      }
+      return out;
+    },
+  },
+  {
+    name: "jftc",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_penalty_jpy || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []).slice(0, 2).join(", ");
+      const amt = total >= 1e10 ? `¥${(total/1e9).toFixed(1)}B`
+        : total >= 1e8 ? `¥${(total/1e8).toFixed(1)}00M`
+        : total > 0 ? `¥${Math.round(total/1e6)}M`
+        : "";
+      const lead = e.action_count === 1
+        ? `JFTC (Japan) action: ${types || "case"}${latest ? ` (${latest})` : ""}.`
+        : `${e.action_count} JFTC actions (${types || "various"})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in surcharges.` : "";
+      const sc = total >= 1e9 || e.action_count >= 3 ? "poor" : "mixed";
+      return [{ category: "political", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
+  {
+    name: "cci-india",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_penalty_inr || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []).slice(0, 2).join(", ");
+      const amt = total >= 1e10 ? `₹${(total/1e9).toFixed(1)}B`
+        : total >= 1e8 ? `₹${(total/1e8).toFixed(1)}00M`
+        : total > 0 ? `₹${Math.round(total/1e6)}M`
+        : "";
+      const lead = e.action_count === 1
+        ? `CCI India action: ${types || "antitrust case"}${latest ? ` (${latest})` : ""}.`
+        : `${e.action_count} CCI India actions (${types || "various"})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in penalties.` : "";
+      const sc = total >= 1e9 || e.action_count >= 2 ? "poor" : "mixed";
+      return [{ category: "political", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
+  {
+    name: "cccs",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_penalty_sgd || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []).slice(0, 2).join(", ");
+      const amt = total >= 1e6 ? `S$${(total/1e6).toFixed(1)}M`
+        : total > 0 ? `S$${Math.round(total/1e3)}K`
+        : "";
+      const lead = e.action_count === 1
+        ? `Singapore CCCS action: ${types || "case"}${latest ? ` (${latest})` : ""}.`
+        : `${e.action_count} CCCS actions (${types || "various"})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in penalties.` : "";
+      const sc = total >= 5e6 || e.action_count >= 2 ? "poor" : "mixed";
+      return [{ category: "political", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
+  {
+    name: "nz-comcom",
+    write: (e) => {
+      if (!e.action_count) return [];
+      const total = e.total_penalty_nzd || 0;
+      const latest = e.latest_action || "";
+      const types = (e.action_types || []).slice(0, 2).join(", ");
+      const amt = total >= 1e6 ? `NZ$${(total/1e6).toFixed(1)}M`
+        : total > 0 ? `NZ$${Math.round(total/1e3)}K`
+        : "";
+      const lead = e.action_count === 1
+        ? `NZ Commerce Commission action: ${types || "case"}${latest ? ` (${latest})` : ""}.`
+        : `${e.action_count} NZ ComCom actions (${types || "various"})${latest ? `, most recent ${latest}` : ""}.`;
+      const tail = amt ? ` ${amt} in penalties.` : "";
+      const sc = total >= 1e7 || e.action_count >= 2 ? "poor" : "mixed";
+      return [{ category: "political", narrative: `${lead}${tail}`.trim(), sc, severity: "negative" }];
+    },
+  },
 ];
 
 function clip(s, n) {

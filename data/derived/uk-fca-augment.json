@@ -1,41 +1,178 @@
 {
-  "generated_at": "2026-06-09T16:30:12.387Z",
+  "generated_at": "2026-06-09T18:42:24.301Z",
   "source": "uk-fca",
   "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement",
-  "company_count": 4,
-  "skipped_unresolved": 0,
+  "input": "data/raw/uk-fca/2026-06-09.json",
+  "company_count": 8,
+  "orphan_count": 2,
   "companies": {
-    "barclays": {
+    "barclays-bank": {
+      "normalized_name": "barclays bank",
       "raw_name": "Barclays Bank plc",
+      "routed_via": "direct",
       "total_fines_gbp": 40000000,
-      "case_count": 1,
-      "latest_year": 2022,
-      "summary": "£40M FCA fine (Oct 2022) over 2008 Qatar capital-raising disclosure failures.",
-      "url": "https://www.fca.org.uk/news/press-releases/fca-fines-barclays-bank-plc-40m"
-    },
-    "santander-uk": {
-      "raw_name": "Santander UK Plc",
-      "total_fines_gbp": 107793300,
-      "case_count": 1,
-      "latest_year": 2022,
-      "summary": "£107.8M FCA fine (Dec 2022) for repeated AML failings affecting 560,000 business customers.",
-      "url": "https://www.fca.org.uk/news/press-releases/santander-uk-fined-107-million-repeated-anti-money-laundering-failings"
-    },
-    "morgan-stanley": {
-      "raw_name": "Morgan Stanley & Co. International plc",
-      "total_fines_gbp": 5410000,
-      "case_count": 1,
-      "latest_year": 2024,
-      "summary": "£5.41M FCA fine (Aug 2024) for failure to record WhatsApp business conversations on the energy desk.",
-      "url": "https://www.fca.org.uk/news/press-releases/morgan-stanley-fined-541-million-failing-record-monitor-electronic-communications"
+      "action_count": 1,
+      "latest_action": "2022-11-22",
+      "action_types": [
+        "AML/Disclosure failures"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "AML/Disclosure failures",
+          "date": "2022-11-22",
+          "penalty_gbp": 40000000,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-barclays-bank-plc-ps40-million-failure-disclose-arrangements-with-qatari-entities"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
     },
     "citigroup": {
+      "normalized_name": "citigroup global markets",
       "raw_name": "Citigroup Global Markets Limited",
-      "total_fines_gbp": 27766200,
-      "case_count": 1,
-      "latest_year": 2024,
-      "summary": "£27.77M FCA fine (May 2024) for trading-system control failures that allowed a $1.4B fat-finger error to reach the market.",
-      "url": "https://www.fca.org.uk/news/press-releases/fca-pra-fine-citigroup-global-markets-limited-trading-control-failings"
+      "routed_via": "seed",
+      "total_fines_gbp": 12553800,
+      "action_count": 1,
+      "latest_action": "2024-05-22",
+      "action_types": [
+        "Market abuse controls"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Market abuse controls",
+          "date": "2024-05-22",
+          "penalty_gbp": 12553800,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-citigroup-global-markets-limited-failures-trade-monitoring"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "jpmorgan-chase": {
+      "normalized_name": "jpmorgan chase bank n a",
+      "raw_name": "JPMorgan Chase Bank N.A.",
+      "routed_via": "seed",
+      "total_fines_gbp": 32400000,
+      "action_count": 1,
+      "latest_action": "2013-09-19",
+      "action_types": [
+        "Market abuse controls"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Market abuse controls",
+          "date": "2013-09-19",
+          "penalty_gbp": 32400000,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-jpmorgan-chase-bank-na-322-million-serious-failings-relating-chief-investment-office"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "goldman-sachs": {
+      "normalized_name": "goldman sachs international",
+      "raw_name": "Goldman Sachs International",
+      "routed_via": "direct",
+      "total_fines_gbp": 96644400,
+      "action_count": 1,
+      "latest_action": "2020-10-22",
+      "action_types": [
+        "1MDB-related controls"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "1MDB-related controls",
+          "date": "2020-10-22",
+          "penalty_gbp": 96644400,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-goldman-sachs-international-96-million-risk-management-failures"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "tesco": {
+      "normalized_name": "tesco personal finance",
+      "raw_name": "Tesco Personal Finance plc",
+      "routed_via": "seed",
+      "total_fines_gbp": 16400000,
+      "action_count": 1,
+      "latest_action": "2018-10-01",
+      "action_types": [
+        "Cyber resilience"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Cyber resilience",
+          "date": "2018-10-01",
+          "penalty_gbp": 16400000,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-tesco-bank-16-4m-failures-2016-cyber-attack"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "santander-uk": {
+      "normalized_name": "santander uk",
+      "raw_name": "Santander UK plc",
+      "routed_via": "direct",
+      "total_fines_gbp": 107793300,
+      "action_count": 1,
+      "latest_action": "2022-12-09",
+      "action_types": [
+        "AML"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "AML",
+          "date": "2022-12-09",
+          "penalty_gbp": 107793300,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-santander-uk-107793300-repeated-anti-money-laundering-failures"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "natwest-group": {
+      "normalized_name": "natwest",
+      "raw_name": "NatWest Group plc",
+      "routed_via": "seed",
+      "total_fines_gbp": 264772619,
+      "action_count": 1,
+      "latest_action": "2021-12-13",
+      "action_types": [
+        "AML"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "AML",
+          "date": "2021-12-13",
+          "penalty_gbp": 264772619,
+          "url": "https://www.fca.org.uk/news/press-releases/natwest-fined-264-million-anti-money-laundering-failures"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "deutsche-bank-aktiengesellschaft": {
+      "normalized_name": "deutsche bank",
+      "raw_name": "Deutsche Bank AG",
+      "routed_via": "seed",
+      "total_fines_gbp": 163076224,
+      "action_count": 1,
+      "latest_action": "2017-01-31",
+      "action_types": [
+        "Anti-money-laundering"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Anti-money-laundering",
+          "date": "2017-01-31",
+          "penalty_gbp": 163076224,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-deutsche-bank-163-million-anti-money-laundering-controls-failure"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
     }
   }
 }
