@@ -304,6 +304,74 @@ const WRITERS = [
       }];
     },
   },
+  // ─── USTR Notorious Markets (counterfeit/piracy IP concerns) ──────────
+  // Flagged as a privacy/trust concern — these platforms knowingly host
+  // counterfeit goods or pirated content per USTR's annual review.
+  {
+    name: "ustr-notorious-markets",
+    write: (e) => {
+      const p = e.privacy;
+      if (!p || !p.ustrNotoriousMarket) return [];
+      const concernStr = p.concern || "counterfeit goods or piracy";
+      const ops = p.operator ? ` (operator: ${p.operator})` : "";
+      return [{
+        category: "privacy",
+        narrative: `USTR ${p.listYear || ""} Notorious Markets List: flagged for ${concernStr} via ${p.marketName}${ops}.`.replace(/\s+/g, " ").trim(),
+        sc: "poor",
+        severity: "negative",
+      }];
+    },
+  },
+  // ─── Common Sense Privacy ─────────────────────────────────────────────
+  // Worst tier across all flagship products of a corporate slug. Warning
+  // = "fails minimum Common Sense safeguards"; Pass is rare and salient.
+  {
+    name: "common-sense-privacy",
+    write: (e) => {
+      const p = e.privacy;
+      if (!p || !p.csPrivacyWorstTier) return [];
+      const prods = Array.isArray(p.csPrivacyProducts) ? p.csPrivacyProducts : [];
+      if (!prods.length) return [];
+      const tier = p.csPrivacyWorstTier;
+      const names = prods.map(x => x.product).slice(0, 3).join(", ")
+        + (prods.length > 3 ? ` (+${prods.length - 3} more)` : "");
+      let narrative, sc, sev;
+      if (tier === "fail") {
+        narrative = `Common Sense Privacy: Fail rating across ${prods.length} product(s) (${names}) — fails minimum data-protection safeguards.`;
+        sc = "poor"; sev = "negative";
+      } else if (tier === "warning") {
+        narrative = `Common Sense Privacy: Warning rating across ${prods.length} product(s) (${names}) — does not meet minimum data-protection safeguards.`;
+        sc = "poor"; sev = "negative";
+      } else if (tier === "pass") {
+        narrative = `Common Sense Privacy: Pass rating on ${prods.length} product(s) (${names}) — meets data-protection safeguards.`;
+        sc = "good"; sev = "positive";
+      } else {
+        return [];
+      }
+      return [{ category: "privacy", narrative, sc, severity: sev }];
+    },
+  },
+  // ─── Consumer Reports Auto Brand Report Card ──────────────────────────
+  // Reliability ranking drives a quality-of-product signal that maps to
+  // the health category (closest semantic: consumer safety + reliability).
+  {
+    name: "cr-auto-reliability",
+    write: (e) => {
+      const h = e.health;
+      if (!h || !h.crBrandRank) return [];
+      const tier = h.crTier || "midpack";
+      const sc = tier === "top10" ? "good" : tier === "bottom5" ? "poor" : "mixed";
+      const sev = tier === "top10" ? "positive" : tier === "bottom5" ? "negative" : "neutral";
+      const rel = h.crReliabilityRank
+        ? ` and #${h.crReliabilityRank} for reliability`
+        : "";
+      return [{
+        category: "health",
+        narrative: `Consumer Reports ${h.seedYear || ""} Brand Report Card: ranked #${h.crBrandRank} of ~26 auto brands${rel}.`.replace(/\s+/g, " ").trim(),
+        sc, severity: sev,
+      }];
+    },
+  },
 ];
 
 // ─── Apply ──────────────────────────────────────────────────────────────
