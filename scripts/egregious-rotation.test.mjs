@@ -119,12 +119,12 @@ test("rotation cycles through all 30 brands in 30 days", async () => {
   assert.equal(seen.size, 30, "rotation should visit all 30 brands within 30 days");
 });
 
-test("polarity distribution: 20 negative, 10 positive", async () => {
+test("polarity distribution: 15 negative, 15 positive", async () => {
   const raw = await loadFacts();
   const neg = raw.facts.filter(f => f.polarity === "negative").length;
   const pos = raw.facts.filter(f => f.polarity === "positive").length;
-  assert.equal(neg, 20);
-  assert.equal(pos, 10);
+  assert.equal(neg, 15);
+  assert.equal(pos, 15);
 });
 
 // --- Logo-classification map ---------------------------------------------
