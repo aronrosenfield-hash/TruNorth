@@ -1,0 +1,464 @@
+{
+  "source": "ewg-skin-deep",
+  "source_url": "https://www.ewg.org/skindeep/",
+  "generated_at": "2026-06-09T19:24:59.193Z",
+  "snapshot_date": "2026-06-09",
+  "raw_product_count": 72,
+  "matched_product_count": 63,
+  "unmatched_product_count": 9,
+  "matched_slug_count": 16,
+  "severity_histogram": {
+    "positive": 2,
+    "mixed": 9,
+    "neutral": 2,
+    "negative": 3
+  },
+  "flag_threshold": 7,
+  "min_sample_for_opinion": 3,
+  "companies": {
+    "olay": {
+      "slug": "olay",
+      "ewg_avg_score": 5.5,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.25,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Olay Body Wash Ultra Moisture",
+          "score": 7
+        },
+        {
+          "product": "Olay Pro-X Anti-Aging Eye Cream",
+          "score": 6
+        },
+        {
+          "product": "Olay Total Effects 7-in-1 Anti-Aging",
+          "score": 5
+        },
+        {
+          "product": "Olay Regenerist Micro-Sculpting Cream",
+          "score": 4
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "pantene": {
+      "slug": "pantene",
+      "ewg_avg_score": 6.5,
+      "ewg_worst_score": 8,
+      "ewg_pct_flagged": 0.5,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 2,
+      "sample_products": [
+        {
+          "product": "Pantene Pro-V Smooth & Sleek Hairspray",
+          "score": 8
+        },
+        {
+          "product": "Pantene 3 Minute Miracle Deep Conditioner",
+          "score": 7
+        },
+        {
+          "product": "Pantene Pro-V Conditioner",
+          "score": 6
+        },
+        {
+          "product": "Pantene Pro-V Daily Moisture Renewal Shampoo",
+          "score": 5
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "maybelline": {
+      "slug": "maybelline",
+      "ewg_avg_score": 6,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.5,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 2,
+      "sample_products": [
+        {
+          "product": "Maybelline SuperStay Matte Ink",
+          "score": 7
+        },
+        {
+          "product": "Maybelline Color Sensational Lipstick",
+          "score": 7
+        },
+        {
+          "product": "Maybelline Fit Me Foundation",
+          "score": 6
+        },
+        {
+          "product": "Maybelline Great Lash Mascara",
+          "score": 4
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "l-or-al": {
+      "slug": "l-or-al",
+      "ewg_avg_score": 5.57,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.143,
+      "ewg_product_count": 7,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "L'Oreal True Match Foundation",
+          "score": 7
+        },
+        {
+          "product": "L'Oreal Voluminous Mascara",
+          "score": 6
+        },
+        {
+          "product": "NYX Epic Smoke Liner",
+          "score": 6
+        },
+        {
+          "product": "L'Oreal Revitalift Triple Power",
+          "score": 5
+        },
+        {
+          "product": "L'Oreal Elvive Total Repair 5 Shampoo",
+          "score": 5
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "dove": {
+      "slug": "dove",
+      "ewg_avg_score": 3.75,
+      "ewg_worst_score": 6,
+      "ewg_pct_flagged": 0,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Dove Antiperspirant Deodorant",
+          "score": 6
+        },
+        {
+          "product": "Dove Deep Moisture Body Wash",
+          "score": 4
+        },
+        {
+          "product": "Dove Beauty Bar",
+          "score": 3
+        },
+        {
+          "product": "Dove Sensitive Skin Bar",
+          "score": 2
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "colgate-palmolive": {
+      "slug": "colgate-palmolive",
+      "ewg_avg_score": 1.5,
+      "ewg_worst_score": 2,
+      "ewg_pct_flagged": 0,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Tom's of Maine Anticavity Toothpaste",
+          "score": 2
+        },
+        {
+          "product": "Tom's of Maine Body Wash",
+          "score": 2
+        },
+        {
+          "product": "Tom's of Maine Deodorant",
+          "score": 1
+        },
+        {
+          "product": "Tom's of Maine Soap Bar",
+          "score": 1
+        }
+      ],
+      "severity": "positive",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "clorox-co": {
+      "slug": "clorox-co",
+      "ewg_avg_score": 1.5,
+      "ewg_worst_score": 2,
+      "ewg_pct_flagged": 0,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Burt's Bees Beeswax Lip Balm Tin",
+          "score": 2
+        },
+        {
+          "product": "Burt's Bees Tinted Lip Balm",
+          "score": 2
+        },
+        {
+          "product": "Burt's Bees Lip Balm",
+          "score": 1
+        },
+        {
+          "product": "Burt's Bees Hand Salve",
+          "score": 1
+        }
+      ],
+      "severity": "positive",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "garnier": {
+      "slug": "garnier",
+      "ewg_avg_score": 6.25,
+      "ewg_worst_score": 8,
+      "ewg_pct_flagged": 0.25,
+      "ewg_product_count": 4,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Garnier Nutrisse Hair Color",
+          "score": 8
+        },
+        {
+          "product": "Garnier Fructis Sleek & Shine Shampoo",
+          "score": 6
+        },
+        {
+          "product": "Garnier Fructis Conditioner",
+          "score": 6
+        },
+        {
+          "product": "Garnier SkinActive Micellar Water",
+          "score": 5
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "johnson-and-johnson": {
+      "slug": "johnson-and-johnson",
+      "ewg_avg_score": 4.14,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.143,
+      "ewg_product_count": 7,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Neutrogena Ultra Sheer Sunscreen SPF 70",
+          "score": 7
+        },
+        {
+          "product": "Neutrogena Rapid Wrinkle Repair",
+          "score": 5
+        },
+        {
+          "product": "Neutrogena Hydro Boost Water Gel",
+          "score": 4
+        },
+        {
+          "product": "Aveeno Positively Radiant Cleanser",
+          "score": 4
+        },
+        {
+          "product": "Neutrogena Naturals Face Cleanser",
+          "score": 3
+        }
+      ],
+      "severity": "neutral",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "covergirl": {
+      "slug": "covergirl",
+      "ewg_avg_score": 5.67,
+      "ewg_worst_score": 6,
+      "ewg_pct_flagged": 0,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "CoverGirl Outlast All-Day Lipstick",
+          "score": 6
+        },
+        {
+          "product": "CoverGirl TruBlend Foundation",
+          "score": 6
+        },
+        {
+          "product": "CoverGirl LashBlast Mascara",
+          "score": 5
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "revlon": {
+      "slug": "revlon",
+      "ewg_avg_score": 6.33,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.333,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Revlon Super Lustrous Lipstick",
+          "score": 7
+        },
+        {
+          "product": "Revlon ColorStay Foundation",
+          "score": 6
+        },
+        {
+          "product": "Revlon Volume + Length Magnified Mascara",
+          "score": 6
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "estee-lauder-companies": {
+      "slug": "estee-lauder-companies",
+      "ewg_avg_score": 6.33,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.333,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Estee Lauder Pure Color Envy Lipstick",
+          "score": 7
+        },
+        {
+          "product": "Estee Lauder Advanced Night Repair Serum",
+          "score": 6
+        },
+        {
+          "product": "Estee Lauder Double Wear Foundation",
+          "score": 6
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "clinique": {
+      "slug": "clinique",
+      "ewg_avg_score": 5.33,
+      "ewg_worst_score": 6,
+      "ewg_pct_flagged": 0,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 0,
+      "sample_products": [
+        {
+          "product": "Clinique Almost Lipstick",
+          "score": 6
+        },
+        {
+          "product": "Clinique Dramatically Different Moisturizing Lotion",
+          "score": 5
+        },
+        {
+          "product": "Clinique High Impact Mascara",
+          "score": 5
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "mac-cosmetics": {
+      "slug": "mac-cosmetics",
+      "ewg_avg_score": 6.33,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.333,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "MAC Lipstick Ruby Woo",
+          "score": 7
+        },
+        {
+          "product": "MAC Studio Fix Powder Plus Foundation",
+          "score": 6
+        },
+        {
+          "product": "MAC Pro Longwear Eyeshadow",
+          "score": 6
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "bath-and-body-works": {
+      "slug": "bath-and-body-works",
+      "ewg_avg_score": 7,
+      "ewg_worst_score": 8,
+      "ewg_pct_flagged": 0.667,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 2,
+      "sample_products": [
+        {
+          "product": "Bath & Body Works Warm Vanilla Sugar Fine Fragrance Mist",
+          "score": 8
+        },
+        {
+          "product": "Bath & Body Works Japanese Cherry Blossom Body Lotion",
+          "score": 7
+        },
+        {
+          "product": "Bath & Body Works PocketBac Hand Sanitizer",
+          "score": 6
+        }
+      ],
+      "severity": "negative",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    },
+    "unilever": {
+      "slug": "unilever",
+      "ewg_avg_score": 6.33,
+      "ewg_worst_score": 7,
+      "ewg_pct_flagged": 0.333,
+      "ewg_product_count": 3,
+      "ewg_flagged_count": 1,
+      "sample_products": [
+        {
+          "product": "Suave 24-Hour Protection Deodorant",
+          "score": 7
+        },
+        {
+          "product": "Suave Essentials Tropical Coconut Shampoo",
+          "score": 6
+        },
+        {
+          "product": "Suave Professionals Almond + Shea Butter Conditioner",
+          "score": 6
+        }
+      ],
+      "severity": "mixed",
+      "source": "ewg-skin-deep",
+      "source_url": "https://www.ewg.org/skindeep/"
+    }
+  }
+}

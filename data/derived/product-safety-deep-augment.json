@@ -1,0 +1,390 @@
+{
+  "source": "product-safety-deep",
+  "generated_at": "2026-06-09T19:24:59.142Z",
+  "snapshot_date": "2026-06-09",
+  "raw_record_count": 61,
+  "matched_record_count": 21,
+  "matched_slug_count": 16,
+  "unmatched_count": 40,
+  "per_source_matched_brand_count": {
+    "ewg-verified": 1,
+    "good-housekeeping-seal": 5,
+    "nsf": 3,
+    "goodguide": 4,
+    "greenguard": 2,
+    "watersense": 1,
+    "vegan-org": 2,
+    "vegan-society": 2
+  },
+  "source_urls": {
+    "ewg-verified": "https://www.ewg.org/ewgverified/",
+    "made-safe": "https://madesafe.org/pages/products",
+    "good-housekeeping-seal": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/",
+    "goodguide": "https://web.archive.org/web/2021*/goodguide.com",
+    "nsf": "https://info.nsf.org/Certified/Listings.asp",
+    "greenguard": "https://spot.ul.com/greenguard/",
+    "watersense": "https://www.epa.gov/watersense/product-search",
+    "vegan-org": "https://vegan.org/certification/",
+    "vegan-society": "https://www.vegansociety.com/the-vegan-trademark/trademark-holders"
+  },
+  "companies": {
+    "honest-company": {
+      "slug": "honest-company",
+      "certifications": [
+        {
+          "source": "ewg-verified",
+          "label": "EWG VERIFIED",
+          "brand_name": "Honest Company",
+          "product_count": 5,
+          "avg_score": null,
+          "source_url": "https://www.ewg.org/ewgverified/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 5,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://www.ewg.org/ewgverified/"
+    },
+    "kraft-heinz": {
+      "slug": "kraft-heinz",
+      "certifications": [
+        {
+          "source": "good-housekeeping-seal",
+          "label": "Good Housekeeping Seal",
+          "brand_name": "Kraft Heinz",
+          "product_count": 28,
+          "avg_score": null,
+          "source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 28,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+    },
+    "procter-and-gamble": {
+      "slug": "procter-and-gamble",
+      "certifications": [
+        {
+          "source": "good-housekeeping-seal",
+          "label": "Good Housekeeping Seal",
+          "brand_name": "Procter & Gamble",
+          "product_count": 47,
+          "avg_score": null,
+          "source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+        },
+        {
+          "source": "nsf",
+          "label": "NSF International certified",
+          "brand_name": "Pur",
+          "product_count": 17,
+          "avg_score": null,
+          "source_url": "https://info.nsf.org/Certified/Listings.asp"
+        }
+      ],
+      "total_certifications": 2,
+      "total_certified_products": 64,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+    },
+    "unilever": {
+      "slug": "unilever",
+      "certifications": [
+        {
+          "source": "good-housekeeping-seal",
+          "label": "Good Housekeeping Seal",
+          "brand_name": "Seventh Generation",
+          "product_count": 11,
+          "avg_score": null,
+          "source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+        },
+        {
+          "source": "goodguide",
+          "label": "GoodGuide",
+          "brand_name": "Seventh Generation",
+          "product_count": 38,
+          "avg_score": 8.4,
+          "source_url": "https://web.archive.org/web/2021*/goodguide.com"
+        }
+      ],
+      "total_certifications": 2,
+      "total_certified_products": 49,
+      "avg_goodguide_score": 8.4,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+    },
+    "clorox-co": {
+      "slug": "clorox-co",
+      "certifications": [
+        {
+          "source": "good-housekeeping-seal",
+          "label": "Good Housekeeping Seal",
+          "brand_name": "Clorox",
+          "product_count": 14,
+          "avg_score": null,
+          "source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+        },
+        {
+          "source": "nsf",
+          "label": "NSF International certified",
+          "brand_name": "Brita",
+          "product_count": 23,
+          "avg_score": null,
+          "source_url": "https://info.nsf.org/Certified/Listings.asp"
+        },
+        {
+          "source": "goodguide",
+          "label": "GoodGuide",
+          "brand_name": "Burt's Bees",
+          "product_count": 47,
+          "avg_score": 7.9,
+          "source_url": "https://web.archive.org/web/2021*/goodguide.com"
+        }
+      ],
+      "total_certifications": 3,
+      "total_certified_products": 84,
+      "avg_goodguide_score": 7.9,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+    },
+    "dyson": {
+      "slug": "dyson",
+      "certifications": [
+        {
+          "source": "good-housekeeping-seal",
+          "label": "Good Housekeeping Seal",
+          "brand_name": "Dyson",
+          "product_count": 9,
+          "avg_score": null,
+          "source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 9,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://www.goodhousekeeping.com/institute/about-the-institute/a22148/about-good-housekeeping-seal/"
+    },
+    "ge-appliances": {
+      "slug": "ge-appliances",
+      "certifications": [
+        {
+          "source": "nsf",
+          "label": "NSF International certified",
+          "brand_name": "GE Appliances",
+          "product_count": 22,
+          "avg_score": null,
+          "source_url": "https://info.nsf.org/Certified/Listings.asp"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 22,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://info.nsf.org/Certified/Listings.asp"
+    },
+    "ikea": {
+      "slug": "ikea",
+      "certifications": [
+        {
+          "source": "greenguard",
+          "label": "GREENGUARD low-VOC certified",
+          "brand_name": "IKEA",
+          "product_count": 42,
+          "avg_score": null,
+          "source_url": "https://spot.ul.com/greenguard/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 42,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health",
+        "environment"
+      ],
+      "primary_source_url": "https://spot.ul.com/greenguard/"
+    },
+    "crate-and-barrel": {
+      "slug": "crate-and-barrel",
+      "certifications": [
+        {
+          "source": "greenguard",
+          "label": "GREENGUARD low-VOC certified",
+          "brand_name": "Crate & Barrel",
+          "product_count": 15,
+          "avg_score": null,
+          "source_url": "https://spot.ul.com/greenguard/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 15,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health",
+        "environment"
+      ],
+      "primary_source_url": "https://spot.ul.com/greenguard/"
+    },
+    "american": {
+      "slug": "american",
+      "certifications": [
+        {
+          "source": "watersense",
+          "label": "EPA WaterSense certified",
+          "brand_name": "American Standard",
+          "product_count": 87,
+          "avg_score": null,
+          "source_url": "https://www.epa.gov/watersense/product-search"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 87,
+      "avg_goodguide_score": null,
+      "categories": [
+        "environment"
+      ],
+      "primary_source_url": "https://www.epa.gov/watersense/product-search"
+    },
+    "colgate-palmolive": {
+      "slug": "colgate-palmolive",
+      "certifications": [
+        {
+          "source": "goodguide",
+          "label": "GoodGuide",
+          "brand_name": "Tom's of Maine",
+          "product_count": 31,
+          "avg_score": 8.2,
+          "source_url": "https://web.archive.org/web/2021*/goodguide.com"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 31,
+      "avg_goodguide_score": 8.2,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://web.archive.org/web/2021*/goodguide.com"
+    },
+    "s-c-johnson-and-son": {
+      "slug": "s-c-johnson-and-son",
+      "certifications": [
+        {
+          "source": "goodguide",
+          "label": "GoodGuide",
+          "brand_name": "Mrs. Meyer's",
+          "product_count": 19,
+          "avg_score": 7.2,
+          "source_url": "https://web.archive.org/web/2021*/goodguide.com"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 19,
+      "avg_goodguide_score": 7.2,
+      "categories": [
+        "health"
+      ],
+      "primary_source_url": "https://web.archive.org/web/2021*/goodguide.com"
+    },
+    "beyond-meat": {
+      "slug": "beyond-meat",
+      "certifications": [
+        {
+          "source": "vegan-org",
+          "label": "Certified Vegan (vegan.org)",
+          "brand_name": "Beyond Meat",
+          "product_count": 18,
+          "avg_score": null,
+          "source_url": "https://vegan.org/certification/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 18,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health",
+        "animals"
+      ],
+      "primary_source_url": "https://vegan.org/certification/"
+    },
+    "tofurky": {
+      "slug": "tofurky",
+      "certifications": [
+        {
+          "source": "vegan-org",
+          "label": "Certified Vegan (vegan.org)",
+          "brand_name": "Tofurky",
+          "product_count": 27,
+          "avg_score": null,
+          "source_url": "https://vegan.org/certification/"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 27,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health",
+        "animals"
+      ],
+      "primary_source_url": "https://vegan.org/certification/"
+    },
+    "l-or-al": {
+      "slug": "l-or-al",
+      "certifications": [
+        {
+          "source": "vegan-society",
+          "label": "Vegan Society Trademark",
+          "brand_name": "The Body Shop",
+          "product_count": 89,
+          "avg_score": null,
+          "source_url": "https://www.vegansociety.com/the-vegan-trademark/trademark-holders"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 89,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health",
+        "animals"
+      ],
+      "primary_source_url": "https://www.vegansociety.com/the-vegan-trademark/trademark-holders"
+    },
+    "quorn": {
+      "slug": "quorn",
+      "certifications": [
+        {
+          "source": "vegan-society",
+          "label": "Vegan Society Trademark",
+          "brand_name": "Quorn",
+          "product_count": 41,
+          "avg_score": null,
+          "source_url": "https://www.vegansociety.com/the-vegan-trademark/trademark-holders"
+        }
+      ],
+      "total_certifications": 1,
+      "total_certified_products": 41,
+      "avg_goodguide_score": null,
+      "categories": [
+        "health",
+        "animals"
+      ],
+      "primary_source_url": "https://www.vegansociety.com/the-vegan-trademark/trademark-holders"
+    }
+  }
+}
