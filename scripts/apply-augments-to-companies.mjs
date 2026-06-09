@@ -648,6 +648,61 @@ const WRITERS = [
       }];
     },
   },
+  // ─── State regulators round 3: CA AG, CPPA, FL AG, IL AG, WA AG, OH AG,
+  //     PA AG, NJ AG, GA AG, NC AG — same shape as round 2. Mapped to
+  //     "privacy" for consumer-protection (same rationale as round 2) so
+  //     downstream "first non-no-record wins" applies cleanly when both
+  //     rounds hit the same brand.
+  {
+    name: "state-regulators-r3",
+    write: (e) => {
+      const actions = Array.isArray(e.actions) ? e.actions : [];
+      if (!actions.length) return [];
+      const newest = actions[0];
+      const totalCount = actions.length;
+      const withAmt = actions.filter(a => a.amountUsd);
+      const totalUsd = withAmt.reduce((s, a) => s + (a.amountUsd || 0), 0);
+      const stateSources = new Set(actions.map(a => a.source));
+      const SRC_LABEL = {
+        "ca-ag":  "CA AG",
+        "cppa":   "CalPrivacy",
+        "fl-ag":  "FL AG",
+        "il-ag":  "IL AG",
+        "wa-ag":  "WA AG",
+        "oh-ag":  "OH AG",
+        "pa-ag":  "PA AG",
+        "nj-ag":  "NJ AG",
+        "ga-ag":  "GA AG",
+        "nc-ag":  "NC AG",
+      };
+      const sourceLabel = [...stateSources].map(s => SRC_LABEL[s] || s).join(", ");
+
+      const amtStr = totalUsd >= 1e9 ? `~$${(totalUsd / 1e9).toFixed(2)}B in known settlements`
+        : totalUsd >= 1e6 ? `~$${(totalUsd / 1e6).toFixed(1)}M in known settlements`
+        : totalUsd > 0 ? `$${Math.round(totalUsd / 1e3)}K in known settlements`
+        : "";
+      const lastDateStr = newest.date ? ` (most recent ${newest.date})` : "";
+      const lead = totalCount === 1
+        ? `State regulator action: ${sourceLabel}${lastDateStr}.`
+        : `${totalCount} state regulator actions (${sourceLabel})${lastDateStr}.`;
+      const tail = amtStr ? ` ${amtStr}.` : "";
+      const narrative = `${lead}${tail} ${clip(newest.caseTitle, 140)}`.trim();
+
+      // Same severity logic as round 2: state AGs lean negative; CalPrivacy
+      // alone stays mixed (informational advisories included).
+      const hasAg = [...stateSources].some(s => s !== "cppa");
+      const sc = hasAg && totalCount >= 2 ? "poor"
+        : hasAg ? "mixed"
+        : "mixed";
+
+      return [{
+        category: "privacy",
+        narrative,
+        sc,
+        severity: "negative",
+      }];
+    },
+  },
 ];
 
 function clip(s, n) {
