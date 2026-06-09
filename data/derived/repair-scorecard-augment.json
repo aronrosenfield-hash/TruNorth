@@ -1,0 +1,242 @@
+{
+  "_license": "PIRG Failing the Fix grades are reproduced from the published annual scorecard. iFixit repairability scores are reproduced from individual teardown pages. Cite the per-row source URLs.",
+  "_source_file": "data/raw/repair-scorecard/2026-06-09.json",
+  "_source_urls": {
+    "pirg2026": "https://pirg.org/edfund/resources/failing-the-fix-2026/",
+    "pirg2025": "https://publicinterestnetwork.org/wp-content/uploads/2025/02/PIRG-Failing-the-Fix-2025.pdf",
+    "pirg2024": "https://pirg.org/edfund/resources/failing-the-fix-2024/",
+    "ifixit": "https://www.ifixit.com/smartphone-repairability",
+    "pirgHome": "https://pirg.org/edfund/resources/failing-the-fix/"
+  },
+  "_generated_at": "2026-06-09T22:50:17.886Z",
+  "_stats": {
+    "brands": 13,
+    "matched_companies": 8,
+    "orphans": 4,
+    "route_counts": {
+      "slugHint": 9,
+      "direct": 0,
+      "alias": 0,
+      "parent": 0,
+      "slugHint-alias": 0,
+      "slugHint-parent": 0,
+      "orphan": 4
+    }
+  },
+  "companies": {
+    "acer": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Acer",
+      "category": "laptop",
+      "pirg_grade": "B",
+      "pirg_grade_value": 3,
+      "pirg_year": 2026,
+      "ifixit_avg": null,
+      "ifixit_recent": [],
+      "severity": "positive",
+      "narrative": "PIRG Failing the Fix 2026: B for laptop.",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/"
+      }
+    },
+    "dell-technologies": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Dell",
+      "category": "laptop",
+      "pirg_grade": "B-",
+      "pirg_grade_value": 2.67,
+      "pirg_year": 2026,
+      "ifixit_avg": null,
+      "ifixit_recent": [],
+      "severity": "positive",
+      "narrative": "PIRG Failing the Fix 2026: B- for laptop.",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/"
+      }
+    },
+    "hp": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "HP",
+      "category": "laptop",
+      "pirg_grade": "B-",
+      "pirg_grade_value": 2.67,
+      "pirg_year": 2026,
+      "ifixit_avg": null,
+      "ifixit_recent": [],
+      "severity": "positive",
+      "narrative": "PIRG Failing the Fix 2026: B- for laptop.",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/"
+      }
+    },
+    "microsoft": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Microsoft",
+      "category": "laptop",
+      "pirg_grade": "B-",
+      "pirg_grade_value": 2.67,
+      "pirg_year": 2026,
+      "ifixit_avg": null,
+      "ifixit_recent": [],
+      "severity": "positive",
+      "narrative": "PIRG Failing the Fix 2026: B- for laptop.",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/"
+      }
+    },
+    "lenovo": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Motorola",
+      "category": "phone",
+      "pirg_grade": "C",
+      "pirg_grade_value": 2,
+      "pirg_year": 2026,
+      "ifixit_avg": 5,
+      "ifixit_recent": [
+        {
+          "model": "Motorola Razr 50 Ultra",
+          "score": 5
+        }
+      ],
+      "severity": "mixed",
+      "narrative": "PIRG Failing the Fix 2026: B+ for phone; iFixit avg 5/10 (e.g. Motorola Razr 50 Ultra 5/10). PIRG Failing the Fix 2026: C for laptop.",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/",
+        "ifixitUrl": "https://www.ifixit.com/smartphone-repairability"
+      },
+      "contributing_brands": [
+        "Motorola",
+        "Lenovo"
+      ]
+    },
+    "apple": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Apple",
+      "category": "both",
+      "pirg_grade": "D-",
+      "pirg_grade_value": 0.67,
+      "pirg_year": 2026,
+      "ifixit_avg": 7,
+      "ifixit_recent": [
+        {
+          "model": "iPhone 17 Pro",
+          "score": 7
+        },
+        {
+          "model": "iPhone Air",
+          "score": 7
+        }
+      ],
+      "severity": "mixed",
+      "narrative": "PIRG Failing the Fix 2026: D- for phone + laptop; iFixit avg 7/10 (e.g. iPhone 17 Pro 7/10).",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/",
+        "ifixitUrl": "https://www.ifixit.com/smartphone-repairability"
+      }
+    },
+    "google-alphabet": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Google",
+      "category": "phone",
+      "pirg_grade": "C-",
+      "pirg_grade_value": 1.67,
+      "pirg_year": 2026,
+      "ifixit_avg": 6,
+      "ifixit_recent": [
+        {
+          "model": "Google Pixel 10",
+          "score": 6
+        }
+      ],
+      "severity": "mixed",
+      "narrative": "PIRG Failing the Fix 2026: C- for phone; iFixit avg 6/10 (e.g. Google Pixel 10 6/10).",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/",
+        "ifixitUrl": "https://www.ifixit.com/smartphone-repairability"
+      }
+    },
+    "samsung-usa": {
+      "_sources": [
+        "repair-scorecard"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:50:17.886Z",
+      "name": "Samsung",
+      "category": "both",
+      "pirg_grade": "D",
+      "pirg_grade_value": 1,
+      "pirg_year": 2026,
+      "ifixit_avg": 4,
+      "ifixit_recent": [
+        {
+          "model": "Galaxy S25 Ultra",
+          "score": 5
+        },
+        {
+          "model": "Galaxy S24 Ultra",
+          "score": 4
+        }
+      ],
+      "severity": "negative",
+      "narrative": "PIRG Failing the Fix 2026: D for phone + laptop; iFixit avg 4/10 (e.g. Galaxy S25 Ultra 5/10).",
+      "sources": {
+        "pirgUrl": "https://pirg.org/edfund/resources/failing-the-fix-2026/",
+        "ifixitUrl": "https://www.ifixit.com/smartphone-repairability"
+      }
+    }
+  },
+  "orphans": [
+    {
+      "name": "ASUS",
+      "slugHint": "asus",
+      "pirg": "B+",
+      "ifixit": null
+    },
+    {
+      "name": "Fairphone",
+      "slugHint": "fairphone",
+      "pirg": null,
+      "ifixit": 10
+    },
+    {
+      "name": "HMD",
+      "slugHint": "hmd-global",
+      "pirg": null,
+      "ifixit": 9
+    },
+    {
+      "name": "Nothing",
+      "slugHint": "nothing-technology",
+      "pirg": null,
+      "ifixit": 3
+    }
+  ]
+}
