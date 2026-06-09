@@ -600,75 +600,61 @@ const WRITERS = [
       }];
     },
   },
-  // ─── USTR Notorious Markets (counterfeit/piracy IP concerns) ──────────
-  // Flagged as a privacy/trust concern — these platforms knowingly host
-  // counterfeit goods or pirated content per USTR's annual review.
+  // ─── State regulators: AG consumer-protection + NYDFS financial ───────
+  // Maps to "privacy" for consumer-protection (deceptive practices, data
+  // misuse) and adds a "labor" narrative if AG action explicitly involved
+  // worker mistreatment. NYDFS financial actions are signal but don't map
+  // cleanly to any user-facing category — we surface them under "privacy"
+  // (financial-services dishonesty correlates with consumer dishonesty).
   {
-    name: "ustr-notorious-markets",
+    name: "state-regulators",
     write: (e) => {
-      const p = e.privacy;
-      if (!p || !p.ustrNotoriousMarket) return [];
-      const concernStr = p.concern || "counterfeit goods or piracy";
-      const ops = p.operator ? ` (operator: ${p.operator})` : "";
+      const actions = Array.isArray(e.actions) ? e.actions : [];
+      if (!actions.length) return [];
+      const newest = actions[0];
+      const totalCount = actions.length;
+      const withAmt = actions.filter(a => a.amountUsd);
+      const totalUsd = withAmt.reduce((s, a) => s + (a.amountUsd || 0), 0);
+      const stateSources = new Set(actions.map(a => a.source));
+      const sourceLabel = [...stateSources].map(s => ({
+        "ny-ag":  "NY AG",
+        "tx-ag":  "TX AG",
+        "ny-dfs": "NYDFS",
+      }[s] || s)).join(", ");
+
+      const amtStr = totalUsd >= 1e9 ? `~$${(totalUsd / 1e9).toFixed(2)}B in known settlements`
+        : totalUsd >= 1e6 ? `~$${(totalUsd / 1e6).toFixed(1)}M in known settlements`
+        : totalUsd > 0 ? `$${Math.round(totalUsd / 1e3)}K in known settlements`
+        : "";
+      const lastDateStr = newest.date ? ` (most recent ${newest.date})` : "";
+      const lead = totalCount === 1
+        ? `State regulator action: ${sourceLabel}${lastDateStr}.`
+        : `${totalCount} state regulator actions (${sourceLabel})${lastDateStr}.`;
+      const tail = amtStr ? ` ${amtStr}.` : "";
+      const narrative = `${lead}${tail} ${clip(newest.caseTitle, 140)}`.trim();
+
+      // Severity: any NY AG / TX AG action is negative-leaning for privacy;
+      // NYDFS-only stays mixed (could be procedural).
+      const hasAg = stateSources.has("ny-ag") || stateSources.has("tx-ag");
+      const sc = hasAg && totalCount >= 2 ? "poor"
+        : hasAg ? "mixed"
+        : "mixed";
+
       return [{
         category: "privacy",
-        narrative: `USTR ${p.listYear || ""} Notorious Markets List: flagged for ${concernStr} via ${p.marketName}${ops}.`.replace(/\s+/g, " ").trim(),
-        sc: "poor",
+        narrative,
+        sc,
         severity: "negative",
       }];
     },
   },
-  // ─── Common Sense Privacy ─────────────────────────────────────────────
-  // Worst tier across all flagship products of a corporate slug. Warning
-  // = "fails minimum Common Sense safeguards"; Pass is rare and salient.
-  {
-    name: "common-sense-privacy",
-    write: (e) => {
-      const p = e.privacy;
-      if (!p || !p.csPrivacyWorstTier) return [];
-      const prods = Array.isArray(p.csPrivacyProducts) ? p.csPrivacyProducts : [];
-      if (!prods.length) return [];
-      const tier = p.csPrivacyWorstTier;
-      const names = prods.map(x => x.product).slice(0, 3).join(", ")
-        + (prods.length > 3 ? ` (+${prods.length - 3} more)` : "");
-      let narrative, sc, sev;
-      if (tier === "fail") {
-        narrative = `Common Sense Privacy: Fail rating across ${prods.length} product(s) (${names}) — fails minimum data-protection safeguards.`;
-        sc = "poor"; sev = "negative";
-      } else if (tier === "warning") {
-        narrative = `Common Sense Privacy: Warning rating across ${prods.length} product(s) (${names}) — does not meet minimum data-protection safeguards.`;
-        sc = "poor"; sev = "negative";
-      } else if (tier === "pass") {
-        narrative = `Common Sense Privacy: Pass rating on ${prods.length} product(s) (${names}) — meets data-protection safeguards.`;
-        sc = "good"; sev = "positive";
-      } else {
-        return [];
-      }
-      return [{ category: "privacy", narrative, sc, severity: sev }];
-    },
-  },
-  // ─── Consumer Reports Auto Brand Report Card ──────────────────────────
-  // Reliability ranking drives a quality-of-product signal that maps to
-  // the health category (closest semantic: consumer safety + reliability).
-  {
-    name: "cr-auto-reliability",
-    write: (e) => {
-      const h = e.health;
-      if (!h || !h.crBrandRank) return [];
-      const tier = h.crTier || "midpack";
-      const sc = tier === "top10" ? "good" : tier === "bottom5" ? "poor" : "mixed";
-      const sev = tier === "top10" ? "positive" : tier === "bottom5" ? "negative" : "neutral";
-      const rel = h.crReliabilityRank
-        ? ` and #${h.crReliabilityRank} for reliability`
-        : "";
-      return [{
-        category: "health",
-        narrative: `Consumer Reports ${h.seedYear || ""} Brand Report Card: ranked #${h.crBrandRank} of ~26 auto brands${rel}.`.replace(/\s+/g, " ").trim(),
-        sc, severity: sev,
-      }];
-    },
-  },
 ];
+
+function clip(s, n) {
+  if (!s) return "";
+  const t = String(s).replace(/\s+/g, " ").trim();
+  return t.length <= n ? t : t.slice(0, n - 1).replace(/\s+\S*$/, "") + "…";
+}
 
 // ─── Apply ──────────────────────────────────────────────────────────────
 const augmentsLoaded = {};

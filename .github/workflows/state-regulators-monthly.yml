@@ -1,0 +1,63 @@
+name: state-regulators-monthly
+
+# US state-level regulator enforcement scraper. Covers state AGs (NY, TX)
+# + NYDFS. See scripts/state-regulators-fetch.mjs for the full list of
+# probed sources and which ones are parked behind bot walls / no public API.
+#
+# Cadence: monthly (1st @ 06:00 UTC). State AG / DFS pages update slowly.
+# Politeness: 1.5s between requests, honest UA.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run parser tests
+        run: node scripts/state-regulators-fetch.test.mjs
+
+      - name: Fetch state-regulator enforcement (live)
+        run: node scripts/state-regulators-fetch.mjs --limit 250
+
+      - name: Build derived augment
+        run: node scripts/state-regulators-merge.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(state-regulators): monthly enforcement refresh"
+          title: "data(state-regulators): monthly enforcement refresh"
+          body: |
+            Automated state-regulator (NY AG, TX AG, NYDFS) refresh.
+
+            - Raw:       `data/raw/state-regulators/<date>.json`
+            - Derived:   `data/derived/state-regulators-augment.json`
+            - Unmatched: `data/derived/state-regulators-unmatched.json`
+
+            Sources:
+              - https://ag.ny.gov/press-releases
+              - https://www.texasattorneygeneral.gov/news/releases
+              - https://www.dfs.ny.gov/industry_guidance/enforcement_actions
+            License: public records.
+          branch: data/state-regulators
+          add-paths: |
+            data/raw/state-regulators/**
+            data/derived/state-regulators-augment.json
+            data/derived/state-regulators-unmatched.json
+          delete-branch: true
