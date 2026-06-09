@@ -304,6 +304,105 @@ const WRITERS = [
       }];
     },
   },
+  // ─── International regulator enforcement (Build 56) ───────────────────
+  // EU Commission antitrust → political (neutral, antitrust flag)
+  {
+    name: "ec-antitrust",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "political", narrative: `EU Commission antitrust — ${e.summary}`, sc: "neutral" }];
+    },
+  },
+  // EU GDPR Enforcement Tracker → privacy
+  {
+    name: "gdpr-enforcement",
+    write: (e) => {
+      if (!e.total_fines_eur && !e.summary) return [];
+      const total = e.total_fines_eur || 0;
+      const sc = total >= 100_000_000 ? "poor" : total >= 10_000_000 ? "mixed" : "neutral";
+      return [{ category: "privacy", narrative: `EU GDPR enforcement — ${e.summary}`, sc, severity: "negative" }];
+    },
+  },
+  // UK FCA Final Notices → execPay (securities enforcement signals governance)
+  {
+    name: "uk-fca",
+    write: (e) => {
+      if (!e.summary) return [];
+      const total = e.total_fines_gbp || 0;
+      const sc = total >= 50_000_000 ? "poor" : total >= 10_000_000 ? "mixed" : "neutral";
+      return [{ category: "execPay", narrative: `UK FCA enforcement — ${e.summary}`, sc, severity: "negative" }];
+    },
+  },
+  // UK CMA decisions → political (antitrust, neutral enum)
+  {
+    name: "uk-cma",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "political", narrative: `UK CMA — ${e.summary}`, sc: "neutral" }];
+    },
+  },
+  // BaFin (German securities) → execPay
+  {
+    name: "bafin",
+    write: (e) => {
+      if (!e.summary) return [];
+      const total = e.total_fines_eur || 0;
+      const sc = total >= 100_000_000 ? "poor" : total >= 10_000_000 ? "mixed" : "neutral";
+      return [{ category: "execPay", narrative: `German BaFin — ${e.summary}`, sc, severity: "negative" }];
+    },
+  },
+  // Norwegian Consumer Council → privacy (most actions are consumer-data related)
+  {
+    name: "norway-consumer",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "privacy", narrative: `Norway Forbrukerrådet — ${e.summary}`, sc: "mixed", severity: "negative" }];
+    },
+  },
+  // OECD Anti-Bribery → political (neutral, governance flag)
+  {
+    name: "oecd-bribery",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "political", narrative: `OECD Anti-Bribery Convention enforcement — ${e.summary}`, sc: "neutral" }];
+    },
+  },
+  // Mexico COFECE → political
+  {
+    name: "cofece-mexico",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "political", narrative: `Mexico COFECE — ${e.summary}`, sc: "neutral" }];
+    },
+  },
+  // Brazil CADE → labor for forced-labor (jbs), political for antitrust
+  {
+    name: "cade-brazil",
+    write: (e) => {
+      if (!e.summary) return [];
+      // Forced-labor flag overrides antitrust narrative
+      if (/forced.labor|lista suja|slave.like/i.test(e.summary)) {
+        return [{ category: "labor", narrative: `Brazil enforcement — ${e.summary}`, sc: "poor", severity: "negative" }];
+      }
+      return [{ category: "political", narrative: `Brazil CADE — ${e.summary}`, sc: "neutral" }];
+    },
+  },
+  // South Africa Competition Tribunal → political
+  {
+    name: "sa-competition",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "political", narrative: `South Africa Competition Commission — ${e.summary}`, sc: "neutral" }];
+    },
+  },
+  // Korea KFTC → political
+  {
+    name: "kftc-korea",
+    write: (e) => {
+      if (!e.summary) return [];
+      return [{ category: "political", narrative: `Korea KFTC — ${e.summary}`, sc: "neutral" }];
+    },
+  },
 ];
 
 // ─── Apply ──────────────────────────────────────────────────────────────

@@ -13,9 +13,8 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "mixed",
-    "execPay": "fair",
-    "health": "mixed"
+    "privacy": "poor",
+    "execPay": "fair"
   },
   "political": {
     "s": "FEC: $801K in executive political donations; partisan lean Democratic +54 across 21 executive donors.",
@@ -66,9 +65,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "CISA Known Exploited Vulns: 71 CVEs on record (9 in past 12mo); affected products include Chromium V8, Chromium.",
+    "s": "EU GDPR enforcement — €140M+ in GDPR/ePrivacy fines including €90M CNIL (Jan 2022) and €50M CNIL (2019) for cookie consent and transparency violations.",
     "grade": "Poor",
-    "sources": []
+    "sources": [
+      "gdpr-enforcement"
+    ]
   },
   "execPay": {
     "s": "No public record found.",
