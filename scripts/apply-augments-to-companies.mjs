@@ -1011,6 +1011,62 @@ const WRITERS = [
       }];
     },
   },
+  // ─── OECD National Contact Points specific instances (R5) ─────────────
+  // Cases filed under the OECD Guidelines for Multinational Enterprises.
+  // The merger groups cases by theme into labor / political / environment.
+  // Severity: single-case → mixed; pattern of 2+ concerns → poor;
+  // landmark NCP finding → very_poor.
+  {
+    name: "oecd-ncp",
+    write: (e) => {
+      const writes = [];
+      const SC = { positive: "good", mixed: "mixed", concern: "poor", landmark: "very_poor" };
+      const CATS = ["labor", "political", "environment"];
+      for (const cat of CATS) {
+        const b = e[cat];
+        if (!b || !b.narrative) continue;
+        const sc = SC[b.bestStatus];
+        if (!sc) continue;
+        const severity = b.bestStatus === "positive" ? "positive"
+          : b.bestStatus === "mixed" ? "mixed"
+          : "negative";
+        writes.push({ category: cat, narrative: b.narrative, sc, severity });
+      }
+      return writes;
+    },
+  },
+  // ─── Insure Our Future scorecard (R5) ─────────────────────────────────
+  // Annual 0-10 climate scorecard for global re/insurers. Maps to
+  // "environment" with severity from the merger's tier-driven bestStatus.
+  {
+    name: "insure-our-future",
+    write: (e) => {
+      const b = e.environment;
+      if (!b || !b.narrative) return [];
+      const SC = { positive: "good", mixed: "mixed", concern: "poor", landmark: "very_poor" };
+      const sc = SC[b.bestStatus];
+      if (!sc) return [];
+      const severity = b.bestStatus === "positive" ? "positive"
+        : b.bestStatus === "mixed" ? "mixed"
+        : "negative";
+      return [{ category: "environment", narrative: b.narrative, sc, severity }];
+    },
+  },
+  // ─── SIPRI Arms Industry Top-100 (R5) ─────────────────────────────────
+  // Annual ranking of arms producers by revenue. Maps to "guns" category.
+  // Top-5 pure-defense → very_poor (landmark); pure-defense at any rank →
+  // poor; diversified ≥10% arms → mixed.
+  {
+    name: "sipri-arms",
+    write: (e) => {
+      const b = e.guns;
+      if (!b || !b.narrative) return [];
+      const SC = { landmark: "very_poor", concern: "poor", mixed: "mixed" };
+      const sc = SC[b.bestStatus];
+      if (!sc) return [];
+      return [{ category: "guns", narrative: b.narrative, sc, severity: "negative" }];
+    },
+  },
   // ─── Aviation deep (DOT ATCR + DOT enforcement + NTSB) ─────────────────
   // Maps to "health" (safety/quality-of-service is closest user-facing
   // category for airlines) and adds a "privacy" narrative when the DOT
