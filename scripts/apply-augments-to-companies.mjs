@@ -891,7 +891,101 @@ const WRITERS = [
       }];
     },
   },
+  // ─── Foreign regulators round 4 (curated kernel) ───────────────────────
+  // Compact writers for the curated euro/latam/asia + Ireland DPC sources.
+  // Each entry below produces one narrative for its category. The kernel
+  // augments are keyed { slug: { case_count, total_fines_<ccy>, summary,
+  // latest_year, url } } — see scripts/euro-regulators-r4-seed.mjs etc.
+  ...foreignR4Writers(),
 ];
+
+// Compact factory for foreign-regulator-r4 writers. Each maps to a single
+// category (political / privacy / execPay) based on the regulator type.
+function foreignR4Writers() {
+  // tier: poor cutoff for total fines (in source currency)
+  const SPECS = [
+    // ── Europe: privacy / data-protection authorities ─────────────────────
+    { name: "bfdi-germany",            label: "BfDI (German federal DPA)",          cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "aepd-spain",              label: "AEPD (Spanish DPA)",                  cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "datatilsynet-norway",     label: "Datatilsynet (Norwegian DPA)",        cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "imy-sweden",              label: "IMY (Swedish DPA)",                   cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "datatilsynet-denmark",    label: "Datatilsynet (Danish DPA)",           cat: "privacy",   ccy: "eur", poorAt: 5_000_000 },
+    { name: "tietosuoja-finland",      label: "Tietosuojavaltuutettu (Finnish DPA)", cat: "privacy",   ccy: "eur", poorAt: 1_000_000 },
+    { name: "apd-belgium",             label: "Belgian DPA (APD/GBA)",               cat: "privacy",   ccy: "eur", poorAt: 1_000_000 },
+    { name: "fdpic-switzerland",       label: "FDPIC (Swiss DPA)",                   cat: "privacy",   ccy: "eur", poorAt: 1 },
+    { name: "ireland-dpc",             label: "Ireland DPC (Irish DPA, EU lead authority for Big Tech)", cat: "privacy", ccy: "eur", poorAt: 100_000_000 },
+    // ── Europe: financial supervisory → execPay (financial-conduct signal)
+    { name: "bafin-r4",                label: "BaFin (German financial supervisory)", cat: "execPay",  ccy: "eur", poorAt: 10_000_000 },
+    { name: "amf-france",              label: "AMF (French financial markets)",       cat: "execPay",  ccy: "eur", poorAt: 10_000_000 },
+    { name: "consob-italy",            label: "CONSOB (Italian financial markets)",   cat: "execPay",  ccy: "eur", poorAt: 5_000_000 },
+    { name: "afm-netherlands",         label: "AFM (Dutch financial markets)",        cat: "execPay",  ccy: "eur", poorAt: 100_000_000 },
+    { name: "finansinspektionen-sweden", label: "Finansinspektionen (Swedish FSA)",   cat: "execPay",  ccy: "eur", poorAt: 50_000_000 },
+    { name: "finma-switzerland",       label: "FINMA (Swiss financial-market supervisory)", cat: "execPay", ccy: "eur", poorAt: 1 },
+    // ── Europe: antitrust / competition / consumer → political ────────────
+    { name: "agcm-italy",              label: "AGCM (Italian antitrust)",             cat: "political", ccy: "eur", poorAt: 100_000_000 },
+    { name: "cnmc-spain",              label: "CNMC (Spanish competition)",           cat: "political", ccy: "eur", poorAt: 5_000_000 },
+    { name: "acm-netherlands",         label: "ACM (Dutch consumer + competition)",   cat: "political", ccy: "eur", poorAt: 25_000_000 },
+    { name: "forbrukertilsynet-norway", label: "Forbrukertilsynet (Norwegian consumer)", cat: "political", ccy: null,  poorAt: 1 },
+    { name: "weko-switzerland",        label: "WEKO/COMCO (Swiss competition)",       cat: "political", ccy: "chf", poorAt: 50_000_000 },
+    // ── LatAm: COFECE/IFT/CNDC/FNE/SIC/INDECOPI → political ───────────────
+    { name: "cofece-r4",               label: "COFECE (Mexican antitrust)",           cat: "political", ccy: "mxn", poorAt: 50_000_000 },
+    { name: "ift-mexico",              label: "IFT (Mexican telecom regulator)",      cat: "political", ccy: "mxn", poorAt: 1_000_000_000 },
+    { name: "cndc-argentina",          label: "CNDC (Argentine competition)",         cat: "political", ccy: null,  poorAt: 1 },
+    { name: "fne-chile",               label: "FNE (Chilean competition prosecutor)", cat: "political", ccy: null,  poorAt: 1 },
+    { name: "sic-colombia",            label: "SIC (Colombian industry + commerce)",  cat: "political", ccy: null,  poorAt: 1 },
+    { name: "indecopi-peru",           label: "INDECOPI (Peruvian competition)",      cat: "political", ccy: null,  poorAt: 1 },
+    // ── Asia: SAMR/MIIT/NDRC/FTC + KFTC retry → political ─────────────────
+    { name: "samr-china",              label: "SAMR (Chinese antitrust)",             cat: "political", ccy: "cny", poorAt: 1_000_000_000 },
+    { name: "miit-china",              label: "MIIT (Chinese app-compliance)",        cat: "privacy",   ccy: null,  poorAt: 1 },
+    { name: "ndrc-china",              label: "NDRC (Chinese antitrust legacy)",      cat: "political", ccy: "cny", poorAt: 1_000_000_000 },
+    { name: "taiwan-ftc",              label: "Taiwan Fair Trade Commission",         cat: "political", ccy: "twd", poorAt: 10_000_000_000 },
+    { name: "israel-competition",      label: "Israel Competition Authority",         cat: "political", ccy: null,  poorAt: 1 },
+    { name: "kftc-r4",                 label: "KFTC (Korean antitrust)",              cat: "political", ccy: "krw", poorAt: 100_000_000_000 },
+    // ── Asia: HK SFC → execPay; OJK Indonesia → execPay ────────────────────
+    { name: "hk-sfc",                  label: "HK SFC (Hong Kong securities)",        cat: "execPay",   ccy: "hkd", poorAt: 100_000_000 },
+    { name: "ojk-indonesia",           label: "OJK (Indonesian financial services)",  cat: "execPay",   ccy: null,  poorAt: 1 },
+  ];
+
+  const CCY_SYM = { eur: "€", chf: "CHF ", mxn: "MXN ", cny: "CNY ", twd: "TWD ", krw: "KRW ", hkd: "HK$" };
+
+  function formatAmt(total, ccy) {
+    if (!total || !ccy) return "";
+    const sym = CCY_SYM[ccy] || "";
+    if (ccy === "eur" || ccy === "chf" || ccy === "hkd") {
+      return total >= 1e9 ? `${sym}${(total / 1e9).toFixed(2)}B`
+        : total >= 1e6 ? `${sym}${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `${sym}${Math.round(total / 1e3)}K`
+        : "";
+    }
+    // Larger denominations
+    return total >= 1e9 ? `${sym}${(total / 1e9).toFixed(2)}B`
+      : total >= 1e6 ? `${sym}${(total / 1e6).toFixed(1)}M`
+      : "";
+  }
+
+  return SPECS.map(spec => ({
+    name: spec.name,
+    write: (e) => {
+      const cnt = Number(e.case_count || e.action_count || 0);
+      if (!cnt) return [];
+      const totalKey = spec.ccy ? `total_fines_${spec.ccy}` : null;
+      const total = totalKey ? Number(e[totalKey] || e.total_fines_eur || 0) : 0;
+      const amtStr = formatAmt(total, spec.ccy);
+      // Year/date: prefer explicit latest_year, fall back to year from latest_action ISO date
+      const yearStr = e.latest_year || (e.latest_action ? String(e.latest_action).slice(0, 4) : "");
+      const head = cnt === 1
+        ? `${spec.label} action${yearStr ? ` (${yearStr})` : ""}.`
+        : `${cnt} ${spec.label} actions${yearStr ? ` (latest ${yearStr})` : ""}.`;
+      const tail = amtStr ? ` ${amtStr} in fines.` : "";
+      // Detail: kernel sources use top-level `summary`; aggregator merges
+      // (e.g. ireland-dpc) put summary inside actions[0].
+      const summary = e.summary || (Array.isArray(e.actions) && e.actions[0]?.summary) || "";
+      const detail = summary ? ` ${clip(summary, 240)}` : "";
+      const sc = (spec.poorAt && total >= spec.poorAt) || cnt >= 3 ? "poor" : "mixed";
+      return [{ category: spec.cat, narrative: `${head}${tail}${detail}`.trim(), sc, severity: "negative" }];
+    },
+  }));
+}
 
 function clip(s, n) {
   if (!s) return "";
