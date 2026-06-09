@@ -1,0 +1,67 @@
+name: kff-denial-annual
+
+# KFF / CMS Marketplace claim-denial rates — annual refresh of in-network
+# claim-denial rate per parent-company insurer.
+#
+# Source: CMS Marketplace Open Enrollment Period Public Use File (CMS
+# Transparency in Coverage), aggregated by KFF in their annual working
+# file. KFF refreshes once a year (typically Jan-Feb for the prior plan
+# year). We run mid-February to catch the new file.
+#
+# Step 1 (kff-denial-fetch.mjs --apply):
+#   - Loads the bundled scripts/fixtures/kff-denial/parents-raw.json
+#     (refreshed manually when KFF updates the xlsx — see methodology
+#     note inside kff-denial-fetch.mjs).
+#   - Writes data/raw/kff-denial/<YYYY-MM-DD>.json with the per-parent
+#     rollup + TruNorth slug join via PARENT_TO_SLUG.
+#
+# Step 2 (kff-denial-merge.mjs):
+#   - Writes data/derived/kff-denial-augment.json keyed by slug.
+#
+# Step 3 (apply-augments-to-companies.mjs):
+#   - Merges into per-company narratives under "health" with the "first
+#     non-no-record wins" rule.
+
+on:
+  schedule:
+    - cron: "0 4 15 2 *"   # 04:00 UTC on Feb 15
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-merge-apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test scripts/kff-denial-fetch.test.mjs
+
+      - name: Build raw snapshot
+        run: node scripts/kff-denial-fetch.mjs --apply
+
+      - name: Build per-slug augment
+        run: node scripts/kff-denial-merge.mjs
+
+      - name: Apply augment to per-company narratives
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push the refreshed snapshot
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/kff-denial/ data/derived/kff-denial-augment.json
+          git add public/data/companies/
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(kff-denial): annual Marketplace claim-denial-rate refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

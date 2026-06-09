@@ -1,0 +1,178 @@
+{
+  "source": "eviction-lab",
+  "source_urls": {
+    "evictionLab": "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+    "evictionLabResearch": "https://evictionlab.org/research/",
+    "ftcInvitationHomes": "https://www.ftc.gov/news-events/news/press-releases/2024/09/federal-trade-commission-action-leads-48-million-refunds-renters-harmed-invitation-homes",
+    "dojRealPage": "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+    "houseOversight": "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+    "atlantaFed": "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+  },
+  "generated_at": "2026-06-09T22:52:35.370Z",
+  "snapshot_date": "2026-06-09",
+  "landlord_count": 7,
+  "matched_slug_count": 6,
+  "orphan_count": 1,
+  "orphans": [
+    "greystar"
+  ],
+  "companies": {
+    "invitation-homes": {
+      "landlord": {
+        "name": "Invitation Homes",
+        "landlordType": "single-family REIT",
+        "estUnits": 85000,
+        "actionCount": 2,
+        "penaltyUsdTotal": 48000000,
+        "latestAction": {
+          "year": 2024,
+          "type": "FTC consent order",
+          "regulator": "FTC",
+          "summary": "$48M FTC consent order — Invitation Homes refunded 444,131 renters after the agency found 'unfair and deceptive tactics' including hidden fees, unjustly withheld security deposits, and misleading pandemic-era eviction-policy claims.",
+          "penaltyUsd": 48000000,
+          "sourceUrl": "https://www.ftc.gov/news-events/news/press-releases/2024/09/federal-trade-commission-action-leads-48-million-refunds-renters-harmed-invitation-homes"
+        },
+        "evictionSignal": "high",
+        "severity": "very_poor",
+        "notes": "Largest US single-family REIT (~85K homes). Federal-level consumer-protection enforcement and academic-cited eviction-rate disparity.",
+        "sourceUrls": [
+          "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+          "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+          "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+          "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        ]
+      }
+    },
+    "american-homes-4-rent": {
+      "landlord": {
+        "name": "American Homes 4 Rent",
+        "landlordType": "single-family REIT",
+        "estUnits": 60000,
+        "actionCount": 1,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2022,
+          "type": "Congressional investigation",
+          "regulator": "US House Oversight Subcommittee",
+          "summary": "House Oversight Subcommittee on Economic and Consumer Policy staff report named American Homes 4 Rent among the largest corporate landlords that collectively filed thousands of pandemic-era eviction actions, despite many tenants being protected by the CDC moratorium.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords"
+        },
+        "evictionSignal": "moderate",
+        "severity": "mixed",
+        "notes": "Second-largest US single-family rental REIT. Cited by House Oversight investigation.",
+        "sourceUrls": [
+          "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+          "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+          "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+          "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        ]
+      }
+    },
+    "starwood": {
+      "landlord": {
+        "name": "Starwood Capital Group",
+        "landlordType": "private equity",
+        "estUnits": 30000,
+        "actionCount": 1,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2016,
+          "type": "academic study",
+          "regulator": "Atlanta Fed",
+          "summary": "Federal Reserve Bank of Atlanta study found Starwood Waypoint (the Starwood Capital SFR vehicle that later merged into Invitation Homes) evicting 30% of renters in the study sample — the highest rate among the corporate landlords examined.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        },
+        "evictionSignal": "moderate",
+        "severity": "mixed",
+        "notes": "Starwood Waypoint merged into Invitation Homes in 2017. Starwood Capital remains a major SFR/multifamily PE investor.",
+        "sourceUrls": [
+          "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+          "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+          "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+          "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        ]
+      }
+    },
+    "mid-america-apartment-communities": {
+      "landlord": {
+        "name": "Mid-America Apartment Communities (MAA)",
+        "landlordType": "multifamily REIT",
+        "estUnits": 102000,
+        "actionCount": 2,
+        "penaltyUsdTotal": 11300000,
+        "latestAction": {
+          "year": 2023,
+          "type": "civil antitrust class action",
+          "regulator": "private class action",
+          "summary": "Named co-defendant in the RealPage rent-pricing algorithm class action alleging horizontal collusion across major multifamily landlords; case track moved into the DOJ amended complaint in January 2025.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters"
+        },
+        "evictionSignal": "moderate",
+        "severity": "poor",
+        "notes": "Largest US multifamily REIT by unit count.",
+        "sourceUrls": [
+          "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+          "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+          "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+          "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        ]
+      }
+    },
+    "sun-communities": {
+      "landlord": {
+        "name": "Sun Communities",
+        "landlordType": "manufactured housing REIT",
+        "estUnits": 180000,
+        "actionCount": 1,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2024,
+          "type": "advocacy investigation",
+          "regulator": "Private Equity Stakeholder Project / MHAction",
+          "summary": "Private Equity Stakeholder Project and tenant advocates documented rent-hike and lot-fee complaints across Sun Communities manufactured-home parks; MHAction reports tracked tenant organising and state-AG inquiries.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://pestakeholder.org/issues/housing/"
+        },
+        "evictionSignal": "moderate",
+        "severity": "mixed",
+        "notes": "Largest manufactured-housing REIT. Negative signal is investigative / advocacy rather than federal enforcement — flagged 'mixed' not 'poor'.",
+        "sourceUrls": [
+          "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+          "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+          "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+          "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        ]
+      }
+    },
+    "avalon": {
+      "landlord": {
+        "name": "AvalonBay Communities",
+        "landlordType": "multifamily REIT",
+        "estUnits": 95000,
+        "actionCount": 2,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2025,
+          "type": "state antitrust",
+          "regulator": "NJ Attorney General",
+          "summary": "NJ AG sued AvalonBay and nine other landlords for an 'unlawful conspiracy' using RealPage software to set supracompetitive rents in violation of NJ antitrust law.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://www.njoag.gov/wp-content/uploads/2025/04/RealPage-Complaint.pdf"
+        },
+        "evictionSignal": "moderate",
+        "severity": "poor",
+        "notes": "Top-3 US multifamily REIT (~95K apartment units). Multiple 2025 state AG and civil-rights actions.",
+        "sourceUrls": [
+          "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+          "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+          "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+          "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        ]
+      }
+    }
+  },
+  "license": "Public-records compilation. Federal enforcement (FTC, DOJ) is US-Federal public domain. State AG filings and academic studies are linked to original publishers."
+}

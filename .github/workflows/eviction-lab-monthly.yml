@@ -1,0 +1,63 @@
+name: eviction-lab-monthly
+
+# Eviction Lab + corporate-landlord research — monthly refresh of the
+# per-landlord scorecard for major US publicly-traded REITs and
+# institutional landlords.
+#
+# Step 1 (eviction-lab-fetch.mjs --apply):
+#   - Builds a snapshot from the curated LANDLORDS constant (FTC consent
+#     orders, DOJ Antitrust RealPage amended complaint, state-AG actions,
+#     House Oversight 2022 staff report, Atlanta Fed eviction study).
+#   - Writes data/raw/eviction-lab/<YYYY-MM-DD>.json.
+#
+# Step 2 (eviction-lab-merge.mjs):
+#   - Resolves each landlord to a TruNorth slug (direct match against
+#     public/data/index.json) and writes data/derived/eviction-lab-augment.json.
+#
+# Step 3 (apply-augments-to-companies.mjs):
+#   - Merges the augment into per-company narratives, mapping to "labor"
+#     (renter-worker rights) under the "first non-no-record wins" rule.
+
+on:
+  schedule:
+    - cron: "0 3 5 * *"   # 03:00 UTC on the 5th of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-merge-apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run unit tests
+        run: node --test scripts/eviction-lab-fetch.test.mjs
+
+      - name: Build raw snapshot
+        run: node scripts/eviction-lab-fetch.mjs --apply
+
+      - name: Build per-slug augment
+        run: node scripts/eviction-lab-merge.mjs
+
+      - name: Apply augment to per-company narratives
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push the refreshed snapshot
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/eviction-lab/ data/derived/eviction-lab-augment.json
+          git add public/data/companies/
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(eviction-lab): monthly corporate-landlord scorecard refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

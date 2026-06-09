@@ -1,0 +1,229 @@
+{
+  "source": "kff-denial",
+  "source_urls": {
+    "cmsPuf": "https://www.cms.gov/marketplace/resources/data",
+    "cmsPufDataset": "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8",
+    "kffBrief": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+    "kffWorkingFile": "https://files.kff.org/attachment/2023-KFF-Transparency-Data-Working-File.xlsx"
+  },
+  "generated_at": "2026-06-09T22:52:43.127Z",
+  "snapshot_date": "2026-06-09",
+  "plan_year": 2023,
+  "parent_count": 65,
+  "matched_slug_count": 9,
+  "orphan_count": 56,
+  "orphans": [
+    "HCSC GRP",
+    "BCBS OF NC GRP",
+    "BCBS OF AL GRP",
+    "BCBS OF SC GRP",
+    "IHC INC GRP",
+    "ARKANSAS BCBS GRP",
+    "HARRIS HLTH GRP",
+    "CARESOURCE GRP",
+    "LOUISIANA HLTH SERV GRP",
+    "SCOTT & WHITE GRP",
+    "MEDICA GRP",
+    "WELLMARK INC GRP",
+    "BCBS OF TN GRP",
+    "BCBS OF MI GRP",
+    "COREWELL HLTH GRP",
+    "COMMON GROUND HLTHCARE COOP",
+    "MEDICAL MUT OF OH GRP",
+    "HIGHMARK GRP",
+    "HEALTH FIRST GRP",
+    "CARLE HOLDING CO GRP",
+    "BCBS OF AZ INC",
+    "BCBS OF KS GRP",
+    "MONTANA HLTH COOPERATIVE",
+    "OREGON DENTAL SERV GRP",
+    "SANFORD HLTH GRP",
+    "SECURITY HLTH PLAN OF WI INC",
+    "BCBS OF WY",
+    "CHRISTUS HLTH GRP",
+    "CAMBIA HEALTH SOLUTIONS INC",
+    "PREMERA BLUE CROSS GRP",
+    "UNIVERSITY HLTH CARE & GUNDERSEN LUTHERAN GRP",
+    "HAWAII MEDICAL SERV ASSN",
+    "PACIFICSOURCE HLTH PLAN GRP",
+    "BCBS OF ND",
+    "UNIVERSITY OF UT GRP",
+    "BCBS OF NE GRP",
+    "PROVIDENCE HLTH GRP",
+    "SENTARA HLTH MGMT GRP",
+    "AVERA HLTH PLANS INC",
+    "ASPIRUS HLTH PLAN INC",
+    "PHYSICIANS HLTH PLAN OF MID MI GRP",
+    "HEALTHPARTNERS GRP",
+    "INDEPENDENCE BLUE CROSS GRP",
+    "MERCY HLTH CORP GRP",
+    "BCBS OF KC GRP",
+    "AULTMAN HLTH FOUNDATION GRP",
+    "SENDERO HLTH PLANS INC",
+    "GROUP HLTH COOP OF S CENTRAL WI",
+    "NETWORK HLTH GRP",
+    "SUMMA HLTH GRP",
+    "CHORUS COMMUNITY HEALTH PLAN INC.",
+    "COMMUNITYCARE GRP",
+    "MCLAREN HLTH GRP",
+    "POINT32HEALTH INC GRP",
+    "COMMUNITY FIRST GRP",
+    "COX INS GRP"
+  ],
+  "companies": {
+    "centene": {
+      "denial": {
+        "parent": "CENTENE CORP GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 83192384,
+        "inNetworkDenials": 11460635,
+        "inNetworkDenialRate": 0.13776062722279964,
+        "issuerCount": 21,
+        "stateCount": 17,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "florida-blue": {
+      "denial": {
+        "parent": "GUIDEWELL MUT HOLDING GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 63826952,
+        "inNetworkDenials": 14301320,
+        "inNetworkDenialRate": 0.22406396595594913,
+        "issuerCount": 4,
+        "stateCount": 1,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "aetna-cvs-health": {
+      "denial": {
+        "parent": "CVS GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 31419396,
+        "inNetworkDenials": 6796838,
+        "inNetworkDenialRate": 0.2163261827184711,
+        "issuerCount": 7,
+        "stateCount": 7,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "oscar-health": {
+      "denial": {
+        "parent": "OSCAR HEALTH INC GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 19655916,
+        "inNetworkDenials": 3362228,
+        "inNetworkDenialRate": 0.17105425155459558,
+        "issuerCount": 14,
+        "stateCount": 13,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "cigna": {
+      "denial": {
+        "parent": "CIGNA HLTH GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 18151575,
+        "inNetworkDenials": 3777467,
+        "inNetworkDenialRate": 0.20810684472284086,
+        "issuerCount": 8,
+        "stateCount": 8,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "unitedhealth-group": {
+      "denial": {
+        "parent": "UNITEDHEALTH GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 14022287,
+        "inNetworkDenials": 4670649,
+        "inNetworkDenialRate": 0.33308753415188264,
+        "issuerCount": 14,
+        "stateCount": 14,
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "anthem-elevance-health": {
+      "denial": {
+        "parent": "ELEVANCE HLTH INC GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 9628609,
+        "inNetworkDenials": 1453736,
+        "inNetworkDenialRate": 0.15098089454042635,
+        "issuerCount": 5,
+        "stateCount": 5,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "molina-healthcare": {
+      "denial": {
+        "parent": "MOLINA HEALTHCARE INC GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 5339437,
+        "inNetworkDenials": 1407854,
+        "inNetworkDenialRate": 0.26367087016852153,
+        "issuerCount": 9,
+        "stateCount": 9,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    },
+    "kaiser-permanente": {
+      "denial": {
+        "parent": "KAISER FOUNDATION GRP",
+        "planYear": 2023,
+        "inNetworkClaims": 23800,
+        "inNetworkDenials": 1439,
+        "inNetworkDenialRate": 0.06046218487394958,
+        "issuerCount": 2,
+        "stateCount": 2,
+        "severity": "positive",
+        "sourceUrls": [
+          "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+          "https://www.cms.gov/marketplace/resources/data",
+          "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8"
+        ]
+      }
+    }
+  },
+  "license": "CMS Transparency in Coverage PUF is US-Federal public domain. KFF aggregate file is reproduced under fair-use for analytical purposes."
+}

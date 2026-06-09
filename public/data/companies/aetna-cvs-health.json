@@ -14,7 +14,8 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $551K in executive political donations; partisan lean split across 17 executive donors.",
@@ -152,5 +153,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "realCats": 1
+  "realCats": 1,
+  "health": {
+    "s": "CMS Marketplace Transparency PUF (2023, via KFF): 21.6% in-network claim-denial rate on 31.4M claims across 7 subsidiaries in 7 states — near the marketplace average of ~20%.",
+    "sources": [
+      "kff-denial"
+    ]
+  }
 }

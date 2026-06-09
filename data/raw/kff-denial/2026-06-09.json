@@ -1,0 +1,1022 @@
+{
+  "source": "kff-denial",
+  "source_urls": {
+    "cmsPuf": "https://www.cms.gov/marketplace/resources/data",
+    "cmsPufDataset": "https://data.healthcare.gov/dataset/5c232812-fc30-4dd7-8af7-015ce0073eb8",
+    "kffBrief": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/",
+    "kffWorkingFile": "https://files.kff.org/attachment/2023-KFF-Transparency-Data-Working-File.xlsx"
+  },
+  "generated_at": "2026-06-09T22:52:43.079Z",
+  "snapshot_date": "2026-06-09",
+  "plan_year": 2023,
+  "parent_count": 65,
+  "matched_parent_count": 9,
+  "parents": [
+    {
+      "parent": "CENTENE CORP GRP",
+      "slug": "centene",
+      "plan_year": 2023,
+      "in_network_claims": 83192384,
+      "in_network_denials": 11460635,
+      "in_network_denial_rate": 0.13776062722279964,
+      "issuer_count": 21,
+      "states": [
+        "AL",
+        "AR",
+        "AZ",
+        "FL",
+        "IL",
+        "KS",
+        "MI",
+        "MO",
+        "MS",
+        "NC",
+        "NE",
+        "NH",
+        "OH",
+        "OK",
+        "SC",
+        "TN",
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "GUIDEWELL MUT HOLDING GRP",
+      "slug": "florida-blue",
+      "plan_year": 2023,
+      "in_network_claims": 63826952,
+      "in_network_denials": 14301320,
+      "in_network_denial_rate": 0.22406396595594913,
+      "issuer_count": 4,
+      "states": [
+        "FL"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "HCSC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 59090043,
+      "in_network_denials": 13816101,
+      "in_network_denial_rate": 0.2338143669991914,
+      "issuer_count": 4,
+      "states": [
+        "IL",
+        "MT",
+        "OK",
+        "TX"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CVS GRP",
+      "slug": "aetna-cvs-health",
+      "plan_year": 2023,
+      "in_network_claims": 31419396,
+      "in_network_denials": 6796838,
+      "in_network_denial_rate": 0.2163261827184711,
+      "issuer_count": 7,
+      "states": [
+        "AZ",
+        "DE",
+        "FL",
+        "IL",
+        "MO",
+        "NC",
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "OSCAR HEALTH INC GRP",
+      "slug": "oscar-health",
+      "plan_year": 2023,
+      "in_network_claims": 19655916,
+      "in_network_denials": 3362228,
+      "in_network_denial_rate": 0.17105425155459558,
+      "issuer_count": 14,
+      "states": [
+        "AZ",
+        "FL",
+        "IA",
+        "IL",
+        "KS",
+        "MI",
+        "MO",
+        "NC",
+        "NE",
+        "OH",
+        "OK",
+        "TN",
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF NC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 18257563,
+      "in_network_denials": 3451238,
+      "in_network_denial_rate": 0.18903059515664825,
+      "issuer_count": 1,
+      "states": [
+        "NC"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CIGNA HLTH GRP",
+      "slug": "cigna",
+      "plan_year": 2023,
+      "in_network_claims": 18151575,
+      "in_network_denials": 3777467,
+      "in_network_denial_rate": 0.20810684472284086,
+      "issuer_count": 8,
+      "states": [
+        "AZ",
+        "FL",
+        "IL",
+        "IN",
+        "MS",
+        "NC",
+        "TN",
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "UNITEDHEALTH GRP",
+      "slug": "unitedhealth-group",
+      "plan_year": 2023,
+      "in_network_claims": 14022287,
+      "in_network_denials": 4670649,
+      "in_network_denial_rate": 0.33308753415188264,
+      "issuer_count": 14,
+      "states": [
+        "AL",
+        "AZ",
+        "FL",
+        "IL",
+        "KS",
+        "LA",
+        "MI",
+        "MO",
+        "MS",
+        "NC",
+        "OH",
+        "OK",
+        "TN",
+        "TX"
+      ],
+      "severity": "very_poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF AL GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 13033751,
+      "in_network_denials": 4533017,
+      "in_network_denial_rate": 0.34779067054449636,
+      "issuer_count": 1,
+      "states": [
+        "AL"
+      ],
+      "severity": "very_poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF SC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 11459827,
+      "in_network_denials": 2183048,
+      "in_network_denial_rate": 0.19049572039787338,
+      "issuer_count": 1,
+      "states": [
+        "SC"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "ELEVANCE HLTH INC GRP",
+      "slug": "anthem-elevance-health",
+      "plan_year": 2023,
+      "in_network_claims": 9628609,
+      "in_network_denials": 1453736,
+      "in_network_denial_rate": 0.15098089454042635,
+      "issuer_count": 5,
+      "states": [
+        "IN",
+        "MO",
+        "NH",
+        "OH",
+        "WI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "IHC INC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 7757055,
+      "in_network_denials": 1444289,
+      "in_network_denial_rate": 0.18619037766265678,
+      "issuer_count": 1,
+      "states": [
+        "UT"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "ARKANSAS BCBS GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 7267045,
+      "in_network_denials": 1198923,
+      "in_network_denial_rate": 0.16498081407229487,
+      "issuer_count": 2,
+      "states": [
+        "AR"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "HARRIS HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 6915555,
+      "in_network_denials": 1238096,
+      "in_network_denial_rate": 0.17903060564191883,
+      "issuer_count": 1,
+      "states": [
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CARESOURCE GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 5495489,
+      "in_network_denials": 1129642,
+      "in_network_denial_rate": 0.20555804952025197,
+      "issuer_count": 4,
+      "states": [
+        "IN",
+        "NC",
+        "OH",
+        "WV"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "MOLINA HEALTHCARE INC GRP",
+      "slug": "molina-healthcare",
+      "plan_year": 2023,
+      "in_network_claims": 5339437,
+      "in_network_denials": 1407854,
+      "in_network_denial_rate": 0.26367087016852153,
+      "issuer_count": 9,
+      "states": [
+        "FL",
+        "IL",
+        "MI",
+        "MS",
+        "OH",
+        "SC",
+        "TX",
+        "UT",
+        "WI"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "LOUISIANA HLTH SERV GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 5237979,
+      "in_network_denials": 852031,
+      "in_network_denial_rate": 0.1626640733000266,
+      "issuer_count": 3,
+      "states": [
+        "LA",
+        "MS"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "SCOTT & WHITE GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 5211245,
+      "in_network_denials": 993379,
+      "in_network_denial_rate": 0.19062220256387868,
+      "issuer_count": 1,
+      "states": [
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "MEDICA GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 4671875,
+      "in_network_denials": 768719,
+      "in_network_denial_rate": 0.16454185953177258,
+      "issuer_count": 9,
+      "states": [
+        "IA",
+        "KS",
+        "MO",
+        "ND",
+        "NE",
+        "OK",
+        "WI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "WELLMARK INC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 4658212,
+      "in_network_denials": 798772,
+      "in_network_denial_rate": 0.17147609426105984,
+      "issuer_count": 2,
+      "states": [
+        "IA",
+        "SD"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF TN GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 4493833,
+      "in_network_denials": 939798,
+      "in_network_denial_rate": 0.20913060187149812,
+      "issuer_count": 1,
+      "states": [
+        "TN"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF MI GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 4462714,
+      "in_network_denials": 760631,
+      "in_network_denial_rate": 0.17044135026353918,
+      "issuer_count": 2,
+      "states": [
+        "MI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "COREWELL HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 3354862,
+      "in_network_denials": 225909,
+      "in_network_denial_rate": 0.06733779213571228,
+      "issuer_count": 1,
+      "states": [
+        "MI"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "COMMON GROUND HLTHCARE COOP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 2954348,
+      "in_network_denials": 475594,
+      "in_network_denial_rate": 0.1609810354095049,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "MEDICAL MUT OF OH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1869340,
+      "in_network_denials": 249493,
+      "in_network_denial_rate": 0.13346582216183253,
+      "issuer_count": 2,
+      "states": [
+        "OH"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "HIGHMARK GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1841524,
+      "in_network_denials": 229948,
+      "in_network_denial_rate": 0.12486831559078242,
+      "issuer_count": 2,
+      "states": [
+        "DE",
+        "WV"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "HEALTH FIRST GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1826300,
+      "in_network_denials": 352972,
+      "in_network_denial_rate": 0.19327164211794337,
+      "issuer_count": 1,
+      "states": [
+        "FL"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CARLE HOLDING CO GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1507897,
+      "in_network_denials": 187861,
+      "in_network_denial_rate": 0.12458476938411576,
+      "issuer_count": 1,
+      "states": [
+        "IL"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF AZ INC",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1370518,
+      "in_network_denials": 222893,
+      "in_network_denial_rate": 0.16263412811798167,
+      "issuer_count": 1,
+      "states": [
+        "AZ"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF KS GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1239867,
+      "in_network_denials": 145732,
+      "in_network_denial_rate": 0.11753841339433987,
+      "issuer_count": 1,
+      "states": [
+        "KS"
+      ],
+      "severity": "neutral",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "MONTANA HLTH COOPERATIVE",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1216866,
+      "in_network_denials": 83340,
+      "in_network_denial_rate": 0.06848740946003914,
+      "issuer_count": 2,
+      "states": [
+        "MT",
+        "WY"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "OREGON DENTAL SERV GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1047762,
+      "in_network_denials": 167308,
+      "in_network_denial_rate": 0.159681301669654,
+      "issuer_count": 2,
+      "states": [
+        "OR",
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "SANFORD HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1042837,
+      "in_network_denials": 51791,
+      "in_network_denial_rate": 0.04966356199482757,
+      "issuer_count": 2,
+      "states": [
+        "ND",
+        "SD"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "SECURITY HLTH PLAN OF WI INC",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 1021773,
+      "in_network_denials": 182583,
+      "in_network_denial_rate": 0.17869233185844605,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF WY",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 976451,
+      "in_network_denials": 187139,
+      "in_network_denial_rate": 0.19165221808365193,
+      "issuer_count": 1,
+      "states": [
+        "WY"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CHRISTUS HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 870516,
+      "in_network_denials": 129841,
+      "in_network_denial_rate": 0.14915406494538871,
+      "issuer_count": 2,
+      "states": [
+        "LA",
+        "TX"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CAMBIA HEALTH SOLUTIONS INC",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 758360,
+      "in_network_denials": 87236,
+      "in_network_denial_rate": 0.11503243841974788,
+      "issuer_count": 4,
+      "states": [
+        "OR",
+        "UT"
+      ],
+      "severity": "neutral",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "PREMERA BLUE CROSS GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 732654,
+      "in_network_denials": 186285,
+      "in_network_denial_rate": 0.25426053771630264,
+      "issuer_count": 1,
+      "states": [
+        "AK"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "UNIVERSITY HLTH CARE & GUNDERSEN LUTHERAN GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 675401,
+      "in_network_denials": 53529,
+      "in_network_denial_rate": 0.07925513879902459,
+      "issuer_count": 2,
+      "states": [
+        "IL",
+        "WI"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "HAWAII MEDICAL SERV ASSN",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 673684,
+      "in_network_denials": 162934,
+      "in_network_denial_rate": 0.24185523182975996,
+      "issuer_count": 1,
+      "states": [
+        "HI"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "PACIFICSOURCE HLTH PLAN GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 616785,
+      "in_network_denials": 14587,
+      "in_network_denial_rate": 0.023650056340540057,
+      "issuer_count": 2,
+      "states": [
+        "MT",
+        "OR"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF ND",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 606207,
+      "in_network_denials": 89205,
+      "in_network_denial_rate": 0.14715270526404348,
+      "issuer_count": 1,
+      "states": [
+        "ND"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "UNIVERSITY OF UT GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 569517,
+      "in_network_denials": 107936,
+      "in_network_denial_rate": 0.18952199846536627,
+      "issuer_count": 1,
+      "states": [
+        "UT"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF NE GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 520183,
+      "in_network_denials": 87307,
+      "in_network_denial_rate": 0.1678390105020733,
+      "issuer_count": 1,
+      "states": [
+        "NE"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "PROVIDENCE HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 502058,
+      "in_network_denials": 19130,
+      "in_network_denial_rate": 0.03810316736313334,
+      "issuer_count": 1,
+      "states": [
+        "OR"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "SENTARA HLTH MGMT GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 473890,
+      "in_network_denials": 147403,
+      "in_network_denial_rate": 0.31104897761083794,
+      "issuer_count": 1,
+      "states": [
+        "FL"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "AVERA HLTH PLANS INC",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 433953,
+      "in_network_denials": 6325,
+      "in_network_denial_rate": 0.01457531115120762,
+      "issuer_count": 1,
+      "states": [
+        "SD"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "ASPIRUS HLTH PLAN INC",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 430766,
+      "in_network_denials": 48665,
+      "in_network_denial_rate": 0.11297316872733688,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "neutral",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "PHYSICIANS HLTH PLAN OF MID MI GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 406649,
+      "in_network_denials": 74036,
+      "in_network_denial_rate": 0.1820636470272889,
+      "issuer_count": 1,
+      "states": [
+        "MI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "HEALTHPARTNERS GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 363667,
+      "in_network_denials": 24127,
+      "in_network_denial_rate": 0.06634366054659895,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "INDEPENDENCE BLUE CROSS GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 297588,
+      "in_network_denials": 122823,
+      "in_network_denial_rate": 0.41272833581999274,
+      "issuer_count": 4,
+      "states": [
+        "DE",
+        "FL",
+        "NC",
+        "SC"
+      ],
+      "severity": "very_poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "MERCY HLTH CORP GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 279640,
+      "in_network_denials": 25618,
+      "in_network_denial_rate": 0.091610642254327,
+      "issuer_count": 2,
+      "states": [
+        "IL",
+        "WI"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "BCBS OF KC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 275828,
+      "in_network_denials": 56985,
+      "in_network_denial_rate": 0.20659613962324347,
+      "issuer_count": 2,
+      "states": [
+        "KS",
+        "MO"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "AULTMAN HLTH FOUNDATION GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 263962,
+      "in_network_denials": 51849,
+      "in_network_denial_rate": 0.19642600071222374,
+      "issuer_count": 1,
+      "states": [
+        "OH"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "SENDERO HLTH PLANS INC",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 253415,
+      "in_network_denials": 71030,
+      "in_network_denial_rate": 0.2802912219087268,
+      "issuer_count": 1,
+      "states": [
+        "TX"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "GROUP HLTH COOP OF S CENTRAL WI",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 243212,
+      "in_network_denials": 20516,
+      "in_network_denial_rate": 0.08435439040836801,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "NETWORK HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 241528,
+      "in_network_denials": 36552,
+      "in_network_denial_rate": 0.15133649100725383,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "SUMMA HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 231936,
+      "in_network_denials": 57441,
+      "in_network_denial_rate": 0.2476588369205298,
+      "issuer_count": 1,
+      "states": [
+        "OH"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "CHORUS COMMUNITY HEALTH PLAN INC.",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 209169,
+      "in_network_denials": 18276,
+      "in_network_denial_rate": 0.08737432411112546,
+      "issuer_count": 1,
+      "states": [
+        "WI"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "COMMUNITYCARE GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 164431,
+      "in_network_denials": 16854,
+      "in_network_denial_rate": 0.1024989205198533,
+      "issuer_count": 1,
+      "states": [
+        "OK"
+      ],
+      "severity": "neutral",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "MCLAREN HLTH GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 142038,
+      "in_network_denials": 22744,
+      "in_network_denial_rate": 0.16012616342105634,
+      "issuer_count": 1,
+      "states": [
+        "MI"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "POINT32HEALTH INC GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 110436,
+      "in_network_denials": 28102,
+      "in_network_denial_rate": 0.2544641240175305,
+      "issuer_count": 1,
+      "states": [
+        "NH"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "COMMUNITY FIRST GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 92909,
+      "in_network_denials": 23797,
+      "in_network_denial_rate": 0.25613234455219624,
+      "issuer_count": 1,
+      "states": [
+        "TX"
+      ],
+      "severity": "poor",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "KAISER FOUNDATION GRP",
+      "slug": "kaiser-permanente",
+      "plan_year": 2023,
+      "in_network_claims": 23800,
+      "in_network_denials": 1439,
+      "in_network_denial_rate": 0.06046218487394958,
+      "issuer_count": 2,
+      "states": [
+        "HI",
+        "OR"
+      ],
+      "severity": "positive",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    },
+    {
+      "parent": "COX INS GRP",
+      "slug": null,
+      "plan_year": 2023,
+      "in_network_claims": 7205,
+      "in_network_denials": 1079,
+      "in_network_denial_rate": 0.14975711311589174,
+      "issuer_count": 1,
+      "states": [
+        "MO"
+      ],
+      "severity": "mixed",
+      "source_url": "https://www.kff.org/affordable-care-act/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/"
+    }
+  ],
+  "license": "CMS Transparency in Coverage PUF is US-Federal public domain. KFF aggregate file is reproduced under fair-use for analytical purposes.",
+  "methodology": "Per-parent rollup of the CMS Marketplace Open Enrollment Period Public Use File via the KFF 2023 working file. We sum Claims_Received_In_Network and Claims_Denied_In_Network across all issuer rows under each parent company and recompute denial_rate = denials/claims. Severity tier compares to the 2023 HealthCare.gov marketplace in-network denial-rate average of ~20%."
+}
