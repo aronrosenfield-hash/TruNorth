@@ -6,7 +6,7 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "sc": {
-    "political": "neutral",
+    "political": "very_poor",
     "charity": "neutral",
     "environment": "mixed",
     "labor": "mixed",
@@ -17,11 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "Treasury OFAC SDN list: 2 listed entities under UKRAINE-EO13662] [RUSSIA-EO14024 / IRAN-EO13902 sanctions programs.",
     "amt": "N/A",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "ofac-sdn"
     ]
   },
   "charity": {

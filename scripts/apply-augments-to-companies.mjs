@@ -1304,6 +1304,78 @@ const WRITERS = [
       return out;
     },
   },
+
+  // ─── B-48 follow-up (2026-06-09): wire the 3 DW-7..12 augments that have
+  // been producing data into augment files but weren't being applied to
+  // per-company narratives. Catches up the "data on disk but not in bundle"
+  // gap left when the old ofac/ferc/dol-whd fetchers were retired.
+  // ─────────────────────────────────────────────────────────────────────
+
+  // ─── OFAC SDN (Treasury sanctions list) → political ──────────────────
+  // Most matches will be foreign / shell entities (Cuba, Iran, Russia,
+  // syndicate aliases). For mainstream brands a hit is rare and severe.
+  {
+    name: "ofac-sdn",
+    write: (e) => {
+      if (!e?.is_sanctioned) return [];
+      const programs = Array.isArray(e.programs) ? e.programs : [];
+      const entityCount = Array.isArray(e.entities) ? e.entities.length : 0;
+      const programLabel = programs.slice(0, 3).join(" / ") || "OFAC program";
+      const narrative = `Treasury OFAC SDN list: ${entityCount} listed entit${entityCount === 1 ? "y" : "ies"} under ${programLabel} sanctions program${programs.length > 1 ? "s" : ""}.`;
+      return [{
+        category: "political",
+        narrative,
+        sc: "very_poor",
+        severity: "negative",
+      }];
+    },
+  },
+
+  // ─── FERC enforcement (energy market manipulation) → environment ────
+  // Targets the natural-gas / power-market manipulation cases. Skip
+  // matches with no civil penalty (likely false-positive name collisions).
+  {
+    name: "ferc-enforcement",
+    write: (e) => {
+      const cnt = e?.action_count;
+      const civ = e?.total_civil_penalty_usd;
+      if (!cnt || !civ || civ < 100_000) return [];
+      const usd = civ >= 1e9 ? `$${(civ / 1e9).toFixed(2)}B`
+                : civ >= 1e6 ? `$${(civ / 1e6).toFixed(1)}M`
+                : `$${Math.round(civ / 1e3)}K`;
+      const narrative = `FERC enforcement: ${cnt} action${cnt === 1 ? "" : "s"} totaling ${usd} in civil penalties for energy-market manipulation or tariff violations.`;
+      const sc = civ >= 100_000_000 ? "very_poor" : civ >= 10_000_000 ? "poor" : "mixed";
+      return [{
+        category: "environment",
+        narrative,
+        sc,
+        severity: civ >= 10_000_000 ? "negative" : "mixed",
+      }];
+    },
+  },
+
+  // ─── DOL Wage & Hour Division violations → labor ─────────────────────
+  // Federal back-wages assessed for FLSA / wage-theft violations.
+  {
+    name: "dol-whd-violations",
+    write: (e) => {
+      const cnt = e?.case_count;
+      const wages = e?.total_back_wages_usd;
+      const emp = e?.total_employees_affected;
+      if (!cnt || !wages) return [];
+      const usd = wages >= 1e6 ? `$${(wages / 1e6).toFixed(1)}M`
+                : `$${Math.round(wages / 1e3)}K`;
+      const empStr = emp ? ` affecting ${emp.toLocaleString()} worker${emp === 1 ? "" : "s"}` : "";
+      const narrative = `DOL Wage & Hour Division: ${cnt} case${cnt === 1 ? "" : "s"} with ${usd} in back wages assessed${empStr} for FLSA / wage-theft violations.`;
+      const sc = wages >= 5_000_000 ? "very poor" : wages >= 500_000 ? "poor" : "mixed";
+      return [{
+        category: "labor",
+        narrative,
+        sc,
+        severity: wages >= 500_000 ? "negative" : "mixed",
+      }];
+    },
+  },
 ];
 
 // Compact factory for foreign-regulator-r4 writers. Each maps to a single
