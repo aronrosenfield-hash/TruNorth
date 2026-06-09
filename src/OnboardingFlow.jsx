@@ -103,7 +103,7 @@ export default function OnboardingFlow({ onComplete }) {
             <h2 style={{ ...s.headline, fontSize:28, textAlign:"center" }}>Shop with a<br /><em style={{ color:"#7c6dfa", fontStyle:"normal" }}>clear conscience.</em></h2>
             <p style={{ ...s.subtext, textAlign:"center", marginBottom:28 }}>11,000+ companies tracked. Top brands carry full grades across 9 categories — federal regulators, court records, corporate filings. Real records, not opinions.</p>
             <div style={s.statsRow}>
-              {[["11,000+","Tracked"],["9","Categories"],["100+","Sources"]].map(([num,label]) => (
+              {[["11,000+","Tracked"],["9","Categories"],["175+","Sources"]].map(([num,label]) => (
                 <div key={label} style={{ textAlign:"center" }}>
                   <div style={s.statNum}>{num}</div>
                   <div style={s.statLabel}>{label}</div>

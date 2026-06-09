@@ -45,7 +45,7 @@ The longer breakdown:
 | **Barcode scanner** | Google ML Kit via `@capacitor-mlkit/barcode-scanning` | Apple's native barcode reader (free, on-device) |
 | **Hosting (marketing site)** | Vercel free tier | Auto-deploys from GitHub on every push. Zero cost. |
 | **"Database"** | JSON files in the GitHub repo | 11k companies, 5.6 MB bundle, served as a static file. No SQL, no NoSQL. The iOS app downloads it once and caches it. |
-| **Data pipeline** | 99+ GitHub Actions workflows | Each one fetches a public-records source on a schedule (daily/weekly/monthly/quarterly/annual) and commits the result back to the repo. The repo IS the database. |
+| **Data pipeline** | 143 GitHub Actions workflows | Each one fetches a public-records source on a schedule (daily/weekly/monthly/quarterly/annual) and commits the result back to the repo. The repo IS the database. |
 | **Email** | MailerLite (newsletter), Gmail Apps Script (support auto-reply) | Both free tiers cover us for years at expected scale |
 | **Analytics** | PostHog | Free tier, proxied through our subdomain so ad blockers don't break it |
 | **Code/data version control** | GitHub | Every data update is a git commit — fully auditable change history |
@@ -82,7 +82,7 @@ Examples:
 - **SEC** for exec pay and litigation
 - **USAspending.gov** for federal contract dollars
 - **Senate LD-2** and **FARA** for lobbying disclosures
-- ...and 100+ more
+- ...and 175+ more
 
 Every grade has a "Why this grade?" view that lists the exact citations. If the government records change, our grades change. If a company gets sued or fined or wins an award, we know within a week.
 
@@ -98,7 +98,7 @@ Buycott aggregates campaigns ("boycott this company, support that one"). That's 
 
 Ethical Consumer uses paid editorial researchers. That's opinion.
 
-TruNorth uses 113+ public-records data sources with traceable citations. We grade the parent company, not the product, so scanning an Oreo gives you a verdict on Mondelez. And the grading methodology is published.
+TruNorth uses 175+ public-records data sources with traceable citations. We grade the parent company, not the product, so scanning an Oreo gives you a verdict on Mondelez. And the grading methodology is published.
 
 ---
 
@@ -106,7 +106,7 @@ TruNorth uses 113+ public-records data sources with traceable citations. We grad
 
 **Two things converged.**
 
-First, the public data is finally good enough. FEC, EPA, OSHA, NLRB all expose machine-readable feeds. Five years ago this would have required a research team. Today it's 113 cron jobs.
+First, the public data is finally good enough. FEC, EPA, OSHA, NLRB all expose machine-readable feeds. Five years ago this would have required a research team. Today it's 143 cron jobs.
 
 Second, consumers got fed up with marketing-speak. "Sustainable," "ethical," "purpose-driven" are all spin. People want receipts. We provide the receipts.
 
@@ -166,8 +166,8 @@ If they ask about background, mention: a year of solo development, mortgaged-the
 ## Quick numbers to memorize
 
 - **11,209 companies graded**
-- **113+ public-records data sources** (growing weekly)
-- **99 GitHub Actions cron jobs** keeping data fresh
+- **175+ public-records data sources** (growing weekly)
+- **143 GitHub Actions cron jobs** keeping data fresh
 - **11 values categories** (political donations, charity, environment, labor, DEI, animal testing, firearms, data privacy, executive pay, transparency, health)
 - **0 ads, 0 trackers selling user data, 0 dollars from rated companies**
 - **$0/month** total infrastructure cost

@@ -278,7 +278,7 @@ export default async function handler(req) {
       }).join("")}
       <section style="border-top:1px solid #2a2a2a;padding:18px 0">
         <h2 style="font-size:16px;margin:0 0 6px;color:#fff;font-weight:700">Data sources</h2>
-        <p style="font-size:13px;color:#8a8a8a;line-height:1.55">Researched from 100 public-records sources: FEC · EPA · OSHA · SEC · CFPB · NHTSA · CISA · DOJ · CourtListener · and 90+ more. See the in-app Sources tab for the full list.</p>
+        <p style="font-size:13px;color:#8a8a8a;line-height:1.55">Researched from 175+ public-records sources: FEC · EPA · OSHA · SEC · CFPB · NHTSA · CISA · DOJ · CourtListener · and 165+ more. See the in-app Sources tab for the full list.</p>
       </section>
       <section style="border-top:1px solid #2a2a2a;padding:18px 0;text-align:center">
         <p style="font-size:13px;color:#8a8a8a;line-height:1.55;margin:0 0 14px">Get the full personalized grade for ${esc(name)} on TruNorth iOS</p>
