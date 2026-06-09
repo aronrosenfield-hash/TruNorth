@@ -304,6 +304,62 @@ const WRITERS = [
       }];
     },
   },
+  // ─── High-credibility investigative news (ProPublica, The Markup, etc.)
+  // Per-brand augment shape: { investigations: [], categorySummary: { [cat]: { count, sc, severity, narrative, sources, topItems } } }
+  // We replay each categorySummary entry as a writer output.
+  {
+    name: "high-cred-news",
+    write: (e) => {
+      const cs = e.categorySummary || {};
+      const out = [];
+      for (const [cat, sum] of Object.entries(cs)) {
+        if (!sum || !sum.narrative) continue;
+        out.push({
+          category: cat,
+          narrative: sum.narrative,
+          sc: sum.sc,
+          severity: sum.severity || "negative",
+        });
+      }
+      return out;
+    },
+  },
+  // ─── Fact-check verdicts (PolitiFact, Snopes, FactCheck.org)
+  // Routes to "transparency" category — false corporate claims tank
+  // transparency, true ones lift it.
+  {
+    name: "factcheck-verdicts",
+    write: (e) => {
+      const s = e.summary;
+      if (!s || !s.narrative) return [];
+      return [{
+        category: "transparency",
+        narrative: s.narrative,
+        sc: s.sc,
+        severity: s.severity || "neutral",
+      }];
+    },
+  },
+  // ─── Corporate PR wire (PR Newswire, Business Wire)
+  // Self-claims — narratives EXPLICITLY say "Company announcement" so
+  // consumers know this isn't independent verification.
+  {
+    name: "corporate-prwire",
+    write: (e) => {
+      const cs = e.categorySummary || {};
+      const out = [];
+      for (const [cat, sum] of Object.entries(cs)) {
+        if (!sum || !sum.narrative) continue;
+        out.push({
+          category: cat,
+          narrative: sum.narrative,
+          sc: sum.sc,
+          severity: "positive",
+        });
+      }
+      return out;
+    },
+  },
 ];
 
 // ─── Apply ──────────────────────────────────────────────────────────────
