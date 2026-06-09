@@ -7,9 +7,9 @@
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "good",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -40,16 +40,18 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "CDP Climate Change: A (2024) — leadership-band environmental disclosure with validated targets.",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "cdp-climate"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "hrc-cei"
     ]
   },
   "animals": {
