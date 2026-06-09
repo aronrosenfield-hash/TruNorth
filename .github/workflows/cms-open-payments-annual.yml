@@ -1,0 +1,67 @@
+name: cms-open-payments-annual
+
+# CMS Open Payments — pharmaceutical / device company payments to physicians.
+#
+# Source:  https://openpaymentsdata.cms.gov
+# License: U.S. Government Work (https://www.usa.gov/government-works)
+#
+# CMS publishes a new program year each January with refresh releases in
+# June/December. We run on the 28th of January and June to pick up the
+# latest available year (currently PGYR 2024, published 2026-01-27).
+#
+# The fetcher streams a 418 MB CSV and aggregates locally to ~1,700
+# manufacturer totals (no per-row data shipped to the repo). Wall time
+# ~3-5 min on GitHub runners.
+
+on:
+  schedule:
+    - cron: "30 4 28 1,6 *"   # 04:30 UTC, Jan 28 + Jun 28
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund --prefer-offline
+
+      - name: Run unit tests
+        run: node --test scripts/cms-open-payments.test.mjs
+
+      - name: Fetch + aggregate CMS Open Payments CSV
+        run: node scripts/cms-open-payments-fetch.mjs --year 2024
+
+      - name: Merge into per-slug augment
+        run: node scripts/cms-open-payments-merge.mjs
+
+      - name: Apply augments to per-company narratives
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(cms-open-payments): annual Open Payments refresh"
+          branch: "data/cms-open-payments-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(cms-open-payments): annual Open Payments refresh"
+          body: |
+            Automated semiannual refresh of CMS Open Payments — pharma
+            and medical-device manufacturers' federally-disclosed payments
+            to physicians and teaching hospitals (ACA "Sunshine Act").
+
+            Source: https://openpaymentsdata.cms.gov
+            License: U.S. Government Work
+          add-paths: |
+            data/raw/cms-open-payments/**
+            data/derived/cms-open-payments-augment.json
+            public/data/companies/**

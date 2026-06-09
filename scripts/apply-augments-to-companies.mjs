@@ -38,9 +38,11 @@ function loadAugment(name) {
 }
 
 function entriesOf(aug) {
-  // Augments can be either { slug: data } or { companies: { slug: data } }
+  // Augments can be either { slug: data }, { companies: { slug: data } },
+  // or { bySlug: { slug: data } } — the latter is the shape produced by
+  // the fdaaa-trials, cms-open-payments, and cms-care-compare mergers.
   if (!aug) return [];
-  const root = aug.companies || aug;
+  const root = aug.companies || aug.bySlug || aug;
   return Object.entries(root).filter(([k]) => !k.startsWith("_"));
 }
 
@@ -273,12 +275,99 @@ const WRITERS = [
       }];
     },
   },
-  // ─── FDAAA TrialsTracker ──────────────────────────────────────────────
+  // ─── OpenFDA Health Signals — drug/device/food recalls + warning labels ─
+  // Highest priority within health: real recall counts beat "trial reporting"
+  // and "pharma payments" as the most consumer-meaningful health signal.
+  {
+    name: "health-signals",
+    write: (e) => {
+      const h = e?.health || e;
+      if (!h) return [];
+      const recalls = h.recallEvents5y || 0;
+      const class1 = h.class1RecallCount || 0;
+      const wl = h.warningLetters5y || 0;
+      const carcinogens = h.carcinogenEmissionsKg || 0;
+      const ae = h.adverseEvents5y || 0;
+      // Skip if no signal at all
+      if (recalls < 1 && class1 < 1 && wl < 1 && carcinogens < 1 && ae < 1) return [];
+      // Scoring
+      let sc = "neutral";
+      if (class1 >= 5) sc = "poor";
+      else if (class1 >= 1 || wl >= 5 || recalls >= 20) sc = "mixed";
+      else if (recalls >= 1 || wl >= 1) sc = "neutral";
+      const bits = [];
+      if (class1 > 0) bits.push(`${class1} Class I (life-threatening) recall${class1 === 1 ? "" : "s"}`);
+      if (recalls > 0) bits.push(`${recalls} total recall event${recalls === 1 ? "" : "s"} in last 5y`);
+      if (wl > 0) bits.push(`${wl} drug warning label${wl === 1 ? "" : "s"}`);
+      if (carcinogens >= 1000) bits.push(`${(carcinogens / 1000).toFixed(1)}k kg carcinogen emissions (EPA TRI)`);
+      if (!bits.length && ae > 100000) bits.push(`${(ae / 1000).toFixed(0)}k adverse-event reports (FDA FAERS)`);
+      if (!bits.length) return [];
+      return [{
+        category: "health",
+        narrative: `OpenFDA: ${bits.join("; ")}.`,
+        sc, severity: sc === "poor" ? "negative" : "neutral",
+      }];
+    },
+  },
+  // ─── CMS Hospital Care Compare — hospital quality stars (highest signal) ─
+  {
+    name: "cms-care-compare",
+    write: (e) => {
+      const h = e?.health || e;
+      const avg = h.avgStarRating;
+      const n = h.hospitals;
+      if (!avg || !n) return [];
+      const sc = avg >= 4 ? "good" : avg >= 3 ? "mixed" : "poor";
+      const safetyNet = (h.safetyMeasuresBetter || 0) - (h.safetyMeasuresWorse || 0);
+      const safetyBit = safetyNet > 0
+        ? ` Hospitals score better than the national average on ${h.safetyMeasuresBetter} safety measures.`
+        : safetyNet < 0
+          ? ` Hospitals score worse than the national average on ${h.safetyMeasuresWorse} safety measures.`
+          : "";
+      return [{
+        category: "health",
+        narrative: `CMS Hospital Care Compare: ${avg}/5 average overall star rating across ${n} hospitals.${safetyBit}`,
+        sc, severity: avg >= 4 ? "positive" : avg <= 2 ? "negative" : "neutral",
+      }];
+    },
+  },
+  // ─── CMS Open Payments — pharma/device payments to physicians ─────────
+  // Runs BEFORE fdaaa-trials so pharma companies get the more concrete
+  // "pharma marketing influence" signal as the headline narrative instead
+  // of generic trial-compliance percentages.
+  {
+    name: "cms-open-payments",
+    write: (e) => {
+      const h = e?.health || e;
+      const total = h.openPaymentsTotalUsd;
+      const recip = h.openPaymentsRecipients;
+      if (!total || total < 1e6) return []; // <$1M = not headline-worthy
+      const usd = total >= 1e9
+        ? `$${(total / 1e9).toFixed(2)}B`
+        : `$${(total / 1e6).toFixed(0)}M`;
+      const yr = h.programYear ? ` in ${h.programYear}` : "";
+      // Scoring: pharma payments are an "influence" signal, not strictly bad.
+      // Mark large payments as "mixed" for transparency rather than "poor".
+      const sc = total >= 50e6 ? "mixed" : "neutral";
+      const recipBit = recip ? ` to ${recip.toLocaleString()} physician recipients` : "";
+      return [{
+        category: "health",
+        narrative: `CMS Open Payments: ${usd} reported${yr}${recipBit} (federal Sunshine Act disclosure).`,
+        sc, severity: "neutral",
+      }];
+    },
+  },
+  // ─── FDAAA TrialsTracker — clinical-trial reporting compliance ────────
+  // Fires for any sponsor (pharma, biotech, academic) with FDAAA-applicable
+  // trials. For brands also covered by cms-open-payments, this falls through
+  // (the writer above already filled `health.s`).
   {
     name: "fdaaa-trials",
     write: (e) => {
-      const total = e.totalTrials || e.trialCount;
-      const late = e.lateOrMissing || e.unreported;
+      // Augment uses bySlug shape: { health: { totalTrials, trialsLateOrMissing, compliancePct } }
+      const h = e?.health || e;
+      const total = h.totalTrials || h.trialCount;
+      const late = h.trialsLateOrMissing ?? h.lateOrMissing ?? h.unreported;
       if (!total) return [];
       const lateCount = late || 0;
       const sc = lateCount / total >= 0.5 ? "poor" : lateCount / total >= 0.2 ? "mixed" : "good";
