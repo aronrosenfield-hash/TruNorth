@@ -399,6 +399,22 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
 
       // Final state: barcode found a brand somewhere but we couldn't map it,
       // OR no source had the barcode at all. lookupBrand may or may not be set.
+      //
+      // Build 54 (Aron 2026-06-09): emit a no_match event so PostHog can
+      // aggregate "top unrecognized barcodes" and "top unmatched brand
+      // strings". Drives the post-launch enrichment queue — we'll prioritize
+      // adding the brands users actually scan in-store. Privacy: barcode +
+      // returned brand string only, no PII. The PostHog dashboard groups
+      // by brand string to surface the highest-leverage missing brands.
+      try {
+        track("scanner_no_match", {
+          barcode: code || null,
+          brand: offBrand || lookupBrand || null,
+          // tier_2_returned_data is true if OFF gave us a brand we couldn't
+          // map to a parent — those are the most actionable misses
+          tier_2_returned_data: !!offBrand,
+        });
+      } catch { /* analytics is best-effort */ }
       setStatus("nomatch");
     }
 
