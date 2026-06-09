@@ -625,34 +625,34 @@ const WRITERS = [
       return out;
     },
   },
-  // ─── DEI / board diversity / executive compensation (consolidated) ─
-  // Pulls Equilar 100, SpencerStuart, Catalyst, DiversityInc, Working
-  // Mother, Paradigm-Parity, Lean In, NAACP, AFL-CIO Paywatch,
-  // As You Sow Most Overpaid, SEC §953(b), supplier-diversity reports.
-  // Writes "dei" and/or "labor" depending on which buckets fired.
+  // ─── Health + pharma + food-safety + medical (round 3) ─────────────
+  // Pulls DOJ False Claims healthcare, DEA enforcement, opioid master
+  // settlements, FDA drug shortages, FDA MAUDE, CMS Nursing Home Compare,
+  // Leapfrog Hospital Safety Grade, USDA FSIS recalls, CDC antibiotic-
+  // resistance meat-industry callouts, CSPI Xtreme Eating, Public Citizen
+  // Worst Pills, Truth Initiative tobacco/vape.
+  //
+  // Writes into the "health" category. Severity "concern" → "poor",
+  // "mixed" → "mixed", "positive" → "good", "leader" → "good".
   {
-    name: "dei-board",
+    name: "health-pharma-r3",
     write: (e) => {
-      const out = [];
-      const CATS = ["dei", "labor"];
-      const SEVERITY_TO_SC = {
-        dei:   { leader: "pro_dei",   positive: "pro_dei",  mixed: "mixed", concern: "anti_dei" },
-        labor: { leader: "good",      positive: "good",     mixed: "mixed", concern: "poor"     },
-      };
-      for (const cat of CATS) {
-        const b = e[cat];
-        if (!b || !b.narrative) continue;
-        const certs = Array.isArray(b.certifications) && b.certifications.length
-          ? ` [${b.certifications.join(" · ")}]`
-          : "";
-        const narrative = `${b.narrative}${certs}`;
-        const sc = SEVERITY_TO_SC[cat]?.[b.bestStatus];
-        const severity = b.bestStatus === "concern" ? "negative"
-          : b.bestStatus === "mixed"  ? "mixed"
-          : "positive";
-        out.push({ category: cat, narrative, sc, severity });
-      }
-      return out;
+      const b = e.health;
+      if (!b || !b.narrative) return [];
+      const SC = { leader: "good", positive: "good", mixed: "mixed", concern: "poor" };
+      const sc = SC[b.bestStatus];
+      if (!sc) return [];
+      const severity = b.bestStatus === "concern" ? "negative"
+        : b.bestStatus === "mixed"  ? "mixed"
+        : "positive";
+      const srcLabel = b.sources && b.sources.length
+        ? ` Sources: ${b.sources.join(", ")}.`
+        : "";
+      return [{
+        category: "health",
+        narrative: `${b.narrative}${srcLabel}`,
+        sc, severity,
+      }];
     },
   },
   // ─── Industry carbon intensity (sector inferred) ──────────────────────

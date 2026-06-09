@@ -7,13 +7,14 @@
   "sc": {
     "political": "left",
     "charity": "neutral",
-    "environment": "positive",
+    "environment": "neutral",
     "labor": "neutral",
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $12K PAC donations; 17% to Republican, 83% to Democratic committees.",
@@ -37,10 +38,9 @@
     ]
   },
   "environment": {
-    "s": "Climate-commitment coalition member: EV100 (since 2019; target 2030). 100% EV corporate fleet by 2030 (US-based Roche subsidiary).",
+    "s": "No public record found.",
     "sources": [
-      "Claude AI synthesis",
-      "climate-coalitions"
+      "Claude AI synthesis"
     ]
   },
   "dei": {
@@ -169,5 +169,11 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-30T23:57:25.822Z"
+  "lastUpdated": "2026-05-30T23:57:25.822Z",
+  "health": {
+    "s": "FDA Drug Shortages: 3 active shortages attributed to Genentech, Inc. Sources: fda-drug-shortages.",
+    "sources": [
+      "health-pharma-r3"
+    ]
+  }
 }
