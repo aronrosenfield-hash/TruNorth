@@ -585,6 +585,36 @@ const WRITERS = [
       return out;
     },
   },
+  // ─── DEI / board diversity / executive compensation (consolidated) ─
+  // Pulls Equilar 100, SpencerStuart, Catalyst, DiversityInc, Working
+  // Mother, Paradigm-Parity, Lean In, NAACP, AFL-CIO Paywatch,
+  // As You Sow Most Overpaid, SEC §953(b), supplier-diversity reports.
+  // Writes "dei" and/or "labor" depending on which buckets fired.
+  {
+    name: "dei-board",
+    write: (e) => {
+      const out = [];
+      const CATS = ["dei", "labor"];
+      const SEVERITY_TO_SC = {
+        dei:   { leader: "pro_dei",   positive: "pro_dei",  mixed: "mixed", concern: "anti_dei" },
+        labor: { leader: "good",      positive: "good",     mixed: "mixed", concern: "poor"     },
+      };
+      for (const cat of CATS) {
+        const b = e[cat];
+        if (!b || !b.narrative) continue;
+        const certs = Array.isArray(b.certifications) && b.certifications.length
+          ? ` [${b.certifications.join(" · ")}]`
+          : "";
+        const narrative = `${b.narrative}${certs}`;
+        const sc = SEVERITY_TO_SC[cat]?.[b.bestStatus];
+        const severity = b.bestStatus === "concern" ? "negative"
+          : b.bestStatus === "mixed"  ? "mixed"
+          : "positive";
+        out.push({ category: cat, narrative, sc, severity });
+      }
+      return out;
+    },
+  },
   // ─── Industry carbon intensity (sector inferred) ──────────────────────
   {
     name: "industry-carbon-intensity",
