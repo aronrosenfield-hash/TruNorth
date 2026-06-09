@@ -79,16 +79,85 @@ function narrativeScore(text) {
   return 50;
 }
 
+// ─── Political signal differentiation (B-58 / Path B) ────────────────────
+// Parse $ amount + tilt from political.s narrative or political.fecData.
+// Old scoring jammed ALL bipartisan brands at score 80 (the right peak of
+// the bimodal cluster). This spreads them across 55-90 using donation size
+// (log scale) + tilt distance from 50/50.
+function parsePoliticalSignals(d) {
+  const p = d?.political || {};
+  let amount = 0, tiltAbs = null, hasData = false;
+  // Prefer structured fecData if present
+  if (p.fecData) {
+    amount = Number(p.fecData.totalRaised) || 0;
+    const rep = Number(p.fecData.repTotal) || 0;
+    const dem = Number(p.fecData.demTotal) || 0;
+    if (rep + dem > 0) {
+      tiltAbs = Math.abs((rep / (rep + dem)) * 100 - 50); // 0 (balanced) to 50 (one-sided)
+    }
+    hasData = true;
+  }
+  // Fall back to narrative parsing
+  const s = String(p.s || "");
+  if (!hasData) {
+    // Match "$XX K|M" patterns: "$166K", "$2.5M", "$1.2B"
+    const m = s.match(/\$([\d.]+)\s*([KMB]?)/);
+    if (m) {
+      const n = parseFloat(m[1]);
+      const unit = m[2] || "";
+      amount = n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
+    }
+  }
+  if (tiltAbs == null) {
+    // "70% to Republican" / "42% to Democratic"
+    const pctR = s.match(/(\d+)%\s+to\s+Republican/i);
+    const pctD = s.match(/(\d+)%\s+to\s+Democratic/i);
+    if (pctR || pctD) {
+      const r = pctR ? +pctR[1] : (pctD ? 100 - +pctD[1] : 50);
+      tiltAbs = Math.abs(r - 50);
+    } else {
+      // "+23 across X donors" / "+54 across Y donors" — partisan lean magnitude
+      const lean = s.match(/\+(\d+)\s+across/i);
+      if (lean) tiltAbs = Math.min(50, +lean[1]);
+      else if (/partisan lean split/i.test(s)) tiltAbs = 5; // explicitly balanced
+    }
+  }
+  // Defaults when nothing parseable
+  if (amount === 0) amount = 100_000;          // "small unknown PAC"
+  if (tiltAbs == null) tiltAbs = 15;            // mild assumption
+  return { amount, tiltAbs };
+}
+
+function politicalScore(d, val) {
+  const { amount, tiltAbs } = parsePoliticalSignals(d);
+  // Log-scaled $ factor: $100K → 0, $1M → 1, $10M → 2, $100M → 3 …
+  // Always positive; we SUBTRACT it weighted to push bigger PACs lower.
+  const sizeFactor = Math.log10(Math.max(1, amount / 100_000));
+  if (val === "bipartisan" || val === "mixed") {
+    // Base 85, spread 55-95 by tilt + size
+    return Math.max(55, Math.min(95, 85 - tiltAbs * 0.5 - sizeFactor * 7));
+  }
+  if (val === "left-leaning" || val === "right-leaning") {
+    return Math.max(45, Math.min(70, 65 - sizeFactor * 5));
+  }
+  if (val === "left" || val === "right") {
+    // Hard partisan: 35-65 spread by tilt + size (bigger PAC = lower)
+    return Math.max(35, Math.min(65, 58 - tiltAbs * 0.2 - sizeFactor * 5));
+  }
+  return null;
+}
+
 /** Non-personalized score for a category. Returns null when no signal. */
-function baseScoreCat(k, v) {
+function baseScoreCat(k, v, d) {
   const val = String(v || "").toLowerCase();
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
-  // Build 55 (Aron's Excel-rebuild 2026-06-09): values aligned with
-  // docs/scoring-calculator.xlsx → scoreCat sheet at user-stance "neutral".
+  // Build 58 (Path B): political differentiation — spread the 80-cluster
+  // and 50-cluster using donation $ + tilt %.
   if (k === "political") {
-    if (["bipartisan", "mixed"].includes(val)) return 80;
-    if (["left", "left-leaning", "right", "right-leaning"].includes(val)) return 50;
+    if (["bipartisan", "mixed", "left", "right", "left-leaning", "right-leaning"].includes(val)) {
+      return politicalScore(d, val);
+    }
     return null;
   }
   if (k === "dei") {
@@ -228,14 +297,14 @@ for (const f of files) {
   for (const k of CAT_KEYS) {
     const cls = classifyCategory(d, k);
     if (cls.state === "real") {
-      const cs = baseScoreCat(k, sc[k]);
+      const cs = baseScoreCat(k, sc[k], d);
       if (cs == null) continue;
       trace.weightedSum += cs * 1.0;
       trace.weightUsed += 1.0;
       trace.categories.push({ k, state: "real", val: sc[k], score: cs, weight: 1.0 });
       signalCount++;
     } else if (cls.state === "inferred") {
-      const cs = baseScoreCat(k, sc[k]);
+      const cs = baseScoreCat(k, sc[k], d);
       if (cs == null) continue;
       trace.weightedSum += cs * 0.5;
       trace.weightUsed += 0.5;

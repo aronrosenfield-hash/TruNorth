@@ -636,19 +636,76 @@ function getDataState(k, v) {
   return "scored";
 }
 
-function scoreCat(k, v, profile) {
+// B-58 (Path B): political differentiation — mirror of rebake-scoring.mjs
+// parsePoliticalSignals + politicalScore. Spreads the 80-cluster (bipartisan
+// brands) across 55-95 by donation size + tilt, and the 50-cluster (partisan)
+// across 35-70. Eliminates the bimodal score distribution by giving every
+// brand a unique-to-its-data position on the political axis.
+function parsePoliticalSignalsApp(co) {
+  const p = co?.political || {};
+  let amount = 0, tiltAbs = null, hasData = false;
+  if (p.fecData) {
+    amount = Number(p.fecData.totalRaised) || 0;
+    const rep = Number(p.fecData.repTotal) || 0;
+    const dem = Number(p.fecData.demTotal) || 0;
+    if (rep + dem > 0) tiltAbs = Math.abs((rep / (rep + dem)) * 100 - 50);
+    hasData = true;
+  }
+  const s = String(p.s || "");
+  if (!hasData) {
+    const m = s.match(/\$([\d.]+)\s*([KMB]?)/);
+    if (m) {
+      const n = parseFloat(m[1]);
+      const unit = m[2] || "";
+      amount = n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
+    }
+  }
+  if (tiltAbs == null) {
+    const pctR = s.match(/(\d+)%\s+to\s+Republican/i);
+    const pctD = s.match(/(\d+)%\s+to\s+Democratic/i);
+    if (pctR || pctD) {
+      const r = pctR ? +pctR[1] : (pctD ? 100 - +pctD[1] : 50);
+      tiltAbs = Math.abs(r - 50);
+    } else {
+      const lean = s.match(/\+(\d+)\s+across/i);
+      if (lean) tiltAbs = Math.min(50, +lean[1]);
+      else if (/partisan lean split/i.test(s)) tiltAbs = 5;
+    }
+  }
+  if (amount === 0) amount = 100_000;
+  if (tiltAbs == null) tiltAbs = 15;
+  return { amount, tiltAbs };
+}
+
+function politicalScoreApp(co, val) {
+  const { amount, tiltAbs } = parsePoliticalSignalsApp(co);
+  // Log-scaled $ factor: positive; subtracted weighted.
+  const sizeFactor = Math.log10(Math.max(1, amount / 100_000));
+  if (val === "bipartisan" || val === "mixed" || val === "neutral") {
+    return Math.max(55, Math.min(95, 85 - tiltAbs * 0.5 - sizeFactor * 7));
+  }
+  if (val === "left-leaning" || val === "right-leaning") {
+    return Math.max(45, Math.min(70, 65 - sizeFactor * 5));
+  }
+  if (val === "left" || val === "right") {
+    return Math.max(35, Math.min(65, 58 - tiltAbs * 0.2 - sizeFactor * 5));
+  }
+  return null;
+}
+
+function scoreCat(k, v, profile, co) {
   // Build 55 (Aron's Excel-rebuild): scores normalized to {8, 50, 97, 100}
   // ranges. Wider separation between match and mismatch, cleaner mental model.
   // Source of truth: docs/scoring-calculator.xlsx · scoreCat sheet.
+  // Build 58 (Path B): political category now varies by $ + tilt.
   const val = (v || "").toLowerCase();
 
   if (k === "political") {
     const lean = profile?.lean || "neutral";
     if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["right","right-leaning"].includes(val)) return 8; return 50; }
     if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["left","left-leaning"].includes(val)) return 8; return 50; }
-    // neutral / no lean
-    if (["bipartisan","mixed","neutral"].includes(val)) return 80;
-    return 50;
+    // neutral / no lean — use signal-differentiated score
+    return politicalScoreApp(co, val) ?? 50;
   }
 
   if (k === "dei") {
@@ -801,7 +858,7 @@ function computeScore(co, profile) {
     if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) continue;
     // B-23: apply scoring_overlay delta if present (numeric categories only;
     // categorical categories carry events_agg + excl_stale, not deltas).
-    const catScore = applyOverlay(co, k, scoreCat(k, v, profile));
+    const catScore = applyOverlay(co, k, scoreCat(k, v, profile, co));
     weightedSum += catScore * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
@@ -1998,8 +2055,8 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
             <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
               {CAT_KEYS.map(k => {
                 const a = resolved[0], b = resolved[1];
-                const sa = scoreCat(k, a.sc?.[k], profile);
-                const sb = scoreCat(k, b.sc?.[k], profile);
+                const sa = scoreCat(k, a.sc?.[k], profile, a);
+                const sb = scoreCat(k, b.sc?.[k], profile, b);
                 const aUnknown = getDataState(k, a.sc?.[k]) === "unknown";
                 const bUnknown = getDataState(k, b.sc?.[k]) === "unknown";
                 // Winner: higher score (only when both have data)
