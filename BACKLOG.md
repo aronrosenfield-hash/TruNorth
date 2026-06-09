@@ -166,7 +166,7 @@ Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 |---|---|---|---|
 | ~~**B-22**~~ | ~~Sub-brand → parent slug mapping~~ | ✅ done 2026-06-03 | |
 | **B-23** | Scoring rebake from `recent_events[]` | M-L | News merge writes events; scoring engine doesn't consume yet. Weekly cron to keep grades fresh. **Partially unblocked by PR #51 (scoring flags now live, OFF by default).** |
-| **B-24** | AllSides outlet whitelist expansion | S | 33 outlets mapped today. Axios/Politico/The Verge/Ars Technica still missing. Add to `OUTLET_BIAS` in `news-rss-collect.mjs`. |
+| ~~**B-24**~~ | ~~AllSides outlet whitelist expansion~~ | ✅ done 2026-06-06 + dedup 2026-06-09 | All 4 outlets (Axios, Politico, The Verge, Ars Technica) already added 06-06. 06-09: removed silent JS object-literal duplicates (techcrunch/theverge/wired/arstechnica appeared twice) — preserved effective weights, no behavior change. |
 | ~~**B-25**~~ | ~~BBB scraper letter extraction~~ | ✅ done 2026-06-03 | (Source itself retired in favor of CFPB.) |
 | ~~**B-26**~~ | ~~CourtListener party disambiguation~~ | ✅ done 2026-06-03 | |
 | ~~**B-27**~~ | ~~CA AG enforcement-actions scrape~~ | ✅ done 2026-06-06 | |
@@ -192,7 +192,7 @@ Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 | ~~**B-56**~~ | ~~Scanner: no-match fallback to brand-name search~~ | ✅ done 2026-06-09 AM (`dcfa9dc5b`) | When OFF/UPCitemdb returns a brand but no parent match, primary "Search for [Brand]" button pre-fills query + jumps to Search tab. Yuka-style no-dead-end. |
 | ~~**B-57**~~ | ~~Scanner: nav restructure — SCAN as bottom-nav middle slot~~ | ✅ done 2026-06-09 AM (`243f67051`) | Bottom-nav: [Top Picks] [Search] [**SCAN**] [Browse] [Library]. SCAN renders as a purple circular FAB-style button bumped above the nav line with drop-shadow. Account moved to top-right header (ti-user-circle icon next to Upgrade pill). Upgrade pill now opens Paywall directly instead of routing through Account tab. |
 | ~~**B-58**~~ | ~~Scanner: UPCitemdb Tier-3 fallback API~~ | ✅ done 2026-06-09 AM (`dcfa9dc5b`) | Free trial endpoint (100/day per-IP, no key). Hit when OFF returns nothing. Wrapped in try/catch — silent on failure. |
-| **B-59** | Coverage-correction call-out in docs/landing | S | My earlier "11k companies all have 7 scored categories" claim was misleading. Honest distribution: 84% have only 3-5 real public-records data points. Update talk tracks accordingly post-launch. |
+| ~~**B-59**~~ | ~~Coverage-correction call-out in docs/landing~~ | ✅ done 2026-06-09 (commit `e9cf06bb8`) | Onboarding + Marketing Landing + meta tags + Twitter/og descriptions all updated: "graded" → "tracked" with explicit "top brands carry full grades" qualifier. TALK_TRACKS.md gains a "How many brands actually get a real grade?" Q&A with the honest 5K/1.1K/380 breakdown. Aron's voice marketing copy (trade-press, L-1/L-2/L-3 drafts, mailerlite drip) left for Aron's own honesty pass if desired. |
 
 ### Scoring schema expansion
 
@@ -243,8 +243,8 @@ Goal: be the **cited source** when ChatGPT / Perplexity / Gemini / Claude / Copi
 | ~~**B-36**~~ | ~~Pre-launch load test (single-IP)~~ | ✅ done 2026-06-07 | k6 reduced to 150 VUs (realistic single-IP). 78ms avg / 282ms p95. |
 | ~~**B-36b**~~ | ~~Diagnose loadtest 94% failure rate~~ | ✅ done 2026-06-07 | Root cause: per-IP rate limit from single GH Actions IP. Not real-world. |
 | **B-36c** | Distributed loadtest at 1000+ VUs (k6 Cloud / BlazeMeter) | M · $ | True 1000-concurrent stress needs many IPs. Defer until post-launch. |
-| **B-48** | Retire old `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs` | S | Replaced by DW-7-12 new pattern. Confirmed safe to coexist; cleanup PR after Jun 14 verification window. |
-| **B-49** | Verify 44 new crons (today) each ran successfully on schedule | S | Check Jun 14 — every workflow added Jun 7-8. |
+| ~~**B-48**~~ | ~~Retire old `ofac-fetch.mjs` / `ferc-fetch.mjs` / `dol-whd-fetch.mjs`~~ | ✅ done 2026-06-09 (commit `aabe1afee`) | Audit confirmed 0 brands had `d.ofac` / `d.ferc` / `d.dolWhd` fields — old infrastructure was dormant. New `ofac-sdn-augment.json`, `ferc-enforcement-augment.json`, `dol-whd-violations-augment.json` exist (next step: wire writers into `apply-augments-to-companies.mjs`). |
+| ~~**B-49**~~ | ~~Verify 44 new crons each ran successfully on schedule~~ | ✅ done 2026-06-09 | See `/docs/cron-audit-2026-06-09.md`. 39 healthy, 6 failing (ITEP 404, EU Transparency 404, FSIS 403, OpenSanctions/Wikirate PR-permission, Bonica DIME secret), 6 cancelled (normal). Top fix: enable "Allow GH Actions to create and approve PRs" in repo settings to unblock 2 crons in one toggle. |
 
 ---
 
