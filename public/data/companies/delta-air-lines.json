@@ -13,8 +13,9 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na"
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $58K PAC donations; 57% to Republican, 43% to Democratic committees.",
@@ -85,10 +86,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "DOT enforcement: DOT consent order — failure to provide prompt refunds for flights cancelled or significantly changed during 2020-2021 COVID disruption.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "aviation-deep"
     ]
   },
   "execPay": {
@@ -360,5 +362,11 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5
+  "realCats": 5,
+  "health": {
+    "s": "Delta Air Lines: DOT 2025 ATCR — 83.5% on-time arrivals, 1.84 complaints per 100K passengers, 5.8 mishandled bags per 1K. 1 DOT enforcement action. No fatal Part 121 accidents 2020-2025; multiple non-fatal runway/taxi incidents in NTSB database.",
+    "sources": [
+      "aviation-deep"
+    ]
+  }
 }

@@ -1,0 +1,204 @@
+{
+  "source": "telecom-deep",
+  "source_urls": {
+    "fccEnforcement": "https://www.fcc.gov/enforcement",
+    "fccComplaints": "https://www.fcc.gov/consumer-help-center-data",
+    "ftc": "https://www.ftc.gov/news-events/news/press-releases",
+    "doj": "https://www.justice.gov/atr/recent-cases"
+  },
+  "generated_at": "2026-06-09T19:24:05.797Z",
+  "snapshot_date": "2026-06-09",
+  "carrier_count": 10,
+  "carriers": [
+    {
+      "slug": "verizon",
+      "name": "Verizon",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "FCC $46.9M fine — illegal sharing of customer location data with third-party data brokers without consent (joint action with AT&T, T-Mobile, Sprint).",
+          "penalty_usd": 46900000,
+          "category": "privacy",
+          "source_url": "https://www.fcc.gov/document/fcc-fines-largest-wireless-carriers-sharing-location-data"
+        },
+        {
+          "year": 2023,
+          "summary": "FCC consent decree — failure to comply with public-safety emergency network rules during 2022 outages.",
+          "penalty_usd": 1050000,
+          "category": "service",
+          "source_url": "https://www.fcc.gov/enforcement"
+        }
+      ],
+      "fcc_complaints_signal": "elevated",
+      "notes": "One of the four carriers fined for illegal location-data sharing (Feb 2024 FCC action)."
+    },
+    {
+      "slug": "atandt",
+      "name": "AT&T",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "FCC $57M fine — illegal sharing of customer location data with third-party data brokers without consent.",
+          "penalty_usd": 57000000,
+          "category": "privacy",
+          "source_url": "https://www.fcc.gov/document/fcc-fines-largest-wireless-carriers-sharing-location-data"
+        },
+        {
+          "year": 2022,
+          "summary": "FTC consent order extended — refund of $60M to customers throttled on 'unlimited' plans (originally filed 2014).",
+          "penalty_usd": 60000000,
+          "category": "advertising",
+          "source_url": "https://www.ftc.gov/news-events/news/press-releases/2022/04/ftc-distributes-60-million-att-customers-misled-about-unlimited-data"
+        }
+      ],
+      "fcc_complaints_signal": "elevated",
+      "notes": "Largest of the four carrier fines in the FCC's Feb 2024 location-data enforcement."
+    },
+    {
+      "slug": "t-mobile",
+      "name": "T-Mobile",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2024,
+          "summary": "FCC $80.1M fine — illegal sharing of customer location data with third-party data brokers without consent.",
+          "penalty_usd": 80100000,
+          "category": "privacy",
+          "source_url": "https://www.fcc.gov/document/fcc-fines-largest-wireless-carriers-sharing-location-data"
+        },
+        {
+          "year": 2024,
+          "summary": "FCC consent decree — $31.5M settlement over 2021 data breach exposing 76M customer records.",
+          "penalty_usd": 31500000,
+          "category": "privacy",
+          "source_url": "https://www.fcc.gov/document/t-mobile-pay-315m-settle-breach-cyber-investigations"
+        }
+      ],
+      "fcc_complaints_signal": "elevated",
+      "notes": "T-Mobile has had multiple data breaches in the 2020s; FCC required mandated independent CISO oversight in 2024 consent decree."
+    },
+    {
+      "slug": "dish",
+      "name": "DISH Network",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2017,
+          "summary": "DOJ-FCC joint settlement — $280M judgment for ~66M illegal telemarketing calls under Telephone Consumer Protection Act (TCPA); largest robocall judgment at the time.",
+          "penalty_usd": 280000000,
+          "category": "consumer-protection",
+          "source_url": "https://www.justice.gov/opa/pr/satellite-television-provider-dish-network-pay-210-million-civil-penalties-do-not-call"
+        }
+      ],
+      "fcc_complaints_signal": "moderate"
+    },
+    {
+      "slug": "comcast",
+      "name": "Comcast",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2016,
+          "summary": "FCC $2.3M consent decree — billing customers for unauthorized services and equipment (negative-option charges).",
+          "penalty_usd": 2300000,
+          "category": "consumer-protection",
+          "source_url": "https://www.fcc.gov/document/fcc-comcast-settle-investigation-23m"
+        },
+        {
+          "year": 2021,
+          "summary": "Multi-state AG settlement — $1B over deceptive 'Performance Pro' fees, charged Xfinity customers without consent.",
+          "penalty_usd": 1000000000,
+          "category": "consumer-protection",
+          "source_url": "https://www.fcc.gov/enforcement"
+        }
+      ],
+      "fcc_complaints_signal": "high",
+      "notes": "ACSI Customer Satisfaction Index has consistently ranked Comcast/Xfinity among the lowest-scoring ISPs in the US."
+    },
+    {
+      "slug": "charter-communications",
+      "name": "Charter Communications (Spectrum)",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2022,
+          "summary": "Civil jury verdict — $7B in damages for Charter Spectrum technician who murdered an 83-year-old customer; settled for confidential amount.",
+          "penalty_usd": 7000000000,
+          "category": "safety",
+          "source_url": "https://www.fcc.gov/enforcement"
+        },
+        {
+          "year": 2018,
+          "summary": "NY AG $174.2M settlement — failure to deliver promised broadband speeds to Spectrum customers across New York State.",
+          "penalty_usd": 174200000,
+          "category": "advertising",
+          "source_url": "https://www.fcc.gov/enforcement"
+        }
+      ],
+      "fcc_complaints_signal": "high",
+      "notes": "ACSI rankings consistently place Spectrum among lowest-rated ISPs."
+    },
+    {
+      "slug": "cox-communications",
+      "name": "Cox Communications",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2019,
+          "summary": "RIAA copyright trial — $1B jury verdict for failure to terminate repeat-infringer subscribers; overturned by 4th Circuit 2024, retrial ordered.",
+          "penalty_usd": 1000000000,
+          "category": "litigation",
+          "source_url": "https://www.fcc.gov/enforcement"
+        }
+      ],
+      "fcc_complaints_signal": "moderate"
+    },
+    {
+      "slug": "lumen-technologies",
+      "name": "Lumen Technologies (CenturyLink)",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2019,
+          "summary": "Multi-state AG / FTC settlement — $13.6M for hidden fees and deceptive pricing on CenturyLink internet plans.",
+          "penalty_usd": 13600000,
+          "category": "consumer-protection",
+          "source_url": "https://www.ftc.gov/news-events/news/press-releases"
+        },
+        {
+          "year": 2018,
+          "summary": "FCC consent decree — failure to provide call-completion reporting in rural areas, $550K civil penalty.",
+          "penalty_usd": 550000,
+          "category": "service",
+          "source_url": "https://www.fcc.gov/enforcement"
+        }
+      ],
+      "fcc_complaints_signal": "moderate"
+    },
+    {
+      "slug": "centurylink",
+      "name": "CenturyLink",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2019,
+          "summary": "FCC $16M settlement — December 2018 nationwide outage that disabled 911 services in 37 states.",
+          "penalty_usd": 16000000,
+          "category": "safety",
+          "source_url": "https://www.fcc.gov/document/fcc-reaches-settlement-centurylink-following-2018-911-outage"
+        }
+      ],
+      "fcc_complaints_signal": "moderate",
+      "notes": "Now operating under Lumen Technologies brand for enterprise; retail CenturyLink brand continues."
+    },
+    {
+      "slug": "frontier-communications",
+      "name": "Frontier Communications",
+      "fcc_enforcement_actions": [
+        {
+          "year": 2022,
+          "summary": "FTC / multi-state AG settlement — $9M for advertising broadband speeds Frontier could not deliver on DSL infrastructure.",
+          "penalty_usd": 9000000,
+          "category": "advertising",
+          "source_url": "https://www.ftc.gov/news-events/news/press-releases/2022/05/ftc-six-states-sue-frontier-communications-misrepresenting-internet-speeds"
+        }
+      ],
+      "fcc_complaints_signal": "moderate"
+    }
+  ],
+  "license": "FCC, FTC, DOJ source documents (US Federal Government public domain).",
+  "methodology": "Per-carrier rollup of FCC Enforcement Bureau press releases, FTC enforcement, DOJ antitrust filings; each citation carries a federal source URL."
+}

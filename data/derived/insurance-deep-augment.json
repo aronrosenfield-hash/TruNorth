@@ -1,0 +1,497 @@
+{
+  "source": "insurance-deep",
+  "source_urls": {
+    "naic": "https://content.naic.org/cis_consumer_information",
+    "amBest": "https://ratings.ambest.com/SearchResults.aspx",
+    "caDoi": "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+    "nyDfs": "https://www.dfs.ny.gov/reports_and_publications/press_releases",
+    "txTdi": "https://www.tdi.texas.gov/news/",
+    "flOir": "https://floir.com/press-releases/",
+    "ftc": "https://www.ftc.gov/news-events/news/press-releases",
+    "doj": "https://www.justice.gov/opa/press-releases"
+  },
+  "generated_at": "2026-06-09T19:24:05.966Z",
+  "snapshot_date": "2026-06-09",
+  "insurer_count": 18,
+  "matched_slug_count": 18,
+  "orphan_count": 0,
+  "orphans": [],
+  "companies": {
+    "state-farm": {
+      "insurance": {
+        "name": "State Farm",
+        "lines": [
+          "Auto",
+          "Home",
+          "Life"
+        ],
+        "naicComplaintIndex": 0.51,
+        "amBestRating": "A++",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2024,
+          "regulator": "CA DOI",
+          "summary": "CA Department of Insurance opened market-conduct review after State Farm announced non-renewal of 30,000+ California homeowner policies citing wildfire risk.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://www.insurance.ca.gov/0400-news/0100-press-releases/"
+        },
+        "notes": "Largest US auto + homeowner insurer. NAIC Complaint Index well below 1.00 (better than peer average).",
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "geico": {
+      "insurance": {
+        "name": "GEICO",
+        "lines": [
+          "Auto"
+        ],
+        "naicComplaintIndex": 1.62,
+        "amBestRating": "A++",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 9750000,
+        "latestAction": {
+          "year": 2023,
+          "regulator": "NY DFS",
+          "summary": "$9.75M penalty — 2020 data breach exposing driver's-license numbers of 116,000+ NY customers; failure to implement reasonable cybersecurity controls.",
+          "penaltyUsd": 9750000,
+          "sourceUrl": "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        },
+        "notes": null,
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "progressive": {
+      "insurance": {
+        "name": "Progressive",
+        "lines": [
+          "Auto",
+          "Home"
+        ],
+        "naicComplaintIndex": 0.94,
+        "amBestRating": "A+",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 24000000,
+        "latestAction": {
+          "year": 2022,
+          "regulator": "CA DOI",
+          "summary": "$24M settlement — Progressive failed to refund pandemic-era premium overcharges to California auto-policy customers in line with Bulletin 2020-3.",
+          "penaltyUsd": 24000000,
+          "sourceUrl": "https://www.insurance.ca.gov/0400-news/0100-press-releases/"
+        },
+        "notes": null,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "allstate": {
+      "insurance": {
+        "name": "Allstate",
+        "lines": [
+          "Auto",
+          "Home",
+          "Life"
+        ],
+        "naicComplaintIndex": 1.21,
+        "amBestRating": "A+",
+        "enforcementCount": 2,
+        "penaltyUsdTotal": 138000000,
+        "latestAction": {
+          "year": 2024,
+          "regulator": "TX TDI / multi-state",
+          "summary": "Multi-state class action: $90M settlement over alleged use of credit-based insurance scoring that produced disparate impact on minority drivers.",
+          "penaltyUsd": 90000000,
+          "sourceUrl": "https://www.tdi.texas.gov/news/"
+        },
+        "notes": null,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "liberty-mutual": {
+      "insurance": {
+        "name": "Liberty Mutual",
+        "lines": [
+          "Auto",
+          "Home",
+          "Commercial"
+        ],
+        "naicComplaintIndex": 1.34,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 2700000,
+        "latestAction": {
+          "year": 2023,
+          "regulator": "MA DOI",
+          "summary": "$2.7M MA Division of Insurance penalty — failure to honor mandated rate refunds during COVID-19 declared emergency.",
+          "penaltyUsd": 2700000,
+          "sourceUrl": "https://www.mass.gov/news/division-of-insurance-press-releases"
+        },
+        "notes": null,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "farmers-insurance": {
+      "insurance": {
+        "name": "Farmers Insurance",
+        "lines": [
+          "Auto",
+          "Home"
+        ],
+        "naicComplaintIndex": 1.11,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2023,
+          "regulator": "FL OIR",
+          "summary": "Florida market-conduct exam — Farmers' July 2023 announcement to discontinue Florida auto-and-home coverage entirely triggered consumer-protection review.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://floir.com/press-releases/"
+        },
+        "notes": null,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "usaa": {
+      "insurance": {
+        "name": "USAA",
+        "lines": [
+          "Auto",
+          "Home",
+          "Life"
+        ],
+        "naicComplaintIndex": 0.42,
+        "amBestRating": "A++",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 140000000,
+        "latestAction": {
+          "year": 2022,
+          "regulator": "FinCEN",
+          "summary": "$140M civil penalty — willful Bank Secrecy Act violations across USAA Federal Savings Bank affiliate's anti-money-laundering program (banking arm, not insurance).",
+          "penaltyUsd": 140000000,
+          "sourceUrl": "https://www.fincen.gov/news/news-releases"
+        },
+        "notes": "Best-in-class NAIC complaint index for auto and homeowner among major US insurers. Banking arm has had BSA enforcement; insurance side clean.",
+        "severity": "poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "nationwide": {
+      "insurance": {
+        "name": "Nationwide",
+        "lines": [
+          "Auto",
+          "Home",
+          "Life"
+        ],
+        "naicComplaintIndex": 0.78,
+        "amBestRating": "A+",
+        "enforcementCount": 0,
+        "penaltyUsdTotal": 0,
+        "latestAction": null,
+        "notes": null,
+        "severity": "neutral",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "travelers": {
+      "insurance": {
+        "name": "Travelers",
+        "lines": [
+          "Auto",
+          "Home",
+          "Commercial"
+        ],
+        "naicComplaintIndex": 0.83,
+        "amBestRating": "A++",
+        "enforcementCount": 0,
+        "penaltyUsdTotal": 0,
+        "latestAction": null,
+        "notes": null,
+        "severity": "neutral",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "american-international-group": {
+      "insurance": {
+        "name": "American International Group (AIG)",
+        "lines": [
+          "Commercial",
+          "Life"
+        ],
+        "naicComplaintIndex": 1.08,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 12000000,
+        "latestAction": {
+          "year": 2023,
+          "regulator": "NY DFS",
+          "summary": "$12M penalty — AIG affiliate failed to implement required cybersecurity controls under NY DFS 23 NYCRR Part 500.",
+          "penaltyUsd": 12000000,
+          "sourceUrl": "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        },
+        "notes": null,
+        "severity": "mixed",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "prudential": {
+      "insurance": {
+        "name": "Prudential",
+        "lines": [
+          "Life",
+          "Annuities"
+        ],
+        "naicComplaintIndex": 0.71,
+        "amBestRating": "A+",
+        "enforcementCount": 0,
+        "penaltyUsdTotal": 0,
+        "latestAction": null,
+        "notes": null,
+        "severity": "neutral",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "aflac": {
+      "insurance": {
+        "name": "AFLAC",
+        "lines": [
+          "Supplemental Health"
+        ],
+        "naicComplaintIndex": 0.69,
+        "amBestRating": "A+",
+        "enforcementCount": 0,
+        "penaltyUsdTotal": 0,
+        "latestAction": null,
+        "notes": null,
+        "severity": "neutral",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "chubb": {
+      "insurance": {
+        "name": "Chubb",
+        "lines": [
+          "Commercial",
+          "Home",
+          "Auto"
+        ],
+        "naicComplaintIndex": 0.62,
+        "amBestRating": "A++",
+        "enforcementCount": 0,
+        "penaltyUsdTotal": 0,
+        "latestAction": null,
+        "notes": null,
+        "severity": "neutral",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "aetna": {
+      "insurance": {
+        "name": "Aetna",
+        "lines": [
+          "Health"
+        ],
+        "naicComplaintIndex": 1.39,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 1930000000,
+        "latestAction": {
+          "year": 2023,
+          "regulator": "DOJ",
+          "summary": "$1.93B settlement — Aetna (and parent CVS) Medicare Part D risk-adjustment overpayments; one of the largest Medicare fraud settlements.",
+          "penaltyUsd": 1930000000,
+          "sourceUrl": "https://www.justice.gov/opa/press-releases"
+        },
+        "notes": null,
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "cigna": {
+      "insurance": {
+        "name": "Cigna",
+        "lines": [
+          "Health"
+        ],
+        "naicComplaintIndex": 1.45,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 172000000,
+        "latestAction": {
+          "year": 2023,
+          "regulator": "DOJ",
+          "summary": "$172M settlement — Cigna submitted false diagnosis codes to inflate Medicare Advantage payments; whistleblower-driven False Claims Act resolution.",
+          "penaltyUsd": 172000000,
+          "sourceUrl": "https://www.justice.gov/opa/press-releases"
+        },
+        "notes": "ProPublica 'PXDX' investigation (2023) revealed Cigna's automated mass-denial of Medicare-Advantage claims without doctor review.",
+        "severity": "poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "humana": {
+      "insurance": {
+        "name": "Humana",
+        "lines": [
+          "Health"
+        ],
+        "naicComplaintIndex": 1.28,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2024,
+          "regulator": "DOJ (qui tam)",
+          "summary": "DOJ joined False Claims Act qui tam suit alleging Humana fraudulently inflated Medicare Advantage risk scores for years.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://www.justice.gov/opa/press-releases"
+        },
+        "notes": null,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "anthem-elevance-health": {
+      "insurance": {
+        "name": "Anthem / Elevance Health",
+        "lines": [
+          "Health"
+        ],
+        "naicComplaintIndex": 1.42,
+        "amBestRating": "A",
+        "enforcementCount": 1,
+        "penaltyUsdTotal": 39500000,
+        "latestAction": {
+          "year": 2020,
+          "regulator": "HHS OCR",
+          "summary": "$39.5M HIPAA settlement — Anthem's 2015 cyber attack exposed PHI of 78.8M individuals (largest US health-data breach in history at the time).",
+          "penaltyUsd": 39500000,
+          "sourceUrl": "https://www.hhs.gov/about/news/index.html"
+        },
+        "notes": null,
+        "severity": "poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    },
+    "unitedhealth-group": {
+      "insurance": {
+        "name": "UnitedHealth Group",
+        "lines": [
+          "Health",
+          "Pharmacy"
+        ],
+        "naicComplaintIndex": 1.51,
+        "amBestRating": "A+",
+        "enforcementCount": 2,
+        "penaltyUsdTotal": 0,
+        "latestAction": {
+          "year": 2024,
+          "regulator": "HHS OCR",
+          "summary": "Change Healthcare (UnitedHealth subsidiary) Feb-Mar 2024 ransomware attack affected ~190M Americans; OCR opened investigation, multi-state AG actions pending.",
+          "penaltyUsd": null,
+          "sourceUrl": "https://www.hhs.gov/about/news/index.html"
+        },
+        "notes": "Largest US healthcare conglomerate. Change Healthcare ransomware incident in 2024 is the largest known US healthcare data breach.",
+        "severity": "very_poor",
+        "sourceUrls": [
+          "https://content.naic.org/cis_consumer_information",
+          "https://ratings.ambest.com/SearchResults.aspx",
+          "https://www.insurance.ca.gov/0400-news/0100-press-releases/",
+          "https://www.dfs.ny.gov/reports_and_publications/press_releases"
+        ]
+      }
+    }
+  },
+  "license": "NAIC consumer materials (member-state public records), state-DOI press releases, DOJ/FTC public-domain releases."
+}
