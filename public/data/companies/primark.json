@@ -8,10 +8,10 @@
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "very_poor",
     "labor": "mixed",
     "dei": "neutral",
-    "animals": "neutral",
+    "animals": "poor",
     "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
@@ -33,9 +33,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Ethical Consumer Avoid — fast-fashion + supply-chain labor concerns. Good On You Not Good Enough — some supplier disclosure but ultra-low-cost model. [ethical-consumer · goodonyou]",
     "rating": "Mixed",
-    "sources": []
+    "sources": [
+      "consumer-scorecards"
+    ]
   },
   "labor": {
     "s": "KnowTheChain Forced-Labor Benchmark (2024): 50/100 (Apparel & Footwear). Mid-pack on supply-chain disclosure and remedy. Supply-chain signals: KnowTheChain 50/100; Fashion Rev 56%; CHRB 13.2/26; TVPRA exposure; FLA affiliate; UK MS statement.",
@@ -57,10 +59,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Ethical Consumer Avoid — fast-fashion + supply-chain labor concerns. Good On You Not Good Enough — some supplier disclosure but ultra-low-cost model. [ethical-consumer · goodonyou]",
     "verdict": "Cruelty-Free",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "consumer-scorecards"
     ]
   },
   "guns": {

@@ -41,6 +41,7 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "net-zero-tracker", "textile-exchange", "epa-smartway", "epa-green-vehicle",
   "nlrb-voluntary-recognition", "corporate-giving",
   "climate-coalitions",
+  "consumer-scorecards",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -889,6 +890,59 @@ const WRITERS = [
         sc,
         severity: "negative",
       }];
+    },
+  },
+  // ─── Consumer scorecards + boycott databases (round 4) ────────────────
+  // Consolidated NGO / journalist / activist scorecards: Goods Unite Us,
+  // Ethical Consumer, DoneGood, Good On You, Buycott, As You Sow Invest
+  // Your Values, Fossil Free Funds, ADL Online Hate Index, Project
+  // Drawdown. Each per-category sub-object carries badges, bestStatus,
+  // narrative, and (where applicable) a TruNorth sc enum.
+  //
+  // Categories written: political, environment, labor, animals, guns,
+  // privacy, health, dei.
+  {
+    name: "consumer-scorecards",
+    write: (e) => {
+      const SC_FROM_SEVERITY = {
+        environment: { leader: "positive", positive: "positive", mixed: "mixed",       concern: "very_poor" },
+        labor:       { leader: "positive", positive: "positive", mixed: "mixed",       concern: "poor" },
+        animals:     { leader: "positive", positive: "positive", mixed: "mixed",       concern: "poor" },
+        health:      { leader: "good",     positive: "good",     mixed: "mixed",       concern: "poor" },
+        privacy:     { leader: "good",     positive: "good",     mixed: "mixed",       concern: "poor" },
+        guns:        { leader: "neutral",  positive: "neutral",  mixed: "sells_guns",  concern: "sells_guns" },
+        dei:         { leader: "pro_dei",  positive: "pro_dei",  mixed: "neutral",     concern: "anti_dei" },
+        political:   { leader: "left",     positive: "left",     mixed: "bipartisan",  neutral: "bipartisan", concern: "controversial" },
+      };
+      const SEVERITY = {
+        environment: { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        labor:       { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        animals:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        health:      { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        privacy:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        guns:        { leader: "neutral",  positive: "neutral",  mixed: "mixed", concern: "negative" },
+        dei:         { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        political:   { leader: "neutral",  positive: "neutral",  mixed: "mixed", neutral: "neutral", concern: "negative" },
+      };
+      const CATEGORIES = ["political","environment","labor","animals","guns","privacy","health","dei"];
+      const out = [];
+      for (const cat of CATEGORIES) {
+        const b = e[cat];
+        if (!b || !b.narrative) continue;
+        const sc = b.sc || SC_FROM_SEVERITY[cat]?.[b.bestStatus];
+        if (!sc) continue;
+        const sources = Array.isArray(b.sources) && b.sources.length
+          ? ` [${b.sources.join(" · ")}]`
+          : "";
+        out.push({
+          category: cat,
+          narrative: `${b.narrative}${sources}`,
+          sc,
+          severity: SEVERITY[cat]?.[b.bestStatus] || "mixed",
+          mergePositive: b.bestStatus === "leader" || b.bestStatus === "positive",
+        });
+      }
+      return out;
     },
   },
 ];
