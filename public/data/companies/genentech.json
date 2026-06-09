@@ -2,14 +2,14 @@
   "name": "Genentech",
   "cat": "Healthcare",
   "init": "GENE",
-  "overall": 50,
+  "overall": 66.7,
   "isPublic": true,
   "sc": {
     "political": "left",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "neutral",
-    "dei": "pro_dei",
+    "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -38,9 +38,10 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Climate-commitment coalition member: EV100 (since 2019; target 2030). 100% EV corporate fleet by 2030 (US-based Roche subsidiary).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "climate-coalitions"
     ]
   },
   "dei": {
@@ -175,5 +176,6 @@
     "sources": [
       "health-pharma-r3"
     ]
-  }
+  },
+  "realCats": 3
 }
