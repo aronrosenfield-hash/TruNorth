@@ -1,0 +1,718 @@
+{
+  "_license": "Synthesis of public/permissive sources: OWiD (CC BY 4.0), EPA CEDA (US public domain), EXIOBASE summary tables (public), EIA MECS (US public domain).",
+  "_sources": [
+    {
+      "name": "Our World in Data — Emissions by sector",
+      "license": "CC BY 4.0",
+      "url": "https://ourworldindata.org/emissions-by-sector"
+    },
+    {
+      "name": "EPA CEDA",
+      "license": "US public domain",
+      "url": "https://www.epa.gov/sustainable-materials-management/comprehensive-environmental-data-archive"
+    },
+    {
+      "name": "EXIOBASE 3",
+      "license": "Public (summary tables)",
+      "url": "https://www.exiobase.eu"
+    },
+    {
+      "name": "EIA MECS",
+      "license": "US public domain",
+      "url": "https://www.eia.gov/consumption/manufacturing/"
+    }
+  ],
+  "_generated_at": "2026-06-09T13:21:41.134Z",
+  "_live_sources_reachable": null,
+  "_units": "kg CO2e per US$ of revenue (2020 PPP)",
+  "_tier_thresholds": {
+    "very-high": ">= 2.0",
+    "high": "0.6 – 2.0",
+    "medium": "0.2 – 0.6",
+    "low": "0.05 – 0.2",
+    "very-low": "< 0.05"
+  },
+  "naics_intensity": {
+    "11": {
+      "label": "Agriculture, forestry, fishing & hunting",
+      "kgCO2ePerUSD": 1.3,
+      "provenance": [
+        "OWiD",
+        "CEDA"
+      ],
+      "tier": "high"
+    },
+    "23": {
+      "label": "Construction",
+      "kgCO2ePerUSD": 0.65,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "high"
+    },
+    "44": {
+      "label": "Retail trade (general)",
+      "kgCO2ePerUSD": 0.25,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "62": {
+      "label": "Health care & social assistance",
+      "kgCO2ePerUSD": 0.1,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "71": {
+      "label": "Arts, entertainment & recreation",
+      "kgCO2ePerUSD": 0.12,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "211": {
+      "label": "Oil & gas extraction",
+      "kgCO2ePerUSD": 4.2,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "very-high"
+    },
+    "212": {
+      "label": "Mining (except oil & gas)",
+      "kgCO2ePerUSD": 3.1,
+      "provenance": [
+        "CEDA",
+        "OWiD"
+      ],
+      "tier": "very-high"
+    },
+    "311": {
+      "label": "Food manufacturing",
+      "kgCO2ePerUSD": 0.45,
+      "provenance": [
+        "CEDA",
+        "OWiD"
+      ],
+      "tier": "medium"
+    },
+    "312": {
+      "label": "Beverage & tobacco product manufacturing",
+      "kgCO2ePerUSD": 0.35,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "313": {
+      "label": "Textile mills",
+      "kgCO2ePerUSD": 0.55,
+      "provenance": [
+        "EXIOBASE",
+        "OWiD"
+      ],
+      "tier": "medium"
+    },
+    "315": {
+      "label": "Apparel manufacturing",
+      "kgCO2ePerUSD": 0.4,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "316": {
+      "label": "Leather & allied product manufacturing",
+      "kgCO2ePerUSD": 0.5,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "321": {
+      "label": "Wood product manufacturing",
+      "kgCO2ePerUSD": 0.45,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "322": {
+      "label": "Paper manufacturing",
+      "kgCO2ePerUSD": 0.55,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "324": {
+      "label": "Petroleum & coal product manufacturing",
+      "kgCO2ePerUSD": 1.8,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "high"
+    },
+    "325": {
+      "label": "Chemical manufacturing",
+      "kgCO2ePerUSD": 1,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "high"
+    },
+    "326": {
+      "label": "Plastics & rubber manufacturing",
+      "kgCO2ePerUSD": 0.5,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "332": {
+      "label": "Fabricated metal product manufacturing",
+      "kgCO2ePerUSD": 0.45,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "333": {
+      "label": "Machinery manufacturing",
+      "kgCO2ePerUSD": 0.4,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "335": {
+      "label": "Electrical equipment & appliances",
+      "kgCO2ePerUSD": 0.35,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "336": {
+      "label": "Transportation equipment manufacturing",
+      "kgCO2ePerUSD": 0.7,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "high"
+    },
+    "337": {
+      "label": "Furniture & related product manufacturing",
+      "kgCO2ePerUSD": 0.3,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "339": {
+      "label": "Miscellaneous manufacturing",
+      "kgCO2ePerUSD": 0.3,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "445": {
+      "label": "Food & beverage retailers (grocery)",
+      "kgCO2ePerUSD": 0.3,
+      "provenance": [
+        "EXIOBASE",
+        "CEDA"
+      ],
+      "tier": "medium"
+    },
+    "446": {
+      "label": "Health & personal care retailers",
+      "kgCO2ePerUSD": 0.2,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "447": {
+      "label": "Gasoline stations",
+      "kgCO2ePerUSD": 0.55,
+      "provenance": [
+        "EIA"
+      ],
+      "tier": "medium"
+    },
+    "482": {
+      "label": "Rail transportation",
+      "kgCO2ePerUSD": 0.6,
+      "provenance": [
+        "EIA",
+        "OWiD"
+      ],
+      "tier": "high"
+    },
+    "483": {
+      "label": "Water transportation (shipping)",
+      "kgCO2ePerUSD": 1.2,
+      "provenance": [
+        "IMO",
+        "OWiD"
+      ],
+      "tier": "high"
+    },
+    "484": {
+      "label": "Truck transportation (freight)",
+      "kgCO2ePerUSD": 0.95,
+      "provenance": [
+        "EIA",
+        "OWiD"
+      ],
+      "tier": "high"
+    },
+    "512": {
+      "label": "Motion picture, video & sound recording",
+      "kgCO2ePerUSD": 0.04,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "515": {
+      "label": "Broadcasting (except internet)",
+      "kgCO2ePerUSD": 0.06,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "517": {
+      "label": "Telecommunications",
+      "kgCO2ePerUSD": 0.1,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "522": {
+      "label": "Credit intermediation (banking)",
+      "kgCO2ePerUSD": 0.07,
+      "provenance": [
+        "EXIOBASE",
+        "CDP"
+      ],
+      "tier": "low"
+    },
+    "523": {
+      "label": "Securities, commodity contracts, investments",
+      "kgCO2ePerUSD": 0.06,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "524": {
+      "label": "Insurance carriers & related",
+      "kgCO2ePerUSD": 0.08,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "611": {
+      "label": "Educational services",
+      "kgCO2ePerUSD": 0.1,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "721": {
+      "label": "Accommodation (hotels, etc.)",
+      "kgCO2ePerUSD": 0.25,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "722": {
+      "label": "Food services & drinking places",
+      "kgCO2ePerUSD": 0.3,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "medium"
+    },
+    "812": {
+      "label": "Personal & laundry services",
+      "kgCO2ePerUSD": 0.15,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "low"
+    },
+    "2211": {
+      "label": "Electric power generation (mixed grid)",
+      "kgCO2ePerUSD": 2.6,
+      "provenance": [
+        "EPA eGRID",
+        "CEDA"
+      ],
+      "tier": "very-high"
+    },
+    "3254": {
+      "label": "Pharmaceutical & medicine manufacturing",
+      "kgCO2ePerUSD": 0.18,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "low"
+    },
+    "3271": {
+      "label": "Cement & concrete product manufacturing",
+      "kgCO2ePerUSD": 5.4,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE",
+        "OWiD"
+      ],
+      "tier": "very-high"
+    },
+    "3311": {
+      "label": "Iron & steel mills",
+      "kgCO2ePerUSD": 3.8,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "very-high"
+    },
+    "3345": {
+      "label": "Navigational, measuring, electromedical, control instruments",
+      "kgCO2ePerUSD": 0.15,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "low"
+    },
+    "3346": {
+      "label": "Manufacturing & reproducing magnetic & optical media",
+      "kgCO2ePerUSD": 0.1,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "low"
+    },
+    "3361": {
+      "label": "Motor vehicle manufacturing",
+      "kgCO2ePerUSD": 0.65,
+      "provenance": [
+        "CEDA",
+        "EXIOBASE"
+      ],
+      "tier": "high"
+    },
+    "3364": {
+      "label": "Aerospace product & parts manufacturing",
+      "kgCO2ePerUSD": 0.8,
+      "provenance": [
+        "CEDA"
+      ],
+      "tier": "high"
+    },
+    "4811": {
+      "label": "Scheduled air transportation",
+      "kgCO2ePerUSD": 2.1,
+      "provenance": [
+        "EXIOBASE",
+        "OWiD"
+      ],
+      "tier": "very-high"
+    },
+    "5112": {
+      "label": "Software publishers",
+      "kgCO2ePerUSD": 0.03,
+      "provenance": [
+        "EXIOBASE",
+        "CDP"
+      ],
+      "tier": "very-low"
+    },
+    "5182": {
+      "label": "Computing infrastructure, data processing & hosting",
+      "kgCO2ePerUSD": 0.04,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "5191": {
+      "label": "Web search, internet publishing, broadcasting",
+      "kgCO2ePerUSD": 0.03,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "5411": {
+      "label": "Legal services",
+      "kgCO2ePerUSD": 0.025,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "5412": {
+      "label": "Accounting, tax, payroll services",
+      "kgCO2ePerUSD": 0.025,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "5415": {
+      "label": "Computer systems design & related services",
+      "kgCO2ePerUSD": 0.03,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "5416": {
+      "label": "Management, scientific & technical consulting",
+      "kgCO2ePerUSD": 0.03,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    },
+    "5418": {
+      "label": "Advertising, PR & related services",
+      "kgCO2ePerUSD": 0.04,
+      "provenance": [
+        "EXIOBASE"
+      ],
+      "tier": "very-low"
+    }
+  },
+  "cat_to_naics": {
+    "Energy": {
+      "naics": "211",
+      "label": "Oil & gas extraction",
+      "tier": "very-high",
+      "kgCO2ePerUSD": 4.2
+    },
+    "Oil & Gas": {
+      "naics": "211",
+      "label": "Oil & gas extraction",
+      "tier": "very-high",
+      "kgCO2ePerUSD": 4.2
+    },
+    "Utilities": {
+      "naics": "2211",
+      "label": "Electric power generation (mixed grid)",
+      "tier": "very-high",
+      "kgCO2ePerUSD": 2.6
+    },
+    "Utility": {
+      "naics": "2211",
+      "label": "Electric power generation (mixed grid)",
+      "tier": "very-high",
+      "kgCO2ePerUSD": 2.6
+    },
+    "Chemicals & Materials": {
+      "naics": "325",
+      "label": "Chemical manufacturing",
+      "tier": "high",
+      "kgCO2ePerUSD": 1
+    },
+    "Manufacturing": {
+      "naics": "333",
+      "label": "Machinery manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.4
+    },
+    "Automotive": {
+      "naics": "3361",
+      "label": "Motor vehicle manufacturing",
+      "tier": "high",
+      "kgCO2ePerUSD": 0.65
+    },
+    "Aerospace": {
+      "naics": "3364",
+      "label": "Aerospace product & parts manufacturing",
+      "tier": "high",
+      "kgCO2ePerUSD": 0.8
+    },
+    "Defense & Aerospace": {
+      "naics": "3364",
+      "label": "Aerospace product & parts manufacturing",
+      "tier": "high",
+      "kgCO2ePerUSD": 0.8
+    },
+    "Agriculture": {
+      "naics": "11",
+      "label": "Agriculture, forestry, fishing & hunting",
+      "tier": "high",
+      "kgCO2ePerUSD": 1.3
+    },
+    "Airline": {
+      "naics": "4811",
+      "label": "Scheduled air transportation",
+      "tier": "very-high",
+      "kgCO2ePerUSD": 2.1
+    },
+    "Transportation": {
+      "naics": "484",
+      "label": "Truck transportation (freight)",
+      "tier": "high",
+      "kgCO2ePerUSD": 0.95
+    },
+    "Travel": {
+      "naics": "4811",
+      "label": "Scheduled air transportation",
+      "tier": "very-high",
+      "kgCO2ePerUSD": 2.1
+    },
+    "Food & Beverage": {
+      "naics": "311",
+      "label": "Food manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.45
+    },
+    "Beverage": {
+      "naics": "312",
+      "label": "Beverage & tobacco product manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.35
+    },
+    "Apparel & Fashion": {
+      "naics": "315",
+      "label": "Apparel manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.4
+    },
+    "Consumer Goods": {
+      "naics": "339",
+      "label": "Miscellaneous manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    },
+    "Beauty & Personal Care": {
+      "naics": "325",
+      "label": "Chemical manufacturing",
+      "tier": "high",
+      "kgCO2ePerUSD": 1
+    },
+    "Furniture & Home": {
+      "naics": "337",
+      "label": "Furniture & related product manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    },
+    "Outdoor": {
+      "naics": "339",
+      "label": "Miscellaneous manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    },
+    "Sports & Fitness": {
+      "naics": "339",
+      "label": "Miscellaneous manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    },
+    "Pet Care": {
+      "naics": "311",
+      "label": "Food manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.45
+    },
+    "Retail": {
+      "naics": "44",
+      "label": "Retail trade (general)",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.25
+    },
+    "Grocery": {
+      "naics": "445",
+      "label": "Food & beverage retailers (grocery)",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    },
+    "Hospitality": {
+      "naics": "721",
+      "label": "Accommodation (hotels, etc.)",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.25
+    },
+    "Hospitality & Travel": {
+      "naics": "721",
+      "label": "Accommodation (hotels, etc.)",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.25
+    },
+    "Technology": {
+      "naics": "5112",
+      "label": "Software publishers",
+      "tier": "very-low",
+      "kgCO2ePerUSD": 0.03
+    },
+    "Telecommunications": {
+      "naics": "517",
+      "label": "Telecommunications",
+      "tier": "low",
+      "kgCO2ePerUSD": 0.1
+    },
+    "Financial Services": {
+      "naics": "522",
+      "label": "Credit intermediation (banking)",
+      "tier": "low",
+      "kgCO2ePerUSD": 0.07
+    },
+    "Healthcare": {
+      "naics": "62",
+      "label": "Health care & social assistance",
+      "tier": "low",
+      "kgCO2ePerUSD": 0.1
+    },
+    "Professional Services": {
+      "naics": "5416",
+      "label": "Management, scientific & technical consulting",
+      "tier": "very-low",
+      "kgCO2ePerUSD": 0.03
+    },
+    "Education": {
+      "naics": "611",
+      "label": "Educational services",
+      "tier": "low",
+      "kgCO2ePerUSD": 0.1
+    },
+    "Entertainment & Media": {
+      "naics": "512",
+      "label": "Motion picture, video & sound recording",
+      "tier": "very-low",
+      "kgCO2ePerUSD": 0.04
+    },
+    "Other": {
+      "naics": "339",
+      "label": "Miscellaneous manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    },
+    "na": {
+      "naics": "339",
+      "label": "Miscellaneous manufacturing",
+      "tier": "medium",
+      "kgCO2ePerUSD": 0.3
+    }
+  }
+}

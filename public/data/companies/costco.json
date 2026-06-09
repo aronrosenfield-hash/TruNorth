@@ -2,7 +2,7 @@
   "name": "Costco",
   "cat": "Retail",
   "init": "CST",
-  "overall": 54.8,
+  "overall": 61.7,
   "isPublic": true,
   "ticker": "COST",
   "sc": {
@@ -10,7 +10,7 @@
     "charity": "positive",
     "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "na",
@@ -61,10 +61,12 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 85/100 (2025) — strong LGBTQ+ workplace policies with minor deductions.",
+    "s": "HRC Corporate Equality Index: 85/100 (2025) — strong LGBTQ+ workplace policies with minor deductions. JUST Capital JUST 100 — ranked #97 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
+      "just-capital",
       "hrc-cei"
     ]
   },

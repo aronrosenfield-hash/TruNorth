@@ -2,7 +2,7 @@
   "name": "Walmart",
   "cat": "Retail",
   "init": "WMT",
-  "overall": 36.2,
+  "overall": 49.9,
   "isPublic": true,
   "ticker": "WMT",
   "sc": {
@@ -10,7 +10,7 @@
     "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
@@ -62,10 +62,13 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 90/100 (2025) — strong LGBTQ+ workplace policies with minor deductions.",
+    "s": "HRC Corporate Equality Index: 90/100 (2025) — strong LGBTQ+ workplace policies with minor deductions. Disability:IN Equality Index score 90/100. JUST Capital JUST 100 — ranked #88 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Mixed",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
+      "disability-in",
+      "just-capital",
       "hrc-cei"
     ]
   },

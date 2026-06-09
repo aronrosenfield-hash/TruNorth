@@ -2,7 +2,7 @@
   "name": "Kraft Heinz",
   "cat": "Food & Beverage",
   "init": "KH",
-  "overall": 44.3,
+  "overall": 45.3,
   "isPublic": true,
   "ticker": "KHC",
   "sc": {
@@ -10,7 +10,7 @@
     "charity": "neutral",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "neutral",
@@ -63,10 +63,11 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture.",
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
       "hrc-cei"
     ]
   },

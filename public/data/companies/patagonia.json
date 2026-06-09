@@ -2,7 +2,7 @@
   "name": "Patagonia",
   "cat": "Apparel & Fashion",
   "init": "PAT",
-  "overall": 82.3,
+  "overall": 79.4,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -10,7 +10,7 @@
     "charity": "positive",
     "environment": "positive",
     "labor": "mixed",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "positive",
     "guns": "neutral",
     "privacy": "na",
@@ -54,9 +54,11 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 95/100 (2025) — strong LGBTQ+ workplace policies with minor deductions.",
+    "s": "HRC Corporate Equality Index: 95/100 (2025) — strong LGBTQ+ workplace policies with minor deductions. Certified B Corporation since 2022 (B Impact score 166/200). HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
+      "hrc-cei",
+      "bcorp",
       "hrc-cei"
     ]
   },
