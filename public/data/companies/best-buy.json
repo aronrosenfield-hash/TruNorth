@@ -7,10 +7,10 @@
   "ticker": "BBY",
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
-    "environment": "neutral",
+    "charity": "positive",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -33,20 +33,23 @@
     }
   },
   "charity": {
-    "s": "$30M reported corporate giving in 2024 (~0.07% of revenue) via Best Buy Foundation.",
+    "s": "$30M reported corporate giving in 2024 (~0.07% of revenue) via Best Buy Foundation. JUST Capital JUST 100 — ranked #30 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
     "amt": "Not disclosed",
     "focus": "Technology education, youth development, community support",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #30 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "rating": "Excellent",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital",
+      "cdp-a-list"
     ]
   },
   "labor": {
@@ -59,10 +62,13 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #30 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {

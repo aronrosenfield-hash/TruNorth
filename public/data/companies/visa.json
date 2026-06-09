@@ -7,10 +7,10 @@
   "ticker": "V",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -33,12 +33,16 @@
     }
   },
   "charity": {
-    "s": "$60M reported corporate giving in 2024 (~0.17% of revenue) via Visa Foundation.",
+    "s": "$60M reported corporate giving in 2024 (~0.17% of revenue) via Visa Foundation. JUST Capital JUST 100 — ranked #42 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #19 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #34 (2024). Newsweek Most Trustworthy Companies in America — ranked #11 (2024).",
     "amt": "~$200M+ annually (grants + investments)",
     "focus": "Financial inclusion, women's economic advancement, small business development, disaster relief, food security",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
@@ -59,10 +63,13 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #42 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {

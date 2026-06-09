@@ -7,10 +7,10 @@
   "ticker": "INTU",
   "sc": {
     "political": "neutral",
-    "charity": "mixed",
-    "environment": "neutral",
+    "charity": "positive",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -32,20 +32,22 @@
     }
   },
   "charity": {
-    "s": "$27M reported corporate giving in 2024 (~0.19% of revenue) via Intuit Foundation.",
+    "s": "$27M reported corporate giving in 2024 (~0.19% of revenue) via Intuit Foundation. JUST Capital JUST 100 — ranked #18 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
     "amt": "$96.8M product donations (FY24); employee matching programs",
     "focus": "Financial empowerment, job readiness, small business support, nonprofit capacity building",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #18 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital"
     ]
   },
   "labor": {
@@ -58,10 +60,12 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #18 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei"
     ]
   },
   "animals": {

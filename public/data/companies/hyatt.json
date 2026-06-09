@@ -7,10 +7,10 @@
   "ac": "#4caf82",
   "sc": {
     "political": "neutral",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "mixed",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -25,12 +25,13 @@
     ]
   },
   "charity": {
-    "s": "$12M reported corporate giving in 2024 (~0.19% of revenue).",
+    "s": "$12M reported corporate giving in 2024 (~0.19% of revenue). Drucker Institute Management Top 250 — ranked #88 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength.",
     "amt": "N/A",
     "focus": "N/A",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "drucker-250"
     ]
   },
   "environment": {
@@ -51,10 +52,11 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "hrc-cei"
     ]
   },
   "animals": {

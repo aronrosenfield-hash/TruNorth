@@ -7,10 +7,10 @@
   "ticker": "HD",
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -33,12 +33,16 @@
     }
   },
   "charity": {
-    "s": "$132M reported corporate giving in 2024 (~0.09% of revenue) via Home Depot Foundation.",
+    "s": "$132M reported corporate giving in 2024 (~0.09% of revenue) via Home Depot Foundation. JUST Capital JUST 100 — ranked #71 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #25 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #23 (2024). Newsweek Most Trustworthy Companies in America — ranked #47 (2024).",
     "amt": "$500M+ cumulative since 2011; ongoing annual giving estimated $50–100M",
     "focus": "Veterans housing, disaster relief, skilled trades workforce development",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
@@ -59,10 +63,12 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #71 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei"
     ]
   },
   "animals": {

@@ -7,10 +7,10 @@
   "ticker": "WMT",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
@@ -33,12 +33,16 @@
     }
   },
   "charity": {
-    "s": "$1.73B reported corporate giving in 2024 (~0.27% of revenue) via Walmart Foundation.",
+    "s": "$1.73B reported corporate giving in 2024 (~0.27% of revenue) via Walmart Foundation. JUST Capital JUST 100 — ranked #88 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #28 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #7 (2024). Newsweek Most Trustworthy Companies in America — ranked #8 (2024).",
     "amt": "~$2B annually (FY2025)",
     "focus": "Hunger relief, economic opportunity, sustainability, racial equity, disaster relief",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
@@ -59,10 +63,13 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Disability:IN Equality Index score 90/100. JUST Capital JUST 100 — ranked #88 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "disability-in",
+      "just-capital",
+      "hrc-cei"
     ]
   },
   "animals": {

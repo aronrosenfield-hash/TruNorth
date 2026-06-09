@@ -9,8 +9,8 @@
     "political": "neutral",
     "charity": "positive",
     "environment": "positive",
-    "labor": "neutral",
-    "dei": "neutral",
+    "labor": "positive",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
@@ -26,31 +26,38 @@
     ]
   },
   "charity": {
-    "s": "$100M reported corporate giving in 2024 (~6.67% of revenue) via Patagonia Inc.",
+    "s": "$100M reported corporate giving in 2024 (~6.67% of revenue) via Patagonia Inc. Certified B Corporation since 2022 (B Impact score 166/200).",
     "amt": "$100+ million annually (post-2022 restructuring); $1-1.5% of annual sales historically",
     "focus": "Environmental conservation, climate change mitigation, public lands protection, grassroots activism",
     "sources": [
-      "corporate-giving"
+      "corporate-giving",
+      "bcorp"
     ]
   },
   "environment": {
-    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits.",
+    "s": "1% for the Planet member — pledges 1% of annual sales to environmental nonprofits. Certified B Corporation since 2022 (B Impact score 166/200). Fair Trade Certified partner (apparel) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "rating": "Excellent",
     "sources": [
-      "one-percent-planet"
+      "one-percent-planet",
+      "bcorp",
+      "fair-trade"
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2022 (B Impact score 166/200). Fair Trade Certified partner (apparel) — sources through cooperatives guaranteeing minimum prices and community premiums.",
     "rating": "Good",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "bcorp",
+      "fair-trade"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Certified B Corporation since 2022 (B Impact score 166/200).",
     "stance": "Pro-DEI",
-    "sources": []
+    "sources": [
+      "bcorp"
+    ]
   },
   "animals": {
     "s": "No public record found.",

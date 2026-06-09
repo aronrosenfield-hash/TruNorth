@@ -7,10 +7,10 @@
   "ticker": "FDX",
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
@@ -32,21 +32,26 @@
     }
   },
   "charity": {
-    "s": "$60M reported corporate giving in 2024 (~0.07% of revenue).",
+    "s": "$60M reported corporate giving in 2024 (~0.07% of revenue). JUST Capital JUST 100 — ranked #94 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #35 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #18 (2024). Newsweek Most Trustworthy Companies in America — ranked #22 (2024).",
     "amt": "$55M annually (FY2024)",
     "focus": "Disaster relief, healthcare access, sustainable transportation, women in STEM, community development",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
-    "s": "EPA SmartWay partner — commits to measure + reduce freight transportation emissions.",
+    "s": "EPA SmartWay partner — commits to measure + reduce freight transportation emissions. JUST Capital JUST 100 — ranked #94 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
     "rating": "Good",
     "sources": [
       "EPA",
       "Violation Tracker",
-      "epa-smartway"
+      "epa-smartway",
+      "just-capital"
     ]
   },
   "labor": {
@@ -59,10 +64,12 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #94 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei"
     ]
   },
   "animals": {

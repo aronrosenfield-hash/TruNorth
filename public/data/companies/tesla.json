@@ -8,9 +8,9 @@
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
-    "environment": "mixed",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
@@ -35,12 +35,13 @@
     ]
   },
   "environment": {
-    "s": "Net-zero pledge.",
+    "s": "Net-zero pledge. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "rating": "Mixed",
     "sources": [
       "EPA",
       "Violation Tracker",
-      "net-zero-tracker"
+      "net-zero-tracker",
+      "cdp-a-list"
     ]
   },
   "labor": {
@@ -53,10 +54,11 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Anti-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "hrc-cei"
     ]
   },
   "animals": {

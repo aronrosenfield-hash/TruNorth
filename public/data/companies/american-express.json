@@ -7,10 +7,10 @@
   "ticker": "AXP",
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
-    "environment": "neutral",
+    "charity": "positive",
+    "environment": "positive",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
@@ -32,20 +32,23 @@
     }
   },
   "charity": {
-    "s": "$45M reported corporate giving in 2024 (~0.07% of revenue) via American Express Foundation.",
+    "s": "$45M reported corporate giving in 2024 (~0.07% of revenue) via American Express Foundation. JUST Capital JUST 100 — ranked #91 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Fortune World's Most Admired Companies — ranked #12 (2024).",
     "amt": "$50M+ estimated annual giving",
     "focus": "Education, workforce development, small business, historic preservation, disaster relief, DEI initiatives",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "fortune-admired"
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #91 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker"
+      "Violation Tracker",
+      "just-capital"
     ]
   },
   "labor": {
@@ -58,10 +61,13 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "JUST Capital JUST 100 — ranked #91 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {

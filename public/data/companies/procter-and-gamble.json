@@ -7,10 +7,10 @@
   "ticker": "PG",
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "mixed",
@@ -33,12 +33,16 @@
     }
   },
   "charity": {
-    "s": "$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund.",
+    "s": "$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund. JUST Capital JUST 100 — ranked #28 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #7 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #14 (2024). Newsweek Most Trustworthy Companies in America — ranked #3 (2024).",
     "amt": "Tens of millions annually (exact amount difficult to quantify due to product donations)",
     "focus": "Education, clean water, sanitation, child/maternal health, disaster relief, community development",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "just-capital",
+      "drucker-250",
+      "fortune-admired",
+      "newsweek-trust"
     ]
   },
   "environment": {
@@ -59,10 +63,14 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Disability:IN Equality Index score 100/100. JUST Capital JUST 100 — ranked #28 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
     "stance": "Pro-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "disability-in",
+      "just-capital",
+      "hrc-cei",
+      "bloomberg-gei"
     ]
   },
   "animals": {
