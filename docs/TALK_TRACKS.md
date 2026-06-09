@@ -6,9 +6,19 @@ Plain-language answers to the questions you'll get asked at events, in DMs, on p
 
 ## "What is TruNorth?"
 
-**TruNorth grades 11,000+ consumer brands on what they actually do — using only public records.**
+**TruNorth tracks 11,000+ consumer brands and grades them on what they actually do — using only public records.**
 
 It's an iOS app. You scan a barcode in-store and get a letter grade (A through F) on the company behind the product, tuned to the values you care about — politics, environment, labor, animal testing, privacy, and more. Every score traces back to a public-record citation. No surveys, no vibes, no opinions.
+
+---
+
+## "How many brands actually get a real grade?"
+
+**Honest answer: ~5,000 of the 11,000 have at least one piece of verified public-record signal. ~1,100 have three or more. ~380 have four or more.**
+
+The top brands you've heard of — every Fortune 500, the big consumer names — carry deep coverage. The long tail (small private brands, niche subsidiaries) doesn't yet, because the public records that grade them simply haven't been published. We mark those brands "limited data" rather than fake a score. As more data lands, more brands earn grades.
+
+This is the YUKA-style honesty: we'd rather show "we don't know yet" than invent a number.
 
 ---
 

@@ -101,9 +101,9 @@ export default function OnboardingFlow({ onComplete }) {
           <div style={s.slide}>
             <div style={s.ctaArt}><div style={s.ctaArtInner}><svg width="36" height="36" viewBox="0 0 48 48"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg></div></div>
             <h2 style={{ ...s.headline, fontSize:28, textAlign:"center" }}>Shop with a<br /><em style={{ color:"#7c6dfa", fontStyle:"normal" }}>clear conscience.</em></h2>
-            <p style={{ ...s.subtext, textAlign:"center", marginBottom:28 }}>11,000+ companies graded using 100 public-records sources — federal regulators, court records, corporate filings. Real records, not opinions.</p>
+            <p style={{ ...s.subtext, textAlign:"center", marginBottom:28 }}>11,000+ companies tracked. Top brands carry full grades across 9 categories — federal regulators, court records, corporate filings. Real records, not opinions.</p>
             <div style={s.statsRow}>
-              {[["11,000+","Companies"],["9","Categories"],["100","Sources"]].map(([num,label]) => (
+              {[["11,000+","Tracked"],["9","Categories"],["100+","Sources"]].map(([num,label]) => (
                 <div key={label} style={{ textAlign:"center" }}>
                   <div style={s.statNum}>{num}</div>
                   <div style={s.statLabel}>{label}</div>
