@@ -11,10 +11,11 @@
     "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "negative",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "poor"
   },
   "political": {
     "s": "FEC: $194K in executive political donations; partisan lean Republican +27 across 7 executive donors.",
@@ -56,10 +57,11 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Mercy For Animals: Olive Garden (Darden) Better Chicken Commitment progress behind schedule. NRDC Chain Reaction: F — no public antibiotic-stewardship policy (Darden). [MFA behind · NRDC Chain Reaction F]",
     "verdict": "N/A",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "animal-welfare-ag-r3"
     ]
   },
   "guns": {
@@ -268,5 +270,11 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "NRDC Chain Reaction: F — no public antibiotic-stewardship policy (Darden). [NRDC Chain Reaction F]",
+    "sources": [
+      "animal-welfare-ag-r3"
+    ]
+  }
 }

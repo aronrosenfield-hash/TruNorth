@@ -8,13 +8,14 @@
   "sc": {
     "political": "neutral",
     "charity": "mixed",
-    "environment": "neutral",
+    "environment": "positive",
     "labor": "mixed",
     "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na"
+    "execPay": "na",
+    "health": "good"
   },
   "political": {
     "s": "No public record found.",
@@ -34,10 +35,11 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Toxic-Free Future Mind The Store retail scorecard 2024: B- — Clean at Sephora program covers PFAS + phthalates. [Mind The Store B-]",
     "rating": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "animal-welfare-ag-r3"
     ]
   },
   "labor": {
@@ -245,5 +247,11 @@
   "osha": null,
   "nlrb": null,
   "epa": null,
-  "lastUpdated": "2026-05-16T23:59:59.000Z"
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "Toxic-Free Future Mind The Store retail scorecard 2024: B- — Clean at Sephora program covers PFAS + phthalates. [Mind The Store B-]",
+    "sources": [
+      "animal-welfare-ag-r3"
+    ]
+  }
 }

@@ -585,6 +585,42 @@ const WRITERS = [
       return out;
     },
   },
+  // ─── Animal welfare + agricultural accountability ROUND 3 ─────────────
+  // Same per-bucket shape as farm-welfare (animals / environment / labor /
+  // health + bestStatus + certifications + narrative). Sources covered:
+  // Certified Humane, AWI, AGA, BAP, Salmon-Safe, Bee Better, Audubon,
+  // Soil Association, Naturland, Seafood Watch, FishWise, MFA, THL, Animal
+  // Equality, World Animal Protection, CIWF ChickenTrack, NRDC Chain Reaction,
+  // Pew, Food Empowerment Project, Slave Free Chocolate, Cocoa Barometer,
+  // Toxic-Free Future, CEH, PFAS Project Lab, Green Seal, UL EcoLogo,
+  // Cradle to Cradle, EWG Skin Deep.
+  {
+    name: "animal-welfare-ag-r3",
+    write: (e) => {
+      const out = [];
+      const CATS = ["animals", "environment", "labor", "health"];
+      const SEVERITY_TO_SC = {
+        animals:     { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        environment: { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        labor:       { leader: "positive", positive: "positive", mixed: "mixed", concern: "negative" },
+        health:      { leader: "good",     positive: "good",     mixed: "mixed", concern: "poor" },
+      };
+      for (const cat of CATS) {
+        const b = e[cat];
+        if (!b || !b.narrative) continue;
+        const certs = Array.isArray(b.certifications) && b.certifications.length
+          ? ` [${b.certifications.join(" · ")}]`
+          : "";
+        const narrative = `${b.narrative}${certs}`;
+        const sc = SEVERITY_TO_SC[cat]?.[b.bestStatus];
+        const severity = b.bestStatus === "concern" ? "negative"
+          : b.bestStatus === "mixed"  ? "mixed"
+          : "positive";
+        out.push({ category: cat, narrative, sc, severity });
+      }
+      return out;
+    },
+  },
   // ─── Industry carbon intensity (sector inferred) ──────────────────────
   {
     name: "industry-carbon-intensity",
