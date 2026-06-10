@@ -1,0 +1,2776 @@
+{
+  "_meta": {
+    "version": 1,
+    "generated_at": "2026-06-10T12:28:42.711Z",
+    "runtime_ms": 7,
+    "mode": "seeds-only",
+    "hard_caps": {
+      "per_source_record_cap": 500,
+      "per_source_timeout_ms": 60000
+    },
+    "sources_attempted": [],
+    "sources_parked": [],
+    "seed_filer_count": 59,
+    "emitted_slug_count": 59,
+    "notes": "Curated-seed mapping of ~50 major corporate filers in CA / NY / TX / NYC. Live Socrata layer is opt-in via --live with HARD 500-row / 60-sec caps. Seeds-only is the safe default and what the monthly cron runs."
+  },
+  "walmart": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1010000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "retail",
+              "labor",
+              "tax"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "retail",
+              "labor"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 410000,
+            "year": 2024,
+            "issues": [
+              "retail",
+              "alcohol",
+              "labor"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "retail",
+          "labor",
+          "alcohol"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Walmart Inc."
+      }
+    }
+  },
+  "amazon": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2940000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 1100000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "logistics",
+              "tax"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "logistics",
+              "labor"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "logistics",
+              "data-center"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          },
+          {
+            "code": "nyc",
+            "label": "NYC eLobbyist",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "logistics",
+              "land-use"
+            ],
+            "source_url": "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+          }
+        ],
+        "top_issues": [
+          "logistics",
+          "tech",
+          "tax"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/",
+          "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Amazon.com Services LLC"
+      }
+    }
+  },
+  "google-alphabet": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 3200000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 2100000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "privacy",
+              "ai"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "privacy"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "data-center"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "privacy",
+          "ai"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Google LLC"
+      }
+    }
+  },
+  "meta-platforms": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2630000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 1800000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "privacy",
+              "ai"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "privacy"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 290000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "data-center"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "privacy",
+          "ai"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Meta Platforms Inc."
+      }
+    }
+  },
+  "apple": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1520000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 1200000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "privacy",
+              "right-to-repair"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "privacy"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "privacy",
+          "right-to-repair"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Apple Inc."
+      }
+    }
+  },
+  "microsoft": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1840000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "ai",
+              "procurement"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "ai",
+              "procurement"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "data-center"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "ai",
+          "procurement"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Microsoft Corporation"
+      }
+    }
+  },
+  "uber": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 5280000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 2400000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "labor",
+              "transportation"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 1100000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "labor",
+              "transportation"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "transportation"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          },
+          {
+            "code": "nyc",
+            "label": "NYC eLobbyist",
+            "amount_usd": 1400000,
+            "year": 2024,
+            "issues": [
+              "for-hire-vehicles",
+              "labor"
+            ],
+            "source_url": "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+          }
+        ],
+        "top_issues": [
+          "labor",
+          "gig-economy",
+          "transportation"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/",
+          "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Uber Technologies Inc."
+      }
+    }
+  },
+  "lyft": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2420000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 1200000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "labor",
+              "transportation"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "transportation"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "nyc",
+            "label": "NYC eLobbyist",
+            "amount_usd": 680000,
+            "year": 2024,
+            "issues": [
+              "for-hire-vehicles",
+              "labor"
+            ],
+            "source_url": "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+          }
+        ],
+        "top_issues": [
+          "labor",
+          "gig-economy",
+          "transportation"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Lyft Inc."
+      }
+    }
+  },
+  "doordash": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2660000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 1400000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "labor"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "nyc",
+            "label": "NYC eLobbyist",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "gig-economy",
+              "labor"
+            ],
+            "source_url": "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+          }
+        ],
+        "top_issues": [
+          "gig-economy",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "DoorDash Inc."
+      }
+    }
+  },
+  "chevron": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 4180000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 3200000,
+            "year": 2024,
+            "issues": [
+              "energy",
+              "climate",
+              "refining"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "oil-gas",
+              "energy"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "energy",
+          "climate",
+          "refining"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Chevron USA Inc."
+      }
+    }
+  },
+  "exxon-mobil": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2320000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "energy",
+              "climate"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "energy"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 1400000,
+            "year": 2024,
+            "issues": [
+              "oil-gas",
+              "energy",
+              "petrochem"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "energy",
+          "oil-gas",
+          "petrochem"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Exxon Mobil Corporation"
+      }
+    }
+  },
+  "exxonmobil": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2320000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "energy",
+              "climate"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "energy"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 1400000,
+            "year": 2024,
+            "issues": [
+              "oil-gas",
+              "energy",
+              "petrochem"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "energy",
+          "oil-gas",
+          "petrochem"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Exxon Mobil Corporation"
+      }
+    }
+  },
+  "atandt": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 3060000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "telecom"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 1800000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "telecom",
+          "broadband"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "AT&T Services Inc."
+      }
+    }
+  },
+  "verizon": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1900000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "telecom"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "telecom",
+          "broadband"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Verizon Communications Inc."
+      }
+    }
+  },
+  "comcast": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1640000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband",
+              "media"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "media"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "telecom"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "telecom",
+          "media",
+          "broadband"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Comcast Corporation"
+      }
+    }
+  },
+  "pfizer": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 920000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "pharma",
+              "drug-pricing"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "pharma"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "pharma",
+          "drug-pricing"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Pfizer Inc."
+      }
+    }
+  },
+  "jpmorgan-chase": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1000000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "banking",
+              "fintech"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 680000,
+            "year": 2024,
+            "issues": [
+              "banking",
+              "fintech"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "banking",
+          "fintech"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "JPMorgan Chase & Co."
+      }
+    }
+  },
+  "bank-of-america": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 820000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "banking"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "banking"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "banking"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Bank of America Corporation"
+      }
+    }
+  },
+  "goldman-sachs": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 720000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "banking",
+              "securities"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "banking",
+          "securities"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Goldman Sachs Group Inc."
+      }
+    }
+  },
+  "citigroup": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 540000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "banking",
+              "securities"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "banking",
+          "securities"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Citigroup Inc."
+      }
+    }
+  },
+  "wells-fargo": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 660000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "banking",
+              "housing"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "banking"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "banking",
+          "housing"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Wells Fargo & Company"
+      }
+    }
+  },
+  "tesla": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2020000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "ev",
+              "autonomous",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "ev",
+              "autonomous"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "ev",
+              "manufacturing",
+              "autonomous"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "ev",
+          "autonomous",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Tesla Inc."
+      }
+    }
+  },
+  "general-motors": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1140000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "auto",
+              "ev",
+              "autonomous"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "auto",
+              "ev"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "auto"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "auto",
+          "ev",
+          "autonomous"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "General Motors LLC"
+      }
+    }
+  },
+  "ford": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 660000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "auto",
+              "ev"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "auto"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "auto",
+          "ev"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Ford Motor Company"
+      }
+    }
+  },
+  "anheuser-busch": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1200000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "alcohol",
+              "distribution"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "alcohol",
+              "distribution"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "alcohol",
+              "distribution"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "alcohol",
+          "distribution"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Anheuser-Busch Companies LLC"
+      }
+    }
+  },
+  "pgande": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 4200000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 4200000,
+            "year": 2024,
+            "issues": [
+              "utilities",
+              "wildfire",
+              "energy"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "utilities",
+          "wildfire",
+          "energy"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Pacific Gas and Electric Company"
+      }
+    }
+  },
+  "edison-international": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 3200000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 3200000,
+            "year": 2024,
+            "issues": [
+              "utilities",
+              "wildfire",
+              "energy"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "utilities",
+          "wildfire",
+          "energy"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Southern California Edison Company"
+      }
+    }
+  },
+  "altria": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1200000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tobacco",
+              "vape"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "tobacco",
+              "vape"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "tobacco"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tobacco",
+          "vape"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Altria Client Services LLC"
+      }
+    }
+  },
+  "philip-morris-international": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 600000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "tobacco",
+              "vape"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "tobacco",
+              "vape"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "tobacco",
+          "vape"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Philip Morris International Inc."
+      }
+    }
+  },
+  "anthem": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 920000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "health-insurance"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "health-insurance"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "health-insurance"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Anthem Inc."
+      }
+    }
+  },
+  "unitedhealth-group": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1640000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "health-insurance",
+              "pharma"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "health-insurance"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "health-insurance"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "health-insurance",
+          "pharma"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "UnitedHealth Group Incorporated"
+      }
+    }
+  },
+  "cvs-health": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 700000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "pharmacy",
+              "pbm"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "pharmacy",
+              "pbm"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "pharmacy",
+          "pbm"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "CVS Health Corporation"
+      }
+    }
+  },
+  "anthropic": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 320000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "ai",
+              "tech"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "ai",
+          "tech"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Anthropic PBC"
+      }
+    }
+  },
+  "openai": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 820000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "ai",
+              "tech"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "ai",
+              "tech"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "ai",
+          "tech"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "OpenAI OpCo LLC"
+      }
+    }
+  },
+  "airbnb": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 2240000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "short-term-rental",
+              "housing"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "short-term-rental",
+              "housing"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "nyc",
+            "label": "NYC eLobbyist",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "short-term-rental",
+              "housing"
+            ],
+            "source_url": "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+          }
+        ],
+        "top_issues": [
+          "short-term-rental",
+          "housing"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Airbnb Inc."
+      }
+    }
+  },
+  "charter-communications": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1100000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "telecom",
+              "broadband"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "telecom",
+          "broadband"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Charter Communications Inc."
+      }
+    }
+  },
+  "t-mobile": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1240000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "telecom"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "telecom"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "telecom"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "telecom"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "T-Mobile USA Inc."
+      }
+    }
+  },
+  "disney": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1260000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "media",
+              "theme-park",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "media"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "media",
+          "theme-park",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "The Walt Disney Company"
+      }
+    }
+  },
+  "netflix": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 820000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "media",
+              "tax-credits",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "media",
+              "tax-credits"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "media",
+          "tax-credits",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Netflix Inc."
+      }
+    }
+  },
+  "starbucks": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 600000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "labor",
+              "food-service"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "labor",
+              "food-service"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "labor",
+          "food-service"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Starbucks Corporation"
+      }
+    }
+  },
+  "mcdonald-s": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1380000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "fast-food",
+              "labor",
+              "minimum-wage"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "fast-food",
+              "labor"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "fast-food"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "fast-food",
+          "labor",
+          "minimum-wage"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "McDonald's USA LLC"
+      }
+    }
+  },
+  "fedex": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 980000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "logistics",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "logistics"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "logistics"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "logistics",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "FedEx Corporation"
+      }
+    }
+  },
+  "ups": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 980000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "logistics",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "logistics",
+              "labor"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "logistics"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "logistics",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "United Parcel Service Inc."
+      }
+    }
+  },
+  "target": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 560000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "retail",
+              "labor"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "retail"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "retail",
+          "labor"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Target Corporation"
+      }
+    }
+  },
+  "boeing": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 920000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "defense",
+              "aerospace"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "defense",
+              "aerospace"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "defense",
+          "aerospace"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "The Boeing Company"
+      }
+    }
+  },
+  "lockheed-martin": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 860000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "defense"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "defense"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "defense"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Lockheed Martin Corporation"
+      }
+    }
+  },
+  "rtx": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 660000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "defense"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "defense"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "defense"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "RTX Corporation"
+      }
+    }
+  },
+  "coca-cola": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 660000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "beverage",
+              "soda-tax",
+              "packaging"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "beverage",
+              "soda-tax"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          }
+        ],
+        "top_issues": [
+          "beverage",
+          "soda-tax",
+          "packaging"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "The Coca-Cola Company"
+      }
+    }
+  },
+  "pepsico": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 980000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "beverage",
+              "soda-tax",
+              "packaging"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "beverage",
+              "soda-tax"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "beverage"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "beverage",
+          "soda-tax",
+          "packaging"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "PepsiCo Inc."
+      }
+    }
+  },
+  "salesforce": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 540000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "ai",
+              "privacy"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "ai",
+          "privacy"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Salesforce Inc."
+      }
+    }
+  },
+  "nvidia": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 380000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "ai",
+              "semiconductors"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "ai",
+          "semiconductors"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "NVIDIA Corporation"
+      }
+    }
+  },
+  "intel": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 320000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "semiconductors"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "semiconductors"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Intel Corporation"
+      }
+    }
+  },
+  "oracle": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 660000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "procurement"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "procurement"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "procurement"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Oracle America Inc."
+      }
+    }
+  },
+  "dell": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 820000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "procurement"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "procurement"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "procurement"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Dell Technologies Inc."
+      }
+    }
+  },
+  "x-corp": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 380000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "social-media",
+              "content-moderation"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "social-media",
+          "content-moderation"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "X Corp."
+      }
+    }
+  },
+  "snap": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 320000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 320000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "social-media",
+              "child-safety"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "social-media",
+          "child-safety"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Snap Inc."
+      }
+    }
+  },
+  "tiktok": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1900000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 980000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "social-media",
+              "child-safety",
+              "data"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "ny",
+            "label": "NY COELIG",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "social-media",
+              "child-safety"
+            ],
+            "source_url": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 380000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "social-media",
+              "child-safety"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "social-media",
+          "child-safety"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "TikTok Inc."
+      }
+    }
+  },
+  "palantir-technologies": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 280000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 280000,
+            "year": 2024,
+            "issues": [
+              "tech",
+              "defense",
+              "procurement"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          }
+        ],
+        "top_issues": [
+          "tech",
+          "defense",
+          "procurement"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Palantir Technologies Inc."
+      }
+    }
+  },
+  "spacex": {
+    "political": {
+      "state_lobbying_r5": {
+        "total_usd_annual": 1260000,
+        "year": 2024,
+        "jurisdictions": [
+          {
+            "code": "ca",
+            "label": "CA CalAccess",
+            "amount_usd": 540000,
+            "year": 2024,
+            "issues": [
+              "aerospace",
+              "spectrum"
+            ],
+            "source_url": "https://calaccess.sos.ca.gov/Lobbying/Employers/"
+          },
+          {
+            "code": "tx",
+            "label": "TX Ethics",
+            "amount_usd": 720000,
+            "year": 2024,
+            "issues": [
+              "aerospace",
+              "spectrum",
+              "land-use"
+            ],
+            "source_url": "https://www.ethics.state.tx.us/data/search/lobby/"
+          }
+        ],
+        "top_issues": [
+          "aerospace",
+          "spectrum",
+          "land-use"
+        ],
+        "source": "state-lobbying-r5",
+        "source_urls": [
+          "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+          "https://www.ethics.state.tx.us/data/search/lobby/"
+        ],
+        "last_updated": "2026-06-10T12:28:42.711Z",
+        "raw_name_matched": "Space Exploration Technologies Corp."
+      }
+    }
+  }
+}

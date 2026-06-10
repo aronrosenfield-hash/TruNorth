@@ -1397,6 +1397,55 @@ const WRITERS = [
       }];
     },
   },
+  // ─── State lobbying (R5): CA CalAccess + NY COELIG + TX Ethics + NYC ──
+  // Augment shape per slug (see scripts/state-lobbying-r5-fetch.mjs):
+  //   { political: { state_lobbying_r5: {
+  //       total_usd_annual, year, jurisdictions[], top_issues[],
+  //       source_urls[], last_updated, raw_name_matched
+  //   } } }
+  //
+  // Federal LDA lobbying (Senate disclosures) is already wired upstream
+  // via the existing "lobbying" writer. THIS writer surfaces the
+  // sub-federal layer that lives in state and city public-records
+  // regimes — non-trivial seven-figure annual spend in CA, NY, TX, and
+  // NYC for the largest corporate filers.
+  //
+  // Severity is intentionally left UNSET. State lobbying alone is
+  // mixed (it's required disclosure of routine government affairs);
+  // editorial polarity for the political category continues to come
+  // from exec-political-donations and the FEC-derived writers.
+  // mergeCrossCite means: if an existing political narrative is already
+  // there, append a compact cross-citation suffix instead of being
+  // silently hidden by first-wins. Empty political → drop primary
+  // narrative.
+  {
+    name: "state-lobbying-r5",
+    write: (e) => {
+      const p = e.political?.state_lobbying_r5 || e.state_lobbying_r5;
+      if (!p || !p.total_usd_annual) return [];
+      const total = p.total_usd_annual;
+      const totalStr = total >= 1e6 ? `$${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `$${Math.round(total / 1e3)}K`
+        : `$${Math.round(total)}`;
+      const jLabels = (p.jurisdictions || [])
+        .map(j => j.code.toUpperCase())
+        .filter((v, i, a) => a.indexOf(v) === i);
+      const jStr = jLabels.length ? ` across ${jLabels.join(" + ")}` : "";
+      const yrStr = p.year ? ` (${p.year})` : "";
+      const issuesStr = Array.isArray(p.top_issues) && p.top_issues.length
+        ? ` Top issues: ${p.top_issues.slice(0, 3).join(", ")}.`
+        : "";
+      const narrative =
+        `State lobbying: ~${totalStr} annual state/city lobbying spend${jStr}${yrStr}. ` +
+        `[CA CalAccess + NY COELIG + TX Ethics + NYC eLobbyist].${issuesStr}`;
+      return [{
+        category: "political",
+        narrative,
+        mergeCrossCite: true,
+        crossCiteSuffix: " [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
+      }];
+    },
+  },
 ];
 
 // Compact factory for foreign-regulator-r4 writers. Each maps to a single
