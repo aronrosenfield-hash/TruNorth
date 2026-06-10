@@ -14,16 +14,15 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na",
-    "health": "poor"
+    "execPay": "na"
   },
   "political": {
-    "s": "FEC: $22K PAC donations; 77% to Republican, 23% to Democratic committees.  [FollowTheMoney.org adds state-level totals.]",
+    "s": "FEC: $22K PAC donations; 77% to Republican, 23% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "$22K PAC (2026 cycle)",
     "lean": "Right",
     "sources": [
       "FEC.gov",
-      "followthemoney-state"
+      "state-lobbying-r5"
     ],
     "fecData": {
       "committeeId": "C00144154",
@@ -104,7 +103,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "at-and-t",
@@ -360,10 +362,14 @@
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
   "realCats": 6,
-  "health": {
-    "s": "2 CPUC service-quality citations totaling $10.5M. CPUC fined AT&T California $8.3M for failing to meet service-quality standards including 911 access reliability and repair-response times across 2017–2019.",
-    "sources": [
-      "cpuc"
-    ]
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 41,
+      "score": 80.3,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
   }
 }

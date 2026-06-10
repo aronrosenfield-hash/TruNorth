@@ -19,12 +19,12 @@
     "governance": "neutral"
   },
   "political": {
-    "s": "FEC: $427K in executive political donations; partisan lean split across 14 executive donors.  [Stanford DIME (Bonica) corroborates.]",
+    "s": "FEC: $427K in executive political donations; partisan lean split across 14 executive donors.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "~$1M/yr federal lobbying (Tesla corporate); Musk personally $277M+ via America PAC (2024)",
     "lean": "Right",
     "sources": [
       "exec-political-donations",
-      "dime"
+      "state-lobbying-r5"
     ]
   },
   "charity": {
@@ -100,7 +100,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "tesla-inc",
@@ -434,5 +437,15 @@
     "sources": [
       "wikidata"
     ]
+  },
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 85,
+      "score": 68.5,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
   }
 }

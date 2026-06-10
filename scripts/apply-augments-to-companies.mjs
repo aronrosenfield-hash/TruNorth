@@ -1813,110 +1813,52 @@ const WRITERS = [
       }];
     },
   },
-
-  // ─── CA DLSE Wage-Theft Citations (state-enforcement-r5) → labor ────
-  // California Labor Commissioner / Division of Labor Standards Enforcement
-  // citations for wage theft. Severity tier set at merge time.
+  // ─── State lobbying (R5): CA CalAccess + NY COELIG + TX Ethics + NYC ──
+  // Augment shape per slug (see scripts/state-lobbying-r5-fetch.mjs):
+  //   { political: { state_lobbying_r5: {
+  //       total_usd_annual, year, jurisdictions[], top_issues[],
+  //       source_urls[], last_updated, raw_name_matched
+  //   } } }
+  //
+  // Federal LDA lobbying (Senate disclosures) is already wired upstream
+  // via the existing "lobbying" writer. THIS writer surfaces the
+  // sub-federal layer that lives in state and city public-records
+  // regimes — non-trivial seven-figure annual spend in CA, NY, TX, and
+  // NYC for the largest corporate filers.
+  //
+  // Severity is intentionally left UNSET. State lobbying alone is
+  // mixed (it's required disclosure of routine government affairs);
+  // editorial polarity for the political category continues to come
+  // from exec-political-donations and the FEC-derived writers.
+  // mergeCrossCite means: if an existing political narrative is already
+  // there, append a compact cross-citation suffix instead of being
+  // silently hidden by first-wins. Empty political → drop primary
+  // narrative.
   {
-    name: "ca-dlse",
+    name: "state-lobbying-r5",
     write: (e) => {
-      const cnt = Number(e.case_count || 0);
-      if (!cnt) return [];
-      const wages = Number(e.total_wages_usd || 0);
-      const cit = Number(e.total_citation_usd || 0);
-      const workers = Number(e.total_workers_affected || 0);
-      const usd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(2)}M`
-                       : n >= 1e3 ? `$${Math.round(n / 1e3)}K`
-                       : `$${n}`;
-      const headline = cnt === 1
-        ? `CA Labor Commissioner cited this brand ${usd(cit)} for wage theft (${usd(wages)} unpaid wages, ${workers || "?"} workers affected).`
-        : `${cnt} CA Labor Commissioner wage-theft citations totaling ${usd(cit)} (${usd(wages)} unpaid wages, ${workers || "?"} workers affected) ${e.earliest ? `${e.earliest.slice(0,4)}–${(e.latest||"").slice(0,4)}` : ""}.`;
-      const top = Array.isArray(e.top_cases) && e.top_cases[0]
-        ? ` ${clip(e.top_cases[0].summary, 200)}`
+      const p = e.political?.state_lobbying_r5 || e.state_lobbying_r5;
+      if (!p || !p.total_usd_annual) return [];
+      const total = p.total_usd_annual;
+      const totalStr = total >= 1e6 ? `$${(total / 1e6).toFixed(1)}M`
+        : total >= 1e3 ? `$${Math.round(total / 1e3)}K`
+        : `$${Math.round(total)}`;
+      const jLabels = (p.jurisdictions || [])
+        .map(j => j.code.toUpperCase())
+        .filter((v, i, a) => a.indexOf(v) === i);
+      const jStr = jLabels.length ? ` across ${jLabels.join(" + ")}` : "";
+      const yrStr = p.year ? ` (${p.year})` : "";
+      const issuesStr = Array.isArray(p.top_issues) && p.top_issues.length
+        ? ` Top issues: ${p.top_issues.slice(0, 3).join(", ")}.`
         : "";
-      const sc = e.severity_tier === "very_poor" ? "very_poor"
-               : e.severity_tier === "poor" ? "poor"
-               : "mixed";
+      const narrative =
+        `State lobbying: ~${totalStr} annual state/city lobbying spend${jStr}${yrStr}. ` +
+        `[CA CalAccess + NY COELIG + TX Ethics + NYC eLobbyist].${issuesStr}`;
       return [{
-        category: "labor",
-        narrative: `${headline}${top}`.trim(),
-        sc,
-        severity: sc === "very_poor" || sc === "poor" ? "negative" : "mixed",
-      }];
-    },
-  },
-
-  // ─── CPUC Enforcement (state-enforcement-r5) → environment + health ──
-  // California Public Utilities Commission citations against utilities,
-  // telecom carriers, and energy companies. Writes one narrative per
-  // category (environment for safety/wildfires/methane, health for 911 /
-  // service-quality, political when ratepayer lobbying misuse).
-  {
-    name: "cpuc",
-    write: (e) => {
-      const cnt = Number(e.action_count || 0);
-      if (!cnt) return [];
-      const usd = (n) => n >= 1e9 ? `$${(n / 1e9).toFixed(2)}B`
-                       : n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M`
-                       : n >= 1e3 ? `$${Math.round(n / 1e3)}K`
-                       : `$${n}`;
-      const byCat = e.by_category || {};
-      const writes = [];
-      for (const [cat, info] of Object.entries(byCat)) {
-        const c = Number(info.case_count || 0);
-        const t = Number(info.total_citation_usd || 0);
-        if (!c) continue;
-        const topInCat = (e.top_actions || []).find(a => a.category === cat) || (e.top_actions || [])[0];
-        const head = c === 1
-          ? `CPUC enforcement: ${usd(t)} citation for ${cat === "environment" ? "utility safety / wildfire / methane" : cat === "health" ? "service-quality / 911 / Lifeline" : "ratepayer misuse / lobbying"}.`
-          : `${c} CPUC ${cat === "environment" ? "safety / wildfire" : cat === "health" ? "service-quality" : "political-funds"} citations totaling ${usd(t)}.`;
-        const tail = topInCat ? ` ${clip(topInCat.summary, 200)}` : "";
-        // Severity per-category uses overall severity_tier when fatalities;
-        // otherwise scale on the per-cat total.
-        const sc = e.has_fatalities ? "very_poor"
-                 : t >= 100_000_000 ? "very_poor"
-                 : t >= 10_000_000 ? "poor"
-                 : "mixed";
-        writes.push({
-          category: cat,
-          narrative: `${head}${tail}`.trim(),
-          sc,
-          severity: sc === "very_poor" || sc === "poor" ? "negative" : "mixed",
-        });
-      }
-      return writes;
-    },
-  },
-
-  // ─── TX TCEQ Compliance History (state-enforcement-r5) → environment ──
-  // Texas Commission on Environmental Quality agreed orders against Texas
-  // oil/gas, petrochem, and industrial facilities.
-  {
-    name: "tx-tceq",
-    write: (e) => {
-      const cnt = Number(e.case_count || 0);
-      if (!cnt) return [];
-      const total = Number(e.total_agreed_penalty_usd || 0);
-      const usd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(2)}M`
-                       : n >= 1e3 ? `$${Math.round(n / 1e3)}K`
-                       : `$${n}`;
-      const violLabel = Array.isArray(e.violation_types) && e.violation_types.length
-        ? ` (${e.violation_types.slice(0, 3).join(", ")})`
-        : "";
-      const head = cnt === 1
-        ? `TX TCEQ agreed order: ${usd(total)} penalty${violLabel}.`
-        : `${cnt} TX TCEQ agreed orders totaling ${usd(total)}${violLabel} ${e.earliest ? `${e.earliest.slice(0,4)}–${(e.latest||"").slice(0,4)}` : ""}.`;
-      const top = Array.isArray(e.top_cases) && e.top_cases[0]
-        ? ` ${clip(e.top_cases[0].summary, 220)}`
-        : "";
-      const sc = e.severity_tier === "very_poor" ? "very_poor"
-               : e.severity_tier === "poor" ? "poor"
-               : "mixed";
-      return [{
-        category: "environment",
-        narrative: `${head}${top}`.trim(),
-        sc,
-        severity: sc === "very_poor" || sc === "poor" ? "negative" : "mixed",
+        category: "political",
+        narrative,
+        mergeCrossCite: true,
+        crossCiteSuffix: " [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
       }];
     },
   },

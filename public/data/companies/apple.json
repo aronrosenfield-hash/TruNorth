@@ -17,12 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "FEC: $25K PAC donations; 68% to Republican, 32% to Democratic committees.  [Stanford DIME (Bonica) corroborates.]",
+    "s": "FEC: $25K PAC donations; 68% to Republican, 32% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "$29K PAC (2026 cycle)",
     "lean": "Right",
     "sources": [
       "FEC.gov",
-      "dime"
+      "state-lobbying-r5"
     ],
     "fecData": {
       "committeeId": "C00344945",
@@ -120,7 +120,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "apple-inc",
@@ -461,5 +464,15 @@
   "health": {
     "s": "16 CPSC recalls on record; sample hazard: an internal short can cause the battery cells to overheat."
   },
-  "realCats": 7
+  "realCats": 7,
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 37,
+      "score": 81.4,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
+  }
 }

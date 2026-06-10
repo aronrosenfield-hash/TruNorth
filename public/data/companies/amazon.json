@@ -17,12 +17,12 @@
     "execPay": "na"
   },
   "political": {
-    "s": "FEC: $88K PAC donations; 46% to Republican, 54% to Democratic committees.  [FollowTheMoney.org adds state-level totals.]",
+    "s": "FEC: $88K PAC donations; 46% to Republican, 54% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "$1.0M PAC (2026 cycle)",
     "lean": "Bipartisan",
     "sources": [
       "FEC.gov",
-      "followthemoney-state"
+      "state-lobbying-r5"
     ],
     "fecData": {
       "committeeId": "C00360354",
@@ -111,7 +111,10 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "amazoncom",
@@ -473,5 +476,15 @@
   "health": {
     "s": "309 CPSC recalls (181 in past 24 months); latest hazard: the recalled dressers are unstable if they are not anchored to the wall."
   },
-  "realCats": 7
+  "realCats": 7,
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 49,
+      "score": 78.3,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
+  }
 }

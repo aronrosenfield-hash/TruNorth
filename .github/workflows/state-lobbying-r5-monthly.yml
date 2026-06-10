@@ -1,0 +1,79 @@
+name: state-lobbying-r5-monthly
+
+# State + city lobbying integration (R5 — political-money fleet).
+#
+# Sub-federal lobbying disclosures from the four largest jurisdictions:
+#   • CA Secretary of State CalAccess (https://calaccess.sos.ca.gov/Lobbying/Employers/)
+#   • NY COELIG via Open NY Socrata   (https://opendata.ny.gov/)
+#   • TX Ethics Commission lobby CSV  (https://www.ethics.state.tx.us/data/search/lobby/)
+#   • NYC eLobbyist via NYC Socrata   (https://data.cityofnewyork.us/)
+#
+# Default mode is SEEDS-ONLY (curated ~50-filer corpus) — safe, fast,
+# deterministic. The optional --live layer is opt-in and bounded by
+# HARD per-source caps:
+#   • $limit=500 on every Socrata request
+#   • 60-second AbortController timeout
+#   • $order=:id for deterministic slicing
+#   • No paging beyond the initial 500 rows
+#
+# These constraints exist because a previous R5 attempt ran for 13+
+# hours trying to bulk-download NY COELIG's 278M-record dataset and
+# silently crashed. The caps are documented in state-lobbying-r5-fetch.mjs
+# and enforced in code via the exported HARD_PER_SOURCE_* constants.
+#
+# Runs the 2nd of each month at 06:00 UTC (24h after the existing
+# state-campaign-finance cron to avoid concurrent commits to main).
+
+on:
+  schedule:
+    - cron: "0 6 2 * *"   # 2nd of month, 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Run with --live (Socrata layer on top of seeds)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write   # required to commit augment + per-company JSON
+
+jobs:
+  fetch-and-merge:
+    runs-on: ubuntu-latest
+    # Hard ceiling — if anything inside this job runs longer than 20
+    # minutes the runner aborts. Seeds-only typically finishes in <2s.
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build state-lobbying-r5 augment
+        run: |
+          if [ "${{ github.event.inputs.live }}" = "true" ]; then
+            node scripts/state-lobbying-r5-fetch.mjs --live
+          else
+            node scripts/state-lobbying-r5-fetch.mjs
+          fi
+
+      - name: Slug-routing audit (dry merge)
+        run: node scripts/state-lobbying-r5-merge.mjs
+
+      - name: Apply augments into per-company JSON
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push the data
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/derived/state-lobbying-r5-augment.json public/data/companies/
+          [ -f public/data/_meta/state-lobbying-r5-merge-log.json ] && \
+            git add public/data/_meta/state-lobbying-r5-merge-log.json
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(state-lobbying-r5): monthly CA+NY+TX+NYC refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

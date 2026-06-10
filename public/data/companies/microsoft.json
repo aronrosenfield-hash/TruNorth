@@ -19,11 +19,12 @@
     "governance": "neutral"
   },
   "political": {
-    "s": "FEC: $22K PAC donations; 91% to Republican, 9% to Democratic committees.",
+    "s": "FEC: $22K PAC donations; 91% to Republican, 9% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "$1.1M PAC (2026 cycle)",
     "lean": "Right",
     "sources": [
-      "FEC.gov"
+      "FEC.gov",
+      "state-lobbying-r5"
     ],
     "fecData": {
       "committeeId": "C00227546",
@@ -47,7 +48,7 @@
     ]
   },
   "environment": {
-    "s": "Science Based Targets initiative: approved. Emissions reduction targets independently validated. JUST Capital JUST 100 — ranked #2 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action. Climate-commitment coalition member: First Movers Coalition (since 2022), RE100 (since 2015; target 2025), and We Mean Business Coalition (since 2019). 100% renewable electricity by 2025 across all data centers, buildings, and campuses. Held by 8 ESG/SRI fund(s) (calvert, domini, ishares-esg, parnassus, pax-world, tiaa-social-choice +2 more) — investor-screen positive signal. Right-to-repair (leader): PIRG Failing the Fix 2026: B- for laptop.",
+    "s": "Science Based Targets initiative: approved. Emissions reduction targets independently validated. JUST Capital JUST 100 — ranked #2 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action. Climate-commitment coalition member: First Movers Coalition (since 2022), RE100 (since 2015; target 2025), and We Mean Business Coalition (since 2019). 100% renewable electricity by 2025 across all data centers, buildings, and campuses. Held by 8 ESG/SRI fund(s) (calvert, domini, ishares-esg, parnassus, pax-world, tiaa-social-choice +2 more) — investor-screen positive signal.",
     "rating": "Mixed",
     "sources": [
       "EPA",
@@ -56,8 +57,7 @@
       "just-capital",
       "cdp-a-list",
       "climate-coalitions",
-      "divestment-impact-funds",
-      "repair-scorecard"
+      "divestment-impact-funds"
     ]
   },
   "labor": {
@@ -122,7 +122,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "microsoft",
@@ -521,5 +524,15 @@
     "sources": [
       "wikidata"
     ]
+  },
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 1,
+      "score": 92.7,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
   }
 }

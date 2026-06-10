@@ -18,13 +18,12 @@
     "governance": "mixed"
   },
   "political": {
-    "s": "FEC: $22K PAC donations; 58% to Republican, 42% to Democratic committees.  [Stanford DIME (Bonica) corroborates.]  [FollowTheMoney.org adds state-level totals.]",
+    "s": "FEC: $22K PAC donations; 58% to Republican, 42% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "$2.1M PAC (2026 cycle)",
     "lean": "Bipartisan",
     "sources": [
       "FEC.gov",
-      "dime",
-      "followthemoney-state"
+      "state-lobbying-r5"
     ],
     "fecData": {
       "committeeId": "C00093054",
@@ -117,7 +116,10 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "walmart",
@@ -618,5 +620,15 @@
     "sources": [
       "wikidata"
     ]
+  },
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 50,
+      "score": 78,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
   }
 }

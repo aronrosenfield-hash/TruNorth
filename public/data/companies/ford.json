@@ -1,1 +1,264 @@
-{"name":"Ford","cat":"Automotive","init":"FORD","overall":48.2,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"mixed","labor":"poor","dei":"pro_dei","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","health":"mixed"},"political":{"s":"FEC: $9K PAC donations; 72% to Republican, 28% to Democratic committees.","amt":"$669K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"117 federal penalties totaling $1.2B since 2000 (Violation Tracker).","rating":"mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":{"legacy":"2026-05-31","newsweekMrc":"2026-06-09T22:43:03.890Z"},"charity":{"s":"$65M reported corporate giving in 2024 (~0.04% of revenue) via Ford Motor Company Fund.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"Climate Action 100+ 2026 Net Zero Benchmark — disclosure 4/5, alignment 3/5, governance 3/5, capital allocation 3/5.","sources":["EPA","Violation Tracker","ca100"]},"dei":{"s":"HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.","sources":["Claude AI synthesis","hrc-cei","bloomberg-gei"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"CFPB consumer complaints: 4568 on record (100 in past 12mo); 99% timely response rate.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","stillInRussia":true,"childLabor":true,"wiki":{"founded":"1903-06-16","hq":"Dearborn","employees":"164000","revenue":"127144000000","parent":null,"industry":"automotive industry","products":null,"keyPeople":"Henry Ford","website":"https://www.ford.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ford_World_Headquarters_from_sidewalk%2C_against_sun.jpg/330px-Ford_World_Headquarters_from_sidewalk%2C_against_sun.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Ford_Motor_Company","extract":"The Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States. It was founded by Henry Ford and incorporated on June 16, 1903. The company sells automobiles and commercial vehicles under the Ford brand, and luxury cars under its Lincoln brand. The company is listed on the New York Stock Exchange under the single-letter ticker symbol F, and is controlled by the Ford family. They have minority ownership, but a plurality of the voting power."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/or/tigard/profile/new-car-dealers/landmark-ford-1296-50002416/addressId/482124"},"secComplaints":{"count":139,"sample":[{"adsh":"0001213900-25-002644","date":"2025-01-10","filer":"OptimizeRx Corp  (OPRX)  (CIK 0001448431)","form":"8-K"},{"adsh":"0001227654-25-000155","date":"2025-08-28","filer":"COMPASS MINERALS INTERNATIONAL INC  (CMP)  (CIK 0001227654)","form":"8-K"},{"adsh":"0001227654-25-000155","date":"2025-08-28","filer":"COMPASS MINERALS INTERNATIONAL INC  (CMP)  (CIK 0001227654)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Ford%20logo%20flat.svg","logoSource":"wikidata_p154","slug":"ford","competitors":[],"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Ford Motor","slug":"ford-motor","ownership":"publicly traded (ticker symbol F)","hq":"Michigan","majorIndustry":"motor vehicles","specificIndustry":"motor vehicles","totalPenalty":1204330366,"totalRecords":117,"offenseGroups":[{"category":"safety-related offenses","penalty":743362533,"records":37},{"category":"government-contracting-related offenses","penalty":365000000,"records":1},{"category":"employment-related offenses","penalty":48133313,"records":39},{"category":"consumer-protection-related offenses","penalty":40572516,"records":7},{"category":"environment-related offenses","penalty":6562004,"records":32}],"primaryOffenses":[{"category":"product safety violation","penalty":399200000,"records":4},{"category":"False Claims Act and related","penalty":365000000,"records":1},{"category":"motor vehicle safety violation","penalty":343862500,"records":5},{"category":"employment discrimination","penalty":45094760,"records":7},{"category":"consumer protection violation","penalty":27334421,"records":4}],"rating":"mixed","lastChecked":"2026-05-30","fetchedAt":"2026-05-30T23:49:31.975Z"},"fec":{"source":"FEC API","committeeId":"C00046474","committeeName":"FORD MOTOR COMPANY CIVIC ACTION FUND","lean":"right","repTotal":6500,"demTotal":2500,"totalRaised":668889,"totalRaisedFmt":"$669K","lastFilingDate":"2026-05-20","cycle":2026,"fetchedAt":"2026-05-30T23:49:26.814Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-03","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ford&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-30T23:49:28.437Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T23:49:31.975Z","health":{"s":"Consumer Reports 2026 Brand Report Card: ranked #18 of ~26 auto brands.","sources":["cr-auto-reliability"]},"realCats":7,"enriched":{"newsweekMrc":{"rank":71,"score":72.1,"year":2025,"sourceUrl":"https://www.newsweek.com/rankings/americas-most-responsible-companies","lastUpdated":"2026-06-09T22:43:03.890Z","source":"newsweek-mrc"}}}
+{
+  "name": "Ford",
+  "cat": "Automotive",
+  "init": "FORD",
+  "overall": 48.2,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $9K PAC donations; 72% to Republican, 28% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
+    "amt": "$669K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov",
+      "state-lobbying-r5"
+    ]
+  },
+  "labor": {
+    "s": "117 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
+    "rating": "mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
+  "charity": {
+    "s": "$65M reported corporate giving in 2024 (~0.04% of revenue) via Ford Motor Company Fund.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Climate Action 100+ 2026 Net Zero Benchmark — disclosure 4/5, alignment 3/5, governance 3/5, capital allocation 3/5.",
+    "sources": [
+      "EPA",
+      "Violation Tracker",
+      "ca100"
+    ]
+  },
+  "dei": {
+    "s": "HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
+    "sources": [
+      "Claude AI synthesis",
+      "hrc-cei",
+      "bloomberg-gei"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "CFPB consumer complaints: 4568 on record (100 in past 12mo); 99% timely response rate.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "stillInRussia": true,
+  "childLabor": true,
+  "wiki": {
+    "founded": "1903-06-16",
+    "hq": "Dearborn",
+    "employees": "164000",
+    "revenue": "127144000000",
+    "parent": null,
+    "industry": "automotive industry",
+    "products": null,
+    "keyPeople": "Henry Ford",
+    "website": "https://www.ford.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ford_World_Headquarters_from_sidewalk%2C_against_sun.jpg/330px-Ford_World_Headquarters_from_sidewalk%2C_against_sun.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ford_Motor_Company",
+    "extract": "The Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States. It was founded by Henry Ford and incorporated on June 16, 1903. The company sells automobiles and commercial vehicles under the Ford brand, and luxury cars under its Lincoln brand. The company is listed on the New York Stock Exchange under the single-letter ticker symbol F, and is controlled by the Ford family. They have minority ownership, but a plurality of the voting power."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/or/tigard/profile/new-car-dealers/landmark-ford-1296-50002416/addressId/482124"
+  },
+  "secComplaints": {
+    "count": 139,
+    "sample": [
+      {
+        "adsh": "0001213900-25-002644",
+        "date": "2025-01-10",
+        "filer": "OptimizeRx Corp  (OPRX)  (CIK 0001448431)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001227654-25-000155",
+        "date": "2025-08-28",
+        "filer": "COMPASS MINERALS INTERNATIONAL INC  (CMP)  (CIK 0001227654)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001227654-25-000155",
+        "date": "2025-08-28",
+        "filer": "COMPASS MINERALS INTERNATIONAL INC  (CMP)  (CIK 0001227654)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ford%20logo%20flat.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "ford",
+  "competitors": [],
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Ford Motor",
+    "slug": "ford-motor",
+    "ownership": "publicly traded (ticker symbol F)",
+    "hq": "Michigan",
+    "majorIndustry": "motor vehicles",
+    "specificIndustry": "motor vehicles",
+    "totalPenalty": 1204330366,
+    "totalRecords": 117,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 743362533,
+        "records": 37
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 365000000,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 48133313,
+        "records": 39
+      },
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 40572516,
+        "records": 7
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 6562004,
+        "records": 32
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "product safety violation",
+        "penalty": 399200000,
+        "records": 4
+      },
+      {
+        "category": "False Claims Act and related",
+        "penalty": 365000000,
+        "records": 1
+      },
+      {
+        "category": "motor vehicle safety violation",
+        "penalty": 343862500,
+        "records": 5
+      },
+      {
+        "category": "employment discrimination",
+        "penalty": 45094760,
+        "records": 7
+      },
+      {
+        "category": "consumer protection violation",
+        "penalty": 27334421,
+        "records": 4
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-30",
+    "fetchedAt": "2026-05-30T23:49:31.975Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00046474",
+    "committeeName": "FORD MOTOR COMPANY CIVIC ACTION FUND",
+    "lean": "right",
+    "repTotal": 6500,
+    "demTotal": 2500,
+    "totalRaised": 668889,
+    "totalRaisedFmt": "$669K",
+    "lastFilingDate": "2026-05-20",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-30T23:49:26.814Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-03",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ford&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-30T23:49:28.437Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T23:49:31.975Z",
+  "health": {
+    "s": "Consumer Reports 2026 Brand Report Card: ranked #18 of ~26 auto brands.",
+    "sources": [
+      "cr-auto-reliability"
+    ]
+  },
+  "realCats": 7,
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 71,
+      "score": 72.1,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
+  }
+}

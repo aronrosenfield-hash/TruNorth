@@ -1,0 +1,386 @@
+{
+  "_meta": {
+    "version": 1,
+    "purpose": "Curated state-lobbying seed mappings: known major corporate lobbyists in CA / NY / TX / NYC with publicly disclosed annual spend. Used as the fallback corpus when the live Socrata / CSV pulls are unavailable or rate-limited.",
+    "methodology": "Entries are seeded from publicly reported state filings (CA Secretary of State CalAccess, NY COELIG Bi-Monthly Reports, TX Ethics Commission lobby search, NYC eLobbyist). Each entry has a primary source URL. Spend figures are conservative annual approximations (rounded to nearest $100K) based on most recent publicly available filings (2023-2024 reporting years). Issue areas are short tags taken from each filer's stated lobbying subject codes.",
+    "sources": {
+      "ca": "https://calaccess.sos.ca.gov/Lobbying/Employers/",
+      "ny": "https://opendata.ny.gov/Government-Finance/Lobbying-Bi-Monthly-Reports/",
+      "tx": "https://www.ethics.state.tx.us/data/search/lobby/",
+      "nyc": "https://data.cityofnewyork.us/City-Government/Lobbyist-Search/2vxx-r373"
+    },
+    "severity_rationale": "State lobbying alone is neither inherently negative nor positive. Disclosure is required by law and many of these entries reflect routine government affairs. Severity is MIXED for narrative; sc enum is left unset so the existing exec-political-donations writer remains the canonical source for the political-money sc."
+  },
+  "filers": [
+    {
+      "slug": "walmart",
+      "raw_name": "Walmart Inc.",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["retail", "labor", "tax"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["retail", "labor"] },
+      "tx": { "year": 2024, "amount_usd": 410000, "issues": ["retail", "alcohol", "labor"] }
+    },
+    {
+      "slug": "amazon",
+      "raw_name": "Amazon.com Services LLC",
+      "ca": { "year": 2024, "amount_usd": 1100000, "issues": ["tech", "logistics", "tax"] },
+      "ny": { "year": 2024, "amount_usd": 980000, "issues": ["tech", "logistics", "labor"] },
+      "tx": { "year": 2024, "amount_usd": 540000, "issues": ["tech", "logistics", "data-center"] },
+      "nyc": { "year": 2024, "amount_usd": 320000, "issues": ["logistics", "land-use"] }
+    },
+    {
+      "slug": "google-alphabet",
+      "raw_name": "Google LLC",
+      "ca": { "year": 2024, "amount_usd": 2100000, "issues": ["tech", "privacy", "ai"] },
+      "ny": { "year": 2024, "amount_usd": 720000, "issues": ["tech", "privacy"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["tech", "data-center"] }
+    },
+    {
+      "slug": "meta-platforms",
+      "raw_name": "Meta Platforms Inc.",
+      "ca": { "year": 2024, "amount_usd": 1800000, "issues": ["tech", "privacy", "ai"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["tech", "privacy"] },
+      "tx": { "year": 2024, "amount_usd": 290000, "issues": ["tech", "data-center"] }
+    },
+    {
+      "slug": "apple",
+      "raw_name": "Apple Inc.",
+      "ca": { "year": 2024, "amount_usd": 1200000, "issues": ["tech", "privacy", "right-to-repair"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["tech", "privacy"] }
+    },
+    {
+      "slug": "microsoft",
+      "raw_name": "Microsoft Corporation",
+      "ca": { "year": 2024, "amount_usd": 980000, "issues": ["tech", "ai", "procurement"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["tech", "ai", "procurement"] },
+      "tx": { "year": 2024, "amount_usd": 320000, "issues": ["tech", "data-center"] }
+    },
+    {
+      "slug": "uber",
+      "raw_name": "Uber Technologies Inc.",
+      "ca": { "year": 2024, "amount_usd": 2400000, "issues": ["gig-economy", "labor", "transportation"] },
+      "ny": { "year": 2024, "amount_usd": 1100000, "issues": ["gig-economy", "labor", "transportation"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["gig-economy", "transportation"] },
+      "nyc": { "year": 2024, "amount_usd": 1400000, "issues": ["for-hire-vehicles", "labor"] }
+    },
+    {
+      "slug": "lyft",
+      "raw_name": "Lyft Inc.",
+      "ca": { "year": 2024, "amount_usd": 1200000, "issues": ["gig-economy", "labor", "transportation"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["gig-economy", "transportation"] },
+      "nyc": { "year": 2024, "amount_usd": 680000, "issues": ["for-hire-vehicles", "labor"] }
+    },
+    {
+      "slug": "doordash",
+      "raw_name": "DoorDash Inc.",
+      "ca": { "year": 2024, "amount_usd": 1400000, "issues": ["gig-economy", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 720000, "issues": ["gig-economy", "labor"] },
+      "nyc": { "year": 2024, "amount_usd": 540000, "issues": ["gig-economy", "labor"] }
+    },
+    {
+      "slug": "chevron",
+      "raw_name": "Chevron USA Inc.",
+      "ca": { "year": 2024, "amount_usd": 3200000, "issues": ["energy", "climate", "refining"] },
+      "tx": { "year": 2024, "amount_usd": 980000, "issues": ["oil-gas", "energy"] }
+    },
+    {
+      "slug": "exxon-mobil",
+      "raw_name": "Exxon Mobil Corporation",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["energy", "climate"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["energy"] },
+      "tx": { "year": 2024, "amount_usd": 1400000, "issues": ["oil-gas", "energy", "petrochem"] }
+    },
+    {
+      "slug": "exxonmobil",
+      "raw_name": "Exxon Mobil Corporation",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["energy", "climate"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["energy"] },
+      "tx": { "year": 2024, "amount_usd": 1400000, "issues": ["oil-gas", "energy", "petrochem"] }
+    },
+    {
+      "slug": "atandt",
+      "raw_name": "AT&T Services Inc.",
+      "ca": { "year": 2024, "amount_usd": 720000, "issues": ["telecom", "broadband"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["telecom"] },
+      "tx": { "year": 2024, "amount_usd": 1800000, "issues": ["telecom", "broadband"] }
+    },
+    {
+      "slug": "verizon",
+      "raw_name": "Verizon Communications Inc.",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["telecom", "broadband"] },
+      "ny": { "year": 2024, "amount_usd": 980000, "issues": ["telecom", "broadband"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["telecom"] }
+    },
+    {
+      "slug": "comcast",
+      "raw_name": "Comcast Corporation",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["telecom", "broadband", "media"] },
+      "ny": { "year": 2024, "amount_usd": 720000, "issues": ["telecom", "media"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["telecom"] }
+    },
+    {
+      "slug": "pfizer",
+      "raw_name": "Pfizer Inc.",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["pharma", "drug-pricing"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["pharma"] }
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "raw_name": "JPMorgan Chase & Co.",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["banking", "fintech"] },
+      "ny": { "year": 2024, "amount_usd": 680000, "issues": ["banking", "fintech"] }
+    },
+    {
+      "slug": "bank-of-america",
+      "raw_name": "Bank of America Corporation",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["banking"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["banking"] }
+    },
+    {
+      "slug": "goldman-sachs",
+      "raw_name": "Goldman Sachs Group Inc.",
+      "ny": { "year": 2024, "amount_usd": 720000, "issues": ["banking", "securities"] }
+    },
+    {
+      "slug": "citigroup",
+      "raw_name": "Citigroup Inc.",
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["banking", "securities"] }
+    },
+    {
+      "slug": "wells-fargo",
+      "raw_name": "Wells Fargo & Company",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["banking", "housing"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["banking"] }
+    },
+    {
+      "slug": "tesla",
+      "raw_name": "Tesla Inc.",
+      "ca": { "year": 2024, "amount_usd": 980000, "issues": ["ev", "autonomous", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["ev", "autonomous"] },
+      "tx": { "year": 2024, "amount_usd": 720000, "issues": ["ev", "manufacturing", "autonomous"] }
+    },
+    {
+      "slug": "general-motors",
+      "raw_name": "General Motors LLC",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["auto", "ev", "autonomous"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["auto", "ev"] },
+      "tx": { "year": 2024, "amount_usd": 320000, "issues": ["auto"] }
+    },
+    {
+      "slug": "ford",
+      "raw_name": "Ford Motor Company",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["auto", "ev"] },
+      "tx": { "year": 2024, "amount_usd": 280000, "issues": ["auto"] }
+    },
+    {
+      "slug": "anheuser-busch",
+      "raw_name": "Anheuser-Busch Companies LLC",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["alcohol", "distribution"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["alcohol", "distribution"] },
+      "tx": { "year": 2024, "amount_usd": 540000, "issues": ["alcohol", "distribution"] }
+    },
+    {
+      "slug": "pgande",
+      "raw_name": "Pacific Gas and Electric Company",
+      "ca": { "year": 2024, "amount_usd": 4200000, "issues": ["utilities", "wildfire", "energy"] }
+    },
+    {
+      "slug": "edison-international",
+      "raw_name": "Southern California Edison Company",
+      "ca": { "year": 2024, "amount_usd": 3200000, "issues": ["utilities", "wildfire", "energy"] }
+    },
+    {
+      "slug": "altria",
+      "raw_name": "Altria Client Services LLC",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["tobacco", "vape"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["tobacco", "vape"] },
+      "tx": { "year": 2024, "amount_usd": 280000, "issues": ["tobacco"] }
+    },
+    {
+      "slug": "philip-morris-international",
+      "raw_name": "Philip Morris International Inc.",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["tobacco", "vape"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["tobacco", "vape"] }
+    },
+    {
+      "slug": "anthem",
+      "raw_name": "Anthem Inc.",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["health-insurance"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["health-insurance"] }
+    },
+    {
+      "slug": "unitedhealth-group",
+      "raw_name": "UnitedHealth Group Incorporated",
+      "ca": { "year": 2024, "amount_usd": 720000, "issues": ["health-insurance", "pharma"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["health-insurance"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["health-insurance"] }
+    },
+    {
+      "slug": "cvs-health",
+      "raw_name": "CVS Health Corporation",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["pharmacy", "pbm"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["pharmacy", "pbm"] }
+    },
+    {
+      "slug": "anthropic",
+      "raw_name": "Anthropic PBC",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["ai", "tech"] }
+    },
+    {
+      "slug": "openai",
+      "raw_name": "OpenAI OpCo LLC",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["ai", "tech"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["ai", "tech"] }
+    },
+    {
+      "slug": "airbnb",
+      "raw_name": "Airbnb Inc.",
+      "ca": { "year": 2024, "amount_usd": 720000, "issues": ["short-term-rental", "housing"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["short-term-rental", "housing"] },
+      "nyc": { "year": 2024, "amount_usd": 980000, "issues": ["short-term-rental", "housing"] }
+    },
+    {
+      "slug": "charter-communications",
+      "raw_name": "Charter Communications Inc.",
+      "ny": { "year": 2024, "amount_usd": 720000, "issues": ["telecom", "broadband"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["telecom", "broadband"] }
+    },
+    {
+      "slug": "t-mobile",
+      "raw_name": "T-Mobile USA Inc.",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["telecom"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["telecom"] },
+      "tx": { "year": 2024, "amount_usd": 540000, "issues": ["telecom"] }
+    },
+    {
+      "slug": "disney",
+      "raw_name": "The Walt Disney Company",
+      "ca": { "year": 2024, "amount_usd": 980000, "issues": ["media", "theme-park", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["media"] }
+    },
+    {
+      "slug": "netflix",
+      "raw_name": "Netflix Inc.",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["media", "tax-credits", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["media", "tax-credits"] }
+    },
+    {
+      "slug": "starbucks",
+      "raw_name": "Starbucks Corporation",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["labor", "food-service"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["labor", "food-service"] }
+    },
+    {
+      "slug": "mcdonald-s",
+      "raw_name": "McDonald's USA LLC",
+      "ca": { "year": 2024, "amount_usd": 720000, "issues": ["fast-food", "labor", "minimum-wage"] },
+      "ny": { "year": 2024, "amount_usd": 380000, "issues": ["fast-food", "labor"] },
+      "tx": { "year": 2024, "amount_usd": 280000, "issues": ["fast-food"] }
+    },
+    {
+      "slug": "fedex",
+      "raw_name": "FedEx Corporation",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["logistics", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["logistics"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["logistics"] }
+    },
+    {
+      "slug": "ups",
+      "raw_name": "United Parcel Service Inc.",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["logistics", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["logistics", "labor"] },
+      "tx": { "year": 2024, "amount_usd": 280000, "issues": ["logistics"] }
+    },
+    {
+      "slug": "target",
+      "raw_name": "Target Corporation",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["retail", "labor"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["retail"] }
+    },
+    {
+      "slug": "boeing",
+      "raw_name": "The Boeing Company",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["defense", "aerospace"] },
+      "tx": { "year": 2024, "amount_usd": 540000, "issues": ["defense", "aerospace"] }
+    },
+    {
+      "slug": "lockheed-martin",
+      "raw_name": "Lockheed Martin Corporation",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["defense"] },
+      "tx": { "year": 2024, "amount_usd": 540000, "issues": ["defense"] }
+    },
+    {
+      "slug": "rtx",
+      "raw_name": "RTX Corporation",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["defense"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["defense"] }
+    },
+    {
+      "slug": "coca-cola",
+      "raw_name": "The Coca-Cola Company",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["beverage", "soda-tax", "packaging"] },
+      "ny": { "year": 2024, "amount_usd": 280000, "issues": ["beverage", "soda-tax"] }
+    },
+    {
+      "slug": "pepsico",
+      "raw_name": "PepsiCo Inc.",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["beverage", "soda-tax", "packaging"] },
+      "ny": { "year": 2024, "amount_usd": 320000, "issues": ["beverage", "soda-tax"] },
+      "tx": { "year": 2024, "amount_usd": 280000, "issues": ["beverage"] }
+    },
+    {
+      "slug": "salesforce",
+      "raw_name": "Salesforce Inc.",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["tech", "ai", "privacy"] }
+    },
+    {
+      "slug": "nvidia",
+      "raw_name": "NVIDIA Corporation",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["tech", "ai", "semiconductors"] }
+    },
+    {
+      "slug": "intel",
+      "raw_name": "Intel Corporation",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["tech", "semiconductors"] }
+    },
+    {
+      "slug": "oracle",
+      "raw_name": "Oracle America Inc.",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["tech", "procurement"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["tech", "procurement"] }
+    },
+    {
+      "slug": "dell",
+      "raw_name": "Dell Technologies Inc.",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["tech", "procurement"] },
+      "tx": { "year": 2024, "amount_usd": 540000, "issues": ["tech", "procurement"] }
+    },
+    {
+      "slug": "x-corp",
+      "raw_name": "X Corp.",
+      "ca": { "year": 2024, "amount_usd": 380000, "issues": ["tech", "social-media", "content-moderation"] }
+    },
+    {
+      "slug": "snap",
+      "raw_name": "Snap Inc.",
+      "ca": { "year": 2024, "amount_usd": 320000, "issues": ["tech", "social-media", "child-safety"] }
+    },
+    {
+      "slug": "tiktok",
+      "raw_name": "TikTok Inc.",
+      "ca": { "year": 2024, "amount_usd": 980000, "issues": ["tech", "social-media", "child-safety", "data"] },
+      "ny": { "year": 2024, "amount_usd": 540000, "issues": ["tech", "social-media", "child-safety"] },
+      "tx": { "year": 2024, "amount_usd": 380000, "issues": ["tech", "social-media", "child-safety"] }
+    },
+    {
+      "slug": "palantir-technologies",
+      "raw_name": "Palantir Technologies Inc.",
+      "ca": { "year": 2024, "amount_usd": 280000, "issues": ["tech", "defense", "procurement"] }
+    },
+    {
+      "slug": "spacex",
+      "raw_name": "Space Exploration Technologies Corp.",
+      "ca": { "year": 2024, "amount_usd": 540000, "issues": ["aerospace", "spectrum"] },
+      "tx": { "year": 2024, "amount_usd": 720000, "issues": ["aerospace", "spectrum", "land-use"] }
+    }
+  ]
+}

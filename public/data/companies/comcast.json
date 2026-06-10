@@ -18,12 +18,12 @@
     "health": "very_poor"
   },
   "political": {
-    "s": "Goods Unite Us C — bipartisan PAC. [goods-unite-us]  [FollowTheMoney.org adds state-level totals.]",
+    "s": "Goods Unite Us C — bipartisan PAC. [goods-unite-us]  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
     "amt": "N/A",
     "lean": "Neutral",
     "sources": [
       "consumer-scorecards",
-      "followthemoney-state"
+      "state-lobbying-r5"
     ]
   },
   "charity": {
@@ -150,7 +150,10 @@
       "rating": "mixed"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "newsweekMrc": "2026-06-09T22:43:03.890Z"
+  },
   "competitors": [
     "charter-communications",
     "atandt",
@@ -311,5 +314,15 @@
     "sources": [
       "telecom-deep"
     ]
+  },
+  "enriched": {
+    "newsweekMrc": {
+      "rank": 43,
+      "score": 79.7,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "source": "newsweek-mrc"
+    }
   }
 }
