@@ -1,0 +1,62 @@
+{
+  "_license": "CC BY-SA 3.0 — Powerbase (Spinwatch), https://powerbase.info",
+  "_source": "https://powerbase.info",
+  "_note": "Hand-curated fixture for offline tests. Mirrors real Powerbase pages.",
+  "pages": [
+    {
+      "slug": "exxonmobil",
+      "name": "ExxonMobil",
+      "source_kind": "seed",
+      "title": "Exxon Mobil",
+      "page_url": "https://powerbase.info/index.php/Exxon_Mobil",
+      "extract": "Exxon Mobil is a US-based multinational oil and gas corporation. Powerbase documents its decades of climate denial funding, lobbying, and revolving-door ties to UK ministers. The company also faced tax-avoidance allegations in Chile.",
+      "extract_chars": 234,
+      "categories": [
+        {"category_title": "Category:Oil Industry", "signal": "fossil_fuel", "cat": "environment"},
+        {"category_title": "Category:Tax avoidance", "signal": "tax_avoidance", "cat": "political"},
+        {"category_title": "Category:Mining and Metals", "signal": "mining_industry", "cat": "environment"},
+        {"category_title": "Category:Fracking", "signal": "fossil_fuel", "cat": "environment"}
+      ],
+      "sections": ["Controversies", "Avoiding Tax in Chile", "Industry Areas", "Worldwide", "UK"],
+      "external_link_count": 24,
+      "external_links_sample": [
+        "http://www.theguardian.com/environment/2015/apr/28/fossil-fuel-lobby-given-far-more-access-to-uk-ministers-than-renewables-analysis",
+        "http://www.ucsusa.org/news/press_release/ExxonMobil-GlobalWarming-tobacco.html",
+        "http://www.sourcewatch.org/index.php?title=Exxon_Mobil"
+      ]
+    },
+    {
+      "slug": "philip-morris-international",
+      "name": "Philip Morris International",
+      "source_kind": "seed",
+      "title": "Philip Morris International",
+      "page_url": "https://powerbase.info/index.php/Philip_Morris_International",
+      "extract": "Philip Morris International is a multinational tobacco company. Powerbase covers its tobacco-industry lobbying, front-group operations, and revolving-door appointments at the World Health Organization and the EU Commission.",
+      "extract_chars": 220,
+      "categories": [
+        {"category_title": "Category:Lobby groups", "signal": "lobbying", "cat": "political"},
+        {"category_title": "Category:Front groups", "signal": "front_group", "cat": "political"},
+        {"category_title": "Category:Revolving door", "signal": "revolving_door", "cat": "political"}
+      ],
+      "sections": ["Background", "Lobbying", "Front Groups", "Revolving Door"],
+      "external_link_count": 8,
+      "external_links_sample": [
+        "https://www.who.int/tobacco/communications/events/wntd/2012/",
+        "https://www.tobaccotactics.org/index.php/Philip_Morris_International"
+      ]
+    },
+    {
+      "slug": "patagonia",
+      "name": "Patagonia",
+      "source_kind": "index",
+      "title": "Patagonia (company)",
+      "page_url": "https://powerbase.info/index.php/Patagonia_(company)",
+      "extract": "Patagonia is a California-based outdoor-clothing company known for its environmental advocacy. Powerbase has only a stub page noting its B Corp certification.",
+      "extract_chars": 160,
+      "categories": [],
+      "sections": ["Background"],
+      "external_link_count": 1,
+      "external_links_sample": ["https://www.patagonia.com/"]
+    }
+  ]
+}
