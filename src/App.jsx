@@ -1106,7 +1106,21 @@ function ElephantSVG({ size=14, col="#e24a4a" }) {
 //   - User is NOT flipped to Pro (isPaid stays false)
 //   - When real IAP launches, flip PRO_WAITLIST_MODE = false and the
 //     same component switches back to the real subscription flow.
-const PRO_WAITLIST_MODE = true;
+//
+// 2026-06-09: BANKING SETTING UP TODAY → flipped to false on this branch
+// (feat/paywall-go-live) to pre-stage the IAP go-live. Hold this PR in
+// DRAFT until RevenueCat is live + a TestFlight build is verified.
+//   Checklist before un-drafting:
+//     1. RevenueCat dashboard configured (X-2)
+//     2. App Store Connect IAP products approved + Ready to Submit
+//     3. Banking + TaxID confirmed in App Store Connect
+//     4. TestFlight build with this flag verified end-to-end:
+//        - Paywall opens on free-view limit hit
+//        - Sandbox sub purchase succeeds + flips isPaid
+//        - Restore purchase works
+//        - Cancel keeps isPaid true through grace period
+//     5. Annual + lifetime tiers wired (X-5) — OR remove their UI rows
+const PRO_WAITLIST_MODE = false;
 
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
