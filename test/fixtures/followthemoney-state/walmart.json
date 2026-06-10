@@ -1,0 +1,18 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for Walmart Inc. Values reflect public FollowTheMoney totals for cycles 2022-2024 within order of magnitude; not exact wire data. Used for unit tests and shape verification.",
+  "slug": "walmart",
+  "name": "Walmart Inc.",
+  "entity_ids": ["FIXTURE-WALMART-1"],
+  "records": [
+    { "state": "AR", "cycle": 2024, "total":  520000, "dem":  80000, "rep": 410000, "other":  30000 },
+    { "state": "TX", "cycle": 2024, "total":  340000, "dem":  60000, "rep": 270000, "other":  10000 },
+    { "state": "FL", "cycle": 2024, "total":  210000, "dem":  40000, "rep": 160000, "other":  10000 },
+    { "state": "CA", "cycle": 2024, "total":  185000, "dem": 120000, "rep":  60000, "other":   5000 },
+    { "state": "GA", "cycle": 2024, "total":  120000, "dem":  20000, "rep":  95000, "other":   5000 },
+    { "state": "NC", "cycle": 2024, "total":   95000, "dem":  18000, "rep":  72000, "other":   5000 },
+    { "state": "OH", "cycle": 2024, "total":   80000, "dem":  18000, "rep":  60000, "other":   2000 },
+    { "state": "TN", "cycle": 2024, "total":   75000, "dem":  10000, "rep":  62000, "other":   3000 },
+    { "state": "AR", "cycle": 2022, "total":  480000, "dem":  70000, "rep": 385000, "other":  25000 },
+    { "state": "TX", "cycle": 2022, "total":  295000, "dem":  55000, "rep": 230000, "other":  10000 }
+  ]
+}

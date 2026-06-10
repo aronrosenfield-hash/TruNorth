@@ -1,0 +1,14 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for Koch Industries cycles 2022-2024.",
+  "slug": "koch-inc",
+  "name": "Koch Industries Inc.",
+  "entity_ids": ["FIXTURE-KOCH-1"],
+  "records": [
+    { "state": "KS", "cycle": 2024, "total":  720000, "dem":  35000, "rep": 670000, "other":  15000 },
+    { "state": "TX", "cycle": 2024, "total":  485000, "dem":  20000, "rep": 460000, "other":   5000 },
+    { "state": "FL", "cycle": 2024, "total":  240000, "dem":   5000, "rep": 230000, "other":   5000 },
+    { "state": "WI", "cycle": 2024, "total":  165000, "dem":   3000, "rep": 160000, "other":   2000 },
+    { "state": "OH", "cycle": 2024, "total":  130000, "dem":   4000, "rep": 124000, "other":   2000 },
+    { "state": "KS", "cycle": 2022, "total":  680000, "dem":  30000, "rep": 635000, "other":  15000 }
+  ]
+}

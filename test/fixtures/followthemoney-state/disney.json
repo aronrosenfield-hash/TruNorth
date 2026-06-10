@@ -1,0 +1,13 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for Walt Disney cycles 2022-2024. Most state-level $ centered in CA and FL where Disney operates major parks.",
+  "slug": "disney",
+  "name": "Walt Disney Co.",
+  "entity_ids": ["FIXTURE-DISNEY-1"],
+  "records": [
+    { "state": "CA", "cycle": 2024, "total":  340000, "dem": 245000, "rep":  85000, "other":  10000 },
+    { "state": "FL", "cycle": 2024, "total":  295000, "dem":  90000, "rep": 195000, "other":  10000 },
+    { "state": "NY", "cycle": 2024, "total":  120000, "dem":  85000, "rep":  32000, "other":   3000 },
+    { "state": "GA", "cycle": 2024, "total":   45000, "dem":  18000, "rep":  25000, "other":   2000 },
+    { "state": "CA", "cycle": 2022, "total":  305000, "dem": 220000, "rep":  78000, "other":   7000 }
+  ]
+}

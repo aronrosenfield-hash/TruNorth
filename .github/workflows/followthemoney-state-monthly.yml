@@ -1,0 +1,61 @@
+name: followthemoney-state-monthly
+
+# FollowTheMoney.org (NIMP) — state-level corporate-donor totals.
+#
+# Many states file campaign-finance reports quarterly; FTM ingests
+# them within 24-48h. A monthly refresh keeps our state-level political
+# augment near-fresh without burning API budget.
+#
+# Cadence: 1st of every month, 06:00 UTC.
+#
+# Requires FTM_API_KEY secret. Register at
+# https://www.followthemoney.org/our-data/apis to obtain one (free for
+# non-commercial use). If unset, fetch fails fast.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Apply augments to per-company JSONs (false → fetcher only)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      FTM_API_KEY: ${{ secrets.FTM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch FTM state-level totals (live)
+        run: node scripts/followthemoney-state-fetch.mjs --apply
+
+      - name: Apply augments to per-company JSONs
+        if: ${{ github.event.inputs.apply != 'false' }}
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/derived/followthemoney-state-augment.json
+          if [ "${{ github.event.inputs.apply }}" != "false" ]; then
+            git add public/data/companies/
+          fi
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(ftm): monthly state-level political $ refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying…"
+            sleep 5
+          done

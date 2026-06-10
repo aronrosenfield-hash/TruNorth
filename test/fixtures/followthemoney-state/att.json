@@ -1,0 +1,16 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for AT&T Inc. cycles 2022-2024. AT&T is consistently a top-3 corporate donor at state level per FollowTheMoney rankings.",
+  "slug": "att",
+  "name": "AT&T Inc.",
+  "entity_ids": ["FIXTURE-ATT-1", "FIXTURE-ATT-PAC-1"],
+  "records": [
+    { "state": "TX", "cycle": 2024, "total":  925000, "dem": 320000, "rep": 580000, "other":  25000 },
+    { "state": "CA", "cycle": 2024, "total":  410000, "dem": 230000, "rep": 165000, "other":  15000 },
+    { "state": "FL", "cycle": 2024, "total":  365000, "dem":  90000, "rep": 265000, "other":  10000 },
+    { "state": "GA", "cycle": 2024, "total":  295000, "dem":  85000, "rep": 200000, "other":  10000 },
+    { "state": "OH", "cycle": 2024, "total":  240000, "dem":  85000, "rep": 150000, "other":   5000 },
+    { "state": "IL", "cycle": 2024, "total":  195000, "dem": 110000, "rep":  80000, "other":   5000 },
+    { "state": "NC", "cycle": 2024, "total":  175000, "dem":  55000, "rep": 115000, "other":   5000 },
+    { "state": "TX", "cycle": 2022, "total":  870000, "dem": 300000, "rep": 545000, "other":  25000 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_doc": "Fixture for followthemoney-state-fetch.mjs dry mode. Realistic-shape state-level aggregates for ExxonMobil cycles 2022-2024.",
+  "slug": "exxon-mobil",
+  "name": "ExxonMobil Corp.",
+  "entity_ids": ["FIXTURE-EXXON-1"],
+  "records": [
+    { "state": "TX", "cycle": 2024, "total":  580000, "dem":  45000, "rep": 520000, "other":  15000 },
+    { "state": "LA", "cycle": 2024, "total":  165000, "dem":  18000, "rep": 142000, "other":   5000 },
+    { "state": "OK", "cycle": 2024, "total":   95000, "dem":   8000, "rep":  85000, "other":   2000 },
+    { "state": "AK", "cycle": 2024, "total":   60000, "dem":   5000, "rep":  53000, "other":   2000 },
+    { "state": "TX", "cycle": 2022, "total":  545000, "dem":  40000, "rep": 495000, "other":  10000 }
+  ]
+}
