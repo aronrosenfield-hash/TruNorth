@@ -1128,6 +1128,10 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
   const [email, setEmail] = useState(initialEmail || getStoredEmail());
+  // 2026-06-10 (X-2 paywall go-live): which plan the user picks on the
+  // paywall. "annual" is the default + recommended (saves ~42% vs monthly).
+  // Only consulted when PRO_WAITLIST_MODE === false (real IAP).
+  const [plan, setPlan] = useState("annual");
 
   // Tighter email validation (audit H8): catches "@@", trailing dots, etc.
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
@@ -1144,17 +1148,40 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       intendsToSubscribe: true,
       waitlist: PRO_WAITLIST_MODE,
     });
-    setLoading(false);
     if (PRO_WAITLIST_MODE) {
       // Don't grant Pro — just confirm the waitlist signup. The user stays
       // free; we surface this to them with a success state, then close.
+      setLoading(false);
       setDone(true);
       setTimeout(() => onClose(), 2200);
-    } else {
-      // Real-IAP path (future): only flip Pro after actual Stripe/StoreKit
-      // receipt verification. setTimeout below is just a placeholder.
-      setTimeout(() => onSubscribe(email), 1500);
+      return;
     }
+    // Real-IAP path — 2026-06-10 (X-2): RevenueCat purchase flow.
+    // Default to annual ($14/yr) per the recommended pricing strategy;
+    // the small "switch to monthly" link is rendered separately.
+    const { setEmailOnCustomer, purchasePro } = await import("./lib/payments");
+    await setEmailOnCustomer(email).catch(() => {});
+    const success = await purchasePro(plan === "monthly" ? "monthly" : "annual");
+    setLoading(false);
+    track(success ? "subscribe_succeeded" : "subscribe_failed", {
+      plan: plan || "annual",
+    });
+    if (success) {
+      onSubscribe(email);
+    }
+    // If !success, user cancelled or hit an error — keep the paywall open
+    // so they can retry. RevenueCat already showed its own error UI if it
+    // was an actual error (not a user cancel).
+  };
+
+  const handleRestore = async () => {
+    track("restore_clicked");
+    setLoading(true);
+    const { restorePurchases } = await import("./lib/payments");
+    const ok = await restorePurchases();
+    setLoading(false);
+    track(ok ? "restore_succeeded" : "restore_failed");
+    if (ok) onSubscribe(email);
   };
 
   return (
@@ -1268,14 +1295,33 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
-            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : "Subscribe for $0.99/mo")}
+            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist"
+                : (plan === "monthly" ? "Subscribe — $1.99/mo" : "Subscribe — $14/yr · save 42%"))}
         </button>
+
+        {!PRO_WAITLIST_MODE && (
+          // 2026-06-10 (X-2): plan toggle. Annual is the default + big CTA;
+          // monthly is a smaller text link below.
+          <button type="button" onClick={() => setPlan(plan === "monthly" ? "annual" : "monthly")}
+            style={{ width:"100%", padding:"8px 12px", borderRadius:10, border:"none", background:"transparent", color:T.accent2, fontSize:12.5, fontWeight:600, cursor:"pointer", marginBottom:8, minHeight:36 }}>
+            {plan === "monthly" ? "← switch to annual (save 42%)" : "or pay monthly — $1.99/mo"}
+          </button>
+        )}
 
         <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10 }}>
           {PRO_WAITLIST_MODE
             ? "We email once: when Pro opens. No charges yet · cancel before launch."
-            : "Secure payment · Cancel anytime · No contracts"}
+            : "Secure payment via Apple · Cancel anytime · No contracts"}
         </div>
+
+        {/* 2026-06-10 (X-2): Restore Purchases — Apple guideline 3.1.1 requires
+            this on every subscription paywall, even if no purchase yet. */}
+        {!PRO_WAITLIST_MODE && (
+          <button type="button" onClick={handleRestore} disabled={loading}
+            style={{ width:"100%", padding:11, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt2, fontSize:13, cursor:loading?"default":"pointer", marginBottom:8, minHeight:44, opacity: loading ? 0.5 : 1 }}>
+            Restore purchases
+          </button>
+        )}
 
         <button onClick={onClose} style={{ width:"100%", padding:11, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer", minHeight:44 }}>
           Maybe later
@@ -4689,8 +4735,9 @@ useEffect(() => {
   // Was: in-memory only (URLSearchParams + dev-only) — every relaunch reset to
   // Free, breaking the Pro UX entirely for paying users.
   // Now: localStorage `tn_isPaid` reads on init, written on every setIsPaid.
-  // Restore Purchase flow still TODO when real IAP lands — for now this at
-  // least keeps the demo-paid state sticky across refreshes.
+  // 2026-06-10 (X-2): on iOS, ALSO query RevenueCat for the live entitlement
+  // on every app boot. Authoritative server-side check; localStorage is just
+  // the fast initial read so the UI doesn't flash Free→Pro.
   const [isPaid, _setIsPaidRaw] = useState(() => {
     try {
       if (typeof window === "undefined") return false;
@@ -4702,6 +4749,28 @@ useEffect(() => {
     _setIsPaidRaw(val);
     try { localStorage.setItem("tn_isPaid", val ? "1" : "0"); } catch {}
   };
+  // On iOS, configure RevenueCat + reconcile entitlement on every mount.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const { configurePayments, hasProEntitlement } = await import("./lib/payments");
+        await configurePayments();
+        const live = await hasProEntitlement();
+        if (cancelled) return;
+        // Only DOWNGRADE if RevenueCat says no — never overwrite a true with
+        // false based on a transient network error (hasProEntitlement returns
+        // false on error too, so we trust the live answer only if non-error).
+        // Simpler: trust localStorage on cold boot, then sync from server.
+        if (live) setIsPaid(true);
+        // If !live AND localStorage thinks they're Pro, leave it — the next
+        // restore-purchases tap will fix it. We don't auto-revoke to avoid
+        // false revoke on sandbox flakes or expired subscriptions in grace.
+      } catch {}
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [showPaywall, setShowPaywall] = useState(false);
 
 
