@@ -1642,6 +1642,113 @@ const WRITERS = [
       }];
     },
   },
+
+  // ─── CA DLSE Wage-Theft Citations (state-enforcement-r5) → labor ────
+  // California Labor Commissioner / Division of Labor Standards Enforcement
+  // citations for wage theft. Severity tier set at merge time.
+  {
+    name: "ca-dlse",
+    write: (e) => {
+      const cnt = Number(e.case_count || 0);
+      if (!cnt) return [];
+      const wages = Number(e.total_wages_usd || 0);
+      const cit = Number(e.total_citation_usd || 0);
+      const workers = Number(e.total_workers_affected || 0);
+      const usd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(2)}M`
+                       : n >= 1e3 ? `$${Math.round(n / 1e3)}K`
+                       : `$${n}`;
+      const headline = cnt === 1
+        ? `CA Labor Commissioner cited this brand ${usd(cit)} for wage theft (${usd(wages)} unpaid wages, ${workers || "?"} workers affected).`
+        : `${cnt} CA Labor Commissioner wage-theft citations totaling ${usd(cit)} (${usd(wages)} unpaid wages, ${workers || "?"} workers affected) ${e.earliest ? `${e.earliest.slice(0,4)}–${(e.latest||"").slice(0,4)}` : ""}.`;
+      const top = Array.isArray(e.top_cases) && e.top_cases[0]
+        ? ` ${clip(e.top_cases[0].summary, 200)}`
+        : "";
+      const sc = e.severity_tier === "very_poor" ? "very_poor"
+               : e.severity_tier === "poor" ? "poor"
+               : "mixed";
+      return [{
+        category: "labor",
+        narrative: `${headline}${top}`.trim(),
+        sc,
+        severity: sc === "very_poor" || sc === "poor" ? "negative" : "mixed",
+      }];
+    },
+  },
+
+  // ─── CPUC Enforcement (state-enforcement-r5) → environment + health ──
+  // California Public Utilities Commission citations against utilities,
+  // telecom carriers, and energy companies. Writes one narrative per
+  // category (environment for safety/wildfires/methane, health for 911 /
+  // service-quality, political when ratepayer lobbying misuse).
+  {
+    name: "cpuc",
+    write: (e) => {
+      const cnt = Number(e.action_count || 0);
+      if (!cnt) return [];
+      const usd = (n) => n >= 1e9 ? `$${(n / 1e9).toFixed(2)}B`
+                       : n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M`
+                       : n >= 1e3 ? `$${Math.round(n / 1e3)}K`
+                       : `$${n}`;
+      const byCat = e.by_category || {};
+      const writes = [];
+      for (const [cat, info] of Object.entries(byCat)) {
+        const c = Number(info.case_count || 0);
+        const t = Number(info.total_citation_usd || 0);
+        if (!c) continue;
+        const topInCat = (e.top_actions || []).find(a => a.category === cat) || (e.top_actions || [])[0];
+        const head = c === 1
+          ? `CPUC enforcement: ${usd(t)} citation for ${cat === "environment" ? "utility safety / wildfire / methane" : cat === "health" ? "service-quality / 911 / Lifeline" : "ratepayer misuse / lobbying"}.`
+          : `${c} CPUC ${cat === "environment" ? "safety / wildfire" : cat === "health" ? "service-quality" : "political-funds"} citations totaling ${usd(t)}.`;
+        const tail = topInCat ? ` ${clip(topInCat.summary, 200)}` : "";
+        // Severity per-category uses overall severity_tier when fatalities;
+        // otherwise scale on the per-cat total.
+        const sc = e.has_fatalities ? "very_poor"
+                 : t >= 100_000_000 ? "very_poor"
+                 : t >= 10_000_000 ? "poor"
+                 : "mixed";
+        writes.push({
+          category: cat,
+          narrative: `${head}${tail}`.trim(),
+          sc,
+          severity: sc === "very_poor" || sc === "poor" ? "negative" : "mixed",
+        });
+      }
+      return writes;
+    },
+  },
+
+  // ─── TX TCEQ Compliance History (state-enforcement-r5) → environment ──
+  // Texas Commission on Environmental Quality agreed orders against Texas
+  // oil/gas, petrochem, and industrial facilities.
+  {
+    name: "tx-tceq",
+    write: (e) => {
+      const cnt = Number(e.case_count || 0);
+      if (!cnt) return [];
+      const total = Number(e.total_agreed_penalty_usd || 0);
+      const usd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(2)}M`
+                       : n >= 1e3 ? `$${Math.round(n / 1e3)}K`
+                       : `$${n}`;
+      const violLabel = Array.isArray(e.violation_types) && e.violation_types.length
+        ? ` (${e.violation_types.slice(0, 3).join(", ")})`
+        : "";
+      const head = cnt === 1
+        ? `TX TCEQ agreed order: ${usd(total)} penalty${violLabel}.`
+        : `${cnt} TX TCEQ agreed orders totaling ${usd(total)}${violLabel} ${e.earliest ? `${e.earliest.slice(0,4)}–${(e.latest||"").slice(0,4)}` : ""}.`;
+      const top = Array.isArray(e.top_cases) && e.top_cases[0]
+        ? ` ${clip(e.top_cases[0].summary, 220)}`
+        : "";
+      const sc = e.severity_tier === "very_poor" ? "very_poor"
+               : e.severity_tier === "poor" ? "poor"
+               : "mixed";
+      return [{
+        category: "environment",
+        narrative: `${head}${top}`.trim(),
+        sc,
+        severity: sc === "very_poor" || sc === "poor" ? "negative" : "mixed",
+      }];
+    },
+  },
 ];
 
 // Compact factory for foreign-regulator-r4 writers. Each maps to a single
