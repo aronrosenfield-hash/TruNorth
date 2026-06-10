@@ -1,0 +1,54 @@
+name: bhrrc-transition-minerals-annual
+
+# BHRRC Transition Minerals Tracker — annual refresh of human-rights
+# allegations against producers of the six EV / renewables minerals
+# (cobalt, copper, lithium, manganese, nickel, zinc).
+#
+# Source: https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/
+#
+# Cadence: annual (typical BHRRC publication is Sept-Nov). We run every
+# 6 months so methodology updates are captured.
+
+on:
+  schedule:
+    - cron: "0 6 1 4,10 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+
+      - name: Fetch BHRRC Transition Minerals (curated corpus)
+        run: node scripts/bhrrc-transition-minerals-fetch.mjs --apply
+
+      - name: Build augment
+        run: node scripts/bhrrc-transition-minerals-merge.mjs
+
+      - name: Tests
+        run: node --test scripts/bhrrc-transition-minerals-fetch.test.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(bhrrc-transition-minerals): annual refresh"
+          title: "data(bhrrc-transition-minerals): annual refresh"
+          body: |
+            Automated BHRRC Transition Minerals Tracker refresh.
+
+            - Source: https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/
+            - Raw: `data/raw/bhrrc-transition-minerals/`
+            - Derived: `data/derived/bhrrc-transition-minerals-augment.json`
+          branch: data/bhrrc-transition-minerals
+          add-paths: |
+            data/raw/bhrrc-transition-minerals/**
+            data/derived/bhrrc-transition-minerals-augment.json
+          delete-branch: true

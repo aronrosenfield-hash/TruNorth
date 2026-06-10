@@ -20,11 +20,31 @@ const FIXTURE = path.join(__dirname, "..", "test/fixtures/forest500/sample.csv")
 
 test("Forest500: fixture parses, N/A → null", async () => {
   const rows = parseCSVToObjects(await fs.readFile(FIXTURE, "utf-8")).map(normalizeRow).filter(Boolean);
-  assert.equal(rows.length, 15);
+  assert.ok(rows.length >= 100, `expected ≥100 fixture rows, got ${rows.length}`);
   const cargill = rows.find(r => r.company === "Cargill Inc");
   assert.equal(cargill.overall_score_2024, 42);
   assert.equal(cargill.timber_score, null, "N/A → null");
   assert.deepEqual(cargill.commodities, ["soy", "palm", "beef"]);
+});
+
+test("Forest500: priority brands appear in fixture", async () => {
+  const rows = parseCSVToObjects(await fs.readFile(FIXTURE, "utf-8")).map(normalizeRow).filter(Boolean);
+  const names = new Set(rows.map(r => r.company));
+  const priority = [
+    "Unilever PLC", "Nestlé S.A.", "Cargill Inc", "JBS S.A.", "Archer Daniels Midland",
+    "Tyson Foods", "Kraft Heinz", "McDonald's Corporation", "Procter & Gamble",
+    "Wilmar International", "Marfrig Global Foods",
+    "BlackRock Inc", "Vanguard Group", "JPMorgan Chase & Co",
+  ];
+  for (const m of priority) assert.ok(names.has(m), `missing priority brand: ${m}`);
+});
+
+test("Forest500: both companies + financial institutions present", async () => {
+  const rows = parseCSVToObjects(await fs.readFile(FIXTURE, "utf-8")).map(normalizeRow).filter(Boolean);
+  const companies = rows.filter(r => r.entity_type === "company").length;
+  const fis = rows.filter(r => r.entity_type === "financial_institution").length;
+  assert.ok(companies >= 80, `expected ≥80 companies, got ${companies}`);
+  assert.ok(fis >= 25, `expected ≥25 financial institutions, got ${fis}`);
 });
 
 test("Forest500: financial institutions get marked", async () => {

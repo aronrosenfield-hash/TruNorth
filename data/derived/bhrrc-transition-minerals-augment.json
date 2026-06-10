@@ -1,0 +1,694 @@
+{
+  "_license": "Public allegations database — Business & Human Rights Resource Centre (BHRRC) Transition Minerals Tracker. CC-BY 4.0. Each allegation cites BHRRC dashboard or report URL.",
+  "_source_urls": {
+    "dashboard": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+    "report_2024": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/transition-minerals-tracker-2024/",
+    "cobalt_brief": "https://www.business-humanrights.org/en/from-us/briefings/digging-deep-the-eu-battery-regulation-and-electric-vehicles/"
+  },
+  "_generated_at": "2026-06-09T22:52:58.696Z",
+  "_source_file": "data/raw/bhrrc-transition-minerals/2026-06-09.json",
+  "_stats": {
+    "raw_entries": 59,
+    "matched_companies": 15,
+    "routing": {
+      "slugHint": 9,
+      "direct": 2,
+      "alias": 4,
+      "parent": 0,
+      "orphan": 44
+    },
+    "orphan_total": 44
+  },
+  "companies": {
+    "glencore-plc": {
+      "display_name": "Glencore plc",
+      "minerals": [
+        "cobalt",
+        "copper",
+        "zinc",
+        "nickel"
+      ],
+      "allegation_count": 56,
+      "countries": [
+        "DRC",
+        "Peru",
+        "Australia",
+        "Zambia",
+        "Bolivia"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "community-displacement",
+        "environment",
+        "violence-security"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "very_poor",
+      "_routedVia": "slugHint"
+    },
+    "bhp-group": {
+      "display_name": "BHP Group",
+      "minerals": [
+        "copper",
+        "nickel"
+      ],
+      "allegation_count": 30,
+      "countries": [
+        "Chile",
+        "Peru",
+        "Australia",
+        "Brazil"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "environment",
+        "indigenous-rights",
+        "community-displacement"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "very_poor",
+      "_routedVia": "slugHint"
+    },
+    "rio-tinto": {
+      "display_name": "Rio Tinto plc",
+      "minerals": [
+        "copper",
+        "lithium"
+      ],
+      "allegation_count": 36,
+      "countries": [
+        "Australia",
+        "Mongolia",
+        "Serbia",
+        "Madagascar",
+        "Bougainville (PNG)"
+      ],
+      "allegation_types": [
+        "indigenous-rights",
+        "community-displacement",
+        "environment",
+        "worker-rights"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "very_poor",
+      "_routedVia": "slugHint"
+    },
+    "freeport-mcmoran": {
+      "display_name": "Freeport-McMoRan",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 21,
+      "countries": [
+        "Indonesia",
+        "USA",
+        "DRC"
+      ],
+      "allegation_types": [
+        "environment",
+        "indigenous-rights",
+        "violence-security",
+        "worker-rights"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "very_poor",
+      "_routedVia": "slugHint"
+    },
+    "albemarle": {
+      "display_name": "Albemarle Corporation",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 6,
+      "countries": [
+        "Chile",
+        "Australia",
+        "USA"
+      ],
+      "allegation_types": [
+        "environment",
+        "indigenous-rights",
+        "community-displacement"
+      ],
+      "period": "2015-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "poor",
+      "_routedVia": "slugHint"
+    },
+    "fmc": {
+      "display_name": "FMC Corporation",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 4,
+      "countries": [
+        "Argentina"
+      ],
+      "allegation_types": [
+        "indigenous-rights",
+        "environment"
+      ],
+      "period": "2010-2020",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "mixed",
+      "_routedVia": "slugHint"
+    },
+    "sibanye-stillwater": {
+      "display_name": "Sibanye-Stillwater",
+      "minerals": [
+        "nickel",
+        "copper"
+      ],
+      "allegation_count": 14,
+      "countries": [
+        "South Africa",
+        "USA",
+        "Argentina"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "environment",
+        "violence-security"
+      ],
+      "period": "2015-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "poor",
+      "_routedVia": "direct"
+    },
+    "teck-resources": {
+      "display_name": "Teck Resources",
+      "minerals": [
+        "zinc",
+        "copper"
+      ],
+      "allegation_count": 12,
+      "countries": [
+        "Canada",
+        "Peru",
+        "Chile",
+        "USA"
+      ],
+      "allegation_types": [
+        "environment",
+        "indigenous-rights",
+        "worker-rights"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "poor",
+      "_routedVia": "slugHint"
+    },
+    "tesla": {
+      "display_name": "Tesla Inc",
+      "minerals": [
+        "cobalt",
+        "lithium",
+        "nickel"
+      ],
+      "allegation_count": 4,
+      "countries": [
+        "DRC (cobalt)",
+        "Indonesia (nickel)",
+        "Chile (lithium)"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "indigenous-rights"
+      ],
+      "period": "2018-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "mixed",
+      "_routedVia": "slugHint"
+    },
+    "volkswagen-usa": {
+      "display_name": "Volkswagen AG",
+      "minerals": [
+        "cobalt",
+        "lithium",
+        "nickel"
+      ],
+      "allegation_count": 3,
+      "countries": [
+        "DRC (cobalt)",
+        "Brazil (nickel)"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "community-displacement"
+      ],
+      "period": "2018-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "mixed",
+      "_routedVia": "alias"
+    },
+    "contemporary-amperex-technology-co-limited": {
+      "display_name": "CATL (Contemporary Amperex Technology)",
+      "minerals": [
+        "cobalt",
+        "lithium",
+        "nickel"
+      ],
+      "allegation_count": 4,
+      "countries": [
+        "DRC (cobalt)",
+        "Indonesia (nickel)"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "environment"
+      ],
+      "period": "2018-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "mixed",
+      "_routedVia": "alias"
+    },
+    "panasonic-usa": {
+      "display_name": "Panasonic Holdings",
+      "minerals": [
+        "cobalt",
+        "nickel"
+      ],
+      "allegation_count": 2,
+      "countries": [
+        "DRC (cobalt)",
+        "Indonesia (nickel)"
+      ],
+      "allegation_types": [
+        "worker-rights"
+      ],
+      "period": "2018-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "mixed",
+      "_routedVia": "alias"
+    },
+    "newmont-corp": {
+      "display_name": "Newmont Corporation",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 11,
+      "countries": [
+        "Peru",
+        "Ghana",
+        "Mexico",
+        "Indonesia"
+      ],
+      "allegation_types": [
+        "environment",
+        "community-displacement",
+        "violence-security"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "poor",
+      "_routedVia": "alias"
+    },
+    "anglogold-ashanti": {
+      "display_name": "AngloGold Ashanti",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 8,
+      "countries": [
+        "Tanzania",
+        "Ghana",
+        "Argentina",
+        "Brazil"
+      ],
+      "allegation_types": [
+        "environment",
+        "violence-security",
+        "community-displacement"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "poor",
+      "_routedVia": "slugHint"
+    },
+    "gold-fields": {
+      "display_name": "Gold Fields",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 4,
+      "countries": [
+        "Ghana",
+        "South Africa",
+        "Peru",
+        "Chile"
+      ],
+      "allegation_types": [
+        "worker-rights",
+        "environment"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "mixed",
+      "_routedVia": "direct"
+    }
+  },
+  "orphans": [
+    {
+      "company": "China Molybdenum (CMOC Group)",
+      "minerals": [
+        "cobalt",
+        "copper",
+        "nickel"
+      ],
+      "allegation_count": 28
+    },
+    {
+      "company": "Eurasian Resources Group (ERG)",
+      "minerals": [
+        "cobalt",
+        "copper"
+      ],
+      "allegation_count": 14
+    },
+    {
+      "company": "Zhejiang Huayou Cobalt",
+      "minerals": [
+        "cobalt",
+        "nickel"
+      ],
+      "allegation_count": 12
+    },
+    {
+      "company": "Umicore",
+      "minerals": [
+        "cobalt",
+        "nickel"
+      ],
+      "allegation_count": 4
+    },
+    {
+      "company": "Sumitomo Metal Mining",
+      "minerals": [
+        "cobalt",
+        "nickel",
+        "copper"
+      ],
+      "allegation_count": 7
+    },
+    {
+      "company": "Anglo American plc",
+      "minerals": [
+        "copper",
+        "nickel"
+      ],
+      "allegation_count": 18
+    },
+    {
+      "company": "Codelco",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 22
+    },
+    {
+      "company": "Antofagasta plc",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 11
+    },
+    {
+      "company": "Southern Copper Corporation",
+      "minerals": [
+        "copper",
+        "zinc"
+      ],
+      "allegation_count": 16
+    },
+    {
+      "company": "Grupo México",
+      "minerals": [
+        "copper",
+        "zinc"
+      ],
+      "allegation_count": 18
+    },
+    {
+      "company": "First Quantum Minerals",
+      "minerals": [
+        "copper",
+        "nickel"
+      ],
+      "allegation_count": 15
+    },
+    {
+      "company": "KGHM Polska Miedź",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 5
+    },
+    {
+      "company": "MMG Limited",
+      "minerals": [
+        "copper",
+        "zinc"
+      ],
+      "allegation_count": 9
+    },
+    {
+      "company": "Sociedad Química y Minera (SQM)",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 11
+    },
+    {
+      "company": "Tianqi Lithium Corporation",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 4
+    },
+    {
+      "company": "Ganfeng Lithium",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 5
+    },
+    {
+      "company": "Livent Corporation",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 3
+    },
+    {
+      "company": "Pilbara Minerals",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 2
+    },
+    {
+      "company": "Allkem (now Arcadium Lithium)",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 3
+    },
+    {
+      "company": "Mineral Resources Limited",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 4
+    },
+    {
+      "company": "Vale S.A.",
+      "minerals": [
+        "nickel",
+        "copper"
+      ],
+      "allegation_count": 48
+    },
+    {
+      "company": "Nornickel (Norilsk Nickel)",
+      "minerals": [
+        "nickel",
+        "copper"
+      ],
+      "allegation_count": 26
+    },
+    {
+      "company": "Eramet",
+      "minerals": [
+        "nickel",
+        "manganese"
+      ],
+      "allegation_count": 8
+    },
+    {
+      "company": "PT Vale Indonesia",
+      "minerals": [
+        "nickel"
+      ],
+      "allegation_count": 12
+    },
+    {
+      "company": "Harita Group (Trimegah Bangun Persada)",
+      "minerals": [
+        "nickel"
+      ],
+      "allegation_count": 7
+    },
+    {
+      "company": "IGO Limited",
+      "minerals": [
+        "nickel",
+        "lithium"
+      ],
+      "allegation_count": 3
+    },
+    {
+      "company": "Tsingshan Holding Group",
+      "minerals": [
+        "nickel"
+      ],
+      "allegation_count": 18
+    },
+    {
+      "company": "Jinchuan Group International Resources",
+      "minerals": [
+        "nickel",
+        "copper",
+        "cobalt"
+      ],
+      "allegation_count": 6
+    },
+    {
+      "company": "South32",
+      "minerals": [
+        "manganese",
+        "zinc"
+      ],
+      "allegation_count": 8
+    },
+    {
+      "company": "Boliden",
+      "minerals": [
+        "zinc",
+        "copper"
+      ],
+      "allegation_count": 5
+    },
+    {
+      "company": "Nyrstar (Trafigura)",
+      "minerals": [
+        "zinc"
+      ],
+      "allegation_count": 6
+    },
+    {
+      "company": "Eramet (manganese SLN)",
+      "minerals": [
+        "manganese"
+      ],
+      "allegation_count": 5
+    },
+    {
+      "company": "Assmang (Assore + ARM)",
+      "minerals": [
+        "manganese"
+      ],
+      "allegation_count": 4
+    },
+    {
+      "company": "Vedanta Resources",
+      "minerals": [
+        "zinc",
+        "copper"
+      ],
+      "allegation_count": 26
+    },
+    {
+      "company": "Hindustan Zinc",
+      "minerals": [
+        "zinc"
+      ],
+      "allegation_count": 9
+    },
+    {
+      "company": "BYD Company",
+      "minerals": [
+        "cobalt",
+        "lithium"
+      ],
+      "allegation_count": 2
+    },
+    {
+      "company": "LG Energy Solution",
+      "minerals": [
+        "cobalt",
+        "nickel"
+      ],
+      "allegation_count": 2
+    },
+    {
+      "company": "Samsung SDI",
+      "minerals": [
+        "cobalt",
+        "nickel"
+      ],
+      "allegation_count": 2
+    },
+    {
+      "company": "Barrick Gold",
+      "minerals": [
+        "copper"
+      ],
+      "allegation_count": 14
+    },
+    {
+      "company": "Lundin Mining",
+      "minerals": [
+        "copper",
+        "zinc",
+        "nickel"
+      ],
+      "allegation_count": 6
+    },
+    {
+      "company": "Ivanhoe Mines",
+      "minerals": [
+        "copper",
+        "zinc"
+      ],
+      "allegation_count": 4
+    },
+    {
+      "company": "Solway Investment Group",
+      "minerals": [
+        "nickel",
+        "copper"
+      ],
+      "allegation_count": 10
+    },
+    {
+      "company": "Zijin Mining Group",
+      "minerals": [
+        "copper",
+        "zinc",
+        "lithium"
+      ],
+      "allegation_count": 16
+    },
+    {
+      "company": "Wesfarmers",
+      "minerals": [
+        "lithium"
+      ],
+      "allegation_count": 2
+    }
+  ]
+}
