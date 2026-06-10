@@ -1,0 +1,399 @@
+{
+  "_license": "Public SIPRI Top-100 arms-industry dataset (Stockholm International Peace Research Institute). Free to use with attribution. Cite https://www.sipri.org/databases/armsindustry.",
+  "_source_file": "data/raw/sipri/2026-06-09.json",
+  "_source_urls": {
+    "database": "https://www.sipri.org/databases/armsindustry",
+    "top100": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024",
+    "series": "https://www.sipri.org/databases/armsindustry/methodology"
+  },
+  "_generated_at": "2026-06-09T22:52:05.925Z",
+  "_stats": {
+    "raw_entries": 30,
+    "matched_companies": 21,
+    "routed_slugHint": 21,
+    "routed_direct": 0,
+    "routed_alias": 0,
+    "routed_parent": 0,
+    "parked": 9
+  },
+  "companies": {
+    "lockheed-martin": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "landmark",
+        "narrative": "SIPRI Top-100 rank #1 (2023 revenue): ~$60.8B in arms sales, 88% of total revenue.",
+        "rank": 1,
+        "armsRevUsdM": 60810,
+        "armsShareRev": 0.88,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "rtx": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "landmark",
+        "narrative": "SIPRI Top-100 rank #2 (2023 revenue): ~$40.6B in arms sales, 59% of total revenue.",
+        "rank": 2,
+        "armsRevUsdM": 40610,
+        "armsShareRev": 0.59,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "northrop-grumman": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "landmark",
+        "narrative": "SIPRI Top-100 rank #3 (2023 revenue): ~$35.2B in arms sales, 89% of total revenue.",
+        "rank": 3,
+        "armsRevUsdM": 35200,
+        "armsShareRev": 0.89,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "boeing": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #4 (2023 revenue): ~$30.5B in arms sales, 39% of total revenue.",
+        "rank": 4,
+        "armsRevUsdM": 30500,
+        "armsShareRev": 0.39,
+        "category": "mixed",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "general-dynamics": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "landmark",
+        "narrative": "SIPRI Top-100 rank #5 (2023 revenue): ~$33.7B in arms sales, 78% of total revenue.",
+        "rank": 5,
+        "armsRevUsdM": 33700,
+        "armsShareRev": 0.78,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "bae-systems-inc": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "landmark",
+        "narrative": "SIPRI Top-100 rank #6 (2023 revenue): ~$29.6B in arms sales, 97% of total revenue.",
+        "rank": 6,
+        "armsRevUsdM": 29600,
+        "armsShareRev": 0.97,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "l3harris-technologies": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #11 (2023 revenue): ~$17.6B in arms sales, 84% of total revenue.",
+        "rank": 11,
+        "armsRevUsdM": 17600,
+        "armsShareRev": 0.84,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "honeywell": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "mixed",
+        "narrative": "SIPRI Top-100 rank #13 (2023 revenue): ~$5.6B in arms sales, 15% of total revenue.",
+        "rank": 13,
+        "armsRevUsdM": 5560,
+        "armsShareRev": 0.15,
+        "category": "diversified",
+        "gunsEnum": "mixed",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "leidos": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #15 (2023 revenue): ~$9.8B in arms sales, 66% of total revenue.",
+        "rank": 15,
+        "armsRevUsdM": 9760,
+        "armsShareRev": 0.66,
+        "category": "mixed",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "huntington-ingalls-industries": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #17 (2023 revenue): ~$10.1B in arms sales, 95% of total revenue.",
+        "rank": 17,
+        "armsRevUsdM": 10100,
+        "armsShareRev": 0.95,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "saic": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #23 (2023 revenue): ~$5.9B in arms sales, 79% of total revenue.",
+        "rank": 23,
+        "armsRevUsdM": 5860,
+        "armsShareRev": 0.79,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "rolls-royce": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "mixed",
+        "narrative": "SIPRI Top-100 rank #19 (2023 revenue): ~$6.0B in arms sales, 32% of total revenue.",
+        "rank": 19,
+        "armsRevUsdM": 5950,
+        "armsShareRev": 0.32,
+        "category": "mixed",
+        "gunsEnum": "mixed",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "textron": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "mixed",
+        "narrative": "SIPRI Top-100 rank #21 (2023 revenue): ~$4.7B in arms sales, 35% of total revenue.",
+        "rank": 21,
+        "armsRevUsdM": 4720,
+        "armsShareRev": 0.35,
+        "category": "mixed",
+        "gunsEnum": "mixed",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "mitsubishi-heavy-industries": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "mixed",
+        "narrative": "SIPRI Top-100 rank #22 (2023 revenue): ~$4.7B in arms sales, 13% of total revenue.",
+        "rank": 22,
+        "armsRevUsdM": 4710,
+        "armsShareRev": 0.13,
+        "category": "diversified",
+        "gunsEnum": "mixed",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "elbit-systems": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #24 (2023 revenue): ~$5.8B in arms sales, 95% of total revenue.",
+        "rank": 24,
+        "armsRevUsdM": 5750,
+        "armsShareRev": 0.95,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "kongsberg-gruppen-asa": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #25 (2023 revenue): ~$2.6B in arms sales, 51% of total revenue.",
+        "rank": 25,
+        "armsRevUsdM": 2630,
+        "armsShareRev": 0.51,
+        "category": "mixed",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "saab-ab": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #26 (2023 revenue): ~$4.6B in arms sales, 88% of total revenue.",
+        "rank": 26,
+        "armsRevUsdM": 4630,
+        "armsShareRev": 0.88,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "leonardo-drs": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #27 (2023 revenue): ~$2.6B in arms sales, 96% of total revenue.",
+        "rank": 27,
+        "armsRevUsdM": 2640,
+        "armsShareRev": 0.96,
+        "category": "pure-defense",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "kbr": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "mixed",
+        "narrative": "SIPRI Top-100 rank #30 (2023 revenue): ~$3.2B in arms sales, 43% of total revenue.",
+        "rank": 30,
+        "armsRevUsdM": 3220,
+        "armsShareRev": 0.43,
+        "category": "mixed",
+        "gunsEnum": "mixed",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "babcock-international-group-plc": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #47 (2023 revenue): ~$2.7B in arms sales, 55% of total revenue.",
+        "rank": 47,
+        "armsRevUsdM": 2700,
+        "armsShareRev": 0.55,
+        "category": "mixed",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    },
+    "bell-textron": {
+      "_sources": [
+        "sipri-arms"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:52:05.925Z",
+      "guns": {
+        "bestStatus": "concern",
+        "narrative": "SIPRI Top-100 rank #58 (2023 revenue): ~$2.0B in arms sales, 65% of total revenue.",
+        "rank": 58,
+        "armsRevUsdM": 2010,
+        "armsShareRev": 0.65,
+        "category": "mixed",
+        "gunsEnum": "makes_weapons",
+        "sourceUrl": "https://www.sipri.org/visualizations/2025/sipri-top-100-arms-producing-and-military-services-companies-world-2024"
+      }
+    }
+  }
+}

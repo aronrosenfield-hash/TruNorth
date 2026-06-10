@@ -1,0 +1,790 @@
+{
+  "_license": "Public OECD National Contact Points specific instances (OECD Watch + OECD MNE Guidelines NCP register). Each row cites a per-case source URL. CC-BY-style use; cite originals.",
+  "_source_file": "data/raw/oecd-ncp/2026-06-09.json",
+  "_source_urls": {
+    "oecdNcpDatabase": "https://mneguidelines.oecd.org/database/",
+    "oecdWatchDb": "https://www.oecdwatch.org/complaints-database/",
+    "oecdGuidelines": "https://mneguidelines.oecd.org/mneguidelines/"
+  },
+  "_generated_at": "2026-06-09T22:53:23.920Z",
+  "_stats": {
+    "raw_entries": 36,
+    "matched_companies": 27,
+    "routed_slugHint": 30,
+    "routed_direct": 0,
+    "routed_alias": 0,
+    "routed_parent": 0,
+    "orphans": 6
+  },
+  "companies": {
+    "shell-usa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "concern",
+        "narrative": "2 OECD NCP specific instances (1 closed without agreement, 1 ongoing); most recent 2023 (Netherlands NCP). Netherlands NCP follow-up on Shell's Ogoniland clean-up obligations; OECD Watch reports progress as incomplete as of 2023.",
+        "caseCount": 2,
+        "cases": [
+          {
+            "caseTitle": "Shell — Niger Delta human rights / environment (Friends of the Earth Netherlands)",
+            "ncp": "Netherlands",
+            "year": 2013,
+            "outcome": "no-agreement",
+            "issues": [
+              "human-rights",
+              "environment",
+              "disclosure"
+            ],
+            "summary": "Netherlands NCP final statement found Shell's Nigeria operations breached the OECD Guidelines on environmental and disclosure provisions tied to Niger Delta oil spills. No agreement reached.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/shell-vs-friends-of-the-earth-international-netherlands/"
+          },
+          {
+            "caseTitle": "Shell — Ogoniland clean-up follow-up",
+            "ncp": "Netherlands",
+            "year": 2023,
+            "outcome": "ongoing",
+            "issues": [
+              "environment",
+              "human-rights"
+            ],
+            "summary": "Netherlands NCP follow-up on Shell's Ogoniland clean-up obligations; OECD Watch reports progress as incomplete as of 2023.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/foe-netherlands-vs-shell-ogoniland/"
+          }
+        ]
+      }
+    },
+    "totalenergies-usa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (France NCP, 2024): ongoing. French NCP accepted the specific instance against TotalEnergies on the East African Crude Oil Pipeline / Tilenga project; instance remains under follow-up monitoring as of 2024.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "TotalEnergies — EACOP / Tilenga pipeline (Survie + Les Amis de la Terre)",
+            "ncp": "France",
+            "year": 2024,
+            "outcome": "ongoing",
+            "issues": [
+              "human-rights",
+              "environment",
+              "indigenous"
+            ],
+            "summary": "French NCP accepted the specific instance against TotalEnergies on the East African Crude Oil Pipeline / Tilenga project; instance remains under follow-up monitoring as of 2024.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/survie-and-les-amis-de-la-terre-france-vs-total/"
+          }
+        ]
+      }
+    },
+    "bp-usa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (UK NCP, 2004): agreement reached. UK NCP closed with a final statement after BP committed to engagement protocols for the Tangguh LNG project in West Papua. Agreement reached.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "BP — West Papua LNG (WALHI)",
+            "ncp": "UK",
+            "year": 2004,
+            "outcome": "agreement",
+            "issues": [
+              "human-rights",
+              "environment",
+              "indigenous"
+            ],
+            "summary": "UK NCP closed with a final statement after BP committed to engagement protocols for the Tangguh LNG project in West Papua. Agreement reached.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/walhi-vs-bp/"
+          }
+        ]
+      }
+    },
+    "equinor-asa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "political": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Norway NCP, 2015): closed without agreement. Norwegian NCP final statement found Statoil/Equinor's non-publication of the Tanzanian production-sharing agreement fell short of OECD disclosure expectations.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Equinor (Statoil) — Tanzanian gas contract transparency",
+            "ncp": "Norway",
+            "year": 2015,
+            "outcome": "no-agreement",
+            "issues": [
+              "disclosure",
+              "taxation"
+            ],
+            "summary": "Norwegian NCP final statement found Statoil/Equinor's non-publication of the Tanzanian production-sharing agreement fell short of OECD disclosure expectations.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/publish-what-you-pay-norway-vs-statoil/"
+          }
+        ]
+      }
+    },
+    "glencore-plc": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "concern",
+        "narrative": "2 OECD NCP specific instances (2 closed without agreement); most recent 2020 (Switzerland NCP). Swiss NCP accepted complaint against Glencore for community impacts of the Cerrejón coal mine; final statement closed without agreement on remedy.",
+        "caseCount": 2,
+        "cases": [
+          {
+            "caseTitle": "Glencore — Cerrejón coal mine, Colombia (Forced displacement of Wayúu and Afro-Colombian communities)",
+            "ncp": "Switzerland",
+            "year": 2020,
+            "outcome": "no-agreement",
+            "issues": [
+              "human-rights",
+              "environment",
+              "indigenous"
+            ],
+            "summary": "Swiss NCP accepted complaint against Glencore for community impacts of the Cerrejón coal mine; final statement closed without agreement on remedy.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/ask-mision-de-observacion-vs-glencore/"
+          },
+          {
+            "caseTitle": "Glencore — DRC Kamoto copper operations (labour rights)",
+            "ncp": "Switzerland",
+            "year": 2018,
+            "outcome": "no-agreement",
+            "issues": [
+              "labour",
+              "human-rights"
+            ],
+            "summary": "Swiss NCP closing statement on Glencore's DRC Kamoto operations identified gaps in trade-union engagement protocols.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/iuf-vs-glencore-kamoto/"
+          }
+        ]
+      }
+    },
+    "bhp-group": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Australia NCP, 2020): closed without agreement. Australian NCP parallel complaint over Cerrejón (BHP was a Cerrejón co-owner). Final statement noted insufficient community engagement.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "BHP Billiton — Cerrejón coal mine (community resettlement)",
+            "ncp": "Australia",
+            "year": 2020,
+            "outcome": "no-agreement",
+            "issues": [
+              "human-rights",
+              "environment",
+              "indigenous"
+            ],
+            "summary": "Australian NCP parallel complaint over Cerrejón (BHP was a Cerrejón co-owner). Final statement noted insufficient community engagement.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/ask-mision-de-observacion-vs-bhp/"
+          }
+        ]
+      }
+    },
+    "rio-tinto": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Australia NCP, 2022): agreement reached. Australian NCP brokered Rio Tinto's commitment to fund an independent environmental and human rights impact assessment of the legacy Panguna mine site.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Rio Tinto — Bougainville / Panguna mine legacy",
+            "ncp": "Australia",
+            "year": 2022,
+            "outcome": "agreement",
+            "issues": [
+              "environment",
+              "human-rights",
+              "indigenous"
+            ],
+            "summary": "Australian NCP brokered Rio Tinto's commitment to fund an independent environmental and human rights impact assessment of the legacy Panguna mine site.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/human-rights-law-centre-vs-rio-tinto-bougainville/"
+          }
+        ]
+      }
+    },
+    "newmont-corp": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (US NCP, 2014): closed without agreement. US NCP closed the specific instance over Newmont's Conga / Yanacocha operations without agreement; no formal finding of breach.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Newmont — Yanacocha mine, Peru (Conga project environmental harm)",
+            "ncp": "US",
+            "year": 2014,
+            "outcome": "no-agreement",
+            "issues": [
+              "environment",
+              "human-rights"
+            ],
+            "summary": "US NCP closed the specific instance over Newmont's Conga / Yanacocha operations without agreement; no formal finding of breach.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/grufides-vs-newmont/"
+          }
+        ]
+      }
+    },
+    "freeport-mcmoran": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (US NCP, 2014): rejected. US NCP declined to accept the Grasberg specific instance; OECD Watch criticised the rejection in its 2015 annual report.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Freeport — Grasberg mine, Indonesia (security forces / human rights)",
+            "ncp": "US",
+            "year": 2014,
+            "outcome": "rejected",
+            "issues": [
+              "human-rights",
+              "environment"
+            ],
+            "summary": "US NCP declined to accept the Grasberg specific instance; OECD Watch criticised the rejection in its 2015 annual report.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/walhi-vs-freeport/"
+          }
+        ]
+      }
+    },
+    "ing-groep-nv": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Netherlands NCP, 2019): agreement reached. Landmark Netherlands NCP statement: agreement that ING would set climate goals consistent with Paris targets — first NCP case to link bank lending and climate.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "ING — climate-policy adequacy (Friends of the Earth NL et al.)",
+            "ncp": "Netherlands",
+            "year": 2019,
+            "outcome": "agreement",
+            "issues": [
+              "environment",
+              "disclosure"
+            ],
+            "summary": "Landmark Netherlands NCP statement: agreement that ING would set climate goals consistent with Paris targets — first NCP case to link bank lending and climate.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/foe-netherlands-bankwiser-et-al-vs-ing/"
+          }
+        ]
+      }
+    },
+    "credit-suisse-ag": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Switzerland NCP, 2019): closed without agreement. Swiss NCP accepted complaint over Credit Suisse financing of the Dakota Access Pipeline; closing statement reported continued disagreement on due diligence adequacy.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Credit Suisse — DAPL / Energy Transfer Partners financing",
+            "ncp": "Switzerland",
+            "year": 2019,
+            "outcome": "no-agreement",
+            "issues": [
+              "human-rights",
+              "indigenous",
+              "environment"
+            ],
+            "summary": "Swiss NCP accepted complaint over Credit Suisse financing of the Dakota Access Pipeline; closing statement reported continued disagreement on due diligence adequacy.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/society-for-threatened-peoples-vs-credit-suisse/"
+          }
+        ]
+      }
+    },
+    "apple": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (UK NCP, 2024): ongoing. UK NCP accepted complaints alleging Apple's cobalt sourcing from DRC artisanal mines fell short of OECD due-diligence standards; case under follow-up.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Apple — DRC cobalt supply chain (RAID, IPIS)",
+            "ncp": "UK",
+            "year": 2024,
+            "outcome": "ongoing",
+            "issues": [
+              "human-rights",
+              "labour"
+            ],
+            "summary": "UK NCP accepted complaints alleging Apple's cobalt sourcing from DRC artisanal mines fell short of OECD due-diligence standards; case under follow-up.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/raid-vs-apple/"
+          }
+        ]
+      }
+    },
+    "tesla": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (US NCP, 2024): ongoing. US NCP accepted parallel complaint on cobalt due diligence; specific instance ongoing.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Tesla — DRC cobalt supply chain (RAID, IPIS)",
+            "ncp": "US",
+            "year": 2024,
+            "outcome": "ongoing",
+            "issues": [
+              "human-rights",
+              "labour"
+            ],
+            "summary": "US NCP accepted parallel complaint on cobalt due diligence; specific instance ongoing.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/raid-vs-tesla/"
+          }
+        ]
+      }
+    },
+    "samsung-usa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (South Korea NCP, 2019): closed without agreement. Korean NCP final statement: Samsung disputed worker-health allegations at Vietnam plants; no remedial agreement reached.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Samsung — Vietnam factory worker conditions (IPEN)",
+            "ncp": "South Korea",
+            "year": 2019,
+            "outcome": "no-agreement",
+            "issues": [
+              "labour",
+              "human-rights"
+            ],
+            "summary": "Korean NCP final statement: Samsung disputed worker-health allegations at Vietnam plants; no remedial agreement reached.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/ipen-vs-samsung/"
+          }
+        ]
+      }
+    },
+    "huawei-technologies": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "political": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (UK NCP, 2022): rejected. UK NCP declined to accept the Xinjiang surveillance specific instance citing inadequate connection to UK operations.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Huawei — Uyghur surveillance / Xinjiang sourcing (Global Legal Action Network)",
+            "ncp": "UK",
+            "year": 2022,
+            "outcome": "rejected",
+            "issues": [
+              "human-rights",
+              "disclosure"
+            ],
+            "summary": "UK NCP declined to accept the Xinjiang surveillance specific instance citing inadequate connection to UK operations.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/glan-vs-huawei/"
+          }
+        ]
+      }
+    },
+    "adidas": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Germany NCP, 2013): agreement reached. German NCP brokered Adidas commitment to humanitarian-aid payments to ex-PT Kizone workers following factory closure.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Adidas — PT Kizone Indonesia severance (Workers Rights Consortium)",
+            "ncp": "Germany",
+            "year": 2013,
+            "outcome": "agreement",
+            "issues": [
+              "labour"
+            ],
+            "summary": "German NCP brokered Adidas commitment to humanitarian-aid payments to ex-PT Kizone workers following factory closure.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/clean-clothes-campaign-vs-adidas-pt-kizone/"
+          }
+        ]
+      }
+    },
+    "handm": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "positive",
+        "narrative": "OECD NCP specific instance (Sweden NCP, 2015): agreement reached. Swedish NCP closing statement: H&M committed to enhanced supplier-fire-safety auditing aligned with the Accord on Fire and Building Safety in Bangladesh.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "H&M — Bangladesh supplier fire safety (post-Rana Plaza monitoring)",
+            "ncp": "Sweden",
+            "year": 2015,
+            "outcome": "agreement",
+            "issues": [
+              "labour",
+              "human-rights"
+            ],
+            "summary": "Swedish NCP closing statement: H&M committed to enhanced supplier-fire-safety auditing aligned with the Accord on Fire and Building Safety in Bangladesh.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/ahr-vs-hm-bangladesh/"
+          }
+        ]
+      }
+    },
+    "nike": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (US NCP, 2018): closed without agreement. US NCP closed Nike-Hansae instance without agreement; OECD Watch report flagged the NCP process as opaque.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Nike — Hansae Vietnam factory dispute",
+            "ncp": "US",
+            "year": 2018,
+            "outcome": "no-agreement",
+            "issues": [
+              "labour"
+            ],
+            "summary": "US NCP closed Nike-Hansae instance without agreement; OECD Watch report flagged the NCP process as opaque.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/wrc-vs-nike-hansae/"
+          }
+        ]
+      }
+    },
+    "zara-inditex": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Spain NCP, 2024): ongoing. Spanish NCP accepted complaint alleging Inditex's Myanmar suppliers underpaid garment workers; instance under follow-up.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Inditex — Myanmar supplier wage theft",
+            "ncp": "Spain",
+            "year": 2024,
+            "outcome": "ongoing",
+            "issues": [
+              "labour",
+              "human-rights"
+            ],
+            "summary": "Spanish NCP accepted complaint alleging Inditex's Myanmar suppliers underpaid garment workers; instance under follow-up.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/ituc-vs-inditex-myanmar/"
+          }
+        ]
+      }
+    },
+    "nestl": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Switzerland NCP, 2021): agreement reached. Swiss NCP closing statement: Nestlé agreed to publish supplier-tier disclosure of its cocoa supply chain and strengthen child-labour remediation.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Nestlé — Côte d'Ivoire cocoa child labour (Mighty Earth)",
+            "ncp": "Switzerland",
+            "year": 2021,
+            "outcome": "agreement",
+            "issues": [
+              "labour",
+              "human-rights"
+            ],
+            "summary": "Swiss NCP closing statement: Nestlé agreed to publish supplier-tier disclosure of its cocoa supply chain and strengthen child-labour remediation.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/mighty-earth-vs-nestle-cocoa/"
+          }
+        ]
+      }
+    },
+    "unilever": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (UK NCP, 2022): agreement reached. UK NCP closing statement: Unilever committed to enhanced grievance mechanisms after post-election violence at Kericho tea estate (Kenya).",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Unilever — Kericho tea-estate violence (Kenya)",
+            "ncp": "UK",
+            "year": 2022,
+            "outcome": "agreement",
+            "issues": [
+              "human-rights",
+              "labour"
+            ],
+            "summary": "UK NCP closing statement: Unilever committed to enhanced grievance mechanisms after post-election violence at Kericho tea estate (Kenya).",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/leigh-day-vs-unilever-kericho/"
+          }
+        ]
+      }
+    },
+    "jbs-n-v": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 2,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "concern",
+        "narrative": "2 OECD NCP specific instances (2 ongoing); most recent 2024 (Brazil NCP). Brazilian NCP accepted multiple specific instances against JBS over Amazon-deforestation links in its cattle supply chain. Ongoing.",
+        "caseCount": 2,
+        "cases": [
+          {
+            "caseTitle": "JBS — Brazilian beef supply-chain deforestation",
+            "ncp": "Brazil",
+            "year": 2024,
+            "outcome": "ongoing",
+            "issues": [
+              "environment",
+              "human-rights",
+              "indigenous"
+            ],
+            "summary": "Brazilian NCP accepted multiple specific instances against JBS over Amazon-deforestation links in its cattle supply chain. Ongoing.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/imazon-vs-jbs/"
+          },
+          {
+            "caseTitle": "JBS — Brazilian Amazon meatpacker due diligence (US NCP)",
+            "ncp": "US",
+            "year": 2024,
+            "outcome": "ongoing",
+            "issues": [
+              "environment"
+            ],
+            "summary": "US NCP accepted specific instance over JBS USA's sourcing exposure to Brazilian Amazon deforestation. Ongoing follow-up.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/imazon-vs-jbs-us/"
+          }
+        ]
+      }
+    },
+    "cargill": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (US NCP, 2020): closed without agreement. US NCP closed instance against Cargill's Brazilian soy sourcing without agreement; final statement noted Cargill resisted full transparency on Cerrado suppliers.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Cargill — Brazilian soy / Cerrado deforestation (Mighty Earth)",
+            "ncp": "US",
+            "year": 2020,
+            "outcome": "no-agreement",
+            "issues": [
+              "environment"
+            ],
+            "summary": "US NCP closed instance against Cargill's Brazilian soy sourcing without agreement; final statement noted Cargill resisted full transparency on Cerrado suppliers.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/mighty-earth-vs-cargill/"
+          }
+        ]
+      }
+    },
+    "bunge-global-sa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "environment": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Netherlands NCP, 2021): closed without agreement. Netherlands NCP final statement criticised Bunge for limited adoption of zero-deforestation commitments in the Cerrado biome.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Bunge — Cerrado soy / deforestation",
+            "ncp": "Netherlands",
+            "year": 2021,
+            "outcome": "no-agreement",
+            "issues": [
+              "environment"
+            ],
+            "summary": "Netherlands NCP final statement criticised Bunge for limited adoption of zero-deforestation commitments in the Cerrado biome.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/mighty-earth-vs-bunge/"
+          }
+        ]
+      }
+    },
+    "novartis": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "political": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Switzerland NCP, 2015): rejected. Swiss NCP declined the specific instance, citing patent law as outside Guidelines scope. OECD Watch flagged in annual report.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Novartis — India / South Africa access-to-medicines (Treatment Action Campaign)",
+            "ncp": "Switzerland",
+            "year": 2015,
+            "outcome": "rejected",
+            "issues": [
+              "human-rights",
+              "consumer-interests"
+            ],
+            "summary": "Swiss NCP declined the specific instance, citing patent law as outside Guidelines scope. OECD Watch flagged in annual report.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/sec-vs-novartis/"
+          }
+        ]
+      }
+    },
+    "posco": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "mixed",
+        "narrative": "OECD NCP specific instance (Norway NCP, 2013): closed without agreement. Norwegian NCP final statement: Norges Bank Investment Management's POSCO holding lacked adequate due diligence for the disputed Odisha project.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "POSCO — Odisha (India) steel project displacement",
+            "ncp": "Norway",
+            "year": 2013,
+            "outcome": "no-agreement",
+            "issues": [
+              "human-rights",
+              "indigenous",
+              "environment"
+            ],
+            "summary": "Norwegian NCP final statement: Norges Bank Investment Management's POSCO holding lacked adequate due diligence for the disputed Odisha project.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/lok-shakti-abhiyan-vs-posco/"
+          }
+        ]
+      }
+    },
+    "heineken-usa": {
+      "_sources": [
+        "oecd-ncp"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-09T22:53:23.920Z",
+      "labor": {
+        "bestStatus": "positive",
+        "narrative": "OECD NCP specific instance (Netherlands NCP, 2017): agreement reached. Netherlands NCP brokered settlement: Heineken paid compensation to DRC Bralima workers dismissed during the 1999 occupation period.",
+        "caseCount": 1,
+        "cases": [
+          {
+            "caseTitle": "Heineken — DRC Bralima workers (post-war redundancy)",
+            "ncp": "Netherlands",
+            "year": 2017,
+            "outcome": "agreement",
+            "issues": [
+              "labour",
+              "human-rights"
+            ],
+            "summary": "Netherlands NCP brokered settlement: Heineken paid compensation to DRC Bralima workers dismissed during the 1999 occupation period.",
+            "sourceUrl": "https://www.oecdwatch.org/complaint/bralima-workers-vs-heineken/"
+          }
+        ]
+      }
+    }
+  }
+}

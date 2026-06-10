@@ -1,0 +1,57 @@
+name: sipri-arms-annual
+
+# SIPRI Top-100 arms producers — annual revenue ranking.
+# Cadence: annual (Dec 5; SIPRI typically releases the Top-100 in early Dec).
+# Source: https://www.sipri.org/databases/armsindustry
+
+on:
+  schedule:
+    - cron: "0 8 5 12 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run fetcher tests
+        run: node --test scripts/sipri-arms-fetch.test.mjs
+
+      - name: Fetch SIPRI Top-100 corpus
+        run: node scripts/sipri-arms-fetch.mjs
+
+      - name: Build derived augment
+        run: node scripts/sipri-arms-merge.mjs
+
+      - name: Open PR if derived changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(sipri-arms): annual Top-100 refresh"
+          title: "data(sipri-arms): annual Top-100 refresh"
+          body: |
+            Automated SIPRI Arms Industry Top-100 refresh.
+
+            - Raw:       `data/raw/sipri/<date>.json`
+            - Derived:   `data/derived/sipri-arms-augment.json`
+            - Parked:    `data/derived/sipri-arms-parked.json`
+
+            Source: https://www.sipri.org/databases/armsindustry
+            License: SIPRI open-data with attribution.
+          branch: data/sipri-arms
+          add-paths: |
+            data/raw/sipri/**
+            data/derived/sipri-arms-augment.json
+            data/derived/sipri-arms-parked.json
+          delete-branch: true
