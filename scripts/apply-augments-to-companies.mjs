@@ -1330,6 +1330,68 @@ const WRITERS = [
       return writes;
     },
   },
+  // ─── Eviction Lab / corporate landlord research (round 5) ─────────────
+  // Real-estate REITs and institutional landlords. The brief flags real
+  // estate as a thin TruNorth category. Per-landlord rollup of FTC consent
+  // orders + DOJ Antitrust amended RealPage complaint + state-AG actions
+  // + House Oversight 2022 staff report + Atlanta Fed eviction study.
+  //
+  // Maps to "labor" — renter-worker rights and community impact is the
+  // closest existing TruNorth category bucket. Severity inherits from the
+  // upstream severityFor() in eviction-lab-fetch.mjs.
+  {
+    name: "eviction-lab",
+    write: (e) => {
+      const l = e.landlord;
+      if (!l || !l.latestAction) return [];
+      const amt = l.penaltyUsdTotal >= 1e9
+        ? `~$${(l.penaltyUsdTotal / 1e9).toFixed(1)}B`
+        : l.penaltyUsdTotal >= 1e6
+          ? `~$${(l.penaltyUsdTotal / 1e6).toFixed(0)}M`
+          : "";
+      const head = l.actionCount === 1
+        ? `Corporate-landlord enforcement (${l.latestAction.regulator}): ${clip(l.latestAction.summary, 220)}`
+        : `${l.actionCount} corporate-landlord enforcement actions${amt ? ` (${amt} in known penalties)` : ""}; latest ${l.latestAction.regulator}: ${clip(l.latestAction.summary, 180)}`;
+      const sc = l.severity === "very_poor" ? "very_poor"
+        : l.severity === "poor" ? "poor"
+        : l.severity === "mixed" ? "mixed" : "mixed";
+      return [{ category: "labor", narrative: head.trim(), sc, severity: "negative" }];
+    },
+  },
+  // ─── KFF / CMS Marketplace claim-denial rates (round 5) ───────────────
+  // Closes the health-insurance gap. Per-parent rollup of the CMS
+  // Transparency in Coverage PUF via KFF's working file; we use the
+  // weighted in-network denial rate across all issuer subsidiaries of
+  // each parent company. Maps to "health".
+  {
+    name: "kff-denial",
+    write: (e) => {
+      const d = e.denial;
+      if (!d || !d.inNetworkDenialRate) return [];
+      const pct = (d.inNetworkDenialRate * 100).toFixed(1);
+      const claimsM = d.inNetworkClaims >= 1e6
+        ? `${(d.inNetworkClaims / 1e6).toFixed(1)}M`
+        : d.inNetworkClaims.toLocaleString();
+      const band = d.severity === "very_poor" ? "well above the marketplace average"
+        : d.severity === "poor" ? "above the marketplace average"
+        : d.severity === "positive" ? "well below the marketplace average"
+        : "near the marketplace average";
+      const narrative =
+        `CMS Marketplace Transparency PUF (${d.planYear}, via KFF): ` +
+        `${pct}% in-network claim-denial rate on ${claimsM} claims across ${d.issuerCount} subsidiar${d.issuerCount === 1 ? "y" : "ies"}` +
+        `${d.stateCount ? ` in ${d.stateCount} state${d.stateCount === 1 ? "" : "s"}` : ""} — ${band} of ~20%.`;
+      const sc = d.severity === "very_poor" ? "very_poor"
+        : d.severity === "poor" ? "poor"
+        : d.severity === "positive" ? "positive"
+        : d.severity === "mixed" ? "mixed" : "neutral";
+      return [{
+        category: "health",
+        narrative,
+        sc,
+        severity: sc === "positive" ? "positive" : (sc === "neutral" ? "neutral" : "negative"),
+      }];
+    },
+  },
   // ─── State regulators round 3: CA AG, CPPA, FL AG, IL AG, WA AG, OH AG,
   //     PA AG, NJ AG, GA AG, NC AG — same shape as round 2. Mapped to
   //     "privacy" for consumer-protection (same rationale as round 2) so
