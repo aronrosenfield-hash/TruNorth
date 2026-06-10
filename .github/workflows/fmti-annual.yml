@@ -1,0 +1,63 @@
+name: fmti-annual
+
+# Stanford CRFM Foundation Model Transparency Index — annual refresh.
+#
+# The Stanford CRFM publishes a new FMTI round roughly once per year (Oct
+# 2023, May 2024, Dec 2025). The repo at github.com/stanford-crfm/fmti
+# hosts each round as a binary indicator matrix (CSV). Our fetcher pulls
+# the newest round's CSV, sums per-developer columns to compute the 0-100
+# transparency score, bands by leader (≥70) / mixed (40-69) / poor (<40),
+# and writes data/raw/fmti/<YYYY-MM-DD>.json.
+#
+# The merger keys by TruNorth slug and writes
+# data/derived/fmti-augment.json — consumed by
+# scripts/apply-augments-to-companies.mjs (privacy + dei writers).
+#
+# Free, public CC-licensed data. Single CSV fetch — total runtime ~10 sec.
+
+on:
+  schedule:
+    - cron: "0 14 15 1 *"   # Jan 15, 14:00 UTC (well after annual release)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run FMTI fixture tests
+        run: node --test scripts/fmti-fetch.test.mjs
+
+      - name: Run FMTI fetcher (live CSV)
+        run: node scripts/fmti-fetch.mjs --apply
+
+      - name: Run FMTI merger
+        run: node scripts/fmti-merge.mjs
+
+      - name: Open a PR if data changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "data(fmti): annual Stanford FMTI refresh"
+          branch: "data/fmti-${{ github.run_id }}"
+          delete-branch: true
+          title: "data(fmti): annual Stanford FMTI refresh"
+          body: |
+            Automated annual refresh of the Stanford CRFM Foundation Model
+            Transparency Index. Pulls the latest round's CSV from
+            github.com/stanford-crfm/fmti and computes per-developer
+            transparency scores (0-100), banded leader/mixed/poor.
+
+            Source: https://crfm.stanford.edu/fmti/
+            License: CC-licensed; see the FMTI GitHub README.
+          add-paths: |
+            data/raw/fmti/**
+            data/derived/fmti-augment.json

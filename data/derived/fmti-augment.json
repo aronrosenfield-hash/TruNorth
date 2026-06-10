@@ -1,0 +1,164 @@
+{
+  "_license": "Stanford CRFM Foundation Model Transparency Index — released under Apache-2.0 / MIT-style permissive licence per the github.com/stanford-crfm/fmti repo. Cite the Stanford CRFM as the source.",
+  "_source_file": "data/raw/fmti/2026-06-09.json",
+  "_source_urls": {
+    "home": "https://crfm.stanford.edu/fmti/",
+    "repo": "https://github.com/stanford-crfm/fmti",
+    "csv": "https://raw.githubusercontent.com/stanford-crfm/fmti/main/Dec2025/Dec2025_scores.csv",
+    "page": "https://crfm.stanford.edu/fmti/"
+  },
+  "_round": "Dec2025",
+  "_generated_at": "2026-06-09T22:47:13.113Z",
+  "_stats": {
+    "developers": 13,
+    "matched_companies": 7,
+    "orphans": 6,
+    "route_counts": {
+      "slugHint": 7,
+      "direct": 0,
+      "alias": 0,
+      "parent": 0,
+      "slugHint-alias": 0,
+      "slugHint-parent": 0,
+      "orphan": 6
+    }
+  },
+  "companies": {
+    "ibm": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "IBM",
+      "score": 95,
+      "maxScore": 100,
+      "pct": 95,
+      "band": "leader",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    },
+    "anthropic": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "Anthropic",
+      "score": 46,
+      "maxScore": 100,
+      "pct": 46,
+      "band": "mixed",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    },
+    "google-alphabet": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "Google",
+      "score": 41,
+      "maxScore": 100,
+      "pct": 41,
+      "band": "mixed",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    },
+    "amazon": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "Amazon",
+      "score": 39,
+      "maxScore": 100,
+      "pct": 39,
+      "band": "poor",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    },
+    "openai": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "OpenAI",
+      "score": 35,
+      "maxScore": 100,
+      "pct": 35,
+      "band": "poor",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    },
+    "meta-facebook": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "Meta",
+      "score": 31,
+      "maxScore": 100,
+      "pct": 31,
+      "band": "poor",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    },
+    "alibaba-group": {
+      "_sources": [
+        "fmti"
+      ],
+      "_routedVia": "slugHint",
+      "_lastUpdated": "2026-06-09T22:47:13.113Z",
+      "name": "Alibaba",
+      "score": 26,
+      "maxScore": 100,
+      "pct": 26,
+      "band": "poor",
+      "roundLabel": "Dec2025",
+      "sourceUrl": "https://crfm.stanford.edu/fmti/"
+    }
+  },
+  "orphans": [
+    {
+      "name": "Writer",
+      "slugHint": "writer",
+      "score": 72,
+      "band": "leader"
+    },
+    {
+      "name": "AI21 Labs",
+      "slugHint": "ai21-labs",
+      "score": 66,
+      "band": "mixed"
+    },
+    {
+      "name": "DeepSeek",
+      "slugHint": "deepseek",
+      "score": 32,
+      "band": "poor"
+    },
+    {
+      "name": "Mistral",
+      "slugHint": "mistral-ai",
+      "score": 18,
+      "band": "poor"
+    },
+    {
+      "name": "Midjourney",
+      "slugHint": "midjourney",
+      "score": 14,
+      "band": "poor"
+    },
+    {
+      "name": "xAI",
+      "slugHint": "xai",
+      "score": 14,
+      "band": "poor"
+    }
+  ]
+}

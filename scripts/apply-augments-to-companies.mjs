@@ -43,8 +43,10 @@ const POSITIVE_MERGE_SOURCES = new Set([
   "climate-coalitions",
   // Round-4 labor-deep additions:
   "fair-labor-association", "ccc-transparency-pledge",
-  // 2026-06-09 (lock-in-200 push):
-  "the-climate-pledge",
+  // Round-5 additions:
+  // - fmti: top-tier (≥70) Stanford FMTI scores merge with other AI / DEI signals
+  // - repair-scorecard: PIRG B-/iFixit ≥8 leaders merge with other env signals
+  "fmti", "repair-scorecard",
 ]);
 
 const NEGATIVE_OR_NEUTRAL_SCS = new Set([
@@ -483,6 +485,31 @@ const WRITERS = [
         category: "environment",
         narrative: `EPA Green Vehicle Guide${ct ? `: ${ct} eligible model(s) listed` : " participation"}.`,
         sc: "positive",
+      }];
+    },
+  },
+  // ─── Right-to-repair scorecard (PIRG Failing the Fix + iFixit) ────────
+  // Augment shape: { name, pirg_grade, pirg_year, ifixit_avg, severity:
+  //   "positive"|"mixed"|"negative", narrative, sources: { pirgUrl?,
+  //   ifixitUrl? } }. Maps to `environment` (electronics longevity =
+  //   e-waste reduction). Conservative: a "negative" severity here means
+  //   both signals agreed; otherwise mixed; positive only when leader.
+  {
+    name: "repair-scorecard",
+    write: (e) => {
+      if (!e.severity || !e.narrative) return [];
+      const sc = e.severity === "positive" ? "positive"
+        : e.severity === "negative" ? "poor"
+        : "mixed";
+      // Top-of-narrative summary: "Right-to-repair: <severity flag>."
+      const flag = e.severity === "positive" ? "leader" : e.severity === "negative" ? "poor performer" : "mixed signals";
+      const narrative = `Right-to-repair (${flag}): ${e.narrative}`;
+      return [{
+        category: "environment",
+        narrative,
+        sc,
+        severity: e.severity === "positive" ? "positive" : "negative",
+        mergePositive: e.severity === "positive",
       }];
     },
   },
@@ -1000,6 +1027,31 @@ const WRITERS = [
       const head = `Citizen Lab investigation: ${first?.product || "platform"} flagged for ${clip(first?.summary || "documented privacy/surveillance concern", 200)}`;
       const sc = sev === "severe" ? "poor" : sev === "high" ? "mixed" : "mixed";
       return [{ category: "privacy", narrative: head, sc, severity: "negative" }];
+    },
+  },
+  // ─── Stanford CRFM Foundation Model Transparency Index ───────────────
+  // Augment shape: { name, score (0-100), band: "leader"|"mixed"|"poor",
+  //   roundLabel, sourceUrl }. Maps to `privacy` (AI surveillance / data
+  //   sourcing transparency) + `dei` (AI labor practices, equitable access,
+  //   downstream-harm disclosure). Leader = ≥70, mixed = 40-69, poor = <40.
+  {
+    name: "fmti",
+    write: (e) => {
+      if (e.score == null) return [];
+      const band = e.band || (e.score >= 70 ? "leader" : e.score >= 40 ? "mixed" : "poor");
+      const head = `Stanford FMTI ${e.roundLabel || ""} foundation-model transparency: ${e.score}/100`.trim();
+      const tail = band === "leader" ? " — top-tier disclosure across data, labor, compute, and downstream-use indicators."
+        : band === "mixed" ? " — mid-tier; gaps remain on data sourcing, data-laborer practices, or downstream-harm reporting."
+        : " — bottom-tier; substantial opacity across data, labor, compute, and downstream-use indicators.";
+      const narrative = `${head}${tail}`;
+      const sc = band === "leader" ? "positive"
+        : band === "mixed" ? "mixed"
+        : "poor";
+      const severity = band === "leader" ? "positive" : "negative";
+      return [
+        { category: "privacy", narrative, sc, severity, mergePositive: band === "leader" },
+        { category: "dei",     narrative, sc, severity, mergePositive: band === "leader" },
+      ];
     },
   },
   // ─── Child-safety tech scorecard (privacy + health) ───────────────────
