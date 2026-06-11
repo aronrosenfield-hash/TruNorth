@@ -61,7 +61,7 @@
  */
 
 import fs from "node:fs/promises";
-import { existsSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -409,6 +409,27 @@ async function loadCompanies() {
       ticker: String(ticker).toUpperCase(),
     });
   }
+
+  // R6 (2026-06-10): expand the universe with companies the sec-ecd frames
+  // fetch matched by NAME — they carry a CIK+ticker straight from SEC even
+  // when our catalog record has no ticker field. This is what grows the
+  // pay-ratio crawl beyond the ~340 ticker-carrying catalog entries.
+  try {
+    const ecdDir = path.join(ROOT, "data/raw/sec-ecd");
+    const latest = readdirSync(ecdDir).filter(f => f.endsWith(".json")).sort().pop();
+    if (latest) {
+      const { records } = JSON.parse(await fs.readFile(path.join(ecdDir, latest), "utf-8"));
+      const have = new Set(out.map(c => c.slug));
+      let added = 0;
+      for (const r of records || []) {
+        if (!r.slug || !r.ticker || have.has(r.slug)) continue;
+        out.push({ slug: r.slug, name: r.entityName, ticker: String(r.ticker).toUpperCase() });
+        have.add(r.slug);
+        added++;
+      }
+      if (added) console.log(`  +${added} companies from sec-ecd name matches (data/raw/sec-ecd/${latest})`);
+    }
+  } catch { /* no ecd raw yet — ticker-only universe */ }
   return out;
 }
 

@@ -2,7 +2,7 @@
   "name": "Walmart",
   "cat": "Retail",
   "init": "WMT",
-  "overall": 51.7,
+  "overall": 46.2,
   "isPublic": true,
   "ticker": "WMT",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "mixed",
     "guns": "sells_guns",
     "privacy": "mixed",
-    "execPay": "na",
+    "execPay": "poor",
     "governance": "mixed"
   },
   "political": {
@@ -104,10 +104,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 958:1 (median employee pay $30,520) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "~930:1 (FY2024 SEC proxy)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -617,7 +618,7 @@
   "health": {
     "s": "62 CPSC recalls (24 in past 24 months); latest hazard: the recalled dressers are unstable if they are not anchored to the wall."
   },
-  "realCats": 7,
+  "realCats": 8,
   "governance": {
     "s": "Wikidata records a notable event: Public Eye Labour Law Award. (Wikidata Q483551)",
     "sources": [

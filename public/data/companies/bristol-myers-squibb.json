@@ -2,7 +2,7 @@
   "name": "Bristol-Myers Squibb",
   "cat": "Healthcare",
   "init": "BMS",
-  "overall": 58.9,
+  "overall": 57.8,
   "isPublic": true,
   "ticker": "BMY",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "poor"
   },
@@ -85,10 +85,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 131:1 (median employee pay $167,191) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "117:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -362,7 +363,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 7,
+  "realCats": 8,
   "governance": {
     "s": "Wikipedia \"Legal issues\" section: In 2002, the company was sued by 29 states for illegally maintaining a monopoly on Taxol, its cancer treatment and was sued in a separate case for trying to keep a generic version of BuSpar off the…",
     "sources": [

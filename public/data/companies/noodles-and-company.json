@@ -1,1 +1,227 @@
-{"name":"Noodles & Company","cat":"Food & Beverage","init":"NC","overall":79.2,"isPublic":true,"ticker":"NDLS","sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $298K in executive political donations; partisan lean split across 14 executive donors.","amt":"Not disclosed","lean":"Neutral","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"No public record found.","amt":"Over $1.27 million distributed (as of 2021); ongoing fundraising partnerships","focus":"Employee support (emergency hardship grants, scholarships), childhood hunger alleviation, community nonprofits","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Below Average","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Approximately 9-14:1","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-03-28","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Noodles%20%26%20Company&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","competitors":["panera-bread","chipotle","panda-express","cheesecake-factory","blaze-pizza"],"wiki":{"founded":"2005-00-00","hq":"Broomfield","employees":null,"revenue":null,"parent":null,"industry":"retail","products":null,"keyPeople":null,"website":"https://www.noodles.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Noodles_and_Company_Sheboygan.jpg/330px-Noodles_and_Company_Sheboygan.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Noodles_%26_Company","extract":"Noodles & Company is an American fast-casual restaurant that offers international and American noodle dishes in addition to soups and salads. Noodles & Company was founded in 1995 by Aaron Kennedy and is headquartered in Broomfield, Colorado. The company went public in 2013 and recorded a $457 million revenue in 2017. In mid-2022, there were 458 Noodles & Company locations across 31 states."},"bbb":{"rating":"C-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/co/broomfield/profile/restaurants/noodles-company-1296-34001232"},"secComplaints":{"count":3,"sample":[{"adsh":"0001275158-25-000008","date":"2025-02-19","filer":"NOODLES & Co  (NDLS)  (CIK 0001275158)","form":"8-K"},{"adsh":"0001275158-24-000090","date":"2024-09-11","filer":"NOODLES & Co  (NDLS)  (CIK 0001275158)","form":"8-K"},{"adsh":"0001493152-25-002824","date":"2025-01-17","filer":"Twin Hospitality Group Inc.  (TWNP)  (CIK 0002011954)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/6/69/Noodles_and_Company_Sheboygan.jpg","logoSource":"wiki_infobox","litigation_courtlistener":{"caseCount24mo":3,"classActionCount":0,"mostRecentCase":"2026-03-20","cases":[{"caseName":"Cohan v. Noodles & Company","dateFiled":"2026-03-20","court":"District Court, N.D. Illinois","natureOfSuit":null,"isClassAction":false,"sourceUrl":"https://www.courtlistener.com/docket/72520889/cohan-v-noodles-company/"},{"caseName":"Ariza v. Noodles & Company, Inc","dateFiled":"2025-07-24","court":"District Court, M.D. Florida","natureOfSuit":"446 Civil Rights: Americans with Disabilities - Other","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/docket/70907927/ariza-v-noodles-company-inc/"},{"caseName":"White v. Noodles & Company Illinois, Inc.","dateFiled":"2024-06-10","court":"District Court, N.D. Illinois","natureOfSuit":"446 Civil Rights: Americans with Disabilities - Other","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/docket/68843707/white-v-noodles-company-illinois-inc/"}]},"slug":"noodles-and-company","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-28","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Noodles%20%26%20Company&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-16T23:59:59.000Z","realCats":1,"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Noodles & Company",
+  "cat": "Food & Beverage",
+  "init": "NC",
+  "overall": 79.2,
+  "isPublic": true,
+  "ticker": "NDLS",
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $298K in executive political donations; partisan lean split across 14 executive donors.",
+    "amt": "Not disclosed",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "Over $1.27 million distributed (as of 2021); ongoing fundraising partnerships",
+    "focus": "Employee support (emergency hardship grants, scholarships), childhood hunger alleviation, community nonprofits",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "No public record found.",
+    "rating": "Below Average",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO total compensation $0K — SEC proxy statement (DEF 14A, 2025). No CEO-to-worker pay ratio disclosed in a parseable form.",
+    "ratio": "Approximately 9-14:1",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-03-28",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Noodles%20%26%20Company&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "panera-bread",
+    "chipotle",
+    "panda-express",
+    "cheesecake-factory",
+    "blaze-pizza"
+  ],
+  "wiki": {
+    "founded": "2005-00-00",
+    "hq": "Broomfield",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "retail",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.noodles.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Noodles_and_Company_Sheboygan.jpg/330px-Noodles_and_Company_Sheboygan.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Noodles_%26_Company",
+    "extract": "Noodles & Company is an American fast-casual restaurant that offers international and American noodle dishes in addition to soups and salads. Noodles & Company was founded in 1995 by Aaron Kennedy and is headquartered in Broomfield, Colorado. The company went public in 2013 and recorded a $457 million revenue in 2017. In mid-2022, there were 458 Noodles & Company locations across 31 states."
+  },
+  "bbb": {
+    "rating": "C-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/co/broomfield/profile/restaurants/noodles-company-1296-34001232"
+  },
+  "secComplaints": {
+    "count": 3,
+    "sample": [
+      {
+        "adsh": "0001275158-25-000008",
+        "date": "2025-02-19",
+        "filer": "NOODLES & Co  (NDLS)  (CIK 0001275158)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001275158-24-000090",
+        "date": "2024-09-11",
+        "filer": "NOODLES & Co  (NDLS)  (CIK 0001275158)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001493152-25-002824",
+        "date": "2025-01-17",
+        "filer": "Twin Hospitality Group Inc.  (TWNP)  (CIK 0002011954)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Noodles_and_Company_Sheboygan.jpg",
+  "logoSource": "wiki_infobox",
+  "litigation_courtlistener": {
+    "caseCount24mo": 3,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-03-20",
+    "cases": [
+      {
+        "caseName": "Cohan v. Noodles & Company",
+        "dateFiled": "2026-03-20",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/docket/72520889/cohan-v-noodles-company/"
+      },
+      {
+        "caseName": "Ariza v. Noodles & Company, Inc",
+        "dateFiled": "2025-07-24",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": "446 Civil Rights: Americans with Disabilities - Other",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/docket/70907927/ariza-v-noodles-company-inc/"
+      },
+      {
+        "caseName": "White v. Noodles & Company Illinois, Inc.",
+        "dateFiled": "2024-06-10",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": "446 Civil Rights: Americans with Disabilities - Other",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/docket/68843707/white-v-noodles-company-illinois-inc/"
+      }
+    ]
+  },
+  "slug": "noodles-and-company",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-28",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Noodles%20%26%20Company&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "realCats": 1,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  }
+}

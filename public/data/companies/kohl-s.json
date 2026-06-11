@@ -2,7 +2,7 @@
   "name": "Kohl's",
   "cat": "Retail",
   "init": "KSS",
-  "overall": 55.1,
+  "overall": 42.5,
   "isPublic": true,
   "ticker": "KSS",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "poor",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -80,10 +80,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 593:1 (median employee pay $15,859) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "1,268:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -359,7 +360,7 @@
   "health": {
     "s": "12 CPSC recalls (1 in past 24 months); latest hazard: fire & fire-related burn."
   },
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Menomonee Falls. (Wikidata Q967265)",
     "sources": [

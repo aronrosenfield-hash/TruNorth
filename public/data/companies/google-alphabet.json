@@ -2,7 +2,7 @@
   "name": "Google / Alphabet",
   "cat": "Technology",
   "init": "ABC",
-  "overall": 39,
+  "overall": 47.6,
   "isPublic": true,
   "ticker": "GOOGL",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "neutral"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $801K in executive political donations; partisan lean Democratic +54 across 21 executive donors.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
@@ -87,9 +87,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 35:1 (median employee pay $310,826; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2011).",
     "ratio": "32:1",
-    "sources": []
+    "sources": [
+      "sec-def14a"
+    ]
   },
   "execPayAPI": {
     "sec": {
@@ -190,7 +192,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: the computer's charger can overheat and melt."
   },
-  "realCats": 6,
+  "realCats": 7,
   "enriched": {
     "newsweekMrc": {
       "rank": 46,

@@ -2,7 +2,7 @@
   "name": "AT&T",
   "cat": "Technology",
   "init": "ATT",
-  "overall": 49.2,
+  "overall": 49.4,
   "isPublic": true,
   "ticker": "T",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $22K PAC donations; 77% to Republican, 23% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]  [FollowTheMoney.org adds state-level totals.]",
@@ -90,10 +90,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 215:1 (median employee pay $139,026) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "416:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -363,7 +364,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 6,
+  "realCats": 7,
   "enriched": {
     "newsweekMrc": {
       "rank": 41,

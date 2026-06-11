@@ -2,7 +2,7 @@
   "name": "Dollar General",
   "cat": "Retail",
   "init": "DG",
-  "overall": 42.5,
+  "overall": 44.1,
   "isPublic": true,
   "ticker": "DG",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "mixed"
   },
@@ -81,10 +81,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 114:1 — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "~114:1 (fiscal 2024)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -522,7 +523,7 @@
   "health": {
     "s": "15 CPSC recalls on record; sample hazard: the key chains contain high levels of lead."
   },
-  "realCats": 4,
+  "realCats": 5,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: featuring a Dollar Store manager who was required to work 70-hour weeks Dollar General, along with other dollar store chains, while \"sometimes filling a need in cash-strapped communities\" where…",
     "sources": [

@@ -2,7 +2,7 @@
   "name": "PayPal",
   "cat": "Financial Services",
   "init": "PP",
-  "overall": 56.1,
+  "overall": 55.2,
   "isPublic": true,
   "ticker": "PYPL",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na",
+    "execPay": "mixed",
     "governance": "neutral"
   },
   "political": {
@@ -93,10 +93,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 221:1 (median employee pay $114,331) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Estimated 250:1 or higher",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -325,7 +326,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikidata: owned by Nasdaq-100. (Wikidata Q483959)",
     "sources": [

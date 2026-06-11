@@ -1,1 +1,265 @@
-{"name":"Ingersoll Rand","cat":"Manufacturing","init":"INGE","overall":50.9,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $6K PAC donations; 78% to Republican, 22% to Democratic committees.","amt":"$20","lean":"right","sources":["FEC.gov"]},"labor":{"s":"23 federal penalties totaling $8.0M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","charity":{"s":"$5M reported corporate giving in 2024 (~0.07% of revenue).","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","competitors":["atlas-copco","parker-hannifin","flowserve"],"wiki":{"founded":"1871-01-01","hq":"Swords","employees":null,"revenue":null,"parent":null,"industry":"conglomerate","products":null,"keyPeople":"Simon Ingersoll","website":"http://www.ingersollrand.com","controversies":null,"logoUrl":null,"wikipediaUrl":null,"extract":null},"bbb":{"rating":"D-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nc/southern-pines/profile/air-compressors/ingersoll-rand-company-0593-90027094/addressId/37138"},"secComplaints":{"count":6,"sample":[{"adsh":"0001193125-25-217778","date":"2025-09-25","filer":"CHART INDUSTRIES INC  (GTLS, GTLS-PB)  (CIK 0000892553)","form":"8-K"},{"adsh":"0001437749-24-038268","date":"2024-12-23","filer":"BROADWIND, INC.  (BWEN)  (CIK 0001120370)","form":"8-K"},{"adsh":"0001193125-26-001508","date":"2026-01-05","filer":"Augusta SpinCo Corp  (CIK 0002082015)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Ingersoll%20Rand%20logo.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":50,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"ingersoll-rand","news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Ingersoll Rand","slug":"ingersoll-rand","ownership":"publicly traded (ticker symbol IR)","hq":"North Carolina","majorIndustry":"industrial equipment","specificIndustry":"industrial equipment","totalPenalty":7960666,"totalRecords":23,"offenseGroups":[{"category":"competition-related offenses","penalty":7400987,"records":3},{"category":"safety-related offenses","penalty":257757,"records":10},{"category":"financial offenses","penalty":137500,"records":1},{"category":"employment-related offenses","penalty":134607,"records":5},{"category":"environment-related offenses","penalty":29815,"records":4}],"primaryOffenses":[{"category":"Foreign Corrupt Practices Act","penalty":6720987,"records":2},{"category":"export control violation","penalty":680000,"records":1},{"category":"workplace safety or health violation","penalty":257757,"records":10},{"category":"economic sanction violation","penalty":137500,"records":1},{"category":"wage and hour violation","penalty":127119,"records":4}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T22:27:42.239Z"},"fec":{"source":"FEC API","committeeId":"C00056226","committeeName":"INGERSOLL-RAND COMPANY POLITICAL ACTION COMMITTEE","lean":"right","repTotal":4411,"demTotal":1250,"totalRaised":20,"totalRaisedFmt":"$20","lastFilingDate":"1990-07-06","cycle":1990,"fetchedAt":"2026-05-27T22:27:38.330Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-26","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ingersoll%20Rand&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T22:27:40.172Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T22:27:42.239Z","realCats":3,"flags":{"guns":{"na":true},"health":{"na":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Manufacturing"}}}
+{
+  "name": "Ingersoll Rand",
+  "cat": "Manufacturing",
+  "init": "INGE",
+  "overall": 50.9,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $6K PAC donations; 78% to Republican, 22% to Democratic committees.",
+    "amt": "$20",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "23 federal penalties totaling $8.0M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "charity": {
+    "s": "$5M reported corporate giving in 2024 (~0.07% of revenue).",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO total compensation $16.7M (2024; other named executives averaged $2.9M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-ecd"
+    ]
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "competitors": [
+    "atlas-copco",
+    "parker-hannifin",
+    "flowserve"
+  ],
+  "wiki": {
+    "founded": "1871-01-01",
+    "hq": "Swords",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "conglomerate",
+    "products": null,
+    "keyPeople": "Simon Ingersoll",
+    "website": "http://www.ingersollrand.com",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": null,
+    "extract": null
+  },
+  "bbb": {
+    "rating": "D-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nc/southern-pines/profile/air-compressors/ingersoll-rand-company-0593-90027094/addressId/37138"
+  },
+  "secComplaints": {
+    "count": 6,
+    "sample": [
+      {
+        "adsh": "0001193125-25-217778",
+        "date": "2025-09-25",
+        "filer": "CHART INDUSTRIES INC  (GTLS, GTLS-PB)  (CIK 0000892553)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001437749-24-038268",
+        "date": "2024-12-23",
+        "filer": "BROADWIND, INC.  (BWEN)  (CIK 0001120370)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-26-001508",
+        "date": "2026-01-05",
+        "filer": "Augusta SpinCo Corp  (CIK 0002082015)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ingersoll%20Rand%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 50,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "ingersoll-rand",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Ingersoll Rand",
+    "slug": "ingersoll-rand",
+    "ownership": "publicly traded (ticker symbol IR)",
+    "hq": "North Carolina",
+    "majorIndustry": "industrial equipment",
+    "specificIndustry": "industrial equipment",
+    "totalPenalty": 7960666,
+    "totalRecords": 23,
+    "offenseGroups": [
+      {
+        "category": "competition-related offenses",
+        "penalty": 7400987,
+        "records": 3
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 257757,
+        "records": 10
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 137500,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 134607,
+        "records": 5
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 29815,
+        "records": 4
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "Foreign Corrupt Practices Act",
+        "penalty": 6720987,
+        "records": 2
+      },
+      {
+        "category": "export control violation",
+        "penalty": 680000,
+        "records": 1
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 257757,
+        "records": 10
+      },
+      {
+        "category": "economic sanction violation",
+        "penalty": 137500,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 127119,
+        "records": 4
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T22:27:42.239Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00056226",
+    "committeeName": "INGERSOLL-RAND COMPANY POLITICAL ACTION COMMITTEE",
+    "lean": "right",
+    "repTotal": 4411,
+    "demTotal": 1250,
+    "totalRaised": 20,
+    "totalRaisedFmt": "$20",
+    "lastFilingDate": "1990-07-06",
+    "cycle": 1990,
+    "fetchedAt": "2026-05-27T22:27:38.330Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-26",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ingersoll%20Rand&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T22:27:40.172Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T22:27:42.239Z",
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Manufacturing"
+    }
+  }
+}

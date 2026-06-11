@@ -2,7 +2,7 @@
   "name": "Dick's Sporting Goods",
   "cat": "Retail",
   "init": "DKS",
-  "overall": 54.7,
+  "overall": 43,
   "isPublic": true,
   "ticker": "DKS",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "poor",
     "health": "mixed"
   },
   "political": {
@@ -79,10 +79,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 341:1 (median employee pay $11,259) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "113:1 (estimated based on available data)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -358,7 +359,7 @@
   "health": {
     "s": "10 CPSC recalls on record; sample hazard: an elastic drawstring hem near the ankle of the pants can create an extended loo."
   },
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "health": {
       "na": true

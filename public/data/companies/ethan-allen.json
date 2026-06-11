@@ -1,1 +1,334 @@
-{"name":"Ethan Allen","cat":"Retail","init":"EA","overall":45.9,"isPublic":true,"ticker":"ETD","sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $130K in executive political donations; partisan lean split across 7 executive donors.","amt":"$23,370 (2024 cycle)","lean":"Neutral","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"No public record found.","amt":"Not disclosed","focus":"Employee welfare, environmental responsibility, community development","sources":["Claude AI synthesis"]},"environment":{"s":"environmental violation: $74K in federal penalties (Violation Tracker).","rating":"Good","sources":["EPA","Violation Tracker"]},"labor":{"s":"16 federal penalties totaling $225K since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"~32:1","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-09-29","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ethan%20Allen&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","laborAPI":{"violationTracker":{"slug":"ethan-allen-interiors","matchedName":"Ethan Allen Interiors","totalPenalty":225392,"totalRecords":16,"offenseGroups":[{"category":"safety-related offenses","penalty":139882,"records":13},{"category":"environment-related offenses","penalty":79197,"records":2},{"category":"employment-related offenses","penalty":6313,"records":1}],"primaryOffenses":[{"category":"workplace safety or health violation","penalty":139882,"records":13},{"category":"environmental violation","penalty":73852,"records":1},{"category":"wage and hour violation","penalty":6313,"records":1},{"category":"air pollution violation","penalty":5345,"records":1}],"rating":"good"}},"competitors":["rh","la-z-boy","wayfair","pottery-barn-williams-sonoma"],"wiki":{"founded":"1932-00-00","hq":"Danbury","employees":null,"revenue":null,"parent":null,"industry":"furniture, hotel industry, interior design, industrial manufacturing","products":null,"keyPeople":"Nathan S. Ancell","website":"https://www.ethanallen.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ethan_Allen_Lexington_Avenue_NYC.jpg/330px-Ethan_Allen_Lexington_Avenue_NYC.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Ethan_Allen_(company)","extract":"Ethan Allen Interiors Inc. is an American manufacturer and retailer of home furnishings, incorporated in Delaware with executive offices in Danbury, Connecticut. As of June 30, 2023, the company reported net annual sales of $791.4 million."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/la/baton-rouge/profile/furniture-stores/ethan-allen-0835-90016415"},"secComplaints":{"count":2,"sample":[{"adsh":"0001159152-26-000048","date":"2026-05-20","filer":"James Hardie Industries plc  (JHX, JHIUF)  (CIK 0001159152)","form":"8-K"},{"adsh":"0001539497-24-002505","date":"2024-11-25","filer":"BANK5 2024-5YR12  (CIK 0002044491)","form":"8-K"}]},"payRatio":{"ratio":92,"ratioDisplay":"92:1","ceoPay":3833334,"medianWorkerPay":41578,"year":"2025","sourceForm":"DEF 14A","filedDate":"2025-09-26","sourceUrl":"https://www.sec.gov/Archives/edgar/data/896156/000110465925093869/tm2526263-2_def14a.htm"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Ehan-Allen.png","logoSource":"wikidata_p154","storeFootprint":{"usStoreCount":111,"byState":{"NY":4,"KY":3,"IL":3,"NJ":3,"CO":3,"TX":3,"OH":2,"PA":2,"CA":2,"AZ":2,"MD":1,"NC":1,"IA":1,"OR":1,"NH":1,"MN":1,"MA":1,"FL":1,"CT":1,"VA":1,"KS":1,"GA":1,"UT":1,"TN":1,"NE":1,"MI":1,"SC":1,"WI":1,"NV":1}},"slug":"ethan-allen","news":null,"deiBadges":null,"animalCerts":null,"products":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Ethan Allen Interiors","slug":"ethan-allen-interiors","ownership":"publicly traded (ticker symbol ETH)","hq":"Connecticut","majorIndustry":"housewares and home furnishings","specificIndustry":"furniture manufacturing and retailing","totalPenalty":225392,"totalRecords":16,"offenseGroups":[{"category":"safety-related offenses","penalty":139882,"records":13},{"category":"environment-related offenses","penalty":79197,"records":2},{"category":"employment-related offenses","penalty":6313,"records":1}],"primaryOffenses":[{"category":"workplace safety or health violation","penalty":139882,"records":13},{"category":"environmental violation","penalty":73852,"records":1},{"category":"wage and hour violation","penalty":6313,"records":1},{"category":"air pollution violation","penalty":5345,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-09-29","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ethan%20Allen&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z","realCats":3,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Ethan Allen",
+  "cat": "Retail",
+  "init": "EA",
+  "overall": 47.1,
+  "isPublic": true,
+  "ticker": "ETD",
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "mixed"
+  },
+  "political": {
+    "s": "FEC: $130K in executive political donations; partisan lean split across 7 executive donors.",
+    "amt": "$23,370 (2024 cycle)",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "Not disclosed",
+    "focus": "Employee welfare, environmental responsibility, community development",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "environmental violation: $74K in federal penalties (Violation Tracker).",
+    "rating": "Good",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "16 federal penalties totaling $225K since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 92:1 (median employee pay $41,578) — SEC proxy statement (DEF 14A, 2025).",
+    "ratio": "~32:1",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-09-29",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ethan%20Allen&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "ethan-allen-interiors",
+      "matchedName": "Ethan Allen Interiors",
+      "totalPenalty": 225392,
+      "totalRecords": 16,
+      "offenseGroups": [
+        {
+          "category": "safety-related offenses",
+          "penalty": 139882,
+          "records": 13
+        },
+        {
+          "category": "environment-related offenses",
+          "penalty": 79197,
+          "records": 2
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 6313,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 139882,
+          "records": 13
+        },
+        {
+          "category": "environmental violation",
+          "penalty": 73852,
+          "records": 1
+        },
+        {
+          "category": "wage and hour violation",
+          "penalty": 6313,
+          "records": 1
+        },
+        {
+          "category": "air pollution violation",
+          "penalty": 5345,
+          "records": 1
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "competitors": [
+    "rh",
+    "la-z-boy",
+    "wayfair",
+    "pottery-barn-williams-sonoma"
+  ],
+  "wiki": {
+    "founded": "1932-00-00",
+    "hq": "Danbury",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "furniture, hotel industry, interior design, industrial manufacturing",
+    "products": null,
+    "keyPeople": "Nathan S. Ancell",
+    "website": "https://www.ethanallen.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ethan_Allen_Lexington_Avenue_NYC.jpg/330px-Ethan_Allen_Lexington_Avenue_NYC.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ethan_Allen_(company)",
+    "extract": "Ethan Allen Interiors Inc. is an American manufacturer and retailer of home furnishings, incorporated in Delaware with executive offices in Danbury, Connecticut. As of June 30, 2023, the company reported net annual sales of $791.4 million."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/la/baton-rouge/profile/furniture-stores/ethan-allen-0835-90016415"
+  },
+  "secComplaints": {
+    "count": 2,
+    "sample": [
+      {
+        "adsh": "0001159152-26-000048",
+        "date": "2026-05-20",
+        "filer": "James Hardie Industries plc  (JHX, JHIUF)  (CIK 0001159152)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001539497-24-002505",
+        "date": "2024-11-25",
+        "filer": "BANK5 2024-5YR12  (CIK 0002044491)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "payRatio": {
+    "ratio": 92,
+    "ratioDisplay": "92:1",
+    "ceoPay": 3833334,
+    "medianWorkerPay": 41578,
+    "year": "2025",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2025-09-26",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/896156/000110465925093869/tm2526263-2_def14a.htm"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ehan-Allen.png",
+  "logoSource": "wikidata_p154",
+  "storeFootprint": {
+    "usStoreCount": 111,
+    "byState": {
+      "NY": 4,
+      "KY": 3,
+      "IL": 3,
+      "NJ": 3,
+      "CO": 3,
+      "TX": 3,
+      "OH": 2,
+      "PA": 2,
+      "CA": 2,
+      "AZ": 2,
+      "MD": 1,
+      "NC": 1,
+      "IA": 1,
+      "OR": 1,
+      "NH": 1,
+      "MN": 1,
+      "MA": 1,
+      "FL": 1,
+      "CT": 1,
+      "VA": 1,
+      "KS": 1,
+      "GA": 1,
+      "UT": 1,
+      "TN": 1,
+      "NE": 1,
+      "MI": 1,
+      "SC": 1,
+      "WI": 1,
+      "NV": 1
+    }
+  },
+  "slug": "ethan-allen",
+  "news": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Ethan Allen Interiors",
+    "slug": "ethan-allen-interiors",
+    "ownership": "publicly traded (ticker symbol ETH)",
+    "hq": "Connecticut",
+    "majorIndustry": "housewares and home furnishings",
+    "specificIndustry": "furniture manufacturing and retailing",
+    "totalPenalty": 225392,
+    "totalRecords": 16,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 139882,
+        "records": 13
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 79197,
+        "records": 2
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 6313,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 139882,
+        "records": 13
+      },
+      {
+        "category": "environmental violation",
+        "penalty": 73852,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 6313,
+        "records": 1
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 5345,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-09-29",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ethan%20Allen&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "realCats": 4,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  }
+}

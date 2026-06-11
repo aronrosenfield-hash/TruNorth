@@ -2,7 +2,7 @@
   "name": "Merck",
   "cat": "Healthcare",
   "init": "MRK",
-  "overall": 62.5,
+  "overall": 60.7,
   "isPublic": true,
   "ticker": "MRK",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed"
   },
   "political": {
@@ -89,10 +89,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 191:1 (median employee pay $108,614) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "416:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -386,7 +387,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: the bottle cap can be cracked which can cause the child-resistant closure to bec."
   },
-  "realCats": 6,
+  "realCats": 7,
   "enriched": {
     "newsweekMrc": {
       "rank": 14,

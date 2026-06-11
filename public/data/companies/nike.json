@@ -2,7 +2,7 @@
   "name": "Nike",
   "cat": "Apparel & Fashion",
   "init": "NKE",
-  "overall": 57.4,
+  "overall": 48.8,
   "isPublic": true,
   "ticker": "NKE",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "positive",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "poor",
     "transparency": "poor",
     "governance": "neutral"
   },
@@ -107,10 +107,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 545:1 (median employee pay $48,723) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "300:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -449,7 +450,7 @@
       "high-cred-news"
     ]
   },
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by Dow Jones Industrial Average; HQ Beaverton. (Wikidata Q483915)",
     "sources": [

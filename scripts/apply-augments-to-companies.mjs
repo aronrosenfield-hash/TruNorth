@@ -637,6 +637,66 @@ const WRITERS = [
   // with last-definition-wins, so this copy was DEAD code. The live writer
   // (snake_case case_count / total_back_wages_usd, tiered sc) is further
   // down in the file.
+  // ─── SEC DEF 14A — CEO pay ratio (execPay, SCORED) ─────────────────────
+  // R6 (2026-06-10): this augment sat in data/derived since Jun 8 with 188
+  // parsed pay ratios and NO writer — the single cheapest execPay unlock in
+  // the catalog. sc tiers MUST stay in sync with getDisplay's execPay
+  // labels in src/App.jsx: good = "<50:1", mixed = "50–300:1",
+  // poor = ">300:1". Entries without a true ratio get no sc (we never
+  // bucket from CEO comp alone — that's not what the category claims).
+  {
+    name: "sec-def14a",
+    write: (e) => {
+      const p = e?.execPay;
+      if (!p) return [];
+      let ratio = typeof p.payRatio === "number" ? p.payRatio : null;
+      if (ratio == null && typeof p.ceoTotal === "number" && typeof p.medianEmployeePay === "number" && p.medianEmployeePay > 0) {
+        ratio = Math.round(p.ceoTotal / p.medianEmployeePay);
+      }
+      const yr = p.year || (p.filingDate ? String(p.filingDate).slice(0, 4) : null);
+      const fmtUsd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : `$${Math.round(n / 1e3)}K`;
+      if (ratio != null) {
+        const sc = ratio < 50 ? "good" : ratio <= 300 ? "mixed" : "poor";
+        const bits = [`CEO-to-median-worker pay ratio ${Math.round(ratio)}:1`];
+        if (typeof p.medianEmployeePay === "number") bits.push(`median employee pay $${Math.round(p.medianEmployeePay).toLocaleString()}`);
+        if (typeof p.ceoTotal === "number") bits.push(`CEO total compensation ${fmtUsd(p.ceoTotal)}`);
+        return [{
+          category: "execPay",
+          narrative: `${bits[0]}${bits.length > 1 ? ` (${bits.slice(1).join("; ")})` : ""} — SEC proxy statement (DEF 14A${yr ? `, ${yr}` : ""}).`,
+          sc,
+          severity: sc === "poor" ? "negative" : sc === "good" ? "positive" : "neutral",
+        }];
+      }
+      // Ratio unavailable — factual comp narrative only, no verdict.
+      if (typeof p.ceoTotal === "number") {
+        return [{
+          category: "execPay",
+          narrative: `CEO total compensation ${fmtUsd(p.ceoTotal)} — SEC proxy statement (DEF 14A${yr ? `, ${yr}` : ""}). No CEO-to-worker pay ratio disclosed in a parseable form.`,
+        }];
+      }
+      return [];
+    },
+  },
+  // ─── SEC XBRL ecd — pay-versus-performance comp (execPay, narrative) ───
+  // R6 (2026-06-10): Item 402(v) XBRL frames. PEO total comp + avg other-NEO
+  // comp for ~1,000-1,500 filers/yr. NOT a worker pay ratio (Item 402(u) is
+  // never XBRL-tagged), so no sc — first-wins ordering means this only
+  // lands where sec-def14a didn't already write a scored entry.
+  {
+    name: "sec-ecd",
+    write: (e) => {
+      const p = e?.execPay;
+      if (!p || typeof p.peoTotal !== "number") return [];
+      const fmtUsd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : `$${Math.round(n / 1e3)}K`;
+      const neo = typeof p.avgNeoTotal === "number"
+        ? `; other named executives averaged ${fmtUsd(p.avgNeoTotal)}`
+        : "";
+      return [{
+        category: "execPay",
+        narrative: `CEO total compensation ${fmtUsd(p.peoTotal)} (${p.year}${neo}) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).`,
+      }];
+    },
+  },
   // ─── Exec political donations (FEC) ───────────────────────────────────
   // Actual augment shape: { political: { execDonationLean: "D+31", totalUsd,
   // donorCount, year, sources } }. The lean string uses PVI-style notation:

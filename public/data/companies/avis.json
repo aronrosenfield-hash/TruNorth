@@ -2,7 +2,7 @@
   "name": "Avis",
   "cat": "Automotive",
   "init": "ABG",
-  "overall": 44.5,
+  "overall": 46,
   "isPublic": true,
   "ticker": "CAR",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed"
   },
   "political": {
@@ -82,10 +82,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 151:1 (median employee pay $49,818) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "47:1 or greater",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -336,7 +337,7 @@
   "health": {
     "s": "5 CPSC recalls (1 in past 24 months); latest hazard: choking."
   },
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "animals": {
       "na": true

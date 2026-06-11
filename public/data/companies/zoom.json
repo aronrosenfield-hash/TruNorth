@@ -2,7 +2,7 @@
   "name": "Zoom",
   "cat": "Technology",
   "init": "ZM",
-  "overall": 43.7,
+  "overall": 54.4,
   "isPublic": true,
   "ticker": "ZM",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $126K in executive political donations; partisan lean split across 8 executive donors.",
@@ -78,10 +78,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 8:1 (median employee pay $165,164) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Low (CEO took pay cut)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -223,7 +224,7 @@
   "health": {
     "s": "4 CPSC recalls (1 in past 24 months); latest hazard: the recalled baby loungers violate the federal safety regulations for infant sle."
   },
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "animals": {
       "na": true

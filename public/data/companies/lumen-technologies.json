@@ -2,7 +2,7 @@
   "name": "Lumen Technologies",
   "cat": "Technology",
   "init": "LUM",
-  "overall": 42.9,
+  "overall": 45.2,
   "isPublic": true,
   "ticker": "LUMN",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "governance": "neutral",
     "health": "poor"
   },
@@ -83,10 +83,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 260:1 (median employee pay $96,065) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Not disclosed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -338,7 +339,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Monroe. (Wikidata Q5063092)",
     "sources": [

@@ -2,7 +2,7 @@
   "name": "Mastercard",
   "cat": "Financial Services",
   "init": "MA",
-  "overall": 57.4,
+  "overall": 56.1,
   "isPublic": true,
   "ticker": "MA",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "governance": "neutral"
   },
   "political": {
@@ -94,10 +94,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 284:1 (median employee pay $124,650) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "250:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -336,7 +337,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Purchase. (Wikidata Q489921)",
     "sources": [

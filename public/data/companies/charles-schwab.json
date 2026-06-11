@@ -2,7 +2,7 @@
   "name": "Charles Schwab",
   "cat": "Financial Services",
   "init": "CS",
-  "overall": 37.3,
+  "overall": 39.6,
   "isPublic": true,
   "ticker": "SCHW",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $31K PAC donations; 63% to Republican, 37% to Democratic committees.",
@@ -85,10 +85,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 143:1 (median employee pay $131,480) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "203:1 or higher",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -317,7 +318,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "flags": {
     "animals": {
       "na": true

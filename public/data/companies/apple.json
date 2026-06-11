@@ -2,7 +2,7 @@
   "name": "Apple",
   "cat": "Technology",
   "init": "APL",
-  "overall": 72.4,
+  "overall": 62.9,
   "isPublic": true,
   "ticker": "AAPL",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "good",
-    "execPay": "na"
+    "execPay": "poor"
   },
   "political": {
     "s": "FEC: $25K PAC donations; 68% to Republican, 32% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]  [Stanford DIME (Bonica) corroborates.]",
@@ -107,10 +107,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 533:1 (median employee pay $512) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "533:1 (FY2025 proxy)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -466,7 +467,7 @@
   "health": {
     "s": "16 CPSC recalls on record; sample hazard: an internal short can cause the battery cells to overheat."
   },
-  "realCats": 6,
+  "realCats": 7,
   "enriched": {
     "newsweekMrc": {
       "rank": 37,

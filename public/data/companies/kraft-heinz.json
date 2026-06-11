@@ -2,7 +2,7 @@
   "name": "Kraft Heinz",
   "cat": "Food & Beverage",
   "init": "KH",
-  "overall": 45.4,
+  "overall": 46.1,
   "isPublic": true,
   "ticker": "KHC",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -94,10 +94,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 170:1 — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Not disclosed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -414,7 +415,7 @@
   "health": {
     "s": "8 CPSC recalls (1 in past 24 months); latest hazard: the presence of aspergillus mold spores were discovered on the products."
   },
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikidata: owned by Berkshire Hathaway; HQ Pittsburgh. (Wikidata Q19681433)",
     "sources": [

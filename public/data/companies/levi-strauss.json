@@ -2,7 +2,7 @@
   "name": "Levi Strauss",
   "cat": "Apparel & Fashion",
   "init": "LS",
-  "overall": 59.8,
+  "overall": 66,
   "isPublic": true,
   "ticker": "LEVI",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $162K in executive political donations; partisan lean Democratic +41 across 9 executive donors.",
@@ -88,10 +88,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 0:1 (median employee pay $16,077; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "111:1 (estimated based on CEO vs median employee)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -281,7 +282,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "flags": {
     "guns": {
       "na": true

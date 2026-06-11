@@ -2,7 +2,7 @@
   "name": "General Dynamics",
   "cat": "Manufacturing",
   "init": "GD",
-  "overall": 45.1,
+  "overall": 46,
   "isPublic": true,
   "ticker": "GD",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "makes_weapons",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "mixed",
     "governance": "neutral"
   },
   "political": {
@@ -91,10 +91,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 241:1 (median employee pay $107,485) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Estimated 300+:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -355,7 +356,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by State Street Corporation; HQ Reston. (Wikidata Q502940)",
     "sources": [

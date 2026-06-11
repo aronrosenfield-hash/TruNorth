@@ -2,7 +2,7 @@
   "name": "ExxonMobil",
   "cat": "Energy & Utilities",
   "init": "XOM",
-  "overall": 49.5,
+  "overall": 49.6,
   "isPublic": true,
   "ticker": "XOM",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $103K PAC donations; 80% to Republican, 20% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
@@ -85,10 +85,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 181:1 (median employee pay $183,084) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "140:1 estimated (CEO compensation vs median employee)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -206,7 +207,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 4,
+  "realCats": 5,
   "industry_flags": {
     "tobacco": false,
     "fossil_fuel": true,

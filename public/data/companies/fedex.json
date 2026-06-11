@@ -2,7 +2,7 @@
   "name": "FedEx",
   "cat": "Professional Services",
   "init": "FDX",
-  "overall": 65,
+  "overall": 62.5,
   "isPublic": true,
   "ticker": "FDX",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "mixed",
     "governance": "neutral"
   },
   "political": {
@@ -96,10 +96,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 254:1 (median employee pay $50,791) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "Estimated 300+:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -353,7 +354,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Memphis. (Wikidata Q459477)",
     "sources": [

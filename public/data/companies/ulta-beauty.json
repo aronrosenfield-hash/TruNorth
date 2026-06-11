@@ -2,7 +2,7 @@
   "name": "Ulta Beauty",
   "cat": "Retail",
   "init": "UB",
-  "overall": 48.8,
+  "overall": 49.1,
   "isPublic": true,
   "ticker": "ULTA",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -80,10 +80,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 296:1 (median employee pay $11,883) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "1,130:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -358,7 +359,7 @@
       "animal-welfare-ag-r3"
     ]
   },
-  "realCats": 4,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Bolingbrook. (Wikidata Q7880076)",
     "sources": [

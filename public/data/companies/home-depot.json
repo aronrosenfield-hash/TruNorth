@@ -2,7 +2,7 @@
   "name": "Home Depot",
   "cat": "Retail",
   "init": "HD",
-  "overall": 40,
+  "overall": 35.5,
   "isPublic": true,
   "ticker": "HD",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na",
+    "execPay": "poor",
     "governance": "mixed"
   },
   "political": {
@@ -91,10 +91,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 2026:1 (median employee pay $37,881; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2011).",
     "ratio": "443:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -458,7 +459,7 @@
   "health": {
     "s": "10 CPSC recalls on record; sample hazard: the mirror can detach from the medicine cabinet door."
   },
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: The Home Depot was embroiled in whistleblower litigation brought under the Sarbanes-Oxley Act (SOX) law. In July 2005, former employee Michael Davis, represented by attorney Mark D. Schwartz, filed…",
     "sources": [

@@ -2,7 +2,7 @@
   "name": "Microsoft",
   "cat": "Technology",
   "init": "MSF",
-  "overall": 55.8,
+  "overall": 49,
   "isPublic": true,
   "ticker": "MSFT",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "positive",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na",
+    "execPay": "poor",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -109,10 +109,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 480:1 (median employee pay $200,972) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "408:1 (FY2024); 480:1 (FY2025)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -520,7 +521,7 @@
       "child-safety-tech"
     ]
   },
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Redmond. (Wikidata Q2283)",
     "sources": [

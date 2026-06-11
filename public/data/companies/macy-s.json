@@ -2,7 +2,7 @@
   "name": "Macy's",
   "cat": "Retail",
   "init": "MYS",
-  "overall": 53.5,
+  "overall": 44.4,
   "isPublic": true,
   "ticker": "M",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "poor",
     "health": "poor"
   },
   "political": {
@@ -80,10 +80,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 368:1 (median employee pay $38,296) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "417:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -343,7 +344,7 @@
   "health": {
     "s": "19 CPSC recalls (2 in past 24 months); latest hazard: fire & fire-related burn."
   },
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true

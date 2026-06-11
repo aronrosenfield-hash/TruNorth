@@ -2,7 +2,7 @@
   "name": "Disney",
   "cat": "Entertainment & Media",
   "init": "DIS",
-  "overall": 48.8,
+  "overall": 42.7,
   "isPublic": true,
   "ticker": "DIS",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "positive",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na"
+    "execPay": "poor"
   },
   "political": {
     "s": "FEC: $22K PAC donations; 65% to Republican, 35% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]  [FollowTheMoney.org adds state-level totals.]",
@@ -98,10 +98,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 805:1 (median employee pay $56,932) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "746:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -367,7 +368,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 6,
+  "realCats": 7,
   "enriched": {
     "newsweekMrc": {
       "rank": 44,

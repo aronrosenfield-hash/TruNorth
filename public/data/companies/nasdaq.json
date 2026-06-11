@@ -1,1 +1,237 @@
-{"name":"Nasdaq","cat":"Financial Services","init":"NASD","overall":46.1,"isPublic":true,"sc":{"political":"right","charity":"mixed","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"FEC: $26K PAC donations; 73% to Republican, 27% to Democratic committees.","amt":"$124K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"5 federal penalties totaling $38.3M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","ab":"#2a0d0d","ac":"#e24a4a","charity":{"s":"$8M reported corporate giving in 2024 (~0.12% of revenue) via Nasdaq Foundation.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":[]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":["london-stock-exchange","japan-exchange-group-inc-adr","lear"],"wiki":{"founded":"1971-02-04","hq":"New York City, One Liberty Plaza","employees":null,"revenue":null,"parent":"Nasdaq, Inc.","industry":"financial services","products":null,"keyPeople":null,"website":"https://www.nasdaq.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nasdaq_Tower_May_2026.jpg/330px-Nasdaq_Tower_May_2026.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Nasdaq","extract":"The Nasdaq Stock Market is an American stock exchange. It is the second-largest stock exchange by market capitalization and the first fully electronic stock market. Based in Manhattan, New York City, the exchange is among the most active stock trading venues by volume in the United States."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ia/cedar-rapids/profile/insurance-companies/ufg-insurance-united-fire-casualty-company-united-fire-group-inc-nasdaq-ufcs-0664-22001252"},"secComplaints":{"count":4075,"sample":[{"adsh":"0001140361-24-032410","date":"2024-07-03","filer":"Trump Media & Technology Group Corp.  (DJT, DJTWW)  (CIK 0001849635)","form":"8-K"},{"adsh":"0001140361-24-038420","date":"2024-08-23","filer":"Trump Media & Technology Group Corp.  (DJT, DJTWW)  (CIK 0001849635)","form":"8-K"},{"adsh":"0001193125-24-287056","date":"2024-12-31","filer":"Dave Inc./DE  (DAVE, DAVEW)  (CIK 0001841408)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/NASDAQ%20Logo.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":85,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"},{"scoreType":"bloomberg_gei","score":100,"year":2023,"sourceUrl":"https://assets.bbhub.io/company/sites/46/2023/01/GEI-MemberList.pdf"}],"slug":"nasdaq","news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Nasdaq Inc.","slug":"nasdaq-inc","ownership":"publicly traded (ticker symbol NDAQ)","hq":"New York","majorIndustry":"financial services","specificIndustry":"financial services","totalPenalty":38285923,"totalRecords":5,"offenseGroups":[{"category":"financial offenses","penalty":38285923,"records":5}],"primaryOffenses":[{"category":"investor protection violation","penalty":34245000,"records":4},{"category":"economic sanction violation","penalty":4040923,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T17:14:38.017Z"},"fec":{"source":"FEC API","committeeId":"C00366013","committeeName":"NASDAQ, INC. PAC (NASDAQ PAC)","lean":"right","repTotal":18500,"demTotal":7000,"totalRaised":124418,"totalRaisedFmt":"$124K","lastFilingDate":"2026-05-12","cycle":2026,"fetchedAt":"2026-05-27T17:14:34.676Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-24","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Nasdaq&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T17:14:36.313Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T17:14:38.017Z","realCats":3,"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Financial Services"}}}
+{
+  "name": "Nasdaq",
+  "cat": "Financial Services",
+  "init": "NASD",
+  "overall": 46.1,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $26K PAC donations; 73% to Republican, 27% to Democratic committees.",
+    "amt": "$124K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "5 federal penalties totaling $38.3M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "charity": {
+    "s": "$8M reported corporate giving in 2024 (~0.12% of revenue) via Nasdaq Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "execPay": {
+    "s": "CEO total compensation $21.5M (2024; other named executives averaged $5.9M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-ecd"
+    ]
+  },
+  "competitors": [
+    "london-stock-exchange",
+    "japan-exchange-group-inc-adr",
+    "lear"
+  ],
+  "wiki": {
+    "founded": "1971-02-04",
+    "hq": "New York City, One Liberty Plaza",
+    "employees": null,
+    "revenue": null,
+    "parent": "Nasdaq, Inc.",
+    "industry": "financial services",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.nasdaq.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Nasdaq_Tower_May_2026.jpg/330px-Nasdaq_Tower_May_2026.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Nasdaq",
+    "extract": "The Nasdaq Stock Market is an American stock exchange. It is the second-largest stock exchange by market capitalization and the first fully electronic stock market. Based in Manhattan, New York City, the exchange is among the most active stock trading venues by volume in the United States."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ia/cedar-rapids/profile/insurance-companies/ufg-insurance-united-fire-casualty-company-united-fire-group-inc-nasdaq-ufcs-0664-22001252"
+  },
+  "secComplaints": {
+    "count": 4075,
+    "sample": [
+      {
+        "adsh": "0001140361-24-032410",
+        "date": "2024-07-03",
+        "filer": "Trump Media & Technology Group Corp.  (DJT, DJTWW)  (CIK 0001849635)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001140361-24-038420",
+        "date": "2024-08-23",
+        "filer": "Trump Media & Technology Group Corp.  (DJT, DJTWW)  (CIK 0001849635)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-24-287056",
+        "date": "2024-12-31",
+        "filer": "Dave Inc./DE  (DAVE, DAVEW)  (CIK 0001841408)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NASDAQ%20Logo.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 85,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    },
+    {
+      "scoreType": "bloomberg_gei",
+      "score": 100,
+      "year": 2023,
+      "sourceUrl": "https://assets.bbhub.io/company/sites/46/2023/01/GEI-MemberList.pdf"
+    }
+  ],
+  "slug": "nasdaq",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Nasdaq Inc.",
+    "slug": "nasdaq-inc",
+    "ownership": "publicly traded (ticker symbol NDAQ)",
+    "hq": "New York",
+    "majorIndustry": "financial services",
+    "specificIndustry": "financial services",
+    "totalPenalty": 38285923,
+    "totalRecords": 5,
+    "offenseGroups": [
+      {
+        "category": "financial offenses",
+        "penalty": 38285923,
+        "records": 5
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "investor protection violation",
+        "penalty": 34245000,
+        "records": 4
+      },
+      {
+        "category": "economic sanction violation",
+        "penalty": 4040923,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T17:14:38.017Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00366013",
+    "committeeName": "NASDAQ, INC. PAC (NASDAQ PAC)",
+    "lean": "right",
+    "repTotal": 18500,
+    "demTotal": 7000,
+    "totalRaised": 124418,
+    "totalRaisedFmt": "$124K",
+    "lastFilingDate": "2026-05-12",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-27T17:14:34.676Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-24",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Nasdaq&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T17:14:36.313Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T17:14:38.017Z",
+  "realCats": 3,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Financial Services"
+    }
+  }
+}

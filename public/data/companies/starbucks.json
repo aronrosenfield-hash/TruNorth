@@ -2,7 +2,7 @@
   "name": "Starbucks",
   "cat": "Food & Beverage",
   "init": "SBX",
-  "overall": 57,
+  "overall": 50.9,
   "isPublic": true,
   "ticker": "SBUX",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "positive",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "neutral",
+    "execPay": "poor",
     "health": "mixed"
   },
   "political": {
@@ -93,9 +93,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 794:1 (median employee pay $34,699) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "6,666:1",
-    "sources": []
+    "sources": [
+      "sec-def14a"
+    ]
   },
   "execPayAPI": {
     "sec": {
@@ -477,7 +479,7 @@
   "health": {
     "s": "11 CPSC recalls on record; sample hazard: if microwaved or filled with extremely hot liquid."
   },
-  "realCats": 7,
+  "realCats": 8,
   "enriched": {
     "newsweekMrc": {
       "rank": 30,

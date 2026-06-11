@@ -2,7 +2,7 @@
   "name": "Chevron",
   "cat": "Energy & Utilities",
   "init": "CHV",
-  "overall": 37.4,
+  "overall": 39.5,
   "isPublic": true,
   "ticker": "CVX",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "mixed",
     "governance": "mixed"
   },
   "political": {
@@ -89,10 +89,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 175:1 (median employee pay $190) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Approximately 200:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -389,7 +390,7 @@
       "source": "newsweek-mrc"
     }
   },
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata records a notable event: Public Eye Environment Award. (Wikidata Q319642)",
     "sources": [

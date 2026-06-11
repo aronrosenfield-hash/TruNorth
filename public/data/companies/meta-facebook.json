@@ -2,7 +2,7 @@
   "name": "Meta / Facebook",
   "cat": "Technology",
   "init": "MTA",
-  "overall": 25.6,
+  "overall": 33.8,
   "isPublic": true,
   "ticker": "META",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "poor"
   },
   "political": {
@@ -72,10 +72,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 65:1 (median employee pay $388,200) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "~72:1 (other NEOs vs. median worker); CEO ratio atypical due to $1 base salary",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -141,7 +142,7 @@
       "child-safety-tech"
     ]
   },
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true

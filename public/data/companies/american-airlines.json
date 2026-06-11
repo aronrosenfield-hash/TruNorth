@@ -2,7 +2,7 @@
   "name": "American Airlines",
   "cat": "Hospitality",
   "init": "AAL",
-  "overall": 34.8,
+  "overall": 36.8,
   "isPublic": true,
   "ticker": "AAL",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na",
+    "execPay": "mixed",
     "violations": "poor",
     "violations.s": "837 federal violations totaling $324.4M in penalties; major fines include $110.8M aviation safety and $63.2M consumer protection.",
     "health": "poor"
@@ -93,10 +93,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 155:1 (median employee pay $89,429) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "155:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -339,7 +340,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 7,
+  "realCats": 8,
   "health": {
     "s": "American Airlines: DOT 2025 ATCR — 77.8% on-time arrivals, 3.42 complaints per 100K passengers, 7.3 mishandled bags per 1K. 1 DOT enforcement action (~$50.0M in penalties). Largest DOT civil penalty in agency history (wheelchair mistreatment, 2024). No Part 121 fatalities.",
     "sources": [

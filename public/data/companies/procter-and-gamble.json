@@ -2,7 +2,7 @@
   "name": "Procter & Gamble",
   "cat": "Consumer Goods",
   "init": "P&G",
-  "overall": 52,
+  "overall": 51.7,
   "isPublic": true,
   "ticker": "PG",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -98,10 +98,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 276:1 (median employee pay $79,510) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "Not disclosed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -374,7 +375,7 @@
   "health": {
     "s": "4 CPSC recalls (1 in past 24 months); latest hazard: the handheld hair dryers lack an immersion protection device."
   },
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikidata: owned by The Vanguard Group; HQ Ohio. (Wikidata Q212405)",
     "sources": [

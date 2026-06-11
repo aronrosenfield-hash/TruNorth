@@ -2,7 +2,7 @@
   "name": "Humana",
   "cat": "Healthcare",
   "init": "HUM",
-  "overall": 39.6,
+  "overall": 41.2,
   "isPublic": true,
   "ticker": "HUM",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "poor",
     "governance": "mixed"
   },
@@ -88,10 +88,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 226:1 (CEO total compensation $1.3M) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "226:1 (2025)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -365,7 +366,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikipedia \"Controversy\" section: In 1987, Humana sued NBC over a story line in the television medical drama St. Elsewhere in which the hospital was to be sold to a for-profit medical corporation and renamed \"Ecumena\", with…",
     "sources": [

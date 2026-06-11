@@ -2,7 +2,7 @@
   "name": "Dollar Tree",
   "cat": "Retail",
   "init": "DT",
-  "overall": 53.8,
+  "overall": 44.2,
   "isPublic": true,
   "ticker": "DLTR",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "poor",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -80,10 +80,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 911:1 (median employee pay $16,214) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "~408:1 (CEO to full-time median worker)",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -458,7 +459,7 @@
   "health": {
     "s": "28 CPSC recalls on record; sample hazard: choking."
   },
-  "realCats": 4,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Chesapeake. (Wikidata Q5289230)",
     "sources": [

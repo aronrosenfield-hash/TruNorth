@@ -2,7 +2,7 @@
   "name": "Gap Inc.",
   "cat": "Apparel & Fashion",
   "init": "GI",
-  "overall": 50,
+  "overall": 57.2,
   "isPublic": true,
   "ticker": "GAP",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "na",
+    "execPay": "good",
     "health": "mixed",
     "governance": "mixed"
   },
@@ -95,10 +95,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 0:1 (median employee pay $10,170; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2022).",
     "ratio": "Estimated 250:1+",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -345,7 +346,7 @@
   "health": {
     "s": "11 CPSC recalls (1 in past 24 months); latest hazard: the detachable tissue box toy can come apart."
   },
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikidata records a notable event: Public Eye Jury Award. (Wikidata Q420822)",
     "sources": [

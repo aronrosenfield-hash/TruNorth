@@ -1,1 +1,183 @@
-{"name":"Allegiant Air","cat":"Hospitality","init":"ALG","overall":44,"isPublic":true,"ticker":"ALGT","sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","health":"poor"},"political":{"s":"FEC: $228K in executive political donations; partisan lean split across 13 executive donors.","amt":"$615,000 lobbying (2024)","lean":"Neutral","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"No public record found.","amt":"$1+ million annually","focus":"Medical assistance (Make-A-Wish), community safety, STEM education","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Below Average","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Mixed","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Not disclosed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Approximately 100:1 or higher","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-04-01","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Allegiant%20Air&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","competitors":["southwest-airlines","spirit-airlines","frontier-airlines"],"wiki":{"founded":"1997-01-00","hq":"Enterprise","employees":null,"revenue":null,"parent":"Allegiant Travel Company","industry":"civil aviation","products":null,"keyPeople":null,"website":"https://www.allegiantair.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Allegiant_Air_logo.svg/330px-Allegiant_Air_logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Allegiant_Air","extract":"Allegiant Air is an American ultra-low-cost airline headquartered in Las Vegas, Nevada. The airline focuses on serving leisure traffic from small and medium-sized cities which it considers to be underserved, offering low base fares with minimal inclusions in fares and a greater number of add-on fees."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/la/shreveport/profile/airlines/allegiant-air-1015-90048106"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Allegiant%20Air%20logo.svg","logoSource":"wikidata_p154","slug":"allegiant-air","secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-01","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Allegiant%20Air&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-17T23:59:59.000Z","realCats":2,"health":{"s":"Allegiant Air: DOT 2025 ATCR — 73.2% on-time arrivals, 4.61 complaints per 100K passengers, 2.9 mishandled bags per 1K. 1 DOT enforcement action. 60 Minutes 2018 investigation flagged mechanical-reliability concerns; FAA increased oversight. NTSB database shows 4 incidents 2020-2025 including engine failures.","sources":["aviation-deep"]},"flags":{"animals":{"na":true},"guns":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Hospitality"}}}
+{
+  "name": "Allegiant Air",
+  "cat": "Hospitality",
+  "init": "ALG",
+  "overall": 61.7,
+  "isPublic": true,
+  "ticker": "ALGT",
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "good",
+    "health": "poor"
+  },
+  "political": {
+    "s": "FEC: $228K in executive political donations; partisan lean split across 13 executive donors.",
+    "amt": "$615,000 lobbying (2024)",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "$1+ million annually",
+    "focus": "Medical assistance (Make-A-Wish), community safety, STEM education",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "No public record found.",
+    "rating": "Below Average",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 32:1 (median employee pay $68,412) — SEC proxy statement (DEF 14A, 2026).",
+    "ratio": "Approximately 100:1 or higher",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-04-01",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Allegiant%20Air&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "southwest-airlines",
+    "spirit-airlines",
+    "frontier-airlines"
+  ],
+  "wiki": {
+    "founded": "1997-01-00",
+    "hq": "Enterprise",
+    "employees": null,
+    "revenue": null,
+    "parent": "Allegiant Travel Company",
+    "industry": "civil aviation",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.allegiantair.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Allegiant_Air_logo.svg/330px-Allegiant_Air_logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Allegiant_Air",
+    "extract": "Allegiant Air is an American ultra-low-cost airline headquartered in Las Vegas, Nevada. The airline focuses on serving leisure traffic from small and medium-sized cities which it considers to be underserved, offering low base fares with minimal inclusions in fares and a greater number of add-on fees."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/la/shreveport/profile/airlines/allegiant-air-1015-90048106"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Allegiant%20Air%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "allegiant-air",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-01",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Allegiant%20Air&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-17T23:59:59.000Z",
+  "realCats": 3,
+  "health": {
+    "s": "Allegiant Air: DOT 2025 ATCR — 73.2% on-time arrivals, 4.61 complaints per 100K passengers, 2.9 mishandled bags per 1K. 1 DOT enforcement action. 60 Minutes 2018 investigation flagged mechanical-reliability concerns; FAA increased oversight. NTSB database shows 4 incidents 2020-2025 including engine failures.",
+    "sources": [
+      "aviation-deep"
+    ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Hospitality"
+    }
+  }
+}

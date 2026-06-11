@@ -2,7 +2,7 @@
   "name": "Visa",
   "cat": "Financial Services",
   "init": "VIS",
-  "overall": 57.6,
+  "overall": 56.3,
   "isPublic": true,
   "ticker": "V",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -93,10 +93,11 @@
     "sources": []
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 204:1 (median employee pay $154,909) — SEC proxy statement (DEF 14A, 2025).",
     "ratio": "254:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -328,7 +329,7 @@
   "health": {
     "s": "HHS Office of Inspector General: 1 recent OIG enforcement action (past 24mo)."
   },
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Mission Rock. (Wikidata Q328840)",
     "sources": [

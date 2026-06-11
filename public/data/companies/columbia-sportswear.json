@@ -2,7 +2,7 @@
   "name": "Columbia Sportswear",
   "cat": "Apparel & Fashion",
   "init": "CS",
-  "overall": 46.8,
+  "overall": 47.5,
   "isPublic": true,
   "ticker": "COLM",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed"
   },
   "political": {
@@ -83,10 +83,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 99:1 (median employee pay $30,613) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Approximately 24:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -266,7 +267,7 @@
   "health": {
     "s": "3 CPSC recalls on record; sample hazard: the batteries have a cell defect which can cause overheating."
   },
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true

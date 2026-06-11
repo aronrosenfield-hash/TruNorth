@@ -1,1 +1,176 @@
-{"name":"Calvin Klein / PVH","cat":"Apparel & Fashion","init":"PVH","overall":55,"isPublic":true,"ticker":"PVH","sc":{"political":"left-leaning","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $167K in executive political donations; partisan lean Democratic +26 across 10 executive donors.","amt":"$60,297 (2024 employee donations)","lean":"Neutral","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"$8M reported corporate giving in 2024 (~0.09% of revenue) via PVH Foundation.","amt":"$6.7 million annually","focus":"Education, women and children's welfare, autism awareness, community development","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","rating":"Good","sources":["Claude AI synthesis"]},"labor":{"s":"Fashion Revolution Transparency Index: 56% disclosure across supply chain, policies, governance, and impact. Mid-pack apparel transparency.","rating":"Mixed","sources":["Claude AI synthesis","fashion-revolution"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"897:1 to 943:1","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-05-10","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Calvin%20Klein&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","competitors":["industria-de-diseno-textil-inditex-sa-adr","handm","gap-inc","kering"],"wiki":{"founded":null,"hq":null,"employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":null,"controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/5/54/Calvin_Klein_2011_Shankbone.JPG","wikipediaUrl":"https://en.wikipedia.org/wiki/Calvin_Klein","extract":"Calvin Richard Klein (born November 19, 1942) is an American fashion designer. In 1968, he launched the company that later became Calvin Klein. In addition to clothing, he has also given his name to a range of perfumes, watches, and jewellery."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nj/bridgewater/profile/clothing/pvh-retail-stores-llc-1296-22728331/addressId/745351"},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/5/54/Calvin_Klein_2011_Shankbone.JPG","logoSource":"wiki_infobox","slug":"calvin-klein-pvh","secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-05-10","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Calvin%20Klein&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-16T23:59:59.000Z","realCats":3,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Apparel & Fashion"}}}
+{
+  "name": "Calvin Klein / PVH",
+  "cat": "Apparel & Fashion",
+  "init": "PVH",
+  "overall": 42.5,
+  "isPublic": true,
+  "ticker": "PVH",
+  "sc": {
+    "political": "left-leaning",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "poor"
+  },
+  "political": {
+    "s": "FEC: $167K in executive political donations; partisan lean Democratic +26 across 10 executive donors.",
+    "amt": "$60,297 (2024 employee donations)",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "$8M reported corporate giving in 2024 (~0.09% of revenue) via PVH Foundation.",
+    "amt": "$6.7 million annually",
+    "focus": "Education, women and children's welfare, autism awareness, community development",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Good",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "Fashion Revolution Transparency Index: 56% disclosure across supply chain, policies, governance, and impact. Mid-pack apparel transparency.",
+    "rating": "Mixed",
+    "sources": [
+      "Claude AI synthesis",
+      "fashion-revolution"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 689:1 (median employee pay $23,461) — SEC proxy statement (DEF 14A, 2026).",
+    "ratio": "897:1 to 943:1",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-05-10",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Calvin%20Klein&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "industria-de-diseno-textil-inditex-sa-adr",
+    "handm",
+    "gap-inc",
+    "kering"
+  ],
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": null,
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Calvin_Klein_2011_Shankbone.JPG",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Calvin_Klein",
+    "extract": "Calvin Richard Klein (born November 19, 1942) is an American fashion designer. In 1968, he launched the company that later became Calvin Klein. In addition to clothing, he has also given his name to a range of perfumes, watches, and jewellery."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nj/bridgewater/profile/clothing/pvh-retail-stores-llc-1296-22728331/addressId/745351"
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Calvin_Klein_2011_Shankbone.JPG",
+  "logoSource": "wiki_infobox",
+  "slug": "calvin-klein-pvh",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-05-10",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Calvin%20Klein&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "realCats": 4,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Apparel & Fashion"
+    }
+  }
+}

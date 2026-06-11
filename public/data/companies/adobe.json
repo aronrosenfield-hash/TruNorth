@@ -2,7 +2,7 @@
   "name": "Adobe",
   "cat": "Technology",
   "init": "ADO",
-  "overall": 55.6,
+  "overall": 54.8,
   "isPublic": true,
   "ticker": "ADBE",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "positive",
     "guns": "neutral",
     "privacy": "poor",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed"
   },
   "political": {
@@ -91,10 +91,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 217:1 (median employee pay $235,989; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2023).",
     "ratio": "30+:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -366,7 +367,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: when two or more magnets are swallowed."
   },
-  "realCats": 6,
+  "realCats": 7,
   "enriched": {
     "newsweekMrc": {
       "rank": 9,

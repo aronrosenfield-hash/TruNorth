@@ -2,7 +2,7 @@
   "name": "Lincoln / Ford",
   "cat": "Automotive",
   "init": "LF",
-  "overall": 48,
+  "overall": 49,
   "isPublic": true,
   "ticker": "F",
   "sc": {
@@ -14,7 +14,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "good"
   },
   "political": {
@@ -81,10 +81,11 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 295:1 (median employee pay $93,397; CEO total compensation $1K) — SEC proxy statement (DEF 14A, 2016).",
     "ratio": "295:1",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "execPayAPI": {
@@ -176,7 +177,7 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true

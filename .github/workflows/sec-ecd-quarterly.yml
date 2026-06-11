@@ -1,0 +1,49 @@
+name: sec-ecd-quarterly
+
+# SEC XBRL ecd (pay-versus-performance) executive-compensation frames →
+# data/derived/sec-ecd-augment.json (execPay narratives for ~700+ public
+# parents) + universe expansion for the annual sec-def14a pay-ratio crawl.
+# R6 research: docs/research/data-sources-r6-coverage-gaps-2026-06-10.md.
+#
+# Quarterly is plenty: the underlying disclosures are annual (proxy season
+# Mar–Jun), and the frames API refreshes continuously as filings land.
+
+on:
+  schedule:
+    - cron: "0 6 5 1,4,7,10 *"   # 06:00 UTC, 5th of Jan/Apr/Jul/Oct
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit raw + augment back to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch ecd frames + match to catalog
+        run: node scripts/sec-ecd-fetch.mjs --apply
+
+      - name: Run tests
+        run: node scripts/sec-ecd-fetch.test.mjs
+
+      - name: Apply augments into per-company JSON
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name  "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/raw/sec-ecd/ data/derived/sec-ecd-augment.json public/data/companies/ || true
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(execPay): quarterly SEC ecd frames refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
