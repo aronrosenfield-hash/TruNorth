@@ -136,7 +136,7 @@ async function main() {
   <!-- Primary CTA: Annual -->
   <rect x="80" y="${SB + 1430}" width="${CW}" height="110" rx="18" fill="${P.gold}"/>
   <text x="${W/2}" y="${SB + 1500}" text-anchor="middle" font-family="-apple-system, Helvetica, sans-serif" font-size="32" font-weight="800" fill="#000">
-    Subscribe — \$14.99/yr · save 42%
+    Subscribe — \$14.99/yr · save 37%
   </text>
 
   <!-- Monthly link -->
