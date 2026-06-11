@@ -86,9 +86,9 @@ All scripted in `/docs/producthunt/LAUNCH_DAY_PLAYBOOK.md`.
 
 | ID | Item | Blocked on |
 |---|---|---|
-| **X-0** | Flip `PRO_WAITLIST_MODE = false` to enable real IAP | RevenueCat live + LLC + bank (X-2). Single constant flip in `src/App.jsx` once unblocked. |
+| **X-0** | Flip `PRO_WAITLIST_MODE = false` + `IAP_SAFE_MODE = false` to enable real IAP | ✅ UNBLOCKED (2026-06-11: LLC ✓, bank ✓, RevenueCat ✓ per Aron). Remaining: rebase/merge `feat/paywall-go-live` onto much-moved main, finish both subs' ASC metadata (screenshot/localization/EULA+privacy links per 3.1.2(c)), sandbox-test purchase, submit version+subs together. |
 | **X-1** | App Store URL in PH First Comment + landing CTA | Apple App Store approval (target: Jun 17 submit, Jun 22 approve) |
-| **X-2** | RevenueCat / Stripe / Apple IAP integration | TruNorthApp LLC + business bank account. Plan at `/docs/payments-integration-plan.md`. |
+| ~~X-2~~ | ~~RevenueCat / Apple IAP integration~~ | ✅ DONE on `feat/paywall-go-live` (91148e52b + bc649612d); LLC + bank + RevenueCat account live (Aron, confirmed 2026-06-11). Web Stripe side still per plan doc. |
 | **X-3** | Apify Indeed reviews scraper | $10/mo Apify subscription + `APIFY_API_TOKEN` |
 | **X-4** | MailerLite paid plan | >1k subscribers OR >12k emails/month |
 | **X-5** | Annual + lifetime pricing tiers | RevenueCat live (depends on X-2) |
