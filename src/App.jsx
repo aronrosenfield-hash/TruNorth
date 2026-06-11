@@ -717,9 +717,15 @@ function scoreCat(k, v, profile, co) {
   const csc = (co?.csc && typeof co.csc[k] === "number") ? co.csc[k] : null;
 
   if (k === "political") {
+    // Build 56 (Aron's WPCR repro): mismatch was a flat 8 with a 1.5× boost —
+    // most large consumer brands donate left and run DEI programs, so a
+    // right-lean profile saw boosted 8s on nearly every brand → wall of F's.
+    // Mismatch is now bad-not-catastrophic and GRADED by intensity: hard
+    // opposite 20, leaning opposite 35; match gradient 100/85. Fully
+    // symmetric — left and right profiles get identical treatment.
     const lean = profile?.lean || "neutral";
-    if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["right","right-leaning"].includes(val)) return 8; return 50; }
-    if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["left","left-leaning"].includes(val)) return 8; return 50; }
+    if (lean === "left")   { if (val==="left") return 100; if (val==="left-leaning") return 85; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (val==="right-leaning") return 35; if (val==="right") return 20; return 50; }
+    if (lean === "right")  { if (val==="right") return 100; if (val==="right-leaning") return 85; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (val==="left-leaning") return 35; if (val==="left") return 20; return 50; }
     // neutral / no lean — use baked signal-differentiated score (csc fixes the
     // index-vs-detail flicker: politicalScoreApp needs co.political.s, which
     // index entries don't carry, so it used to hit parse defaults on rows).
@@ -727,9 +733,12 @@ function scoreCat(k, v, profile, co) {
   }
 
   if (k === "dei") {
+    // Build 56: mismatch 8 → 30 (see political comment — DEI programs are
+    // near-universal at large brands; a flat 8 made anti-DEI profiles grade
+    // everything F. Symmetric for pro-DEI users on anti_dei brands).
     const deiLean = profile?.deiLean || "neutral";
-    if (deiLean === "pro")  { if (val==="pro_dei") return 100; if (val==="anti_dei") return 8; return 50; }
-    if (deiLean === "anti") { if (val==="anti_dei") return 100; if (val==="pro_dei") return 8; return 50; }
+    if (deiLean === "pro")  { if (val==="pro_dei") return 100; if (val==="anti_dei") return 30; return 50; }
+    if (deiLean === "anti") { if (val==="anti_dei") return 100; if (val==="pro_dei") return 30; return 50; }
     return 50;
   }
 
@@ -741,9 +750,14 @@ function scoreCat(k, v, profile, co) {
   }
 
   if (k === "guns") {
+    // Build 56 (100 Thieves repro): 1,626 retailers now carry a factual
+    // "no_guns" (Lever 2). For a pro-firearms user, NOT selling guns is not
+    // a values violation — at 35 it turned every non-gun retailer into a
+    // penalty. no_guns is neutral (50) for supporters; selling/making stays
+    // their positive. Avoiders keep the original mapping (explicit stance).
     const pref = profile?.guns || "neutral";
     if (pref === "avoid")   { if (val==="no_guns") return 100; if (["sells_guns","makes_guns"].includes(val)) return 8; return 50; }
-    if (pref === "support") { if (val==="no_guns") return 35; if (["sells_guns","makes_guns"].includes(val)) return 100; return 50; }
+    if (pref === "support") { if (val==="no_guns") return 50; if (["sells_guns","makes_guns"].includes(val)) return 100; return 50; }
     return 50;
   }
 
@@ -855,6 +869,7 @@ function computeScore(co, profile) {
   // those badges are informational only — they don't contribute to the grade.
   let weightedSum  = 0;
   let weightUsed   = 0;
+  let minUniversal = 100; // worst record-backed category seen (Build 56 floor)
   // PR-3: when the scoring-flags feature is on, exclude categories explicitly
   // marked `flags.<cat>.na` or `flags.<cat>.notDisclosed`. `_inferred` scores
   // still count. When the flag is OFF, this resolves to `false` for every
@@ -905,6 +920,17 @@ function computeScore(co, profile) {
     // B-23: apply scoring_overlay delta if present (numeric categories only;
     // categorical categories carry events_agg + excl_stale, not deltas).
     const catScore = applyOverlay(co, k, scoreCat(k, v, profile, co));
+    // Build 56 (100 Thieves repro): a stance category sitting at neutral for
+    // THIS user (e.g. "doesn't sell firearms" for a firearms supporter) is
+    // not a signal — without this, a brand whose only datum is a
+    // stance-neutral fact fabricated a whole grade from it.
+    if (["dei", "animals", "guns"].includes(k) && Math.abs(catScore - 50) < 5) continue;
+    // Build 56: track the worst UNIVERSAL (record-backed) category for the
+    // F-requires-misconduct floor below. Stance axes (politics/DEI/animals/
+    // guns) are values alignment, not misconduct.
+    if (!["political", "dei", "animals", "guns"].includes(k)) {
+      minUniversal = Math.min(minUniversal, catScore);
+    }
     weightedSum += catScore * baseWeights[k];
     weightUsed  += baseWeights[k];
   }
@@ -916,7 +942,7 @@ function computeScore(co, profile) {
   // survives; replaces the old hard signal-count grade cap in scoreGrade.
   // co.overall is already shrunk, so the fallback path must NOT re-shrink.
   const K_SHRINK = 1.5;
-  const ws = weightUsed > 0
+  let ws = weightUsed > 0
     ? (weightedSum + 50 * K_SHRINK) / (weightUsed + K_SHRINK)
     : (co.overall ?? null);
   // 2026-06-11 (100 Thieves repro): a zero-data brand used to fall through
@@ -924,6 +950,13 @@ function computeScore(co, profile) {
   // private-company "no data isn't a verdict" explainer. No signals → null →
   // grade "?" for personalized users too.
   if (ws == null) return null;
+  // Build 56 (Aron's WPCR repro): F is reserved for documented misconduct.
+  // If every record-backed category is clean (≥45) and the score only sank
+  // below the D line because of stance mismatch (politics/DEI/animals/guns),
+  // floor at 41 (D). Values disagreement caps at D; violations — and the
+  // user's explicit dealbreakers below — can still drive F. Symmetric: the
+  // same floor protects left-lean users on right-donating brands.
+  if (ws < 41 && minUniversal >= 45) ws = 41;
   // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
   // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
   // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.
@@ -3302,7 +3335,11 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               companies. Say that, once, up top. Detection mirrors
               reflag-categories: no ticker + not isPublic ⇒ private. */}
           {(() => {
-            const zeroData = (enriched.realCats ?? 0) === 0;
+            // Build 56: with a profile, gate on the PERSONALIZED score being
+            // null — Aron's repro showed "F 38" stacked on top of "no public
+            // records" (realCats counts only baked signals; the user's stance
+            // had produced a grade). The card and the grade must agree.
+            const zeroData = profile ? ps == null : (enriched.realCats ?? 0) === 0;
             if (!zeroData) return null;
             const isPrivate = !enriched.ticker && !enriched.isPublic;
             // 2026-06-11 (Aron): private + zero-data gets a DISTINCT card, not
@@ -5827,7 +5864,7 @@ if (screen === "onboarding") {
           }}
         />
       )}
-      <WhatsNewModal companyCount={companies?.length || 11000} />
+      <WhatsNewModal companyCount={companies?.length || 12000} />
 
       {/* UX 8B: aria-live region for screen readers — announces filtered count
           and which tab is active without visual clutter. */}
