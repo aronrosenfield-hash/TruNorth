@@ -39,31 +39,48 @@ async function loadRC() {
 const IOS_API_KEY  = import.meta.env.VITE_REVENUECAT_IOS_KEY || "";
 const ENTITLEMENT_ID = "pro";
 
-// Track whether we've already called configure() — RevenueCat is fine with
-// duplicate calls but they're wasted work + log spam.
-let configured = false;
+// PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR — the only error-shape that
+// reliably crosses the Capacitor bridge is `err.code` (the native side rejects
+// with (message, code) and no data dict, so `err.userCancelled` is always
+// undefined — QA finding 2026-06-10). Inlined to avoid importing the enum on web.
+const PURCHASE_CANCELLED_CODE = "1";
+
+// Cache the in-flight configure promise (not a boolean) so a mount-effect and
+// a tap handler racing each other can't both invoke native configure().
+let configurePromise = null;
 
 /** Initialize the SDK. Safe to call multiple times. No-ops on web. */
-export async function configurePayments(appUserID = null) {
-  if (!Capacitor.isNativePlatform()) return;
-  if (configured) return;
+export function configurePayments(appUserID = null) {
+  if (!Capacitor.isNativePlatform()) return Promise.resolve();
+  if (configurePromise) return configurePromise;
   if (!IOS_API_KEY) {
     console.warn("[payments] VITE_REVENUECAT_IOS_KEY missing — paywall will fail silently");
-    return;
+    return Promise.resolve();
   }
-  const RC = await loadRC();
-  if (!RC) return;
-  // Anonymous by default; appUserID can be set later via logIn() once we
-  // have a real auth/email identity to associate purchases with.
-  await RC.Purchases.configure({ apiKey: IOS_API_KEY, appUserID });
-  configured = true;
+  configurePromise = (async () => {
+    const RC = await loadRC();
+    if (!RC) return;
+    // Anonymous by default; appUserID can be set later via logIn() once we
+    // have a real auth/email identity to associate purchases with.
+    await RC.Purchases.configure({ apiKey: IOS_API_KEY, appUserID });
+  })().catch((err) => {
+    configurePromise = null; // allow retry after a failed configure
+    throw err;
+  });
+  return configurePromise;
 }
 
-/** Returns true if the user currently has the "pro" entitlement active. */
+/**
+ * Tri-state entitlement check:
+ *   true  — RevenueCat verified the "pro" entitlement is active
+ *   false — RevenueCat answered and it is NOT active (safe to revoke)
+ *   null  — couldn't get an answer (web / network error / SDK missing) — do
+ *           NOT revoke on null; keep whatever local state says.
+ */
 export async function hasProEntitlement() {
-  if (!Capacitor.isNativePlatform()) return false;
+  if (!Capacitor.isNativePlatform()) return null;
   const RC = await loadRC();
-  if (!RC) return false;
+  if (!RC) return null;
   try {
     await configurePayments();
     const { customerInfo } = await RC.Purchases.getCustomerInfo();
@@ -71,7 +88,7 @@ export async function hasProEntitlement() {
     return ent != null;
   } catch (err) {
     console.warn("[payments] hasProEntitlement failed:", err?.message || err);
-    return false;
+    return null;
   }
 }
 
@@ -82,7 +99,10 @@ export async function getOfferings() {
   if (!RC) return null;
   try {
     await configurePayments();
-    const { offerings } = await RC.Purchases.getOfferings();
+    // v13 returns the PurchasesOfferings object DIRECTLY ({ all, current }) —
+    // no wrapper key. Destructuring { offerings } returned undefined and made
+    // every purchase silently no-op (QA P0, 2026-06-10).
+    const offerings = await RC.Purchases.getOfferings();
     const current = offerings?.current;
     if (!current) return null;
     return {
@@ -96,22 +116,26 @@ export async function getOfferings() {
   }
 }
 
-/** Purchase a specific package. Returns true if entitlement is now active. */
+/**
+ * Purchase a specific package.
+ * Returns: "purchased" | "cancelled" | "failed"
+ * (Callers treat only "purchased" as success; "cancelled" must not be
+ * tracked as a failure.)
+ */
 export async function purchasePackage(pkg) {
-  if (!Capacitor.isNativePlatform()) return false;
-  if (!pkg) return false;
+  if (!Capacitor.isNativePlatform()) return "failed";
+  if (!pkg) return "failed";
   const RC = await loadRC();
-  if (!RC) return false;
+  if (!RC) return "failed";
   try {
     await configurePayments();
     const { customerInfo } = await RC.Purchases.purchasePackage({ aPackage: pkg });
     const ent = customerInfo?.entitlements?.active?.[ENTITLEMENT_ID];
-    return ent != null;
+    return ent != null ? "purchased" : "failed";
   } catch (err) {
-    // User-cancel comes through as a thrown error — silent.
-    if (err?.userCancelled) return false;
+    if (String(err?.code) === PURCHASE_CANCELLED_CODE) return "cancelled";
     console.warn("[payments] purchasePackage failed:", err?.message || err);
-    return false;
+    return "failed";
   }
 }
 
@@ -134,13 +158,13 @@ export async function restorePurchases() {
 /**
  * Convenience: given a chosen plan tier, fetch offerings + complete purchase.
  * tier: "annual" | "monthly"
- * Returns true if Pro is now active.
+ * Returns: "purchased" | "cancelled" | "failed" (same contract as purchasePackage).
  */
 export async function purchasePro(tier = "annual") {
   const offerings = await getOfferings();
-  if (!offerings) return false;
+  if (!offerings) return "failed";
   const pkg = tier === "monthly" ? offerings.monthly : offerings.annual;
-  if (!pkg) return false;
+  if (!pkg) return "failed";
   return purchasePackage(pkg);
 }
 

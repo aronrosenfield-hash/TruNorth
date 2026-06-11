@@ -1129,15 +1129,19 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   // 4.7: prefill from stored email if we've seen this user before
   const [email, setEmail] = useState(initialEmail || getStoredEmail());
   // 2026-06-10 (X-2 paywall go-live): which plan the user picks on the
-  // paywall. "annual" is the default + recommended (saves ~42% vs monthly).
-  // Only consulted when PRO_WAITLIST_MODE === false (real IAP).
+  // paywall. "annual" is the default + recommended ($14.99/yr saves 37%
+  // vs $1.99/mo × 12 = $23.88). Only consulted when PRO_WAITLIST_MODE
+  // === false (real IAP).
   const [plan, setPlan] = useState("annual");
+  // QA 2026-06-10: user-visible purchase feedback (web dead-end + failures).
+  const [purchaseError, setPurchaseError] = useState("");
 
   // Tighter email validation (audit H8): catches "@@", trailing dots, etc.
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
 
   const handleSubscribe = async () => {
     if (!isValidEmail(email)) { return; /* button stays disabled — no native alert() */ }
+    setPurchaseError("");
     track("upgrade_clicked", {
       email_provided: true,
       source: PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall",
@@ -1157,21 +1161,32 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       return;
     }
     // Real-IAP path — 2026-06-10 (X-2): RevenueCat purchase flow.
-    // Default to annual ($14/yr) per the recommended pricing strategy;
+    // Default to annual ($14.99/yr) per the recommended pricing strategy;
     // the small "switch to monthly" link is rendered separately.
+    // QA 2026-06-10: web has no IAP — show an explicit message instead of a
+    // silent dead-end (the iOS app is the only purchase surface at launch).
+    const { Capacitor } = await import("@capacitor/core");
+    if (!Capacitor.isNativePlatform()) {
+      setLoading(false);
+      setPurchaseError("Subscriptions are available in the iOS app — get TruNorth on the App Store.");
+      return;
+    }
     const { setEmailOnCustomer, purchasePro } = await import("./lib/payments");
     await setEmailOnCustomer(email).catch(() => {});
-    const success = await purchasePro(plan === "monthly" ? "monthly" : "annual");
+    // purchasePro returns "purchased" | "cancelled" | "failed" — a user
+    // cancel is NOT a failure (analytics + UI must not treat it as one).
+    const result = await purchasePro(plan === "monthly" ? "monthly" : "annual");
     setLoading(false);
-    track(success ? "subscribe_succeeded" : "subscribe_failed", {
-      plan: plan || "annual",
-    });
-    if (success) {
+    if (result === "purchased") {
+      track("subscribe_succeeded", { plan: plan || "annual" });
       onSubscribe(email);
+    } else if (result === "cancelled") {
+      track("subscribe_cancelled", { plan: plan || "annual" });
+      // Keep the paywall open quietly — the user changed their mind.
+    } else {
+      track("subscribe_failed", { plan: plan || "annual" });
+      setPurchaseError("Purchase didn't go through. Check your App Store connection and try again.");
     }
-    // If !success, user cancelled or hit an error — keep the paywall open
-    // so they can retry. RevenueCat already showed its own error UI if it
-    // was an actual error (not a user cancel).
   };
 
   const handleRestore = async () => {
@@ -1182,6 +1197,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
     setLoading(false);
     track(ok ? "restore_succeeded" : "restore_failed");
     if (ok) onSubscribe(email);
+    else setPurchaseError("No previous purchase found for this Apple ID.");
   };
 
   return (
@@ -1272,12 +1288,14 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           {PRO_WAITLIST_MODE ? (
             <>
               <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
+              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $1.99/mo</span>
             </>
           ) : (
+            // Price block mirrors the selected plan — matches the App Store
+            // products exactly ($14.99/yr · $1.99/mo).
             <>
-              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$0.99</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
+              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>{plan === "monthly" ? "$1.99" : "$14.99"}</span>
+              <span style={{ fontSize:13, color:T.txt3 }}>{plan === "monthly" ? " / month · Cancel anytime" : " / year · Cancel anytime"}</span>
             </>
           )}
         </div>
@@ -1296,7 +1314,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
             : (PRO_WAITLIST_MODE ? "Join the Pro waitlist"
-                : (plan === "monthly" ? "Subscribe — $1.99/mo" : "Subscribe — $14/yr · save 42%"))}
+                : (plan === "monthly" ? "Subscribe — $1.99/mo" : "Subscribe — $14.99/yr · save 37%"))}
         </button>
 
         {!PRO_WAITLIST_MODE && (
@@ -1304,7 +1322,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           // monthly is a smaller text link below.
           <button type="button" onClick={() => setPlan(plan === "monthly" ? "annual" : "monthly")}
             style={{ width:"100%", padding:"8px 12px", borderRadius:10, border:"none", background:"transparent", color:T.accent2, fontSize:12.5, fontWeight:600, cursor:"pointer", marginBottom:8, minHeight:36 }}>
-            {plan === "monthly" ? "← switch to annual (save 42%)" : "or pay monthly — $1.99/mo"}
+            {plan === "monthly" ? "← switch to annual (save 37%)" : "or pay monthly — $1.99/mo"}
           </button>
         )}
 
@@ -1313,6 +1331,14 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
             ? "We email once: when Pro opens. No charges yet · cancel before launch."
             : "Secure payment via Apple · Cancel anytime · No contracts"}
         </div>
+
+        {/* QA 2026-06-10: user-visible purchase feedback (failures + web
+            dead-end). Cleared on each new attempt via setPurchaseError(""). */}
+        {purchaseError && (
+          <div role="alert" style={{ fontSize:12.5, color:"#ff7043", textAlign:"center", marginBottom:10, padding:"8px 12px", background:"rgba(255,112,67,0.1)", border:"1px solid rgba(255,112,67,0.35)", borderRadius:10 }}>
+            {purchaseError}
+          </div>
+        )}
 
         {/* 2026-06-10 (X-2): Restore Purchases — Apple guideline 3.1.1 requires
             this on every subscription paywall, even if no purchase yet. */}
@@ -2739,7 +2765,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     // Refined from the previous "0 free / paywall on first tap" — that was
     // too aggressive; users couldn't even sample the product before being
     // gated. 1 free view lets them experience the depth of one brand
-    // profile, builds the desire, then the paywall asks for $0.99/mo to
+    // profile, builds the desire, then the paywall asks for $1.99/mo to
     // unlock the rest. Cooldown preserved so dismissers can browse for 4h.
     //
     // Re-opening an already-viewed company doesn't punish the user.
@@ -4193,7 +4219,7 @@ function SubmitView({ isPaid, onUpgrade }) {
         </div>
         <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:8 }}>Submissions are for subscribers</div>
         <div style={{ fontSize:13, color:T.txt3, marginBottom:20, lineHeight:1.6 }}>Upgrade to help keep our database accurate by flagging corrections or suggesting new companies.</div>
-        <button onClick={onUpgrade} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $0.99/mo</button>
+        <button onClick={onUpgrade} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $1.99/mo</button>
       </div>
     );
   }
@@ -4750,6 +4776,13 @@ useEffect(() => {
     try { localStorage.setItem("tn_isPaid", val ? "1" : "0"); } catch {}
   };
   // On iOS, configure RevenueCat + reconcile entitlement on every mount.
+  // QA 2026-06-10: hasProEntitlement is now TRI-STATE —
+  //   true  → RevenueCat verified active   → upgrade local state
+  //   false → RevenueCat verified INACTIVE → revoke (this is the path that
+  //           ends Pro after a cancellation; RevenueCat keeps the entitlement
+  //           "active" through the paid period + any grace period, so a
+  //           verified-false here genuinely means the sub has lapsed)
+  //   null  → no answer (web / network error) → leave local state untouched
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -4757,15 +4790,8 @@ useEffect(() => {
         const { configurePayments, hasProEntitlement } = await import("./lib/payments");
         await configurePayments();
         const live = await hasProEntitlement();
-        if (cancelled) return;
-        // Only DOWNGRADE if RevenueCat says no — never overwrite a true with
-        // false based on a transient network error (hasProEntitlement returns
-        // false on error too, so we trust the live answer only if non-error).
-        // Simpler: trust localStorage on cold boot, then sync from server.
-        if (live) setIsPaid(true);
-        // If !live AND localStorage thinks they're Pro, leave it — the next
-        // restore-purchases tap will fix it. We don't auto-revoke to avoid
-        // false revoke on sandbox flakes or expired subscriptions in grace.
+        if (cancelled || live === null) return;
+        setIsPaid(live);
       } catch {}
     })();
     return () => { cancelled = true; };
@@ -5966,7 +5992,7 @@ if (screen === "onboarding") {
               <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
               <div>
                 <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>Unlock personalized scores</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $0.99/mo · narratives, sources & full profiles</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $1.99/mo · narratives, sources & full profiles</div>
               </div>
               <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
             </div>
@@ -6608,7 +6634,7 @@ if (screen === "onboarding") {
 
                 <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
                   <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
-                  Unlock per-grade citations — $0.99/mo
+                  Unlock per-grade citations — $1.99/mo
                 </button>
                 <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
                   Pro shows which specific records drove each brand's grade.
@@ -6691,7 +6717,7 @@ if (screen === "onboarding") {
             </div>
             {!isPaid && (
               <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:12, borderRadius:10, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
-                Upgrade to Pro — $0.99/mo
+                Upgrade to Pro — $1.99/mo
               </button>
             )}
           </div>
