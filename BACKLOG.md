@@ -24,14 +24,20 @@ Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scorin
 
 ---
 
-## 🔧 OUTSTANDING — ENGINEERING (Claude-side, post-V3 sweep 2026-06-11)
+## 🔧 OUTSTANDING — ENGINEERING (updated 2026-06-11 PM)
+
+**Shipped this round (`3f251e342`):** EDGAR expansion **+1,583 public cos → 12,841 brands** (all count claims now 12,000+) · ToS;DR privacy source live (E-2 ✅ — license verified CC BY-SA 3.0 grades-only-with-attribution, 114 fills, monthly cron) · Lever 2 residuals ✅ (1,607 factual no_guns from ATF-FFL absence, 27 sells/makes from FFL evidence, private-co execPay→na) · Lever 3 BUILT (`scripts/ai-research-bake.mjs`, citation-required) with a 20-brand pilot dispatched — **full ~3,000-brand run awaits your go (~$300-700 API)** · private+zero-data brands get a distinct "not required to disclose" explainer card with report-a-record CTA · fixed fabricated "C 50" on zero-data brands for quiz users (now "?").
+
+**Note:** the 1,583 new public cos enrich incrementally as the 30+ source crons cycle (their fetchers need network windows) + via the Lever 3 bake.
+
+## 🔧 OUTSTANDING — ENGINEERING (remaining)
 
 | # | Item | Size | Notes |
 |---|---|---|---|
 | E-1 | **Scoring-flags toggle ON** | scheduled | Flip `scoringFlagsEnabled` Mon Jun 16, 24h watch → App Store cut Tue Jun 17 (see rollout table below) |
-| E-2 | **ToS;DR privacy source (Lever 4c)** | ~2h + wait | Fetcher is easy; BLOCKED on the license question for derived grades — email ToS;DR team / check CC-BY-SA terms before ingesting (R6 research §2) |
-| E-7 | **Lever 3 — web-search-grounded AI research bake** | ~2-3 days + ~$200-400 API | The long-tail filler: re-bake top ~3,000 brands by PostHog search demand via Claude API + web search, citation URL REQUIRED per claim (uncited claims stay out of scoring per neutrality rules). Phase-4.11 bake had no web search — could only summarize pipeline data. Batched overnight jobs. UNBUILT — the big outstanding lever |
-| E-8 | **Lever 2 residuals** | ~half day | reflag-categories na pass IS live (guns na on 11,164 brands, animals 5,698, health 8,729) + private-co explainer shipped; still missing: execPay-na for private companies (0 flagged today) and the retailer "does not sell firearms" factual fills (only 1 no_guns in catalog — it's a real datapoint for gun-stance quiz users) |
+| ~~E-2~~ | ~~ToS;DR (Lever 4c)~~ | ✅ done 2026-06-11 | License verified safe (CC BY-SA 3.0, grades-only + attribution). 2,285 services, 114 privacy fills, tosdr-monthly.yml cron |
+| E-7 | **Lever 3 — AI research bake: FULL RUN (build ✅, pilot running)** | your go + ~$300-700 API | The long-tail filler: re-bake top ~3,000 brands by PostHog search demand via Claude API + web search, citation URL REQUIRED per claim (uncited claims stay out of scoring per neutrality rules). Phase-4.11 bake had no web search — could only summarize pipeline data. Batched overnight jobs. UNBUILT — the big outstanding lever |
+| ~~E-8~~ | ~~Lever 2 residuals~~ | ✅ done 2026-06-11 | reflag-categories na pass IS live (guns na on 11,164 brands, animals 5,698, health 8,729) + private-co explainer shipped; still missing: execPay-na for private companies (0 flagged today) and the retailer "does not sell firearms" factual fills (only 1 no_guns in catalog — it's a real datapoint for gun-stance quiz users) |
 | E-3 | **FTC cases & proceedings fetcher** | ~half day | R6 research §4 — privacy/consumer enforcement, verified viable, unbuilt |
 | E-4 | **OFCCP EEO-1 Type 2 static augment** | manual + 1h | Needs Aron: one-time manual FOIA-library download, then a static augment writer (best per-company DEI option) |
 | E-5 | **11 empty augments** (was 15) | ~1h | awa, cnmv-spain, datatilsynet-denmark, fdpic-switzerland, hk-compcomm + 6 more — verify each is legitimately-no-matches vs wiped (sandboxed-PR incident class, B-60/61/62) |
