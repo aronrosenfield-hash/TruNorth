@@ -2,7 +2,7 @@
   "name": "Etsy",
   "cat": "Retail",
   "init": "ETSY",
-  "overall": 67.7,
+  "overall": 66.5,
   "isPublic": true,
   "ticker": "ETSY",
   "sc": {
@@ -169,7 +169,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ New York. (Wikidata Q1353939)",
     "sources": [
@@ -189,7 +189,6 @@
     "charity": 50,
     "environment": 100,
     "labor": 78,
-    "dei": 78,
     "privacy": 50
   },
   "privacy_tosdr": {
@@ -199,5 +198,15 @@
     "reviewed": false,
     "license": "CC BY-SA 3.0",
     "fetchedAt": "2026-06-11"
+  },
+  "dei_eeo1": {
+    "year": 2020,
+    "totalEmployees": 1232,
+    "pctWomen": 50.9,
+    "pctMinority": 33.8,
+    "pctWomenMgmt": 52.5,
+    "pctMinorityMgmt": 24.3,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }

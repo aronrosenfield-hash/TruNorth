@@ -1,0 +1,45 @@
+name: sam-exclusions-monthly
+
+# R7: SAM.gov Exclusions Public Extract V2 (federal debarments, firm-class).
+# REVIEW-QUEUE source: the merger writes nothing to company files unless the
+# slug is in its reviewed allowlist — new name-collision candidates land in
+# data/derived/sam-exclusions-review.json for Aron.
+
+on:
+  schedule:
+    - cron: "50 8 7 * *" # 7th monthly, 08:50 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --omit=dev
+      - name: Fetch exclusions extract
+        run: node scripts/sam-exclusions-fetch.mjs
+      - name: Merge (review-queue)
+        run: node scripts/sam-exclusions-merge.mjs
+      - name: Rebake + finalize
+        run: |
+          node scripts/rebake-scoring.mjs
+          node scripts/finalize-bundle.mjs
+      - name: Commit
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data data/derived/sam-exclusions-review.json
+          git diff --cached --quiet || git commit -m "data(sam): exclusions refresh + review queue [skip ci]"
+          git pull --rebase origin main
+          git push origin main

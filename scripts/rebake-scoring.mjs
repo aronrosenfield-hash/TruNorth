@@ -423,6 +423,15 @@ for (const f of files) {
       trace.categories.push({ k, state: "inferred", val: sc[k], score: cs, weight: 0.5 });
       signalCount++;
     } else if (cls.state === "narrativeOnly") {
+      // V3/R4 guard (2026-06-11, OFCCP regression): stance categories stay
+      // OUT of the neutral baseline even when a narrative exists — an EEO-1
+      // demographics fact is display evidence, not a neutral-user score.
+      // Without this, 722 OFCCP dei narratives entered as flat 50s and
+      // pulled strong brands toward C.
+      if (k === "dei" || k === "animals" || k === "guns") {
+        trace.categories.push({ k, state: "narrative-display-only", val: "(stance cat)" });
+        continue;
+      }
       // Salvage: text record present but enum was set to neutral. Score from
       // keywords in the narrative. Weight at 0.75 — more than inferred (which
       // is sector-based guessing) but less than real (which has both enum +

@@ -2,14 +2,14 @@
   "name": "Giant Bicycles",
   "cat": "Apparel & Fashion",
   "init": "GB",
-  "overall": 62.7,
+  "overall": 47,
   "isPublic": true,
   "ticker": "9921.TW",
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "very poor",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
@@ -41,10 +41,11 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Named in US forced-labor enforcement: CBP Withhold Release Order (9/24/2025) — imports subject to detention under 19 U.S.C. §1307.",
     "rating": "Poor",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "cbp-forced-labor"
     ]
   },
   "dei": {
@@ -132,7 +133,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -155,6 +156,20 @@
     }
   },
   "csc": {
-    "political": 81.6
+    "political": 81.6,
+    "labor": 8
+  },
+  "forcedLaborListed": {
+    "entries": [
+      {
+        "list": "CBP Withhold Release Order",
+        "entity": "Giant Manufacturing Co., Ltd.",
+        "date": "9/24/2025",
+        "country": "TW",
+        "status": "Active"
+      }
+    ],
+    "source": "CBP/DHS forced-labor enforcement (19 U.S.C. §1307)",
+    "fetchedAt": "2026-06-11"
   }
 }

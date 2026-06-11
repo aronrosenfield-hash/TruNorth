@@ -493,9 +493,36 @@ async function main() {
 
   await fs.mkdir(CACHE_DIR, { recursive: true });
 
-  const targets = SLUG_ARG
+  // R7 #2 (2026-06-11): --public-cos extends the curated TARGETS to every
+  // public company in the catalog (ticker/cik/isPublic) — primarily the
+  // 1,583 EDGAR-expansion mid-caps. Resumable: slugs with a cache file
+  // newer than 90 days are skipped, so quarterly runs only do new work.
+  let targets = SLUG_ARG
     ? TARGETS.filter(t => t.slug === SLUG_ARG)
     : TARGETS;
+  if (process.argv.includes("--public-cos")) {
+    const compsDir = path.join(ROOT, "public/data/companies");
+    const have = new Set(TARGETS.map(t => t.slug));
+    const cutoff = Date.now() - 90 * 24 * 3600 * 1000;
+    const extra = [];
+    for (const f of (await fs.readdir(compsDir))) {
+      if (!f.endsWith(".json")) continue;
+      const slug = f.replace(/\.json$/, "");
+      if (have.has(slug)) continue;
+      try {
+        const d = JSON.parse(await fs.readFile(path.join(compsDir, f), "utf8"));
+        if (!(d.ticker || d.cik || d.isPublic === true)) continue;
+        try {
+          const st = await fs.stat(path.join(CACHE_DIR, `${slug}.json`));
+          if (st.mtimeMs > cutoff) continue;
+        } catch {}
+        extra.push({ slug, name: d.legalName || d.name });
+      } catch {}
+    }
+    const cap = Number((process.argv.find(a => a.startsWith("--max=")) || "").split("=")[1]) || extra.length;
+    targets = targets.concat(extra.slice(0, cap));
+    console.log(`[usaspending] --public-cos added ${Math.min(cap, extra.length)} dynamic targets (of ${extra.length} uncached public cos)`);
+  }
   if (targets.length === 0) {
     console.error(`No target matching slug "${SLUG_ARG}"`);
     process.exit(2);

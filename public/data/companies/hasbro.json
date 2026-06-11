@@ -55,9 +55,10 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "EEO-1 workforce demographics on federal record (FY2020, DOL OFCCP FOIA release): 2,827 US employees — 53% women, 21% racial/ethnic minorities; management 49.4% women, 17.8% minorities.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "ofccp-eeo1"
     ]
   },
   "animals": {
@@ -446,5 +447,15 @@
     "lastUpdated": "2026-06-11T14:35:39.983Z",
     "source": "cpsc",
     "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Hasbro"
+  },
+  "dei_eeo1": {
+    "year": 2020,
+    "totalEmployees": 2827,
+    "pctWomen": 53,
+    "pctMinority": 21,
+    "pctWomenMgmt": 49.4,
+    "pctMinorityMgmt": 17.8,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }

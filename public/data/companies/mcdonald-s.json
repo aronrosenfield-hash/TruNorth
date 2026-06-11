@@ -65,10 +65,11 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "EEO-1 workforce demographics on federal record (FY2016, DOL OFCCP FOIA release): 332 US employees — 58.7% women, 18.4% racial/ethnic minorities; management 90.9% women, 18.2% minorities.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "ofccp-eeo1"
     ]
   },
   "animals": {
@@ -836,5 +837,15 @@
     "lastUpdated": "2026-06-11T14:35:39.983Z",
     "source": "cpsc",
     "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=McDonald's"
+  },
+  "dei_eeo1": {
+    "year": 2018,
+    "totalEmployees": 56746,
+    "pctWomen": 62.4,
+    "pctMinority": 68.1,
+    "pctWomenMgmt": 61,
+    "pctMinorityMgmt": 46.6,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }

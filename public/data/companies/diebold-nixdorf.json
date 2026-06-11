@@ -50,9 +50,10 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "EEO-1 workforce demographics on federal record (FY2020, DOL OFCCP FOIA release): 3,838 US employees — 17.4% women, 22.6% racial/ethnic minorities; management 26.4% women, 13.5% minorities.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "ofccp-eeo1"
     ]
   },
   "animals": {
@@ -239,5 +240,15 @@
   "csc": {
     "political": 81.8,
     "labor": 8.7
+  },
+  "dei_eeo1": {
+    "year": 2020,
+    "totalEmployees": 3838,
+    "pctWomen": 17.4,
+    "pctMinority": 22.6,
+    "pctWomenMgmt": 26.4,
+    "pctMinorityMgmt": 13.5,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }

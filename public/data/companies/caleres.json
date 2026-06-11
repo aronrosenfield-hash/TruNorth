@@ -2,7 +2,7 @@
   "name": "CALERES",
   "cat": "Apparel & Fashion",
   "init": "CALE",
-  "overall": 55.5,
+  "overall": 56.3,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -51,9 +51,10 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "EEO-1 workforce demographics on federal record (FY2017, DOL OFCCP FOIA release): 10,202 US employees — 68.3% women, 39.9% racial/ethnic minorities; management 71.3% women, 35.1% minorities.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "ofccp-eeo1"
     ]
   },
   "animals": {
@@ -184,7 +185,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T19:29:31.200Z",
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -227,8 +228,17 @@
   "csc": {
     "political": 79.3,
     "labor": 50,
-    "animals": 50,
     "privacy": 50,
     "execPay": 53.8
+  },
+  "dei_eeo1": {
+    "year": 2017,
+    "totalEmployees": 10202,
+    "pctWomen": 68.3,
+    "pctMinority": 39.9,
+    "pctWomenMgmt": 71.3,
+    "pctMinorityMgmt": 35.1,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }

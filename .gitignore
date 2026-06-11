@@ -56,3 +56,5 @@ scripts/cache/
 
 # IRS bulk files — 400MB, re-downloaded by the fetcher; never commit
 public/data/_cache/irs990pf/
+# R7: 52MB OFCCP XLSX stays out of git; the derived JSON + dictionary are committed
+data/raw/ofccp-eeo1/*.xlsx

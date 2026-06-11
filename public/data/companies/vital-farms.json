@@ -42,8 +42,10 @@
     "sources": []
   },
   "dei": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "EEO-1 workforce demographics on federal record (FY2018, DOL OFCCP FOIA release): 115 US employees — 43.5% women, 13.9% racial/ethnic minorities; management 26.7% women, 20% minorities.",
+    "sources": [
+      "ofccp-eeo1"
+    ]
   },
   "animals": {
     "s": "GAP Step 5+ pasture-raised egg producer; flock density audited. Real Organic Project certified pasture-raised eggs. [GAP Step 5+ · Real Organic Project certified]",
@@ -90,5 +92,15 @@
   "csc": {
     "environment": 100,
     "health": 100
+  },
+  "dei_eeo1": {
+    "year": 2018,
+    "totalEmployees": 115,
+    "pctWomen": 43.5,
+    "pctMinority": 13.9,
+    "pctWomenMgmt": 26.7,
+    "pctMinorityMgmt": 20,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }

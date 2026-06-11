@@ -1,0 +1,43 @@
+name: cbp-forced-labor-quarterly
+
+# R7: DHS UFLPA Entity List + CBP Withhold Release Orders / Findings.
+# Public domain; event-driven source so quarterly is plenty.
+
+on:
+  schedule:
+    - cron: "20 8 9 1,4,7,10 *" # quarterly, 9th, 08:20 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --omit=dev
+      - name: Fetch UFLPA + WRO
+        run: node scripts/cbp-forced-labor-fetch.mjs
+      - name: Merge
+        run: node scripts/cbp-forced-labor-merge.mjs
+      - name: Rebake + finalize
+        run: |
+          node scripts/rebake-scoring.mjs
+          node scripts/finalize-bundle.mjs
+      - name: Commit
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add public/data
+          git diff --cached --quiet || git commit -m "data(cbp): UFLPA + WRO forced-labor refresh [skip ci]"
+          git pull --rebase origin main
+          git push origin main

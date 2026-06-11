@@ -192,6 +192,10 @@
 | Newsweek Most Responsible Companies | https://www.newsweek.com/rankings/americas-most-responsible-companies | Annual | Annual top 600 US ranking on ESG |
 | WikiRate | https://wikirate.org | Monthly | Crowdsourced ESG metrics aggregator (needs API key) |
 | ToS;DR | https://tosdr.org | Monthly | Terms-of-service privacy grades A–E (CC BY-SA 3.0, grades-only with attribution — license verified 2026-06-11) |
+| DOL OFCCP EEO-1 (Type 2) | https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports | One-time (FY2016-2020 FOIA release) | Per-company workforce demographics for federal contractors — facts only, no verdict (R7 #1) |
+| DHS UFLPA Entity List | https://www.dhs.gov/uflpa-entity-list | Quarterly | Forced-labor import-ban entities, 19 U.S.C. §1307 (R7) |
+| CBP Withhold Release Orders | https://www.cbp.gov/document/stats/withhold-release-orders-findings | Quarterly | Per-producer forced-labor detention orders + findings (R7) |
+| SAM.gov Exclusions | https://sam.gov/data-services | Monthly | Federal debarments (firm-class, review-queue gated) (R7) |
 
 ### International regulators (4)
 

@@ -969,7 +969,10 @@ function computeScore(co, profile) {
       return bad.includes(v) ? p + 10 : p;
     }
     // Hard dealbreakers (-20): structural — about the company, not a single category
-    if (db === "forcedLabor"    && (co.sc.labor||"").toLowerCase() === "poor") return p + 20;
+    // R7 (2026-06-11): the CBP forced-labor sidecar (UFLPA Entity List /
+    // Withhold Release Orders) is direct federal enforcement — it triggers
+    // the dealbreaker regardless of the labor enum.
+    if (db === "forcedLabor"    && (["poor","very poor"].includes((co.sc.labor||"").toLowerCase()) || co.forcedLaborListed)) return p + 20;
     if (db === "taxAvoidance"   && (co.sc.execPay||"").toLowerCase() === "poor") return p + 20;
     if (db === "predatoryPrice" && (co.sc.labor||"").toLowerCase() === "poor") return p + 20;
     if (db === "darkPatterns"   && (co.sc.privacy||"").toLowerCase() === "poor") return p + 20;
@@ -3196,7 +3199,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                             const v = (enriched.sc?.[db] || "").toLowerCase();
                             const bad = ["negative","poor","very poor","below average","tests_animals","sells_guns","makes_guns"];
                             if (bad.includes(v)) penalties.push({ db, label: `${CAT_LABELS[db]} dealbreaker`, points: -10 });
-                          } else if (db === "forcedLabor" && (enriched.sc?.labor||"").toLowerCase() === "poor") {
+                          } else if (db === "forcedLabor" && (["poor","very poor"].includes((enriched.sc?.labor||"").toLowerCase()) || enriched.forcedLaborListed)) {
                             penalties.push({ db, label: "Forced-labor dealbreaker", points: -20 });
                           } else if (db === "taxAvoidance" && (enriched.sc?.execPay||"").toLowerCase() === "poor") {
                             penalties.push({ db, label: "Tax-avoidance dealbreaker", points: -20 });
@@ -4537,6 +4540,10 @@ const SOURCES_DATA = [
     {name:"Newsweek Most Responsible Companies",url:"https://www.newsweek.com/rankings/americas-most-responsible-companies",desc:"Annual top 600 US ranking on ESG performance.",cadence:"Annual"},
     {name:"WikiRate",url:"https://wikirate.org",desc:"Crowdsourced ESG metrics aggregator (private/public companies, all sectors).",cadence:"Monthly"},
     {name:"ToS;DR",url:"https://tosdr.org",desc:"Terms-of-service privacy grades (A–E), CC BY-SA 3.0 — used with attribution.",cadence:"Monthly"},
+    {name:"DOL OFCCP EEO-1",url:"https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports",desc:"Federal-contractor workforce demographics (FOIA release, FY2016-2020) — reported as facts, never a verdict.",cadence:"One-time"},
+    {name:"DHS UFLPA Entity List",url:"https://www.dhs.gov/uflpa-entity-list",desc:"Companies subject to the forced-labor import-ban presumption (19 U.S.C. §1307).",cadence:"Quarterly"},
+    {name:"CBP Withhold Release Orders",url:"https://www.cbp.gov/document/stats/withhold-release-orders-findings",desc:"Per-producer forced-labor detention orders and findings.",cadence:"Quarterly"},
+    {name:"SAM.gov Exclusions",url:"https://sam.gov/data-services",desc:"Federal debarment registry (manually reviewed before any brand is flagged).",cadence:"Monthly"},
   ]},
   {group:"International regulators",icon:"ti-globe",items:[
     {name:"EU DG Comp Antitrust",url:"https://ec.europa.eu/competition/antitrust",desc:"European Commission antitrust + merger decisions, cartel cases, state-aid actions. Fines in EUR.",cadence:"Monthly"},

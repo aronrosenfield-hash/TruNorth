@@ -2,7 +2,7 @@
   "name": "Mayo Clinic",
   "cat": "Healthcare",
   "init": "MC",
-  "overall": 42.4,
+  "overall": 41.3,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -52,10 +52,11 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "EEO-1 workforce demographics on federal record (FY2020, DOL OFCCP FOIA release): 65,145 US employees — 72.4% women, 15.6% racial/ethnic minorities; management 56.8% women, 9.3% minorities.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "ofccp-eeo1"
     ]
   },
   "animals": {
@@ -319,7 +320,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 5,
+  "realCats": 4,
   "governance": {
     "s": "Wikipedia \"Criticism\" section: In May 2023, Mayo Clinic lobbied against two statewide health care bills, the Keeping Nurses at the Bedside Act (KNABA) and the Health Care Affordability Board, threatening to pull over 4 billion…",
     "sources": [
@@ -343,8 +344,17 @@
   "csc": {
     "environment": 32.1,
     "labor": 9.8,
-    "animals": 50,
     "privacy": 8,
     "health": 100
+  },
+  "dei_eeo1": {
+    "year": 2020,
+    "totalEmployees": 65145,
+    "pctWomen": 72.4,
+    "pctMinority": 15.6,
+    "pctWomenMgmt": 56.8,
+    "pctMinorityMgmt": 9.3,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
   }
 }
