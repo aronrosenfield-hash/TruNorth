@@ -2,7 +2,7 @@
   "name": "Spree",
   "cat": "Retail",
   "init": "SPRE",
-  "overall": 63.6,
+  "overall": 67.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "na",
     "health": "mixed"
@@ -57,8 +57,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -128,9 +130,6 @@
   "lastUpdated": "2026-05-27T16:25:39.969Z",
   "realCats": 3,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -142,10 +141,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {

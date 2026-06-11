@@ -2,7 +2,7 @@
   "name": "Shaw's and Star Market",
   "cat": "Grocery",
   "init": "SHAW",
-  "overall": 38,
+  "overall": 36.7,
   "isPublic": false,
   "sc": {
     "political": "left",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "poor"
   },
@@ -53,8 +53,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -122,13 +124,10 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -138,10 +137,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "inheritedFrom": "albertsons",
@@ -149,7 +144,6 @@
     "political": 53.8,
     "charity": 50,
     "environment": 15,
-    "labor": 8,
-    "execPay": 33.5
+    "labor": 8
   }
 }

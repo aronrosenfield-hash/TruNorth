@@ -2,7 +2,7 @@
   "name": "Gatorade",
   "cat": "Food & Beverage",
   "init": "GATO",
-  "overall": 48.5,
+  "overall": 43.2,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral",
     "health": "mixed"
@@ -30,7 +30,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "charity": {
     "s": "$90M reported corporate giving in 2024 (~0.10% of revenue) via PepsiCo Foundation.",
     "sources": [
@@ -61,9 +64,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Pepsi: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -130,7 +133,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-22",
+    "cases": [
+      {
+        "caseName": "Darr v. The Gatorade Company",
+        "dateFiled": "2026-05-22",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Gatorade%22"
+      },
+      {
+        "caseName": "Leam v. PepsiCo, Inc.",
+        "dateFiled": "2026-05-21",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Gatorade%22"
+      },
+      {
+        "caseName": "Notz v. Brooks Shoes",
+        "dateFiled": "2025-02-10",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Gatorade%22"
+      },
+      {
+        "caseName": "Speer v. Gatorade Atlanta",
+        "dateFiled": "2024-11-04",
+        "court": "District Court, N.D. Georgia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Gatorade%22"
+      },
+      {
+        "caseName": "Asinga v. The Gatorade Company",
+        "dateFiled": "2024-07-10",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Gatorade%22"
+      }
+    ],
+    "totalAllTime": 22,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -146,7 +198,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T23:56:31.583Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by PepsiCo; HQ Chicago. (Wikidata Q304992)",
     "sources": [
@@ -162,10 +214,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "health": {
@@ -180,6 +228,7 @@
     "charity": 50,
     "environment": 50,
     "labor": 8.9,
+    "privacy": 8,
     "health": 50
   }
 }

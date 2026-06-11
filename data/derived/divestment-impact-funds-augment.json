@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T19:21:47.384Z",
+  "generated_at": "2026-06-11T14:35:40.286Z",
   "source": "divestment-impact-funds",
   "source_url": "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
   "source_urls": {
@@ -25,7 +25,7 @@
   },
   "license": "Public/open institutional disclosures (sovereign wealth fund exclusion lists, mutual-fund top-holding filings, divestment commitment registries). Each record cites a per-source URL.",
   "upstream_file": "data/raw/divestment-impact-funds/2026-06-09.json",
-  "company_count": 129,
+  "company_count": 130,
   "unmatched_count": 0,
   "companies": {
     "lockheed-martin": {
@@ -149,7 +149,7 @@
       "negative_fund_count": 2,
       "informational_fund_count": 0
     },
-    "honeywell": {
+    "honeywell-international": {
       "display_name": "Honeywell International",
       "sources": [
         "norway-gpfg"
@@ -184,7 +184,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "bae-systems-usa": {
+    "bae-systems": {
       "display_name": "BAE Systems",
       "sources": [
         "norway-gpfg"
@@ -328,7 +328,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "raytheon-technologies": {
+    "raytheon": {
       "display_name": "Raytheon",
       "sources": [
         "norway-gpfg",
@@ -337,11 +337,10 @@
       "category_signals": {
         "guns": {
           "polarity": "negative",
-          "count": 3,
+          "count": 2,
           "reasons": [
             "Production of cluster munitions / nuclear weapons components",
-            "High military-prime exposure (Weapons Free Funds screen — RTX Corp)",
-            "High military-prime exposure (Weapons Free Funds screen)"
+            "High military-prime exposure (Weapons Free Funds screen — RTX Corp)"
           ],
           "source_urls": [
             "https://www.nbim.no/en/responsible-investment/exclusion-of-companies/",
@@ -489,7 +488,7 @@
       "negative_fund_count": 3,
       "informational_fund_count": 0
     },
-    "british-american-tobacco-p-l-c": {
+    "british-american-tobacco": {
       "display_name": "British American Tobacco",
       "sources": [
         "norway-gpfg",
@@ -645,7 +644,7 @@
       "negative_fund_count": 2,
       "informational_fund_count": 0
     },
-    "glencore-plc": {
+    "glencore": {
       "display_name": "Glencore",
       "sources": [
         "divestment-commitments",
@@ -1349,7 +1348,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "adani-enterprises": {
+    "adani-power": {
       "display_name": "Adani Power",
       "sources": [
         "norway-gpfg"
@@ -1419,7 +1418,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "petrobras-petroleo-brasileiro-sa": {
+    "petrobras": {
       "display_name": "Petrobras",
       "sources": [
         "norway-gpfg"
@@ -1612,7 +1611,7 @@
       "negative_fund_count": 2,
       "informational_fund_count": 0
     },
-    "leonardo-drs": {
+    "leonardo": {
       "display_name": "Leonardo",
       "sources": [
         "norway-gpfg"
@@ -1756,7 +1755,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "exxon-mobil": {
+    "exxonmobil": {
       "display_name": "ExxonMobil",
       "sources": [
         "divestment-commitments",
@@ -1767,9 +1766,10 @@
       "category_signals": {
         "environment": {
           "polarity": "negative",
-          "count": 4,
+          "count": 5,
           "reasons": [
             "Most commonly divested fossil-fuel brand across 250+ university endowments",
+            "Fossil-fuel divestment target — Canadian oil-sands (ExxonMobil subsidiary)",
             "Highest fossil-fuel exposure across S&P-500 ESG mutual funds (Fossil Free Funds screen)",
             "Wespath / United Methodist Pension Fund excluded (fossil-fuel screen)",
             "Episcopal Church SRI screen — fossil-fuel divestment"
@@ -2255,33 +2255,6 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "exxonmobil": {
-      "display_name": "Imperial Oil",
-      "sources": [
-        "divestment-commitments"
-      ],
-      "category_signals": {
-        "environment": {
-          "polarity": "negative",
-          "count": 1,
-          "reasons": [
-            "Fossil-fuel divestment target — Canadian oil-sands (ExxonMobil subsidiary)"
-          ],
-          "source_urls": [
-            "https://gofossilfree.org/divestment/commitments/"
-          ],
-          "sources": [
-            "divestment-commitments"
-          ]
-        }
-      },
-      "pattern_severity": "mixed",
-      "norway_gpfg": null,
-      "divestment_targeted": true,
-      "positive_fund_count": 0,
-      "negative_fund_count": 1,
-      "informational_fund_count": 0
-    },
     "peabody-energy": {
       "display_name": "Peabody Energy",
       "sources": [
@@ -2633,7 +2606,34 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "smith-and-wesson-brands": {
+    "rtx": {
+      "display_name": "RTX",
+      "sources": [
+        "weapons-free-funds"
+      ],
+      "category_signals": {
+        "guns": {
+          "polarity": "negative",
+          "count": 1,
+          "reasons": [
+            "High military-prime exposure (Weapons Free Funds screen)"
+          ],
+          "source_urls": [
+            "https://weaponfreefunds.org/"
+          ],
+          "sources": [
+            "weapons-free-funds"
+          ]
+        }
+      },
+      "pattern_severity": "mixed",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 1,
+      "informational_fund_count": 0
+    },
+    "smith-and-wesson": {
       "display_name": "Smith & Wesson",
       "sources": [
         "weapons-free-funds"
@@ -2660,7 +2660,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "sturm-ruger-and-co": {
+    "sturm-ruger": {
       "display_name": "Sturm Ruger",
       "sources": [
         "weapons-free-funds"
@@ -2714,7 +2714,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "olin-corporation": {
+    "olin": {
       "display_name": "Olin",
       "sources": [
         "weapons-free-funds"
@@ -2768,7 +2768,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "marfrig-global-foods-s-a": {
+    "marfrig": {
       "display_name": "Marfrig",
       "sources": [
         "deforestation-free-funds"
@@ -2849,7 +2849,7 @@
       "negative_fund_count": 1,
       "informational_fund_count": 0
     },
-    "bunge-global-sa": {
+    "bunge": {
       "display_name": "Bunge",
       "sources": [
         "deforestation-free-funds"
@@ -3448,7 +3448,7 @@
       "negative_fund_count": 0,
       "informational_fund_count": 0
     },
-    "estee-lauder-companies": {
+    "est-e-lauder": {
       "display_name": "Estée Lauder",
       "sources": [
         "gender-equality-funds",
@@ -4162,7 +4162,7 @@
       "negative_fund_count": 0,
       "informational_fund_count": 0
     },
-    "hewlett-packard-enterprise": {
+    "hp": {
       "display_name": "HP Inc.",
       "sources": [
         "bds-boycott"
@@ -4170,7 +4170,34 @@
       "category_signals": {
         "political": {
           "polarity": "informational",
-          "count": 2,
+          "count": 1,
+          "reasons": [
+            "Listed by BDS Movement (informational only — not scored as negative)"
+          ],
+          "source_urls": [
+            "https://bdsmovement.net/"
+          ],
+          "sources": [
+            "bds-boycott"
+          ]
+        }
+      },
+      "pattern_severity": "neutral",
+      "norway_gpfg": null,
+      "divestment_targeted": false,
+      "positive_fund_count": 0,
+      "negative_fund_count": 0,
+      "informational_fund_count": 1
+    },
+    "hewlett-packard-enterprise": {
+      "display_name": "Hewlett Packard Enterprise",
+      "sources": [
+        "bds-boycott"
+      ],
+      "category_signals": {
+        "political": {
+          "polarity": "informational",
+          "count": 1,
           "reasons": [
             "Listed by BDS Movement (informational only — not scored as negative)"
           ],

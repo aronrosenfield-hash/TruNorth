@@ -2,7 +2,7 @@
   "name": "Rumble",
   "cat": "Entertainment & Media",
   "init": "RUMB",
-  "overall": 48.6,
+  "overall": 39.6,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
     "health": "mixed",
     "governance": "neutral"
@@ -30,7 +30,12 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "cfpb": "2026-06-11T14:35:38.932Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -60,9 +65,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -157,7 +163,7 @@
   "health": {
     "s": "3 CPSC recalls on record; sample hazard: the adapters can detach."
   },
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by alt-tech; HQ Toronto. (Wikidata Q104765127)",
     "sources": [
@@ -190,6 +196,192 @@
   },
   "csc": {
     "political": 45,
-    "labor": 50
+    "labor": 50,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Rumble",
+    "tosdrUrl": "https://tosdr.org/en/service/2645",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cfpb": {
+    "totalComplaints": 2,
+    "recent12moCount": 0,
+    "timelyResponseRate": 100,
+    "topIssues": [
+      {
+        "label": "Improper use of your report",
+        "count": 1
+      },
+      {
+        "label": "Managing the loan or lease",
+        "count": 1
+      }
+    ],
+    "topProducts": [
+      {
+        "label": "Credit reporting, credit repair services, or other personal consumer reports",
+        "count": 1
+      },
+      {
+        "label": "Vehicle loan or lease",
+        "count": 1
+      }
+    ],
+    "topResponseTypes": [
+      {
+        "label": "Closed with explanation",
+        "count": 2
+      }
+    ],
+    "sampleComplaints": [
+      {
+        "date_received": "2023-06-18T07:55:23.000Z",
+        "product": "Credit reporting, credit repair services, or other personal consumer reports",
+        "sub_product": "Credit reporting",
+        "issue": "Improper use of your report",
+        "sub_issue": "Reporting company used your report improperly",
+        "state": "AZ",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "7132721"
+      },
+      {
+        "date_received": "2023-01-11T20:54:37.000Z",
+        "product": "Vehicle loan or lease",
+        "sub_product": "Loan",
+        "issue": "Managing the loan or lease",
+        "sub_issue": "Billing problem",
+        "state": "PA",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "6426861"
+      }
+    ],
+    "sampledCount": 2,
+    "lastUpdated": "2026-06-11T14:35:38.932Z",
+    "source": "cfpb",
+    "sourceUrl": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Rumble"
+  },
+  "cpsc": {
+    "totalRecalls": 3,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The adapters can detach, posing a fall hazard to the child in the RumbleSeat.",
+        "count": 1
+      },
+      {
+        "label": "The strollers' and RumbleSeats' bumper bar poses a choking hazard when a child bites the bumper bar and removes a piece of the foam covering.",
+        "count": 1
+      },
+      {
+        "label": "The dried apples and cinnamon in the candle can ignite, causing a flare up and breaking the glass, posing a fire hazard.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 9091,
+        "recall_number": "21158",
+        "recall_date": "2021-06-30T00:00:00",
+        "title": "UPPAbaby Recalls Adapters Included with RumbleSeats Due to Child Fall Hazard",
+        "description": "The recall includes RumbleSeat accessory adapters designed to be used with the UPPAbaby RumbleSeat. The RumbleSeat accessory attaches to the stroller via two plastic adapters that fit onto the stroller frame. The adapters were only included with RumbleSeat Models 0252, 0917 and 0918. Consumers can find these model num…",
+        "url": "https://www.cpsc.gov/Recalls/2021/UPPAbaby-Recalls-Adapters-Included-with-RumbleSeats-Due-to-Child-Fall-Hazard",
+        "hazards": [
+          "The adapters can detach, posing a fall hazard to the child in the RumbleSeat."
+        ],
+        "injuries": [
+          "The firm has received 135 reports of detachments, including 77 incidents resulting in bumps, scrapes and two reports of broken noses."
+        ],
+        "products": [
+          "UPPAbaby adapters included with Rumbleseats"
+        ],
+        "units": [
+          "About 86,000"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 6457,
+        "recall_number": "15196",
+        "recall_date": "2015-07-23T00:00:00",
+        "title": "UPPAbaby Recalls Strollers and RumbleSeats Due to Choking Hazard",
+        "description": "This recall involves 2015 CRUZ and 2015 VISTA strollers and 2015 RumbleSeat. The CRUZ strollers have an aluminum alloy gray or black frame with a black fabric toddler seat with a colored fabric sunshade canopy and a black basket under the seat. The UPPAbaby name and logo are printed on the side of the canopy and \"CRUZ…",
+        "url": "https://www.cpsc.gov/Recalls/2015/UPPAbaby-Recalls-Strollers-and-RumbleSeats",
+        "hazards": [
+          "The strollers' and RumbleSeats' bumper bar poses a choking hazard when a child bites the bumper bar and removes a piece of the foam covering."
+        ],
+        "injuries": [
+          "UPPAbaby has received 22 reports of children biting off a piece of the bumper bar foam. No injuries have been reported."
+        ],
+        "products": [
+          "UPPAbaby 2015 CRUZ, 2015 VISTA strollers and 2015 RumbleSeat"
+        ],
+        "units": [
+          "About 71,000 (in addition, 8,000 were sold in Canada)"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      },
+      {
+        "recall_id": 2773,
+        "recall_number": "04574",
+        "recall_date": "2004-08-18T00:00:00",
+        "title": "CPSC, Seventh Avenue Inc. Announce Recall of Kitchen Krumblers Candle",
+        "description": "The scented candle is housed in a clear glass holder and has a crumbled appearance with color variations. It contains slices of dried apple and cinnamon sticks in the wax. The candle is 3 inches in diameter and 3.5 inches high. \"Kitchen Krumblers\" is labeled at the base of the candle. The candle was sold separately or…",
+        "url": "https://www.cpsc.gov/Recalls/2004/CPSC-Seventh-Avenue-Inc-Announce-Recall-of-Kitchen-Krumblers-Candle-",
+        "hazards": [
+          "The dried apples and cinnamon in the candle can ignite, causing a flare up and breaking the glass, posing a fire hazard."
+        ],
+        "injuries": [
+          "Three reports have been received of a candle flaring up, breaking the glass, and spreading fire. No injuries have been reported."
+        ],
+        "products": [
+          "Kitchen Krumblers Apple Cinnamon Candle"
+        ],
+        "units": [
+          "About 1,200 units"
+        ],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Rumble"
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2020": 1
+      },
+      "totalRecordsAllTime": 1,
+      "sampleRecords": [
+        {
+          "event_date": "2020-05-10",
+          "employer": "Trumble Construction, Inc",
+          "city": "CINCINNATI",
+          "state": "OHIO",
+          "part_of_body": "Upper and lower limb(s)",
+          "nature": "Fractures",
+          "event_description": "Other fall to lower level 16 to 20 feet",
+          "final_narrative": "An employee was working on a roof when wind blew the employee 30 feet across the roof and 18 feet off of it. The employee suffered a broken wrist, fractured leg, and torn knee.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

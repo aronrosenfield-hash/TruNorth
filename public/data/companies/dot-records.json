@@ -2,7 +2,7 @@
   "name": "Dot Records",
   "cat": "Entertainment & Media",
   "init": "DOTR",
-  "overall": 37.1,
+  "overall": 30.6,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -58,9 +58,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Universal Music: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -108,7 +108,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T23:09:25.664Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -136,6 +136,7 @@
   "inheritedFrom": "universal-music",
   "csc": {
     "political": 44.9,
-    "labor": 9.8
+    "labor": 9.8,
+    "privacy": 8
   }
 }

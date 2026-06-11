@@ -2,7 +2,7 @@
   "name": "Bumble",
   "cat": "Technology",
   "init": "BUMB",
-  "overall": 54.2,
+  "overall": 51,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "mixed",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "good",
     "health": "mixed",
     "governance": "poor"
@@ -33,7 +33,9 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "ab": "#2a1a05",
   "ac": "#f0a030",
@@ -67,9 +69,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -144,7 +147,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-20",
+    "cases": [
+      {
+        "caseName": "Orzo v. Bumble Bee Foods, LLC",
+        "dateFiled": "2026-05-20",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Bumble%22"
+      },
+      {
+        "caseName": "Michael Justice v. Bumble B Holdings LLC",
+        "dateFiled": "2026-04-14",
+        "court": "District Court, C.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Bumble%22"
+      },
+      {
+        "caseName": "Omirin v. Bumble Inc.",
+        "dateFiled": "2026-02-19",
+        "court": "District Court, W.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Bumble%22"
+      },
+      {
+        "caseName": "Conscious Content Inc. v. Resch",
+        "dateFiled": "2025-12-15",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Bumble%22"
+      },
+      {
+        "caseName": "Bumble Bee Foods LLC v. United States Customs and Border Protection",
+        "dateFiled": "2025-11-18",
+        "court": "United States Court of International Trade",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Bumble%22"
+      }
+    ],
+    "totalAllTime": 339,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": {
@@ -175,7 +227,7 @@
   "health": {
     "s": "2 CPSC recalls on record; sample hazard: the front wheel can break at the axle hub."
   },
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikipedia \"Lawsuits\" section: In March 2018, Match Group sued Bumble, arguing that it was guilty of patent infringement and of stealing trade secrets from Tinder. In June 2020, an undisclosed settlement was reached between Match…",
     "sources": [
@@ -197,10 +249,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Technology"
     }
   },
   "enriched": {
@@ -230,6 +278,78 @@
     "charity": 50,
     "environment": 100,
     "labor": 13.7,
+    "privacy": 8,
     "execPay": 85.2
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Bumble",
+    "tosdrUrl": "https://tosdr.org/en/service/634",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 2,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The front wheel can break at the axle hub, causing the stroller to tip and posing a fall hazard.",
+        "count": 1
+      },
+      {
+        "label": "The blue antennae on the Bumble Bee toy can break, posing a choking hazard to young children.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 976,
+        "recall_number": "12104",
+        "recall_date": "2012-02-03T00:00:00",
+        "title": "Bumbleride Recalls Indie & Indie Twin Strollers Due to Fall Hazard",
+        "description": "The recalled Bumbleride Indie strollers are model numbers I-107, I-110 and I-205 with a DOM (Date of Manufacture) from January 2009 through August 2011 sold in multiple colors. The DOM (Date of Manufacture) can be found on a white rectangular sticker affixed to the side of the seat frame. The recalled Bumbleride Indie…",
+        "url": "https://www.cpsc.gov/Recalls/2012/Bumbleride-Recalls-Indie--Indie-Twin-Strollers-Due-to-Fall-Hazard",
+        "hazards": [
+          "The front wheel can break at the axle hub, causing the stroller to tip and posing a fall hazard."
+        ],
+        "injuries": [
+          "There have been 36 incidents of the front wheel cracking, including two reports of the stroller tipping over resulting in minor injuries."
+        ],
+        "products": [
+          "Bumbleride Indie & Indie Twin Strollers"
+        ],
+        "units": [
+          "About 28,000 (an additional 2,700 were sold in Canada)"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      },
+      {
+        "recall_id": 2555,
+        "recall_number": "04064",
+        "recall_date": "2004-01-14T00:00:00",
+        "title": "CPSC, Graco Children's Products Announce Recall of Bumble Bee Toys with Blue Antennae",
+        "description": "All Bumble Bee toys with blue antennae distributed by Graco are included in this recall. Specifically, Bumble Bee toys with blue antennae were distributed with Graco High Chair model numbers 3656CUB, 3658FKB, 3659KER, 3659NGS, 3660WNN and 35605 manufactured between July 22, 2002 and March 9, 2003, and Graco Tot Wheels…",
+        "url": "https://www.cpsc.gov/Recalls/2004/CPSC-Graco-Childrens-Products-Announce-Recall-of-Bumble-Bee-Toys-with-Blue-Antennae-",
+        "hazards": [
+          "The blue antennae on the Bumble Bee toy can break, posing a choking hazard to young children."
+        ],
+        "injuries": [
+          "Graco has received 26 reports of the antennae breaking off of the Bumble Bee toys, including five reports of children who started to choke on the broken antennae. One child's throat was scratched whe…"
+        ],
+        "products": [
+          "Bumble Bee Toys with blue antennae sold with certain Graco high chairs and Graco mobile entertainers, and also sold sep…"
+        ],
+        "units": [
+          "About 398,000"
+        ],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Bumble"
   }
 }

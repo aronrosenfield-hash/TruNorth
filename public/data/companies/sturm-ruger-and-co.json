@@ -32,7 +32,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "atf_ffl": "2026-06-11T14:35:36.526Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -114,24 +115,20 @@
   },
   "firearms_atf_ffl": {
     "fflTypes": [
-      "07",
-      "08"
+      "07"
     ],
     "fflTypeNames": [
-      "Manufacturer of Firearms Other Than Destructive Devices (07)",
-      "Importer of Firearms Other Than Destructive Devices (08)"
+      "Manufacturer of Firearms Other Than Destructive Devices"
     ],
-    "licenseCount": 9,
+    "licenseCount": 1,
     "states": [
-      "AZ",
-      "CT",
-      "KY",
-      "NC",
-      "NH"
+      "NC"
     ],
     "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
+    "sourceMonth": "2026-06",
+    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees",
+    "matchBasis": "allowlist",
+    "confidence": 0.95
   },
   "slug": "sturm-ruger-and-co",
   "news": null,

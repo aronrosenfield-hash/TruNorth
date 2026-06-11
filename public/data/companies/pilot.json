@@ -2,7 +2,7 @@
   "name": "Pilot",
   "cat": "Consumer Goods",
   "init": "PI",
-  "overall": 38,
+  "overall": 31.3,
   "ab": "#0d2318",
   "ac": "#4caf82",
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -69,10 +69,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -253,7 +254,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -262,7 +263,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -276,6 +277,15 @@
   },
   "csc": {
     "environment": 50,
-    "labor": 8
+    "labor": 8,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "The Pilot",
+    "tosdrUrl": "https://tosdr.org/en/service/11523",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

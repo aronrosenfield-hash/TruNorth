@@ -2,7 +2,7 @@
   "name": "Waymo",
   "cat": "Automotive",
   "init": "WAYM",
-  "overall": 59,
+  "overall": 47.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral"
   },
@@ -60,9 +60,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -151,7 +152,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:31:51.027Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Waymo Holding; HQ Mountain View. (Wikidata Q15330)",
     "sources": [
@@ -181,6 +182,15 @@
   },
   "csc": {
     "political": 81.5,
-    "charity": 50
+    "charity": 50,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Waymo",
+    "tosdrUrl": "https://tosdr.org/en/service/7057",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

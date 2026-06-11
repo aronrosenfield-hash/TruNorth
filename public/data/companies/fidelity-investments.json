@@ -2,7 +2,7 @@
   "name": "Fidelity Investments",
   "cat": "Financial Services",
   "init": "FI",
-  "overall": 52.3,
+  "overall": 44.2,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -69,9 +69,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "tosdr"
+    ]
   },
   "execPay": {
     "s": "No public record found.",
@@ -89,7 +91,12 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "cfpb": "2026-06-11T14:35:38.932Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "fidelity-investments",
@@ -220,7 +227,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-26",
+    "cases": [
+      {
+        "caseName": "Giuliano v. Fidelity Investments Institutional Services Compan",
+        "dateFiled": "2026-05-26",
+        "court": "United States Bankruptcy Court, D. Delaware",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Fidelity%20Investments%22"
+      },
+      {
+        "caseName": "Raney v. Fidelity Investments",
+        "dateFiled": "2026-05-05",
+        "court": "District Court, S.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Fidelity%20Investments%22"
+      },
+      {
+        "caseName": "Henderson v. Fidelity Investments Institutional Operations Company, LLC.",
+        "dateFiled": "2026-04-13",
+        "court": "District Court, E.D. Virginia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Fidelity%20Investments%22"
+      },
+      {
+        "caseName": "Ding v. Fidelity Investments",
+        "dateFiled": "2026-03-10",
+        "court": "District Court, E.D. Michigan",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Fidelity%20Investments%22"
+      },
+      {
+        "caseName": "United States v. Dundon",
+        "dateFiled": "2026-02-13",
+        "court": "District Court, N.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Fidelity%20Investments%22"
+      }
+    ],
+    "totalAllTime": 508,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -298,7 +354,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "animals": {
       "na": true
@@ -310,7 +366,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "transparency": {
       "notDisclosed": true
@@ -319,6 +375,83 @@
   "csc": {
     "charity": 50,
     "environment": 100,
-    "labor": 10.1
+    "labor": 10.1,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Fidelity Investments",
+    "tosdrUrl": "https://tosdr.org/en/service/4247",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cfpb": {
+    "totalComplaints": 1,
+    "recent12moCount": 0,
+    "timelyResponseRate": 0,
+    "topIssues": [
+      {
+        "label": "Managing an account",
+        "count": 1
+      }
+    ],
+    "topProducts": [
+      {
+        "label": "Checking or savings account",
+        "count": 1
+      }
+    ],
+    "topResponseTypes": [
+      {
+        "label": "Untimely response",
+        "count": 1
+      }
+    ],
+    "sampleComplaints": [
+      {
+        "date_received": "2017-08-23T21:47:47.000Z",
+        "product": "Checking or savings account",
+        "sub_product": "Checking account",
+        "issue": "Managing an account",
+        "sub_issue": "Banking errors",
+        "state": "CA",
+        "company_response": "Untimely response",
+        "timely": "No",
+        "complaint_id": "2642737"
+      }
+    ],
+    "sampledCount": 1,
+    "lastUpdated": "2026-06-11T14:35:38.932Z",
+    "source": "cfpb",
+    "sourceUrl": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Fidelity%20Investments"
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2019": 1
+      },
+      "totalRecordsAllTime": 1,
+      "sampleRecords": [
+        {
+          "event_date": "2019-12-27",
+          "employer": "Fidelity Investments",
+          "city": "BOSTON",
+          "state": "MASSACHUSETTS",
+          "part_of_body": "Foot (feet), unspecified",
+          "nature": "Cuts, lacerations",
+          "event_description": "Contact with objects and equipment, unspecified",
+          "final_narrative": "An employee was walking on a loading dock when a steel security barrier closed on his left foot, lacerating it.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

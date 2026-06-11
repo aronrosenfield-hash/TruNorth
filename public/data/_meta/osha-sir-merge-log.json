@@ -1,50 +1,43 @@
 {
-  "merged_at": "2026-06-03T19:57:39.559Z",
+  "merged_at": "2026-06-11T14:35:44.423Z",
   "source_file": "public/data/osha-sir.json",
   "dataset_rows": 103750,
   "source_url": "https://www.osha.gov/sites/default/files/January2015toAugust2025.zip",
   "total_brands": 528,
-  "merged_count": 251,
+  "merged_count": 258,
   "skipped_count": 240,
-  "orphan_count": 37,
+  "orphan_count": 30,
   "error_count": 0,
   "orphans": [
-    "corona",
     "clif-bar",
-    "post",
     "lush",
-    "texas-roadhouse",
+    "procter-gamble",
+    "johnson-johnson",
     "wegmans",
     "giant-eagle",
-    "big-lots",
-    "tj-maxx",
-    "homegoods",
     "barnes-noble",
     "oreilly-auto-parts",
     "napa-auto-parts",
-    "rite-aid",
     "cumberland-farms",
     "goya",
     "new-balance",
     "zara",
-    "chanel",
     "asus",
     "linear",
-    "canva",
     "block",
     "plaid",
     "us-bank",
     "sofi",
     "new-york-life",
-    "att",
     "us-cellular",
     "volvo",
+    "royal-caribbean",
     "hobby-lobby",
     "ninja",
-    "vitamix",
-    "dyson",
+    "black-decker",
+    "milwaukee-tools",
     "husqvarna",
-    "toro",
+    "john-deere",
     "lego"
   ],
   "top_by_records": [
@@ -95,6 +88,12 @@
       "target": "disney",
       "records_all": 215,
       "records_2y": 18
+    },
+    {
+      "brand": "att",
+      "target": "atandt",
+      "records_all": 165,
+      "records_2y": 13
     },
     {
       "brand": "coca-cola",
@@ -161,12 +160,6 @@
       "target": "crest",
       "records_all": 84,
       "records_2y": 7
-    },
-    {
-      "brand": "comcast",
-      "target": "comcast",
-      "records_all": 81,
-      "records_2y": 11
     }
   ]
 }

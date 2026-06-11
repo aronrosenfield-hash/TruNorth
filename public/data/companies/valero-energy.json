@@ -2,7 +2,7 @@
   "name": "Valero Energy",
   "cat": "Energy & Utilities",
   "init": "VLO",
-  "overall": 35.4,
+  "overall": 37.6,
   "isPublic": true,
   "ticker": "VLO",
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "mixed",
     "governance": "neutral"
   },
   "political": {
@@ -77,10 +77,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "N/A",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -342,7 +343,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ San Antonio. (Wikidata Q1283291)",
     "sources": [
@@ -402,6 +403,15 @@
     "charity": 50,
     "environment": 8,
     "labor": 8,
+    "privacy": 50,
     "execPay": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Valero Energy Corporation",
+    "tosdrUrl": "https://tosdr.org/en/service/5609",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

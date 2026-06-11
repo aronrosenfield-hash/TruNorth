@@ -2,7 +2,7 @@
   "name": "Playskool",
   "cat": "Consumer Goods",
   "init": "PLAY",
-  "overall": 63,
+  "overall": 57.2,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "mixed",
     "health": "mixed"
   },
@@ -59,9 +59,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company HASBRO: Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -130,17 +130,13 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Consumer Goods"
     }
   },
   "health": {
@@ -154,6 +150,6 @@
     "political": 81.5,
     "charity": 50,
     "environment": 100,
-    "execPay": 58.6
+    "privacy": 8
   }
 }

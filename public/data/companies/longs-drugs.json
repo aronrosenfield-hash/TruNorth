@@ -2,7 +2,7 @@
   "name": "Longs Drugs",
   "cat": "Retail",
   "init": "LONG",
-  "overall": 32.8,
+  "overall": 34.4,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "mixed",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "poor",
     "execPay": "na",
     "health": "poor"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company CVS Health: Named in 1 FTC 6(b)/tech report, 1 with adverse findings. Pharmacy Benefit Manager 6(b) (2024) — adverse finding.",
@@ -108,14 +110,11 @@
   "lastUpdated": null,
   "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -125,10 +124,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {

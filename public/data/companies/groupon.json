@@ -2,7 +2,7 @@
   "name": "Groupon",
   "cat": "Retail",
   "init": "GROU",
-  "overall": 49.3,
+  "overall": 49.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,8 +11,8 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "neutral",
+    "guns": "no_guns",
+    "privacy": "mixed",
     "execPay": "na",
     "governance": "neutral"
   },
@@ -64,13 +64,16 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -191,7 +194,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:05:33.073Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by The Vanguard Group; HQ Chicago. (Wikidata Q852787)",
     "sources": [
@@ -199,9 +202,6 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -239,6 +239,15 @@
   },
   "csc": {
     "political": 81.9,
-    "labor": 15.7
+    "labor": 15.7,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Groupon",
+    "tosdrUrl": "https://tosdr.org/en/service/289",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

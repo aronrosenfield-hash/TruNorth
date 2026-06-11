@@ -2,7 +2,7 @@
   "name": "Tidal",
   "cat": "Entertainment & Media",
   "init": "TID",
-  "overall": 48,
+  "overall": 48.4,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na",
     "violations": "good",
     "violations.s": "5 federal records; $4.7M penalties primarily False Claims Act violations."
@@ -73,10 +73,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -259,7 +260,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "animals": {
       "na": true
@@ -271,7 +272,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -283,6 +284,15 @@
   "csc": {
     "charity": 50,
     "environment": 38.8,
-    "labor": 50
+    "labor": 50,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Tidal",
+    "tosdrUrl": "https://tosdr.org/en/service/2138",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

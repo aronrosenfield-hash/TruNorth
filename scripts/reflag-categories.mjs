@@ -125,12 +125,17 @@ export function computeFlagsForCompany(co, lookups) {
     }
   }
 
-  // 2. Per-company notDisclosed flags (only if NOT already NA).
+  // 2. Per-company flags (only if NOT already NA).
   const isPublicLike =
     !!co.ticker || co.isPublic === true || !!co.cik;
 
+  // Lever 2 (2026-06-11): private companies are NOT REQUIRED to disclose a
+  // CEO-to-worker pay ratio — SEC Item 402(u) applies to public registrants
+  // only. That's "the question doesn't apply" (na, factual), not "they chose
+  // not to disclose" (notDisclosed). Fixes the denominator for coverage
+  // claims and stops penalizing private cos in the disclosure UI.
   if (!flags.execPay && !isPublicLike) {
-    flags.execPay = { notDisclosed: true };
+    flags.execPay = { na: true };
   }
 
   // dei: notDisclosed when no deiBadges present.

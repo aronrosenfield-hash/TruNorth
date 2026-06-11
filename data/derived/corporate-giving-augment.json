@@ -2,14 +2,14 @@
   "_license": "Public domain — IRS Form 990 + corporate citizenship disclosures",
   "_source": "data/raw/corporate-giving/<date>.json",
   "_source_file": "data/raw/corporate-giving/2026-06-09.json",
-  "_generated_at": "2026-06-09T13:52:11.901Z",
+  "_generated_at": "2026-06-11T14:35:39.891Z",
   "_stats": {
     "raw_records": 598,
-    "matched": 576,
-    "via_direct": 486,
-    "via_parent": 73,
+    "matched": 584,
+    "via_direct": 491,
+    "via_parent": 76,
     "via_alias": 8,
-    "orphans": 55,
+    "orphans": 50,
     "skipped": 0
   },
   "orphans": [
@@ -21,7 +21,6 @@
     "snickers-bar",
     "m-m-s",
     "lego",
-    "3m",
     "meijer",
     "takeda",
     "hobby-lobby",
@@ -37,7 +36,6 @@
     "kraft-singles",
     "chips-ahoy",
     "yum-brands",
-    "booz-allen-hamilton",
     "mass-mutual",
     "healthy-choice",
     "aig",
@@ -49,21 +47,18 @@
     "occidental-petroleum",
     "franklin-templeton",
     "burt-s-bees",
-    "pinterest",
     "instacart",
     "pseg",
     "giant-eagle",
     "coors-light",
     "miller-high-life",
     "yankee-candle",
-    "crowdstrike",
     "royal-caribbean",
     "dr-horton",
     "seventh-generation",
     "panera-bread-company",
     "pulte-homes",
     "seagate",
-    "wynn-resorts",
     "hanesbrands",
     "fresh-market",
     "toms-of-maine",
@@ -1139,6 +1134,18 @@
         "sourceUrl": "https://www.ge.com/sustainability/",
         "foundationName": "GE Foundation",
         "ein": "14-6015726",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
+    "3m": {
+      "charity": {
+        "totalGivingUsd": 70000000,
+        "pctRevenue": 0.0021,
+        "year": 2024,
+        "sourceUrl": "https://www.3m.com/3M/en_US/sustainability-us/",
+        "foundationName": "3M Foundation",
+        "ein": "41-6035835",
         "source": "corporate-disclosure"
       },
       "routedVia": "direct"
@@ -2972,6 +2979,18 @@
       },
       "routedVia": "direct"
     },
+    "booz-allen-hamilton": {
+      "charity": {
+        "totalGivingUsd": 18000000,
+        "pctRevenue": 0.0017,
+        "year": 2024,
+        "sourceUrl": "https://www.boozallen.com/about/community.html",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
     "conagra-brands": {
       "charity": {
         "totalGivingUsd": 18000000,
@@ -4186,6 +4205,18 @@
       },
       "routedVia": "direct"
     },
+    "pinterest": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0021,
+        "year": 2024,
+        "sourceUrl": "https://newsroom.pinterest.com/en/social-impact",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
     "amd": {
       "charity": {
         "totalGivingUsd": 8000000,
@@ -4800,6 +4831,18 @@
       },
       "routedVia": "direct"
     },
+    "crowdstrike": {
+      "charity": {
+        "totalGivingUsd": 5000000,
+        "pctRevenue": 0.0013,
+        "year": 2024,
+        "sourceUrl": "https://www.crowdstrike.com/about-us/foundation/",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
     "dropbox": {
       "charity": {
         "totalGivingUsd": 5000000,
@@ -5361,6 +5404,18 @@
         "pctRevenue": 0.0017,
         "year": 2024,
         "sourceUrl": "https://www.fiveguys.com/Why-Five-Guys/About-Us",
+        "foundationName": null,
+        "ein": null,
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "direct"
+    },
+    "wynn-resorts": {
+      "charity": {
+        "totalGivingUsd": 3000000,
+        "pctRevenue": 0.0005,
+        "year": 2024,
+        "sourceUrl": "https://www.wynnresorts.com/Esg",
         "foundationName": null,
         "ein": null,
         "source": "corporate-disclosure"
@@ -6266,6 +6321,19 @@
       "routedVia": "parent",
       "parentSlug": "johnson-and-johnson"
     },
+    "cheer": {
+      "charity": {
+        "totalGivingUsd": 70000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://us.pg.com/community-impact/",
+        "foundationName": "P&G Fund",
+        "ein": "31-1392951",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "procter-and-gamble"
+    },
     "classico": {
       "charity": {
         "totalGivingUsd": 25000000,
@@ -6395,6 +6463,19 @@
       },
       "routedVia": "parent",
       "parentSlug": "berkshire-hathaway"
+    },
+    "emerald": {
+      "charity": {
+        "totalGivingUsd": 8000000,
+        "pctRevenue": 0.0008,
+        "year": 2024,
+        "sourceUrl": "https://www.campbellsoupcompany.com/our-impact/",
+        "foundationName": "Campbell Soup Foundation",
+        "ein": "23-2529821",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "campbell-soup"
     },
     "extra": {
       "charity": {
@@ -6902,6 +6983,19 @@
       },
       "routedVia": "parent",
       "parentSlug": "pepsico"
+    },
+    "stride": {
+      "charity": {
+        "totalGivingUsd": 25000000,
+        "pctRevenue": 0.0007,
+        "year": 2024,
+        "sourceUrl": "https://www.mondelezinternational.com/snacking-made-right",
+        "foundationName": "Mondelez International Foundation",
+        "ein": "36-4676065",
+        "source": "corporate-disclosure"
+      },
+      "routedVia": "parent",
+      "parentSlug": "mondelez-international"
     },
     "supertarget": {
       "charity": {

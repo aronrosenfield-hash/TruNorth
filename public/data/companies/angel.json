@@ -2,7 +2,7 @@
   "name": "Angel",
   "cat": "Retail",
   "init": "ANGE",
-  "overall": 46.9,
+  "overall": 39.5,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -11,8 +11,8 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "na",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -59,13 +59,15 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Universal Music: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -209,11 +211,8 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T21:53:58.995Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -230,6 +229,8 @@
   "csc": {
     "political": 48,
     "environment": 35.1,
-    "labor": 50
-  }
+    "labor": 50,
+    "privacy": 8
+  },
+  "inheritedFrom": "universal-music"
 }

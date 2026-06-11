@@ -2,7 +2,7 @@
   "name": "CuriosityStream",
   "cat": "Entertainment & Media",
   "init": "CURI",
-  "overall": 48.1,
+  "overall": 36.6,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -60,9 +60,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -137,7 +138,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T20:07:36.057Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -163,6 +164,15 @@
     }
   },
   "csc": {
-    "political": 45.2
+    "political": 45.2,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "CuriosityStream",
+    "tosdrUrl": "https://tosdr.org/en/service/3648",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

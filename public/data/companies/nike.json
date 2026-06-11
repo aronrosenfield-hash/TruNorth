@@ -2,7 +2,7 @@
   "name": "Nike",
   "cat": "Apparel & Fashion",
   "init": "NKE",
-  "overall": 54.9,
+  "overall": 48.4,
   "isPublic": true,
   "ticker": "NKE",
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "pro_dei",
     "animals": "positive",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "transparency": "poor",
     "governance": "neutral"
@@ -101,10 +101,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -126,8 +127,15 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "newsweekMrc": "2026-06-09T22:43:03.890Z",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "newsweekMrc": "2026-06-11T14:35:43.707Z",
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "asYouSow": "2026-06-11T14:35:36.486Z",
+    "cpaZicklin": "2026-06-11T14:35:39.917Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "knowTheChain": "2026-06-11T14:35:43.001Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -321,7 +329,7 @@
     "propublicaUrl": "https://projects.propublica.org/nonprofits/organizations/931159948"
   },
   "litigation_courtlistener": {
-    "caseCount24mo": 35,
+    "caseCount24mo": 5,
     "classActionCount": 0,
     "mostRecentCase": "2026-05-26",
     "cases": [
@@ -329,17 +337,17 @@
         "caseName": "Alvear v. Nike, Inc.",
         "dateFiled": "2026-05-26",
         "court": "District Court, M.D. Florida",
-        "natureOfSuit": "446 Civil Rights: Americans with Disabilities - Other",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73392814/alvear-v-nike-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Nike%22"
       },
       {
         "caseName": "Dunn v. Nike, Inc.",
         "dateFiled": "2026-05-12",
         "court": "District Court, D. Oregon",
-        "natureOfSuit": "890 Other Statutory Actions",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73332749/dunn-v-nike-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Nike%22"
       },
       {
         "caseName": "Farrington v. Nike Inc",
@@ -347,25 +355,28 @@
         "court": "District Court, C.D. Illinois",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73319181/farrington-v-nike-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Nike%22"
       },
       {
         "caseName": "Caldwell v. Nike, Inc.",
         "dateFiled": "2026-05-08",
         "court": "District Court, D. Oregon",
-        "natureOfSuit": "360 Personal Injury: Other",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73316885/caldwell-v-nike-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Nike%22"
       },
       {
         "caseName": "Taylor v. Nike, Inc",
         "dateFiled": "2026-05-04",
         "court": "District Court, E.D. Missouri",
-        "natureOfSuit": "470 Racketeer/Corrupt Organization",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73297155/taylor-v-nike-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Nike%22"
       }
-    ]
+    ],
+    "totalAllTime": 1379,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
   },
   "slug": "nike",
   "news": null,
@@ -452,7 +463,7 @@
       "high-cred-news"
     ]
   },
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by Dow Jones Industrial Average; HQ Beaverton. (Wikidata Q483915)",
     "sources": [
@@ -465,7 +476,7 @@
       "score": 84.3,
       "year": 2025,
       "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
-      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "lastUpdated": "2026-06-11T14:35:43.707Z",
       "source": "newsweek-mrc"
     },
     "execPay": {
@@ -486,6 +497,133 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/320187/000032018725000048/nke-20250717.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "asYouSow": {
+      "lists": [
+        {
+          "topic": "racial-justice",
+          "year": 2024,
+          "scoreOrRank": "B",
+          "sourceUrl": "https://www.asyousow.org/reports/racial-justice-scorecard"
+        }
+      ],
+      "bestScores": [
+        {
+          "topic": "racial-justice",
+          "year": 2024,
+          "scoreOrRank": "B",
+          "sourceUrl": "https://www.asyousow.org/reports/racial-justice-scorecard"
+        }
+      ],
+      "worstScores": [
+        {
+          "topic": "racial-justice",
+          "year": 2024,
+          "scoreOrRank": "B",
+          "sourceUrl": "https://www.asyousow.org/reports/racial-justice-scorecard"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:36.486Z",
+      "source": "as-you-sow"
+    },
+    "cpaZicklin": {
+      "score": 61.4,
+      "tier": "Third Tier",
+      "year": 2024,
+      "sourceUrl": "https://politicalaccountability.net/cpa-zicklin-index",
+      "lastUpdated": "2026-06-11T14:35:39.917Z",
+      "source": "cpa-zicklin"
+    },
+    "knowTheChain": {
+      "score": 55,
+      "rank": 3,
+      "sector": "Apparel & Footwear",
+      "year": 2025,
+      "weakAreas": [
+        "recruitment",
+        "worker voice"
+      ],
+      "sourceUrl": "https://knowthechain.org/benchmarks/apparel-footwear/",
+      "lastUpdated": "2026-06-11T14:35:43.001Z",
+      "source": "knowthechain"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2016": 1,
+        "2018": 2,
+        "2020": 1,
+        "2023": 1,
+        "2024": 1
+      },
+      "totalRecordsAllTime": 6,
+      "sampleRecords": [
+        {
+          "event_date": "2024-05-05",
+          "employer": "NIKE IHM INC.",
+          "city": "SAINT CHARLES",
+          "state": "MISSOURI",
+          "part_of_body": " Thumb(s)",
+          "nature": " Amputations, avulsions, enucleations  unspecified",
+          "event_description": " Struck by dislodged or detached object(s)",
+          "final_narrative": "An employee was applying a bevel to a 5\" brass component with a 12\" disc sander. The disc sander came off and struck him, resulting in an amputation to his right thumb.",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2023-08-01",
+          "employer": "Warnike Carpet & Tile",
+          "city": "WESTLAKE",
+          "state": "OHIO",
+          "part_of_body": "Finger(s), fingernail(s), unspecified",
+          "nature": "Amputations",
+          "event_description": "Caught in running equipment or machinery during regular operation",
+          "final_narrative": "An employee was cutting wood flooring using a table saw when the wood became pinched and pulled his hand into the blade. The employee sustained a partial amputation to his little finger and lacerations to his thumb, ring finger, and middle finger.",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2020-05-21",
+          "employer": "NIKE AIRMI",
+          "city": "SAINT CHARLES",
+          "state": "MISSOURI",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Caught in running equipment or machinery during regular operation",
+          "final_narrative": "An employee was attempting to remove a TPU sheet from a TPU machine when her thumb was caught between two rollers, resulting in a thumb tip amputation.",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2018-10-21",
+          "employer": "NIKE AIR MANUFACTURING INNOVATION",
+          "city": "SAINT CHARLES",
+          "state": "MISSOURI",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Caught in running equipment or machinery during maintenance, cleaning ",
+          "final_narrative": "An employee was attempting to clear out bridged material from a support hopper in the compounding process. The employee opened the bottom of the hopper to insert a tool to break up the material. Upon clearing the jam, the slide gate closed while his hand was in the zone. The employee's middle fingertip on the right hand was pinched by the slide gate as he pulled his hand out, resulting in a finger",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2018-03-06",
+          "employer": "NIKE AIR MANUFACTURING INNOVATION",
+          "city": "SAINT CHARLES",
+          "state": "MISSOURI",
+          "part_of_body": "Ankle(s)",
+          "nature": "Fractures",
+          "event_description": "Fall from collapsing structure or equipment, unspecified",
+          "final_narrative": "An employee was sitting on a thermoforming machine's exit tray when it collapsed and she fell to the floor, breaking her ankle.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
     }
   },
   "flags": {
@@ -501,6 +639,178 @@
     "charity": 86.6,
     "environment": 100,
     "labor": 14,
+    "privacy": 8,
     "execPay": 30.1
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Nike",
+    "tosdrUrl": "https://tosdr.org/en/service/5219",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 8,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The shoes have a thin metal strip on the outside of the heel that can protrude from the shoe and form a sharp edge that can cut consumers.",
+        "count": 2
+      },
+      {
+        "label": "Choking",
+        "count": 2
+      },
+      {
+        "label": "The chin strap's plastic cup can break as a result of contact, exposing the player to facial or head injuries.",
+        "count": 1
+      },
+      {
+        "label": "The 1.5-inch to 1.75-inch rubber tab at the top of the heel can detach from the shoe, posing a choking hazard to young children.",
+        "count": 1
+      },
+      {
+        "label": "Lead",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 4091,
+        "recall_number": "08081",
+        "recall_date": "2007-11-13T00:00:00",
+        "title": "Nike Recalls Football Helmet Chin Straps Which Can Break and Pose Risk of Serious Injury",
+        "description": "The recalled football helmet chin strap consists of a plastic cup with a foam liner, straps and four metal snaps. They were sold in both youth and adult sizes and come in black/gray and white/gray color combinations. The Nike Swoosh trademark is printed on the outside of the chin cup and DRI-FIT™ is printed on the foa…",
+        "url": "https://www.cpsc.gov/Recalls/2008/Nike-Recalls-Football-Helmet-Chin-Straps-Which-Can-Break-and-Pose-Risk-of-Serious-Injury",
+        "hazards": [
+          "The chin strap's plastic cup can break as a result of contact, exposing the player to facial or head injuries."
+        ],
+        "injuries": [
+          "Nike has received 18 reports of the chin strap breaking, including two reports of concussions, two reports of facial lacerations requiring stitches, and a report of a broken nose."
+        ],
+        "products": [
+          "Football Helmet Chin Straps"
+        ],
+        "units": [
+          "About 235,000"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 2671,
+        "recall_number": "04200",
+        "recall_date": "2004-08-18T00:00:00",
+        "title": "CPSC, NIKE Announce Recall of Children's Athletic Shoes",
+        "description": "The \"GET-GO\" and \"LITTLE GET-GO\" children's athletic shoes come in various color combinations and were sold in toddler and pre-school sizes 2C through 3Y. The Nike Swoosh symbol is on the outside and sole of the shoe. All shoes close with a strap. The style name \"GET-GO\" or \"LITTLE GET-GO\" is written on the shoe box. …",
+        "url": "https://www.cpsc.gov/Recalls/2004/CPSC-NIKE-Announce-Recall-of-Childrens-Athletic-Shoes-",
+        "hazards": [
+          "The 1.5-inch to 1.75-inch rubber tab at the top of the heel can detach from the shoe, posing a choking hazard to young children."
+        ],
+        "injuries": [
+          "Nike has received three reports of heel tabs separating from shoes. No injuries have been reported."
+        ],
+        "products": [
+          "Nike™ Get-Go and Little Get-Go Children's Athletic Shoes"
+        ],
+        "units": [
+          "About 9,000"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 916,
+        "recall_number": "01204",
+        "recall_date": "2001-07-23T00:00:00",
+        "title": "CPSC, NIKE USA Inc. Announce Recall of Jordan Trunner Cross-Training Shoes",
+        "description": "The models being recalled are the Trunner, Trunner Mid, Trunner Bubble, and Trunner 2000. The following chart lists the shoes involved in this recall: Model Name Model Numbers Trunner Bubble (Men's) 136055-001, 136055-102, 136055-002, 136055-401 (Women's) 833002-141, 833002-101 Trunner 136022 Trunner Mid 136033 Trunne…",
+        "url": "https://www.cpsc.gov/Recalls/2001/CPSC-NIKE-USA-Inc-Announce-Recall-of-Jordan-Trunner-Cross-Training-Shoes1",
+        "hazards": [
+          "The shoes have a thin metal strip on the outside of the heel that can protrude from the shoe and form a sharp edge that can cut consumers."
+        ],
+        "injuries": [
+          "NIKE has received six reports of the metal strip protruding from the Bubble, including five cuts to the lower leg that required stitches; one injury report on the Trunner; and no injury reports on th…"
+        ],
+        "products": [
+          "Jordan Trunner cross-training shoes"
+        ],
+        "units": [
+          "About 425,000"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 460,
+        "recall_number": "01090",
+        "recall_date": "2001-02-22T00:00:00",
+        "title": "CPSC, NIKE USA Inc. Announce Recall of Jordan Trunner Cross-Training Shoes",
+        "description": "The NIKE Jordan Trunner LX and Jordan Trunner 2000 Mid shoes being recalled have a strip of metal about 4 inches long at the upper part of the back of the shoe, which is encased in plastic. These shoes are size six and higher, and have model numbers 136040 (the Jordan Trunner LX) and model number 136050 (the Jordan Tr…",
+        "url": "https://www.cpsc.gov/Recalls/2001/CPSC-NIKE-USA-Inc-Announce-Recall-of-Jordan-Trunner-Cross-Training-Shoes",
+        "hazards": [
+          "The shoes have a thin metal strip on the outside of the heel that can protrude from the shoe and form a sharp edge that can cut consumers."
+        ],
+        "injuries": [
+          "NIKE has received 16 reports of consumers receiving cuts to the lower legs from the metal strip on these shoes, including several reports of persons requiring stitches."
+        ],
+        "products": [
+          "Jordan Trunner LX and Jordan Trunner 2000 cross-training shoes"
+        ],
+        "units": [
+          "About 225,000"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 6315,
+        "recall_number": "99146",
+        "recall_date": "1999-07-20T00:00:00",
+        "title": "NIKE Sport Waterbottles Recall",
+        "description": "NIKE Sport Waterbottles Recall NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE July 20, 1999 Release # 99-146 Company Phone Number: (800) 344-6453 CPSC Consumer Hotline: (800) 638-2772 CPSC Media Contact: Kim Dulic, (301) 504-70…",
+        "url": "https://www.cpsc.gov/Recalls/1999/CPSC-NIKE-Announce-Recall-of-NIKE-Sport-Waterbottles",
+        "hazards": [
+          "Choking"
+        ],
+        "injuries": [],
+        "products": [
+          "NIKE sport waterbottles"
+        ],
+        "units": [],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Nike"
+  },
+  "doj": {
+    "totalMentions90d": 2,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Seven Additional Canadian Nationals Charged in Connection with Nationwide Multimillion-Dollar “Grandparent Scam” Following Homeland Security Task Force Investigation",
+        "url": "https://www.justice.gov/usao-vt/pr/seven-additional-canadian-nationals-charged-connection-nationwide-multimillion-dollar",
+        "date": "2026-05-08",
+        "components": [
+          "USAO - Vermont"
+        ],
+        "categories": [],
+        "snippet": "…c) cody jodouin-king , a.k.a. “lids,” (28 – vaudreuil-dorion, québec) panagiota fountotos , a.k.a. “nike,” (29 – laval, québec) all seven defendants were arrested in canada on may 7, 2026. the charges rel…"
+      },
+      {
+        "title": "Morrow County man sentenced to more than 14 years in prison for 2 armed bank robberies near Polaris mall",
+        "url": "https://www.justice.gov/usao-sdoh/pr/morrow-county-man-sentenced-more-14-years-prison-2-armed-banked-robberies-near-polaris",
+        "date": "2026-04-17",
+        "components": [
+          "USAO - Ohio, Southern"
+        ],
+        "categories": [],
+        "snippet": "…ngton bank on gemini place while carrying a firearm. scurlock wore a black sweatshirt, jeans, white nike shoes, black gloves and a white camouflage mask during both robberies. during the first robbery, he…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

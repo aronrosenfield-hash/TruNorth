@@ -2,7 +2,7 @@
   "name": "USA Drug",
   "cat": "Healthcare",
   "init": "USAD",
-  "overall": 59.4,
+  "overall": 58.5,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -11,7 +11,7 @@
     "labor": "good",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "mixed",
     "execPay": "na",
     "health": "mixed"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company Walgreens: No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "privacy": {
     "s": "Via parent company Walgreens: 2 HHS OCR HIPAA breaches reported; 147K individuals affected total. Most recent: 2020-02-04. Indiana jury awarded $1.44M after Walgreens pharmacist disclosed prescription records.",
@@ -112,7 +114,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -122,10 +124,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Healthcare"
     }
   },
   "health": {

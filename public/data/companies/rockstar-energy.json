@@ -2,7 +2,7 @@
   "name": "Rockstar Energy",
   "cat": "Food & Beverage",
   "init": "RE",
-  "overall": 55.8,
+  "overall": 48,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "pro_dei",
     "animals": "poor",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -66,10 +66,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -155,13 +156,13 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -171,10 +172,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "inheritedFrom": "pepsico",
@@ -182,6 +179,15 @@
     "political": 85,
     "charity": 85,
     "environment": 50,
-    "labor": 8.9
+    "labor": 8.9,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Rockstar Energy",
+    "tosdrUrl": "https://tosdr.org/en/service/2782",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

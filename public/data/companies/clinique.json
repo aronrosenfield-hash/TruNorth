@@ -2,7 +2,7 @@
   "name": "Clinique",
   "cat": "Beauty & Personal Care",
   "init": "CLQ",
-  "overall": 46.4,
+  "overall": 50.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -91,7 +91,11 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "hhsOig": "2026-06-11T14:35:42.256Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "competitors": [
     "est-e-lauder",
     "origins"
@@ -135,7 +139,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-05",
+    "cases": [
+      {
+        "caseName": "Farkash v. Abramov",
+        "dateFiled": "2026-05-05",
+        "court": "District Court, E.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Clinique%22"
+      },
+      {
+        "caseName": "Bridget Botto v. Clinique Laboratories LLC",
+        "dateFiled": "2026-04-21",
+        "court": "District Court, C.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Clinique%22"
+      },
+      {
+        "caseName": "Clinique G Brown",
+        "dateFiled": "2026-04-09",
+        "court": "United States Bankruptcy Court, S.D. Mississippi",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Clinique%22"
+      },
+      {
+        "caseName": "Toni Clinique Steele",
+        "dateFiled": "2026-04-09",
+        "court": "United States Bankruptcy Court, E.D. Michigan",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Clinique%22"
+      },
+      {
+        "caseName": "Estee Lauder, Inc. v. Walmart, Inc.",
+        "dateFiled": "2026-02-09",
+        "court": "District Court, C.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Clinique%22"
+      }
+    ],
+    "totalAllTime": 95,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -166,17 +219,13 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Beauty & Personal Care"
     }
   },
   "inheritedFrom": "estee-lauder-companies",
@@ -186,5 +235,23 @@
     "environment": 100,
     "labor": 13.7,
     "health": 8
+  },
+  "hhsOig": {
+    "isExcluded": true,
+    "exclusionCount": 1,
+    "exclusionSample": [
+      {
+        "busname": "ACE CLINIQUE OF MEDICINE, LLC",
+        "exclDate": "20181120",
+        "exclType": "1128a1",
+        "city": "LEXINGTON",
+        "state": "KY"
+      }
+    ],
+    "recentFraudActions24mo": 0,
+    "sampleActions": [],
+    "lastUpdated": "2026-06-11T14:35:42.256Z",
+    "source": "hhs-oig",
+    "sourceUrl": "https://oig.hhs.gov/fraud/enforcement/"
   }
 }

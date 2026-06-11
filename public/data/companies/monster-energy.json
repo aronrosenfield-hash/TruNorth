@@ -90,7 +90,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "competitors": [
     "red-bull",
     "rockstar-energy",
@@ -149,7 +152,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-01-07",
+    "cases": [
+      {
+        "caseName": "GSDMIA, Inc. v. Monster Energy Company",
+        "dateFiled": "2026-01-07",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Monster%20Energy%22"
+      },
+      {
+        "caseName": "GSDMIA, INC v. SEKO Worldwide, LLC",
+        "dateFiled": "2025-12-03",
+        "court": "District Court, S.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Monster%20Energy%22"
+      },
+      {
+        "caseName": "Monster Energy Company v. Monster Straw Company, LLC",
+        "dateFiled": "2025-11-21",
+        "court": "District Court, C.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Monster%20Energy%22"
+      },
+      {
+        "caseName": "Owoc v. Monster Energy Company",
+        "dateFiled": "2025-10-28",
+        "court": "District Court, S.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Monster%20Energy%22"
+      },
+      {
+        "caseName": "Monster Energy Company v. The Partnerships and Unincorporated Associations Identified on Schedule A",
+        "dateFiled": "2025-09-16",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Monster%20Energy%22"
+      }
+    ],
+    "totalAllTime": 198,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,

@@ -2,7 +2,7 @@
   "name": "Zeta",
   "cat": "Technology",
   "init": "ZETA",
-  "overall": 47.9,
+  "overall": 36.5,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -60,9 +60,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -135,7 +136,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:48:32.629Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -161,6 +162,15 @@
     }
   },
   "csc": {
-    "political": 44.7
+    "political": 44.7,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Zeta",
+    "tosdrUrl": "https://tosdr.org/en/service/6329",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

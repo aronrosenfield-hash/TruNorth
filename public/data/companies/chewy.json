@@ -2,7 +2,7 @@
   "name": "Chewy",
   "cat": "Retail",
   "init": "CH",
-  "overall": 41.4,
+  "overall": null,
   "ab": "#0d2318",
   "ac": "#4caf82",
   "sc": {
@@ -12,7 +12,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "poor"
   },
@@ -61,9 +61,11 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
     "verdict": "N/A",
-    "sources": []
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -212,16 +214,13 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 1,
+  "realCats": 0,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "charity": {
       "notDisclosed": true
@@ -254,8 +253,5 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
-  },
-  "csc": {
-    "execPay": 28.6
   }
 }

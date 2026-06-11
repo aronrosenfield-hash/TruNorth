@@ -105,7 +105,17 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "asYouSow": "2026-06-11T14:35:36.486Z",
+    "cfpb": "2026-06-11T14:35:38.932Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "knowTheChain": "2026-06-11T14:35:43.001Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "rainforestAlliance": "2026-06-11T14:35:44.750Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "unilever",
@@ -241,51 +251,54 @@
     }
   ],
   "litigation_courtlistener": {
-    "caseCount24mo": 30,
+    "caseCount24mo": 5,
     "classActionCount": 0,
-    "mostRecentCase": "2026-04-23",
+    "mostRecentCase": "2026-04-28",
     "cases": [
       {
-        "caseName": "BODE v. UNILEVER BEST FOODS NA",
-        "dateFiled": "2026-04-23",
-        "court": "District Court, S.D. Indiana",
+        "caseName": "Kameron Michael Axe and Faith Lynette Axe",
+        "dateFiled": "2026-04-28",
+        "court": "United States Bankruptcy Court, E.D. Texas",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73237359/bode-v-unilever-best-foods-na/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Axe%22"
       },
       {
-        "caseName": "Salazar v. Unilever Manufacturing (US), LLC",
-        "dateFiled": "2026-04-20",
-        "court": "District Court, W.D. Missouri",
+        "caseName": "Theodore F Memmoli, Jr. and Elizabeth Two-Axe Memmoli",
+        "dateFiled": "2026-04-03",
+        "court": "United States Bankruptcy Court, M.D. Florida",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73214605/salazar-v-unilever-manufacturing-us-llc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Axe%22"
       },
       {
-        "caseName": "Mittal v. Unilever PLC",
-        "dateFiled": "2026-03-26",
-        "court": "District Court, N.D. California",
-        "natureOfSuit": "320 Assault Libel & Slander",
-        "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73067832/mittal-v-unilever-plc/"
-      },
-      {
-        "caseName": "McElroy v. Unilever United States, Inc.",
-        "dateFiled": "2026-02-17",
-        "court": "District Court, N.D. Illinois",
+        "caseName": "Charles Williams Axe, Jr. and Kristen Diane Axe",
+        "dateFiled": "2026-03-27",
+        "court": "United States Bankruptcy Court, M.D. Florida",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/72287276/mcelroy-v-unilever-united-states-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Axe%22"
       },
       {
-        "caseName": "Gardner v. Unilever United States, Inc.",
-        "dateFiled": "2025-12-29",
-        "court": "District Court, E.D. New York",
-        "natureOfSuit": "370 Fraud or Truth-In-Lending",
+        "caseName": "Axe Tactical, LLC",
+        "dateFiled": "2026-03-06",
+        "court": "United States Bankruptcy Court, M.D. Florida",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/72085114/gardner-v-unilever-united-states-inc/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Axe%22"
+      },
+      {
+        "caseName": "Axe Capital Management, LLC",
+        "dateFiled": "2026-02-11",
+        "court": "United States Bankruptcy Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Axe%22"
       }
-    ]
+    ],
+    "totalAllTime": 293,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
   },
   "slug": "unilever",
   "news": null,
@@ -409,5 +422,489 @@
     "environment": 50,
     "labor": 11.4,
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Unilever",
+    "tosdrUrl": "https://tosdr.org/en/service/5490",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "enriched": {
+    "asYouSow": {
+      "lists": [
+        {
+          "topic": "climate",
+          "year": 2024,
+          "scoreOrRank": "B",
+          "sourceUrl": "https://www.asyousow.org/reports/road-to-zero-emissions"
+        },
+        {
+          "topic": "plastic-packaging",
+          "year": 2024,
+          "scoreOrRank": "C",
+          "sourceUrl": "https://www.asyousow.org/reports/corporate-plastic-pollution-scorecard"
+        }
+      ],
+      "bestScores": [
+        {
+          "topic": "climate",
+          "year": 2024,
+          "scoreOrRank": "B",
+          "sourceUrl": "https://www.asyousow.org/reports/road-to-zero-emissions"
+        },
+        {
+          "topic": "plastic-packaging",
+          "year": 2024,
+          "scoreOrRank": "C",
+          "sourceUrl": "https://www.asyousow.org/reports/corporate-plastic-pollution-scorecard"
+        }
+      ],
+      "worstScores": [
+        {
+          "topic": "plastic-packaging",
+          "year": 2024,
+          "scoreOrRank": "C",
+          "sourceUrl": "https://www.asyousow.org/reports/corporate-plastic-pollution-scorecard"
+        },
+        {
+          "topic": "climate",
+          "year": 2024,
+          "scoreOrRank": "B",
+          "sourceUrl": "https://www.asyousow.org/reports/road-to-zero-emissions"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:36.486Z",
+      "source": "as-you-sow"
+    },
+    "knowTheChain": {
+      "score": 58,
+      "rank": 1,
+      "sector": "Food & Beverage",
+      "year": 2024,
+      "weakAreas": [
+        "recruitment",
+        "remedy"
+      ],
+      "sourceUrl": "https://knowthechain.org/benchmarks/food-beverage/",
+      "lastUpdated": "2026-06-11T14:35:43.001Z",
+      "source": "knowthechain"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2016": 1,
+        "2017": 1,
+        "2019": 2,
+        "2023": 1,
+        "2024": 1
+      },
+      "totalRecordsAllTime": 6,
+      "sampleRecords": [
+        {
+          "event_date": "2024-01-18",
+          "employer": "UNILEVER",
+          "city": "JEFFERSON CITY",
+          "state": "MISSOURI",
+          "part_of_body": " Hip(s) and leg(s)  n.e.c.",
+          "nature": " Fractures   ",
+          "event_description": " Fall on same level due to slip or trip",
+          "final_narrative": "An employee tripped and fell onto a pallet, resulting in fractures to their left femur and pelvis.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2023-06-07",
+          "employer": "UNILEVER",
+          "city": "INDEPENDENCE",
+          "state": "MISSOURI",
+          "part_of_body": "Hip(s)",
+          "nature": "Fractures",
+          "event_description": "Fall on same level, n.e.c. ",
+          "final_narrative": "An employee was walking into the breakroom when she collided with a cart and fell to the floor. The employee sustained a hip fracture.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2019-03-17",
+          "employer": " UNILEVER ILLINOIS MANUFACTURING, LLC",
+          "city": "CHICAGO",
+          "state": "ILLINOIS",
+          "part_of_body": "Hand(s), unspecified",
+          "nature": "Crushing injuries",
+          "event_description": "Caught in running equipment or machinery, n.e.c.",
+          "final_narrative": "An employee was inspecting an overhead conveyor 9 feet above ground level. The employee's hand was entangled and crushed in the tension roller of an overhead conveyor belt.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2019-01-12",
+          "employer": "UNILEVER",
+          "city": "JEFFERSON CITY",
+          "state": "MISSOURI",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Avulsions, enucleations",
+          "event_description": "Caught in running equipment or machinery, unspecified",
+          "final_narrative": "An employee was adjusting an overhead conveyor belt (8 feet in the air) on a scissor lift when her finger became pinched in an in-running nip point, resulting in a fingertip avulsion. The conveyor belt was running at the time.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2017-08-30",
+          "employer": "Unilever Manufacturing (US), Inc.",
+          "city": "NEW CENTURY",
+          "state": "KANSAS",
+          "part_of_body": "Upper arm(s)",
+          "nature": "Fractures",
+          "event_description": "Fall on same level due to tripping over an object ",
+          "final_narrative": "An employee tripped on a rug in front of the locker room and fell to the ground, breaking her left humerus.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "rainforestAlliance": {
+      "isRainforestAllianceCertified": true,
+      "raCategories": [
+        "tea"
+      ],
+      "sinceYear": 2007,
+      "sourceUrl": "https://www.unilever.com/planet-and-society/responsible-business/responsible-sourcing/",
+      "lastUpdated": "2026-06-11T14:35:44.750Z",
+      "source": "rainforest-alliance"
+    }
+  },
+  "cfpb": {
+    "totalComplaints": 70,
+    "recent12moCount": 36,
+    "timelyResponseRate": 99,
+    "topIssues": [
+      {
+        "label": "False statements or representation",
+        "count": 20
+      },
+      {
+        "label": "Attempts to collect debt not owed",
+        "count": 15
+      },
+      {
+        "label": "Written notification about debt",
+        "count": 13
+      },
+      {
+        "label": "Took or threatened to take negative or legal action",
+        "count": 12
+      },
+      {
+        "label": "Communication tactics",
+        "count": 4
+      }
+    ],
+    "topProducts": [
+      {
+        "label": "Debt collection",
+        "count": 66
+      },
+      {
+        "label": "Credit card or prepaid card",
+        "count": 2
+      },
+      {
+        "label": "Credit reporting or other personal consumer reports",
+        "count": 1
+      },
+      {
+        "label": "Checking or savings account",
+        "count": 1
+      }
+    ],
+    "topResponseTypes": [
+      {
+        "label": "Closed with explanation",
+        "count": 66
+      },
+      {
+        "label": "In progress",
+        "count": 2
+      },
+      {
+        "label": "Closed with monetary relief",
+        "count": 2
+      }
+    ],
+    "sampleComplaints": [
+      {
+        "date_received": "2026-05-09T17:09:55.000Z",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Seized or attempted to seize your property",
+        "state": "CA",
+        "company_response": "In progress",
+        "timely": "Yes",
+        "complaint_id": "22051903"
+      },
+      {
+        "date_received": "2026-04-30T23:43:40.000Z",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "False statements or representation",
+        "sub_issue": "Attempted to collect wrong amount",
+        "state": "PA",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "21772544"
+      },
+      {
+        "date_received": "2026-04-30T16:18:18.000Z",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Seized or attempted to seize your property",
+        "state": "GA",
+        "company_response": "In progress",
+        "timely": "Yes",
+        "complaint_id": "21755903"
+      },
+      {
+        "date_received": "2026-04-08T16:09:56.000Z",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "False statements or representation",
+        "sub_issue": "Attempted to collect wrong amount",
+        "state": "NC",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "21055559"
+      },
+      {
+        "date_received": "2026-04-07T03:31:31.000Z",
+        "product": "Debt collection",
+        "sub_product": "Other debt",
+        "issue": "False statements or representation",
+        "sub_issue": "Attempted to collect wrong amount",
+        "state": "NJ",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "20999162"
+      }
+    ],
+    "sampledCount": 70,
+    "lastUpdated": "2026-06-11T14:35:38.932Z",
+    "source": "cfpb",
+    "sourceUrl": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Axe"
+  },
+  "cpsc": {
+    "totalRecalls": 7,
+    "recent24moCount": 1,
+    "topHazards": [
+      {
+        "label": "The ice axe shaft can break at the handle during use, posing a fall hazard, which can result in serious injury or death.",
+        "count": 1
+      },
+      {
+        "label": "The spike and/or head of the ice axe can detach from the handle during use, posing serious injury and fall hazards to the climber.",
+        "count": 1
+      },
+      {
+        "label": "The axe head can detach from the handle, posing an injury hazard.",
+        "count": 1
+      },
+      {
+        "label": "The knife in the axe handle can detach, posing a laceration or impact hazard to the user or bystanders.",
+        "count": 1
+      },
+      {
+        "label": "The handle of the axe can crack, allowing the axe head to come loose, posing a laceration or impact hazard to the user or bystanders.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 10677,
+        "recall_number": "26347",
+        "recall_date": "2026-03-26T00:00:00",
+        "title": "Petzl America Recalls Nomic and Ergonomic Ice Climbing Axes Due to Fall Hazard; Risk of Serious Injury or Death",
+        "description": "This recall involves the Petzl Nomic ice climbing axes (model U021AA00, serial numbers 17L 0000000 000 to 20F 9999999 999) and Ergonomic ice climbing axes (model U022AA00, serial numbers 18F 0000000 000 to 21L 9999999 999). The axes are made from an aluminum shaft, steel pick and reinforced plastic grip. Nomic axes ar…",
+        "url": "https://www.cpsc.gov/Recalls/2026/Petzl-America-Recalls-Nomic-and-Ergonomic-Ice-Climbing-Axes-Due-to-Fall-Hazard-Risk-of-Serious-Injury-or-Death",
+        "hazards": [
+          "The ice axe shaft can break at the handle during use, posing a fall hazard, which can result in serious injury or death."
+        ],
+        "injuries": [
+          "The firm has received 26 reports of the ice axe shafts breaking at the handle. No injuries have been reported."
+        ],
+        "products": [
+          "Nomic and Ergonomic Ice Climbing Axes"
+        ],
+        "units": [
+          "About 4,200 (In addition, about 1,160 were sold in Canada)"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      },
+      {
+        "recall_id": 8632,
+        "recall_number": "19180",
+        "recall_date": "2019-08-07T00:00:00",
+        "title": "Seattle Manufacturing Corporation Recalls Ice Axes Due to Serious Injury and Fall Hazards",
+        "description": "This recall involves Kobah Ice Axes of lengths 60, 65, 70 and 75 centimeters. The axes each have a steel pick and adze joined at the top of an orange aluminum handle shaft by a black polyamide resin head. There is a steel spike in the bottom of the handle shaft. \"Kobah,\" \"SMC\" and Manufacturer's Lot Number (MLN) 10864…",
+        "url": "https://www.cpsc.gov/Recalls/2019/Seattle-Manufacturing-Corporation-Recalls-Ice-Axes-Due-to-Serious-Injury-and-Fall-Hazards",
+        "hazards": [
+          "The spike and/or head of the ice axe can detach from the handle during use, posing serious injury and fall hazards to the climber."
+        ],
+        "injuries": [
+          "The firm has received one report of the axe's spike detaching from the handle. No injuries have been reported."
+        ],
+        "products": [
+          "Kobah Ice Axes"
+        ],
+        "units": [
+          "About 165"
+        ],
+        "remedies": [
+          "Refund"
+        ]
+      },
+      {
+        "recall_id": 8415,
+        "recall_number": "19003",
+        "recall_date": "2018-10-03T00:00:00",
+        "title": "Walmart Recalls Camp Axes Due to Injury Hazard",
+        "description": "This recall involves Ozark Trail camp axes. The steel shaft tubular axes measure about 14 inches long from handle to axe head, and weigh about 1.25 lbs. The axes have a black, non-slip rubber grip and claw feature. \"Ozark Trail\" and model number 60111140 are printed on the product packaging.",
+        "url": "https://www.cpsc.gov/Recalls/2019/Walmart-Recalls-Camp-Axes-Due-to-Injury-Hazard",
+        "hazards": [
+          "The axe head can detach from the handle, posing an injury hazard."
+        ],
+        "injuries": [
+          "Walmart has received two reports of axe heads detaching from the handle, resulting in minor cuts and abrasions."
+        ],
+        "products": [
+          "Ozark Trail camp axes"
+        ],
+        "units": [
+          "About 246,000"
+        ],
+        "remedies": [
+          "Refund"
+        ]
+      },
+      {
+        "recall_id": 7816,
+        "recall_number": "16233",
+        "recall_date": "2016-07-28T00:00:00",
+        "title": "STUBAI Recalls Ice Axes Due to Laceration and Impact Hazards",
+        "description": "This recall involves the STUBAI Tour Lite Telescope ice axe. The red and black axe ranges about 20 to 35 inches long with an aluminum head that is 9 inches long and 1 inch wide. \"STUBAI\" is printed on the top side of the axe above the black gripper. The axe weighs about one pound and can be adjusted from about 23 to 3…",
+        "url": "https://www.cpsc.gov/Recalls/2016/STUBAI-Recalls-Ice-Axes",
+        "hazards": [
+          "The knife in the axe handle can detach, posing a laceration or impact hazard to the user or bystanders."
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "Ice axes"
+        ],
+        "units": [
+          "About 20"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 6381,
+        "recall_number": "15130",
+        "recall_date": "2015-05-07T00:00:00",
+        "title": "Snow Peak Recalls Japanese Axe Due to Laceration and Impact Hazards",
+        "description": "The recalled Japanese Axe M has item number R-061 printed on the back page of the included manual. The black axe head measures 5-3/4 inches high by 4 inches wide and weighs 2 pounds. The axe handle measures 14 inches long and is made of light-colored maple. A small black snow flake (asterisk) is burnt into the handle …",
+        "url": "https://www.cpsc.gov/Recalls/2015/Snow-Peak-Recalls-Japanese-Axe",
+        "hazards": [
+          "The handle of the axe can crack, allowing the axe head to come loose, posing a laceration or impact hazard to the user or bystanders."
+        ],
+        "injuries": [
+          "The firm has received three reports of a cracked handle or loose head on the axe. No injuries have been reported."
+        ],
+        "products": [
+          "Japanese Axe M"
+        ],
+        "units": [
+          "About 220"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Axe"
+  },
+  "doj": {
+    "totalMentions90d": 7,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Former Pagan’s Motorcycle Gang Member Sentenced to Ten Years for Armed Assault Against Rival",
+        "url": "https://www.justice.gov/usao-wdmo/pr/former-pagans-motorcycle-gang-member-sentenced-ten-years-armed-assault-against-rival",
+        "date": "2026-05-26",
+        "components": [
+          "USAO - Missouri, Western"
+        ],
+        "categories": [],
+        "snippet": "…ngs, mo. various members of the pagan’s and los valerosos were armed with firearms and at least one axe handle. hahn, who was a member of the los valerosos at the time, and the others, confronted the vic…"
+      },
+      {
+        "title": "Former Pagan’s Motorcycle Gang Member Sentenced to 110 Months for Assault Against Rivals",
+        "url": "https://www.justice.gov/usao-wdmo/pr/former-pagans-motorcycle-gang-member-sentenced-110-months-assault-against-rivals",
+        "date": "2026-05-20",
+        "components": [
+          "USAO - Missouri, Western"
+        ],
+        "categories": [],
+        "snippet": "…ngs, mo. various members of the pagan’s and los valerosos were armed with firearms and at least one axe handle. cottman, who was a pagan’s prospect at the time, and the others confronted the victim on th…"
+      },
+      {
+        "title": "Outlaw Motorcycle Gang Member Sentenced for Armed Assault Against Rival",
+        "url": "https://www.justice.gov/usao-wdmo/pr/outlaw-motorcycle-gang-member-sentenced-armed-assault-against-rival",
+        "date": "2026-04-07",
+        "components": [
+          "USAO - Missouri, Western"
+        ],
+        "categories": [],
+        "snippet": "…ngs, mo. various members of the pagan’s and los valerosos were armed with firearms and at least one axe handle. fletcher, who was an associate of the los valerosos at the time, and others confronted the…"
+      },
+      {
+        "title": "Former Pagan’s Motorcycle Gang Member Pleaded Guilty for Armed Assault Against Rival",
+        "url": "https://www.justice.gov/usao-wdmo/pr/former-pagans-motorcycle-gang-member-pleaded-guilty-armed-assault-against-rival",
+        "date": "2026-04-07",
+        "components": [
+          "USAO - Missouri, Western"
+        ],
+        "categories": [],
+        "snippet": "…ngs, mo. various members of the pagan’s and los valerosos were armed with firearms and at least one axe handle. hannah and the others confronted the victim on the side of the roadway and ultimately, the…"
+      },
+      {
+        "title": "Jury Convicts Springfield Man of Hatchet Assault in National Park",
+        "url": "https://www.justice.gov/usao-wdva/pr/jury-convicts-springfield-man-hatchet-assault-national-park",
+        "date": "2026-03-20",
+        "components": [
+          "USAO - Virginia, Western"
+        ],
+        "categories": [],
+        "snippet": "…m. when questioned by officers, the defendant told them victim 1’s arm was accidentally cut with an axe. emergency medical personnel arrived at the overlook and transported victim 1 to the nearest hospit…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

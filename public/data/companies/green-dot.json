@@ -2,7 +2,7 @@
   "name": "GREEN DOT",
   "cat": "Financial Services",
   "init": "GREE",
-  "overall": 54.1,
+  "overall": 40.9,
   "isPublic": true,
   "sc": {
     "political": "right-leaning",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -60,9 +60,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -153,7 +154,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:02:29.056Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -179,6 +180,15 @@
     }
   },
   "csc": {
-    "political": 60.3
+    "political": 60.3,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Green Dot",
+    "tosdrUrl": "https://tosdr.org/en/service/437",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

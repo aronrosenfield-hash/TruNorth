@@ -91,7 +91,7 @@ export default async function handler(req) {
   const title = `Higher-graded alternatives to ${name}${cat ? " (" + cat + ")" : ""} | TruNorth`;
   const intro = alts.length
     ? `${name}${overallG ? ` holds a TruNorth grade of ${overallG}` : ""} based on public records. In ${cat || "its category"}, these brands grade higher on the nine values categories TruNorth tracks — political donations, environment, labor, DEI, charity, animal welfare, firearms, privacy, and executive pay — each scored from public records (FEC, EPA, OSHA, SEC, NLRB, and more).`
-    : `TruNorth could not find a higher-graded ${cat || ""} alternative to ${name} in its catalog of 11,000+ brands at this time.`;
+    : `TruNorth could not find a higher-graded ${cat || ""} alternative to ${name} in its catalog of 12,000+ brands at this time.`;
   const description = `Public-records alternatives to ${name} that grade higher on TruNorth: ${alts.slice(0, 4).map(a => `${a.name} (${a.g})`).join(", ") || "see the full list"}.`;
 
   const itemList = {

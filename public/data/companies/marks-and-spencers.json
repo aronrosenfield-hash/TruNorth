@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "na"
   },
@@ -38,10 +38,11 @@
     ]
   },
   "environment": {
-    "s": "Forest 500 2024 leader (score 82/100) — strong tropical deforestation policy + implementation on commodity supply-chain. Exposed to soy, palm, beef, pulp.",
+    "s": "Forest 500 2024 leader (score 82/100) — strong tropical deforestation policy + implementation on commodity supply-chain. Exposed to soy, palm, beef, pulp. Climate-commitment coalition member: RE100 (since 2017; target 2030). 100% renewable electricity across global operations — achieved across UK + ROI.",
     "sources": [
       "Claude AI synthesis",
-      "forest500"
+      "forest500",
+      "climate-coalitions"
     ]
   },
   "dei": {
@@ -57,8 +58,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -120,14 +123,11 @@
   "lastUpdated": null,
   "realCats": 2,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true

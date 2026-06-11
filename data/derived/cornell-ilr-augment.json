@@ -2,9 +2,9 @@
   "_license": "CC-BY — Cornell ILR",
   "_citation": "Kallas, J., Iyer, D. K., & Friedman, E. (2024). \"Labor Action Tracker.\" Cornell University ILR School & University of Illinois LER School. Retrieved from striketracker.ilr.cornell.edu",
   "_source_url": "https://striketracker.ilr.cornell.edu",
-  "_generated_at": "2026-06-09T13:52:12.221Z",
+  "_generated_at": "2026-06-11T14:35:39.838Z",
   "_source_raw_file": "data/raw/cornell-ilr/2026-06-09.json",
-  "_matched_slugs": 294,
+  "_matched_slugs": 315,
   "_orphan_employers": [
     {
       "name": "The US Federal Government",
@@ -95,11 +95,6 @@
       "name": "Carl's Jr",
       "actionCount": 7,
       "totalWorkers": 216
-    },
-    {
-      "name": "City of New York",
-      "actionCount": 7,
-      "totalWorkers": 10950
     },
     {
       "name": "Boston University",
@@ -255,13 +250,18 @@
       "name": "Clark County School District",
       "actionCount": 5,
       "totalWorkers": 4020
+    },
+    {
+      "name": "Providence Health",
+      "actionCount": 5,
+      "totalWorkers": 8207
     }
   ],
   "_routing_counts": {
-    "direct": 1163,
-    "alias": 112,
-    "brand-parent": 89,
-    "orphan": 3329
+    "direct": 1308,
+    "alias": 97,
+    "brand-parent": 87,
+    "orphan": 3201
   },
   "bySlug": {
     "conagra-brands": {
@@ -297,6 +297,69 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 1400,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "vail-resorts": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 33,
+            "actionType": "protest",
+            "startDate": "2021-01-16",
+            "endDate": "2021-01-16",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 200,
+            "numUnions": 1,
+            "unions": [
+              "United Professional Ski Patrols of America - CWA"
+            ],
+            "industry": [
+              "Arts, Entertainment and Recreation"
+            ],
+            "demands": [
+              "Pay",
+              "Sick leave benefits"
+            ],
+            "city": "Park City",
+            "state": "Utah",
+            "sourceUrl": "https://www.parkrecord.com/news/business/not-on-strike-just-practicing-ski-patrollers-locked-in-negotiations-with-vail-resorts-picket-at-pcmr/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-33",
+            "notes": ""
+          },
+          {
+            "actionId": 42,
+            "actionType": "protest",
+            "startDate": "2021-01-16",
+            "endDate": "2021-01-16",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 15,
+            "bargainingUnitSize": 50,
+            "numUnions": 1,
+            "unions": [
+              "United Professional Ski Patrols of America - CWA"
+            ],
+            "industry": [
+              "Arts, Entertainment and Recreation"
+            ],
+            "demands": [
+              "Pay",
+              "First contract",
+              "Professional development"
+            ],
+            "city": "Leavenworth",
+            "state": "Washington",
+            "sourceUrl": "https://www.ncwlife.com/stevens-pass-ski-patrollers-campaign-for-contract-amid-impasse-with-vail-resorts/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-42",
+            "notes": ""
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 15,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -7347,6 +7410,119 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "warrior-met-coal": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 686,
+            "actionType": "protest",
+            "startDate": "2021-11-04",
+            "endDate": "2021-11-04",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Mine Workers"
+            ],
+            "industry": [
+              "Mining"
+            ],
+            "demands": [
+              "Pay",
+              "Time off"
+            ],
+            "city": "New York City",
+            "state": "New York",
+            "sourceUrl": "https://www.cnn.com/2021/11/04/business/mine-workers-protest-nyc/index.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-686",
+            "notes": ""
+          },
+          {
+            "actionId": 434,
+            "actionType": "protest",
+            "startDate": "2021-07-28",
+            "endDate": "2021-07-28",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 1100,
+            "numUnions": 1,
+            "unions": [
+              "United Mine Workers of America (UMWA)"
+            ],
+            "industry": [
+              "Mining"
+            ],
+            "demands": [
+              "Support striking miners in Alabama"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.theguardian.com/business/2021/jul/28/union-advocates-rally-striking-alabama-coalminers",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-434",
+            "notes": ""
+          },
+          {
+            "actionId": 377,
+            "actionType": "protest",
+            "startDate": "2021-06-22",
+            "endDate": "2021-06-22",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 1100,
+            "numUnions": 1,
+            "unions": [
+              "United Mine Workers of America (UMWA)"
+            ],
+            "industry": [
+              "Mining"
+            ],
+            "demands": [
+              "Support striking miners in Alabama"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.al.com/news/2021/06/striking-alabama-coal-miners-take-protest-to-wall-street.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-377",
+            "notes": ""
+          },
+          {
+            "actionId": 127,
+            "actionType": "strike",
+            "startDate": "2021-04-01",
+            "endDate": "2023-03-01",
+            "durationDays": 700,
+            "authorized": true,
+            "numWorkers": null,
+            "bargainingUnitSize": 1100,
+            "numUnions": 1,
+            "unions": [
+              "United Mine Workers of America (UMWA)"
+            ],
+            "industry": [
+              "Mining"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "More paid time off"
+            ],
+            "city": "Brookwood",
+            "state": "Alabama",
+            "sourceUrl": "https://www.al.com/news/2021/04/as-alabama-coal-miners-strike-company-implements-contingency-plan.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-127",
+            "notes": ""
+          }
+        ],
+        "actionCount": 4,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "smithfield-foods": {
       "labor": {
         "laborActions": [
@@ -7451,6 +7627,102 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 40,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "universal-logistics": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 151,
+            "actionType": "strike",
+            "startDate": "2021-04-12",
+            "endDate": "2021-04-15",
+            "durationDays": 4,
+            "authorized": null,
+            "numWorkers": 30,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "Teamsters (IBT)",
+              "International Longshore and Warehouse Union (ILWU)"
+            ],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "Sympathy strike; Union recognition; Classify workers as employees; Rehire terminated workers"
+            ],
+            "city": "Compton",
+            "state": "California",
+            "sourceUrl": "https://mynewsla.com/crime/2021/04/12/drivers-who-work-at-port-of-los-angeles-go-on-strike-against-trucking-company/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-151",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 30,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "unifi": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4448,
+            "actionType": "protest",
+            "startDate": "2025-10-22",
+            "endDate": "2025-10-22",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "SEIU United Service Workers West (SEIU-USWW)"
+            ],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "End to anti union retaliation",
+              "Health and safety",
+              "Reinstate suspended workers"
+            ],
+            "city": " San Franscisco",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20251025023655/https://www.smdailyjournal.com/news/local/airport-workers-rally-after-suspensions-during-contract-negotiations/article_57efec24-f16b-4192-8809-62490f3434a6.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4448",
+            "notes": ""
+          },
+          {
+            "actionId": 155,
+            "actionType": "strike",
+            "startDate": "2021-04-12",
+            "endDate": "2021-04-24",
+            "durationDays": 13,
+            "authorized": null,
+            "numWorkers": 7,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Missoula",
+            "state": "Montana",
+            "sourceUrl": "https://missoulian.com/news/local/missoula-airport-workers-protest-low-wages-unsafe-conditions/article_48b3508e-7932-5463-85c0-b2adf8eb109e.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-155",
+            "notes": ""
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 7,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -7908,6 +8180,69 @@
         ],
         "actionCount": 17,
         "totalWorkersInvolved": 4300,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "ziff-davis": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3225,
+            "actionType": "protest",
+            "startDate": "2024-05-28",
+            "endDate": "2024-08-28",
+            "durationDays": 93,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Ziff Davis Creators Guild - The NewsGuild of New York"
+            ],
+            "industry": [
+              "Other Services (except Public Administration)",
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Transparency on the Ziff Davis's use of AI"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.nyguild.org/front-page-details/trust-the-workers-editorial-staff-at-lifehacker-mashable-and-pcmag-to-rally-in-protest-of-companys-games-on-wages-ai",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3225",
+            "notes": ""
+          },
+          {
+            "actionId": 171,
+            "actionType": "strike",
+            "startDate": "2021-04-15",
+            "endDate": "2021-04-15",
+            "durationDays": 1,
+            "authorized": true,
+            "numWorkers": 70,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "The NewsGuild - CWA"
+            ],
+            "industry": [
+              "Information"
+            ],
+            "demands": [
+              "Pay",
+              "First contract"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.adweek.com/media/the-ziff-davis-creators-guild-walks-out-in-protest-of-bad-faith-bargaining/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-171",
+            "notes": ""
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 70,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -8559,7 +8894,7 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
-    "ups": {
+    "united-parcel-service": {
       "labor": {
         "laborActions": [
           {
@@ -9096,6 +9431,2517 @@
         ],
         "actionCount": 3,
         "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "city": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4886,
+            "actionType": "protest",
+            "startDate": "2026-06-01",
+            "endDate": "2026-06-01",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Uniformed Firefighters Association - IAFF"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Reverse budget cuts",
+              "Staffing",
+              "Health and safety"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://web.archive.org/web/20260604033755/https://www.cbsnews.com/newyork/news/fdny-5th-firefighter-on-engines-rally-mamdani-city-budget/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4886",
+            "notes": ""
+          },
+          {
+            "actionId": 4667,
+            "actionType": "strike",
+            "startDate": "2026-03-04",
+            "endDate": "2026-03-15",
+            "durationDays": 12,
+            "authorized": true,
+            "numWorkers": 70,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "International Brotherhood of Electrical Workers (IBEW)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Orange",
+            "state": "California",
+            "sourceUrl": "http://web.archive.org/web/20260310210439/https://www.ocregister.com/2026/03/04/public-works-employees-on-strike-in-the-city-of-orange/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4667",
+            "notes": "This strike occurred at locations across the City of Orange. We have instead listed the two main picket locations at City Hall and the Public Works Department"
+          },
+          {
+            "actionId": 4585,
+            "actionType": "protest",
+            "startDate": "2025-12-12",
+            "endDate": "2025-12-12",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 70,
+            "bargainingUnitSize": 0,
+            "numUnions": 4,
+            "unions": [
+              "Starbucks Workers United",
+              "Brooklyn College Student Union",
+              "CUNY’s Professional Staff Congress (PSC)",
+              "Hunter College Young Democratic Socialists of America"
+            ],
+            "industry": [],
+            "demands": [
+              "First contract",
+              "Reinstatement of four Brooklyn College adjuncts"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://archive.ph/JnUmQ",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4585",
+            "notes": ""
+          },
+          {
+            "actionId": 4444,
+            "actionType": "protest",
+            "startDate": "2025-10-21",
+            "endDate": "2025-10-21",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 11,
+            "unions": [
+              "Communications Workers of America (CWA)",
+              "International Association of Machinists and Aerospace Workers (IAM)",
+              "International Brotherhood of Electrical Workers (IBEW)",
+              "International Union of Operating Engineers (IUOE)",
+              "American Federation of State, County and Municipal Employees (AFSCME)",
+              "International Brotherhood of Teamsters (IBT)",
+              "Memphis Fire Fighters Association",
+              "Memphis Police Association",
+              "Memphis & West Tennessee Labor Council",
+              "Service Employees International Union (SEIU) Healthcare",
+              "United Steelworkers (USW)"
+            ],
+            "industry": [],
+            "demands": [
+              "Honor MOUs",
+              "Pay",
+              "Give previously agreed upon raises"
+            ],
+            "city": " Memphis",
+            "state": "Tennessee",
+            "sourceUrl": "https://web.archive.org/web/20251029221312/https://www.fox13memphis.com/news/from-librarians-to-electricians-hundreds-of-city-workers-protest-outside-of-memphis-city-hall/article_1440ddd6-c404-4aec-af8f-e8e9c157ebc6.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4444",
+            "notes": ""
+          },
+          {
+            "actionId": 4352,
+            "actionType": "protest",
+            "startDate": "2025-09-15",
+            "endDate": "2025-09-15",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU),  San Diego and Imperial Counties Labor Council"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "$25 minimum wage"
+            ],
+            "city": " San Diego",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20250916232250/https://timesofsandiego.com/politics/2025/09/15/union-leaders-workers-rally-hospitality-wage/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4352",
+            "notes": ""
+          },
+          {
+            "actionId": 4241,
+            "actionType": "protest",
+            "startDate": "2025-08-14",
+            "endDate": "2025-08-14",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Paid time off (PTO)",
+              "scheduling"
+            ],
+            "city": "Fairfield",
+            "state": "California",
+            "sourceUrl": "https://archive.ph/E3R3w",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4241",
+            "notes": ""
+          },
+          {
+            "actionId": 4204,
+            "actionType": "strike",
+            "startDate": "2025-08-05",
+            "endDate": "2025-08-07",
+            "durationDays": 3,
+            "authorized": true,
+            "numWorkers": 76,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Novato",
+            "state": "California",
+            "sourceUrl": "http://web.archive.org/web/20250806152525/https://www.marinij.com/2025/08/05/novato-employees-strike-for-higher-wages/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4204",
+            "notes": "This strike occurred across the city of Novato, we have instead listed the city hall as the location of the strike. "
+          },
+          {
+            "actionId": 4287,
+            "actionType": "protest",
+            "startDate": "2025-07-31",
+            "endDate": "2025-08-31",
+            "durationDays": 32,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Professional Staff Congress (PSC CUNY) - AFT"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Against the firing of 4 faculty members",
+              "Job Security",
+              "Academic freedom"
+            ],
+            "city": "Brooklyn",
+            "state": "New York",
+            "sourceUrl": "https://archive.ph/HBfMB",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4287",
+            "notes": ""
+          },
+          {
+            "actionId": 4089,
+            "actionType": "strike",
+            "startDate": "2025-07-01",
+            "endDate": "2025-07-09",
+            "durationDays": 9,
+            "authorized": true,
+            "numWorkers": 10000,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Retirement benefits"
+            ],
+            "city": "Philadelphia",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://web.archive.org/web/20250701150258/https://www.inquirer.com/politics/philadelphia/dc33-strike-afscme-union-philadelphia-parker-trash-20250701.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4089",
+            "notes": ""
+          },
+          {
+            "actionId": 4084,
+            "actionType": "protest",
+            "startDate": "2025-06-30",
+            "endDate": "2025-06-30",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Philadelphia",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://web.archive.org/web/20250630193824/https://6abc.com/post/strike-looms-deal-is-not-reached-district-council-33-philadelphias-largest-workers-union/16887463/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4084",
+            "notes": ""
+          },
+          {
+            "actionId": 4048,
+            "actionType": "protest",
+            "startDate": "2025-06-18",
+            "endDate": "2025-06-18",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 3,
+            "unions": [
+              "Teamsters (IBT)",
+              "American Federation of State, County and Municipal Employees (AFSCME)",
+              "Communications Workers of America (CWA)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Job Security"
+            ],
+            "city": "Denver",
+            "state": "Colorado",
+            "sourceUrl": "https://web.archive.org/web/20250624163051/https://denverite.com/2025/06/19/denver-workers-unions-layoffs-career-service-board-rules/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4048",
+            "notes": ""
+          },
+          {
+            "actionId": 3992,
+            "actionType": "protest",
+            "startDate": "2025-06-04",
+            "endDate": "2025-06-04",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 1000,
+            "bargainingUnitSize": 0,
+            "numUnions": 2,
+            "unions": [
+              "Service Employees International Union (SEIU)",
+              "International Federation of Professional and Technical Engineers (IFPTE)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Stop Budget Cuts",
+              "Stop Layoffs"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20250605184039/https://www.kqed.org/news/12042690/sf-labor-unions-community-groups-decry-budget-cuts-at-city-hall",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3992",
+            "notes": ""
+          },
+          {
+            "actionId": 3903,
+            "actionType": "protest",
+            "startDate": "2025-04-23",
+            "endDate": "2025-04-23",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "City of Portland Professional Workers Union (CPPW)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "First contract",
+              "Pay",
+              "Job Security"
+            ],
+            "city": "Portland",
+            "state": "Oregon",
+            "sourceUrl": "https://web.archive.org/save/https://www.koin.com/news/portland/portland-city-union-workers-hold-rally-outside-city-hall-amid-possible-cuts/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3903",
+            "notes": ""
+          },
+          {
+            "actionId": 3884,
+            "actionType": "protest",
+            "startDate": "2025-04-16",
+            "endDate": "2025-04-16",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 0,
+            "numUnions": 2,
+            "unions": [
+              "Chicago Fire Fighters Union (CGGU) - IAFF",
+              "Chicago Teachers Union (CTU) - AFT"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Health and safety",
+              "Repair equipment",
+              "Pay",
+              "Retirement benefits"
+            ],
+            "city": "Chicago",
+            "state": "Illinois",
+            "sourceUrl": "https://www.facebook.com/chicagolabor/posts/-rally-alert-join-us-on-wednesday-april-16-at-city-hall-at-9-am-as-we-rally-in-s/1381032376722088/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3884",
+            "notes": ""
+          },
+          {
+            "actionId": 3883,
+            "actionType": "protest",
+            "startDate": "2025-04-15",
+            "endDate": "2025-04-15",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Enact paid sick leave legislation"
+            ],
+            "city": "Pittsburgh",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://web.archive.org/web/20250428163249/https://www.wtae.com/article/consumer-way-day-2025-wayfair-savings/mraid.js",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3883",
+            "notes": ""
+          },
+          {
+            "actionId": 3813,
+            "actionType": "protest",
+            "startDate": "2025-03-24",
+            "endDate": "2025-03-24",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 0,
+            "numUnions": 2,
+            "unions": [
+              "Chicago Teachers Union (CTU) - AFT",
+              "Chicago Fire Fighters Union (CFFU) - IAFF"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Staffing",
+              "Pay"
+            ],
+            "city": "Chicago",
+            "state": "Illinois",
+            "sourceUrl": "https://web.archive.org/web/20250329170938/https://abc7chicago.com/post/chicago-teachers-union-firefighters-rally-solidarity-both-call-contract-deals/16076490/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3813",
+            "notes": ""
+          },
+          {
+            "actionId": 3775,
+            "actionType": "protest",
+            "startDate": "2025-03-13",
+            "endDate": "2025-03-13",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Municipal Employees’ Federation (MEF) - AFSCME"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Increase funding for essential service",
+              "End hiring freeze",
+              "Staffing",
+              "Job Security"
+            ],
+            "city": "San Jose",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/save/https://sanjosespotlight.com/san-jose-workers-rally-against-hiring-freeze/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3775",
+            "notes": ""
+          },
+          {
+            "actionId": 3970,
+            "actionType": "protest",
+            "startDate": "2025-02-20",
+            "endDate": "2025-02-20",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Madison",
+            "state": "Wisconsin",
+            "sourceUrl": "https://web.archive.org/web/20250221214805/https://www.wkow.com/news/metro-transit-rides-delayed-after-drivers-call-out-refuse-overtime/article_57a0e8d6-efdf-11ef-8c00-e733211e7684.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3970",
+            "notes": "This is a work slowdown."
+          },
+          {
+            "actionId": 3698,
+            "actionType": "protest",
+            "startDate": "2025-02-11",
+            "endDate": "2025-02-11",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 60,
+            "bargainingUnitSize": null,
+            "numUnions": 4,
+            "unions": [
+              "Service Employees International Union (SEIU)",
+              "International Federation of Professional and Technical Engineers (IFPTE)",
+              "International Brotherhood of Electric Workers (IBEW)",
+              "International Association of Fire Fighters (IAFF)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management"
+            ],
+            "demands": [
+              "Job Security",
+              "Reverse layoff decision"
+            ],
+            "city": "Oakland",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20250213133242/https://www.cbsnews.com/sanfrancisco/video/oakland-city-workers-rally-after-receiving-layoff-notices/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3698",
+            "notes": ""
+          },
+          {
+            "actionId": 3652,
+            "actionType": "protest",
+            "startDate": "2025-02-03",
+            "endDate": "2025-02-03",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 50,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County, and Municipal Employers Union (AFSCME)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Public Administration"
+            ],
+            "demands": [
+              "good faith bargaining"
+            ],
+            "city": "Mansfield",
+            "state": "Ohio",
+            "sourceUrl": "https://www.richlandsource.com/2025/02/04/mansfield-afscme-workers-use-public-event-to-turn-up-heat-for-new-contract/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3652",
+            "notes": ""
+          },
+          {
+            "actionId": 3674,
+            "actionType": "protest",
+            "startDate": "2025-02-03",
+            "endDate": "2025-02-03",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 50,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County, and Municipal Employers Union (AFSCME)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Public Administration"
+            ],
+            "demands": [
+              "Renew expired contract"
+            ],
+            "city": "Mansfield",
+            "state": "Ohio",
+            "sourceUrl": "https://web.archive.org/web/20250207044850*/https://www.richlandsource.com/2025/02/04/mansfield-afscme-workers-use-public-event-to-turn-up-heat-for-new-contract/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3674",
+            "notes": ""
+          },
+          {
+            "actionId": 3553,
+            "actionType": "strike",
+            "startDate": "2024-12-17",
+            "endDate": "2024-12-17",
+            "durationDays": 1,
+            "authorized": true,
+            "numWorkers": 210,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "City of Fresno Professional Employees Association (CFPEA)",
+              "Amalgamated Transit Union (ATU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Scheduling"
+            ],
+            "city": "Fresno",
+            "state": "California",
+            "sourceUrl": "http://web.archive.org/web/20241218221212/https://fresnoland.org/2024/12/17/hundreds-of-bus-routes-canceled-in-fresno-as-workers-strike-outside-city-hall/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3553",
+            "notes": "This strike occurred across the City of Fresno. We have instead listed the location of the Fresno Municipal Services building. The number of striking workers includes 110 ATU bus drivers who joined the strike in solidarity. "
+          },
+          {
+            "actionId": 3518,
+            "actionType": "protest",
+            "startDate": "2024-11-18",
+            "endDate": "2024-11-18",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Revere Teachers Association - MTA"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Paid parental leave; Support special education"
+            ],
+            "city": "Revere",
+            "state": "Massachusetts",
+            "sourceUrl": "https://web.archive.org/web/20241121213316/https://whdh.com/news/teachers-rally-outside-revere-city-hall-ahead-of-unions-next-bargaining-session/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3518",
+            "notes": ""
+          },
+          {
+            "actionId": 3525,
+            "actionType": "protest",
+            "startDate": "2024-11-12",
+            "endDate": "2024-11-22",
+            "durationDays": 11,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Professional Staff Congress of the City University of New York (PSC/CUNY)"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security",
+              "Remote work options"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://psc-cuny.org/news-events/week/contract-pickets-at-cuny-central/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3525",
+            "notes": "This protest occurred on four different dates: November 12, 14, 20, and 22. "
+          },
+          {
+            "actionId": 3498,
+            "actionType": "strike",
+            "startDate": "2024-10-28",
+            "endDate": "2024-11-21",
+            "durationDays": 25,
+            "authorized": null,
+            "numWorkers": 14,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Staffing"
+            ],
+            "city": "St. Louis",
+            "state": "Missouri",
+            "sourceUrl": "http://web.archive.org/web/20241112024918/https://www.stltoday.com/news/local/government-politics/open-the-doors-bellefontaine-neighbors-residents-blast-aldermen-over-city-shutdown/article_4b854c90-9c92-11ef-80f2-030abb079f5a.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3498",
+            "notes": ""
+          },
+          {
+            "actionId": 3383,
+            "actionType": "protest",
+            "startDate": "2024-09-24",
+            "endDate": "2024-09-24",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Professional Staff Congress (LSC)-CUNY - AFT"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://psc-cuny.org/calendar/contract-now-informational-picket/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3383",
+            "notes": ""
+          },
+          {
+            "actionId": 3290,
+            "actionType": "protest",
+            "startDate": "2024-08-15",
+            "endDate": "2024-08-15",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 800,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Ensuring vendor access to business licensing",
+              "Reducing criminal liability for general and mobile food vendors",
+              "Creating a division of street vendor assistance within NYC small business services",
+              "Reforming public siting"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://abc7ny.com/post/street-vendors-rally-hundreds-gather-nycs-city-hall-calling-new-bill-ease-licensing-process-street-vendors/15189495/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3290",
+            "notes": ""
+          },
+          {
+            "actionId": 3279,
+            "actionType": "protest",
+            "startDate": "2024-07-23",
+            "endDate": "2024-07-23",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing"
+            ],
+            "city": "Denver",
+            "state": "Colorado",
+            "sourceUrl": "https://denverite.com/2024/07/23/denver-janitors-strike-authorization-vote/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3279",
+            "notes": ""
+          },
+          {
+            "actionId": 3245,
+            "actionType": "protest",
+            "startDate": "2024-07-18",
+            "endDate": "2024-07-18",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Hostile work environment"
+            ],
+            "city": "La Center",
+            "state": "Kentucky",
+            "sourceUrl": "https://www.paducahsun.com/news/former-la-center-maintenance-workers-talk-latest-employee-walkout/article_284c6e20-ae6a-5842-a33a-809e0e29d5f8.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3245",
+            "notes": ""
+          },
+          {
+            "actionId": 3296,
+            "actionType": "protest",
+            "startDate": "2024-07-02",
+            "endDate": "2024-07-02",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "California Fast Food Workers Union - SEIU"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Predictable scheduling",
+              "10-hour rest period between shifts"
+            ],
+            "city": "Los Angeles",
+            "state": "California",
+            "sourceUrl": "https://www.msn.com/en-us/money/companies/dozens-of-l-a-fast-food-workers-rally-at-city-hall/ar-BB1piw6G",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3296",
+            "notes": ""
+          },
+          {
+            "actionId": 3191,
+            "actionType": "protest",
+            "startDate": "2024-06-26",
+            "endDate": "2024-06-26",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Oswego Municipal Employees Association - Oregon AFSCME"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "More opportunities for advancement; Include time spent on employee resource groups as work hours"
+            ],
+            "city": "Lake Oswego",
+            "state": "Oregon",
+            "sourceUrl": "https://www.lakeoswegoreview.com/news/lake-oswego-workers-rally-for-better-wages/article_3b525f58-3409-11ef-812d-ab01af630e74.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3191",
+            "notes": ""
+          },
+          {
+            "actionId": 3094,
+            "actionType": "strike",
+            "startDate": "2024-05-20",
+            "endDate": "2024-05-21",
+            "durationDays": 2,
+            "authorized": false,
+            "numWorkers": 18,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Racial justice",
+              "Staffing",
+              "End to sexual harassment"
+            ],
+            "city": "St Louis",
+            "state": "Missouri",
+            "sourceUrl": "https://www.firstalert4.com/2024/05/20/st-louis-city-refuse-workers-call-sick-protest-low-pay-understaffing-allegations-poor-working-conditions/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3094",
+            "notes": ""
+          },
+          {
+            "actionId": 3057,
+            "actionType": "strike",
+            "startDate": "2024-05-01",
+            "endDate": "2024-05-01",
+            "durationDays": 1,
+            "authorized": false,
+            "numWorkers": 300,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Professional Staff Congress/CUNY - AFT"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Disclose and divest; Demilitarize campus; Make CUNY tuition-free"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://x.com/cunyonstrike/status/1785868440877625648",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3057",
+            "notes": "This sickout included workers from 25 CUNY campuses. We instead list the CCNY campus as the sickout's primary location."
+          },
+          {
+            "actionId": 3013,
+            "actionType": "protest",
+            "startDate": "2024-04-16",
+            "endDate": "2024-04-16",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 15,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Virginia Beach City Workers Union (VBCWU) - UE"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Give workers the right to collectively bargain"
+            ],
+            "city": "Virginia Beach",
+            "state": "Virginia",
+            "sourceUrl": "https://www.wavy.com/news/local-news/virginia-beach/informational-picket-and-press-conference-will-discuss-collective-bargaining-in-virginia-beach/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3013",
+            "notes": ""
+          },
+          {
+            "actionId": 2999,
+            "actionType": "protest",
+            "startDate": "2024-04-09",
+            "endDate": "2024-04-09",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "San Francisco Librarians’ Guild - SEIU"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Health and safety"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://www.kqed.org/news/11982445/not-what-i-signed-up-for-sf-librarians-demand-more-security-guards",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2999",
+            "notes": ""
+          },
+          {
+            "actionId": 2955,
+            "actionType": "protest",
+            "startDate": "2024-03-18",
+            "endDate": "2024-03-18",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Professional Firefighters of Durham (PFD) - IAFF"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Durham",
+            "state": "North Carolina",
+            "sourceUrl": "https://abc11.com/fair-wages-fight-durham-city-workers-budget-trash-pickup-council/14541642/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2955",
+            "notes": ""
+          },
+          {
+            "actionId": 2908,
+            "actionType": "strike",
+            "startDate": "2024-03-06",
+            "endDate": "2024-03-12",
+            "durationDays": 7,
+            "authorized": true,
+            "numWorkers": 60,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare"
+            ],
+            "city": "Virginia",
+            "state": "Minnesota",
+            "sourceUrl": "https://www.northernnewsnow.com/2024/03/06/city-virginia-union-workers-walk-off-job-wednesday/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2908",
+            "notes": ""
+          },
+          {
+            "actionId": 2896,
+            "actionType": "protest",
+            "startDate": "2024-02-27",
+            "endDate": "2024-02-27",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "International Federation of Professional and Technical Engineers (IFPTE)",
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Staffing",
+              "Job Security"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://www.prnewswire.com/news-releases/over-one-thousand-san-francisco-city-workers-rally-and-release-new-report-to-shed-light-on-wasteful-contracting-out-302073438.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2896",
+            "notes": ""
+          },
+          {
+            "actionId": 2864,
+            "actionType": "protest",
+            "startDate": "2024-02-20",
+            "endDate": "2024-02-20",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Tranparency from city leaders on negotiations"
+            ],
+            "city": "Silvis",
+            "state": "Illinois",
+            "sourceUrl": "https://www.kwqc.com/2024/02/20/city-silvis-issues-statement-anticipated-city-workers-picket/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2864",
+            "notes": ""
+          },
+          {
+            "actionId": 2786,
+            "actionType": "protest",
+            "startDate": "2024-01-17",
+            "endDate": "2024-01-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 2500,
+            "bargainingUnitSize": null,
+            "numUnions": 5,
+            "unions": [
+              "Service Employees International Union (SEIU)",
+              "International Federation of Professional and Technical Engineers (IFPTE)",
+              "Teamsters (IBT)",
+              "International Brotherhood of Electrical Workers (IBEW)",
+              "United Association of Journeymen and Apprentices of the Plumbing and Pipe Fitting Industry (UA)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Job Security"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://www.sfchronicle.com/sf/article/sf-labor-strike-budget-deficit-breed-election-18613517.php",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2786",
+            "notes": ""
+          },
+          {
+            "actionId": 2733,
+            "actionType": "strike",
+            "startDate": "2024-01-04",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 12,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Auto Workers (UAW)"
+            ],
+            "industry": [
+              "Retail Trade"
+            ],
+            "demands": [
+              "First contract"
+            ],
+            "city": "Bronx",
+            "state": "New York",
+            "sourceUrl": "https://www.nycclc.org/news/2024-01/workers-city-world-ford-strike",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2733",
+            "notes": ""
+          },
+          {
+            "actionId": 2719,
+            "actionType": "protest",
+            "startDate": "2023-12-20",
+            "endDate": "2023-12-20",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 40,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Los Angeles",
+            "state": "California",
+            "sourceUrl": "https://abc7.com/lax-los-angeles-airport-workers/14208051/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2719",
+            "notes": ""
+          },
+          {
+            "actionId": 2644,
+            "actionType": "strike",
+            "startDate": "2023-12-04",
+            "endDate": "2023-12-04",
+            "durationDays": 1,
+            "authorized": true,
+            "numWorkers": 150,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "End to intimidation; Protect free speech"
+            ],
+            "city": "Burlingame",
+            "state": "California",
+            "sourceUrl": "https://patch.com/california/burlingame-hillsborough/burlingame-city-workers-set-strike-monday",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2644",
+            "notes": ""
+          },
+          {
+            "actionId": 2634,
+            "actionType": "protest",
+            "startDate": "2023-11-28",
+            "endDate": "2023-11-28",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 60,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Fair workload"
+            ],
+            "city": "Richmond",
+            "state": "Virginia",
+            "sourceUrl": "https://www.wtvr.com/news/local-news/city-workers-rally-nov-28-2023",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2634",
+            "notes": ""
+          },
+          {
+            "actionId": 2636,
+            "actionType": "strike",
+            "startDate": "2023-11-28",
+            "endDate": "2023-12-02",
+            "durationDays": 5,
+            "authorized": true,
+            "numWorkers": 200,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "International Union of Operating Engineers (IUOE)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "End to anti-union retaliation"
+            ],
+            "city": "Stockton",
+            "state": "California",
+            "sourceUrl": "https://www.abc10.com/article/news/local/stockton/stockton-water-sewer-strike/103-376f0358-9070-4361-ac15-739888a4e858",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2636",
+            "notes": ""
+          },
+          {
+            "actionId": 2613,
+            "actionType": "protest",
+            "startDate": "2023-11-17",
+            "endDate": "2023-11-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Federation of Teachers (UFT)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Stop budget cuts"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.cbsnews.com/newyork/news/new-york-city-budget-cuts-protest-outside-city-hall/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2613",
+            "notes": ""
+          },
+          {
+            "actionId": 2630,
+            "actionType": "protest",
+            "startDate": "2023-11-15",
+            "endDate": "2023-11-15",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 150,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Professional Staff Congress (PSC-CUNY) - AFT"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Racial justice",
+              "Call for ceasefire",
+              "Free tuition"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.leftvoice.org/student-workers-stand-up-for-cuny-and-palestine/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2630",
+            "notes": ""
+          },
+          {
+            "actionId": 2606,
+            "actionType": "protest",
+            "startDate": "2023-11-13",
+            "endDate": "2023-11-13",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "International Association of Firefighters (IAF)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Right to collectively bargain"
+            ],
+            "city": "Portsmouth",
+            "state": "Virginia",
+            "sourceUrl": "https://www.pilotonline.com/2023/11/13/portsmouth-council-to-vote-on-collective-bargaining-for-city-workers/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2606",
+            "notes": ""
+          },
+          {
+            "actionId": 2532,
+            "actionType": "protest",
+            "startDate": "2023-10-26",
+            "endDate": "2023-10-26",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Detroit Fire Fighters Association (DFFA) - International Association of Fire Fighters (IAFF)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Staffing"
+            ],
+            "city": "Detroit",
+            "state": "Michigan",
+            "sourceUrl": "https://www.ems1.com/labor-issues/articles/detroit-ems-personnel-protest-long-hours-short-staffing-40uzm3tsaFLPmEtf/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2532",
+            "notes": ""
+          },
+          {
+            "actionId": 2507,
+            "actionType": "protest",
+            "startDate": "2023-10-11",
+            "endDate": "2023-10-11",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Increase tuition reimbursement"
+            ],
+            "city": "Escondido",
+            "state": "California",
+            "sourceUrl": "https://www.kpbs.org/news/quality-of-life/2023/10/12/escondido-city-workers-rally-over-expired-union-contract",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2507",
+            "notes": ""
+          },
+          {
+            "actionId": 2431,
+            "actionType": "protest",
+            "startDate": "2023-10-10",
+            "endDate": "2023-10-10",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Laborers' International Union of North America (LIUNA)"
+            ],
+            "industry": [
+              "Utilities"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Negotiate in good faith"
+            ],
+            "city": "Columbia",
+            "state": "Missouri",
+            "sourceUrl": "https://abc17news.com/news/columbia/2023/10/10/local-union-columbia-water-distribution-workers-rally-outside-city-hall-workers-claim-city-violated-rights/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2431",
+            "notes": ""
+          },
+          {
+            "actionId": 2393,
+            "actionType": "protest",
+            "startDate": "2023-10-03",
+            "endDate": "2023-10-03",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "Teamsters (IBT)",
+              "International Brotherhood of Electrical Workers (IBEW)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Tacoma",
+            "state": "Washington",
+            "sourceUrl": "https://komonews.com/news/local/tacoma-city-workers-rally-outside-of-city-hall-negotiations-wages-cost-of-living-contract-local-union-employee-teamsters-117-ibew-483-public-serviced-devalue-labor-servants-wage-proposal",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2393",
+            "notes": ""
+          },
+          {
+            "actionId": 2347,
+            "actionType": "protest",
+            "startDate": "2023-09-21",
+            "endDate": "2023-09-21",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "UNITE HERE"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Scheduling"
+            ],
+            "city": "Philadelphia",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://philadelphia.chalkbeat.org/2023/9/21/23884697/philadelphia-school-climate-cafeteria-workers-rally-strike-higher-pay",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2347",
+            "notes": ""
+          },
+          {
+            "actionId": 2398,
+            "actionType": "protest",
+            "startDate": "2023-09-21",
+            "endDate": "2023-09-21",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 6,
+            "unions": [
+              "American Federation of Teachers (AFT)",
+              "United Auto Workers (UAW)",
+              "Communications Workers (CWA)",
+              "Teamsters (IBT)",
+              "Coalition of Black Trade Unionists (CBTU)",
+              "Missouri National Education Association (MNEA)"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "First contract",
+              "Staffing"
+            ],
+            "city": "St. Louis",
+            "state": "Missouri",
+            "sourceUrl": "https://labortribune.com/aft-local-420-teachers-and-staff-at-kipp-high-school-joined-by-labor-faith-allies-in-demand-for-a-first-contract/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2398",
+            "notes": ""
+          },
+          {
+            "actionId": 2331,
+            "actionType": "protest",
+            "startDate": "2023-09-19",
+            "endDate": "2023-09-19",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 1000,
+            "bargainingUnitSize": null,
+            "numUnions": 9,
+            "unions": [
+              "PROTEC17",
+              "LiUNA",
+              "AFSCME",
+              "Seattle Dispatchers Guild",
+              "Sheet Metal Workers",
+              "IBEW",
+              "IAM",
+              "IBT",
+              "IATSE"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Racial justice",
+              "Staffing",
+              "Climate justice; End housing crisis; Scheduling"
+            ],
+            "city": "Seattle",
+            "state": "Washington",
+            "sourceUrl": "https://www.thestand.org/2023/09/city-workers-rally-for-rspct-on-sept-19-at-seattle-city-hall/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2331",
+            "notes": ""
+          },
+          {
+            "actionId": 2351,
+            "actionType": "protest",
+            "startDate": "2023-09-19",
+            "endDate": "2023-09-19",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Cambridge Education Association"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Cambridge",
+            "state": "Massachusetts",
+            "sourceUrl": "https://www.thecrimson.com/article/2023/9/20/cambridge-educators-rally-contract/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2351",
+            "notes": ""
+          },
+          {
+            "actionId": 2280,
+            "actionType": "strike",
+            "startDate": "2023-09-06",
+            "endDate": "2023-09-11",
+            "durationDays": 6,
+            "authorized": true,
+            "numWorkers": 60,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Durham City Workers Union - UE"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Improved equipment"
+            ],
+            "city": "Durham",
+            "state": "North Carolina",
+            "sourceUrl": "https://www.youtube.com/watch?v=T2ih4aDoq40",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2280",
+            "notes": ""
+          },
+          {
+            "actionId": 2217,
+            "actionType": "protest",
+            "startDate": "2023-08-09",
+            "endDate": "2023-08-11",
+            "durationDays": 3,
+            "authorized": null,
+            "numWorkers": 7,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Goodhue",
+            "state": "Minnesota",
+            "sourceUrl": "https://www.minnpost.com/fact-briefs/2023/08/did-police-in-the-southeastern-minnesota-town-of-goodhue-resign-due-to-low-wages/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2217",
+            "notes": ""
+          },
+          {
+            "actionId": 2176,
+            "actionType": "strike",
+            "startDate": "2023-08-08",
+            "endDate": "2023-08-08",
+            "durationDays": 1,
+            "authorized": true,
+            "numWorkers": 11000,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Retirement benefits"
+            ],
+            "city": "Los Angeles",
+            "state": "California",
+            "sourceUrl": "https://ktla.com/news/local-news/city-workers-1-day-strike-expected-to-impact-services-angelenos-count-on/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2176",
+            "notes": "This strike includes workers from multiple locations not listed here. We instead list the location of two main picket lines."
+          },
+          {
+            "actionId": 2181,
+            "actionType": "protest",
+            "startDate": "2023-08-02",
+            "endDate": "2023-08-02",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "International Association of Fire Fighters (IAFF)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing"
+            ],
+            "city": "Saint Paul",
+            "state": "Minnesota",
+            "sourceUrl": "https://www.firehouse.com/careers-education/news/53067990/st-paul-mn-firefighters-picket-after-200-days-without-labor-contract",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2181",
+            "notes": ""
+          },
+          {
+            "actionId": 2067,
+            "actionType": "protest",
+            "startDate": "2023-06-20",
+            "endDate": "2023-06-20",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Health and safety",
+              "Stopping retaliation against employees",
+              "following grievance procedure"
+            ],
+            "city": "Lawrence",
+            "state": "Kansas",
+            "sourceUrl": "https://teamster.org/2023/06/lawrence-public-sector-teamsters-file-complaint-against-city-hold-informational-picket/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2067",
+            "notes": ""
+          },
+          {
+            "actionId": 2015,
+            "actionType": "protest",
+            "startDate": "2023-06-01",
+            "endDate": "2023-06-01",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County, and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Revoking in-person work policy"
+            ],
+            "city": "Austin",
+            "state": "Texas",
+            "sourceUrl": "https://communityimpact.com/austin/central-austin/city-county/2023/06/01/city-employees-take-a-stand-against-in-person-work-policy/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2015",
+            "notes": ""
+          },
+          {
+            "actionId": 2014,
+            "actionType": "protest",
+            "startDate": "2023-05-31",
+            "endDate": "2023-05-31",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Laborers' International Union of North America (LIUNA)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing"
+            ],
+            "city": "Columbia",
+            "state": "Missouri",
+            "sourceUrl": "https://www.komu.com/news/midmissourinews/union-city-workers-protest-outside-columbia-city-hall-for-higher-wages/article_d823be84-ffe0-11ed-a744-8b057cf69bf4.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2014",
+            "notes": ""
+          },
+          {
+            "actionId": 1968,
+            "actionType": "protest",
+            "startDate": "2023-04-18",
+            "endDate": "2023-04-18",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 200,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Coalition of City Unions (CCU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Seattle",
+            "state": "Washington",
+            "sourceUrl": "https://publicola.com/2023/04/20/essential-workers-protest-harrells-insulting-1-percent-pay-increase-offer/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1968",
+            "notes": ""
+          },
+          {
+            "actionId": 1815,
+            "actionType": "protest",
+            "startDate": "2023-02-22",
+            "endDate": "2023-02-22",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union - SEIU"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Arts, Entertainment and Recreation"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Bakersfield",
+            "state": "California",
+            "sourceUrl": "https://bakersfieldnow.com/news/local/city-employees-picket-for-fair-wages-and-new-contract?utm_source=substack&utm_medium=email",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1815",
+            "notes": ""
+          },
+          {
+            "actionId": 1758,
+            "actionType": "strike",
+            "startDate": "2023-02-02",
+            "endDate": "2023-02-05",
+            "durationDays": 4,
+            "authorized": true,
+            "numWorkers": 600,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Laborers International Union of North America (LIUNA)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Portland",
+            "state": "Oregon",
+            "sourceUrl": "https://www.portlandmercury.com/labor/2023/02/02/46332987/hundreds-of-critical-portland-operations-workers-on-strike-after-mediation-fails",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1758",
+            "notes": ""
+          },
+          {
+            "actionId": 1754,
+            "actionType": "strike",
+            "startDate": "2023-02-01",
+            "endDate": "2023-03-07",
+            "durationDays": 35,
+            "authorized": true,
+            "numWorkers": 130,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Health and safety"
+            ],
+            "city": "Camden",
+            "state": "New Jersey",
+            "sourceUrl": "https://www.nbcphiladelphia.com/news/local/waste-management-workers-in-camden-county-go-on-strike/3487380/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1754",
+            "notes": ""
+          },
+          {
+            "actionId": 1741,
+            "actionType": "protest",
+            "startDate": "2023-01-30",
+            "endDate": "2023-01-30",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "Laborers' International Union of North America (LiUNA)",
+              "Missouri Jobs with Justice"
+            ],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing"
+            ],
+            "city": "Columbia",
+            "state": "Missouri",
+            "sourceUrl": "https://www.columbiamissourian.com/news/local/city-labor-union-protests-transit-cuts-drug-tests-low-wages/article_93b323ae-a0d4-11ed-81e8-8b736edb909e.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1741",
+            "notes": ""
+          },
+          {
+            "actionId": 1786,
+            "actionType": "protest",
+            "startDate": "2023-01-30",
+            "endDate": "2023-01-30",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Amalgamated Transit Union (ATU)"
+            ],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety"
+            ],
+            "city": "La Crosse",
+            "state": "Wisconsin",
+            "sourceUrl": "https://www.wpr.org/la-crosse-bus-drivers-push-better-pay-amid-inflation-tough-job-market?utm_source=substack&utm_medium=email",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1786",
+            "notes": ""
+          },
+          {
+            "actionId": 1842,
+            "actionType": "protest",
+            "startDate": "2023-01-09",
+            "endDate": "2023-01-09",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 6,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing"
+            ],
+            "city": "Benton",
+            "state": "Arkansas",
+            "sourceUrl": "https://katv.com/news/local/walk-out-for-good-haskell-police-officers-quit-the-force-amid-city-not-fulfilling-needs-of-department",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1842",
+            "notes": ""
+          },
+          {
+            "actionId": 1638,
+            "actionType": "protest",
+            "startDate": "2022-11-10",
+            "endDate": "2022-11-10",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 30,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "End to anti-union retaliation; Connecticut State Board of Mediation and Arbitration must settle the collective bargaining agreement"
+            ],
+            "city": "Shelton",
+            "state": "Connecticut",
+            "sourceUrl": "https://teamster.org/2022/11/teamsters-allies-rally-for-contract-outside-of-shelton-city-hall/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1638",
+            "notes": ""
+          },
+          {
+            "actionId": 1542,
+            "actionType": "protest",
+            "startDate": "2022-11-03",
+            "endDate": "2022-11-03",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 5,
+            "unions": [
+              "Laborers' International Union of North America (LIUNA)",
+              "Utility Supervisors Employee Association",
+              "Teamsters",
+              "Cleveland Jobs With Justice",
+              "AFL-CIO"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Transportation and Warehousing",
+              "Utilities"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Cleveland",
+            "state": "Ohio",
+            "sourceUrl": "https://www.cleveland.com/news/2022/11/unions-protest-outside-cleveland-city-hall-in-pursuit-of-higher-wages.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1542",
+            "notes": ""
+          },
+          {
+            "actionId": 1497,
+            "actionType": "strike",
+            "startDate": "2022-10-17",
+            "endDate": "2022-10-19",
+            "durationDays": 3,
+            "authorized": true,
+            "numWorkers": 430,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Santa Cruz",
+            "state": "California",
+            "sourceUrl": "https://www.ksbw.com/article/santa-cruz-city-service-workers-begin-strike-impacting-trash-and-park-services/41649476",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1497",
+            "notes": ""
+          },
+          {
+            "actionId": 1583,
+            "actionType": "protest",
+            "startDate": "2022-10-06",
+            "endDate": "2022-10-06",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Cook County College Teachers Union - AFT"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Pay",
+              "Reduce class sizes; Hire laboratory assistants; Foster greater relations with local high schools"
+            ],
+            "city": "Chicago",
+            "state": "Illinois",
+            "sourceUrl": "https://chicago.suntimes.com/education/2022/10/6/23391138/city-colleges-faculty-staff-union-authorizes-strike",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1583",
+            "notes": ""
+          },
+          {
+            "actionId": 1158,
+            "actionType": "protest",
+            "startDate": "2022-06-28",
+            "endDate": "2022-06-28",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "International Association of Fire Fighters (IAFF)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Wichita",
+            "state": "Kansas",
+            "sourceUrl": "https://www.fireengineering.com/leadership/wichita-ks-firefighters-supporters-protest-at-city-hall-over-wages/#gref",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1158",
+            "notes": ""
+          },
+          {
+            "actionId": 1042,
+            "actionType": "protest",
+            "startDate": "2022-05-02",
+            "endDate": "2022-05-05",
+            "durationDays": 4,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "City College of San Francisco Faculty Union - AFT"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Job Security"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://www.cbsnews.com/sanfrancisco/news/sf-city-college-teachers-protest-layoffs-class-cuts-amid-budget-crisis/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1042",
+            "notes": ""
+          },
+          {
+            "actionId": 965,
+            "actionType": "protest",
+            "startDate": "2022-04-19",
+            "endDate": "2022-04-19",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 80,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "Municipal Employee's Federation (MEF)",
+              "International Federation of Professional and Technical Engineers (IFPTE)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "San Jose",
+            "state": "California",
+            "sourceUrl": "https://sanjosespotlight.com/san-jose-workers-fleeing-city-others-rally-for-higher-wages/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-965",
+            "notes": ""
+          },
+          {
+            "actionId": 972,
+            "actionType": "protest",
+            "startDate": "2022-04-19",
+            "endDate": "2022-04-19",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Santa Barbara",
+            "state": "California",
+            "sourceUrl": "https://www.independent.com/2022/04/20/santa-barbara-city-workers-push-for-raise-during-budget-talks/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-972",
+            "notes": ""
+          },
+          {
+            "actionId": 966,
+            "actionType": "protest",
+            "startDate": "2022-04-13",
+            "endDate": "2022-04-13",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 10000,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.cbsnews.com/newyork/news/nyc-building-service-workers-rally/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-966",
+            "notes": ""
+          },
+          {
+            "actionId": 894,
+            "actionType": "strike",
+            "startDate": "2022-03-15",
+            "endDate": "2022-03-17",
+            "durationDays": 3,
+            "authorized": true,
+            "numWorkers": 180,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "IUE-CWA"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Seniority rights; Scheduling"
+            ],
+            "city": "Latrobe",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://triblive.com/local/westmoreland/workers-begin-strike-at-city-brewing-company-in-latrobe/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-894",
+            "notes": ""
+          },
+          {
+            "actionId": 905,
+            "actionType": "protest",
+            "startDate": "2022-03-01",
+            "endDate": "2022-03-02",
+            "durationDays": 2,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "North Carolina Public Service Workers Union"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Charlotte",
+            "state": "North Carolina",
+            "sourceUrl": "https://twitter.com/ueunion/status/1499796814949613569",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-905",
+            "notes": ""
+          },
+          {
+            "actionId": 870,
+            "actionType": "protest",
+            "startDate": "2022-02-11",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": null,
+            "numWorkers": 8,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Hostile work environment"
+            ],
+            "city": "Port Wentworth",
+            "state": "Georgia",
+            "sourceUrl": "https://www.savannahnow.com/story/news/2022/02/17/port-wentworth-police-chief-interim-city-manager-resigns/6833054001/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-870",
+            "notes": ""
+          },
+          {
+            "actionId": 827,
+            "actionType": "protest",
+            "startDate": "2022-01-22",
+            "endDate": "2022-01-22",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 150,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "District Council of Trade Unions (DCTU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Portland",
+            "state": "Oregon",
+            "sourceUrl": "https://www.koin.com/news/civic-affairs/portland-union-workers-hold-practice-picket-at-city-hall/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-827",
+            "notes": ""
+          },
+          {
+            "actionId": 832,
+            "actionType": "protest",
+            "startDate": "2022-01-20",
+            "endDate": "2022-01-20",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Orange County Employee Association"
+            ],
+            "industry": [
+              "Health Care and Social Assistance",
+              "Public Administration"
+            ],
+            "demands": [
+              "COVID-19 protocols"
+            ],
+            "city": "Orange",
+            "state": "California",
+            "sourceUrl": "https://voiceofoc.org/2022/01/county-of-orange-workers-protest-petri-dish-covid-workplace-call-for-better-protections/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-832",
+            "notes": ""
+          },
+          {
+            "actionId": 810,
+            "actionType": "protest",
+            "startDate": "2022-01-18",
+            "endDate": "2022-01-18",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 50,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Electrical, Radio & Machine Workers of America (UE)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management",
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Racial justice",
+              "union recognition"
+            ],
+            "city": "Virginia Beach",
+            "state": "Virginia",
+            "sourceUrl": "https://www.wavy.com/news/local-news/virginia-beach/virginia-beach-city-workers-union-to-rally-for-collective-bargaining-at-council-meeting/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-810",
+            "notes": ""
+          },
+          {
+            "actionId": 794,
+            "actionType": "protest",
+            "startDate": "2022-01-08",
+            "endDate": "2022-01-08",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "District Council of Trade Unions (DCTU)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Portland",
+            "state": "Oregon",
+            "sourceUrl": "https://www.portlandmercury.com/blogtown/2022/01/05/37873445/portland-city-workers-prepared-to-strike-over-low-wages",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-794",
+            "notes": ""
+          },
+          {
+            "actionId": 770,
+            "actionType": "protest",
+            "startDate": "2021-12-14",
+            "endDate": "2021-12-14",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 20,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Administrative and Support and Waste Management"
+            ],
+            "demands": [
+              "Appointment of department director"
+            ],
+            "city": "Memphis",
+            "state": "Tennessee",
+            "sourceUrl": "https://www.commercialappeal.com/story/news/2021/12/15/memphis-sanitation-workers-protest-afscme-local-1733-chandell-ryan/8892025002/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-770",
+            "notes": "This protest was not sanctioned by AFSCME Local 1733 although most solid waste workers are represented by the local"
+          },
+          {
+            "actionId": 693,
+            "actionType": "protest",
+            "startDate": "2021-11-08",
+            "endDate": "2021-11-08",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "against vaccine mandate"
+            ],
+            "city": "Los Angeles",
+            "state": "California",
+            "sourceUrl": "https://ktla.com/news/local-news/large-crowd-gathers-for-protest-against-l-a-city-worker-covid-vaccine-mandate/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-693",
+            "notes": ""
+          },
+          {
+            "actionId": 560,
+            "actionType": "protest",
+            "startDate": "2021-09-12",
+            "endDate": "2021-09-12",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 150,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "COVID-19 protocols",
+              "Health and safety"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.labornotes.org/blogs/2021/09/new-york-city-municipal-employees-protest-abrupt-return-offices",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-560",
+            "notes": ""
+          },
+          {
+            "actionId": 426,
+            "actionType": "strike",
+            "startDate": "2021-07-20",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Pelham",
+            "state": "Georgia",
+            "sourceUrl": "https://twitter.com/ArielMWFXL/status/1417515527858176000?s=20",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-426",
+            "notes": ""
+          },
+          {
+            "actionId": 401,
+            "actionType": "protest",
+            "startDate": "2021-07-07",
+            "endDate": "2021-07-07",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)",
+              "Uniformed Firefighters Association - IAFF"
+            ],
+            "industry": [
+              "Health Care and Social Assistance",
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://www.fireengineering.com/fire-ems/fdny-fire-union-boycotts-nyc-parade-honoring-covid-frontline-workers/#gref",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-401",
+            "notes": ""
+          },
+          {
+            "actionId": 387,
+            "actionType": "protest",
+            "startDate": "2021-06-29",
+            "endDate": "2021-06-29",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "International Federation of Professional and Technical Engineers",
+              "AFSCME-MEF"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "San Jose",
+            "state": "California",
+            "sourceUrl": "https://sanfrancisco.cbslocal.com/2021/06/25/san-jose-city-workers-angry-over-proposed-3-pay-raise-planning-to-protest/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-387",
+            "notes": ""
+          },
+          {
+            "actionId": 391,
+            "actionType": "strike",
+            "startDate": "2021-06-29",
+            "endDate": "2021-06-30",
+            "durationDays": 2,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 0,
+            "unions": [],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Elizabeth City",
+            "state": "North Carolina",
+            "sourceUrl": "https://www.wavy.com/news/north-carolina/elizabeth-city-employees-go-on-strike-over-pay/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-391",
+            "notes": ""
+          },
+          {
+            "actionId": 264,
+            "actionType": "protest",
+            "startDate": "2021-05-06",
+            "endDate": "2021-05-06",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "CCSF Collective",
+              "American Federation of Teachers (AFT)"
+            ],
+            "industry": [
+              "Educational Services"
+            ],
+            "demands": [
+              "Racial justice",
+              "Job Security"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://www.kqed.org/news/11872330/my-heart-dropped-ccsf-students-rally-to-protest-cuts-that-threaten-to-transform-college",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-264",
+            "notes": ""
+          },
+          {
+            "actionId": 237,
+            "actionType": "protest",
+            "startDate": "2021-05-01",
+            "endDate": "2021-05-01",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "City Workers for Justice"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "COVID-19 protocols",
+              "Health and safety"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://abc7ny.com/covid-vaccine-nyc-municipal-workers-rally-coronavirus/10569308/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-237",
+            "notes": ""
+          }
+        ],
+        "actionCount": 95,
+        "totalWorkersInvolved": 40306,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -10710,6 +13556,41 @@
         ],
         "actionCount": 3,
         "totalWorkersInvolved": 93,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "viatris": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 341,
+            "actionType": "protest",
+            "startDate": "2021-06-08",
+            "endDate": "2021-06-08",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Steelworkers (USW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Job Security"
+            ],
+            "city": "Charleston",
+            "state": "West Virginia",
+            "sourceUrl": "https://wvmetronews.com/2021/06/08/mylan-workers-rally-outside-capitol-call-for-justice-to-do-more-to-save-their-jobs/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-341",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -13532,6 +16413,42 @@
         ],
         "actionCount": 4,
         "totalWorkersInvolved": 900,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "highway": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 436,
+            "actionType": "strike",
+            "startDate": "2021-07-01",
+            "endDate": "2021-07-12",
+            "durationDays": 12,
+            "authorized": true,
+            "numWorkers": null,
+            "bargainingUnitSize": 4,
+            "numUnions": 1,
+            "unions": [
+              "International Association of Machinists (IAM)"
+            ],
+            "industry": [
+              "Retail Trade"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security"
+            ],
+            "city": "Kansas City",
+            "state": "Missouri",
+            "sourceUrl": "https://www.goiam.org/news/strike-solidarity-prevails-for-kansas-city-local-778-members-at-highway-trailer-sales/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-436",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -16758,6 +19675,43 @@
         ],
         "actionCount": 11,
         "totalWorkersInvolved": 100,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "buzzfeed": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 739,
+            "actionType": "strike",
+            "startDate": "2021-12-02",
+            "endDate": "2021-12-02",
+            "durationDays": 1,
+            "authorized": true,
+            "numWorkers": null,
+            "bargainingUnitSize": 61,
+            "numUnions": 1,
+            "unions": [
+              "The NewsGuild - CWA"
+            ],
+            "industry": [
+              "Information"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "First contract"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://newsguild.org/buzzfeed-news-union-members-walk-out-demanding-a-fair-contract-on-the-day-shareholders-take-the-company-public/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-739",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -24243,6 +27197,43 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "coffee": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 789,
+            "actionType": "protest",
+            "startDate": "2022-01-05",
+            "endDate": "2022-01-05",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 50,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Food and Commercial Workers (UFCW)"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Union recognition; Rehire terminated activist"
+            ],
+            "city": "Pittsburgh",
+            "state": "Pennsylvania",
+            "sourceUrl": "https://www.pghcitypaper.com/pittsburgh/labor-leaders-rally-for-coffee-tree-unionization-call-for-fired-worker-to-be-rehired/Content?oid=20873004",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-789",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 50,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "king-soopers": {
       "labor": {
         "laborActions": [
@@ -24875,7 +27866,7 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
-    "heineken-usa": {
+    "star": {
       "labor": {
         "laborActions": [
           {
@@ -27273,6 +30264,44 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "graphic-packaging": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 1249,
+            "actionType": "strike",
+            "startDate": "2022-07-17",
+            "endDate": "2022-07-26",
+            "durationDays": 10,
+            "authorized": true,
+            "numWorkers": 130,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Association of Western Pulp & Paper Workers (AWPPW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Retirement benefits",
+              "New hire benefits"
+            ],
+            "city": "Portland",
+            "state": "Oregon",
+            "sourceUrl": "https://www.bloomberglaw.com/product/labor/document/XBVOHF1O000000?criteria_id=c9a106fe50edfd2abd72b09bcee4fa3e&searchGuid=b1952baf-dd80-42ca-9b97-dd5ff422c18d",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1249",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 130,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "trader-joe-s": {
       "labor": {
         "laborActions": [
@@ -27549,6 +30578,44 @@
         ],
         "actionCount": 2,
         "totalWorkersInvolved": 123,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "miami-international": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 1287,
+            "actionType": "protest",
+            "startDate": "2022-08-03",
+            "endDate": "2022-08-03",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 40,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Transportation and Warehousing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Retirement benefits",
+              "Paid sick leave"
+            ],
+            "city": "Orlando",
+            "state": "Florida",
+            "sourceUrl": "https://wusfnews.wusf.usf.edu/economy-business/2022-08-04/florida-airline-workers-demand-living-wages-benefits",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-1287",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 40,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -33949,6 +37016,72 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "wynn-resorts": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 2494,
+            "actionType": "protest",
+            "startDate": "2023-10-25",
+            "endDate": "2023-10-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Culinary Workers Union - UNITE HERE"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Job Security",
+              "Reduce workload"
+            ],
+            "city": "Paradise",
+            "state": "Nevada",
+            "sourceUrl": "https://www.8newsnow.com/news/local-news/thousands-of-culinary-union-workers-to-rally-on-las-vegas-strip-as-strike-deadline-nears/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2494",
+            "notes": ""
+          },
+          {
+            "actionId": 2436,
+            "actionType": "protest",
+            "startDate": "2023-10-12",
+            "endDate": "2023-10-12",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 2,
+            "unions": [
+              "Culinary Workers Union - UNITE HERE",
+              "Bartenders Union - UNITE HERE"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Job Security"
+            ],
+            "city": "Las Vegas",
+            "state": "Nevada",
+            "sourceUrl": "https://www.8newsnow.com/news/local-news/thousands-picket-in-las-vegas-as-negotiations-continue-between-culinary-union-resorts/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2436",
+            "notes": "This is a multi location protest that took place at 8 different locations, 4 of those locations are included here. "
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "subway": {
       "labor": {
         "laborActions": [
@@ -34725,6 +37858,68 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "us-foods": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3069,
+            "actionType": "strike",
+            "startDate": "2024-05-10",
+            "endDate": "2024-05-21",
+            "durationDays": 12,
+            "authorized": true,
+            "numWorkers": 120,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Wholesale Trade"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Vista",
+            "state": "California",
+            "sourceUrl": "https://www.tdu.org/542-us-foods",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3069",
+            "notes": "Less than 24 hours into the strike, picket line extensions are up at other Southern California US Foods locations. These include US Foods Teamsters from Locals 63, 495, 630, 848, Pepsi Teamsters in Local 953, and Airgas Teamsters in Local 986."
+          },
+          {
+            "actionId": 2746,
+            "actionType": "strike",
+            "startDate": "2024-01-08",
+            "endDate": "2024-01-29",
+            "durationDays": 22,
+            "authorized": true,
+            "numWorkers": 130,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Wholesale Trade"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Health and safety"
+            ],
+            "city": "Bensenville",
+            "state": "Illinois",
+            "sourceUrl": "https://www.fox9.com/news/minnesota-us-foods-workers-picketing-restaurant-deliveries-delayed",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-2746",
+            "notes": "Teamsters 705 have extended their picket line across the country, where other Teamsters at US Foods are honoring the picket line."
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 250,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "sahara-las-vegas": {
       "labor": {
         "laborActions": [
@@ -35197,6 +38392,42 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "silgan": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3064,
+            "actionType": "strike",
+            "startDate": "2024-04-21",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 95,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "United Steelworkers (USW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare"
+            ],
+            "city": "Edison",
+            "state": "New Jersey",
+            "sourceUrl": "https://www.packagingdive.com/news/silgan-containers-usw-strike-edison-nj/715073/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3064",
+            "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with a labor organization as a source."
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 95,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "wingstop": {
       "labor": {
         "laborActions": [
@@ -35310,6 +38541,117 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "el-pollo-loco": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3581,
+            "actionType": "strike",
+            "startDate": "2024-12-05",
+            "endDate": "2024-12-07",
+            "durationDays": 3,
+            "authorized": null,
+            "numWorkers": 7,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "California Fast Food Workers Union - SEIU"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety"
+            ],
+            "city": "Oakland",
+            "state": "California",
+            "sourceUrl": "https://archive.ph/pgFBL",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3581",
+            "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with the labor organization as a source."
+          },
+          {
+            "actionId": 3561,
+            "actionType": "strike",
+            "startDate": "2024-11-01",
+            "endDate": "2024-11-01",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 3,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "California Fast Food Workers Union - SEIU"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Health and safety"
+            ],
+            "city": "Los Angeles",
+            "state": "California",
+            "sourceUrl": "https://archive.ph/c4AND",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3561",
+            "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with the labor organization as a source."
+          },
+          {
+            "actionId": 3080,
+            "actionType": "strike",
+            "startDate": "2024-05-02",
+            "endDate": "2024-05-04",
+            "durationDays": 3,
+            "authorized": null,
+            "numWorkers": 5,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "California Fast Food Workers Union - SEIU"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "End to age discrimination"
+            ],
+            "city": "Los Angeles",
+            "state": "California",
+            "sourceUrl": "https://x.com/CAFastFoodUnion/status/1786138883966787751",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3080",
+            "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with the labor organization as a source."
+          },
+          {
+            "actionId": 3081,
+            "actionType": "strike",
+            "startDate": "2024-05-02",
+            "endDate": "2024-05-04",
+            "durationDays": 3,
+            "authorized": null,
+            "numWorkers": 6,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "California Fast Food Workers Union - SEIU"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Health and safety"
+            ],
+            "city": "Oakland",
+            "state": "California",
+            "sourceUrl": "https://x.com/CAFastFoodUnion/status/1786165212552532473",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3081",
+            "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with the labor organization as a source."
+          }
+        ],
+        "actionCount": 4,
+        "totalWorkersInvolved": 21,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "amerigas": {
       "labor": {
         "laborActions": [
@@ -35341,6 +38683,43 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 20,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "trane-technologies": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3106,
+            "actionType": "protest",
+            "startDate": "2024-05-06",
+            "endDate": "2024-05-06",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": null,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "International Union of Electrical Workers (IUE) - CWA"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Time Off"
+            ],
+            "city": "Tyler",
+            "state": "Texas",
+            "sourceUrl": "https://www.cbs19.tv/article/news/local/trane-union-members-in-tyler-picket-lines-seek-better-wages/501-5f344226-0216-4444-a04b-abdbf32cf63f",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3106",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -35776,6 +39155,43 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 100,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "electronic-arts": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3261,
+            "actionType": "strike",
+            "startDate": "2024-07-26",
+            "endDate": "2025-06-09",
+            "durationDays": 319,
+            "authorized": true,
+            "numWorkers": 2600,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "Screen Actors Guild - American Federation of Television and Radio Artists (SAG-AFTRA)"
+            ],
+            "industry": [
+              "Arts, Entertainment and Recreation"
+            ],
+            "demands": [
+              "Pay",
+              "Health and safety",
+              "Job Security"
+            ],
+            "city": "Santa Monica",
+            "state": "California",
+            "sourceUrl": "https://www.wired.com/story/video-game-voice-actors-are-going-on-strike-over-ai/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3261",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 2600,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -36279,6 +39695,69 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 900,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "westlake": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4418,
+            "actionType": "strike",
+            "startDate": "2025-07-28",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 150,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Health and safety",
+              "First contract"
+            ],
+            "city": "American Canyon",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20251013171657/https://teamsters853.org/westlake-strike-teamsters/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4418",
+            "notes": ""
+          },
+          {
+            "actionId": 3481,
+            "actionType": "strike",
+            "startDate": "2024-11-01",
+            "endDate": "2024-11-08",
+            "durationDays": 8,
+            "authorized": true,
+            "numWorkers": 174,
+            "bargainingUnitSize": null,
+            "numUnions": 1,
+            "unions": [
+              "International Association of Machinists (IAM)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Calvert City",
+            "state": "Kentucky",
+            "sourceUrl": "http://web.archive.org/web/20241112025807/https://www.paducahsun.com/news/iam-union-members-at-westlake-vinyls-in-calvert-city-strike-over-pay/article_0b7e145f-7035-5f6a-aa29-79cfc9d4cf4d.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3481",
+            "notes": ""
+          }
+        ],
+        "actionCount": 2,
+        "totalWorkersInvolved": 324,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -36967,6 +40446,41 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
+    "united-rentals": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3841,
+            "actionType": "strike",
+            "startDate": "2025-04-01",
+            "endDate": "2025-04-25",
+            "durationDays": 25,
+            "authorized": true,
+            "numWorkers": 9,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "International Union of Operating Engineers (IUOE)"
+            ],
+            "industry": [
+              "Real Estate and Rental and Leasing"
+            ],
+            "demands": [
+              "First contract"
+            ],
+            "city": "Fort Wayne",
+            "state": "Indiana",
+            "sourceUrl": "https://archive.ph/QDELB",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3841",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 9,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
     "keurig-dr-pepper": {
       "labor": {
         "laborActions": [
@@ -37081,6 +40595,43 @@
             "sourceUrl": "http://web.archive.org/web/20250428171632/https://www.wfyi.org/news/articles/statehouse-ista-day-of-action-pike-ips-monroe-virtual-school",
             "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3904",
             "notes": "This strike occurred in schools across four districts in Indiana. We have listed the four district headquarters as the locations for this strike. "
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "herc": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 3916,
+            "actionType": "strike",
+            "startDate": "2025-04-21",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Real Estate and Rental and Leasing"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Reinstate terminated worker"
+            ],
+            "city": "Upper Marlboro",
+            "state": "Maryland",
+            "sourceUrl": "https://web.archive.org/web/20250502212020/https://www.prnewswire.com/news-releases/teamsters-at-herc-rentals-strike-for-first-contract-302433766.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-3916",
+            "notes": ""
           }
         ],
         "actionCount": 1,

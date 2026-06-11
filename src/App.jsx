@@ -918,7 +918,12 @@ function computeScore(co, profile) {
   const K_SHRINK = 1.5;
   const ws = weightUsed > 0
     ? (weightedSum + 50 * K_SHRINK) / (weightUsed + K_SHRINK)
-    : (co.overall || 50);
+    : (co.overall ?? null);
+  // 2026-06-11 (100 Thieves repro): a zero-data brand used to fall through
+  // as ||50 → quiz users saw a fabricated "C 50" right next to the
+  // private-company "no data isn't a verdict" explainer. No signals → null →
+  // grade "?" for personalized users too.
+  if (ws == null) return null;
   // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
   // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
   // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.
@@ -1275,7 +1280,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           {[
             { feat: "View brand names + grade",       free: true,  pro: true  },
             { feat: "30-second values quiz",          free: true,  pro: true  },
-            { feat: "Browse 11,000+ companies",       free: true,  pro: true  },
+            { feat: "Browse 12,000+ companies",       free: true,  pro: true  },
             { feat: "Personalized scores",            free: false, pro: true, hi: true },
             { feat: "Full grade breakdowns",          free: false, pro: true  },
             { feat: "All 9 value categories",         free: false, pro: true  },
@@ -1940,9 +1945,9 @@ function WhatsNewModal({ companyCount }) {
           </div>
         </div>
         <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
-          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>11,000+</div>
+          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>12,000+</div>
           {/* 2026-06-01 (user feedback + audit H2): honest framing — we
-              TRACK 11,000+ companies but only grade the ones with
+              TRACK 12,000+ companies but only grade the ones with
               verified public-record signal. Top brands have full coverage. */}
           <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>
             Companies tracked. Top brands have full grades across 9 categories using US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC).
@@ -2109,7 +2114,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                     <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{co.cat || ""}</div>
                     <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
                       <div style={{ fontSize:28, fontWeight:800, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
-                      {isPaid && profile && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
+                      {isPaid && profile && ps != null && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
                       {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take quiz</div>}
                     </div>
                   </div>
@@ -3109,7 +3114,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                 <div style={{ flex:1, minWidth:0 }}>
                   {profile ? (
                     <>
-                      <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.1 }}>{ps}<span style={{ fontSize:14, color:T.txt3, fontWeight:500 }}>/100</span></div>
+                      <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.1 }}>{ps == null ? "—" : ps}<span style={{ fontSize:14, color:T.txt3, fontWeight:500 }}>{ps == null ? "" : "/100"}</span></div>
                       <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>{enriched.cat} · your personalized score</div>
                       {(() => {
                         // Phase 5.y "Why this grade?" — surface the 1–2 categories
@@ -3179,7 +3184,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         }
                         penalties.sort((a,b) => a.points - b.points); // most-negative first
 
-                        const top = impacts.slice(0, 2);
+                        // 2026-06-11: a neutral-scored category (delta 0, e.g.
+                        // no_guns with no firearms stance) used to win top-2 by
+                        // default on sparse brands and render "Firearms hurt" —
+                        // a zero-delta category neither helped nor hurt. Require
+                        // a real move before we explain it.
+                        const top = impacts.filter(it => Math.abs(it.delta) >= 5).slice(0, 2);
                         if (!top.length && !penalties.length) return null;
                         const reasonFor = (it) => {
                           const cat = CAT_LABELS[it.k];
@@ -3295,16 +3305,52 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             const zeroData = (enriched.realCats ?? 0) === 0;
             if (!zeroData) return null;
             const isPrivate = !enriched.ticker && !enriched.isPublic;
+            // 2026-06-11 (Aron): private + zero-data gets a DISTINCT card, not
+            // the generic gray one — users were reading bare empty rows as
+            // "the app failed." The truth is structural and worth saying
+            // plainly: private companies have no legal duty to publish the
+            // records grades draw on, and absence of records is not a verdict.
+            if (isPrivate) {
+              const subject = encodeURIComponent(`TruNorth record submission: ${enriched.name}`);
+              const body = encodeURIComponent(`Company: ${enriched.name}\nLink to the verifiable public record (regulator action, court filing, certification, press release):\n\nWhat it shows:\n`);
+              return (
+                <div style={{ margin:"4px 0 10px", padding:"14px 15px", borderRadius:12, background:T.bg3, border:`1px solid ${T.accent}33`, borderLeft:`3px solid ${T.accent}` }}>
+                  <div style={{ fontSize:10, fontWeight:700, color:T.accent, textTransform:"uppercase", letterSpacing:0.6, marginBottom:5 }}>
+                    <i className="ti ti-lock" aria-hidden="true" style={{ marginRight:5 }} />
+                    Private company · No public records
+                  </div>
+                  <div style={{ fontSize:12.5, color:T.txt2, lineHeight:1.55, marginBottom:8 }}>
+                    {enriched.name} is privately held. Private companies aren't legally
+                    required to publish the disclosures most grades draw on — SEC pay
+                    ratios, proxy statements, workforce reports, or annual filings.
+                    <b style={{ color:T.txt }}> No data here isn't a verdict</b> — it means
+                    nothing is on the public record yet, and TruNorth only grades what
+                    public records can verify.
+                  </div>
+                  <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5, marginBottom:10 }}>
+                    We continuously monitor 200+ regulator, court, and certification
+                    feeds. If this company appears in any of them — an OSHA citation, an
+                    EPA action, an FEC filing, a cruelty-free certification — its record
+                    shows up here automatically.
+                  </div>
+                  <a
+                    href={`mailto:corrections@trunorthapp.com?subject=${subject}&body=${body}`}
+                    onClick={() => track("private_record_submit_clicked", { slug: enriched.slug, name: enriched.name })}
+                    style={{ fontSize:12, fontWeight:700, color:T.accent, textDecoration:"none" }}
+                  >
+                    Know a verifiable record we missed? Report it <i className="ti ti-arrow-right" aria-hidden="true" />
+                  </a>
+                </div>
+              );
+            }
             return (
               <div style={{ margin:"4px 0 10px", padding:"12px 14px", borderRadius:12, background:T.bg3, border:`1px solid ${T.border2}` }}>
                 <div style={{ fontSize:12, fontWeight:700, color:T.txt2, marginBottom:4 }}>
-                  <i className={`ti ${isPrivate ? "ti-lock" : "ti-file-search"}`} aria-hidden="true" style={{ marginRight:5 }} />
-                  {isPrivate ? "Privately held — limited public records" : "No public records found yet"}
+                  <i className="ti ti-file-search" aria-hidden="true" style={{ marginRight:5 }} />
+                  No public records found yet
                 </div>
                 <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5 }}>
-                  {isPrivate
-                    ? "Private companies aren't required to file the disclosures most of our grades draw on (SEC pay data, proxy statements, workforce reports). We show regulator actions when they exist — none are on file for this brand yet."
-                    : "None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them."}
+                  None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them.
                 </div>
               </div>
             );
@@ -4453,6 +4499,7 @@ const SOURCES_DATA = [
     {name:"Ethisphere World's Most Ethical Companies",url:"https://ethisphere.com/wme",desc:"Annual ~135-company honoree list across 40+ industries.",cadence:"Annual"},
     {name:"Newsweek Most Responsible Companies",url:"https://www.newsweek.com/rankings/americas-most-responsible-companies",desc:"Annual top 600 US ranking on ESG performance.",cadence:"Annual"},
     {name:"WikiRate",url:"https://wikirate.org",desc:"Crowdsourced ESG metrics aggregator (private/public companies, all sectors).",cadence:"Monthly"},
+    {name:"ToS;DR",url:"https://tosdr.org",desc:"Terms-of-service privacy grades (A–E), CC BY-SA 3.0 — used with attribution.",cadence:"Monthly"},
   ]},
   {group:"International regulators",icon:"ti-globe",items:[
     {name:"EU DG Comp Antitrust",url:"https://ec.europa.eu/competition/antitrust",desc:"European Commission antitrust + merger decisions, cartel cases, state-aid actions. Fines in EUR.",cadence:"Monthly"},
@@ -5675,7 +5722,7 @@ if (screen === "onboarding") {
             onClick={() => setScreen("main")}
             style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}
           >
-            Explore all 11,000+ brands →
+            Explore all 12,000+ brands →
           </button>
         </div>
       </div>

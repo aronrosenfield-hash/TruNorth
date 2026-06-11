@@ -2,7 +2,7 @@
   "name": "Frosted Flakes",
   "cat": "Food & Beverage",
   "init": "FROS",
-  "overall": 55.8,
+  "overall": 55.3,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -28,7 +28,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "charity": {
     "s": "Via parent company Kellogg's: $30M reported corporate giving in 2024 (~0.23% of revenue) via Kellogg's Corporate Citizenship Fund.",
     "sources": [
@@ -106,7 +109,15 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 0,
+    "classActionCount": 0,
+    "mostRecentCase": null,
+    "cases": [],
+    "totalAllTime": 0,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -135,10 +146,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "inheritedFrom": "kellogg-s",

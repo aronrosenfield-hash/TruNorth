@@ -2,7 +2,7 @@
   "name": "Alpha Beta",
   "cat": "Financial Services",
   "init": "ALPH",
-  "overall": 48.5,
+  "overall": 45.4,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "poor",
     "health": "mixed"
@@ -55,8 +55,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company Kroger: No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -149,10 +151,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Financial Services"
     }
   },
   "health": {

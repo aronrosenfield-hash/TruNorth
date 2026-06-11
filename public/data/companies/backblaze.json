@@ -2,7 +2,7 @@
   "name": "Backblaze",
   "cat": "Technology",
   "init": "BACK",
-  "overall": 47.2,
+  "overall": 48,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na"
   },
   "political": {
@@ -60,9 +60,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -127,7 +128,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T18:56:28.514Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -153,6 +154,15 @@
     }
   },
   "csc": {
-    "political": 43.1
+    "political": 43.1,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "backblaze",
+    "tosdrUrl": "https://tosdr.org/en/service/2058",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

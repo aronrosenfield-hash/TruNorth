@@ -2,7 +2,7 @@
   "name": "BOX",
   "cat": "Retail",
   "init": "BOX",
-  "overall": 49.4,
+  "overall": 40.2,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -11,8 +11,8 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "neutral",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -61,13 +61,16 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -201,11 +204,8 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T19:19:00.146Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -222,6 +222,15 @@
   },
   "csc": {
     "political": 48,
-    "labor": 50
+    "labor": 50,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Box",
+    "tosdrUrl": "https://tosdr.org/en/service/3848",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

@@ -2,7 +2,7 @@
   "name": "Ruffles",
   "cat": "Consumer Goods",
   "init": "RUFF",
-  "overall": 48.2,
+  "overall": 42.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "health": "mixed"
   },
@@ -62,9 +62,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Pepsi: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -134,7 +134,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:47:21.087Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -147,10 +147,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Consumer Goods"
     }
   },
   "health": {
@@ -164,6 +160,7 @@
     "political": 82,
     "charity": 50,
     "environment": 50,
-    "labor": 8.9
+    "labor": 8.9,
+    "privacy": 8
   }
 }

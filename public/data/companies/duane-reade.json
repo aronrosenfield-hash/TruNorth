@@ -2,7 +2,7 @@
   "name": "Duane Reade",
   "cat": "Retail",
   "init": "DUAN",
-  "overall": 55.9,
+  "overall": 55.3,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "mixed",
     "execPay": "na",
     "health": "mixed"
@@ -29,7 +29,11 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -55,8 +59,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company Walgreens: 2 HHS OCR HIPAA breaches reported; 147K individuals affected total. Most recent: 2020-02-04. Indiana jury awarded $1.44M after Walgreens pharmacist disclosed prescription records.",
@@ -98,7 +104,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 1,
+    "classActionCount": 0,
+    "mostRecentCase": "2025-11-20",
+    "cases": [
+      {
+        "caseName": "Nwokedi v. Walgreen Co.",
+        "dateFiled": "2025-11-20",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Duane%20Reade%22"
+      },
+      {
+        "caseName": "Roberts v. Duane Reade Pharmacy",
+        "dateFiled": "2024-05-21",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Duane%20Reade%22"
+      },
+      {
+        "caseName": "Philip Krause v. Glenmark Pharmaceuticals, Inc. USA",
+        "dateFiled": "2023-10-05",
+        "court": "Court of Appeals for the Eleventh Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Duane%20Reade%22"
+      },
+      {
+        "caseName": "Brian Stoltz v. Glenmark Pharmaceuticals, Inc. USA",
+        "dateFiled": "2023-09-28",
+        "court": "Court of Appeals for the Eleventh Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Duane%20Reade%22"
+      },
+      {
+        "caseName": "Ida Adams v. Glenmark Pharmaceuticals, Inc. USA",
+        "dateFiled": "2023-08-23",
+        "court": "Court of Appeals for the Eleventh Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Duane%20Reade%22"
+      }
+    ],
+    "totalAllTime": 152,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -116,9 +171,6 @@
   "lastUpdated": "2026-05-30T23:13:14.654Z",
   "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -130,10 +182,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {
@@ -148,5 +196,33 @@
     "environment": 50,
     "labor": 50,
     "privacy": 50
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2016": 1
+      },
+      "totalRecordsAllTime": 1,
+      "sampleRecords": [
+        {
+          "event_date": "2016-06-24",
+          "employer": "Duane Reade",
+          "city": "NEW YORK",
+          "state": "NEW YORK",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Struck by dislodged flying object, particle",
+          "final_narrative": "An employee was attempting to unjam a hand tool that was lodged in the baler crush plate and baler wall. When the jammed hand tool came loose, it struck the employee's left index finger, amputating the fingertip.",
+          "amputation": true,
+          "hospitalized": false
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

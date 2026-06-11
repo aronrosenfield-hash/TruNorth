@@ -2,7 +2,7 @@
   "name": "River",
   "cat": "Financial Services",
   "init": "RIVE",
-  "overall": 48.3,
+  "overall": 48.4,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "na",
     "health": "poor"
@@ -58,8 +58,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company Aldi: No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -154,10 +156,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Financial Services"
     }
   },
   "health": {

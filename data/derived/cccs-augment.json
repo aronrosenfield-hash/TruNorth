@@ -1,11 +1,32 @@
 {
-  "generated_at": "2026-06-09T18:42:24.495Z",
+  "generated_at": "2026-06-11T14:35:38.779Z",
   "source": "cccs",
   "source_url": "https://www.cccs.gov.sg/cases-and-commitments",
   "input": "data/raw/cccs/2026-06-09.json",
-  "company_count": 3,
-  "orphan_count": 7,
+  "company_count": 4,
+  "orphan_count": 6,
   "companies": {
+    "grab": {
+      "normalized_name": "grab",
+      "raw_name": "Grab Holdings Inc.",
+      "routed_via": "direct",
+      "total_penalty_sgd": 6420000,
+      "action_count": 1,
+      "latest_action": "2018-09-24",
+      "action_types": [
+        "Anti-competitive merger - Uber SEA"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "Anti-competitive merger - Uber SEA",
+          "date": "2018-09-24",
+          "penalty_sgd": 6420000,
+          "url": "https://www.cccs.gov.sg/media-and-consultation/newsroom/media-releases/grab-uber-id-2018"
+        }
+      ],
+      "source": "cccs",
+      "source_url": "https://www.cccs.gov.sg/cases-and-commitments"
+    },
     "uber": {
       "normalized_name": "uber singapore technology",
       "raw_name": "Uber Singapore Technology Pte Ltd",

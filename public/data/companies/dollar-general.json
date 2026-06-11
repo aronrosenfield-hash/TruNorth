@@ -2,7 +2,7 @@
   "name": "Dollar General",
   "cat": "Retail",
   "init": "DG",
-  "overall": 48.3,
+  "overall": 42.7,
   "isPublic": true,
   "ticker": "DG",
   "sc": {
@@ -12,8 +12,8 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "na",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "mixed",
     "health": "mixed",
     "governance": "mixed"
@@ -69,15 +69,18 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
     "verdict": "No gun sales",
-    "sources": []
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -99,8 +102,14 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "newsweekMrc": "2026-06-09T22:43:03.890Z",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "newsweekMrc": "2026-06-11T14:35:43.707Z",
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "knowTheChain": "2026-06-11T14:35:43.001Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "secLitigation": "2026-06-11T14:35:44.954Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -384,7 +393,7 @@
     "propublicaUrl": "https://projects.propublica.org/nonprofits/organizations/621546736"
   },
   "litigation_courtlistener": {
-    "caseCount24mo": 50,
+    "caseCount24mo": 5,
     "classActionCount": 0,
     "mostRecentCase": "2026-05-29",
     "cases": [
@@ -394,15 +403,15 @@
         "court": "District Court, E.D. California",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73417245/sanchez-v-dollar-general-corporation/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dollar%20General%22"
       },
       {
         "caseName": "Williams v. Dollar General Corporation",
         "dateFiled": "2026-05-27",
         "court": "District Court, D. South Carolina",
-        "natureOfSuit": "360 P.I.: Other",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73404358/williams-v-dollar-general-corporation/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dollar%20General%22"
       },
       {
         "caseName": "Thomas v. Dollar General Corporation",
@@ -410,7 +419,7 @@
         "court": "District Court, S.D. Texas",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73385089/thomas-v-dollar-general-corporation/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dollar%20General%22"
       },
       {
         "caseName": "KNOUSE v. DOLLAR GENERAL",
@@ -418,17 +427,20 @@
         "court": "District Court, E.D. Pennsylvania",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73355359/knouse-v-dollar-general/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dollar%20General%22"
       },
       {
         "caseName": "KNOUSE v. DOLLAR GENERAL",
         "dateFiled": "2026-05-15",
         "court": "District Court, E.D. Pennsylvania",
-        "natureOfSuit": "360 P.I.: Other",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73351047/knouse-v-dollar-general/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dollar%20General%22"
       }
-    ]
+    ],
+    "totalAllTime": 2527,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
   },
   "slug": "dollar-general",
   "news": null,
@@ -524,7 +536,7 @@
   "health": {
     "s": "15 CPSC recalls on record; sample hazard: the key chains contain high levels of lead."
   },
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: featuring a Dollar Store manager who was required to work 70-hour weeks Dollar General, along with other dollar store chains, while \"sometimes filling a need in cash-strapped communities\" where…",
     "sources": [
@@ -537,7 +549,7 @@
       "score": 28.7,
       "year": 2025,
       "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
-      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "lastUpdated": "2026-06-11T14:35:43.707Z",
       "source": "newsweek-mrc"
     },
     "execPay": {
@@ -558,12 +570,129 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/29534/000110465926040394/tm261322-1_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "knowTheChain": {
+      "score": 5,
+      "rank": 10,
+      "sector": "General",
+      "year": 2024,
+      "weakAreas": [
+        "commitment",
+        "traceability",
+        "worker voice"
+      ],
+      "sourceUrl": "https://knowthechain.org/benchmarks/general/",
+      "lastUpdated": "2026-06-11T14:35:43.001Z",
+      "source": "knowthechain"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 2,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 2,
+      "byYear": {
+        "2015": 1,
+        "2017": 1,
+        "2018": 3,
+        "2019": 2,
+        "2020": 1,
+        "2022": 3,
+        "2023": 20,
+        "2024": 6,
+        "2025": 1
+      },
+      "totalRecordsAllTime": 38,
+      "sampleRecords": [
+        {
+          "event_date": "2025-01-07",
+          "employer": "Dollar General",
+          "city": "JACKSON",
+          "state": "GEORGIA",
+          "part_of_body": " Lower leg(s)",
+          "nature": " Cuts, lacerations, punctures without injury to internal structures",
+          "event_description": " Struck by rolling powered vehicle or machinery",
+          "final_narrative": "On January 7, 2025, at approximately 11:18 AM, an employee was operating a retainer carrier (RTC) to pick merchandise. He exited the RTC and was then struck by the RTC. His right leg was pinned between the rack and the RTC. The employee was hospitalized with a laceration to the right calf.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-11-01",
+          "employer": "Dollar General #17922",
+          "city": "CANTON",
+          "state": "OHIO",
+          "part_of_body": " Leg(s)  unspecified",
+          "nature": " Gunshot wounds ",
+          "event_description": " Shooting by other person",
+          "final_narrative": "An employee was working the cash register when they were shot by a burglar. The employee sustained a gunshot wound and a leg fracture.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-05-11",
+          "employer": "Dollar General",
+          "city": "LAKE WALES",
+          "state": "FLORIDA",
+          "part_of_body": " Wrist(s)",
+          "nature": " Cuts, lacerations, punctures without injury to internal structures",
+          "event_description": " Injured by object held or wielded by person",
+          "final_narrative": "An employee was using a pocketknife to open a tote of merchandise. The knife slipped and lacerated the employee's left wrist. ",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-04-26",
+          "employer": "Dollar General Distribution Center",
+          "city": "SAN ANTONIO",
+          "state": "TEXAS",
+          "part_of_body": " Lower leg(s)",
+          "nature": " Cuts, lacerations, punctures without injury to internal structures",
+          "event_description": " Nonroadway incident involving motorized land vehicle  unspecified",
+          "final_narrative": "An employee was driving an electrical pallet jack when they lost footing resulting in a laceration to the left calf. The employee was hospitalized.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-04-17",
+          "employer": "Dollar General Distribution Center",
+          "city": "BLAIR",
+          "state": "NEBRASKA",
+          "part_of_body": " Ankle(s)",
+          "nature": " Fractures   ",
+          "event_description": " Nonroadway noncollision  fall or jump from and struck by moving vehicle",
+          "final_narrative": "An employee operating a powered pallet jack dismounted the jack before it came to a complete stop. The employee's right ankle was pinned between the pallet jack and a rack and it was fractured.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secLitigation": {
+      "totalReleasesLifetime": 2,
+      "recent24mo": 0,
+      "latestReleaseDate": "2006-04-12T14:22:19Z",
+      "sampleReleases": [
+        {
+          "lr": "LR-19653",
+          "date": "2006-04-12T14:22:19Z",
+          "caption": "Dollar General Corp., et al.",
+          "summary": "Accounting and Auditing Enforcement Release No. 2411 /April 12, 2006 SEC v. Dollar General Corp., et al. , Civil Action No. 3:05-0283 (filed April 7, 2005) Court Enters Final Judgment Against Former Dollar General Chief Financial Officer Brian Burr Burr Will Pay Over $1.2 Million in Penalties, Disgorgement and Prejudgment Interest On April 11, 2006, the United States District Court for the Middle District of Tennessee entered a settled final judgment against Brian Burr (\"Burr\"), former chief fin",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-19653"
+        },
+        {
+          "lr": "LR-19174",
+          "date": "2005-04-07T14:21:53Z",
+          "caption": "Dollar General Corporation, Hurley Calister Turner, Jr., Brian M. Burr, Randy C. Sanderson, and Bobby R. Carpenter",
+          "summary": "Litigation Release No. 19174 \\ April 7, 2005 Accounting and Auditing Enforcement Release No. 2226 \\ April 7, 2005 SECURITIES AND EXCHANGE COMMISSION v. DOLLAR GENERAL CORPORATION, HURLEY CALISTER TURNER, JR., BRIAN M. BURR, RANDY C. SANDERSON, AND BOBBY R. CARPENTER, Civil Action No. 3:05-0283 (M.D. Tenn.) (WJH) (filed April 7, 2005) SEC SUES DOLLAR GENERAL CORPORATION AND FIVE INDIVIDUALS FOR ACCOUNTING FRAUD DOLLAR GENERAL AND FOUR INDIVIDUALS SETTLE AND AGREE TO PAY OVER $11.1 MILLION IN PENA",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-19174"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.954Z",
+      "source": "sec",
+      "sourceUrl": "https://www.sec.gov/cgi-bin/srqsb?text=%22Dollar%20General%22+form-type%3DLitigation+Release"
     }
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -576,6 +705,178 @@
     "charity": 50,
     "environment": 35,
     "labor": 8.3,
+    "privacy": 8,
     "execPay": 67
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Dollar General Corporation",
+    "tosdrUrl": "https://tosdr.org/en/service/11391",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 15,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The key chains contain high levels of lead. Lead is toxic if ingested by young children and can cause adverse health effects.",
+        "count": 2
+      },
+      {
+        "label": "The recalled loungers can collapse unexpectedly, posing an amputation, laceration and pinching hazard if finger gets caught in the metal folding joints.",
+        "count": 1
+      },
+      {
+        "label": "The toy truck's remote control can short circuit, causing it to overheat and posing fire and burn hazards.",
+        "count": 1
+      },
+      {
+        "label": "These heaters have caught fire, posing a fire hazard to consumers.",
+        "count": 1
+      },
+      {
+        "label": "The orange tips located at the end of the toy guns' barrels, which are designed to distinguish them from real guns, can easily be removed from the barrels, pos…",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 9117,
+        "recall_number": "21176",
+        "recall_date": "2021-08-04T00:00:00",
+        "title": "Sling Loungers Sold at Dollar General Recalled Due to Amputation, Laceration, and Pinching Hazard; Manufactured by Shanghai Worth Garden Products",
+        "description": "This recall involves True Living Sling Loungers sold in 2019. The loungers have white frames with solid blue or solid green fabric. The 12-digit UPC number 430001047344 is located on the receipt.",
+        "url": "https://www.cpsc.gov/Recalls/2021/Sling-Loungers-Sold-at-Dollar-General-Recalled-Due-to-Amputation-Laceration-and-Pinching-Hazard-Manufactured-by-Shanghai-Worth-Garden-Products",
+        "hazards": [
+          "The recalled loungers can collapse unexpectedly, posing an amputation, laceration and pinching hazard if finger gets caught in the metal folding joints."
+        ],
+        "injuries": [
+          "The firm has received three reports of the sling loungers collapsing, resulting in amputations or lacerations to fingers from the metal folding joints."
+        ],
+        "products": [
+          "True Living Sling Loungers"
+        ],
+        "units": [
+          "About 155,000"
+        ],
+        "remedies": [
+          "Refund"
+        ]
+      },
+      {
+        "recall_id": 6645,
+        "recall_number": "16092",
+        "recall_date": "2016-02-04T00:00:00",
+        "title": "Dollar General Recalls Construction Truck Toy Vehicles Due to Fire and Burn Hazards; Sold Exclusively at Dollar General",
+        "description": "This recall involves a toy excavator and a shovel loader. The remote-controlled plastic toys are orange with black and orange wheels. Both have tracking code 90RWE15 marked on the back of the battery compartment. UPC number 00430000549030 can be found on the bottom of the packaging. Power, Shovel Loader and Super Powe…",
+        "url": "https://www.cpsc.gov/Recalls/2016/Dollar-General-Recalls-Construction-Truck-Toy-Vehicles",
+        "hazards": [
+          "The toy truck's remote control can short circuit, causing it to overheat and posing fire and burn hazards."
+        ],
+        "injuries": [
+          "Dollar General has received five reports of the toy's remote control overheating. No injuries have been reported."
+        ],
+        "products": [
+          "Toy trucks"
+        ],
+        "units": [
+          "About 27,000"
+        ],
+        "remedies": [
+          "Refund"
+        ]
+      },
+      {
+        "recall_id": 594,
+        "recall_number": "11130",
+        "recall_date": "2011-02-16T00:00:00",
+        "title": "Atico International USA Recalls Heaters Due to Fire Hazard; Sold Exclusively at Dollar General Stores",
+        "description": "Both heaters can be identified by the following model and item numbers and universal product codes (UPC): Model# Item# UPC Heater Fans NSB-200B A14B1053 40022749831 Portable Quartz Radiant Heaters HD-700 A14B0979 400022750066 Model numbers are found on a silver colored sticker on the bottom of the unit. Additionally, …",
+        "url": "https://www.cpsc.gov/Recalls/2011/Atico-International-USA-Recalls-Heaters-Due-to-Fire-Hazard-Sold-Exclusively-at-Dollar",
+        "hazards": [
+          "These heaters have caught fire, posing a fire hazard to consumers."
+        ],
+        "injuries": [
+          "Atico has received eight reports of the A14B1053 Heater Fan overheating and 21 reports of the A14B0979 Quartz Heater overheating. Reports for the A14B1053 Heater Fan included one report of damage to …"
+        ],
+        "products": [
+          "TrueLiving Heater Fans and Portable Quartz Radiant Heaters"
+        ],
+        "units": [
+          "About 92,000"
+        ],
+        "remedies": [
+          "Refund"
+        ]
+      },
+      {
+        "recall_id": 131,
+        "recall_number": "10132",
+        "recall_date": "2010-02-03T00:00:00",
+        "title": "Dollar General Recalls Toy Guns Due to Choking Hazard",
+        "description": "This recall includes a Special Forces Weapons and Accessories Set and a SWAT Police Play Equipment Set. Each set includes two toy guns and related accessories. The number 48JQH09 is printed on the right side of the larger gun included in the recalled sets.",
+        "url": "https://www.cpsc.gov/Recalls/2010/Dollar-General-Recalls-Toy-Guns-Due-to-Choking-Hazard",
+        "hazards": [
+          "The orange tips located at the end of the toy guns' barrels, which are designed to distinguish them from real guns, can easily be removed from the barrels, pos…"
+        ],
+        "injuries": [
+          "None reported."
+        ],
+        "products": [
+          "Special Forces and Police SWAT Toy Gun Sets"
+        ],
+        "units": [
+          "About 9,600"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 4090,
+        "recall_number": "08080",
+        "recall_date": "2007-11-08T00:00:00",
+        "title": "Children's Sunglasses Recalled by Dollar General Due to Violation of Lead Paint Standard",
+        "description": "The recall involves yellow children's sunglasses. No other colors of sunglasses are included in this recall. The word \"CHINA\" is printed on the left side of the frame. The UPC #400007860896 and words \"Fashion Sunglasses\" and \"Time to Play Every Day\" are printed on the product's red hangtag.",
+        "url": "https://www.cpsc.gov/Recalls/2008/Childrens-Sunglasses-Recalled-by-Dollar-General-Due-to-Violation-of-Lead-Paint-Standard",
+        "hazards": [
+          "The yellow surface paint on the sunglasses may contain excessive levels of lead, violating the federal lead paint standard."
+        ],
+        "injuries": [
+          "None reported."
+        ],
+        "products": [
+          "Children's Fashion Sunglasses"
+        ],
+        "units": [
+          "About 51,000"
+        ],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Dollar%20General"
+  },
+  "doj": {
+    "totalMentions90d": 1,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "\"GUILTY\" - A Federal Jury Convicts a Repeat Criminal of Hobbs Act and Use of Firearm in the Commission of a Violent Crime",
+        "url": "https://www.justice.gov/usao-ndms/pr/guilty-federal-jury-convicts-repeat-criminal-hobbs-act-and-use-firearm-commission",
+        "date": "2026-04-28",
+        "components": [
+          "USAO - Mississippi, Northern"
+        ],
+        "categories": [],
+        "snippet": "…eased from mdoc after serving a three-year sentence for aggravated assault convictions. he robbed a dollar general in carroll county with a gun and fled from law enforcement.\ngreenville, ms – united states attorney…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

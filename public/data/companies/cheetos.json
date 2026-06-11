@@ -2,7 +2,7 @@
   "name": "Cheetos",
   "cat": "Food & Beverage",
   "init": "CHEE",
-  "overall": 48,
+  "overall": 42.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral",
     "health": "mixed"
@@ -30,7 +30,11 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "charity": {
     "s": "$90M reported corporate giving in 2024 (~0.10% of revenue) via PepsiCo Foundation.",
     "sources": [
@@ -61,9 +65,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Pepsi: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -109,7 +113,15 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 0,
+    "classActionCount": 0,
+    "mostRecentCase": null,
+    "cases": [],
+    "totalAllTime": 0,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -125,7 +137,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:40:22.904Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by Frito-Lay. (Wikidata Q484544)",
     "sources": [
@@ -141,10 +153,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "health": {
@@ -159,6 +167,29 @@
     "charity": 50,
     "environment": 50,
     "labor": 8.9,
+    "privacy": 8,
     "health": 50
+  },
+  "doj": {
+    "totalMentions90d": 1,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Duo Sentenced to 17 Years in Federal Prison for Trafficking Meth Concealed in Cheetos Bags",
+        "url": "https://www.justice.gov/usao-sdin/pr/duo-sentenced-17-years-federal-prison-trafficking-meth-concealed-cheetos-bags",
+        "date": "2026-04-17",
+        "components": [
+          "Drug Enforcement Administration (DEA)",
+          "USAO - Indiana, Southern"
+        ],
+        "categories": [],
+        "snippet": "duo sentenced to 17 years in federal prison for trafficking meth concealed in cheetos bags\n\nevansville- goldie flenor, 37, and natasha garner, 47, both of los angeles, california, have…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

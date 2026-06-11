@@ -1,0 +1,55 @@
+name: ai-research-bake
+
+# Lever 3 / E-7: web-search-grounded AI research bake. Fills empty categories
+# on high-demand brands with CITED facts only (uncited claims discarded).
+# Manual dispatch with a brand cap — cost is ~$0.10-0.25/brand. Nightly batch
+# schedule stays OFF until Aron green-lights the full ~3,000-brand run.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_brands:
+        description: "Max brands to research this run"
+        required: false
+        default: "25"
+      slugs:
+        description: "Comma-separated slug override (optional)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Research + fill cited categories
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS="--max=${{ github.event.inputs.max_brands || '25' }}"
+          if [ -n "${{ github.event.inputs.slugs }}" ]; then ARGS="$ARGS --slugs=${{ github.event.inputs.slugs }}"; fi
+          node scripts/ai-research-bake.mjs $ARGS
+      - name: Reflag + rebake + finalize
+        run: |
+          node scripts/reflag-categories.mjs
+          node scripts/rebake-scoring.mjs
+          node scripts/finalize-bundle.mjs
+      - name: Commit
+        run: |
+          git config user.name "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git pull --rebase origin main
+          git add public/data data/raw/ai-research
+          git diff --cached --quiet || git commit -m "data(ai-bake): web-search research fills [skip ci]"
+          git push origin main

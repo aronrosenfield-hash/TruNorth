@@ -11,7 +11,7 @@
 
 ## 1 · One-line pitch
 
-> **TruNorth grades 11,000+ consumer brands across 9 values categories using 100 public-records sources — so you can shop in line with what you actually believe in.**
+> **TruNorth grades 12,000+ consumer brands across 9 values categories using 100 public-records sources — so you can shop in line with what you actually believe in.**
 
 We're a personalized, mobile-first, primary-sourced shopping intelligence app. Anti-engagement-trap by design: no streaks, no push spam, no rage-bait. Open, decide, close. The 30-second values quiz reweights every grade so two users see different verdicts on the same brand.
 
@@ -39,7 +39,7 @@ TruNorth is the only consumer-facing app pulling from 100 federal regulators, co
 | Flow | Description |
 |---|---|
 | **Quiz** | 30-second values quiz weights 9 categories per user. Re-takeable anytime. |
-| **Search** | 11,000+ companies in MiniSearch index. Sub-brand → parent rollup so subsidiaries inherit. |
+| **Search** | 12,000+ companies in MiniSearch index. Sub-brand → parent rollup so subsidiaries inherit. |
 | **Scan** | ML Kit barcode scanner — point at any product, get the brand's grade before you pay. |
 | **Top Picks** | Curated 55-brand list of the most recognizable US brands (Amazon, Walmart, Apple, Starbucks, etc.). Profile-ranked. |
 | **Browse** | By industry bucket (Retail, F&B, Tech, Apparel, etc.). |
@@ -118,7 +118,7 @@ Per-source JSON output (/public/data/{source}.json)
        ↓
 Per-source merge script (resolves brand → company slug via slug-aliases.json + brand-parent-map.json)
        ↓
-Per-company JSON file (/public/data/companies/{slug}.json) — 11,000+ files
+Per-company JSON file (/public/data/companies/{slug}.json) — 12,000+ files
        ↓
 companies.json index (merged at build time, ships with bundle)
        ↓
@@ -164,7 +164,7 @@ React app reads companies.json → renders detail card on demand
   companies.js         # Lazy-loaded company index (split from main bundle)
   lib/                 # analytics.js, marketing.js, theme.js
 /public/data/          # All source-level + per-company JSON
-  companies/           # 11,000+ files
+  companies/           # 12,000+ files
   _meta/               # slug-aliases.json, brand-parent-map.json, merge logs
 /scripts/              # All cron fetchers + mergers (~100 .mjs files)
 /.github/workflows/    # 30+ cron workflows
@@ -176,7 +176,7 @@ React app reads companies.json → renders detail card on demand
 
 - **App.jsx**: ~6,000 lines (intentionally monolithic for solo-dev velocity)
 - **Total LOC**: ~50,000 (incl. ~25k in pipeline scripts)
-- **Per-company JSON files**: 11,000+
+- **Per-company JSON files**: 12,000+
 - **GitHub Actions workflows**: 30+ active crons
 - **Build size**: 700KB gzipped main bundle, 630KB gzipped company index
 

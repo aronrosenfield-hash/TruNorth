@@ -2,7 +2,7 @@
   "name": "Dick's House of Sport",
   "cat": "Retail",
   "init": "DICK",
-  "overall": 46.2,
+  "overall": 47.1,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "poor",
     "health": "mixed"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -120,16 +122,13 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 4,
+  "realCats": 3,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -155,7 +154,6 @@
   "csc": {
     "political": 79.1,
     "charity": 50,
-    "labor": 8,
-    "execPay": 41.8
+    "labor": 8
   }
 }

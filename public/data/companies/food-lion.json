@@ -2,7 +2,7 @@
   "name": "Food Lion",
   "cat": "Grocery",
   "init": "FOOD",
-  "overall": 55.8,
+  "overall": 48,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,8 +11,8 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "positive",
-    "guns": "neutral",
-    "privacy": "neutral",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "mixed"
   },
@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "charity": {
     "s": "$14M reported corporate giving in 2024 (~0.12% of revenue) via Food Lion Feeds Foundation.",
     "sources": [
@@ -56,13 +59,16 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -158,7 +164,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T23:48:26.690Z",
-  "realCats": 4,
+  "realCats": 5,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: During the late 1980s and early 1990s, the United Food and Commercial Workers Union Local 400 alleged that Food Lion had underpaid its workers and engaged in unfair labor practices for many years.…",
     "sources": [
@@ -166,15 +172,8 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "inheritedFrom": "ahold-delhaize",
@@ -182,6 +181,95 @@
     "political": 78.8,
     "charity": 50,
     "environment": 50,
-    "labor": 50
+    "labor": 50,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Food Lion",
+    "tosdrUrl": "https://tosdr.org/en/service/3817",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2015": 1,
+        "2016": 1,
+        "2019": 1,
+        "2020": 2,
+        "2021": 1
+      },
+      "totalRecordsAllTime": 6,
+      "sampleRecords": [
+        {
+          "event_date": "2021-11-09",
+          "employer": "Food Lion, LLC",
+          "city": "NEWARK",
+          "state": "DELAWARE",
+          "part_of_body": "Hip(s) and leg(s) ",
+          "nature": "Fractures",
+          "event_description": "Fall on same level, n.e.c. ",
+          "final_narrative": "An employee was moving a trash can on a dolly to a dumpster. The dolly wheels caught on an object, causing the employee to fall to the ground and suffered fractures to the left hip and leg.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2020-09-02",
+          "employer": "Food Lion, LLC #1528",
+          "city": "HARRINGTON",
+          "state": "DELAWARE",
+          "part_of_body": "Toes(s), toenail(s)",
+          "nature": "Amputations",
+          "event_description": "Struck by rolling object or equipment being pushed by injured worker",
+          "final_narrative": "An employee was unloading a trailer. The employee was pulling a pallet jack out of the trailer when it went onto their left foot resulting in the amputation of a toe.",
+          "amputation": true,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2020-01-20",
+          "employer": "Food Lion, LLC",
+          "city": "SMYRNA",
+          "state": "DELAWARE",
+          "part_of_body": "Hip(s)",
+          "nature": "Fractures",
+          "event_description": "Fall on same level due to tripping over an object ",
+          "final_narrative": "An employee was putting bags in cart for a customer. She then walked backwards to her register and tripped on a rock salt display, causing her to fall. She landed on and fractured her right hip.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2019-05-11",
+          "employer": "Food Lion, LLC",
+          "city": "HINESVILLE",
+          "state": "GEORGIA",
+          "part_of_body": "Finger(s), fingernail(s), n.e.c.",
+          "nature": "Amputations",
+          "event_description": "Struck against moving part of machinery or equipment",
+          "final_narrative": "An employee was cutting meat with a band saw and amputated their right index finger between the first and second joint.",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2016-03-08",
+          "employer": "Food Lion",
+          "city": "AMERICUS",
+          "state": "GEORGIA",
+          "part_of_body": "Knee(s)",
+          "nature": "Fractures",
+          "event_description": "Fall on same level due to tripping over an object ",
+          "final_narrative": "An employee was carrying multiple containers of baby formula with both hands. She was going behind the service desk when she tripped over a box that was on the floor behind the desk. She fell and fractured her left knee, requiring hospitalization.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

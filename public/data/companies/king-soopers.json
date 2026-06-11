@@ -2,7 +2,7 @@
   "name": "King Soopers",
   "cat": "Grocery",
   "init": "KING",
-  "overall": 48.3,
+  "overall": 45.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "poor",
     "health": "mixed"
@@ -55,8 +55,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -116,9 +118,6 @@
   "lastUpdated": "2026-05-31T00:23:55.551Z",
   "realCats": 6,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "dei": {
       "notDisclosed": true
     },
@@ -127,10 +126,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "health": {

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-09T18:42:24.301Z",
+  "generated_at": "2026-06-11T14:35:45.877Z",
   "source": "uk-fca",
   "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement",
   "input": "data/raw/uk-fca/2026-06-09.json",
-  "company_count": 8,
-  "orphan_count": 2,
+  "company_count": 9,
+  "orphan_count": 1,
   "companies": {
     "barclays-bank": {
       "normalized_name": "barclays bank",
@@ -64,6 +64,27 @@
           "date": "2013-09-19",
           "penalty_gbp": 32400000,
           "url": "https://www.fca.org.uk/news/press-releases/fca-fines-jpmorgan-chase-bank-na-322-million-serious-failings-relating-chief-investment-office"
+        }
+      ],
+      "source": "uk-fca",
+      "source_url": "https://www.fca.org.uk/news/news-stories?np_category=enforcement"
+    },
+    "hsbc": {
+      "normalized_name": "hsbc bank",
+      "raw_name": "HSBC Bank plc",
+      "routed_via": "first-token",
+      "total_fines_gbp": 63946800,
+      "action_count": 1,
+      "latest_action": "2021-12-17",
+      "action_types": [
+        "AML/Financial crime"
+      ],
+      "sample_actions": [
+        {
+          "action_type": "AML/Financial crime",
+          "date": "2021-12-17",
+          "penalty_gbp": 63946800,
+          "url": "https://www.fca.org.uk/news/press-releases/fca-fines-hsbc-bank-plc-639-million-deficient-transaction-monitoring-controls"
         }
       ],
       "source": "uk-fca",

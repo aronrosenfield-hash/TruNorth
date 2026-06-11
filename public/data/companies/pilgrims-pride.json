@@ -11,7 +11,7 @@
     "labor": "negative",
     "dei": "neutral",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "na"
   },
@@ -58,8 +58,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company Pilgrim: No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -157,5 +159,6 @@
     "political": 50,
     "environment": 35,
     "labor": 35
-  }
+  },
+  "inheritedFrom": "pilgrim"
 }

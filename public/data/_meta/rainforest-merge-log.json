@@ -1,12 +1,14 @@
 {
-  "merged_at": "2026-06-07T19:37:41.355Z",
+  "merged_at": "2026-06-11T14:35:44.750Z",
   "source_file": "public/data/rainforest.json",
   "total_brands": 528,
-  "merged_count": 9,
+  "merged_count": 8,
   "skipped_count": 519,
-  "orphan_count": 0,
+  "orphan_count": 1,
   "error_count": 0,
-  "orphans": [],
+  "orphans": [
+    "ben-jerrys"
+  ],
   "certified_list": [
     {
       "brand": "mars",
@@ -76,15 +78,6 @@
         "coffee"
       ],
       "since_year": 2011
-    },
-    {
-      "brand": "ben-jerrys",
-      "target": "unilever",
-      "categories": [
-        "bananas",
-        "cocoa"
-      ],
-      "since_year": 2010
     }
   ]
 }

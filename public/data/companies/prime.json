@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "makes_guns",
     "privacy": "neutral",
     "execPay": "na",
     "governance": "neutral"
@@ -60,8 +60,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Holds 3 active federal firearms licenses (ATF FFL registry, manufacturer).",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -247,9 +249,6 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },

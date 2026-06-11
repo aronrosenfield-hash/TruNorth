@@ -2,7 +2,7 @@
   "name": "Kit Kat",
   "cat": "Food & Beverage",
   "init": "KITK",
-  "overall": 40.6,
+  "overall": 35.1,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "neutral",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "health": "poor"
   },
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -59,9 +62,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Hershey: Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -113,7 +116,24 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 0,
+    "classActionCount": 0,
+    "mostRecentCase": "2004-08-19",
+    "cases": [
+      {
+        "caseName": "Kit-Kat Cafe, Inc. v. Tippett",
+        "dateFiled": "2004-08-19",
+        "court": "District Court, E.D. North Carolina",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Kit%20Kat%22"
+      }
+    ],
+    "totalAllTime": 1,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -128,7 +148,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -151,7 +171,7 @@
   "csc": {
     "political": 51.8,
     "charity": 50,
-    "execPay": 38.5,
+    "privacy": 8,
     "health": 8
   }
 }

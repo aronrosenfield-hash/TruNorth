@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "poor",
     "execPay": "na"
   },
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "1 documented breach affecting 91,436,280 accounts (HIBP); latest breach 2014-03-01.",
@@ -139,9 +141,6 @@
   "lastUpdated": "2026-05-31T01:58:22.290Z",
   "realCats": 2,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },

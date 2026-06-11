@@ -2,7 +2,7 @@
   "name": "Intuit",
   "cat": "Financial Services",
   "init": "INT",
-  "overall": 57.9,
+  "overall": 51,
   "isPublic": true,
   "ticker": "INTU",
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "mixed",
     "governance": "neutral"
   },
@@ -83,9 +83,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "tosdr"
+    ]
   },
   "execPay": {
     "s": "CEO-to-median-worker pay ratio 152:1 (median employee pay $242,190) — SEC proxy statement (DEF 14A, 2025).",
@@ -106,7 +108,8 @@
   "ac": "#9b8ff0",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -244,7 +247,32 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 0,
+    "classActionCount": 0,
+    "mostRecentCase": "2022-04-22",
+    "cases": [
+      {
+        "caseName": "Levinson v. Intuit, Inc.",
+        "dateFiled": "2022-04-22",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Mailchimp%22"
+      },
+      {
+        "caseName": "Cumberland Systems LLC v. The Rocket Science Group, LLC d/b/a MailChimp",
+        "dateFiled": "2017-05-08",
+        "court": "District Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Mailchimp%22"
+      }
+    ],
+    "totalAllTime": 2,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -324,7 +352,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Mountain View. (Wikidata Q1318848)",
     "sources": [
@@ -371,6 +399,15 @@
     "charity": 85,
     "environment": 100,
     "labor": 8,
+    "privacy": 8,
     "execPay": 56.4
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Intuit",
+    "tosdrUrl": "https://tosdr.org/en/service/3241",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

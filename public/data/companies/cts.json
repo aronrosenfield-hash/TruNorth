@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "sells_guns",
     "privacy": "na",
     "execPay": "na"
   },
@@ -60,8 +60,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Holds 1 active federal firearms license (ATF FFL registry, dealer).",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -206,9 +208,6 @@
   "lastUpdated": "2026-05-27T20:05:36.165Z",
   "realCats": 2,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },

@@ -2,7 +2,7 @@
   "name": "Jolly Rancher",
   "cat": "Consumer Goods",
   "init": "JOLL",
-  "overall": 47.9,
+  "overall": 41.1,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "health": "poor"
   },
@@ -59,9 +59,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Hershey: Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -116,7 +116,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -139,6 +139,6 @@
   "csc": {
     "political": 51.8,
     "charity": 50,
-    "execPay": 38.5
+    "privacy": 8
   }
 }

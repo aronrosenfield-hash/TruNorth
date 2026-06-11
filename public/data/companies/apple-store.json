@@ -2,7 +2,7 @@
   "name": "Apple Store",
   "cat": "Retail",
   "init": "AP",
-  "overall": 57.6,
+  "overall": 66.4,
   "ab": "#0d2318",
   "ac": "#4caf82",
   "sc": {
@@ -12,7 +12,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "good",
     "execPay": "poor"
   },
@@ -61,9 +61,11 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
     "verdict": "N/A",
-    "sources": []
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company Apple: Common Sense Privacy: Pass rating on 1 product(s) (Apple TV+) — meets data-protection safeguards.",
@@ -171,16 +173,13 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -190,10 +189,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "apple",
@@ -201,7 +196,6 @@
     "charity": 85,
     "environment": 100,
     "labor": 8,
-    "privacy": 97,
-    "execPay": 30.7
+    "privacy": 97
   }
 }

@@ -2,7 +2,7 @@
   "name": "OCULUS",
   "cat": "Technology",
   "init": "OCUL",
-  "overall": 47.3,
+  "overall": 48.1,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na"
   },
   "political": {
@@ -60,9 +60,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -139,7 +140,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:18:42.138Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -165,6 +166,15 @@
     }
   },
   "csc": {
-    "political": 43.3
+    "political": 43.3,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Oculus",
+    "tosdrUrl": "https://tosdr.org/en/service/2384",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

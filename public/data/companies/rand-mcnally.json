@@ -2,7 +2,7 @@
   "name": "Rand McNally",
   "cat": "Retail",
   "init": "RAND",
-  "overall": 48.7,
+  "overall": 49.1,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -11,8 +11,8 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "neutral",
+    "guns": "no_guns",
+    "privacy": "mixed",
     "execPay": "na"
   },
   "political": {
@@ -54,13 +54,16 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -127,11 +130,8 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T01:58:27.536Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -150,6 +150,15 @@
     }
   },
   "csc": {
-    "political": 46.7
+    "political": 46.7,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Rand McNally",
+    "tosdrUrl": "https://tosdr.org/en/service/5668",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

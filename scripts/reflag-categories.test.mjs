@@ -74,13 +74,14 @@ test("Walmart → guns applicable via override (NOT na), health NA by cat, discl
   assert.equal(f.transparency, undefined, "Walmart is in transparency benchmarks");
 });
 
-test("Walmart → without override file, guns WOULD be {na:true} (sanity check)", () => {
-  // Locks the contract: it's specifically the override map that changes
-  // Walmart, not some unrelated tweak to the Retail cat applicability rule.
+test("Walmart → guns applicable at the Retail industry tier (Lever 2, 2026-06-11)", () => {
+  // Lever 2 made guns APPLICABLE for Retail + Grocery at the cat level —
+  // for merchants, "do they sell firearms" is a real question and the ATF
+  // FFL registry answers it factually. No override needed anymore.
   const walmart = readCompany("walmart");
   const f = computeFlagsForCompany(walmart, LOOKUPS_NO_OVERRIDES);
-  assert.deepEqual(f.guns, { na: true },
-    "without overrides, Retail's cat-level rule must still mark guns NA");
+  assert.equal(f.guns, undefined,
+    "Retail cat-level rule must leave guns applicable (no {na:true})");
 });
 
 test("Apple → guns still {na:true} (no override applies, cat-level rule wins)", () => {
@@ -97,7 +98,7 @@ test("Patagonia → execPay notDisclosed (private), guns na, health na", () => {
   const f = computeFlagsForCompany(pat, LOOKUPS);
   assert.deepEqual(f.guns,    { na: true }, "Apparel & Fashion: guns NA");
   assert.deepEqual(f.health,  { na: true }, "Apparel & Fashion: health NA");
-  assert.deepEqual(f.execPay, { notDisclosed: true }, "Patagonia is private — execPay notDisclosed");
+  assert.deepEqual(f.execPay, { na: true }, "Patagonia is private — execPay na (Lever 2: SEC 402(u) doesn't apply to private cos)");
 });
 
 test("environment _inferred — present iff narrative is 'No public record found.' AND in carbon augment", () => {
@@ -129,7 +130,7 @@ test("environment _inferred — present iff narrative is 'No public record found
   assert.equal(f1.environment, undefined);
 });
 
-test("small private brand → execPay/dei/charity/transparency notDisclosed", () => {
+test("small private brand → execPay na (Lever 2) + dei/charity/transparency notDisclosed", () => {
   // Pick a small private brand: scan for one with no ticker, no deiBadges,
   // not in giving, not in transparency/wikirate. Use deterministic discovery.
   const slugs = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
@@ -146,7 +147,7 @@ test("small private brand → execPay/dei/charity/transparency notDisclosed", ()
   }
   assert.ok(picked, "should be able to find at least one small private brand");
   const f = computeFlagsForCompany(picked, LOOKUPS);
-  assert.deepEqual(f.execPay,      { notDisclosed: true });
+  assert.deepEqual(f.execPay,      { na: true }); // Lever 2: private → na
   assert.deepEqual(f.dei,          { notDisclosed: true });
   assert.deepEqual(f.charity,      { notDisclosed: true });
   assert.deepEqual(f.transparency, { notDisclosed: true });
@@ -156,7 +157,9 @@ test("small private brand → execPay/dei/charity/transparency notDisclosed", ()
 
 test("all 11261 companies process without throwing; flags shape is canonical", () => {
   const slugs = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
-  assert.equal(slugs.length, 11261, `expected 11261 companies, got ${slugs.length}`);
+  // 2026-06-11 EDGAR expansion: catalog grows over time — assert a floor,
+  // not a frozen census (12,841 as of the expansion).
+  assert.ok(slugs.length >= 12841, `expected >=12841 companies, got ${slugs.length}`);
   let ok = 0;
   for (const file of slugs) {
     const co = readJSON(path.join(COMPANIES_DIR, file));
@@ -176,7 +179,7 @@ test("all 11261 companies process without throwing; flags shape is canonical", (
     }
     ok++;
   }
-  assert.equal(ok, 11261);
+  assert.ok(ok >= 12841, `processed ${ok}`);
 });
 
 test("snapshot diff — sc.<cat> values unchanged before/after reflag (hash compare)", () => {

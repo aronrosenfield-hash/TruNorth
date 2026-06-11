@@ -2,7 +2,7 @@
   "name": "Giant Food Stores",
   "cat": "Grocery",
   "init": "GIAN",
-  "overall": 41.2,
+  "overall": 42,
   "isPublic": false,
   "sc": {
     "political": "left",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -53,8 +53,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -107,11 +109,8 @@
   "lastUpdated": null,
   "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -121,10 +120,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "inheritedFrom": "ahold-delhaize",

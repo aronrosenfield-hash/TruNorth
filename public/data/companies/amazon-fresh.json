@@ -2,7 +2,7 @@
   "name": "Amazon Fresh",
   "cat": "Grocery",
   "init": "AF",
-  "overall": 43.7,
+  "overall": 41.6,
   "isPublic": true,
   "ticker": "AMZN",
   "sc": {
@@ -12,7 +12,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "poor",
     "execPay": "na"
   },
@@ -63,9 +63,11 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
     "verdict": "N/A",
-    "sources": []
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company Amazon: Common Sense Privacy: Warning rating across 2 product(s) (Amazon Alexa, Prime Video) — does not meet minimum data-protection safeguards.",
@@ -170,9 +172,6 @@
   "lastUpdated": "2026-05-17T23:59:59.000Z",
   "realCats": 5,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "dei": {
       "notDisclosed": true
     },
@@ -181,10 +180,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "enriched": {

@@ -2,7 +2,7 @@
   "name": "Henry's Farmers Market",
   "cat": "Grocery",
   "init": "HENR",
-  "overall": 57.5,
+  "overall": 45.3,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "good",
     "governance": "neutral"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -101,7 +103,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 3,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by Apollo Global Management; HQ Phoenix. (Wikidata Q5716856)",
     "sources": [
@@ -109,11 +111,8 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -132,7 +131,6 @@
   "inheritedFrom": "apollo-global-management",
   "csc": {
     "political": 75.6,
-    "labor": 8,
-    "execPay": 100
+    "labor": 8
   }
 }

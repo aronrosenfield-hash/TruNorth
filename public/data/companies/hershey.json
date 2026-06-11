@@ -2,7 +2,7 @@
   "name": "Hershey",
   "cat": "Food & Beverage",
   "init": "HSY",
-  "overall": 42.7,
+  "overall": 38.3,
   "isPublic": true,
   "ticker": "HSY",
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "poor",
     "health": "poor"
   },
@@ -83,9 +83,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
-    "sources": []
+    "sources": [
+      "tosdr"
+    ]
   },
   "execPay": {
     "s": "CEO-to-median-worker pay ratio 389:1 (median employee pay $64,007) — SEC proxy statement (DEF 14A, 2026).",
@@ -106,7 +108,10 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -235,51 +240,54 @@
     "propublicaUrl": "https://projects.propublica.org/nonprofits/organizations/341525626"
   },
   "litigation_courtlistener": {
-    "caseCount24mo": 45,
+    "caseCount24mo": 5,
     "classActionCount": 0,
-    "mostRecentCase": "2026-05-31",
+    "mostRecentCase": "2026-06-02",
     "cases": [
       {
-        "caseName": "Natalie Linn Hershey",
-        "dateFiled": "2026-05-31",
-        "court": "United States Bankruptcy Court, N.D. West Virginia",
+        "caseName": "Reese v. City of Chicago",
+        "dateFiled": "2026-06-02",
+        "court": "District Court, N.D. Illinois",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73419229/natalie-linn-hershey/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reese's%22"
       },
       {
-        "caseName": "Hall v. Hershey Chocolate Company",
-        "dateFiled": "2026-05-09",
-        "court": "District Court, N.D. Ohio",
-        "natureOfSuit": "365 Personal Inj. Prod. Liability",
-        "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73320512/hall-v-hershey-chocolate-company/"
-      },
-      {
-        "caseName": "Valerie J. Hershey-Wokaly",
-        "dateFiled": "2026-04-22",
-        "court": "United States Bankruptcy Court, N.D. Ohio",
+        "caseName": "Reese v. United States",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, W.D. Oklahoma",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73228857/valerie-j-hershey-wokaly/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reese's%22"
       },
       {
-        "caseName": "Samantha Marie Hershey",
-        "dateFiled": "2026-04-12",
-        "court": "United States Bankruptcy Court, C.D. California",
+        "caseName": "Reese Mateo Filer",
+        "dateFiled": "2026-06-01",
+        "court": "United States Bankruptcy Court, S.D. Texas",
         "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73180514/samantha-marie-hershey/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reese's%22"
       },
       {
-        "caseName": "Keen v. The Hershey Company",
-        "dateFiled": "2026-04-09",
-        "court": "District Court, E.D. Michigan",
-        "natureOfSuit": "365 Personal Inj. Prod. Liability",
+        "caseName": "Cynthia Renee Reese",
+        "dateFiled": "2026-06-01",
+        "court": "United States Bankruptcy Court, N.D. Georgia",
+        "natureOfSuit": null,
         "isClassAction": false,
-        "sourceUrl": "https://www.courtlistener.com/docket/73171080/keen-v-the-hershey-company/"
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reese's%22"
+      },
+      {
+        "caseName": "Reese v. Dolton Riverdale School District 148",
+        "dateFiled": "2026-05-29",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reese's%22"
       }
-    ]
+    ],
+    "totalAllTime": 21923,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
   },
   "slug": "hershey",
   "news": null,
@@ -375,7 +383,7 @@
   "health": {
     "s": "6 CPSC recalls (6 in past 24 months); latest hazard: the recalled lights violate the mandatory federal regulations for consumer produ."
   },
-  "realCats": 6,
+  "realCats": 7,
   "flags": {
     "guns": {
       "na": true
@@ -403,6 +411,32 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/47111/000162828026021065/hsy-20260325.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2023": 1
+      },
+      "totalRecordsAllTime": 1,
+      "sampleRecords": [
+        {
+          "event_date": "2023-09-12",
+          "employer": "Hershey Salty Snacks",
+          "city": "EDGERTON",
+          "state": "KANSAS",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Compressed or pinched by shifting objects or equipment",
+          "final_narrative": "An employee was dumping trash into the compactor from a rolling utility tilt cart. While lowering the utility cart from the tilted position to dump the trash, the employee s right little finger was caught between the cart s metal frame and the compactor frame. The employee suffered a fingertip amputation.",
+          "amputation": true,
+          "hospitalized": false
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
     }
   },
   "csc": {
@@ -410,7 +444,163 @@
     "charity": 76.2,
     "environment": 39.7,
     "labor": 25.8,
+    "privacy": 8,
     "execPay": 38.5,
     "health": 8
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "The Hershey Company",
+    "tosdrUrl": "https://tosdr.org/en/service/4992",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 6,
+    "recent24moCount": 6,
+    "topHazards": [
+      {
+        "label": "The recalled lights violate the mandatory federal regulations for consumer products designed to use button cell or coin batteries because the strip lights allo…",
+        "count": 1
+      },
+      {
+        "label": "The recalled camera grips violate the mandatory federal regulation for consumer products containing button cell and coin batteries because, when the product is…",
+        "count": 1
+      },
+      {
+        "label": "The recalled Holosun Red and Gold Firearm Dot Sights violate the mandatory federal regulations for consumer products containing button cell or coin batteries b…",
+        "count": 1
+      },
+      {
+        "label": "The recalled products violate the mandatory federal regulations for consumer products containing button cell or coin batteries, because the sliding doors' sens…",
+        "count": 1
+      },
+      {
+        "label": "The recalled digital kitchen scales violate the mandatory federal regulations for consumer products containing button cell or coin batteries, because the scale…",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 10246,
+        "recall_number": "25232",
+        "recall_date": "2025-04-24T00:00:00",
+        "title": "AliExpress Recalls LED Strip Lights Due to Risk of Serious Injury or Death from Ingestion Hazard; Violations of Reese's Law Federal Safety Regulations for Consumer Products with Coin Batteries; Sold on AliExpress.com",
+        "description": "This recall involves RGB-branded LED strip lights powered with button batteries. The color-changing, dimmable lights measure about 0.4 inches long and were sold in white, warm white, blue, ice blue, green, red, yellow, purple and pink.",
+        "url": "https://www.cpsc.gov/Recalls/2025/AliExpress-Recalls-LED-Strip-Lights-Due-to-Risk-of-Serious-Injury-or-Death-from-Ingestion-Hazard-Violations-of-Reeses-Law-Federal-Safety-Regulations-for-Consumer-Products-with-Coin-Batteries-Sold-on-AliExpress-com",
+        "hazards": [
+          "The recalled lights violate the mandatory federal regulations for consumer products designed to use button cell or coin batteries because the strip lights allo…"
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "LED Strip Lights"
+        ],
+        "units": [
+          "About 390"
+        ],
+        "remedies": [
+          "Refund"
+        ]
+      },
+      {
+        "recall_id": 10168,
+        "recall_number": "25142",
+        "recall_date": "2025-02-20T00:00:00",
+        "title": "Fjorden iPhone Camera Grips Recalled Due to Battery Ingestion Hazard; Violation of Reese's Law Federal Safety Regulations for Consumer Products with Coin Batteries; Sold Exclusively on shop.fjorden.co by Fjorden Electra AS",
+        "description": "This recall involves the Fjorden iPhone Camera Grip. The black rectangular grips attach to an iPhone to feel like a real camera and aid with taking photographs.",
+        "url": "https://www.cpsc.gov/Recalls/2025/Fjorden-iPhone-Camera-Grips-Recalled-Due-to-Battery-Ingestion-Hazard-Violation-of-Reeses-Law-Federal-Safety-Regulations-for-Consumer-Products-with-Coin-Batteries-Sold-Exclusively-on-shop-fjorden-co-by-Fjorden-Electra-AS",
+        "hazards": [
+          "The recalled camera grips violate the mandatory federal regulation for consumer products containing button cell and coin batteries because, when the product is…"
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "Fjorden iPhone Camera Grips"
+        ],
+        "units": [
+          "About 546"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 10169,
+        "recall_number": "25143",
+        "recall_date": "2025-02-20T00:00:00",
+        "title": "Holosun Technologies Recalls Two Firearm Dot Sights Due to Battery Ingestion Hazard; Violations of Reese's Law Federal Safety Regulations for Consumer Products with Coin Batteries and Child Resistant Coin Battery Packaging",
+        "description": "This recall involves Holosun Firearm Dot Sights: Red Dot Sights (Model HS503G-ACSS) and Gold Dot Sight (Model HE512C-GD). The dot sight is an accessory that attaches to a firearm and produces an illuminated color dot for precision aiming. They are labeled with the product name and model on the packaging sleeve, box, m…",
+        "url": "https://www.cpsc.gov/Recalls/2025/Holosun-Technologies-Recalls-Two-Firearm-Dot-Sights-Due-to-Battery-Ingestion-Hazard-Violations-of-Reeses-Law-Federal-Safety-Regulations-for-Consumer-Products-with-Coin-Batteries-and-Child-Resistant-Coin-Battery-Packaging",
+        "hazards": [
+          "The recalled Holosun Red and Gold Firearm Dot Sights violate the mandatory federal regulations for consumer products containing button cell or coin batteries b…"
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "Holosun Firearm Dot Sights"
+        ],
+        "units": [
+          "About 9,400"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 10146,
+        "recall_number": "25120",
+        "recall_date": "2025-02-06T00:00:00",
+        "title": "Pella Recalls Sliding Patio Doors and Windows Due to Battery Ingestion Hazard; Violation of Reese's Law Federal Safety Regulations for Consumer Products with Button Cell Batteries",
+        "description": "This recall involves the following Pella's sliding patio doors and windows with automated shades: The Pella Reserve and Pella Lifestyle sliding doors with Insynctive technology, models 2-panel, 3-panel, and 4-panel sliding doors. These doors have a sensor housing where the cell battery is located. Date codes for doors…",
+        "url": "https://www.cpsc.gov/Recalls/2025/Pella-Recalls-Sliding-Patio-Doors-and-Windows-Due-to-Battery-Ingestion-Hazard-Violation-of-Reeses-Law-Federal-Safety-Regulations-for-Consumer-Products-with-Button-Cell-Batteries",
+        "hazards": [
+          "The recalled products violate the mandatory federal regulations for consumer products containing button cell or coin batteries, because the sliding doors' sens…"
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "Pella Reserve and Lifestyle Sliding Patio Doors and Lifestyle Windows"
+        ],
+        "units": [
+          "About 340"
+        ],
+        "remedies": [
+          "Repair",
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 10140,
+        "recall_number": "25111",
+        "recall_date": "2025-01-30T00:00:00",
+        "title": "Greater Goods Recalls Digital Kitchen Scales Due to Ingestion Hazard; Violations of Reese's Law Federal Safety Regulations for Consumer Products with Coin Batteries and Child Resistant Coin Battery Packaging",
+        "description": "This recall involves Greater Goods Digital Kitchen Scales, models: 0480, 0455, 0456, 0458, 0473, 0479, 0481, 0747, 0748, 0749, 0751, 0752, 0754. They are labeled with a sticker with the brand and model printed on the back and come in gray, black, blue, green, pink, red, silver and white colors. The Greater Goods logo …",
+        "url": "https://www.cpsc.gov/Recalls/2025/Greater-Goods-Recalls-Digital-Kitchen-Scales-Due-to-Ingestion-Hazard-Violations-of-Reeses-Law-Federal-Safety-Regulations-for-Consumer-Products-with-Coin-Batteries-and-Child-Resistant-Coin-Battery-Packaging",
+        "hazards": [
+          "The recalled digital kitchen scales violate the mandatory federal regulations for consumer products containing button cell or coin batteries, because the scale…"
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "Greater Goods Digital Kitchen Scales"
+        ],
+        "units": [
+          "About 349,500"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Reese's"
   }
 }

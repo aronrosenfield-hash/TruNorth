@@ -1,0 +1,168 @@
+{
+  "name": "Labcorp Holdings",
+  "legalName": "LABCORP HOLDINGS INC.",
+  "cat": "Healthcare",
+  "init": "LH",
+  "overall": 33.2,
+  "realCats": 1,
+  "isPublic": true,
+  "ticker": "LH",
+  "cik": 920148,
+  "sic": 8071,
+  "sicDescription": "Services-Medical Laboratories",
+  "addedBy": "edgar-expansion-2026-06",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "neutral",
+    "guns": "neutral",
+    "privacy": "poor",
+    "execPay": "neutral",
+    "health": "neutral"
+  },
+  "political": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "labor": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "HHS OCR HIPAA breach: 7.7M individuals affected. Most recent: 2019-06-04. 7.7M LabCorp patients via the same AMCA collections-vendor breach.",
+    "sources": [
+      "hhs-ocr-breaches"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "health": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "ab": "#211b0d",
+  "ac": "#cfa959",
+  "competitors": [],
+  "slug": "labcorp",
+  "hhsOig": {
+    "isExcluded": false,
+    "exclusionCount": 0,
+    "exclusionSample": [],
+    "recentFraudActions24mo": 1,
+    "sampleActions": [
+      {
+        "date": "January 2, 2025",
+        "title": "LabCorp and University Health System Agree To Pay $388,667 To Resolve Alleged False Claims Act Violations",
+        "actionType": "Criminal and Civil Actions",
+        "fineAmount": 388667,
+        "url": "https://oig.hhs.gov/fraud/enforcement/labcorp-and-university-health-system-agree-to-pay-388667-to-resolve-alleged-false-claims-act-violations/"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:42.256Z",
+    "source": "hhs-oig",
+    "sourceUrl": "https://oig.hhs.gov/fraud/enforcement/"
+  },
+  "dataLastUpdated": {
+    "hhsOig": "2026-06-11T14:35:42.256Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2018": 1,
+        "2020": 2
+      },
+      "totalRecordsAllTime": 3,
+      "sampleRecords": [
+        {
+          "event_date": "2020-10-08",
+          "employer": "LabCorp",
+          "city": "NEWTOWN SQUARE",
+          "state": "PENNSYLVANIA",
+          "part_of_body": "BODY SYSTEMS",
+          "nature": "Poisoning, including poisoning-related asphyxia",
+          "event_description": "Inhalation of harmful substance-single episode",
+          "final_narrative": "An employee had a reaction to the fumes from cleaning chemicals, fainted, and was hospitalized for asthmatic exacerbation.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2020-03-11",
+          "employer": "Charleston Labcorp",
+          "city": "CHARLESTON",
+          "state": "WEST VIRGINIA",
+          "part_of_body": "Foot (feet) and ankle(s)",
+          "nature": "Fractures and dislocations",
+          "event_description": "Fall on same level, n.e.c. ",
+          "final_narrative": "Earlier in the day the injured employee was visiting a client and had tripped on the curb, injuring his shoulder. A few hours later while at the office, he began to feel ill. The employee passed out and landed on the floor in an awkward position resulting in a fractured left foot and a dislocated left ankle. The employee was hospitalized.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2018-09-20",
+          "employer": "LabCorp",
+          "city": "AUSTIN",
+          "state": "TEXAS",
+          "part_of_body": "Shoulder(s), including clavicle(s), scapula(e)",
+          "nature": "Fractures and dislocations",
+          "event_description": "Fall on same level due to tripping over an object ",
+          "final_narrative": "An employee was filling up a truck at a gas station when he tripped over the gas pump hose and fell to the ground, suffering a broken collarbone and dislocated shoulder.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Healthcare"
+    }
+  },
+  "csc": {
+    "privacy": 8
+  }
+}

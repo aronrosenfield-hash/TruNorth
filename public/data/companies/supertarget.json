@@ -2,7 +2,7 @@
   "name": "SuperTarget",
   "cat": "Retail",
   "init": "SUPE",
-  "overall": 35.9,
+  "overall": 36.5,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "poor",
     "execPay": "poor"
   },
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company Target: 1 publicly-disclosed data breach per Have I Been Pwned (2013) — 70M accounts compromised. Most recent: Target (2013).",
@@ -101,26 +103,19 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 6,
+  "realCats": 5,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "target",
@@ -129,7 +124,6 @@
     "charity": 50,
     "environment": 13.2,
     "labor": 8,
-    "privacy": 8,
-    "execPay": 20.7
+    "privacy": 8
   }
 }

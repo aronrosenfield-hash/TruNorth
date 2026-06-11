@@ -2,7 +2,7 @@
   "name": "Chips Deluxe",
   "cat": "Food & Beverage",
   "init": "CHIP",
-  "overall": 54.2,
+  "overall": 54.9,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "poor",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "governance": "neutral",
     "health": "mixed"
@@ -59,9 +59,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Mondelez International: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -114,7 +114,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -124,10 +124,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "health": {
@@ -142,7 +138,7 @@
     "charity": 85,
     "environment": 100,
     "labor": 9,
-    "execPay": 25.9,
+    "privacy": 8,
     "health": 50
   }
 }

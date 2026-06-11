@@ -2,7 +2,7 @@
   "name": "Dollar General Market",
   "cat": "Retail",
   "init": "DOLL",
-  "overall": 49.4,
+  "overall": 37.3,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,8 +11,8 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "neutral",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "mixed",
     "governance": "neutral",
     "health": "mixed"
@@ -58,13 +58,15 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Dollar General: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -221,14 +223,11 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -238,10 +237,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {
@@ -255,6 +250,6 @@
     "political": 79.1,
     "environment": 35,
     "labor": 8.3,
-    "execPay": 67
+    "privacy": 8
   }
 }

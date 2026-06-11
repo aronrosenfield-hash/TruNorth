@@ -2,7 +2,7 @@
   "name": "Rockstar Games",
   "cat": "Entertainment & Media",
   "init": "ROCK",
-  "overall": 62.7,
+  "overall": 47.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "na",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -60,9 +60,10 @@
     ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -129,7 +130,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T02:10:01.983Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -155,6 +156,15 @@
     }
   },
   "csc": {
-    "political": 81.7
+    "political": 81.7,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Rockstar Games",
+    "tosdrUrl": "https://tosdr.org/en/service/2424",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

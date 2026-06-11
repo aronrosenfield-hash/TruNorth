@@ -2,7 +2,7 @@
   "name": "ExtraMile",
   "cat": "Retail",
   "init": "EXTR",
-  "overall": 40.5,
+  "overall": 34.5,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "mixed"
   },
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -120,7 +122,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "industry_flags": {
     "tobacco": false,
     "fossil_fuel": true,
@@ -136,24 +138,17 @@
     "lastUpdated": "2026-06-09T22:28:26.986Z"
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "chevron",
@@ -161,7 +156,6 @@
     "political": 48.6,
     "charity": 50,
     "environment": 8,
-    "labor": 8,
-    "execPay": 57.3
+    "labor": 8
   }
 }

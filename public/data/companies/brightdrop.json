@@ -2,7 +2,7 @@
   "name": "BrightDrop",
   "cat": "Retail",
   "init": "BRIG",
-  "overall": 38.1,
+  "overall": 38.9,
   "isPublic": true,
   "sc": {
     "political": "right-leaning",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "poor",
     "execPay": "poor",
     "governance": "neutral"
@@ -56,8 +56,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company General Motors: CFPB consumer complaints: 9221 on record (100 in past 12mo); 100% timely response rate.",
@@ -154,9 +156,6 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -165,10 +164,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "general-motors",

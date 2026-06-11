@@ -100,7 +100,9 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -263,7 +265,56 @@
   "firearms_atf_ffl": null,
   "environment_ejscreen": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-06-01",
+    "cases": [
+      {
+        "caseName": "Lassiter v. Airbnb Inc",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, N.D. Alabama",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Airbnb%22"
+      },
+      {
+        "caseName": "Stewart v. AirBnb, Inc.",
+        "dateFiled": "2026-05-29",
+        "court": "District Court, N.D. Georgia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Airbnb%22"
+      },
+      {
+        "caseName": "Brown v. AirBnB Inc.",
+        "dateFiled": "2026-05-13",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Airbnb%22"
+      },
+      {
+        "caseName": "Drew v. Airbnb, Inc.",
+        "dateFiled": "2026-05-13",
+        "court": "District Court, N.D. Georgia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Airbnb%22"
+      },
+      {
+        "caseName": "Smith v. Airbnb, Inc.",
+        "dateFiled": "2026-05-13",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Airbnb%22"
+      }
+    ],
+    "totalAllTime": 272,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -369,5 +420,65 @@
     "charity": 50,
     "labor": 31.5,
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Airbnb",
+    "tosdrUrl": "https://tosdr.org/en/service/168",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "doj": {
+    "totalMentions90d": 4,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Homeland Security Task Force Investigation Leads to Indictment of Four Illegal Aliens from South America in Million Dollar Multistate Burglary Ring",
+        "url": "https://www.justice.gov/usao-edwi/pr/homeland-security-task-force-investigation-leads-indictment-four-illegal-aliens-south",
+        "date": "2026-05-12",
+        "components": [
+          "USAO - Wisconsin, Eastern"
+        ],
+        "categories": [],
+        "snippet": "…al car, with the support of watay, who is living in the u.s. illegally in florida, and who reserved airbnb rentals for the burglary crew, posted their bail when needed, and conducted financial transactions…"
+      },
+      {
+        "title": "Two men charged in West Seattle drug rip-off that ended in homicide",
+        "url": "https://www.justice.gov/usao-wdwa/pr/two-men-charged-west-seattle-drug-rip-ended-homicide",
+        "date": "2026-04-29",
+        "components": [
+          "USAO - Washington, Western"
+        ],
+        "categories": [],
+        "snippet": "…hell marijuana. the men rented cars and drove up to west seattle where mitchell had arranged for an airbnb rental. at the airbnb, all three men were armed with handguns. thompson hid in one of the bedrooms…"
+      },
+      {
+        "title": "Five Admit Role in St. Louis Area Mail Theft",
+        "url": "https://www.justice.gov/usao-edmo/pr/five-admit-role-st-louis-area-mail-theft",
+        "date": "2026-04-23",
+        "components": [
+          "USAO - Missouri, Eastern"
+        ],
+        "categories": [],
+        "snippet": "…in frontenac, missouri. u.s. postal inspectors tracked the vehicle used by walker and others to an airbnb in the 5500 block of chippewa street in st. louis, then followed the vehicle to a restaurant. walke…"
+      },
+      {
+        "title": "Illegal Alien From Vietnam Pleads Guilty to Drug Trafficking and Illegal Firearms Possession",
+        "url": "https://www.justice.gov/usao-dc/pr/illegal-alien-vietnam-pleads-guilty-drug-trafficking-and-illegal-firearms-possession",
+        "date": "2026-03-31",
+        "components": [
+          "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)",
+          "USAO - District of Columbia"
+        ],
+        "categories": [],
+        "snippet": "…, pleaded guilty today in u.s. district court in connection with drug trafficking from a georgetown airbnb as well as being a previously convicted felon in possession of two guns.\nwashington – hieu trung vu…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

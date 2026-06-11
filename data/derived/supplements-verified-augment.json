@@ -1,18 +1,18 @@
 {
   "_license": "Public certification registries — NSF + USP. Citation: NSF International (nsf.org), U.S. Pharmacopeia (usp.org).",
-  "_generated_at": "2026-06-08T16:08:06.215Z",
+  "_generated_at": "2026-06-11T14:35:45.433Z",
   "_source_raw_file": "data/raw/supplements-verified/2026-06-08.json",
   "_source_urls": {
     "nsfSport": "https://www.nsfsport.com/certified-products/search-results.php",
     "nsf173": "https://info.nsf.org/Certified/Dietary/Listings.asp",
     "uspVerified": "https://www.usp.org/verification-services/program-participants"
   },
-  "_matched_slugs": 27,
+  "_matched_slugs": 32,
   "_routing_counts": {
-    "direct": 223,
-    "supplement-alias": 234,
-    "brand-parent": 59,
-    "orphan": 4329
+    "direct": 259,
+    "supplement-alias": 247,
+    "brand-parent": 60,
+    "orphan": 4279
   },
   "_orphan_brands": [
     {
@@ -378,13 +378,6 @@
       ]
     },
     {
-      "name": "Wegmans Food Markets Inc.",
-      "totalProducts": 18,
-      "certTypes": [
-        "NSF 173"
-      ]
-    },
-    {
       "name": "Cwench",
       "totalProducts": 17,
       "certTypes": [
@@ -537,14 +530,6 @@
       ]
     },
     {
-      "name": "USANA",
-      "totalProducts": 13,
-      "certTypes": [
-        "NSF Sport",
-        "USP Verified"
-      ]
-    },
-    {
       "name": "XYMOGEN INC.",
       "totalProducts": 13,
       "certTypes": [
@@ -596,13 +581,6 @@
     },
     {
       "name": "Living Essentials, LLC",
-      "totalProducts": 12,
-      "certTypes": [
-        "NSF 173"
-      ]
-    },
-    {
-      "name": "USANA Health Sciences, Inc.",
       "totalProducts": 12,
       "certTypes": [
         "NSF 173"
@@ -729,6 +707,27 @@
       "certTypes": [
         "NSF Sport"
       ]
+    },
+    {
+      "name": "BUBS Naturals",
+      "totalProducts": 9,
+      "certTypes": [
+        "NSF Sport"
+      ]
+    },
+    {
+      "name": "Drip Drop Hydration",
+      "totalProducts": 9,
+      "certTypes": [
+        "NSF Sport"
+      ]
+    },
+    {
+      "name": "Nutrafol",
+      "totalProducts": 9,
+      "certTypes": [
+        "NSF Sport"
+      ]
     }
   ],
   "bySlug": {
@@ -799,6 +798,17 @@
         ]
       }
     },
+    "impossible-foods": {
+      "health": {
+        "nsfSportCount": 3,
+        "nsf173Count": 0,
+        "uspVerifiedCount": 0,
+        "latestYear": 2026,
+        "sourceUrls": [
+          "https://www.nsfsport.com/certified-products/search-results.php"
+        ]
+      }
+    },
     "monster-energy": {
       "health": {
         "nsfSportCount": 2,
@@ -821,6 +831,18 @@
         ]
       }
     },
+    "procter-and-gamble": {
+      "health": {
+        "nsfSportCount": 1,
+        "nsf173Count": 6,
+        "uspVerifiedCount": 0,
+        "latestYear": 2026,
+        "sourceUrls": [
+          "https://www.nsfsport.com/certified-products/search-results.php",
+          "https://info.nsf.org/Certified/Dietary/Listings.asp"
+        ]
+      }
+    },
     "red-bull": {
       "health": {
         "nsfSportCount": 9,
@@ -829,6 +851,19 @@
         "latestYear": 2026,
         "sourceUrls": [
           "https://www.nsfsport.com/certified-products/search-results.php"
+        ]
+      }
+    },
+    "usana-health-sciences": {
+      "health": {
+        "nsfSportCount": 12,
+        "nsf173Count": 12,
+        "uspVerifiedCount": 1,
+        "latestYear": 2026,
+        "sourceUrls": [
+          "https://www.nsfsport.com/certified-products/search-results.php",
+          "https://info.nsf.org/Certified/Dietary/Listings.asp",
+          "https://www.usp.org/verification-services/program-participants"
         ]
       }
     },
@@ -888,6 +923,17 @@
         ]
       }
     },
+    "capstone": {
+      "health": {
+        "nsfSportCount": 0,
+        "nsf173Count": 1,
+        "uspVerifiedCount": 0,
+        "latestYear": 2026,
+        "sourceUrls": [
+          "https://info.nsf.org/Certified/Dietary/Listings.asp"
+        ]
+      }
+    },
     "eagle": {
       "health": {
         "nsfSportCount": 0,
@@ -910,10 +956,10 @@
         ]
       }
     },
-    "procter-and-gamble": {
+    "medifast": {
       "health": {
         "nsfSportCount": 0,
-        "nsf173Count": 6,
+        "nsf173Count": 2,
         "uspVerifiedCount": 0,
         "latestYear": 2026,
         "sourceUrls": [
@@ -974,6 +1020,17 @@
         "sourceUrls": [
           "https://info.nsf.org/Certified/Dietary/Listings.asp",
           "https://www.usp.org/verification-services/program-participants"
+        ]
+      }
+    },
+    "wegmans-food-markets": {
+      "health": {
+        "nsfSportCount": 0,
+        "nsf173Count": 18,
+        "uspVerifiedCount": 0,
+        "latestYear": 2026,
+        "sourceUrls": [
+          "https://info.nsf.org/Certified/Dietary/Listings.asp"
         ]
       }
     },

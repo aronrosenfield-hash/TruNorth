@@ -2,7 +2,7 @@
   "name": "Lenovo",
   "cat": "Technology",
   "init": "LENO",
-  "overall": 49.7,
+  "overall": 43.3,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
     "health": "mixed"
   },
@@ -32,7 +32,12 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "knowTheChain": "2026-06-11T14:35:43.001Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -67,8 +72,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
+    "sources": [
+      "tosdr"
+    ]
   },
   "execPay": {
     "s": "No public record found.",
@@ -145,7 +152,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-31",
+    "cases": [
+      {
+        "caseName": "WILLIAMS v. LENOVO (UNITED STATES), INC",
+        "dateFiled": "2026-05-31",
+        "court": "District Court, E.D. Pennsylvania",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Lenovo%22"
+      },
+      {
+        "caseName": "Frost v. Lenovo (United States) Inc.",
+        "dateFiled": "2026-05-27",
+        "court": "District Court, D. Minnesota",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Lenovo%22"
+      },
+      {
+        "caseName": "Alderian Technologies LLC v. Lenovo Group Limited",
+        "dateFiled": "2026-05-26",
+        "court": "District Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Lenovo%22"
+      },
+      {
+        "caseName": "iCashe, Inc. v. Lenovo Group Limited",
+        "dateFiled": "2026-05-08",
+        "court": "District Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Lenovo%22"
+      },
+      {
+        "caseName": "Reyes v. Lenovo (United States) Inc.",
+        "dateFiled": "2026-03-11",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Lenovo%22"
+      }
+    ],
+    "totalAllTime": 680,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -216,7 +272,7 @@
   "health": {
     "s": "10 CPSC recalls on record; sample hazard: the battery packs can overheat."
   },
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "animals": {
       "na": true
@@ -235,6 +291,177 @@
     "political": 47.9,
     "charity": 85,
     "environment": 50,
-    "labor": 15.6
+    "labor": 15.6,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Lenovo",
+    "tosdrUrl": "https://tosdr.org/en/service/2561",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 10,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The battery packs can overheat, posing a fire hazard.",
+        "count": 2
+      },
+      {
+        "label": "A defect in an internal component in the power supply can overheat and pose a fire hazard.",
+        "count": 2
+      },
+      {
+        "label": "The power bank's internal screws can come loose, causing a short circuit and overheating of the lithium-ion battery, posing a fire hazard. Do not put lithium-i…",
+        "count": 1
+      },
+      {
+        "label": "An unfastened screw can damage the battery causing ovearheating, posing a fire hazard.",
+        "count": 1
+      },
+      {
+        "label": "The AC power cord can overheat, posing fire and burn hazards.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 9766,
+        "recall_number": "24031",
+        "recall_date": "2023-11-22T00:00:00",
+        "title": "Lenovo Recalls USB-C Laptop Power Banks Due to Fire Hazard",
+        "description": "This recall involves the Lenovo USB USB-C Laptop Power Bank with model number PBLG2W. The power bank has a 20,000 mAh rechargeable lithium-ion battery used to charge laptops, cell phones, and other devices when an electrical outlet is not available. The power bank is black and measures approximately 7 inches long by 3…",
+        "url": "https://www.cpsc.gov/Recalls/2024/Lenovo-Recalls-USB-C-Laptop-Power-Banks-Due-to-Fire-Hazard",
+        "hazards": [
+          "The power bank's internal screws can come loose, causing a short circuit and overheating of the lithium-ion battery, posing a fire hazard. Do not put lithium-i…"
+        ],
+        "injuries": [
+          "The firm has received one report of a fire causing minimal property damage. No injuries have been reported."
+        ],
+        "products": [
+          "Lenovo USB-C Laptop Power Banks"
+        ],
+        "units": [
+          "About 2,850 (In addition, about 510 were sold in Canada)"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 8248,
+        "recall_number": "18094",
+        "recall_date": "2018-02-06T00:00:00",
+        "title": "Lenovo Recalls ThinkPad Laptops Due to Fire Hazard",
+        "description": "This recall involves 14-inch ThinkPad X1 Carbon 5th Generation laptops. They were sold in silver and black. The product name \"5th Generation Lenovo ThinkPad X1 Carbon,\" the machine type 20HQ, 20HR, 20K3 or 20K4 and the serial number or S/N are printed on the bottom of the laptop. Laptops manufacture dates from 16/12 t…",
+        "url": "https://www.cpsc.gov/Recalls/2018/Lenovo-Recalls-ThinkPad-Laptops-Due-to-Fire-Hazard",
+        "hazards": [
+          "An unfastened screw can damage the battery causing ovearheating, posing a fire hazard."
+        ],
+        "injuries": [
+          "There have been no reports of overheating in the United States."
+        ],
+        "products": [
+          "ThinkPad X1 Carbon Laptops (5th Generation)"
+        ],
+        "units": [
+          "About 78,000 (In addition, about 5,500 were sold in Canada)"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      },
+      {
+        "recall_id": 6370,
+        "recall_number": "15117",
+        "recall_date": "2015-04-21T00:00:00",
+        "title": "Lenovo Expands Recall of Battery Packs for ThinkPad Notebook Computers Due to Fire Hazard",
+        "description": "This recall involves Lenovo battery packs sold with the following ThinkPad notebook computers: the Edge 11, 13, 14, 15, 120, 125, 320, 325, 420, 425, 430, 520, 525 and 530 series; the L412, L420/421, L512 and L520 series; the T410, T420, T510 and T520 series; the W510 and W520 series; and the X100e, X120e, X121e, X130…",
+        "url": "https://www.cpsc.gov/Recalls/2015/Lenovo-Expands-Recall-of-Battery-Packs-for-ThinkPad-Notebook-Computers",
+        "hazards": [
+          "The battery packs can overheat, posing a fire hazard."
+        ],
+        "injuries": [
+          "Lenovo has received four reports of incidents of battery packs overheating and damaging the computers, battery packs and surrounding property. One incident included a consumer's skin being reddened a…"
+        ],
+        "products": [
+          "ThinkPad notebook computer battery packs"
+        ],
+        "units": [
+          "About 148,800 in the United States and 17,700 in Canada (About 34,500 in the United States and 2,900 in Canada were recalled in March 2014)"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 1878,
+        "recall_number": "15044",
+        "recall_date": "2014-12-09T00:00:00",
+        "title": "Lenovo Recalls Computer Power Cords Due to Fire and Burn Hazards",
+        "description": "This recall involves Lenovo's LS-15 AC power cord manufactured from February 2011 to December 2011. The power cords were distributed with IdeaPad brand B-, G-, S-, U-, V- and Z-series laptop computers and Lenovo brand B-, G- and V-series laptop computers. The recalled power cords are black in color and have the \"LS-15…",
+        "url": "https://www.cpsc.gov/Recalls/2015/Lenovo-Recalls-Computer-Power-Cords",
+        "hazards": [
+          "The AC power cord can overheat, posing fire and burn hazards."
+        ],
+        "injuries": [
+          "None reported in the U.S. or Canada. Lenovo has received reports from outside the U.S. of 15 incidents involving overheating, sparking, melting and burning. No injuries were reported."
+        ],
+        "products": [
+          "AC power cords"
+        ],
+        "units": [
+          "About 500,000 in the U.S. and 44,000 in Canada"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 6408,
+        "recall_number": "14142",
+        "recall_date": "2014-03-27T00:00:00",
+        "title": "Lenovo Recalls Battery Packs for ThinkPad Notebook Computers Due to Fire Hazard",
+        "description": "This recall involves Lenovo battery packs sold with the following ThinkPad notebook computers: the Edge 11, 13 and 14 series, the T410, T420, T510 and W510 series, and the X100e, X120e, X200, X201 and X201s series. The battery packs were also sold separately. The black battery packs measure between 8 to 11 inches long…",
+        "url": "https://www.cpsc.gov/Recalls/2014/Lenovo-Recalls-Battery-Packs-for-ThinkPad-Notebook-Computers",
+        "hazards": [
+          "The battery packs can overheat, posing a fire hazard."
+        ],
+        "injuries": [
+          "Lenovo has received two reports of the battery packs overheating, resulting in damage to the computer, battery pack and nearby property. No injuries have been reported."
+        ],
+        "products": [
+          "ThinkPad notebook computer battery packs"
+        ],
+        "units": [
+          "About 34,500 in the United States and 2,900 in Canada"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Lenovo"
+  },
+  "enriched": {
+    "knowTheChain": {
+      "score": 33,
+      "rank": 7,
+      "sector": "ICT",
+      "year": 2023,
+      "weakAreas": [
+        "purchasing practices",
+        "worker voice",
+        "remedy"
+      ],
+      "sourceUrl": "https://knowthechain.org/benchmarks/ict/",
+      "lastUpdated": "2026-06-11T14:35:43.001Z",
+      "source": "knowthechain"
+    }
   }
 }

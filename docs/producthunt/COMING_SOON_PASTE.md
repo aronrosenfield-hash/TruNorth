@@ -20,7 +20,7 @@ Shop with your values. Real data, not opinions.
 
 **Description (260 char max — currently 248):**
 ```
-Grade 11,000+ companies on politics, environment, labor, animal testing, privacy & more — using only public records like FEC, EPA, OSHA filings. Take the 30-sec quiz to personalize. Scan barcodes in-store. Free forever on iOS.
+Grade 12,000+ companies on politics, environment, labor, animal testing, privacy & more — using only public records like FEC, EPA, OSHA filings. Take the 30-sec quiz to personalize. Scan barcodes in-store. Free forever on iOS.
 ```
 
 **Topics (select these on the form):**
@@ -54,7 +54,7 @@ https://www.trunorthapp.com
 **Add yourself as maker:**
 - Name: Aron Rosenfield
 - Title/role: Founder & CEO
-- Bio (1-2 sentences): "Founder of TruNorth. Building a consumer values shopping app that grades 11,000+ brands using only public records — no AI, no opinions. Bootstrapped, indie."
+- Bio (1-2 sentences): "Founder of TruNorth. Building a consumer values shopping app that grades 12,000+ brands using only public records — no AI, no opinions. Bootstrapped, indie."
 
 ---
 

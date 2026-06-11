@@ -2,7 +2,7 @@
   "name": "A&M Records",
   "cat": "Entertainment & Media",
   "init": "AMRE",
-  "overall": 47.7,
+  "overall": 38.9,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral"
   },
@@ -58,9 +58,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Universal Music: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -115,7 +115,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Universal Music Group; HQ Los Angeles. (Wikidata Q277626)",
     "sources": [
@@ -133,7 +133,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -152,6 +152,7 @@
   "inheritedFrom": "universal-music",
   "csc": {
     "political": 82.3,
-    "labor": 9.8
+    "labor": 9.8,
+    "privacy": 8
   }
 }

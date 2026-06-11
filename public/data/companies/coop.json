@@ -2,7 +2,7 @@
   "name": "Coop",
   "cat": "Grocery",
   "init": "COOP",
-  "overall": 46.5,
+  "overall": 39.2,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,8 +11,8 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "neutral",
-    "guns": "neutral",
-    "privacy": "na",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -60,13 +60,16 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -221,11 +224,8 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T16:13:46.622Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "dei": {
       "notDisclosed": true
     },
@@ -239,6 +239,15 @@
   "csc": {
     "political": 78.7,
     "environment": 40,
-    "labor": 13.9
+    "labor": 13.9,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Coop",
+    "tosdrUrl": "https://tosdr.org/en/service/8450",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

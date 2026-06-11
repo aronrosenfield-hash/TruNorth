@@ -2,7 +2,7 @@
   "name": "CVS Pharmacy y más",
   "cat": "Retail",
   "init": "CVSP",
-  "overall": 57.2,
+  "overall": 56.4,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "mixed",
     "execPay": "na",
     "governance": "neutral"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Wikidata records a notable event: CVS 2015 data breach. (Wikidata Q2078880)",
@@ -110,14 +112,11 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -127,10 +126,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "cvs-pharmacy",

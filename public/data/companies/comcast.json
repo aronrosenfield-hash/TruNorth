@@ -2,7 +2,7 @@
   "name": "Comcast",
   "cat": "Technology",
   "init": "CO",
-  "overall": 41.6,
+  "overall": 42,
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "sc": {
@@ -154,8 +154,14 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "newsweekMrc": "2026-06-09T22:43:03.890Z",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "newsweekMrc": "2026-06-11T14:35:43.707Z",
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "cpaZicklin": "2026-06-11T14:35:39.917Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "msha": "2026-06-11T14:35:43.462Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "secLitigation": "2026-06-11T14:35:44.954Z"
   },
   "competitors": [
     "charter-communications",
@@ -235,7 +241,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-29",
+    "cases": [
+      {
+        "caseName": "Clark v. Comcast Cable Communications, LLC",
+        "dateFiled": "2026-05-29",
+        "court": "District Court, S.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Comcast%22"
+      },
+      {
+        "caseName": "Supreme v. Comcast Cable Communications Management, LLC",
+        "dateFiled": "2026-05-26",
+        "court": "District Court, S.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Comcast%22"
+      },
+      {
+        "caseName": "Matthews v. Comcast Cable Communications Management, LLC",
+        "dateFiled": "2026-05-22",
+        "court": "District Court, W.D. Tennessee",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Comcast%22"
+      },
+      {
+        "caseName": "Daniels v. Comcast Cable Communications LLC",
+        "dateFiled": "2026-05-21",
+        "court": "District Court, W.D. Missouri",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Comcast%22"
+      },
+      {
+        "caseName": "Cable v. The Pennsylvania State Civil Service Commission",
+        "dateFiled": "2026-05-15",
+        "court": "District Court, W.D. Pennsylvania",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Comcast%22"
+      }
+    ],
+    "totalAllTime": 3438,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -311,7 +366,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 6,
+  "realCats": 5,
   "health": {
     "s": "2 FCC/FTC enforcement actions (~$1.0B in penalties). Multi-state AG settlement — $1B over deceptive 'Performance Pro' fees, charged Xfinity customers without consent.",
     "sources": [
@@ -324,7 +379,7 @@
       "score": 79.7,
       "year": 2025,
       "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
-      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "lastUpdated": "2026-06-11T14:35:43.707Z",
       "source": "newsweek-mrc"
     },
     "execPay": {
@@ -345,6 +400,188 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "cpaZicklin": {
+      "score": 52.1,
+      "tier": "Fourth Tier",
+      "year": 2024,
+      "sourceUrl": "https://politicalaccountability.net/cpa-zicklin-index",
+      "lastUpdated": "2026-06-11T14:35:39.917Z",
+      "source": "cpa-zicklin"
+    },
+    "msha": {
+      "totalCitations": 86,
+      "totalPenaltiesUsd": 8958,
+      "significantSubstantial": 16,
+      "fatalities5y": 0,
+      "totalAccidents": 6,
+      "sampleCitations": [
+        {
+          "date": "04/10/2019",
+          "mine_name": "Barrackville Refuse Pile",
+          "mine_type": "Surface",
+          "section": "77.1605(k)",
+          "type": "Citation",
+          "sig_sub": true,
+          "likelihood": "Reasonably",
+          "proposed_penalty_usd": 121,
+          "violator": "LP Mineral, LLC",
+          "violation_no": "9181620"
+        },
+        {
+          "date": "10/10/2018",
+          "mine_name": "Humphrey No. 7 Mine ",
+          "mine_type": "Surface",
+          "section": "77.1001",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 118,
+          "violator": "LP Mineral LLC",
+          "violation_no": "9181856"
+        },
+        {
+          "date": "10/10/2018",
+          "mine_name": "Humphrey No. 7 Mine ",
+          "mine_type": "Surface",
+          "section": "77.1000",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 118,
+          "violator": "LP Mineral LLC",
+          "violation_no": "9181857"
+        },
+        {
+          "date": "10/10/2018",
+          "mine_name": "Humphrey No. 7 Mine ",
+          "mine_type": "Surface",
+          "section": "77.1605(l)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 118,
+          "violator": "LP Mineral LLC",
+          "violation_no": "9181858"
+        },
+        {
+          "date": "10/10/2018",
+          "mine_name": "Humphrey No. 7 Mine ",
+          "mine_type": "Surface",
+          "section": "77.1713(a)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 118,
+          "violator": "LP Mineral LLC",
+          "violation_no": "9181859"
+        }
+      ],
+      "sampleFatalities": [],
+      "lastUpdated": "2026-06-11T14:35:43.462Z",
+      "source": "msha",
+      "sourceUrl": "https://www.msha.gov/data-reports"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 11,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 11,
+      "byYear": {
+        "2015": 12,
+        "2016": 7,
+        "2017": 3,
+        "2018": 13,
+        "2019": 5,
+        "2020": 5,
+        "2021": 10,
+        "2022": 8,
+        "2023": 6,
+        "2024": 5,
+        "2025": 7
+      },
+      "totalRecordsAllTime": 81,
+      "sampleRecords": [
+        {
+          "event_date": "2025-07-23",
+          "employer": "Comcast of Houston LLC",
+          "city": "HOUSTON",
+          "state": "TEXAS",
+          "part_of_body": " BODY SYSTEMS  ",
+          "nature": " Heat exhaustion, fatigue",
+          "event_description": " Exposure to environmental heat  outdoor",
+          "final_narrative": "An employee had been installing an outside cable line at a residence. The employee became nauseous from working in the heat. The employee was hospitalized with heat exhaustion and dehydration.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2025-05-09",
+          "employer": "Comcast of Houston LLC",
+          "city": "MONTGOMERY",
+          "state": "TEXAS",
+          "part_of_body": " Brain",
+          "nature": " Concussions",
+          "event_description": " Fall on same level due to slip or trip",
+          "final_narrative": "An employee tripped at an elevation change while approaching a home. He fell to the ground and hit his head on a rock, suffering a contusion to the left eyebrow and a possible concussion.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2025-04-30",
+          "employer": "Comcast Service Center",
+          "city": "PALATKA",
+          "state": "FLORIDA",
+          "part_of_body": " Knee(s)",
+          "nature": " Multiple soft tissue injuries",
+          "event_description": " Walking, without other incident",
+          "final_narrative": "An employee was about to install a cable at a residential site. While setting up a ladder, he stepped back on an uneven street surface and hyperextended his knee. He dislocated his knee and tore his patellar tendon.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2025-04-10",
+          "employer": "Comcast of Illinois XI, LLC",
+          "city": "BUFFALO GROVE",
+          "state": "ILLINOIS",
+          "part_of_body": " Foot (feet), toe(s)  unspecified",
+          "nature": " Fractures   ",
+          "event_description": " Fall to lower level from collapsing structure or equipment  unspecified",
+          "final_narrative": "An employee was on a combination ladder drilling a hole for a cable when the ladder slipped and the employee fell to the floor and became entangled in the ladder. The employee was hospitalized for broken bones in his feet.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2025-02-18",
+          "employer": "Comcast of Connecticut",
+          "city": "PRESTON",
+          "state": "CONNECTICUT",
+          "part_of_body": " Leg(s)  unspecified",
+          "nature": " Fractures   ",
+          "event_description": " Fall on same level due to slip or trip",
+          "final_narrative": "An employee was walking across a customer's driveway when he slipped on ice and fell to the ground, landing on his right leg. The leg was fractured.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secLitigation": {
+      "totalReleasesLifetime": 1,
+      "recent24mo": 0,
+      "latestReleaseDate": "2012-05-30T14:24:49Z",
+      "sampleReleases": [
+        {
+          "lr": "LR-22381",
+          "date": "2012-05-30T14:24:49Z",
+          "caption": "Mark A. Lefkowitz, Compass Capital Group, Inc., Mark A. Lopez, Unico, Inc., Steven R. Peacock, Shane H. Traveller, and Advanced Cell Technology, Inc.",
+          "summary": "Securities and Exchange Commission v. Mark A. Lefkowitz, Compass Capital Group, Inc., Mark A. Lopez, Unico, Inc., Steven R. Peacock, Shane H. Traveller, and Advanced Cell Technology, Inc., United States District Court for the Middle District of Florida, Civil Action No. 8:12-CV-1210T35MAP SEC Charges Penny Stock Financiers and Two Public Companies With Illegal Unregistered Stock Distributions The Securities and Exchange Commission filed a civil injunctive action today in the United States Distri",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-22381"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.954Z",
+      "source": "sec",
+      "sourceUrl": "https://www.sec.gov/cgi-bin/srqsb?text=%22Peacock%22+form-type%3DLitigation+Release"
     }
   },
   "flags": {
@@ -358,7 +595,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -372,7 +609,27 @@
     "charity": 50,
     "environment": 12.7,
     "labor": 8,
-    "privacy": 50,
-    "execPay": 39
+    "privacy": 50
+  },
+  "doj": {
+    "totalMentions90d": 1,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "North Fort Myers Man Sentenced to More than Six Years in Federal Prison for Distributing Methamphetamine",
+        "url": "https://www.justice.gov/usao-mdfl/pr/north-fort-myers-man-sentenced-more-six-years-federal-prison-distributing",
+        "date": "2026-04-03",
+        "components": [
+          "USAO - Florida, Middle"
+        ],
+        "categories": [],
+        "snippet": "…ore than six years in federal prison for distributing methamphetamine\nfort myers, florida – michael peacock (39, north fort myers) has been sentenced by u.s. district judge kyle dudek to six years and six mo…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

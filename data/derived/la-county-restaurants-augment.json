@@ -1,14 +1,14 @@
 {
   "_license": "City of Los Angeles open data (public domain)",
   "_source": "https://data.lacity.org/Community-Economic-Development/Restaurant-and-Market-Health-Inspections/29fd-3paw",
-  "_generated_at": "2026-06-09T22:46:20.048Z",
+  "_generated_at": "2026-06-11T14:35:43.107Z",
   "_source_file": "data/raw/la-county-restaurants/2026-06-09.json",
   "_stats": {
     "raw_chains": 51,
-    "matched_companies": 38,
+    "matched_companies": 39,
     "by_severity": {
       "positive": 16,
-      "poor": 17,
+      "poor": 18,
       "mixed": 5
     }
   },
@@ -117,6 +117,24 @@
         }
       ],
       "narrative": "LA City health inspections (data through 2018): 22 of 113 LA outlets (19.5%) received a B or worse grade — 27 B grades, 1 C grade across 356 inspections (avg score 92.6).",
+      "sc": "poor",
+      "severity": "negative",
+      "source_url": "https://data.lacity.org/Community-Economic-Development/Restaurant-and-Market-Health-Inspections/29fd-3paw"
+    },
+    "el-pollo-loco": {
+      "outlet_count": 38,
+      "inspection_count": 298,
+      "grade_a": 287,
+      "grade_b": 11,
+      "grade_c": 0,
+      "b_or_worse_outlets": 10,
+      "pct_b_or_worse_outlets": 26.3,
+      "avg_score": 94.6,
+      "min_score": 81,
+      "max_score": 100,
+      "latest_inspection": "2018-07-31",
+      "sample_violations": [],
+      "narrative": "LA City health inspections (data through 2018): 10 of 38 LA outlets (26.3%) received a B or worse grade — 11 B grades across 298 inspections (avg score 94.6).",
       "sc": "poor",
       "severity": "negative",
       "source_url": "https://data.lacity.org/Community-Economic-Development/Restaurant-and-Market-Health-Inspections/29fd-3paw"

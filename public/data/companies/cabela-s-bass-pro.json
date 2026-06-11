@@ -90,7 +90,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "atf_ffl": "2026-06-11T14:35:36.526Z"
+  },
   "competitors": [
     "academy-sports",
     "dick-s-sporting-goods",
@@ -118,7 +121,23 @@
   "origin": null,
   "ownership": null,
   "charity_irs990": null,
-  "firearms_atf_ffl": null,
+  "firearms_atf_ffl": {
+    "fflTypes": [
+      "01"
+    ],
+    "fflTypeNames": [
+      "Dealer in Firearms Other Than Destructive Devices"
+    ],
+    "licenseCount": 1,
+    "states": [
+      "MO"
+    ],
+    "primaryRole": "dealer",
+    "sourceMonth": "2026-06",
+    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees",
+    "matchBasis": "allowlist",
+    "confidence": 0.95
+  },
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
@@ -157,7 +176,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true

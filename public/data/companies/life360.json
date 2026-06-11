@@ -2,7 +2,7 @@
   "name": "Life360",
   "cat": "Technology",
   "init": "LIFE",
-  "overall": 47.4,
+  "overall": 36.1,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -58,9 +58,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -132,7 +133,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:56:13.981Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -158,6 +159,15 @@
     }
   },
   "csc": {
-    "political": 43.5
+    "political": 43.5,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Life360",
+    "tosdrUrl": "https://tosdr.org/en/service/9163",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

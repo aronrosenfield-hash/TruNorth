@@ -36,8 +36,11 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "newsweekMrc": "2026-06-09T22:43:03.890Z",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "newsweekMrc": "2026-06-11T14:35:43.707Z",
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -178,7 +181,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-12",
+    "cases": [
+      {
+        "caseName": "Rogers v. Nvidia Corporation",
+        "dateFiled": "2026-05-12",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22NVIDIA%22"
+      },
+      {
+        "caseName": "MonolithIC 3D Inc. v. NVIDIA Corporation",
+        "dateFiled": "2026-05-11",
+        "court": "District Court, W.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22NVIDIA%22"
+      },
+      {
+        "caseName": "Veleber v. Alphabet Inc.",
+        "dateFiled": "2026-04-17",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22NVIDIA%22"
+      },
+      {
+        "caseName": "SpeedNIC LLC v. NVIDIA Corp.",
+        "dateFiled": "2026-04-16",
+        "court": "District Court, W.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22NVIDIA%22"
+      },
+      {
+        "caseName": "Stichting Pensioenfonds PGB, et al. v. NVIDIA Corporation, et al.",
+        "dateFiled": "2026-04-09",
+        "court": "Court of Appeals for the Ninth Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22NVIDIA%22"
+      }
+    ],
+    "totalAllTime": 424,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -247,7 +299,7 @@
       "score": 81.2,
       "year": 2025,
       "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
-      "lastUpdated": "2026-06-09T22:43:03.890Z",
+      "lastUpdated": "2026-06-11T14:35:43.707Z",
       "source": "newsweek-mrc"
     },
     "execPay": {
@@ -288,5 +340,101 @@
     "labor": 50,
     "privacy": 22,
     "execPay": 64.2
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "NVIDIA",
+    "tosdrUrl": "https://tosdr.org/en/service/705",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 2,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The plug heads can break exposing metal prongs, posing an electric shock hazard.",
+        "count": 1
+      },
+      {
+        "label": "The lithium-ion battery in the tablets can overheat, posing a fire hazard.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 8114,
+        "recall_number": "17201",
+        "recall_date": "2017-08-08T00:00:00",
+        "title": "NVIDIA Recalls European Plug Heads Sold with Power Adaptors Due to Electric Shock Hazard",
+        "description": "This recall involves European plug heads for power adaptors included with NVIDIA SHIELD™ World Charger Kits, as well as with NVIDIA SHIELD tablet computers and TVs intended for use in Europe. The European plug head has two thin round metal prongs within a black plastic hexagonal extender on a black plastic base plate …",
+        "url": "https://www.cpsc.gov/Recalls/2017/NVIDIA-Recalls-European-Plug-Heads-Sold-with-Power-Adaptors",
+        "hazards": [
+          "The plug heads can break exposing metal prongs, posing an electric shock hazard."
+        ],
+        "injuries": [
+          "There have been no reports of injuries or incidents in the U.S. NVIDIA has received nine reports of the European plug heads breaking overseas, including six reports of consumers receiving electrical …"
+        ],
+        "products": [
+          "European plug heads for NVIDIA SHIELD™ power adaptors"
+        ],
+        "units": [
+          "About 6,900 (in addition, about 360 were sold in Canada)"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 6465,
+        "recall_number": "15204",
+        "recall_date": "2015-07-31T00:00:00",
+        "title": "NVIDIA Recalls Tablet Computers Due to Fire Hazard",
+        "description": "This recall involves NVIDIA SHIELD tablet computers with 8-inch touch screens. Model numbers P1761, P1761W and P1761WX and serial numbers 0410215901781 through 0425214604018 are included in this recall. NVIDIA and the model and serial numbers are etched on the left side edge of the tablets. The SHIELD logo is on the b…",
+        "url": "https://www.cpsc.gov/Recalls/2015/NVIDIA-Recalls-Tablet-Computers",
+        "hazards": [
+          "The lithium-ion battery in the tablets can overheat, posing a fire hazard."
+        ],
+        "injuries": [
+          "NVIDIA has received four reports of batteries overheating due to thermal runaway, including two reports of damage to flooring."
+        ],
+        "products": [
+          "NVIDIA SHIELD tablet computers"
+        ],
+        "units": [
+          "About 83,000 (in addition, 5,000 were sold in Canada)"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=NVIDIA"
+  },
+  "doj": {
+    "totalMentions90d": 1,
+    "antitrustMentions": 0,
+    "fraudMentions": 1,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Founder of Citron Research Found Guilty of Scheming to Manipulate Stock Market via Media Campaigns",
+        "url": "https://www.justice.gov/usao-cdca/pr/founder-citron-research-found-guilty-scheming-manipulate-stock-market-media-campaigns",
+        "date": "2026-06-01",
+        "components": [
+          "USAO - California, Central"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…the issuance of its commentary. for example, in november 2018, left wrote a portfolio manager about nvidia corp., a publicly traded technology company based in santa clara, california. in the message, left…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

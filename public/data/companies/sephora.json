@@ -12,7 +12,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "poor",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "mixed",
     "execPay": "na",
     "health": "good",
@@ -63,9 +63,11 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
     "verdict": "N/A",
-    "sources": []
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "1 documented breach affecting 780,073 accounts (HIBP); latest breach 2017-01-09.",
@@ -90,7 +92,11 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "competitors": [
     "ulta-beauty"
   ],
@@ -235,7 +241,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-26",
+    "cases": [
+      {
+        "caseName": "Pagan v. Sephora USA, Inc.",
+        "dateFiled": "2026-05-26",
+        "court": "District Court, S.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Sephora%22"
+      },
+      {
+        "caseName": "Kane v. Sephora USA, Inc.",
+        "dateFiled": "2026-03-30",
+        "court": "District Court, D. Massachusetts",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Sephora%22"
+      },
+      {
+        "caseName": "Baghdasaryan v. Sephora USA, Inc.",
+        "dateFiled": "2026-03-23",
+        "court": "District Court, E.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Sephora%22"
+      },
+      {
+        "caseName": "Carlos Gonzalez v. Sephora USA Inc",
+        "dateFiled": "2026-02-23",
+        "court": "District Court, C.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Sephora%22"
+      },
+      {
+        "caseName": "Calibrate Networks LLC v. Sephora S.A.",
+        "dateFiled": "2026-02-17",
+        "court": "District Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Sephora%22"
+      }
+    ],
+    "totalAllTime": 178,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -265,14 +320,11 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "transparency": {
       "notDisclosed": true
@@ -284,5 +336,33 @@
     "environment": 100,
     "labor": 50,
     "privacy": 50
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2024": 1
+      },
+      "totalRecordsAllTime": 1,
+      "sampleRecords": [
+        {
+          "event_date": "2024-03-04",
+          "employer": "Sephora USA, Inc.",
+          "city": "OLIVE BRANCH",
+          "state": "MISSISSIPPI",
+          "part_of_body": " Finger or thumb tip(s), nail(s)",
+          "nature": " Amputations, avulsions, enucleations  unspecified",
+          "event_description": " Caught, entangled in running powered equipment  normal operation",
+          "final_narrative": "An employee was sorting boxes on a conveyor belt line when his hand got caught in the conveyor belt, resulting in an amputation of the left index fingertip.",
+          "amputation": true,
+          "hospitalized": false
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

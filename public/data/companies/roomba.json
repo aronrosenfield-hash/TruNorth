@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -111,7 +114,15 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 0,
+    "classActionCount": 0,
+    "mostRecentCase": null,
+    "cases": [],
+    "totalAllTime": 0,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,

@@ -2,7 +2,7 @@
   "name": "Uptown Records",
   "cat": "Retail",
   "init": "UPTO",
-  "overall": 47.7,
+  "overall": 38.9,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,8 +11,8 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "na",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -53,13 +53,15 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Universal Music: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -100,16 +102,13 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -128,6 +127,7 @@
   "inheritedFrom": "universal-music",
   "csc": {
     "political": 82.3,
-    "labor": 9.8
+    "labor": 9.8,
+    "privacy": 8
   }
 }

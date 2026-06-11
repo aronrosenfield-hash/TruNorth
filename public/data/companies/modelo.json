@@ -2,7 +2,7 @@
   "name": "Modelo",
   "cat": "Food & Beverage",
   "init": "GM",
-  "overall": 42,
+  "overall": 42.6,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -90,7 +90,11 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "hhsOig": "2026-06-11T14:35:42.256Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "competitors": [
     "corona-constellation-brands",
     "heineken-usa",
@@ -131,7 +135,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 2,
+    "classActionCount": 0,
+    "mostRecentCase": "2025-03-17",
+    "cases": [
+      {
+        "caseName": "Janelle P. Modelo",
+        "dateFiled": "2025-03-17",
+        "court": "United States Bankruptcy Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Modelo%22"
+      },
+      {
+        "caseName": "CB Brand Strategies, LLC v. Oz Trading Group, Inc.",
+        "dateFiled": "2024-09-17",
+        "court": "District Court, S.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Modelo%22"
+      },
+      {
+        "caseName": "CB Brand Strategies, LLC v. National Distribution Company, Inc.",
+        "dateFiled": "2024-04-25",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Modelo%22"
+      },
+      {
+        "caseName": "Cerveceria Modelo de Mexico, S. de R.L. de C.V. v. CB Brand Strategies, LLC",
+        "dateFiled": "2023-05-15",
+        "court": "Court of Appeals for the Second Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Modelo%22"
+      },
+      {
+        "caseName": "Hernandez-Silva v. Instituto Modelo de Ensenanza Individualizada, Inc.",
+        "dateFiled": "2022-10-12",
+        "court": "District Court, D. Puerto Rico",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Modelo%22"
+      }
+    ],
+    "totalAllTime": 77,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -170,17 +223,13 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "inheritedFrom": "anheuser-busch",
@@ -190,5 +239,23 @@
     "environment": 50,
     "labor": 13.7,
     "health": 8
+  },
+  "hhsOig": {
+    "isExcluded": true,
+    "exclusionCount": 1,
+    "exclusionSample": [
+      {
+        "busname": "FARMACIA NUEVO MODELO",
+        "exclDate": "20000320",
+        "exclType": "1128a1",
+        "city": "BAYAMON",
+        "state": "PR"
+      }
+    ],
+    "recentFraudActions24mo": 0,
+    "sampleActions": [],
+    "lastUpdated": "2026-06-11T14:35:42.256Z",
+    "source": "hhs-oig",
+    "sourceUrl": "https://oig.hhs.gov/fraud/enforcement/"
   }
 }

@@ -2,7 +2,7 @@
   "name": "Pantene",
   "cat": "Beauty & Personal Care",
   "init": "PANT",
-  "overall": 42.8,
+  "overall": 42.1,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -28,7 +28,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "charity": {
     "s": "$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund.",
     "sources": [
@@ -107,7 +110,40 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 1,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-01-27",
+    "cases": [
+      {
+        "caseName": "Pantene Maria Sargent",
+        "dateFiled": "2026-01-27",
+        "court": "United States Bankruptcy Court, W.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Pantene%22"
+      },
+      {
+        "caseName": "Chris Sports North America, Inc v. M/V \"APL Peru\"",
+        "dateFiled": "2008-10-31",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Pantene%22"
+      },
+      {
+        "caseName": "MURPHY MOTOR FREIGHT v. PANTENE CO.",
+        "dateFiled": "1989-02-27",
+        "court": "District Court, M.D. North Carolina",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Pantene%22"
+      }
+    ],
+    "totalAllTime": 3,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -116,13 +152,13 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -146,7 +182,6 @@
     "charity": 50,
     "labor": 8.4,
     "privacy": 50,
-    "execPay": 46.9,
     "health": 50
   }
 }

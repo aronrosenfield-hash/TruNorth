@@ -31,17 +31,48 @@
     "c2c": "https://www.c2ccertified.org/products/registry",
     "ewg-skindeep": "https://www.ewg.org/skindeep/"
   },
-  "_generated_at": "2026-06-09T18:43:46.402Z",
+  "_generated_at": "2026-06-11T14:35:36.363Z",
   "_stats": {
     "raw_entries": 157,
-    "matched_companies": 69,
-    "routed_slugHint": 112,
-    "routed_direct": 1,
+    "matched_companies": 72,
+    "routed_slugHint": 113,
+    "routed_direct": 3,
     "routed_alias": 2,
     "routed_parent": 1,
-    "orphans": 41
+    "orphans": 38
   },
   "companies": {
+    "vital-farms": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "certified-humane"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
+      "animals": {
+        "certifications": [
+          "Certified Humane"
+        ],
+        "sources": [
+          "certified-humane"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Certified Humane across pasture-raised egg + butter line."
+      },
+      "health": {
+        "certifications": [
+          "Certified Humane"
+        ],
+        "sources": [
+          "certified-humane"
+        ],
+        "bestStatus": "leader",
+        "narrative": "Certified Humane across pasture-raised egg + butter line."
+      }
+    },
     "hormel-foods": {
       "_sources": [
         "animal-welfare-ag-r3"
@@ -51,7 +82,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Certified Humane"
@@ -83,7 +114,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Certified Humane",
@@ -129,7 +160,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 4,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "AWI recommended",
@@ -178,7 +209,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "BAP certified",
@@ -225,7 +256,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "BAP certified",
@@ -274,7 +305,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 5,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "BAP certified",
@@ -325,7 +356,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "BAP certified"
@@ -347,6 +378,37 @@
         "narrative": "Sysco farmed-seafood lines require BAP certification."
       }
     },
+    "us-foods": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "bap"
+      ],
+      "_routedVia": "direct",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
+      "animals": {
+        "certifications": [
+          "BAP certified"
+        ],
+        "sources": [
+          "bap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "US Foods farmed-seafood lines committed to BAP certification."
+      },
+      "environment": {
+        "certifications": [
+          "BAP certified"
+        ],
+        "sources": [
+          "bap"
+        ],
+        "bestStatus": "leader",
+        "narrative": "US Foods farmed-seafood lines committed to BAP certification."
+      }
+    },
     "aramark": {
       "_sources": [
         "animal-welfare-ag-r3"
@@ -357,7 +419,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "BAP certified",
@@ -392,7 +454,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "BAP certified"
@@ -424,7 +486,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Salmon-Safe",
@@ -457,7 +519,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Salmon-Safe"
@@ -488,7 +550,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Salmon-Safe"
@@ -519,7 +581,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Salmon-Safe"
@@ -551,7 +613,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Salmon-Safe",
@@ -595,7 +657,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Bee Better",
@@ -632,7 +694,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Soil Association organic",
@@ -677,7 +739,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "Soil Association organic"
@@ -718,7 +780,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Seafood Watch partner"
@@ -749,7 +811,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Seafood Watch partner"
@@ -781,7 +843,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Seafood Watch partner"
@@ -815,7 +877,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "FishWise partner"
@@ -849,7 +911,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "FishWise partner"
@@ -892,7 +954,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "FishWise partner"
@@ -925,7 +987,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA on track",
@@ -961,7 +1023,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA behind",
@@ -995,7 +1057,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA no commitment",
@@ -1029,7 +1091,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA no commitment",
@@ -1063,7 +1125,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA behind",
@@ -1096,7 +1158,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA on track"
@@ -1118,7 +1180,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA fulfilled",
@@ -1152,7 +1214,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "MFA fulfilled",
@@ -1187,7 +1249,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "THL on track",
@@ -1223,7 +1285,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "THL on track",
@@ -1256,7 +1318,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "THL fulfilled"
@@ -1278,7 +1340,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "THL fulfilled",
@@ -1312,7 +1374,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "THL behind",
@@ -1346,7 +1408,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Animal Equality target"
@@ -1387,7 +1449,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "WAP Mixed"
@@ -1408,7 +1470,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "WAP Behind"
@@ -1432,7 +1494,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 4,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "CIWF ChickenTrack on track"
@@ -1467,7 +1529,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "CIWF ChickenTrack fulfilled"
@@ -1488,7 +1550,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "NRDC Chain Reaction B-"
@@ -1519,7 +1581,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "NRDC Chain Reaction D+"
@@ -1550,7 +1612,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "NRDC Chain Reaction F"
@@ -1581,7 +1643,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "NRDC Chain Reaction F"
@@ -1612,7 +1674,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "NRDC Chain Reaction F"
@@ -1643,7 +1705,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "NRDC Chain Reaction F"
@@ -1674,7 +1736,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Pew antibiotic-free chicken"
@@ -1705,7 +1767,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "animals": {
         "certifications": [
           "Pew antibiotic-free partial"
@@ -1738,7 +1800,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "labor": {
         "certifications": [
           "FEP Not Recommended",
@@ -1765,7 +1827,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "labor": {
         "certifications": [
           "FEP Not Recommended",
@@ -1792,7 +1854,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "labor": {
         "certifications": [
           "FEP Not Recommended",
@@ -1818,7 +1880,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "labor": {
         "certifications": [
           "FEP Not Recommended",
@@ -1841,7 +1903,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "Mind The Store A-"
@@ -1872,7 +1934,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "Mind The Store B"
@@ -1903,7 +1965,7 @@
       ],
       "_routedVia": "direct",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "Mind The Store B-"
@@ -1934,7 +1996,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "Mind The Store C"
@@ -1965,7 +2027,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "Mind The Store F"
@@ -1996,7 +2058,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "Mind The Store F"
@@ -2027,7 +2089,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "CEH PFAS settlement"
@@ -2049,6 +2111,37 @@
         "narrative": "CEH 2024 settlement: Lululemon agreed to phase out PFAS from leggings + other apparel by 2025."
       }
     },
+    "3m": {
+      "_sources": [
+        "animal-welfare-ag-r3"
+      ],
+      "_innerSources": [
+        "pfas-project"
+      ],
+      "_routedVia": "slugHint",
+      "_entries": 1,
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
+      "health": {
+        "certifications": [
+          "PFAS Manufacturer (legacy PFAS)"
+        ],
+        "sources": [
+          "pfas-project"
+        ],
+        "bestStatus": "concern",
+        "narrative": "PFAS Project Lab: 3M classified as major historical manufacturer of PFOA/PFOS; committed to phase out PFAS by end-2025."
+      },
+      "environment": {
+        "certifications": [
+          "PFAS Manufacturer (legacy PFAS)"
+        ],
+        "sources": [
+          "pfas-project"
+        ],
+        "bestStatus": "concern",
+        "narrative": "PFAS Project Lab: 3M classified as major historical manufacturer of PFOA/PFOS; committed to phase out PFAS by end-2025."
+      }
+    },
     "dupont": {
       "_sources": [
         "animal-welfare-ag-r3"
@@ -2058,7 +2151,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "PFAS Manufacturer (legacy PFAS)"
@@ -2089,7 +2182,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "PFAS Manufacturer (active)"
@@ -2121,7 +2214,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "UL EcoLogo"
@@ -2152,7 +2245,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "UL EcoLogo"
@@ -2173,7 +2266,7 @@
       ],
       "_routedVia": "parent",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "UL EcoLogo"
@@ -2194,7 +2287,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "C2C Bronze"
@@ -2215,7 +2308,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "environment": {
         "certifications": [
           "C2C Gold"
@@ -2236,7 +2329,7 @@
       ],
       "_routedVia": "alias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "EWG Skin Deep Mixed"
@@ -2257,7 +2350,7 @@
       ],
       "_routedVia": "alias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-09T18:43:46.402Z",
+      "_lastUpdated": "2026-06-11T14:35:36.363Z",
       "health": {
         "certifications": [
           "EWG Skin Deep Mixed"
@@ -2271,11 +2364,6 @@
     }
   },
   "orphans": [
-    {
-      "brand": "Vital Farms",
-      "source": "certified-humane",
-      "tier": "Certified Humane"
-    },
     {
       "brand": "Pete and Gerry's",
       "source": "certified-humane",
@@ -2340,11 +2428,6 @@
       "brand": "Force of Nature",
       "source": "ag-grassfed",
       "tier": "AGA Certified"
-    },
-    {
-      "brand": "US Foods",
-      "source": "bap",
-      "tier": "BAP foodservice partner"
     },
     {
       "brand": "Niman Ranch",
@@ -2442,11 +2525,6 @@
       "tier": "2/5 transparency"
     },
     {
-      "brand": "3M",
-      "source": "pfas-project",
-      "tier": "Manufacturer (legacy PFAS)"
-    },
-    {
       "brand": "Wolverine Worldwide",
       "source": "pfas-project",
       "tier": "Product PFAS use"
@@ -2477,5 +2555,5 @@
       "tier": "EWG Verified — selected SKUs"
     }
   ],
-  "orphan_total": 41
+  "orphan_total": 38
 }

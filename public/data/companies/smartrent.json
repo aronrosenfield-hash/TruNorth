@@ -2,7 +2,7 @@
   "name": "SmartRent",
   "cat": "Technology",
   "init": "SMAR",
-  "overall": 49.7,
+  "overall": 37.8,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -58,9 +58,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -145,7 +146,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:56:54.886Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -171,6 +172,15 @@
     }
   },
   "csc": {
-    "political": 49.3
+    "political": 49.3,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "SmartRent",
+    "tosdrUrl": "https://tosdr.org/en/service/7728",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

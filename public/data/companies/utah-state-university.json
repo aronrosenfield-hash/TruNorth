@@ -2,7 +2,7 @@
   "name": "Utah State University",
   "cat": "Professional Services",
   "init": "UTAH",
-  "overall": 48.6,
+  "overall": 49,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "mixed",
     "execPay": "na"
   },
   "political": {
@@ -56,9 +56,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -121,7 +122,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:13:40.968Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -147,6 +148,15 @@
     }
   },
   "csc": {
-    "political": 46.6
+    "political": 46.6,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Utah State University",
+    "tosdrUrl": "https://tosdr.org/en/service/11615",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

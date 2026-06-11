@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -59,8 +59,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -171,11 +173,8 @@
   "lastUpdated": "2026-05-27T17:48:21.076Z",
   "realCats": 2,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true

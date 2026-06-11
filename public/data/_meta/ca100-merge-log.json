@@ -1,14 +1,16 @@
 {
-  "merged_at": "2026-06-07T19:37:43.693Z",
-  "mode": "apply",
+  "merged_at": "2026-06-11T14:35:38.663Z",
+  "mode": "dry",
   "source_file": "public/data/ca100.json",
   "benchmark_year": 2026,
   "total_brands": 528,
-  "merged_count": 17,
+  "merged_count": 16,
   "skipped_count": 511,
-  "orphan_count": 0,
+  "orphan_count": 1,
   "error_count": 0,
-  "orphans": [],
+  "orphans": [
+    "john-deere"
+  ],
   "ranked_list": [
     {
       "brand": "exxonmobil",
@@ -209,7 +211,7 @@
     {
       "brand": "volkswagen",
       "target": "volkswagen-usa",
-      "routed_via": "parent",
+      "routed_via": "alias",
       "year": 2026,
       "scores": {
         "disclosure": 4,
@@ -223,7 +225,7 @@
     {
       "brand": "bmw",
       "target": "bmw-usa",
-      "routed_via": "parent",
+      "routed_via": "alias",
       "year": 2026,
       "scores": {
         "disclosure": 4,
@@ -233,20 +235,6 @@
       },
       "net_zero_target_year": 2050,
       "scope_1_2_emissions_mt_co2e": 1.5
-    },
-    {
-      "brand": "john-deere",
-      "target": "deere-and-company",
-      "routed_via": "parent",
-      "year": 2026,
-      "scores": {
-        "disclosure": 3,
-        "alignment": 2,
-        "governance": 2,
-        "capital_allocation": 1
-      },
-      "net_zero_target_year": 2050,
-      "scope_1_2_emissions_mt_co2e": 0.5
     }
   ]
 }

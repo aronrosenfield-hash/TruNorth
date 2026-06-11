@@ -2,7 +2,7 @@
   "name": "University of South Florida",
   "cat": "Professional Services",
   "init": "UNIV",
-  "overall": 48.4,
+  "overall": 48.9,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na"
   },
   "political": {
@@ -54,9 +54,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade C (mixed) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -145,7 +146,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:10:22.485Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -171,6 +172,15 @@
     }
   },
   "csc": {
-    "political": 46.1
+    "political": 46.1,
+    "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "University of South Florida",
+    "tosdrUrl": "https://tosdr.org/en/service/1956",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

@@ -2,7 +2,7 @@
   "name": "Universal Music",
   "cat": "Entertainment & Media",
   "init": "UNIV",
-  "overall": 47.7,
+  "overall": 38.9,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral"
   },
@@ -63,9 +63,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -202,7 +203,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:06:38.979Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Tencent; HQ California. (Wikidata Q38903)",
     "sources": [
@@ -235,6 +236,15 @@
   },
   "csc": {
     "political": 82.3,
-    "labor": 9.8
+    "labor": 9.8,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Universal Music Group",
+    "tosdrUrl": "https://tosdr.org/en/service/4338",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

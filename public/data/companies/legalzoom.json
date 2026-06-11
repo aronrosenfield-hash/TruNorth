@@ -2,7 +2,7 @@
   "name": "LegalZoom",
   "cat": "Financial Services",
   "init": "LZ",
-  "overall": 71.7,
+  "overall": 57.6,
   "isPublic": true,
   "ticker": "LZ",
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "good"
   },
   "political": {
@@ -67,10 +67,11 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -164,7 +165,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -212,6 +213,15 @@
   },
   "csc": {
     "political": 76,
+    "privacy": 8,
     "execPay": 100
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "LegalZoom",
+    "tosdrUrl": "https://tosdr.org/en/service/2463",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

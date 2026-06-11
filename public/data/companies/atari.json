@@ -2,7 +2,7 @@
   "name": "Atari",
   "cat": "Entertainment & Media",
   "init": "ATAR",
-  "overall": 62.8,
+  "overall": 47.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral"
   },
@@ -59,9 +59,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -128,7 +129,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T21:57:11.592Z",
-  "realCats": 1,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by Atari Interactive; HQ California. (Wikidata Q207922)",
     "sources": [
@@ -160,6 +161,15 @@
     }
   },
   "csc": {
-    "political": 81.9
+    "political": 81.9,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Atari",
+    "tosdrUrl": "https://tosdr.org/en/service/6557",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

@@ -2,7 +2,7 @@
   "name": "COS",
   "cat": "Retail",
   "init": "COS",
-  "overall": 46.4,
+  "overall": 51.5,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "poor",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "mixed",
     "execPay": "na"
   },
@@ -58,8 +58,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company H&M: Wikidata records a notable event: BigBrotherAwards. (Wikidata Q188326)",
@@ -220,9 +222,6 @@
   "lastUpdated": "2026-05-30T22:51:35.422Z",
   "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -234,10 +233,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "handm",

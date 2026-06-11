@@ -2,7 +2,7 @@
   "name": "Fred Meyer Jewelers",
   "cat": "Retail",
   "init": "FRED",
-  "overall": 43.4,
+  "overall": 41.3,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "poor",
     "governance": "neutral",
@@ -55,8 +55,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -121,7 +123,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Kroger; HQ Portland. (Wikidata Q5495935)",
     "sources": [
@@ -129,14 +131,11 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -146,10 +145,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {
@@ -163,7 +158,6 @@
     "political": 51.4,
     "charity": 85,
     "environment": 8,
-    "labor": 8,
-    "execPay": 36.8
+    "labor": 8
   }
 }

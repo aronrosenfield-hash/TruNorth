@@ -2,7 +2,7 @@
   "name": "Getty Images",
   "cat": "Entertainment & Media",
   "init": "GETT",
-  "overall": 49.1,
+  "overall": 37.4,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -56,9 +56,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -147,7 +148,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T23:58:45.416Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -173,6 +174,15 @@
     }
   },
   "csc": {
-    "political": 47.8
+    "political": 47.8,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Getty Images",
+    "tosdrUrl": "https://tosdr.org/en/service/4219",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

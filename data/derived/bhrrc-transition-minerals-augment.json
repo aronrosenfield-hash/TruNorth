@@ -5,19 +5,19 @@
     "report_2024": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/transition-minerals-tracker-2024/",
     "cobalt_brief": "https://www.business-humanrights.org/en/from-us/briefings/digging-deep-the-eu-battery-regulation-and-electric-vehicles/"
   },
-  "_generated_at": "2026-06-09T22:52:58.696Z",
+  "_generated_at": "2026-06-11T14:35:37.758Z",
   "_source_file": "data/raw/bhrrc-transition-minerals/2026-06-09.json",
   "_stats": {
     "raw_entries": 59,
-    "matched_companies": 15,
+    "matched_companies": 17,
     "routing": {
       "slugHint": 9,
-      "direct": 2,
+      "direct": 4,
       "alias": 4,
       "parent": 0,
-      "orphan": 44
+      "orphan": 42
     },
-    "orphan_total": 44
+    "orphan_total": 42
   },
   "companies": {
     "glencore-plc": {
@@ -118,6 +118,27 @@
       "severity": "very_poor",
       "_routedVia": "slugHint"
     },
+    "southern-copper": {
+      "display_name": "Southern Copper Corporation",
+      "minerals": [
+        "copper",
+        "zinc"
+      ],
+      "allegation_count": 16,
+      "countries": [
+        "Peru",
+        "Mexico"
+      ],
+      "allegation_types": [
+        "environment",
+        "community-displacement",
+        "violence-security"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "very_poor",
+      "_routedVia": "direct"
+    },
     "albemarle": {
       "display_name": "Albemarle Corporation",
       "minerals": [
@@ -156,6 +177,31 @@
       "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
       "severity": "mixed",
       "_routedVia": "slugHint"
+    },
+    "vale-s-a": {
+      "display_name": "Vale S.A.",
+      "minerals": [
+        "nickel",
+        "copper"
+      ],
+      "allegation_count": 48,
+      "countries": [
+        "Brazil",
+        "Indonesia",
+        "Canada",
+        "New Caledonia"
+      ],
+      "allegation_types": [
+        "environment",
+        "indigenous-rights",
+        "worker-rights",
+        "violence-security",
+        "community-displacement"
+      ],
+      "period": "2010-2024",
+      "sourceUrl": "https://www.business-humanrights.org/en/from-us/transition-minerals-tracker/",
+      "severity": "very_poor",
+      "_routedVia": "direct"
     },
     "sibanye-stillwater": {
       "display_name": "Sibanye-Stillwater",
@@ -417,14 +463,6 @@
       "allegation_count": 11
     },
     {
-      "company": "Southern Copper Corporation",
-      "minerals": [
-        "copper",
-        "zinc"
-      ],
-      "allegation_count": 16
-    },
-    {
       "company": "Grupo México",
       "minerals": [
         "copper",
@@ -503,14 +541,6 @@
         "lithium"
       ],
       "allegation_count": 4
-    },
-    {
-      "company": "Vale S.A.",
-      "minerals": [
-        "nickel",
-        "copper"
-      ],
-      "allegation_count": 48
     },
     {
       "company": "Nornickel (Norilsk Nickel)",

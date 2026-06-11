@@ -29,7 +29,11 @@
       "knowthechain"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "knowTheChain": "2026-06-11T14:35:43.001Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -129,7 +133,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-26",
+    "cases": [
+      {
+        "caseName": "Alderian Technologies LLC v. Xiaomi Corporation",
+        "dateFiled": "2026-05-26",
+        "court": "District Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Xiaomi%22"
+      },
+      {
+        "caseName": "Slyde Analytics LLC v. Xiaomi Corporation",
+        "dateFiled": "2026-05-19",
+        "court": "District Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Xiaomi%22"
+      },
+      {
+        "caseName": "United States v. Mint Green Xiaomi Cellular Phone Case Number: SYS-25-10-0630 (\"Target Device 2\")",
+        "dateFiled": "2025-11-03",
+        "court": "District Court, S.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Xiaomi%22"
+      },
+      {
+        "caseName": "United States v. Mint Green Xiaomi Cellular Phone Case Number: SYS-25-10-0630 (\"Target Device 2\")",
+        "dateFiled": "2025-11-03",
+        "court": "District Court, S.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Xiaomi%22"
+      },
+      {
+        "caseName": "United States v. Gray Xiaomi Cellphone 2026250400006001-0004 (\"Target Device\")",
+        "dateFiled": "2025-10-20",
+        "court": "District Court, S.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Xiaomi%22"
+      }
+    ],
+    "totalAllTime": 105,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -173,5 +226,29 @@
   "csc": {
     "political": 78.1,
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Xiaomi",
+    "tosdrUrl": "https://tosdr.org/en/service/406",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "enriched": {
+    "knowTheChain": {
+      "score": 8,
+      "rank": 14,
+      "sector": "ICT",
+      "year": 2023,
+      "weakAreas": [
+        "commitment",
+        "traceability",
+        "worker voice"
+      ],
+      "sourceUrl": "https://knowthechain.org/benchmarks/ict/",
+      "lastUpdated": "2026-06-11T14:35:43.001Z",
+      "source": "knowthechain"
+    }
   }
 }

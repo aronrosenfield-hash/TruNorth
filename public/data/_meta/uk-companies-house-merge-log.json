@@ -1,19 +1,17 @@
 {
-  "merged_at": "2026-06-07T20:53:40.078Z",
-  "mode": "write",
+  "merged_at": "2026-06-11T14:35:45.838Z",
+  "mode": "dry-run",
   "input_mode": "live",
   "source_file": "public/data/uk-companies-house.json",
   "total_brands": 30,
-  "merged_count": 7,
+  "merged_count": 10,
   "skipped_count": 1,
-  "orphan_count": 22,
+  "orphan_count": 19,
   "error_count": 0,
   "orphans": [
     "bp-uk",
     "boots-uk",
-    "marks-and-spencer",
     "sainsburys",
-    "hsbc",
     "standard-chartered",
     "prudential-uk",
     "vodafone-uk",
@@ -21,7 +19,6 @@
     "itv",
     "bbc",
     "britvic",
-    "glaxosmithkline",
     "reckitt-benckiser",
     "unilever-uk",
     "kingfisher-uk",
@@ -42,6 +39,14 @@
       "officers": 11
     },
     {
+      "brand": "marks-and-spencer",
+      "target": "marks-and-spencers",
+      "routed_via": "alias",
+      "company_number": "04256886",
+      "incorporated": "2001-07-23",
+      "officers": 11
+    },
+    {
       "brand": "lloyds-banking-group",
       "target": "lloyds-banking-group",
       "routed_via": "direct",
@@ -55,6 +60,14 @@
       "routed_via": "direct",
       "company_number": "00048839",
       "incorporated": "1896-07-20",
+      "officers": 12
+    },
+    {
+      "brand": "hsbc",
+      "target": "hsbc",
+      "routed_via": "direct",
+      "company_number": "00617987",
+      "incorporated": "1959-01-01",
       "officers": 12
     },
     {
@@ -72,6 +85,14 @@
       "company_number": "00023307",
       "incorporated": "1886-10-21",
       "officers": 11
+    },
+    {
+      "brand": "glaxosmithkline",
+      "target": "gsk",
+      "routed_via": "parent",
+      "company_number": "03888792",
+      "incorporated": "1999-12-06",
+      "officers": 12
     },
     {
       "brand": "astrazeneca",

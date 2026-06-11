@@ -2,7 +2,7 @@
   "name": "Visible",
   "cat": "Retail",
   "init": "VISI",
-  "overall": 61.3,
+  "overall": 46.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,8 +11,8 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
-    "privacy": "neutral",
+    "guns": "no_guns",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -54,13 +54,16 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -149,11 +152,8 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:22:19.422Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -172,6 +172,15 @@
     }
   },
   "csc": {
-    "political": 78.3
+    "political": 78.3,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Visible",
+    "tosdrUrl": "https://tosdr.org/en/service/503",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

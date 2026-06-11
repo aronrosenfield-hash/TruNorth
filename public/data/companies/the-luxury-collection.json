@@ -2,7 +2,7 @@
   "name": "The Luxury Collection",
   "cat": "Retail",
   "init": "THEL",
-  "overall": 39.1,
+  "overall": 40.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "poor",
     "execPay": "na",
     "health": "mixed"
@@ -55,8 +55,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company Marriott International: 1 publicly-disclosed data breach per Have I Been Pwned (2018) — 383M accounts compromised. Most recent: Marriott (Starwood) (2018).",
@@ -116,9 +118,6 @@
   "lastUpdated": "2026-05-31T02:52:14.845Z",
   "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -130,10 +129,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {

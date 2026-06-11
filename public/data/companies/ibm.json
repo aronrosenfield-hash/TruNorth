@@ -35,7 +35,15 @@
       "au-modern-slavery"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "cpaZicklin": "2026-06-11T14:35:39.917Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "newsweekMrc": "2026-06-11T14:35:43.707Z"
+  },
   "charity": {
     "s": "$195M reported corporate giving in 2024 (~0.32% of revenue) via International Business Machines Corp. JUST Capital JUST 100 — ranked #8 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #6 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #33 (2024). Newsweek Most Trustworthy Companies in America — ranked #38 (2024).",
     "sources": [
@@ -159,7 +167,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-05",
+    "cases": [
+      {
+        "caseName": "Comstock v. Microsoft Corporation",
+        "dateFiled": "2026-05-05",
+        "court": "District Court, D. Puerto Rico",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22IBM%22"
+      },
+      {
+        "caseName": "Lee v. Menegaux",
+        "dateFiled": "2026-04-23",
+        "court": "District Court, N.D. Georgia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22IBM%22"
+      },
+      {
+        "caseName": "Comstock v. Microsoft Corporation",
+        "dateFiled": "2026-04-23",
+        "court": "District Court, D. Montana",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22IBM%22"
+      },
+      {
+        "caseName": "Comstock v. Microsoft Corporation",
+        "dateFiled": "2026-04-08",
+        "court": "District Court, W.D. Washington",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22IBM%22"
+      },
+      {
+        "caseName": "Joseph v. IBM Corporation",
+        "dateFiled": "2026-04-07",
+        "court": "District Court, E.D. North Carolina",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22IBM%22"
+      }
+    ],
+    "totalAllTime": 1707,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -263,5 +320,313 @@
     "environment": 14.9,
     "labor": 8,
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "IBM",
+    "tosdrUrl": "https://tosdr.org/en/service/272",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "enriched": {
+    "cisaKev": {
+      "vendor": "IBM",
+      "totalCveCount": 7,
+      "recent12moCount": 0,
+      "ransomwareCount": 2,
+      "productBreakdown": [
+        {
+          "label": "Data Risk Manager",
+          "count": 3
+        },
+        {
+          "label": "Aspera Faspex",
+          "count": 1
+        },
+        {
+          "label": "InfoSphere BigInsights",
+          "count": 1
+        },
+        {
+          "label": "WebSphere Application Server and Server Hypervisor Edition",
+          "count": 1
+        },
+        {
+          "label": "Planning Analytics",
+          "count": 1
+        }
+      ],
+      "topCves": [
+        {
+          "cveID": "CVE-2022-47986",
+          "product": "Aspera Faspex",
+          "vulnerabilityName": "IBM Aspera Faspex Code Execution Vulnerability",
+          "dateAdded": "2023-02-21",
+          "dueDate": "2023-03-14",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "IBM Aspera Faspex could allow a remote attacker to execute code on the system, caused by a YAML deserialization flaw.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
+        },
+        {
+          "cveID": "CVE-2013-3993",
+          "product": "InfoSphere BigInsights",
+          "vulnerabilityName": "IBM InfoSphere BigInsights Invalid Input Vulnerability",
+          "dateAdded": "2022-05-25",
+          "dueDate": "2022-06-15",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Certain APIs within BigInsights can take invalid input that might allow attackers unauthorized access to read, write, modify, or delete data.",
+          "requiredAction": "The impacted product is end-of-life and should be disconnected if still in use.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3993"
+        },
+        {
+          "cveID": "CVE-2015-7450",
+          "product": "WebSphere Application Server and Server Hypervisor Edition",
+          "vulnerabilityName": "IBM WebSphere Application Server and Server Hypervisor Edition Code Injection.",
+          "dateAdded": "2022-01-10",
+          "dueDate": "2022-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Serialized-object interfaces in certain IBM analytics, business solutions, cognitive, IT infrastructure, and mobile and social products allow remote attackers to execute arbitrary commands",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7450"
+        },
+        {
+          "cveID": "CVE-2020-4430",
+          "product": "Data Risk Manager",
+          "vulnerabilityName": "IBM Data Risk Manager Directory Traversal Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "IBM Data Risk Manager contains a directory traversal vulnerability that could allow a remote authenticated attacker to traverse directories and send a specially crafted URL request to download arbitrary files from the system.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4430"
+        },
+        {
+          "cveID": "CVE-2020-4427",
+          "product": "Data Risk Manager",
+          "vulnerabilityName": "IBM Data Risk Manager Security Bypass Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "IBM Data Risk Manager contains a security bypass vulnerability that could allow a remote attacker to bypass security restrictions when configured with SAML authentication. By sending a specially crafted HTTP request, an attacker could exploit this vulnerability to bypass the authentication process and gain full administrative access to the system.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4427"
+        }
+      ],
+      "highestSeverity": [
+        {
+          "cveID": "CVE-2022-47986",
+          "product": "Aspera Faspex",
+          "vulnerabilityName": "IBM Aspera Faspex Code Execution Vulnerability",
+          "dateAdded": "2023-02-21",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
+        },
+        {
+          "cveID": "CVE-2013-3993",
+          "product": "InfoSphere BigInsights",
+          "vulnerabilityName": "IBM InfoSphere BigInsights Invalid Input Vulnerability",
+          "dateAdded": "2022-05-25",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3993"
+        },
+        {
+          "cveID": "CVE-2015-7450",
+          "product": "WebSphere Application Server and Server Hypervisor Edition",
+          "vulnerabilityName": "IBM WebSphere Application Server and Server Hypervisor Edition Code Injection.",
+          "dateAdded": "2022-01-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7450"
+        },
+        {
+          "cveID": "CVE-2020-4430",
+          "product": "Data Risk Manager",
+          "vulnerabilityName": "IBM Data Risk Manager Directory Traversal Vulnerability",
+          "dateAdded": "2021-11-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4430"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:39.055Z",
+      "source": "cisa-kev",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "cpaZicklin": {
+      "score": 85.7,
+      "tier": "First Tier",
+      "year": 2024,
+      "sourceUrl": "https://politicalaccountability.net/cpa-zicklin-index",
+      "lastUpdated": "2026-06-11T14:35:39.917Z",
+      "source": "cpa-zicklin"
+    },
+    "newsweekMrc": {
+      "rank": 6,
+      "score": 90.4,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-11T14:35:43.707Z",
+      "source": "newsweek-mrc"
+    }
+  },
+  "cpsc": {
+    "totalRecalls": 9,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The monitor's circuit board can overheat and smoke, posing a fire hazard to consumers.",
+        "count": 2
+      },
+      {
+        "label": "Fire & Fire-Related Burn",
+        "count": 2
+      },
+      {
+        "label": "Electrocution/Electric Shock",
+        "count": 2
+      },
+      {
+        "label": "A plastic weld on the power adapters can fail and allow two parts to separate, exposing live electrical contacts. This poses a shock hazard to consumers.",
+        "count": 1
+      },
+      {
+        "label": "These lithium-ion batteries can cause overheating, posing a fire hazard to consumers.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 390,
+        "recall_number": "10706",
+        "recall_date": "2009-11-10T00:00:00",
+        "title": "Power Adapters Used with IBM RDX Back Up Disk Hard Drives Recalled Due to Shock Hazard",
+        "description": "This recall involves power adapters sold with IBM RDX removable back up hard disk drives. The data storage devices were sold with a power adapter that fits various country specific plugs. \"Hon-Kwang Electric (Shenzhen) Co., Ltd\" is printed on the adapters. IBM and RDX are printed on the back up hard disk drives.",
+        "url": "https://www.cpsc.gov/Recalls/2010/Power-Adapters-Used-with-IBM-RDX-Back-Up-Disk-Hard-Drives-Recalled-Due-to-Shock-Hazard",
+        "hazards": [
+          "A plastic weld on the power adapters can fail and allow two parts to separate, exposing live electrical contacts. This poses a shock hazard to consumers."
+        ],
+        "injuries": [
+          "None reported."
+        ],
+        "products": [
+          "Power Adapters with IBM RDX Back Up Hard Disk Drives"
+        ],
+        "units": [
+          "About 90"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 3367,
+        "recall_number": "06270",
+        "recall_date": "2006-09-28T00:00:00",
+        "title": "Lenovo and IBM Announce Recall of ThinkPad Notebook Computer Batteries Due to Fire Hazard",
+        "description": "The recalled lithium-ion batteries were sold with or sold separately to be used with the following ThinkPad notebook computers: T Series (T43, T43p, T60, T60p); R Series (R51e, R52, R60, R60e); and X Series (X60, X60s). The recalled batteries have the following part or model numbers, which can be found on the battery …",
+        "url": "https://www.cpsc.gov/Recalls/2006/Lenovo-and-IBM-Announce-Recall-of-ThinkPad-Notebook-Computer-Batteries-Due-to-Fire-Hazard",
+        "hazards": [
+          "These lithium-ion batteries can cause overheating, posing a fire hazard to consumers."
+        ],
+        "injuries": [
+          "Lenovo has received one confirmed report of a battery overheating and causing a fire that damaged the notebook computer. The incident, which occurred within an airport terminal as the user was boardi…"
+        ],
+        "products": [
+          "Rechargeable lithium-ion batteries used in ThinkPad notebook computers"
+        ],
+        "units": [
+          "About 168,500 battery packs (an additional 357,500 battery packs were sold worldwide)"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 2679,
+        "recall_number": "04208",
+        "recall_date": "2004-09-02T00:00:00",
+        "title": "CPSC, IBM Announce Recall of AC Adapters for Notebook Computers",
+        "description": "The recalled 56W AC power adapters were shipped primarily with IBM ThinkPad i Series, 390 and 240 Series, and s Series notebook computers. The adapters have three hollow pins at the AC inlet and part number 02K6549 on a label on the top of the unit. The IBM logo appears on top of the unit. Adapters with solid pins are…",
+        "url": "https://www.cpsc.gov/Recalls/2004/CPSC-IBM-Announce-Recall-of-AC-Adapters-for-Notebook-Computers-",
+        "hazards": [
+          "The adapters can overheat, cause damage to the circuit board and melt through the housing, which poses a fire and electrical shock hazard to consumers."
+        ],
+        "injuries": [
+          "IBM has received six reports of incidents, including some with minor property damage. No injuries have been reported."
+        ],
+        "products": [
+          "AC Power Adapters"
+        ],
+        "units": [
+          "About 225,000"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 2431,
+        "recall_number": "03176",
+        "recall_date": "2003-08-29T00:00:00",
+        "title": "CPSC, IBM and LiteOn Technology Announce Expansion of Previously Announced Recall of Computer Monitors",
+        "description": "The recalled IBM monitors include the G51 CRT (Cathode Ray Tube) and G51t Touch Screen CRT models. The G51 and G51t monitors have the following model numbers on a label on the back of the unit: 6541-02N, 6541-02E, 6541-02S, 6541-Q0N, 6541-Q0E, and 6541-Q0S. The label on the back of the recalled G51 models also has a d…",
+        "url": "https://www.cpsc.gov/Recalls/2003/CPSC-IBM-and-LiteOn-Technology-Announce-Expansion-of-Previously-Announced-Recall-of-Computer-Monitors",
+        "hazards": [
+          "The monitor's circuit board can overheat and smoke, posing a fire hazard to consumers."
+        ],
+        "injuries": [
+          "IBM and LiteOn have received seven reports of monitors overheating and smoking, including one report of minor property damage and one report of minor smoke inhalation."
+        ],
+        "products": [
+          "IBM monitors: G51 CRT (Cathode Ray Tube) and G51t Touch Screen CRT models"
+        ],
+        "units": [
+          "63,000 (in addition, 56,000 monitors were recalled in 2003)"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 2361,
+        "recall_number": "03088",
+        "recall_date": "2003-03-04T00:00:00",
+        "title": "CPSC, IBM Announce Recall to Repair Computer Monitors",
+        "description": "The recalled IBM monitors include the G51 CRT (Cathode Ray Tube) and G51t Touch Screen CRT models. The G51 and G51t monitors have the following model numbers on a label on the back of the unit: 6541-02N, 6541-02E, 6541-02S, 6541-Q0N, 6541-Q0E, and 6541-Q0S. The label on the back of the recalled G51 models also has a d…",
+        "url": "https://www.cpsc.gov/Recalls/2003/CPSC-IBM-Announce-Recall-to-Repair-Computer-Monitors-",
+        "hazards": [
+          "The monitor's circuit board can overheat and smoke, posing a fire hazard to consumers."
+        ],
+        "injuries": [
+          "IBM has received five reports of monitors overheating and smoking, including one report of minor property damage. No injuries have been reported."
+        ],
+        "products": [
+          "IBM G51 CRT (Cathode Ray Tube) and G51t Touch Screen CRT Computer Monitors"
+        ],
+        "units": [
+          "56,000"
+        ],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=IBM"
+  },
+  "doj": {
+    "totalMentions90d": 1,
+    "antitrustMentions": 0,
+    "fraudMentions": 1,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "IBM Pays $17 Million to Resolve Allegations of Discrimination Through Illegal DEI Practices",
+        "url": "https://www.justice.gov/opa/pr/ibm-pays-17-million-resolve-allegations-discrimination-through-illegal-dei-practices",
+        "date": "2026-04-10",
+        "components": [
+          "Office of the Attorney General",
+          "Civil Division"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "ibm pays $17 million to resolve allegations of discrimination through illegal dei practices\ntoday, acti…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

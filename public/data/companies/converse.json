@@ -2,7 +2,7 @@
   "name": "Converse",
   "cat": "Apparel & Fashion",
   "init": "CONV",
-  "overall": 50.1,
+  "overall": 47.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "positive",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "governance": "neutral"
   },
@@ -60,9 +60,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Nike: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -151,7 +151,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:48:53.324Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by Nike; HQ Boston. (Wikidata Q319515)",
     "sources": [
@@ -170,10 +170,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Apparel & Fashion"
     }
   },
   "inheritedFrom": "nike",
@@ -182,6 +178,7 @@
     "charity": 50,
     "environment": 100,
     "labor": 14,
+    "privacy": 8,
     "execPay": 30.1
   }
 }

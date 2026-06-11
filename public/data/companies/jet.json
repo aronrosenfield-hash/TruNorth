@@ -2,7 +2,7 @@
   "name": "Jet",
   "cat": "Retail",
   "init": "JET",
-  "overall": 45.3,
+  "overall": 41.6,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -59,8 +59,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -220,9 +222,6 @@
     "lastUpdated": "2026-06-09T22:28:27.024Z"
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
@@ -231,10 +230,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "inheritedFrom": "phillips-66",

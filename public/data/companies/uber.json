@@ -140,7 +140,14 @@
       "rating": "poor"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "cfpb": "2026-06-11T14:35:38.932Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "competitors": [
     "lyft",
     "bolthouse-farms"
@@ -237,7 +244,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-06-01",
+    "cases": [
+      {
+        "caseName": "LS 718 v. Uber Technologies, Inc.",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Uber%22"
+      },
+      {
+        "caseName": "LS 717 v. Uber Technologies, Inc.",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Uber%22"
+      },
+      {
+        "caseName": "Jane Doe PNA (E.D.) v. Uber Technologies Inc",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Uber%22"
+      },
+      {
+        "caseName": "Jane Doe PNA (I.C.) v. Uber Technologies Inc",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Uber%22"
+      },
+      {
+        "caseName": "M.V. v. Uber Technologies Inc",
+        "dateFiled": "2026-06-01",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Uber%22"
+      }
+    ],
+    "totalAllTime": 8577,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -324,7 +380,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "transparency": {
       "notDisclosed": true
@@ -335,5 +391,331 @@
     "environment": 50,
     "labor": 8,
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Uber",
+    "tosdrUrl": "https://tosdr.org/en/service/252",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cfpb": {
+    "totalComplaints": 58,
+    "recent12moCount": 0,
+    "timelyResponseRate": 62,
+    "topIssues": [
+      {
+        "label": "Improper use of your report",
+        "count": 15
+      },
+      {
+        "label": "Incorrect information on your report",
+        "count": 11
+      },
+      {
+        "label": "Managing the loan or lease",
+        "count": 4
+      },
+      {
+        "label": "Problem with a company's investigation into an existing issue",
+        "count": 4
+      },
+      {
+        "label": "Taking out the loan or lease",
+        "count": 4
+      }
+    ],
+    "topProducts": [
+      {
+        "label": "Credit reporting, credit repair services, or other personal consumer reports",
+        "count": 29
+      },
+      {
+        "label": "Consumer Loan",
+        "count": 8
+      },
+      {
+        "label": "Vehicle loan or lease",
+        "count": 7
+      },
+      {
+        "label": "Debt collection",
+        "count": 4
+      },
+      {
+        "label": "Checking or savings account",
+        "count": 4
+      }
+    ],
+    "topResponseTypes": [
+      {
+        "label": "Closed with explanation",
+        "count": 48
+      },
+      {
+        "label": "Untimely response",
+        "count": 6
+      },
+      {
+        "label": "Closed with monetary relief",
+        "count": 3
+      },
+      {
+        "label": "Closed with non-monetary relief",
+        "count": 1
+      }
+    ],
+    "sampleComplaints": [
+      {
+        "date_received": "2025-01-09T20:16:13.000Z",
+        "product": "Credit reporting or other personal consumer reports",
+        "sub_product": "Credit reporting",
+        "issue": "Improper use of your report",
+        "sub_issue": "Credit inquiries on your report that you don't recognize",
+        "state": "PA",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "11453735"
+      },
+      {
+        "date_received": "2024-07-10T14:19:18.000Z",
+        "product": "Payday loan, title loan, personal loan, or advance loan",
+        "sub_product": "Installment loan",
+        "issue": "Getting the loan",
+        "sub_issue": null,
+        "state": "NC",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "9478709"
+      },
+      {
+        "date_received": "2024-01-16T18:39:43.000Z",
+        "product": "Credit reporting or other personal consumer reports",
+        "sub_product": "Credit reporting",
+        "issue": "Improper use of your report",
+        "sub_issue": "Reporting company used your report improperly",
+        "state": "PA",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "8161913"
+      },
+      {
+        "date_received": "2019-10-09T19:27:18.000Z",
+        "product": "Vehicle loan or lease",
+        "sub_product": "Lease",
+        "issue": "Managing the loan or lease",
+        "sub_issue": "Problem with fees charged",
+        "state": "IL",
+        "company_response": "Untimely response",
+        "timely": "No",
+        "complaint_id": "3400602"
+      },
+      {
+        "date_received": "2019-03-25T18:45:39.000Z",
+        "product": "Debt collection",
+        "sub_product": "Auto debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Seized or attempted to seize your property",
+        "state": "CA",
+        "company_response": "Untimely response",
+        "timely": "No",
+        "complaint_id": "3190316"
+      }
+    ],
+    "sampledCount": 58,
+    "lastUpdated": "2026-06-11T14:35:38.932Z",
+    "source": "cfpb",
+    "sourceUrl": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Uber"
+  },
+  "cpsc": {
+    "totalRecalls": 1,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The packaging is not child resistant as required by the Poison Prevention Packaging Act. The pain relieving cream and spray contain lidocaine, posing a risk of…",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 8413,
+        "recall_number": "19001",
+        "recall_date": "2018-10-01T00:00:00",
+        "title": "UberScientific Recalls Topical Anesthetic Due to Failure to Meet Child Resistant Closure Requirement; Risk of Poisoning",
+        "description": "This recall involves UberScientific Uber Numb Topical Anesthetic Cream and Uber Numb Spray. The recalled cream is in a white jar with a smooth, rounded cap and a green label with \"Uber Numb Topical Anesthetic Cream\" printed on the front. The cream was sold in one, two and four ounce sizes with the lot numbers printed …",
+        "url": "https://www.cpsc.gov/Recalls/2019/UberScientific-Recalls-Topical-Anesthetic-Due-to-Failure-to-Meet-Child-Resistant-Closure-Requirement-Risk-of-Poisoning",
+        "hazards": [
+          "The packaging is not child resistant as required by the Poison Prevention Packaging Act. The pain relieving cream and spray contain lidocaine, posing a risk of…"
+        ],
+        "injuries": [
+          "None reported"
+        ],
+        "products": [
+          "Uber Numb topical anesthetic cream and spray"
+        ],
+        "units": [
+          "About 76,000"
+        ],
+        "remedies": [
+          "Refund",
+          "Replace"
+        ]
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Uber"
+  },
+  "doj": {
+    "totalMentions90d": 6,
+    "antitrustMentions": 0,
+    "fraudMentions": 1,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Ringleader Sentenced To 122 Months in Prison in Connection With $63 Million Mail Theft Conspiracy That Included Two Postal Employees",
+        "url": "https://www.justice.gov/usao-edmi/pr/ringleader-sentenced-122-months-prison-connection-63-million-mail-theft-conspiracy",
+        "date": "2026-06-03",
+        "components": [
+          "USAO - Michigan, Eastern"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…amed “whole foods slipsss,” was used to advertise high-dollar checks, while another channel, named “uber eats slips,” was used to advertise lower-dollar checks. “slips” is a term commonly used in these sc…"
+      },
+      {
+        "title": "Dominican National and Former Massachusetts Resident Pleads Guilty to Distributing Almost 700 Grams of Fentanyl",
+        "url": "https://www.justice.gov/usao-nh/pr/dominican-national-and-former-massachusetts-resident-pleads-guilty-distributing-almost",
+        "date": "2026-04-06",
+        "components": [
+          "Drug Enforcement Administration (DEA)",
+          "USAO - New Hampshire",
+          "U.S. Marshals Service"
+        ],
+        "categories": [],
+        "snippet": "…oxycodone pills laced with fentanyl from baez. baez responded that his “brother” would arrive in an uber rideshare, and that baez himself would arrive a few minutes later. badia arrived at the designated…"
+      },
+      {
+        "title": "Guilty Plea in Federal Murder Case for Killing of U.S. Air Force Reservist",
+        "url": "https://www.justice.gov/usao-ndfl/pr/guilty-plea-federal-murder-case-killing-us-air-force-reservist",
+        "date": "2026-04-02",
+        "components": [
+          "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)",
+          "USAO - Florida, Northern"
+        ],
+        "categories": [],
+        "snippet": "…-dowdy, who was at his residence in mobile, alabama, used his cellular phone to hail a ride via the uber ridesharing service and traveled to the victim’s residence in pensacola, florida, to confront her.…"
+      },
+      {
+        "title": "Previously Deported Dominican Man Pleads Guilty to Illegally Reentering the United States and Distributing Methamphetamine",
+        "url": "https://www.justice.gov/usao-nh/pr/previously-deported-dominican-man-pleads-guilty-illegally-reentering-united-states-and",
+        "date": "2026-03-19",
+        "components": [
+          "Drug Enforcement Administration (DEA)",
+          "USAO - New Hampshire"
+        ],
+        "categories": [],
+        "snippet": "…that his “brother,” later identified as the defendant, joel castillo-soto, would be arriving in an uber to deliver the product. thereafter, castillo-soto arrived and delivered the methamphetamine, cocain…"
+      },
+      {
+        "title": "Road Rage Killer Sentenced to Life in Prison in Fatal Shooting of Uber Driver",
+        "url": "https://www.justice.gov/usao-dc/pr/road-rage-killer-sentenced-life-prison-fatal-shooting-uber-driver",
+        "date": "2026-03-17",
+        "components": [
+          "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)",
+          "USAO - District of Columbia"
+        ],
+        "categories": [],
+        "snippet": "road rage killer sentenced to life in prison in fatal shooting of uber driver\nrodney baggott, 58, of the district of columbia, was sentenced in u.s. district court today…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 5,
+      "totalAmputations2y": 2,
+      "totalHospitalizations2y": 3,
+      "byYear": {
+        "2016": 2,
+        "2017": 3,
+        "2018": 3,
+        "2019": 4,
+        "2020": 2,
+        "2022": 2,
+        "2024": 4,
+        "2025": 2
+      },
+      "totalRecordsAllTime": 22,
+      "sampleRecords": [
+        {
+          "event_date": "2025-08-04",
+          "employer": "Neubert Painting Inc",
+          "city": "GATES MILLS",
+          "state": "OHIO",
+          "part_of_body": " Hip joint(s)",
+          "nature": " Fractures   ",
+          "event_description": " Other fall to lower level  6 to 30 feet",
+          "final_narrative": "On August 4, 2025, an employee was painting a residential house from an extension ladder when they went to grab a piece of wooden trim. The trim broke off and they fell approximately 12-15 feet to the back patio paver stones. The employee sustained a fractured right hip.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2025-07-24",
+          "employer": "Dauber Company, Inc.",
+          "city": "TONICA",
+          "state": "ILLINOIS",
+          "part_of_body": " Multiple trunk locations",
+          "nature": " Fractures   ",
+          "event_description": " Caught, entangled in running powered equipment  normal operation",
+          "final_narrative": "An employee was running the cuber machine (moves and stacks blocks onto pallets) in the block plant. He went to manually move some blocks and the carriage of the cuber moved and pinned his midsection (abdomen, pelvis, and lower back region). The employee was hospitalized with fractures to his bottom two ribs and L3 vertebra. The machine was not locked out/tagged out at the time.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-12-10",
+          "employer": "Huber Construction Company, Inc.",
+          "city": "HOUSTON",
+          "state": "TEXAS",
+          "part_of_body": " Finger or thumb tip(s), nail(s)",
+          "nature": " Amputations, avulsions, enucleations  unspecified",
+          "event_description": " Struck by falling object  unspecified",
+          "final_narrative": "An employee was working in a furnace, tearing out brick from the door jambs. A brick fell from about 5 feet above him and landed on his left middle finger. The fingertip was medically amputated.",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2024-10-17",
+          "employer": "Keith Huber Corporation",
+          "city": "GULFPORT",
+          "state": "MISSISSIPPI",
+          "part_of_body": " Toes(s), toenail(s)",
+          "nature": " Amputations involving bone loss",
+          "event_description": " Struck by other falling object  n.e.c.",
+          "final_narrative": "An employee was removing a steel band that was around a stack of steel pipes. One of the pipes fell approximately 42 inches and struck the employee's left foot, resulting in a an amputation to their left big toe at the top joint.",
+          "amputation": true,
+          "hospitalized": false
+        },
+        {
+          "event_date": "2024-08-30",
+          "employer": "Neubert Staining, Inc.",
+          "city": "CHAGRIN FALLS",
+          "state": "OHIO",
+          "part_of_body": " Upper and lower extremities  n.e.c.",
+          "nature": " Cuts, lacerations, punctures without injury to internal structures",
+          "event_description": " Fall to lower level from collapsing structure or equipment  unspecified",
+          "final_narrative": "An employee was standing on a ladder, masking off a window for painting. The ladder slipped and the employee fell into the window, resulting in lacerations to his hand and leg. ",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

@@ -2,7 +2,7 @@
   "name": "Asana",
   "cat": "Technology",
   "init": "ASAN",
-  "overall": 49.6,
+  "overall": 40.3,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "mixed",
     "governance": "neutral"
   },
@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -64,9 +65,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade E (very poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -119,7 +121,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-02-27",
+    "cases": [
+      {
+        "caseName": "The BowFlex Liquidating Trust v. Asana, Inc.",
+        "dateFiled": "2026-02-27",
+        "court": "United States Bankruptcy Court, D. New Jersey",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Asana%22"
+      },
+      {
+        "caseName": "Adamiec v. Asana Rebel GmbH",
+        "dateFiled": "2025-08-29",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Asana%22"
+      },
+      {
+        "caseName": "Yellow Corporation v. Asana, Inc.",
+        "dateFiled": "2025-08-05",
+        "court": "United States Bankruptcy Court, D. Delaware",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Asana%22"
+      },
+      {
+        "caseName": "Blue Cross and Blue Shield of Oklahoma v. Asana Recovery, Inc.",
+        "dateFiled": "2025-04-10",
+        "court": "District Court, C.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Asana%22"
+      },
+      {
+        "caseName": "Holy Sexuality v. Asana, Inc.",
+        "dateFiled": "2025-02-18",
+        "court": "District Court, S.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Asana%22"
+      }
+    ],
+    "totalAllTime": 31,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -135,7 +186,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T18:38:45.894Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by yoga. (Wikidata Q466797)",
     "sources": [
@@ -189,6 +240,15 @@
   },
   "csc": {
     "political": 43,
+    "privacy": 8,
     "execPay": 55.5
+  },
+  "privacy_tosdr": {
+    "rating": "E",
+    "serviceName": "Asana, Inc.",
+    "tosdrUrl": "https://tosdr.org/en/service/2711",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

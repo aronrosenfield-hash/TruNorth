@@ -2,7 +2,7 @@
   "name": "Betty Crocker",
   "cat": "Food & Beverage",
   "init": "BETT",
-  "overall": 55,
+  "overall": 48.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "positive",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "mixed",
     "governance": "neutral",
     "health": "mixed"
@@ -61,9 +61,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -130,7 +131,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:07:29.281Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by General Mills. (Wikidata Q4898793)",
     "sources": [
@@ -163,7 +164,16 @@
     "political": 79.1,
     "charity": 50,
     "labor": 50,
+    "privacy": 8,
     "execPay": 53.6,
     "health": 50
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Betty Crocker",
+    "tosdrUrl": "https://tosdr.org/en/service/817",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

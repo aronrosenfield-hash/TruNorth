@@ -35,7 +35,18 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "cfpb": "2026-06-11T14:35:38.932Z",
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "hhsOig": "2026-06-11T14:35:42.256Z",
+    "knowTheChain": "2026-06-11T14:35:43.001Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "secLitigation": "2026-06-11T14:35:44.954Z"
+  },
   "charity": {
     "s": "$65M reported corporate giving in 2024 (~0.07% of revenue).",
     "sources": [
@@ -148,7 +159,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-26",
+    "cases": [
+      {
+        "caseName": "Lorraine Dell",
+        "dateFiled": "2026-05-26",
+        "court": "United States Bankruptcy Court, S.D. New York",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dell%22"
+      },
+      {
+        "caseName": "Eva Dell Wood",
+        "dateFiled": "2026-05-21",
+        "court": "United States Bankruptcy Court, E.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dell%22"
+      },
+      {
+        "caseName": "Webb v. Rossnagle",
+        "dateFiled": "2026-05-20",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dell%22"
+      },
+      {
+        "caseName": "Deborah A. Dell",
+        "dateFiled": "2026-05-18",
+        "court": "United States Bankruptcy Court, N.D. Ohio",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dell%22"
+      },
+      {
+        "caseName": "Ervin v. Loreal USA, Inc.",
+        "dateFiled": "2026-05-12",
+        "court": "District Court, N.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Dell%22"
+      }
+    ],
+    "totalAllTime": 16492,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -273,5 +333,607 @@
     "environment": 100,
     "labor": 8,
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "C",
+    "serviceName": "Dell",
+    "tosdrUrl": "https://tosdr.org/en/service/228",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cfpb": {
+    "totalComplaints": 16,
+    "recent12moCount": 1,
+    "timelyResponseRate": 94,
+    "topIssues": [
+      {
+        "label": "Took or threatened to take negative or legal action",
+        "count": 6
+      },
+      {
+        "label": "Attempts to collect debt not owed",
+        "count": 4
+      },
+      {
+        "label": "Getting a credit card",
+        "count": 2
+      },
+      {
+        "label": "False statements or representation",
+        "count": 2
+      },
+      {
+        "label": "Problem with a company's investigation into an existing problem",
+        "count": 1
+      }
+    ],
+    "topProducts": [
+      {
+        "label": "Debt collection",
+        "count": 13
+      },
+      {
+        "label": "Credit card",
+        "count": 2
+      },
+      {
+        "label": "Credit reporting or other personal consumer reports",
+        "count": 1
+      }
+    ],
+    "topResponseTypes": [
+      {
+        "label": "Closed with explanation",
+        "count": 15
+      },
+      {
+        "label": "Untimely response",
+        "count": 1
+      }
+    ],
+    "sampleComplaints": [
+      {
+        "date_received": "2025-06-08T16:37:43.000Z",
+        "product": "Debt collection",
+        "sub_product": "Credit card debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Sued you without properly notifying you of lawsuit",
+        "state": "TX",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "13961651"
+      },
+      {
+        "date_received": "2025-04-15T02:23:32.000Z",
+        "product": "Debt collection",
+        "sub_product": "Credit card debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Threatened to sue you for very old debt",
+        "state": "TX",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "12969978"
+      },
+      {
+        "date_received": "2025-04-09T00:58:19.000Z",
+        "product": "Debt collection",
+        "sub_product": "Credit card debt",
+        "issue": "Took or threatened to take negative or legal action",
+        "sub_issue": "Threatened to sue you for very old debt",
+        "state": "TX",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "12872009"
+      },
+      {
+        "date_received": "2025-04-08T15:24:06.000Z",
+        "product": "Debt collection",
+        "sub_product": "Credit card debt",
+        "issue": "Attempts to collect debt not owed",
+        "sub_issue": "Debt was result of identity theft",
+        "state": "NV",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "12882289"
+      },
+      {
+        "date_received": "2025-04-05T19:29:45.000Z",
+        "product": "Credit card",
+        "sub_product": "General-purpose credit card or charge card",
+        "issue": "Getting a credit card",
+        "sub_issue": "Card opened without my consent or knowledge",
+        "state": "NV",
+        "company_response": "Closed with explanation",
+        "timely": "Yes",
+        "complaint_id": "12841339"
+      }
+    ],
+    "sampledCount": 16,
+    "lastUpdated": "2026-06-11T14:35:38.932Z",
+    "source": "cfpb",
+    "sourceUrl": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/?company=Dell"
+  },
+  "enriched": {
+    "cisaKev": {
+      "vendor": "Dell",
+      "totalCveCount": 2,
+      "recent12moCount": 1,
+      "ransomwareCount": 0,
+      "productBreakdown": [
+        {
+          "label": "RecoverPoint for Virtual Machines (RP4VMs)",
+          "count": 1
+        },
+        {
+          "label": "dbutil Driver",
+          "count": 1
+        }
+      ],
+      "topCves": [
+        {
+          "cveID": "CVE-2026-22769",
+          "product": "RecoverPoint for Virtual Machines (RP4VMs)",
+          "vulnerabilityName": "Dell RecoverPoint for Virtual Machines (RP4VMs) Use of Hard-coded Credentials Vulnerability",
+          "dateAdded": "2026-02-18",
+          "dueDate": "2026-02-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Dell RecoverPoint for Virtual Machines (RP4VMs) contains an use of hard-coded credentials vulnerability that could allow an unauthenticated remote attacker to gain unauthorized access to the underlying operating system and root-level persistence.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22769"
+        },
+        {
+          "cveID": "CVE-2021-21551",
+          "product": "dbutil Driver",
+          "vulnerabilityName": "Dell dbutil Driver Insufficient Access Control Vulnerability",
+          "dateAdded": "2022-03-31",
+          "dueDate": "2022-04-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Dell dbutil driver contains an insufficient access control vulnerability which may lead to escalation of privileges, denial-of-service (DoS), or information disclosure.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21551"
+        }
+      ],
+      "highestSeverity": [
+        {
+          "cveID": "CVE-2026-22769",
+          "product": "RecoverPoint for Virtual Machines (RP4VMs)",
+          "vulnerabilityName": "Dell RecoverPoint for Virtual Machines (RP4VMs) Use of Hard-coded Credentials Vulnerability",
+          "dateAdded": "2026-02-18",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-22769"
+        },
+        {
+          "cveID": "CVE-2021-21551",
+          "product": "dbutil Driver",
+          "vulnerabilityName": "Dell dbutil Driver Insufficient Access Control Vulnerability",
+          "dateAdded": "2022-03-31",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21551"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:39.055Z",
+      "source": "cisa-kev",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "knowTheChain": {
+      "score": 51,
+      "rank": 3,
+      "sector": "ICT",
+      "year": 2023,
+      "weakAreas": [
+        "purchasing practices",
+        "remedy"
+      ],
+      "sourceUrl": "https://knowthechain.org/benchmarks/ict/",
+      "lastUpdated": "2026-06-11T14:35:43.001Z",
+      "source": "knowthechain"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 4,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 4,
+      "byYear": {
+        "2015": 3,
+        "2016": 3,
+        "2017": 7,
+        "2018": 5,
+        "2019": 5,
+        "2020": 5,
+        "2021": 2,
+        "2022": 3,
+        "2023": 5,
+        "2024": 4
+      },
+      "totalRecordsAllTime": 42,
+      "sampleRecords": [
+        {
+          "event_date": "2024-11-11",
+          "employer": "Lyondell Basell",
+          "city": "LA PORTE",
+          "state": "TEXAS",
+          "part_of_body": " Ankle(s)",
+          "nature": " Dislocations",
+          "event_description": " Roadway noncollision  vehicle overturn",
+          "final_narrative": "An employee was driving a utility vehicle and making rounds in the facility. While transitioning from the paved portion of the roadway to the uneven gravel portion, the vehicle overturned and the employee's left foot was caught between the vehicle and the ground. The employee sustained a dislocated left ankle.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-10-07",
+          "employer": "Dells Material Company",
+          "city": "DELL RAPIDS",
+          "state": "SOUTH DAKOTA",
+          "part_of_body": " Brain",
+          "nature": " Concussions",
+          "event_description": " Other fall to lower level  less than 6 feet",
+          "final_narrative": "An employee was holding a piece of sheet metal while standing on the second rung from the bottom of a ladder. A gust of wind caused the employee to fall from the ladder to the ground, striking his head. The employee sustained a head injury, lost consciousness, and was hospitalized.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-07-11",
+          "employer": "Sunny Dell",
+          "city": "OXFORD",
+          "state": "PENNSYLVANIA",
+          "part_of_body": " Hand(s) and arm(s)  n.e.c.",
+          "nature": " Cuts, lacerations, punctures without injury to internal structures",
+          "event_description": " Struck by running powered equipment  during maintenance, cleaning, testing",
+          "final_narrative": "An employee was cleaning a conveyor belt used to transport mushrooms. The employee noticed a piece of mushroom that was stuck in the conveyor. He was grabbing the piece when his right hand and arm got stuck in the conveyor, resulting in a laceration. The conveyor belt was energized at the time of the incident.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2024-07-09",
+          "employer": "Anthonella Cardella, MD, LLC",
+          "city": "MIAMI",
+          "state": "FLORIDA",
+          "part_of_body": " Upper arm(s)",
+          "nature": " Fractures   ",
+          "event_description": " Fall on same level due to slip or trip",
+          "final_narrative": "An employee was walking to the parking garage when they tripped over a yellow parking block and fell to the ground, sustaining a fractured humerus that required surgery.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2023-09-07",
+          "employer": "Dells Material Company",
+          "city": "DELL RAPIDS",
+          "state": "SOUTH DAKOTA",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Struck by swinging part of powered vehicle",
+          "final_narrative": "An employee was removing a chain that was caught between the gate and box of a truck. After the chain was removed, the gate closed, catching the employee's right index and ring fingers between the gate and the box. Both fingertips were amputated.",
+          "amputation": true,
+          "hospitalized": false
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secLitigation": {
+      "totalReleasesLifetime": 4,
+      "recent24mo": 0,
+      "latestReleaseDate": "2010-07-22T14:24:05Z",
+      "sampleReleases": [
+        {
+          "lr": "LR-21599",
+          "date": "2010-07-22T14:24:05Z",
+          "caption": "Dell Inc., Michael S. Dell, Kevin B. Rollins, James M. Schneider, Leslie L. Jackson, Nicholas A.R. Dunning",
+          "summary": "Accounting and Auditing Enforcement Release No. 3156 / July 22, 2010 Securities and Exchange Commission v. Dell Inc., Michael S. Dell, Kevin B. Rollins, James M. Schneider, Leslie L. Jackson, Nicholas A.R. Dunning , Civil Action No. 1:10-cv-01245 (D.D.C.) SEC CHARGES DELL AND SENIOR EXECUTIVES WITH DISCLOSURE AND ACCOUNTING FRAUD Company to Pay $100 Million Penalty, Michael Dell to Pay $4 Million Penalty The Securities and Exchange Commission today charged Dell Inc. with failing to disclose mate",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-21599"
+        },
+        {
+          "lr": "LR-21543",
+          "date": "2010-06-02T14:24:02Z",
+          "caption": "Diebold, Inc.; Walden O'Dell; and Gregory Geswein, Kevin Krakora, and Sandra Miller",
+          "summary": "Accounting and Auditing Enforcement Release No. 3137 / June 2, 2010 SEC v. Diebold, Inc. , Civil Action No. 1:10-CV-00908 (D.D.C.); SEC v. Walden O'Dell , Civil Action No. 1:10-CV-00909 (D.D.C.); and SEC v. Gregory Geswein, Kevin Krakora, and Sandra Miller , Civil Action No. 5:10-CV-01235 (N.D. Ohio) SEC CHARGES DIEBOLD AND FORMER FINANCIAL EXECUTIVES WITH ACCOUNTING FRAUD Diebold To Pay $25 Million Civil Penalty Former Diebold CEO To Reimburse Cash Bonuses, Stock and Options Pursuant to Section",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-21543"
+        },
+        {
+          "lr": "LR-19391",
+          "date": "2005-09-23T14:22:05Z",
+          "caption": "Keith G. Baxter, Ronald J. Goedde, Richard D. Nye, Robert E. Ellington and Anthony W. O'Dell",
+          "summary": "Accounting and Auditing Enforcement Release No. 2319 / September 23, 2005 SEC V. KEITH G. BAXTER, RONALD J. GOEDDE, RICHARD D. NYE, ROBERT E. ELLINGTON AND ANTHONY W. O'DELL, (United States District Court for the Northern District of California, Civil Action No. C05-3843 (PVT)) SEC CHARGES FIVE FORMER EXECUTIVES OF CORNERSTONE PROPANE PARTNERS, L.P. WITH FALSE FINANCIAL REPORTING The Securities and Exchange Commission today filed civil charges against five individuals formerly associated with Co",
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-19391"
+        },
+        {
+          "lr": "LR-15858",
+          "date": "1998-08-24T14:19:02Z",
+          "caption": "Larry K. O'Dell",
+          "summary": "SECURITIES AND EXCHANGE COMMISSION Washington, DC Litigation Release No. 15858 / August 24, 1998 SECURITIES AND EXCHANGE COMMISSION v. LARRY K. O'DELL, United States District Court for the Middle District of Florida, Civil Action No. 98-948-CIV-ORL-18A The Securities and Exchange Commission today announced the filing of a Complaint against Larry K. O'Dell, the former Director of Public Works for Osceola County, Florida, for failing to disclose his receipt of bribes for assisting a brokerage firm",
+          "url": "https://www.sec.gov/files/litigation/litreleases/lr15858.txt"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.954Z",
+      "source": "sec",
+      "sourceUrl": "https://www.sec.gov/cgi-bin/srqsb?text=%22Dell%22+form-type%3DLitigation+Release"
+    }
+  },
+  "cpsc": {
+    "totalRecalls": 16,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "The hybrid power adapter casing can break and detach, exposing the internal metal components, posing an electric shock hazard.",
+        "count": 1
+      },
+      {
+        "label": "The front opening between the tray and seat bottom of the high chair can allow a child's body to pass through and become entrapped at the neck. This poses a st…",
+        "count": 1
+      },
+      {
+        "label": "The cookware can collapse, crimp or severely deform when exposed to heat, posing a burn and fire hazard to the consumer and nearby property.",
+        "count": 1
+      },
+      {
+        "label": "Children can fall or land on these dive sticks in shallow water and suffer impalement injuries. Eye and other facial injuries are also possible.",
+        "count": 1
+      },
+      {
+        "label": "Surface paints on the recalled helmets contain excessive levels of lead, violating the federal lead paint standard.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 8485,
+        "recall_number": "19060",
+        "recall_date": "2019-02-06T00:00:00",
+        "title": "Dell Recalls Hybrid Power Adapters Sold with Power Banks Due to Shock Hazard",
+        "description": "This recall involves Dell hybrid power adapters sold with power banks. The adapter is designed to be disconnected from the power bank via release tabs. The recalled adapters were manufactured from January 2017 through March 2017 and can be used separately from the power bank while connected to a power outlet. The adap…",
+        "url": "https://www.cpsc.gov/Recalls/2019/Dell-Recalls-Hybrid-Power-Adapters-Sold-with-Power-Banks-Due-to-Shock-Hazard",
+        "hazards": [
+          "The hybrid power adapter casing can break and detach, exposing the internal metal components, posing an electric shock hazard."
+        ],
+        "injuries": [
+          "Dell has received 11 reports of the hybrid power adapter breaking and exposing the internal components. No injuries have been reported."
+        ],
+        "products": [
+          "Hybrid Power Adapters sold with Power Banks"
+        ],
+        "units": [
+          "About 8,900 (in addition, about 475 were sold in Canada)"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 1345,
+        "recall_number": "13155",
+        "recall_date": "2013-03-28T00:00:00",
+        "title": "BabyHome USA Recalls High Chairs Due to Strangulation Hazard",
+        "description": "This recall includes Eat model high chairs in red, black, green, purple, navy, orange, and brown. The model number BH2104 is located on a label on the back of the high chair. The word \"babyhome\" is printed on one leg of the chair and the word \"eat\" is printed on the opposite leg of the chair. The high chairs have a ny…",
+        "url": "https://www.cpsc.gov/Recalls/2013/BabyHome-USA-Recalls-High-Chairs",
+        "hazards": [
+          "The front opening between the tray and seat bottom of the high chair can allow a child's body to pass through and become entrapped at the neck. This poses a st…"
+        ],
+        "injuries": [
+          "None reported."
+        ],
+        "products": [
+          "Baby high chairs"
+        ],
+        "units": [
+          "About 1,100"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      },
+      {
+        "recall_id": 1295,
+        "recall_number": "13098",
+        "recall_date": "2012-01-17T00:00:00",
+        "title": "Hy Cite Enterprises Recalls Royal Prestige Thermal Wall Pots and Pans Due to Burn and Fire Hazard",
+        "description": "This recall involves stainless steel 9-ply \"Thermal Wall\" pans sold under the \"Royal Prestige\" brand name. The products were sold individually and in sets. The following cookware is included in this recall: 1.5 qt. saucepan 2 qt. saucepan 3 qt. Dutch oven 4 qt. Dutch oven 6 qt. Dutch oven 8 qt. Dutch oven 8\" skillet 1…",
+        "url": "https://www.cpsc.gov/Recalls/2013/Hy-Cite-Enterprises-Recalls-Royal-Prestige-Thermal-Wall-Pots-and-Pans-Due-to-Burn-and-Fire-Hazard",
+        "hazards": [
+          "The cookware can collapse, crimp or severely deform when exposed to heat, posing a burn and fire hazard to the consumer and nearby property."
+        ],
+        "injuries": [
+          "The company is aware of 1,136 reports of cookware collapsing, crimping or deforming, including one report of consumers getting spattered with hot oil when the pan collapsed inward while cooking."
+        ],
+        "products": [
+          "Royal Prestige 9-Ply Thermal Wall Cookware"
+        ],
+        "units": [
+          "About 1.7 million"
+        ],
+        "remedies": [
+          "Replace"
+        ]
+      },
+      {
+        "recall_id": 5003,
+        "recall_number": "09043",
+        "recall_date": "2008-11-13T00:00:00",
+        "title": "Swim 'N Score Dive Sticks Recalled by Modell's Due to Risk of Impalement Injury to Children",
+        "description": "The recalled Pool Stix are weighted plastic tubes, which stand upright when tossed into water. The sticks are about 8\" long and were sold in packs of 6 in various colors. The UPC (#4969382814) is printed on the product's packaging.",
+        "url": "https://www.cpsc.gov/Recalls/2009/Swim-N-Score-Dive-Sticks-Recalled-by-Modells-Due-to-Risk-of-Impalement-Injury-to-Children",
+        "hazards": [
+          "Children can fall or land on these dive sticks in shallow water and suffer impalement injuries. Eye and other facial injuries are also possible."
+        ],
+        "injuries": [
+          "None reported."
+        ],
+        "products": [
+          "CORAL Swim 'N Score Pool Stix"
+        ],
+        "units": [
+          "About 130"
+        ],
+        "remedies": []
+      },
+      {
+        "recall_id": 4036,
+        "recall_number": "08019",
+        "recall_date": "2007-10-11T00:00:00",
+        "title": "Riddell Recalls Collectible Mini Racing Helmets Due to Violation of Lead Paint Standard",
+        "description": "The recalled product is a six-inch tall, collectible, miniature helmet, modeled after the helmet worn by race car driver Jeff Gordon. The helmet is red and blue with a black visor, and is painted with various sponsor logos and playing cards. The UPC number 095855720029 is located on the bottom of the product's packagi…",
+        "url": "https://www.cpsc.gov/Recalls/2008/Riddell-Recalls-Collectible-Mini-Racing-Helmets-Due-to-Violation-of-Lead-Paint-Standard",
+        "hazards": [
+          "Surface paints on the recalled helmets contain excessive levels of lead, violating the federal lead paint standard."
+        ],
+        "injuries": [
+          "None reported."
+        ],
+        "products": [
+          "Collectible \"Jeff Gordon\" Mini Helmets"
+        ],
+        "units": [
+          "About 2,500"
+        ],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Dell"
+  },
+  "doj": {
+    "totalMentions90d": 7,
+    "antitrustMentions": 0,
+    "fraudMentions": 6,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Utah Doctor and Two Nurses Charged with Health Care Fraud After Submitting False Claims to Medicare and Receiving Millions in Payout",
+        "url": "https://www.justice.gov/usao-ut/pr/utah-doctor-and-two-nurses-charged-health-care-fraud-after-submitting-false-claims",
+        "date": "2026-05-12",
+        "components": [
+          "Federal Bureau of Investigation (FBI)",
+          "National Fraud Enforcement Division",
+          "USAO - Utah"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…2025, ryan scott ellsworth, 47, of highland, utah; emily kelly, 45, of washington, utah; and drake dell broadbent, 55, of santa clara, utah, allegedly defrauded the federal health care benefit program, m…"
+      },
+      {
+        "title": "U.S. Attorney’s Office Honors Several for Excellence in Service",
+        "url": "https://www.justice.gov/usao-md/pr/us-attorneys-office-honors-several-excellence-service",
+        "date": "2026-05-07",
+        "components": [
+          "USAO - Maryland"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…al david rutledge , supervisory forensic accountant, federal bureau of investigation nicole brianna dell , forensic accountant, federal bureau of investigation this award recognizes law enforcement agents…"
+      },
+      {
+        "title": "Members of “Noir’s Luxury Refunds” Telegram Channel Sentenced to Prison",
+        "url": "https://www.justice.gov/usao-ndal/pr/members-noirs-luxury-refunds-telegram-channel-sentenced-prison",
+        "date": "2026-04-30",
+        "components": [
+          "Federal Bureau of Investigation (FBI)",
+          "USAO - Alabama, Northern"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…sistance was provided by target corporation; amazon.com, inc.; wal-mart stores, inc.; wayfair inc.; dell technologies; dick’s sporting goods, inc.; american airlines group inc.; hewlett packard incorporat…"
+      },
+      {
+        "title": "Eleven Sentenced for Refund Fraud Scheme Causing Millions of Dollars in Losses to Online Retailers",
+        "url": "https://www.justice.gov/usao-ndok/pr/eleven-sentenced-refund-fraud-scheme-causing-millions-dollars-losses-online-retailers",
+        "date": "2026-04-29",
+        "components": [
+          "Federal Bureau of Investigation (FBI)",
+          "USAO - Oklahoma, Northern"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…nd resulted in millions of dollars in losses to companies such as amazon, walmart, target, wayfair, dell technologies, kate spade, dick’s sporting goods, hp inc., and adidas, among others.\ntulsa, okla. –…"
+      },
+      {
+        "title": "Four Charged with Trafficking Narcotics into Massachusetts from Puerto Rico and California through the Mail",
+        "url": "https://www.justice.gov/usao-ma/pr/four-charged-trafficking-narcotics-massachusetts-puerto-rico-and-california-through-mail",
+        "date": "2026-04-16",
+        "components": [
+          "USAO - Massachusetts"
+        ],
+        "categories": [
+          "fraud"
+        ],
+        "snippet": "…the massachusetts state police and the watertown police department. assistant u.s. attorney charles dell’anno of the narcotics & money laundering unit is prosecuting the case. this case was investigated a…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
+  },
+  "hhsOig": {
+    "isExcluded": true,
+    "exclusionCount": 3,
+    "exclusionSample": [
+      {
+        "busname": "A G O'DELL, INC",
+        "exclDate": "19881123",
+        "exclType": "1128a1",
+        "city": "WATERLOO",
+        "state": "NY"
+      },
+      {
+        "busname": "MIA'S PHARMACY SLIDELL, LLC",
+        "exclDate": "20070920",
+        "exclType": "1128a4",
+        "city": "MARIANNA",
+        "state": "FL"
+      },
+      {
+        "busname": "SCHERER'S SLIDELL MEDICAL CENT",
+        "exclDate": "20070920",
+        "exclType": "1128a4",
+        "city": "MARIANNA",
+        "state": "FL"
+      }
+    ],
+    "recentFraudActions24mo": 8,
+    "sampleActions": [
+      {
+        "date": "April 10, 2026",
+        "title": "Slidell Doctor Sentenced For $6.6 Million In Health Care Fraud",
+        "actionType": "Criminal and Civil Actions",
+        "fineAmount": 6600000,
+        "url": "https://oig.hhs.gov/fraud/enforcement/slidell-doctor-sentenced-for-66-million-in-health-care-fraud/"
+      },
+      {
+        "date": "January 28, 2026",
+        "title": "Slidell Chiropractor Sentenced for Health Care Fraud",
+        "actionType": "COVID-19",
+        "fineAmount": null,
+        "url": "https://oig.hhs.gov/fraud/enforcement/slidell-chiropractor-sentenced-for-health-care-fraud/"
+      },
+      {
+        "date": "January 27, 2026",
+        "title": "Cordell Memorial Hospital Agreed to Pay $40,000 for Allegedly Violating Patient Dumping Statute by Failing to Provide an Appropriate Medical Screening Examination",
+        "actionType": "CMP and Affirmative Exclusions",
+        "fineAmount": 40000,
+        "url": "https://oig.hhs.gov/fraud/enforcement/cordell-memorial-hospital-agreed-to-pay-40000-for-allegedly-violating-patient-dumping-statute-by-failing-to-provide-an-appropriate-medical-screening-examination/"
+      },
+      {
+        "date": "August 15, 2025",
+        "title": "AG Murrill&#x27;s Medicaid Fraud Control Unit Arrests Slidell Woman For Cruel Attack On An Individual With A Disability Under Her Care",
+        "actionType": "State Enforcement Agencies",
+        "fineAmount": null,
+        "url": "https://oig.hhs.gov/fraud/enforcement/ag-murrills-medicaid-fraud-control-unit-arrests-slidell-woman-for-cruel-attack-on-an-individual-with-a-disability-under-her-care/"
+      },
+      {
+        "date": "May 27, 2025",
+        "title": "Slidell Doctor Convicted Of Health Care Fraud",
+        "actionType": "Criminal and Civil Actions",
+        "fineAmount": null,
+        "url": "https://oig.hhs.gov/fraud/enforcement/slidell-doctor-convicted-of-health-care-fraud/"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:42.256Z",
+    "source": "hhs-oig",
+    "sourceUrl": "https://oig.hhs.gov/fraud/enforcement/"
   }
 }

@@ -1,17 +1,14 @@
 {
-  "merged_at": "2026-06-03T20:00:53.490Z",
+  "merged_at": "2026-06-11T14:35:42.256Z",
   "source_file": "public/data/hhs-oig.json",
   "total_brands": 528,
-  "merged_count": 38,
+  "merged_count": 41,
   "skipped_count": 485,
-  "orphan_count": 5,
+  "orphan_count": 2,
   "error_count": 0,
   "orphans": [
-    "corona",
-    "rite-aid",
     "block",
-    "sofi",
-    "toro"
+    "sofi"
   ],
   "merged_brands": [
     {
@@ -23,9 +20,17 @@
       "recentActions24mo": 0
     },
     {
+      "brand": "corona",
+      "target": "anheuser-busch",
+      "routed_via": "parent",
+      "isExcluded": true,
+      "exclusionCount": 1,
+      "recentActions24mo": 0
+    },
+    {
       "brand": "heineken",
       "target": "heineken-usa",
-      "routed_via": "parent",
+      "routed_via": "alias",
       "isExcluded": true,
       "exclusionCount": 1,
       "recentActions24mo": 0
@@ -125,6 +130,14 @@
       "isExcluded": false,
       "exclusionCount": 0,
       "recentActions24mo": 4
+    },
+    {
+      "brand": "rite-aid",
+      "target": "rite-aid",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 1,
+      "recentActions24mo": 2
     },
     {
       "brand": "coach",
@@ -288,8 +301,8 @@
     },
     {
       "brand": "labcorp",
-      "target": "labcorp-drug-development",
-      "routed_via": "parent",
+      "target": "labcorp",
+      "routed_via": "direct",
       "isExcluded": false,
       "exclusionCount": 0,
       "recentActions24mo": 1
@@ -316,6 +329,14 @@
       "routed_via": "direct",
       "isExcluded": true,
       "exclusionCount": 2,
+      "recentActions24mo": 0
+    },
+    {
+      "brand": "toro",
+      "target": "toro",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 1,
       "recentActions24mo": 0
     }
   ]

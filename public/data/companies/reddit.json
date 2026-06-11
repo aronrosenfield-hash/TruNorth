@@ -88,7 +88,9 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "competitors": [
     "discord"
@@ -164,7 +166,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 1,
+    "mostRecentCase": "2026-05-27",
+    "cases": [
+      {
+        "caseName": "Karpowski v. Reddit Inc",
+        "dateFiled": "2026-05-27",
+        "court": "District Court, C.D. Illinois",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reddit%22"
+      },
+      {
+        "caseName": "In Re: DMCA Subpoena to Reddit Inc.",
+        "dateFiled": "2026-04-27",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reddit%22"
+      },
+      {
+        "caseName": "In Re DMCA Subpoena to Reddit, Inc.",
+        "dateFiled": "2026-04-27",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": true,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reddit%22"
+      },
+      {
+        "caseName": "Babbini v. Reddit, Inc.",
+        "dateFiled": "2026-02-20",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reddit%22"
+      },
+      {
+        "caseName": "G.P. v. Arevalo",
+        "dateFiled": "2026-01-25",
+        "court": "District Court, W.D. Washington",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Reddit%22"
+      }
+    ],
+    "totalAllTime": 115,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -227,5 +278,77 @@
     "charity": 50,
     "privacy": 97,
     "execPay": 100
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Reddit",
+    "tosdrUrl": "https://tosdr.org/en/service/194",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "doj": {
+    "totalMentions90d": 8,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Registered Sex Offender Sentenced To 25 Years In Prison For Producing Child Sexual Abuse Material",
+        "url": "https://www.justice.gov/usao-wdnc/pr/registered-sex-offender-sentenced-25-years-prison-producing-child-sexual-abuse",
+        "date": "2026-05-26",
+        "components": [
+          "USAO - North Carolina, Western"
+        ],
+        "categories": [],
+        "snippet": "…yeats also admitted to sharing the csam with people he met in sex-related chatrooms online, such as reddit. court documents further show that yeats molested second minor victim and distributed images of tha…"
+      },
+      {
+        "title": "Rapid City Man Sentenced to Five Years in Federal Prison for Attempted Receipt of Child Pornography",
+        "url": "https://www.justice.gov/usao-sd/pr/rapid-city-man-sentenced-five-years-federal-prison-attempted-receipt-child-pornography",
+        "date": "2026-05-21",
+        "components": [
+          "USAO - South Dakota"
+        ],
+        "categories": [],
+        "snippet": "…guilty on january 5, 2026. on august 3, 2024, during the 2024 sturgis bike rally, poorman used his reddit account to begin chatting with someone he thought was a 13-year-old girl but was, unbeknownst to po…"
+      },
+      {
+        "title": "Former Tennessee Sheriff’s Deputy Pleads Guilty to Production of Child Sexual Abuse Material",
+        "url": "https://www.justice.gov/usao-sc/pr/former-tennessee-sheriffs-deputy-pleads-guilty-production-child-sexual-abuse-material",
+        "date": "2026-05-13",
+        "components": [
+          "Federal Bureau of Investigation (FBI)",
+          "USAO - South Carolina"
+        ],
+        "categories": [],
+        "snippet": "…ial.* evidence obtained in the investigation revealed that in september 2024 allen used accounts on reddit and text me to contact a 13-year-old girl in south carolina. allen posed as a 14-year-old boy named…"
+      },
+      {
+        "title": "Slovakian Administrator of Darknet Market that Sold Drugs and Stolen Personal Information Sentenced to 200 Months in Prison",
+        "url": "https://www.justice.gov/usao-edmo/pr/slovakian-administrator-darknet-market-sold-drugs-and-stolen-personal-information",
+        "date": "2026-05-08",
+        "components": [
+          "Drug Enforcement Administration (DEA)",
+          "Federal Bureau of Investigation (FBI)",
+          "USAO - Missouri, Eastern"
+        ],
+        "categories": [],
+        "snippet": "…t associated with kingdom, assisting with the creation of kingdom’s forum pages on websites such as reddit and dread, having access to kingdom usernames that made postings on behalf of kingdom on social med…"
+      },
+      {
+        "title": "Brooklyn Man Convicted of Sexual Exploitation of a Child",
+        "url": "https://www.justice.gov/usao-edny/pr/brooklyn-man-convicted-sexual-exploitation-child",
+        "date": "2026-05-07",
+        "components": [
+          "USAO - New York, Eastern"
+        ],
+        "categories": [],
+        "snippet": "…or about march 2024, john identified a 13-year-old girl who had posted photographs of herself on a reddit forum and whose posts disclosed her age. john offered to pay the girl for her for photographs and t…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

@@ -2,7 +2,7 @@
   "name": "Milka",
   "cat": "Food & Beverage",
   "init": "MILK",
-  "overall": 48.4,
+  "overall": 46.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "poor",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "governance": "neutral",
     "health": "mixed"
@@ -63,9 +63,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Mondelez International: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -129,7 +129,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T16:21:53.243Z",
-  "realCats": 6,
+  "realCats": 7,
   "governance": {
     "s": "Wikidata: owned by Mondelez International; HQ Lörrach. (Wikidata Q757388)",
     "sources": [
@@ -145,10 +145,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "health": {
@@ -163,6 +159,7 @@
     "charity": 50,
     "environment": 100,
     "labor": 9,
+    "privacy": 8,
     "execPay": 25.9,
     "health": 50
   }

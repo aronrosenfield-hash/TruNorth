@@ -1,9 +1,9 @@
 {
   "source": "ofac-sdn",
   "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
-  "generated_at": "2026-06-10T14:41:42.276Z",
+  "generated_at": "2026-06-11T14:35:44.302Z",
   "snapshot_date": "2026-06-10",
-  "matched_slug_count": 80,
+  "matched_slug_count": 91,
   "companies": {
     "azul-sa": {
       "slug": "azul-sa",
@@ -96,6 +96,137 @@
       "source": "ofac-sdn",
       "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
     },
+    "star": {
+      "slug": "star",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN",
+        "DPRK4",
+        "DPRK",
+        "IRAN-EO13846",
+        "RUSSIA-EO14024",
+        "SDGT",
+        "IRAN-EO13902",
+        "VENEZUELA-EO13850"
+      ],
+      "entities": [
+        {
+          "name": "SEA STAR III",
+          "program": "IRAN",
+          "sanction_date": null
+        },
+        {
+          "name": "STARK I",
+          "program": "IRAN",
+          "sanction_date": null
+        },
+        {
+          "name": "WOORY STAR",
+          "program": "DPRK4",
+          "sanction_date": null
+        },
+        {
+          "name": "NYMEX STAR",
+          "program": "DPRK",
+          "sanction_date": null
+        },
+        {
+          "name": "LUCKY STAR",
+          "program": "DPRK4",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR 18",
+          "program": "DPRK4",
+          "sanction_date": null
+        },
+        {
+          "name": "FULL STAR",
+          "program": "IRAN-EO13846",
+          "sanction_date": null
+        },
+        {
+          "name": "HS STAR",
+          "program": "RUSSIA-EO14024",
+          "sanction_date": null
+        },
+        {
+          "name": "HUNTER STAR",
+          "program": "RUSSIA-EO14024",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR 5",
+          "program": "SDGT",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR FOREST",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "GLORY STAR I",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR TWINKLE 6",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR MM",
+          "program": "SDGT",
+          "sanction_date": null
+        },
+        {
+          "name": "MADESTAR",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "MAX STAR",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "NORD STAR",
+          "program": "VENEZUELA-EO13850",
+          "sanction_date": null
+        },
+        {
+          "name": "NORTH STAR",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "city": {
+      "slug": "city",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN"
+      ],
+      "entities": [
+        {
+          "name": "FELICITY",
+          "program": "IRAN",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
     "arla": {
       "slug": "arla",
       "is_sanctioned": true,
@@ -175,6 +306,23 @@
       "source": "ofac-sdn",
       "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
     },
+    "orion": {
+      "slug": "orion",
+      "is_sanctioned": true,
+      "programs": [
+        "DPRK"
+      ],
+      "entities": [
+        {
+          "name": "ORION STAR",
+          "program": "DPRK",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
     "mars": {
       "slug": "mars",
       "is_sanctioned": true,
@@ -185,6 +333,34 @@
         {
           "name": "MARSHAL ZHUKOV",
           "program": "UKRAINE-EO13685",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "prog": {
+      "slug": "prog",
+      "is_sanctioned": true,
+      "programs": [
+        "LIBYA3",
+        "IRAN-EO13846"
+      ],
+      "entities": [
+        {
+          "name": "PROGRES",
+          "program": "LIBYA3",
+          "sanction_date": null
+        },
+        {
+          "name": "PROGRESS V",
+          "program": "IRAN-EO13846",
+          "sanction_date": null
+        },
+        {
+          "name": "WORLD PROGRESS",
+          "program": "IRAN-EO13846",
           "sanction_date": null
         }
       ],
@@ -224,6 +400,29 @@
         {
           "name": "KOTI",
           "program": "DPRK4",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "mara": {
+      "slug": "mara",
+      "is_sanctioned": true,
+      "programs": [
+        "VENEZUELA-EO13850",
+        "LIBYA3"
+      ],
+      "entities": [
+        {
+          "name": "MARA",
+          "program": "VENEZUELA-EO13850",
+          "sanction_date": null
+        },
+        {
+          "name": "MARAYA",
+          "program": "LIBYA3",
           "sanction_date": null
         }
       ],
@@ -522,11 +721,6 @@
         },
         {
           "name": "LIONESS",
-          "program": "IRAN-EO13902",
-          "sanction_date": null
-        },
-        {
-          "name": "CH BILLION",
           "program": "IRAN-EO13902",
           "sanction_date": null
         }
@@ -972,6 +1166,23 @@
       "source": "ofac-sdn",
       "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
     },
+    "angi": {
+      "slug": "angi",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN-EO13902"
+      ],
+      "entities": [
+        {
+          "name": "MS ANGIA",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
     "mercury": {
       "slug": "mercury",
       "is_sanctioned": true,
@@ -1004,6 +1215,23 @@
         },
         {
           "name": "TB ANPING",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "bill": {
+      "slug": "bill",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN-EO13902"
+      ],
+      "entities": [
+        {
+          "name": "CH BILLION",
           "program": "IRAN-EO13902",
           "sanction_date": null
         }
@@ -1262,6 +1490,28 @@
       "source": "ofac-sdn",
       "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
     },
+    "aether": {
+      "slug": "aether",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN-EO13902"
+      ],
+      "entities": [
+        {
+          "name": "AETHER",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "AETHER SAIL",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
     "cerus": {
       "slug": "cerus",
       "is_sanctioned": true,
@@ -1373,6 +1623,23 @@
       "entities": [
         {
           "name": "TIDAL RHYTHM",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "wise": {
+      "slug": "wise",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN-EO13902"
+      ],
+      "entities": [
+        {
+          "name": "SEA WISE",
           "program": "IRAN-EO13902",
           "sanction_date": null
         }
@@ -1526,6 +1793,40 @@
       "entities": [
         {
           "name": "SEEKER 8",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "usio": {
+      "slug": "usio",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN-EO13846"
+      ],
+      "entities": [
+        {
+          "name": "NEW FUSION",
+          "program": "IRAN-EO13846",
+          "sanction_date": null
+        }
+      ],
+      "earliest_listing": null,
+      "source": "ofac-sdn",
+      "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+    },
+    "navigator": {
+      "slug": "navigator",
+      "is_sanctioned": true,
+      "programs": [
+        "IRAN-EO13902"
+      ],
+      "entities": [
+        {
+          "name": "MIGHTY NAVIGATOR",
           "program": "IRAN-EO13902",
           "sanction_date": null
         }

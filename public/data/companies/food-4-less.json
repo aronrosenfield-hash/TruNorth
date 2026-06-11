@@ -2,7 +2,7 @@
   "name": "Food 4 Less",
   "cat": "Grocery",
   "init": "FOOD",
-  "overall": 48.2,
+  "overall": 45.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "poor",
     "health": "mixed"
@@ -55,8 +55,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -122,9 +124,6 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "dei": {
       "notDisclosed": true
     },
@@ -133,10 +132,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "inheritedFrom": "kroger",

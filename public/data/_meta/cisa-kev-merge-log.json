@@ -1,12 +1,138 @@
 {
-  "merged_at": "2026-06-08T14:40:49.829Z",
+  "merged_at": "2026-06-11T14:35:39.055Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 265,
-  "merged_count": 2,
-  "skipped_count": 32,
-  "orphan_count": 231,
+  "merged_count": 35,
+  "skipped_count": 1,
+  "orphan_count": 229,
   "error_count": 0,
   "merged_vendors": [
+    {
+      "vendor": "Microsoft",
+      "target": "microsoft",
+      "routed_via": "override",
+      "cves": 377
+    },
+    {
+      "vendor": "Apple",
+      "target": "apple",
+      "routed_via": "override",
+      "cves": 93
+    },
+    {
+      "vendor": "Cisco",
+      "target": "cisco",
+      "routed_via": "override",
+      "cves": 90
+    },
+    {
+      "vendor": "Adobe",
+      "target": "adobe",
+      "routed_via": "override",
+      "cves": 79
+    },
+    {
+      "vendor": "Google",
+      "target": "google-alphabet",
+      "routed_via": "override",
+      "cves": 71
+    },
+    {
+      "vendor": "Oracle",
+      "target": "oracle-cloud",
+      "routed_via": "parent",
+      "cves": 43
+    },
+    {
+      "vendor": "Fortinet",
+      "target": "fortinet",
+      "routed_via": "override",
+      "cves": 26
+    },
+    {
+      "vendor": "VMware",
+      "target": "vmware",
+      "routed_via": "override",
+      "cves": 26
+    },
+    {
+      "vendor": "Palo Alto Networks",
+      "target": "palo-alto-networks",
+      "routed_via": "direct",
+      "cves": 15
+    },
+    {
+      "vendor": "Samsung",
+      "target": "samsung-usa",
+      "routed_via": "parent",
+      "cves": 15
+    },
+    {
+      "vendor": "SAP",
+      "target": "sap",
+      "routed_via": "override",
+      "cves": 14
+    },
+    {
+      "vendor": "Atlassian",
+      "target": "atlassian",
+      "routed_via": "direct",
+      "cves": 13
+    },
+    {
+      "vendor": "Qualcomm",
+      "target": "qualcomm",
+      "routed_via": "direct",
+      "cves": 12
+    },
+    {
+      "vendor": "NETGEAR",
+      "target": "netgear",
+      "routed_via": "override",
+      "cves": 8
+    },
+    {
+      "vendor": "F5",
+      "target": "f5",
+      "routed_via": "direct",
+      "cves": 7
+    },
+    {
+      "vendor": "Red Hat",
+      "target": "red-hat",
+      "routed_via": "direct",
+      "cves": 7
+    },
+    {
+      "vendor": "IBM",
+      "target": "ibm",
+      "routed_via": "override",
+      "cves": 7
+    },
+    {
+      "vendor": "Broadcom",
+      "target": "broadcom",
+      "routed_via": "direct",
+      "cves": 4
+    },
+    {
+      "vendor": "GitLab",
+      "target": "gitlab",
+      "routed_via": "direct",
+      "cves": 4
+    },
+    {
+      "vendor": "Meta Platforms",
+      "target": "meta-platforms",
+      "routed_via": "direct",
+      "cves": 3
+    },
+    {
+      "vendor": "Veritas",
+      "target": "veritas",
+      "routed_via": "direct",
+      "cves": 3
+    },
     {
       "vendor": "Quest",
       "target": "simply-good-foods",
@@ -14,8 +140,80 @@
       "cves": 2
     },
     {
+      "vendor": "Dell",
+      "target": "dell",
+      "routed_via": "override",
+      "cves": 2
+    },
+    {
+      "vendor": "MongoDB",
+      "target": "mongodb",
+      "routed_via": "direct",
+      "cves": 2
+    },
+    {
+      "vendor": "N-able",
+      "target": "n-able",
+      "routed_via": "direct",
+      "cves": 2
+    },
+    {
+      "vendor": "Hitachi Vantara",
+      "target": "hitachi-vantara",
+      "routed_via": "direct",
+      "cves": 2
+    },
+    {
+      "vendor": "ServiceNow",
+      "target": "servicenow",
+      "routed_via": "direct",
+      "cves": 2
+    },
+    {
+      "vendor": "Intel",
+      "target": "intel",
+      "routed_via": "override",
+      "cves": 2
+    },
+    {
+      "vendor": "Meta",
+      "target": "meta-facebook",
+      "routed_via": "override",
+      "cves": 1
+    },
+    {
+      "vendor": "Trimble",
+      "target": "trimble",
+      "routed_via": "direct",
+      "cves": 1
+    },
+    {
+      "vendor": "Twilio",
+      "target": "twilio",
+      "routed_via": "direct",
+      "cves": 1
+    },
+    {
+      "vendor": "Nice",
+      "target": "nice",
+      "routed_via": "direct",
+      "cves": 1
+    },
+    {
+      "vendor": "Ubiquiti",
+      "target": "ubiquiti",
+      "routed_via": "direct",
+      "cves": 1
+    },
+    {
       "vendor": "Alcatel",
       "target": "nokia",
+      "routed_via": "parent",
+      "cves": 1
+    },
+    {
+      "vendor": "LG",
+      "target": "lg-usa",
       "routed_via": "parent",
       "cves": 1
     }

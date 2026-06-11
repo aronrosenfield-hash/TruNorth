@@ -2,10 +2,10 @@
   "source": "epa-smartway",
   "source_url": "https://www.epa.gov/smartway/smartway-carrier-partner-list",
   "license": "US federal public domain (EPA SmartWay)",
-  "generated_at": "2026-06-09T13:52:11.624Z",
+  "generated_at": "2026-06-11T14:35:40.718Z",
   "snapshot_date": "2026-06-09",
   "carrier_count": 30,
-  "matched_slug_count": 23,
+  "matched_slug_count": 24,
   "companies": {
     "amazon": {
       "slug": "amazon",
@@ -35,8 +35,8 @@
       ],
       "matched_carrier_count": 3
     },
-    "ups": {
-      "slug": "ups",
+    "united-parcel-service": {
+      "slug": "united-parcel-service",
       "environment": {
         "smartwayPartnerSince": 2004,
         "tier": "SmartWay Carrier",
@@ -214,6 +214,19 @@
       },
       "matched_carriers": [
         "Sysco Corporation Fleet"
+      ],
+      "matched_carrier_count": 1
+    },
+    "us-foods": {
+      "slug": "us-foods",
+      "environment": {
+        "smartwayPartnerSince": 2009,
+        "tier": "SmartWay Carrier",
+        "fleetSize": 6500,
+        "sourceUrl": "https://www.epa.gov/smartway/smartway-carrier-partner-list"
+      },
+      "matched_carriers": [
+        "US Foods Inc. Fleet"
       ],
       "matched_carrier_count": 1
     },

@@ -191,6 +191,7 @@
 | Ethisphere World's Most Ethical Companies | https://ethisphere.com/wme | Annual | Annual ~135-company honoree list |
 | Newsweek Most Responsible Companies | https://www.newsweek.com/rankings/americas-most-responsible-companies | Annual | Annual top 600 US ranking on ESG |
 | WikiRate | https://wikirate.org | Monthly | Crowdsourced ESG metrics aggregator (needs API key) |
+| ToS;DR | https://tosdr.org | Monthly | Terms-of-service privacy grades A–E (CC BY-SA 3.0, grades-only with attribution — license verified 2026-06-11) |
 
 ### International regulators (4)
 

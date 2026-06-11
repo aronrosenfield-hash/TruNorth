@@ -2,7 +2,7 @@
   "name": "Magnolia Audio Visual",
   "cat": "Retail",
   "init": "MAGN",
-  "overall": 59.4,
+  "overall": 62.5,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "pro_dei",
     "animals": "na",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "mixed",
     "execPay": "na",
     "health": "mixed"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "Via parent company Best Buy: Wikipedia \"Privacy\" section: On October 20, 2023, CBC News released the results of a Marketplace investigation which found that Best Buy technicians had viewed private files, such as intimate photos, on customer devices. One…",
@@ -122,14 +124,11 @@
   "lastUpdated": null,
   "realCats": 5,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "health": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -139,10 +138,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Retail"
     }
   },
   "health": {

@@ -1,33 +1,128 @@
 {
-  "_doc": "Per-industry applicability map for scoring categories. REWRITTEN 2026-06-08 for the 18-cat consolidated taxonomy (PR: feat(taxonomy): consolidate 34 cats → 18). Keys = the 18 distinct `cat` values produced by scripts/recategorize-companies.mjs. Values: `na` lists scoring categories that are NOT APPLICABLE for that industry (renders 'Not Applicable for this Industry' in PR-3, excluded from grade math). Unlisted categories are implicitly applicable. The reflag script (scripts/reflag-categories.mjs) consumes this map. SAFE DEFAULT: when in doubt, leave a category applicable — a false-positive `na` is worse UX than a low-confidence score. Per-company overrides for edge cases (e.g. retailers that DO sell firearms) live in public/data/_meta/category-applicability-overrides.json (consumed by reflag in a future PR).",
+  "_doc": "Per-industry applicability map for scoring categories. REWRITTEN 2026-06-08 for the 18-cat consolidated taxonomy (PR: feat(taxonomy): consolidate 34 cats \u2192 18). Keys = the 18 distinct `cat` values produced by scripts/recategorize-companies.mjs. Values: `na` lists scoring categories that are NOT APPLICABLE for that industry (renders 'Not Applicable for this Industry' in PR-3, excluded from grade math). Unlisted categories are implicitly applicable. The reflag script (scripts/reflag-categories.mjs) consumes this map. SAFE DEFAULT: when in doubt, leave a category applicable \u2014 a false-positive `na` is worse UX than a low-confidence score. Per-company overrides for edge cases (e.g. retailers that DO sell firearms) live in public/data/_meta/category-applicability-overrides.json (consumed by reflag in a future PR).",
   "_rules": {
-    "guns": "NA for every industry EXCEPT [Sports & Outdoor, Defense & Aerospace]. A handful of mass-market retailers (Walmart, Bass Pro, etc.) DO sell firearms — those are handled via per-company overrides, not this map.",
-    "health": "NA for every industry EXCEPT [Food & Beverage, Healthcare, Beauty & Personal Care, Grocery, Hospitality] — the cats whose companies sell physical things humans ingest / put on bodies / use medically.",
+    "guns": "NA for every industry EXCEPT [Sports & Outdoor, Defense & Aerospace]. A handful of mass-market retailers (Walmart, Bass Pro, etc.) DO sell firearms \u2014 those are handled via per-company overrides, not this map.",
+    "health": "NA for every industry EXCEPT [Food & Beverage, Healthcare, Beauty & Personal Care, Grocery, Hospitality] \u2014 the cats whose companies sell physical things humans ingest / put on bodies / use medically.",
     "animals": "NA for non-physical-product cats: [Technology, Financial Services, Professional Services, Entertainment & Media, Energy & Utilities]. These industries don't sell physical products that involve animal testing or animal-derived ingredients.",
-    "execPay": "Handled by reflag script at per-company level, not industry — driven by ticker/isPublic presence.",
-    "dei": "Handled per-company by reflag script — driven by deiBadges presence and sec-def14a-augment.",
-    "charity": "Handled per-company by reflag script — driven by corporate-giving-augment.json membership.",
-    "transparency": "Handled per-company by reflag script — driven by transparency-benchmarks-augment.json or wikirate-augment.json membership.",
-    "environment_inferred": "Handled per-company by reflag script — when narrative is 'No public record found' AND industry-carbon-intensity-augment.json has a sector for the company's cat, mark environment as {_inferred:true, basis:<cat>}."
+    "execPay": "Handled by reflag script at per-company level, not industry \u2014 driven by ticker/isPublic presence.",
+    "dei": "Handled per-company by reflag script \u2014 driven by deiBadges presence and sec-def14a-augment.",
+    "charity": "Handled per-company by reflag script \u2014 driven by corporate-giving-augment.json membership.",
+    "transparency": "Handled per-company by reflag script \u2014 driven by transparency-benchmarks-augment.json or wikirate-augment.json membership.",
+    "environment_inferred": "Handled per-company by reflag script \u2014 when narrative is 'No public record found' AND industry-carbon-intensity-augment.json has a sector for the company's cat, mark environment as {_inferred:true, basis:<cat>}."
   },
   "industries": {
-    "Apparel & Fashion":        { "na": ["guns", "health"] },
-    "Automotive":               { "na": ["guns", "health", "animals"] },
-    "Beauty & Personal Care":   { "na": ["guns"] },
-    "Consumer Goods":           { "na": ["guns", "health"] },
-    "Defense & Aerospace":      { "na": ["health", "animals"] },
-    "Energy & Utilities":       { "na": ["guns", "health", "animals"] },
-    "Entertainment & Media":    { "na": ["guns", "health", "animals"] },
-    "Financial Services":       { "na": ["guns", "health", "animals"] },
-    "Food & Beverage":          { "na": ["guns"] },
-    "Grocery":                  { "na": ["guns"] },
-    "Healthcare":               { "na": ["guns"] },
-    "Hospitality":              { "na": ["guns", "animals"] },
-    "Manufacturing":            { "na": ["guns", "health"] },
-    "Professional Services":    { "na": ["guns", "health", "animals"] },
-    "Retail":                   { "na": ["guns", "health"] },
-    "Sports & Outdoor":         { "na": ["health"] },
-    "Technology":               { "na": ["guns", "health", "animals"] },
-    "Travel & Transportation":  { "na": ["guns", "health", "animals"] }
+    "Apparel & Fashion": {
+      "na": [
+        "guns",
+        "health"
+      ]
+    },
+    "Automotive": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    },
+    "Beauty & Personal Care": {
+      "na": [
+        "guns"
+      ]
+    },
+    "Consumer Goods": {
+      "na": [
+        "guns",
+        "health"
+      ]
+    },
+    "Defense & Aerospace": {
+      "na": [
+        "health",
+        "animals"
+      ]
+    },
+    "Energy & Utilities": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    },
+    "Entertainment & Media": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    },
+    "Financial Services": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    },
+    "Food & Beverage": {
+      "na": [
+        "guns"
+      ]
+    },
+    "Grocery": {
+      "na": [],
+      "_notes": {
+        "guns": "Applicable as of 2026-06-11 (Lever 2): for merchants, whether firearms are sold is a real datapoint \u2014 absence of an ATF FFL is a factual no-involvement answer."
+      }
+    },
+    "Healthcare": {
+      "na": [
+        "guns"
+      ]
+    },
+    "Hospitality": {
+      "na": [
+        "guns",
+        "animals"
+      ]
+    },
+    "Manufacturing": {
+      "na": [
+        "guns",
+        "health"
+      ]
+    },
+    "Professional Services": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    },
+    "Retail": {
+      "na": [
+        "health"
+      ],
+      "_notes": {
+        "guns": "Applicable as of 2026-06-11 (Lever 2): for merchants, whether firearms are sold is a real datapoint \u2014 absence of an ATF FFL is a factual no-involvement answer."
+      }
+    },
+    "Sports & Outdoor": {
+      "na": [
+        "health"
+      ]
+    },
+    "Technology": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    },
+    "Travel & Transportation": {
+      "na": [
+        "guns",
+        "health",
+        "animals"
+      ]
+    }
   }
 }

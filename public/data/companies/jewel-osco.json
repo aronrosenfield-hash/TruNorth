@@ -2,7 +2,7 @@
   "name": "Jewel-Osco",
   "cat": "Grocery",
   "init": "JEWE",
-  "overall": 42.1,
+  "overall": 40,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "poor"
   },
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -151,9 +153,6 @@
   "lastUpdated": "2026-05-31T00:20:11.609Z",
   "realCats": 5,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "dei": {
       "notDisclosed": true
     },
@@ -162,10 +161,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "inheritedFrom": "albertsons",

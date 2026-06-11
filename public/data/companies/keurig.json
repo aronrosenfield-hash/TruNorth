@@ -34,7 +34,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "cpsc": "2026-06-11T14:35:39.983Z"
+  },
   "charity": {
     "s": "$15M reported corporate giving in 2024 (~0.11% of revenue) via Keurig Dr Pepper Foundation.",
     "sources": [
@@ -271,5 +274,43 @@
     "charity": 50,
     "labor": 8.4,
     "execPay": 64.6
+  },
+  "cpsc": {
+    "totalRecalls": 1,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "Water can overheat during brewing, spray out and burn consumers.",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 1889,
+        "recall_number": "15054",
+        "recall_date": "2014-12-23T00:00:00",
+        "title": "Keurig Recalls MINI Plus Brewing Systems Due to Burn Hazard",
+        "description": "This recall involves Keurig® MINI Plus Brewing System with model number K10 (previously identified as model number B31). Recalled brewers have an identification number starting with \"31\" followed by a range of numbers printed on a white sticker on the bottom of the brewer. They are single-serve, hot beverage brewers a…",
+        "url": "https://www.cpsc.gov/Recalls/2015/Keurig-Recalls-MINI-Plus-Brewing-Systems",
+        "hazards": [
+          "Water can overheat during brewing, spray out and burn consumers."
+        ],
+        "injuries": [
+          "Keurig has received about 200 reports of hot liquid escaping from the brewer, including 90 reports of burn-related injuries."
+        ],
+        "products": [
+          "Keurig® MINI Plus Brewing Systems"
+        ],
+        "units": [
+          "About 6.6 million in the U.S. and 564,000 Canada"
+        ],
+        "remedies": [
+          "Repair"
+        ]
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Keurig"
   }
 }

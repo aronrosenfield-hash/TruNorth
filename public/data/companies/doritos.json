@@ -2,7 +2,7 @@
   "name": "Doritos",
   "cat": "Food & Beverage",
   "init": "DORI",
-  "overall": 48,
+  "overall": 42.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral",
     "health": "mixed"
@@ -30,7 +30,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -63,9 +66,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Pepsi: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -118,7 +121,24 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 0,
+    "classActionCount": 0,
+    "mostRecentCase": "2024-05-17",
+    "cases": [
+      {
+        "caseName": "FREDERICK v. DORITOS",
+        "dateFiled": "2024-05-17",
+        "court": "District Court, District of Columbia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Doritos%22"
+      }
+    ],
+    "totalAllTime": 1,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -134,7 +154,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:39:24.913Z",
-  "realCats": 5,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by Frito-Lay. (Wikidata Q776795)",
     "sources": [
@@ -150,10 +170,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "health": {
@@ -168,6 +184,7 @@
     "charity": 50,
     "environment": 50,
     "labor": 8.9,
+    "privacy": 8,
     "health": 50
   }
 }

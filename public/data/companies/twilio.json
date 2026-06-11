@@ -1,0 +1,193 @@
+{
+  "name": "Twilio",
+  "legalName": "TWILIO INC",
+  "cat": "Technology",
+  "init": "TWLO",
+  "overall": 50,
+  "realCats": 1,
+  "isPublic": true,
+  "ticker": "TWLO",
+  "cik": 1447669,
+  "sic": 7372,
+  "sicDescription": "Services-Prepackaged Software",
+  "addedBy": "edgar-expansion-2026-06",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "neutral",
+    "guns": "neutral",
+    "privacy": "mixed",
+    "execPay": "neutral",
+    "health": "neutral"
+  },
+  "political": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "labor": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Krebs on Security: Twilio + Signal breach via 0ktapus phishing campaign that also hit 130+ orgs.",
+    "sources": [
+      "krebs-investigations"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "health": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "ab": "#210d16",
+  "ac": "#cf5990",
+  "competitors": [],
+  "slug": "twilio",
+  "enriched": {
+    "cisaKev": {
+      "vendor": "Twilio",
+      "totalCveCount": 1,
+      "recent12moCount": 0,
+      "ransomwareCount": 0,
+      "productBreakdown": [
+        {
+          "label": "Authy",
+          "count": 1
+        }
+      ],
+      "topCves": [
+        {
+          "cveID": "CVE-2024-39891",
+          "product": "Authy",
+          "vulnerabilityName": "Twilio Authy Information Disclosure Vulnerability",
+          "dateAdded": "2024-07-23",
+          "dueDate": "2024-08-13",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Twilio Authy contains an information disclosure vulnerability in its API that allows an unauthenticated endpoint to accept a request containing a phone number and respond with information about whether the phone number was registered with Authy.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-39891"
+        }
+      ],
+      "highestSeverity": [
+        {
+          "cveID": "CVE-2024-39891",
+          "product": "Authy",
+          "vulnerabilityName": "Twilio Authy Information Disclosure Vulnerability",
+          "dateAdded": "2024-07-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-39891"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:39.055Z",
+      "source": "cisa-kev",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    }
+  },
+  "dataLastUpdated": {
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-03-25",
+    "cases": [
+      {
+        "caseName": "E.R. v. Twilio Inc.",
+        "dateFiled": "2026-03-25",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Twilio%22"
+      },
+      {
+        "caseName": "Lowrey v. Twilio Inc",
+        "dateFiled": "2025-12-29",
+        "court": "District Court, W.D. Virginia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Twilio%22"
+      },
+      {
+        "caseName": "Delvaux v. Google LLC",
+        "dateFiled": "2025-11-25",
+        "court": "District Court, M.D. Florida",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Twilio%22"
+      },
+      {
+        "caseName": "v. Twilio Inc.",
+        "dateFiled": "2025-10-16",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Twilio%22"
+      },
+      {
+        "caseName": "The Pill Club Liquidating Trust v. Twilio Inc.",
+        "dateFiled": "2025-04-16",
+        "court": "United States Bankruptcy Court, N.D. Texas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Twilio%22"
+      }
+    ],
+    "totalAllTime": 54,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Technology"
+    }
+  },
+  "csc": {
+    "privacy": 50
+  }
+}

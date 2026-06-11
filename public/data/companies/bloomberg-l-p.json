@@ -2,7 +2,7 @@
   "name": "Bloomberg L.P.",
   "cat": "Financial Services",
   "init": "BLOO",
-  "overall": 36.7,
+  "overall": 30.3,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "governance": "neutral"
   },
@@ -62,9 +62,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -197,7 +198,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:09:45.990Z",
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Michael Bloomberg; HQ New York City. (Wikidata Q13977)",
     "sources": [
@@ -227,6 +228,15 @@
   },
   "csc": {
     "political": 45.2,
-    "labor": 8.1
+    "labor": 8.1,
+    "privacy": 8
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Bloomberg L. P.",
+    "tosdrUrl": "https://tosdr.org/en/service/2741",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
   }
 }

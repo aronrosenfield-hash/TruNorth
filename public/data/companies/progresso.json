@@ -2,7 +2,7 @@
   "name": "Progresso",
   "cat": "Grocery",
   "init": "PROG",
-  "overall": 50.6,
+  "overall": 50.1,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "pro_dei",
     "animals": "positive",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "mixed",
     "health": "mixed"
@@ -57,8 +57,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -123,13 +125,10 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -153,7 +152,6 @@
     "political": 50.4,
     "charity": 50,
     "labor": 50,
-    "execPay": 53.6,
     "health": 50
   }
 }

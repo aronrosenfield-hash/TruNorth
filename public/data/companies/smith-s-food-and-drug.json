@@ -2,7 +2,7 @@
   "name": "Smith's Food and Drug",
   "cat": "Grocery",
   "init": "SMIT",
-  "overall": 44.3,
+  "overall": 42.7,
   "isPublic": false,
   "sc": {
     "political": "right",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "negative",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "na",
     "execPay": "poor",
     "health": "mixed"
@@ -54,8 +54,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "No public record found.",
@@ -106,13 +108,10 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 6,
+  "realCats": 5,
   "flags": {
-    "guns": {
-      "na": true
-    },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -122,10 +121,6 @@
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Grocery"
     }
   },
   "health": {
@@ -140,7 +135,6 @@
     "charity": 85,
     "environment": 8,
     "labor": 8,
-    "execPay": 36.8,
     "health": 50
   }
 }

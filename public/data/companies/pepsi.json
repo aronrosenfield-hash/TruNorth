@@ -2,7 +2,7 @@
   "name": "Pepsi",
   "cat": "Food & Beverage",
   "init": "PEPS",
-  "overall": 49.1,
+  "overall": 43.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
     "health": "mixed"
   },
@@ -33,7 +33,13 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "cpsc": "2026-06-11T14:35:39.983Z",
+    "fdic": "2026-06-11T14:35:41.451Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
   "charity": {
     "s": "$90M reported corporate giving in 2024 (~0.10% of revenue) via PepsiCo Foundation.",
     "sources": [
@@ -65,9 +71,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -140,7 +147,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-03-18",
+    "cases": [
+      {
+        "caseName": "QUAKER HOUGHTON PA INC. v. JUST IN TIME CHEMICAL SALES & MARKETING TRANSITION LLC",
+        "dateFiled": "2026-03-18",
+        "court": "District Court, E.D. Pennsylvania",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Quaker%22"
+      },
+      {
+        "caseName": "Quaker Valley Foods, LLC v. United States",
+        "dateFiled": "2026-03-05",
+        "court": "United States Court of International Trade",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Quaker%22"
+      },
+      {
+        "caseName": "Kessler v. The Quaker Oats Company",
+        "dateFiled": "2026-02-03",
+        "court": "Court of Appeals for the Second Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Quaker%22"
+      },
+      {
+        "caseName": "Kessler v. The Quaker Oats Company",
+        "dateFiled": "2026-02-03",
+        "court": "Court of Appeals for the Second Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Quaker%22"
+      },
+      {
+        "caseName": "Kessler v. The Quaker Oats Company",
+        "dateFiled": "2026-01-14",
+        "court": "Court of Appeals for the Second Circuit",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Quaker%22"
+      }
+    ],
+    "totalAllTime": 1018,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": {
     "source": "Violation Tracker",
@@ -233,7 +289,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: a small wire can protrude through the fabric of the ears on these headbands."
   },
-  "realCats": 5,
+  "realCats": 6,
   "flags": {
     "guns": {
       "na": true
@@ -250,6 +306,173 @@
     "charity": 50,
     "environment": 50,
     "labor": 8.9,
+    "privacy": 8,
     "health": 50
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Pepsi",
+    "tosdrUrl": "https://tosdr.org/en/service/6001",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "cpsc": {
+    "totalRecalls": 2,
+    "recent24moCount": 0,
+    "topHazards": [
+      {
+        "label": "Laceration",
+        "count": 1
+      },
+      {
+        "label": "Suffocation",
+        "count": 1
+      }
+    ],
+    "sampleRecalls": [
+      {
+        "recall_id": 5432,
+        "recall_number": "93065",
+        "recall_date": "1993-04-29T00:00:00",
+        "title": "Quaker Halts Sales Of Cap'n Crunch Cereal Containing \"Popper\" Promotional Toy Because Of Eye Injuries",
+        "description": "April 29, 1993 Release # 93-065 PRODUCT: \"Popper\" promotional toy in Quaker's Cap'n Crunch, Crunchberries and Peanut Butter Crunch cereals. The \"popper\" toy is packed in 8.3 million cereal packages distributed nationwide. PROBLEM: Thirty-six injuries, such as bruised or bloodshot eyes, when children used the toy by ap…",
+        "url": "https://www.cpsc.gov/Recalls/1993/Quaker-Halts-Sales-Of-Capn-Crunch-Cereal-Containing-Popper-Promotional-Toy-Because-Of-Eye-Injuries",
+        "hazards": [
+          "Laceration"
+        ],
+        "injuries": [],
+        "products": [
+          "Quaker Oat's Popper promotional toys"
+        ],
+        "units": [],
+        "remedies": []
+      },
+      {
+        "recall_id": 4467,
+        "recall_number": "84048",
+        "recall_date": "1984-07-26T00:00:00",
+        "title": "Splash & Stack Bluebird Toys Recalled by Fisher-Price",
+        "description": "Splash & Stack Bluebird Toys Recalled by Fisher-Price NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 Note: Phone number change. FOR IMMEDIATE RELEASE Originally issued July 26, 1984; Revised December 2, 2005 Release # 84-048 Fisher-Price Splash & St…",
+        "url": "https://www.cpsc.gov/Recalls/1984/Fisher-Price-Splash--Stack-Bluebird-Toy-Part-Recalled",
+        "hazards": [
+          "Suffocation"
+        ],
+        "injuries": [],
+        "products": [
+          "Fisher-Price Splash & Stack Bluebird toy"
+        ],
+        "units": [],
+        "remedies": []
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:39.983Z",
+    "source": "cpsc",
+    "sourceUrl": "https://www.cpsc.gov/Recalls?field_rc_manufacturer_value=Quaker"
+  },
+  "enriched": {
+    "fdic": {
+      "bankCertNumbers": [
+        28272
+      ],
+      "bankNames": [
+        {
+          "cert": 28272,
+          "name": "Quaker City Bank",
+          "state": "CA",
+          "active": 0,
+          "bkclass": "SL"
+        }
+      ],
+      "totalOrders5y": null,
+      "totalCivilMoneyPenaltyUsd": null,
+      "sampleActions": [],
+      "lastUpdated": "2026-06-11T14:35:41.451Z",
+      "source": "fdic-edos",
+      "sourceUrl": "https://orders.fdic.gov",
+      "edosStatus": "edos_unreachable",
+      "edosError": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON"
+    },
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 1,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 1,
+      "byYear": {
+        "2015": 3,
+        "2017": 3,
+        "2018": 1,
+        "2019": 3,
+        "2020": 2,
+        "2022": 3,
+        "2023": 4,
+        "2024": 1
+      },
+      "totalRecordsAllTime": 20,
+      "sampleRecords": [
+        {
+          "event_date": "2024-07-25",
+          "employer": "Quaker Valley Foods, Inc.",
+          "city": "PHILADELPHIA",
+          "state": "PENNSYLVANIA",
+          "part_of_body": " Brain",
+          "nature": " Cerebral and other intracranial hemorrhages without skull fracture  ",
+          "event_description": " Collision with stationary object, nonroadway",
+          "final_narrative": "An employee was operating a ride-on pallet jack in reverse between racks and struck his head on a rack, resulting in a concussion and brain bleed.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2023-11-27",
+          "employer": "QUAKER MANUFACTURING, LLC",
+          "city": "COLUMBIA",
+          "state": "MISSOURI",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Contact with objects and equipment, unspecified",
+          "final_narrative": "An employee noticed a water spray nozzle from the grain conveyor system was out of place overhead. They reached up to put it back in the opening where it belongs when their left middle finger slipped into the opening. The employee's fingertip was amputated.",
+          "amputation": true,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2023-09-30",
+          "employer": "Quakertown Veterinary Clinic",
+          "city": "QUAKERTOWN",
+          "state": "PENNSYLVANIA",
+          "part_of_body": "Hand(s), unspecified",
+          "nature": "Multiple types of open wounds",
+          "event_description": "Other animal bites, nonvenomous",
+          "final_narrative": "A veterinarian was handling a dog when they were bit on the hand, resulting in a puncture wound/laceration that required hospitalization and surgery.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2023-02-08",
+          "employer": "Quakertown Veterinary Clinic",
+          "city": "QUAKERTOWN",
+          "state": "PENNSYLVANIA",
+          "part_of_body": "Finger(s), fingernail(s), unspecified",
+          "nature": "Puncture wounds, except gunshot wounds",
+          "event_description": "Other animal bites, nonvenomous",
+          "final_narrative": "An employee was bit by a cat, resulting in four puncture wounds to the right thumb. The employee experiencing joint swelling and red streaking on the skin and was hospitalized.",
+          "amputation": false,
+          "hospitalized": true
+        },
+        {
+          "event_date": "2023-01-18",
+          "employer": "Quaker Valley Foods Inc.",
+          "city": "PHILADELPHIA",
+          "state": "PENNSYLVANIA",
+          "part_of_body": "Foot (feet) and ankle(s)",
+          "nature": "Fractures",
+          "event_description": "Pedestrian struck by vehicle backing up in nonroadway area",
+          "final_narrative": "An employee was walking in the warehouse with a driver jack. Another pallet jack operator came into the area and backed into the injured employee. The pallet jack that the injured employee was walking with ran over his right foot and he sustained a toe and ankle fracture that required hospitalization and surgery.",
+          "amputation": false,
+          "hospitalized": true
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
   }
 }

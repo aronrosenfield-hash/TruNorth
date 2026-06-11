@@ -84,7 +84,11 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
+  },
   "competitors": [
     "microsoft"
   ],
@@ -149,7 +153,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 0,
+    "mostRecentCase": "2026-05-18",
+    "cases": [
+      {
+        "caseName": "United States v. Discord Username \"roy0335910\"",
+        "dateFiled": "2026-05-18",
+        "court": "District Court, E.D. Arkansas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Discord%22"
+      },
+      {
+        "caseName": "United States v. Discord Username \"roy0335910\"",
+        "dateFiled": "2026-05-18",
+        "court": "District Court, E.D. Arkansas",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Discord%22"
+      },
+      {
+        "caseName": "Doe v. Roblox Corporation",
+        "dateFiled": "2026-04-24",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Discord%22"
+      },
+      {
+        "caseName": "Doe v. Roblox Corporation",
+        "dateFiled": "2026-04-22",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Discord%22"
+      },
+      {
+        "caseName": "Nelson v. Discord, Inc.",
+        "dateFiled": "2026-04-15",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Discord%22"
+      }
+    ],
+    "totalAllTime": 246,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -182,7 +235,7 @@
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
@@ -200,5 +253,79 @@
   },
   "csc": {
     "privacy": 50
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Discord",
+    "tosdrUrl": "https://tosdr.org/en/service/536",
+    "reviewed": false,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "doj": {
+    "totalMentions90d": 26,
+    "antitrustMentions": 0,
+    "fraudMentions": 2,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Five Men Plead Guilty to Distributing Large Quantities of Child Sexual Abuse Material on Peer-to-Peer Networks",
+        "url": "https://www.justice.gov/usao-nv/pr/five-men-plead-guilty-distributing-large-quantities-child-sexual-abuse-material-peer",
+        "date": "2026-06-05",
+        "components": [
+          "USAO - Nevada"
+        ],
+        "categories": [],
+        "snippet": "…xual abuse material at least 11 times with other users and channels of the social media application discord. donovan admitted that he also transported child sexual abuse material to an amazon cloud account u…"
+      },
+      {
+        "title": "Three Arrested in Kansas and California, Charged with Plot to Support ISIS",
+        "url": "https://www.justice.gov/opa/pr/three-arrested-kansas-and-california-charged-plot-support-isis",
+        "date": "2026-06-05",
+        "components": [
+          "Office of the Attorney General",
+          "Federal Bureau of Investigation (FBI)",
+          "National Security Division (NSD)",
+          "USAO - California, Eastern",
+          "USAO - California, Southern",
+          "USAO - Kansas"
+        ],
+        "categories": [],
+        "snippet": "…l plans to support isis, including through the provision of personnel, services, and money. through discord chats, voice calls, and other messaging platforms, the coconspirators pledged allegiance to isis an…"
+      },
+      {
+        "title": "California Man Sentenced to 30 Years for Producing Child Sexual Abuse Material and Coercing and Enticing a Minor",
+        "url": "https://www.justice.gov/usao-mdfl/pr/california-man-sentenced-30-years-producing-child-sexual-abuse-material-and-coercing",
+        "date": "2026-06-04",
+        "components": [
+          "USAO - Florida, Middle"
+        ],
+        "categories": [],
+        "snippet": "…ok and began communicating with the victim on other internet-based applications including telegram, discord and signal. on three dates in august and september 2024, rios gallardo used, persuaded, induced, en…"
+      },
+      {
+        "title": "Chunchula Man Sentenced To 96 Months",
+        "url": "https://www.justice.gov/usao-sdal/pr/chunchula-man-sentenced-96-months",
+        "date": "2026-06-01",
+        "components": [
+          "USAO - Alabama, Southern"
+        ],
+        "categories": [],
+        "snippet": "…hild pornography. according to court documents, benedum, 47, was using the social media application discord to trade videos and images of child pornography with other users. many of the images depicted child…"
+      },
+      {
+        "title": "Austin Man Indicted for Production of Child Pornography",
+        "url": "https://www.justice.gov/usao-mn/pr/austin-man-indicted-production-child-pornography",
+        "date": "2026-05-28",
+        "components": [
+          "USAO - Minnesota"
+        ],
+        "categories": [],
+        "snippet": "…ey daniel n. rosen. according to state and federal court documents, mallan owned multiple snapchat, discord, and other social media and email accounts that he used to solicit minor victims across the world t…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }

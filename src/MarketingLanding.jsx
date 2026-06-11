@@ -159,7 +159,7 @@ const VALUE_PROPS = [
   },
   {
     icon:"⌕",
-    title:"Scan or search 11,000+ brands",
+    title:"Scan or search 12,000+ brands",
     body:"Search by name or scan a product barcode in store. Subsidiaries roll up to parents — no more accidentally rewarding the parent company behind a brand you scanned.",
   },
   {
@@ -358,7 +358,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth tracks 11,000+ companies. Where public records exist, we grade them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 170+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
+              TruNorth tracks 12,000+ companies. Where public records exist, we grade them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 170+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* Phase 5.az: the iOS CTA points at the App Store listing once

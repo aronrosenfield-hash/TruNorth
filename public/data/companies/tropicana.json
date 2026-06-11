@@ -2,7 +2,7 @@
   "name": "Tropicana",
   "cat": "Food & Beverage",
   "init": "TBG",
-  "overall": 42.8,
+  "overall": 38.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "na",
     "health": "mixed"
   },
@@ -75,10 +75,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Pepsi: Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -192,23 +192,19 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "realCats": 5,
+  "realCats": 6,
   "flags": {
     "guns": {
       "na": true
     },
     "execPay": {
-      "notDisclosed": true
+      "na": true
     },
     "dei": {
       "notDisclosed": true
     },
     "transparency": {
       "notDisclosed": true
-    },
-    "environment": {
-      "_inferred": true,
-      "basis": "Food & Beverage"
     }
   },
   "health": {
@@ -223,6 +219,7 @@
     "charity": 50,
     "environment": 50,
     "labor": 8.9,
+    "privacy": 8,
     "health": 50
   }
 }

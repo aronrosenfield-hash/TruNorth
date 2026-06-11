@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "mixed",
-    "guns": "neutral",
+    "guns": "no_guns",
     "privacy": "neutral",
     "execPay": "mixed",
     "governance": "neutral"
@@ -63,8 +63,10 @@
     ]
   },
   "guns": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
   },
   "privacy": {
     "s": "1 documented breach affecting 2,239 accounts (HIBP); latest breach 2014-02-12.",
@@ -185,9 +187,6 @@
     ]
   },
   "flags": {
-    "guns": {
-      "na": true
-    },
     "dei": {
       "notDisclosed": true
     },

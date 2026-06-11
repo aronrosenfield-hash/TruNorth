@@ -1,18 +1,18 @@
 {
   "_license": "CC BY-SA 3.0 — Powerbase (Spinwatch), https://powerbase.info",
   "_source": "https://powerbase.info",
-  "_generated_at": "2026-06-09T22:59:40.815Z",
+  "_generated_at": "2026-06-11T14:35:44.651Z",
   "_source_file": "data/raw/powerbase/2026-06-09.json",
   "_stats": {
     "raw_pages": 37,
-    "matched_companies": 22,
+    "matched_companies": 23,
     "by_category": {
-      "political": 20,
+      "political": 21,
       "environment": 2
     },
     "by_severity": {
       "poor": 3,
-      "mixed": 19
+      "mixed": 20
     }
   },
   "companies": {
@@ -225,6 +225,56 @@
         }
       ],
       "external_link_count": 1
+    },
+    "hsbc": {
+      "title": "HSBC",
+      "page_url": "https://powerbase.info/index.php/HSBC",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, lobbying, revolving door. HSBC Group is one of the largest banking and financial services organisations in the world. It was rated the world's largest banking group in 2008 in terms of market value. It has around 9,500…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/HSBC"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:EU Lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Finance Lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Fracking",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Tax avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 0
     },
     "barclays": {
       "title": "Barclays",

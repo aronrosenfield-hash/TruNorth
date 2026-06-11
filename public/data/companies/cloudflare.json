@@ -2,7 +2,7 @@
   "name": "Cloudflare",
   "cat": "Technology",
   "init": "CLOU",
-  "overall": 46.5,
+  "overall": 39.2,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "poor",
     "governance": "mixed"
   },
@@ -31,7 +31,9 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "doj": "2026-06-11T14:35:40.356Z",
+    "courtlistener": "2026-06-11T14:35:43.162Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -65,9 +67,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Terms-of-service privacy grade D (poor) via ToS;DR (tosdr.org), CC BY-SA 3.0 — transformed to TruNorth's scale.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "tosdr"
     ]
   },
   "execPay": {
@@ -136,7 +139,56 @@
   "environment_ejscreen": null,
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
-  "litigation_courtlistener": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 5,
+    "classActionCount": 2,
+    "mostRecentCase": "2026-05-27",
+    "cases": [
+      {
+        "caseName": "Weller Recreation v. Cloudflare Inc.",
+        "dateFiled": "2026-05-27",
+        "court": "District Court, D. Utah",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Cloudflare%22"
+      },
+      {
+        "caseName": "CLOUDFLARE, INC.",
+        "dateFiled": "2026-05-18",
+        "court": "District Court, District of Columbia",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Cloudflare%22"
+      },
+      {
+        "caseName": "MKH, Inc. v. CloudFlare, Inc.",
+        "dateFiled": "2026-04-01",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Cloudflare%22"
+      },
+      {
+        "caseName": "In Re 17 U.S.C. § 512(h) Subpoena to Cloudflare, Inc.",
+        "dateFiled": "2026-03-10",
+        "court": "District Court, N.D. California",
+        "natureOfSuit": null,
+        "isClassAction": true,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Cloudflare%22"
+      },
+      {
+        "caseName": "IN RE CLOUDFLARE, INC.",
+        "dateFiled": "2026-03-09",
+        "court": "District Court, District of Columbia",
+        "natureOfSuit": null,
+        "isClassAction": true,
+        "sourceUrl": "https://www.courtlistener.com/?q=%22Cloudflare%22"
+      }
+    ],
+    "totalAllTime": 218,
+    "lastUpdated": "2026-06-11T14:35:43.162Z",
+    "source": "courtlistener-recap"
+  },
   "labor_dol_whd": null,
   "violationTracker": null,
   "fec": null,
@@ -152,7 +204,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T19:54:09.549Z",
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata records a notable event: boycott. (Wikidata Q4778915)",
     "sources": [
@@ -201,6 +253,56 @@
   "csc": {
     "political": 46.5,
     "charity": 50,
+    "privacy": 8,
     "execPay": 38.7
+  },
+  "privacy_tosdr": {
+    "rating": "D",
+    "serviceName": "Cloudflare",
+    "tosdrUrl": "https://tosdr.org/en/service/894",
+    "reviewed": true,
+    "license": "CC BY-SA 3.0",
+    "fetchedAt": "2026-06-11"
+  },
+  "doj": {
+    "totalMentions90d": 3,
+    "antitrustMentions": 0,
+    "fraudMentions": 0,
+    "criminalMentions": 0,
+    "recentReleases": [
+      {
+        "title": "Canadian man arrested by international authorities, charged with administrating KimWolf DDoS botnet",
+        "url": "https://www.justice.gov/usao-ak/pr/canadian-man-arrested-international-authorities-charged-administrating-kimwolf-ddos",
+        "date": "2026-05-21",
+        "components": [
+          "USAO - Alaska"
+        ],
+        "categories": [],
+        "snippet": "…deskriminalamt (bka). additionally, the u.s. justice department thanks akamai, amazon web services, cloudflare, digitalocean, epieos, google, hydrolix, lumen, nokia, oracle, paypal, registrar of last resort, sa…"
+      },
+      {
+        "title": "U.S. authorities conduct cyber operations as part of global crackdown on DDoS-for-hire services",
+        "url": "https://www.justice.gov/usao-ak/pr/us-authorities-conduct-cyber-operations-part-global-crackdown-ddos-hire-services",
+        "date": "2026-04-16",
+        "components": [
+          "USAO - Alaska"
+        ],
+        "categories": [],
+        "snippet": "…france’s police nationale, and many others. assistance was provided by akamai, amazon web services, cloudflare, digital ocean, epieos, google, hydrolix, paypal, registrar of last resort and the shadowserver fou…"
+      },
+      {
+        "title": "Authorities disrupt world’s largest IoT DDoS botnets responsible for record breaking attacks targeting victims worldwide",
+        "url": "https://www.justice.gov/usao-ak/pr/authorities-disrupt-worlds-largest-iot-ddos-botnets-responsible-record-breaking-attacks",
+        "date": "2026-03-19",
+        "components": [
+          "USAO - Alaska"
+        ],
+        "categories": [],
+        "snippet": "…sûreté du québec (sq) additionally, the u.s. justice department thanks akamai, amazon web services, cloudflare, digitalocean, epieos, google, hydrolix, lumen, nokia, okta, oracle, paypal, registrar of last reso…"
+      }
+    ],
+    "lastUpdated": "2026-06-11T14:35:40.356Z",
+    "source": "doj",
+    "sourceUrl": "https://www.justice.gov/news?type=press_release"
   }
 }
