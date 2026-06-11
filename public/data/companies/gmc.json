@@ -2,7 +2,7 @@
   "name": "GMC",
   "cat": "Automotive",
   "init": "GMC",
-  "overall": 33.8,
+  "overall": 36.1,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -170,7 +170,7 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 7,
+  "realCats": 6,
   "flags": {
     "animals": {
       "na": true
@@ -192,5 +192,13 @@
       "basis": "Automotive"
     }
   },
-  "inheritedFrom": "general-motors"
+  "inheritedFrom": "general-motors",
+  "csc": {
+    "political": 48,
+    "charity": 50,
+    "environment": 50,
+    "labor": 8,
+    "privacy": 8,
+    "execPay": 42.4
+  }
 }

@@ -2,11 +2,11 @@
   "name": "French's",
   "cat": "Consumer Goods",
   "init": "FREN",
-  "overall": 48.8,
+  "overall": 52.4,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "pro_dei",
@@ -31,9 +31,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Kraft Heinz: $25M reported corporate giving in 2024 (~0.09% of revenue) via Kraft Heinz Foundation. Operates the Kraft Heinz Company Foundation: $2.9M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -158,5 +158,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "kraft-heinz"
+  "inheritedFrom": "kraft-heinz",
+  "csc": {
+    "political": 80.5,
+    "charity": 85,
+    "environment": 15.7,
+    "labor": 8,
+    "execPay": 57.9
+  }
 }

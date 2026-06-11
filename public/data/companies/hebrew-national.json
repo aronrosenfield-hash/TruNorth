@@ -2,18 +2,17 @@
   "name": "Hebrew National",
   "cat": "Food & Beverage",
   "init": "HEBR",
-  "overall": 44.5,
+  "overall": 39.1,
   "isPublic": false,
   "sc": {
     "political": "right",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "good",
     "governance": "neutral",
     "health": "poor"
   },
@@ -31,7 +30,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company Conagra Brands: $18M reported corporate giving in 2024 (~0.15% of revenue) via Conagra Brands Foundation.",
+    "s": "Via parent company Conagra Brands: $18M reported corporate giving in 2024 (~0.15% of revenue) via Conagra Brands Foundation. Operates the Conagra Brands Foundation: $5.5M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -65,10 +64,8 @@
     ]
   },
   "execPay": {
-    "s": "Via parent company Conagra Brands: CEO-to-median-worker pay ratio 0:1 (median employee pay $64,614; CEO total compensation $8K) — SEC proxy statement (DEF 14A, 2015).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -116,7 +113,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by Conagra Brands, Inc.. (Wikidata Q5695863)",
     "sources": [
@@ -150,5 +147,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "conagra-brands"
+  "inheritedFrom": "conagra-brands",
+  "csc": {
+    "political": 50.6,
+    "charity": 85,
+    "environment": 15.9,
+    "labor": 8,
+    "health": 8
+  }
 }

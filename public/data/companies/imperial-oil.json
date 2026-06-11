@@ -2,11 +2,11 @@
   "name": "IMPERIAL OIL",
   "cat": "Energy & Utilities",
   "init": "IMPE",
-  "overall": 48.6,
+  "overall": 55.9,
   "isPublic": true,
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "mixed",
     "dei": "pro_dei",
@@ -31,9 +31,9 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company ExxonMobil: Operates the Exxonmobil Foundation: $29.6M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -165,5 +165,12 @@
       "basis": "Energy & Utilities"
     }
   },
-  "inheritedFrom": "exxonmobil"
+  "inheritedFrom": "exxonmobil",
+  "csc": {
+    "political": 43.9,
+    "charity": 85,
+    "environment": 50,
+    "labor": 50,
+    "execPay": 56.5
+  }
 }

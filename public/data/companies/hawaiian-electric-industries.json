@@ -2,11 +2,11 @@
   "name": "HAWAIIAN ELECTRIC INDUSTRIES",
   "cat": "Energy & Utilities",
   "init": "HAWA",
-  "overall": 61.5,
+  "overall": 58.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -36,9 +36,10 @@
     "execPay": "2026-06-11T03:48:51.753Z"
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Hawaiian Electric Industries Charitable Foundation: $2.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -219,7 +220,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:13:33.923Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "animals": {
       "na": true
@@ -260,5 +261,12 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 81.9,
+    "charity": 85,
+    "environment": 29.6,
+    "labor": 8,
+    "execPay": 91.1
   }
 }

@@ -1,1 +1,230 @@
-{"name":"ONE Gas","cat":"Energy & Utilities","init":"ONEG","overall":36.9,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $6K PAC donations; 100% to Republican, 0% to Democratic committees.","amt":"$172K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"11 federal penalties totaling $95K since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","competitors":["atmos-energy","nisource","spire","ameren"],"wiki":{"founded":null,"hq":"Tulsa, Oklahoma","employees":null,"revenue":null,"parent":null,"industry":"Natural gas utility","products":"Natural Gas","keyPeople":"Robert S. McAnnally (President and CEO)","website":"http://www.onegas.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/One_Gas","extract":"One Gas, Inc. is a stand-alone, 100 percent regulated, publicly traded natural gas utility and is one of the largest natural gas utilities in the United States.\nOne Gas provides natural gas distribution services to more than 2 million customers in Oklahoma, Kansas and Texas. Headquartered in Tulsa, Oklahoma, it comprises three operating companies–Oklahoma Natural Gas, Kansas Gas Service, and Texas Gas Service. Its service territory covers most of Oklahoma, much of the eastern half of Kansas, and several disparate portions of Texas.\nIts largest natural gas distribution markets by customer count"},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/tx/austin/profile/natural-gas-companies/texas-gas-service-company-0825-41612"},"logoUrl":"https://icons.duckduckgo.com/ip3/onegas.com.ico","logoSource":"ddg_favicon_official","deiBadges":[{"scoreType":"hrc_cei","score":55,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"},{"scoreType":"disability_in","score":90,"year":2024,"sourceUrl":"https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"}],"slug":"one-gas","secComplaints":null,"news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"ONE Gas Inc.","slug":"one-gas-inc","ownership":"publicly traded (ticker symbol OGS)","hq":"Oklahoma","majorIndustry":"utilities and power generation","specificIndustry":"natural gas distribution","totalPenalty":95032,"totalRecords":11,"offenseGroups":[{"category":"safety-related offenses","penalty":89500,"records":10},{"category":"employment-related offenses","penalty":5532,"records":1}],"primaryOffenses":[{"category":"utility safety violation","penalty":89500,"records":10},{"category":"wage and hour violation","penalty":5532,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T23:57:30.683Z"},"fec":{"source":"FEC API","committeeId":"C00554444","committeeName":"ONE GAS, INC. POLITICAL ACTION COMMITTEE","lean":"right","repTotal":5500,"demTotal":0,"totalRaised":171752,"totalRaisedFmt":"$172K","lastFilingDate":"2026-05-06","cycle":2026,"fetchedAt":"2026-05-27T23:57:27.336Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-04-05","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=ONE%20Gas&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T23:57:28.716Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T23:57:30.683Z","realCats":2,"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Energy & Utilities"}}}
+{
+  "name": "ONE Gas",
+  "cat": "Energy & Utilities",
+  "init": "ONEG",
+  "overall": 54.6,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "positive",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $6K PAC donations; 100% to Republican, 0% to Democratic committees.",
+    "amt": "$172K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "11 federal penalties totaling $95K since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "charity": {
+    "s": "Operates the One Gas Foundation Inc: $2.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
+    "sources": [
+      "Claude AI synthesis",
+      "irs990pf-foundations"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "competitors": [
+    "atmos-energy",
+    "nisource",
+    "spire",
+    "ameren"
+  ],
+  "wiki": {
+    "founded": null,
+    "hq": "Tulsa, Oklahoma",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "Natural gas utility",
+    "products": "Natural Gas",
+    "keyPeople": "Robert S. McAnnally (President and CEO)",
+    "website": "http://www.onegas.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/One_Gas",
+    "extract": "One Gas, Inc. is a stand-alone, 100 percent regulated, publicly traded natural gas utility and is one of the largest natural gas utilities in the United States.\nOne Gas provides natural gas distribution services to more than 2 million customers in Oklahoma, Kansas and Texas. Headquartered in Tulsa, Oklahoma, it comprises three operating companies–Oklahoma Natural Gas, Kansas Gas Service, and Texas Gas Service. Its service territory covers most of Oklahoma, much of the eastern half of Kansas, and several disparate portions of Texas.\nIts largest natural gas distribution markets by customer count"
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/tx/austin/profile/natural-gas-companies/texas-gas-service-company-0825-41612"
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/onegas.com.ico",
+  "logoSource": "ddg_favicon_official",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 55,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    },
+    {
+      "scoreType": "disability_in",
+      "score": 90,
+      "year": 2024,
+      "sourceUrl": "https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"
+    }
+  ],
+  "slug": "one-gas",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "ONE Gas Inc.",
+    "slug": "one-gas-inc",
+    "ownership": "publicly traded (ticker symbol OGS)",
+    "hq": "Oklahoma",
+    "majorIndustry": "utilities and power generation",
+    "specificIndustry": "natural gas distribution",
+    "totalPenalty": 95032,
+    "totalRecords": 11,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 89500,
+        "records": 10
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 5532,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "utility safety violation",
+        "penalty": 89500,
+        "records": 10
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 5532,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T23:57:30.683Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00554444",
+    "committeeName": "ONE GAS, INC. POLITICAL ACTION COMMITTEE",
+    "lean": "right",
+    "repTotal": 5500,
+    "demTotal": 0,
+    "totalRaised": 171752,
+    "totalRaisedFmt": "$172K",
+    "lastFilingDate": "2026-05-06",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-27T23:57:27.336Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-04-05",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=ONE%20Gas&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T23:57:28.716Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T23:57:30.683Z",
+  "realCats": 3,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Energy & Utilities"
+    }
+  },
+  "csc": {
+    "political": 48,
+    "charity": 85,
+    "labor": 32.2
+  }
+}

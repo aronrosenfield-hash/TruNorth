@@ -2,11 +2,11 @@
   "name": "Air Jordan",
   "cat": "Apparel & Fashion",
   "init": "AIRJ",
-  "overall": 44.2,
+  "overall": 50.7,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "good",
     "labor": "poor",
     "dei": "pro_dei",
@@ -31,7 +31,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company Nike: $220M reported corporate giving in 2024 (~0.42% of revenue) via Nike Foundation. JUST Capital JUST 100 — ranked #41 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #21 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #15 (2024). Newsweek Most Trustworthy Companies in America — ranked #31 (2024).",
+    "s": "Via parent company Nike: $220M reported corporate giving in 2024 (~0.42% of revenue) via Nike Foundation. JUST Capital JUST 100 — ranked #41 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #21 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #15 (2024). Newsweek Most Trustworthy Companies in America — ranked #31 (2024). Operates the Nike Foundation: $21.3M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -128,7 +128,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T21:44:58.314Z",
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by Nike. (Wikidata Q420953)",
     "sources": [
@@ -156,5 +156,12 @@
       "basis": "Apparel & Fashion"
     }
   },
-  "inheritedFrom": "nike"
+  "inheritedFrom": "nike",
+  "csc": {
+    "political": 50,
+    "charity": 85,
+    "environment": 100,
+    "labor": 14,
+    "execPay": 30.1
+  }
 }

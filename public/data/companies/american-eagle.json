@@ -2,7 +2,7 @@
   "name": "American Eagle",
   "cat": "Apparel & Fashion",
   "init": "AMER",
-  "overall": 43.4,
+  "overall": 42.4,
   "isPublic": true,
   "sc": {
     "political": "left-leaning",
@@ -204,7 +204,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: the metal clasp at the waistband can detach from the garment."
   },
-  "realCats": 7,
+  "realCats": 6,
   "flags": {
     "guns": {
       "na": true
@@ -223,5 +223,13 @@
       "basis": "Apparel & Fashion"
     }
   },
-  "inheritedFrom": "american-airlines"
+  "inheritedFrom": "american-airlines",
+  "csc": {
+    "political": 63.8,
+    "charity": 50,
+    "environment": 50,
+    "labor": 14.6,
+    "privacy": 8,
+    "execPay": 60
+  }
 }

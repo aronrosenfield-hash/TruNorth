@@ -358,6 +358,16 @@ async function main() {
 
   const snap = await tryReadJson(inFile);
   if (!snap) throw new Error(`Failed to parse ${inFile}`);
+  // Guard: never merge a dry-run / synthetic snapshot — that silently produces
+  // an empty augment (0 matched slugs). Re-fetch with --apply, or point --in
+  // at a real snapshot.
+  if (snap._mode === "dry" || snap._stats?.synthetic) {
+    throw new Error(
+      `${inFile} is a dry-run/synthetic snapshot (_mode=${snap._mode}, ` +
+      `_stats.synthetic=${!!snap._stats?.synthetic}). Refusing to merge — ` +
+      `run \`node scripts/climate-trace-fetch.mjs --apply\` for real data.`
+    );
+  }
 
   const indexArr = (await tryReadJson(INDEX_FILE)) || [];
   const parentMap = (await tryReadJson(path.join(META_DIR, "brand-parent-map.json"))) || {};

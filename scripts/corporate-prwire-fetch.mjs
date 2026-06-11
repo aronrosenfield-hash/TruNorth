@@ -16,10 +16,17 @@
  *     verification.
  *
  * Feeds (free RSS):
- *   - PR Newswire (general news-releases-list RSS — last ~100 items)
+ *   - PR Newswire (general news-releases-list RSS — last ~20 items)
  *     https://www.prnewswire.com/rss/news-releases-list.rss
- *   - Business Wire (home portal RSS — last ~50 items)
- *     https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVtRWg==
+ *   - PR Newswire Corporate Social Responsibility category feed —
+ *     pre-filtered to exactly the announcements the positive router
+ *     targets (giving / sustainability / workforce).
+ *   - Business Wire Philanthropy subject feed. NOTE: the old token
+ *     (G1QFDERJXkJeGVtRWg==) resolved to "Technology: Photography News"
+ *     (~3 items, never brand-relevant) — not the home feed as previously
+ *     documented. Business Wire's all-news RSS channels are deactivated
+ *     (0 items), so the Philanthropy subject feed is the closest live
+ *     equivalent for this collector's purpose.
  *
  * Output: data/derived/corporate-prwire-augment.json keyed by slug.
  *
@@ -43,8 +50,9 @@ const OUT_FILE = path.join(ROOT, "data/derived/corporate-prwire-augment.json");
 const UA = "TruNorth-PRWire/1.0 (+https://www.trunorthapp.com)";
 
 const FEEDS = [
-  { id: "prnewswire",   label: "PR Newswire",   url: "https://www.prnewswire.com/rss/news-releases-list.rss" },
-  { id: "businesswire", label: "Business Wire", url: "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVtRWg==" },
+  { id: "prnewswire",     label: "PR Newswire",                url: "https://www.prnewswire.com/rss/news-releases-list.rss" },
+  { id: "prnewswire-csr", label: "PR Newswire (CSR)",          url: "https://www.prnewswire.com/rss/policy-public-interest-latest-news/corporate-social-responsibility-list.rss" },
+  { id: "businesswire",   label: "Business Wire (Philanthropy)", url: "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpTXw==" },
 ];
 
 const HORIZON_DAYS = 30;
@@ -56,7 +64,9 @@ const CUTOFF_MS = Date.now() - HORIZON_DAYS * 24 * 60 * 60 * 1000;
 // "Company announcement" provenance.
 const POSITIVE_ROUTER = [
   // charity / giving
-  { pat: /donat(es?|ed|ion)|gives? \$\d|pledges? \$\d|grants? \$\d|million pledge|million donation|million grant|nonprofit partnership|relief fund|disaster relief|matching gift/i,
+  // "raises $X for / in support of" needs the trailing preposition so
+  // capital raises ("Ares Raises $12.7 Billion to Invest...") don't match.
+  { pat: /donat(es?|ed|ion)|gives? \$\d|pledges? \$\d|grants? \$\d|million pledge|million donation|million grant|nonprofit partnership|relief fund|disaster relief|matching gift|fundrais|charitable|raises? (?:more than |over |a record |record )?\$[\d.,]+ ?(?:million|billion)? ?(?:for|in support)/i,
     category: "charity", sc: "positive" },
   // environment
   { pat: /net[- ]zero|carbon neutral|renewable energy commit|emissions reduction|science[- ]based target|sustainability goal|recyclable packag|circular econom|electrif[a-z]+ fleet|ev fleet|ev charging/i,
@@ -221,6 +231,9 @@ async function main() {
         skipped_no_brand:   skippedNoBrand,
         brands_with_signal: Object.keys(out).length,
       },
+      ...(Object.keys(out).length === 0 ? {
+        note: "Fetch OK — feeds returned items, but none passed both the positive-action router and the top-500 brand match in this snapshot. Wire feeds are snapshot-only (~20-80 items/day), so zero-signal days are expected.",
+      } : {}),
     },
     ...out,
   };

@@ -2,12 +2,12 @@
   "name": "Bare Minerals",
   "cat": "Consumer Goods",
   "init": "BM",
-  "overall": 50,
+  "overall": 61.7,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "neutral",
     "dei": "neutral",
@@ -25,11 +25,11 @@
     ]
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Henkel: Operates the Henkel Foundation Inc: $353K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$500,000+ (minimum, 2019)",
     "focus": "Women's education, mentorship, entrepreneurship",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -135,7 +135,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -160,5 +160,9 @@
       "basis": "Consumer Goods"
     }
   },
-  "inheritedFrom": "henkel"
+  "inheritedFrom": "henkel",
+  "csc": {
+    "charity": 85,
+    "environment": 50
+  }
 }

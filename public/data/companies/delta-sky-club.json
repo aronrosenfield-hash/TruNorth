@@ -2,11 +2,11 @@
   "name": "Delta Sky Club",
   "cat": "Hospitality",
   "init": "DELT",
-  "overall": 54.1,
+  "overall": 55.2,
   "isPublic": true,
   "sc": {
     "political": "left-leaning",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "good",
     "labor": "poor",
     "dei": "pro_dei",
@@ -32,9 +32,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Delta Air Lines: $35M reported corporate giving in 2024 (~0.06% of revenue) via Delta Air Lines Foundation. JUST Capital JUST 100 — ranked #38 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #39 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #10 (2024). Newsweek Most Trustworthy Companies in America — ranked #13 (2024). Operates the Delta Air Lines Foundation: $12.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -164,5 +164,13 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "delta-air-lines"
+  "inheritedFrom": "delta-air-lines",
+  "csc": {
+    "political": 62.8,
+    "charity": 85,
+    "environment": 100,
+    "labor": 8,
+    "execPay": 55.4,
+    "health": 50
+  }
 }

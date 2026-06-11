@@ -2,11 +2,11 @@
   "name": "Hyatt Place",
   "cat": "Hospitality",
   "init": "HYAT",
-  "overall": 56.5,
+  "overall": 60.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "mixed",
     "dei": "pro_dei",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Hyatt Hotels: Operates the Hyatt Hotels Foundation: $1.1M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -171,5 +171,12 @@
       "basis": "Hospitality"
     }
   },
-  "inheritedFrom": "hyatt-hotels"
+  "inheritedFrom": "hyatt-hotels",
+  "csc": {
+    "political": 79.1,
+    "charity": 85,
+    "environment": 50,
+    "labor": 50,
+    "privacy": 50
+  }
 }

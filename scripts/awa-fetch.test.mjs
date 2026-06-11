@@ -19,6 +19,10 @@ import {
   normalizeCategories,
   decodeEntities,
   stripTags,
+  isAwaListing,
+  isProducerListing,
+  listingToFarm,
+  dedupeFarms,
   SOURCE_URL,
 } from "./awa-fetch.mjs";
 
@@ -86,6 +90,52 @@ test("parseFarmsHtml: multi-category Applegate", async () => {
   const items = parseFarmsHtml(await loadFixture());
   const ap = items.find(f => f.brand === "Applegate");
   assert.deepEqual(ap.productCategories, ["beef", "pork", "poultry"]);
+});
+
+// ─── GeoDirectory API mapper (post-2026 site redesign) ────────────────────
+const API_LISTING = {
+  title: { raw: "Archway Farm" },
+  region: "New Hampshire",
+  country: "United States",
+  post_category: [{ name: "Pork" }, { name: "Eggs" }],
+  certification_type: { rendered: ["Animal Welfare"] },
+  store_type: { rendered: ["Farm Stores"] },
+  link: "https://agreenerworld.org/agw-listings/united-states/new-hampshire/keene/pork/archway-farm/",
+};
+
+test("isAwaListing: keeps Animal Welfare, drops other AGW certs", () => {
+  assert.ok(isAwaListing(API_LISTING));
+  assert.ok(isAwaListing({ certification_type: { rendered: ["Animal Welfare", "Grassfed"] } }));
+  assert.ok(!isAwaListing({ certification_type: { rendered: ["Certified Regenerative by AGW"] } }));
+  assert.ok(!isAwaListing({ certification_type: { rendered: ["Non-GMO"] } }));
+  assert.ok(!isAwaListing({}));
+});
+
+test("isProducerListing: producer store types only (outlets carry, not hold, the cert)", () => {
+  assert.ok(isProducerListing(API_LISTING));
+  assert.ok(isProducerListing({ store_type: { rendered: ["CSAs"] } }));
+  assert.ok(isProducerListing({ store_type: { rendered: ["Farm Stays & BnBs", "Online Shopping"] } }));
+  assert.ok(!isProducerListing({ store_type: { rendered: ["Stores"] } }), "Kroger et al. excluded");
+  assert.ok(!isProducerListing({ store_type: { rendered: ["Restaurants"] } }));
+  assert.ok(!isProducerListing({ store_type: { rendered: ["Online Shopping"] } }), "marketplaces excluded");
+  assert.ok(!isProducerListing({}));
+});
+
+test("listingToFarm maps API fields to the snapshot farm shape", () => {
+  const f = listingToFarm(API_LISTING);
+  assert.equal(f.brand, "Archway Farm");
+  assert.equal(f.state, "New Hampshire");
+  assert.equal(f.country, "United States");
+  assert.deepEqual(f.productCategories, ["pork", "eggs"]);
+  assert.deepEqual(f.storeTypes, ["Farm Stores"]);
+  assert.match(f.sourceUrl, /agreenerworld\.org/);
+  assert.equal(listingToFarm({ title: { raw: "" } }), null, "nameless listings dropped");
+});
+
+test("dedupeFarms collapses on brand + state", () => {
+  const a = { brand: "Archway Farm", state: "NH" };
+  const out = dedupeFarms([a, { ...a }, { brand: "Archway Farm", state: "VT" }]);
+  assert.equal(out.length, 2);
 });
 
 // ─── merge helpers ────────────────────────────────────────────────────────

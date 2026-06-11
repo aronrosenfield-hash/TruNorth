@@ -2,7 +2,7 @@
   "name": "INTEL",
   "cat": "Technology",
   "init": "INTE",
-  "overall": 52.5,
+  "overall": 47,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -45,14 +45,15 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "$50M reported corporate giving in 2024 (~0.09% of revenue) via Intel Foundation. JUST Capital JUST 100 — ranked #7 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #11 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #24 (2024). Newsweek Most Trustworthy Companies in America — ranked #33 (2024).",
+    "s": "$50M reported corporate giving in 2024 (~0.09% of revenue) via Intel Foundation. JUST Capital JUST 100 — ranked #7 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Drucker Institute Management Top 250 — ranked #11 (2024) on customer satisfaction, employee engagement, innovation, social responsibility, and financial strength. Fortune World's Most Admired Companies — ranked #24 (2024). Newsweek Most Trustworthy Companies in America — ranked #33 (2024). Operates the Intel Foundation: $28.6M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
       "corporate-giving",
       "just-capital",
       "drucker-250",
       "fortune-admired",
-      "newsweek-trust"
+      "newsweek-trust",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -293,7 +294,7 @@
   "health": {
     "s": "7 CPSC recalls (6 in past 24 months); latest hazard: the beard growth serum contains minoxidil."
   },
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Santa Clara. (Wikidata Q248)",
     "sources": [
@@ -320,5 +321,12 @@
     "health": {
       "na": true
     }
+  },
+  "csc": {
+    "political": 53.4,
+    "charity": 85,
+    "environment": 30.1,
+    "labor": 8,
+    "privacy": 50
   }
 }

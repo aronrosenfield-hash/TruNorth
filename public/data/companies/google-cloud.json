@@ -1,1 +1,224 @@
-{"name":"Google Cloud","cat":"Technology","init":"GC","overall":70,"isPublic":true,"ticker":"GOOGL","sc":{"political":"left","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"good"},"political":{"s":"FEC: $1.01M in executive political donations; partisan lean Democratic +71 across 24 executive donors.","amt":"$20M+ annually (estimated combined federal and state lobbying)","lean":"Left-leaning","sources":["exec-political-donations"]},"charity":{"s":"No public record found.","amt":"Not disclosed","focus":"nonprofit technology access, data analytics, environmental sustainability","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Good","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Poor","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Mixed","sources":[]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":[]},"execPay":{"s":"CEO-to-median-worker pay ratio 35:1 (median employee pay $310,826; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2011).","ratio":"1:120","sources":["sec-def14a"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-05-29","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Google%20Cloud&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#1e1535","ac":"#9b8ff0","dataLastUpdated":{"legacy":"2026-05-28","execPay":"2026-06-11T03:48:51.753Z"},"competitors":["amazon-web-services","microsoft-azure","ibm-cloud","oracle-cloud"],"wiki":{"founded":null,"hq":null,"employees":null,"revenue":"(2025)","parent":"Google","industry":"Web service, cloud computing","products":null,"keyPeople":null,"website":null,"controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/1/14/Google_Cloud_icon_%282026%29.svg","wikipediaUrl":"https://en.wikipedia.org/wiki/Google_Cloud_Platform","extract":"Google Cloud is a suite of cloud computing services offered by Google that provides a series of modular cloud services including computing, data storage, data analytics, and machine learning, alongside a set of management tools. It runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, and Google Docs, according to Verma et al. Registration requires a credit card or bank account details.\nGoogle Cloud provides infrastructure as a service, platform as a service, and serverless computing environments.\nIn April 2008, Google announced Ap"},"bbb":{"rating":"F","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ca/baldwin-park/profile/web-design/google-cloud-platform-apren-sturdy-comfort-1216-1532644"},"secComplaints":{"count":8,"sample":[{"adsh":"0001477932-25-000982","date":"2025-02-14","filer":"Nexscient, Inc.  (NXNT)  (CIK 0001976663)","form":"8-K"},{"adsh":"0001683168-26-003637","date":"2026-05-11","filer":"Unusual Machines, Inc.  (UMAC)  (CIK 0001956955)","form":"8-K"},{"adsh":"0001683168-25-000690","date":"2025-02-04","filer":"Unusual Machines, Inc.  (UMAC)  (CIK 0001956955)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/1/14/Google_Cloud_icon_%282026%29.svg","logoSource":"wiki_infobox","slug":"google-cloud","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-05-29","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Google%20Cloud&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-17T23:59:59.000Z","realCats":2,"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Technology"}},"enriched":{"execPay":{"ceoName":"Google's","ceoTotal":2001,"ceoBaseSalary":2015,"ceoBonus":2015,"ceoStockAwards":2019,"ceoOptionAwards":2001,"ceoNonEquityIncentive":2011,"ceoAllOtherComp":1998,"medianEmployeePay":310826,"payRatio":35,"year":2011,"ticker":"GOOGL","cik":"0001652044","filingDate":"2026-04-24","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm","lastUpdated":"2026-06-11T03:48:51.753Z","source":"sec-def14a"}}}
+{
+  "name": "Google Cloud",
+  "cat": "Technology",
+  "init": "GC",
+  "overall": 62.3,
+  "isPublic": true,
+  "ticker": "GOOGL",
+  "sc": {
+    "political": "left",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "good"
+  },
+  "political": {
+    "s": "FEC: $1.01M in executive political donations; partisan lean Democratic +71 across 24 executive donors.",
+    "amt": "$20M+ annually (estimated combined federal and state lobbying)",
+    "lean": "Left-leaning",
+    "sources": [
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "Not disclosed",
+    "focus": "nonprofit technology access, data analytics, environmental sustainability",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Good",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "No public record found.",
+    "rating": "Poor",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Mixed",
+    "sources": []
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": []
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 35:1 (median employee pay $310,826; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2011).",
+    "ratio": "1:120",
+    "sources": [
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-05-29",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Google%20Cloud&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#1e1535",
+  "ac": "#9b8ff0",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "competitors": [
+    "amazon-web-services",
+    "microsoft-azure",
+    "ibm-cloud",
+    "oracle-cloud"
+  ],
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": "(2025)",
+    "parent": "Google",
+    "industry": "Web service, cloud computing",
+    "products": null,
+    "keyPeople": null,
+    "website": null,
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Google_Cloud_icon_%282026%29.svg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Google_Cloud_Platform",
+    "extract": "Google Cloud is a suite of cloud computing services offered by Google that provides a series of modular cloud services including computing, data storage, data analytics, and machine learning, alongside a set of management tools. It runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, and Google Docs, according to Verma et al. Registration requires a credit card or bank account details.\nGoogle Cloud provides infrastructure as a service, platform as a service, and serverless computing environments.\nIn April 2008, Google announced Ap"
+  },
+  "bbb": {
+    "rating": "F",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ca/baldwin-park/profile/web-design/google-cloud-platform-apren-sturdy-comfort-1216-1532644"
+  },
+  "secComplaints": {
+    "count": 8,
+    "sample": [
+      {
+        "adsh": "0001477932-25-000982",
+        "date": "2025-02-14",
+        "filer": "Nexscient, Inc.  (NXNT)  (CIK 0001976663)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001683168-26-003637",
+        "date": "2026-05-11",
+        "filer": "Unusual Machines, Inc.  (UMAC)  (CIK 0001956955)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001683168-25-000690",
+        "date": "2025-02-04",
+        "filer": "Unusual Machines, Inc.  (UMAC)  (CIK 0001956955)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Google_Cloud_icon_%282026%29.svg",
+  "logoSource": "wiki_infobox",
+  "slug": "google-cloud",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-05-29",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Google%20Cloud&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-17T23:59:59.000Z",
+  "realCats": 2,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Google's",
+      "ceoTotal": 2001,
+      "ceoBaseSalary": 2015,
+      "ceoBonus": 2015,
+      "ceoStockAwards": 2019,
+      "ceoOptionAwards": 2001,
+      "ceoNonEquityIncentive": 2011,
+      "ceoAllOtherComp": 1998,
+      "medianEmployeePay": 310826,
+      "payRatio": 35,
+      "year": 2011,
+      "ticker": "GOOGL",
+      "cik": "0001652044",
+      "filingDate": "2026-04-24",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  },
+  "csc": {
+    "political": 43,
+    "execPay": 100
+  }
+}

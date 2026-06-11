@@ -2,11 +2,11 @@
   "name": "AFLAC",
   "cat": "Financial Services",
   "init": "AFLA",
-  "overall": 59.7,
+  "overall": 63.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
@@ -40,10 +40,11 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "$15M reported corporate giving in 2024 (~0.08% of revenue) via Aflac Foundation.",
+    "s": "$15M reported corporate giving in 2024 (~0.08% of revenue) via Aflac Foundation. Operates the Aflac Foundation Inc: $1.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -267,5 +268,10 @@
       "_inferred": true,
       "basis": "Financial Services"
     }
+  },
+  "csc": {
+    "political": 76.7,
+    "charity": 85,
+    "labor": 50
   }
 }

@@ -2,11 +2,11 @@
   "name": "AdvanSix",
   "cat": "Manufacturing",
   "init": "ADVA",
-  "overall": 39.1,
+  "overall": 56.2,
   "isPublic": true,
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -39,9 +39,10 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Advansix Charitable Foundation: $309K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -209,7 +210,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T18:18:36.760Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -247,5 +248,12 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 53.8,
+    "charity": 85,
+    "environment": 29.4,
+    "labor": 25.9,
+    "execPay": 82.1
   }
 }

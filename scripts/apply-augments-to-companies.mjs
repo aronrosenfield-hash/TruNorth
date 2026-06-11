@@ -637,6 +637,47 @@ const WRITERS = [
   // with last-definition-wins, so this copy was DEAD code. The live writer
   // (snake_case case_count / total_back_wages_usd, tiered sc) is further
   // down in the file.
+  // ─── IRS 990-PF corporate foundations (charity) ────────────────────────
+  // R6 Lever 4a (2026-06-10): IRS EO BMF + SOI 990-PF extract, public
+  // domain. Conservative exact-name matching with an independent-
+  // philanthropy denylist (the Ford Foundation is NOT Ford Motor's).
+  {
+    name: "irs990pf-foundations",
+    write: (e) => {
+      const c = e?.charity;
+      if (!c || typeof c.grantsPaidUsd !== "number" || c.grantsPaidUsd <= 0) return [];
+      const usd = c.grantsPaidUsd >= 1e6
+        ? `$${(c.grantsPaidUsd / 1e6).toFixed(1)}M`
+        : `$${Math.round(c.grantsPaidUsd / 1e3)}K`;
+      const fname = String(c.foundationName || "")
+        .toLowerCase().replace(/\b[a-z]/g, ch => ch.toUpperCase());
+      return [{
+        category: "charity",
+        narrative: `Operates the ${fname}: ${usd} in charitable contributions, gifts & grants paid${c.taxYear ? ` (FY${c.taxYear}` : " ("}, IRS Form 990-PF).`,
+        sc: "positive",
+        severity: "positive",
+        mergePositive: true,
+      }];
+    },
+  },
+  // ─── CPPA California Data Broker Registry (privacy) ────────────────────
+  // R6 Lever 4b: registration under CA Civil Code §1798.99.80 means the
+  // business "knowingly collects and sells to third parties the personal
+  // information of a consumer with whom the business does not have a
+  // direct relationship" — a factual, statutory privacy signal.
+  {
+    name: "cppa-data-brokers",
+    write: (e) => {
+      const p = e?.privacy;
+      if (!p?.registered) return [];
+      return [{
+        category: "privacy",
+        narrative: `Registered data broker (California Data Broker Registry, CPPA${p.dateAdded ? `, since ${p.dateAdded}` : ""}): collects and sells consumers' personal information to third parties under CA Civil Code §1798.99.80.`,
+        sc: "poor",
+        severity: "negative",
+      }];
+    },
+  },
   // ─── SEC DEF 14A — CEO pay ratio (execPay, SCORED) ─────────────────────
   // R6 (2026-06-10): this augment sat in data/derived since Jun 8 with 188
   // parsed pay ratios and NO writer — the single cheapest execPay unlock in
@@ -650,9 +691,13 @@ const WRITERS = [
       const p = e?.execPay;
       if (!p) return [];
       let ratio = typeof p.payRatio === "number" ? p.payRatio : null;
-      if (ratio == null && typeof p.ceoTotal === "number" && typeof p.medianEmployeePay === "number" && p.medianEmployeePay > 0) {
+      if (ratio == null && typeof p.ceoTotal === "number" && p.ceoTotal > 0 && typeof p.medianEmployeePay === "number" && p.medianEmployeePay > 0) {
         ratio = Math.round(p.ceoTotal / p.medianEmployeePay);
       }
+      // Plausibility floor (mirrors the fetcher's HTML-path guard, which the
+      // XBRL path bypassed): a public-company CEO-to-median ratio below 5:1
+      // is a parse artifact (Gap extracted as 0:1 / $0), not a real value.
+      if (ratio != null && ratio < 5) ratio = null;
       const yr = p.year || (p.filingDate ? String(p.filingDate).slice(0, 4) : null);
       const fmtUsd = (n) => n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : `$${Math.round(n / 1e3)}K`;
       if (ratio != null) {
@@ -668,7 +713,7 @@ const WRITERS = [
         }];
       }
       // Ratio unavailable — factual comp narrative only, no verdict.
-      if (typeof p.ceoTotal === "number") {
+      if (typeof p.ceoTotal === "number" && p.ceoTotal > 0) {
         return [{
           category: "execPay",
           narrative: `CEO total compensation ${fmtUsd(p.ceoTotal)} — SEC proxy statement (DEF 14A${yr ? `, ${yr}` : ""}). No CEO-to-worker pay ratio disclosed in a parseable form.`,

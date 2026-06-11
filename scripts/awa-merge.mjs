@@ -47,7 +47,7 @@ const META_DIR    = path.join(ROOT, "public/data/_meta");
 const DERIVED_DIR = path.join(ROOT, "data/derived");
 const OUT_FILE    = path.join(DERIVED_DIR, "awa-augment.json");
 
-export const SOURCE_URL = "https://agreenerworld.org/programs/certified-animal-welfare-approved/";
+export const SOURCE_URL = "https://agreenerworld.org/directory/";
 
 const argv = process.argv.slice(2);
 const inIdx  = argv.indexOf("--in");
@@ -96,9 +96,22 @@ async function loadMaps() {
 
 async function loadKnownSlugs() {
   const idx = await tryReadJson(INDEX_FILE);
-  if (!Array.isArray(idx)) return new Set();
-  return new Set(idx.map(r => r.slug));
+  if (!Array.isArray(idx)) return { knownSlugs: new Set(), slugCats: new Map() };
+  return {
+    knownSlugs: new Set(idx.map(r => r.slug)),
+    slugCats: new Map(idx.map(r => [r.slug, r.cat || null])),
+  };
 }
+
+/**
+ * AWA certifies meat/dairy/egg producers. A farm name that fuzzy-matches a
+ * non-food TruNorth company ("Staples Farm" → staples, the office retailer)
+ * must NOT light up that brand. Only these index categories may receive the
+ * awaCertified flag.
+ */
+export const FOOD_CATS = new Set([
+  "Food & Beverage", "Grocery", "Consumer Goods", "Hospitality",
+]);
 
 async function latestRawFile() {
   if (IN_OVERRIDE) return IN_OVERRIDE;
@@ -142,15 +155,26 @@ async function main() {
   const raw = await tryReadJson(rawFile);
   if (!raw) { console.error(`Could not parse ${rawFile}`); process.exit(2); }
 
-  const knownSlugs = await loadKnownSlugs();
+  const { knownSlugs, slugCats } = await loadKnownSlugs();
   const maps = await loadMaps();
 
   const companies = {};
   const orphans = [];
   const routeCounts = { direct: 0, alias: 0, parent: 0, orphan: 0 };
+  let categoryRejected = 0;
 
   for (const f of raw.farms || []) {
-    const { slug, routedVia } = resolveBrand(f.brand, { knownSlugs, ...maps });
+    let { slug, routedVia } = resolveBrand(f.brand, { knownSlugs, ...maps });
+    if (slug) {
+      const cat = slugCats.get(slug);
+      if (cat && !FOOD_CATS.has(cat)) {
+        // Non-food company — almost certainly a name collision, not an
+        // AWA-certified producer. Demote to orphan.
+        categoryRejected++;
+        slug = null;
+        routedVia = "orphan";
+      }
+    }
     routeCounts[routedVia]++;
     if (!slug) {
       orphans.push({
@@ -185,11 +209,17 @@ async function main() {
     }
   }
 
+  const matchedCount = Object.keys(companies).length;
   const payload = {
     _license: raw._license || "Public certification list (A Greener World / Animal Welfare Approved); cite source URL.",
     _source_file: path.relative(ROOT, rawFile),
     _source_url: SOURCE_URL,
     _generated_at: now.toISOString(),
+    ...(matchedCount === 0 && (raw.farms?.length || 0) > 0 ? {
+      _note: "0 matched companies is expected: the AGW directory lists small local " +
+        "producers (farm stores/CSAs), which rarely overlap the TruNorth consumer-brand " +
+        "catalog. Raw farm count is the pipeline health signal.",
+    } : {}),
     _stats: {
       raw_farms: raw.farms?.length || 0,
       matched_companies: Object.keys(companies).length,
@@ -197,6 +227,12 @@ async function main() {
       routed_alias: routeCounts.alias,
       routed_parent: routeCounts.parent,
       orphans: routeCounts.orphan,
+      category_rejected: categoryRejected,
+      // Propagate the raw snapshot's health so an empty augment is
+      // self-explanatory (fetch failure vs genuinely zero records).
+      raw_status: raw._status || null,
+      ...(raw._empty_reason ? { raw_empty_reason: raw._empty_reason } : {}),
+      ...(raw._note ? { raw_note: raw._note } : {}),
     },
     companies,
     orphans: orphans.slice(0, 500),

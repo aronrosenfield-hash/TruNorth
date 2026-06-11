@@ -2,11 +2,11 @@
   "name": "Snap",
   "cat": "Technology",
   "init": "SNAP",
-  "overall": 44.5,
+  "overall": 47.9,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -37,10 +37,11 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "$9M reported corporate giving in 2024 (~0.20% of revenue).",
+    "s": "$9M reported corporate giving in 2024 (~0.20% of revenue). Operates the Snap Foundation: $8.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -239,5 +240,11 @@
       "_inferred": true,
       "basis": "Technology"
     }
+  },
+  "csc": {
+    "political": 43,
+    "charity": 85,
+    "labor": 10.4,
+    "privacy": 50
   }
 }

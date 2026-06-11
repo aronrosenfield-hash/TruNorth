@@ -2,11 +2,11 @@
   "name": "Coach",
   "cat": "Apparel & Fashion",
   "init": "COAC",
-  "overall": 50,
+  "overall": 58.2,
   "isPublic": true,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
@@ -33,9 +33,10 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Coach Foundation Inc: $3.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -167,7 +168,7 @@
   "health": {
     "s": "HHS Office of Inspector General: 6 OIG exclusions (Medicare/Medicaid debarment)."
   },
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Tapestry, Inc.; HQ New York City. (Wikidata Q727697)",
     "sources": [
@@ -194,5 +195,10 @@
       "_inferred": true,
       "basis": "Apparel & Fashion"
     }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 85,
+    "labor": 50
   }
 }

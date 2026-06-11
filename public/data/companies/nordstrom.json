@@ -2,7 +2,7 @@
   "name": "Nordstrom",
   "cat": "Retail",
   "init": "NOR",
-  "overall": 44.5,
+  "overall": 38.2,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -342,7 +342,7 @@
   "health": {
     "s": "21 CPSC recalls (1 in past 24 months); latest hazard: fire & fire-related burn."
   },
-  "realCats": 3,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -360,5 +360,9 @@
       "_inferred": true,
       "basis": "Retail"
     }
+  },
+  "csc": {
+    "charity": 50,
+    "labor": 11.7
   }
 }

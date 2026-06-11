@@ -2,11 +2,11 @@
   "name": "Health Mart",
   "cat": "Retail",
   "init": "HEAL",
-  "overall": 44.2,
+  "overall": 49.2,
   "isPublic": false,
   "sc": {
     "political": "left",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company MCKESSON: $12M reported corporate giving in 2024 (~0.01% of revenue) via McKesson Foundation. Operates the Mckesson Foundation: $13.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -106,7 +106,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -137,5 +137,10 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "mckesson"
+  "inheritedFrom": "mckesson",
+  "csc": {
+    "political": 53.4,
+    "charity": 85,
+    "labor": 8
+  }
 }

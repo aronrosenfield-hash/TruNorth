@@ -25,9 +25,14 @@ import {
   findNextPageUrl,
   decodeEntities,
   stripTags,
+  parseCsv,
+  csvRowToEntry,
+  extractCacheId,
+  buildFilterUrl,
   VR_CASE_TYPES,
   VR_DISPOSITION_PATTERNS,
   BASE_SEARCH_URL,
+  DATA_URL,
 } from "./nlrb-voluntary-recognition-fetch.mjs";
 import { slugify, resolveSlug, buildAugment, entryPayload } from "./nlrb-voluntary-recognition-merge.mjs";
 
@@ -95,12 +100,82 @@ test("VR_DISPOSITION_PATTERNS contains the four expected matchers", () => {
   assert.equal(VR_DISPOSITION_PATTERNS.length, 4);
 });
 
-test("BASE_SEARCH_URL points at NLRB representation case filter", () => {
-  assert.match(BASE_SEARCH_URL, /^https:\/\/www\.nlrb\.gov\/search\/case/);
-  assert.match(BASE_SEARCH_URL, /case_type%3A2/);
+test("BASE_SEARCH_URL points at the Recent Filings representation-case filter", () => {
+  // 2026-06: /search/case dropped browse-all + the numeric case_type facet
+  // and no longer exposes dispositions; the pipeline now rides the Recent
+  // Filings CSV export (see fetcher header).
+  assert.match(BASE_SEARCH_URL, /^https:\/\/www\.nlrb\.gov\/reports\/graphs-data\/recent-filings/);
+  assert.match(BASE_SEARCH_URL, /case_type%3AR/);
 });
 
-/* ----------------------------------------------------------------- parser */
+test("buildFilterUrl appends the mm/dd/yyyy date window", () => {
+  const url = buildFilterUrl("06/11/2025", "06/10/2026");
+  assert.match(url, new RegExp(`^${DATA_URL.replace(/[/.]/g, m => `\\${m}`)}\\?`));
+  assert.match(url, /f%5B0%5D=case_type%3AR/);
+  assert.match(url, /date_start=06%2F11%2F2025/);
+  assert.match(url, /date_end=06%2F10%2F2026/);
+});
+
+/* ----------------------------------------------- CSV export path (live) */
+
+test("parseCsv: quoted fields with embedded commas + newlines", () => {
+  const rows = parseCsv('A,B,C\n"x, y","line1\nline2","say ""hi"""\nplain,2,3\n');
+  assert.equal(rows.length, 2);
+  assert.deepEqual(rows[0], { A: "x, y", B: "line1\nline2", C: 'say "hi"' });
+  assert.deepEqual(rows[1], { A: "plain", B: "2", C: "3" });
+  assert.deepEqual(parseCsv(""), []);
+  assert.deepEqual(parseCsv("only,a,header\n"), []);
+});
+
+test("csvRowToEntry: accepts VR representation rows, rejects everything else", () => {
+  const base = {
+    "Name": "Starbucks Corporation",
+    "Case Number": "13-RM-294317",
+    "City": "Chicago",
+    "States & Territories": "IL",
+    "Date Closed": "03/12/2026",
+    "Reason Closed": "Voluntary Recognition",
+    "No. of Employees": "42",
+    "Certified Representative": "Workers United, SEIU",
+  };
+  const e = csvRowToEntry(base);
+  assert.ok(e, "VR RM row accepted");
+  assert.equal(e.case_type, "RM");
+  assert.equal(e.employer, "Starbucks Corporation");
+  assert.equal(e.union, "Workers United, SEIU");
+  assert.equal(e.recognition_date, "2026-03-12");
+  assert.equal(e.location, "Chicago, IL");
+  assert.equal(e.workers, 42);
+  assert.equal(e.source_url, "https://www.nlrb.gov/case/13-RM-294317");
+
+  // ULP charge — wrong case type.
+  assert.equal(csvRowToEntry({ ...base, "Case Number": "22-CA-300000" }), null);
+  // Real-world close methods that are NOT explicit voluntary recognitions.
+  assert.equal(csvRowToEntry({ ...base, "Reason Closed": "Certific. of Representative" }), null);
+  assert.equal(csvRowToEntry({ ...base, "Reason Closed": "Withdrawal Adjusted" }), null,
+    "Withdrawal Adjusted is often VR-resolved in practice but the data does not say so — never inferred");
+  assert.equal(csvRowToEntry({ ...base, "Reason Closed": "" }), null, "open cases skipped");
+});
+
+test("extractCacheId pulls the export cache token from the filtered page", () => {
+  const html = '<a id="download-button" data-typeofreport="recent_filings" ' +
+    'data-cacheid="recent_filings_data___abc123">Download CSV</a>';
+  assert.equal(extractCacheId(html), "recent_filings_data___abc123");
+  assert.equal(extractCacheId("<div>no export</div>"), null);
+  assert.equal(extractCacheId(""), null);
+});
+
+test("CSV fixture end-to-end: 2 VR entries out of 6 rows", async () => {
+  const csv = await fs.readFile(path.join(FIX, "recent-filings.csv"), "utf-8");
+  const rows = parseCsv(csv);
+  assert.equal(rows.length, 6);
+  const entries = rows.map(csvRowToEntry).filter(Boolean);
+  assert.equal(entries.length, 2, "Starbucks (explicit VR) + Apple (withdrawn after VR)");
+  assert.deepEqual(entries.map(e => e.case_number).sort(),
+    ["07-RC-318274", "13-RM-294317"]);
+});
+
+/* ------------------------------------------- parser (LEGACY search pages) */
 
 test("parseSearchResults: page-1 captures both table + card shapes", async () => {
   const html = await loadFixture("page-1");

@@ -1,1 +1,231 @@
-{"name":"NEWMARKET","cat":"Retail","init":"NEWM","overall":44.6,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $358K in executive political donations; partisan lean split across 16 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"16 federal penalties totaling $793K since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"environmental violation: $672K in federal penalties (Violation Tracker).","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","competitors":[],"wiki":{"founded":null,"hq":null,"employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":"https://newmarket.ca","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/8/8c/Old_Town_Hall-460_Botsford_Street-Newmarket-Ontario-HPC6381-20200905.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Newmarket,_Ontario","extract":"Newmarket (2021 population: 87,942) is a town and regional seat of the Regional Municipality of York in the Canadian province of Ontario. It is part of Greater Toronto in the Golden Horseshoe region of Southern Ontario. The name stems from the fact that the settlement was a \"New Market\",  in contrast to York as the Old Market.\nThe town was formed as one of many farming communities in the area, but also developed an industrial centre on the Northern Railway of Canada's mainline, which was built in 1853 through what would become the downtown area. It also became a thriving market town with the a"},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/va/richmond/profile/chemicals/newmarket-corporation-0603-63400963"},"secComplaints":{"count":2,"sample":[{"adsh":"0001213900-24-057955","date":"2024-07-01","filer":"Hall of Fame Resort & Entertainment Co  (HOFV, HOFVW)  (CIK 0001708176)","form":"8-K"},{"adsh":"0001628280-25-045287","date":"2025-10-17","filer":"Solstice Advanced Materials Inc.  (SOLS)  (CIK 0002064953)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/8/8c/Old_Town_Hall-460_Botsford_Street-Newmarket-Ontario-HPC6381-20200905.jpg","logoSource":"wiki_infobox","firearms_atf_ffl":{"fflTypes":["01"],"fflTypeNames":["Dealer in Firearms Other Than Destructive Devices (01)"],"licenseCount":1,"states":["GA"],"primaryRole":"dealer","sourceMonth":"2026-04","sourceUrl":"https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"},"slug":"newmarket","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"NewMarket Corp.","slug":"newmarket-corp","ownership":"publicly traded (ticker symbol NEU)","hq":"Virginia","majorIndustry":"chemicals","specificIndustry":"petroleum additives","totalPenalty":792994,"totalRecords":16,"offenseGroups":[{"category":"environment-related offenses","penalty":737744,"records":8},{"category":"safety-related offenses","penalty":55250,"records":8}],"primaryOffenses":[{"category":"environmental violation","penalty":671744,"records":7},{"category":"air pollution violation","penalty":66000,"records":1},{"category":"railroad safety violation","penalty":55250,"records":8}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T23:37:55.759Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-11","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=NEWMARKET&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T23:37:53.803Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T23:37:55.759Z","realCats":3,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "NEWMARKET",
+  "cat": "Retail",
+  "init": "NEWM",
+  "overall": 55.3,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "positive",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $358K in executive political donations; partisan lean split across 16 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "16 federal penalties totaling $793K since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "charity": {
+    "s": "Operates the Newmarket Foundation: $994K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
+    "sources": [
+      "Claude AI synthesis",
+      "irs990pf-foundations"
+    ]
+  },
+  "environment": {
+    "s": "environmental violation: $672K in federal penalties (Violation Tracker).",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "competitors": [],
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://newmarket.ca",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Old_Town_Hall-460_Botsford_Street-Newmarket-Ontario-HPC6381-20200905.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Newmarket,_Ontario",
+    "extract": "Newmarket (2021 population: 87,942) is a town and regional seat of the Regional Municipality of York in the Canadian province of Ontario. It is part of Greater Toronto in the Golden Horseshoe region of Southern Ontario. The name stems from the fact that the settlement was a \"New Market\",  in contrast to York as the Old Market.\nThe town was formed as one of many farming communities in the area, but also developed an industrial centre on the Northern Railway of Canada's mainline, which was built in 1853 through what would become the downtown area. It also became a thriving market town with the a"
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/va/richmond/profile/chemicals/newmarket-corporation-0603-63400963"
+  },
+  "secComplaints": {
+    "count": 2,
+    "sample": [
+      {
+        "adsh": "0001213900-24-057955",
+        "date": "2024-07-01",
+        "filer": "Hall of Fame Resort & Entertainment Co  (HOFV, HOFVW)  (CIK 0001708176)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001628280-25-045287",
+        "date": "2025-10-17",
+        "filer": "Solstice Advanced Materials Inc.  (SOLS)  (CIK 0002064953)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Old_Town_Hall-460_Botsford_Street-Newmarket-Ontario-HPC6381-20200905.jpg",
+  "logoSource": "wiki_infobox",
+  "firearms_atf_ffl": {
+    "fflTypes": [
+      "01"
+    ],
+    "fflTypeNames": [
+      "Dealer in Firearms Other Than Destructive Devices (01)"
+    ],
+    "licenseCount": 1,
+    "states": [
+      "GA"
+    ],
+    "primaryRole": "dealer",
+    "sourceMonth": "2026-04",
+    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
+  },
+  "slug": "newmarket",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "NewMarket Corp.",
+    "slug": "newmarket-corp",
+    "ownership": "publicly traded (ticker symbol NEU)",
+    "hq": "Virginia",
+    "majorIndustry": "chemicals",
+    "specificIndustry": "petroleum additives",
+    "totalPenalty": 792994,
+    "totalRecords": 16,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 737744,
+        "records": 8
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 55250,
+        "records": 8
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "environmental violation",
+        "penalty": 671744,
+        "records": 7
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 66000,
+        "records": 1
+      },
+      {
+        "category": "railroad safety violation",
+        "penalty": 55250,
+        "records": 8
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T23:37:55.759Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-11",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=NEWMARKET&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T23:37:53.803Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T23:37:55.759Z",
+  "realCats": 4,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "csc": {
+    "political": 78.6,
+    "charity": 85,
+    "environment": 25.4,
+    "labor": 24.8
+  }
+}

@@ -2,12 +2,12 @@
   "name": "Bolthouse Farms",
   "cat": "Food & Beverage",
   "init": "BF",
-  "overall": 54.1,
+  "overall": 56.8,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -26,11 +26,11 @@
     ]
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Campbell Soup: $8M reported corporate giving in 2024 (~0.08% of revenue) via Campbell Soup Foundation. Operates the Campbell Soup Foundation: $2.7M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "amt": "$4 million (2020)",
     "focus": "Healthier eating, nutrition access, food security, community support",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -151,7 +151,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-16T23:59:59.000Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -179,5 +179,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "campbell-soup"
+  "inheritedFrom": "campbell-soup",
+  "csc": {
+    "political": 81.5,
+    "charity": 85,
+    "labor": 13.6,
+    "execPay": 64.4,
+    "health": 50
+  }
 }

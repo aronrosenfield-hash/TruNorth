@@ -1,1 +1,261 @@
-{"name":"Enpro","cat":"Consumer Goods","init":"ENPR","overall":31.3,"isPublic":true,"sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No FEC PAC data found.","amt":"$0","lean":"bipartisan","sources":["FEC.gov"]},"labor":{"s":"5 federal penalties totaling $582K since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","ab":"#1e1535","ac":"#9b8ff0","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"air pollution violation: $390K in federal penalties (Violation Tracker).","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":[],"wiki":{"founded":"2002-01-01","hq":"Charlotte","employees":null,"revenue":null,"parent":null,"industry":"industrial manufacturing","products":null,"keyPeople":null,"website":"http://www.enproindustries.com","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Enpro_Industries","extract":"Enpro is a US-based industrial technology company that designs and manufactures products and materials for technology-intensive sectors. The company serves industries such as semiconductors, aerospace, power generation, heavy-duty trucking, agricultural machinery, chemical processing, pulp and paper, and life sciences from 61 primary manufacturing facilities located in 12 countries, worldwide. It is organized under three segments: Sealing Technologies, Advanced Surface Technologies, and Engineered Materials."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ca/gold-river/profile/electrical/imperial-electric-1156-90084992"},"secComplaints":{"count":3,"sample":[{"adsh":"0001193125-25-155013","date":"2025-07-02","filer":"FARO TECHNOLOGIES INC  (FARO)  (CIK 0000917491)","form":"8-K"},{"adsh":"0001193125-25-012891","date":"2025-01-27","filer":"MATTHEWS INTERNATIONAL CORP  (MATW)  (CIK 0000063296)","form":"8-K"},{"adsh":"0002104052-26-000055","date":"2026-05-11","filer":"Enviri II Corp  (CIK 0002104052)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Enpro%20Industries%20logo.svg","logoSource":"wikidata_p154","slug":"enpro","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"EnPro Industries","slug":"enpro-industries","ownership":"publicly traded (ticker symbol NPO)","hq":"North Carolina","majorIndustry":"miscellaneous manufacturing","specificIndustry":"engineered industrial products","totalPenalty":581916,"totalRecords":5,"offenseGroups":[{"category":"environment-related offenses","penalty":390000,"records":1},{"category":"competition-related offenses","penalty":110000,"records":1},{"category":"employment-related offenses","penalty":53791,"records":1},{"category":"financial offenses","penalty":16875,"records":1},{"category":"safety-related offenses","penalty":11250,"records":1}],"primaryOffenses":[{"category":"air pollution violation","penalty":390000,"records":1},{"category":"export control violation","penalty":110000,"records":1},{"category":"wage and hour violation","penalty":53791,"records":1},{"category":"economic sanction violation","penalty":16875,"records":1},{"category":"workplace safety or health violation","penalty":11250,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T21:01:51.618Z"},"fec":{"source":"FEC API","committeeId":"C00379784","committeeName":"ENPRO INC. POLITICAL ACTION COMMITTEE","lean":"bipartisan","repTotal":10000,"demTotal":9750,"totalRaised":0,"totalRaisedFmt":"$0","lastFilingDate":"2026-05-11","cycle":2026,"fetchedAt":"2026-05-27T21:01:49.083Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-25","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Enpro&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T21:01:49.757Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T21:01:51.618Z","realCats":3,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Enpro",
+  "cat": "Consumer Goods",
+  "init": "ENPR",
+  "overall": 50,
+  "isPublic": true,
+  "sc": {
+    "political": "neutral",
+    "charity": "positive",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "No FEC PAC data found.",
+    "amt": "$0",
+    "lean": "bipartisan",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "5 federal penalties totaling $582K since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#1e1535",
+  "ac": "#9b8ff0",
+  "charity": {
+    "s": "Operates the Enpro Foundation: $434K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
+    "sources": [
+      "Claude AI synthesis",
+      "irs990pf-foundations"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $390K in federal penalties (Violation Tracker).",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "competitors": [],
+  "wiki": {
+    "founded": "2002-01-01",
+    "hq": "Charlotte",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "industrial manufacturing",
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.enproindustries.com",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Enpro_Industries",
+    "extract": "Enpro is a US-based industrial technology company that designs and manufactures products and materials for technology-intensive sectors. The company serves industries such as semiconductors, aerospace, power generation, heavy-duty trucking, agricultural machinery, chemical processing, pulp and paper, and life sciences from 61 primary manufacturing facilities located in 12 countries, worldwide. It is organized under three segments: Sealing Technologies, Advanced Surface Technologies, and Engineered Materials."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ca/gold-river/profile/electrical/imperial-electric-1156-90084992"
+  },
+  "secComplaints": {
+    "count": 3,
+    "sample": [
+      {
+        "adsh": "0001193125-25-155013",
+        "date": "2025-07-02",
+        "filer": "FARO TECHNOLOGIES INC  (FARO)  (CIK 0000917491)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-25-012891",
+        "date": "2025-01-27",
+        "filer": "MATTHEWS INTERNATIONAL CORP  (MATW)  (CIK 0000063296)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0002104052-26-000055",
+        "date": "2026-05-11",
+        "filer": "Enviri II Corp  (CIK 0002104052)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Enpro%20Industries%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "enpro",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "EnPro Industries",
+    "slug": "enpro-industries",
+    "ownership": "publicly traded (ticker symbol NPO)",
+    "hq": "North Carolina",
+    "majorIndustry": "miscellaneous manufacturing",
+    "specificIndustry": "engineered industrial products",
+    "totalPenalty": 581916,
+    "totalRecords": 5,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 390000,
+        "records": 1
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 110000,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 53791,
+        "records": 1
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 16875,
+        "records": 1
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 11250,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "air pollution violation",
+        "penalty": 390000,
+        "records": 1
+      },
+      {
+        "category": "export control violation",
+        "penalty": 110000,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 53791,
+        "records": 1
+      },
+      {
+        "category": "economic sanction violation",
+        "penalty": 16875,
+        "records": 1
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 11250,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T21:01:51.618Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00379784",
+    "committeeName": "ENPRO INC. POLITICAL ACTION COMMITTEE",
+    "lean": "bipartisan",
+    "repTotal": 10000,
+    "demTotal": 9750,
+    "totalRaised": 0,
+    "totalRaisedFmt": "$0",
+    "lastFilingDate": "2026-05-11",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-27T21:01:49.083Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-25",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Enpro&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T21:01:49.757Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T21:01:51.618Z",
+  "realCats": 4,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 85,
+    "environment": 27.3,
+    "labor": 25.9
+  }
+}

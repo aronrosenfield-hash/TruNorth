@@ -238,13 +238,21 @@ function main() {
   writeAugment("miit-china", "https://www.miit.gov.cn/", MIIT_CHINA);
   writeAugment("ndrc-china", "https://en.ndrc.gov.cn/", NDRC_CHINA);
   writeAugment("hk-sfc", "https://www.sfc.hk/en/News-and-announcements/Enforcement-news", HK_SFC);
-  writeAugment("hk-compcomm", "https://www.compcomm.hk/en/", HK_COMPCOMM);
+  writeAugment("hk-compcomm", "https://www.compcomm.hk/en/", HK_COMPCOMM, {
+    parkedNote: "The HK Competition Commission has issued ~10 enforcement decisions since 2015, mostly against Hong Kong SMEs (construction, IT) that don't resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("taiwan-ftc", "https://www.ftc.gov.tw/internet/english/", TAIWAN_FTC);
   writeAugment("ojk-indonesia", "https://www.ojk.go.id/en/", OJK_INDONESIA);
-  writeAugment("sbv-vietnam", "https://www.sbv.gov.vn/", SBV_VIETNAM);
+  writeAugment("sbv-vietnam", "https://www.sbv.gov.vn/", SBV_VIETNAM, {
+    parkedNote: "SBV enforcement targets domestic Vietnamese banks; none resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("israel-competition", "https://www.gov.il/en/departments/the_israel_competition_authority", ISRAEL_COMP);
-  writeAugment("uae-sca", "https://www.sca.gov.ae/en/", UAE_SCA);
-  writeAugment("saudi-cma", "https://cma.org.sa/en/", SAUDI_CMA);
+  writeAugment("uae-sca", "https://www.sca.gov.ae/en/", UAE_SCA, {
+    parkedNote: "SCA enforcement targets UAE-listed entities (Etisalat, DP World) not in the TruNorth catalog. Curated kernel intentionally empty — not a broken fetch.",
+  });
+  writeAugment("saudi-cma", "https://cma.org.sa/en/", SAUDI_CMA, {
+    parkedNote: "Saudi CMA enforcement mostly targets Saudi-listed entities (SABIC, Saudi Aramco subsidiaries) not in the TruNorth catalog. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("kftc-r4", "https://www.ftc.go.kr/eng/index.do", KFTC_R4);
 
   console.log("\n=== ASIA REGULATORS R4 SEED DONE ===");

@@ -2,12 +2,12 @@
   "name": "Shell USA",
   "cat": "Energy & Utilities",
   "init": "SU",
-  "overall": 32.5,
+  "overall": 47.5,
   "isPublic": true,
   "ticker": "SHEL",
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "very_poor",
     "labor": "neutral",
     "dei": "neutral",
@@ -28,11 +28,12 @@
     ]
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Shell Usa Company Foundation: $20.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "Over $544,000 to conservative groups (2013-2022); various employee matching programs",
     "focus": "Children's charities, religious organizations, some climate-skeptical groups",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -214,7 +215,7 @@
   "health": {
     "s": "5 CPSC recalls (1 in past 24 months); latest hazard: the hook of one boot can catch on the lace of the other boot."
   },
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Shell; HQ Shell Centre. (Wikidata Q3240764)",
     "sources": [
@@ -247,5 +248,11 @@
     "charity": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 43.9,
+    "charity": 85,
+    "labor": 50,
+    "privacy": 8
   }
 }

@@ -2,11 +2,11 @@
   "name": "LendingTree",
   "cat": "Financial Services",
   "init": "LEND",
-  "overall": 66.8,
+  "overall": 64.1,
   "isPublic": true,
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
@@ -40,9 +40,10 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Lendingtree Foundation: $1.6M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -208,7 +209,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:11:13.560Z",
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by QVC Group. (Wikidata Q6522339)",
     "sources": [
@@ -259,5 +260,11 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 53.4,
+    "charity": 85,
+    "labor": 50,
+    "execPay": 88.9
   }
 }

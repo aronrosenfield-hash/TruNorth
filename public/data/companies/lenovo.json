@@ -2,11 +2,11 @@
   "name": "Lenovo",
   "cat": "Technology",
   "init": "LENO",
-  "overall": 44.3,
+  "overall": 49.7,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "poor",
     "dei": "neutral",
@@ -36,9 +36,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Lenovo Foundation: $765K in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -215,7 +216,7 @@
   "health": {
     "s": "10 CPSC recalls on record; sample hazard: the battery packs can overheat."
   },
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "animals": {
       "na": true
@@ -229,5 +230,11 @@
     "charity": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 47.9,
+    "charity": 85,
+    "environment": 50,
+    "labor": 15.6
   }
 }

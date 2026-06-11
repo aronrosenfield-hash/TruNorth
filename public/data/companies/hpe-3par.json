@@ -2,11 +2,11 @@
   "name": "HPE 3PAR",
   "cat": "Technology",
   "init": "HPE3",
-  "overall": 55.2,
+  "overall": 54.2,
   "isPublic": false,
   "sc": {
     "political": "left",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "positive",
     "labor": "poor",
     "dei": "neutral",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Hewlett Packard Enterprise: Operates the Hewlett Packard Enterprise Foundation: $8.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -115,7 +115,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Hewlett-Packard; HQ Fremont. (Wikidata Q2816491)",
     "sources": [
@@ -149,5 +149,11 @@
       "basis": "Technology"
     }
   },
-  "inheritedFrom": "hewlett-packard-enterprise"
+  "inheritedFrom": "hewlett-packard-enterprise",
+  "csc": {
+    "political": 53,
+    "charity": 85,
+    "environment": 100,
+    "labor": 8
+  }
 }

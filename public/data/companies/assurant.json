@@ -2,11 +2,11 @@
   "name": "ASSURANT",
   "cat": "Financial Services",
   "init": "ASSU",
-  "overall": 50,
+  "overall": 57.7,
   "isPublic": true,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -36,9 +36,10 @@
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Assurant Foundation: $3.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -162,7 +163,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T18:39:37.045Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -204,5 +205,10 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 85,
+    "execPay": 47.6
   }
 }

@@ -208,7 +208,20 @@ async function fetchJson(url) {
   // 403'd by WikiRate's Cloudflare in front of the API.
   if (process.env.WIKIRATE_API_KEY) headers["X-API-KEY"] = process.env.WIKIRATE_API_KEY;
   const res = await fetch(url, { headers });
-  if (!res.ok) throw new Error(`WikiRate ${res.status} for ${url}`);
+  if (!res.ok) {
+    // Distinguish a Cloudflare bot-challenge page from a plain API error —
+    // since 2026-06 WikiRate's Cloudflare serves a "Just a moment..."
+    // managed challenge (HTTP 403, text/html) to all non-browser clients
+    // unless authenticated via WIKIRATE_API_KEY.
+    let hint = "";
+    try {
+      const body = await res.text();
+      if (/just a moment|challenges\.cloudflare\.com|cf-chl/i.test(body)) {
+        hint = " (Cloudflare bot challenge — set WIKIRATE_API_KEY to authenticate)";
+      }
+    } catch { /* body unavailable; status alone is enough */ }
+    throw new Error(`WikiRate HTTP ${res.status}${hint} for ${url}`);
+  }
   return res.json();
 }
 
@@ -245,6 +258,18 @@ export async function fetchMetric(metricEntry, { limit, cache, log = () => {} })
     await sleep(RATE_LIMIT_MS);
   }
   return all;
+}
+
+// ─────────────────────────── run status ─────────────────────────────────
+// Classify a finished run so downstream consumers (and humans reading the
+// snapshot) can tell a failed fetch apart from a genuinely-empty result:
+//   "ok"      — no fetch errors
+//   "partial" — some metrics errored, but at least one succeeded
+//   "failed"  — every requested metric errored (nothing was fetched)
+// Dry runs are always "ok" (no network involved).
+export function computeStatus({ dry, metricCount, errorCount }) {
+  if (dry || errorCount === 0) return "ok";
+  return errorCount >= metricCount ? "failed" : "partial";
 }
 
 // ─────────────────────────── dry-run replay ─────────────────────────────
@@ -294,6 +319,7 @@ async function main() {
   await fs.mkdir(path.dirname(outFile), { recursive: true });
 
   const allRows = [];
+  const fetchErrors = [];
   if (args.dry) {
     const rows = await replayFixture(args.metric);
     console.log(`  [dry] replayed ${rows.length} rows from fixture`);
@@ -308,6 +334,7 @@ async function main() {
         allRows.push(...rows);
       } catch (e) {
         console.error(`  ! failed: ${e.message}`);
+        fetchErrors.push({ metric_name: m.metric_name, error: e.message });
       }
       if (i < metrics.length - 1) await sleep(RATE_LIMIT_MS);
       if (allRows.length >= SAFETY_CAP) {
@@ -317,21 +344,36 @@ async function main() {
     }
   }
 
+  const status = computeStatus({ dry: args.dry, metricCount: metrics.length, errorCount: fetchErrors.length });
+
   // Output bundle. The `_license` field rides with the data through the
   // rest of the pipeline so downstream consumers cannot accidentally drop
-  // the required CC BY 4.0 attribution.
+  // the required CC BY 4.0 attribution. `status` + `fetch_errors` record
+  // whether the run actually succeeded — a failed fetch must never be
+  // mistaken for a genuinely-empty result downstream.
   const bundle = {
     _license: LICENSE,
     _source: "https://wikirate.org",
     _api: API_BASE,
     generated_at: new Date().toISOString(),
     mode: args.dry ? "dry" : "live",
+    status,
+    fetch_errors: fetchErrors,
     metrics_requested: metrics.map(m => m.metric_name),
     answer_count: allRows.length,
     answers: allRows,
   };
   await fs.writeFile(outFile, JSON.stringify(bundle, null, 2));
-  console.log(`\nWrote ${outFile}  (${allRows.length} answers)`);
+  console.log(`\nWrote ${outFile}  (${allRows.length} answers, status=${status})`);
+
+  if (status === "failed") {
+    console.error(`\nwikirate-fetch: every metric failed — snapshot kept for forensics, exiting non-zero.`);
+    for (const e of fetchErrors) console.error(`  - ${e.metric_name}: ${e.error}`);
+    process.exit(1);
+  }
+  if (status === "partial") {
+    console.warn(`\nwikirate-fetch: ${fetchErrors.length}/${metrics.length} metrics failed (status=partial).`);
+  }
 }
 
 const isMain = import.meta.url === `file://${process.argv[1]}`;

@@ -2,7 +2,7 @@
   "name": "Chrysler automatic transmission fluid",
   "cat": "Automotive",
   "init": "CHRY",
-  "overall": 26,
+  "overall": 29,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -142,5 +142,9 @@
       "basis": "Automotive"
     }
   },
-  "inheritedFrom": "stellantis-north-america"
+  "inheritedFrom": "stellantis-north-america",
+  "csc": {
+    "environment": 8,
+    "labor": 8
+  }
 }

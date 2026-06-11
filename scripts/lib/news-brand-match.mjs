@@ -45,7 +45,7 @@ const NEEDS_CONTEXT = new Set([
   // Additional common-word collisions found post-launch
   "fossil", "budget", "nationwide", "costco", "zoom", "google", "gap",
   "camel", "champion", "patron", "burberry", "polo", "warrior", "diesel",
-  "twitter", "x",
+  "twitter", "x", "facebook",
 ]);
 
 const NEGATIVE_CONTEXT = {
@@ -79,6 +79,8 @@ const NEGATIVE_CONTEXT = {
   // Twitter / X — generic mentions are usually about the platform as a medium ("X posts said"), not corporate actions.
   twitter: ["twitter post", "twitter user", "tweeted", "on twitter"],
   x:       ["x post", "x user", "x account", "x platform"],
+  // Facebook as rumor medium ("Facebook pages claimed...") vs Meta corporate action.
+  facebook: ["facebook post", "facebook page", "facebook user", "facebook group", "on facebook", "via facebook"],
 };
 
 const BUSINESS_CONTEXT = [

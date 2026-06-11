@@ -2,7 +2,7 @@
   "name": "Welch's",
   "cat": "Food & Beverage",
   "init": "WCH",
-  "overall": 45,
+  "overall": 44,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -159,5 +159,10 @@
       "basis": "Food & Beverage"
     }
   },
-  "inheritedFrom": "keurig-dr-pepper"
+  "inheritedFrom": "keurig-dr-pepper",
+  "csc": {
+    "charity": 50,
+    "labor": 8.4,
+    "execPay": 64.6
+  }
 }

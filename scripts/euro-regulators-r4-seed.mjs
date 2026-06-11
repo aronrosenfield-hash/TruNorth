@@ -53,7 +53,7 @@ const COMP_DIR = path.join(ROOT, "public/data/companies");
 const compFiles = new Set(fs.existsSync(COMP_DIR) ? fs.readdirSync(COMP_DIR) : []);
 function hasSlug(slug) { return compFiles.has(`${slug}.json`); }
 
-export function writeAugment(name, sourceUrl, companies, { skipUnresolved = true } = {}) {
+export function writeAugment(name, sourceUrl, companies, { skipUnresolved = true, parkedNote = null } = {}) {
   const resolved = {};
   let skipped = 0;
   const skippedSlugs = [];
@@ -67,6 +67,9 @@ export function writeAugment(name, sourceUrl, companies, { skipUnresolved = true
     source_url: sourceUrl,
     company_count: Object.keys(resolved).length,
     skipped_unresolved: skipped,
+    // Empty-by-design sources carry _stats.status so an intentionally empty
+    // augment is distinguishable from a broken fetch.
+    ...(parkedNote ? { _stats: { status: "parked-empty-by-design", broken_fetch: false, reason: parkedNote } } : {}),
     companies: resolved,
   };
   fs.mkdirSync(DERIVED, { recursive: true });
@@ -456,22 +459,32 @@ function main() {
   writeAugment("bfdi-germany", "https://www.bfdi.bund.de/EN/Home/home_node.html", BFDI);
   writeAugment("amf-france", "https://www.amf-france.org/en/news-publications/decisions-sanctions", AMF);
   writeAugment("agcm-italy", "https://en.agcm.it/", AGCM);
-  writeAugment("ivass-italy", "https://www.ivass.it/", IVASS);
+  writeAugment("ivass-italy", "https://www.ivass.it/", IVASS, {
+    parkedNote: "IVASS publishes sanctions weekly, but they are mostly small administrative fines on individual Italian brokers; no major consumer-brand actions in the public register resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("consob-italy", "https://www.consob.it/", CONSOB);
   writeAugment("cnmc-spain", "https://www.cnmc.es/en", CNMC);
   writeAugment("aepd-spain", "https://www.aepd.es/en/", AEPD);
-  writeAugment("cnmv-spain", "https://www.cnmv.es/", CNMV);
+  writeAugment("cnmv-spain", "https://www.cnmv.es/", CNMV, {
+    parkedNote: "Most CNMV sanctions target individuals and Spanish-listed broker-dealers that don't resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("acm-netherlands", "https://www.acm.nl/en", ACM_NL);
   writeAugment("afm-netherlands", "https://www.afm.nl/en", AFM);
   writeAugment("forbrukertilsynet-norway", "https://www.forbrukertilsynet.no/", FORBRUKERTILSYNET);
   writeAugment("datatilsynet-norway", "https://www.datatilsynet.no/en/", DATATILSYNET_NO);
   writeAugment("finansinspektionen-sweden", "https://www.fi.se/en/", FI_SE);
   writeAugment("imy-sweden", "https://www.imy.se/en/", IMY_SE);
-  writeAugment("datatilsynet-denmark", "https://www.datatilsynet.dk/english", DATATILSYNET_DK);
-  writeAugment("tietosuoja-finland", "https://tietosuoja.fi/en/home", TIETOSUOJA_FI);
+  writeAugment("datatilsynet-denmark", "https://www.datatilsynet.dk/english", DATATILSYNET_DK, {
+    parkedNote: "The Danish DPA cannot issue administrative fines directly (it refers cases to police for prosecution), and major Danish-brand actions (TDC, Coop Danmark, Nemlig.com) don't resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
+  writeAugment("tietosuoja-finland", "https://tietosuoja.fi/en/home", TIETOSUOJA_FI, {
+    parkedNote: "Finnish DPA enforcement targets mostly local entities — the major Alma Media (€750K, 2020), Yousician, and Posti Group cases don't resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("apd-belgium", "https://www.dataprotectionauthority.be/", APD_BE);
   writeAugment("finma-switzerland", "https://www.finma.ch/en/news/enforcement/", FINMA);
-  writeAugment("fdpic-switzerland", "https://www.edoeb.admin.ch/edoeb/en/home.html", FDPIC);
+  writeAugment("fdpic-switzerland", "https://www.edoeb.admin.ch/edoeb/en/home.html", FDPIC, {
+    parkedNote: "FDPIC issues recommendations rather than fines (can refer cases to civil courts); no actionable consumer-brand actions in the public record resolve to TruNorth catalog slugs. Curated kernel intentionally empty — not a broken fetch.",
+  });
   writeAugment("weko-switzerland", "https://www.weko.admin.ch/weko/en/home.html", WEKO);
 
   console.log("\n=== EURO REGULATORS R4 SEED DONE ===");

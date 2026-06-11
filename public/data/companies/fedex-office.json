@@ -2,7 +2,7 @@
   "name": "FedEx Office",
   "cat": "Retail",
   "init": "FEDE",
-  "overall": 60,
+  "overall": 52.5,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -213,7 +213,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T23:39:42.845Z",
-  "realCats": 6,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -235,5 +235,12 @@
       "basis": "Retail"
     }
   },
-  "inheritedFrom": "fedex"
+  "inheritedFrom": "fedex",
+  "csc": {
+    "political": 48.2,
+    "charity": 85,
+    "environment": 100,
+    "labor": 8,
+    "execPay": 48.8
+  }
 }

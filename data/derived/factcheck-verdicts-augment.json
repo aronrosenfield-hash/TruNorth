@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-06-09T16:49:33.246Z",
+    "generated_at": "2026-06-11T02:47:23.704Z",
     "horizon_days": 365,
     "feeds": [
       "politifact",
@@ -15,6 +15,7 @@
       "skipped_no_brand": 13,
       "brands_with_signal": 0
     },
-    "verdict_distribution": {}
+    "verdict_distribution": {},
+    "note": "Fetch OK — no fetched item both carried a classifiable verdict in its RSS title/teaser AND named a top-500 brand as claimant. Feeds embed verdict text only sporadically (Snopes/PolitiFact teasers usually omit the rating), and brand-tagged items are often viral-rumor debunks rather than corporate claims, so zero-signal windows are expected."
   }
 }

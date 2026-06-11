@@ -2,12 +2,12 @@
   "name": "Nationwide",
   "cat": "Financial Services",
   "init": "NW",
-  "overall": 47.1,
+  "overall": 49.1,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "right",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -32,12 +32,13 @@
     }
   },
   "charity": {
-    "s": "$35M reported corporate giving in 2024 (~0.17% of revenue) via Nationwide Foundation.",
+    "s": "$35M reported corporate giving in 2024 (~0.17% of revenue) via Nationwide Foundation. Operates the Nationwide Foundation: $39.9M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$700M+ since 2000 (~$35M annually average); employee giving 2024: $7M",
     "focus": "Food security, crisis stabilization, economic empowerment, children's wellbeing, disaster relief",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -347,5 +348,12 @@
       "_inferred": true,
       "basis": "Financial Services"
     }
+  },
+  "csc": {
+    "political": 51.1,
+    "charity": 85,
+    "labor": 8,
+    "privacy": 50,
+    "execPay": 50
   }
 }

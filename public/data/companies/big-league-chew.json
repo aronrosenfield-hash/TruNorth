@@ -2,11 +2,11 @@
   "name": "Big League Chew",
   "cat": "Consumer Goods",
   "init": "BIGL",
-  "overall": 44.3,
+  "overall": 49,
   "isPublic": false,
   "sc": {
     "political": "right",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -31,7 +31,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company Mars: $90M reported corporate giving in 2024 (~0.19% of revenue).",
+    "s": "Via parent company Mars: $90M reported corporate giving in 2024 (~0.19% of revenue). Operates the Mars Foundation: $944K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -139,5 +139,10 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "mars"
+  "inheritedFrom": "mars",
+  "csc": {
+    "political": 48,
+    "charity": 85,
+    "labor": 12.5
+  }
 }

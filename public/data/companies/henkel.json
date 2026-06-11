@@ -2,11 +2,11 @@
   "name": "Henkel",
   "cat": "Consumer Goods",
   "init": "HENK",
-  "overall": 50,
+  "overall": 60,
   "isPublic": true,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "neutral",
     "dei": "neutral",
@@ -23,9 +23,10 @@
     ]
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Henkel Foundation Inc: $353K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Public records research"
+      "Public records research",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -90,11 +91,15 @@
       "notDisclosed": true
     }
   },
-  "realCats": 1,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by DivDAX; HQ Düsseldorf. (Wikidata Q276507)",
     "sources": [
       "wikidata"
     ]
+  },
+  "csc": {
+    "charity": 85,
+    "environment": 50
   }
 }

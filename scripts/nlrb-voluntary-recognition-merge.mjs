@@ -52,7 +52,7 @@ const META_DIR = path.join(ROOT, "public/data/_meta");
 const DERIVED_DIR = path.join(ROOT, "data/derived");
 const OUT_FILE = path.join(DERIVED_DIR, "nlrb-voluntary-recognition-augment.json");
 
-const SOURCE_URL = "https://www.nlrb.gov/reports/agency-performance/election-reports";
+const SOURCE_URL = "https://www.nlrb.gov/reports/graphs-data/recent-filings";
 
 export function slugify(name) {
   return String(name || "")
@@ -225,6 +225,13 @@ async function main() {
         .reduce((a, c) => a + c.labor.voluntaryRecogCount, 0),
       orphan_count: orphans.length,
       raw_entries: raw.entries.length,
+      // Propagate the raw snapshot's health so an empty augment is
+      // self-explanatory (fetch failure vs genuinely zero VR records —
+      // see the fetcher header: NLRB's public CATS data currently exposes
+      // no voluntary-recognition close method at all).
+      raw_status: raw._status || null,
+      ...(raw._empty_reason ? { raw_empty_reason: raw._empty_reason } : {}),
+      ...(raw._note ? { raw_note: raw._note } : {}),
     },
     companies,
     orphans: orphans.slice(0, 500),

@@ -2,11 +2,11 @@
   "name": "Bumble and bumble",
   "cat": "Apparel & Fashion",
   "init": "BUMB",
-  "overall": 52.8,
+  "overall": 54.7,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "positive",
     "labor": "poor",
     "dei": "neutral",
@@ -30,7 +30,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company ESTEE LAUDER COMPANIES: $35M reported corporate giving in 2024 (~0.21% of revenue) via Estée Lauder Charitable Foundation.",
+    "s": "Via parent company ESTEE LAUDER COMPANIES: $35M reported corporate giving in 2024 (~0.21% of revenue) via Estée Lauder Charitable Foundation. Operates the Estee Lauder Companies Charitable Foundation: $15.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -159,5 +159,11 @@
       "basis": "Apparel & Fashion"
     }
   },
-  "inheritedFrom": "estee-lauder-companies"
+  "inheritedFrom": "estee-lauder-companies",
+  "csc": {
+    "political": 49.9,
+    "charity": 85,
+    "environment": 100,
+    "labor": 13.7
+  }
 }

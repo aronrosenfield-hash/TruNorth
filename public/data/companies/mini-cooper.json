@@ -2,7 +2,7 @@
   "name": "MINI",
   "cat": "Automotive",
   "init": "MINI",
-  "overall": 40,
+  "overall": 36,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -107,5 +107,9 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "bmw-usa"
+  "inheritedFrom": "bmw-usa",
+  "csc": {
+    "environment": 50,
+    "labor": 8
+  }
 }

@@ -2,11 +2,11 @@
   "name": "PRINCIPAL FINANCIAL GROUP",
   "cat": "Financial Services",
   "init": "PRIN",
-  "overall": 52.7,
+  "overall": 56.3,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -35,10 +35,11 @@
     "execPay": "2026-06-11T03:48:51.753Z"
   },
   "charity": {
-    "s": "$15M reported corporate giving in 2024 (~0.10% of revenue) via Principal Foundation.",
+    "s": "$15M reported corporate giving in 2024 (~0.10% of revenue) via Principal Foundation. Operates the Principal Financial Group Foundation Inc: $15.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -269,5 +270,11 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 75.9,
+    "charity": 85,
+    "labor": 13.9,
+    "execPay": 60
   }
 }

@@ -2,11 +2,11 @@
   "name": "Cargill",
   "cat": "Consumer Goods",
   "init": "CARG",
-  "overall": 32.3,
+  "overall": 41.8,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "neutral",
@@ -36,9 +36,10 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Cargill Foundation: $24.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -256,7 +257,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Cargill family; HQ Minnetonka. (Wikidata Q1036056)",
     "sources": [
@@ -276,5 +277,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 53.8,
+    "charity": 85,
+    "environment": 8,
+    "labor": 8
   }
 }

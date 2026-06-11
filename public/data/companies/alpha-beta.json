@@ -2,11 +2,11 @@
   "name": "Alpha Beta",
   "cat": "Financial Services",
   "init": "ALPH",
-  "overall": 39.8,
+  "overall": 48.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "neutral",
@@ -31,7 +31,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company Kroger: $240M reported corporate giving in 2024 (~0.16% of revenue) via Kroger Co. Foundation.",
+    "s": "Via parent company Kroger: $240M reported corporate giving in 2024 (~0.16% of revenue) via Kroger Co. Foundation. Operates the Kroger Co Foundation: $6.9M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -161,5 +161,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "kroger"
+  "inheritedFrom": "kroger",
+  "csc": {
+    "political": 82,
+    "charity": 85,
+    "environment": 8,
+    "labor": 8,
+    "execPay": 36.8
+  }
 }

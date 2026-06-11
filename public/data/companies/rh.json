@@ -2,7 +2,7 @@
   "name": "RH",
   "cat": "Apparel & Fashion",
   "init": "RH",
-  "overall": 56.9,
+  "overall": 47,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,8 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
-    "execPay": "good"
+    "privacy": "na"
   },
   "political": {
     "s": "FEC: $155K in executive political donations; partisan lean Democratic +35 across 7 executive donors.",
@@ -71,7 +70,7 @@
     ]
   },
   "execPay": {
-    "s": "CEO-to-median-worker pay ratio 0:1 (median employee pay $1,262,000; CEO total compensation $8K) — SEC proxy statement (DEF 14A, 2025).",
+    "s": "CEO total compensation $8K — SEC proxy statement (DEF 14A, 2025). No CEO-to-worker pay ratio disclosed in a parseable form.",
     "sources": [
       "sec-def14a"
     ]
@@ -246,5 +245,11 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 50,
+    "environment": 29.7,
+    "labor": 50,
+    "execPay": 50
   }
 }

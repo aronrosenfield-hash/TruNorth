@@ -2,12 +2,12 @@
   "name": "Moderna",
   "cat": "Healthcare",
   "init": "MNA",
-  "overall": 51.2,
+  "overall": 60.4,
   "isPublic": true,
   "ticker": "MRNA",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "neutral",
     "dei": "pro_dei",
@@ -27,12 +27,13 @@
     ]
   },
   "charity": {
-    "s": "$15M reported corporate giving in 2024 (~0.18% of revenue).",
+    "s": "$15M reported corporate giving in 2024 (~0.18% of revenue). Operates the Moderna Charitable Foundation Inc: $8.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$8.5M+ (2022 grants)",
     "focus": "Public health, healthcare access, scientific education, diversity & inclusion, COVID-19 relief",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -248,7 +249,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 5,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Robert S. Langer, Jr.; HQ Cambridge. (Wikidata Q17081612)",
     "sources": [
@@ -262,5 +263,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 76.9,
+    "charity": 85,
+    "environment": 50,
+    "labor": 40
   }
 }

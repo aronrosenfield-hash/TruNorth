@@ -2,7 +2,7 @@
   "name": "MAGNITE",
   "cat": "Technology",
   "init": "MAGN",
-  "overall": 70.1,
+  "overall": 48.3,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "good"
   },
   "political": {
@@ -61,9 +61,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Registered data broker (California Data Broker Registry, CPPA, since 6/19/2023): collects and sells consumers' personal information to third parties under CA Civil Code §1798.99.80.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "cppa-data-brokers"
     ]
   },
   "execPay": {
@@ -150,7 +151,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T23:06:41.855Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -195,5 +196,10 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 43.1,
+    "privacy": 8,
+    "execPay": 91.1
   }
 }

@@ -2,12 +2,12 @@
   "name": "Zoetis",
   "cat": "Healthcare",
   "init": "ZTS",
-  "overall": 45.4,
+  "overall": 57.2,
   "isPublic": true,
   "ticker": "ZTS",
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -32,11 +32,12 @@
     }
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Zoetis Foundation Inc: $8.3M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$11.3M annually (2024)",
     "focus": "Veterinary education, farmer livelihoods, animal care access, disaster relief",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -293,7 +294,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -304,5 +305,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 80.5,
+    "charity": 85,
+    "environment": 31.9,
+    "labor": 29
   }
 }

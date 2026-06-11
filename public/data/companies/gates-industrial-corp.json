@@ -2,11 +2,11 @@
   "name": "Gates Industrial Corp",
   "cat": "Manufacturing",
   "init": "GATE",
-  "overall": 45.9,
+  "overall": 57.2,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -35,9 +35,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Gates Industrial Corporation Foundation: $700K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -177,7 +178,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T21:36:46.057Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -194,5 +195,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 81.8,
+    "charity": 85,
+    "environment": 31.7,
+    "labor": 27.4
   }
 }

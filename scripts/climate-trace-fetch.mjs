@@ -498,9 +498,14 @@ async function main() {
     };
   }
 
-  await fs.mkdir(RAW_DIR, { recursive: true });
+  const mode = APPLY ? "apply" : (SRC_OWN ? "local" : "dry");
   const stamp = new Date().toISOString().slice(0, 10);
-  const outPath = OUT_OVER ?? path.join(RAW_DIR, `${stamp}.json`);
+  // Dry-run (synthetic) snapshots must NEVER land in data/raw/ — the merger
+  // picks the latest-dated file there, so a stray dry file would shadow a
+  // real snapshot and silently empty the augment. Park them in TMP_DIR.
+  const outPath = OUT_OVER ?? (mode === "dry"
+    ? path.join(TMP_DIR, `${stamp}-dry.json`)
+    : path.join(RAW_DIR, `${stamp}.json`));
   await fs.mkdir(path.dirname(outPath), { recursive: true });
 
   const payload = {
@@ -509,7 +514,7 @@ async function main() {
     _version_hint: "Climate TRACE v5.x bulk download (https://downloads.climatetrace.org/latest/)",
     _gas: GAS,
     _generated_at: new Date().toISOString(),
-    _mode: APPLY ? "apply" : (SRC_OWN ? "local" : "dry"),
+    _mode: mode,
     _stats: snap._stats,
     ownership: snap.ownership,
     emissions: snap.emissions,

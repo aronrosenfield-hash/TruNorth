@@ -2,7 +2,7 @@
   "name": "Shaw's and Star Market",
   "cat": "Grocery",
   "init": "SHAW",
-  "overall": 33.5,
+  "overall": 38,
   "isPublic": false,
   "sc": {
     "political": "left",
@@ -144,5 +144,12 @@
       "basis": "Grocery"
     }
   },
-  "inheritedFrom": "albertsons"
+  "inheritedFrom": "albertsons",
+  "csc": {
+    "political": 53.8,
+    "charity": 50,
+    "environment": 15,
+    "labor": 8,
+    "execPay": 33.5
+  }
 }

@@ -2,11 +2,11 @@
   "name": "Williams Sonoma",
   "cat": "Retail",
   "init": "WILL",
-  "overall": 43.5,
+  "overall": 57.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
@@ -36,10 +36,11 @@
     "execPay": "2026-06-11T03:48:51.753Z"
   },
   "charity": {
-    "s": "$8M reported corporate giving in 2024 (~0.10% of revenue).",
+    "s": "$8M reported corporate giving in 2024 (~0.10% of revenue). Operates the Williams-Sonoma Inc Foundation: $1.1M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -252,5 +253,12 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 82.2,
+    "charity": 85,
+    "environment": 35.1,
+    "labor": 50,
+    "execPay": 42.3
   }
 }

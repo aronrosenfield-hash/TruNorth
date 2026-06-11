@@ -2,11 +2,11 @@
   "name": "Lazard",
   "cat": "Financial Services",
   "init": "LAZA",
-  "overall": 63.2,
+  "overall": 70.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -33,9 +33,10 @@
     "execPay": "2026-06-11T03:48:51.753Z"
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Lazard Foundation: $1.6M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -135,7 +136,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:54:06.186Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -180,5 +181,10 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 76.3,
+    "charity": 85,
+    "execPay": 80.8
   }
 }

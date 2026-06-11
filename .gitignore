@@ -53,3 +53,6 @@ scripts/cache/
 
 # Local fetch caches (regeneratable)
 .cache/
+
+# IRS bulk files — 400MB, re-downloaded by the fetcher; never commit
+public/data/_cache/irs990pf/

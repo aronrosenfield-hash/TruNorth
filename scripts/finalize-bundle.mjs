@@ -38,22 +38,17 @@ const INDEX_OUT = path.join(DATA, "index.json");
 const SEARCH_OUT = path.join(DATA, "search-index.json");
 const META_OUT = path.join(DATA, "meta.json");
 
-function scoreGrade(n, realCats) {
-  // Build 57 (S2 + signal-count cap): A≥65 ∧ ≥3 sig, B≥55 ∧ ≥2 sig.
-  // Must stay in sync with src/App.jsx scoreGrade and
-  // scripts/rebake-scoring.mjs gradeFromOverall.
+function scoreGrade(n) {
+  // SCORING V3 (2026-06-11): signal-count cap removed — evidence confidence
+  // is handled by shrinkage in rebake-scoring.mjs. Thresholds frozen from the
+  // one-time V3 recalibration. Must stay in sync with src/App.jsx scoreGrade
+  // and scripts/rebake-scoring.mjs gradeFromOverall.
   if (n == null) return "?";
-  let g;
-  if (n >= 65) g = "A";
-  else if (n >= 55) g = "B";
-  else if (n >= 45) g = "C";
-  else if (n >= 30) g = "D";
-  else g = "F";
-  if (typeof realCats === "number") {
-    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
-    else if (realCats < 3 && g === "A") g = "B";
-  }
-  return g;
+  if (n >= 63) return "A";
+  if (n >= 56) return "B";
+  if (n >= 46) return "C";
+  if (n >= 41) return "D";
+  return "F";
 }
 
 function indexEntryFromCompanyFile(slug, d) {
@@ -64,10 +59,13 @@ function indexEntryFromCompanyFile(slug, d) {
     name:    d.name,
     cat:     d.cat,
     init:    d.init,
-    grade:   scoreGrade(d.overall, d.realCats),
+    grade:   scoreGrade(d.overall),
     score:   d.overall,
     overall: d.overall,
     realCats: typeof d.realCats === "number" ? d.realCats : null,
+    // V3: per-category continuous scores baked by rebake-scoring.mjs — the
+    // client scores collapsed index rows and expanded detail identically.
+    ...(d.csc ? { csc: d.csc } : {}),
     // 2026-06-10 (QA): flags were silently dropped when Build 55 made this
     // function re-derive the whole index — the scoring-flags feature (toggle
     // ON Jun 16) reads them from index entries in list views.

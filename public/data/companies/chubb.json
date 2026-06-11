@@ -1,1 +1,285 @@
-{"name":"Chubb","cat":"Financial Services","init":"CHUB","overall":43.9,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"poor","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $11K PAC donations; 48% to Republican, 52% to Democratic committees.","amt":"$120K","lean":"bipartisan","sources":["FEC.gov"]},"labor":{"s":"199 federal penalties totaling $207.0M since 2000 (Violation Tracker).","rating":"mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","ab":"#1e1535","ac":"#9b8ff0","charity":{"s":"$16M reported corporate giving in 2024 (~0.04% of revenue) via Chubb Charitable Foundation.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"Insure Our Future 2024 scorecard: 2.3/10 (weak). Sub-scores: coal underwriting moderate; oil & gas underwriting weak. Chubb: 2022 oil-sands underwriting policy improved coal/oil sands position; oil and gas exclusions still lag European peers.","sources":["EPA","Violation Tracker","insure-our-future"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"NAIC Complaint Index 0.62 (well below the 1.00 US peer average).","sources":["Claude AI synthesis","insurance-deep"]},"competitors":["travelers","allstate","berkshire-hathaway"],"antitrust":true,"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/fl/lake-mary/profile/personal-injury-lawyer/chubb-law-accident-injury-attorneys-0733-235975666"},"secComplaints":{"count":24,"sample":[{"adsh":"0000950103-25-002262","date":"2025-02-21","filer":"Spirit Airlines, Inc.  (SAVEQ)  (CIK 0001498710)","form":"8-K"},{"adsh":"0001078207-24-000095","date":"2024-08-21","filer":"BOWFLEX INC.  (BFXXQ)  (CIK 0001078207)","form":"8-K"},{"adsh":"0001193125-24-178615","date":"2024-07-12","filer":"PhaseBio Pharmaceuticals Inc  (PHASQ)  (CIK 0001169245)","form":"8-K"}]},"wiki":{"founded":"1818-00-00","hq":"Blackburn","employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":"Charles Chubb, Jeremiah Chubb","website":"https://chubbfs.com/worldwide-en/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/ChubbFS_APIG_2022.svg/330px-ChubbFS_APIG_2022.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Chubb_Fire_%26_Security","extract":"Chubb Fire & Security is a British multinational company that provides property protection and life safety equipment and services, including fire protection and security systems. It has been a subsidiary of APi Group Corporation since January 2022."},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Chubb%20Fire%20%26%20Security%20logo.png","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":95,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"},{"scoreType":"disability_in","score":90,"year":2021,"sourceUrl":"https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"}],"slug":"chubb","news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Chubb Limited","slug":"chubb-limited","ownership":"publicly traded (ticker symbol CB)","hq":"Switzerland","majorIndustry":"financial services","specificIndustry":"insurance","totalPenalty":207021142,"totalRecords":199,"offenseGroups":[{"category":"competition-related offenses","penalty":112470000,"records":5},{"category":"government-contracting-related offenses","penalty":70000000,"records":1},{"category":"employment-related offenses","penalty":14506000,"records":3},{"category":"consumer-protection-related offenses","penalty":9978930,"records":189},{"category":"financial offenses","penalty":66212,"records":1}],"primaryOffenses":[{"category":"price-fixing or anti-competitive practices","penalty":112470000,"records":5},{"category":"False Claims Act and related","penalty":70000000,"records":1},{"category":"insurance violation","penalty":9739919,"records":188},{"category":"employment discrimination","penalty":8500000,"records":1},{"category":"wage and hour violation","penalty":6006000,"records":2}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T19:50:56.650Z"},"fec":{"source":"FEC API","committeeId":"C00348938","committeeName":"CHUBB GROUP HOLDINGS INC. POLITICAL ACTION COMMITTEE","lean":"bipartisan","repTotal":5000,"demTotal":5500,"totalRaised":120141,"totalRaisedFmt":"$120K","lastFilingDate":"2026-04-15","cycle":2026,"fetchedAt":"2026-05-27T19:50:51.609Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-05-03","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Chubb&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T19:50:53.042Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T19:50:56.650Z","realCats":4,"governance":{"s":"Wikidata: owned by S&P 500; HQ Warren. (Wikidata Q1089060)","sources":["wikidata"]},"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Chubb",
+  "cat": "Financial Services",
+  "init": "CHUB",
+  "overall": 45.6,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $11K PAC donations; 48% to Republican, 52% to Democratic committees.",
+    "amt": "$120K",
+    "lean": "bipartisan",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "199 federal penalties totaling $207.0M since 2000 (Violation Tracker).",
+    "rating": "mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#1e1535",
+  "ac": "#9b8ff0",
+  "charity": {
+    "s": "$16M reported corporate giving in 2024 (~0.04% of revenue) via Chubb Charitable Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Insure Our Future 2024 scorecard: 2.3/10 (weak). Sub-scores: coal underwriting moderate; oil & gas underwriting weak. Chubb: 2022 oil-sands underwriting policy improved coal/oil sands position; oil and gas exclusions still lag European peers.",
+    "sources": [
+      "EPA",
+      "Violation Tracker",
+      "insure-our-future"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "NAIC Complaint Index 0.62 (well below the 1.00 US peer average).",
+    "sources": [
+      "Claude AI synthesis",
+      "insurance-deep"
+    ]
+  },
+  "competitors": [
+    "travelers",
+    "allstate",
+    "berkshire-hathaway"
+  ],
+  "antitrust": true,
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/fl/lake-mary/profile/personal-injury-lawyer/chubb-law-accident-injury-attorneys-0733-235975666"
+  },
+  "secComplaints": {
+    "count": 24,
+    "sample": [
+      {
+        "adsh": "0000950103-25-002262",
+        "date": "2025-02-21",
+        "filer": "Spirit Airlines, Inc.  (SAVEQ)  (CIK 0001498710)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001078207-24-000095",
+        "date": "2024-08-21",
+        "filer": "BOWFLEX INC.  (BFXXQ)  (CIK 0001078207)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-24-178615",
+        "date": "2024-07-12",
+        "filer": "PhaseBio Pharmaceuticals Inc  (PHASQ)  (CIK 0001169245)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "wiki": {
+    "founded": "1818-00-00",
+    "hq": "Blackburn",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": "Charles Chubb, Jeremiah Chubb",
+    "website": "https://chubbfs.com/worldwide-en/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/ChubbFS_APIG_2022.svg/330px-ChubbFS_APIG_2022.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Chubb_Fire_%26_Security",
+    "extract": "Chubb Fire & Security is a British multinational company that provides property protection and life safety equipment and services, including fire protection and security systems. It has been a subsidiary of APi Group Corporation since January 2022."
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Chubb%20Fire%20%26%20Security%20logo.png",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 95,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    },
+    {
+      "scoreType": "disability_in",
+      "score": 90,
+      "year": 2021,
+      "sourceUrl": "https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"
+    }
+  ],
+  "slug": "chubb",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Chubb Limited",
+    "slug": "chubb-limited",
+    "ownership": "publicly traded (ticker symbol CB)",
+    "hq": "Switzerland",
+    "majorIndustry": "financial services",
+    "specificIndustry": "insurance",
+    "totalPenalty": 207021142,
+    "totalRecords": 199,
+    "offenseGroups": [
+      {
+        "category": "competition-related offenses",
+        "penalty": 112470000,
+        "records": 5
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 70000000,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 14506000,
+        "records": 3
+      },
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 9978930,
+        "records": 189
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 66212,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "price-fixing or anti-competitive practices",
+        "penalty": 112470000,
+        "records": 5
+      },
+      {
+        "category": "False Claims Act and related",
+        "penalty": 70000000,
+        "records": 1
+      },
+      {
+        "category": "insurance violation",
+        "penalty": 9739919,
+        "records": 188
+      },
+      {
+        "category": "employment discrimination",
+        "penalty": 8500000,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 6006000,
+        "records": 2
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T19:50:56.650Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00348938",
+    "committeeName": "CHUBB GROUP HOLDINGS INC. POLITICAL ACTION COMMITTEE",
+    "lean": "bipartisan",
+    "repTotal": 5000,
+    "demTotal": 5500,
+    "totalRaised": 120141,
+    "totalRaisedFmt": "$120K",
+    "lastFilingDate": "2026-04-15",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-27T19:50:51.609Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-05-03",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Chubb&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T19:50:53.042Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T19:50:56.650Z",
+  "realCats": 4,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Warren. (Wikidata Q1089060)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "csc": {
+    "political": 84,
+    "charity": 50,
+    "environment": 35,
+    "labor": 8
+  }
+}

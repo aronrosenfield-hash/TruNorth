@@ -2,7 +2,7 @@
   "name": "Brouwmeester",
   "cat": "Retail",
   "init": "BROU",
-  "overall": 44,
+  "overall": 39.9,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -148,5 +148,10 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "aldi"
+  "inheritedFrom": "aldi",
+  "csc": {
+    "charity": 50,
+    "environment": 50,
+    "labor": 9.6
+  }
 }

@@ -2,12 +2,12 @@
   "name": "Ralph Lauren",
   "cat": "Apparel & Fashion",
   "init": "RL",
-  "overall": 66.3,
+  "overall": 71.2,
   "isPublic": true,
   "ticker": "RL",
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "positive",
     "labor": "mixed",
     "dei": "pro_dei",
@@ -27,12 +27,13 @@
     ]
   },
   "charity": {
-    "s": "$14M reported corporate giving in 2024 (~0.21% of revenue) via Ralph Lauren Corporate Foundation.",
+    "s": "$14M reported corporate giving in 2024 (~0.21% of revenue) via Ralph Lauren Corporate Foundation. Operates the The Ralph Lauren Corporate Foundation: $8.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$13.4 million (FY25)",
     "focus": "Cancer care, community development, emergency relief, HIV/AIDS support",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -305,7 +306,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: fire & fire-related burn."
   },
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -313,5 +314,11 @@
     "health": {
       "na": true
     }
+  },
+  "csc": {
+    "political": 81.7,
+    "charity": 85,
+    "environment": 100,
+    "labor": 50
   }
 }

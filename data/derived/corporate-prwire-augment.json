@@ -1,18 +1,77 @@
 {
   "_meta": {
-    "generated_at": "2026-06-09T16:49:33.667Z",
+    "generated_at": "2026-06-11T02:47:31.649Z",
     "horizon_days": 30,
     "feeds": [
       "prnewswire",
+      "prnewswire-csr",
       "businesswire"
     ],
     "counts": {
-      "items_fetched": 22,
-      "items_matched": 0,
+      "items_fetched": 56,
+      "items_matched": 2,
       "skipped_date": 0,
-      "skipped_no_positive": 22,
-      "skipped_no_brand": 0,
-      "brands_with_signal": 0
+      "skipped_no_positive": 47,
+      "skipped_no_brand": 7,
+      "brands_with_signal": 2
+    }
+  },
+  "humana": {
+    "announcements": [
+      {
+        "source": "businesswire",
+        "sourceLabel": "Business Wire (Philanthropy)",
+        "title": "Humana and CenterWell Employees Donate More Than $1.4 Million in 24 Hours",
+        "url": "http://www.businesswire.com/news/home/20260610774527/en/Humana-and-CenterWell-Employees-Donate-More-Than-1.4-Million-in-24-Hours/?feedref=JjAwJuNHiystnCoBq_hl-VKYzSbOOqBqjKXH5avoZgn7EmNODbxWaoM2s1g-aVmLnkvYMqDDYxFrLs-oQ2BHQx6VAQCkWafJkCXZOmt4bL2KlRga3O461kEs-I8JDeWRx_CEbz6pDQ0WxfZ2Va5bKg==",
+        "pub_date": "Wed, 10 Jun 2026 13:00:00 UT",
+        "category": "charity",
+        "sc": "positive",
+        "provenance": "company-announcement"
+      }
+    ],
+    "categorySummary": {
+      "charity": {
+        "count": 1,
+        "sc": "positive",
+        "narrative": "Company announcement: \"Humana and CenterWell Employees Donate More Than $1.4 Million in 24 Hours\" (wire release, 2026-06-10).",
+        "provenance": "company-announcement",
+        "topItems": [
+          {
+            "title": "Humana and CenterWell Employees Donate More Than $1.4 Million in 24 Hours",
+            "url": "http://www.businesswire.com/news/home/20260610774527/en/Humana-and-CenterWell-Employees-Donate-More-Than-1.4-Million-in-24-Hours/?feedref=JjAwJuNHiystnCoBq_hl-VKYzSbOOqBqjKXH5avoZgn7EmNODbxWaoM2s1g-aVmLnkvYMqDDYxFrLs-oQ2BHQx6VAQCkWafJkCXZOmt4bL2KlRga3O461kEs-I8JDeWRx_CEbz6pDQ0WxfZ2Va5bKg==",
+            "pub_date": "Wed, 10 Jun 2026 13:00:00 UT"
+          }
+        ]
+      }
+    }
+  },
+  "subway": {
+    "announcements": [
+      {
+        "source": "businesswire",
+        "sourceLabel": "Business Wire (Philanthropy)",
+        "title": "Subway Canada’s Charitable Never Miss Lunch Week Returns to Help Tackle Childhood Food Insecurity, One Cookie at a Time",
+        "url": "http://www.businesswire.com/news/home/20260610806019/en/Subway-Canada%E2%80%99s-Charitable-Never-Miss-Lunch-Week-Returns-to-Help-Tackle-Childhood-Food-Insecurity-One-Cookie-at-a-Time/?feedref=JjAwJuNHiystnCoBq_hl-VKYzSbOOqBqjKXH5avoZgn7EmNODbxWaoM2s1g-aVmLnkvYMqDDYxFrLs-oQ2BHQx6VAQCkWafJkCXZOmt4bL2KlRga3O461kEs-I8JDeWRx_CEbz6pDQ0WxfZ2Va5bKg==",
+        "pub_date": "Wed, 10 Jun 2026 12:00:00 UT",
+        "category": "charity",
+        "sc": "positive",
+        "provenance": "company-announcement"
+      }
+    ],
+    "categorySummary": {
+      "charity": {
+        "count": 1,
+        "sc": "positive",
+        "narrative": "Company announcement: \"Subway Canada’s Charitable Never Miss Lunch Week Returns to Help Tackle Childhood Food Insecurity, One Cookie at a Time\" (wire release, 2026-06-10).",
+        "provenance": "company-announcement",
+        "topItems": [
+          {
+            "title": "Subway Canada’s Charitable Never Miss Lunch Week Returns to Help Tackle Childhood Food Insecurity, One Cookie at a Time",
+            "url": "http://www.businesswire.com/news/home/20260610806019/en/Subway-Canada%E2%80%99s-Charitable-Never-Miss-Lunch-Week-Returns-to-Help-Tackle-Childhood-Food-Insecurity-One-Cookie-at-a-Time/?feedref=JjAwJuNHiystnCoBq_hl-VKYzSbOOqBqjKXH5avoZgn7EmNODbxWaoM2s1g-aVmLnkvYMqDDYxFrLs-oQ2BHQx6VAQCkWafJkCXZOmt4bL2KlRga3O461kEs-I8JDeWRx_CEbz6pDQ0WxfZ2Va5bKg==",
+            "pub_date": "Wed, 10 Jun 2026 12:00:00 UT"
+          }
+        ]
+      }
     }
   }
 }

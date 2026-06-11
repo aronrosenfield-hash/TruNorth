@@ -2,7 +2,7 @@
   "name": "Roots Blowers",
   "cat": "Manufacturing",
   "init": "ROOT",
-  "overall": 42.5,
+  "overall": 38,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -139,5 +139,9 @@
       "basis": "Manufacturing"
     }
   },
-  "inheritedFrom": "general-electric"
+  "inheritedFrom": "general-electric",
+  "csc": {
+    "charity": 50,
+    "labor": 8
+  }
 }

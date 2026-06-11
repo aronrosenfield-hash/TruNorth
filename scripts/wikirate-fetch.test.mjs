@@ -28,6 +28,7 @@ import {
   buildUrl,
   normalizeAnswerPayload,
   replayFixture,
+  computeStatus,
 } from "./wikirate-fetch.mjs";
 import {
   normalizeCompanyName,
@@ -35,6 +36,7 @@ import {
   buildIndex,
   matchCompany,
   buildAugment,
+  isUsableRaw,
 } from "./wikirate-merge.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -79,6 +81,35 @@ test("buildUrl produces the documented endpoint shape", () => {
   assert.equal(u.searchParams.get("view"), "answer_list");
   assert.equal(u.searchParams.get("limit"), "50");
   assert.equal(u.searchParams.get("offset"), "100");
+});
+
+test("computeStatus distinguishes ok / partial / failed runs", () => {
+  // No errors -> ok.
+  assert.equal(computeStatus({ dry: false, metricCount: 9, errorCount: 0 }), "ok");
+  // Some errors -> partial.
+  assert.equal(computeStatus({ dry: false, metricCount: 9, errorCount: 3 }), "partial");
+  // Every metric errored -> failed (this is what a network outage or a
+  // Cloudflare 403 wall looks like; must never read as a clean empty run).
+  assert.equal(computeStatus({ dry: false, metricCount: 9, errorCount: 9 }), "failed");
+  // Dry runs never touch the network -> always ok.
+  assert.equal(computeStatus({ dry: true, metricCount: 9, errorCount: 0 }), "ok");
+});
+
+test("isUsableRaw rejects failed and empty-live snapshots", () => {
+  // Failed run (new fetcher) -> unusable, regardless of mode.
+  assert.equal(isUsableRaw({ mode: "live", status: "failed", answer_count: 0, answers: [] }), false);
+  // Legacy live snapshot with zero answers (pre-`status` fetcher swallowing
+  // errors, e.g. data/raw/wikirate/2026-06-09.json) -> unusable.
+  assert.equal(isUsableRaw({ mode: "live", answer_count: 0, answers: [] }), false);
+  // Healthy live snapshot -> usable.
+  assert.equal(isUsableRaw({ mode: "live", status: "ok", answer_count: 12, answers: [{}] }), true);
+  // Partial live snapshot still has real data -> usable.
+  assert.equal(isUsableRaw({ mode: "live", status: "partial", answer_count: 5, answers: [{}] }), true);
+  // Dry snapshots are fixture replays; usable even without `status`.
+  assert.equal(isUsableRaw({ mode: "dry", answer_count: 30, answers: [{}] }), true);
+  // Garbage -> unusable.
+  assert.equal(isUsableRaw(null), false);
+  assert.equal(isUsableRaw("nope"), false);
 });
 
 test("normalizeAnswerPayload accepts {answer:[...]} envelope", async () => {

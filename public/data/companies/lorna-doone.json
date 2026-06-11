@@ -2,11 +2,11 @@
   "name": "Lorna Doone",
   "cat": "Entertainment & Media",
   "init": "LORN",
-  "overall": 50.6,
+  "overall": 54.9,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "good",
     "labor": "poor",
     "dei": "pro_dei",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Mondelez International: $25M reported corporate giving in 2024 (~0.07% of revenue) via Mondelez International Foundation. Operates the Mondelez International Foundation: $3.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -135,5 +135,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "mondelez-international"
+  "inheritedFrom": "mondelez-international",
+  "csc": {
+    "political": 84.5,
+    "charity": 85,
+    "environment": 100,
+    "labor": 9,
+    "execPay": 25.9
+  }
 }

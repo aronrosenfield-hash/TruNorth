@@ -2,7 +2,7 @@
   "name": "Bloomingdale's",
   "cat": "Retail",
   "init": "BLD",
-  "overall": 47.4,
+  "overall": 53.4,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -155,7 +155,7 @@
   "health": {
     "s": "8 CPSC recalls on record; sample hazard: fire & fire-related burn."
   },
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -180,5 +180,11 @@
       "basis": "Retail"
     }
   },
-  "inheritedFrom": "macy-s"
+  "inheritedFrom": "macy-s",
+  "csc": {
+    "political": 78.8,
+    "charity": 50,
+    "labor": 50,
+    "execPay": 39.9
+  }
 }

@@ -2,7 +2,7 @@
   "name": "Quad/Graphics",
   "cat": "Manufacturing",
   "init": "QUAD",
-  "overall": 48.5,
+  "overall": 38,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na"
   },
   "political": {
@@ -62,9 +62,10 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Registered data broker (California Data Broker Registry, CPPA, since 12/14/2020): collects and sells consumers' personal information to third parties under CA Civil Code §1798.99.80.",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "cppa-data-brokers"
     ]
   },
   "execPay": {
@@ -212,7 +213,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:15:51.284Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -229,5 +230,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 81.8,
+    "environment": 26.3,
+    "labor": 15.2,
+    "privacy": 8
   }
 }

@@ -2,7 +2,7 @@
   "name": "BXP",
   "cat": "Retail",
   "init": "BXP",
-  "overall": 51,
+  "overall": 46.3,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -12,8 +12,7 @@
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "na",
-    "execPay": "good"
+    "privacy": "na"
   },
   "political": {
     "s": "FEC: $294K in executive political donations; partisan lean Republican +35 across 8 executive donors.",
@@ -73,7 +72,7 @@
     ]
   },
   "execPay": {
-    "s": "CEO-to-median-worker pay ratio 0:1 (median employee pay $140,113; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2013).",
+    "s": "CEO total compensation $0K — SEC proxy statement (DEF 14A, 2013). No CEO-to-worker pay ratio disclosed in a parseable form.",
     "sources": [
       "sec-def14a"
     ]
@@ -221,5 +220,11 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 48.7,
+    "environment": 39.1,
+    "labor": 39.1,
+    "execPay": 50
   }
 }

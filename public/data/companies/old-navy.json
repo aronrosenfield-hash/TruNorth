@@ -2,7 +2,7 @@
   "name": "Old Navy",
   "cat": "Apparel & Fashion",
   "init": "OLDN",
-  "overall": 61.1,
+  "overall": 50,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -13,7 +13,6 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "good",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -65,10 +64,8 @@
     ]
   },
   "execPay": {
-    "s": "Via parent company Gap Inc.: CEO-to-median-worker pay ratio 0:1 (median employee pay $10,170; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2022).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -106,12 +103,17 @@
   "health": {
     "s": "4 CPSC recalls on record; sample hazard: this style of aqua socks has less traction when worn on wet or smooth surfaces s."
   },
-  "realCats": 5,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Gap Inc.; HQ San Francisco. (Wikidata Q2735242)",
     "sources": [
       "wikidata"
     ]
   },
-  "inheritedFrom": "gap-inc"
+  "inheritedFrom": "gap-inc",
+  "csc": {
+    "environment": 50,
+    "labor": 50,
+    "privacy": 50
+  }
 }

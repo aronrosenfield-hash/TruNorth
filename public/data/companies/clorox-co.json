@@ -2,11 +2,11 @@
   "name": "CLOROX CO",
   "cat": "Consumer Goods",
   "init": "CLOR",
-  "overall": 39.7,
+  "overall": 46.1,
   "isPublic": true,
   "sc": {
     "political": "neutral",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -40,10 +40,11 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "$9M reported corporate giving in 2024 (~0.11% of revenue) via Clorox Company Foundation.",
+    "s": "$9M reported corporate giving in 2024 (~0.11% of revenue) via Clorox Company Foundation. Operates the Clorox Company Foundation: $4.6M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -250,5 +251,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 85,
+    "environment": 26.3,
+    "labor": 13.1
   }
 }

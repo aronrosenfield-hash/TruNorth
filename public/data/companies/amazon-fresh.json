@@ -2,7 +2,7 @@
   "name": "Amazon Fresh",
   "cat": "Grocery",
   "init": "AF",
-  "overall": 49.6,
+  "overall": 43.7,
   "isPublic": true,
   "ticker": "AMZN",
   "sc": {
@@ -168,7 +168,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-17T23:59:59.000Z",
-  "realCats": 6,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -208,5 +208,12 @@
       "source": "sec-def14a"
     }
   },
-  "inheritedFrom": "amazon"
+  "inheritedFrom": "amazon",
+  "csc": {
+    "political": 78.5,
+    "charity": 85,
+    "environment": 15.9,
+    "labor": 8,
+    "privacy": 8
+  }
 }

@@ -1,1 +1,224 @@
-{"name":"IQVIA","cat":"Healthcare","init":"IQVI","overall":63.4,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $670K in executive political donations; partisan lean split across 16 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"2 federal penalties totaling $4.0M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-31","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":"2016-00-00","hq":"Durham, Danbury","employees":null,"revenue":null,"parent":null,"industry":"pharmaceutical industry","products":null,"keyPeople":"Dennis Gillings","website":"https://www.iqvia.com/","controversies":"== Controversies ==\nIMS Health's business of collecting and selling pharmaceutical sales data, even though it is anonymized, was under scrutiny from both the media and the legal system.\n\nIMS Health v. Ayotte was a free speech case involving IMS Health.\n\nSorrell v. IMS Health Inc. was a case about physician-data privacy, which went to the U.S. Supreme Court. The court ruled in favor of the company.\n\nIQVIA was contracted by the UK government's Office of National Statistics to provide data on the prevalence of COVID-19 infection in the population. Some users of the survey reported problems contacting IQVIA and arranging for testing. The problems with how the survey results were collected were criticised for potentially leading to biased data by New Scientist.\n\nOn July 17, 2023, the Federal Trade Commission sued to block IQVIA’s acquisition of Propel Media alleging in an administrative complaint that the acquisition would give IQVIA a market-leading position in health care programmatic advertising and would raise health-care prices for consumers. In December 2023, U.S. District Court Judge Edgardo Ramos issued an order granting the FTC’s motion for preliminary injunction to block the merger. Speaking in favor of the FTC, Ramos said, \"The FTC has shown that there is a reasonable probability that the proposed acquisition will substantially impair competition in the relevant market and that the equities weigh in favor of injunctive relief.\" An administrative trial was scheduled to start on January 18, 2024. However, on January 5, 2024, IQVIA and Propel Media announced that they had mutually agreed to abandon the proposed merger.","logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/IQVIA","extract":"IQVIA Holdings, Inc. is an American company based in Durham, North Carolina, focused on health information technology and clinical research."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nc/durham/profile/pharmaceutical-consultant/iqvia-0593-6008030"},"secComplaints":{"count":16,"sample":[{"adsh":"0001193125-24-196457","date":"2024-08-08","filer":"Galera Therapeutics, Inc.  (GRTX)  (CIK 0001563577)","form":"8-K"},{"adsh":"0001140361-25-045204","date":"2025-12-11","filer":"Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)","form":"8-K"},{"adsh":"0001104659-24-085826","date":"2024-08-05","filer":"Theravance Biopharma, Inc.  (TBPH)  (CIK 0001583107)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Iqvia-logo-color.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":5,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"iqvia","competitors":[],"news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"IQVIA","slug":"iqvia","ownership":"publicly traded (ticker symbol IQV)","hq":"Connecticut","majorIndustry":"healthcare services","specificIndustry":"pharmaceutical services","totalPenalty":4050000,"totalRecords":2,"offenseGroups":[{"category":"employment-related offenses","penalty":4050000,"records":2}],"primaryOffenses":[{"category":"benefit plan administrator violation","penalty":3500000,"records":1},{"category":"employment discrimination","penalty":550000,"records":1}],"rating":"good","lastChecked":"2026-05-31","fetchedAt":"2026-05-31T00:16:37.156Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-02-27","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=IQVIA&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T00:16:35.462Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T00:16:37.156Z","realCats":2,"governance":{"s":"Wikidata: owned by S&P 500; HQ Danbury. (Wikidata Q305473)","sources":["wikidata"]},"flags":{"guns":{"na":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Healthcare"}}}
+{
+  "name": "IQVIA",
+  "cat": "Healthcare",
+  "init": "IQVI",
+  "overall": 46.6,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "poor",
+    "execPay": "na",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $670K in executive political donations; partisan lean split across 16 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "2 federal penalties totaling $4.0M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Registered data broker (California Data Broker Registry, CPPA, since 1/30/2023): collects and sells consumers' personal information to third parties under CA Civil Code §1798.99.80.",
+    "sources": [
+      "Claude AI synthesis",
+      "cppa-data-brokers"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": "2016-00-00",
+    "hq": "Durham, Danbury",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "pharmaceutical industry",
+    "products": null,
+    "keyPeople": "Dennis Gillings",
+    "website": "https://www.iqvia.com/",
+    "controversies": "== Controversies ==\nIMS Health's business of collecting and selling pharmaceutical sales data, even though it is anonymized, was under scrutiny from both the media and the legal system.\n\nIMS Health v. Ayotte was a free speech case involving IMS Health.\n\nSorrell v. IMS Health Inc. was a case about physician-data privacy, which went to the U.S. Supreme Court. The court ruled in favor of the company.\n\nIQVIA was contracted by the UK government's Office of National Statistics to provide data on the prevalence of COVID-19 infection in the population. Some users of the survey reported problems contacting IQVIA and arranging for testing. The problems with how the survey results were collected were criticised for potentially leading to biased data by New Scientist.\n\nOn July 17, 2023, the Federal Trade Commission sued to block IQVIA’s acquisition of Propel Media alleging in an administrative complaint that the acquisition would give IQVIA a market-leading position in health care programmatic advertising and would raise health-care prices for consumers. In December 2023, U.S. District Court Judge Edgardo Ramos issued an order granting the FTC’s motion for preliminary injunction to block the merger. Speaking in favor of the FTC, Ramos said, \"The FTC has shown that there is a reasonable probability that the proposed acquisition will substantially impair competition in the relevant market and that the equities weigh in favor of injunctive relief.\" An administrative trial was scheduled to start on January 18, 2024. However, on January 5, 2024, IQVIA and Propel Media announced that they had mutually agreed to abandon the proposed merger.",
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/IQVIA",
+    "extract": "IQVIA Holdings, Inc. is an American company based in Durham, North Carolina, focused on health information technology and clinical research."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nc/durham/profile/pharmaceutical-consultant/iqvia-0593-6008030"
+  },
+  "secComplaints": {
+    "count": 16,
+    "sample": [
+      {
+        "adsh": "0001193125-24-196457",
+        "date": "2024-08-08",
+        "filer": "Galera Therapeutics, Inc.  (GRTX)  (CIK 0001563577)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001140361-25-045204",
+        "date": "2025-12-11",
+        "filer": "Roivant Sciences Ltd.  (ROIV)  (CIK 0001635088)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-24-085826",
+        "date": "2024-08-05",
+        "filer": "Theravance Biopharma, Inc.  (TBPH)  (CIK 0001583107)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Iqvia-logo-color.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 5,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "iqvia",
+  "competitors": [],
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "IQVIA",
+    "slug": "iqvia",
+    "ownership": "publicly traded (ticker symbol IQV)",
+    "hq": "Connecticut",
+    "majorIndustry": "healthcare services",
+    "specificIndustry": "pharmaceutical services",
+    "totalPenalty": 4050000,
+    "totalRecords": 2,
+    "offenseGroups": [
+      {
+        "category": "employment-related offenses",
+        "penalty": 4050000,
+        "records": 2
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "benefit plan administrator violation",
+        "penalty": 3500000,
+        "records": 1
+      },
+      {
+        "category": "employment discrimination",
+        "penalty": 550000,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-31",
+    "fetchedAt": "2026-05-31T00:16:37.156Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-02-27",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=IQVIA&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T00:16:35.462Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T00:16:37.156Z",
+  "realCats": 3,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Danbury. (Wikidata Q305473)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Healthcare"
+    }
+  },
+  "csc": {
+    "political": 76.7,
+    "labor": 50,
+    "privacy": 8
+  }
+}

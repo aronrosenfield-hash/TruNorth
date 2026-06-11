@@ -2,7 +2,7 @@
   "name": "USA Drug",
   "cat": "Healthcare",
   "init": "USAD",
-  "overall": 60.4,
+  "overall": 59.4,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -106,7 +106,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -134,5 +134,11 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "walgreens"
+  "inheritedFrom": "walgreens",
+  "csc": {
+    "environment": 50,
+    "labor": 97,
+    "privacy": 50,
+    "health": 50
+  }
 }

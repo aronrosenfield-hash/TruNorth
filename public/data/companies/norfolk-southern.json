@@ -2,12 +2,12 @@
   "name": "Norfolk Southern",
   "cat": "Manufacturing",
   "init": "NO",
-  "overall": 29.3,
+  "overall": 39.1,
   "ab": "#0d2318",
   "ac": "#4caf82",
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "neutral",
@@ -26,12 +26,13 @@
     ]
   },
   "charity": {
-    "s": "$12M reported corporate giving in 2024 (~0.09% of revenue) via Norfolk Southern Foundation.",
+    "s": "$12M reported corporate giving in 2024 (~0.09% of revenue) via Norfolk Southern Foundation. Operates the Norfolk Southern Foundation: $7.9M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "N/A",
     "focus": "N/A",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -308,5 +309,10 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "charity": 85,
+    "environment": 8,
+    "labor": 8
   }
 }

@@ -2,11 +2,11 @@
   "name": "Breckenridge Brewery",
   "cat": "Food & Beverage",
   "init": "BREC",
-  "overall": 54.2,
+  "overall": 54.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "poor",
     "dei": "neutral",
@@ -31,9 +31,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Anheuser-Busch: $30M reported corporate giving in 2024 (~0.05% of revenue) via Anheuser-Busch Foundation. Operates the Anheuser-Busch Foundation: $7.3M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -138,7 +138,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:12:32.392Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -163,5 +163,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "anheuser-busch"
+  "inheritedFrom": "anheuser-busch",
+  "csc": {
+    "political": 79.8,
+    "charity": 85,
+    "environment": 50,
+    "labor": 13.7,
+    "health": 50
+  }
 }

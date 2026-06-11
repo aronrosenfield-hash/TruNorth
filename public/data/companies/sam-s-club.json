@@ -2,7 +2,7 @@
   "name": "Sam's Club",
   "cat": "Retail",
   "init": "SC",
-  "overall": 45.1,
+  "overall": 49.8,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -315,7 +315,7 @@
   "health": {
     "s": "16 CPSC recalls (1 in past 24 months); latest hazard: electrocution/electric shock."
   },
-  "realCats": 7,
+  "realCats": 6,
   "flags": {
     "guns": {
       "na": true
@@ -337,5 +337,13 @@
       "basis": "Retail"
     }
   },
-  "inheritedFrom": "walmart"
+  "inheritedFrom": "walmart",
+  "csc": {
+    "political": 81,
+    "charity": 50,
+    "environment": 8.3,
+    "labor": 50,
+    "privacy": 50,
+    "execPay": 38.6
+  }
 }

@@ -2,11 +2,11 @@
   "name": "Magnolia Audio Visual",
   "cat": "Retail",
   "init": "MAGN",
-  "overall": 59.6,
+  "overall": 59.4,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "good",
     "labor": "poor",
     "dei": "pro_dei",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Best Buy: $30M reported corporate giving in 2024 (~0.07% of revenue) via Best Buy Foundation. JUST Capital JUST 100 — ranked #30 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Operates the Best Buy Foundation: $13.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -151,5 +151,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "best-buy"
+  "inheritedFrom": "best-buy",
+  "csc": {
+    "political": 83,
+    "charity": 85,
+    "environment": 100,
+    "labor": 13.2,
+    "privacy": 50
+  }
 }

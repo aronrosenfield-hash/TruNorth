@@ -1,1 +1,206 @@
-{"name":"Tesco","cat":"Grocery","init":"TESC","overall":55.5,"isPublic":true,"sc":{"political":"neutral","charity":"mixed","environment":"positive","labor":"neutral","dei":"neutral","animals":"mixed","guns":"neutral","privacy":"neutral","execPay":"mixed","governance":"neutral"},"political":{"s":"FEC: $9K PAC donations; 63% to Republican, 37% to Democratic committees.","amt":"$43K","lean":"bipartisan","sources":["FEC.gov"]},"labor":{"s":"Publishes UK Modern Slavery Act Section 54 statement (latest 2024) — discloses supply-chain due-diligence steps.","sources":["Claude AI synthesis","uk-modern-slavery"]},"dataLastUpdated":"2026-05-28","ab":"#1e1535","ac":"#9b8ff0","charity":{"s":"$130M reported corporate giving in 2024 (~0.67% of revenue) via BlackRock Foundation.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"Climate-commitment coalition member: EV100 (since 2018; target 2030) and RE100 (since 2017; target 2030). 100% renewable electricity across UK + Ireland operations — achieved. Forest 500 2024 leader (score 72/100) — strong tropical deforestation policy + implementation on commodity supply-chain. Exposed to soy, palm, beef, pulp.","sources":["Claude AI synthesis","climate-coalitions","forest500"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"Wikipedia \"Animal welfare\" section: Tesco has received criticism for supplying meat from intensive animal farms. In September 2019, footage from a farm supplying Tesco showed birds being kicked and hurled into crates. The following…","sources":["Claude AI synthesis","wikipedia-controversies"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"1 documented breach affecting 2,239 accounts (HIBP); latest breach 2014-02-12.","sources":["Have I Been Pwned"]},"execPay":{"s":"UK FCA fine for Cyber resilience (2018-10-01). £16.4M in fines.","sources":["Claude AI synthesis","uk-fca"]},"competitors":["sainsbury-s","nasdaq","aldi"],"stillInRussia":true,"wiki":{"founded":"1919-00-00","hq":"Welwyn Garden City, Cheshunt","employees":"482152","revenue":"54433000000","parent":"Norges Bank, Deutsche Bank, BlackRock, Schroders","industry":"retail chain","products":null,"keyPeople":"Jack Cohen","website":"https://www.tescoplc.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Tesco","extract":"Tesco plc is a British multinational groceries and general merchandise retailer headquartered in the United Kingdom at its head offices in Welwyn Garden City, England. The company was founded by Sir Jack Cohen in Hackney, London, in 1919. In 2011, it was the third-largest retailer in the world measured by gross revenues and the ninth-largest in the world measured by revenues. It is the market leader of groceries in the UK. As well as the United Kingdom, Tesco has stores in Czechia, Ireland, Slovakia, the Isle of Man and Hungary."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ne/omaha/profile/sound-recording/tesco-productions-0714-118000062"},"secComplaints":{"count":3,"sample":[{"adsh":"0001193125-25-155222","date":"2025-07-03","filer":"Walgreens Boots Alliance, Inc.  (WBA)  (CIK 0001618921)","form":"8-K"},{"adsh":"0001213900-25-068761","date":"2025-07-29","filer":"NEW ERA HELIUM INC.  (NEHC, NEHCW)  (CIK 0002028336)","form":"8-K"},{"adsh":"0001829126-25-010236","date":"2025-12-22","filer":"SharonAI Holdings, Inc.  (CIK 0002068385)","form":"8-K"}]},"storeFootprint":{"usStoreCount":1,"byState":{}},"slug":"tesco","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":{"source":"FEC API","committeeId":"C00079483","committeeName":"TESCO DIV OF TEXAS UTILITIES ELECTRIC CO PAC","lean":"bipartisan","repTotal":5500,"demTotal":3250,"totalRaised":42535,"totalRaisedFmt":"$43K","lastFilingDate":"1992-03-27","cycle":1992,"fetchedAt":"2026-05-27T16:45:36.624Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-16","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Tesco&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T16:45:40.743Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T16:45:40.743Z","realCats":6,"governance":{"s":"Wikidata: owned by Deutsche Bank; HQ Welwyn Garden City. (Wikidata Q487494)","sources":["wikidata"]},"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Tesco",
+  "cat": "Grocery",
+  "init": "TESC",
+  "overall": 54.3,
+  "isPublic": true,
+  "sc": {
+    "political": "neutral",
+    "charity": "mixed",
+    "environment": "positive",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "mixed",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "mixed",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $9K PAC donations; 63% to Republican, 37% to Democratic committees.",
+    "amt": "$43K",
+    "lean": "bipartisan",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "Publishes UK Modern Slavery Act Section 54 statement (latest 2024) — discloses supply-chain due-diligence steps.",
+    "sources": [
+      "Claude AI synthesis",
+      "uk-modern-slavery"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#1e1535",
+  "ac": "#9b8ff0",
+  "charity": {
+    "s": "$130M reported corporate giving in 2024 (~0.67% of revenue) via BlackRock Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Climate-commitment coalition member: EV100 (since 2018; target 2030) and RE100 (since 2017; target 2030). 100% renewable electricity across UK + Ireland operations — achieved. Forest 500 2024 leader (score 72/100) — strong tropical deforestation policy + implementation on commodity supply-chain. Exposed to soy, palm, beef, pulp.",
+    "sources": [
+      "Claude AI synthesis",
+      "climate-coalitions",
+      "forest500"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "Wikipedia \"Animal welfare\" section: Tesco has received criticism for supplying meat from intensive animal farms. In September 2019, footage from a farm supplying Tesco showed birds being kicked and hurled into crates. The following…",
+    "sources": [
+      "Claude AI synthesis",
+      "wikipedia-controversies"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "1 documented breach affecting 2,239 accounts (HIBP); latest breach 2014-02-12.",
+    "sources": [
+      "Have I Been Pwned"
+    ]
+  },
+  "execPay": {
+    "s": "UK FCA fine for Cyber resilience (2018-10-01). £16.4M in fines.",
+    "sources": [
+      "Claude AI synthesis",
+      "uk-fca"
+    ]
+  },
+  "competitors": [
+    "sainsbury-s",
+    "nasdaq",
+    "aldi"
+  ],
+  "stillInRussia": true,
+  "wiki": {
+    "founded": "1919-00-00",
+    "hq": "Welwyn Garden City, Cheshunt",
+    "employees": "482152",
+    "revenue": "54433000000",
+    "parent": "Norges Bank, Deutsche Bank, BlackRock, Schroders",
+    "industry": "retail chain",
+    "products": null,
+    "keyPeople": "Jack Cohen",
+    "website": "https://www.tescoplc.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tesco",
+    "extract": "Tesco plc is a British multinational groceries and general merchandise retailer headquartered in the United Kingdom at its head offices in Welwyn Garden City, England. The company was founded by Sir Jack Cohen in Hackney, London, in 1919. In 2011, it was the third-largest retailer in the world measured by gross revenues and the ninth-largest in the world measured by revenues. It is the market leader of groceries in the UK. As well as the United Kingdom, Tesco has stores in Czechia, Ireland, Slovakia, the Isle of Man and Hungary."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ne/omaha/profile/sound-recording/tesco-productions-0714-118000062"
+  },
+  "secComplaints": {
+    "count": 3,
+    "sample": [
+      {
+        "adsh": "0001193125-25-155222",
+        "date": "2025-07-03",
+        "filer": "Walgreens Boots Alliance, Inc.  (WBA)  (CIK 0001618921)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001213900-25-068761",
+        "date": "2025-07-29",
+        "filer": "NEW ERA HELIUM INC.  (NEHC, NEHCW)  (CIK 0002028336)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001829126-25-010236",
+        "date": "2025-12-22",
+        "filer": "SharonAI Holdings, Inc.  (CIK 0002068385)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "storeFootprint": {
+    "usStoreCount": 1,
+    "byState": {}
+  },
+  "slug": "tesco",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00079483",
+    "committeeName": "TESCO DIV OF TEXAS UTILITIES ELECTRIC CO PAC",
+    "lean": "bipartisan",
+    "repTotal": 5500,
+    "demTotal": 3250,
+    "totalRaised": 42535,
+    "totalRaisedFmt": "$43K",
+    "lastFilingDate": "1992-03-27",
+    "cycle": 1992,
+    "fetchedAt": "2026-05-27T16:45:36.624Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-16",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Tesco&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T16:45:40.743Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T16:45:40.743Z",
+  "realCats": 6,
+  "governance": {
+    "s": "Wikidata: owned by Deutsche Bank; HQ Welwyn Garden City. (Wikidata Q487494)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 50,
+    "environment": 100,
+    "labor": 50,
+    "privacy": 22,
+    "execPay": 50
+  }
+}

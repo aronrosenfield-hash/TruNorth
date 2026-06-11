@@ -2,12 +2,12 @@
   "name": "Jo Malone",
   "cat": "Beauty & Personal Care",
   "init": "JM",
-  "overall": 61.9,
+  "overall": 61.1,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "positive",
     "labor": "poor",
     "dei": "neutral",
@@ -25,7 +25,7 @@
     ]
   },
   "charity": {
-    "s": "Via parent company ESTEE LAUDER COMPANIES: $35M reported corporate giving in 2024 (~0.21% of revenue) via Estée Lauder Charitable Foundation.",
+    "s": "Via parent company ESTEE LAUDER COMPANIES: $35M reported corporate giving in 2024 (~0.21% of revenue) via Estée Lauder Charitable Foundation. Operates the Estee Lauder Companies Charitable Foundation: $15.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$4.5 million through 2025",
     "focus": "Mental health, children's wellbeing, breast cancer research",
     "sources": [
@@ -163,5 +163,11 @@
       "basis": "Beauty & Personal Care"
     }
   },
-  "inheritedFrom": "estee-lauder-companies"
+  "inheritedFrom": "estee-lauder-companies",
+  "csc": {
+    "political": 81.7,
+    "charity": 85,
+    "environment": 100,
+    "labor": 13.7
+  }
 }

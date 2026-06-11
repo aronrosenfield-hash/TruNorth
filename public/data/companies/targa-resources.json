@@ -1,1 +1,247 @@
-{"name":"Targa Resources","cat":"Energy & Utilities","init":"TARG","overall":31.6,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"poor","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $26K PAC donations; 81% to Republican, 19% to Democratic committees.","amt":"$48K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"98 federal penalties totaling $13.7M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"environmental violation: $12.4M in federal penalties (Violation Tracker).","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","competitors":["equinor-asa"],"wiki":{"founded":null,"hq":null,"employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":"https://www.targaresources.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Targa_Resources","extract":"Targa Resources Corp. is a Fortune 500 company based in Houston, Texas. Targa, a midstream energy infrastructure corporation, is one of the largest infrastructure companies delivering natural gas and natural gas liquids in the United States. Their operations are based largely, though not entirely, on the Gulf Coast, particularly in Texas and Louisiana. Matthew J. Meloy has been Chief Executive Officer since 2020."},"secComplaints":{"count":2,"sample":[{"adsh":"0001104659-25-005253","date":"2025-01-22","filer":"EnLink Midstream, LLC  (ENLC)  (CIK 0001592000)","form":"8-K"},{"adsh":"0001001614-25-000061","date":"2025-12-04","filer":"Riley Exploration Permian, Inc.  (REPX)  (CIK 0001001614)","form":"8-K"}]},"deiBadges":[{"scoreType":"hrc_cei","score":0,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"targa-resources","bbb":null,"news":null,"payRatio":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Targa Resources","slug":"targa-resources","ownership":"publicly traded (ticker symbol TRGP)","hq":"Texas","majorIndustry":"pipelines","specificIndustry":"pipelines","totalPenalty":13656806,"totalRecords":98,"offenseGroups":[{"category":"environment-related offenses","penalty":13453219,"records":81},{"category":"safety-related offenses","penalty":125216,"records":16},{"category":"employment-related offenses","penalty":78371,"records":1}],"primaryOffenses":[{"category":"environmental violation","penalty":12357033,"records":68},{"category":"air pollution violation","penalty":1048186,"records":11},{"category":"wage and hour violation","penalty":78371,"records":1},{"category":"railroad safety violation","penalty":67650,"records":10},{"category":"workplace safety or health violation","penalty":57566,"records":6}],"rating":"good","lastChecked":"2026-05-28","fetchedAt":"2026-05-28T01:25:30.101Z"},"fec":{"source":"FEC API","committeeId":"C00510016","committeeName":"TARGA RESOURCES CORP. FEDERAL PAC","lean":"right","repTotal":21000,"demTotal":5000,"totalRaised":47993,"totalRaisedFmt":"$48K","lastFilingDate":"2026-05-19","cycle":2026,"fetchedAt":"2026-05-28T01:25:25.778Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-30","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Targa%20Resources&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-28T01:25:26.594Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-28T01:25:30.101Z","realCats":3,"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Targa Resources",
+  "cat": "Energy & Utilities",
+  "init": "TARG",
+  "overall": 34.9,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $26K PAC donations; 81% to Republican, 19% to Democratic committees.",
+    "amt": "$48K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "98 federal penalties totaling $13.7M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "environmental violation: $12.4M in federal penalties (Violation Tracker).",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "competitors": [
+    "equinor-asa"
+  ],
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.targaresources.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Targa_Resources",
+    "extract": "Targa Resources Corp. is a Fortune 500 company based in Houston, Texas. Targa, a midstream energy infrastructure corporation, is one of the largest infrastructure companies delivering natural gas and natural gas liquids in the United States. Their operations are based largely, though not entirely, on the Gulf Coast, particularly in Texas and Louisiana. Matthew J. Meloy has been Chief Executive Officer since 2020."
+  },
+  "secComplaints": {
+    "count": 2,
+    "sample": [
+      {
+        "adsh": "0001104659-25-005253",
+        "date": "2025-01-22",
+        "filer": "EnLink Midstream, LLC  (ENLC)  (CIK 0001592000)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001001614-25-000061",
+        "date": "2025-12-04",
+        "filer": "Riley Exploration Permian, Inc.  (REPX)  (CIK 0001001614)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 0,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "targa-resources",
+  "bbb": null,
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Targa Resources",
+    "slug": "targa-resources",
+    "ownership": "publicly traded (ticker symbol TRGP)",
+    "hq": "Texas",
+    "majorIndustry": "pipelines",
+    "specificIndustry": "pipelines",
+    "totalPenalty": 13656806,
+    "totalRecords": 98,
+    "offenseGroups": [
+      {
+        "category": "environment-related offenses",
+        "penalty": 13453219,
+        "records": 81
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 125216,
+        "records": 16
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 78371,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "environmental violation",
+        "penalty": 12357033,
+        "records": 68
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 1048186,
+        "records": 11
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 78371,
+        "records": 1
+      },
+      {
+        "category": "railroad safety violation",
+        "penalty": 67650,
+        "records": 10
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 57566,
+        "records": 6
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-28",
+    "fetchedAt": "2026-05-28T01:25:30.101Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00510016",
+    "committeeName": "TARGA RESOURCES CORP. FEDERAL PAC",
+    "lean": "right",
+    "repTotal": 21000,
+    "demTotal": 5000,
+    "totalRaised": 47993,
+    "totalRaisedFmt": "$48K",
+    "lastFilingDate": "2026-05-19",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-28T01:25:25.778Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-30",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Targa%20Resources&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-28T01:25:26.594Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-28T01:25:30.101Z",
+  "realCats": 3,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "csc": {
+    "political": 51.8,
+    "environment": 15.3,
+    "labor": 14.9
+  }
+}

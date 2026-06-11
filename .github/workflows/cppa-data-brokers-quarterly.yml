@@ -1,0 +1,42 @@
+name: cppa-data-brokers-quarterly
+
+# R6 Lever 4b: CPPA California Data Broker Registry CSV → privacy signals.
+# Registration cycle is annual (Jan 31 deadline); quarterly catches
+# mid-year additions.
+
+on:
+  schedule:
+    - cron: "0 7 8 2,5,8,11 *"   # 07:00 UTC, 8th of Feb/May/Aug/Nov
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch registry + match to catalog
+        run: node scripts/cppa-data-brokers-fetch.mjs
+
+      - name: Apply augments into per-company JSON
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name  "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/derived/cppa-data-brokers-augment.json public/data/companies/ || true
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(privacy): quarterly CPPA data-broker registry refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

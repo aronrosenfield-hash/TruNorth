@@ -2,11 +2,11 @@
   "name": "Destination by Hyatt",
   "cat": "Hospitality",
   "init": "DEST",
-  "overall": 52.9,
+  "overall": 58,
   "isPublic": false,
   "sc": {
     "political": "left-leaning",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "mixed",
     "dei": "pro_dei",
@@ -29,9 +29,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Hyatt Hotels: Operates the Hyatt Hotels Foundation: $1.1M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -125,5 +125,12 @@
       "basis": "Hospitality"
     }
   },
-  "inheritedFrom": "hyatt-hotels"
+  "inheritedFrom": "hyatt-hotels",
+  "csc": {
+    "political": 62.8,
+    "charity": 85,
+    "environment": 50,
+    "labor": 50,
+    "privacy": 50
+  }
 }

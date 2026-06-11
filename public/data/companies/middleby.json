@@ -1,1 +1,258 @@
-{"name":"MIDDLEBY","cat":"Manufacturing","init":"MIDD","overall":45.9,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $131K in executive political donations; partisan lean split across 7 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"22 federal penalties totaling $717K since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":{"legacy":"2026-05-28","execPay":"2026-06-11T03:48:51.753Z"},"charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"environmental violation: $11K in federal penalties (Violation Tracker).","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"CEO total compensation $7.5M (2024; other named executives averaged $2.8M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).","sources":["Claude AI synthesis","sec-ecd"]},"ab":"#0d2318","ac":"#4caf82","competitors":["ra","manitowoc"],"wiki":{"founded":"1888-01-01","hq":"Elgin","employees":null,"revenue":null,"parent":null,"industry":"oven","products":null,"keyPeople":null,"website":"http://www.middleby.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Middleby","extract":"The Middleby Corporation is a publicly traded American company based in Elgin, Illinois. The company manufactures commercial cooking equipment, industrial processing equipment, and residential appliances. The commercial cooking equipment side of Middleby does business with 97 out of the top 100 food service chains in the United States and internationally."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/il/elgin/profile/restaurant-equipment/middleby-corporation-0654-88157199"},"secComplaints":{"count":2,"sample":[{"adsh":"0001140361-25-046568","date":"2025-12-23","filer":"Hillenbrand, Inc.  (HI)  (CIK 0001417398)","form":"8-K"},{"adsh":"0001193125-24-190334","date":"2024-08-01","filer":"John Bean Technologies CORP  (JBT)  (CIK 0001433660)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/5/51/Middleby_logo.jpg","logoSource":"wiki_infobox","slug":"middleby","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Middleby Corp.","slug":"middleby-corp","ownership":"publicly traded (ticker symbol MIDD)","hq":"Illinois","majorIndustry":"miscellaneous manufacturing","specificIndustry":"commercial cooking equipment","totalPenalty":716769,"totalRecords":22,"offenseGroups":[{"category":"safety-related offenses","penalty":653988,"records":17},{"category":"environment-related offenses","penalty":52780,"records":4},{"category":"employment-related offenses","penalty":10001,"records":1}],"primaryOffenses":[{"category":"product safety violation","penalty":450000,"records":1},{"category":"workplace safety or health violation","penalty":203988,"records":16},{"category":"energy conservation violation","penalty":41760,"records":2},{"category":"environmental violation","penalty":11020,"records":2},{"category":"benefit plan administrator violation","penalty":10001,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T23:21:03.504Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-29","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=MIDDLEBY&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T23:21:01.371Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T23:21:03.504Z","realCats":3,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}},"enriched":{"execPay":{"ceoName":null,"ceoTotal":null,"ceoBaseSalary":null,"ceoBonus":null,"ceoStockAwards":null,"ceoOptionAwards":null,"ceoNonEquityIncentive":null,"ceoAllOtherComp":null,"medianEmployeePay":53874,"payRatio":null,"year":null,"ticker":"MIDD","cik":"0000769520","filingDate":"2026-04-08","sourceUrl":"https://www.sec.gov/Archives/edgar/data/769520/000130817926000231/midd014643-def14a.htm","lastUpdated":"2026-06-11T03:48:51.753Z","source":"sec-def14a"}}}
+{
+  "name": "MIDDLEBY",
+  "cat": "Manufacturing",
+  "init": "MIDD",
+  "overall": 51.3,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $131K in executive political donations; partisan lean split across 7 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "22 federal penalties totaling $717K since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "environmental violation: $11K in federal penalties (Violation Tracker).",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO total compensation $7.5M (2024; other named executives averaged $2.8M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-ecd"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "competitors": [
+    "ra",
+    "manitowoc"
+  ],
+  "wiki": {
+    "founded": "1888-01-01",
+    "hq": "Elgin",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "oven",
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.middleby.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Middleby",
+    "extract": "The Middleby Corporation is a publicly traded American company based in Elgin, Illinois. The company manufactures commercial cooking equipment, industrial processing equipment, and residential appliances. The commercial cooking equipment side of Middleby does business with 97 out of the top 100 food service chains in the United States and internationally."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/il/elgin/profile/restaurant-equipment/middleby-corporation-0654-88157199"
+  },
+  "secComplaints": {
+    "count": 2,
+    "sample": [
+      {
+        "adsh": "0001140361-25-046568",
+        "date": "2025-12-23",
+        "filer": "Hillenbrand, Inc.  (HI)  (CIK 0001417398)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-24-190334",
+        "date": "2024-08-01",
+        "filer": "John Bean Technologies CORP  (JBT)  (CIK 0001433660)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Middleby_logo.jpg",
+  "logoSource": "wiki_infobox",
+  "slug": "middleby",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Middleby Corp.",
+    "slug": "middleby-corp",
+    "ownership": "publicly traded (ticker symbol MIDD)",
+    "hq": "Illinois",
+    "majorIndustry": "miscellaneous manufacturing",
+    "specificIndustry": "commercial cooking equipment",
+    "totalPenalty": 716769,
+    "totalRecords": 22,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 653988,
+        "records": 17
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 52780,
+        "records": 4
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 10001,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "product safety violation",
+        "penalty": 450000,
+        "records": 1
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 203988,
+        "records": 16
+      },
+      {
+        "category": "energy conservation violation",
+        "penalty": 41760,
+        "records": 2
+      },
+      {
+        "category": "environmental violation",
+        "penalty": 11020,
+        "records": 2
+      },
+      {
+        "category": "benefit plan administrator violation",
+        "penalty": 10001,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T23:21:03.504Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-29",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=MIDDLEBY&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T23:21:01.371Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T23:21:03.504Z",
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 53874,
+      "payRatio": null,
+      "year": null,
+      "ticker": "MIDD",
+      "cik": "0000769520",
+      "filingDate": "2026-04-08",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/769520/000130817926000231/midd014643-def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  },
+  "csc": {
+    "political": 81.7,
+    "environment": 39.7,
+    "labor": 25.2
+  }
+}

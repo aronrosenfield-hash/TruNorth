@@ -62,13 +62,38 @@ function parseArgs(argv) {
   return args;
 }
 
-// Pick the newest YYYY-MM-DD.json in RAW_DIR.
+// A raw snapshot is usable iff the fetch actually succeeded:
+//   - status "failed" (fetcher >= 2026-06) means every metric errored — skip.
+//   - A live snapshot with answer_count 0 is a failed fetch in disguise:
+//     the 9 curated metrics can never ALL be genuinely empty. (Legacy
+//     snapshots written before the fetcher recorded `status` look exactly
+//     like this when the network or Cloudflare blocked the run.)
+export function isUsableRaw(bundle) {
+  if (!bundle || typeof bundle !== "object") return false;
+  if (bundle.status === "failed") return false;
+  if (bundle.mode === "live" && !(bundle.answer_count > 0)) return false;
+  return true;
+}
+
+// Pick the newest *usable* YYYY-MM-DD.json in RAW_DIR (skipping snapshots
+// from failed fetch runs so a bad quarterly run can't wipe the augment).
 async function findLatestRaw() {
   if (!existsSync(RAW_DIR)) return null;
   const files = (await fs.readdir(RAW_DIR))
     .filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
-    .sort();
-  return files.length ? path.join(RAW_DIR, files[files.length - 1]) : null;
+    .sort()
+    .reverse();
+  for (const f of files) {
+    const full = path.join(RAW_DIR, f);
+    try {
+      const bundle = JSON.parse(await fs.readFile(full, "utf-8"));
+      if (isUsableRaw(bundle)) return full;
+      console.warn(`  (skipping ${f}: failed/empty fetch — status=${bundle.status ?? "n/a"}, mode=${bundle.mode}, answers=${bundle.answer_count ?? 0})`);
+    } catch {
+      console.warn(`  (skipping ${f}: unreadable JSON)`);
+    }
+  }
+  return null;
 }
 
 // ─────────────────────────── name normalization ─────────────────────────
@@ -247,6 +272,12 @@ async function main() {
   console.log(`  Source: ${inFile}`);
 
   const raw = JSON.parse(await fs.readFile(inFile, "utf-8"));
+  if (!isUsableRaw(raw)) {
+    console.error(`Refusing to merge ${inFile}: snapshot is from a failed/empty live fetch ` +
+                  `(status=${raw.status ?? "n/a"}, mode=${raw.mode}, answer_count=${raw.answer_count ?? 0}). ` +
+                  `Re-run wikirate-fetch.mjs successfully first.`);
+    process.exit(3);
+  }
   const answers = raw.answers || [];
   console.log(`  ${answers.length} raw answers loaded`);
 

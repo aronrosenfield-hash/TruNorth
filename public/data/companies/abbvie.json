@@ -2,12 +2,12 @@
   "name": "AbbVie",
   "cat": "Healthcare",
   "init": "ABV",
-  "overall": 40.3,
+  "overall": 42.3,
   "isPublic": true,
   "ticker": "ABBV",
   "sc": {
     "political": "left",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "poor",
     "dei": "pro_dei",
@@ -34,12 +34,13 @@
     }
   },
   "charity": {
-    "s": "$165M reported corporate giving in 2024 (~0.30% of revenue) via AbbVie Foundation.",
+    "s": "$165M reported corporate giving in 2024 (~0.30% of revenue) via AbbVie Foundation. Operates the Abbvie Foundation: $39.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$650M cumulative since 2013; $350M (2018-2023 initiative); $2.2M annual local grants",
     "focus": "Health equity, K-12 education, disaster relief, community resiliency",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -355,7 +356,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikipedia \"Legal issues\" section: AbbVie has been accused of using anti-competitive patent thickets to prevent potentially cheaper biosimilars from entering the market. AbbVie and Alvotech, filed lawsuits against each other…",
     "sources": [
@@ -379,5 +380,12 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 49,
+    "charity": 85,
+    "environment": 50,
+    "labor": 8,
+    "health": 8
   }
 }

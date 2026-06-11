@@ -2,12 +2,12 @@
   "name": "Caterpillar",
   "cat": "Manufacturing",
   "init": "CA",
-  "overall": 34.8,
+  "overall": 40.2,
   "ab": "#0d2318",
   "ac": "#4caf82",
   "sc": {
     "political": "poor",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "pro_dei",
@@ -26,12 +26,13 @@
     ]
   },
   "charity": {
-    "s": "$40M reported corporate giving in 2024 (~0.06% of revenue) via Caterpillar Foundation.",
+    "s": "$40M reported corporate giving in 2024 (~0.06% of revenue) via Caterpillar Foundation. Operates the Caterpillar Foundation: $43.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "N/A",
     "focus": "N/A",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -320,7 +321,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T02:11:50.926Z",
-  "realCats": 4,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -334,5 +335,10 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "charity": 85,
+    "environment": 12.7,
+    "labor": 8
   }
 }

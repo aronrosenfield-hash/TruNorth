@@ -2,11 +2,11 @@
   "name": "AT&T U-verse",
   "cat": "Technology",
   "init": "ATTU",
-  "overall": 44.7,
+  "overall": 47.3,
   "isPublic": false,
   "sc": {
     "political": "right",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "good",
     "labor": "poor",
     "dei": "pro_dei",
@@ -32,9 +32,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company AT&T: $110M reported corporate giving in 2024 (~0.09% of revenue) via AT&T Foundation. Operates the At&T Foundation: $7.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -213,5 +213,13 @@
       "basis": "Technology"
     }
   },
-  "inheritedFrom": "atandt"
+  "inheritedFrom": "atandt",
+  "csc": {
+    "political": 52.6,
+    "charity": 85,
+    "environment": 100,
+    "labor": 8,
+    "privacy": 8,
+    "execPay": 52.6
+  }
 }

@@ -2,11 +2,11 @@
   "name": "Electro-Motive Diesel",
   "cat": "Manufacturing",
   "init": "ELEC",
-  "overall": 35.6,
+  "overall": 43.6,
   "isPublic": false,
   "sc": {
     "political": "poor",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "pro_dei",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Caterpillar: $40M reported corporate giving in 2024 (~0.06% of revenue) via Caterpillar Foundation. Operates the Caterpillar Foundation: $43.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -152,5 +152,10 @@
       "basis": "Manufacturing"
     }
   },
-  "inheritedFrom": "caterpillar"
+  "inheritedFrom": "caterpillar",
+  "csc": {
+    "charity": 85,
+    "environment": 12.7,
+    "labor": 8
+  }
 }

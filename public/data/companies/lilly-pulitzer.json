@@ -2,11 +2,11 @@
   "name": "Lilly Pulitzer",
   "cat": "Apparel & Fashion",
   "init": "LILL",
-  "overall": 49.1,
+  "overall": 58.5,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company OXFORD INDUSTRIES: $1M reported corporate giving in 2024 (~0.06% of revenue). Operates the Oxford Industries Foundation Inc: $510K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -127,7 +127,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T00:42:56.922Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -149,5 +149,10 @@
       "basis": "Apparel & Fashion"
     }
   },
-  "inheritedFrom": "oxford-industries"
+  "inheritedFrom": "oxford-industries",
+  "csc": {
+    "political": 48.2,
+    "charity": 85,
+    "execPay": 55.2
+  }
 }

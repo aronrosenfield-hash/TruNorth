@@ -2,11 +2,11 @@
   "name": "Death Row Records",
   "cat": "Entertainment & Media",
   "init": "DEAT",
-  "overall": 55.2,
+  "overall": 54.1,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -29,9 +29,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Blackstone: Operates the Blackstone Charitable Foundation: $22.3M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -100,7 +100,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -128,5 +128,10 @@
       "basis": "Entertainment & Media"
     }
   },
-  "inheritedFrom": "blackstone"
+  "inheritedFrom": "blackstone",
+  "csc": {
+    "political": 75.4,
+    "charity": 85,
+    "labor": 8
+  }
 }

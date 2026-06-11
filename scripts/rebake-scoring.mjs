@@ -54,6 +54,93 @@ const CAT_KEYS = ["political", "charity", "environment", "labor", "dei", "animal
 
 const NO_RECORD = /^\s*no public record found\.?\s*$/i;
 
+// Pass --dry to compute + print the distribution without writing any files.
+const DRY = process.argv.includes("--dry");
+
+// ─── SCORING V3 (2026-06-11, grade-dispersion overhaul) ─────────────────────
+// Four changes vs Build 57:
+//   R1 Shrinkage: overall = (W·raw + K·50)/(W+K), W = evidence weight used,
+//      K = 1.5. Replaces the realCats grade cliff (A needs ≥3 sig, etc.) with
+//      a continuous evidence-confidence slope — same estimator family as
+//      IMDb's weighted rating. Grades start neutral; every verified record
+//      moves them.
+//   R2 Thresholds recalibrated once from the post-V3 score distribution to a
+//      target shape (~A10/B25/C35/D20/F10), then FROZEN. See gradeFromOverall.
+//   R3 Severity-continuous category scores: execPay from the actual SEC
+//      pay ratio, labor/environment negatives from penalty dollars, charity
+//      from IRS-990 grant totals. ("Path B for every category.")
+//   R4 Stance categories (dei / animals / guns) are EXCLUDED from the
+//      un-quizzed neutral baseline — the app takes no position on contested
+//      values; those axes only move grades after the user takes the quiz.
+//      They still render as badges and still personalize.
+const K_SHRINK = 1.5;
+
+// Parse "$8.4M" / "$120,500" / "$95K" → dollars. 0 when nothing parseable.
+function parseDollars(text) {
+  const m = String(text || "").match(/\$([\d,]+(?:\.\d+)?)\s*([KMB])?/i);
+  if (!m) return 0;
+  const n = parseFloat(m[1].replace(/,/g, ""));
+  const unit = (m[2] || "").toUpperCase();
+  return n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
+}
+
+// Negative-band severity: log-scaled penalty dollars.
+//   $10K→40 · $100K→32 · $1M→24 · $10M→16 · ≥$100M→8   (clamped 8–40)
+// "very poor" enums cap at 18 so they can't out-score a documented "poor".
+// No parseable $ → legacy band defaults (35 / 8) so nothing silently moves.
+function negativeSeverityScore(narrative, enumVal) {
+  const dollars = parseDollars(narrative);
+  if (dollars >= 1000) {
+    const sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
+    return enumVal === "very poor" ? Math.min(sev, 18) : sev;
+  }
+  return enumVal === "very poor" ? 8 : 35;
+}
+
+// Actual CEO-to-median-worker pay ratio, preferring the structured DEF 14A
+// crawl (payRatio.ratio) over the narrative "NNN:1" string.
+function parsePayRatio(d) {
+  const pr = d?.payRatio;
+  if (pr && typeof pr.ratio === "number" && pr.ratio > 0) return pr.ratio;
+  if (typeof pr === "number" && pr > 0) return pr;
+  for (const s of [d?.execPay?.ratio, d?.execPay?.s]) {
+    const m = String(s || "").replace(/,/g, "").match(/([\d.]+)\s*:\s*1/);
+    if (m && parseFloat(m[1]) > 0) return parseFloat(m[1]);
+  }
+  return null;
+}
+
+// Piecewise-linear in log10(ratio) over published anchors:
+//   ≤20:1→100 · 25→95 · 100→70 · 300→45 · 1000→15 · ≥3000→5
+// The anchors keep the old enum bands honest (<50 was "fair", >300 "poor")
+// while spreading brands inside each band by their disclosed number.
+const PAY_ANCHORS = [[20, 100], [25, 95], [100, 70], [300, 45], [1000, 15], [3000, 5]];
+function payRatioScore(ratio) {
+  if (ratio <= PAY_ANCHORS[0][0]) return 100;
+  const lr = Math.log10(ratio);
+  for (let i = 1; i < PAY_ANCHORS.length; i++) {
+    const [r1, s1] = PAY_ANCHORS[i - 1];
+    const [r2, s2] = PAY_ANCHORS[i];
+    if (ratio <= r2) {
+      const t = (lr - Math.log10(r1)) / (Math.log10(r2) - Math.log10(r1));
+      return s1 + t * (s2 - s1);
+    }
+  }
+  return 5;
+}
+
+// Charity positive band spread by IRS-990 grant totals (log scale):
+//   $10K→60 · $100K→68 · $1M→76 · $10M→84 · $100M→92 · ≥$1B→100
+// Returns null when no structured grant data — caller falls back to 85
+// (documented-but-unquantified giving).
+function charityGivingScore(d) {
+  const g = d?.charity_irs990?.totalGrants;
+  if (typeof g === "number" && g >= 10_000) {
+    return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
+  }
+  return null;
+}
+
 // Narrative-keyword scoring (Build 55 — salvage signals from text records
 // where the enum was baked as neutral but the detail.s actually contains
 // substantive content). Wendy's case: detail.s says "environmental violation:
@@ -70,7 +157,13 @@ function narrativeScore(text) {
   if (!text || NO_RECORD.test(text)) return null;
   const neg = NEG_KEYWORDS.test(text);
   const pos = POS_KEYWORDS.test(text);
-  if (neg && !pos) return 22; // clear negative signal
+  // V3: negative narratives scale by penalty $ when one is stated —
+  // a $9K citation shouldn't score like a $100M consent decree.
+  if (neg && !pos) {
+    const dollars = parseDollars(text);
+    if (dollars >= 1000) return Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
+    return 22; // clear negative signal, magnitude unknown
+  }
   if (pos && !neg) return 78; // clear positive signal
   if (neg && pos)  return 50; // mixed
   // Narrative present but no scoring keywords found — treat as mild signal at 50.
@@ -160,24 +253,18 @@ function baseScoreCat(k, v, d) {
     }
     return null;
   }
-  if (k === "dei") {
-    // Preference axis; non-personalized = neutral baseline.
-    if (["pro_dei", "anti_dei", "mixed"].includes(val)) return 50;
-    return null;
-  }
-  if (k === "animals") {
-    if (["cruelty_free", "some_testing", "tests_animals"].includes(val)) return 50;
-    return null;
-  }
-  if (k === "guns") {
-    if (["no_guns", "sells_guns", "makes_guns"].includes(val)) return 50;
-    return null;
-  }
+  // V3/R4: stance categories are personal-values axes the app is neutral on.
+  // They contribute NOTHING to the un-quizzed baseline (previously injected a
+  // flat 50, diluting every real signal toward C). They still render as
+  // badges and still drive personalized grades after the quiz.
+  if (k === "dei" || k === "animals" || k === "guns") return null;
   if (k === "labor") {
     if (["positive", "excellent", "strong", "good"].includes(val)) return 97;
     if (val === "mixed") return 50;
-    if (["negative", "poor", "below average"].includes(val)) return 35;
-    if (val === "very poor") return 8;
+    // V3/R3: negatives spread 8–40 by penalty dollars in the record.
+    if (["negative", "poor", "below average", "very poor"].includes(val)) {
+      return negativeSeverityScore(d?.labor?.s, val);
+    }
     return null;
   }
   if (k === "privacy") {
@@ -187,6 +274,10 @@ function baseScoreCat(k, v, d) {
     return null;
   }
   if (k === "execPay") {
+    // V3/R3: score the actual SEC-disclosed pay ratio when we have it —
+    // continuous log curve instead of the {97, 50, 8} buckets.
+    const ratio = parsePayRatio(d);
+    if (ratio != null) return payRatioScore(ratio);
     if (["fair", "good"].includes(val)) return 97;
     if (val === "mixed") return 50;
     if (val === "poor") return 8;
@@ -201,10 +292,23 @@ function baseScoreCat(k, v, d) {
   if (k === "environment") {
     if (["positive", "excellent", "strong", "good"].includes(val)) return 100;
     if (val === "mixed") return 50;
+    // V3/R3: negatives spread 8–40 by penalty dollars in the record.
+    if (["negative", "poor", "below average", "very poor"].includes(val)) {
+      return negativeSeverityScore(d?.environment?.s, val);
+    }
+    return null;
+  }
+  if (k === "charity") {
+    // V3/R3: positive band spread 60–100 by IRS-990 grant totals; enum-only
+    // positives (documented but unquantified giving) sit at 85.
+    if (["positive", "excellent", "strong", "good", "active_giving"].includes(val)) {
+      return charityGivingScore(d) ?? 85;
+    }
+    if (val === "mixed") return 50;
     if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
     return null;
   }
-  // charity (and fallback)
+  // fallback (unknown future categories)
   if (["positive", "excellent", "strong", "good"].includes(val)) return 97;
   if (val === "mixed") return 50;
   if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
@@ -246,31 +350,33 @@ console.log(`[rebake] processing ${files.length} companies`);
 let updated = 0;
 const distOld = {}, distNew = {};
 const realCountDist = {};
+const allOveralls = [];
 let nullOveralls = 0;
 const wendySlug = "wendy-s";
 const tjSlug = "trader-joe-s";
 const traces = { [wendySlug]: null, [tjSlug]: null };
 
-function gradeFromOverall(n, realCats) {
-  // Build 57 (S2 + signal-count cap):
-  //   - A requires score ≥65 AND ≥3 contributing signals
-  //   - B requires score ≥55 AND ≥2 contributing signals
-  //   - Single-signal brands max out at C regardless of score (S-56 cap)
-  // Thresholds lowered from 70/60 to 65/55 so the 3+ signal cohort can
-  // earn honest A/B at a realistic rate. Must stay in sync with
-  // src/App.jsx scoreGrade and scripts/finalize-bundle.mjs scoreGrade.
+function gradeFromOverall(n) {
+  // SCORING V3 (2026-06-11): the Build-57 signal-count cliff (A needs ≥3 sig,
+  // single-signal brands capped at C) is GONE — evidence confidence is now
+  // handled continuously by the K_SHRINK shrinkage upstream, so a one-signal
+  // brand at raw 82 lands ~63 (B) instead of being flattened to the same C
+  // as a one-signal brand at 46.
+  //
+  // Thresholds were recalibrated ONCE from the post-V3 distribution of all
+  // 5,303 scored brands (2026-06-11 dry run), then FROZEN — calibration, not
+  // a perpetual curve; brands move on their own evidence from here. Cut
+  // points deliberately avoid the two dense score spikes (47-48 mixed-record
+  // cluster → interior of C; 61-62 single-signal-political cluster → interior
+  // of B). Resulting shape among graded: A 7% · B 35% · C 40% · D 8% · F 10%.
+  // Must stay in sync with src/App.jsx scoreGrade and
+  // scripts/finalize-bundle.mjs scoreGrade.
   if (n == null) return "?";
-  let g;
-  if (n >= 65) g = "A";
-  else if (n >= 55) g = "B";
-  else if (n >= 45) g = "C";
-  else if (n >= 30) g = "D";
-  else g = "F";
-  if (typeof realCats === "number") {
-    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
-    else if (realCats < 3 && g === "A") g = "B";
-  }
-  return g;
+  if (n >= 63) return "A";
+  if (n >= 56) return "B";
+  if (n >= 46) return "C";
+  if (n >= 41) return "D";
+  return "F";
 }
 
 for (const f of files) {
@@ -280,7 +386,7 @@ for (const f of files) {
   const slug = d.slug || f.replace(/\.json$/, "");
 
   const sc = { ...(d.sc || {}) };
-  const trace = { slug, name: d.name, oldOverall: d.overall, oldGrade: gradeFromOverall(d.overall, d.realCats), categories: [], realCount: 0, weightedSum: 0, weightUsed: 0 };
+  const trace = { slug, name: d.name, oldOverall: d.overall, oldGrade: gradeFromOverall(d.overall), categories: [], realCount: 0, weightedSum: 0, weightUsed: 0 };
 
   // Pass 1: align sc.* with detail.* (zero out orphan labels)
   for (const k of CAT_KEYS) {
@@ -292,13 +398,18 @@ for (const f of files) {
   }
   d.sc = sc;
 
-  // Pass 2: compute new overall over real + inferred + narrative-only categories
+  // Pass 2: compute new overall over real + inferred + narrative-only categories.
+  // V3: also bake `csc` — the per-category continuous 0-100 used by the
+  // client (App.jsx scoreCat consults co.csc[k] so collapsed index rows and
+  // expanded detail score identically; fixes the political-fallback flicker).
   let signalCount = 0;
+  const csc = {};
   for (const k of CAT_KEYS) {
     const cls = classifyCategory(d, k);
     if (cls.state === "real") {
       const cs = baseScoreCat(k, sc[k], d);
       if (cs == null) continue;
+      csc[k] = Math.round(cs * 10) / 10;
       trace.weightedSum += cs * 1.0;
       trace.weightUsed += 1.0;
       trace.categories.push({ k, state: "real", val: sc[k], score: cs, weight: 1.0 });
@@ -306,6 +417,7 @@ for (const f of files) {
     } else if (cls.state === "inferred") {
       const cs = baseScoreCat(k, sc[k], d);
       if (cs == null) continue;
+      csc[k] = Math.round(cs * 10) / 10;
       trace.weightedSum += cs * 0.5;
       trace.weightUsed += 0.5;
       trace.categories.push({ k, state: "inferred", val: sc[k], score: cs, weight: 0.5 });
@@ -317,6 +429,7 @@ for (const f of files) {
       // narrative agreeing).
       const cs = narrativeScore(cls.narrative);
       if (cs == null) continue;
+      csc[k] = Math.round(cs * 10) / 10;
       trace.weightedSum += cs * 0.75;
       trace.weightUsed += 0.75;
       trace.categories.push({ k, state: "narrative", val: "(neutral enum + text)", score: cs, weight: 0.75, snippet: cls.narrative.slice(0, 80) });
@@ -328,15 +441,17 @@ for (const f of files) {
   trace.realCount = signalCount;
   realCountDist[signalCount] = (realCountDist[signalCount] || 0) + 1;
 
-  // Minimum data threshold: require >= 1 contributing signal (real/inferred/
-  // narrative) for a numeric grade. Companies with 0 signals get overall=null
-  // → grade "?". Lowered from 2-real to 1-any after Aron's call: salvage
-  // narrative-only signals to expand graded coverage.
-  const newOverall = (signalCount >= 1 && trace.weightUsed > 0)
-    ? Math.round((trace.weightedSum / trace.weightUsed) * 10) / 10
+  // V3/R1: evidence-weighted shrinkage toward neutral (50). W is the evidence
+  // weight actually used (real=1.0, narrative=0.75, inferred=0.5 each), so a
+  // single-record brand is pulled ~60% toward 50 while a five-record brand
+  // keeps ~77% of its raw signal. Replaces the hard signal-count grade cap.
+  // Companies with 0 signals keep overall=null → grade "?".
+  const W = trace.weightUsed;
+  const newOverall = (signalCount >= 1 && W > 0)
+    ? Math.round(((trace.weightedSum / W) * W + 50 * K_SHRINK) / (W + K_SHRINK) * 10) / 10
     : null;
   trace.newOverall = newOverall;
-  trace.newGrade = gradeFromOverall(newOverall, signalCount);
+  trace.newGrade = gradeFromOverall(newOverall);
 
   const oldG = trace.oldGrade;
   const newG = trace.newGrade;
@@ -346,15 +461,26 @@ for (const f of files) {
 
   // Capture trace for the two example brands.
   if (slug === wendySlug || slug === tjSlug) traces[slug] = trace;
+  if (newOverall != null) allOveralls.push(newOverall);
 
-  // Persist realCats so the UI + index can apply the signal-count cap.
-  if (d.overall !== newOverall || d.realCats !== signalCount || JSON.stringify(d.sc) !== JSON.stringify(sc)) {
+  // Persist realCats (contributing-signal count, now informational) + csc.
+  const newCsc = Object.keys(csc).length ? csc : undefined;
+  if (d.overall !== newOverall || d.realCats !== signalCount ||
+      JSON.stringify(d.sc) !== JSON.stringify(sc) || JSON.stringify(d.csc) !== JSON.stringify(newCsc)) {
     d.overall = newOverall;
     d.realCats = signalCount;
-    fs.writeFileSync(filePath, JSON.stringify(d, null, 2));
+    if (newCsc) d.csc = newCsc; else delete d.csc;
+    if (!DRY) fs.writeFileSync(filePath, JSON.stringify(d, null, 2));
     updated++;
   }
 }
+
+// Quantile report — used once to derive the frozen V3 grade thresholds.
+allOveralls.sort((a, b) => b - a);
+const q = (p) => allOveralls[Math.min(allOveralls.length - 1, Math.floor(p * allOveralls.length))];
+console.log(`\n=== Score quantiles (scored brands: ${allOveralls.length}) ===`);
+console.log(`  p10(A/B)=${q(0.10)}  p35(B/C)=${q(0.35)}  p70(C/D)=${q(0.70)}  p90(D/F)=${q(0.90)}`);
+if (DRY) fs.writeFileSync("/tmp/v3-overalls.json", JSON.stringify(allOveralls));
 
 console.log(`[rebake] updated ${updated} files. ${nullOveralls} companies have null overall (insufficient data).`);
 console.log("");

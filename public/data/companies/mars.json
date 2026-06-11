@@ -2,12 +2,12 @@
   "name": "Mars",
   "cat": "Consumer Goods",
   "init": "MAR",
-  "overall": 38.8,
+  "overall": 45.1,
   "isPublic": false,
   "ticker": null,
   "sc": {
     "political": "right",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -34,12 +34,13 @@
     }
   },
   "charity": {
-    "s": "$90M reported corporate giving in 2024 (~0.19% of revenue).",
+    "s": "$90M reported corporate giving in 2024 (~0.19% of revenue). Operates the Mars Foundation: $944K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "$2+ billion cumulative (sustainability/farmer support)",
     "focus": "Sustainable agriculture, poverty alleviation, animal welfare, disaster relief, community development",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -365,5 +366,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 43.8,
+    "charity": 85,
+    "environment": 27.1,
+    "labor": 12.5
   }
 }

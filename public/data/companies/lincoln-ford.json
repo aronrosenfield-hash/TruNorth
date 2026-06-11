@@ -1,1 +1,233 @@
-{"name":"Lincoln / Ford","cat":"Automotive","init":"LF","overall":49,"isPublic":true,"ticker":"F","sc":{"political":"left","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"mixed","health":"good"},"political":{"s":"FEC: $14K PAC donations; 0% to Republican, 100% to Democratic committees.","amt":"$1.53 PAC (2014 cycle)","lean":"Left","sources":["FEC.gov"],"fecData":{"committeeId":"C00324368","repTotal":0,"demTotal":13650,"totalRaised":2,"lastFiling":"2014-04-11"}},"charity":{"s":"No public record found.","amt":"$73.7 million annually (2023)","focus":"Disaster relief, food security, education, entrepreneurship, community centers","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Good","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Mixed","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Mixed","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Poor","sources":["Claude AI synthesis"]},"execPay":{"s":"CEO-to-median-worker pay ratio 295:1 (median employee pay $93,397; CEO total compensation $1K) — SEC proxy statement (DEF 14A, 2016).","ratio":"295:1","sources":["Claude AI synthesis","sec-def14a"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-03-18","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Lincoln&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":{"legacy":"2026-05-28","execPay":"2026-06-11T03:48:51.753Z"},"competitors":["general-motors","stellantis","toyota-usa","honda-usa"],"wiki":{"founded":null,"hq":null,"employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":null,"controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Mordecai_Lincoln","extract":"Mordecai Lincoln (1771 – 1830) was an uncle of U.S. President Abraham Lincoln. He was the eldest son of Captain Abraham Lincoln, a brother of Thomas Lincoln and Mary Lincoln Crume, and the husband of Mary Mudd. He is buried at the Old Catholic or Lincoln Cemetery near Fountain Green, Illinois.\nMordecai's home in Springfield, Kentucky, is the only home built by a member of the Lincoln family that still stands in its original location. It is listed on the National Register of Historic Places."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nj/vauxhall/profile/new-car-dealers/maplecrest-ford-lincoln-0221-1006187"},"slug":"lincoln-ford","secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":{"source":"FEC API","committeeId":"C00324368","committeeName":"FORD LINCOLN-MERCURY MINORITY DEALERS ASSOCIATION POLITICAL ACTION COMMITTEE (FLMMDA PAC)","lean":"left","repTotal":0,"demTotal":13650,"totalRaised":2,"totalRaisedFmt":"$1.53","lastFilingDate":"2014-04-11","cycle":2014,"fetchedAt":"2026-05-17T23:59:59.000Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-18","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Lincoln&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-17T23:59:59.000Z","health":{"s":"Consumer Reports 2026 Brand Report Card: ranked #7 of ~26 auto brands.","sources":["cr-auto-reliability"]},"realCats":2,"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Automotive"}},"enriched":{"execPay":{"ceoName":"John S. Weinberg Independent","ceoTotal":918,"ceoBaseSalary":183,"ceoBonus":183,"ceoStockAwards":183,"ceoOptionAwards":183,"ceoNonEquityIncentive":183,"ceoAllOtherComp":3,"medianEmployeePay":93397,"payRatio":295,"year":2016,"ticker":"F","cik":"0000037996","filingDate":"2026-03-27","sourceUrl":"https://www.sec.gov/Archives/edgar/data/37996/000155278126000164/e26003_f-def14a.htm","lastUpdated":"2026-06-11T03:48:51.753Z","source":"sec-def14a"}}}
+{
+  "name": "Lincoln / Ford",
+  "cat": "Automotive",
+  "init": "LF",
+  "overall": 48.1,
+  "isPublic": true,
+  "ticker": "F",
+  "sc": {
+    "political": "left",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "mixed",
+    "health": "good"
+  },
+  "political": {
+    "s": "FEC: $14K PAC donations; 0% to Republican, 100% to Democratic committees.",
+    "amt": "$1.53 PAC (2014 cycle)",
+    "lean": "Left",
+    "sources": [
+      "FEC.gov"
+    ],
+    "fecData": {
+      "committeeId": "C00324368",
+      "repTotal": 0,
+      "demTotal": 13650,
+      "totalRaised": 2,
+      "lastFiling": "2014-04-11"
+    }
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "$73.7 million annually (2023)",
+    "focus": "Disaster relief, food security, education, entrepreneurship, community centers",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Good",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Poor",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 295:1 (median employee pay $93,397; CEO total compensation $1K) — SEC proxy statement (DEF 14A, 2016).",
+    "ratio": "295:1",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-03-18",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Lincoln&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "competitors": [
+    "general-motors",
+    "stellantis",
+    "toyota-usa",
+    "honda-usa"
+  ],
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": null,
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Mordecai_Lincoln",
+    "extract": "Mordecai Lincoln (1771 – 1830) was an uncle of U.S. President Abraham Lincoln. He was the eldest son of Captain Abraham Lincoln, a brother of Thomas Lincoln and Mary Lincoln Crume, and the husband of Mary Mudd. He is buried at the Old Catholic or Lincoln Cemetery near Fountain Green, Illinois.\nMordecai's home in Springfield, Kentucky, is the only home built by a member of the Lincoln family that still stands in its original location. It is listed on the National Register of Historic Places."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nj/vauxhall/profile/new-car-dealers/maplecrest-ford-lincoln-0221-1006187"
+  },
+  "slug": "lincoln-ford",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00324368",
+    "committeeName": "FORD LINCOLN-MERCURY MINORITY DEALERS ASSOCIATION POLITICAL ACTION COMMITTEE (FLMMDA PAC)",
+    "lean": "left",
+    "repTotal": 0,
+    "demTotal": 13650,
+    "totalRaised": 2,
+    "totalRaisedFmt": "$1.53",
+    "lastFilingDate": "2014-04-11",
+    "cycle": 2014,
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-18",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Lincoln&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-17T23:59:59.000Z",
+  "health": {
+    "s": "Consumer Reports 2026 Brand Report Card: ranked #7 of ~26 auto brands.",
+    "sources": [
+      "cr-auto-reliability"
+    ]
+  },
+  "realCats": 2,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "John S. Weinberg Independent",
+      "ceoTotal": 918,
+      "ceoBaseSalary": 183,
+      "ceoBonus": 183,
+      "ceoStockAwards": 183,
+      "ceoOptionAwards": 183,
+      "ceoNonEquityIncentive": 183,
+      "ceoAllOtherComp": 3,
+      "medianEmployeePay": 93397,
+      "payRatio": 295,
+      "year": 2016,
+      "ticker": "F",
+      "cik": "0000037996",
+      "filingDate": "2026-03-27",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/37996/000155278126000164/e26003_f-def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  },
+  "csc": {
+    "political": 48,
+    "execPay": 45.4
+  }
+}

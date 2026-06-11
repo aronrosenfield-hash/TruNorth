@@ -2,7 +2,7 @@
   "name": "Athleta",
   "cat": "Apparel & Fashion",
   "init": "ATHL",
-  "overall": 81.8,
+  "overall": 74,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -13,7 +13,6 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "good",
     "health": "mixed"
   },
   "political": {
@@ -70,10 +69,8 @@
     ]
   },
   "execPay": {
-    "s": "Via parent company Gap Inc.: CEO-to-median-worker pay ratio 0:1 (median employee pay $10,170; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2022).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -104,12 +101,18 @@
       "notDisclosed": true
     }
   },
-  "realCats": 6,
+  "realCats": 4,
   "health": {
     "s": "Via parent company Gap Inc.: 11 CPSC recalls (1 in past 24 months); latest hazard: the detachable tissue box toy can come apart.",
     "sources": [
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "gap-inc"
+  "inheritedFrom": "gap-inc",
+  "csc": {
+    "charity": 85,
+    "environment": 100,
+    "labor": 97,
+    "privacy": 50
+  }
 }

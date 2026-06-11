@@ -2,11 +2,11 @@
   "name": "OXFORD INDUSTRIES",
   "cat": "Apparel & Fashion",
   "init": "OXFO",
-  "overall": 54.2,
+  "overall": 61.5,
   "isPublic": true,
   "sc": {
     "political": "right-leaning",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "neutral",
     "dei": "neutral",
@@ -33,10 +33,11 @@
     "execPay": "2026-06-11T03:48:51.753Z"
   },
   "charity": {
-    "s": "$1M reported corporate giving in 2024 (~0.06% of revenue).",
+    "s": "$1M reported corporate giving in 2024 (~0.06% of revenue). Operates the Oxford Industries Foundation Inc: $510K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -183,5 +184,10 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
+  },
+  "csc": {
+    "political": 61.6,
+    "charity": 85,
+    "execPay": 55.2
   }
 }

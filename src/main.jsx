@@ -46,7 +46,16 @@ const mountReact = () => {
 if (isSeoLandingPath && typeof requestAnimationFrame === "function") {
   // Two rAFs ≈ one paint cycle. Tested: <33ms perceived delay, LCP
   // attaches to SEO paint instead of React-replaced content.
-  requestAnimationFrame(() => requestAnimationFrame(mountReact));
+  //
+  // R6 fix (2026-06-10): rAF is SUSPENDED in background tabs (and headless
+  // browsers) — a share link opened in a background tab stayed a blank
+  // white page until the tab was focused. The 250ms timeout fallback
+  // guarantees the mount; in a foreground tab the rAF pair always wins
+  // the race, so the LCP behavior is unchanged.
+  let mounted = false;
+  const mountOnce = () => { if (!mounted) { mounted = true; mountReact(); } };
+  requestAnimationFrame(() => requestAnimationFrame(mountOnce));
+  setTimeout(mountOnce, 250);
 } else {
   mountReact();
 }

@@ -62,18 +62,21 @@ const CUTOFF_MS = Date.now() - HORIZON_DAYS * 24 * 60 * 60 * 1000;
 // ─── Verdict scoring ─────────────────────────────────────────────────────
 // Returns { rating, severity, weight } where severity ∈ {positive,negative,neutral}
 // and weight is a 0..1 indicator of how decisive the verdict is.
+// Specific ratings ("Mostly False", "Half True", satire) are checked BEFORE
+// the broad false/true word-matches — otherwise "mostly false" falls into the
+// bare /false/ branch and gets over-weighted (0.85 instead of 0.65).
 function classifyVerdict(text) {
   const t = text.toLowerCase();
+  if (/satire|labeled satire/.test(t))        return null; // skip satire
   if (/pants on fire/.test(t))                return { rating: "Pants on Fire", severity: "negative", weight: 1.00 };
-  if (/(?:^|\W)false(?:\W|$)|fake|fabricated|hoax|debunk/.test(t))
-                                                return { rating: "False",         severity: "negative", weight: 0.85 };
   if (/mostly false|mainly false|miscaptioned|mislabel/.test(t))
                                                 return { rating: "Mostly False",  severity: "negative", weight: 0.65 };
   if (/mixture|half true|partly|partially false/.test(t))
                                                 return { rating: "Mixed",         severity: "neutral",  weight: 0.20 };
   if (/mostly true|mainly true/.test(t))      return { rating: "Mostly True",   severity: "positive", weight: 0.60 };
+  if (/(?:^|\W)false(?:\W|$)|fake|fabricated|hoax|debunk/.test(t))
+                                                return { rating: "False",         severity: "negative", weight: 0.85 };
   if (/(?:^|\W)true(?:\W|$)/.test(t))         return { rating: "True",          severity: "positive", weight: 0.80 };
-  if (/satire|labeled satire/.test(t))        return null; // skip satire
   if (/no evidence|unsupported|misleading|missing context/.test(t))
                                                 return { rating: "Misleading",    severity: "negative", weight: 0.50 };
   return null;
@@ -275,6 +278,9 @@ async function main() {
         brands_with_signal:  Object.keys(out).length,
       },
       verdict_distribution: verdictDist,
+      ...(Object.keys(out).length === 0 ? {
+        note: "Fetch OK — no fetched item both carried a classifiable verdict in its RSS title/teaser AND named a top-500 brand as claimant. Feeds embed verdict text only sporadically (Snopes/PolitiFact teasers usually omit the rating), and brand-tagged items are often viral-rumor debunks rather than corporate claims, so zero-signal windows are expected.",
+      } : {}),
     },
     ...out,
   };

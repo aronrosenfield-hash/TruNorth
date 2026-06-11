@@ -707,14 +707,23 @@ function scoreCat(k, v, profile, co) {
   // ranges. Wider separation between match and mismatch, cleaner mental model.
   // Source of truth: docs/scoring-calculator.xlsx · scoreCat sheet.
   // Build 58 (Path B): political category now varies by $ + tilt.
+  // SCORING V3 (2026-06-11): universal categories prefer the baked continuous
+  // score co.csc[k] (severity-scaled penalties, actual SEC pay ratios, IRS-990
+  // grant totals — computed by scripts/rebake-scoring.mjs and carried on both
+  // index entries and detail files, so collapsed rows and expanded detail
+  // score identically). Enum mappings below remain as fallback for companies
+  // not yet rebaked.
   const val = (v || "").toLowerCase();
+  const csc = (co?.csc && typeof co.csc[k] === "number") ? co.csc[k] : null;
 
   if (k === "political") {
     const lean = profile?.lean || "neutral";
     if (lean === "left")   { if (["left","left-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["right","right-leaning"].includes(val)) return 8; return 50; }
     if (lean === "right")  { if (["right","right-leaning"].includes(val)) return 100; if (["bipartisan","mixed","neutral"].includes(val)) return 50; if (["left","left-leaning"].includes(val)) return 8; return 50; }
-    // neutral / no lean — use signal-differentiated score
-    return politicalScoreApp(co, val) ?? 50;
+    // neutral / no lean — use baked signal-differentiated score (csc fixes the
+    // index-vs-detail flicker: politicalScoreApp needs co.political.s, which
+    // index entries don't carry, so it used to hit parse defaults on rows).
+    return csc ?? politicalScoreApp(co, val) ?? 50;
   }
 
   if (k === "dei") {
@@ -740,6 +749,15 @@ function scoreCat(k, v, profile, co) {
 
   if (k === "labor") {
     const union = profile?.unionSupport || "neutral";
+    // V3: csc carries the penalty-severity-scaled score (8-40 negatives, 97
+    // positives). Pro/neutral users take it as-is (the pro stance already
+    // gets a 1.5× weight boost); anti-union users compress toward 50 —
+    // labor-board findings matter less to them, mirroring the old softer
+    // enum mapping (8→~23, 35→~40, 97→~81).
+    if (csc != null) {
+      if (union === "anti") return 50 + (csc - 50) * 0.65;
+      return csc;
+    }
     if (union === "pro")  { if (["positive","excellent","strong","good"].includes(val)) return 97; if (val==="mixed") return 50; if (["negative","poor","below average","very poor"].includes(val)) return 8; return 50; }
     if (union === "anti") { if (["positive","excellent","strong","good"].includes(val)) return 73; if (val==="mixed") return 65; if (["negative","poor","below average"].includes(val)) return 35; if (val==="very poor") return 8; return 50; }
     // neutral
@@ -751,18 +769,23 @@ function scoreCat(k, v, profile, co) {
   }
 
   if (k === "privacy") {
+    if (csc != null) return csc;
     if (val==="good") return 97; if (val==="mixed") return 50; if (val==="poor") return 8; return 50;
   }
 
   if (k === "execPay") {
+    // V3: csc is the log-curve score of the actual SEC-disclosed pay ratio.
+    if (csc != null) return csc;
     if (["fair","good"].includes(val)) return 97; if (val==="mixed") return 50; if (val==="poor") return 8; return 50;
   }
 
   if (k === "health") {
+    if (csc != null) return csc;
     if (["good","positive"].includes(val)) return 100; if (val==="mixed") return 50; if (["poor","negative"].includes(val)) return 8; return 50;
   }
 
   if (k === "environment") {
+    if (csc != null) return csc;
     if (["positive","excellent","strong","good"].includes(val)) return 100;
     if (val==="mixed" || val==="neutral") return 50;
     if (["negative","poor","below average","very poor"].includes(val)) return 8;
@@ -770,6 +793,7 @@ function scoreCat(k, v, profile, co) {
   }
 
   // charity (and fallback)
+  if (k === "charity" && csc != null) return csc;
   if (["positive","excellent","strong","good"].includes(val)) return 97;
   if (val==="mixed" || val==="neutral") return 50;
   if (["negative","poor","below average","very poor"].includes(val)) return 8;
@@ -3235,6 +3259,32 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     </div>
                   </div>
                 )}
+              </div>
+            );
+          })()}
+
+          {/* R6 (2026-06-10, Aron request): private-company explainer. A
+              zero-data brand used to open onto nine bare "No public record
+              found" rows — reads like the APP failed. For privately-held
+              companies the truth is structural: SEC pay data, proxy
+              statements, and most disclosure regimes only bind public
+              companies. Say that, once, up top. Detection mirrors
+              reflag-categories: no ticker + not isPublic ⇒ private. */}
+          {(() => {
+            const zeroData = (enriched.realCats ?? 0) === 0;
+            if (!zeroData) return null;
+            const isPrivate = !enriched.ticker && !enriched.isPublic;
+            return (
+              <div style={{ margin:"4px 0 10px", padding:"12px 14px", borderRadius:12, background:T.bg3, border:`1px solid ${T.border2}` }}>
+                <div style={{ fontSize:12, fontWeight:700, color:T.txt2, marginBottom:4 }}>
+                  <i className={`ti ${isPrivate ? "ti-lock" : "ti-file-search"}`} aria-hidden="true" style={{ marginRight:5 }} />
+                  {isPrivate ? "Privately held — limited public records" : "No public records found yet"}
+                </div>
+                <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5 }}>
+                  {isPrivate
+                    ? "Private companies aren't required to file the disclosures most of our grades draw on (SEC pay data, proxy statements, workforce reports). We show regulator actions when they exist — none are on file for this brand yet."
+                    : "None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them."}
+                </div>
               </div>
             );
           })()}

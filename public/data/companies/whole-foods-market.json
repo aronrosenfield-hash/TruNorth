@@ -2,11 +2,11 @@
   "name": "Whole Foods Market",
   "cat": "Grocery",
   "init": "WHOL",
-  "overall": 57.9,
+  "overall": 61.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "positive",
     "labor": "mixed",
     "dei": "neutral",
@@ -32,9 +32,10 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "$18M reported corporate giving in 2024 (~0.11% of revenue) via Whole Kids Foundation.",
+    "s": "$18M reported corporate giving in 2024 (~0.11% of revenue) via Whole Kids Foundation. Operates the Whole Foods Market Foundation: $5.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -181,5 +182,12 @@
       "notDisclosed": true
     }
   },
-  "inheritedFrom": "whole-foods"
+  "inheritedFrom": "whole-foods",
+  "csc": {
+    "political": 81.7,
+    "charity": 85,
+    "environment": 100,
+    "labor": 50,
+    "health": 8
+  }
 }

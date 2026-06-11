@@ -11,27 +11,52 @@
  *   - RC petitions withdrawn after voluntary recognition
  *   - UC clarification cases following an existing voluntary recognition
  *
- * Source:
- *   https://www.nlrb.gov/reports/agency-performance/election-reports
- *   https://www.nlrb.gov/search/case  (case_type=2  =>  Representation)
+ * Source (updated 2026-06 — the original case-search strategy is dead):
+ *   https://www.nlrb.gov/reports/graphs-data/recent-filings   (CATS data + CSV export)
  *
- * The NLRB does NOT expose a dedicated voluntary-recognition CSV/JSON feed.
- * This fetcher therefore walks the public CATS search-results pages, filters
- * for RM/RC/UC rows whose disposition text matches voluntary-recognition
- * keywords, and writes a normalized snapshot. The script tolerates schema
- * drift — if the HTML changes shape, individual rows are skipped (recorded
- * in _stats.skipped) rather than failing the run. Complements the existing
- * NLRB unfair-labor-practice pipeline (negative labor signal) by capturing
- * a positive one.
+ * WHY THE REWRITE — as of mid-2026 the NLRB case search at /search/case:
+ *   1. returns "did not match any cases" for an empty search term (you can no
+ *      longer browse all representation cases),
+ *   2. dropped the numeric case_type facet (now case_type:C / case_type:R),
+ *   3. renders result rows with ONLY case name/number/date-filed/status/
+ *      location — NO disposition or union columns to filter on, and
+ *   4. its full-text index covers case NAMES only, so searching
+ *      "voluntary recognition" finds nothing.
+ *
+ * The one public CATS surface that still exposes a disposition is the
+ * Recent Filings dataset (/reports/graphs-data/recent-filings), whose CSV
+ * export carries a "Reason Closed" column plus employer/union/location/unit
+ * size. We filter it server-side to Representation cases via
+ * `?f[0]=case_type:R` + a date window, then drive the site's async CSV
+ * export (/nlrb-downloads/start-download → /nlrb-downloads/progress →
+ * generated file) and post-filter rows whose Reason Closed matches the
+ * voluntary-recognition patterns below.
+ *
+ * KNOWN UPSTREAM LIMITATION (verified live 2026-06-10): the public CATS
+ * close-method vocabulary is {Certific. of Representative, Certification of
+ * Results, Withdrawal Adjusted/Non-adjusted, Dismissal Adjusted/Non-adjusted,
+ * Unit Clarification, Amended Certification, Compliance w/BO} — NONE encode a
+ * voluntary recognition, in 2026 or in 2021 (when the 2020 Election
+ * Protection Rule's VR-notification requirement was still in force; it was
+ * rescinded effective 2024, and no NN-VR-NNNNNN case numbers are searchable).
+ * "Withdrawal Adjusted" RC petitions are often VR-resolved in practice, but
+ * the data does not say so explicitly and we refuse to guess. Until the NLRB
+ * republishes VR dispositions, a healthy run therefore yields _status:"empty"
+ * with _empty_reason:"fetch_ok_no_vr_dispositions" and a close-method census
+ * in _stats proving the fetch worked. If a VR close method ever (re)appears,
+ * this fetcher picks it up automatically. Complements the existing NLRB
+ * unfair-labor-practice pipeline (negative labor signal) with a positive one.
  *
  * OUTPUT  data/raw/nlrb-voluntary-recognition/<YYYY-MM-DD>.json:
  *   {
  *     _license:      "US Government work — public domain (17 U.S.C. § 105).",
- *     _source_url:   "https://www.nlrb.gov/reports/agency-performance/election-reports",
+ *     _source_url:   "https://www.nlrb.gov/reports/graphs-data/recent-filings",
  *     _generated_at: "...",
+ *     _status:       "ok" | "empty" | "blocked",   // empty = fetch OK, 0 VR rows
  *     _signal:       "positive",        // explicit — annotate for downstream
  *     _sources:      [{ url, count, status }],
- *     _stats:        { total, skipped, unique_employers, date_range, by_case_type },
+ *     _stats:        { total, candidate_rows, close_methods, skipped,
+ *                      unique_employers, date_range, by_case_type },
  *     entries:       [{
  *       case_number,
  *       employer,
@@ -45,13 +70,15 @@
  *     }]
  *   }
  *
- * THROTTLE: 2s between pages, exponential backoff retry on 5xx, hard cap of
- * MAX_PAGES per run (≈1000 records — well above the realistic per-month
- * volume of voluntary recognitions, which historically runs 50–200/yr).
+ * THROTTLE: 1s between progress polls (the server processes its export in
+ * batches of ~100 rows per poll), exponential backoff retry on 5xx, and a
+ * stale-progress bailout so a wedged export can't spin forever. A one-year
+ * R-case window is ~2.5k rows ≈ 26 polls.
  *
- * FIXTURE MODE  --fixture   loads HTML from
- *   test/fixtures/nlrb-voluntary-recognition/page-<N>.html
- * so the script can be exercised end-to-end without network. Tests use this.
+ * FIXTURE MODE  --fixture   loads CSV from
+ *   test/fixtures/nlrb-voluntary-recognition/recent-filings.csv
+ * so the script can be exercised end-to-end without network. (The legacy
+ * page-<N>.html fixtures still back the legacy-parser unit tests.)
  *
  * Locally:
  *   node scripts/nlrb-voluntary-recognition-fetch.mjs            # live
@@ -62,6 +89,7 @@ import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { randomUUID } from "node:crypto";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -69,15 +97,38 @@ const RAW_DIR = path.join(ROOT, "data/raw/nlrb-voluntary-recognition");
 const FIXTURE_DIR = path.join(ROOT, "test/fixtures/nlrb-voluntary-recognition");
 
 const UA = "TruNorth-NLRB-VoluntaryRecognition/1.0 (+https://www.trunorthapp.com; positive labor signal pipeline)";
-const REQ_DELAY_MS = 2000;
-const MAX_PAGES = 25;
+const POLL_DELAY_MS = 1000;
+const MAX_POLLS = 400;        // 400 polls × ~100 rows/poll ≈ 40k rows — way past a year of R cases
+const MAX_STALE_POLLS = 30;   // bail if the export stops advancing
+const WINDOW_DAYS = 365;
 const FIXTURE_MODE = process.argv.includes("--fixture");
 
-// Case-type filter on the CATS search UI:
-//   case_type=2 -> Representation (RM/RC/UC variants all bucket here).
-// We then post-filter rows by disposition keywords.
-export const BASE_SEARCH_URL =
-  "https://www.nlrb.gov/search/case?f%5B0%5D=case_type%3A2";
+export const NLRB_HOST = "https://www.nlrb.gov";
+export const DATA_URL = `${NLRB_HOST}/reports/graphs-data/recent-filings`;
+
+/** mm/dd/yyyy for the NLRB date_start/date_end filter params. */
+export function fmtUsDate(d) {
+  const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+  const dd = String(d.getUTCDate()).padStart(2, "0");
+  return `${mm}/${dd}/${d.getUTCFullYear()}`;
+}
+
+/**
+ * Recent Filings filtered to Representation cases (RM/RC/UC all bucket under
+ * case_type:R) in a date window. We then post-filter the exported CSV rows
+ * by Reason Closed keywords.
+ */
+export function buildFilterUrl(dateStart, dateEnd) {
+  const p = new URLSearchParams();
+  p.set("f[0]", "case_type:R");
+  if (dateStart) p.set("date_start", dateStart);
+  if (dateEnd) p.set("date_end", dateEnd);
+  return `${DATA_URL}?${p.toString()}`;
+}
+
+// Kept export name for back-compat with older tooling; now points at the
+// Recent Filings dataset (the /search/case?case_type=2 surface is gone).
+export const BASE_SEARCH_URL = buildFilterUrl();
 
 // Disposition / outcome strings that signify a voluntary recognition.
 // Matched against the lowercased disposition column.
@@ -191,9 +242,155 @@ export function isVoluntaryRecognition(disposition) {
   return VR_DISPOSITION_PATTERNS.some(re => re.test(disposition));
 }
 
-/* ----------------------------------------------------------------- parser */
+/* ------------------------------------------------------------- CSV parser */
 
 /**
+ * Minimal RFC-4180 CSV parser (quoted fields, embedded commas/newlines,
+ * doubled-quote escapes). Returns an array of objects keyed by the header
+ * row. The NLRB export quotes free-text columns like Unit Sought which
+ * routinely contain both commas and newlines.
+ */
+export function parseCsv(text) {
+  const s = String(text || "");
+  const rows = [];
+  let field = "", row = [], inQuotes = false;
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (s[i + 1] === '"') { field += '"'; i++; }
+        else inQuotes = false;
+      } else field += ch;
+    } else if (ch === '"') {
+      inQuotes = true;
+    } else if (ch === ",") {
+      row.push(field); field = "";
+    } else if (ch === "\n") {
+      row.push(field); field = "";
+      if (row.some(c => c !== "")) rows.push(row);
+      row = [];
+    } else if (ch !== "\r") {
+      field += ch;
+    }
+  }
+  if (field !== "" || row.length) {
+    row.push(field);
+    if (row.some(c => c !== "")) rows.push(row);
+  }
+  if (rows.length < 2) return [];
+  const header = rows[0].map(h => h.trim());
+  return rows.slice(1).map(r =>
+    Object.fromEntries(header.map((h, i) => [h, (r[i] ?? "").trim()])));
+}
+
+/**
+ * Map one Recent Filings CSV row to a snapshot entry — or null when the row
+ * is not a voluntary-recognition representation case (wrong case type, or a
+ * Reason Closed that doesn't match the VR patterns).
+ *
+ * Export columns (verified 2026-06): Name, Case Number, City,
+ * "States & Territories", Date Filed, Region Assigned, Status, Date Closed,
+ * Reason Closed, "No. of Eligible Voters", "No. of Employees",
+ * Certified Representative, Unit Sought.
+ */
+export function csvRowToEntry(row) {
+  const case_number = (row["Case Number"] || "").trim();
+  const case_type = parseCaseType(case_number);
+  if (!case_type || !VR_CASE_TYPES.has(case_type)) return null;
+
+  const disposition = (row["Reason Closed"] || "").trim();
+  if (!isVoluntaryRecognition(disposition)) return null;
+
+  const employer = (row["Name"] || "").trim();
+  if (!employer || employer.length > 200) return null;
+
+  const city = (row["City"] || "").trim();
+  const state = (row["States & Territories"] || "").trim();
+  return {
+    case_number,
+    case_type,
+    employer,
+    union: (row["Certified Representative"] || "").trim() || null,
+    disposition,
+    recognition_date: normalizeDate(row["Date Closed"]),
+    location: [city, state].filter(Boolean).join(", ") || null,
+    workers: parseWorkers(row["No. of Employees"] || row["No. of Eligible Voters"]),
+    source_url: `${NLRB_HOST}/case/${encodeURIComponent(case_number)}`,
+  };
+}
+
+/* ------------------------------------------------------------ CSV export  */
+
+/** Pull the data-cacheid the filtered page embeds for its CSV export. */
+export function extractCacheId(html) {
+  const m = /data-cacheid="([^"]+)"/.exec(String(html || ""));
+  return m ? m[1] : null;
+}
+
+/**
+ * Drive the NLRB's async CSV export for the given filtered Recent Filings
+ * URL: read the page → start the export with a throwaway session token →
+ * poll until the server finishes batching → download the generated file.
+ * Returns { ok, csvText } or { ok:false, blocker }.
+ */
+async function downloadFilteredCsv(filterUrl) {
+  const page = await fetchText(filterUrl, null);
+  if (!page.ok) return { ok: false, blocker: `filter_page:${page.blocker}` };
+
+  const cacheId = extractCacheId(page.body);
+  if (!cacheId) return { ok: false, blocker: "no_cacheid_in_filter_page" };
+
+  const token = randomUUID();
+  const dlHeaders = {
+    "User-Agent": UA,
+    "Accept": "application/json",
+    "Cookie": `nlrb-dl-sessid=${token}`,
+  };
+  const getJson = async (url) => {
+    try {
+      const res = await fetch(url, { headers: dlHeaders });
+      if (!res.ok) return { ok: false, blocker: `http_${res.status}` };
+      return { ok: true, json: await res.json() };
+    } catch (err) {
+      return { ok: false, blocker: `network:${err.message}` };
+    }
+  };
+
+  const start = await getJson(`${NLRB_HOST}/nlrb-downloads/start-download/recent_filings/${cacheId}/${token}`);
+  if (!start.ok) return { ok: false, blocker: `start_download:${start.blocker}` };
+  let dl = start.json?.data;
+  if (!dl?.id) return { ok: false, blocker: "start_download:malformed_response" };
+  console.log(`  export started (id ${dl.id}, ${dl.total} rows)`);
+
+  let polls = 0, lastProcessed = -1, stale = 0;
+  while (!dl.finished && polls < MAX_POLLS) {
+    await sleep(POLL_DELAY_MS);
+    const p = await getJson(`${NLRB_HOST}/nlrb-downloads/progress/${dl.id}`);
+    if (!p.ok) return { ok: false, blocker: `progress:${p.blocker}` };
+    dl = p.json?.data ?? dl;
+    if (dl.processed === lastProcessed) {
+      if (++stale > MAX_STALE_POLLS) return { ok: false, blocker: "export_stalled" };
+    } else {
+      stale = 0;
+      lastProcessed = dl.processed;
+    }
+    polls++;
+  }
+  if (!dl.finished) return { ok: false, blocker: "export_timeout" };
+
+  const csv = await fetchText(`${NLRB_HOST}${dl.filename}`, null);
+  if (!csv.ok) return { ok: false, blocker: `csv_fetch:${csv.blocker}` };
+  return { ok: true, csvText: csv.body };
+}
+
+/* ------------------------------------------------- parser (LEGACY, unused) */
+
+/**
+ * LEGACY — parser for the pre-2026 /search/case results pages, kept exported
+ * because (a) the pure functions are still unit-tested and (b) it documents
+ * the old HTML shapes in case the NLRB resurrects them. The live pipeline
+ * now goes through the Recent Filings CSV export above.
+ *
  * Parse one NLRB CATS search-results page. Accepts two HTML shapes the NLRB
  * has shipped over the years — a `<table class="cats-results">` style and a
  * card grid (`<article class="search-result">`). Rows are returned ONLY when
@@ -316,39 +513,65 @@ async function main() {
   console.log(`NLRB voluntary-recognition fetcher starting (fixture=${FIXTURE_MODE})...`);
   await fs.mkdir(RAW_DIR, { recursive: true });
 
-  const entries = [];
-  const sources = [];
-  let totalSkipped = 0;
-  let url = BASE_SEARCH_URL;
-  let pageNum = 0;
+  const now = new Date();
+  const windowStart = new Date(now.getTime() - WINDOW_DAYS * 24 * 60 * 60 * 1000);
+  const filterUrl = buildFilterUrl(fmtUsDate(windowStart), fmtUsDate(now));
 
-  while (url && pageNum < MAX_PAGES) {
-    pageNum++;
-    const fixtureName = `page-${pageNum}`;
-    const res = await fetchText(url, fixtureName);
-    if (!res.ok) {
-      console.error(`  [page ${pageNum}] BLOCKED (${res.blocker})`);
-      sources.push({ url, count: 0, status: "blocked", note: res.blocker });
-      break;
+  let csvText = null;
+  let status = "ok"; let note; let emptyReason;
+
+  if (FIXTURE_MODE) {
+    const p = path.join(FIXTURE_DIR, "recent-filings.csv");
+    csvText = existsSync(p) ? await fs.readFile(p, "utf-8") : "";
+  } else {
+    console.log(`  ${filterUrl}`);
+    const dl = await downloadFilteredCsv(filterUrl);
+    if (!dl.ok) {
+      console.error(`  BLOCKED (${dl.blocker})`);
+      status = "blocked";
+      note = dl.blocker;
+    } else {
+      csvText = dl.csvText;
     }
-    const { rows, skipped } = parseSearchResults(res.body);
-    totalSkipped += skipped;
-    entries.push(...rows);
-    sources.push({ url, count: rows.length, status: rows.length > 0 ? "ok" : "empty" });
-    console.log(`  [page ${pageNum}] ${rows.length} voluntary-recognition rows (${skipped} skipped)`);
-
-    const next = findNextPageUrl(res.body);
-    if (!next || next === url) break;
-    url = next;
-    if (!FIXTURE_MODE) await sleep(REQ_DELAY_MS);
   }
 
-  // Dedupe by case_number — multi-page overlap or stale-pager edge cases.
+  let entries = [];
+  let candidateRows = 0;
+  const closeMethods = {};
+  let skipped = 0;
+
+  if (csvText !== null) {
+    const rows = parseCsv(csvText);
+    for (const row of rows) {
+      const caseType = parseCaseType(row["Case Number"]);
+      if (!caseType || !VR_CASE_TYPES.has(caseType)) { skipped++; continue; }
+      candidateRows++;
+      const method = (row["Reason Closed"] || "").trim();
+      if (method) closeMethods[method] = (closeMethods[method] || 0) + 1;
+      const entry = csvRowToEntry(row);
+      if (entry) entries.push(entry);
+    }
+    console.log(`  ${rows.length} CSV rows, ${candidateRows} RM/RC/UC candidates, ${entries.length} voluntary recognitions`);
+    if (entries.length === 0 && status === "ok") {
+      status = "empty";
+      if (candidateRows > 0) {
+        emptyReason = "fetch_ok_no_vr_dispositions";
+        note = `Fetched ${candidateRows} representation cases for ${fmtUsDate(windowStart)}–${fmtUsDate(now)} ` +
+          `but the public CATS close-method vocabulary (see _stats.close_methods) contains no ` +
+          `voluntary-recognition disposition — the NLRB stopped publishing VR outcomes after the 2020 ` +
+          `Election Protection Rule's notification requirement was rescinded. Not a fetch failure.`;
+      } else {
+        emptyReason = "fetch_ok_zero_candidate_rows";
+        note = "CSV export fetched but contained no RM/RC/UC rows — check the case_type filter upstream.";
+      }
+    }
+  }
+
+  // Dedupe by case_number, preferring the more populated entry.
   const seen = new Map();
   for (const e of entries) {
     const existing = seen.get(e.case_number);
     if (!existing) { seen.set(e.case_number, e); continue; }
-    // Prefer the entry with more populated fields.
     const score = (x) => [x.union, x.recognition_date, x.location, x.workers].filter(Boolean).length;
     if (score(e) > score(existing)) seen.set(e.case_number, e);
   }
@@ -360,14 +583,19 @@ async function main() {
   const outFile = path.join(RAW_DIR, `${today}.json`);
   const payload = {
     _license: "US Government work — public domain (17 U.S.C. § 105).",
-    _source_url: "https://www.nlrb.gov/reports/agency-performance/election-reports",
-    _search_url: BASE_SEARCH_URL,
+    _source_url: DATA_URL,
+    _search_url: filterUrl,
     _generated_at: new Date().toISOString(),
+    _status: status,
+    ...(emptyReason ? { _empty_reason: emptyReason } : {}),
+    ...(note ? { _note: note } : {}),
     _signal: "positive",
-    _sources: sources,
+    _sources: [{ url: filterUrl, count: deduped.length, status }],
     _stats: {
       total: deduped.length,
-      skipped: totalSkipped,
+      candidate_rows: candidateRows,
+      close_methods: closeMethods,
+      skipped,
       unique_employers: uniqueEmployers,
       date_range: dates.length ? { earliest: dates[0], latest: dates[dates.length - 1] } : null,
       by_case_type: deduped.reduce((acc, e) => {
@@ -378,7 +606,7 @@ async function main() {
     entries: deduped,
   };
   await fs.writeFile(outFile, JSON.stringify(payload, null, 2));
-  console.log(`\nWrote ${outFile} (${deduped.length} voluntary recognitions, ${uniqueEmployers} unique employers)`);
+  console.log(`\nWrote ${outFile} (${deduped.length} voluntary recognitions, ${uniqueEmployers} unique employers, status=${status})`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

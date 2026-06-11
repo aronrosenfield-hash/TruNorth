@@ -2,12 +2,12 @@
   "name": "Verizon",
   "cat": "Technology",
   "init": "VE",
-  "overall": 60.9,
+  "overall": 60.8,
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "good",
     "labor": "poor",
     "dei": "pro_dei",
@@ -27,13 +27,14 @@
     ]
   },
   "charity": {
-    "s": "$38M reported corporate giving in 2024 (~0.03% of revenue) via Verizon Foundation. JUST Capital JUST 100 — ranked #35 of Russell 1000 (2025) for treatment of workers, customers, communities, environment.",
+    "s": "$38M reported corporate giving in 2024 (~0.03% of revenue) via Verizon Foundation. JUST Capital JUST 100 — ranked #35 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Operates the Verizon Foundation: $7.3M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "amt": "N/A",
     "focus": "N/A",
     "sources": [
       "Claude AI synthesis",
       "corporate-giving",
-      "just-capital"
+      "just-capital",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -322,7 +323,7 @@
   "health": {
     "s": "2 CPSC recalls on record; sample hazard: the lithium ion battery in the hotspots can overheat."
   },
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ New York City. (Wikidata Q467752)",
     "sources": [
@@ -352,5 +353,12 @@
     "execPay": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 77.5,
+    "charity": 85,
+    "environment": 100,
+    "labor": 8,
+    "privacy": 50
   }
 }

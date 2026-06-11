@@ -1,1 +1,343 @@
-{"name":"AMETEK","cat":"Manufacturing","init":"AME","overall":52.5,"isPublic":true,"ticker":"AME","sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"mixed","governance":"neutral"},"political":{"s":"FEC: $115K in executive political donations; partisan lean split across 6 executive donors.","amt":"$96,598 (2024 PAC contributions + lobbying)","lean":"Bipartisan","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"$2M reported corporate giving in 2024 (~0.03% of revenue).","amt":"Not disclosed","focus":"Education (particularly STEM), health and welfare, civic and social service, arts and culture","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"environmental violation: $492K in federal penalties (Violation Tracker).","rating":"Good","sources":["EPA","Violation Tracker"]},"labor":{"s":"49 federal penalties totaling $2.2M since 2000 (Violation Tracker).","rating":"Good","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"CEO-to-median-worker pay ratio 258:1 (median employee pay $63,719) — SEC proxy statement (DEF 14A, 2026).","ratio":"Approximately 100:1","sources":["Claude AI synthesis","sec-def14a"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-03-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=AMETEK&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":{"legacy":"2026-05-28","execPay":"2026-06-11T03:48:51.753Z"},"laborAPI":{"violationTracker":{"slug":"ametek","matchedName":"Ametek","totalPenalty":2172935,"totalRecords":49,"offenseGroups":[{"category":"government-contracting-related offenses","penalty":1200000,"records":1},{"category":"environment-related offenses","penalty":527810,"records":17},{"category":"safety-related offenses","penalty":401925,"records":30},{"category":"employment-related offenses","penalty":43200,"records":1}],"primaryOffenses":[{"category":"False Claims Act and related","penalty":1200000,"records":1},{"category":"environmental violation","penalty":491510,"records":16},{"category":"workplace safety or health violation","penalty":242925,"records":24},{"category":"aviation safety violation","penalty":159000,"records":6},{"category":"labor relations violation","penalty":43200,"records":1}],"rating":"good"}},"competitors":["te-connectivity","indus","roper-technologies","fortive","crane"],"wiki":{"founded":"1930-00-00","hq":"Berwyn","employees":null,"revenue":"2136850000","parent":null,"industry":"industrial manufacturing","products":null,"keyPeople":null,"website":"https://www.ametek.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Ametek","extract":"AMETEK, Inc. is an American multinational conglomerate and global designer and manufacturer of electronic instruments and electromechanical devices with headquarters in the United States and over 150 sites worldwide."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/oh/kent/profile/electric-motor-distributor/ametek-inc-0272-6001034"},"payRatio":{"ratio":258,"ratioDisplay":"258:1","ceoPay":16462630,"medianWorkerPay":63719,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-03-11","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1037868/000103786826000062/ame-20260311.htm"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Ametek-Logo.svg","logoSource":"wikidata_p154","slug":"ametek","secComplaints":null,"news":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Ametek","slug":"ametek","ownership":"publicly traded (ticker symbol AME)","hq":"Pennsylvania","majorIndustry":"electrical and electronic equipment","specificIndustry":"electronic equipment","totalPenalty":2172935,"totalRecords":49,"offenseGroups":[{"category":"government-contracting-related offenses","penalty":1200000,"records":1},{"category":"environment-related offenses","penalty":527810,"records":17},{"category":"safety-related offenses","penalty":401925,"records":30},{"category":"employment-related offenses","penalty":43200,"records":1}],"primaryOffenses":[{"category":"False Claims Act and related","penalty":1200000,"records":1},{"category":"environmental violation","penalty":491510,"records":16},{"category":"workplace safety or health violation","penalty":242925,"records":24},{"category":"aviation safety violation","penalty":159000,"records":6},{"category":"labor relations violation","penalty":43200,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=AMETEK&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-17T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z","realCats":5,"governance":{"s":"Wikidata: owned by S&P 500; HQ Berwyn. (Wikidata Q470317)","sources":["wikidata"]},"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true}},"enriched":{"execPay":{"ceoName":null,"ceoTotal":null,"ceoBaseSalary":null,"ceoBonus":null,"ceoStockAwards":null,"ceoOptionAwards":null,"ceoNonEquityIncentive":null,"ceoAllOtherComp":null,"medianEmployeePay":63719,"payRatio":258,"year":null,"ticker":"AME","cik":"0001037868","filingDate":"2026-03-11","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1037868/000103786826000062/ame-20260311.htm","lastUpdated":"2026-06-11T03:48:51.753Z","source":"sec-def14a"}}}
+{
+  "name": "AMETEK",
+  "cat": "Manufacturing",
+  "init": "AME",
+  "overall": 57.7,
+  "isPublic": true,
+  "ticker": "AME",
+  "sc": {
+    "political": "bipartisan",
+    "charity": "positive",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "mixed",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $115K in executive political donations; partisan lean split across 6 executive donors.",
+    "amt": "$96,598 (2024 PAC contributions + lobbying)",
+    "lean": "Bipartisan",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "$2M reported corporate giving in 2024 (~0.03% of revenue). Operates the Ametek Foundation Inc: $2.3M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
+    "amt": "Not disclosed",
+    "focus": "Education (particularly STEM), health and welfare, civic and social service, arts and culture",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving",
+      "irs990pf-foundations"
+    ]
+  },
+  "environment": {
+    "s": "environmental violation: $492K in federal penalties (Violation Tracker).",
+    "rating": "Good",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "49 federal penalties totaling $2.2M since 2000 (Violation Tracker).",
+    "rating": "Good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 258:1 (median employee pay $63,719) — SEC proxy statement (DEF 14A, 2026).",
+    "ratio": "Approximately 100:1",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-03-13",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=AMETEK&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "ametek",
+      "matchedName": "Ametek",
+      "totalPenalty": 2172935,
+      "totalRecords": 49,
+      "offenseGroups": [
+        {
+          "category": "government-contracting-related offenses",
+          "penalty": 1200000,
+          "records": 1
+        },
+        {
+          "category": "environment-related offenses",
+          "penalty": 527810,
+          "records": 17
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 401925,
+          "records": 30
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 43200,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "False Claims Act and related",
+          "penalty": 1200000,
+          "records": 1
+        },
+        {
+          "category": "environmental violation",
+          "penalty": 491510,
+          "records": 16
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 242925,
+          "records": 24
+        },
+        {
+          "category": "aviation safety violation",
+          "penalty": 159000,
+          "records": 6
+        },
+        {
+          "category": "labor relations violation",
+          "penalty": 43200,
+          "records": 1
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "competitors": [
+    "te-connectivity",
+    "indus",
+    "roper-technologies",
+    "fortive",
+    "crane"
+  ],
+  "wiki": {
+    "founded": "1930-00-00",
+    "hq": "Berwyn",
+    "employees": null,
+    "revenue": "2136850000",
+    "parent": null,
+    "industry": "industrial manufacturing",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.ametek.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ametek",
+    "extract": "AMETEK, Inc. is an American multinational conglomerate and global designer and manufacturer of electronic instruments and electromechanical devices with headquarters in the United States and over 150 sites worldwide."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/oh/kent/profile/electric-motor-distributor/ametek-inc-0272-6001034"
+  },
+  "payRatio": {
+    "ratio": 258,
+    "ratioDisplay": "258:1",
+    "ceoPay": 16462630,
+    "medianWorkerPay": 63719,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-03-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000062/ame-20260311.htm"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Ametek-Logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "ametek",
+  "secComplaints": null,
+  "news": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Ametek",
+    "slug": "ametek",
+    "ownership": "publicly traded (ticker symbol AME)",
+    "hq": "Pennsylvania",
+    "majorIndustry": "electrical and electronic equipment",
+    "specificIndustry": "electronic equipment",
+    "totalPenalty": 2172935,
+    "totalRecords": 49,
+    "offenseGroups": [
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 1200000,
+        "records": 1
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 527810,
+        "records": 17
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 401925,
+        "records": 30
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 43200,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "False Claims Act and related",
+        "penalty": 1200000,
+        "records": 1
+      },
+      {
+        "category": "environmental violation",
+        "penalty": 491510,
+        "records": 16
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 242925,
+        "records": 24
+      },
+      {
+        "category": "aviation safety violation",
+        "penalty": 159000,
+        "records": 6
+      },
+      {
+        "category": "labor relations violation",
+        "penalty": 43200,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-13",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=AMETEK&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-17T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "realCats": 5,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Berwyn. (Wikidata Q470317)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 63719,
+      "payRatio": 258,
+      "year": null,
+      "ticker": "AME",
+      "cik": "0001037868",
+      "filingDate": "2026-03-11",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1037868/000103786826000062/ame-20260311.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  },
+  "csc": {
+    "political": 82.1,
+    "charity": 85,
+    "environment": 26.5,
+    "labor": 50,
+    "execPay": 48.4
+  }
+}

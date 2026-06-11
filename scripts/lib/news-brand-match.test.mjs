@@ -41,6 +41,8 @@ async function run() {
   assert(!(await matchBrands("Gap year in education hits rich vs poor")).length, "Gap year (idiom, not Gap Inc)");
   assert(!(await matchBrands("Welcome to Costco banner — FAKE image")).length, "Costco fake image debunking");
   assert(!(await matchBrands("X post user said")).length, "X post (platform reference)");
+  assert(!(await matchBrands("Facebook pages claimed that Streep and Ivanka Trump had an on-air encounter")).length, "Facebook pages (rumor medium, not Meta corp)");
+  assert((await matchBrands("Facebook hit with FTC investigation over teen data")).includes("meta-platforms"), "Facebook corporate action → meta-platforms");
 
   console.log("\nresolveSlug — alias + parent-map");
   assert(await resolveSlug("McDonalds") === "mcdonald-s", "McDonalds alias → mcdonald-s");

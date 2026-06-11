@@ -2,11 +2,11 @@
   "name": "Smith's Food and Drug",
   "cat": "Grocery",
   "init": "SMIT",
-  "overall": 36.1,
+  "overall": 44.3,
   "isPublic": false,
   "sc": {
     "political": "right",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "poor",
     "labor": "poor",
     "dei": "neutral",
@@ -30,7 +30,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company Kroger: $240M reported corporate giving in 2024 (~0.16% of revenue) via Kroger Co. Foundation.",
+    "s": "Via parent company Kroger: $240M reported corporate giving in 2024 (~0.16% of revenue) via Kroger Co. Foundation. Operates the Kroger Co Foundation: $6.9M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -134,5 +134,13 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "kroger"
+  "inheritedFrom": "kroger",
+  "csc": {
+    "political": 51.4,
+    "charity": 85,
+    "environment": 8,
+    "labor": 8,
+    "execPay": 36.8,
+    "health": 50
+  }
 }

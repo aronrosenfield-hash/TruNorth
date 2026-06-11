@@ -2,11 +2,11 @@
   "name": "Club Monaco",
   "cat": "Apparel & Fashion",
   "init": "CLUB",
-  "overall": 62,
+  "overall": 67.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "mixed",
+    "charity": "positive",
     "environment": "positive",
     "labor": "mixed",
     "dei": "pro_dei",
@@ -31,7 +31,7 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "Via parent company Ralph Lauren: $14M reported corporate giving in 2024 (~0.21% of revenue) via Ralph Lauren Corporate Foundation.",
+    "s": "Via parent company Ralph Lauren: $14M reported corporate giving in 2024 (~0.21% of revenue) via Ralph Lauren Corporate Foundation. Operates the The Ralph Lauren Corporate Foundation: $8.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "parent-inheritance"
     ]
@@ -129,7 +129,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:43:11.917Z",
-  "realCats": 5,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -157,5 +157,11 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "ralph-lauren"
+  "inheritedFrom": "ralph-lauren",
+  "csc": {
+    "political": 78.8,
+    "charity": 85,
+    "environment": 100,
+    "labor": 50
+  }
 }

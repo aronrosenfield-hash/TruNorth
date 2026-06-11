@@ -2,7 +2,7 @@
   "name": "Ralphs",
   "cat": "Grocery",
   "init": "RALP",
-  "overall": 27.1,
+  "overall": 32.5,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -150,5 +150,13 @@
       "basis": "Grocery"
     }
   },
-  "inheritedFrom": "kroger"
+  "inheritedFrom": "kroger",
+  "csc": {
+    "political": 50,
+    "charity": 50,
+    "environment": 8,
+    "labor": 8,
+    "execPay": 36.8,
+    "health": 8
+  }
 }

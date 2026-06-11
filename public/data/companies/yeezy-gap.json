@@ -2,7 +2,7 @@
   "name": "Yeezy Gap",
   "cat": "Apparel & Fashion",
   "init": "YEEZ",
-  "overall": 58.4,
+  "overall": 49.9,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -13,7 +13,6 @@
     "animals": "mixed",
     "guns": "neutral",
     "privacy": "mixed",
-    "execPay": "good",
     "health": "mixed"
   },
   "political": {
@@ -65,10 +64,8 @@
     ]
   },
   "execPay": {
-    "s": "Via parent company Gap Inc.: CEO-to-median-worker pay ratio 0:1 (median employee pay $10,170; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2022).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -123,7 +120,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:51:24.741Z",
-  "realCats": 6,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -151,5 +148,11 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "gap-inc"
+  "inheritedFrom": "gap-inc",
+  "csc": {
+    "political": 49.3,
+    "environment": 50,
+    "labor": 50,
+    "privacy": 50
+  }
 }

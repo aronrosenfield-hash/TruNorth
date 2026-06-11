@@ -2,11 +2,11 @@
   "name": "MATTEL INC",
   "cat": "Consumer Goods",
   "init": "MATT",
-  "overall": 45.1,
+  "overall": 49.5,
   "isPublic": true,
   "sc": {
     "political": "left",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -35,10 +35,11 @@
   },
   "dataLastUpdated": "2026-05-28",
   "charity": {
-    "s": "$5M reported corporate giving in 2024 (~0.09% of revenue) via Mattel Children's Foundation.",
+    "s": "$5M reported corporate giving in 2024 (~0.09% of revenue) via Mattel Children's Foundation. Operates the Mattel Foundation: $252K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
       "Claude AI synthesis",
-      "corporate-giving"
+      "corporate-giving",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -240,5 +241,10 @@
       "_inferred": true,
       "basis": "Consumer Goods"
     }
+  },
+  "csc": {
+    "political": 51.6,
+    "charity": 85,
+    "labor": 11.2
   }
 }

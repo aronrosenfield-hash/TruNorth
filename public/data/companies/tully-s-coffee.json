@@ -2,7 +2,7 @@
   "name": "Tully's Coffee",
   "cat": "Food & Beverage",
   "init": "TULL",
-  "overall": 45,
+  "overall": 44,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -136,5 +136,10 @@
       "basis": "Food & Beverage"
     }
   },
-  "inheritedFrom": "keurig-dr-pepper"
+  "inheritedFrom": "keurig-dr-pepper",
+  "csc": {
+    "charity": 50,
+    "labor": 8.4,
+    "execPay": 64.6
+  }
 }

@@ -2,11 +2,11 @@
   "name": "Mercury",
   "cat": "Financial Services",
   "init": "MERC",
-  "overall": 56.1,
+  "overall": 56.5,
   "isPublic": true,
   "sc": {
     "political": "right-leaning",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "positive",
     "labor": "poor",
     "dei": "pro_dei",
@@ -33,9 +33,10 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Mercury Foundation: $22.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -205,5 +206,11 @@
       "basis": "Financial Services"
     }
   },
-  "inheritedFrom": "ford-motor"
+  "inheritedFrom": "ford-motor",
+  "csc": {
+    "political": 61.4,
+    "charity": 85,
+    "environment": 100,
+    "labor": 10.9
+  }
 }

@@ -2,7 +2,7 @@
   "name": "Chef Boyardee",
   "cat": "Food & Beverage",
   "init": "CHEF",
-  "overall": 49.6,
+  "overall": 38,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,6 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "good",
     "governance": "neutral",
     "health": "poor"
   },
@@ -67,10 +66,8 @@
     ]
   },
   "execPay": {
-    "s": "Via parent company Conagra Brands: CEO-to-median-worker pay ratio 0:1 (median employee pay $64,614; CEO total compensation $8K) — SEC proxy statement (DEF 14A, 2015).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -125,7 +122,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T22:40:28.172Z",
-  "realCats": 6,
+  "realCats": 5,
   "governance": {
     "s": "Wikidata: owned by Conagra Brands, Inc.. (Wikidata Q17079048)",
     "sources": [
@@ -153,5 +150,12 @@
       "parent-inheritance"
     ]
   },
-  "inheritedFrom": "conagra-brands"
+  "inheritedFrom": "conagra-brands",
+  "csc": {
+    "political": 79,
+    "charity": 50,
+    "environment": 15.9,
+    "labor": 8,
+    "health": 8
+  }
 }

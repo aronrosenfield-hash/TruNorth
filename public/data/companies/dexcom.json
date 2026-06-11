@@ -1,1 +1,257 @@
-{"name":"DEXCOM","cat":"Healthcare","init":"DEXC","overall":31.6,"isPublic":true,"sc":{"political":"left-leaning","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","health":"poor"},"political":{"s":"FEC: $334K in executive political donations; partisan lean Democratic +25 across 11 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"1 federal penalties totaling $5K since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-28","ab":"#0d2318","ac":"#4caf82","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":["abbott-laboratories","medtronic","pt-chandra-asri-petrochemical-tbk-adr"],"wiki":{"founded":"1999-00-00","hq":"San Diego","employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":"http://dexcom.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Dexcom_HQ.jpg/330px-Dexcom_HQ.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Dexcom","extract":"Dexcom, Inc. is an American multinational healthcare company that develops, manufactures, produces and distributes a line of continuous glucose monitoring (CGM) systems for diabetes management. It operates internationally with global headquarters and R&D center in San Diego, California, U.S., and manufacturing facilities in Mesa, Arizona, U.S.; Batu Kawan, Malaysia; and Athenry, County Galway, Ireland."},"bbb":{"rating":"A-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ca/san-diego/profile/diabetic-supplies/dexcom-inc-1126-15028122"},"secComplaints":{"count":1,"sample":[{"adsh":"0001193125-24-241069","date":"2024-10-22","filer":"OWENS & MINOR INC/VA/  (OMI)  (CIK 0000075252)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/6/6a/A_dexcom_g6_glucose_monitor_%2852075092685%29.jpg","logoSource":"wiki_infobox","recalls":{"recalls":[{"agency":"FDA","date":"2026-04-14","productName":"Brand Name: Dexcom G7 Continuous Glucose Monitoring System  Product Name: Dexcom G7 CGM watchOS App  Model/Catalog Number: SW13355  Software Version: Versions 2.9.0 through 2.11.2  Product Description: Dexcom G7 CGM watchOS App - The watchOS app is installed along with the iOS phone app and the versions used are the same for each user. The watchOS app cannot be installed independently from the iOS phone app.  Component: Dexcom G7 Continuous Glucose Monitoring System, Dexcom G7 15 Day Continuous Glucose Monitoring System","reason":"A software defect in which a low-priority file I/O check blocks the higher-priority thread responsible for processing estimated glucose values (EGVs) and trend arrows. When the app is running in the background, EGV notifications may queue up and then \"replay\" sequentially when the user brings the app to the foreground, causing the Glucose Compass to flicker through previous EGVs. In more severe instances, the app may perceive signal loss and deploy signal loss mitigations. This delay in EGV and alert processing creates a risk that users may miss detection of a hypoglycemic or hyperglycemic event, or make treatment decisions based on outdated glucose information.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2164-2026%22","recallId":"Z-2164-2026"},{"agency":"FDA","date":"2026-04-14","productName":"Brand Name: Dexcom G7 Continuous Glucose Monitoring System  Product Name: Dexcom G7 CGM iOS App  Model/Catalog Number: SW12300  Software Version: Versions 2.9.0 through 2.11.2  Product Description: Dexcom G7 CGM iOS App  Component: Dexcom G7 Continuous Glucose Monitoring System, Dexcom G7 15 Day Continuous Glucose Monitoring System","reason":"A software defect in which a low-priority file I/O check blocks the higher-priority thread responsible for processing estimated glucose values (EGVs) and trend arrows. When the app is running in the background, EGV notifications may queue up and then \"replay\" sequentially when the user brings the app to the foreground, causing the Glucose Compass to flicker through previous EGVs. In more severe instances, the app may perceive signal loss and deploy signal loss mitigations. This delay in EGV and alert processing creates a risk that users may miss detection of a hypoglycemic or hyperglycemic event, or make treatment decisions based on outdated glucose information.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2163-2026%22","recallId":"Z-2163-2026"},{"agency":"FDA","date":"2026-04-14","productName":"Brand Name: Dexcom ONE+ Continuous Glucose Monitoring System  Product Name: Dexcom ONE+ iOS CGM App  Model/Catalog Number: SW14244  Software Version: versions 1.5.0 and 1.6.0  Product Description: Dexcom ONE+ iOS CGM App  Component: Dexcom ONE+ Continuous Glucose Monitoring System","reason":"A software defect in which a low-priority file I/O check blocks the higher-priority thread responsible for processing estimated glucose values (EGVs) and trend arrows. When the app is running in the background, EGV notifications may queue up and then \"replay\" sequentially when the user brings the app to the foreground, causing the Glucose Compass to flicker through previous EGVs. In more severe instances, the app may perceive signal loss and deploy signal loss mitigations. This delay in EGV and alert processing creates a risk that users may miss detection of a hypoglycemic or hyperglycemic event, or make treatment decisions based on outdated glucose information.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2165-2026%22","recallId":"Z-2165-2026"},{"agency":"FDA","date":"2025-08-28","productName":"Brand Name: Dexcom G6 Continuous Glucose Monitoring System  Product Name: Dexcom G6 and G6 Pro Android US CGM App  Model/Catalog Number: SW11678  Software Version: version 1.15.0  Product Description: Dexcom G6 and G6 Pro Android US CGM App SW11678 version 1.15.0  Component: Dexcom G6 Continuous Glucose Monitoring System","reason":"A software defect in version v1.15.0 of the G6 Android app can cause the app to terminate unexpectedly, which may result in the user not receiving estimated glucose values, alarms, alerts or notifications. This could result in the missed detection of a hyperglycemic or hypoglycemic event, protentional resulting in severe hyperglycemia, diabetic ketoacidosis (DKA), or hyperosmolar hyperglycemic state (HHS).","severity":"high","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-0318-2026%22","recallId":"Z-0318-2026"},{"agency":"FDA","date":"2025-07-24","productName":"Brand Name: Dexcom G7 Continuous Glucose Monitoring System  Product Name: Dexcom G7 CGM Android App  Model/Catalog Number: SW12299  Software Version: version 2.8.0 and earlier  Product Description: Dexcom G7 CGM Android App SW12299  Component: Dexcom G7 Continuous Glucose Monitoring System","reason":"The affected devices are the Dexcom G7 Continuous Glucose Monitoring System (CGM System) using iOS, watchOS and Android App software (versions 2.8.0 or earlier) and Dexcom ONE+ CGM System using iOS and Android App software (versions 1.4.0 or earlier), henceforth referred to as the \u001cApp\u001d. The affected App does not provide an expected \"Sensor Failed\" alert when the transmitter sends a \"transmitterFailed\" error message to the App when the CGM experiences a hardware or firmware failure. Instead, the App ends the CGM sensor session, stops reporting glucose values and displays the \u001cStart Sensor\u001d screen or \u001cNo active sensor\u001d message without alerting the user, which can lead to missed detection of a hyperglycemic or hypoglycemic event and a delay in treatment.","severity":"high","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2446-2025%22","recallId":"Z-2446-2025"}],"recallCount24mo":9,"lastRecallDate":"2026-04-14","severityMax":"high"},"slug":"dexcom","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Dexcom Inc.","slug":"dexcom-inc","ownership":"publicly traded (ticker symbol DXCM)","hq":"California","majorIndustry":"medical equipment and supplies","specificIndustry":"medical devices","totalPenalty":5000,"totalRecords":1,"offenseGroups":[{"category":"safety-related offenses","penalty":5000,"records":1}],"primaryOffenses":[{"category":"workplace safety or health violation","penalty":5000,"records":1}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T20:19:07.667Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-04-06","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=DEXCOM&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T20:19:06.005Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T20:19:07.667Z","health":{"s":"FDA MAUDE: 716,899 medical-device adverse-event reports (24mo) — DEXCOM, INC.. Sources: fda-maude-mfr.","sources":["health-pharma-r3"]},"realCats":3,"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Healthcare"}}}
+{
+  "name": "DEXCOM",
+  "cat": "Healthcare",
+  "init": "DEXC",
+  "overall": 41.3,
+  "isPublic": true,
+  "sc": {
+    "political": "left-leaning",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na",
+    "health": "poor"
+  },
+  "political": {
+    "s": "FEC: $334K in executive political donations; partisan lean Democratic +25 across 11 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "1 federal penalties totaling $5K since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "competitors": [
+    "abbott-laboratories",
+    "medtronic",
+    "pt-chandra-asri-petrochemical-tbk-adr"
+  ],
+  "wiki": {
+    "founded": "1999-00-00",
+    "hq": "San Diego",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "http://dexcom.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Dexcom_HQ.jpg/330px-Dexcom_HQ.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dexcom",
+    "extract": "Dexcom, Inc. is an American multinational healthcare company that develops, manufactures, produces and distributes a line of continuous glucose monitoring (CGM) systems for diabetes management. It operates internationally with global headquarters and R&D center in San Diego, California, U.S., and manufacturing facilities in Mesa, Arizona, U.S.; Batu Kawan, Malaysia; and Athenry, County Galway, Ireland."
+  },
+  "bbb": {
+    "rating": "A-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ca/san-diego/profile/diabetic-supplies/dexcom-inc-1126-15028122"
+  },
+  "secComplaints": {
+    "count": 1,
+    "sample": [
+      {
+        "adsh": "0001193125-24-241069",
+        "date": "2024-10-22",
+        "filer": "OWENS & MINOR INC/VA/  (OMI)  (CIK 0000075252)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/A_dexcom_g6_glucose_monitor_%2852075092685%29.jpg",
+  "logoSource": "wiki_infobox",
+  "recalls": {
+    "recalls": [
+      {
+        "agency": "FDA",
+        "date": "2026-04-14",
+        "productName": "Brand Name: Dexcom G7 Continuous Glucose Monitoring System  Product Name: Dexcom G7 CGM watchOS App  Model/Catalog Number: SW13355  Software Version: Versions 2.9.0 through 2.11.2  Product Description: Dexcom G7 CGM watchOS App - The watchOS app is installed along with the iOS phone app and the versions used are the same for each user. The watchOS app cannot be installed independently from the iOS phone app.  Component: Dexcom G7 Continuous Glucose Monitoring System, Dexcom G7 15 Day Continuous Glucose Monitoring System",
+        "reason": "A software defect in which a low-priority file I/O check blocks the higher-priority thread responsible for processing estimated glucose values (EGVs) and trend arrows. When the app is running in the background, EGV notifications may queue up and then \"replay\" sequentially when the user brings the app to the foreground, causing the Glucose Compass to flicker through previous EGVs. In more severe instances, the app may perceive signal loss and deploy signal loss mitigations. This delay in EGV and alert processing creates a risk that users may miss detection of a hypoglycemic or hyperglycemic event, or make treatment decisions based on outdated glucose information.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2164-2026%22",
+        "recallId": "Z-2164-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2026-04-14",
+        "productName": "Brand Name: Dexcom G7 Continuous Glucose Monitoring System  Product Name: Dexcom G7 CGM iOS App  Model/Catalog Number: SW12300  Software Version: Versions 2.9.0 through 2.11.2  Product Description: Dexcom G7 CGM iOS App  Component: Dexcom G7 Continuous Glucose Monitoring System, Dexcom G7 15 Day Continuous Glucose Monitoring System",
+        "reason": "A software defect in which a low-priority file I/O check blocks the higher-priority thread responsible for processing estimated glucose values (EGVs) and trend arrows. When the app is running in the background, EGV notifications may queue up and then \"replay\" sequentially when the user brings the app to the foreground, causing the Glucose Compass to flicker through previous EGVs. In more severe instances, the app may perceive signal loss and deploy signal loss mitigations. This delay in EGV and alert processing creates a risk that users may miss detection of a hypoglycemic or hyperglycemic event, or make treatment decisions based on outdated glucose information.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2163-2026%22",
+        "recallId": "Z-2163-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2026-04-14",
+        "productName": "Brand Name: Dexcom ONE+ Continuous Glucose Monitoring System  Product Name: Dexcom ONE+ iOS CGM App  Model/Catalog Number: SW14244  Software Version: versions 1.5.0 and 1.6.0  Product Description: Dexcom ONE+ iOS CGM App  Component: Dexcom ONE+ Continuous Glucose Monitoring System",
+        "reason": "A software defect in which a low-priority file I/O check blocks the higher-priority thread responsible for processing estimated glucose values (EGVs) and trend arrows. When the app is running in the background, EGV notifications may queue up and then \"replay\" sequentially when the user brings the app to the foreground, causing the Glucose Compass to flicker through previous EGVs. In more severe instances, the app may perceive signal loss and deploy signal loss mitigations. This delay in EGV and alert processing creates a risk that users may miss detection of a hypoglycemic or hyperglycemic event, or make treatment decisions based on outdated glucose information.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2165-2026%22",
+        "recallId": "Z-2165-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2025-08-28",
+        "productName": "Brand Name: Dexcom G6 Continuous Glucose Monitoring System  Product Name: Dexcom G6 and G6 Pro Android US CGM App  Model/Catalog Number: SW11678  Software Version: version 1.15.0  Product Description: Dexcom G6 and G6 Pro Android US CGM App SW11678 version 1.15.0  Component: Dexcom G6 Continuous Glucose Monitoring System",
+        "reason": "A software defect in version v1.15.0 of the G6 Android app can cause the app to terminate unexpectedly, which may result in the user not receiving estimated glucose values, alarms, alerts or notifications. This could result in the missed detection of a hyperglycemic or hypoglycemic event, protentional resulting in severe hyperglycemia, diabetic ketoacidosis (DKA), or hyperosmolar hyperglycemic state (HHS).",
+        "severity": "high",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-0318-2026%22",
+        "recallId": "Z-0318-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2025-07-24",
+        "productName": "Brand Name: Dexcom G7 Continuous Glucose Monitoring System  Product Name: Dexcom G7 CGM Android App  Model/Catalog Number: SW12299  Software Version: version 2.8.0 and earlier  Product Description: Dexcom G7 CGM Android App SW12299  Component: Dexcom G7 Continuous Glucose Monitoring System",
+        "reason": "The affected devices are the Dexcom G7 Continuous Glucose Monitoring System (CGM System) using iOS, watchOS and Android App software (versions 2.8.0 or earlier) and Dexcom ONE+ CGM System using iOS and Android App software (versions 1.4.0 or earlier), henceforth referred to as the \u001cApp\u001d. The affected App does not provide an expected \"Sensor Failed\" alert when the transmitter sends a \"transmitterFailed\" error message to the App when the CGM experiences a hardware or firmware failure. Instead, the App ends the CGM sensor session, stops reporting glucose values and displays the \u001cStart Sensor\u001d screen or \u001cNo active sensor\u001d message without alerting the user, which can lead to missed detection of a hyperglycemic or hypoglycemic event and a delay in treatment.",
+        "severity": "high",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2446-2025%22",
+        "recallId": "Z-2446-2025"
+      }
+    ],
+    "recallCount24mo": 9,
+    "lastRecallDate": "2026-04-14",
+    "severityMax": "high"
+  },
+  "slug": "dexcom",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Dexcom Inc.",
+    "slug": "dexcom-inc",
+    "ownership": "publicly traded (ticker symbol DXCM)",
+    "hq": "California",
+    "majorIndustry": "medical equipment and supplies",
+    "specificIndustry": "medical devices",
+    "totalPenalty": 5000,
+    "totalRecords": 1,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 5000,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 5000,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T20:19:07.667Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-04-06",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=DEXCOM&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T20:19:06.005Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T20:19:07.667Z",
+  "health": {
+    "s": "FDA MAUDE: 716,899 medical-device adverse-event reports (24mo) — DEXCOM, INC.. Sources: fda-maude-mfr.",
+    "sources": [
+      "health-pharma-r3"
+    ]
+  },
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Healthcare"
+    }
+  },
+  "csc": {
+    "political": 62.4,
+    "labor": 40,
+    "health": 8
+  }
+}

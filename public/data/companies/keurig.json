@@ -2,7 +2,7 @@
   "name": "Keurig",
   "cat": "Consumer Goods",
   "init": "KEUR",
-  "overall": 46,
+  "overall": 44.9,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -265,5 +265,11 @@
       "basis": "Consumer Goods"
     }
   },
-  "inheritedFrom": "keurig-dr-pepper"
+  "inheritedFrom": "keurig-dr-pepper",
+  "csc": {
+    "political": 50,
+    "charity": 50,
+    "labor": 8.4,
+    "execPay": 64.6
+  }
 }

@@ -1,1 +1,258 @@
-{"name":"Urban Outfitters / URBN","cat":"Apparel & Fashion","init":"UO","overall":62.2,"isPublic":true,"ticker":"URBN","sc":{"political":"left","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"good"},"political":{"s":"FEC: $176K in executive political donations; partisan lean Democratic +41 across 12 executive donors.","amt":"$14,000+ (Hayne personal donations to Santorum, historical)","lean":"Right-leaning","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"$2M reported corporate giving in 2024 (~0.04% of revenue).","amt":"$150,000+ to Creatives Want Change","focus":"Education and arts programs for underrepresented populations","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","rating":"Poor","sources":["EPA","Violation Tracker"]},"labor":{"s":"11 federal penalties totaling $6.3M since 2000 (Violation Tracker).","rating":"Below Average","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Mixed","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"Tests on Animals","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"CEO-to-median-worker pay ratio 0:1 (median employee pay $17,071; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2025).","ratio":"48:1","sources":["Claude AI synthesis","sec-def14a"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-04-01","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Urban%20Outfitters&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":{"legacy":"2026-05-28","execPay":"2026-06-11T03:48:51.753Z"},"laborAPI":{"violationTracker":{"slug":"urban-outfitters","matchedName":"Urban Outfitters","totalPenalty":6304659,"totalRecords":11,"offenseGroups":[{"category":"employment-related offenses","penalty":6193298,"records":3},{"category":"safety-related offenses","penalty":111361,"records":8}],"primaryOffenses":[{"category":"wage and hour violation","penalty":6193298,"records":3},{"category":"workplace safety or health violation","penalty":111361,"records":8}],"rating":"good"}},"competitors":["american-eagle-outfitters","free-people-urbn","anthropologie-urbn","handm","forever-21"],"slug":"urban-outfitters-urbn","wiki":null,"bbb":null,"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Urban Outfitters","slug":"urban-outfitters","ownership":"publicly traded (ticker symbol URBN)","hq":"Pennsylvania","majorIndustry":"retailing","specificIndustry":"retail-apparel","totalPenalty":6304659,"totalRecords":11,"offenseGroups":[{"category":"employment-related offenses","penalty":6193298,"records":3},{"category":"safety-related offenses","penalty":111361,"records":8}],"primaryOffenses":[{"category":"wage and hour violation","penalty":6193298,"records":3},{"category":"workplace safety or health violation","penalty":111361,"records":8}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-01","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Urban%20Outfitters&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z","realCats":4,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Apparel & Fashion"}},"enriched":{"execPay":{"ceoName":"Global","ceoTotal":2024,"ceoBaseSalary":1111953,"ceoBonus":5000,"ceoStockAwards":1649971,"ceoOptionAwards":1980147,"ceoNonEquityIncentive":9161,"ceoAllOtherComp":4756232,"medianEmployeePay":17071,"payRatio":0.1,"year":2025,"ticker":"URBN","cik":"0000912615","filingDate":"2026-04-01","sourceUrl":"https://www.sec.gov/Archives/edgar/data/912615/000119312526137990/d42640ddef14a.htm","lastUpdated":"2026-06-11T03:48:51.753Z","source":"sec-def14a"}}}
+{
+  "name": "Urban Outfitters / URBN",
+  "cat": "Apparel & Fashion",
+  "init": "UO",
+  "overall": 49.7,
+  "isPublic": true,
+  "ticker": "URBN",
+  "sc": {
+    "political": "left",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral"
+  },
+  "political": {
+    "s": "FEC: $176K in executive political donations; partisan lean Democratic +41 across 12 executive donors.",
+    "amt": "$14,000+ (Hayne personal donations to Santorum, historical)",
+    "lean": "Right-leaning",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "$2M reported corporate giving in 2024 (~0.04% of revenue).",
+    "amt": "$150,000+ to Creatives Want Change",
+    "focus": "Education and arts programs for underrepresented populations",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Poor",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "11 federal penalties totaling $6.3M since 2000 (Violation Tracker).",
+    "rating": "Below Average",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "Tests on Animals",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO total compensation $2K — SEC proxy statement (DEF 14A, 2025). No CEO-to-worker pay ratio disclosed in a parseable form.",
+    "ratio": "48:1",
+    "sources": [
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-04-01",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Urban%20Outfitters&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "urban-outfitters",
+      "matchedName": "Urban Outfitters",
+      "totalPenalty": 6304659,
+      "totalRecords": 11,
+      "offenseGroups": [
+        {
+          "category": "employment-related offenses",
+          "penalty": 6193298,
+          "records": 3
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 111361,
+          "records": 8
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "wage and hour violation",
+          "penalty": 6193298,
+          "records": 3
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 111361,
+          "records": 8
+        }
+      ],
+      "rating": "good"
+    }
+  },
+  "competitors": [
+    "american-eagle-outfitters",
+    "free-people-urbn",
+    "anthropologie-urbn",
+    "handm",
+    "forever-21"
+  ],
+  "slug": "urban-outfitters-urbn",
+  "wiki": null,
+  "bbb": null,
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Urban Outfitters",
+    "slug": "urban-outfitters",
+    "ownership": "publicly traded (ticker symbol URBN)",
+    "hq": "Pennsylvania",
+    "majorIndustry": "retailing",
+    "specificIndustry": "retail-apparel",
+    "totalPenalty": 6304659,
+    "totalRecords": 11,
+    "offenseGroups": [
+      {
+        "category": "employment-related offenses",
+        "penalty": 6193298,
+        "records": 3
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 111361,
+        "records": 8
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "wage and hour violation",
+        "penalty": 6193298,
+        "records": 3
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 111361,
+        "records": 8
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-01",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Urban%20Outfitters&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "realCats": 4,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Apparel & Fashion"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Global",
+      "ceoTotal": 2024,
+      "ceoBaseSalary": 1111953,
+      "ceoBonus": 5000,
+      "ceoStockAwards": 1649971,
+      "ceoOptionAwards": 1980147,
+      "ceoNonEquityIncentive": 9161,
+      "ceoAllOtherComp": 4756232,
+      "medianEmployeePay": 17071,
+      "payRatio": 0.1,
+      "year": 2025,
+      "ticker": "URBN",
+      "cik": "0000912615",
+      "filingDate": "2026-04-01",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/912615/000119312526137990/d42640ddef14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  },
+  "csc": {
+    "political": 48.6,
+    "charity": 50,
+    "labor": 50,
+    "execPay": 50
+  }
+}

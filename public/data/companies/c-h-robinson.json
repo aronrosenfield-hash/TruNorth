@@ -1,1 +1,316 @@
-{"name":"C.H. Robinson","cat":"Professional Services","init":"C.","overall":35,"ab":"#0d2318","ac":"#4caf82","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"No public record found.","amt":"N/A","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"No public record found.","amt":"N/A","focus":"N/A","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["EPA","Violation Tracker"]},"labor":{"s":"14 federal penalties totaling $23.4M since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"N/A","sources":["Claude AI synthesis"]},"laborAPI":{"violationTracker":{"slug":"ch-robinson","matchedName":"C.H. Robinson","totalPenalty":23408347,"totalRecords":14,"offenseGroups":[{"category":"employment-related offenses","penalty":23014057,"records":4},{"category":"financial offenses","penalty":257690,"records":1},{"category":"competition-related offenses","penalty":62000,"records":2},{"category":"safety-related offenses","penalty":49200,"records":5},{"category":"environment-related offenses","penalty":25400,"records":2}],"primaryOffenses":[{"category":"employment discrimination","penalty":15000000,"records":1},{"category":"wage and hour violation","penalty":8014057,"records":3},{"category":"economic sanction violation","penalty":257690,"records":1},{"category":"export control violation","penalty":37000,"records":1},{"category":"workplace safety or health violation","penalty":31200,"records":3}],"rating":"mixed"}},"dataLastUpdated":"2026-05-28","competitors":["xpo-logistics","j-b-hunt","schneider-national"],"wiki":{"founded":"1905-01-01","hq":"Grand Forks, Eden Prairie","employees":null,"revenue":null,"parent":null,"industry":"logistics","products":null,"keyPeople":null,"website":"http://www.chrobinson.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/C.H._Robinson_HQ_entrance.JPG/330px-C.H._Robinson_HQ_entrance.JPG","wikipediaUrl":"https://en.wikipedia.org/wiki/C.H._Robinson","extract":"C.H. Robinson Worldwide, Inc. is an American transportation company that includes third-party logistics (3PL). The company offers freight transportation, transportation management, brokerage and warehousing. It offers truckload, less than truckload, air freight, intermodal, and ocean transportation."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/mo/kansas-city/profile/logistics/ch-robinson-transport-0714-1000026078"},"payRatio":{"ratio":178,"ratioDisplay":"178:1","ceoPay":11067328,"medianWorkerPay":62176,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-03-24","sourceUrl":"https://www.sec.gov/Archives/edgar/data/1043277/000104327726000011/chrw-20260323.htm"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/C.%20H.%20Robinson%20logo.svg","logoSource":"wikidata_p154","slug":"c-h-robinson","secComplaints":null,"news":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"C.H. Robinson","slug":"ch-robinson","ownership":"publicly traded (ticker symbol CHRW)","hq":"Minnesota","majorIndustry":"freight and logistics","specificIndustry":"freight services","totalPenalty":23408347,"totalRecords":14,"offenseGroups":[{"category":"employment-related offenses","penalty":23014057,"records":4},{"category":"financial offenses","penalty":257690,"records":1},{"category":"competition-related offenses","penalty":62000,"records":2},{"category":"safety-related offenses","penalty":49200,"records":5},{"category":"environment-related offenses","penalty":25400,"records":2}],"primaryOffenses":[{"category":"employment discrimination","penalty":15000000,"records":1},{"category":"wage and hour violation","penalty":8014057,"records":3},{"category":"economic sanction violation","penalty":257690,"records":1},{"category":"export control violation","penalty":37000,"records":1},{"category":"workplace safety or health violation","penalty":31200,"records":3}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z","realCats":1,"governance":{"s":"Wikidata: owned by S&P 500; HQ Eden Prairie. (Wikidata Q931200)","sources":["wikidata"]},"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"execPay":{"notDisclosed":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Professional Services"}}}
+{
+  "name": "C.H. Robinson",
+  "cat": "Professional Services",
+  "init": "C.",
+  "overall": 35.2,
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "charity": {
+    "s": "No public record found.",
+    "amt": "N/A",
+    "focus": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "14 federal penalties totaling $23.4M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "ch-robinson",
+      "matchedName": "C.H. Robinson",
+      "totalPenalty": 23408347,
+      "totalRecords": 14,
+      "offenseGroups": [
+        {
+          "category": "employment-related offenses",
+          "penalty": 23014057,
+          "records": 4
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 257690,
+          "records": 1
+        },
+        {
+          "category": "competition-related offenses",
+          "penalty": 62000,
+          "records": 2
+        },
+        {
+          "category": "safety-related offenses",
+          "penalty": 49200,
+          "records": 5
+        },
+        {
+          "category": "environment-related offenses",
+          "penalty": 25400,
+          "records": 2
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "employment discrimination",
+          "penalty": 15000000,
+          "records": 1
+        },
+        {
+          "category": "wage and hour violation",
+          "penalty": 8014057,
+          "records": 3
+        },
+        {
+          "category": "economic sanction violation",
+          "penalty": 257690,
+          "records": 1
+        },
+        {
+          "category": "export control violation",
+          "penalty": 37000,
+          "records": 1
+        },
+        {
+          "category": "workplace safety or health violation",
+          "penalty": 31200,
+          "records": 3
+        }
+      ],
+      "rating": "mixed"
+    }
+  },
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "xpo-logistics",
+    "j-b-hunt",
+    "schneider-national"
+  ],
+  "wiki": {
+    "founded": "1905-01-01",
+    "hq": "Grand Forks, Eden Prairie",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": "logistics",
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.chrobinson.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/C.H._Robinson_HQ_entrance.JPG/330px-C.H._Robinson_HQ_entrance.JPG",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/C.H._Robinson",
+    "extract": "C.H. Robinson Worldwide, Inc. is an American transportation company that includes third-party logistics (3PL). The company offers freight transportation, transportation management, brokerage and warehousing. It offers truckload, less than truckload, air freight, intermodal, and ocean transportation."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/mo/kansas-city/profile/logistics/ch-robinson-transport-0714-1000026078"
+  },
+  "payRatio": {
+    "ratio": 178,
+    "ratioDisplay": "178:1",
+    "ceoPay": 11067328,
+    "medianWorkerPay": 62176,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-03-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1043277/000104327726000011/chrw-20260323.htm"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/C.%20H.%20Robinson%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "c-h-robinson",
+  "secComplaints": null,
+  "news": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "C.H. Robinson",
+    "slug": "ch-robinson",
+    "ownership": "publicly traded (ticker symbol CHRW)",
+    "hq": "Minnesota",
+    "majorIndustry": "freight and logistics",
+    "specificIndustry": "freight services",
+    "totalPenalty": 23408347,
+    "totalRecords": 14,
+    "offenseGroups": [
+      {
+        "category": "employment-related offenses",
+        "penalty": 23014057,
+        "records": 4
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 257690,
+        "records": 1
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 62000,
+        "records": 2
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 49200,
+        "records": 5
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 25400,
+        "records": 2
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "employment discrimination",
+        "penalty": 15000000,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 8014057,
+        "records": 3
+      },
+      {
+        "category": "economic sanction violation",
+        "penalty": 257690,
+        "records": 1
+      },
+      {
+        "category": "export control violation",
+        "penalty": 37000,
+        "records": 1
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 31200,
+        "records": 3
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "realCats": 1,
+  "governance": {
+    "s": "Wikidata: owned by S&P 500; HQ Eden Prairie. (Wikidata Q931200)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Professional Services"
+    }
+  },
+  "csc": {
+    "labor": 13
+  }
+}

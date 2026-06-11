@@ -2,7 +2,7 @@
   "name": "Motorcraft",
   "cat": "Automotive",
   "init": "MOTO",
-  "overall": 54,
+  "overall": 44.3,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -119,7 +119,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 3,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -147,5 +147,9 @@
       "basis": "Automotive"
     }
   },
-  "inheritedFrom": "ford-motor"
+  "inheritedFrom": "ford-motor",
+  "csc": {
+    "environment": 100,
+    "labor": 8
+  }
 }

@@ -2,11 +2,11 @@
   "name": "The Capital Grille",
   "cat": "Food & Beverage",
   "init": "THEC",
-  "overall": 57.3,
+  "overall": 56,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -30,9 +30,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company DARDEN RESTAURANTS: $9M reported corporate giving in 2024 (~0.08% of revenue) via Darden Foundation. Operates the Darden Restaurants Inc Foundation: $4.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -113,7 +113,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T02:51:25.447Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -132,5 +132,10 @@
       "basis": "Food & Beverage"
     }
   },
-  "inheritedFrom": "darden-restaurants"
+  "inheritedFrom": "darden-restaurants",
+  "csc": {
+    "political": 79.5,
+    "charity": 85,
+    "labor": 12.3
+  }
 }

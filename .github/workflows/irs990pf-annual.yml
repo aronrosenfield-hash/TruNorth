@@ -1,0 +1,44 @@
+name: irs990pf-annual
+
+# R6 Lever 4a: IRS EO BMF + SOI 990-PF extract → corporate-foundation
+# charity data (~300 brands). IRS publishes the PF extract once a year
+# (mid-year); BMF refreshes monthly but foundation rosters move slowly.
+# NOTE: bulk files are ~400 MB, cached to public/data/_cache/irs990pf/
+# (gitignored) and re-downloaded fresh on each run.
+
+on:
+  schedule:
+    - cron: "0 7 20 8 *"   # 07:00 UTC, Aug 20 — after the annual extract lands
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build foundation augment from IRS bulk files
+        run: node scripts/irs990pf-foundations-fetch.mjs
+
+      - name: Apply augments into per-company JSON
+        run: node scripts/apply-augments-to-companies.mjs
+
+      - name: Commit + push
+        run: |
+          git config user.name  "trunorth-bot"
+          git config user.email "bot@trunorthapp.com"
+          git add data/derived/irs990pf-foundations-augment.json public/data/companies/ || true
+          git diff --quiet --staged && echo "No changes" && exit 0
+          git commit -m "data(charity): annual IRS 990-PF foundation refresh [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done

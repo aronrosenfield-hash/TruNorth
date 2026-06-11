@@ -2,11 +2,11 @@
   "name": "CHEMED",
   "cat": "Consumer Goods",
   "init": "CHEM",
-  "overall": 58.7,
+  "overall": 55.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -35,9 +35,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Chemed Foundation: $1.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -189,7 +190,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T19:48:12.408Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -210,5 +211,10 @@
       "_inferred": true,
       "basis": "Consumer Goods"
     }
+  },
+  "csc": {
+    "political": 82.4,
+    "charity": 85,
+    "labor": 8
   }
 }

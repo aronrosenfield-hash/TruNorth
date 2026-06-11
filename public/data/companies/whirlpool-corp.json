@@ -2,11 +2,11 @@
   "name": "WHIRLPOOL CORP",
   "cat": "Consumer Goods",
   "init": "WHIR",
-  "overall": 35.6,
+  "overall": 46.2,
   "isPublic": true,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "neutral",
     "labor": "poor",
     "dei": "neutral",
@@ -37,9 +37,10 @@
   "ab": "#2a1a05",
   "ac": "#f0a030",
   "charity": {
-    "s": "No public record found.",
+    "s": "Operates the Whirlpool Foundation: $14.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "irs990pf-foundations"
     ]
   },
   "environment": {
@@ -218,7 +219,7 @@
   "health": {
     "s": "23 CPSC recalls on record; sample hazard: fire & fire-related burn."
   },
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -232,5 +233,11 @@
     "transparency": {
       "notDisclosed": true
     }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 85,
+    "environment": 29.8,
+    "labor": 11
   }
 }

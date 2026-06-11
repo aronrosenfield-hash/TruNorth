@@ -1,1 +1,466 @@
-{"name":"Boston Scientific","cat":"Healthcare","init":"BSX","overall":37.3,"isPublic":true,"ticker":"BSX","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"poor","health":"mixed","governance":"mixed"},"political":{"s":"FEC: $28K PAC donations; 69% to Republican, 31% to Democratic committees.","amt":"$281K PAC (2026 cycle)","lean":"Right","sources":["FEC.gov"],"fecData":{"committeeId":"C00357863","repTotal":19000,"demTotal":8500,"totalRaised":280580,"lastFiling":"2026-04-17"}},"charity":{"s":"$9M reported corporate giving in 2024 (~0.06% of revenue) via Boston Scientific Foundation.","amt":"$67-70M annually","focus":"Health, STEM education, disease prevention for underserved communities","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","rating":"Good","sources":["EPA","Violation Tracker"]},"labor":{"s":"19 federal penalties totaling $1.6B since 2000 (Violation Tracker).","rating":"Mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dei":{"s":"No public record found.","stance":"Pro-DEI","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"Tests on Animals","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":[]},"execPay":{"s":"CEO-to-median-worker pay ratio 348:1 (median employee pay $67,539) — SEC proxy statement (DEF 14A, 2026).","ratio":"348:1","sources":["Claude AI synthesis","sec-def14a"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-03-22","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Boston%20Scientific&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#2a0d0d","ac":"#e24a4a","dataLastUpdated":{"legacy":"2026-05-28","execPay":"2026-06-11T03:48:51.753Z"},"laborAPI":{"violationTracker":{"slug":"boston-scientific-corp","matchedName":"Boston Scientific Corp.","totalPenalty":1647185388,"totalRecords":19,"offenseGroups":[{"category":"safety-related offenses","penalty":1520438185,"records":10},{"category":"government-contracting-related offenses","penalty":104150000,"records":3},{"category":"employment-related offenses","penalty":15200000,"records":2},{"category":"competition-related offenses","penalty":7040000,"records":1},{"category":"financial offenses","penalty":277017,"records":1}],"primaryOffenses":[{"category":"drug or medical equipment safety violation","penalty":1520350000,"records":6},{"category":"False Claims Act and related","penalty":104150000,"records":3},{"category":"benefit plan administrator violation","penalty":15200000,"records":2},{"category":"price-fixing or anti-competitive practices","penalty":7040000,"records":1},{"category":"economic sanction violation","penalty":277017,"records":1}],"rating":"mixed"}},"competitors":["medtronic","abbott-laboratories","johnson-and-johnson","stryker","becton-dickinson"],"antitrust":true,"wiki":{"founded":"1984-05-04","hq":"Marlborough","employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":"John Abele, Peter Nicholas","website":"http://www.bostonscientific.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Boston_Scientific_Logo.svg/330px-Boston_Scientific_Logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Boston_Scientific","extract":"Boston Scientific Corporation (BSC) is an American biotechnology and biomedical engineering firm and multinational manufacturer of medical devices used in interventional medical specialties, including interventional radiology, interventional cardiology, peripheral interventions, neuromodulation, neurovascular intervention, electrophysiology, cardiac surgery, vascular surgery, endoscopy, oncology, urology and gynecology."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ca/valencia/profile/biotechnology/boston-scientific-1216-1650602"},"secComplaints":{"count":7,"sample":[{"adsh":"0000885725-25-000003","date":"2025-01-16","filer":"BOSTON SCIENTIFIC CORP  (BSX)  (CIK 0000885725)","form":"8-K"},{"adsh":"0000885725-25-000003","date":"2025-01-16","filer":"BOSTON SCIENTIFIC CORP  (BSX)  (CIK 0000885725)","form":"8-K"},{"adsh":"0001104659-24-072846","date":"2024-06-18","filer":"Silk Road Medical Inc  (SILK)  (CIK 0001397702)","form":"8-K"}]},"payRatio":{"ratio":348,"ratioDisplay":"348:1","ceoPay":23532050,"medianWorkerPay":67539,"year":"2026","sourceForm":"DEF 14A","filedDate":"2026-03-18","sourceUrl":"https://www.sec.gov/Archives/edgar/data/885725/000088572526000025/bsx-20260318.htm"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Boston%20Scientific%20Logo.svg","logoSource":"wikidata_p154","deiBadges":[{"scoreType":"hrc_cei","score":100,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"},{"scoreType":"disability_in","score":100,"year":2021,"sourceUrl":"https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"},{"scoreType":"bloomberg_gei","score":100,"year":2023,"sourceUrl":"https://assets.bbhub.io/company/sites/46/2023/01/GEI-MemberList.pdf"}],"recalls":{"recalls":[{"agency":"FDA","date":"2026-03-30","productName":"LUX-DX II, Arrythmia detector and alarm, Model M302, with SERVER SW LATITUDE DRAGON US, Model 6460, Version 7.5","reason":"For some patients upgraded from a LUX-Dx M301 device to a new Model M302 or M312, the new ICM device is not collecting PVC Burden data (both M302/M312) or monitoring for Bradyarrhythmia and Pause (M312 only). In addition, for these devices that are not being monitored, the LATITUDE Clarity programming screens have discrepant information, indicating that the monitoring is enabled for these features in one location and not enabled in another location.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2048-2026%22","recallId":"Z-2048-2026"},{"agency":"FDA","date":"2026-03-30","productName":"LUX-Dx II Plus, Arrythmia detector and alarm, Model M312, with SERVER SW LATITUDE DRAGON EU (Europe), Model 6446, Version 7.5, or SERVER SW LATITUDE DRAGON AU (Australia/New Zealand), Model 6448, Version 7.5","reason":"For some patients upgraded from a LUX-Dx M301 device to a new Model M302 or M312, the new ICM device is not collecting PVC Burden data (both M302/M312) or monitoring for Bradyarrhythmia and Pause (M312 only). In addition, for these devices that are not being monitored, the LATITUDE Clarity programming screens have discrepant information, indicating that the monitoring is enabled for these features in one location and not enabled in another location.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2049-2026%22","recallId":"Z-2049-2026"},{"agency":"FDA","date":"2026-03-19","productName":"Boston Scientific Cardiac Resynchronization Therapy (CRT)labeled as:    1. VALITUDE CRT-P EL, Model Number U125;   2. VALITUDE CRT-P EL MRI, Model Number U128;   3. VISIONIST CRT-P EL, Model Number U225;   4. VISIONIST CRT-P EL, Model Number U226;   5. VISIONIST CRT-P EL MRI, Model Number U228.","reason":"Updated software, Brady software maintenance release 6 (SMR6), is now available for the ACCOLADE\" family of pacemakers and cardiac resynchronization therapy pacemakers (CRT-Ps)1 and the advisory population is expanding to include all CRT-P and dual-chamber extended life (DR-EL) devices.    Dual chamber modes are specifically indicated for treatment of the following:    \" Conduction disorders that require restoration of AV synchrony, including varying degrees of AV block    \" VVI intolerance (i.e., pacemaker syndrome) in the presence of persistent sinus rhythm    \" Low cardiac output or congestive heart failure secondary to bradycardia","severity":"high","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1771-2026%22","recallId":"Z-1771-2026"},{"agency":"FDA","date":"2026-03-19","productName":"Boston Scientific Pacemaker, Implantable Pulse Generator, Pacemaker (non- Cardiac Re-Synchronization Therapy) labeled as:    1. ESSENTIO SR SL, Model Number L100;   2. ESSENTIO DR SL Pacemaker, Model Number L101;   3. ESSENTIO SR SL MRI Pacemaker, Model Number L110;   4. ESSENTIO DR SL MRI Pacemaker, Model Number L111;   5. ESSENTIO DR EL Pacemaker, Model Number L121;   6. ESSENTIO DR EL MRI Pacemaker, Model Number L131;   7. PROPONENT SR SL Pacemaker, Model Number L200;   8. PROPONENT DR SL Pacemaker, Model Number L201;   9. PROPONENT DR (VDD) SL Pacemaker, Model Number L209;   10. PROPONENT SR SL Pacemaker, Model Number L210;   11. PROPONENT DR SL MRI Pacemaker, Model Number L211;   12. PROPONENT DR EL Pacemaker, Model Number L221;   13. PROPONENT DR EL MRI Pacemaker, Model Number L231*;   14. ACCOLADE SR SL Pacemaker, Model Number L300;   15. ACCOLADE DR SL Pacemaker, Model Number L301;   16. ACCOLADE SR SL MRI Pacemaker, Model Number L310;   17. ACCOLADE DR SL MRI Pacemaker, Model Number L311;   18. ACCOLADE DR EL Pacemaker, Model Number L321;   19. ACCOLADE DR EL MRI Pacemaker, Model Number L331*;   20. ALTRUA 2 SR SL Pacemaker, Model Number S701;   21. ALTRUA 2 DR SL Pacemaker, Model Number S702;   22. ALTRUA 2 DR EL Pacemaker, Model Number S722.","reason":"Updated software, Brady software maintenance release 6 (SMR6), is now available for the ACCOLADE\" family of pacemakers and cardiac resynchronization therapy pacemakers (CRT-Ps)1 and the advisory population is expanding to include all CRT-P and dual-chamber extended life (DR-EL) devices.    Dual chamber modes are specifically indicated for treatment of the following:    \" Conduction disorders that require restoration of AV synchrony, including varying degrees of AV block    \" VVI intolerance (i.e., pacemaker syndrome) in the presence of persistent sinus rhythm    \" Low cardiac output or congestive heart failure secondary to bradycardia","severity":"high","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1770-2026%22","recallId":"Z-1770-2026"},{"agency":"FDA","date":"2026-02-10","productName":"EndoVive Safety PEG Kit;  Outer Box Material Number (UPN): M00509001;  Inner Box Material Number (UPN): M00509000;","reason":"Recall of kits which utilized ChloraPrep Triple Swabsticks from BD. Open or compromised seals on the sterile swabstick packaging, which could result in loss of sterility or drying of the antiseptic solution. This component is placed outside of the sterile barrier of the tray manufactured by Boston Scientific, which contains the majority of the kit  components. As such, inclusion of the affected ChloraPrep Triple Swabsticks does not degrade the integrity of the other components within the PEG kit.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1551-2026%22","recallId":"Z-1551-2026"}],"recallCount24mo":73,"lastRecallDate":"2026-03-30","severityMax":"high"},"slug":"boston-scientific","news":null,"animalCerts":null,"products":null,"storeFootprint":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Boston Scientific Corp.","slug":"boston-scientific-corp","ownership":"publicly traded (ticker symbol BSX)","hq":"Massachusetts","majorIndustry":"medical equipment and supplies","specificIndustry":"medical devices","totalPenalty":1647185388,"totalRecords":19,"offenseGroups":[{"category":"safety-related offenses","penalty":1520438185,"records":10},{"category":"government-contracting-related offenses","penalty":104150000,"records":3},{"category":"employment-related offenses","penalty":15200000,"records":2},{"category":"competition-related offenses","penalty":7040000,"records":1},{"category":"financial offenses","penalty":277017,"records":1}],"primaryOffenses":[{"category":"drug or medical equipment safety violation","penalty":1520350000,"records":6},{"category":"False Claims Act and related","penalty":104150000,"records":3},{"category":"benefit plan administrator violation","penalty":15200000,"records":2},{"category":"price-fixing or anti-competitive practices","penalty":7040000,"records":1},{"category":"economic sanction violation","penalty":277017,"records":1}],"rating":"mixed","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T02:11:50.926Z"},"fec":{"source":"FEC API","committeeId":"C00357863","committeeName":"BOSTON SCIENTIFIC CORPORATION POLITICAL ACTION COMMITTEE (BSC PAC)","lean":"right","repTotal":19000,"demTotal":8500,"totalRaised":280580,"totalRaisedFmt":"$281K","lastFilingDate":"2026-04-17","cycle":2026,"fetchedAt":"2026-05-16T23:59:59.000Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-22","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Boston%20Scientific&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T02:11:50.926Z","health":{"s":"FDA MAUDE: 96,000 adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION. Sources: fda-maude-mfr.","sources":["health-pharma-r3"]},"realCats":5,"governance":{"s":"Wikidata records a notable event: product recall. (Wikidata Q894585)","sources":["wikidata"]},"flags":{"guns":{"na":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Healthcare"}},"enriched":{"execPay":{"ceoName":null,"ceoTotal":null,"ceoBaseSalary":null,"ceoBonus":null,"ceoStockAwards":null,"ceoOptionAwards":null,"ceoNonEquityIncentive":null,"ceoAllOtherComp":null,"medianEmployeePay":67539,"payRatio":348,"year":null,"ticker":"BSX","cik":"0000885725","filingDate":"2026-03-18","sourceUrl":"https://www.sec.gov/Archives/edgar/data/885725/000088572526000025/bsx-20260318.htm","lastUpdated":"2026-06-11T03:48:51.753Z","source":"sec-def14a"}}}
+{
+  "name": "Boston Scientific",
+  "cat": "Healthcare",
+  "init": "BSX",
+  "overall": 41.6,
+  "isPublic": true,
+  "ticker": "BSX",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "poor",
+    "health": "mixed",
+    "governance": "mixed"
+  },
+  "political": {
+    "s": "FEC: $28K PAC donations; 69% to Republican, 31% to Democratic committees.",
+    "amt": "$281K PAC (2026 cycle)",
+    "lean": "Right",
+    "sources": [
+      "FEC.gov"
+    ],
+    "fecData": {
+      "committeeId": "C00357863",
+      "repTotal": 19000,
+      "demTotal": 8500,
+      "totalRaised": 280580,
+      "lastFiling": "2026-04-17"
+    }
+  },
+  "charity": {
+    "s": "$9M reported corporate giving in 2024 (~0.06% of revenue) via Boston Scientific Foundation.",
+    "amt": "$67-70M annually",
+    "focus": "Health, STEM education, disease prevention for underserved communities",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Good",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "labor": {
+    "s": "19 federal penalties totaling $1.6B since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Pro-DEI",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "Tests on Animals",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": []
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 348:1 (median employee pay $67,539) — SEC proxy statement (DEF 14A, 2026).",
+    "ratio": "348:1",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-03-22",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Boston%20Scientific&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "laborAPI": {
+    "violationTracker": {
+      "slug": "boston-scientific-corp",
+      "matchedName": "Boston Scientific Corp.",
+      "totalPenalty": 1647185388,
+      "totalRecords": 19,
+      "offenseGroups": [
+        {
+          "category": "safety-related offenses",
+          "penalty": 1520438185,
+          "records": 10
+        },
+        {
+          "category": "government-contracting-related offenses",
+          "penalty": 104150000,
+          "records": 3
+        },
+        {
+          "category": "employment-related offenses",
+          "penalty": 15200000,
+          "records": 2
+        },
+        {
+          "category": "competition-related offenses",
+          "penalty": 7040000,
+          "records": 1
+        },
+        {
+          "category": "financial offenses",
+          "penalty": 277017,
+          "records": 1
+        }
+      ],
+      "primaryOffenses": [
+        {
+          "category": "drug or medical equipment safety violation",
+          "penalty": 1520350000,
+          "records": 6
+        },
+        {
+          "category": "False Claims Act and related",
+          "penalty": 104150000,
+          "records": 3
+        },
+        {
+          "category": "benefit plan administrator violation",
+          "penalty": 15200000,
+          "records": 2
+        },
+        {
+          "category": "price-fixing or anti-competitive practices",
+          "penalty": 7040000,
+          "records": 1
+        },
+        {
+          "category": "economic sanction violation",
+          "penalty": 277017,
+          "records": 1
+        }
+      ],
+      "rating": "mixed"
+    }
+  },
+  "competitors": [
+    "medtronic",
+    "abbott-laboratories",
+    "johnson-and-johnson",
+    "stryker",
+    "becton-dickinson"
+  ],
+  "antitrust": true,
+  "wiki": {
+    "founded": "1984-05-04",
+    "hq": "Marlborough",
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": "John Abele, Peter Nicholas",
+    "website": "http://www.bostonscientific.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Boston_Scientific_Logo.svg/330px-Boston_Scientific_Logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Boston_Scientific",
+    "extract": "Boston Scientific Corporation (BSC) is an American biotechnology and biomedical engineering firm and multinational manufacturer of medical devices used in interventional medical specialties, including interventional radiology, interventional cardiology, peripheral interventions, neuromodulation, neurovascular intervention, electrophysiology, cardiac surgery, vascular surgery, endoscopy, oncology, urology and gynecology."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ca/valencia/profile/biotechnology/boston-scientific-1216-1650602"
+  },
+  "secComplaints": {
+    "count": 7,
+    "sample": [
+      {
+        "adsh": "0000885725-25-000003",
+        "date": "2025-01-16",
+        "filer": "BOSTON SCIENTIFIC CORP  (BSX)  (CIK 0000885725)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000885725-25-000003",
+        "date": "2025-01-16",
+        "filer": "BOSTON SCIENTIFIC CORP  (BSX)  (CIK 0000885725)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-24-072846",
+        "date": "2024-06-18",
+        "filer": "Silk Road Medical Inc  (SILK)  (CIK 0001397702)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "payRatio": {
+    "ratio": 348,
+    "ratioDisplay": "348:1",
+    "ceoPay": 23532050,
+    "medianWorkerPay": 67539,
+    "year": "2026",
+    "sourceForm": "DEF 14A",
+    "filedDate": "2026-03-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/885725/000088572526000025/bsx-20260318.htm"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Boston%20Scientific%20Logo.svg",
+  "logoSource": "wikidata_p154",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 100,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    },
+    {
+      "scoreType": "disability_in",
+      "score": 100,
+      "year": 2021,
+      "sourceUrl": "https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"
+    },
+    {
+      "scoreType": "bloomberg_gei",
+      "score": 100,
+      "year": 2023,
+      "sourceUrl": "https://assets.bbhub.io/company/sites/46/2023/01/GEI-MemberList.pdf"
+    }
+  ],
+  "recalls": {
+    "recalls": [
+      {
+        "agency": "FDA",
+        "date": "2026-03-30",
+        "productName": "LUX-DX II, Arrythmia detector and alarm, Model M302, with SERVER SW LATITUDE DRAGON US, Model 6460, Version 7.5",
+        "reason": "For some patients upgraded from a LUX-Dx M301 device to a new Model M302 or M312, the new ICM device is not collecting PVC Burden data (both M302/M312) or monitoring for Bradyarrhythmia and Pause (M312 only). In addition, for these devices that are not being monitored, the LATITUDE Clarity programming screens have discrepant information, indicating that the monitoring is enabled for these features in one location and not enabled in another location.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2048-2026%22",
+        "recallId": "Z-2048-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2026-03-30",
+        "productName": "LUX-Dx II Plus, Arrythmia detector and alarm, Model M312, with SERVER SW LATITUDE DRAGON EU (Europe), Model 6446, Version 7.5, or SERVER SW LATITUDE DRAGON AU (Australia/New Zealand), Model 6448, Version 7.5",
+        "reason": "For some patients upgraded from a LUX-Dx M301 device to a new Model M302 or M312, the new ICM device is not collecting PVC Burden data (both M302/M312) or monitoring for Bradyarrhythmia and Pause (M312 only). In addition, for these devices that are not being monitored, the LATITUDE Clarity programming screens have discrepant information, indicating that the monitoring is enabled for these features in one location and not enabled in another location.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-2049-2026%22",
+        "recallId": "Z-2049-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2026-03-19",
+        "productName": "Boston Scientific Cardiac Resynchronization Therapy (CRT)labeled as:    1. VALITUDE CRT-P EL, Model Number U125;   2. VALITUDE CRT-P EL MRI, Model Number U128;   3. VISIONIST CRT-P EL, Model Number U225;   4. VISIONIST CRT-P EL, Model Number U226;   5. VISIONIST CRT-P EL MRI, Model Number U228.",
+        "reason": "Updated software, Brady software maintenance release 6 (SMR6), is now available for the ACCOLADE\" family of pacemakers and cardiac resynchronization therapy pacemakers (CRT-Ps)1 and the advisory population is expanding to include all CRT-P and dual-chamber extended life (DR-EL) devices.    Dual chamber modes are specifically indicated for treatment of the following:    \" Conduction disorders that require restoration of AV synchrony, including varying degrees of AV block    \" VVI intolerance (i.e., pacemaker syndrome) in the presence of persistent sinus rhythm    \" Low cardiac output or congestive heart failure secondary to bradycardia",
+        "severity": "high",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1771-2026%22",
+        "recallId": "Z-1771-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2026-03-19",
+        "productName": "Boston Scientific Pacemaker, Implantable Pulse Generator, Pacemaker (non- Cardiac Re-Synchronization Therapy) labeled as:    1. ESSENTIO SR SL, Model Number L100;   2. ESSENTIO DR SL Pacemaker, Model Number L101;   3. ESSENTIO SR SL MRI Pacemaker, Model Number L110;   4. ESSENTIO DR SL MRI Pacemaker, Model Number L111;   5. ESSENTIO DR EL Pacemaker, Model Number L121;   6. ESSENTIO DR EL MRI Pacemaker, Model Number L131;   7. PROPONENT SR SL Pacemaker, Model Number L200;   8. PROPONENT DR SL Pacemaker, Model Number L201;   9. PROPONENT DR (VDD) SL Pacemaker, Model Number L209;   10. PROPONENT SR SL Pacemaker, Model Number L210;   11. PROPONENT DR SL MRI Pacemaker, Model Number L211;   12. PROPONENT DR EL Pacemaker, Model Number L221;   13. PROPONENT DR EL MRI Pacemaker, Model Number L231*;   14. ACCOLADE SR SL Pacemaker, Model Number L300;   15. ACCOLADE DR SL Pacemaker, Model Number L301;   16. ACCOLADE SR SL MRI Pacemaker, Model Number L310;   17. ACCOLADE DR SL MRI Pacemaker, Model Number L311;   18. ACCOLADE DR EL Pacemaker, Model Number L321;   19. ACCOLADE DR EL MRI Pacemaker, Model Number L331*;   20. ALTRUA 2 SR SL Pacemaker, Model Number S701;   21. ALTRUA 2 DR SL Pacemaker, Model Number S702;   22. ALTRUA 2 DR EL Pacemaker, Model Number S722.",
+        "reason": "Updated software, Brady software maintenance release 6 (SMR6), is now available for the ACCOLADE\" family of pacemakers and cardiac resynchronization therapy pacemakers (CRT-Ps)1 and the advisory population is expanding to include all CRT-P and dual-chamber extended life (DR-EL) devices.    Dual chamber modes are specifically indicated for treatment of the following:    \" Conduction disorders that require restoration of AV synchrony, including varying degrees of AV block    \" VVI intolerance (i.e., pacemaker syndrome) in the presence of persistent sinus rhythm    \" Low cardiac output or congestive heart failure secondary to bradycardia",
+        "severity": "high",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1770-2026%22",
+        "recallId": "Z-1770-2026"
+      },
+      {
+        "agency": "FDA",
+        "date": "2026-02-10",
+        "productName": "EndoVive Safety PEG Kit;  Outer Box Material Number (UPN): M00509001;  Inner Box Material Number (UPN): M00509000;",
+        "reason": "Recall of kits which utilized ChloraPrep Triple Swabsticks from BD. Open or compromised seals on the sterile swabstick packaging, which could result in loss of sterility or drying of the antiseptic solution. This component is placed outside of the sterile barrier of the tray manufactured by Boston Scientific, which contains the majority of the kit  components. As such, inclusion of the affected ChloraPrep Triple Swabsticks does not degrade the integrity of the other components within the PEG kit.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1551-2026%22",
+        "recallId": "Z-1551-2026"
+      }
+    ],
+    "recallCount24mo": 73,
+    "lastRecallDate": "2026-03-30",
+    "severityMax": "high"
+  },
+  "slug": "boston-scientific",
+  "news": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Boston Scientific Corp.",
+    "slug": "boston-scientific-corp",
+    "ownership": "publicly traded (ticker symbol BSX)",
+    "hq": "Massachusetts",
+    "majorIndustry": "medical equipment and supplies",
+    "specificIndustry": "medical devices",
+    "totalPenalty": 1647185388,
+    "totalRecords": 19,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 1520438185,
+        "records": 10
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 104150000,
+        "records": 3
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 15200000,
+        "records": 2
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 7040000,
+        "records": 1
+      },
+      {
+        "category": "financial offenses",
+        "penalty": 277017,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "drug or medical equipment safety violation",
+        "penalty": 1520350000,
+        "records": 6
+      },
+      {
+        "category": "False Claims Act and related",
+        "penalty": 104150000,
+        "records": 3
+      },
+      {
+        "category": "benefit plan administrator violation",
+        "penalty": 15200000,
+        "records": 2
+      },
+      {
+        "category": "price-fixing or anti-competitive practices",
+        "penalty": 7040000,
+        "records": 1
+      },
+      {
+        "category": "economic sanction violation",
+        "penalty": 277017,
+        "records": 1
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T02:11:50.926Z"
+  },
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00357863",
+    "committeeName": "BOSTON SCIENTIFIC CORPORATION POLITICAL ACTION COMMITTEE (BSC PAC)",
+    "lean": "right",
+    "repTotal": 19000,
+    "demTotal": 8500,
+    "totalRaised": 280580,
+    "totalRaisedFmt": "$281K",
+    "lastFilingDate": "2026-04-17",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-22",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Boston%20Scientific&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T02:11:50.926Z",
+  "health": {
+    "s": "FDA MAUDE: 96,000 adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION. Sources: fda-maude-mfr.",
+    "sources": [
+      "health-pharma-r3"
+    ]
+  },
+  "realCats": 5,
+  "governance": {
+    "s": "Wikidata records a notable event: product recall. (Wikidata Q894585)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 67539,
+      "payRatio": 348,
+      "year": null,
+      "ticker": "BSX",
+      "cik": "0000885725",
+      "filingDate": "2026-03-18",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/885725/000088572526000025/bsx-20260318.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  },
+  "csc": {
+    "political": 50,
+    "charity": 50,
+    "labor": 8,
+    "execPay": 41.3,
+    "health": 50
+  }
+}

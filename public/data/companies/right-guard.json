@@ -2,11 +2,11 @@
   "name": "Right Guard",
   "cat": "Consumer Goods",
   "init": "RIGH",
-  "overall": 50,
+  "overall": 61.7,
   "isPublic": false,
   "sc": {
     "political": "neutral",
-    "charity": "neutral",
+    "charity": "positive",
     "environment": "mixed",
     "labor": "neutral",
     "dei": "neutral",
@@ -29,9 +29,9 @@
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Henkel: Operates the Henkel Foundation Inc: $353K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -114,7 +114,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -139,5 +139,9 @@
       "basis": "Consumer Goods"
     }
   },
-  "inheritedFrom": "henkel"
+  "inheritedFrom": "henkel",
+  "csc": {
+    "charity": 85,
+    "environment": 50
+  }
 }
