@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git pull --rebase origin main
           git add public/data
           git diff --cached --quiet || git commit -m "data(tosdr): monthly ToS;DR privacy-grade refresh [skip ci]"
+          git pull --rebase origin main
           git push origin main
