@@ -50,11 +50,19 @@ let matched = 0;
 // allowlist below. New candidates go to data/derived/sam-exclusions-review.json
 // for Aron to approve.
 const APPROVED = new Set([
-  // e.g. "huawei-technologies" — add only after manually confirming the
-  // excluded entity IS this brand (agency, address, context).
+  // Aron-reviewed 2026-06-11:
+  "royal-caribbean-cruises", // EPA prohibition 1998 — matches documented ocean-dumping felony pleas
+  "huawei-technologies",     // USAF ineligible (proceedings pending) 2019 — exact entity
+  "gulfport-energy",         // EPA prohibition 2014 — exact corporate name, industry fits
+]);
+// Rejected name-collisions (Aron 2026-06-11) — never re-queue these slugs:
+const REJECTED = new Set([
+  "target",                       // "TARGET CORPORATION" (EPA 2006) is not the retailer
+  "american-international-group", // "AMERICAN INTERNATIONAL INC" (FAA 2007) is not AIG
 ]);
 const reviewQueue = [];
 for (const [slug, recs] of bySlug) {
+  if (REJECTED.has(slug)) continue;
   if (!APPROVED.has(slug)) {
     reviewQueue.push({ slug, candidates: recs.slice(0, 3) });
     continue;

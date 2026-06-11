@@ -36,9 +36,10 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Active federal exclusion/debarment on record (SAM.gov): Ineligible (Proceedings Pending) by USAF, effective 2019-02-21.",
     "sources": [
-      "Public records research"
+      "Public records research",
+      "sam-exclusions"
     ]
   },
   "dei": {
@@ -100,7 +101,7 @@
       "basis": "Technology"
     }
   },
-  "realCats": 1,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by Ren Zhengfei; HQ Shenzhen. (Wikidata Q160120)",
     "sources": [
@@ -108,6 +109,19 @@
     ]
   },
   "csc": {
-    "political": 50
+    "political": 50,
+    "labor": 50
+  },
+  "sam_exclusion": {
+    "records": [
+      {
+        "name": "Huawei Technologies Co., Ltd.",
+        "type": "Ineligible (Proceedings Pending)",
+        "agency": "USAF",
+        "activeDate": "2019-02-21"
+      }
+    ],
+    "source": "SAM.gov Exclusions Public Extract V2",
+    "fetchedAt": "2026-06-11"
   }
 }
