@@ -25,14 +25,25 @@ function esc(s) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
-function grade(score) {
+function grade(score, realCats) {
+  // QA fix 2026-06-10: this carried pre-Build-57 thresholds (80/65/50/35,
+  // no signal-count cap) so SEO pages disagreed with the app by up to two
+  // letters. MUST stay in sync with src/App.jsx scoreGrade,
+  // scripts/finalize-bundle.mjs scoreGrade, scripts/rebake-scoring.mjs
+  // gradeFromOverall: A≥65∧≥3 cats, B≥55∧≥2 cats, C≥45, D≥30, F<30.
   const n = Number(score);
   if (!isFinite(n)) return "—";
-  if (n >= 80) return "A";
-  if (n >= 65) return "B";
-  if (n >= 50) return "C";
-  if (n >= 35) return "D";
-  return "F";
+  let g;
+  if (n >= 65) g = "A";
+  else if (n >= 55) g = "B";
+  else if (n >= 45) g = "C";
+  else if (n >= 30) g = "D";
+  else g = "F";
+  if (typeof realCats === "number") {
+    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
+    else if (realCats < 3 && g === "A") g = "B";
+  }
+  return g;
 }
 async function getCompany(origin, slug) {
   try {
@@ -59,7 +70,7 @@ export default async function handler(req) {
 
   const nameA = a.name || slugA, nameB = b.name || slugB;
   const oA = Number(a.overall), oB = Number(b.overall);
-  const gA = grade(oA), gB = grade(oB);
+  const gA = grade(oA, a.realCats), gB = grade(oB, b.realCats);
   const better = isFinite(oA) && isFinite(oB) ? (oA > oB ? nameA : oB > oA ? nameB : null) : null;
 
   const title = `${nameA} vs ${nameB} — values & public-records comparison | TruNorth`;
@@ -109,7 +120,7 @@ export default async function handler(req) {
 <meta property="og:url" content="${BASE}/compare/${encodeURIComponent(slugA)}-vs-${encodeURIComponent(slugB)}" />
 <meta property="og:site_name" content="TruNorth" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<script type="application/ld+json">${JSON.stringify(faq)}</script>
+<script type="application/ld+json">${JSON.stringify(faq).replace(/</g, "\\u003c")}</script>
 </head>
 <body style="background:#0f0f0f;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
 <main style="padding:28px 24px 56px;max-width:760px;margin:0 auto;color:#f2f2f2">

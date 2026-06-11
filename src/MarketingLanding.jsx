@@ -150,7 +150,7 @@ const VALUE_PROPS = [
   {
     icon:"◉",
     title:"Citations attached",
-    body:"Scores pulled from FEC, EPA, OSHA, OpenFDA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, and 90+ more public-records sources — 100 in total across federal regulators, courts, certifications, and international enforcement. Sourced, not synthesized.",
+    body:"Scores pulled from FEC, EPA, OSHA, OpenFDA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, and 190+ more public-records sources — 200+ in total across federal regulators, courts, certifications, and international enforcement. Sourced, not synthesized.",
   },
   {
     icon:"✦",
@@ -194,7 +194,7 @@ const STEPS = [
 ];
 
 // ─── data sources strip ─────────────────────────────────────────────────────
-const SOURCES = ["SEC EDGAR", "FEC", "EPA ECHO", "OSHA", "OpenFDA", "CFPB", "NHTSA", "DOJ", "CourtListener", "CISA KEV", "FINRA", "+ 89 more"];
+const SOURCES = ["SEC EDGAR", "FEC", "EPA ECHO", "OSHA", "OpenFDA", "CFPB", "NHTSA", "DOJ", "CourtListener", "CISA KEV", "FINRA", "+ 190 more"];
 
 // ─── FAQ ────────────────────────────────────────────────────────────────────
 const FAQ = [
@@ -548,8 +548,13 @@ export default function MarketingLanding({ onOpenPrivacy }) {
                 fontSize:15, fontFamily:FONT,
               }}
             />
+            {/* QA fix 2026-06-10: this button had onClick={handleEmailSubmit}
+                AND lives inside <form onSubmit={handleEmailSubmit}> — a click
+                fired both in the same tick (the loading-state guard can't see
+                the first call's setState yet), double-POSTing /api/subscribe
+                and burning 2 of the 5/min rate-limit slots. Form onSubmit owns
+                the submission; the button is just type=submit. */}
             <PrimaryCTA
-              onClick={handleEmailSubmit}
               style={{ padding:"14px 22px", whiteSpace:"nowrap" }}
             >
               {submitState === "loading" ? "Subscribing…" :

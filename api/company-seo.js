@@ -40,14 +40,25 @@ function esc(s) {
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
-function grade(score) {
+function grade(score, realCats) {
+  // QA fix 2026-06-10: this carried pre-Build-57 thresholds (80/65/50/35,
+  // no signal-count cap) so SEO pages disagreed with the app by up to two
+  // letters. MUST stay in sync with src/App.jsx scoreGrade,
+  // scripts/finalize-bundle.mjs scoreGrade, scripts/rebake-scoring.mjs
+  // gradeFromOverall: A≥65∧≥3 cats, B≥55∧≥2 cats, C≥45, D≥30, F<30.
   const n = Number(score);
   if (!isFinite(n)) return "—";
-  if (n >= 80) return "A";
-  if (n >= 65) return "B";
-  if (n >= 50) return "C";
-  if (n >= 35) return "D";
-  return "F";
+  let g;
+  if (n >= 65) g = "A";
+  else if (n >= 55) g = "B";
+  else if (n >= 45) g = "C";
+  else if (n >= 30) g = "D";
+  else g = "F";
+  if (typeof realCats === "number") {
+    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
+    else if (realCats < 3 && g === "A") g = "B";
+  }
+  return g;
 }
 
 function ratingPercentile(score) {
@@ -170,9 +181,12 @@ export default async function handler(req) {
     });
   }
 
+  // Resolve the hashed SPA asset URLs BEFORE rendering (see ensureSpa below).
+  await ensureSpa();
+
   const name        = company.name || slug;
   const overall     = company.overall ?? null;
-  const overallG    = overall != null ? grade(overall) : null;
+  const overallG    = overall != null ? grade(overall, company.realCats) : null;
   const cat         = company.cat || "";
   const canonical   = `${BASE}/company/${encodeURIComponent(slug)}`;
   // 2026-06-05: was pointing at /api/og/company which doesn't exist — 404'd
@@ -316,7 +330,7 @@ export default async function handler(req) {
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
 <!-- Structured data: Organization + AggregateRating -->
-<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>
 
 <!-- SPA shell hydrate target — Vite's index.html mounts here -->
 <script type="module" crossorigin src="${getSpaScript()}"></script>
@@ -342,6 +356,7 @@ export default async function handler(req) {
 // once per cold start and cache the URLs in memory.
 let _spaScript = null;
 let _spaStyle  = null;
+let _spaPromise = null;
 async function lookupSpa() {
   try {
     const r = await fetch("https://www.trunorthapp.com/index.html");
@@ -350,12 +365,20 @@ async function lookupSpa() {
     const styleMatch  = html.match(/href="(\/assets\/index-[^"]+\.css)"/);
     _spaScript = scriptMatch?.[1] || "/assets/index.js";
     _spaStyle  = styleMatch?.[1]  || "/assets/index.css";
+    if (!scriptMatch) _spaPromise = null; // no real hash found — retry on next request
   } catch {
     _spaScript = "/assets/index.js";
     _spaStyle  = "/assets/index.css";
+    _spaPromise = null; // don't cache the failure
   }
+}
+// QA fix 2026-06-10: lookupSpa() was fire-and-forget on cold start, so the
+// first request rendered <script src="/assets/index.js"> — a 404, since Vite
+// hashes every bundle — and the CDN cached that broken HTML for an hour
+// (s-maxage=3600). The handler now awaits ensureSpa() before rendering.
+function ensureSpa() {
+  if (!_spaPromise) _spaPromise = lookupSpa();
+  return _spaPromise;
 }
 function getSpaScript() { return _spaScript || "/assets/index.js"; }
 function getSpaStyle()  { return _spaStyle  || "/assets/index.css"; }
-// Kick off the lookup on cold start (don't await — first request may use defaults)
-lookupSpa();

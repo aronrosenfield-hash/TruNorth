@@ -31,10 +31,6 @@ function rateLimited(ip) {
 }
 
 export default async function handler(req) {
-  if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
-  }
-
   // Basic origin check — only accept calls from our own deploys.
   const origin = req.headers.get("origin") || "";
   const allowedOrigins = [
@@ -45,6 +41,22 @@ export default async function handler(req) {
     "ionic://localhost",
   ];
   const isAllowed = allowedOrigins.includes(origin) || !origin; // empty origin = same-origin
+
+  // QA fix 2026-06-10: the handler 405'd OPTIONS, so any cross-origin caller
+  // (the capacitor:// native shell, the apex→www domain) failed CORS
+  // preflight and the email never reached MailerLite. Also: every error
+  // response below now carries CORS headers — without them the browser
+  // can't read the status and the client treated rate-limits as network
+  // failures.
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      status: isAllowed ? 204 : 403,
+      headers: { ...corsHeaders(origin), "Access-Control-Max-Age": "86400" },
+    });
+  }
+  if (req.method !== "POST") {
+    return new Response("Method not allowed", { status: 405, headers: corsHeaders(origin) });
+  }
   if (!isAllowed) {
     return new Response("Forbidden", { status: 403 });
   }
@@ -54,13 +66,13 @@ export default async function handler(req) {
   if (rateLimited(ip)) {
     return new Response(JSON.stringify({ ok: false, error: "rate_limited" }), {
       status: 429,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
     });
   }
 
   let body;
   try { body = await req.json(); }
-  catch { return new Response("Invalid JSON", { status: 400 }); }
+  catch { return new Response("Invalid JSON", { status: 400, headers: corsHeaders(origin) }); }
 
   const email = String(body?.email || "").trim().toLowerCase();
   const source = String(body?.source || "unknown").slice(0, 64);
@@ -69,7 +81,7 @@ export default async function handler(req) {
   if (!email.includes("@") || !email.includes(".") || email.length > 320) {
     return new Response(JSON.stringify({ ok: false, error: "invalid_email" }), {
       status: 400,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
     });
   }
 

@@ -18,14 +18,25 @@ function esc(s) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
-function grade(score) {
+function grade(score, realCats) {
+  // QA fix 2026-06-10: this carried pre-Build-57 thresholds (80/65/50/35,
+  // no signal-count cap) so SEO pages disagreed with the app by up to two
+  // letters. MUST stay in sync with src/App.jsx scoreGrade,
+  // scripts/finalize-bundle.mjs scoreGrade, scripts/rebake-scoring.mjs
+  // gradeFromOverall: A≥65∧≥3 cats, B≥55∧≥2 cats, C≥45, D≥30, F<30.
   const n = Number(score);
   if (!isFinite(n)) return "—";
-  if (n >= 80) return "A";
-  if (n >= 65) return "B";
-  if (n >= 50) return "C";
-  if (n >= 35) return "D";
-  return "F";
+  let g;
+  if (n >= 65) g = "A";
+  else if (n >= 55) g = "B";
+  else if (n >= 45) g = "C";
+  else if (n >= 30) g = "D";
+  else g = "F";
+  if (typeof realCats === "number") {
+    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
+    else if (realCats < 3 && g === "A") g = "B";
+  }
+  return g;
 }
 
 let _indexCache = null;
@@ -55,7 +66,7 @@ export default async function handler(req) {
   const name = company.name || slug;
   const cat = company.cat || "";
   const overall = Number(company.overall);
-  const overallG = isFinite(overall) ? grade(overall) : null;
+  const overallG = isFinite(overall) ? grade(overall, company.realCats) : null;
 
   const index = await getIndex(url.origin);
   const compSet = new Set((company.competitors || []).map(c => String(c).toLowerCase()));
@@ -79,7 +90,7 @@ export default async function handler(req) {
     slug: co.slug || co.id,
     name: co.name,
     overall: Number(co.overall ?? co.score),
-    g: grade(co.overall ?? co.score),
+    g: grade(co.overall ?? co.score, co.realCats),
   }));
 
   const title = `Higher-graded alternatives to ${name}${cat ? " (" + cat + ")" : ""} | TruNorth`;
@@ -140,8 +151,8 @@ export default async function handler(req) {
 <meta property="og:url" content="${BASE}/alternatives/${encodeURIComponent(slug)}" />
 <meta property="og:site_name" content="TruNorth" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<script type="application/ld+json">${JSON.stringify(itemList)}</script>
-<script type="application/ld+json">${JSON.stringify(faq)}</script>
+<script type="application/ld+json">${JSON.stringify(itemList).replace(/</g, "\\u003c")}</script>
+<script type="application/ld+json">${JSON.stringify(faq).replace(/</g, "\\u003c")}</script>
 </head>
 <body style="background:#0f0f0f;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
 <main style="padding:28px 24px 56px;max-width:720px;margin:0 auto;color:#f2f2f2">
