@@ -1,0 +1,1487 @@
+{
+  "merged_at": "2026-06-11T23:51:18.870Z",
+  "source_file": "public/data/usaspending-contracts.json",
+  "total_records": 549,
+  "merged_count": 210,
+  "orphan_count": 1,
+  "skipped_count": 338,
+  "error_count": 0,
+  "merged_brands": [
+    {
+      "slug": "boeing",
+      "target": "boeing",
+      "routed_via": "direct",
+      "obligated_USD": 394146382670,
+      "award_count": 500
+    },
+    {
+      "slug": "lockheed-martin",
+      "target": "lockheed-martin",
+      "routed_via": "direct",
+      "obligated_USD": 743115906436,
+      "award_count": 500
+    },
+    {
+      "slug": "raytheon-technologies",
+      "target": "raytheon-technologies",
+      "routed_via": "direct",
+      "obligated_USD": 226535615171,
+      "award_count": 500
+    },
+    {
+      "slug": "northrop-grumman",
+      "target": "northrop-grumman",
+      "routed_via": "direct",
+      "obligated_USD": 162478499268,
+      "award_count": 500
+    },
+    {
+      "slug": "general-dynamics",
+      "target": "general-dynamics",
+      "routed_via": "direct",
+      "obligated_USD": 139762267084,
+      "award_count": 500
+    },
+    {
+      "slug": "leidos",
+      "target": "leidos",
+      "routed_via": "direct",
+      "obligated_USD": 67045387109,
+      "award_count": 500
+    },
+    {
+      "slug": "booz-allen-hamilton",
+      "target": "booz-allen-hamilton",
+      "routed_via": "direct",
+      "obligated_USD": 48885337851,
+      "award_count": 500
+    },
+    {
+      "slug": "oracle",
+      "target": "oracle-cloud",
+      "routed_via": "parent",
+      "obligated_USD": 8786921133,
+      "award_count": 204
+    },
+    {
+      "slug": "microsoft",
+      "target": "microsoft",
+      "routed_via": "direct",
+      "obligated_USD": 3882179404,
+      "award_count": 500
+    },
+    {
+      "slug": "amazon",
+      "target": "amazon",
+      "routed_via": "direct",
+      "obligated_USD": 987890337,
+      "award_count": 382
+    },
+    {
+      "slug": "google-alphabet",
+      "target": "google-alphabet",
+      "routed_via": "direct",
+      "obligated_USD": 37810610,
+      "award_count": 22
+    },
+    {
+      "slug": "apple",
+      "target": "apple",
+      "routed_via": "direct",
+      "obligated_USD": 179958033,
+      "award_count": 500
+    },
+    {
+      "slug": "ibm",
+      "target": "ibm",
+      "routed_via": "direct",
+      "obligated_USD": 13124322626,
+      "award_count": 500
+    },
+    {
+      "slug": "hp",
+      "target": "hp",
+      "routed_via": "direct",
+      "obligated_USD": 861052173,
+      "award_count": 314
+    },
+    {
+      "slug": "dell",
+      "target": "dell",
+      "routed_via": "direct",
+      "obligated_USD": 24964682143,
+      "award_count": 500
+    },
+    {
+      "slug": "accenture",
+      "target": "accenture",
+      "routed_via": "direct",
+      "obligated_USD": 23227237049,
+      "award_count": 500
+    },
+    {
+      "slug": "deloitte",
+      "target": "deloitte",
+      "routed_via": "direct",
+      "obligated_USD": 20327035976,
+      "award_count": 500
+    },
+    {
+      "slug": "kpmg",
+      "target": "kpmg",
+      "routed_via": "direct",
+      "obligated_USD": 3143053843,
+      "award_count": 477
+    },
+    {
+      "slug": "pfizer",
+      "target": "pfizer",
+      "routed_via": "direct",
+      "obligated_USD": 33007778000,
+      "award_count": 500
+    },
+    {
+      "slug": "moderna",
+      "target": "moderna",
+      "routed_via": "direct",
+      "obligated_USD": 11820663631,
+      "award_count": 8
+    },
+    {
+      "slug": "johnson-and-johnson",
+      "target": "johnson-and-johnson",
+      "routed_via": "direct",
+      "obligated_USD": 130249473,
+      "award_count": 500
+    },
+    {
+      "slug": "abbott-laboratories",
+      "target": "abbott-laboratories",
+      "routed_via": "direct",
+      "obligated_USD": 3410090376,
+      "award_count": 500
+    },
+    {
+      "slug": "medtronic",
+      "target": "medtronic",
+      "routed_via": "direct",
+      "obligated_USD": 386857461,
+      "award_count": 500
+    },
+    {
+      "slug": "mckesson",
+      "target": "mckesson",
+      "routed_via": "direct",
+      "obligated_USD": 51652077513,
+      "award_count": 500
+    },
+    {
+      "slug": "cardinal-health",
+      "target": "cardinal-health",
+      "routed_via": "direct",
+      "obligated_USD": 1052711642,
+      "award_count": 500
+    },
+    {
+      "slug": "unitedhealth-group",
+      "target": "unitedhealth-group",
+      "routed_via": "direct",
+      "obligated_USD": 13320065206,
+      "award_count": 27
+    },
+    {
+      "slug": "humana",
+      "target": "humana",
+      "routed_via": "direct",
+      "obligated_USD": 79078163131,
+      "award_count": 5
+    },
+    {
+      "slug": "cvs-health",
+      "target": "cvs-health",
+      "routed_via": "direct",
+      "obligated_USD": 26048700,
+      "award_count": 13
+    },
+    {
+      "slug": "walgreens",
+      "target": "walgreens",
+      "routed_via": "direct",
+      "obligated_USD": 1139267346,
+      "award_count": 130
+    },
+    {
+      "slug": "fedex",
+      "target": "fedex",
+      "routed_via": "direct",
+      "obligated_USD": 3829896452,
+      "award_count": 500
+    },
+    {
+      "slug": "ups",
+      "target": "ups",
+      "routed_via": "direct",
+      "obligated_USD": 1361369237,
+      "award_count": 500
+    },
+    {
+      "slug": "caterpillar",
+      "target": "caterpillar",
+      "routed_via": "direct",
+      "obligated_USD": 1398050035,
+      "award_count": 500
+    },
+    {
+      "slug": "ge-aerospace",
+      "target": "ge-aerospace",
+      "routed_via": "direct",
+      "obligated_USD": 148816554,
+      "award_count": 112
+    },
+    {
+      "slug": "honeywell",
+      "target": "honeywell",
+      "routed_via": "direct",
+      "obligated_USD": 72875867058,
+      "award_count": 500
+    },
+    {
+      "slug": "3m",
+      "target": "3m",
+      "routed_via": "direct",
+      "obligated_USD": 702223035,
+      "award_count": 500
+    },
+    {
+      "slug": "dupont",
+      "target": "dupont",
+      "routed_via": "direct",
+      "obligated_USD": 25164018,
+      "award_count": 283
+    },
+    {
+      "slug": "exxon-mobil",
+      "target": "exxon-mobil",
+      "routed_via": "direct",
+      "obligated_USD": 358537858,
+      "award_count": 320
+    },
+    {
+      "slug": "chevron",
+      "target": "chevron",
+      "routed_via": "direct",
+      "obligated_USD": 1135509762,
+      "award_count": 500
+    },
+    {
+      "slug": "valero-energy",
+      "target": "valero-energy",
+      "routed_via": "direct",
+      "obligated_USD": 4880467015,
+      "award_count": 500
+    },
+    {
+      "slug": "marathon-petroleum",
+      "target": "marathon-petroleum",
+      "routed_via": "direct",
+      "obligated_USD": 1735158293,
+      "award_count": 500
+    },
+    {
+      "slug": "verizon",
+      "target": "verizon",
+      "routed_via": "direct",
+      "obligated_USD": 5534305009,
+      "award_count": 500
+    },
+    {
+      "slug": "atandt",
+      "target": "atandt",
+      "routed_via": "direct",
+      "obligated_USD": 7695895294,
+      "award_count": 500
+    },
+    {
+      "slug": "t-mobile-us",
+      "target": "t-mobile-us",
+      "routed_via": "direct",
+      "obligated_USD": 604972519,
+      "award_count": 500
+    },
+    {
+      "slug": "comcast",
+      "target": "comcast",
+      "routed_via": "direct",
+      "obligated_USD": 100319992,
+      "award_count": 500
+    },
+    {
+      "slug": "charter-communications",
+      "target": "charter-communications",
+      "routed_via": "direct",
+      "obligated_USD": 32885406,
+      "award_count": 500
+    },
+    {
+      "slug": "1-automotive",
+      "target": "1-automotive",
+      "routed_via": "direct",
+      "obligated_USD": 27166,
+      "award_count": 5
+    },
+    {
+      "slug": "10x-genomics",
+      "target": "10x-genomics",
+      "routed_via": "direct",
+      "obligated_USD": 37621373,
+      "award_count": 500
+    },
+    {
+      "slug": "3d-systems",
+      "target": "3d-systems",
+      "routed_via": "direct",
+      "obligated_USD": 36731958,
+      "award_count": 88
+    },
+    {
+      "slug": "47",
+      "target": "47",
+      "routed_via": "direct",
+      "obligated_USD": 41390958,
+      "award_count": 103
+    },
+    {
+      "slug": "908-devices",
+      "target": "908-devices",
+      "routed_via": "direct",
+      "obligated_USD": 12528372,
+      "award_count": 25
+    },
+    {
+      "slug": "a10-networks",
+      "target": "a10-networks",
+      "routed_via": "direct",
+      "obligated_USD": 34466,
+      "award_count": 1
+    },
+    {
+      "slug": "aar",
+      "target": "aar",
+      "routed_via": "direct",
+      "obligated_USD": 4269822555,
+      "award_count": 500
+    },
+    {
+      "slug": "abb",
+      "target": "abb",
+      "routed_via": "direct",
+      "obligated_USD": 4279572646,
+      "award_count": 500
+    },
+    {
+      "slug": "abbvie",
+      "target": "abbvie",
+      "routed_via": "direct",
+      "obligated_USD": 594329,
+      "award_count": 21
+    },
+    {
+      "slug": "abc",
+      "target": "abc",
+      "routed_via": "direct",
+      "obligated_USD": 17828284587,
+      "award_count": 500
+    },
+    {
+      "slug": "abcellera-biologics",
+      "target": "abcellera-biologics",
+      "routed_via": "direct",
+      "obligated_USD": 884000,
+      "award_count": 1
+    },
+    {
+      "slug": "abm-industries-inc",
+      "target": "abm-industries-inc",
+      "routed_via": "direct",
+      "obligated_USD": 34455598,
+      "award_count": 277
+    },
+    {
+      "slug": "abx-air",
+      "target": "abx-air",
+      "routed_via": "direct",
+      "obligated_USD": 19526260,
+      "award_count": 84
+    },
+    {
+      "slug": "acadia-healthcare-company",
+      "target": "acadia-healthcare-company",
+      "routed_via": "direct",
+      "obligated_USD": 455696,
+      "award_count": 10
+    },
+    {
+      "slug": "accent",
+      "target": "accent",
+      "routed_via": "direct",
+      "obligated_USD": 23463589540,
+      "award_count": 500
+    },
+    {
+      "slug": "access-wireless",
+      "target": "access-wireless",
+      "routed_via": "direct",
+      "obligated_USD": 213070,
+      "award_count": 1
+    },
+    {
+      "slug": "acco-brands",
+      "target": "acco-brands",
+      "routed_via": "direct",
+      "obligated_USD": 40156,
+      "award_count": 9
+    },
+    {
+      "slug": "accuray",
+      "target": "accuray",
+      "routed_via": "direct",
+      "obligated_USD": 22362461,
+      "award_count": 25
+    },
+    {
+      "slug": "acer",
+      "target": "acer",
+      "routed_via": "direct",
+      "obligated_USD": 12068010,
+      "award_count": 192
+    },
+    {
+      "slug": "actelion",
+      "target": "actelion",
+      "routed_via": "direct",
+      "obligated_USD": 11169985,
+      "award_count": 191
+    },
+    {
+      "slug": "action-jackson",
+      "target": "action-jackson",
+      "routed_via": "direct",
+      "obligated_USD": 56600,
+      "award_count": 4
+    },
+    {
+      "slug": "acxiom",
+      "target": "acxiom",
+      "routed_via": "direct",
+      "obligated_USD": 7905094,
+      "award_count": 2
+    },
+    {
+      "slug": "adaptive-biotechnologies",
+      "target": "adaptive-biotechnologies",
+      "routed_via": "direct",
+      "obligated_USD": 2361316,
+      "award_count": 39
+    },
+    {
+      "slug": "addus-homecare",
+      "target": "addus-homecare",
+      "routed_via": "direct",
+      "obligated_USD": 20327,
+      "award_count": 1
+    },
+    {
+      "slug": "adient",
+      "target": "adient",
+      "routed_via": "direct",
+      "obligated_USD": 38831373,
+      "award_count": 500
+    },
+    {
+      "slug": "adobe",
+      "target": "adobe",
+      "routed_via": "direct",
+      "obligated_USD": 2405867,
+      "award_count": 55
+    },
+    {
+      "slug": "adt",
+      "target": "adt",
+      "routed_via": "direct",
+      "obligated_USD": 41392516,
+      "award_count": 294
+    },
+    {
+      "slug": "advanced-drainage-systems",
+      "target": "advanced-drainage-systems",
+      "routed_via": "direct",
+      "obligated_USD": 81636,
+      "award_count": 1
+    },
+    {
+      "slug": "advanced-energy-industries",
+      "target": "advanced-energy-industries",
+      "routed_via": "direct",
+      "obligated_USD": 1739867,
+      "award_count": 17
+    },
+    {
+      "slug": "advanced-micro-devices",
+      "target": "advanced-micro-devices",
+      "routed_via": "direct",
+      "obligated_USD": 8379615,
+      "award_count": 1
+    },
+    {
+      "slug": "advantage-solutions",
+      "target": "advantage-solutions",
+      "routed_via": "direct",
+      "obligated_USD": 254066,
+      "award_count": 9
+    },
+    {
+      "slug": "advantest",
+      "target": "advantest",
+      "routed_via": "direct",
+      "obligated_USD": 3069890,
+      "award_count": 45
+    },
+    {
+      "slug": "advent-international",
+      "target": "advent-international",
+      "routed_via": "direct",
+      "obligated_USD": 385946985,
+      "award_count": 12
+    },
+    {
+      "slug": "aec",
+      "target": "aec",
+      "routed_via": "direct",
+      "obligated_USD": 7132040236,
+      "award_count": 500
+    },
+    {
+      "slug": "aecom",
+      "target": "aecom",
+      "routed_via": "direct",
+      "obligated_USD": 7000859572,
+      "award_count": 500
+    },
+    {
+      "slug": "aeluma",
+      "target": "aeluma",
+      "routed_via": "direct",
+      "obligated_USD": 2964300,
+      "award_count": 8
+    },
+    {
+      "slug": "aerodata",
+      "target": "aerodata",
+      "routed_via": "direct",
+      "obligated_USD": 338187,
+      "award_count": 8
+    },
+    {
+      "slug": "aerojet",
+      "target": "aerojet",
+      "routed_via": "direct",
+      "obligated_USD": 9961211039,
+      "award_count": 84
+    },
+    {
+      "slug": "aerovironment",
+      "target": "aerovironment",
+      "routed_via": "direct",
+      "obligated_USD": 2424302492,
+      "award_count": 177
+    },
+    {
+      "slug": "aersale",
+      "target": "aersale",
+      "routed_via": "direct",
+      "obligated_USD": 53041167,
+      "award_count": 10
+    },
+    {
+      "slug": "aes",
+      "target": "aes",
+      "routed_via": "direct",
+      "obligated_USD": 1080937446,
+      "award_count": 500
+    },
+    {
+      "slug": "aethlon-medical",
+      "target": "aethlon-medical",
+      "routed_via": "direct",
+      "obligated_USD": 1860557,
+      "award_count": 1
+    },
+    {
+      "slug": "aetna",
+      "target": "aetna",
+      "routed_via": "direct",
+      "obligated_USD": 13075799,
+      "award_count": 10
+    },
+    {
+      "slug": "agc",
+      "target": "agc",
+      "routed_via": "direct",
+      "obligated_USD": 21612180,
+      "award_count": 42
+    },
+    {
+      "slug": "ageagle-aerial-systems",
+      "target": "ageagle-aerial-systems",
+      "routed_via": "direct",
+      "obligated_USD": 15995,
+      "award_count": 1
+    },
+    {
+      "slug": "agi",
+      "target": "agi",
+      "routed_via": "direct",
+      "obligated_USD": 10385750744,
+      "award_count": 500
+    },
+    {
+      "slug": "agilent-technologies",
+      "target": "agilent-technologies",
+      "routed_via": "direct",
+      "obligated_USD": 220983940,
+      "award_count": 500
+    },
+    {
+      "slug": "agilysys",
+      "target": "agilysys",
+      "routed_via": "direct",
+      "obligated_USD": 6775,
+      "award_count": 1
+    },
+    {
+      "slug": "agoda",
+      "target": "agoda",
+      "routed_via": "direct",
+      "obligated_USD": 26795225,
+      "award_count": 4
+    },
+    {
+      "slug": "agora",
+      "target": "agora",
+      "routed_via": "direct",
+      "obligated_USD": 134815012,
+      "award_count": 18
+    },
+    {
+      "slug": "ahold-delhaize",
+      "target": "ahold-delhaize",
+      "routed_via": "direct",
+      "obligated_USD": 828078,
+      "award_count": 6
+    },
+    {
+      "slug": "ai-strategy",
+      "target": "ai-strategy",
+      "routed_via": "direct",
+      "obligated_USD": 500,
+      "award_count": 1
+    },
+    {
+      "slug": "aiden",
+      "target": "aiden",
+      "routed_via": "direct",
+      "obligated_USD": 14825672,
+      "award_count": 97
+    },
+    {
+      "slug": "air-industries",
+      "target": "air-industries",
+      "routed_via": "direct",
+      "obligated_USD": 23498761,
+      "award_count": 500
+    },
+    {
+      "slug": "air-transport-international",
+      "target": "air-transport-international",
+      "routed_via": "direct",
+      "obligated_USD": 510079122,
+      "award_count": 63
+    },
+    {
+      "slug": "airwa",
+      "target": "airwa",
+      "routed_via": "direct",
+      "obligated_USD": 221403554,
+      "award_count": 500
+    },
+    {
+      "slug": "akamai-technologies",
+      "target": "akamai-technologies",
+      "routed_via": "direct",
+      "obligated_USD": 43955089,
+      "award_count": 12
+    },
+    {
+      "slug": "alabama-power",
+      "target": "alabama-power",
+      "routed_via": "direct",
+      "obligated_USD": 168703545,
+      "award_count": 67
+    },
+    {
+      "slug": "alaska-air-group",
+      "target": "alaska-air-group",
+      "routed_via": "direct",
+      "obligated_USD": 55281774,
+      "award_count": 110
+    },
+    {
+      "slug": "alaska-airlines",
+      "target": "alaska-airlines",
+      "routed_via": "direct",
+      "obligated_USD": 55281774,
+      "award_count": 110
+    },
+    {
+      "slug": "albemarle",
+      "target": "albemarle",
+      "routed_via": "direct",
+      "obligated_USD": 421019,
+      "award_count": 19
+    },
+    {
+      "slug": "alco",
+      "target": "alco",
+      "routed_via": "direct",
+      "obligated_USD": 2642570917,
+      "award_count": 500
+    },
+    {
+      "slug": "alcoa",
+      "target": "alcoa",
+      "routed_via": "direct",
+      "obligated_USD": 37972104,
+      "award_count": 500
+    },
+    {
+      "slug": "alcon",
+      "target": "alcon",
+      "routed_via": "direct",
+      "obligated_USD": 1020428527,
+      "award_count": 500
+    },
+    {
+      "slug": "alert",
+      "target": "alert",
+      "routed_via": "direct",
+      "obligated_USD": 43939256,
+      "award_count": 119
+    },
+    {
+      "slug": "alexion-pharmaceuticals",
+      "target": "alexion-pharmaceuticals",
+      "routed_via": "direct",
+      "obligated_USD": 2663765,
+      "award_count": 5
+    },
+    {
+      "slug": "alico",
+      "target": "alico",
+      "routed_via": "direct",
+      "obligated_USD": 9453237,
+      "award_count": 34
+    },
+    {
+      "slug": "align-technology",
+      "target": "align-technology",
+      "routed_via": "direct",
+      "obligated_USD": 527040,
+      "award_count": 1
+    },
+    {
+      "slug": "aligos-therapeutics",
+      "target": "aligos-therapeutics",
+      "routed_via": "direct",
+      "obligated_USD": 11286393,
+      "award_count": 1
+    },
+    {
+      "slug": "alisa",
+      "target": "alisa",
+      "routed_via": "direct",
+      "obligated_USD": 44562469,
+      "award_count": 374
+    },
+    {
+      "slug": "allegiant-air",
+      "target": "allegiant-air",
+      "routed_via": "direct",
+      "obligated_USD": 52246121,
+      "award_count": 500
+    },
+    {
+      "slug": "allegiant-travel",
+      "target": "allegiant-travel",
+      "routed_via": "direct",
+      "obligated_USD": 52246121,
+      "award_count": 500
+    },
+    {
+      "slug": "allegion",
+      "target": "allegion",
+      "routed_via": "direct",
+      "obligated_USD": 2077513,
+      "award_count": 39
+    },
+    {
+      "slug": "allegro-microsystems",
+      "target": "allegro-microsystems",
+      "routed_via": "direct",
+      "obligated_USD": 1734053,
+      "award_count": 4
+    },
+    {
+      "slug": "allen",
+      "target": "allen",
+      "routed_via": "direct",
+      "obligated_USD": 48885337851,
+      "award_count": 500
+    },
+    {
+      "slug": "allergan-inc",
+      "target": "allergan-inc",
+      "routed_via": "direct",
+      "obligated_USD": 896972,
+      "award_count": 41
+    },
+    {
+      "slug": "alliant-energy",
+      "target": "alliant-energy",
+      "routed_via": "direct",
+      "obligated_USD": 1549352,
+      "award_count": 4
+    },
+    {
+      "slug": "allot",
+      "target": "allot",
+      "routed_via": "direct",
+      "obligated_USD": 656470,
+      "award_count": 6
+    },
+    {
+      "slug": "allpoint",
+      "target": "allpoint",
+      "routed_via": "direct",
+      "obligated_USD": 430929,
+      "award_count": 9
+    },
+    {
+      "slug": "allstate",
+      "target": "allstate",
+      "routed_via": "direct",
+      "obligated_USD": 45813181,
+      "award_count": 95
+    },
+    {
+      "slug": "alpha-beta",
+      "target": "alpha-beta",
+      "routed_via": "direct",
+      "obligated_USD": 28756,
+      "award_count": 1
+    },
+    {
+      "slug": "alsace",
+      "target": "alsace",
+      "routed_via": "direct",
+      "obligated_USD": 14517,
+      "award_count": 1
+    },
+    {
+      "slug": "altera",
+      "target": "altera",
+      "routed_via": "direct",
+      "obligated_USD": 870702,
+      "award_count": 9
+    },
+    {
+      "slug": "alticor",
+      "target": "alticor",
+      "routed_via": "direct",
+      "obligated_USD": 375645,
+      "award_count": 1
+    },
+    {
+      "slug": "altimmune",
+      "target": "altimmune",
+      "routed_via": "direct",
+      "obligated_USD": 45629256,
+      "award_count": 3
+    },
+    {
+      "slug": "am-general",
+      "target": "am-general",
+      "routed_via": "direct",
+      "obligated_USD": 5386806659,
+      "award_count": 500
+    },
+    {
+      "slug": "amalgamated",
+      "target": "amalgamated",
+      "routed_via": "direct",
+      "obligated_USD": 29524090,
+      "award_count": 381
+    },
+    {
+      "slug": "amazon-web-services",
+      "target": "amazon-web-services",
+      "routed_via": "direct",
+      "obligated_USD": 986221312,
+      "award_count": 233
+    },
+    {
+      "slug": "amcor",
+      "target": "amcor",
+      "routed_via": "direct",
+      "obligated_USD": 133438253,
+      "award_count": 16
+    },
+    {
+      "slug": "amd",
+      "target": "amd",
+      "routed_via": "direct",
+      "obligated_USD": 151099086,
+      "award_count": 497
+    },
+    {
+      "slug": "ameren-illinois",
+      "target": "ameren-illinois",
+      "routed_via": "direct",
+      "obligated_USD": 538948,
+      "award_count": 14
+    },
+    {
+      "slug": "ameren",
+      "target": "ameren",
+      "routed_via": "direct",
+      "obligated_USD": 8610791,
+      "award_count": 132
+    },
+    {
+      "slug": "ameresco",
+      "target": "ameresco",
+      "routed_via": "direct",
+      "obligated_USD": 1921269225,
+      "award_count": 106
+    },
+    {
+      "slug": "america",
+      "target": "america",
+      "routed_via": "direct",
+      "obligated_USD": 35599961467,
+      "award_count": 500
+    },
+    {
+      "slug": "american-airlines",
+      "target": "american-airlines",
+      "routed_via": "direct",
+      "obligated_USD": 59509913,
+      "award_count": 115
+    },
+    {
+      "slug": "american-eagle",
+      "target": "american-eagle",
+      "routed_via": "direct",
+      "obligated_USD": 146375323,
+      "award_count": 91
+    },
+    {
+      "slug": "american-electric-power-co",
+      "target": "american-electric-power-co",
+      "routed_via": "direct",
+      "obligated_USD": 154201187,
+      "award_count": 174
+    },
+    {
+      "slug": "american-express",
+      "target": "american-express",
+      "routed_via": "direct",
+      "obligated_USD": 30297999,
+      "award_count": 500
+    },
+    {
+      "slug": "american-financial-group",
+      "target": "american-financial-group",
+      "routed_via": "direct",
+      "obligated_USD": 20171272,
+      "award_count": 1
+    },
+    {
+      "slug": "american-lithium",
+      "target": "american-lithium",
+      "routed_via": "direct",
+      "obligated_USD": 10057207,
+      "award_count": 6
+    },
+    {
+      "slug": "american-resources",
+      "target": "american-resources",
+      "routed_via": "direct",
+      "obligated_USD": 2552623,
+      "award_count": 25
+    },
+    {
+      "slug": "american-states-water",
+      "target": "american-states-water",
+      "routed_via": "direct",
+      "obligated_USD": 32252877,
+      "award_count": 3
+    },
+    {
+      "slug": "american-tower-corp",
+      "target": "american-tower-corp",
+      "routed_via": "direct",
+      "obligated_USD": 9142168,
+      "award_count": 155
+    },
+    {
+      "slug": "american-water-works-company",
+      "target": "american-water-works-company",
+      "routed_via": "direct",
+      "obligated_USD": 508442193,
+      "award_count": 39
+    },
+    {
+      "slug": "american-well",
+      "target": "american-well",
+      "routed_via": "direct",
+      "obligated_USD": 758500,
+      "award_count": 3
+    },
+    {
+      "slug": "american",
+      "target": "american",
+      "routed_via": "direct",
+      "obligated_USD": 19887303563,
+      "award_count": 500
+    },
+    {
+      "slug": "amerigas",
+      "target": "amerigas",
+      "routed_via": "direct",
+      "obligated_USD": 41959621,
+      "award_count": 314
+    },
+    {
+      "slug": "ames",
+      "target": "ames",
+      "routed_via": "direct",
+      "obligated_USD": 1543129696,
+      "award_count": 500
+    },
+    {
+      "slug": "ametek",
+      "target": "ametek",
+      "routed_via": "direct",
+      "obligated_USD": 251441979,
+      "award_count": 500
+    },
+    {
+      "slug": "amgen",
+      "target": "amgen",
+      "routed_via": "direct",
+      "obligated_USD": 963572165,
+      "award_count": 8
+    },
+    {
+      "slug": "amigos",
+      "target": "amigos",
+      "routed_via": "direct",
+      "obligated_USD": 175597,
+      "award_count": 4
+    },
+    {
+      "slug": "amn-healthcare-services",
+      "target": "amn-healthcare-services",
+      "routed_via": "direct",
+      "obligated_USD": 30217903,
+      "award_count": 127
+    },
+    {
+      "slug": "amneal-pharmaceuticals",
+      "target": "amneal-pharmaceuticals",
+      "routed_via": "direct",
+      "obligated_USD": 826662,
+      "award_count": 5
+    },
+    {
+      "slug": "ampex",
+      "target": "ampex",
+      "routed_via": "direct",
+      "obligated_USD": 17451685,
+      "award_count": 65
+    },
+    {
+      "slug": "amphenol-corp",
+      "target": "amphenol-corp",
+      "routed_via": "direct",
+      "obligated_USD": 16637724,
+      "award_count": 500
+    },
+    {
+      "slug": "amplitude",
+      "target": "amplitude",
+      "routed_via": "direct",
+      "obligated_USD": 3734376,
+      "award_count": 15
+    },
+    {
+      "slug": "amprius-technologies",
+      "target": "amprius-technologies",
+      "routed_via": "direct",
+      "obligated_USD": 1899984,
+      "award_count": 1
+    },
+    {
+      "slug": "amylyx-pharmaceuticals",
+      "target": "amylyx-pharmaceuticals",
+      "routed_via": "direct",
+      "obligated_USD": 1792272,
+      "award_count": 18
+    },
+    {
+      "slug": "an-railway",
+      "target": "an-railway",
+      "routed_via": "direct",
+      "obligated_USD": 904832,
+      "award_count": 10
+    },
+    {
+      "slug": "an2-therapeutics",
+      "target": "an2-therapeutics",
+      "routed_via": "direct",
+      "obligated_USD": 9235577,
+      "award_count": 1
+    },
+    {
+      "slug": "analog-devices",
+      "target": "analog-devices",
+      "routed_via": "direct",
+      "obligated_USD": 690998,
+      "award_count": 13
+    },
+    {
+      "slug": "analytical-services-inc",
+      "target": "analytical-services-inc",
+      "routed_via": "direct",
+      "obligated_USD": 405090195,
+      "award_count": 63
+    },
+    {
+      "slug": "anderson",
+      "target": "anderson",
+      "routed_via": "direct",
+      "obligated_USD": 1608696589,
+      "award_count": 500
+    },
+    {
+      "slug": "andersons",
+      "target": "andersons",
+      "routed_via": "direct",
+      "obligated_USD": 116146058,
+      "award_count": 10
+    },
+    {
+      "slug": "andrea",
+      "target": "andrea",
+      "routed_via": "direct",
+      "obligated_USD": 34407838,
+      "award_count": 216
+    },
+    {
+      "slug": "andros",
+      "target": "andros",
+      "routed_via": "direct",
+      "obligated_USD": 63566613,
+      "award_count": 132
+    },
+    {
+      "slug": "angel",
+      "target": "angel",
+      "routed_via": "direct",
+      "obligated_USD": 911280789,
+      "award_count": 500
+    },
+    {
+      "slug": "angiodynamics",
+      "target": "angiodynamics",
+      "routed_via": "direct",
+      "obligated_USD": 1323446,
+      "award_count": 38
+    },
+    {
+      "slug": "angle",
+      "target": "angle",
+      "routed_via": "direct",
+      "obligated_USD": 5078053905,
+      "award_count": 500
+    },
+    {
+      "slug": "anheuser-busch",
+      "target": "anheuser-busch",
+      "routed_via": "direct",
+      "obligated_USD": 291568,
+      "award_count": 10
+    },
+    {
+      "slug": "anterix",
+      "target": "anterix",
+      "routed_via": "direct",
+      "obligated_USD": 21586531,
+      "award_count": 61
+    },
+    {
+      "slug": "anti",
+      "target": "anti",
+      "routed_via": "direct",
+      "obligated_USD": 6764327,
+      "award_count": 63
+    },
+    {
+      "slug": "aol",
+      "target": "aol",
+      "routed_via": "direct",
+      "obligated_USD": 6718339,
+      "award_count": 133
+    },
+    {
+      "slug": "aon",
+      "target": "aon",
+      "routed_via": "direct",
+      "obligated_USD": 89755790,
+      "award_count": 405
+    },
+    {
+      "slug": "apa",
+      "target": "apa",
+      "routed_via": "direct",
+      "obligated_USD": 2700491596,
+      "award_count": 500
+    },
+    {
+      "slug": "apellis-pharmaceuticals",
+      "target": "apellis-pharmaceuticals",
+      "routed_via": "direct",
+      "obligated_USD": 512871,
+      "award_count": 20
+    },
+    {
+      "slug": "api-group",
+      "target": "api-group",
+      "routed_via": "direct",
+      "obligated_USD": 15362539,
+      "award_count": 82
+    },
+    {
+      "slug": "apogee-enterprises",
+      "target": "apogee-enterprises",
+      "routed_via": "direct",
+      "obligated_USD": 1480796,
+      "award_count": 1
+    },
+    {
+      "slug": "apollo",
+      "target": "apollo",
+      "routed_via": "direct",
+      "obligated_USD": 66280987,
+      "award_count": 500
+    },
+    {
+      "slug": "appian",
+      "target": "appian",
+      "routed_via": "direct",
+      "obligated_USD": 71770852,
+      "award_count": 17
+    },
+    {
+      "slug": "applied-biosystems",
+      "target": "applied-biosystems",
+      "routed_via": "direct",
+      "obligated_USD": 5602,
+      "award_count": 1
+    },
+    {
+      "slug": "applied-digital",
+      "target": "applied-digital",
+      "routed_via": "direct",
+      "obligated_USD": 39034,
+      "award_count": 2
+    },
+    {
+      "slug": "applied-industrial-technologies",
+      "target": "applied-industrial-technologies",
+      "routed_via": "direct",
+      "obligated_USD": 11980342,
+      "award_count": 500
+    },
+    {
+      "slug": "aptargroup",
+      "target": "aptargroup",
+      "routed_via": "direct",
+      "obligated_USD": 21491157,
+      "award_count": 3
+    },
+    {
+      "slug": "aptiv",
+      "target": "aptiv",
+      "routed_via": "direct",
+      "obligated_USD": 1729553861,
+      "award_count": 500
+    },
+    {
+      "slug": "apyx-medical",
+      "target": "apyx-medical",
+      "routed_via": "direct",
+      "obligated_USD": 95634,
+      "award_count": 1
+    },
+    {
+      "slug": "aramark",
+      "target": "aramark",
+      "routed_via": "direct",
+      "obligated_USD": 77123661,
+      "award_count": 117
+    },
+    {
+      "slug": "archer-aviation",
+      "target": "archer-aviation",
+      "routed_via": "direct",
+      "obligated_USD": 2037873,
+      "award_count": 2
+    },
+    {
+      "slug": "archer-daniels-midland",
+      "target": "archer-daniels-midland",
+      "routed_via": "direct",
+      "obligated_USD": 649476876,
+      "award_count": 153
+    },
+    {
+      "slug": "arco",
+      "target": "arco",
+      "routed_via": "direct",
+      "obligated_USD": 1300892809,
+      "award_count": 500
+    },
+    {
+      "slug": "ardelyx",
+      "target": "ardelyx",
+      "routed_via": "direct",
+      "obligated_USD": 54269,
+      "award_count": 9
+    },
+    {
+      "slug": "argan",
+      "target": "argan",
+      "routed_via": "direct",
+      "obligated_USD": 790685,
+      "award_count": 15
+    },
+    {
+      "slug": "argo",
+      "target": "argo",
+      "routed_via": "direct",
+      "obligated_USD": 19163166947,
+      "award_count": 500
+    },
+    {
+      "slug": "argonne",
+      "target": "argonne",
+      "routed_via": "direct",
+      "obligated_USD": 17313621679,
+      "award_count": 6
+    },
+    {
+      "slug": "arizona-public-service",
+      "target": "arizona-public-service",
+      "routed_via": "direct",
+      "obligated_USD": 45196668,
+      "award_count": 38
+    },
+    {
+      "slug": "arizona-state-university",
+      "target": "arizona-state-university",
+      "routed_via": "direct",
+      "obligated_USD": 298761701,
+      "award_count": 114
+    },
+    {
+      "slug": "arko",
+      "target": "arko",
+      "routed_via": "direct",
+      "obligated_USD": 210289523,
+      "award_count": 500
+    },
+    {
+      "slug": "armstrong-world-industries",
+      "target": "armstrong-world-industries",
+      "routed_via": "direct",
+      "obligated_USD": 172746,
+      "award_count": 2
+    },
+    {
+      "slug": "arq",
+      "target": "arq",
+      "routed_via": "direct",
+      "obligated_USD": 158895228,
+      "award_count": 500
+    },
+    {
+      "slug": "arrow-electronics",
+      "target": "arrow-electronics",
+      "routed_via": "direct",
+      "obligated_USD": 1226457142,
+      "award_count": 500
+    },
+    {
+      "slug": "artesian-resources",
+      "target": "artesian-resources",
+      "routed_via": "direct",
+      "obligated_USD": 139799,
+      "award_count": 1
+    },
+    {
+      "slug": "arthur-j-gallagher-and",
+      "target": "arthur-j-gallagher-and",
+      "routed_via": "direct",
+      "obligated_USD": 6934396,
+      "award_count": 5
+    },
+    {
+      "slug": "artivion",
+      "target": "artivion",
+      "routed_via": "direct",
+      "obligated_USD": 4161588,
+      "award_count": 274
+    },
+    {
+      "slug": "asana",
+      "target": "asana",
+      "routed_via": "direct",
+      "obligated_USD": 2811937,
+      "award_count": 32
+    },
+    {
+      "slug": "ashland",
+      "target": "ashland",
+      "routed_via": "direct",
+      "obligated_USD": 50551888,
+      "award_count": 454
+    }
+  ],
+  "orphans": [
+    {
+      "slug": "dow",
+      "obligated_USD": 9797458
+    }
+  ]
+}
