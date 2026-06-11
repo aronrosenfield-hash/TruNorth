@@ -473,3 +473,8 @@ Tier-1 re-narrate (quarterly Sept 1) · HRC CEI (Nov 15) · CDP A-List (Feb 15) 
 - `/docs/producthunt/LAUNCH_DAY_PLAYBOOK.md` + `/docs/producthunt/PROMO_COPY.md`
 - `/docs/ANDROID_LAUNCH_PLAN.md`, `/docs/payments-integration-plan.md`
 - `/docs/TruNorth-TestFlight-Setup.docx`, `/docs/app-store-submission.md`
+
+
+## R7 source research (2026-06-11)
+
+Deep-research sweep (105 agents, adversarially verified) found **8 license-clean $0 sources** — full dossier: `docs/research/data-sources-r7-deep-research-2026-06-11.md`. Headline: **per-company DEI at scale is finally unlocked** — the DOL OFCCP FOIA library completed its court-ordered release (Feb 25, 2026) of Type 2 EEO-1 workforce demographics for federal contractors FY2016-2020; the 52 MB consolidated XLSX (56,650 rows, CONAME/DUNS + ~200 demographic columns) was verified downloadable today. Build order: (1) OFCCP EEO-1 ingest → dei, (2) USAspending per-recipient API → new-mid-cap enrichment (keyless, no rate limits), (3) FTC Legal Library 6,086 cases → privacy, (4) CBP UFLPA Entity List + WRO/Findings → forcedLabor/childLabor flags, (5) SAM.gov Exclusions bulk → debarment, (6) USDA APHIS AWA → animals, (7) Illinois SOS EEO filings → dei supplement. All US-federal = public domain, no commercial restriction. Watch-out: Akamai bot-blocking on dol/ilsos/cbp/ftc — default curl UA worked where spoofed Chrome got 403. Animals at 1,000+ brand scale remains unsolved.
