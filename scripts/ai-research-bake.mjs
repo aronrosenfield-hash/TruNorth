@@ -25,7 +25,7 @@
  * only after 180 days. Run on GitHub Actions (ai-research-bake.yml) where
  * ANTHROPIC_API_KEY lives; ~$0.10-0.25/brand with web search.
  *
- * Model: claude-opus-4-8 (repo convention for non-news LLM calls).
+ * Model: claude-sonnet-4-6 by default (cost: see pilot note at MODEL).
  */
 
 import fs from "node:fs";
@@ -37,7 +37,11 @@ const ROOT = path.resolve(__dirname, "..");
 const COMPS = path.join(ROOT, "public/data/companies");
 const STATE_DIR = path.join(ROOT, "data/raw/ai-research");
 const STATE = path.join(STATE_DIR, "state.json");
-const MODEL = "claude-opus-4-8";
+// Pilot 2026-06-11: web-search results are token-heavy (~55k input/brand) —
+// Opus came out ~$1/brand (~$3k for the full 3k-brand run). Sonnet 4.6 is the
+// same family the news pipeline uses and lands ~$0.25/brand with equal
+// citation discipline. Override with --model= if a run warrants Opus.
+const MODEL = (process.argv.find(a => a.startsWith("--model=")) || "").split("=")[1] || "claude-sonnet-4-6";
 const NO_REC_RE = /^\s*no public record found\.?\s*$/i;
 const RESEARCH_CATS = ["environment", "labor", "charity", "dei", "animals", "privacy"];
 
