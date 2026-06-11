@@ -8,60 +8,32 @@
 
 ---
 
-## 🔴 NEEDS YOUR DECISION — TODAY
+## 🔴 NEEDS YOUR DECISION — CURRENT (cleaned 2026-06-11 AM)
 
-### 1. Build 53 — overnight progress report (Aron wakes up to this)
-
-**Build 52 still on your phone.** Build 53 is **75% ready** — needs your nav-restructure call + ship approval.
-
-**✅ DONE overnight (merged + pushed to main):**
-- PR #64 merged: brand-parent-map +1,980 entries (4,738 → 6,718). Bush's Best, Heinz, KitKat→Hershey (corrected), Planters→Hormel (corrected), Pop-Tarts, French's, etc. all resolve now.
-- PR #65 merged: static `upc-to-slug.json` cache with **3,937 UPCs** baked into the IPA. Bush's Best 53 SKUs included. Instant + offline lookup.
-- **B: No-match → Search fallback** — scanner overlay now shows "Search for [Brand]" button when OFF/UPCitemdb returns a brand but we can't map it. Never a dead-end. (commit `dcfa9dc5b`)
-- **D: UPCitemdb Tier-3 fallback** — when OFF returns nothing, fall through to UPCitemdb's free trial endpoint (100 lookups/day, no API key). Wrapped in try/catch.
-- **Search-bug fix** (`aa4c1a941`) — focusedSlug releases when query changes.
-- 7/7 scanner tests pass. `vite build` clean.
-- Build number persisted (47→52 was lost from git previously; now committed so next ship-ios bumps cleanly to 53).
-
-**⏸️ WAITING ON YOUR EYEBALL:**
-- **C: Nav restructure** — your spec was "SCAN as middle bottom-nav slot · Account top-right corner next to Upgrade with an icon." Need a 30-second eyeball on which icon for Account (likely `ti-user-circle` to match Upgrade's crown) + confirm I should swap the Account tab out of bottom nav. I held the change because it touches every screen.
-- **Build 53 ship** — once C lands, `./scripts/ship-ios.sh` fires.
-
-**🎯 Tuesday morning action when you wake up:**
-1. Read this section (you're here ✓)
-2. Approve nav-restructure execution (or tweak my plan)
-3. I implement C in 30 min
-4. You run `./scripts/ship-ios.sh` → Build 53 to TestFlight in 15 min
-5. Test Bush's Best UPC + a couple others to confirm the scanner is fixed
+### 1. Ship Build 54 to TestFlight — ready on your word
+Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scoring tests green). Info.plist/pbxproj sit at 53, so `./scripts/ship-ios.sh` uploads as **Build 54** — first TestFlight build carrying SCORING V3 + the search/scanner fixes (`af427cbbc`). One command, ~15 min to TestFlight.
 
 ### 2. L-2 LinkedIn pinned post (5 min — Twitter pin is up; LinkedIn audience won't see it)
 - **Copy:** `/docs/producthunt/PROMO_COPY.md` → "Pinned LinkedIn post" section. Same vibe as your X pin.
 - **Where:** Your LinkedIn personal profile → Activity → Featured → + → Post → paste → pin.
 
-### ✅ Resolved earlier today
-- ~~**PR #63 — banner design fix**~~ → **merged** 2026-06-08 (commit `acf0649a1`). Round 1 + round 2 (desat purple + reclassify 5 + Chipotle name) all in.
-- ~~**PR #19 — Glassdoor**~~ → **closed** 2026-06-08, parked as F-5.
-- ~~**MailerLite Vercel env var**~~ → **fixed days ago** (Aron confirmed). `/api/subscribe` healthy.
-- ~~**L-1 Twitter pinned post**~~ → **done** 2026-06-08 PM with promo video.
+### ✅ Resolved
+- ~~Build 53 nav restructure (C)~~ → **done** (Account in top-right header, SCAN as bottom-nav action — B-57).
+- ~~Build 53 scanner/search fixes~~ → **done** (`dcfa9dc5b`, `aa4c1a941`, `af427cbbc`; UPC cache PR #65).
+- ~~L-1 Twitter pinned post~~ → **done** 2026-06-08 PM with promo video.
 
 ---
 
-## ⏰ COUNTDOWN TO LAUNCH
+## 🔧 OUTSTANDING — ENGINEERING (Claude-side, post-V3 sweep 2026-06-11)
 
-| Date | Event |
-|---|---|
-| **Tue Jun 9 · 9 AM CDT** | ITEP follow-up to Amy Hanauer (auto-reminder) |
-| **Tue Jun 9 · 1 PM CDT** | Egregious 15:15 polarity rebalance (auto-reminder) |
-| **Fri Jun 13** | Final `ship-ios.sh` → Build N for App Store submission |
-| **Sat Jun 14** | Submit Build N to App Review |
-| **Mon Jun 16 · 9 AM CDT** | (a) PH 1-week prep, (b) coverage measurement after Tier-S crons run (auto-reminder) |
-| **Mon Jun 16** | Toggle scoring-flags feature ON (24h stability watch) |
-| **Tue Jun 17** | Cut final App Store build if flags stable |
-| ~Jun 18-22 | Apple review (avg 24-48h, buffer for re-submit) |
-| **Mon Jun 22 · 7 PM** | PH launch eve reminder |
-| **Tue Jun 23 · 1:50 AM CDT** | Launch hour wake-up |
-| **Tue Jun 23 · 2:01 AM CDT** | 🚀 **Product Hunt launch fires** |
-| ~Jul 7 | Earliest Android shipping window (P-1) |
+| # | Item | Size | Notes |
+|---|---|---|---|
+| E-1 | **Scoring-flags toggle ON** | scheduled | Flip `scoringFlagsEnabled` Mon Jun 16, 24h watch → App Store cut Tue Jun 17 (see rollout table below) |
+| E-2 | **ToS;DR privacy source ("Lever 3")** | ~2h + wait | Fetcher is easy; BLOCKED on the license question for derived grades — email ToS;DR team / check CC-BY-SA terms before ingesting (R6 research §2) |
+| E-3 | **FTC cases & proceedings fetcher** | ~half day | R6 research §4 — privacy/consumer enforcement, verified viable, unbuilt |
+| E-4 | **OFCCP EEO-1 Type 2 static augment** | manual + 1h | Needs Aron: one-time manual FOIA-library download, then a static augment writer (best per-company DEI option) |
+| E-5 | **11 empty augments** (was 15) | ~1h | awa, cnmv-spain, datatilsynet-denmark, fdpic-switzerland, hk-compcomm + 6 more — verify each is legitimately-no-matches vs wiped (sandboxed-PR incident class, B-60/61/62) |
+| E-6 | **SOURCES_DATA sync** | ~1h | In-app Sources tab lists 100 sources; `docs/SOURCES.md` has ~150; landing claims 200+. User-visible — reconcile before PH eyes on it |
 
 ---
 
