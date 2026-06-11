@@ -862,10 +862,23 @@ function computeScore(co, profile) {
   const flagsOn = featureFlagsEnabled();
   for (const k of CAT_KEYS) {
     if (isCategoryExcludedByFlags(co.flags, k, flagsOn)) continue;
+    // SCORING V3 / R4: stance categories (dei / animals / guns) only enter the
+    // grade when the user took a side in the quiz. With no stance they would
+    // contribute a flat 50 — pure dilution toward C, and a value judgment the
+    // app explicitly doesn't make (Phase 4.11: facts, not verdicts). The
+    // badges still render; the axes still count once the user opts in.
+    if (k === "dei"     && (!profile.deiLean       || profile.deiLean       === "neutral")) continue;
+    if (k === "animals" && (!profile.animalTesting || profile.animalTesting === "neutral")) continue;
+    if (k === "guns"    && (!profile.guns          || profile.guns          === "neutral")) continue;
     const v = co.sc[k];
-    if (getDataState(k, v) === "unknown") continue;
     const lv = String(v || "").toLowerCase();
-    if (lv === "neutral") continue;
+    // V3: a baked continuous score (co.csc[k]) counts as a real signal even
+    // when the enum is neutral — that's the narrative-salvage cohort (text
+    // record present, enum never set). Keeps personalized grades consistent
+    // with the neutral baseline, which already scores those records.
+    const hasCsc = co.csc && typeof co.csc[k] === "number";
+    if (getDataState(k, v) === "unknown" && !hasCsc) continue;
+    if (lv === "neutral" && !hasCsc) continue;
     // 2026-06-01 (user-reported bug): 'na' (not applicable, e.g. animal
     // testing on a B2B software company) was being scored as 50 (fallback)
     // because NA_IS_FACTUAL marks it 'scored' for display. But the GRADE
@@ -897,7 +910,15 @@ function computeScore(co, profile) {
   }
   // If nothing scored, fall back to the overall (un-personalized) score so the
   // app doesn't show a misleading "50" for companies with no data at all.
-  const ws = weightUsed > 0 ? weightedSum / weightUsed : (co.overall || 50);
+  // SCORING V3 / R1: evidence-confidence shrinkage toward neutral (50) — the
+  // same estimator the baked baseline uses (scripts/rebake-scoring.mjs). The
+  // more weighted evidence behind the score, the more of its raw signal
+  // survives; replaces the old hard signal-count grade cap in scoreGrade.
+  // co.overall is already shrunk, so the fallback path must NOT re-shrink.
+  const K_SHRINK = 1.5;
+  const ws = weightUsed > 0
+    ? (weightedSum + 50 * K_SHRINK) / (weightUsed + K_SHRINK)
+    : (co.overall || 50);
   // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
   // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
   // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.
@@ -1034,21 +1055,20 @@ function getDisplay(k, val, profile) {
 
 // Score text grade
 function scoreGrade(n, realCats) {
-  // Build 57 (S2 + signal-count cap): A≥65 ∧ ≥3 sig, B≥55 ∧ ≥2 sig.
-  // Single-signal brands max out at C regardless of score.
-  // Must stay in sync with scripts/rebake-scoring.mjs gradeFromOverall and
-  // scripts/finalize-bundle.mjs scoreGrade.
-  let g;
-  if (n >= 65) g = "A";
-  else if (n >= 55) g = "B";
-  else if (n >= 45) g = "C";
-  else if (n >= 30) g = "D";
-  else g = "F";
-  if (typeof realCats === "number") {
-    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
-    else if (realCats < 3 && g === "A") g = "B";
-  }
-  return g;
+  // SCORING V3 (2026-06-11): the Build-57 signal-count cap is gone — low
+  // evidence is now priced in continuously by K_SHRINK shrinkage inside
+  // computeScore / rebake-scoring.mjs, so a one-signal 82 lands ~63 (B)
+  // instead of being flattened to the same C as a one-signal 46. The
+  // realCats param is kept for call-site compatibility but unused.
+  // Thresholds frozen from the one-time V3 recalibration (~A7/B35/C40/D8/F10
+  // among graded). Must stay in sync with scripts/rebake-scoring.mjs
+  // gradeFromOverall and scripts/finalize-bundle.mjs scoreGrade.
+  if (n == null) return "?";
+  if (n >= 63) return "A";
+  if (n >= 56) return "B";
+  if (n >= 46) return "C";
+  if (n >= 41) return "D";
+  return "F";
 }
 
 // S3: user-relevant signal count for personalized grades.

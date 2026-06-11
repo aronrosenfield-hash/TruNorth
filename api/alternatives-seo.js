@@ -19,24 +19,19 @@ function esc(s) {
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 function grade(score, realCats) {
-  // QA fix 2026-06-10: this carried pre-Build-57 thresholds (80/65/50/35,
-  // no signal-count cap) so SEO pages disagreed with the app by up to two
-  // letters. MUST stay in sync with src/App.jsx scoreGrade,
-  // scripts/finalize-bundle.mjs scoreGrade, scripts/rebake-scoring.mjs
-  // gradeFromOverall: A≥65∧≥3 cats, B≥55∧≥2 cats, C≥45, D≥30, F<30.
+  // SCORING V3 (2026-06-11): signal-count cap removed — evidence confidence
+  // is priced in by shrinkage when scores are baked (rebake-scoring.mjs), so
+  // realCats is kept for call-site compatibility but unused. Thresholds
+  // frozen from the one-time V3 recalibration. MUST stay in sync with
+  // src/App.jsx scoreGrade, scripts/finalize-bundle.mjs scoreGrade,
+  // scripts/rebake-scoring.mjs gradeFromOverall: A>=63, B>=56, C>=46, D>=41.
   const n = Number(score);
-  if (!isFinite(n)) return "—";
-  let g;
-  if (n >= 65) g = "A";
-  else if (n >= 55) g = "B";
-  else if (n >= 45) g = "C";
-  else if (n >= 30) g = "D";
-  else g = "F";
-  if (typeof realCats === "number") {
-    if (realCats < 2 && (g === "A" || g === "B")) g = "C";
-    else if (realCats < 3 && g === "A") g = "B";
-  }
-  return g;
+  if (!isFinite(n)) return "\u2014";
+  if (n >= 63) return "A";
+  if (n >= 56) return "B";
+  if (n >= 46) return "C";
+  if (n >= 41) return "D";
+  return "F";
 }
 
 let _indexCache = null;

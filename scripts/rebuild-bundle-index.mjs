@@ -27,6 +27,20 @@ const CATEGORIES = [
   "political","charity","environment","labor","dei","animals","guns","privacy","execPay"
 ];
 
+// SCORING V3 (2026-06-11): grade derived here (company files carry only
+// `overall`, which is already evidence-shrunk by rebake-scoring.mjs).
+// Thresholds frozen from the one-time V3 recalibration — keep in sync with
+// src/App.jsx scoreGrade, scripts/finalize-bundle.mjs scoreGrade and
+// scripts/rebake-scoring.mjs gradeFromOverall.
+function scoreGrade(n) {
+  if (n == null) return "?";
+  if (n >= 63) return "A";
+  if (n >= 56) return "B";
+  if (n >= 46) return "C";
+  if (n >= 41) return "D";
+  return "F";
+}
+
 const files = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
 console.log(`[bundle-index] reading ${files.length} company files`);
 
@@ -70,9 +84,13 @@ for (const file of files) {
     name:           co.name,
     cat:            co.cat,
     init:           co.init,
-    grade:          co.grade,
-    score:          co.score,
+    grade:          scoreGrade(co.overall),
+    score:          co.overall,
     overall:        co.overall,
+    realCats:       typeof co.realCats === "number" ? co.realCats : null,
+    // V3: per-category continuous scores baked by rebake-scoring.mjs — the
+    // client scores collapsed index rows and expanded detail identically.
+    ...(co.csc ? { csc: co.csc } : {}),
     ab:             co.ab,
     ac:             co.ac,
     sc:             co.sc,

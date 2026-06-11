@@ -66,6 +66,11 @@ function indexEntryFromCompanyFile(slug, d) {
     // V3: per-category continuous scores baked by rebake-scoring.mjs — the
     // client scores collapsed index rows and expanded detail identically.
     ...(d.csc ? { csc: d.csc } : {}),
+    // Parity with scripts/rebuild-bundle-index.mjs (the npm-build generator):
+    // categories whose narrative is "No public record found" — computeScore
+    // excludes them on collapsed rows the same way it does on expanded detail.
+    excl: ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"]
+      .filter(k => /^\s*no public record found\.?\s*$/i.test(String(d[k]?.s || ""))),
     // 2026-06-10 (QA): flags were silently dropped when Build 55 made this
     // function re-derive the whole index — the scoring-flags feature (toggle
     // ON Jun 16) reads them from index entries in list views.
