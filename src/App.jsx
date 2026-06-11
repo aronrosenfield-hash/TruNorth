@@ -1062,7 +1062,8 @@ function scoreGrade(n, realCats) {
   // realCats param is kept for call-site compatibility but unused.
   // Thresholds frozen from the one-time V3 recalibration (~A7/B35/C40/D8/F10
   // among graded). Must stay in sync with scripts/rebake-scoring.mjs
-  // gradeFromOverall and scripts/finalize-bundle.mjs scoreGrade.
+  // gradeFromOverall and scripts/lib/index-entry.mjs scoreGrade (shared by
+  // rebuild-bundle-index.mjs + finalize-bundle.mjs).
   if (n == null) return "?";
   if (n >= 63) return "A";
   if (n >= 56) return "B";
