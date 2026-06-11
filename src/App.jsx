@@ -1227,6 +1227,17 @@ function ElephantSVG({ size=14, col="#e24a4a" }) {
 //     same component switches back to the real subscription flow.
 const PRO_WAITLIST_MODE = true;
 
+// App Review fix (2026-06-11 — v1.0 rejected on 2.1.0 / 3.1.1 / 3.1.2):
+// until RevenueCat IAP is live (X-0/X-2), the iOS binary must contain NO
+// purchase UI, NO subscription pricing, and NO email-waitlist for a future
+// paid upgrade — Apple read the "$9/yr founder pricing" waitlist paywall as
+// an uncompletable purchase. IAP_SAFE_MODE removes every Pro/Upgrade
+// affordance and unlocks the previously-gated features (v1.0 ships fully
+// free; Pro returns in 1.1 with real IAP). The founder-pricing waitlist on
+// the WEB marketing site is unaffected — Apple doesn't govern the web.
+// Flip to false together with PRO_WAITLIST_MODE when RevenueCat goes live.
+const IAP_SAFE_MODE = true;
+
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
   const [loading, setLoading] = useState(false);
@@ -4905,6 +4916,9 @@ useEffect(() => {
   // Restore Purchase flow still TODO when real IAP lands — for now this at
   // least keeps the demo-paid state sticky across refreshes.
   const [isPaid, _setIsPaidRaw] = useState(() => {
+    // IAP_SAFE_MODE: everything unlocked — no purchasable upgrade exists, so
+    // nothing may be gated behind one (App Review 2.1.0/3.1.1).
+    if (IAP_SAFE_MODE) return true;
     try {
       if (typeof window === "undefined") return false;
       if (import.meta.env.DEV && new URLSearchParams(window.location.search).has("pro")) return true;
@@ -5782,7 +5796,7 @@ if (screen === "onboarding") {
     // so the Quiz fully fills the viewport.
     return (
       <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden" }}>
-        {showPaywall && <PaywallScreen
+        {showPaywall && !IAP_SAFE_MODE && <PaywallScreen
           initialEmail={currentUser?.email||""}
           onSubscribe={(paidEmail)=>{
             setIsPaid(true);
@@ -5827,7 +5841,7 @@ if (screen === "onboarding") {
 
   return (
     <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
-      {showPaywall && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={(paidEmail)=>{
+      {showPaywall && !IAP_SAFE_MODE && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={(paidEmail)=>{
         setIsPaid(true);
         // Phase 5.as (#11): persist paywall email to Account.
         if (paidEmail) {
@@ -5918,10 +5932,12 @@ if (screen === "onboarding") {
             >
               <i className="ti ti-user-circle" style={{ fontSize:18 }} aria-hidden="true" />
             </button>
-            {isPaid
+            {/* IAP_SAFE_MODE: no Pro chip, no Upgrade button — the App Store
+                binary carries zero purchase affordances until IAP is real. */}
+            {!IAP_SAFE_MODE && (isPaid
               ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
               : <button onClick={()=>setShowPaywall(true)} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4, minHeight:32 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
-            }
+            )}
           </div>
         </div>
         {tab !== "account" && (
