@@ -156,6 +156,10 @@ ${batch.map((item, i) => `[${i + 1}] BRAND: ${item.brand_name} (${item.brand_slu
         tool_choice: { type: "tool", name: "record_extracted_items" },
         messages: [{ role: "user", content: userPrompt }],
       }),
+      // QA fix 2026-06-10: a hung API connection blocked the nightly job
+      // until GitHub's 60-min kill (no commit). 3 min >> any normal batch;
+      // the abort feeds the existing retry path above.
+      signal: AbortSignal.timeout(180_000),
     });
 
     if (!res.ok) {

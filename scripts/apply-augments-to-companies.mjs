@@ -237,22 +237,10 @@ const WRITERS = [
       }];
     },
   },
-  // ─── B Corp certification (multi-category) ────────────────────────────
-  {
-    name: "bcorp",
-    write: (e) => {
-      const out = [];
-      const score = e.score || e.totalScore || e.overallScore;
-      const yr = e.certifiedSince || e.year;
-      const baseline = score
-        ? `Certified B Corporation${yr ? ` since ${yr}` : ""}, B Impact score ${score}/200.`
-        : `Certified B Corporation${yr ? ` since ${yr}` : ""}.`;
-      out.push({ category: "labor", narrative: baseline, sc: "positive" });
-      out.push({ category: "environment", narrative: baseline, sc: "positive" });
-      out.push({ category: "dei", narrative: baseline, sc: "pro_dei" });
-      return out;
-    },
-  },
+  // QA 2026-06-10: a duplicate "bcorp" writer lived here. writerMap keys by
+  // name with last-definition-wins, so this copy was DEAD code — edits to it
+  // silently did nothing. The live writer (mergePositive + charity) is the
+  // one further down, next to just-capital.
   // ─── SBTi (Science-Based Targets) ────────────────────────────────────
   {
     name: "sbti",
@@ -644,22 +632,11 @@ const WRITERS = [
       }];
     },
   },
-  // ─── DOL WHD wage violations ──────────────────────────────────────────
-  {
-    name: "dol-whd-violations",
-    write: (e) => {
-      const total = e.totalBackWages || e.backWages;
-      const cases = e.caseCount || e.cases;
-      if (!total && !cases) return [];
-      const tStr = total ? `$${(total / 1e6).toFixed(2)}M in back wages owed to workers` : `${cases} wage/hour violations`;
-      return [{
-        category: "labor",
-        narrative: `DOL Wage & Hour Division: ${tStr}${cases ? ` across ${cases} cases` : ""}.`,
-        sc: "poor",
-        severity: "negative",
-      }];
-    },
-  },
+  // QA 2026-06-10: a duplicate "dol-whd-violations" writer lived here,
+  // reading camelCase fields the augment never uses. writerMap keys by name
+  // with last-definition-wins, so this copy was DEAD code. The live writer
+  // (snake_case case_count / total_back_wages_usd, tiered sc) is further
+  // down in the file.
   // ─── Exec political donations (FEC) ───────────────────────────────────
   // Actual augment shape: { political: { execDonationLean: "D+31", totalUsd,
   // donorCount, year, sources } }. The lean string uses PVI-style notation:

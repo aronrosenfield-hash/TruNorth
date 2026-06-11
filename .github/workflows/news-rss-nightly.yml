@@ -36,18 +36,28 @@ jobs:
         with:
           node-version: "22"
 
+      # QA 2026-06-10: this job hit its 60-min kill 8 nights straight (hung
+      # sockets — no fetch timeouts) and the commit step never ran, so an
+      # hour of collection was discarded nightly. The scripts now carry
+      # per-request timeouts + a 35-min collector budget, and the commit
+      # step runs even when an upstream step fails, so partial digests land.
       - name: Run news collector
         run: node scripts/news-rss-collect.mjs
 
       - name: Run AI extraction on high-signal items
+        if: ${{ !cancelled() }}
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/news-rss-extract.mjs
 
       - name: Merge extracted signals into per-company JSON
+        if: ${{ !cancelled() }}
+        continue-on-error: true
         run: node scripts/news-extracted-merge.mjs
 
       - name: Commit + push the digest
+        if: ${{ !cancelled() }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "trunorth-bot"

@@ -28,7 +28,10 @@ const BASE       = "https://www.trunorthapp.com";
 
 const HARDCODED_PAGES = [
   { loc: BASE + "/",          priority: "1.0", changefreq: "daily"   },
-  { loc: BASE + "/#privacy",  priority: "0.5", changefreq: "monthly" },
+  // QA fix 2026-06-10: was "/#privacy" — crawlers strip fragments, so this
+  // was a duplicate homepage entry and the policy page was uncrawlable.
+  // /privacy is a real rewrite (vercel.json) and the app now routes it.
+  { loc: BASE + "/privacy",   priority: "0.5", changefreq: "monthly" },
 ];
 
 function esc(s) {

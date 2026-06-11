@@ -442,7 +442,9 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
     <div style={{ position:"fixed", inset:0, background:"#000", zIndex:300, display:"flex", flexDirection:"column" }}>
       <div style={{ padding:"calc(12px + env(safe-area-inset-top, 0px)) 16px 12px", display:"flex", alignItems:"center", justifyContent:"space-between" }}>
         <div style={{ color:"#fff", fontSize:16, fontWeight:700 }}>Scan barcode</div>
-        <button onClick={onClose} aria-label="Close scanner" style={{ width:36, height:36, padding:0, borderRadius:"50%", border:"none", background:"rgba(255,255,255,0.12)", color:"#fff", fontSize:22, cursor:"pointer" }}>×</button>
+        {/* QA 2026-06-10: 36px → 44px to meet the Apple HIG / WCAG 2.5.5
+            minimum touch target — this is the only way out of the scanner. */}
+        <button onClick={onClose} aria-label="Close scanner" style={{ width:44, height:44, padding:0, borderRadius:"50%", border:"none", background:"rgba(255,255,255,0.12)", color:"#fff", fontSize:22, cursor:"pointer" }}>×</button>
       </div>
       <div style={{ flex:1, position:"relative", overflow:"hidden" }}>
         <video ref={videoRef} playsInline muted style={{ width:"100%", height:"100%", objectFit:"cover" }} />
@@ -1310,22 +1312,10 @@ function stripCites(s) {
   return (s || "").replace(/<\/?cite[^>]*>/gi, "").trim();
 }
 
-// ─── LIVE FETCH ───────────────────────────────────────────────────────────────
-async function fetchLiveData(name) {
-  try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model:"claude-sonnet-4-6", max_tokens:800,
-        tools:[{type:"web_search_20250305",name:"web_search"}],
-        messages:[{role:"user",content:`For "${name}", give 2-3 sentence updates on any recent 2024-2025 news about political donations, environmental actions, labor disputes, DEI changes, or animal testing controversies. Return ONLY JSON with no markdown: {"political":null,"environment":null,"labor":null,"dei":null,"animals":null,"sources":[]}`}]
-      })
-    });
-    const data = await res.json();
-    const text = data.content?.find(b=>b.type==="text")?.text || "{}";
-    return JSON.parse(text.replace(/```json|```/g,"").trim());
-  } catch { return null; }
-}
+// QA 2026-06-10: removed dead fetchLiveData() — zero call sites, and it
+// POSTed to the Anthropic API from the CLIENT with no API key (could never
+// succeed; would have leaked a key if one were ever added). Live freshness
+// comes from the nightly news pipeline instead.
 
 // ─── COMPANY CARD ─────────────────────────────────────────────────────────────
 
@@ -2747,8 +2737,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
       const now = new Date();
       // 2026-06-01 (user pick): switched from 1 free view/week → 1 free
       // view/day. Same field name `log.week` retained but it now holds a
-      // YYYY-MM-DD day key. Resets at local midnight (UTC).
-      const dayKey = now.toISOString().slice(0, 10);
+      // YYYY-MM-DD day key.
+      // QA fix 2026-06-10: was toISOString() (UTC) — for US users the free
+      // view reset at 7-8pm local, granting two views some calendar days and
+      // a confusing mid-evening reset. Local-date key resets at the user's
+      // own midnight.
+      const dayKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
       let log = {};
       try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
       if (log.week !== dayKey) log = { week: dayKey, slugs: [] };
@@ -4699,7 +4693,11 @@ export default function App() {
   // Clean up stale flag from the previous flow if present.
   try { localStorage.removeItem("tn_skipMarketing"); } catch {}
   const [marketingScreen, setMarketingScreen] = useState(() => {
-    if (__hash.replace(/^#/, "") === "privacy") return "privacy";
+    // QA fix 2026-06-10: vercel.json rewrites /privacy → index.html and the
+    // sitemap lists it, but only the #privacy HASH was detected here — the
+    // crawlable /privacy URL rendered the marketing landing instead of the
+    // policy. Accept both forms.
+    if (__hash.replace(/^#/, "") === "privacy" || __pathname === "/privacy") return "privacy";
     // Native shell ALWAYS goes to the app — no marketing landing on iOS.
     if (__isCapacitorNative) return "app";
     if (__isRoot && !__hasDeepLink && !__search) return "landing";
@@ -5717,7 +5715,7 @@ if (screen === "onboarding") {
           and which tab is active without visual clutter. */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {tab === "search" && (query.trim() || leanFilter !== "all" || catFilters.length > 0 || showSavedOnly)
-          ? `${filtered.length} compan${filtered.length === 1 ? "y" : "ies"} match your filters`
+          ? `${filtered.length} compan${filtered.length === 1 ? "y matches" : "ies match"} your filters`
           : `${tab} tab`}
       </div>
 

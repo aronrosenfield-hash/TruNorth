@@ -377,6 +377,11 @@ async function fetchBrandNews(brand) {
   try {
     const res = await fetch(url, {
       headers: { "User-Agent": "TruNorth-RSS-Collector/1.0 (+https://www.trunorthapp.com)" },
+      // QA fix 2026-06-10: no timeout meant ONE tarpitted Google connection
+      // stalled its whole Promise.all batch forever — the nightly cron hit
+      // its 60-min kill 8 nights straight and committed NOTHING. 20s is
+      // generous for an RSS endpoint; a slow brand is skipped, not fatal.
+      signal: AbortSignal.timeout(20_000),
     });
     if (!res.ok) return [];
     const xml = await res.text();
@@ -431,8 +436,17 @@ async function main() {
 
   // Throttle: 10 brands at a time, 1.5s between batches (Google News tolerates this)
   const BATCH = 10;
+  // QA fix 2026-06-10: hard wall-clock budget. Even with per-fetch timeouts,
+  // sustained throttling could drag the run toward the workflow's 60-min
+  // kill — which aborts the job WITHOUT committing. Stopping ourselves at
+  // 35 min writes a partial digest the downstream steps still process.
+  const DEADLINE = Date.now() + Number(process.env.COLLECT_BUDGET_MS || 35 * 60_000);
   const all = [];
   for (let i = 0; i < brands.length; i += BATCH) {
+    if (Date.now() > DEADLINE) {
+      console.warn(`⏱ time budget exhausted at ${i}/${brands.length} brands — writing partial digest`);
+      break;
+    }
     const slice = brands.slice(i, i + BATCH);
     const results = await Promise.all(slice.map(fetchBrandNews));
     all.push(...results.flat());
