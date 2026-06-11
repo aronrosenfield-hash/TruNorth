@@ -5,6 +5,17 @@ parked overnight. Most are <5 min each.
 
 ## Order of operations
 
+### 0. **Re-upload the corrected review screenshot to BOTH subscriptions** (3 min)
+
+The screenshot you uploaded yesterday says "save 42%" — the real saving
+is **37%** ($14.99 vs $1.99×12 = $23.88). The file at
+`docs/marketing/iap-review/paywall-iphone-65.png` is regenerated with
+the right number (same 1242×2688 size Apple accepted).
+
+App Store Connect → Subscriptions → **TruNorth Pro Annual** → Review
+Information → replace Screenshot → Save. Repeat for **TruNorth Pro
+Monthly**.
+
 ### 1. **Create TruNorth Pro Monthly subscription** (10 min)
 
 App Store Connect → My Apps → TruNorth → Subscriptions → TruNorth Pro
@@ -89,7 +100,11 @@ PR #105 → cut the final App Store production build.
 - ✅ Apple banking + tax + agreements all Active
 - ✅ RevenueCat configured + iOS SDK Key wired into code
 - ✅ TruNorth Pro Annual: Prepare for Submission
-- ⏳ TruNorth Pro Monthly: not yet created
+- ✅ TruNorth Pro Monthly: created (Aron, Jun 10) — needs corrected
+  37% screenshot (step 0)
+- ✅ Full-app QA sweep: all 5 fix phases on main
+  (`c2d587bca`..`10811f944`) + payments P0s on the PR #105 branch
+  (`bc649612d`)
 - ⏳ Sandbox testers: not yet created
 - ⏳ TestFlight build with paywall: waiting on Monthly + sandbox testers
 - ⏳ Apple Small Business Program enrollment: reminder scheduled Jun 24

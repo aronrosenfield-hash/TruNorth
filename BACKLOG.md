@@ -4,7 +4,7 @@
 >
 > **How to use:** Open this file → say "let's do **L-3**" or "what's blocked?" or "what's the next highest-leverage item?"
 >
-> **Last updated:** 2026-06-09 — **GEO strategy shipped** (G-1..G-6, G-8): llms.txt, expanded AI-crawler allowlist, entity-disambiguation JSON-LD, per-brand provenance + TruNorth-authored Review schema, quotable summary lines, `/alternatives` + `/compare` landing pages (sitemap 11.3k → 30.6k URLs), PostHog AI-referrer tracking. Remaining GEO: G-7/G-9/G-10/G-11 (manual/recurring). Prior: 37 PRs merged Jun 8. **14 days to launch.**
+> **Last updated:** 2026-06-10 PM — **Full-app QA sweep: all 5 fix phases shipped to main** (`c2d587bca`..`10811f944`). Phase 1 data (legacy-category revert re-fixed, flags passthrough, HRC writer, trending slugs). Phase 2 payments-branch P0s (`bc649612d` on feat/paywall-go-live: getOfferings, cancel detection, tri-state entitlement revoke, $14.99/$1.99/37% copy). Phase 3 app criticals (deep-link detail fetch + /c/ links + consumption-based deepLinkSlug clear, S3 cap fix, dealbreaker math, Why-panel −20/−10 sync, Top Match capped-grade rank, onboarding live grades + real Terms/Privacy links, scanner double-fire, NaN sorts). Phase 4 web (SEO grade parity — 0/11,261 mismatches, lookupSpa await, JSON-LD escape, subscribe CORS preflight, landing 200+ sources, double-POST). Phase 5 infra (news-rss-nightly hang fixed: fetch timeouts + 35-min budget + partial commits; gdelt/openstates/nhtsa timeout bumps; dead dup writers removed; /privacy path + sitemap; local-day quota; 44px scanner close; grammar). IAP screenshot regenerated at 37% — **Aron must re-upload to BOTH subscriptions in ASC**. 15 empty augments flagged as a follow-up task. Prior: GEO shipped Jun 9. **13 days to launch.**
 
 ---
 
