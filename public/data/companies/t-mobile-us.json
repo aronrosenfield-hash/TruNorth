@@ -2,7 +2,7 @@
   "name": "T-Mobile US",
   "cat": "Technology",
   "init": "TMOB",
-  "overall": 45.8,
+  "overall": 45,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -50,9 +50,10 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
       "hrc-cei",
       "hrc-cei"
     ]
@@ -221,7 +222,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T02:48:36.402Z",
-  "realCats": 7,
+  "realCats": 6,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: On October 1, 2009, some users of Microsoft's Sidekick handset temporarily lost personal data, including contacts, notes, and calendars. On October 8, most data services were restored to users. The…",
     "sources": [
@@ -233,5 +234,22 @@
     "sources": [
       "cpuc"
     ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
   }
 }

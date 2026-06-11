@@ -2,7 +2,7 @@
   "name": "Home Depot",
   "cat": "Retail",
   "init": "HD",
-  "overall": 41.1,
+  "overall": 40,
   "isPublic": true,
   "ticker": "HD",
   "sc": {
@@ -458,11 +458,22 @@
   "health": {
     "s": "10 CPSC recalls on record; sample hazard: the mirror can detach from the medicine cabinet door."
   },
-  "realCats": 7,
+  "realCats": 6,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: The Home Depot was embroiled in whistleblower litigation brought under the Sarbanes-Oxley Act (SOX) law. In July 2005, former employee Michael Davis, represented by attorney Mark D. Schwartz, filed…",
     "sources": [
       "wikipedia-controversies"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
   }
 }

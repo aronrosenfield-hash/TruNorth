@@ -2,7 +2,7 @@
   "name": "Avis",
   "cat": "Automotive",
   "init": "ABG",
-  "overall": 46,
+  "overall": 44.5,
   "isPublic": true,
   "ticker": "CAR",
   "sc": {
@@ -336,5 +336,29 @@
   "health": {
     "s": "5 CPSC recalls (1 in past 24 months); latest hazard: choking."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

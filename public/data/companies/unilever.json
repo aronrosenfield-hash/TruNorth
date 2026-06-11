@@ -2,7 +2,7 @@
   "name": "Unilever",
   "cat": "Consumer Goods",
   "init": "UNL",
-  "overall": 46.9,
+  "overall": 46.4,
   "isPublic": true,
   "ticker": "UL",
   "sc": {
@@ -59,13 +59,14 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture.",
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Pro-DEI",
     "sources": [
       "Claude AI synthesis",
       "hrc-cei",
       "hrc-cei",
-      "bloomberg-gei"
+      "bloomberg-gei",
+      "hrc-cei"
     ]
   },
   "animals": {
@@ -387,11 +388,19 @@
   "health": {
     "s": "4 CPSC recalls on record; sample hazard: the controller of the freezer is incompatible with the unit and can overheat and."
   },
-  "realCats": 7,
+  "realCats": 6,
   "governance": {
     "s": "Wikipedia \"Controversies\" section: In April 2011, Unilever was fined €104&nbsp;million by the European Commission for establishing a price-fixing cartel for washing powder in Europe, along with Procter & Gamble and Henkel. In 2016,…",
     "sources": [
       "wikipedia-controversies"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    }
   }
 }

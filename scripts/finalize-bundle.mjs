@@ -68,6 +68,10 @@ function indexEntryFromCompanyFile(slug, d) {
     score:   d.overall,
     overall: d.overall,
     realCats: typeof d.realCats === "number" ? d.realCats : null,
+    // 2026-06-10 (QA): flags were silently dropped when Build 55 made this
+    // function re-derive the whole index — the scoring-flags feature (toggle
+    // ON Jun 16) reads them from index entries in list views.
+    ...(d.flags ? { flags: d.flags } : {}),
     ab:      d.ab,
     ac:      d.ac,
     sc:      d.sc || {},

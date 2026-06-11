@@ -2,7 +2,7 @@
   "name": "GE Appliances",
   "cat": "Consumer Goods",
   "init": "GEAP",
-  "overall": 44.5,
+  "overall": 41.4,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -181,11 +181,29 @@
   "health": {
     "s": "7 CPSC recalls on record; sample hazard: the cooktop's burners can remain on after use."
   },
-  "realCats": 3,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by Haier; HQ Louisville. (Wikidata Q1485263)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
   }
 }

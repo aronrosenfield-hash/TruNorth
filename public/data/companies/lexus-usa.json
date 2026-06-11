@@ -2,7 +2,7 @@
   "name": "Lexus USA",
   "cat": "Automotive",
   "init": "LEX",
-  "overall": 89,
+  "overall": 78,
   "isPublic": true,
   "ticker": "TM",
   "sc": {
@@ -144,5 +144,29 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 2
+  "realCats": 1,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

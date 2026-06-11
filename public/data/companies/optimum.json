@@ -2,7 +2,7 @@
   "name": "Optimum",
   "cat": "Retail",
   "init": "OPTI",
-  "overall": 46.5,
+  "overall": 65.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -167,11 +167,32 @@
   "health": {
     "s": "HHS Office of Inspector General: 3 OIG exclusions (Medicare/Medicaid debarment); 1 recent OIG enforcement action (past 24mo)."
   },
-  "realCats": 3,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by algorithmics. (Wikidata Q141495)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
   }
 }

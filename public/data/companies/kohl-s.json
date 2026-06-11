@@ -2,7 +2,7 @@
   "name": "Kohl's",
   "cat": "Retail",
   "init": "KSS",
-  "overall": 53.7,
+  "overall": 55.1,
   "isPublic": true,
   "ticker": "KSS",
   "sc": {
@@ -359,11 +359,26 @@
   "health": {
     "s": "12 CPSC recalls (1 in past 24 months); latest hazard: fire & fire-related burn."
   },
-  "realCats": 4,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by S&P 500; HQ Menomonee Falls. (Wikidata Q967265)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
   }
 }

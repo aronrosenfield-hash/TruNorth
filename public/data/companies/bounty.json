@@ -2,7 +2,7 @@
   "name": "Bounty",
   "cat": "Retail",
   "init": "BOUN",
-  "overall": 57.7,
+  "overall": 60.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -118,5 +118,23 @@
   "health": {
     "s": "1 CPSC recall on record."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  }
 }

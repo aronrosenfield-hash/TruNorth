@@ -2,7 +2,7 @@
   "name": "Acura USA",
   "cat": "Automotive",
   "init": "AUS",
-  "overall": 80.9,
+  "overall": 61.9,
   "isPublic": true,
   "ticker": "NYSE:HMC",
   "sc": {
@@ -139,5 +139,29 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 2
+  "realCats": 1,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

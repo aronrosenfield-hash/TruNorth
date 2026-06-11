@@ -2,7 +2,7 @@
   "name": "Lincoln / Ford",
   "cat": "Automotive",
   "init": "LF",
-  "overall": 74,
+  "overall": 48,
   "isPublic": true,
   "ticker": "F",
   "sc": {
@@ -176,5 +176,29 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 2
+  "realCats": 1,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

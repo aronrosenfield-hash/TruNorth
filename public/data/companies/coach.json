@@ -2,7 +2,7 @@
   "name": "Coach",
   "cat": "Apparel & Fashion",
   "init": "COAC",
-  "overall": 34.7,
+  "overall": 50,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -167,11 +167,32 @@
   "health": {
     "s": "HHS Office of Inspector General: 6 OIG exclusions (Medicare/Medicaid debarment)."
   },
-  "realCats": 3,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by Tapestry, Inc.; HQ New York City. (Wikidata Q727697)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Apparel & Fashion"
+    }
   }
 }

@@ -2,7 +2,7 @@
   "name": "Keurig",
   "cat": "Consumer Goods",
   "init": "KEUR",
-  "overall": 46,
+  "overall": 44.5,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -240,11 +240,29 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: water can overheat during brewing."
   },
-  "realCats": 4,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by Keurig Dr Pepper. (Wikidata Q6395629)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
   }
 }

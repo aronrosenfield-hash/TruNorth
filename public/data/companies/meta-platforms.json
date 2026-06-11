@@ -2,7 +2,7 @@
   "name": "Meta Platforms",
   "cat": "Technology",
   "init": "META",
-  "overall": 53.9,
+  "overall": 61.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -53,9 +53,10 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
       "hrc-cei",
       "hrc-cei"
     ]
@@ -254,11 +255,22 @@
       "child-safety-tech"
     ]
   },
-  "realCats": 7,
+  "realCats": 6,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Menlo Park. (Wikidata Q380)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "ExxonMobil",
-  "cat": "Energy",
+  "cat": "Energy & Utilities",
   "init": "XOM",
   "overall": 49.5,
   "isPublic": true,
@@ -56,10 +56,11 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 85/100 (2025) — strong LGBTQ+ workplace policies with minor deductions. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
+    "s": "HRC Corporate Equality Index: 85/100 (2025) — strong LGBTQ+ workplace policies with minor deductions. HRC Corporate Equality Index 85/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Anti-DEI",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
       "hrc-cei",
       "hrc-cei"
     ]
@@ -227,6 +228,23 @@
       "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
       "lastUpdated": "2026-06-09T22:43:03.890Z",
       "source": "newsweek-mrc"
+    }
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
     }
   }
 }

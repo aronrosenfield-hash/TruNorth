@@ -74,12 +74,31 @@ async function main() {
     return;
   }
 
+  // 2026-06-10 (QA fix): company_view events sometimes carry name but a null
+  // slug (the HogQL IS NOT NULL filter doesn't exclude explicit nulls the way
+  // we assumed) — which shipped 15/15 null-slug entries and left the app's
+  // Trending row permanently on its hardcoded fallback. Resolve missing slugs
+  // by exact name match against index.json; drop rows that still don't resolve.
+  const indexPath = path.resolve(__dirname, "..", "public", "data", "index.json");
+  const nameToSlug = new Map(
+    JSON.parse(fs.readFileSync(indexPath, "utf8")).map((c) => [String(c.name || "").toLowerCase(), c.slug])
+  );
+  const resolved = rows
+    .map(([slug, name, views, uniques]) => ({
+      slug: slug || nameToSlug.get(String(name || "").toLowerCase()) || null,
+      name, views, uniques,
+    }))
+    .filter((b) => b.slug && b.name);
+  if (!resolved.length) {
+    console.log("(No rows resolved to a known slug — leaving trending.json alone.)");
+    return;
+  }
+  console.log(`   resolved ${resolved.length}/${rows.length} rows to slugs`);
+
   const out = {
     generatedAt: new Date().toISOString(),
     lookbackDays: LOOKBACK_DAYS,
-    brands: rows.map(([slug, name, views, uniques]) => ({
-      slug, name, views, uniques,
-    })),
+    brands: resolved,
   };
 
   const outPath = path.resolve(__dirname, "..", "public", "data", "trending.json");

@@ -410,13 +410,23 @@ const WRITERS = [
     },
   },
   // ─── HRC Corporate Equality Index ─────────────────────────────────────
+  // 2026-06-10 (QA fix): the r3 augment shape is { lgbtq: { score, designation,
+  // vintage } }, not the flat { cei_score, year } this writer originally read —
+  // which printed "undefined/100 (undefined)" into 80 brand narratives.
+  // Guard hard: no narrative at all unless a numeric score is present.
   {
     name: "hrc-cei",
-    write: (e) => [{
-      category: "dei",
-      narrative: `HRC Corporate Equality Index ${e.cei_score}/100 (${e.year}) — top-tier LGBTQ+ workplace equality rating.`,
-      sc: "pro_dei", mergePositive: true,
-    }],
+    write: (e) => {
+      const score = e?.lgbtq?.score ?? e?.cei_score;
+      const year  = e?.lgbtq?.vintage ?? e?.year;
+      if (typeof score !== "number") return [];
+      const yearStr = year ? ` (${year})` : "";
+      return [{
+        category: "dei",
+        narrative: `HRC Corporate Equality Index ${score}/100${yearStr} — top-tier LGBTQ+ workplace equality rating.`,
+        sc: "pro_dei", mergePositive: true,
+      }];
+    },
   },
   // ─── Bloomberg Gender-Equality Index ──────────────────────────────────
   {

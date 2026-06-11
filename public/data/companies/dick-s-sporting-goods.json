@@ -2,7 +2,7 @@
   "name": "Dick's Sporting Goods",
   "cat": "Retail",
   "init": "DKS",
-  "overall": 53.5,
+  "overall": 54.7,
   "isPublic": true,
   "ticker": "DKS",
   "sc": {
@@ -358,5 +358,17 @@
   "health": {
     "s": "10 CPSC recalls on record; sample hazard: an elastic drawstring hem near the ankle of the pants can create an extended loo."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  }
 }

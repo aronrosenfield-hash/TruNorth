@@ -2,7 +2,7 @@
   "name": "State Farm",
   "cat": "Financial Services",
   "init": "SF",
-  "overall": 40.1,
+  "overall": 38,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -309,5 +309,26 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: the eyes on these bears can come off."
   },
-  "realCats": 6
+  "realCats": 5,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Financial Services"
+    }
+  }
 }

@@ -2,7 +2,7 @@
   "name": "Family Dollar",
   "cat": "Retail",
   "init": "FD",
-  "overall": 44.5,
+  "overall": 41.4,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -400,5 +400,26 @@
   "health": {
     "s": "17 CPSC recalls on record; sample hazard: the recalled loungers can collapse unexpectedly."
   },
-  "realCats": 3
+  "realCats": 2,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  }
 }

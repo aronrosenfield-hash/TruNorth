@@ -2,7 +2,7 @@
   "name": "Chevrolet",
   "cat": "Automotive",
   "init": "CHEV",
-  "overall": 57.4,
+  "overall": 60.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -158,11 +158,32 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 4,
+  "realCats": 3,
   "governance": {
     "s": "Wikidata: owned by General Motors; HQ Detroit. (Wikidata Q29570)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
   }
 }

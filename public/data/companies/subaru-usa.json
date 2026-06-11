@@ -2,7 +2,7 @@
   "name": "Subaru USA",
   "cat": "Automotive",
   "init": "SUB",
-  "overall": 76,
+  "overall": 64,
   "isPublic": true,
   "ticker": null,
   "sc": {
@@ -138,5 +138,29 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 3
+  "realCats": 2,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

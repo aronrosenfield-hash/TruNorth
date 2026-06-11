@@ -2,7 +2,7 @@
   "name": "Enterprise Rent-A-Car",
   "cat": "Automotive",
   "init": "ERC",
-  "overall": 17,
+  "overall": 21.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -170,5 +170,32 @@
   "health": {
     "s": "123 CPSC recalls (2 in past 24 months); latest hazard: fire & fire-related burn."
   },
-  "realCats": 3
+  "realCats": 2,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

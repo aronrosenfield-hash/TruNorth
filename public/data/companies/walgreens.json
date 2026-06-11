@@ -2,7 +2,7 @@
   "name": "Walgreens",
   "cat": "Retail",
   "init": "WBA",
-  "overall": 57.2,
+  "overall": 58.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -58,10 +58,11 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index undefined/100 (undefined) — top-tier LGBTQ+ workplace equality rating.",
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Mixed",
     "sources": [
       "Claude AI synthesis",
+      "hrc-cei",
       "hrc-cei",
       "hrc-cei"
     ]
@@ -273,5 +274,19 @@
   "health": {
     "s": "18 CPSC recalls on record; sample hazard: fire & fire-related burn."
   },
-  "realCats": 7
+  "realCats": 6,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  }
 }

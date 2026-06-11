@@ -2,7 +2,7 @@
   "name": "Philip Morris International",
   "cat": "Consumer Goods",
   "init": "PHIL",
-  "overall": 35,
+  "overall": 48.5,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -213,7 +213,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 3,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Lausanne. (Wikidata Q1852556)",
     "sources": [
@@ -232,5 +232,23 @@
       }
     },
     "lastUpdated": "2026-06-09T22:28:27.109Z"
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
   }
 }

@@ -2,7 +2,7 @@
   "name": "PetSmart",
   "cat": "Retail",
   "init": "PS",
-  "overall": 65.7,
+  "overall": 73.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -216,5 +216,23 @@
   "health": {
     "s": "8 CPSC recalls on record; sample hazard: the glass fish bowls can crack."
   },
-  "realCats": 3
+  "realCats": 2,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  }
 }

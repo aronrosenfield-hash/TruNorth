@@ -2,7 +2,7 @@
   "name": "DeWALT",
   "cat": "Manufacturing",
   "init": "DEWA",
-  "overall": 47.3,
+  "overall": 61.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -142,5 +142,23 @@
   "health": {
     "s": "29 CPSC recalls (3 in past 24 months); latest hazard: electrocution/electric shock."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Manufacturing"
+    }
+  }
 }

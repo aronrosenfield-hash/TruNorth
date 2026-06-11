@@ -2,7 +2,7 @@
   "name": "Sephora",
   "cat": "Retail",
   "init": "SEP",
-  "overall": 70,
+  "overall": 62.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -255,11 +255,25 @@
       "animal-welfare-ag-r3"
     ]
   },
-  "realCats": 5,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by LVMH; HQ Neuilly-sur-Seine. (Wikidata Q2408041)",
     "sources": [
       "wikidata"
     ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
   }
 }

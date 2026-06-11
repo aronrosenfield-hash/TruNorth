@@ -2,7 +2,7 @@
   "name": "Macy's",
   "cat": "Retail",
   "init": "MYS",
-  "overall": 44.4,
+  "overall": 53.5,
   "isPublic": true,
   "ticker": "M",
   "sc": {
@@ -343,5 +343,20 @@
   "health": {
     "s": "19 CPSC recalls (2 in past 24 months); latest hazard: fire & fire-related burn."
   },
-  "realCats": 5
+  "realCats": 4,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  }
 }

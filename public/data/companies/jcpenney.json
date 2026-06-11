@@ -2,7 +2,7 @@
   "name": "JCPenney",
   "cat": "Retail",
   "init": "JCP",
-  "overall": 57.8,
+  "overall": 60.6,
   "isPublic": true,
   "ticker": "JCPNQ",
   "sc": {
@@ -222,5 +222,17 @@
   "health": {
     "s": "11 CPSC recalls on record; sample hazard: the children's nightgowns fail to meet the flammability standards for children's."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  }
 }

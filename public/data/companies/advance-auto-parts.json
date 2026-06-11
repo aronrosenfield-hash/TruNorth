@@ -2,7 +2,7 @@
   "name": "ADVANCE AUTO PARTS",
   "cat": "Automotive",
   "init": "ADVA",
-  "overall": 46.9,
+  "overall": 46.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -217,5 +217,26 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: the compressor's motor can overheat and ignite the protective cover."
   },
-  "realCats": 5
+  "realCats": 4,
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Automotive"
+    }
+  }
 }

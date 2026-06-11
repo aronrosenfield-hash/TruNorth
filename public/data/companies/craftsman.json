@@ -2,7 +2,7 @@
   "name": "Craftsman",
   "cat": "Consumer Goods",
   "init": "CRAF",
-  "overall": 49.5,
+  "overall": 49.3,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -181,5 +181,23 @@
   "health": {
     "s": "19 CPSC recalls on record; sample hazard: laceration."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
+  }
 }

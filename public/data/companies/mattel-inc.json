@@ -2,7 +2,7 @@
   "name": "MATTEL INC",
   "cat": "Consumer Goods",
   "init": "MATT",
-  "overall": 46.4,
+  "overall": 45.1,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -225,5 +225,20 @@
   "health": {
     "s": "14 CPSC recalls on record; sample hazard: choking."
   },
-  "realCats": 4
+  "realCats": 3,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
+  }
 }

@@ -2,7 +2,7 @@
   "name": "Ford",
   "cat": "Automotive",
   "init": "FORD",
-  "overall": 48.2,
+  "overall": 47.9,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -250,7 +250,7 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 7,
+  "realCats": 6,
   "enriched": {
     "newsweekMrc": {
       "rank": 71,
@@ -259,6 +259,20 @@
       "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
       "lastUpdated": "2026-06-09T22:43:03.890Z",
       "source": "newsweek-mrc"
+    }
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
     }
   }
 }

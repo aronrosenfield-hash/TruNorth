@@ -101,15 +101,32 @@ test("Patagonia → execPay notDisclosed (private), guns na, health na", () => {
 });
 
 test("environment _inferred — present iff narrative is 'No public record found.' AND in carbon augment", () => {
-  // Apple: narrative IS 'No public record found.' → _inferred fires.
-  const apple = readCompany("apple");
-  const f1 = computeFlagsForCompany(apple, LOOKUPS);
-  assert.deepEqual(f1.environment, { _inferred: true, basis: "Technology" });
+  // 2026-06-10: Apple (the old fixture) gained a real SBTi environment
+  // narrative in the r3-r5 enrichment rounds, so _inferred is now correctly
+  // suppressed for it. Discover a still-inferred company dynamically: one
+  // whose environment narrative is "No public record found." — for those,
+  // _inferred must fire with a string basis.
+  const slugs = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
+  let inferred = null;
+  for (const file of slugs) {
+    const co = readJSON(path.join(COMPANIES_DIR, file));
+    if (!/^\s*no public record found\.?\s*$/i.test(co.environment?.s || "")) continue;
+    const f = computeFlagsForCompany(co, LOOKUPS);
+    if (f.environment?._inferred === true) { inferred = { slug: co.slug || file, flags: f }; break; }
+  }
+  assert.ok(inferred, "expected at least one company with an inferred environment flag");
+  assert.equal(inferred.flags.environment._inferred, true);
+  assert.equal(typeof inferred.flags.environment.basis, "string");
 
   // Walmart: narrative is a real violation summary → _inferred suppressed.
   const walmart = readCompany("walmart");
   const f2 = computeFlagsForCompany(walmart, LOOKUPS);
   assert.equal(f2.environment, undefined);
+
+  // Apple: now enriched (SBTi narrative) → _inferred suppressed too.
+  const apple = readCompany("apple");
+  const f1 = computeFlagsForCompany(apple, LOOKUPS);
+  assert.equal(f1.environment, undefined);
 });
 
 test("small private brand → execPay/dei/charity/transparency notDisclosed", () => {
@@ -137,9 +154,9 @@ test("small private brand → execPay/dei/charity/transparency notDisclosed", ()
 
 // ─────────────────────── corpus-wide invariants ───────────────────────
 
-test("all 11260 companies process without throwing; flags shape is canonical", () => {
+test("all 11261 companies process without throwing; flags shape is canonical", () => {
   const slugs = fs.readdirSync(COMPANIES_DIR).filter(f => f.endsWith(".json"));
-  assert.equal(slugs.length, 11260, `expected 11260 companies, got ${slugs.length}`);
+  assert.equal(slugs.length, 11261, `expected 11261 companies, got ${slugs.length}`);
   let ok = 0;
   for (const file of slugs) {
     const co = readJSON(path.join(COMPANIES_DIR, file));
@@ -159,7 +176,7 @@ test("all 11260 companies process without throwing; flags shape is canonical", (
     }
     ok++;
   }
-  assert.equal(ok, 11260);
+  assert.equal(ok, 11261);
 });
 
 test("snapshot diff — sc.<cat> values unchanged before/after reflag (hash compare)", () => {
