@@ -2,7 +2,7 @@
   "name": "HOST HOTELS & RESORTS",
   "cat": "Hospitality",
   "init": "HOST",
-  "overall": 48.8,
+  "overall": 49.4,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $277K in executive political donations; partisan lean Republican +35 across 8 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $16.4M (2024; other named executives averaged $4.1M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 195:1 (median employee pay $243,291) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -137,7 +139,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:18:12.664Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -154,6 +156,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Hospitality"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 243291,
+      "payRatio": 195,
+      "year": null,
+      "ticker": "HST",
+      "cik": "0001070750",
+      "filingDate": "2026-04-08",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1070750/000107075026000062/hst-20260407.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

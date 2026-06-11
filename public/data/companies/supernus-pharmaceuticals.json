@@ -2,7 +2,7 @@
   "name": "SUPERNUS PHARMACEUTICALS",
   "cat": "Healthcare",
   "init": "SUPE",
-  "overall": 77,
+  "overall": 63.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $614K in executive political donations; partisan lean split across 15 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $12.6M (2024; other named executives averaged $1.6M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 81:1 (median employee pay $192,397) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -133,7 +135,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T01:18:36.681Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -150,6 +152,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 192397,
+      "payRatio": 81,
+      "year": null,
+      "ticker": "SUPN",
+      "cik": "0001356576",
+      "filingDate": "2026-04-30",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1356576/000110465926053111/tm261453-1_def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

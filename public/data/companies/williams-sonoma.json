@@ -2,7 +2,7 @@
   "name": "Williams Sonoma",
   "cat": "Retail",
   "init": "WILL",
-  "overall": 53,
+  "overall": 43.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "poor"
   },
   "political": {
     "s": "FEC: $112K in executive political donations; partisan lean split across 7 executive donors.",
@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "$8M reported corporate giving in 2024 (~0.10% of revenue).",
     "sources": [
@@ -69,10 +72,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $27.7M (2024; other named executives averaged $5.3M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 335:1 (median employee pay $24,943; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -218,7 +220,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T03:44:02.291Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -228,6 +230,27 @@
     },
     "transparency": {
       "notDisclosed": true
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Our",
+      "ceoTotal": 50,
+      "ceoBaseSalary": 2025,
+      "ceoBonus": 2025,
+      "ceoStockAwards": 500,
+      "ceoOptionAwards": 40,
+      "ceoNonEquityIncentive": 2025,
+      "ceoAllOtherComp": 401,
+      "medianEmployeePay": 24943,
+      "payRatio": 335,
+      "year": 2026,
+      "ticker": "WSM",
+      "cik": "0000719955",
+      "filingDate": "2026-05-06",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000109/wsm-20260506.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

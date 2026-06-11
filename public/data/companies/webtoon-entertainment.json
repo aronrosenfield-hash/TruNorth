@@ -2,7 +2,7 @@
   "name": "WEBTOON Entertainment",
   "cat": "Entertainment & Media",
   "init": "WEBT",
-  "overall": null,
+  "overall": 97,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "No public record found.",
@@ -27,7 +27,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -63,10 +66,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $41.1M (2024; other named executives averaged $3.7M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 12:1 (median employee pay $81,147; CEO total compensation $936K) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -115,7 +117,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 0,
+  "realCats": 1,
   "flags": {
     "animals": {
       "na": true
@@ -141,6 +143,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Entertainment & Media"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Junkoo Kim",
+      "ceoTotal": 935582,
+      "ceoBaseSalary": 584537,
+      "ceoBonus": 8212,
+      "ceoStockAwards": 8212,
+      "ceoOptionAwards": 8212,
+      "ceoNonEquityIncentive": 285000,
+      "ceoAllOtherComp": 66045,
+      "medianEmployeePay": 81147,
+      "payRatio": 11.53,
+      "year": 2025,
+      "ticker": "WBTN",
+      "cik": "0001997859",
+      "filingDate": "2026-04-22",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1997859/000199785926000055/wbtn-20260421.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

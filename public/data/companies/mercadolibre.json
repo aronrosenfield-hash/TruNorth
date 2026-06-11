@@ -2,7 +2,7 @@
   "name": "MERCADOLIBRE",
   "cat": "Retail",
   "init": "MERC",
-  "overall": 81.9,
+  "overall": 45,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "poor"
   },
   "political": {
     "s": "FEC: $120K in executive political donations; partisan lean split across 3 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $13.7M (2024; other named executives averaged $4.0M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 681:1 (median employee pay $7,816; CEO total compensation $2K) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -140,7 +142,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T23:18:30.736Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -160,6 +162,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Marcos Galperin",
+      "ceoTotal": 2025,
+      "ceoBaseSalary": 592521,
+      "ceoBonus": 277088,
+      "ceoStockAwards": 12268318,
+      "ceoOptionAwards": 8212,
+      "ceoNonEquityIncentive": 13137927,
+      "ceoAllOtherComp": 237,
+      "medianEmployeePay": 7816,
+      "payRatio": 681,
+      "year": 2025,
+      "ticker": "MELI",
+      "cik": "0001099590",
+      "filingDate": "2026-04-23",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000010/meli-20260423.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

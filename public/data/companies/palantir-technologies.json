@@ -2,7 +2,7 @@
   "name": "Palantir Technologies",
   "cat": "Technology",
   "init": "PALA",
-  "overall": 49.7,
+  "overall": 61.6,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "good",
     "governance": "neutral"
   },
   "political": {
@@ -34,7 +34,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "$15M reported corporate giving in 2024 (~0.23% of revenue).",
     "sources": [
@@ -72,10 +75,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $4.6M (2024; other named executives averaged $6.3M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 37:1 (median employee pay $235,115) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#2a0d0d",
@@ -205,7 +207,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:02:24.762Z",
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by BlackRock; HQ Miami. (Wikidata Q2047336)",
     "sources": [
@@ -231,6 +233,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 235115,
+      "payRatio": 37,
+      "year": null,
+      "ticker": "PLTR",
+      "cik": "0001321655",
+      "filingDate": "2026-04-24",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

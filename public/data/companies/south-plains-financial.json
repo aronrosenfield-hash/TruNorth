@@ -2,7 +2,7 @@
   "name": "SOUTH PLAINS FINANCIAL",
   "cat": "Financial Services",
   "init": "SOUT",
-  "overall": 76.5,
+  "overall": 86.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $710K in executive political donations; partisan lean split across 20 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $2.1M (2024; other named executives averaged $804K) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 49:1 (median employee pay $46,287) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -135,7 +137,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T01:02:57.651Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -158,6 +160,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Financial Services"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 46287,
+      "payRatio": 49,
+      "year": null,
+      "ticker": "SPFI",
+      "cik": "0001163668",
+      "filingDate": "2026-04-06",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1163668/000114036126013355/ny20063159x2_def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

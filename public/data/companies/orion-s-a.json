@@ -2,7 +2,7 @@
   "name": "Orion S.A.",
   "cat": "Food & Beverage",
   "init": "ORIO",
-  "overall": 54.8,
+  "overall": 70.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $278K in executive political donations; partisan lean split across 14 executive donors.",
@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -68,10 +71,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $4.6M (2024; other named executives averaged $962K) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 45:1 (median employee pay $78,448) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -179,7 +181,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T23:59:52.068Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -196,6 +198,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 78448,
+      "payRatio": 45,
+      "year": null,
+      "ticker": "OEC",
+      "cik": "0001609804",
+      "filingDate": "2026-04-24",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1609804/000130817926000347/oec014447-def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

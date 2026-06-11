@@ -2,7 +2,7 @@
   "name": "Bumble",
   "cat": "Technology",
   "init": "BUMB",
-  "overall": 50,
+  "overall": 67.1,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "good",
     "health": "mixed",
     "governance": "poor"
   },
@@ -31,7 +31,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "ab": "#2a1a05",
   "ac": "#f0a030",
   "charity": {
@@ -70,9 +73,10 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "CEO-to-median-worker pay ratio 43:1 (median employee pay $178,674; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2024).",
     "sources": [
-      "Claude AI synthesis"
+      "Claude AI synthesis",
+      "sec-def14a"
     ]
   },
   "competitors": [
@@ -171,7 +175,7 @@
   "health": {
     "s": "2 CPSC recalls on record; sample hazard: the front wheel can break at the axle hub."
   },
-  "realCats": 2,
+  "realCats": 3,
   "governance": {
     "s": "Wikipedia \"Lawsuits\" section: In March 2018, Match Group sued Bumble, arguing that it was guilty of patent infringement and of stealing trade secrets from Tinder. In June 2020, an undisclosed settlement was reached between Match…",
     "sources": [
@@ -197,6 +201,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Former",
+      "ceoTotal": 3,
+      "ceoBaseSalary": 2024,
+      "ceoBonus": 17,
+      "ceoStockAwards": 2025,
+      "ceoOptionAwards": 2,
+      "ceoNonEquityIncentive": 12,
+      "ceoAllOtherComp": 2025,
+      "medianEmployeePay": 178674,
+      "payRatio": 43,
+      "year": 2024,
+      "ticker": "BMBL",
+      "cik": "0001830043",
+      "filingDate": "2026-04-17",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1830043/000162828026025680/bmbl-20260417.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

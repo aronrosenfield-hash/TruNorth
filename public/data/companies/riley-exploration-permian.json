@@ -2,7 +2,7 @@
   "name": "Riley Exploration Permian",
   "cat": "Energy & Utilities",
   "init": "RILE",
-  "overall": 82,
+  "overall": 89.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $116K in executive political donations; partisan lean split across 7 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $3.5M (2024; other named executives averaged $1.8M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 30:1 (median employee pay $193,097) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -114,7 +116,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:24:21.216Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -137,6 +139,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Energy & Utilities"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 193097,
+      "payRatio": 30,
+      "year": null,
+      "ticker": "REPX",
+      "cik": "0001001614",
+      "filingDate": "2026-04-10",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1001614/000114036126014090/ef20069823_def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

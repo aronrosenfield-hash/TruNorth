@@ -2,7 +2,7 @@
   "name": "JONES LANG LASALLE",
   "cat": "Financial Services",
   "init": "JONE",
-  "overall": 37.5,
+  "overall": 41.1,
   "isPublic": true,
   "sc": {
     "political": "right-leaning",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $679K in executive political donations; partisan lean Republican +25 across 24 executive donors.",
@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -68,10 +71,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $17.0M (2024; other named executives averaged $8.1M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 243:1 (median employee pay $10,000; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -225,7 +227,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:43:44.841Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "animals": {
       "na": true
@@ -241,6 +243,27 @@
     },
     "transparency": {
       "notDisclosed": true
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Name Title Christian Ulbrich",
+      "ceoTotal": 35,
+      "ceoBaseSalary": 2026,
+      "ceoBonus": 43,
+      "ceoStockAwards": 93,
+      "ceoOptionAwards": 88,
+      "ceoNonEquityIncentive": 19,
+      "ceoAllOtherComp": 74,
+      "medianEmployeePay": 10000,
+      "payRatio": 243,
+      "year": 2025,
+      "ticker": "JLL",
+      "cik": "0001037976",
+      "filingDate": "2026-04-17",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1037976/000103797626000099/jll-20260417.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

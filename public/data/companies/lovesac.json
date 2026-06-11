@@ -2,7 +2,7 @@
   "name": "Lovesac",
   "cat": "Consumer Goods",
   "init": "LOVE",
-  "overall": 81.5,
+  "overall": 65.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $137K in executive political donations; partisan lean split across 9 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $4.7M (2024; other named executives averaged $3.5M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 218:1 (median employee pay $22,725) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -148,7 +150,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T23:05:12.820Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "guns": {
       "na": true
@@ -168,6 +170,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 22725,
+      "payRatio": 218,
+      "year": null,
+      "ticker": "LOVE",
+      "cik": "0001701758",
+      "filingDate": "2026-04-23",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1701758/000130817926000324/love015445-def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

@@ -2,7 +2,7 @@
   "name": "IMPINJ",
   "cat": "Technology",
   "init": "IMPI",
-  "overall": 42.9,
+  "overall": 70,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $1.03M in executive political donations; partisan lean Democratic +60 across 26 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $11.2M (2024; other named executives averaged $4.1M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 35:1 (median employee pay $203,359) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -131,7 +133,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:26:53.074Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -154,6 +156,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 203359,
+      "payRatio": 35,
+      "year": null,
+      "ticker": "PI",
+      "cik": "0001114995",
+      "filingDate": "2026-04-16",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1114995/000119312526159032/pi-20260416.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

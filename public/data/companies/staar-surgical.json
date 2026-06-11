@@ -1,1 +1,210 @@
-{"name":"STAAR SURGICAL","cat":"Healthcare","init":"STAA","overall":79,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na"},"political":{"s":"FEC: $319K in executive political donations; partisan lean split across 12 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-28","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","competitors":["alcon","johnson-and-johnson","lensar"],"secComplaints":{"count":5,"sample":[{"adsh":"0000950170-25-027880","date":"2025-02-26","filer":"STAAR SURGICAL CO  (STAA)  (CIK 0000718937)","form":"8-K"},{"adsh":"0000950170-25-027880","date":"2025-02-26","filer":"STAAR SURGICAL CO  (STAA)  (CIK 0000718937)","form":"8-K"},{"adsh":"0001193125-26-013622","date":"2026-01-15","filer":"STAAR SURGICAL CO  (STAA)  (CIK 0000718937)","form":"8-K"}]},"wiki":{"founded":"1982-01-01","hq":null,"employees":null,"revenue":null,"parent":null,"industry":null,"products":null,"keyPeople":null,"website":"https://staar.com/","controversies":null,"logoUrl":null,"wikipediaUrl":null,"extract":null},"recalls":{"recalls":[{"agency":"FDA","date":"2026-01-21","productName":"EVO+ Visian Toric Implantable Collamer Lens (TICL), Model: VTICM5","reason":"Toric Implantable Collamer for correction/reduction of myopia in phakic eyes with astigmatism were labeled as 12.1 mm length but are 12.6 mm length lenses, so there is the potential for excessive vault, which may cause: Significant reduction of irido-corneal angles, Significant shallowing of anterior chamber, Patient discomfort, Elevated IOP/Angle closure, Unreactive pupil, Lens exchange/removal.","severity":"medium","recallUrl":"https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1480-2026%22","recallId":"Z-1480-2026"}],"recallCount24mo":1,"lastRecallDate":"2026-01-21","severityMax":"medium"},"slug":"staar-surgical","bbb":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-24","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=STAAR%20SURGICAL&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-28T01:04:43.545Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-28T01:04:43.545Z","realCats":1,"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Healthcare"}}}
+{
+  "name": "STAAR SURGICAL",
+  "cat": "Healthcare",
+  "init": "STAA",
+  "overall": 64.5,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "mixed"
+  },
+  "political": {
+    "s": "FEC: $319K in executive political donations; partisan lean split across 12 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "CEO-to-median-worker pay ratio 97:1 (median employee pay $89,344; CEO total compensation $8K) — SEC proxy statement (DEF 14A, 2025).",
+    "sources": [
+      "Claude AI synthesis",
+      "sec-def14a"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "competitors": [
+    "alcon",
+    "johnson-and-johnson",
+    "lensar"
+  ],
+  "secComplaints": {
+    "count": 5,
+    "sample": [
+      {
+        "adsh": "0000950170-25-027880",
+        "date": "2025-02-26",
+        "filer": "STAAR SURGICAL CO  (STAA)  (CIK 0000718937)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000950170-25-027880",
+        "date": "2025-02-26",
+        "filer": "STAAR SURGICAL CO  (STAA)  (CIK 0000718937)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-26-013622",
+        "date": "2026-01-15",
+        "filer": "STAAR SURGICAL CO  (STAA)  (CIK 0000718937)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "wiki": {
+    "founded": "1982-01-01",
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": null,
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://staar.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": null,
+    "extract": null
+  },
+  "recalls": {
+    "recalls": [
+      {
+        "agency": "FDA",
+        "date": "2026-01-21",
+        "productName": "EVO+ Visian Toric Implantable Collamer Lens (TICL), Model: VTICM5",
+        "reason": "Toric Implantable Collamer for correction/reduction of myopia in phakic eyes with astigmatism were labeled as 12.1 mm length but are 12.6 mm length lenses, so there is the potential for excessive vault, which may cause: Significant reduction of irido-corneal angles, Significant shallowing of anterior chamber, Patient discomfort, Elevated IOP/Angle closure, Unreactive pupil, Lens exchange/removal.",
+        "severity": "medium",
+        "recallUrl": "https://api.fda.gov/device/enforcement.json?search=recall_number:%22Z-1480-2026%22",
+        "recallId": "Z-1480-2026"
+      }
+    ],
+    "recallCount24mo": 1,
+    "lastRecallDate": "2026-01-21",
+    "severityMax": "medium"
+  },
+  "slug": "staar-surgical",
+  "bbb": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-24",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=STAAR%20SURGICAL&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-28T01:04:43.545Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-28T01:04:43.545Z",
+  "realCats": 2,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Stephen C. Farrell",
+      "ceoTotal": 8211,
+      "ceoBaseSalary": 2025,
+      "ceoBonus": 2025,
+      "ceoStockAwards": 2025,
+      "ceoOptionAwards": 2020,
+      "ceoNonEquityIncentive": 2025,
+      "ceoAllOtherComp": 2026,
+      "medianEmployeePay": 89344,
+      "payRatio": 97,
+      "year": 2025,
+      "ticker": "STAA",
+      "cik": "0000718937",
+      "filingDate": "2026-05-04",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/718937/000071893726000015/staa-20260501.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
+    }
+  }
+}

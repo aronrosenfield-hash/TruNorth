@@ -2,7 +2,7 @@
   "name": "ServisFirst Bancshares",
   "cat": "Financial Services",
   "init": "SERV",
-  "overall": 76.1,
+  "overall": 86.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $811K in executive political donations; partisan lean split across 18 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $2.1M (2024; other named executives averaged $499K) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 0:1 (median employee pay $80,196; CEO total compensation $10K) — SEC proxy statement (DEF 14A, 2007).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -128,7 +130,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:41:25.225Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -151,6 +153,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Financial Services"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Retired",
+      "ceoTotal": 10003,
+      "ceoBaseSalary": 10003,
+      "ceoBonus": 56,
+      "ceoStockAwards": 2023,
+      "ceoOptionAwards": 10003,
+      "ceoNonEquityIncentive": 50,
+      "ceoAllOtherComp": 2019,
+      "medianEmployeePay": 80196,
+      "payRatio": 0.1,
+      "year": 2007,
+      "ticker": "SFBS",
+      "cik": "0001430723",
+      "filingDate": "2026-04-06",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1430723/000117184326002258/sfbs20260401_def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

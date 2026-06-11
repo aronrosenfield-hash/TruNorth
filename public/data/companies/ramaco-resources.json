@@ -2,7 +2,7 @@
   "name": "Ramaco Resources",
   "cat": "Energy & Utilities",
   "init": "RAMA",
-  "overall": 66.1,
+  "overall": 60.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $113K in executive political donations; partisan lean split across 5 executive donors.",
@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -68,10 +71,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $7.8M (2024; other named executives averaged $3.0M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 78:1 (median employee pay $117,751; CEO total compensation $1K) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -162,7 +164,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:20:19.731Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -185,6 +187,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Energy & Utilities"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Randall W. Atkins",
+      "ceoTotal": 859,
+      "ceoBaseSalary": 2026,
+      "ceoBonus": 2025,
+      "ceoStockAwards": 2026,
+      "ceoOptionAwards": 250,
+      "ceoNonEquityIncentive": 1900,
+      "ceoAllOtherComp": 40507,
+      "medianEmployeePay": 117751,
+      "payRatio": 78,
+      "year": 2026,
+      "ticker": "METC",
+      "cik": "0001687187",
+      "filingDate": "2026-04-27",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1687187/000121390026047772/ea0286044-01.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

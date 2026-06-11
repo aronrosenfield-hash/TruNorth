@@ -2,7 +2,7 @@
   "name": "NEXSTAR MEDIA GROUP",
   "cat": "Entertainment & Media",
   "init": "NEXS",
-  "overall": 42.2,
+  "overall": 30.8,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "poor"
   },
   "political": {
     "s": "FEC: $53K PAC donations; 93% to Republican, 7% to Democratic committees.",
@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -69,10 +72,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $35.9M (2024; other named executives averaged $4.4M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 612:1 (median employee pay $64,536) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#2a0d0d",
@@ -216,7 +218,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T23:38:27.489Z",
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "animals": {
       "na": true
@@ -239,6 +241,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Entertainment & Media"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 64536,
+      "payRatio": 612,
+      "year": null,
+      "ticker": "NXST",
+      "cik": "0001142417",
+      "filingDate": "2026-04-30",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1142417/000114241726000016/nxst-20260430.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

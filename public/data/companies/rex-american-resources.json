@@ -2,7 +2,7 @@
   "name": "REX AMERICAN RESOURCES",
   "cat": "Energy & Utilities",
   "init": "REXA",
-  "overall": 82.1,
+  "overall": 66.1,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "FEC: $114K in executive political donations; partisan lean split across 8 executive donors.",
@@ -27,7 +27,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -63,10 +66,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $4.2M (2024; other named executives averaged $2.4M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 73:1 (median employee pay $71,880) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#2a0d0d",
@@ -129,7 +131,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:23:31.860Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -152,6 +154,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Energy & Utilities"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 71880,
+      "payRatio": 73.4,
+      "year": null,
+      "ticker": "REX",
+      "cik": "0000744187",
+      "filingDate": "2026-04-15",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/744187/000093041326001049/c115955_def14a-ixbrl.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

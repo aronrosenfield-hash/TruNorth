@@ -2,7 +2,7 @@
   "name": "Babcock & Wilcox Enterprises",
   "cat": "Manufacturing",
   "init": "BABC",
-  "overall": 32.4,
+  "overall": 50.9,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $12K PAC donations; 100% to Republican, 0% to Democratic committees.",
@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -71,10 +74,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $2.9M (2024; other named executives averaged $788K) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 25:1 (median employee pay $77,847) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "competitors": [
@@ -223,7 +225,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T18:56:25.201Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -239,6 +241,27 @@
     },
     "transparency": {
       "notDisclosed": true
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 77847,
+      "payRatio": 25,
+      "year": null,
+      "ticker": "BW",
+      "cik": "0001630805",
+      "filingDate": "2026-04-13",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1630805/000110465926042128/tm261491-4_def14a.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

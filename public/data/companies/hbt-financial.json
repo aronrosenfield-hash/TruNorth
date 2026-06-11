@@ -2,7 +2,7 @@
   "name": "HBT Financial",
   "cat": "Financial Services",
   "init": "HBTF",
-  "overall": 76.2,
+  "overall": 86.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $796K in executive political donations; partisan lean split across 22 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $1.2M (2024; other named executives averaged $617K) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 22:1 — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -123,7 +125,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T22:13:57.670Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -146,6 +148,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Financial Services"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": null,
+      "payRatio": 22,
+      "year": null,
+      "ticker": "HBT",
+      "cik": "0000775215",
+      "filingDate": "2026-04-08",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/775215/000077521526000037/hbt-20260407.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

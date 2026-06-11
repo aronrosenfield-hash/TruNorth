@@ -2,7 +2,7 @@
   "name": "MEDALLION FINANCIAL",
   "cat": "Financial Services",
   "init": "MEDA",
-  "overall": 75.9,
+  "overall": 86.5,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $866K in executive political donations; partisan lean split across 23 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $2.6M (2024; other named executives averaged $2.3M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 26:1 (median employee pay $101,538) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -138,7 +140,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T23:12:33.135Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -161,6 +163,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Financial Services"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": null,
+      "ceoTotal": null,
+      "ceoBaseSalary": null,
+      "ceoBonus": null,
+      "ceoStockAwards": null,
+      "ceoOptionAwards": null,
+      "ceoNonEquityIncentive": null,
+      "ceoAllOtherComp": null,
+      "medianEmployeePay": 101538,
+      "payRatio": 26,
+      "year": null,
+      "ticker": "MFIN",
+      "cik": "0001000209",
+      "filingDate": "2025-04-30",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1000209/000095017025061067/mfin-20250430.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

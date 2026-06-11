@@ -2,7 +2,7 @@
   "name": "PHINIA",
   "cat": "Technology",
   "init": "PHIN",
-  "overall": 45.2,
+  "overall": 71.1,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "good"
   },
   "political": {
     "s": "FEC: $994K in executive political donations; partisan lean Democratic +39 across 23 executive donors.",
@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -64,10 +67,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $9.7M (2024; other named executives averaged $1.8M) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 0:1 (median employee pay $140,000; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#0d2318",
@@ -127,7 +129,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-28T00:07:52.446Z",
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -150,6 +152,27 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Brady D. Ericson",
+      "ceoTotal": 44,
+      "ceoBaseSalary": 39,
+      "ceoBonus": 39,
+      "ceoStockAwards": 41,
+      "ceoOptionAwards": 41,
+      "ceoNonEquityIncentive": 42,
+      "ceoAllOtherComp": 44,
+      "medianEmployeePay": 140000,
+      "payRatio": 0,
+      "year": 2025,
+      "ticker": "PHIN",
+      "cik": "0001968915",
+      "filingDate": "2026-04-09",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1968915/000196891526000061/phin-20260408.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }

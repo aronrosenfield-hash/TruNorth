@@ -2,7 +2,7 @@
   "name": "Titan",
   "cat": "Consumer Goods",
   "init": "TITA",
-  "overall": 41.6,
+  "overall": 44,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "na",
-    "execPay": "na"
+    "execPay": "mixed"
   },
   "political": {
     "s": "No FEC PAC data found.",
@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "execPay": "2026-06-11T03:48:51.753Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -69,10 +72,9 @@
     ]
   },
   "execPay": {
-    "s": "CEO total compensation $2.7M (2024; other named executives averaged $889K) — SEC pay-versus-performance disclosure (Item 402(v) XBRL).",
+    "s": "CEO-to-median-worker pay ratio 69:1 (median employee pay $35,633; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2024).",
     "sources": [
-      "Claude AI synthesis",
-      "sec-ecd"
+      "sec-def14a"
     ]
   },
   "ab": "#2a0d0d",
@@ -224,7 +226,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T02:54:51.390Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "guns": {
       "na": true
@@ -240,6 +242,27 @@
     },
     "transparency": {
       "notDisclosed": true
+    }
+  },
+  "enriched": {
+    "execPay": {
+      "ceoName": "Titan's",
+      "ceoTotal": 22,
+      "ceoBaseSalary": 2026,
+      "ceoBonus": 2026,
+      "ceoStockAwards": 21,
+      "ceoOptionAwards": 31,
+      "ceoNonEquityIncentive": 2025,
+      "ceoAllOtherComp": 2026,
+      "medianEmployeePay": 35633,
+      "payRatio": 69,
+      "year": 2024,
+      "ticker": "TWI",
+      "cik": "0000899751",
+      "filingDate": "2026-04-29",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/899751/000089975126000033/twi-20260427.htm",
+      "lastUpdated": "2026-06-11T03:48:51.753Z",
+      "source": "sec-def14a"
     }
   }
 }
