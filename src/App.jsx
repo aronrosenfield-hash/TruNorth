@@ -257,6 +257,13 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
               if (codes && codes.length > 0) {
                 const code = codes[0].rawValue;
                 if (code && code !== lastCode) {
+                  // QA fix 2026-06-10: `lastCode` here is the STALE closure
+                  // value from when the effect ran, so this guard never blocked
+                  // a repeat — the 200ms interval kept calling lookup(code) for
+                  // the same barcode until unmount (duplicate lookups, history
+                  // spam, track() double-fires). Kill the interval on first hit;
+                  // a re-scan re-mounts the scanner with a fresh interval.
+                  if (intervalId) { clearInterval(intervalId); intervalId = null; }
                   setLastCode(code);
                   lookup(code);
                   return;
@@ -886,9 +893,18 @@ function computeScore(co, profile) {
     if (db === "childLabor"     && co.childLabor) return p + 20;
     return p;
   }, 0);
-  // Animal-testing dealbreaker special-case: penalty -20 (was -40)
-  if (profile.animalTesting === "dealbreaker" && (co.sc.animals === "tests_animals")) return Math.max(0, Math.min(ws - 20, 30));
-  return Math.max(0, Math.min(100, Math.round(ws - pen)));
+  // Animal-testing dealbreaker special-case: penalty -20 (was -40).
+  // QA fix 2026-06-10: this early-returned `ws - 20` and silently DROPPED the
+  // accumulated `pen` from the user's other dealbreakers (and skipped the
+  // rounding) — a brand could trip childLabor + animal-testing and only pay
+  // for one. Fold it into pen and share the single clamp/round exit.
+  let totalPen = pen;
+  let cap = 100;
+  if (profile.animalTesting === "dealbreaker" && (co.sc.animals === "tests_animals")) {
+    totalPen += 20;
+    cap = 30; // animal-testing dealbreaker also caps the score at 30 (D range)
+  }
+  return Math.max(0, Math.min(cap, Math.round(ws - totalPen)));
 }
 
 // ─── DISPLAY HELPERS ─────────────────────────────────────────────────────────
@@ -1023,13 +1039,28 @@ function scoreGrade(n, realCats) {
 // personalization is generous, never stricter than the base cap.
 // If there's no profile, fall back to base realCats unchanged.
 const CAT_KEYS_FOR_REL = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay","health"];
+// QA fix 2026-06-10: this read profile[k] for weights, but the quiz stores
+// rank weights under profile.weights[k] and stance boosts as separate string
+// fields (lean / deiLean / animalTesting / guns / unionSupport) — so
+// boostedFilled was ALWAYS 0 and the S3 personalized cap never ran. Now
+// mirrors computeScore's actual boost logic: a category counts as "actively
+// boosted" when its quiz rank weight exceeds the 1.2 default ceiling OR its
+// stance field is set away from neutral (the 1.5× boosts).
 function userRelevantRealCats(co, profile) {
   if (!profile || !co) return co?.realCats ?? null;
   const sc = co.sc || {};
-  let boostedFilled = 0;
+  const boosted = new Set();
+  const w = profile.weights || {};
   for (const k of CAT_KEYS_FOR_REL) {
-    const w = profile[k];
-    if (typeof w !== "number" || w <= 1.0) continue; // only actively boosted
+    if (typeof w[k] === "number" && w[k] > 1.2) boosted.add(k); // above any default
+  }
+  if (profile.lean          && profile.lean          !== "neutral") boosted.add("political");
+  if (profile.deiLean       && profile.deiLean       !== "neutral") boosted.add("dei");
+  if (profile.animalTesting && profile.animalTesting !== "neutral") boosted.add("animals");
+  if (profile.guns          && profile.guns          !== "neutral") boosted.add("guns");
+  if (profile.unionSupport  && profile.unionSupport  !== "neutral") boosted.add("labor");
+  let boostedFilled = 0;
+  for (const k of boosted) {
     const v = sc[k];
     if (!v || v === "neutral" || v === "na" || v === "unknown") continue;
     boostedFilled++;
@@ -2662,10 +2693,17 @@ function CategoryRow({ cat: k, enriched, profile }) {
 // parent render but are functionally identical (just closures over the same
 // stable parent state). Comparing the data props that actually drive the
 // render is enough.
-const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, allCompanies, initiallyOpen }) {
+const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, allCompanies, initiallyOpen, onConsumedDeepLink }) {
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
+
+  // QA fix 2026-06-10: tell the deep-link effect its slug was consumed so it
+  // stops marking this brand initiallyOpen on future list re-mounts.
+  useEffect(() => {
+    if (initiallyOpen) onConsumedDeepLink?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Phase 3.1: when running in split-bundle mode, the row-level `company`
   // only has the compact shape (no narrative/sources). On expand, lazy-load
@@ -2673,6 +2711,27 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const enriched = detail || company;
   const ps = computeScore(enriched, profile);
   const grade = scoreGrade(ps, userRelevantRealCats(enriched, profile));
+
+  // QA CRITICAL fix 2026-06-10: cards opened ALREADY-EXPANDED (deep links,
+  // universal links, scanner match, Better-Alts navigation → initiallyOpen)
+  // never ran handleTap, so the detail JSON was never fetched and every
+  // category showed "No public record found yet." This effect makes the
+  // fetch follow `open` regardless of HOW the card was opened. handleTap's
+  // own fetch remains as a fast-path; the !detail/!loadingDetail guards
+  // make the two idempotent.
+  useEffect(() => {
+    if (!open) return;
+    if (!isSplitBundleEnabled() || !company.slug) return;
+    if (detail || loadingDetail) return;
+    let cancelled = false;
+    setLoadingDetail(true);
+    loadCompanyDetail(company.slug)
+      .then(d => { if (!cancelled) setDetail(d); })
+      .catch(err => console.error("[dataSource] detail fetch failed for", company.slug, err))
+      .finally(() => { if (!cancelled) setLoadingDetail(false); });
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, company.slug]);
 
   const handleTap = () => {
     // 2026-06-01 (user pick): 1 free company view per week, then paywall.
@@ -3038,38 +3097,46 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                           if (lv === "neutral" || lv === "na" || lv === "n/a") return null;
                           const detailObj = enriched[k] || {};
                           if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) return null;
-                          const sc = scoreCat(k, v, profile);
+                          // QA fix 2026-06-10: pass `enriched` as the co arg —
+                          // scoreCat's overlay/context branches read it; omitting
+                          // it made the Why-panel numbers drift from computeScore.
+                          const sc = scoreCat(k, v, profile, enriched);
                           const delta = sc - 50;
                           return { k, sc, delta, impact: Math.abs(delta) * baseW[k] };
                         }).filter(Boolean).sort((a,b) => b.impact - a.impact);
 
                         // B-60: compute dealbreaker penalties the way computeScore
-                        // does (App.jsx ~line 790). Surface any that fired.
+                        // does (App.jsx ~line 871). QA fix 2026-06-10: the points
+                        // here were stale Build-54 values (-30/-25/-15/-40) — the
+                        // Build 55 Excel rebuild flattened the engine to soft -10 /
+                        // hard -20 / animal-testing -20, so the panel was telling
+                        // users penalties up to 2× what was actually applied.
+                        // These MUST mirror computeScore's reduce() exactly.
                         const dealbreakers = profile.dealBreakers || [];
                         const penalties = [];
                         for (const db of dealbreakers) {
                           if (["environment","labor","privacy","execPay","animals","guns","charity"].includes(db)) {
                             const v = (enriched.sc?.[db] || "").toLowerCase();
                             const bad = ["negative","poor","very poor","below average","tests_animals","sells_guns","makes_guns"];
-                            if (bad.includes(v)) penalties.push({ db, label: `${CAT_LABELS[db]} dealbreaker`, points: -20 });
+                            if (bad.includes(v)) penalties.push({ db, label: `${CAT_LABELS[db]} dealbreaker`, points: -10 });
                           } else if (db === "forcedLabor" && (enriched.sc?.labor||"").toLowerCase() === "poor") {
-                            penalties.push({ db, label: "Forced-labor dealbreaker", points: -25 });
+                            penalties.push({ db, label: "Forced-labor dealbreaker", points: -20 });
                           } else if (db === "taxAvoidance" && (enriched.sc?.execPay||"").toLowerCase() === "poor") {
-                            penalties.push({ db, label: "Tax-avoidance dealbreaker", points: -15 });
+                            penalties.push({ db, label: "Tax-avoidance dealbreaker", points: -20 });
                           } else if (db === "predatoryPrice" && (enriched.sc?.labor||"").toLowerCase() === "poor") {
-                            penalties.push({ db, label: "Predatory-pricing dealbreaker", points: -15 });
+                            penalties.push({ db, label: "Predatory-pricing dealbreaker", points: -20 });
                           } else if (db === "darkPatterns" && (enriched.sc?.privacy||"").toLowerCase() === "poor") {
                             penalties.push({ db, label: "Dark-patterns dealbreaker", points: -20 });
                           } else if (db === "foreignOwn" && enriched.foreignOwned) {
-                            penalties.push({ db, label: `Foreign-owned (${enriched.foreignCountry || "non-US"})`, points: -30 });
+                            penalties.push({ db, label: `Foreign-owned (${enriched.foreignCountry || "non-US"})`, points: -20 });
                           } else if (db === "monopoly" && enriched.antitrust) {
-                            penalties.push({ db, label: "Antitrust history", points: -25 });
+                            penalties.push({ db, label: "Antitrust history", points: -20 });
                           } else if (db === "childLabor" && enriched.childLabor) {
-                            penalties.push({ db, label: "Child-labor history", points: -30 });
+                            penalties.push({ db, label: "Child-labor history", points: -20 });
                           }
                         }
                         if (profile.animalTesting === "dealbreaker" && enriched.sc?.animals === "tests_animals") {
-                          penalties.push({ db: "animalTesting", label: "Animal-testing dealbreaker", points: -40 });
+                          penalties.push({ db: "animalTesting", label: "Animal-testing dealbreaker", points: -20 });
                         }
                         penalties.sort((a,b) => a.points - b.points); // most-negative first
 
@@ -4931,7 +4998,11 @@ useEffect(() => {
   // intended company profile.
   const [deepLinkSlug, setDeepLinkSlug] = useState(() => {
     if (typeof window === "undefined") return null;
-    const m = window.location.pathname.match(/^\/company\/([^/?#]+)/);
+    // QA fix 2026-06-10: the marketing-landing gate (and vercel rewrites)
+    // accept BOTH /company/<slug> and the short /c/<slug> form, but this
+    // parser only matched /company/ — so /c/ links entered the app and then
+    // silently landed on Top Picks with nothing opened.
+    const m = window.location.pathname.match(/^\/(?:company|c)\/([^/?#]+)/);
     return m ? decodeURIComponent(m[1]) : null;
   });
   // Phase 5.aj: when scanner matches OR Better-Alts taps a brand, we want
@@ -5038,10 +5109,13 @@ useEffect(() => {
     track("deep_link_open", { slug: deepLinkSlug, name: co.name });
     // Replace URL with clean root so back-button works as expected
     try { window.history.replaceState({}, "", "/"); } catch {}
-    // Phase 5.ag (QA fix #4): clear after a beat so the CompanyCard has time
-    // to mount and consume initiallyOpen, but stale-auto-open on later tab
-    // returns doesn't happen.
-    const t = setTimeout(() => setDeepLinkSlug(null), 800);
+    // QA fix 2026-06-10: the old 800ms clear timer raced the lazy MiniSearch
+    // index — when the search-hits list mounted the card later than 800ms
+    // (cold load), initiallyOpen was already false and shared links landed on
+    // a COLLAPSED row. Now the card itself reports consumption via
+    // onConsumedDeepLink (below); the 15s timer is only a safety net against
+    // stale auto-open if the card never mounts at all.
+    const t = setTimeout(() => setDeepLinkSlug(null), 15000);
     return () => clearTimeout(t);
   }, [deepLinkSlug, companies]);
 
@@ -5098,7 +5172,11 @@ useEffect(() => {
       return true;
     })
     .sort((a,b) => {
-      if (sort==="score") return computeScore(b,profile) - computeScore(a,profile);
+      // QA fix 2026-06-10: without a profile computeScore returns co.overall
+      // RAW — null/undefined on the ~6,300 stub brands — so score-sort
+      // compared NaN and ordered arbitrarily. `?? -1` sinks no-data brands
+      // below every real score (which bottoms out at 0).
+      if (sort==="score") return (computeScore(b,profile) ?? -1) - (computeScore(a,profile) ?? -1);
       if (sort==="name") return a.name.localeCompare(b.name);
       const o={left:0,"left-leaning":1,bipartisan:2,mixed:3,neutral:4,right:6,"right-leaning":6};
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
@@ -5226,7 +5304,7 @@ useEffect(() => {
     return TOP_PICKS_CURATED
       .map(slug => idx.get(slug))
       .filter(Boolean)
-      .map(c => ({ co: c, score: computeScore(c, profile) }))
+      .map(c => ({ co: c, score: computeScore(c, profile) ?? -1 }))
       .sort((a, b) => b.score - a.score)
       .map(({ co }) => co);
   }, [deduped, profile]);
@@ -5345,15 +5423,28 @@ if (screen === "onboarding") {
     // funnel. Dumping the user straight into the search list (the old
     // behavior) wasted the moment. Wave 3 will add a "share my values"
     // PNG card on this screen.
+    // QA fix 2026-06-10: ranked by RAW computeScore while the badge showed the
+    // signal-count-CAPPED grade — a sparse 2-category brand could post a 100
+    // numeric score, win "Your top match", and render with a C badge above
+    // runners-up showing B (Aron repro: BYD CO C/100 over ColourPop B). Now:
+    // (1) gate to 3+ real categories (same bar as Top Picks), and (2) rank by
+    // the capped grade FIRST, numeric score as tiebreak, so the badge order
+    // always matches the list order.
+    const GRADE_RANK = { A: 5, B: 4, C: 3, D: 2, F: 1, "?": 0 };
     const top3 = (companies || [])
       .filter(c => {
-        // Only consider companies with at least one scored category — exclude
-        // unknown-only entries so the reveal feels substantive.
+        if (typeof c.realCats === "number") return c.realCats >= 3;
         const sc = c.sc || {};
-        return Object.keys(sc).some(k => sc[k] && String(sc[k]).toLowerCase() !== "neutral" && String(sc[k]).toLowerCase() !== "unknown");
+        return Object.keys(sc).filter(k => {
+          const v = String(sc[k] || "").toLowerCase();
+          return v && v !== "neutral" && v !== "unknown" && v !== "na";
+        }).length >= 3;
       })
-      .map(c => ({ co: c, score: computeScore(c, profile) }))
-      .sort((a, b) => b.score - a.score)
+      .map(c => {
+        const score = computeScore(c, profile);
+        return { co: c, score, grade: scoreGrade(score, userRelevantRealCats(c, profile)) };
+      })
+      .sort((a, b) => ((GRADE_RANK[b.grade] || 0) - (GRADE_RANK[a.grade] || 0)) || (b.score - a.score))
       .slice(0, 3);
     const winner = top3[0];
     return (
@@ -5966,7 +6057,7 @@ if (screen === "onboarding") {
                     </button>
                   </div>
                 )}
-                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} />)}
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} onConsumedDeepLink={() => setDeepLinkSlug(null)} />)}
                 {filtered.length > visibleLimit && (
                   <button
                     onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
@@ -6247,7 +6338,7 @@ if (screen === "onboarding") {
             // Phase 5.as (QA friction #6): sort + category filter for Library/Saved.
             // A user with 20+ saved brands can't find anything in a flat dump.
             if (savedSortMode === "grade") {
-              savedCos = [...savedCos].sort((a,b) => computeScore(b, profile) - computeScore(a, profile));
+              savedCos = [...savedCos].sort((a,b) => (computeScore(b, profile) ?? -1) - (computeScore(a, profile) ?? -1));
             } else if (savedSortMode === "name") {
               savedCos = [...savedCos].sort((a,b) => (a.name||"").localeCompare(b.name||""));
             } else if (savedSortMode === "category") {

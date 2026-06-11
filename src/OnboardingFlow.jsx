@@ -1,9 +1,14 @@
 import { useState } from "react";
 
+// QA fix 2026-06-10: these hardcoded "live example" grades had drifted from
+// the real bundle (Tesla showed C, actual B; Shein showed D, actual C) — the
+// FIRST thing a new user checks is whether the app agrees with itself. Grades
+// + detail rows below now mirror public/data/index.json. If a rebake moves
+// any of these brands a letter, update this array.
 const COMPANIES = [
-  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"A", gradeStyle:{background:"#1a3a2a",color:"#4ade80"}, details:[{label:"⚖️ Labor",pct:90,color:"#4ade80",grade:"A"},{label:"🏳️ DEI",pct:82,color:"#4ade80",grade:"A-"},{label:"❤️ Charity",pct:78,color:"#4ade80",grade:"B+"}] },
-  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"C", gradeStyle:{background:"#2e2a1a",color:"#fde68a"}, details:[{label:"🌿 Environment",pct:78,color:"#4ade80",grade:"B+"},{label:"⚖️ Labor",pct:35,color:"#fca5a5",grade:"D"},{label:"🏳️ DEI",pct:48,color:"#fde68a",grade:"C"}] },
-  { emoji:"👗", bg:"#2e1a1a", name:"Shein",     meta:"Apparel · Fast Fashion", grade:"D", gradeStyle:{background:"#2e1e1a",color:"#fca5a5"}, details:[{label:"🌿 Environment",pct:15,color:"#fca5a5",grade:"F"},{label:"⚖️ Labor",pct:18,color:"#fca5a5",grade:"F"},{label:"🔒 Privacy",pct:35,color:"#fca5a5",grade:"D"}] },
+  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"A", gradeStyle:{background:"#1a3a2a",color:"#4ade80"}, details:[{label:"🌿 Environment",pct:80,color:"#4ade80",grade:"B+"},{label:"🏳️ DEI",pct:82,color:"#4ade80",grade:"A-"},{label:"❤️ Charity",pct:78,color:"#4ade80",grade:"B+"}] },
+  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"B", gradeStyle:{background:"#1a2810",color:"#8bc34a"}, details:[{label:"🌿 Environment",pct:78,color:"#4ade80",grade:"B+"},{label:"🏳️ DEI",pct:65,color:"#8bc34a",grade:"B"},{label:"⚖️ Labor",pct:35,color:"#fca5a5",grade:"D"}] },
+  { emoji:"👗", bg:"#2e1a1a", name:"Shein",     meta:"Apparel · Fast Fashion", grade:"C", gradeStyle:{background:"#2e2a1a",color:"#fde68a"}, details:[{label:"🔒 Privacy",pct:25,color:"#fca5a5",grade:"F"},{label:"🐰 Animals",pct:30,color:"#fca5a5",grade:"D"},{label:"⚖️ Labor",pct:48,color:"#fde68a",grade:"C"}] },
 ];
 
 const CATEGORIES = [
@@ -115,7 +120,13 @@ export default function OnboardingFlow({ onComplete }) {
                 Search, scan barcodes, browse by category — all free. Take the 30-second values quiz any time to personalize your scores.
               </div>
             </div>
-            <p style={s.terms}>By continuing you agree to our <a href="#" style={{ color:"#7c6dfa", textDecoration:"none" }}>Terms</a> & <a href="#" style={{ color:"#7c6dfa", textDecoration:"none" }}>Privacy Policy</a>.</p>
+            {/* QA fix 2026-06-10: both links were href="#" (dead) — an App
+                Review-visible defect on the consent line. Terms = Apple's
+                standard EULA (the App Store listing's default; no custom ToS
+                exists yet). Privacy = the live #privacy route on the site.
+                target=_blank so the native shell opens Safari instead of
+                navigating the WebView away from onboarding. */}
+            <p style={s.terms}>By continuing you agree to our <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:"#7c6dfa", textDecoration:"none" }}>Terms</a> & <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:"#7c6dfa", textDecoration:"none" }}>Privacy Policy</a>.</p>
           </div>
         )}
       </div>
