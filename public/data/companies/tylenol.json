@@ -1,1 +1,160 @@
-{"name":"Tylenol","cat":"Consumer Goods","init":"TYLE","overall":89.7,"isPublic":true,"sc":{"political":"bipartisan","charity":"positive","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $103K in executive political donations; partisan lean split across 3 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"$880M reported corporate giving in 2024 (~1.02% of revenue) via Johnson & Johnson Foundation.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":null,"hq":null,"employees":null,"revenue":null,"parent":"McNeil Consumer Healthcare","industry":null,"products":null,"keyPeople":null,"website":"https://www.tylenol.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg/330px-Extra_Strength_Tylenol_and_Tylenol_PM.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Tylenol","extract":"Tylenol is a brand of medication, advertised for reducing pain, reducing fever, and relieving the symptoms of allergies, cold, cough, headache, and influenza. An active ingredient in these medications is acetaminophen (paracetamol), an analgesic and antipyretic, although other ingredients with significant effects are included in some variants. Like the generic names paracetamol and acetaminophen, the brand name Tylenol is derived from a chemical name for the compound, N-acetyl-para-aminophenol."},"slug":"tylenol","competitors":[],"bbb":null,"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-02-17","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Tylenol&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T03:02:23.375Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T03:02:23.375Z","realCats":2,"governance":{"s":"Wikidata: owned by McNeil Consumer Healthcare. (Wikidata Q3245302)","sources":["wikidata"]},"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Consumer Goods"}}}
+{
+  "name": "Tylenol",
+  "cat": "Consumer Goods",
+  "init": "TYLE",
+  "overall": 50.8,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "positive",
+    "environment": "good",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "poor",
+    "execPay": "poor",
+    "governance": "neutral",
+    "health": "poor"
+  },
+  "political": {
+    "s": "FEC: $103K in executive political donations; partisan lean split across 3 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Johnson & Johnson: 81 federal penalties totaling $25.1B since 2000 (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "$880M reported corporate giving in 2024 (~1.02% of revenue) via Johnson & Johnson Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Johnson & Johnson: CDP Climate Change: A- (2024) — leadership-band environmental disclosure with validated targets.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Johnson & Johnson: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. JUST Capital JUST 100 — ranked #62 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Via parent company Johnson & Johnson: 3 state regulator actions (NY AG, TX AG) (most recent 2026-01-01). ~$3.00B in known settlements. Attorney General James Co-Leads Bipartisan Coalition Urging Congress to Pass Legislation to Protect Communities from Illicit Xylazine",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Johnson & Johnson: CEO-to-median-worker pay ratio 360:1 (median employee pay $91,000) — SEC proxy statement (DEF 14A, 2026).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": null,
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": "McNeil Consumer Healthcare",
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.tylenol.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Extra_Strength_Tylenol_and_Tylenol_PM.jpg/330px-Extra_Strength_Tylenol_and_Tylenol_PM.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tylenol",
+    "extract": "Tylenol is a brand of medication, advertised for reducing pain, reducing fever, and relieving the symptoms of allergies, cold, cough, headache, and influenza. An active ingredient in these medications is acetaminophen (paracetamol), an analgesic and antipyretic, although other ingredients with significant effects are included in some variants. Like the generic names paracetamol and acetaminophen, the brand name Tylenol is derived from a chemical name for the compound, N-acetyl-para-aminophenol."
+  },
+  "slug": "tylenol",
+  "competitors": [],
+  "bbb": null,
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-02-17",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Tylenol&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T03:02:23.375Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T03:02:23.375Z",
+  "realCats": 7,
+  "governance": {
+    "s": "Wikidata: owned by McNeil Consumer Healthcare. (Wikidata Q3245302)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
+  },
+  "health": {
+    "s": "Via parent company Johnson & Johnson: J&J — national opioid settlement (~$5B over 9 years) ($5.00B). FDA MAUDE: 27,000 adverse-event reports (24mo) — JOHNSON & JOHNSON MEDICAL. Sources: fda-maude-mfr, opioid-settlements.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "johnson-and-johnson"
+}

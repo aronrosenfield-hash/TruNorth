@@ -2,12 +2,12 @@
   "name": "Jeep",
   "cat": "Automotive",
   "init": "JEEP",
-  "overall": 54.2,
+  "overall": 47.1,
   "isPublic": true,
   "sc": {
     "political": "right-leaning",
     "charity": "neutral",
-    "environment": "neutral",
+    "environment": "poor",
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
@@ -39,9 +39,9 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Via parent company Stellantis North America: air pollution violation: $1.3B in federal penalties (Violation Tracker).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "dei": {
@@ -158,7 +158,7 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Stellantis North America; HQ Toledo. (Wikidata Q30113)",
     "sources": [
@@ -185,5 +185,6 @@
       "_inferred": true,
       "basis": "Automotive"
     }
-  }
+  },
+  "inheritedFrom": "stellantis-north-america"
 }

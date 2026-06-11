@@ -1,1 +1,185 @@
-{"name":"Whole Foods Market","cat":"Grocery","init":"WHOL","overall":59.9,"isPublic":true,"sc":{"political":"bipartisan","charity":"mixed","environment":"positive","labor":"neutral","dei":"neutral","animals":"positive","guns":"neutral","privacy":"na","execPay":"na","health":"poor","governance":"neutral"},"political":{"s":"FEC: $128K in executive political donations; partisan lean split across 6 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"$18M reported corporate giving in 2024 (~0.11% of revenue) via Whole Kids Foundation.","sources":["corporate-giving"]},"environment":{"s":"MSC retail partner — all wild seafood at counter is MSC-certified or Seafood Watch best-choice. ASC-certified farmed salmon + shrimp across seafood counter. [MSC certified · ASC certified]","sources":["Claude AI synthesis","farm-welfare"]},"dei":{"s":"No public record found.","sources":[]},"animals":{"s":"BBFAW 2024 Tier 2 — meat counter standards require GAP Step rating for all fresh meat sold. All fresh meat sold at Whole Foods must carry a GAP Step rating; many SKUs are Step 4+ (pasture-centred). [BBFAW Tier 2 · GAP Step 1+ (in-store) · CIWF Award · Cage-free fulfilled · MSC certified · ASC certified]","sources":["Claude AI synthesis","farm-welfare"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":"1980-09-20","hq":"Austin","employees":"91000","revenue":null,"parent":"Amazon","industry":"food industry","products":null,"keyPeople":"John Mackey","website":"https://www.wholefoodsmarket.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Whole_Foods_Market_201x_logo.svg/330px-Whole_Foods_Market_201x_logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Whole_Foods_Market","extract":"Whole Foods Market, Inc. is an American multinational supermarket chain headquartered in Austin, Texas, owned wholly by Amazon, and which generally sells whole food products free from hydrogenated fats and artificial colors, flavors, and preservatives. A USDA Certified Organic grocer in the United States, the chain is popularly known for its organic selections."},"bbb":{"rating":"D-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ca/oxnard/profile/grocery-store/whole-foods-market-1236-92012649/addressId/36406"},"secComplaints":{"count":5,"sample":[{"adsh":"0001104659-25-085730","date":"2025-08-29","filer":"SpartanNash Co  (SPTN)  (CIK 0000877422)","form":"8-K"},{"adsh":"0001018724-26-000002","date":"2026-02-05","filer":"AMAZON COM INC  (AMZN)  (CIK 0001018724)","form":"8-K"},{"adsh":"0001193125-25-155222","date":"2025-07-03","filer":"Walgreens Boots Alliance, Inc.  (WBA)  (CIK 0001618921)","form":"8-K"}]},"animalCerts":[{"certifyingBody":"leaping_bunny","certified":true,"sourceUrl":"https://www.leapingbunny.org/brand/whole-foods-market"}],"slug":"whole-foods-market","competitors":[],"news":null,"payRatio":null,"deiBadges":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-04-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Whole%20Foods%20Market&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T03:42:29.594Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T03:42:29.594Z","health":{"s":"CEH historical alert: BPA in canned-food liners (lawsuit settled — Whole Foods agreed to disclosure). [CEH BPA alert]","sources":["animal-welfare-ag-r3"]},"realCats":4,"governance":{"s":"Wikidata: owned by Amazon; HQ Austin. (Wikidata Q1809448)","sources":["wikidata"]},"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Whole Foods Market",
+  "cat": "Grocery",
+  "init": "WHOL",
+  "overall": 57.9,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "mixed",
+    "environment": "positive",
+    "labor": "mixed",
+    "dei": "neutral",
+    "animals": "positive",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na",
+    "health": "poor",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $128K in executive political donations; partisan lean split across 6 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Whole Foods: 5 OSHA severe-injury reports in past 2y (2 amputations); 36 since 2015.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "$18M reported corporate giving in 2024 (~0.11% of revenue) via Whole Kids Foundation.",
+    "sources": [
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "MSC retail partner — all wild seafood at counter is MSC-certified or Seafood Watch best-choice. ASC-certified farmed salmon + shrimp across seafood counter. [MSC certified · ASC certified]",
+    "sources": [
+      "Claude AI synthesis",
+      "farm-welfare"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "animals": {
+    "s": "BBFAW 2024 Tier 2 — meat counter standards require GAP Step rating for all fresh meat sold. All fresh meat sold at Whole Foods must carry a GAP Step rating; many SKUs are Step 4+ (pasture-centred). [BBFAW Tier 2 · GAP Step 1+ (in-store) · CIWF Award · Cage-free fulfilled · MSC certified · ASC certified]",
+    "sources": [
+      "Claude AI synthesis",
+      "farm-welfare"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": "1980-09-20",
+    "hq": "Austin",
+    "employees": "91000",
+    "revenue": null,
+    "parent": "Amazon",
+    "industry": "food industry",
+    "products": null,
+    "keyPeople": "John Mackey",
+    "website": "https://www.wholefoodsmarket.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Whole_Foods_Market_201x_logo.svg/330px-Whole_Foods_Market_201x_logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Whole_Foods_Market",
+    "extract": "Whole Foods Market, Inc. is an American multinational supermarket chain headquartered in Austin, Texas, owned wholly by Amazon, and which generally sells whole food products free from hydrogenated fats and artificial colors, flavors, and preservatives. A USDA Certified Organic grocer in the United States, the chain is popularly known for its organic selections."
+  },
+  "bbb": {
+    "rating": "D-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ca/oxnard/profile/grocery-store/whole-foods-market-1236-92012649/addressId/36406"
+  },
+  "secComplaints": {
+    "count": 5,
+    "sample": [
+      {
+        "adsh": "0001104659-25-085730",
+        "date": "2025-08-29",
+        "filer": "SpartanNash Co  (SPTN)  (CIK 0000877422)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001018724-26-000002",
+        "date": "2026-02-05",
+        "filer": "AMAZON COM INC  (AMZN)  (CIK 0001018724)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-25-155222",
+        "date": "2025-07-03",
+        "filer": "Walgreens Boots Alliance, Inc.  (WBA)  (CIK 0001618921)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "animalCerts": [
+    {
+      "certifyingBody": "leaping_bunny",
+      "certified": true,
+      "sourceUrl": "https://www.leapingbunny.org/brand/whole-foods-market"
+    }
+  ],
+  "slug": "whole-foods-market",
+  "competitors": [],
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-04-13",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Whole%20Foods%20Market&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T03:42:29.594Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T03:42:29.594Z",
+  "health": {
+    "s": "CEH historical alert: BPA in canned-food liners (lawsuit settled — Whole Foods agreed to disclosure). [CEH BPA alert]",
+    "sources": [
+      "animal-welfare-ag-r3"
+    ]
+  },
+  "realCats": 5,
+  "governance": {
+    "s": "Wikidata: owned by Amazon; HQ Austin. (Wikidata Q1809448)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "inheritedFrom": "whole-foods"
+}

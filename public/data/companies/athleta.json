@@ -2,7 +2,7 @@
   "name": "Athleta",
   "cat": "Apparel & Fashion",
   "init": "ATHL",
-  "overall": 86,
+  "overall": 81.8,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -10,10 +10,11 @@
     "environment": "positive",
     "labor": "positive",
     "dei": "pro_dei",
-    "animals": "neutral",
+    "animals": "mixed",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "neutral"
+    "privacy": "mixed",
+    "execPay": "good",
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -53,21 +54,25 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company Gap Inc.: Good On You It's a Start — Better Cotton Initiative + worker programs in supply chain. [goodonyou]",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "guns": {
     "s": "No public record found.",
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company Gap Inc.: Wikidata records a notable event: Gap Inc. 2007 data breach. (Wikidata Q420822)",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "Via parent company Gap Inc.: CEO-to-median-worker pay ratio 0:1 (median employee pay $10,170; CEO total compensation $0K) — SEC proxy statement (DEF 14A, 2022).",
     "sources": [
-      "Public records research"
+      "parent-inheritance"
     ]
   },
   "ab": "#0d2318",
@@ -99,5 +104,12 @@
       "notDisclosed": true
     }
   },
-  "realCats": 4
+  "realCats": 6,
+  "health": {
+    "s": "Via parent company Gap Inc.: 11 CPSC recalls (1 in past 24 months); latest hazard: the detachable tissue box toy can come apart.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "gap-inc"
 }

@@ -1,1 +1,166 @@
-{"name":"Flora","cat":"Grocery","init":"FLOR","overall":66.5,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $330K in executive political donations; partisan lean split across 14 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-28","ab":"#0d2318","ac":"#4caf82","charity":{"s":"$60M reported corporate giving in 2024 (~0.09% of revenue).","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":["naturli"],"childLabor":true,"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ny/binghamton/profile/retail-florist/kokedama-flora-0041-235994915"},"secComplaints":{"count":217,"sample":[{"adsh":"0001062993-25-017473","date":"2025-12-23","filer":"Flora Growth Corp.  (FLGC)  (CIK 0001790169)","form":"8-K"},{"adsh":"0001876945-24-000090","date":"2024-10-07","filer":"Gold Flora Corp.  (GRAM, GRAMW)  (CIK 0001876945)","form":"8-K"},{"adsh":"0001876945-24-000090","date":"2024-10-07","filer":"Gold Flora Corp.  (GRAM, GRAMW)  (CIK 0001876945)","form":"8-K"}]},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/9/90/Flora.png","logoSource":"wiki_infobox","slug":"flora","wiki":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-10","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Flora&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T16:15:57.566Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T16:15:57.566Z","realCats":2,"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Grocery"}}}
+{
+  "name": "Flora",
+  "cat": "Grocery",
+  "init": "FLOR",
+  "overall": 52.2,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "positive",
+    "guns": "neutral",
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $330K in executive political donations; partisan lean split across 14 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Unilever: 44 federal penalties totaling $38.1M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 73/100; CHRB 19.5/26; TVPRA exposure; UK MS statement; AU MS statement.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-28",
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "charity": {
+    "s": "$60M reported corporate giving in 2024 (~0.09% of revenue).",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Unilever: water pollution violation: $4.6M in federal penalties (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Unilever: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Unilever: BBFAW 2024 Tier 2 — among leading multinationals on policy + reporting. CIWF Good Egg + Good Dairy Awards (Ben & Jerry's Caring Dairy programme). [BBFAW Tier 2 · CIWF Award]",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Via parent company Unilever: CFPB consumer complaints: 70 on record (36 in past 12mo); 99% timely response rate.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "competitors": [
+    "naturli"
+  ],
+  "childLabor": true,
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ny/binghamton/profile/retail-florist/kokedama-flora-0041-235994915"
+  },
+  "secComplaints": {
+    "count": 217,
+    "sample": [
+      {
+        "adsh": "0001062993-25-017473",
+        "date": "2025-12-23",
+        "filer": "Flora Growth Corp.  (FLGC)  (CIK 0001790169)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001876945-24-000090",
+        "date": "2024-10-07",
+        "filer": "Gold Flora Corp.  (GRAM, GRAMW)  (CIK 0001876945)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001876945-24-000090",
+        "date": "2024-10-07",
+        "filer": "Gold Flora Corp.  (GRAM, GRAMW)  (CIK 0001876945)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Flora.png",
+  "logoSource": "wiki_infobox",
+  "slug": "flora",
+  "wiki": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-10",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Flora&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T16:15:57.566Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T16:15:57.566Z",
+  "realCats": 7,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Grocery"
+    }
+  },
+  "health": {
+    "s": "Via parent company Unilever: 4 CPSC recalls on record; sample hazard: the controller of the freezer is incompatible with the unit and can overheat and.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "unilever"
+}

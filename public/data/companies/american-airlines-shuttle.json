@@ -1,1 +1,214 @@
-{"name":"American Airlines Shuttle","cat":"Hospitality","init":"AMER","overall":35,"isPublic":false,"sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"No public record found.","sources":["Claude AI synthesis"]},"labor":{"s":"837 federal penalties totaling $324.4M since 2000 (Violation Tracker).","rating":"mixed","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-31","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","antitrust":true,"slug":"american-airlines-shuttle","competitors":[],"wiki":null,"bbb":null,"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"American Airlines","slug":"american-airlines","ownership":"publicly traded (ticker symbol AAL)","hq":"Texas","majorIndustry":"airlines","specificIndustry":"airlines","totalPenalty":324434117,"totalRecords":837,"offenseGroups":[{"category":"safety-related offenses","penalty":111770214,"records":767},{"category":"consumer-protection-related offenses","penalty":80525000,"records":31},{"category":"competition-related offenses","penalty":50000000,"records":2},{"category":"employment-related offenses","penalty":48527496,"records":19},{"category":"government-contracting-related offenses","penalty":22100000,"records":1}],"primaryOffenses":[{"category":"aviation safety violation","penalty":110848944,"records":702},{"category":"aviation consumer protection violation","penalty":63175000,"records":29},{"category":"price-fixing or anti-competitive practices","penalty":50000000,"records":2},{"category":"benefit plan administrator violation","penalty":32200000,"records":3},{"category":"False Claims Act and related","penalty":22100000,"records":1}],"rating":"mixed","lastChecked":"2026-05-30","fetchedAt":"2026-05-30T21:51:53.448Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T21:51:53.448Z","realCats":1,"governance":{"s":"Wikidata: owned by American Airlines. (Wikidata Q25054280)","sources":["wikidata"]},"flags":{"animals":{"na":true},"guns":{"na":true},"execPay":{"notDisclosed":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Hospitality"}}}
+{
+  "name": "American Airlines Shuttle",
+  "cat": "Hospitality",
+  "init": "AMER",
+  "overall": 32,
+  "isPublic": false,
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "poor",
+    "execPay": "mixed",
+    "governance": "neutral",
+    "health": "poor"
+  },
+  "political": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "837 federal penalties totaling $324.4M since 2000 (Violation Tracker).",
+    "rating": "mixed",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company American Airlines: CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company American Airlines: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Via parent company American Airlines: DOT enforcement: Record $50M DOT civil penalty — failure to provide timely refunds and mistreatment of wheelchair-using passengers; largest single-carrier enforcement action in agency history.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company American Airlines: CEO-to-median-worker pay ratio 155:1 (median employee pay $89,429) — SEC proxy statement (DEF 14A, 2026).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "antitrust": true,
+  "slug": "american-airlines-shuttle",
+  "competitors": [],
+  "wiki": null,
+  "bbb": null,
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "American Airlines",
+    "slug": "american-airlines",
+    "ownership": "publicly traded (ticker symbol AAL)",
+    "hq": "Texas",
+    "majorIndustry": "airlines",
+    "specificIndustry": "airlines",
+    "totalPenalty": 324434117,
+    "totalRecords": 837,
+    "offenseGroups": [
+      {
+        "category": "safety-related offenses",
+        "penalty": 111770214,
+        "records": 767
+      },
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 80525000,
+        "records": 31
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 50000000,
+        "records": 2
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 48527496,
+        "records": 19
+      },
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 22100000,
+        "records": 1
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "aviation safety violation",
+        "penalty": 110848944,
+        "records": 702
+      },
+      {
+        "category": "aviation consumer protection violation",
+        "penalty": 63175000,
+        "records": 29
+      },
+      {
+        "category": "price-fixing or anti-competitive practices",
+        "penalty": 50000000,
+        "records": 2
+      },
+      {
+        "category": "benefit plan administrator violation",
+        "penalty": 32200000,
+        "records": 3
+      },
+      {
+        "category": "False Claims Act and related",
+        "penalty": 22100000,
+        "records": 1
+      }
+    ],
+    "rating": "mixed",
+    "lastChecked": "2026-05-30",
+    "fetchedAt": "2026-05-30T21:51:53.448Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T21:51:53.448Z",
+  "realCats": 6,
+  "governance": {
+    "s": "Wikidata: owned by American Airlines. (Wikidata Q25054280)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Hospitality"
+    }
+  },
+  "health": {
+    "s": "Via parent company American Airlines: American Airlines: DOT 2025 ATCR — 77.8% on-time arrivals, 3.42 complaints per 100K passengers, 7.3 mishandled bags per 1K. 1 DOT enforcement action (~$50.0M in penalties). Largest DOT civil penalty in agency history (wheelchair mistreatment, 2024). No Part 121 fatalities.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "american-airlines"
+}

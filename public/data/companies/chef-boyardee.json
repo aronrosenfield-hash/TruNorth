@@ -1,1 +1,157 @@
-{"name":"Chef Boyardee","cat":"Food & Beverage","init":"CHEF","overall":64.5,"isPublic":true,"sc":{"political":"bipartisan","charity":"mixed","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $319K in executive political donations; partisan lean split across 14 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"$18M reported corporate giving in 2024 (~0.15% of revenue) via Conagra Brands Foundation.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":"1928-00-00","hq":null,"employees":null,"revenue":null,"parent":"Conagra Brands, Inc.","industry":null,"products":null,"keyPeople":"Ettore Boiardi","website":"http://www.chefboyardee.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/en/0/04/New_Chef_Boyardee_Logo.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Chef_Boyardee","extract":"Chef Boyardee is an American brand of canned pasta products owned by Hometown Food Company. The company was founded by Italian immigrant Ettore Boiardi in Cleveland, Ohio, in 1928."},"logoUrl":"https://icons.duckduckgo.com/ip3/chefboyardee.com.ico","logoSource":"ddg_favicon_official","slug":"chef-boyardee","competitors":[],"bbb":null,"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-08-07","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Chef%20Boyardee&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-30T22:40:28.172Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T22:40:28.172Z","realCats":2,"governance":{"s":"Wikidata: owned by Conagra Brands, Inc.. (Wikidata Q17079048)","sources":["wikidata"]},"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Chef Boyardee",
+  "cat": "Food & Beverage",
+  "init": "CHEF",
+  "overall": 49.6,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "mixed",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "good",
+    "governance": "neutral",
+    "health": "poor"
+  },
+  "political": {
+    "s": "FEC: $319K in executive political donations; partisan lean split across 14 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Conagra Brands: 173 federal penalties totaling $201.2M since 2000 (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "$18M reported corporate giving in 2024 (~0.15% of revenue) via Conagra Brands Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Conagra Brands: environmental violation: $10.3M in federal penalties (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Conagra Brands: CEO-to-median-worker pay ratio 0:1 (median employee pay $64,614; CEO total compensation $8K) — SEC proxy statement (DEF 14A, 2015).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": "1928-00-00",
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": "Conagra Brands, Inc.",
+    "industry": null,
+    "products": null,
+    "keyPeople": "Ettore Boiardi",
+    "website": "http://www.chefboyardee.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/0/04/New_Chef_Boyardee_Logo.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Chef_Boyardee",
+    "extract": "Chef Boyardee is an American brand of canned pasta products owned by Hometown Food Company. The company was founded by Italian immigrant Ettore Boiardi in Cleveland, Ohio, in 1928."
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/chefboyardee.com.ico",
+  "logoSource": "ddg_favicon_official",
+  "slug": "chef-boyardee",
+  "competitors": [],
+  "bbb": null,
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-08-07",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Chef%20Boyardee&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-30T22:40:28.172Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T22:40:28.172Z",
+  "realCats": 6,
+  "governance": {
+    "s": "Wikidata: owned by Conagra Brands, Inc.. (Wikidata Q17079048)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  },
+  "health": {
+    "s": "Via parent company Conagra Brands: FSIS Class-I recalls — Banquet chicken strips (plastic) + ready-to-eat items. Sources: usda-fsis-recalls.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "conagra-brands"
+}

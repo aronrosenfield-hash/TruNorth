@@ -1,1 +1,161 @@
-{"name":"Market Street","cat":"Retail","init":"MARK","overall":79.3,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $285K in executive political donations; partisan lean split across 14 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ne/milford/profile/retail-stores/main-street-market-0714-300296806"},"secComplaints":{"count":498,"sample":[{"adsh":"0001376986-25-000040","date":"2025-07-17","filer":"Tennessee Valley Authority  (TVC, TVE)  (CIK 0001376986)","form":"8-K"},{"adsh":"0001104659-24-070907","date":"2024-06-12","filer":"Waystar Holding Corp.  (WAY)  (CIK 0001990354)","form":"8-K"},{"adsh":"0001104659-24-070907","date":"2024-06-12","filer":"Waystar Holding Corp.  (WAY)  (CIK 0001990354)","form":"8-K"}]},"logoUrl":"https://icons.duckduckgo.com/ip3/marketstreet.com.ico","logoSource":"ddg_favicon_heuristic","slug":"market-street","competitors":[],"wiki":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-28","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Market%20Street&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T00:55:44.422Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T00:55:44.422Z","realCats":1,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Retail"}}}
+{
+  "name": "Market Street",
+  "cat": "Retail",
+  "init": "MARK",
+  "overall": 39.2,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "mixed",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "positive",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "poor"
+  },
+  "political": {
+    "s": "FEC: $285K in executive political donations; partisan lean split across 14 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Albertsons: 308 federal penalties totaling $1.0B since 2000 (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "Via parent company Albertsons: $280M reported corporate giving in 2024 (~0.36% of revenue) via Albertsons Companies Foundation.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Albertsons: hazardous waste violation: $13.2M in federal penalties (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Albertsons: Albertsons responsible-seafood sourcing developed with FishWise. [FishWise partner]",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Albertsons: CEO-to-median-worker pay ratio 475:1 (median employee pay $32,057) — SEC proxy statement (DEF 14A, 2025).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ne/milford/profile/retail-stores/main-street-market-0714-300296806"
+  },
+  "secComplaints": {
+    "count": 498,
+    "sample": [
+      {
+        "adsh": "0001376986-25-000040",
+        "date": "2025-07-17",
+        "filer": "Tennessee Valley Authority  (TVC, TVE)  (CIK 0001376986)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-24-070907",
+        "date": "2024-06-12",
+        "filer": "Waystar Holding Corp.  (WAY)  (CIK 0001990354)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-24-070907",
+        "date": "2024-06-12",
+        "filer": "Waystar Holding Corp.  (WAY)  (CIK 0001990354)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/marketstreet.com.ico",
+  "logoSource": "ddg_favicon_heuristic",
+  "slug": "market-street",
+  "competitors": [],
+  "wiki": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-28",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Market%20Street&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T00:55:44.422Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T00:55:44.422Z",
+  "realCats": 5,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Retail"
+    }
+  },
+  "inheritedFrom": "albertsons"
+}

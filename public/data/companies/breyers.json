@@ -1,1 +1,183 @@
-{"name":"Breyers","cat":"Food & Beverage","init":"BR","overall":66.5,"isPublic":true,"ticker":"MICC","sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $328K in executive political donations; partisan lean split across 13 executive donors.","amt":"Not disclosed","lean":"Neutral","sources":["Claude AI synthesis","exec-political-donations"]},"charity":{"s":"$60M reported corporate giving in 2024 (~0.09% of revenue).","amt":"Not disclosed","focus":"Sustainable agriculture, children's education and health, community enrichment","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","rating":"Good","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Average","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Not disclosed","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-04-04","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Breyers&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","competitors":["ben-and-jerry-s"],"wiki":{"founded":"1866-00-00","hq":null,"employees":null,"revenue":null,"parent":"Unilever","industry":null,"products":null,"keyPeople":null,"website":"http://www.breyers.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Breyers_logo_2025.png/330px-Breyers_logo_2025.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Breyers","extract":"Breyers is an ice cream and frozen dessert brand with headquarters in Englewood Cliffs, New Jersey. Since 1993, Breyers was owned and managed by the British conglomerate, Unilever, which incorporated Breyers with other Unilever ice cream brands into the Magnum Ice Cream Company in 2025."},"bbb":{"rating":"B-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/in/huntington/profile/ice-cream/good-humor-breyers-ice-cream-0352-90134559"},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/b/bf/Breyers_logo_2025.png","logoSource":"wiki_infobox","slug":"breyers","secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-04","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Breyers&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-16T23:59:59.000Z","realCats":2,"governance":{"s":"Wikidata: owned by Unilever. (Wikidata Q4962798)","sources":["wikidata"]},"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Breyers",
+  "cat": "Food & Beverage",
+  "init": "BR",
+  "overall": 52.2,
+  "isPublic": true,
+  "ticker": "MICC",
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "positive",
+    "guns": "neutral",
+    "privacy": "mixed",
+    "execPay": "na",
+    "governance": "neutral",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $328K in executive political donations; partisan lean split across 13 executive donors.",
+    "amt": "Not disclosed",
+    "lean": "Neutral",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "charity": {
+    "s": "$60M reported corporate giving in 2024 (~0.09% of revenue).",
+    "amt": "Not disclosed",
+    "focus": "Sustainable agriculture, children's education and health, community enrichment",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Unilever: water pollution violation: $4.6M in federal penalties (Violation Tracker).",
+    "rating": "Good",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Unilever: 44 federal penalties totaling $38.1M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 73/100; CHRB 19.5/26; TVPRA exposure; UK MS statement; AU MS statement.",
+    "rating": "Average",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Unilever: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "stance": "Neutral",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Unilever: BBFAW 2024 Tier 2 — among leading multinationals on policy + reporting. CIWF Good Egg + Good Dairy Awards (Ben & Jerry's Caring Dairy programme). [BBFAW Tier 2 · CIWF Award]",
+    "verdict": "N/A",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Via parent company Unilever: CFPB consumer complaints: 70 on record (36 in past 12mo); 99% timely response rate.",
+    "grade": "Mixed",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-04-04",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Breyers&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "ben-and-jerry-s"
+  ],
+  "wiki": {
+    "founded": "1866-00-00",
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": "Unilever",
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.breyers.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Breyers_logo_2025.png/330px-Breyers_logo_2025.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Breyers",
+    "extract": "Breyers is an ice cream and frozen dessert brand with headquarters in Englewood Cliffs, New Jersey. Since 1993, Breyers was owned and managed by the British conglomerate, Unilever, which incorporated Breyers with other Unilever ice cream brands into the Magnum Ice Cream Company in 2025."
+  },
+  "bbb": {
+    "rating": "B-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/in/huntington/profile/ice-cream/good-humor-breyers-ice-cream-0352-90134559"
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Breyers_logo_2025.png",
+  "logoSource": "wiki_infobox",
+  "slug": "breyers",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-04",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Breyers&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "realCats": 7,
+  "governance": {
+    "s": "Wikidata: owned by Unilever. (Wikidata Q4962798)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  },
+  "health": {
+    "s": "Via parent company Unilever: 4 CPSC recalls on record; sample hazard: the controller of the freezer is incompatible with the unit and can overheat and.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "unilever"
+}

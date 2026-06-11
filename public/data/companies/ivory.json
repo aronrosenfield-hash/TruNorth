@@ -1,1 +1,179 @@
-{"name":"Ivory","cat":"Consumer Goods","init":"IVOR","overall":48.9,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $9K PAC donations; 100% to Republican, 0% to Democratic committees.","amt":"$81","lean":"right","sources":["FEC.gov"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ne/bellevue/profile/beauty-supplies/ebony-2-ivory-0714-1000072669"},"secComplaints":{"count":28,"sample":[{"adsh":"0001193125-24-269931","date":"2024-12-03","filer":"TechTarget, Inc.  (CIK 0002018064)","form":"8-K"},{"adsh":"0001193125-24-269931","date":"2024-12-03","filer":"TechTarget, Inc.  (CIK 0002018064)","form":"8-K"},{"adsh":"0001193125-24-259862","date":"2024-11-15","filer":"TechTarget Inc  (TTGT)  (CIK 0001293282)","form":"8-K"}]},"logoUrl":"https://icons.duckduckgo.com/ip3/ivory.com.ico","logoSource":"ddg_favicon_heuristic","slug":"ivory","competitors":[],"wiki":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":{"source":"FEC API","committeeId":"C00146647","committeeName":"PATRIOTISM IN CONSERVATISM POLITICAL ACTION COMMITTEE (FORMERLY PASCO IVORY CLUB PAC)","lean":"right","repTotal":8750,"demTotal":0,"totalRaised":81,"totalRaisedFmt":"$81","lastFilingDate":"1992-01-31","cycle":1992,"fetchedAt":"2026-05-31T00:16:53.473Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-17","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ivory&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T00:16:53.947Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T00:16:53.947Z","realCats":2,"flags":{"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Consumer Goods"}}}
+{
+  "name": "Ivory",
+  "cat": "Consumer Goods",
+  "init": "IVOR",
+  "overall": 47,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "mixed",
+    "guns": "neutral",
+    "privacy": "mixed",
+    "execPay": "mixed",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $9K PAC donations; 100% to Republican, 0% to Democratic committees.",
+    "amt": "$81",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Procter & Gamble: 60 federal penalties totaling $89.7M since 2000 (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Procter & Gamble: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Disability:IN Equality Index score 100/100. JUST Capital JUST 100 — ranked #28 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. Held by 1 ESG/SRI fund(s) (gender-equality-funds) — investor-screen positive signal. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Procter & Gamble: Wikipedia \"Animal testing\" section: Procter & Gamble has received criticism from animal advocacy group PETA for the practice of testing on animals. On June 30, 1999, Procter & Gamble announced that it would limit its animal testing…",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Via parent company Procter & Gamble: CFPB consumer complaints: 390 on record (33 in past 12mo); 100% timely response rate.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Procter & Gamble: CEO-to-median-worker pay ratio 276:1 (median employee pay $79,510) — SEC proxy statement (DEF 14A, 2025).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ne/bellevue/profile/beauty-supplies/ebony-2-ivory-0714-1000072669"
+  },
+  "secComplaints": {
+    "count": 28,
+    "sample": [
+      {
+        "adsh": "0001193125-24-269931",
+        "date": "2024-12-03",
+        "filer": "TechTarget, Inc.  (CIK 0002018064)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-24-269931",
+        "date": "2024-12-03",
+        "filer": "TechTarget, Inc.  (CIK 0002018064)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001193125-24-259862",
+        "date": "2024-11-15",
+        "filer": "TechTarget Inc  (TTGT)  (CIK 0001293282)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/ivory.com.ico",
+  "logoSource": "ddg_favicon_heuristic",
+  "slug": "ivory",
+  "competitors": [],
+  "wiki": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00146647",
+    "committeeName": "PATRIOTISM IN CONSERVATISM POLITICAL ACTION COMMITTEE (FORMERLY PASCO IVORY CLUB PAC)",
+    "lean": "right",
+    "repTotal": 8750,
+    "demTotal": 0,
+    "totalRaised": 81,
+    "totalRaisedFmt": "$81",
+    "lastFilingDate": "1992-01-31",
+    "cycle": 1992,
+    "fetchedAt": "2026-05-31T00:16:53.473Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-17",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Ivory&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T00:16:53.947Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T00:16:53.947Z",
+  "realCats": 6,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Consumer Goods"
+    }
+  },
+  "health": {
+    "s": "Via parent company Procter & Gamble: 4 CPSC recalls (1 in past 24 months); latest hazard: the handheld hair dryers lack an immersion protection device.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "procter-and-gamble"
+}

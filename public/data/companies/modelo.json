@@ -1,1 +1,187 @@
-{"name":"Modelo","cat":"Food & Beverage","init":"GM","overall":26,"isPublic":false,"ticker":null,"sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na","health":"poor"},"political":{"s":"No public record found.","amt":"Not disclosed","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"$30M reported corporate giving in 2024 (~0.05% of revenue) via Anheuser-Busch Foundation.","amt":"Not disclosed","focus":"Not disclosed","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","rating":"Below Average","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Mixed","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Not disclosed","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2023-06-01","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Modelo&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","competitors":["corona-constellation-brands","heineken-usa","budweiser-anheuser-busch-inbev"],"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ma/somerville/profile/retail-bakers/panificadora-modelo-0021-390195"},"secComplaints":{"count":1,"sample":[{"adsh":"0000915913-25-000024","date":"2025-02-12","filer":"ALBEMARLE CORP  (ALB, ALB-PA)  (CIK 0000915913)","form":"8-K"}]},"slug":"modelo","wiki":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-06-01","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Modelo&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-16T23:59:59.000Z","health":{"s":"HHS Office of Inspector General: 1 OIG exclusion (Medicare/Medicaid debarment)."},"realCats":2,"industry_flags":{"tobacco":false,"fossil_fuel":false,"firearms_industry":false,"alcohol":true,"sources":{"alcohol":{"matchBasis":"parent_map","role":"beer","parent":"anheuser-busch"}},"lastUpdated":"2026-06-09T22:28:27.084Z"},"flags":{"guns":{"na":true},"execPay":{"notDisclosed":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Modelo",
+  "cat": "Food & Beverage",
+  "init": "GM",
+  "overall": 44.2,
+  "isPublic": false,
+  "ticker": null,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na",
+    "health": "poor"
+  },
+  "political": {
+    "s": "Via parent company Anheuser-Busch: FEC: $108K in executive political donations; partisan lean split across 8 executive donors.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
+    "amt": "Not disclosed",
+    "lean": "Neutral",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "charity": {
+    "s": "$30M reported corporate giving in 2024 (~0.05% of revenue) via Anheuser-Busch Foundation.",
+    "amt": "Not disclosed",
+    "focus": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Anheuser-Busch: air pollution violation: $1.5M in federal penalties (Violation Tracker).",
+    "rating": "Below Average",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Anheuser-Busch: 63 federal penalties totaling $19.2M since 2000 (Violation Tracker).",
+    "rating": "Mixed",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "stance": "Neutral",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "ratio": "Not disclosed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2023-06-01",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Modelo&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "corona-constellation-brands",
+    "heineken-usa",
+    "budweiser-anheuser-busch-inbev"
+  ],
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ma/somerville/profile/retail-bakers/panificadora-modelo-0021-390195"
+  },
+  "secComplaints": {
+    "count": 1,
+    "sample": [
+      {
+        "adsh": "0000915913-25-000024",
+        "date": "2025-02-12",
+        "filer": "ALBEMARLE CORP  (ALB, ALB-PA)  (CIK 0000915913)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "slug": "modelo",
+  "wiki": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-06-01",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Modelo&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "health": {
+    "s": "HHS Office of Inspector General: 1 OIG exclusion (Medicare/Medicaid debarment)."
+  },
+  "realCats": 5,
+  "industry_flags": {
+    "tobacco": false,
+    "fossil_fuel": false,
+    "firearms_industry": false,
+    "alcohol": true,
+    "sources": {
+      "alcohol": {
+        "matchBasis": "parent_map",
+        "role": "beer",
+        "parent": "anheuser-busch"
+      }
+    },
+    "lastUpdated": "2026-06-09T22:28:27.084Z"
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  },
+  "inheritedFrom": "anheuser-busch"
+}

@@ -2,15 +2,15 @@
   "name": "Bumble",
   "cat": "Technology",
   "init": "BUMB",
-  "overall": 67.1,
+  "overall": 63.4,
   "isPublic": true,
   "sc": {
     "political": "neutral",
     "charity": "mixed",
-    "environment": "neutral",
-    "labor": "neutral",
+    "environment": "positive",
+    "labor": "poor",
     "dei": "neutral",
-    "animals": "na",
+    "animals": "mixed",
     "guns": "neutral",
     "privacy": "neutral",
     "execPay": "good",
@@ -26,9 +26,9 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "Via parent company ESTEE LAUDER COMPANIES: 10 federal penalties totaling $19.2M since 2000 (Violation Tracker).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "dataLastUpdated": {
@@ -45,9 +45,9 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Via parent company ESTEE LAUDER COMPANIES: Held by 1 ESG/SRI fund(s) (trillium) — investor-screen positive signal.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "dei": {
@@ -57,9 +57,9 @@
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Via parent company ESTEE LAUDER COMPANIES: Buycott — animal-testing campaigns. [buycott]",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "guns": {
@@ -175,7 +175,7 @@
   "health": {
     "s": "2 CPSC recalls on record; sample hazard: the front wheel can break at the axle hub."
   },
-  "realCats": 3,
+  "realCats": 5,
   "governance": {
     "s": "Wikipedia \"Lawsuits\" section: In March 2018, Match Group sued Bumble, arguing that it was guilty of patent infringement and of stealing trade secrets from Tinder. In June 2020, an undisclosed settlement was reached between Match…",
     "sources": [
@@ -223,5 +223,6 @@
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
     }
-  }
+  },
+  "inheritedFrom": "estee-lauder-companies"
 }

@@ -1,1 +1,170 @@
-{"name":"Pillsbury Company","cat":"Food & Beverage","init":"PILL","overall":50,"isPublic":true,"sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $5K PAC donations; 70% to Republican, 30% to Democratic committees.","amt":"$17K","lean":"right","sources":["FEC.gov"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","wiki":{"founded":"1872-01-01","hq":"Minneapolis","employees":null,"revenue":null,"parent":"General Mills","industry":"food industry","products":null,"keyPeople":"Charles Alfred Pillsbury, John S. Pillsbury","website":"https://www.pillsbury.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Pillsbury_company_logo.svg/330px-Pillsbury_company_logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Pillsbury_(brand)","extract":"Pillsbury is an American brand of baking and dough products, marketed by General Mills and Hometown Food Company. Pillsbury products include refrigerated and frozen dough products, including the Toaster Strudel, marketed by General Mills; and shelf-stable flours and baking products marketed by Hometown Food Company. The brand originated in Minneapolis in 1869 with the founding of C. A. Pillsbury and Company, a flour mill on the banks of the Mississippi River."},"bbb":{"rating":"A-","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/mo/saint-louis/profile/jewelry-designers/mary-phillsbury-0734-310418854"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Pillsbury%20company%20logo.svg","logoSource":"wikidata_p154","slug":"pillsbury-company","competitors":[],"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":{"source":"FEC API","committeeId":"C00032748","committeeName":"PILLSBURY COMPANY POLITICAL ACTION COMMITTEE","lean":"right","repTotal":3800,"demTotal":1656,"totalRaised":16788,"totalRaisedFmt":"$17K","lastFilingDate":"1994-01-28","cycle":1994,"fetchedAt":"2026-05-31T01:49:19.298Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-06-20","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Pillsbury%20Company&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T01:49:24.490Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T01:49:24.490Z","realCats":1,"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Pillsbury Company",
+  "cat": "Food & Beverage",
+  "init": "PILL",
+  "overall": 50,
+  "isPublic": true,
+  "sc": {
+    "political": "neutral",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "pro_dei",
+    "animals": "positive",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "mixed",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $5K PAC donations; 70% to Republican, 30% to Democratic committees.",
+    "amt": "$17K",
+    "lean": "right",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company General Mills: 34 federal penalties totaling $1.5M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 48/100; CHRB 12.3/26; TVPRA exposure.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "Via parent company General Mills: $35M reported corporate giving in 2024 (~0.17% of revenue) via General Mills Foundation.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company General Mills: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company General Mills: Häagen-Dazs vanilla + strawberry SKUs sourced from Bee Better Certified almond + strawberry farms (General Mills sub-brand). General Mills funds Bee Better Certified pollinator-habitat conversion across California almond + strawberry suppliers. [Bee Better · Audubon Bird-Friendly Beef]",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company General Mills: CEO-to-median-worker pay ratio 206:1 (median employee pay $60,655) — SEC proxy statement (DEF 14A, 2025).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "wiki": {
+    "founded": "1872-01-01",
+    "hq": "Minneapolis",
+    "employees": null,
+    "revenue": null,
+    "parent": "General Mills",
+    "industry": "food industry",
+    "products": null,
+    "keyPeople": "Charles Alfred Pillsbury, John S. Pillsbury",
+    "website": "https://www.pillsbury.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Pillsbury_company_logo.svg/330px-Pillsbury_company_logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pillsbury_(brand)",
+    "extract": "Pillsbury is an American brand of baking and dough products, marketed by General Mills and Hometown Food Company. Pillsbury products include refrigerated and frozen dough products, including the Toaster Strudel, marketed by General Mills; and shelf-stable flours and baking products marketed by Hometown Food Company. The brand originated in Minneapolis in 1869 with the founding of C. A. Pillsbury and Company, a flour mill on the banks of the Mississippi River."
+  },
+  "bbb": {
+    "rating": "A-",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/mo/saint-louis/profile/jewelry-designers/mary-phillsbury-0734-310418854"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Pillsbury%20company%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "pillsbury-company",
+  "competitors": [],
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00032748",
+    "committeeName": "PILLSBURY COMPANY POLITICAL ACTION COMMITTEE",
+    "lean": "right",
+    "repTotal": 3800,
+    "demTotal": 1656,
+    "totalRaised": 16788,
+    "totalRaisedFmt": "$17K",
+    "lastFilingDate": "1994-01-28",
+    "cycle": 1994,
+    "fetchedAt": "2026-05-31T01:49:19.298Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-06-20",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Pillsbury%20Company&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T01:49:24.490Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T01:49:24.490Z",
+  "realCats": 6,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  },
+  "health": {
+    "s": "Via parent company General Mills: 1 CPSC recall on record; sample hazard: choking.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "general-mills"
+}

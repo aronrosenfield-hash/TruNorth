@@ -2,18 +2,18 @@
   "name": "Bounty",
   "cat": "Retail",
   "init": "BOUN",
-  "overall": 60.5,
+  "overall": 55,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
     "labor": "mixed",
-    "dei": "neutral",
-    "animals": "na",
+    "dei": "pro_dei",
+    "animals": "mixed",
     "guns": "neutral",
-    "privacy": "na",
-    "execPay": "na",
+    "privacy": "mixed",
+    "execPay": "mixed",
     "health": "mixed"
   },
   "political": {
@@ -44,15 +44,15 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company Procter & Gamble: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Disability:IN Equality Index score 100/100. JUST Capital JUST 100 — ranked #28 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. Held by 1 ESG/SRI fund(s) (gender-equality-funds) — investor-screen positive signal. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Via parent company Procter & Gamble: Wikipedia \"Animal testing\" section: Procter & Gamble has received criticism from animal advocacy group PETA for the practice of testing on animals. On June 30, 1999, Procter & Gamble announced that it would limit its animal testing…",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "guns": {
@@ -60,15 +60,15 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Procter & Gamble: CFPB consumer complaints: 390 on record (33 in past 12mo); 100% timely response rate.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "Via parent company Procter & Gamble: CEO-to-median-worker pay ratio 276:1 (median employee pay $79,510) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "ab": "#0d2318",
@@ -118,7 +118,7 @@
   "health": {
     "s": "1 CPSC recall on record."
   },
-  "realCats": 3,
+  "realCats": 6,
   "flags": {
     "guns": {
       "na": true
@@ -136,5 +136,6 @@
       "_inferred": true,
       "basis": "Retail"
     }
-  }
+  },
+  "inheritedFrom": "procter-and-gamble"
 }

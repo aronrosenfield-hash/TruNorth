@@ -2,18 +2,18 @@
   "name": "American Eagle",
   "cat": "Apparel & Fashion",
   "init": "AMER",
-  "overall": 49.6,
+  "overall": 43.4,
   "isPublic": true,
   "sc": {
     "political": "left-leaning",
     "charity": "mixed",
-    "environment": "neutral",
+    "environment": "mixed",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
-    "execPay": "na",
+    "privacy": "poor",
+    "execPay": "mixed",
     "health": "mixed"
   },
   "political": {
@@ -41,16 +41,15 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Via parent company American Airlines: CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "parent-inheritance"
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company American Airlines: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
@@ -64,13 +63,15 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
-    "sources": []
+    "s": "Via parent company American Airlines: DOT enforcement: Record $50M DOT civil penalty — failure to provide timely refunds and mistreatment of wheelchair-using passengers; largest single-carrier enforcement action in agency history.",
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "Via parent company American Airlines: CEO-to-median-worker pay ratio 155:1 (median employee pay $89,429) — SEC proxy statement (DEF 14A, 2026).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "ab": "#0d2318",
@@ -203,7 +204,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: the metal clasp at the waistband can detach from the garment."
   },
-  "realCats": 3,
+  "realCats": 7,
   "flags": {
     "guns": {
       "na": true
@@ -221,5 +222,6 @@
       "_inferred": true,
       "basis": "Apparel & Fashion"
     }
-  }
+  },
+  "inheritedFrom": "american-airlines"
 }

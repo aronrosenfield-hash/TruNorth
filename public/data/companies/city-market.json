@@ -1,1 +1,179 @@
-{"name":"City Market","cat":"Grocery","init":"CITY","overall":78.6,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $365K in executive political donations; partisan lean split across 12 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":"1924-01-01","hq":null,"employees":null,"revenue":null,"parent":"Kroger","industry":"retail","products":null,"keyPeople":null,"website":"https://www.citymarket.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/City_Market_Glenwood_Springs_Colorado.jpg/330px-City_Market_Glenwood_Springs_Colorado.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/City_Market_(US_grocery_store_chain)","extract":"City Market is a supermarket chain operating in the Rocky Mountains of the United States. City Market, Inc. has its headquarters in Grand Junction, Colorado. It is a subsidiary of Kroger."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/oh/port-clinton/profile/grocery-store/bassetts-hardware-city-market-0422-211009943"},"secComplaints":{"count":10,"sample":[{"adsh":"0001035443-25-000182","date":"2025-07-21","filer":"ALEXANDRIA REAL ESTATE EQUITIES, INC.  (ARE)  (CIK 0001035443)","form":"8-K"},{"adsh":"0001035443-25-000137","date":"2025-04-28","filer":"ALEXANDRIA REAL ESTATE EQUITIES, INC.  (ARE)  (CIK 0001035443)","form":"8-K"},{"adsh":"0001035443-25-000068","date":"2025-01-27","filer":"ALEXANDRIA REAL ESTATE EQUITIES, INC.  (ARE)  (CIK 0001035443)","form":"8-K"}]},"logoUrl":"https://icons.duckduckgo.com/ip3/citymarket.com.ico","logoSource":"ddg_favicon_heuristic","slug":"city-market","competitors":[],"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-08-25","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=City%20Market&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-30T22:42:14.362Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T22:42:14.362Z","realCats":1,"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Grocery"}}}
+{
+  "name": "City Market",
+  "cat": "Grocery",
+  "init": "CITY",
+  "overall": 41,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "mixed",
+    "environment": "poor",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "negative",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "poor",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $365K in executive political donations; partisan lean split across 12 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Kroger: 320 federal penalties totaling $3.3B since 2000 (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "Via parent company Kroger: $240M reported corporate giving in 2024 (~0.16% of revenue) via Kroger Co. Foundation.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Kroger: air pollution violation: $102.8M in federal penalties (Violation Tracker).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Kroger: Open Wing Alliance: At risk — Simple Truth cage-free milestone partially reported. [Cage-free at risk]",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Kroger: CEO-to-median-worker pay ratio 417:1 (median employee pay $106) — SEC proxy statement (DEF 14A, 2026).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": "1924-01-01",
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": "Kroger",
+    "industry": "retail",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.citymarket.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/City_Market_Glenwood_Springs_Colorado.jpg/330px-City_Market_Glenwood_Springs_Colorado.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/City_Market_(US_grocery_store_chain)",
+    "extract": "City Market is a supermarket chain operating in the Rocky Mountains of the United States. City Market, Inc. has its headquarters in Grand Junction, Colorado. It is a subsidiary of Kroger."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/oh/port-clinton/profile/grocery-store/bassetts-hardware-city-market-0422-211009943"
+  },
+  "secComplaints": {
+    "count": 10,
+    "sample": [
+      {
+        "adsh": "0001035443-25-000182",
+        "date": "2025-07-21",
+        "filer": "ALEXANDRIA REAL ESTATE EQUITIES, INC.  (ARE)  (CIK 0001035443)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001035443-25-000137",
+        "date": "2025-04-28",
+        "filer": "ALEXANDRIA REAL ESTATE EQUITIES, INC.  (ARE)  (CIK 0001035443)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001035443-25-000068",
+        "date": "2025-01-27",
+        "filer": "ALEXANDRIA REAL ESTATE EQUITIES, INC.  (ARE)  (CIK 0001035443)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/citymarket.com.ico",
+  "logoSource": "ddg_favicon_heuristic",
+  "slug": "city-market",
+  "competitors": [],
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-08-25",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=City%20Market&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-30T22:42:14.362Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T22:42:14.362Z",
+  "realCats": 6,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Grocery"
+    }
+  },
+  "health": {
+    "s": "Via parent company Kroger: 6 CPSC recalls (1 in past 24 months); latest hazard: the recalled over-the-counter product contains the regulated substance acetamino.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "kroger"
+}

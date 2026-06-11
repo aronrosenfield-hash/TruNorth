@@ -1,1 +1,222 @@
-{"name":"Iams","cat":"Consumer Goods","init":"IAMS","overall":41.6,"isPublic":false,"sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"mixed","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"No public record found.","sources":["Claude AI synthesis"]},"labor":{"s":"26 federal penalties totaling $9.4M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":"2026-05-31","charity":{"s":"$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"air pollution violation: $41K in federal penalties (Violation Tracker).","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":"1946-00-00","hq":"Mason","employees":null,"revenue":null,"parent":"Mars, Incorporated, Spectrum Brands","industry":null,"products":null,"keyPeople":"Paul F. Iams","website":"https://www.iams.com/","controversies":null,"logoUrl":null,"wikipediaUrl":"https://en.wikipedia.org/wiki/Iams","extract":"Iams is an American brand of dog food and cat food manufactured by Spectrum Brands in Europe and Mars, Incorporated worldwide excluding Europe. The food is formulated for the puppy/kitten, adult and mature stages of life. Veterinary formulas for pets with special dietary requirements are also produced."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ne/elkhorn/profile/financial-planning-consultants/iams-wealth-management-0714-300181880"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/IAMS-Logo.svg","logoSource":"wikidata_p154","slug":"iams","competitors":[],"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"Williams-Sonoma","slug":"williams-sonoma","ownership":"publicly traded (ticker symbol WSM)","hq":"California","majorIndustry":"retailing","specificIndustry":"retail-housewares","totalPenalty":9399430,"totalRecords":26,"offenseGroups":[{"category":"consumer-protection-related offenses","penalty":5175000,"records":3},{"category":"employment-related offenses","penalty":2200553,"records":3},{"category":"safety-related offenses","penalty":1946271,"records":17},{"category":"environment-related offenses","penalty":77606,"records":3}],"primaryOffenses":[{"category":"consumer protection violation","penalty":5175000,"records":3},{"category":"wage and hour violation","penalty":2200553,"records":3},{"category":"product safety violation","penalty":1687500,"records":2},{"category":"workplace safety or health violation","penalty":258771,"records":15},{"category":"air pollution violation","penalty":40600,"records":1}],"rating":"good","lastChecked":"2026-05-31","fetchedAt":"2026-05-31T00:13:01.084Z"},"fec":null,"sec":null,"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T00:13:01.084Z","realCats":3,"governance":{"s":"Wikidata: owned by Mars, Incorporated; HQ Mason. (Wikidata Q1466792)","sources":["wikidata"]},"flags":{"guns":{"na":true},"health":{"na":true},"execPay":{"notDisclosed":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true}}}
+{
+  "name": "Iams",
+  "cat": "Consumer Goods",
+  "init": "IAMS",
+  "overall": 46.2,
+  "isPublic": false,
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "pro_dei",
+    "animals": "mixed",
+    "guns": "neutral",
+    "privacy": "mixed",
+    "execPay": "mixed",
+    "governance": "neutral",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "26 federal penalties totaling $9.4M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "$70M reported corporate giving in 2024 (~0.08% of revenue) via P&G Fund.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "air pollution violation: $41K in federal penalties (Violation Tracker).",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Procter & Gamble: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Disability:IN Equality Index score 100/100. JUST Capital JUST 100 — ranked #28 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. Held by 1 ESG/SRI fund(s) (gender-equality-funds) — investor-screen positive signal. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Procter & Gamble: Wikipedia \"Animal testing\" section: Procter & Gamble has received criticism from animal advocacy group PETA for the practice of testing on animals. On June 30, 1999, Procter & Gamble announced that it would limit its animal testing…",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "Via parent company Procter & Gamble: CFPB consumer complaints: 390 on record (33 in past 12mo); 100% timely response rate.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Procter & Gamble: CEO-to-median-worker pay ratio 276:1 (median employee pay $79,510) — SEC proxy statement (DEF 14A, 2025).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": "1946-00-00",
+    "hq": "Mason",
+    "employees": null,
+    "revenue": null,
+    "parent": "Mars, Incorporated, Spectrum Brands",
+    "industry": null,
+    "products": null,
+    "keyPeople": "Paul F. Iams",
+    "website": "https://www.iams.com/",
+    "controversies": null,
+    "logoUrl": null,
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Iams",
+    "extract": "Iams is an American brand of dog food and cat food manufactured by Spectrum Brands in Europe and Mars, Incorporated worldwide excluding Europe. The food is formulated for the puppy/kitten, adult and mature stages of life. Veterinary formulas for pets with special dietary requirements are also produced."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ne/elkhorn/profile/financial-planning-consultants/iams-wealth-management-0714-300181880"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/IAMS-Logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "iams",
+  "competitors": [],
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "Williams-Sonoma",
+    "slug": "williams-sonoma",
+    "ownership": "publicly traded (ticker symbol WSM)",
+    "hq": "California",
+    "majorIndustry": "retailing",
+    "specificIndustry": "retail-housewares",
+    "totalPenalty": 9399430,
+    "totalRecords": 26,
+    "offenseGroups": [
+      {
+        "category": "consumer-protection-related offenses",
+        "penalty": 5175000,
+        "records": 3
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 2200553,
+        "records": 3
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 1946271,
+        "records": 17
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 77606,
+        "records": 3
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "consumer protection violation",
+        "penalty": 5175000,
+        "records": 3
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 2200553,
+        "records": 3
+      },
+      {
+        "category": "product safety violation",
+        "penalty": 1687500,
+        "records": 2
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 258771,
+        "records": 15
+      },
+      {
+        "category": "air pollution violation",
+        "penalty": 40600,
+        "records": 1
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-31",
+    "fetchedAt": "2026-05-31T00:13:01.084Z"
+  },
+  "fec": null,
+  "sec": null,
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T00:13:01.084Z",
+  "realCats": 6,
+  "governance": {
+    "s": "Wikidata: owned by Mars, Incorporated; HQ Mason. (Wikidata Q1466792)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "health": {
+    "s": "Via parent company Procter & Gamble: 4 CPSC recalls (1 in past 24 months); latest hazard: the handheld hair dryers lack an immersion protection device.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "procter-and-gamble"
+}

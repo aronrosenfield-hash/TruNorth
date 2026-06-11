@@ -2,35 +2,35 @@
   "name": "Bloomingdale's",
   "cat": "Retail",
   "init": "BLD",
-  "overall": 50,
+  "overall": 47.4,
   "isPublic": false,
   "ticker": null,
   "sc": {
-    "political": "neutral",
-    "charity": "neutral",
+    "political": "bipartisan",
+    "charity": "mixed",
     "environment": "neutral",
     "labor": "mixed",
-    "dei": "neutral",
+    "dei": "pro_dei",
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "poor",
     "health": "mixed"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "Via parent company Macy's: FEC: $333K in executive political donations; partisan lean split across 14 executive donors.",
     "amt": "Not disclosed",
     "lean": "Neutral",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "charity": {
-    "s": "No public record found.",
+    "s": "Via parent company Macy's: $65M reported corporate giving in 2024 (~0.27% of revenue).",
     "amt": "At least $220,000+ annually (recent estimates)",
     "focus": "Arts and culture, breast cancer research, education, HIV/AIDS, mental health advocacy",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "environment": {
@@ -48,10 +48,10 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company Macy's: HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
@@ -74,10 +74,10 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "Via parent company Macy's: CEO-to-median-worker pay ratio 368:1 (median employee pay $38,296) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "Not disclosed",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "ab": "#0d2318",
@@ -155,7 +155,7 @@
   "health": {
     "s": "8 CPSC recalls on record; sample hazard: fire & fire-related burn."
   },
-  "realCats": 1,
+  "realCats": 5,
   "flags": {
     "guns": {
       "na": true
@@ -179,5 +179,6 @@
       "_inferred": true,
       "basis": "Retail"
     }
-  }
+  },
+  "inheritedFrom": "macy-s"
 }

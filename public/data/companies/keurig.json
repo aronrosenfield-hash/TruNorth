@@ -2,7 +2,7 @@
   "name": "Keurig",
   "cat": "Consumer Goods",
   "init": "KEUR",
-  "overall": 44.5,
+  "overall": 46,
   "isPublic": true,
   "sc": {
     "political": "neutral",
@@ -13,7 +13,7 @@
     "animals": "na",
     "guns": "neutral",
     "privacy": "neutral",
-    "execPay": "na",
+    "execPay": "mixed",
     "health": "mixed",
     "governance": "neutral"
   },
@@ -72,9 +72,9 @@
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "Via parent company Keurig Dr Pepper: CEO-to-median-worker pay ratio 127:1 (median employee pay $64,534; CEO total compensation $8K) — SEC proxy statement (DEF 14A, 2025).",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "ab": "#2a0d0d",
@@ -240,7 +240,7 @@
   "health": {
     "s": "1 CPSC recall on record; sample hazard: water can overheat during brewing."
   },
-  "realCats": 3,
+  "realCats": 4,
   "governance": {
     "s": "Wikidata: owned by Keurig Dr Pepper. (Wikidata Q6395629)",
     "sources": [
@@ -264,5 +264,6 @@
       "_inferred": true,
       "basis": "Consumer Goods"
     }
-  }
+  },
+  "inheritedFrom": "keurig-dr-pepper"
 }

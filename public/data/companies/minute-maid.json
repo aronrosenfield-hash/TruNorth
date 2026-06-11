@@ -1,1 +1,190 @@
-{"name":"Minute Maid","cat":"Food & Beverage","init":"MM","overall":50,"isPublic":false,"ticker":null,"sc":{"political":"neutral","charity":"mixed","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"No public record found.","amt":"Not disclosed","lean":"Neutral","sources":["Claude AI synthesis"]},"charity":{"s":"$165M reported corporate giving in 2024 (~0.36% of revenue) via Coca-Cola Foundation.","amt":"Up to $60,000 (documented Canadian partnership)","focus":"Child nutrition, education, community well-being","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","rating":"Mixed","sources":["Claude AI synthesis"]},"labor":{"s":"No public record found.","rating":"Poor","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","stance":"Neutral","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","verdict":"N/A","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","verdict":"N/A","sources":[]},"privacy":{"s":"No public record found.","grade":"Mixed","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","ratio":"Not disclosed","sources":["Claude AI synthesis"]},"execPayAPI":{"sec":{"filingFound":true,"filingDate":"2024-03-04","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Minute%20Maid&type=DEF+14A&dateb=&owner=include&count=10"}},"ab":"#0d2318","ac":"#4caf82","dataLastUpdated":"2026-05-28","competitors":["tropicana","naked-juice","ocean-spray"],"wiki":{"founded":"1945-00-00","hq":"Sugar Land","employees":null,"revenue":null,"parent":"The Coca-Cola Company","industry":"beverage industry","products":null,"keyPeople":null,"website":"https://www.minutemaid.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Minute_Maid_2023.svg/330px-Minute_Maid_2023.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Minute_Maid","extract":"Minute Maid is an American brand of beverages, usually associated with lemonade or orange juice, but which now extends to soft drinks of different kinds, including Hi-C. Minute Maid was the first company to market frozen orange juice concentrate, allowing it to be distributed throughout the United States and served year-round."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nj/fairfield/profile/product-development-and-marketing/telebrands-0221-19000531/addressId/20362"},"secComplaints":{"count":1,"sample":[{"adsh":"0000021344-24-000040","date":"2024-07-23","filer":"COCA COLA CO  (KO)  (CIK 0000021344)","form":"8-K"}]},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Minute%20Maid%202023.svg","logoSource":"wikidata_p154","slug":"minute-maid","news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-03-04","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Minute%20Maid&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-16T23:59:59.000Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-16T23:59:59.000Z","realCats":1,"flags":{"guns":{"na":true},"execPay":{"notDisclosed":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Minute Maid",
+  "cat": "Food & Beverage",
+  "init": "MM",
+  "overall": 45.4,
+  "isPublic": false,
+  "ticker": null,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "poor",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "poor",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "Via parent company Coca-Cola: FEC: $252K in executive political donations; partisan lean split across 14 executive donors.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
+    "amt": "Not disclosed",
+    "lean": "Neutral",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "charity": {
+    "s": "$165M reported corporate giving in 2024 (~0.36% of revenue) via Coca-Cola Foundation.",
+    "amt": "Up to $60,000 (documented Canadian partnership)",
+    "focus": "Child nutrition, education, community well-being",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "rating": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company Coca-Cola: 123 federal penalties totaling $265.8M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 58/100; CHRB 13.8/26; TVPRA exposure; UK MS statement; AU MS statement.",
+    "rating": "Poor",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Coca-Cola: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "stance": "Neutral",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company Coca-Cola: Ethical Consumer Avoid — environment + plastic-pollution + tax + political-donations concerns. [ethical-consumer]",
+    "verdict": "N/A",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "verdict": "N/A",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "grade": "Mixed",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company Coca-Cola: CEO-to-median-worker pay ratio 739:1 (median employee pay $17,947) — SEC proxy statement (DEF 14A, 2026).",
+    "ratio": "Not disclosed",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPayAPI": {
+    "sec": {
+      "filingFound": true,
+      "filingDate": "2024-03-04",
+      "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Minute%20Maid&type=DEF+14A&dateb=&owner=include&count=10"
+    }
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "dataLastUpdated": "2026-05-28",
+  "competitors": [
+    "tropicana",
+    "naked-juice",
+    "ocean-spray"
+  ],
+  "wiki": {
+    "founded": "1945-00-00",
+    "hq": "Sugar Land",
+    "employees": null,
+    "revenue": null,
+    "parent": "The Coca-Cola Company",
+    "industry": "beverage industry",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.minutemaid.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Minute_Maid_2023.svg/330px-Minute_Maid_2023.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Minute_Maid",
+    "extract": "Minute Maid is an American brand of beverages, usually associated with lemonade or orange juice, but which now extends to soft drinks of different kinds, including Hi-C. Minute Maid was the first company to market frozen orange juice concentrate, allowing it to be distributed throughout the United States and served year-round."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nj/fairfield/profile/product-development-and-marketing/telebrands-0221-19000531/addressId/20362"
+  },
+  "secComplaints": {
+    "count": 1,
+    "sample": [
+      {
+        "adsh": "0000021344-24-000040",
+        "date": "2024-07-23",
+        "filer": "COCA COLA CO  (KO)  (CIK 0000021344)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Minute%20Maid%202023.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "minute-maid",
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-03-04",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Minute%20Maid&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-16T23:59:59.000Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-16T23:59:59.000Z",
+  "realCats": 6,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "execPay": {
+      "notDisclosed": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  },
+  "health": {
+    "s": "Via parent company Coca-Cola: 3 CPSC recalls on record; sample hazard: the inner wall of the double-walled glasses can break easily.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "coca-cola"
+}

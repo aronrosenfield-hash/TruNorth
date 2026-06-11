@@ -11,7 +11,7 @@
     "environment": "positive",
     "labor": "mixed",
     "dei": "neutral",
-    "animals": "neutral",
+    "animals": "poor",
     "guns": "neutral",
     "privacy": "mixed",
     "execPay": "na",
@@ -56,9 +56,11 @@
     "sources": []
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Via parent company LVMH: Good On You Not Good Enough — LVMH limited public targets. [goodonyou]",
     "verdict": "Tests on Animals",
-    "sources": []
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "guns": {
     "s": "No public record found.",
@@ -275,5 +277,6 @@
     "transparency": {
       "notDisclosed": true
     }
-  }
+  },
+  "inheritedFrom": "lvmh"
 }

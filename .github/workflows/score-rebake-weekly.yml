@@ -38,6 +38,17 @@ jobs:
       - name: Apply rebake (writes sidecar to per-company JSON)
         run: node scripts/rebake-scores-from-events.mjs --apply
 
+      # R6 Lever 1 (2026-06-10): propagate refreshed parent data to
+      # sub-brand catalog entries ("Via parent company X" cells), then
+      # recompute realCats/overall and the index so inherited grades ship.
+      - name: Parent-inheritance refresh
+        run: node scripts/inherit-from-parent.mjs --apply
+
+      - name: Rebake scoring + finalize bundle
+        run: |
+          node scripts/rebake-scoring.mjs --apply
+          node scripts/finalize-bundle.mjs
+
       - name: Commit + push
         run: |
           DATE=$(date -u +%Y-%m-%d)

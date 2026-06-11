@@ -2,27 +2,27 @@
   "name": "Sam's Club",
   "cat": "Retail",
   "init": "SC",
-  "overall": 50,
+  "overall": 45.1,
   "isPublic": false,
   "ticker": null,
   "sc": {
-    "political": "neutral",
+    "political": "bipartisan",
     "charity": "mixed",
-    "environment": "neutral",
+    "environment": "poor",
     "labor": "mixed",
-    "dei": "neutral",
-    "animals": "na",
-    "guns": "neutral",
-    "privacy": "na",
-    "execPay": "na",
+    "dei": "pro_dei",
+    "animals": "mixed",
+    "guns": "sells_guns",
+    "privacy": "mixed",
+    "execPay": "poor",
     "health": "mixed"
   },
   "political": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: FEC: $22K PAC donations; 58% to Republican, 42% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]  [Stanford DIME (Bonica) corroborates.]  [FollowTheMoney.org adds state-level totals.]",
     "amt": "~$7.24M lobbying + $3.89M contributions (Walmart/parent, 2024)",
     "lean": "Right-leaning",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "charity": {
@@ -35,10 +35,10 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: water pollution violation: $90.8M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "labor": {
@@ -49,36 +49,38 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: HRC Corporate Equality Index: 90/100 (2025) — strong LGBTQ+ workplace policies with minor deductions. Disability:IN Equality Index score 90/100. JUST Capital JUST 100 — ranked #88 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. HRC Corporate Equality Index 90/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
     "stance": "Anti-DEI",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: Open Wing Alliance: At risk — Great Value cage-free milestone not yet reported. MSC retail partner — Great Value canned tuna + wild-catch lines MSC-certified. [Cage-free at risk · MSC certified]",
     "verdict": "Some Testing",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "guns": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: Buycott — campaigns over warehouse wages, firearm retail, supply-chain labor. [buycott]",
     "verdict": "No gun sales",
-    "sources": []
+    "sources": [
+      "parent-inheritance"
+    ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: 1 investigation by The Markup (themes: pricing). Most recent: \"Walmart Charges Higher Prices in Lower-Income Zip Codes\" (2023).",
     "grade": "Mixed",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
-    "s": "No public record found.",
+    "s": "Via parent company Walmart: CEO-to-median-worker pay ratio 958:1 (median employee pay $30,520) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "~388:1 (divisional CEO vs. median worker estimate)",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPayAPI": {
@@ -313,7 +315,7 @@
   "health": {
     "s": "16 CPSC recalls (1 in past 24 months); latest hazard: electrocution/electric shock."
   },
-  "realCats": 2,
+  "realCats": 7,
   "flags": {
     "guns": {
       "na": true
@@ -334,5 +336,6 @@
       "_inferred": true,
       "basis": "Retail"
     }
-  }
+  },
+  "inheritedFrom": "walmart"
 }

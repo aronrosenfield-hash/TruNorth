@@ -1,1 +1,162 @@
-{"name":"Betty Crocker","cat":"Food & Beverage","init":"BETT","overall":64.5,"isPublic":true,"sc":{"political":"bipartisan","charity":"mixed","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $310K in executive political donations; partisan lean split across 9 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":"2026-05-31","charity":{"s":"$35M reported corporate giving in 2024 (~0.17% of revenue) via General Mills Foundation.","sources":["Claude AI synthesis","corporate-giving"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","wiki":{"founded":"1921-00-00","hq":null,"employees":null,"revenue":null,"parent":"General Mills","industry":null,"products":null,"keyPeople":null,"website":"https://www.bettycrocker.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/Betty_Crocker_New_Logo.svg/330px-Betty_Crocker_New_Logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/Betty_Crocker","extract":"Betty Crocker is a brand and fictional character used in advertising campaigns for food and recipes. The character was created by the Washburn-Crosby Company in 1921 to give a personalized response to consumer product questions. In 1954, General Mills introduced the red spoon logo with her signature, placing it on Gold Medal flour, Bisquick, and cake-mix packages. A portrait of Betty Crocker appears on printed advertisements, product packaging, and cookbooks."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/nj/fairfield/profile/product-development-and-marketing/telebrands-0221-19000531"},"logoUrl":"https://icons.duckduckgo.com/ip3/bettycrocker.com.ico","logoSource":"ddg_favicon_official","slug":"betty-crocker","competitors":[],"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-07-19","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Betty%20Crocker&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-30T22:07:29.281Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T22:07:29.281Z","realCats":2,"governance":{"s":"Wikidata: owned by General Mills. (Wikidata Q4898793)","sources":["wikidata"]},"flags":{"guns":{"na":true},"dei":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Food & Beverage"}}}
+{
+  "name": "Betty Crocker",
+  "cat": "Food & Beverage",
+  "init": "BETT",
+  "overall": 54.8,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "mixed",
+    "environment": "neutral",
+    "labor": "mixed",
+    "dei": "pro_dei",
+    "animals": "positive",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "mixed",
+    "governance": "neutral",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $310K in executive political donations; partisan lean split across 9 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "Via parent company General Mills: 34 federal penalties totaling $1.5M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 48/100; CHRB 12.3/26; TVPRA exposure.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dataLastUpdated": "2026-05-31",
+  "charity": {
+    "s": "$35M reported corporate giving in 2024 (~0.17% of revenue) via General Mills Foundation.",
+    "sources": [
+      "Claude AI synthesis",
+      "corporate-giving"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company General Mills: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "Via parent company General Mills: Häagen-Dazs vanilla + strawberry SKUs sourced from Bee Better Certified almond + strawberry farms (General Mills sub-brand). General Mills funds Bee Better Certified pollinator-habitat conversion across California almond + strawberry suppliers. [Bee Better · Audubon Bird-Friendly Beef]",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "Via parent company General Mills: CEO-to-median-worker pay ratio 206:1 (median employee pay $60,655) — SEC proxy statement (DEF 14A, 2025).",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "wiki": {
+    "founded": "1921-00-00",
+    "hq": null,
+    "employees": null,
+    "revenue": null,
+    "parent": "General Mills",
+    "industry": null,
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.bettycrocker.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/Betty_Crocker_New_Logo.svg/330px-Betty_Crocker_New_Logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Betty_Crocker",
+    "extract": "Betty Crocker is a brand and fictional character used in advertising campaigns for food and recipes. The character was created by the Washburn-Crosby Company in 1921 to give a personalized response to consumer product questions. In 1954, General Mills introduced the red spoon logo with her signature, placing it on Gold Medal flour, Bisquick, and cake-mix packages. A portrait of Betty Crocker appears on printed advertisements, product packaging, and cookbooks."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/nj/fairfield/profile/product-development-and-marketing/telebrands-0221-19000531"
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/bettycrocker.com.ico",
+  "logoSource": "ddg_favicon_official",
+  "slug": "betty-crocker",
+  "competitors": [],
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-07-19",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Betty%20Crocker&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-30T22:07:29.281Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T22:07:29.281Z",
+  "realCats": 6,
+  "governance": {
+    "s": "Wikidata: owned by General Mills. (Wikidata Q4898793)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Food & Beverage"
+    }
+  },
+  "health": {
+    "s": "Via parent company General Mills: 1 CPSC recall on record; sample hazard: choking.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "general-mills"
+}
