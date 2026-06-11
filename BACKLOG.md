@@ -40,7 +40,7 @@ Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scorin
 | ~~E-8~~ | ~~Lever 2 residuals~~ | ✅ done 2026-06-11 | reflag-categories na pass IS live (guns na on 11,164 brands, animals 5,698, health 8,729) + private-co explainer shipped; still missing: execPay-na for private companies (0 flagged today) and the retailer "does not sell firearms" factual fills (only 1 no_guns in catalog — it's a real datapoint for gun-stance quiz users) |
 | E-3 | **FTC cases & proceedings fetcher** | ~half day | R6 research §4 — privacy/consumer enforcement, verified viable, unbuilt |
 | E-4 | **OFCCP EEO-1 Type 2 static augment** | manual + 1h | Needs Aron: one-time manual FOIA-library download, then a static augment writer (best per-company DEI option) |
-| E-5 | **11 empty augments** (was 15) | ~1h | awa, cnmv-spain, datatilsynet-denmark, fdpic-switzerland, hk-compcomm + 6 more — verify each is legitimately-no-matches vs wiped (sandboxed-PR incident class, B-60/61/62) |
+| ~~E-5~~ | ~~11 empty augments~~ | ✅ verified legit 2026-06-11 | All 11 are legitimately empty: seed/merge scripts run clean but those small intl regulators have zero catalog-brand matches (awa: 9 records all orphaned; fdpic: 0; weko: 1). NOT the wiped-snapshot class |
 | E-6 | **SOURCES_DATA sync** | ~1h | In-app Sources tab lists 100 sources; `docs/SOURCES.md` has ~150; landing claims 200+. User-visible — reconcile before PH eyes on it |
 
 ---
