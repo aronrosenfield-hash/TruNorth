@@ -14,7 +14,7 @@ export const T = {
   txt: "#EDE9E0", txt2: "#A9A498", txt3: "#9A9489",
   border: "#23262C", border2: "#2A2E35",
   // verdigris — THE signal color (alignment, compass, progress, links)
-  accent: "#3DD6B5", accent2: "#5FE3C8", accentBg: "#10231F",
+  accent: "#38C0CE", accent2: "#5CD6E0", accentBg: "#0E2126",
   // party colors stay semantic (donation facts, not verdicts)
   dem: "#4A90E2", demBg: "#0D1F35",
   // oxblood — clash/violations only
@@ -31,7 +31,7 @@ export const MONO = "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace";
 // Grade palette — engraving colors for seals/chips. A=verdigris (aligned),
 // F=oxblood (clash); B/C/D are bone-and-amber neutrals, NOT signal colors.
 export const GRADE_COLORS = {
-  A: { text: "#3DD6B5", bg: "#10231F", border: "#1E4A3F" },
+  A: { text: "#38C0CE", bg: "#0E2126", border: "#1E444A" },
   B: { text: "#9CC98A", bg: "#19230F", border: "#2E4A1E" },
   C: { text: "#A9A498", bg: "#1F2228", border: "#2A2E35" },
   D: { text: "#E8A04C", bg: "#241B0D", border: "#4A381E" },

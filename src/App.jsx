@@ -1760,7 +1760,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
       const pickScore = computeScore(co, profile);
       const pickGrade = scoreGrade(pickScore, userRelevantRealCats(co, profile));
       const flavor = {
-        A: { color:"#3DD6B5", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#10231F" },
+        A: { color:"#38C0CE", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0E2126" },
         B: { color:"#9CC98A", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#19230F" },
         C: { color:"#E8A04C", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#1F2228" },
         D: { color:"#E8A04C", bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:"#241B0D" },
@@ -1803,7 +1803,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
   const pickScore = computeScore(pick, profile);
   const pickGrade = scoreGrade(pickScore, userRelevantRealCats(pick, profile));
   const flavorByGrade = {
-    A: { tag: "Worth knowing", color: "#3DD6B5", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
+    A: { tag: "Worth knowing", color: "#38C0CE", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
     B: { tag: "Worth knowing", color: "#9CC98A", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
     C: { tag: "Mixed signal",  color: "#E8A04C", bgTint: "rgba(240,160,48,0.08)", borderTint: "rgba(240,160,48,0.4)" },
     D: { tag: "Worth a look",  color: "#E8A04C", bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
@@ -1821,7 +1821,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
         <div style={{ fontSize:15, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", marginTop:2 }}>{pick.name}</div>
         <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{pick.cat}</div>
       </div>
-      <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#10231F" : pickGrade === "B" ? "#19230F" : pickGrade === "C" ? "#1F2228" : pickGrade === "D" ? "#241B0D" : "#291110", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+      <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#0E2126" : pickGrade === "B" ? "#19230F" : pickGrade === "C" ? "#1F2228" : pickGrade === "D" ? "#241B0D" : "#291110", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
     </div>
   );
 }
@@ -2402,12 +2402,12 @@ function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance", unk
   const dotColor = unknown
     ? "transparent"
     : isUniversal
-      ? (pos < 0.35 ? "#E0524D" : pos > 0.65 ? "#3DD6B5" : "#9b8ff0")
+      ? (pos < 0.35 ? "#E0524D" : pos > 0.65 ? "#38C0CE" : "#9b8ff0")
       : "#9b8ff0";
   const gradient = unknown
     ? "#2a2348"
     : isUniversal
-      ? "linear-gradient(to right, #E0524D 0%, #E0524D 22%, #555 38%, #555 62%, #3DD6B5 78%, #3DD6B5 100%)"
+      ? "linear-gradient(to right, #E0524D 0%, #E0524D 22%, #555 38%, #555 62%, #38C0CE 78%, #38C0CE 100%)"
       : "linear-gradient(to right, #2A2E35 0%, #4A4E55 50%, #6E6A60 100%)";
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%", opacity: unknown ? 0.65 : 1 }}>
@@ -2972,7 +2972,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
           {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
           {(() => {
             const gradeRowColors = {
-              A: { bg:"#10231F", border:"#1E4A3F", text:"#3DD6B5" },
+              A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
               B: { bg:"#19230F", border:"#2E4A1E", text:"#9CC98A" },
               C: { bg:"#1F2228", border:"#2A2E35", text:"#E8A04C" },
               D: { bg:"#241B0D", border:"#4A381E", text:"#E8A04C" },
@@ -3146,7 +3146,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             if (hasBetterAlts) {
               return (
                 <div style={{ background:"rgba(76,175,130,0.08)", border:"1.5px solid rgba(76,175,130,0.4)", borderRadius:12, padding:"12px 14px", marginBottom:14 }}>
-                  <div style={{ fontSize:11, fontWeight:700, color:"#3DD6B5", textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
+                  <div style={{ fontSize:11, fontWeight:700, color:"#38C0CE", textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
                     <i className="ti ti-arrow-up-right" aria-hidden="true" /> Better for your values
                   </div>
                   <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
@@ -3171,7 +3171,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                             <div style={{ fontSize:13, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{alt.name}</div>
                             <div style={{ fontSize:11, color:T.txt3 }}>{altScore - ps}+ points better for you</div>
                           </div>
-                          <div style={{ padding:"4px 10px", borderRadius:8, background:altGrade === "A" ? "#10231F" : "#19230F", color: altGrade === "A" ? "#3DD6B5" : "#9CC98A", fontSize:13, fontWeight:700 }}>{altGrade}</div>
+                          <div style={{ padding:"4px 10px", borderRadius:8, background:altGrade === "A" ? "#0E2126" : "#19230F", color: altGrade === "A" ? "#38C0CE" : "#9CC98A", fontSize:13, fontWeight:700 }}>{altGrade}</div>
                           <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
                         </button>
                       );
@@ -3210,7 +3210,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               profile flows below it. Pre-quiz users see a neutral grey circle. */}
           {(() => {
             const gradeColors = {
-              A: { bg:"#10231F", border:"#3DD6B5", text:"#3DD6B5" },
+              A: { bg:"#0E2126", border:"#38C0CE", text:"#38C0CE" },
               B: { bg:"#19230F", border:"#9CC98A", text:"#9CC98A" },
               C: { bg:"#1F2228", border:"#E8A04C", text:"#E8A04C" },
               D: { bg:"#241B0D", border:"#E8A04C", text:"#E8A04C" },
@@ -3258,7 +3258,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         return (
                           <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, whiteSpace:"nowrap", background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
                             <i className={`ti ${limited ? "ti-file" : "ti-files"}`} aria-hidden="true" style={{ fontSize:11 }} />
-                            {limited ? `Limited data — ${n} record category` : `Based on ${n} record categories`}
+                            {limited ? `Limited · ${n} category` : `${n} record categories`}
                           </div>
                         );
                       })()}
@@ -3346,7 +3346,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                                 {top.map((it, i) => (
                                   <span key={it.k}>
                                     {i > 0 && ", "}
-                                    <span style={{ color: it.delta > 0 ? "#3DD6B5" : "#E0524D", fontWeight:600 }}>{reasonFor(it)}</span>
+                                    <span style={{ color: it.delta > 0 ? "#38C0CE" : "#E0524D", fontWeight:600 }}>{reasonFor(it)}</span>
                                   </span>
                                 ))}
                                 {top[0] && <span style={{ color:T.txt3 }}> most</span>}
@@ -3381,7 +3381,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         return (
                           <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, whiteSpace:"nowrap", background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
                             <i className={`ti ${limited ? "ti-file" : "ti-files"}`} aria-hidden="true" style={{ fontSize:11 }} />
-                            {limited ? `Limited data — ${n} record category` : `Based on ${n} record categories`}
+                            {limited ? `Limited · ${n} category` : `${n} record categories`}
                           </div>
                         );
                       })()}
@@ -3589,7 +3589,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   <div style={{ fontSize:11, color:T.txt3, marginBottom:6 }}>
                     News last 90d: <b style={{ color:T.txt2 }}>{enriched.news.mentionCount90d || 0}</b> mentions
                     {typeof enriched.news.avgTone === "number" && (
-                      <> · tone <b style={{ color: enriched.news.avgTone < -2 ? "#E0524D" : enriched.news.avgTone > 2 ? "#3DD6B5" : T.txt2 }}>{enriched.news.avgTone.toFixed(1)}</b></>
+                      <> · tone <b style={{ color: enriched.news.avgTone < -2 ? "#E0524D" : enriched.news.avgTone > 2 ? "#38C0CE" : T.txt2 }}>{enriched.news.avgTone.toFixed(1)}</b></>
                     )}
                   </div>
                   {enriched.news.scandalSignals?.length > 0 && (
@@ -3745,7 +3745,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               {/* Phase 5.af: SEC DEF 14A pay-ratio */}
               {enriched.payRatio && (enriched.payRatio.ratioDisplay || enriched.payRatio.ratio) && (
                 <div style={{ marginBottom:10, fontSize:11, color:T.txt3 }}>
-                  CEO-to-median pay ratio: <b style={{ color: enriched.payRatio.ratio > 250 ? "#E0524D" : enriched.payRatio.ratio > 50 ? T.gold : "#3DD6B5" }}>{enriched.payRatio.ratioDisplay || `${Math.round(enriched.payRatio.ratio)}:1`}</b>
+                  CEO-to-median pay ratio: <b style={{ color: enriched.payRatio.ratio > 250 ? "#E0524D" : enriched.payRatio.ratio > 50 ? T.gold : "#38C0CE" }}>{enriched.payRatio.ratioDisplay || `${Math.round(enriched.payRatio.ratio)}:1`}</b>
                   {enriched.payRatio.ceoPay && (
                     <> · CEO ${(enriched.payRatio.ceoPay/1e6).toFixed(1)}M</>
                   )}
@@ -3771,7 +3771,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                       const scoreOk = typeof b.score === "number" && b.score >= 80;
                       const Tag = b.sourceUrl ? "a" : "span";
                       return (
-                        <Tag key={i} href={b.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background: scoreOk ? "rgba(76,175,130,0.12)" : T.bg3, border:`1px solid ${scoreOk ? "rgba(76,175,130,0.4)" : T.border}`, color: scoreOk ? "#3DD6B5" : T.txt2, textDecoration:"none" }}>
+                        <Tag key={i} href={b.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background: scoreOk ? "rgba(76,175,130,0.12)" : T.bg3, border:`1px solid ${scoreOk ? "rgba(76,175,130,0.4)" : T.border}`, color: scoreOk ? "#38C0CE" : T.txt2, textDecoration:"none" }}>
                           {label} {b.score != null ? `· ${b.score}` : ""} {b.year ? `· ${b.year}` : ""}
                         </Tag>
                       );
@@ -3794,7 +3794,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                                   : c.certifyingBody;
                       const Tag = c.sourceUrl ? "a" : "span";
                       return (
-                        <Tag key={i} href={c.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background: negative ? "rgba(226,74,74,0.12)" : "rgba(76,175,130,0.12)", border:`1px solid ${negative ? "rgba(226,74,74,0.4)" : "rgba(76,175,130,0.4)"}`, color: negative ? "#E0524D" : "#3DD6B5", textDecoration:"none" }}>
+                        <Tag key={i} href={c.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background: negative ? "rgba(226,74,74,0.12)" : "rgba(76,175,130,0.12)", border:`1px solid ${negative ? "rgba(226,74,74,0.4)" : "rgba(76,175,130,0.4)"}`, color: negative ? "#E0524D" : "#38C0CE", textDecoration:"none" }}>
                           {negative ? "✗ " : "✓ "}{label}
                         </Tag>
                       );
@@ -3845,10 +3845,10 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                 <div style={{ marginBottom:10 }}>
                   <div style={{ fontSize:11, color:T.txt3, marginBottom:4 }}>Ownership</div>
                   <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
-                    {enriched.ownership.blackOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5FE3C8" }}>Black-owned</span>}
-                    {enriched.ownership.womenOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5FE3C8" }}>Women-owned</span>}
-                    {enriched.ownership.minorityOwned && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5FE3C8" }}>Minority-owned</span>}
-                    {enriched.ownership.lgbtOwned     && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5FE3C8" }}>LGBT-owned</span>}
+                    {enriched.ownership.blackOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>Black-owned</span>}
+                    {enriched.ownership.womenOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>Women-owned</span>}
+                    {enriched.ownership.minorityOwned && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>Minority-owned</span>}
+                    {enriched.ownership.lgbtOwned     && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>LGBT-owned</span>}
                     {enriched.ownership.smallBusiness && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}>Small business</span>}
                   </div>
                 </div>
@@ -4549,7 +4549,7 @@ function SubmitView({ isPaid, onUpgrade }) {
   return (
     <div style={{ padding:16 }}>
       <p style={{ fontSize:13, color:T.txt3, marginBottom:16, lineHeight:1.6 }}>Help us keep data accurate. Flag a correction or suggest a company to add.</p>
-      {sent && <div style={{ background:"#10231F", border:"1px solid #3DD6B5", borderRadius:12, padding:14, color:"#3DD6B5", fontSize:14, fontWeight:600, marginBottom:14, display:"flex", alignItems:"center", gap:8 }}><i className="ti ti-check" style={{fontSize:18}} aria-hidden="true" /> Submitted — thanks!</div>}
+      {sent && <div style={{ background:"#0E2126", border:"1px solid #38C0CE", borderRadius:12, padding:14, color:"#38C0CE", fontSize:14, fontWeight:600, marginBottom:14, display:"flex", alignItems:"center", gap:8 }}><i className="ti ti-check" style={{fontSize:18}} aria-hidden="true" /> Submitted — thanks!</div>}
       <div style={{ display:"flex", gap:8, marginBottom:16 }}>
         {["correction","new"].map(t => (
           <button key={t} onClick={()=>setType(t)} style={{ padding:"7px 12px", borderRadius:20, fontSize:13, fontWeight:type===t?600:400, border:`1px solid ${type===t?T.accent:T.border2}`, background:type===t?T.accentBg:T.bg3, color:type===t?T.accent2:T.txt2, cursor:"pointer" }}>
@@ -4850,7 +4850,7 @@ function SuggestBrandButton({ query }) {
 
   if (phase === "done_email") {
     return (
-      <div style={{ fontSize:13, color:"#3DD6B5", display:"flex", alignItems:"center", justifyContent:"center", gap:6, padding:"4px 8px" }}>
+      <div style={{ fontSize:13, color:"#38C0CE", display:"flex", alignItems:"center", justifyContent:"center", gap:6, padding:"4px 8px" }}>
         <i className="ti ti-mail-check" aria-hidden="true" />
         Thanks — we'll email you when &ldquo;{query}&rdquo; is added
       </div>
@@ -4858,7 +4858,7 @@ function SuggestBrandButton({ query }) {
   }
   if (phase === "done_anon") {
     return (
-      <div style={{ fontSize:13, color:"#3DD6B5", display:"flex", alignItems:"center", justifyContent:"center", gap:6 }}>
+      <div style={{ fontSize:13, color:"#38C0CE", display:"flex", alignItems:"center", justifyContent:"center", gap:6 }}>
         <i className="ti ti-check" aria-hidden="true" />
         Thanks — we'll look at adding it
       </div>
@@ -5743,8 +5743,8 @@ useEffect(() => {
     return pick;
   }, [deduped, profile]);
   const catIconMap = {Retail:"ti-building-store",Food:"ti-chef-hat",Technology:"ti-device-laptop",Grocery:"ti-shopping-cart",Energy:"ti-bolt",Apparel:"ti-shirt",Media:"ti-device-tv",Finance:"ti-building-bank",Healthcare:"ti-heartbeat",Outdoor:"ti-mountain",Consumer:"ti-package",Conglomerate:"ti-building-skyscraper",Auto:"ti-car",Sports:"ti-ball-basketball"};
-  const catBgs = ["#1e1535","#10231F","#0d1f35","#291110","#2e1a05","#2a1a05"];
-  const catFgs = ["#9b8ff0","#3DD6B5","#4a90e2","#E0524D","#e8a042","#E8A04C"];
+  const catBgs = ["#1e1535","#0E2126","#0d1f35","#291110","#2e1a05","#2a1a05"];
+  const catFgs = ["#9b8ff0","#38C0CE","#4a90e2","#E0524D","#e8a042","#E8A04C"];
 
   // Phase 5.am: combined "library" tab replacing the separate History tab.
   // User asked to surface Favorites prominently (was buried in Account)
@@ -5923,7 +5923,7 @@ if (screen === "onboarding") {
                 {(() => {
                   const wg = scoreGrade(winner.score, userRelevantRealCats(winner.co, profile));
                   const palette = {
-                    A: { bg:"#10231F", border:"#1E4A3F", text:"#3DD6B5" },
+                    A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
                     B: { bg:"#19230F", border:"#2E4A1E", text:"#9CC98A" },
                     C: { bg:"#1F2228", border:"#2A2E35", text:"#E8A04C" },
                     D: { bg:"#241B0D", border:"#4A381E", text:"#E8A04C" },
@@ -6235,7 +6235,7 @@ if (screen === "onboarding") {
                 <div style={{ position:"absolute", top:"calc(100% + 4px)", left:0, right:0, background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, boxShadow:"0 8px 24px rgba(0,0,0,0.4)", zIndex:50, overflow:"hidden" }}>
                   {suggestions.map(co => {
                     const g = co.overall != null ? scoreGrade(co.overall, co.realCats) : "?";
-                    const gradeColor = { A:"#3DD6B5", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
+                    const gradeColor = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
                     return (
                       <button
                         key={co.slug || co.id}
@@ -6785,7 +6785,7 @@ if (screen === "onboarding") {
                   <span style={{ flex:1, fontWeight:600, color:T.txt }}>{ch.name}</span>
                   <span style={{ color:T.txt3 }}>{ch.from}</span>
                   <i className="ti ti-arrow-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
-                  <span style={{ fontWeight:800, color: "ABC".includes(ch.to) && !"ABC".includes(ch.from) ? "#3DD6B5" : ("DF".includes(ch.to) && !"DF".includes(ch.from) ? "#E0524D" : T.txt) }}>{ch.to}</span>
+                  <span style={{ fontWeight:800, color: "ABC".includes(ch.to) && !"ABC".includes(ch.from) ? "#38C0CE" : ("DF".includes(ch.to) && !"DF".includes(ch.from) ? "#E0524D" : T.txt) }}>{ch.to}</span>
                 </div>
               ))}
               <div style={{ fontSize:10.5, color:T.txt3, marginTop:6 }}>Grades moved because new public records arrived for these brands.</div>
@@ -6870,7 +6870,7 @@ if (screen === "onboarding") {
                 ) : savedCos.map(co => {
                   const ps = computeScore(co, profile);
                   const g = scoreGrade(ps, userRelevantRealCats(co, profile));
-                  const colors = { A:"#3DD6B5", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
+                  const colors = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
                   // Phase 5.au (QA #12): "Updates since you saved" badge.
                   // Counts weekly_changes entries for this brand. Promotes
                   // Saved from passive list → active dossier (journalism loop).
@@ -6969,7 +6969,7 @@ if (screen === "onboarding") {
                         {fullCo && (() => {
                           const ps = computeScore(fullCo, profile);
                           const g = scoreGrade(ps, userRelevantRealCats(fullCo, profile));
-                          const colors = { A:"#3DD6B5", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
+                          const colors = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
                           return <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>;
                         })()}
                         <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
@@ -7403,7 +7403,7 @@ if (screen === "onboarding") {
               Each company is scored 0–100 across the value categories with data, then averaged. The letter grade is the overall score put on a school-grade curve:
             </div>
             {[
-              { grade:"A", range:"90–100", desc:"Best of class — strong on most categories with no major red flags",  color:"#3DD6B5", bg:"#10231F", border:"#1E4A3F" },
+              { grade:"A", range:"90–100", desc:"Best of class — strong on most categories with no major red flags",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
               { grade:"B", range:"80–89",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
               { grade:"C", range:"70–79",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
               { grade:"D", range:"60–69",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },

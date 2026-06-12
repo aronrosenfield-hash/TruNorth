@@ -10,7 +10,7 @@ import React from "react";
 
 const C = {
   bg: "#0E0F12", bgSoft: "#16181D", bgCard: "#16181D", border: "#23262C",
-  text: "#EDE9E0", textDim: "#A9A498", textMute: "#9A9489", accent: "#3DD6B5",
+  text: "#EDE9E0", textDim: "#A9A498", textMute: "#9A9489", accent: "#38C0CE",
 };
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 

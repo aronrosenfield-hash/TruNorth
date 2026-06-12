@@ -34,7 +34,7 @@ The current dark-gray + purple is interchangeable with a thousand indie apps. Th
 | `bone` | `#EDE9E0` | Primary text (warm paper, not white) |
 | `bone.dim` | `#A9A498` | Secondary text |
 | `bone.mute` | `#6E6A60` | Tertiary / captions |
-| `verdigris` | `#3DD6B5` | THE signal color: alignment, the compass, progress |
+| `verdigris` | `#38C0CE` | THE signal color: alignment, the compass, progress (cooled toward cyan per Aron, 2026-06-12 — was #3DD6B5) |
 | `oxblood` | `#E0524D` | Clash / violations only |
 | `brass` | `#C9A86A` | Records, citations, ledger accents (the "receipt" color) |
 

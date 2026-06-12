@@ -12,7 +12,7 @@ const C = {
   text:     "#EDE9E0",
   textDim:  "#A9A498",
   textMute: "#9A9489",
-  accent:   "#3DD6B5",
+  accent:   "#38C0CE",
 };
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";

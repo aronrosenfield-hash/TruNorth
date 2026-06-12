@@ -38,8 +38,8 @@ function arcPath(cx, cy, r, startDeg, endDeg) {
 // Alignment color ramp: low scores sit bone-muted, high scores verdigris.
 // (Oxblood is reserved for the single clash axis — not a general ramp.)
 function arcColor(v) {
-  if (v >= 0.75) return { stroke: "#3DD6B5", opacity: 1 };
-  if (v >= 0.55) return { stroke: "#3DD6B5", opacity: 0.62 };
+  if (v >= 0.75) return { stroke: "#38C0CE", opacity: 1 };
+  if (v >= 0.55) return { stroke: "#38C0CE", opacity: 0.62 };
   if (v >= 0.40) return { stroke: "#A9A498", opacity: 0.75 };
   return { stroke: "#A9A498", opacity: 0.45 };
 }
@@ -69,7 +69,7 @@ export default function CompassSeal({
     return (
       <svg width={size} height={size} viewBox="0 0 100 100" role="img"
         aria-label={title || (grade ? `Compass verdict: grade ${grade}` : "Compass verdict")}
-        style={glow ? { filter: "drop-shadow(0 0 16px rgba(61,214,181,0.28))" } : undefined}>
+        style={glow ? { filter: "drop-shadow(0 0 16px rgba(56,192,206,0.28))" } : undefined}>
         {/* quiet base ring so the seal reads as one object before data */}
         <circle cx={cx} cy={cy} r={R} fill="none" stroke="#1F2228" strokeWidth="7" />
         {COMPASS_AXES.map((k, i) => {
@@ -110,10 +110,10 @@ export default function CompassSeal({
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" role="img"
       aria-label={title || "Your values compass"}
-      style={glow ? { filter: "drop-shadow(0 0 16px rgba(61,214,181,0.28))" } : undefined}>
+      style={glow ? { filter: "drop-shadow(0 0 16px rgba(56,192,206,0.28))" } : undefined}>
       <circle cx={cx} cy={cy} r={R + 4} fill="none" stroke="#23262C" strokeWidth="1" />
-      <polygon points={polygon} fill="rgba(61,214,181,0.10)" stroke="#3DD6B5" strokeWidth="2.2" strokeLinejoin="round" />
-      <g stroke="#3DD6B5" strokeWidth="0.8" opacity="0.35">
+      <polygon points={polygon} fill="rgba(56,192,206,0.10)" stroke="#38C0CE" strokeWidth="2.2" strokeLinejoin="round" />
+      <g stroke="#38C0CE" strokeWidth="0.8" opacity="0.35">
         {pts.map((p, i) => <line key={i} x1={cx} y1={cy} x2={p[0]} y2={p[1]} />)}
       </g>
       <circle cx={cx} cy={cy} r="3" fill="#EDE9E0" />

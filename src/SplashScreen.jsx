@@ -36,7 +36,7 @@ export default function SplashScreen({ onDone }) {
               </div>
               <div style={styles.wordmark}>
                 <span style={{ color: "#EDE9E0" }}>Tru</span>
-                <span style={{ color: "#3DD6B5" }}>North</span>
+                <span style={{ color: "#38C0CE" }}>North</span>
               </div>
             </div>
             <div style={styles.tagline}>Know where your money goes</div>
@@ -53,7 +53,7 @@ const styles = {
   wrap:  { width:"100%", maxWidth:430, height:"100%", display:"flex", alignItems:"center", justifyContent:"center" },
   inner: { display:"flex", alignItems:"center", justifyContent:"center", width:"100%", height:"100%" },
   logo:  { display:"flex", alignItems:"center", gap:12 },
-  icon:  { width:52, height:52, background:"#3DD6B5", borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", fontSize:26, color:"#fff" },
+  icon:  { width:52, height:52, background:"#38C0CE", borderRadius:14, display:"flex", alignItems:"center", justifyContent:"center", fontSize:26, color:"#fff" },
   wordmark: { fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize:30, fontWeight:800, letterSpacing:-0.5 },
   tagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:13, color:"#bbb", letterSpacing:0.3, marginTop:4 },
   subtagline: { fontFamily:"-apple-system, BlinkMacSystemFont, sans-serif", fontSize:14, color:"#888", letterSpacing:0.3, marginTop:2 },
