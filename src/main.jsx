@@ -1,6 +1,9 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import '@tabler/icons-webfont/dist/tabler-icons.min.css'
+// M8 (2026-06-11): subset icon font — 84 used glyphs, 12KB vs the full
+// 5,800-glyph 457KB woff2. Regenerate src/tabler-subset.css + assets woff2
+// when adding icons (see comment inside the css).
+import './tabler-subset.css'
 import App from './App.jsx'
 import { initCapacitor } from './lib/capacitor-init'
 import { ConfirmProvider } from './components/ConfirmModal'

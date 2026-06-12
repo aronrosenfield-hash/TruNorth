@@ -3983,6 +3983,32 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               (not the closed row) so the company name has room to breathe. */}
           {(onToggleSave || onToggleCompare) && (
             <div style={{ display:"flex", gap:8, marginBottom:8 }}>
+              {/* Retention v1 (2026-06-11): brand-grade share — the viral
+                  object is "this brand grades X on my values", rendered by
+                  the /api/og/brand endpoint for rich previews. */}
+              <button
+                onClick={async (e) => {
+                  e.stopPropagation();
+                  const slug = company.slug || company.id;
+                  const myGrade = profile && grade && grade !== "?" ? grade : null;
+                  const url = `https://www.trunorthapp.com/company/${slug}?${new URLSearchParams({ ...(myGrade ? { g: myGrade } : {}), utm_source: "share", utm_medium: "brand_card" })}`;
+                  const shareData = {
+                    title: `${company.name} on TruNorth`,
+                    text: myGrade ? `${company.name} grades ${myGrade} on my values. See what it grades on yours:` : `See how ${company.name} scores on what matters to you:`,
+                    url,
+                  };
+                  let method = "clipboard";
+                  try {
+                    if (navigator.share && navigator.canShare?.(shareData) !== false) { await navigator.share(shareData); method = "native_share"; }
+                    else if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(url); }
+                  } catch (err) { if (err?.name === "AbortError") method = "cancelled"; }
+                  track("brand_card_shared", { slug, grade: myGrade, method });
+                }}
+                style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}
+              >
+                <i className="ti ti-share" aria-hidden="true" style={{ fontSize:13 }} />
+                Share
+              </button>
               {onToggleSave && (
                 <button
                   onClick={(e) => { e.stopPropagation(); onToggleSave(); }}
@@ -5101,6 +5127,13 @@ useEffect(() => {
     catch { return new Set(); }
   });
   const [showSavedOnly, setShowSavedOnly] = useState(false);
+  // Retention v1 (2026-06-11 review): local "what changed" feed. We snapshot
+  // the user-visible grade of every SAVED brand (localStorage, no backend),
+  // and on each launch diff current grades against the snapshot. Changes
+  // surface as a card at the top of Library → Saved and a dot on the tab.
+  // This converts the daily data pipeline into a visible return-trigger
+  // without accounts or push infra (APNs is the post-launch upgrade path).
+  const [savedChanges, setSavedChanges] = useState([]);
   // Review fix (2026-06-11): default surfaces exclude non-consumer companies
   // (EDGAR mid-caps, B2B). Search still finds them by exact intent — they
   // rank below consumer matches — and this toggle reveals everything.
@@ -5370,6 +5403,34 @@ useEffect(() => {
       });
     return () => { cancelled = true; };
   }, [companies, marketingScreen]);
+
+  // Retention v1: diff saved brands' grades vs the last-seen snapshot.
+  useEffect(() => {
+    if (!companies || savedSet.size === 0) return;
+    let snap = {};
+    try { snap = JSON.parse(localStorage.getItem("tn_savedGradeSnap") || "{}"); } catch {}
+    const next = {};
+    const changes = [];
+    for (const slug of savedSet) {
+      const co = companies.find(c => (c.slug || c.id) === slug);
+      if (!co) continue;
+      const ps = computeScore(co, profile);
+      const g = scoreGrade(ps, userRelevantRealCats(co, profile));
+      next[slug] = { g, at: Date.now() };
+      const prev = snap[slug];
+      if (prev && prev.g && prev.g !== "?" && g !== "?" && prev.g !== g) {
+        changes.push({ slug, name: co.name, from: prev.g, to: g });
+      }
+    }
+    // Persist the new snapshot immediately — the in-memory list keeps this
+    // session's diffs visible; next launch starts from today's grades.
+    try { localStorage.setItem("tn_savedGradeSnap", JSON.stringify(next)); } catch {}
+    if (changes.length) {
+      setSavedChanges(changes);
+      track("saved_grades_changed", { count: changes.length });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [companies, profile]);
 
   // Deep-link: when companies have loaded and we have a slug from the URL,
   // jump to the search tab and seed the search with the company's name so
@@ -6304,8 +6365,8 @@ if (screen === "onboarding") {
               </button>
             )}
             <span style={{ marginLeft:"auto", fontSize:11, color:T.txt3 }}>{filtered.length}</span>
+            <button onClick={()=>setShowAllCompanies(v=>!v)} style={{ fontSize:11, color:showAllCompanies?T.accent2:T.txt3, background:showAllCompanies?T.accentBg:"transparent", border:`1px solid ${showAllCompanies?T.accent:T.border2}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }} title="Include banks, utilities, and other non-consumer companies in browse">{showAllCompanies ? "All companies" : "Consumer brands"}</button>
             {(leanFilter!=="all"||catFilters.length>0||query||showSavedOnly) && (
-              <button onClick={()=>setShowAllCompanies(v=>!v)} style={{ fontSize:11, color:showAllCompanies?T.accent2:T.txt3, background:showAllCompanies?T.accentBg:"transparent", border:`1px solid ${showAllCompanies?T.accent:T.border2}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }} title="Include banks, utilities, and other non-consumer companies in browse">{showAllCompanies ? "All companies" : "Consumer brands"}</button>
               <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQueryRaw("");setQuery("");setShowSavedOnly(false);setShowAllCompanies(false);}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
             )}
           </div>
@@ -6674,6 +6735,25 @@ if (screen === "onboarding") {
               );
             })}
           </div>
+
+          {/* Retention v1: what-changed card — the reason to come back. */}
+          {librarySubtab === "saved" && savedChanges.length > 0 && (
+            <div style={{ margin:"12px 16px 0", padding:"12px 14px", borderRadius:12, background:T.accentBg, border:`1px solid ${T.accent}` }}>
+              <div style={{ fontSize:12, fontWeight:700, color:T.accent2, marginBottom:8 }}>
+                <i className="ti ti-bell" aria-hidden="true" style={{ marginRight:5 }} />
+                Since your last visit
+              </div>
+              {savedChanges.slice(0, 6).map(ch => (
+                <div key={ch.slug} onClick={() => openBrand(ch.slug)} style={{ display:"flex", alignItems:"center", gap:8, padding:"6px 0", cursor:"pointer", fontSize:13, color:T.txt2 }}>
+                  <span style={{ flex:1, fontWeight:600, color:T.txt }}>{ch.name}</span>
+                  <span style={{ color:T.txt3 }}>{ch.from}</span>
+                  <i className="ti ti-arrow-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
+                  <span style={{ fontWeight:800, color: "ABC".includes(ch.to) && !"ABC".includes(ch.from) ? "#4caf82" : ("DF".includes(ch.to) && !"DF".includes(ch.from) ? "#e24a4a" : T.txt) }}>{ch.to}</span>
+                </div>
+              ))}
+              <div style={{ fontSize:10.5, color:T.txt3, marginTop:6 }}>Grades moved because new public records arrived for these brands.</div>
+            </div>
+          )}
 
           {/* ── SAVED sub-tab ─────────────────────────────────────────── */}
           {librarySubtab === "saved" && (() => {
