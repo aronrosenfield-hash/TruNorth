@@ -1,15 +1,40 @@
-// UX 9B: theme tokens extracted from App.jsx. Single source of truth for
-// brand colors used throughout the app.
+// Civic Premium tokens (R1, 2026-06-11) — the Compass redesign skin.
+// Spec: docs/design/REDESIGN_BRIEF.md §2. Single source of truth.
+//
+// Rules: verdigris + oxblood are VERDICT colors only — never decoration.
+// Brass marks anything sourced from a public record. Everything else is
+// ink and bone. (The old gray+purple palette is retired;
+// scripts/ui-guards.test.mjs bans the purple from ever returning.)
 
 export const T = {
-  bg: "#0f0f0f", bg2: "#1a1a1a", bg3: "#242424", bg4: "#2e2e2e",
-  // 2026-06-05 (PageSpeed Tier 1 / a11y): bumped txt3 from #666 (3.34:1
-  // contrast on bg #0f0f0f — FAILS WCAG AA) to #8a8a8a (5.55:1 — PASSES).
-  // Lighthouse contrast-ratio violation on / and /company/* is now resolved.
-  txt: "#f2f2f2", txt2: "#a8a8a8", txt3: "#8a8a8a",
-  border: "#2a2a2a", border2: "#3a3a3a",
-  accent: "#7c6dfa", accent2: "#9d91ff", accentBg: "#1e1b3a",
-  dem: "#4a90e2", demBg: "#0d1f35",
-  rep: "#e24a4a", repBg: "#350d0d",
-  gold: "#f0c040", goldBg: "#2a2005",
+  // ink scale (warm near-blacks)
+  bg: "#0E0F12", bg2: "#16181D", bg3: "#1F2228", bg4: "#262A31",
+  // bone scale (warm paper, not white). txt3 stays ≥4.5:1 on bg for WCAG AA
+  // (the 2026-06-05 contrast fix carries over — do not darken below #9A94).
+  txt: "#EDE9E0", txt2: "#A9A498", txt3: "#9A9489",
+  border: "#23262C", border2: "#2A2E35",
+  // verdigris — THE signal color (alignment, compass, progress, links)
+  accent: "#3DD6B5", accent2: "#5FE3C8", accentBg: "#10231F",
+  // party colors stay semantic (donation facts, not verdicts)
+  dem: "#4A90E2", demBg: "#0D1F35",
+  // oxblood — clash/violations only
+  rep: "#E0524D", repBg: "#291110",
+  // brass — records, citations, ledger accents (was gold)
+  gold: "#C9A86A", goldBg: "#241D10",
+};
+
+// Type system (brief §2): serif = the verdict/identity voice; mono = the
+// trust texture for receipts, dates, dollars, ratios, grades-in-ledgers.
+export const SERIF = "ui-serif, 'New York', Georgia, 'Times New Roman', serif";
+export const MONO = "ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace";
+
+// Grade palette — engraving colors for seals/chips. A=verdigris (aligned),
+// F=oxblood (clash); B/C/D are bone-and-amber neutrals, NOT signal colors.
+export const GRADE_COLORS = {
+  A: { text: "#3DD6B5", bg: "#10231F", border: "#1E4A3F" },
+  B: { text: "#9CC98A", bg: "#19230F", border: "#2E4A1E" },
+  C: { text: "#A9A498", bg: "#1F2228", border: "#2A2E35" },
+  D: { text: "#E8A04C", bg: "#241B0D", border: "#4A381E" },
+  F: { text: "#E0524D", bg: "#291110", border: "#4A1E1E" },
+  "?": { text: "#6E6A60", bg: "#16181D", border: "#23262C" },
 };

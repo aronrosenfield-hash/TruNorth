@@ -5,14 +5,14 @@
 import React from "react";
 
 const C = {
-  bg:       "#0f0f0f",
-  bgSoft:   "#161616",
-  bgCard:   "#1c1c1e",
-  border:   "#2a2a2c",
-  text:     "#f2f2f2",
-  textDim:  "#a8a8ad",
-  textMute: "#6c6c72",
-  accent:   "#7c6dfa",
+  bg:       "#0E0F12",
+  bgSoft:   "#16181D",
+  bgCard:   "#16181D",
+  border:   "#23262C",
+  text:     "#EDE9E0",
+  textDim:  "#A9A498",
+  textMute: "#9A9489",
+  accent:   "#3DD6B5",
 };
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";

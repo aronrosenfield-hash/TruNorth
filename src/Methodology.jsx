@@ -9,8 +9,8 @@
 import React from "react";
 
 const C = {
-  bg: "#0f0f0f", bgSoft: "#161616", bgCard: "#1c1c1e", border: "#2a2a2c",
-  text: "#f2f2f2", textDim: "#a8a8ad", textMute: "#6c6c72", accent: "#7c6dfa",
+  bg: "#0E0F12", bgSoft: "#16181D", bgCard: "#16181D", border: "#23262C",
+  text: "#EDE9E0", textDim: "#A9A498", textMute: "#9A9489", accent: "#3DD6B5",
 };
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
@@ -32,7 +32,7 @@ export default function Methodology({ onBack }) {
     <div style={{ minHeight: "100dvh", background: C.bg, color: C.text, fontFamily: FONT }}>
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "calc(24px + env(safe-area-inset-top,0px)) 22px 80px" }}>
         <button onClick={onBack} style={{ background: "transparent", border: "none", color: C.accent, fontSize: 14, fontWeight: 600, cursor: "pointer", padding: "8px 0", marginBottom: 8 }}>← Back</button>
-        <h1 style={{ fontSize: 32, fontWeight: 800, letterSpacing: -1, marginBottom: 6 }}>How TruNorth grades work</h1>
+        <h1 style={{ fontFamily: "ui-serif, 'New York', Georgia, serif", fontSize: 32, fontWeight: 600, letterSpacing: -0.5, marginBottom: 6 }}>How TruNorth grades work</h1>
         <p style={{ fontSize: 13, color: C.textMute, marginBottom: 24 }}>Methodology, published in full. Last updated June 11, 2026.</p>
 
         <P>Every grade in TruNorth is computed by the published formula on this page, from public records we cite. No grade is hand-set, no company can pay to change one, and the same math runs identically whether a brand leans left, right, or neither.</P>

@@ -154,8 +154,11 @@ Engine note: **zero new data or scoring work required** — verdict sentences, r
 ## 7. What we deliberately keep
 The scoring engine and methodology page (untouched) · evidence-count honesty (re-expressed as "n receipts") · the "?" no-fake-grades rule · neutrality symmetry (tension cards are stance-neutral by construction) · the corrections channel · barcode infrastructure (Lens wraps it) · the values-archetype concept (promoted, not replaced).
 
-## 8. Open design questions for Aron
-1. Light "paper" mode as the *default* (full archival look) or dark-ink only at first? (Mockups are dark-ink; paper variant is a half-day spike.)
-2. Compass geometry: radar-polygon (mockup v1) vs. radial-burst seal — needs side-by-side.
-3. Wrapped in v1.1 or hold for December cultural moment?
-4. Tension-card copy: nine drafts included in mockups — wants his red pen.
+## 8. Design decisions (Aron, 2026-06-11 PM)
+1. ✅ **Dark ink** — sole mode. No paper-light variant for now.
+2. ✅ **Radar-polygon** seal geometry (mockup v1 as shipped).
+3. ✅ **The Switch flow greenlit** as the core action/loop.
+4. Wrapped: design now, ship dormant for the December cultural moment (default kept — revisit anytime).
+5. Tension-card copy: drafts stand pending Aron's red pen during R2.
+
+**R1 began 2026-06-11 PM.**

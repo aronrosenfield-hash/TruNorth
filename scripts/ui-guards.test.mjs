@@ -25,6 +25,19 @@ test("guard: viewport zoom lock intact in index.html", () => {
     "Viewport zoom lock removed — accidental pinch will leave the iOS WebView stuck zoomed (Build 55 bug).");
 });
 
+test("guard: Civic Premium — the retired purple (#7c6dfa) never returns", () => {
+  // R1 (2026-06-11): the old gray+purple skin is retired by the Compass
+  // redesign (docs/design/REDESIGN_BRIEF.md). Any reappearance of the old
+  // accent means a component was pasted from a pre-R1 commit.
+  const files = ["src/App.jsx", "src/OnboardingFlow.jsx", "src/Methodology.jsx",
+    "src/PrivacyPolicy.jsx", "src/SplashScreen.jsx", "src/lib/theme.js", "index.html"];
+  for (const f of files) {
+    const txt = fs.readFileSync(f, "utf8").toLowerCase();
+    assert.ok(!txt.includes("#7c6dfa") && !txt.includes("#9d91ff"),
+      `${f} contains the retired purple accent — use T.accent (verdigris) from lib/theme`);
+  }
+});
+
 test("guard: subset icon font in use (not the 457KB full webfont)", () => {
   const main = fs.readFileSync("src/main.jsx", "utf8");
   assert.ok(main.includes("tabler-subset.css"), "main.jsx no longer imports the subset css");

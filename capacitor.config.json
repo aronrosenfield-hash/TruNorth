@@ -1,27 +1,27 @@
 {
-  "appId": "com.trunorthapp.app",
-  "appName": "TruNorth",
-  "webDir": "dist",
-  "ios": {
-    "contentInset": "never",
-    "scrollEnabled": false,
-    "limitsNavigationsToAppBoundDomains": false,
-    "scheme": "TruNorth",
-    "backgroundColor": "#0f0f0f"
-  },
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 1200,
-      "launchAutoHide": true,
-      "backgroundColor": "#0f0f0f",
-      "androidSplashResourceName": "splash",
-      "iosSpinnerStyle": "small",
-      "spinnerColor": "#7c6dfa",
-      "showSpinner": false
-    },
-    "StatusBar": {
-      "style": "DARK",
-      "backgroundColor": "#0f0f0f"
-    }
-  }
+	"appId": "com.trunorthapp.app",
+	"appName": "TruNorth",
+	"webDir": "dist",
+	"ios": {
+		"contentInset": "never",
+		"scrollEnabled": false,
+		"limitsNavigationsToAppBoundDomains": false,
+		"scheme": "TruNorth",
+		"backgroundColor": "#0E0F12"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 1200,
+			"launchAutoHide": true,
+			"backgroundColor": "#0E0F12",
+			"androidSplashResourceName": "splash",
+			"iosSpinnerStyle": "small",
+			"spinnerColor": "#3DD6B5",
+			"showSpinner": false
+		},
+		"StatusBar": {
+			"style": "DARK",
+			"backgroundColor": "#0E0F12"
+		}
+	}
 }
