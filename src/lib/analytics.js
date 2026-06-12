@@ -56,7 +56,10 @@ export function initAnalytics() {
     persistence: 'memory',         // cookieless — no consent banner needed
     autocapture: true,             // grabs most clicks/forms automatically
     capture_pageview: true,
-    disable_session_recording: false,
+    // M4 (2026-06-11 privacy alignment): the app markets itself as anonymous
+    // — session replay recorded full screen contents and was ON. Replay is
+    // now permanently disabled; we keep event analytics only.
+    disable_session_recording: true,
     loaded: (ph) => {
       const ai = detectAiReferrer();
       if (ai) {

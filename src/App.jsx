@@ -9,7 +9,7 @@ import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource } from "./lib/dataSource";
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
@@ -2249,13 +2249,14 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
   // Phase 5.af: prefer the curated logoUrl from the pipeline's logo harvester
   // (Wikidata P154 > Wikipedia infobox > DuckDuckGo favicon, picked at build
   // time). Falls back to the favicon-API providers when no curated URL exists.
-  const providers = [
-    ...(company?.logoUrl ? [company.logoUrl] : []),
-    ...(domain ? [
-      `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
-      `https://icons.duckduckgo.com/ip3/${domain}.ico`,
-    ] : []),
-  ];
+  // M4 (2026-06-11 privacy alignment): the old fallback chain called
+  // google.com/s2/favicons + icons.duckduckgo.com per rendered brand —
+  // leaking each user's browsing list to third parties, in an app marketed
+  // as anonymous. Curated pipeline logoUrl or initials only. (The pipeline
+  // logo harvester already bakes DuckDuckGo favicons at BUILD time where
+  // useful — that lookup happens on our servers, not the user's device.)
+  const providers = company?.logoUrl ? [company.logoUrl] : [];
+  void domain; // retained for guessDomain callers elsewhere
   const [providerIdx, setProviderIdx] = React.useState(0);
   const [errored, setErrored] = React.useState(providers.length === 0);
   React.useEffect(() => {
@@ -2784,6 +2785,11 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
+  // M5 (2026-06-11): when the detail fetch fails (offline / 404), the card
+  // used to render "No public record found yet" for every category — a
+  // FACTUAL CLAIM this app must never make in an error state. Track the
+  // failure and render a retry block instead.
+  const [detailError, setDetailError] = useState(false);
 
   // QA fix 2026-06-10: tell the deep-link effect its slug was consumed so it
   // stops marking this brand initiallyOpen on future list re-mounts.
@@ -2813,8 +2819,8 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     let cancelled = false;
     setLoadingDetail(true);
     loadCompanyDetail(company.slug)
-      .then(d => { if (!cancelled) setDetail(d); })
-      .catch(err => console.error("[dataSource] detail fetch failed for", company.slug, err))
+      .then(d => { if (!cancelled) { setDetail(d); setDetailError(false); } })
+      .catch(err => { console.error("[dataSource] detail fetch failed for", company.slug, err); if (!cancelled) setDetailError(true); })
       .finally(() => { if (!cancelled) setLoadingDetail(false); });
     return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -2882,8 +2888,8 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
         if (isSplitBundleEnabled() && company.slug && !detail && !loadingDetail) {
           setLoadingDetail(true);
           loadCompanyDetail(company.slug)
-            .then(d => setDetail(d))
-            .catch(err => console.error("[dataSource] detail fetch failed for", company.slug, err))
+            .then(d => { setDetail(d); setDetailError(false); })
+            .catch(err => { console.error("[dataSource] detail fetch failed for", company.slug, err); setDetailError(true); })
             .finally(() => setLoadingDetail(false));
         }
       }
@@ -2952,6 +2958,28 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
           {/* Phase 3.1: thin loading bar while we fetch full detail */}
           {loadingDetail && (
             <div style={{ height:2, background:T.accent, opacity:0.5, marginBottom:12, borderRadius:1, animation:"pulse 1.5s ease-in-out infinite" }} aria-label="Loading details" />
+          )}
+          {/* M5: fetch failed — say so honestly and offer retry. Never let an
+              error state read as "no public record" (that's an assertion). */}
+          {detailError && !detail && !loadingDetail && (
+            <div style={{ padding:"14px 12px", textAlign:"center", marginBottom:10, background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:12 }}>
+              <div style={{ fontSize:13, fontWeight:600, color:T.txt2, marginBottom:4 }}>
+                <i className="ti ti-wifi-off" aria-hidden="true" style={{ marginRight:6 }} />
+                Couldn't load this company's records
+              </div>
+              <div style={{ fontSize:12, color:T.txt3, marginBottom:10 }}>Check your connection — the records are still there.</div>
+              <button
+                onClick={() => {
+                  setDetailError(false);
+                  setLoadingDetail(true);
+                  loadCompanyDetail(company.slug)
+                    .then(d => { setDetail(d); setDetailError(false); })
+                    .catch(() => setDetailError(true))
+                    .finally(() => setLoadingDetail(false));
+                }}
+                style={{ padding:"8px 18px", borderRadius:10, border:`1px solid ${T.accent}`, background:"transparent", color:T.accent2, fontSize:12, fontWeight:700, cursor:"pointer", minHeight:36 }}
+              >Retry</button>
+            </div>
           )}
           {/* Federal penalty callout. Phase 4.11: now triggers on the FACT
               (≥$5M in penalties), not the app's grade verdict. Lets users
@@ -3407,7 +3435,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             );
           })()}
 
-          {CAT_KEYS.map(k => (
+          {!(detailError && !detail) && CAT_KEYS.map(k => (
             <CategoryRow
               key={k}
               cat={k}
@@ -4930,6 +4958,11 @@ useEffect(() => {
     try { localStorage.setItem("tn_isPaid", val ? "1" : "0"); } catch {}
   };
   const [showPaywall, setShowPaywall] = useState(false);
+  // H3 (2026-06-11): true when the live catalog failed and we fell back to
+  // the build-time snapshot (src/companies.js) — grades may be outdated and
+  // the user MUST be told. Also set when native iOS serves bundled data
+  // offline (see getNativeDataSource in lib/dataSource).
+  const [staleDataMode, setStaleDataMode] = useState(false);
 
 
   const [tab, setTab]           = useState(() => {
@@ -5018,7 +5051,7 @@ useEffect(() => {
   const [weeklyChanges, setWeeklyChanges] = useState(null);
   useEffect(() => {
     let cancelled = false;
-    fetch("/data/weekly_changes.json", { cache: "no-cache" })
+    fetchAppData("/data/weekly_changes.json", { cache: "no-cache" })
       .then(r => r.ok ? r.json() : null)
       .then(d => { if (!cancelled) setWeeklyChanges(d); })
       .catch(() => { /* file just doesn't exist yet — fine */ });
@@ -5030,7 +5063,7 @@ useEffect(() => {
   const [editorial, setEditorial] = useState(null);
   useEffect(() => {
     let cancelled = false;
-    fetch("/data/editorial.json", { cache: "no-cache" })
+    fetchAppData("/data/editorial.json", { cache: "no-cache" })
       .then(r => r.ok ? r.json() : null)
       .then(d => { if (!cancelled) setEditorial(d); })
       .catch(() => { /* missing = silently fall back to algorithmic pool */ });
@@ -5256,11 +5289,17 @@ useEffect(() => {
     const primary  = () => splitFirst ? loadCompanyIndex() : import("./companies.js").then(m => m.COMPANIES);
     const fallback = () => splitFirst ? import("./companies.js").then(m => m.COMPANIES) : loadCompanyIndex();
     primary()
-      .then(list => { if (!cancelled) setCompanies(list); })
+      .then(list => {
+        if (cancelled) return;
+        setCompanies(list);
+        // Native offline: index came from the .ipa's bundled copy → data is
+        // as old as the installed build. Same banner as the web fallback.
+        if (getNativeDataSource() === "bundled") setStaleDataMode(true);
+      })
       .catch(err => {
         console.error("[dataSource] primary failed, trying fallback:", err);
         fallback()
-          .then(list => { if (!cancelled) setCompanies(list); })
+          .then(list => { if (!cancelled) { setCompanies(list); setStaleDataMode(true); } })
           .catch(err2 => console.error("[dataSource] fallback also failed:", err2));
       });
     return () => { cancelled = true; };
@@ -5295,7 +5334,13 @@ useEffect(() => {
 
   // UX 1A: memoize the dedupe/filter/sort chain so it doesn't rerun on unrelated state changes
   const deduped = useMemo(
-    () => (companies || []).filter((c,i,a) => a.findIndex(x=>x.name===c.name)===i),
+    () => (companies || []).filter((() => {
+        // H1 (2026-06-11 tech review): was O(n²) findIndex over 12,841
+        // entries — measured 577ms on an M2, 1.5-3s of jank on phones,
+        // to drop ~6 duplicates. One-pass Set is O(n).
+        const seen = new Set();
+        return (c) => { if (seen.has(c.name)) return false; seen.add(c.name); return true; };
+      })()),
     [companies]
   );
 
@@ -5408,11 +5453,17 @@ useEffect(() => {
     return () => { cancelled = true; };
   }, []);
 
-  // Analytics — fire `search` when debounced query commits + persist recent
+  // Analytics — fire `search` only after the query SETTLES (M4: the old
+  // per-deferred-value event sent every partial keystroke state — "n",
+  // "nik", "nike" — to PostHog; one settled event per search intent is
+  // enough and far less invasive).
   useEffect(() => {
     const q = query.trim();
     if (!q) return;
-    track("search", { query: q, result_count: filtered.length });
+    const settle = setTimeout(() => {
+      track("search", { query: q.slice(0, 60), result_count: filtered.length });
+    }, 1200);
+    return () => clearTimeout(settle);
     // Only stash searches that returned something
     if (filtered.length > 0) {
       setRecentSearches(prev => {
@@ -6042,6 +6093,18 @@ if (screen === "onboarding") {
             <i className="ti ti-sparkles" style={{ fontSize:11 }} aria-hidden="true" />
             Personalized · Tap to edit
           </button>
+        </div>
+      )}
+
+      {/* H3 (2026-06-11): stale-data honesty banner — shown whenever grades
+          on screen may not reflect the latest records (offline native, or
+          web fell back to the build-time snapshot). */}
+      {staleDataMode && (
+        <div style={{ margin:"6px 16px 0", padding:"8px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}`, display:"flex", alignItems:"center", gap:8 }}>
+          <i className="ti ti-wifi-off" style={{ fontSize:14, color:T.txt3, flexShrink:0 }} aria-hidden="true" />
+          <div style={{ fontSize:11, color:T.txt3, lineHeight:1.4 }}>
+            Offline — showing saved data. Grades may not reflect the latest public records.
+          </div>
         </div>
       )}
 

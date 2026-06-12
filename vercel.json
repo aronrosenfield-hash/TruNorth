@@ -1,64 +1,134 @@
 {
   "rewrites": [
-    { "source": "/static/(.*)",
-      "has": [{ "type": "host", "value": "ph.trunorthapp.com" }],
-      "destination": "https://us-assets.i.posthog.com/static/$1" },
-    { "source": "/array/(.*)",
-      "has": [{ "type": "host", "value": "ph.trunorthapp.com" }],
-      "destination": "https://us-assets.i.posthog.com/array/$1" },
-    { "source": "/(.*)",
-      "has": [{ "type": "host", "value": "ph.trunorthapp.com" }],
-      "destination": "https://us.i.posthog.com/$1" },
-    { "source": "/company/:slug", "destination": "/api/company-seo?slug=:slug" },
-    { "source": "/c/:slug",       "destination": "/api/company-seo?slug=:slug" },
-    { "source": "/alternatives/:slug", "destination": "/api/alternatives-seo?slug=:slug" },
-    { "source": "/compare/:slug",      "destination": "/api/compare-seo?slug=:slug" },
-    { "source": "/privacy",       "destination": "/index.html" }
+    {
+      "source": "/static/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ph.trunorthapp.com"
+        }
+      ],
+      "destination": "https://us-assets.i.posthog.com/static/$1"
+    },
+    {
+      "source": "/array/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ph.trunorthapp.com"
+        }
+      ],
+      "destination": "https://us-assets.i.posthog.com/array/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ph.trunorthapp.com"
+        }
+      ],
+      "destination": "https://us.i.posthog.com/$1"
+    },
+    {
+      "source": "/company/:slug",
+      "destination": "/api/company-seo?slug=:slug"
+    },
+    {
+      "source": "/c/:slug",
+      "destination": "/api/company-seo?slug=:slug"
+    },
+    {
+      "source": "/alternatives/:slug",
+      "destination": "/api/alternatives-seo?slug=:slug"
+    },
+    {
+      "source": "/compare/:slug",
+      "destination": "/api/compare-seo?slug=:slug"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(woff2|woff|ttf|otf|eot)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(favicon\\.svg|favicon\\.ico|apple-touch-icon\\.png|og-image\\.png|email-signature-logo\\.png|icons\\.svg)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/data/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/.well-known/apple-app-site-association",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     }
   ]

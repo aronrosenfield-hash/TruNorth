@@ -12,8 +12,42 @@
 // Explicitly set VITE_USE_SPLIT_BUNDLE=false to opt out (e.g. for debugging).
 
 import MiniSearch from "minisearch";
+import { Capacitor } from "@capacitor/core";
 
 const ENABLED = String(import.meta.env.VITE_USE_SPLIT_BUNDLE ?? "true").toLowerCase() !== "false";
+
+// H4 (2026-06-11 tech review): on native iOS, relative /data/ paths resolve
+// to assets FROZEN into the .ipa at build time — installed apps never saw a
+// nightly data refresh between App Store releases, despite this file's old
+// comments claiming otherwise. Native now fetches LIVE production data first
+// (CORS enabled on /data/* in vercel.json) and falls back to the bundled
+// copy when offline. Web behavior is unchanged (relative = same origin).
+const REMOTE_BASE = "https://www.trunorthapp.com";
+const IS_NATIVE = (() => {
+  try { return Capacitor.isNativePlatform() === true; } catch { return false; }
+})();
+
+// Staleness signal for the UI: "live" | "bundled" | null (web/unknown).
+// App.jsx shows a data-may-be-stale banner when this lands on "bundled".
+let nativeDataSource = null;
+export function getNativeDataSource() { return IS_NATIVE ? nativeDataSource : null; }
+
+export { fetchData as fetchAppData }; // App.jsx routes its own /data/ fetches through this
+
+async function fetchData(path, { timeoutMs = 12_000 } = {}) {
+  if (IS_NATIVE) {
+    try {
+      const r = await fetch(REMOTE_BASE + path, { signal: AbortSignal.timeout(timeoutMs) });
+      if (r.ok) {
+        if (nativeDataSource !== "bundled") nativeDataSource = "live";
+        return r;
+      }
+    } catch { /* offline / blocked → bundled copy below */ }
+    nativeDataSource = "bundled";
+    return fetch(path);
+  }
+  return fetch(path);
+}
 
 let indexPromise = null;
 let searchPromise = null;
@@ -26,7 +60,7 @@ export function isSplitBundleEnabled() {
 /** Load the compact list of all companies. Renders the home screen quickly. */
 export async function loadCompanyIndex() {
   if (!indexPromise) {
-    indexPromise = fetch("/data/index.json")
+    indexPromise = fetchData("/data/index.json")
       .then(r => {
         if (!r.ok) throw new Error(`index.json HTTP ${r.status}`);
         return r.json();
@@ -38,12 +72,15 @@ export async function loadCompanyIndex() {
 /** Load and rehydrate the MiniSearch index. Called lazily after first paint. */
 export async function loadSearchIndex() {
   if (!searchPromise) {
-    searchPromise = fetch("/data/search-index.json")
+    searchPromise = fetchData("/data/search-index.json")
       .then(r => {
         if (!r.ok) throw new Error(`search-index.json HTTP ${r.status}`);
-        return r.json();
+        // H2 fix: MiniSearch.loadJSON takes the raw STRING — the old
+        // r.json() → JSON.stringify() → loadJSON re-parse round-tripped 6MB
+        // through the main thread three times.
+        return r.text();
       })
-      .then(json => MiniSearch.loadJSON(JSON.stringify(json), {
+      .then(text => MiniSearch.loadJSON(text, {
         fields: ["name", "cat"],
         storeFields: ["id", "slug", "name", "cat", "grade", "score", "init", "ab", "ac", "political"],
         searchOptions: { boost: { name: 2 }, prefix: true, fuzzy: 0.2 },
@@ -56,7 +93,7 @@ export async function loadSearchIndex() {
 export async function loadCompanyDetail(slug) {
   if (!slug) return null;
   if (detailCache.has(slug)) return detailCache.get(slug);
-  const p = fetch(`/data/companies/${slug}.json`)
+  const p = fetchData(`/data/companies/${slug}.json`)
     .then(r => {
       if (!r.ok) throw new Error(`${slug}.json HTTP ${r.status}`);
       return r.json();
@@ -81,12 +118,12 @@ export function warmDetailCache(slugs, limit = 6) {
 //   1. VITE_SCORING_FLAGS_ENABLED (env, build-time) — set on Vercel, redeploy.
 //      Best for web (one click in Vercel UI, ~2 min to propagate). Cannot
 //      reach iOS once a build is in Apple's review queue.
-//   2. /data/_meta/feature-flags.json (runtime fetch) — bundled into the iOS
-//      app at build time but FETCHED FRESH on each launch from the bundle
-//      assets, so a Vercel redeploy of public/data/_meta/feature-flags.json
-//      can flip iOS WITHOUT a new App Store submission… provided the user's
-//      installed build already includes this fetch path. Once 1.0.1 is in
-//      everyone's hands, this is the only iOS kill switch we have.
+//   2. /data/_meta/feature-flags.json (runtime fetch) — as of the H4 fix
+//      (2026-06-11) native iOS fetches this LIVE from production via
+//      fetchData(), so a Vercel redeploy genuinely flips iOS without a new
+//      App Store submission. (Before H4 this comment was wrong: the fetch
+//      resolved to the copy frozen inside the .ipa.) Offline launches fall
+//      back to the bundled copy, i.e. the flag state at build time.
 //
 // Effective flag = (env === 'true') OR (runtime.scoringFlagsEnabled === true).
 // Default is OFF: unset env + JSON value `false` ⇒ flag off ⇒ pixel-identical
@@ -103,7 +140,7 @@ let featureFlagsResolved = { scoringFlagsEnabled: false };
 /** Lazy-load /data/_meta/feature-flags.json. Returns {} on fetch failure. */
 export async function loadFeatureFlags() {
   if (!featureFlagsPromise) {
-    featureFlagsPromise = fetch("/data/_meta/feature-flags.json")
+    featureFlagsPromise = fetchData("/data/_meta/feature-flags.json")
       .then(r => (r.ok ? r.json() : {}))
       .catch(() => ({}))
       .then(json => {
@@ -142,7 +179,7 @@ let upcCachePromise = null;
  */
 export async function loadBrandParentMap() {
   if (!brandParentPromise) {
-    brandParentPromise = fetch("/data/_meta/brand-parent-map.json")
+    brandParentPromise = fetchData("/data/_meta/brand-parent-map.json")
       .then(r => r.ok ? r.json() : {})
       .catch(() => ({}));
   }
@@ -162,7 +199,7 @@ export async function loadBrandParentMap() {
  */
 export async function loadUpcCache() {
   if (!upcCachePromise) {
-    upcCachePromise = fetch("/data/_meta/upc-to-slug.json")
+    upcCachePromise = fetchData("/data/_meta/upc-to-slug.json")
       .then(r => r.ok ? r.json() : {})
       .catch(() => ({}));
   }
