@@ -21,6 +21,9 @@ const ML_ENDPOINT = "https://connect.mailerlite.com/api/subscribers";
 const _hits = new Map();
 function rateLimited(ip) {
   const now = Date.now();
+  if (_hits.size > 5000) {
+    for (const [k, v] of _hits) { if (!v.some?.(t => now - t < 60_000) && !(typeof v === 'number' && now - v < 60_000)) _hits.delete(k); }
+  }
   const windowMs = 60_000;
   const max = 5;
   const arr = (_hits.get(ip) || []).filter(t => now - t < windowMs);

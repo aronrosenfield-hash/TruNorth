@@ -352,6 +352,13 @@ export default async function handler(req) {
 let _spaScript = null;
 let _spaStyle  = null;
 let _spaPromise = null;
+// M3 (2026-06-11): the looked-up asset hash was cached in isolate memory
+// FOREVER — after every Vercel deploy, old isolates kept emitting the
+// previous deploy's /assets/index-<hash>.js (now 404) until the isolate
+// died, so /company/<slug> pages rendered but never hydrated. 60s TTL keeps
+// the lookup cheap while bounding the post-deploy outage window.
+let _spaFetchedAt = 0;
+const SPA_TTL_MS = 60_000;
 async function lookupSpa() {
   try {
     const r = await fetch("https://www.trunorthapp.com/index.html");
@@ -372,7 +379,10 @@ async function lookupSpa() {
 // hashes every bundle — and the CDN cached that broken HTML for an hour
 // (s-maxage=3600). The handler now awaits ensureSpa() before rendering.
 function ensureSpa() {
-  if (!_spaPromise) _spaPromise = lookupSpa();
+  if (!_spaPromise || Date.now() - _spaFetchedAt > SPA_TTL_MS) {
+    _spaFetchedAt = Date.now();
+    _spaPromise = lookupSpa();
+  }
   return _spaPromise;
 }
 function getSpaScript() { return _spaScript || "/assets/index.js"; }

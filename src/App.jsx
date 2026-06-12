@@ -7,6 +7,7 @@ import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
+import Methodology from "./Methodology";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource } from "./lib/dataSource";
@@ -1140,7 +1141,7 @@ function scoreGrade(n, realCats) {
   // among graded). Must stay in sync with scripts/rebake-scoring.mjs
   // gradeFromOverall and scripts/lib/index-entry.mjs scoreGrade (shared by
   // rebuild-bundle-index.mjs + finalize-bundle.mjs).
-  if (n == null) return "?";
+  if (n == null || !Number.isFinite(Number(n))) return "?"; // L1: NaN was falling through to F
   if (n >= 63) return "A";
   if (n >= 56) return "B";
   if (n >= 46) return "C";
@@ -2862,7 +2863,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   }, [open, company.slug]);
 
   const handleTap = () => {
-    // 2026-06-01 (user pick): 1 free company view per week, then paywall.
+    // 2026-06-01 (user pick), updated: 1 free company view per DAY, then paywall.
     // Refined from the previous "0 free / paywall on first tap" — that was
     // too aggressive; users couldn't even sample the product before being
     // gated. 1 free view lets them experience the depth of one brand
@@ -3226,6 +3227,20 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     <>
                       <div style={{ fontSize:22, fontWeight:700, color:T.txt, lineHeight:1.1 }}>{ps == null ? "—" : ps}<span style={{ fontSize:14, color:T.txt3, fontWeight:500 }}>{ps == null ? "" : "/100"}</span></div>
                       <div style={{ fontSize:12, color:T.txt3, marginTop:2 }}>{enriched.cat} · your personalized score</div>
+                      {/* Trust layer (2026-06-11): evidence-depth honesty. 52%
+                          of graded brands rest on 1-2 record categories — say
+                          so up front instead of letting users discover it. */}
+                      {(() => {
+                        const n = enriched.realCats ?? 0;
+                        if (n <= 0) return null;
+                        const limited = n <= 1;
+                        return (
+                          <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
+                            <i className={`ti ${limited ? "ti-file" : "ti-files"}`} aria-hidden="true" style={{ fontSize:11 }} />
+                            {limited ? `Limited data — ${n} record category` : `Based on ${n} record categories`}
+                          </div>
+                        );
+                      })()}
                       {(() => {
                         // Phase 5.y "Why this grade?" — surface the 1–2 categories
                         // that moved the needle most on this user's score, derived
@@ -3952,6 +3967,17 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               </div>
             );
           })()}
+          {/* Trust layer (2026-06-11): opinion framing + methodology link on
+              every profile — the legal posture (grades = opinions from cited
+              records) and the trust asset (published formula) in one line. */}
+          <div style={{ marginTop:6, fontSize:10.5, color:T.txt3, lineHeight:1.5 }}>
+            Grades are opinions derived from the cited public records.{" "}
+            <a
+              href="#methodology"
+              onClick={() => track("methodology_opened", { from: "card_footer" })}
+              style={{ color:T.accent2, textDecoration:"none" }}
+            >How grades work →</a>
+          </div>
 
           {/* Phase 5.af: Save + Compare buttons live in the expanded profile
               (not the closed row) so the company name has room to breathe. */}
@@ -4933,6 +4959,7 @@ export default function App() {
     // crawlable /privacy URL rendered the marketing landing instead of the
     // policy. Accept both forms.
     if (__hash.replace(/^#/, "") === "privacy" || __pathname === "/privacy") return "privacy";
+    if (__hash.replace(/^#/, "") === "methodology" || __pathname === "/methodology") return "methodology";
     // Native shell ALWAYS goes to the app — no marketing landing on iOS.
     if (__isCapacitorNative) return "app";
     if (__isRoot && !__hasDeepLink && !__search) return "landing";
@@ -4943,7 +4970,8 @@ export default function App() {
     const onHash = () => {
       const h = window.location.hash.replace(/^#/, "");
       if (h === "privacy") setMarketingScreen("privacy");
-      else if (marketingScreen === "privacy") {
+      else if (h === "methodology") setMarketingScreen("methodology");
+      else if (marketingScreen === "privacy" || marketingScreen === "methodology") {
         // Same rule: native always to app, web back to landing or app based on URL
         if (__isCapacitorNative) setMarketingScreen("app");
         else setMarketingScreen(__isRoot && !__hasDeepLink && !__search ? "landing" : "app");
@@ -5321,7 +5349,7 @@ useEffect(() => {
     // visitor (most of whom never enter the SPA — they tap "Get TruNorth
     // on iOS" instead). PageSpeed TBT on / dropped from 4.6s → ~1s once
     // this gate landed.
-    if (marketingScreen === "landing" || marketingScreen === "privacy") return;
+    if (marketingScreen === "landing" || marketingScreen === "privacy" || marketingScreen === "methodology") return;
     let cancelled = false;
     const splitFirst = isSplitBundleEnabled();
     const primary  = () => splitFirst ? loadCompanyIndex() : import("./companies.js").then(m => m.COMPANIES);
@@ -5640,6 +5668,12 @@ useEffect(() => {
 
   // ─── Marketing / privacy early-returns ──────────────────────────────────
   // These run AFTER every hook above, so React's rules-of-hooks stay happy.
+  if (marketingScreen === "methodology") {
+    return <Methodology onBack={() => {
+      try { window.location.hash = ""; } catch {}
+      setMarketingScreen(__isCapacitorNative || !__isRoot ? "app" : "landing");
+    }} />;
+  }
   if (marketingScreen === "privacy") {
     return <PrivacyPolicy onBack={() => {
       try { window.location.hash = ""; } catch {}

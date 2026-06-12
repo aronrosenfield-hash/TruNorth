@@ -26,6 +26,11 @@ export const config = { runtime: "edge" };
 const _hits = new Map();
 function rateLimited(ip, max = 5, windowMs = 60_000) {
   const now = Date.now();
+  // M6 (2026-06-11): evict stale IPs so the Map can't grow unbounded in a
+  // long-lived isolate (was: every IP ever seen, kept forever).
+  if (_hits.size > 5000) {
+    for (const [k, v] of _hits) { if (!v.some(t => now - t < windowMs)) _hits.delete(k); }
+  }
   const arr = (_hits.get(ip) || []).filter(t => now - t < windowMs);
   if (arr.length >= max) return true;
   arr.push(now);
@@ -33,9 +38,26 @@ function rateLimited(ip, max = 5, windowMs = 60_000) {
   return false;
 }
 
+// M6 (2026-06-11): submit.js had NO origin check — trivial Resend-quota burn
+// (100/day free tier) from any curl. Same allowlist as subscribe.js; an
+// ABSENT Origin header is allowed only for same-origin form posts, but
+// browser cross-site posts and bots that send an Origin must match.
+const ALLOWED_ORIGINS = [
+  "https://www.trunorthapp.com",
+  "https://trunorthapp.com",
+  "http://localhost:5173",
+  "capacitor://localhost",
+  "ionic://localhost",
+];
+
 export default async function handler(req) {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ ok: false, error: "method_not_allowed" }), { status: 405 });
+  }
+
+  const origin = req.headers.get("origin") || "";
+  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    return new Response(JSON.stringify({ ok: false, error: "forbidden_origin" }), { status: 403, headers: { "Content-Type": "application/json" } });
   }
 
   // Rate limit before parsing any body
