@@ -1199,6 +1199,30 @@ function userRelevantRealCats(co, profile) {
   return Math.max(boostedFilled, co.realCats ?? 0);
 }
 
+// R2 (Today/Ledger): basket alignment — share of the user's saved brands
+// whose personalized grade lands A/B. "?" brands are excluded from the
+// denominator (no fake alignment from ungraded brands).
+function basketAlignment(savedCos, profile) {
+  if (!profile || !savedCos.length) return { pct: null, graded: 0, aligned: 0 };
+  let graded = 0, aligned = 0;
+  for (const co of savedCos) {
+    const g = scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile));
+    if (g === "?") continue;
+    graded++;
+    if (g === "A" || g === "B") aligned++;
+  }
+  return { pct: graded ? Math.round((aligned / graded) * 100) : null, graded, aligned };
+}
+
+// ISO-ish week key for the alignment history (local-time, Monday-agnostic —
+// consistency week-over-week matters, not calendar pedantry).
+function weekKey(ts) {
+  const t = new Date(ts);
+  const jan1 = new Date(t.getFullYear(), 0, 1);
+  const wk = Math.ceil((((t - jan1) / 864e5) + jan1.getDay() + 1) / 7);
+  return `${t.getFullYear()}-W${String(wk).padStart(2, "0")}`;
+}
+
 // ─── SVG ICONS ────────────────────────────────────────────────────────────────
 function DonkeySVG({ size=14, col="#4a90e2" }) {
   return (
@@ -2114,7 +2138,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
             {/* Show the picked one + suggestions for the second slot */}
             {resolved.length === 1 && (
               <div style={{ background:T.bg2, borderRadius:12, padding:12, border:`1px solid ${T.border}`, marginBottom:14, display:"flex", alignItems:"center", gap:10 }}>
-                <div style={{ width:36, height:36, borderRadius:8, background:resolved[0].ab || T.bg3, color:resolved[0].ac || T.accent2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, flexShrink:0 }}>{resolved[0].init || "??"}</div>
+                <div style={{ width:36, height:36, borderRadius:8, background:T.bg3, color:T.txt2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:700, flexShrink:0 }}>{resolved[0].init || "??"}</div>
                 <div style={{ flex:1, minWidth:0 }}>
                   <div style={{ fontSize:14, fontWeight:700, color:T.txt }}>{resolved[0].name}</div>
                   <div style={{ fontSize:11, color:T.txt3 }}>{resolved[0].cat || ""}</div>
@@ -2176,7 +2200,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                     onClick={() => { onAdd && onAdd(co.slug || co.id, co.name); track("compare_suggest_pick", { slug: co.slug || co.id, name: co.name }); }}
                     style={{ display:"flex", alignItems:"center", gap:8, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", color:T.txt }}
                   >
-                    <div style={{ width:28, height:28, borderRadius:6, background:co.ab || T.bg3, color:co.ac || T.accent2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:10, fontWeight:700, flexShrink:0 }}>{co.init || "??"}</div>
+                    <div style={{ width:28, height:28, borderRadius:6, background:T.bg3, color:T.txt2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:10, fontWeight:700, flexShrink:0 }}>{co.init || "??"}</div>
                     <div style={{ minWidth:0, flex:1 }}>
                       <div style={{ fontSize:12, fontWeight:600, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
                       <div style={{ fontSize:10, color:T.txt3 }}>{co.cat || ""} · {co.grade || "?"}</div>
@@ -2311,7 +2335,7 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
       width:size, height:size, borderRadius:rounded,
       display:"flex", alignItems:"center", justifyContent:"center",
       fontSize: Math.max(10, Math.round(size*0.30)), fontWeight:700, flexShrink:0,
-      background:company.ab||T.bg3, color:company.ac||T.accent2,
+      background:T.bg3, color:T.txt2,
     }} aria-hidden="true">{company.init}</div>
   );
   if (errored) return initialsAvatar;
@@ -2399,13 +2423,17 @@ function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance", unk
   // 2026-06-03 (Option B): when `unknown` is set, the bar dims to a flat
   // muted background and the dot becomes a dashed-outline "?" — clearly
   // distinct from a real centered signal.
+  // R2: the marker is BONE — a neutral pointer on the axis. Verdigris/oxblood
+  // stay reserved for the verdict ends of universal axes (Civic Premium rule:
+  // signal colors are never decoration). The old lavender dot was a
+  // pre-redesign straggler Aron caught on device (Build 63 screenshot).
   const dotColor = unknown
     ? "transparent"
     : isUniversal
-      ? (pos < 0.35 ? "#E0524D" : pos > 0.65 ? "#38C0CE" : "#9b8ff0")
-      : "#9b8ff0";
+      ? (pos < 0.35 ? "#E0524D" : pos > 0.65 ? "#38C0CE" : "#EDE9E0")
+      : "#EDE9E0";
   const gradient = unknown
-    ? "#2a2348"
+    ? "#1F2228"
     : isUniversal
       ? "linear-gradient(to right, #E0524D 0%, #E0524D 22%, #555 38%, #555 62%, #38C0CE 78%, #38C0CE 100%)"
       : "linear-gradient(to right, #2A2E35 0%, #4A4E55 50%, #6E6A60 100%)";
@@ -2418,11 +2446,11 @@ function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance", unk
         <div style={{
           position:"absolute", top: unknown ? -4 : -3, left:`calc(${pos*100}% - ${unknown ? 7 : 6}px)`,
           width: unknown ? 14 : 12, height: unknown ? 14 : 12, borderRadius:"50%",
-          background: dotColor, border: unknown ? "2px dashed #9b8ff0" : "2px solid #fff",
+          background: dotColor, border: unknown ? "2px dashed #6E6A60" : "2px solid #fff",
           boxShadow: unknown ? "none" : "0 0 0 1px rgba(0,0,0,0.4)",
           display: unknown ? "flex" : "block",
           alignItems: "center", justifyContent: "center",
-          color: "#9b8ff0", fontSize: 8, fontWeight: 700,
+          color: "#6E6A60", fontSize: 8, fontWeight: 700,
         }}>{unknown ? "?" : ""}</div>
       </div>
       <div style={{ display:"flex", justifyContent:"space-between", fontSize:10, color:"#888", lineHeight:1.2 }}>
@@ -4774,7 +4802,7 @@ function PoliticalSpectrum({ lean }) {
   // Color by lean
   const dotColor = pos < 0.4 ? "#4a90e2"
                 : pos > 0.6 ? "#E0524D"
-                : "#9b8ff0";
+                : "#EDE9E0";
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:4, alignItems:"flex-end", minWidth:120 }}>
       <div style={{
@@ -5091,9 +5119,11 @@ useEffect(() => {
     // Dev-only: ?tab=search|browse|top|account|sources opens that tab directly (for QA)
     if (import.meta.env.DEV && typeof window !== "undefined") {
       const t = new URLSearchParams(window.location.search).get("tab");
-      if (t && ["top","search","browse","account","sources","submit"].includes(t)) return t;
+      if (t && ["today","top","search","browse","library","account","sources","submit"].includes(t)) return t;
     }
-    return "top";
+    // R2: TODAY is the front door (brief §3.1). "top" and "browse" survive as
+    // interior surfaces reachable from Lens — not bottom-nav destinations.
+    return "today";
   });
   // Phase 5.ag (perf): use React 18 useDeferredValue instead of a manual
   // 150ms setTimeout debounce. useDeferredValue keeps the input itself at
@@ -5466,6 +5496,22 @@ useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [companies, profile]);
 
+  // R2 (Today): record this week's basket-alignment % so Today can show the
+  // week-over-week delta and Ledger can sparkline it. Last 12 weeks kept.
+  useEffect(() => {
+    if (!companies || !profile || savedSet.size === 0) return;
+    const savedCos = Array.from(savedSet).map(s => companies.find(c => (c.slug || c.id) === s)).filter(Boolean);
+    const { pct } = basketAlignment(savedCos, profile);
+    if (pct == null) return;
+    try {
+      const hist = JSON.parse(localStorage.getItem("tn_alignHist") || "{}");
+      hist[weekKey(Date.now())] = pct;
+      const keys = Object.keys(hist).sort().slice(-12);
+      localStorage.setItem("tn_alignHist", JSON.stringify(Object.fromEntries(keys.map(k => [k, hist[k]]))));
+    } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [companies, profile, savedSet]);
+
   // Deep-link: when companies have loaded and we have a slug from the URL,
   // jump to the search tab and seed the search with the company's name so
   // the card surfaces and CompanyCard's initiallyOpen prop expands it.
@@ -5744,7 +5790,7 @@ useEffect(() => {
   }, [deduped, profile]);
   const catIconMap = {Retail:"ti-building-store",Food:"ti-chef-hat",Technology:"ti-device-laptop",Grocery:"ti-shopping-cart",Energy:"ti-bolt",Apparel:"ti-shirt",Media:"ti-device-tv",Finance:"ti-building-bank",Healthcare:"ti-heartbeat",Outdoor:"ti-mountain",Consumer:"ti-package",Conglomerate:"ti-building-skyscraper",Auto:"ti-car",Sports:"ti-ball-basketball"};
   const catBgs = ["#1e1535","#0E2126","#0d1f35","#291110","#2e1a05","#2a1a05"];
-  const catFgs = ["#9b8ff0","#38C0CE","#4a90e2","#E0524D","#e8a042","#E8A04C"];
+  const catFgs = ["#5CD6E0","#38C0CE","#4a90e2","#E0524D","#e8a042","#E8A04C"];
 
   // Phase 5.am: combined "library" tab replacing the separate History tab.
   // User asked to surface Favorites prominently (was buried in Account)
@@ -6310,6 +6356,144 @@ if (screen === "onboarding") {
         </div>
       )}
 
+      {/* TODAY — the daily pulse (R2, brief §3.1): three cards, no lists.
+          1. Compass card — your seal + basket alignment. Tap → Ledger.
+          2. Story card — one record-driven story for YOU (brass = receipt).
+          3. Shelf card — one curated category, ranked for you. Daily rotate. */}
+      {tab === "today" && (
+        <ErrorBoundary name="today">
+          {(() => {
+            const savedCos = Array.from(savedSet).map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
+            const { pct, graded } = basketAlignment(savedCos, profile);
+            let delta = null;
+            try {
+              const hist = JSON.parse(localStorage.getItem("tn_alignHist") || "{}");
+              const keys = Object.keys(hist).sort();
+              const prev = keys.length >= 2 ? hist[keys[keys.length - 2]] : null;
+              if (prev != null && pct != null) delta = pct - prev;
+            } catch {}
+
+            // Story pick: your basket moved → this week's digest → quiet week.
+            const story = savedChanges[0] || null;
+            const weeklyStory = !story && weeklyChanges?.changes?.length ? weeklyChanges.changes[0] : null;
+
+            // Shelf: deterministic daily category. WHITELISTED to aisles a
+            // person actually shops (no "Professional Services" staffing
+            // firms), with a documentation floor (≥3 record categories) so
+            // the shelf surfaces household names, not thin-file mid-caps.
+            const SHELF_BUCKETS = ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"];
+            const day = Math.floor(Date.now() / 864e5);
+            const shelfPool = deduped.filter(c => c.consumerFacing !== false && c.overall != null && (c.realCats ?? 0) >= 3);
+            const present = SHELF_BUCKETS.filter(b => shelfPool.some(c => getBucket(c.cat || "") === b));
+            const bucket = present.length ? present[day % present.length] : null;
+            const shelf = bucket
+              ? shelfPool
+                  .filter(c => getBucket(c.cat || "") === bucket)
+                  .map(co => ({ co, s: profile ? computeScore(co, profile) : co.overall }))
+                  .filter(x => x.s != null)
+                  .sort((a, b) => b.s - a.s)
+                  .slice(0, 4)
+              : [];
+
+            const card = { background: T.bg2, border: `1px solid ${T.border}`, borderRadius: 16, padding: "16px 16px" };
+            return (
+              <div style={{ padding: "10px 16px 24px", display: "flex", flexDirection: "column", gap: 12 }}>
+                {/* 1 · COMPASS CARD */}
+                {!profile ? (
+                  <button onClick={() => { track("quiz_started", { from: "today_compass_card" }); setScreen("quiz"); }}
+                    style={{ ...card, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}>
+                    <CompassSeal weights={null} size={64} />
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.25 }}>Find your bearings.</div>
+                      <div style={{ fontSize: 12, color: T.txt2, marginTop: 4, lineHeight: 1.45 }}>Nine quick choices shape your compass — then every brand answers to it.</div>
+                      <div style={{ fontSize: 11, color: T.accent2, fontWeight: 600, marginTop: 6 }}>Start the Match · 45 seconds →</div>
+                    </div>
+                  </button>
+                ) : savedCos.length === 0 ? (
+                  <button onClick={() => setTab("search")}
+                    style={{ ...card, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}>
+                    <CompassSeal weights={profile.weights} size={64} />
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.25 }}>Your compass is set.</div>
+                      <div style={{ fontSize: 12, color: T.txt2, marginTop: 4, lineHeight: 1.45 }}>Save the brands you actually buy and Today starts judging them against it.</div>
+                      <div style={{ fontSize: 11, color: T.accent2, fontWeight: 600, marginTop: 6 }}>Build your basket →</div>
+                    </div>
+                  </button>
+                ) : (
+                  <button onClick={() => setTab("library")}
+                    style={{ ...card, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}
+                    aria-label={`Your basket: ${pct == null ? "not yet graded" : pct + " percent aligned"}. Open Ledger.`}>
+                    <CompassSeal weights={profile.weights} size={64} glow />
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: 11, color: T.txt3, textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600 }}>Your basket</div>
+                      <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 2 }}>
+                        <span style={{ fontFamily: MONO, fontSize: 30, fontWeight: 700, color: T.txt, lineHeight: 1 }}>{pct == null ? "—" : `${pct}%`}</span>
+                        <span style={{ fontSize: 12, color: T.txt2 }}>aligned</span>
+                        {delta != null && delta !== 0 && (
+                          <span style={{ fontFamily: MONO, fontSize: 12, fontWeight: 600, color: delta > 0 ? T.accent2 : "#E0524D" }}>
+                            {delta > 0 ? "▲" : "▼"}{Math.abs(delta)} this week
+                          </span>
+                        )}
+                      </div>
+                      <div style={{ fontSize: 11, color: T.txt3, marginTop: 5 }}>{graded} graded · {savedCos.length} in basket · open Ledger →</div>
+                    </div>
+                  </button>
+                )}
+
+                {/* 2 · STORY CARD */}
+                {story ? (
+                  <button onClick={() => openBrand(story.slug)} style={{ ...card, borderLeft: `3px solid ${T.gold}`, textAlign: "left", cursor: "pointer" }}>
+                    <div style={{ fontFamily: MONO, fontSize: 10, color: T.gold, letterSpacing: "0.12em", marginBottom: 7 }}>YOUR BASKET · RECORD CHANGE</div>
+                    <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.3 }}>
+                      New public records moved {story.name} from {story.from} to {story.to}.
+                    </div>
+                    <div style={{ fontFamily: MONO, fontSize: 11, color: T.txt3, marginTop: 8 }}>tap for the receipt ↗</div>
+                  </button>
+                ) : weeklyStory ? (
+                  <button onClick={() => openBrand(weeklyStory.slug)} style={{ ...card, borderLeft: `3px solid ${T.gold}`, textAlign: "left", cursor: "pointer" }}>
+                    <div style={{ fontFamily: MONO, fontSize: 10, color: T.gold, letterSpacing: "0.12em", marginBottom: 7 }}>THIS WEEK ON THE RECORD</div>
+                    <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.3 }}>
+                      {weeklyStory.name || weeklyStory.slug} moved {weeklyStory.from ? `${weeklyStory.from} → ${weeklyStory.to}` : "this week"}.
+                    </div>
+                    <div style={{ fontFamily: MONO, fontSize: 11, color: T.txt3, marginTop: 8 }}>tap for the receipt ↗</div>
+                  </button>
+                ) : (
+                  <div style={{ ...card, borderLeft: `3px solid ${T.border2}` }}>
+                    <div style={{ fontFamily: MONO, fontSize: 10, color: T.txt3, letterSpacing: "0.12em", marginBottom: 7 }}>THIS WEEK ON THE RECORD</div>
+                    <div style={{ fontFamily: SERIF, fontSize: 17, color: T.txt2, lineHeight: 1.35 }}>
+                      All quiet — no grade moves {savedCos.length ? "in your basket" : "to report"} this week.
+                    </div>
+                    <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh nightly across 190+ public sources.</div>
+                  </div>
+                )}
+
+                {/* 3 · SHELF CARD */}
+                {shelf.length >= 2 && (
+                  <div style={{ ...card }}>
+                    <div style={{ fontFamily: SERIF, fontSize: 18, color: T.txt, marginBottom: 2 }}>{bucket}, ranked {profile ? "for you" : "by record"}</div>
+                    <div style={{ fontSize: 11, color: T.txt3, marginBottom: 12 }}>Today's shelf · rotates daily</div>
+                    <div style={{ display: "flex", gap: 8 }}>
+                      {shelf.map(({ co }) => {
+                        const g = profile ? scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile)) : "?";
+                        const gcol = { A: "#38C0CE", B: "#9CC98A", C: T.txt2, D: "#E8A04C", F: "#E0524D", "?": T.txt3 }[g];
+                        return (
+                          <button key={co.slug || co.id} onClick={() => openBrand(co.slug || co.id)}
+                            style={{ flex: 1, minWidth: 0, background: T.bg3, border: `1px solid ${T.border2}`, borderRadius: 12, padding: "10px 4px 8px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                            <CompanyLogo company={co} size={34} />
+                            <div style={{ fontSize: 10, color: T.txt2, fontWeight: 600, maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{co.name}</div>
+                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: gcol }}>{g}</div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
+        </ErrorBoundary>
+      )}
+
       {/* SEARCH */}
       {tab === "search" && (
         <ErrorBoundary name="search">
@@ -6431,6 +6615,18 @@ if (screen === "onboarding") {
                 state captured the click and the industry's company list never rendered. */}
             {!query.trim() && leanFilter === "all" && catFilters.length === 0 && !showSavedOnly && !industryBucket ? (
               <div style={{ padding:"24px 4px" }}>
+                {/* R2: Browse + Top Picks left the bottom nav — Lens is their
+                    front door now. Two quiet chips, always visible pre-query. */}
+                <div style={{ display:"flex", gap:8, marginBottom:20 }}>
+                  <button onClick={()=>setTab("browse")}
+                    style={{ flex:1, padding:"11px 10px", borderRadius:12, fontSize:12.5, fontWeight:600, background:T.bg3, border:`1px solid ${T.border2}`, color:T.txt2, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:7 }}>
+                    <i className="ti ti-apps" aria-hidden="true" /> Browse categories
+                  </button>
+                  <button onClick={()=>setTab("top")}
+                    style={{ flex:1, padding:"11px 10px", borderRadius:12, fontSize:12.5, fontWeight:600, background:T.bg3, border:`1px solid ${T.border2}`, color:T.txt2, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:7 }}>
+                    <i className="ti ti-star" aria-hidden="true" /> Top picks
+                  </button>
+                </div>
                 {recentSearches.length > 0 && (
                   <div style={{ marginBottom:20 }}>
                     <div style={{ fontSize:11, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.06em", marginBottom:10, display:"flex", alignItems:"center", gap:6 }}>
@@ -7482,40 +7678,43 @@ if (screen === "onboarding") {
           paddingBottom:env(safe-area-inset-bottom) fills the home indicator zone. */}
       <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 8px)" }}>
         {[
-          // Build 53 (B-57): SCAN takes the middle slot — the killer in-store
-          // feature gets the most prominent UI position. Account moved out to
-          // the top-right header (next to Upgrade). Tapping SCAN opens the
-          // BarcodeScanner overlay; it's an ACTION, not a tab — so the active
-          // state never sticks to it.
-          {id:"top",     icon:"ti-star",      label:"Top Picks"},
-          {id:"search",  icon:"ti-search",    label:"Search"},
-          {id:"scan",    icon:"ti-scan",      label:"Scan",     action:"openScanner"},
-          {id:"browse",  icon:"ti-apps",      label:"Browse"},
-          {id:"library", icon:"ti-bookmarks", label:"Library"},
+          // R2 (brief §3): four surfaces — TODAY · LENS(center) · LEDGER, with
+          // YOU living top-right. Top Picks and Browse fold into Lens (chips
+          // in its empty state); the scanner is the camera glyph inside the
+          // Lens input, plus a power shortcut: tapping LENS while already on
+          // it opens the camera directly (preserves the one-thumb store flow).
+          {id:"today",   icon:"ti-location",  label:"Today"},
+          {id:"search",  icon:"ti-crosshair", label:"Lens", center:true},
+          {id:"library", icon:"ti-coin",      label:"Ledger"},
         ].map(t => {
-          const isScan = t.action === "openScanner";
-          const isActive = !isScan && tab === t.id;
+          const isActive = tab === t.id;
           return (
             <button
               key={t.id}
-              onClick={() => isScan ? setShowScanner(true) : setTab(t.id)}
-              aria-label={isScan ? "Open barcode scanner" : t.label}
+              onClick={() => {
+                if (t.center && tab === "search") { setShowScanner(true); track("scanner_open", { tab: "lens_double" }); return; }
+                setTab(t.id);
+                if (t.center) setTimeout(() => { try { document.getElementById("tn-search")?.focus(); } catch {} }, 60);
+              }}
+              aria-label={t.center ? "Lens — search, ask, or point" : t.label}
               style={{ flex:1, padding:"10px 4px 8px", display:"flex", flexDirection:"column", alignItems:"center", gap:3, background:"none", border:"none", cursor:"pointer" }}
             >
-              {isScan ? (
+              {t.center ? (
                 <div style={{
-                  width:44, height:44, borderRadius:"50%",
-                  background:T.accent, color:"#fff",
+                  width:46, height:46, borderRadius:"50%",
+                  background: isActive ? T.accent : T.bg3,
+                  border:`1.5px solid ${T.accent}`,
+                  color: isActive ? "#0E0F12" : T.accent2,
                   display:"flex", alignItems:"center", justifyContent:"center",
-                  marginTop:-12, marginBottom:-2,
-                  boxShadow:"0 4px 12px rgba(124,109,250,0.45)"
+                  marginTop:-14, marginBottom:-2,
+                  boxShadow:"0 6px 18px rgba(56,192,206,0.18)"
                 }}>
-                  <i className="ti ti-scan" style={{ fontSize:24 }} aria-hidden="true" />
+                  <i className={`ti ${t.icon}`} style={{ fontSize:22 }} aria-hidden="true" />
                 </div>
               ) : (
                 <i className={`ti ${t.icon}`} style={{ fontSize:22, color: isActive ? T.accent2 : T.txt3 }} aria-hidden="true" />
               )}
-              <span style={{ fontSize:10, color: isActive ? T.accent2 : (isScan ? T.accent2 : T.txt3), fontWeight: isActive || isScan ? 600 : 400 }}>{t.label}</span>
+              <span style={{ fontSize:10, color: isActive || t.center ? T.accent2 : T.txt3, fontWeight: isActive || t.center ? 600 : 400 }}>{t.label}</span>
             </button>
           );
         })}
