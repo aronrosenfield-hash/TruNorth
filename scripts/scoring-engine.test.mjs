@@ -170,6 +170,15 @@ test("shrinkage: single-signal raw 46 stays C — low scores aren't lifted past 
   assert.equal(gradeFromOverall(s), "C");
 });
 
+test("E-9: one contributing category caps at B — never A", () => {
+  // Aron's call 2026-06-12. A lone 95-scoring signal shrinks to 68 (A range)
+  // — the cap pulls it to 62 (B). Two categories are NOT capped.
+  const one = Math.min(62, shrink(95, 1));
+  assert.equal(gradeFromOverall(one), "B");
+  assert.ok(shrink(95, 1) >= 63, "precondition: uncapped single-signal would have been an A");
+  assert.equal(gradeFromOverall(shrink(95, 2)), "A", "two signals may still earn A");
+});
+
 test("shrinkage: evidence weight scales confidence monotonically", () => {
   // Same raw 85: more evidence → less shrink → higher final score.
   const w1 = shrink(85, 1);    // 64

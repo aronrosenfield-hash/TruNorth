@@ -994,6 +994,12 @@ function computeScore(co, profile) {
   // user's explicit dealbreakers below — can still drive F. Symmetric: the
   // same floor protects left-lean users on right-donating brands.
   if (ws < 41 && minUniversal >= 45) ws = 41;
+  // E-9 (Aron, 2026-06-12): one contributing category caps at B — a single
+  // signal (including a lone stance match like no_guns for a gun-avoider)
+  // can never mint an A. Matches the published methodology line: "One
+  // strong record can earn a B; an A takes a broad, verified track record."
+  // Cap limits upside only — bad single signals still grade D/F normally.
+  if (contributingCats === 1 && ws > 62) ws = 62;
   // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
   // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
   // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.

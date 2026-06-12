@@ -456,9 +456,13 @@ for (const f of files) {
   // keeps ~77% of its raw signal. Replaces the hard signal-count grade cap.
   // Companies with 0 signals keep overall=null → grade "?".
   const W = trace.weightUsed;
-  const newOverall = (signalCount >= 1 && W > 0)
+  let newOverall = (signalCount >= 1 && W > 0)
     ? Math.round(((trace.weightedSum / W) * W + 50 * K_SHRINK) / (W + K_SHRINK) * 10) / 10
     : null;
+  // E-9 (Aron, 2026-06-12): single-category brands cap at B (score ≤62,
+  // below the A≥63 threshold). Upside-only — the score-level clamp keeps
+  // every downstream scoreGrade() copy in sync with zero signature churn.
+  if (newOverall != null && signalCount === 1 && newOverall > 62) newOverall = 62;
   trace.newOverall = newOverall;
   trace.newGrade = gradeFromOverall(newOverall);
 
