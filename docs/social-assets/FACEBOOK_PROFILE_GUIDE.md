@@ -48,13 +48,13 @@ Pick up to 3 (Facebook uses these for discovery + the Page subtitle):
 Facebook truncates hard at 101 characters. Use:
 
 ```
-Shop your values. We grade 11,000+ brands using only public records. Free on iOS.
+Shop your values. We grade 12,000+ brands using only public records. Free on iOS.
 ```
 
 (80 chars.) Alternate:
 
 ```
-Know where your money goes. 11,000+ brands graded from 100 public-records sources.
+Know where your money goes. 12,000+ brands graded from 200+ public-record sources.
 ```
 
 (81 chars.)
@@ -87,9 +87,9 @@ Page → **Edit** → **About** → **Additional information**. Paste:
 ```
 TruNorth is the conscious-consumer shopping app for people who want their money to match their values.
 
-We grade 11,000+ consumer brands across 9 categories — political donations, environmental record, labor practices, DEI, animal welfare, firearms policy, data privacy, executive pay, and charitable giving — using 100 public-records sources. No vibes. No opinions. Every grade traces back to a primary record you can audit yourself.
+We grade 12,000+ consumer brands across 9 categories — political donations, environmental record, labor practices, DEI, animal welfare, firearms policy, data privacy, executive pay, and charitable giving — using 200+ public-record sources. No vibes. No opinions. Every grade traces back to a primary record you can audit yourself.
 
-Take a 30-second values quiz and every brand grade is personalized to what you actually care about. Search or scan 11,000+ brands in-store before you pay. Subsidiaries roll up to their parent companies, so you never accidentally reward the holding company you were boycotting.
+Take a 30-second values quiz and every brand grade is personalized to what you actually care about. Search or scan 12,000+ brands in-store before you pay. Subsidiaries roll up to their parent companies, so you never accidentally reward the holding company you were boycotting.
 
 Free forever for the core grading. iOS first, Android to follow. Launching on Product Hunt June 23, 2026.
 
@@ -106,7 +106,7 @@ Pages let you add a featured **Story** with its own header image + title. Use th
 ```
 Every "ethical shopping" app I tried felt like vibes — opinions dressed up as ratings. So I built TruNorth differently.
 
-It pulls from primary sources only: FEC for political donations, EPA for environmental enforcement, OSHA for labor violations, SEC for executive pay, and 90+ more. 11,000 companies graded. Every score traceable to a public record you can check yourself.
+It pulls from primary sources only: FEC for political donations, EPA for environmental enforcement, OSHA for labor violations, SEC for executive pay, and 90+ more. 12,000+ companies graded. Every score traceable to a public record you can check yourself.
 
 Scan a barcode in-store and get the verdict before you pay. Free forever, iOS first.
 
@@ -126,7 +126,7 @@ We just launched TruNorth's Facebook page 👋
 
 If you've ever wondered "is this brand actually doing what they say?" — we built the answer.
 
-100 public-records sources. 11,000+ brands. Grades you can trace back to the EPA filing, the OSHA violation, the SEC litigation, the FEC donation.
+200+ public-record sources. 12,000+ brands. Grades you can trace back to the EPA filing, the OSHA violation, the SEC litigation, the FEC donation.
 
 No vibes. No paid ratings. No engagement traps.
 
@@ -140,7 +140,7 @@ iOS public launch on Product Hunt: June 23, 2026. Follow along — the next few 
 ```
 A lot of shopping apps tell you what to buy. Almost none show you why.
 
-TruNorth's brand grades are powered by 100 public-records sources, including:
+TruNorth's brand grades are powered by 200+ public-record sources, including:
 
 ▶ FEC.gov — every campaign donation
 ▶ EPA ECHO — environmental violations by facility

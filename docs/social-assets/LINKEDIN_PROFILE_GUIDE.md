@@ -10,22 +10,22 @@ LinkedIn lets you change your headline anytime, no broadcast. **Swap on each mil
 
 ### Pre-launch (use until Jun 22)
 ```
-Founder @ TruNorth · Conscious-consumer shopping app · 100 public-records sources, 11,000+ brand grades · Launching iOS on Product Hunt Jun 23
+Founder @ TruNorth · Conscious-consumer shopping app · 200+ public-record sources, 12,000+ brand grades · Launching iOS on Product Hunt Jun 23
 ```
 
 ### Launch day (swap morning of Jun 23)
 ```
-Founder @ TruNorth · Just launched: the conscious-shopping app with 11,000+ brand grades sourced from 100 public records · Live on the App Store + Product Hunt
+Founder @ TruNorth · Just launched: the conscious-shopping app with 12,000+ brand grades sourced from 200+ public records · Live on the App Store + Product Hunt
 ```
 
 ### One week after launch (swap Jun 30, regardless of PH rank)
 ```
-Founder @ TruNorth · Conscious-consumer shopping app · 11,000+ brand grades from 100 public-records sources · iOS live, Android next · [PH #X] [add metric: "5k downloads," etc. only if real]
+Founder @ TruNorth · Conscious-consumer shopping app · 12,000+ brand grades from 200+ public-record sources · iOS live, Android next · [PH #X] [add metric: "5k downloads," etc. only if real]
 ```
 
 ### One month after launch (swap ~Jul 23)
 ```
-Founder @ TruNorth · The conscious-shopping app where every brand grade traces back to a primary public record · 11,000+ brands · 100 sources · iOS + Android
+Founder @ TruNorth · The conscious-shopping app where every brand grade traces back to a primary public record · 12,000+ brands · 100 sources · iOS + Android
 ```
 
 > **Reminder:** Task #125 is set to nudge you to make the launch-day swap on Jun 23. Don't broadcast the headline update — leave the "share with network" toggle OFF.
@@ -64,7 +64,7 @@ LinkedIn → Edit Page → **Cover image** → upload the PNG → save.
 **Banner content**:
 - TruNorth logo + wordmark on the left
 - Tagline: "Know where your money goes"
-- Stat strip: "100 public-records sources · 11,000+ brands · grades you can trace"
+- Stat strip: "200+ public-record sources · 12,000+ brands · grades you can trace"
 - 3 demo brand pills on the right (Patagonia A / Amazon C / ExxonMobil D)
 - Dark gradient background matching the app
 
@@ -91,7 +91,7 @@ Edit Page → **Page info** tab:
 ### 4. Tagline (160 chars max)
 
 ```
-The conscious-consumer shopping app. 100 public-records sources, 11,000+ brands, grades you can trace. Built for people who shop their values.
+The conscious-consumer shopping app. 200+ public-record sources, 12,000+ brands, grades you can trace. Built for people who shop their values.
 ```
 
 (140 chars — fits cleanly in feed previews.)
@@ -105,15 +105,15 @@ Paste this into Edit Page → **About**:
 ```
 TruNorth is the conscious-consumer shopping app for people who want their money to match their values.
 
-We grade 11,000+ consumer brands across 9 categories — political donations, environmental record, labor practices, DEI, animal welfare, firearms policy, data privacy, executive pay, and charitable giving — using 100 public-records sources. No vibes. No opinions. Every grade traces back to a primary record you can audit yourself.
+We grade 12,000+ consumer brands across 9 categories — political donations, environmental record, labor practices, DEI, animal welfare, firearms policy, data privacy, executive pay, and charitable giving — using 200+ public-record sources. No vibes. No opinions. Every grade traces back to a primary record you can audit yourself.
 
 What sets us apart:
 
-• 100 public-records sources — the deepest free dataset of its kind. Federal regulators (FEC, EPA, OSHA, SEC, CFPB, NHTSA, DOJ, CISA, FDA, ATF, MSHA, NLRB, and dozens more), federal courts (CourtListener, Stanford SCAC, GAO, IG reports), accredited certifications (B Corp, Fair Trade, Climate Neutral, MSC, FSC, GoodWeave, Rainforest Alliance), and international enforcement (EU DG Comp, UK Modern Slavery, Canadian Competition Bureau, Australian ACCC).
+• 200+ public-record sources — the deepest free dataset of its kind. Federal regulators (FEC, EPA, OSHA, SEC, CFPB, NHTSA, DOJ, CISA, FDA, ATF, MSHA, NLRB, and dozens more), federal courts (CourtListener, Stanford SCAC, GAO, IG reports), accredited certifications (B Corp, Fair Trade, Climate Neutral, MSC, FSC, GoodWeave, Rainforest Alliance), and international enforcement (EU DG Comp, UK Modern Slavery, Canadian Competition Bureau, Australian ACCC).
 
-• Personalized to your values. A 30-second quiz weights every category to what you actually care about. The same brand earns different grades for different shoppers — and that's the point.
+• Personalized to your values. A 45-second values match weights every category to what you actually care about. The same brand earns different grades for different shoppers — and that's the point.
 
-• Scan or search 11,000+ brands. Subsidiaries roll up to parents so you never accidentally reward the holding company you were boycotting.
+• Scan or search 12,000+ brands. Subsidiaries roll up to parents so you never accidentally reward the holding company you were boycotting.
 
 • No engagement traps. We deliberately don't ship streaks, push spam, or rage-bait. Open the app when you need it. Close it when you're done.
 
@@ -149,7 +149,7 @@ We launched TruNorth's LinkedIn page today.
 
 If you've ever wondered "is this brand actually doing what they say?" — we built the answer.
 
-100 public-records sources. 11,000+ brands. Grades you can trace back to the EPA filing, the OSHA violation, the SEC litigation, the FEC donation.
+200+ public-record sources. 12,000+ brands. Grades you can trace back to the EPA filing, the OSHA violation, the SEC litigation, the FEC donation.
 
 No vibes. No paid ratings. No engagement traps.
 
@@ -165,7 +165,7 @@ Follow along — the next month is the build-up.
 ```
 A lot of shopping apps tell you what to buy. Almost none show you why.
 
-This week we hit 100 public-records sources powering TruNorth's brand grades. Some examples of what's actually in the pipeline:
+This week we hit 200+ public-record sources powering TruNorth's brand grades. Some examples of what's actually in the pipeline:
 
 ▶ FEC.gov — every campaign donation
 ▶ EPA ECHO — every environmental violation per facility

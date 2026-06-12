@@ -335,7 +335,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
         display:"flex", alignItems:"center", justifyContent:"space-between",
       }}>
         <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-          <img src="/apple-touch-icon.png" alt="" width={32} height={32} style={{ borderRadius:8 }} />
+          <img src="/apple-touch-icon.png?v=cp1" alt="" width={32} height={32} style={{ borderRadius:8 }} />
           <div style={{ fontWeight:800, fontSize:17, letterSpacing:-0.3 }}>TruNorth</div>
         </div>
         {/* Phase 5.az: removed the header "Email Aron" / "Get TruNorth →"

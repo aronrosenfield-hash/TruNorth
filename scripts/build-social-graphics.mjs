@@ -30,15 +30,15 @@ const OUT_DIR = path.join(ROOT, "docs/marketing/social");
 
 const SIZE = 1200;
 const P = {
-  bg: "#0f0f0f",
-  bgCard: "#1a1a1a",
+  bg: "#0E0F12",
+  bgCard: "#16181D",
   bgCard2: "#222",
   border: "#2a2a2a",
   txt: "#f2f2f2",
   txt2: "#a8a8ad",
   txt3: "#6c6c72",
-  purple: "#7c6dfa",
-  purpleDeep: "#5d54a6",
+  purple: "#38C0CE",
+  purpleDeep: "#0F6E56",
   green: "#4caf82",
   greenSoft: "rgba(76,175,130,0.12)",
   amber: "#f0a030",
@@ -64,8 +64,9 @@ function wordmark(x, y, size = 36) {
   const offset = arrowSize / 2;
   return `
     <g transform="translate(${x},${y})">
-      <rect x="0" y="0" width="${arrowSize}" height="${arrowSize}" rx="${arrowSize * 0.22}" fill="${P.purple}"/>
-      <polygon points="${offset},${arrowSize * 0.15} ${arrowSize * 0.78},${arrowSize * 0.62} ${arrowSize * 0.62},${arrowSize * 0.62} ${arrowSize * 0.62},${arrowSize * 0.85} ${arrowSize * 0.38},${arrowSize * 0.85} ${arrowSize * 0.38},${arrowSize * 0.62} ${arrowSize * 0.22},${arrowSize * 0.62}" fill="#fff"/>
+      <rect x="0" y="0" width="${arrowSize}" height="${arrowSize}" rx="${arrowSize * 0.22}" fill="#0E0F12"/>
+      <circle cx="${offset}" cy="${offset}" r="${arrowSize * 0.40}" fill="none" stroke="${P.purple}" stroke-width="${arrowSize * 0.045}"/>
+      <polygon points="${offset},${arrowSize * 0.17} ${arrowSize * 0.73},${arrowSize * 0.60} ${arrowSize * 0.57},${arrowSize * 0.60} ${arrowSize * 0.57},${arrowSize * 0.83} ${arrowSize * 0.43},${arrowSize * 0.83} ${arrowSize * 0.43},${arrowSize * 0.60} ${arrowSize * 0.27},${arrowSize * 0.60}" fill="#EDE9E0"/>
       <text x="${arrowSize + 12}" y="${arrowSize * 0.72}" font-family="-apple-system, BlinkMacSystemFont, Helvetica, sans-serif" font-size="${size * 0.7}" font-weight="800" fill="${P.txt}">Tru<tspan fill="${P.purple}">North</tspan></text>
     </g>
   `;
@@ -111,7 +112,7 @@ async function buildSourceCount() {
   <text x="${SIZE / 2}" y="580" text-anchor="middle"
         font-family="-apple-system, Helvetica, sans-serif" font-size="32" font-weight="600"
         fill="${P.txt2}">
-    powering 11,000+ brand grades
+    powering 12,000+ brand grades
   </text>
 
   <!-- Source strip header -->

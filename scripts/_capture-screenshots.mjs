@@ -1,159 +1,165 @@
-// Capture App Store screenshots at iPhone 14 Pro Max resolution (1290×2796)
-// by driving the local Vite dev server with Playwright.
+// Capture App Store screenshots from the local dev server.
+// R2 edition (2026-06-12): five scenes off the Civic Premium four-surface
+// app — Today (clash-led card), Lens verdict (Patagonia), the Match
+// (ENVIRONMENT tension card), Ledger (switch receipts), the Reveal.
+//
+// iPhone: 430×932 @3x → 1290×2796 (6.7" class)
+// iPad:   1024×1366 @2x → 2048×2732 (12.9" class)   (--ipad)
+//
+// Runs against http://localhost:5173 (start `npm run dev` first).
+// Uses puppeteer-core + system Chrome — no bundled browser download.
 
-import { chromium } from 'playwright';
+import puppeteer from 'puppeteer-core';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const OUT_DIR = '/Users/aronrosenfield/Developer/trunorth/docs/app-store-screenshots/raw';
-const BASE_URL = 'http://localhost:5173/';
+const IPAD = process.argv.includes('--ipad');
+const ROOT = '/Users/aronrosenfield/Developer/trunorth/docs/app-store-screenshots';
+const OUT_DIR = path.join(ROOT, IPAD ? 'raw-ipad' : 'raw');
+const BASE = 'http://localhost:5173';
+const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
-const VIEWPORT = { width: 430, height: 932 };
-const DPR = 3;
+const VIEWPORT = IPAD
+  ? { width: 1024, height: 1366, deviceScaleFactor: 2 }
+  : { width: 430, height: 932, deviceScaleFactor: 3 };
 
-async function pause(ms) { return new Promise(r => setTimeout(r, ms)); }
+const pause = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const PROFILE_PRESEED = {
-  political: 'liberal', dei: 'pro', animals: 'dealbreaker', guns: 'avoid', union: 'pro',
-  environmentImportance: 5, laborImportance: 4, privacyImportance: 4, execPayImportance: 3, charityImportance: 3,
-  topPick: 'Patagonia',
+// Profile shape MUST match normalizeProfile v2 (lean/deiLean/animalTesting/
+// guns/unionSupport/weights/dealBreakers). Values-forward, non-partisan —
+// store screenshots should demo the product, not a politics.
+const PROFILE = {
+  v: 2,
+  lean: 'neutral', deiLean: 'neutral', animalTesting: 'prefer_not',
+  guns: 'neutral', unionSupport: 'neutral',
+  weights: { political: 3, charity: 3, environment: 5, labor: 4, dei: 2, animals: 3, guns: 2, privacy: 4, execPay: 3 },
+  dealBreakers: ['forcedLabor', 'childLabor'],
 };
+const BASKET = ['patagonia', 'costco', 'trader-joe-s', 'walmart'];
+const SWITCHES = [
+  { from: 'walmart', fromName: 'Walmart', to: 'costco', toName: 'Costco', monthly: 60, at: Date.now() - 86400000 * 8 },
+  { from: 'shein', fromName: 'SHEIN', to: 'patagonia', toName: 'Patagonia', monthly: 25, at: Date.now() - 86400000 * 2 },
+];
 
-const INIT_SCRIPT = `
-  // Force the SPA to treat us as a native shell (so we skip the marketing landing).
-  // Use Object.defineProperty to prevent the @capacitor/core module from
-  // overwriting our mock when it imports later.
-  Object.defineProperty(window, 'Capacitor', {
-    value: {
-      isNativePlatform: () => true,
-      platform: 'ios',
-      getPlatform: () => 'ios',
-      isPluginAvailable: () => false,
-      Plugins: {},
-    },
-    writable: false,
-    configurable: false,
-  });
-  try {
-    localStorage.setItem('tn_profile', JSON.stringify(${JSON.stringify(PROFILE_PRESEED)}));
-    localStorage.setItem('tn_onboardingComplete', '1');
-    localStorage.setItem('tn_onboardingSeen', '1');
-    localStorage.setItem('tn_welcomeSeen', '1');
-    localStorage.setItem('tn_skipMarketing', '1');
-    for (let v = 40; v <= 60; v++) {
-      localStorage.setItem('tn_whatsNewSeen_' + v, '1');
-    }
-  } catch {}
-`;
-
-// Click through any onboarding carousel that's blocking the app
-async function skipOnboarding(page) {
-  for (let i = 0; i < 6; i++) {
-    const skipBtn = page.locator('button').filter({ hasText: /^\s*Skip\s*$/i }).first();
-    const nextBtn = page.locator('button').filter({ hasText: /Let'?s go|Start exploring|Get started|Continue|Next/i }).first();
-    let clicked = false;
-    if (await skipBtn.count() > 0) {
-      try { await skipBtn.click({ timeout: 1500 }); clicked = true; } catch {}
-    }
-    if (!clicked && await nextBtn.count() > 0) {
-      try { await nextBtn.click({ timeout: 1500 }); clicked = true; } catch {}
-    }
-    if (!clicked) break;
-    await pause(800);
-  }
-  await pause(1500);
+function initScript({ profile = true, basket = true, switches = false } = {}) {
+  return `
+    try {
+      localStorage.clear();
+      localStorage.setItem('tn_hasOnboarded', '1');
+      ${profile ? `localStorage.setItem('tn_profile', ${JSON.stringify(JSON.stringify(PROFILE))});` : ''}
+      ${basket ? `localStorage.setItem('tn_saved', ${JSON.stringify(JSON.stringify(BASKET))});` : ''}
+      ${switches ? `localStorage.setItem('tn_switches', ${JSON.stringify(JSON.stringify(SWITCHES))});` : ''}
+    } catch (e) {}
+  `;
 }
 
-async function captureSearch(page) {
-  await page.goto(BASE_URL, { waitUntil: 'networkidle' });
-  await pause(2500);
-  await skipOnboarding(page);
-  // Navigate to Search tab
+// Dismiss the deep-link welcome modal if it's up.
+async function dismissWelcome(page) {
   try {
-    const search = page.locator('input[placeholder*="Search" i], input[type="search"]').first();
-    if (await search.count() > 0) {
-      await search.click({ timeout: 2000 });
-      await search.fill('Patagonia');
-      await pause(2000);
-    }
+    await page.evaluate(() => {
+      const b = [...document.querySelectorAll('button')].find((x) => x.textContent.includes("Let's go"));
+      if (b) b.click();
+    });
   } catch {}
-  await page.screenshot({ path: path.join(OUT_DIR, '01-search.png'), fullPage: false });
-  console.log('  ✓ 01-search.png');
+  await pause(600);
 }
 
-async function captureQuiz(page) {
-  await page.evaluate(() => { try { localStorage.removeItem('tn_profile'); } catch {} });
-  await page.goto(BASE_URL, { waitUntil: 'networkidle' });
-  await pause(2500);
-  await skipOnboarding(page);
-  // Try to find a "Take quiz" or values-fingerprint CTA
-  try {
-    const btn = page.locator('button, a').filter({ hasText: /quiz|tune.*scores|personalize|values fingerprint|find your.*archetype/i }).first();
-    if (await btn.count() > 0) { await btn.click({ timeout: 3000 }); await pause(2500); }
-  } catch {}
-  await page.screenshot({ path: path.join(OUT_DIR, '02-quiz.png'), fullPage: false });
-  console.log('  ✓ 02-quiz.png');
-  await page.evaluate((p) => { try { localStorage.setItem('tn_profile', JSON.stringify(p)); } catch {} }, PROFILE_PRESEED);
+async function tapByText(page, text, { exact = false } = {}) {
+  const ok = await page.evaluate(({ text, exact }) => {
+    const btns = [...document.querySelectorAll('button')];
+    const b = btns.find((x) => exact ? x.textContent.trim() === text : x.textContent.includes(text));
+    if (b) { b.click(); return true; }
+    return false;
+  }, { text, exact });
+  await pause(700);
+  return ok;
 }
 
-async function captureTopPicks(page) {
-  await page.goto(BASE_URL, { waitUntil: 'networkidle' });
-  await pause(2500);
-  await skipOnboarding(page);
-  try {
-    const btn = page.locator('button, [role="button"]').filter({ hasText: /top picks/i }).first();
-    if (await btn.count() > 0) { await btn.click({ timeout: 3000 }); await pause(3000); }
-  } catch {}
-  await page.screenshot({ path: path.join(OUT_DIR, '03-top-picks.png'), fullPage: false });
-  console.log('  ✓ 03-top-picks.png');
+async function newPage(browser, seeds) {
+  const context = await browser.createBrowserContext();
+  const page = await context.newPage();
+  await page.setViewport(VIEWPORT);
+  await page.evaluateOnNewDocument(initScript(seeds));
+  return { page, context };
 }
 
-async function captureScanner(page) {
-  await page.goto(BASE_URL, { waitUntil: 'networkidle' });
-  await pause(2500);
-  await skipOnboarding(page);
-  try {
-    const btn = page.locator('[aria-label*="scan" i], [title*="scan" i], button:has(i.ti-scan)').first();
-    if (await btn.count() > 0) { await btn.click({ timeout: 3000 }); await pause(2500); }
-  } catch {}
-  await page.screenshot({ path: path.join(OUT_DIR, '04-scanner.png'), fullPage: false });
-  console.log('  ✓ 04-scanner.png');
-}
-
-async function captureAccount(page) {
-  await page.goto(BASE_URL, { waitUntil: 'networkidle' });
-  await pause(2500);
-  await skipOnboarding(page);
-  try {
-    const btn = page.locator('button, [role="button"]').filter({ hasText: /^\s*account\s*$/i }).first();
-    if (await btn.count() > 0) { await btn.click({ timeout: 3000 }); await pause(3000); }
-  } catch {}
-  await page.screenshot({ path: path.join(OUT_DIR, '05-account.png'), fullPage: false });
-  console.log('  ✓ 05-account.png');
+async function shot(page, name) {
+  await page.screenshot({ path: path.join(OUT_DIR, name) });
+  console.log('  ✓', name);
 }
 
 (async () => {
   await fs.mkdir(OUT_DIR, { recursive: true });
-  const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext({
-    viewport: VIEWPORT, deviceScaleFactor: DPR,
-    userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
-    isMobile: true, hasTouch: true, locale: 'en-US', timezoneId: 'America/Chicago',
-  });
-  await context.addInitScript(INIT_SCRIPT);
-  const page = await context.newPage();
-  page.on('console', () => {});
-  page.on('pageerror', () => {});
+  const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new' });
 
-  console.log(`Capturing → ${OUT_DIR}`);
-  console.log(`Viewport: ${VIEWPORT.width}×${VIEWPORT.height} @ ${DPR}x = ${VIEWPORT.width * DPR}×${VIEWPORT.height * DPR}`);
+  // 1 · TODAY — clash-led compass card + story + shelf
+  {
+    const { page, context } = await newPage(browser, { switches: false });
+    await page.goto(`${BASE}/?tab=today`, { waitUntil: 'networkidle2' });
+    await pause(2500); await dismissWelcome(page); await pause(800);
+    await shot(page, '01-today.png');
+    await context.close();
+  }
 
-  await captureSearch(page);
-  await captureQuiz(page);
-  await captureTopPicks(page);
-  await captureScanner(page);
-  await captureAccount(page);
+  // 2 · LENS VERDICT — Patagonia expanded (serif sentence + receipts + seal)
+  {
+    const { page, context } = await newPage(browser, {});
+    await page.goto(`${BASE}/company/patagonia`, { waitUntil: 'networkidle2' });
+    await pause(3000); await dismissWelcome(page); await pause(1200);
+    await shot(page, '02-verdict.png');
+    await context.close();
+  }
+
+  // 3 · THE MATCH — ENVIRONMENT tension card (card 2; politics skipped)
+  {
+    const { page, context } = await newPage(browser, { profile: false });
+    await page.goto(`${BASE}/?tab=today`, { waitUntil: 'networkidle2' });
+    await pause(2500); await dismissWelcome(page); await pause(600);
+    await tapByText(page, 'Start the Match');
+    await pause(900);
+    await tapByText(page, 'independent / no preference — skip');
+    await pause(900);
+    await shot(page, '03-match.png');
+    await context.close();
+  }
+
+  // 4 · LEDGER — dial + Redirected counter + switch receipts
+  {
+    const { page, context } = await newPage(browser, { switches: true });
+    await page.goto(`${BASE}/?tab=library`, { waitUntil: 'networkidle2' });
+    await pause(2500); await dismissWelcome(page); await pause(800);
+    await shot(page, '04-ledger.png');
+    await context.close();
+  }
+
+  // 5 · THE REVEAL — drive the full Match, land on the archetype
+  {
+    const { page, context } = await newPage(browser, { profile: false });
+    await page.goto(`${BASE}/?tab=today`, { waitUntil: 'networkidle2' });
+    await pause(2500); await dismissWelcome(page); await pause(600);
+    await tapByText(page, 'Start the Match');
+    await pause(900);
+    const answers = [
+      'independent / no preference — skip', // politics
+      'Dealbreaker',                        // environment
+      'Forgivable',                         // workers
+      'no preference — skip',               // unions
+      'no preference — skip',               // diversity
+      'It matters to me',                   // giving
+      'Not a priority',                     // animals
+      'no preference — skip',               // firearms
+      'Dealbreaker',                        // privacy
+      'Forgivable',                         // CEO pay
+    ];
+    for (const a of answers) { await tapByText(page, a); }
+    await tapByText(page, 'Forced labor in supply chain');
+    await tapByText(page, 'Child labor in supply chain');
+    await tapByText(page, 'finish');
+    await pause(2500);
+    await shot(page, '05-reveal.png');
+    await context.close();
+  }
 
   await browser.close();
-  console.log('\nDone.');
+  console.log(`done → ${OUT_DIR}`);
 })();
