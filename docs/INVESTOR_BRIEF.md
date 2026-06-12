@@ -2,18 +2,28 @@
 
 > **Living document.** Maintained by the founder + AI engineering co-pilot. Last updated automatically as material changes ship. **Do not share secrets / API keys from this doc** — all sensitive values are intentionally redacted and stored in `.env` files (git-ignored) and GitHub Actions Secrets.
 
-**Last updated:** 2026-06-04 PM
-**Status:** Pre-launch · iOS TestFlight (Build 46) · Public PH launch June 23, 2026
+**Last updated:** 2026-06-12 PM
+**Status:** Pre-launch · iOS TestFlight (Build 68) · full product redesign shipped Jun 11–12 ("Civic Premium") · PH launch date being re-set post-redesign
 **Founder:** Aron Rosenfield (solo indie, US-based, Texas)
-**Legal entity:** TBD (LLC in formation — pre-revenue)
+**Legal entity:** TruNorthApp LLC (formed; business bank account + RevenueCat live — pre-revenue by choice until the paid build flips)
+
+---
+
+## 0 · What shipped June 5–12 (material changes)
+
+- **Civic Premium redesign (Builds 61–68):** full visual system (ink/bone/teal, serif verdicts, mono receipts), four-surface architecture, ring verdict seal, the Match, the Switch + Ledger impact counter, clash-led basket stat ("0% aligned" retired — presentation only, scoring untouched).
+- **Scoring V3 (frozen):** evidence-shrunk overall scores, thresholds A≥63/B≥56/C≥46/D≥41; single-category brands cap at B; F requires documented misconduct; zero-data brands show "?" — never a fabricated C.
+- **Neutrality hardening:** stance categories (politics/DEI/animals/firearms) contribute nothing to neutral baselines; symmetric mismatch scoring both directions; third-party DEI recognition (HRC/Disability:IN/Bloomberg, 736 brands) now reaches stanced users' grades both ways.
+- **Catalog & sources:** 12,841 companies (EDGAR expansion +1,583); R7 sources wired (OFCCP EEO-1, ToS;DR, CBP UFLPA, SAM exclusions, USAspending); 167 automated workflows.
+- **Trust layer:** published /methodology (formulas + frozen thresholds + disclosed judgment calls), per-claim receipts on the verdict card, opinion framing, corrections channel.
 
 ---
 
 ## 1 · One-line pitch
 
-> **TruNorth grades 12,000+ consumer brands across 9 values categories using 100 public-records sources — so you can shop in line with what you actually believe in.**
+> **TruNorth grades 12,000+ consumer brands across 9 values categories using over 200 public-records sources — so you can shop in line with what you actually believe in.**
 
-We're a personalized, mobile-first, primary-sourced shopping intelligence app. Anti-engagement-trap by design: no streaks, no push spam, no rage-bait. Open, decide, close. The 30-second values quiz reweights every grade so two users see different verdicts on the same brand.
+We're a personalized, mobile-first, primary-sourced shopping intelligence app. Anti-engagement-trap by design: no streaks, no push spam, no rage-bait. Open, decide, close. The Match — nine full-screen tension cards, ~45 seconds — derives your weights (never asks for numbers), and every grade reweights to you: two users see different verdicts on the same brand.
 
 ---
 
@@ -26,7 +36,7 @@ US consumers funnel **$4T/year** through brands whose values diverge sharply fro
 3. **Yuka, EWG, etc.** cover narrow verticals (food only, beauty only).
 4. **No personalization** — a left-leaning shopper and a right-leaning shopper see the same "score."
 
-TruNorth is the only consumer-facing app pulling from 100 federal regulators, courts, certifications, and international enforcement bodies — with profile-aware grading.
+TruNorth is the only consumer-facing app pulling from 200+ federal regulators, courts, certifications, and international enforcement bodies — with profile-aware grading.
 
 ---
 
@@ -36,16 +46,16 @@ TruNorth is the only consumer-facing app pulling from 100 federal regulators, co
 
 ### Core flows
 
-| Flow | Description |
+The June 2026 redesign ("Civic Premium" — archival ink + bone, one teal signal color, serif verdicts, monospace receipts) reorganized the app into **four surfaces**:
+
+| Surface | Description |
 |---|---|
-| **Quiz** | 30-second values quiz weights 9 categories per user. Re-takeable anytime. |
-| **Search** | 12,000+ companies in MiniSearch index. Sub-brand → parent rollup so subsidiaries inherit. |
-| **Scan** | ML Kit barcode scanner — point at any product, get the brand's grade before you pay. |
-| **Top Picks** | Curated 55-brand list of the most recognizable US brands (Amazon, Walmart, Apple, Starbucks, etc.). Profile-ranked. |
-| **Browse** | By industry bucket (Retail, F&B, Tech, Apparel, etc.). |
-| **Compare** | Two brands side-by-side, category-by-category. |
-| **Library** | Save brands, history, "alternatives to..." suggestions per brand. |
-| **Account** | Pro upgrade (one-time IAP planned), privacy controls, sources tab. |
+| **Today** | The daily pulse: your compass seal + basket verdict ("One clash on the record — the rest holds steady"), one record-driven story, one daily-rotating shelf ranked for you. |
+| **Lens** (center) | Search, scan, or browse → the **verdict card**: one serif sentence ("Aligned on 4 of your 5 priorities — one red flag"), three mono receipt lines (penalties · recalls · political money) with source links, and a better-matched swap. One-tap barcode scanner. |
+| **Ledger** | Your money's record: clash count, **dollars redirected** ($X/mo · $Y/yr from committed switches), switch receipts, saved basket with a what-changed feed. |
+| **You** | Values archetype (serif name + 4-letter codename + identity seal), re-run the Match anytime, methodology/sources/corrections. |
+
+Supporting flows: **the Match** (11 tension cards replace the old quiz; weights derived, never asked; politically symmetric by construction) · **the Switch** (commit a swap, log monthly spend once, Ledger counts the impact) · **Versus** (two brands, serif verdict line) · first-run basket picker → "your basket, judged" reveal in under 90 seconds.
 
 ### Scoring categories (9)
 
@@ -67,11 +77,11 @@ TruNorth is the only consumer-facing app pulling from 100 federal regulators, co
 
 ## 4 · Data — the moat
 
-### 100 public-records sources, free, primary
+### 200+ public-record sources, free, primary
 
 The core IP. No competitor has assembled this. Costs the user $0 because every source is gov / nonprofit / open-data.
 
-**Live in pipeline as of 2026-06-04** — full registry: `/docs/SOURCES.md`
+**Live in pipeline as of 2026-06-12** — full registry: `/docs/SOURCES.md`. The table below is the 2026-06-04 baseline (100); R6/R7 expansions since added 100+ more feeds: OFCCP EEO-1 workforce demographics, ToS;DR privacy grades, CBP UFLPA/WRO forced-labor lists, SAM.gov exclusions, USAspending per-recipient, DOL/state regulators, and the international round-3 set.
 
 | Tier | Source count | Examples |
 |---|---|---|
@@ -283,7 +293,7 @@ React app reads companies.json → renders detail card on demand
 
 | App | Coverage | Sources | Personalization | Cost to user |
 |---|---|---|---|---|
-| **TruNorth** | 11k+ brands, 9 categories | **100 primary** | Yes (profile quiz) | Free (Pro $0.99) |
+| **TruNorth** | 12k+ brands, 9 categories | **200+ primary** | Yes (the Match) | Free (Pro $0.99) |
 | Yuka | ~2M food/cosmetic products | ~5 (mostly product-level) | No | Freemium |
 | Buycott | ~250k brands | Crowdsourced | Campaign-based | Free |
 | Good On You | ~3k fashion brands | Proprietary methodology | No | Freemium |
@@ -344,7 +354,7 @@ Assuming PH launch performance similar to peer indie apps (5k-15k downloads firs
 
 | Risk | Mitigation |
 |---|---|
-| Apple App Store rejection at launch | TestFlight Build 46 live + tested; app meets all guidelines; June 17 submission gives 5-day review buffer |
+| Apple App Store rejection at launch | Build 51 was rejected (IAP metadata + receipts); fixed via free-v1 safe mode + full resubmission package staged. Build 68 live on TestFlight; resubmission fires on founder go |
 | Source endpoint changes (gov reshuffling URLs) | Per-source `*-fetch.mjs` scripts are isolated. Failures don't cascade. Repair time per source ~30 min |
 | Cloudflare bot blocks on public sources | Already handled — workflows run on GH Actions IPs which clear most WAFs. Two sources behind heavy bot protection (BBB dropped; ConsumerAffairs not used) |
 | Lawsuit threat from brands with bad grades | Every score traces to **primary public records**. We don't editorialize. Settled SCOTUS precedent (Hustler v. Falwell) protects factual reporting. Defamation insurance + privacy-policy lawyer review is X-5 in backlog |
@@ -362,7 +372,7 @@ Assuming PH launch performance similar to peer indie apps (5k-15k downloads firs
 - **Apple Bundle ID**: `com.trunorth.app` — registered to founder under personal Apple Developer Program (transfers to LLC post-formation).
 - **Privacy Policy**: at `https://www.trunorthapp.com/#privacy`. No PII collected by default; analytics anonymized through PostHog.
 - **Open-source license dependencies**: all MIT/Apache 2.0 — no copyleft contamination. Full dependency tree in `package.json`.
-- **Data sources licensing**: all 100 sources are public-records (US federal/state government, EU/UK/CA/AU government, accredited nonprofits, open-data certifications). No paid feeds, no scraped private data.
+- **Data sources licensing**: all 200+ sources are public-records (US federal/state government, EU/UK/CA/AU government, accredited nonprofits, open-data certifications). No paid feeds, no scraped private data.
 
 ---
 
@@ -377,7 +387,7 @@ Assuming PH launch performance similar to peer indie apps (5k-15k downloads firs
 | Apple Developer account proof | Available |
 | Vercel / GitHub / domain registration proof | Available |
 | PostHog dashboard access | Available |
-| TestFlight build (current = 46) | Available |
+| TestFlight build (current = 68) | Available |
 | Privacy policy + terms | Live at `/#privacy` |
 | Founder background / LinkedIn | Available |
 | LLC formation docs | **Pending — to be filed post-launch** |

@@ -6864,7 +6864,7 @@ if (screen === "basket") {
                     <div style={{ fontFamily: SERIF, fontSize: 17, color: T.txt2, lineHeight: 1.35 }}>
                       All quiet — no grade moves {savedCos.length ? "in your basket" : "to report"} this week.
                     </div>
-                    <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh nightly across 190+ public sources.</div>
+                    <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh nightly across 200+ public sources.</div>
                   </div>
                 )}
 
@@ -7683,7 +7683,7 @@ if (screen === "basket") {
             return (
               <div style={{ padding:16 }}>
                 <p style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.6 }}>
-                  Every score is researched from <strong style={{ color:T.txt2 }}>{totalSources} primary public-record sources</strong> across {SOURCES_DATA.length} categories — federal regulators, court records, accredited certifications, independent monitors.
+                  Every score is researched from <strong style={{ color:T.txt2 }}>200+ primary public-record sources</strong> — federal regulators, court records, accredited certifications, independent monitors. The {totalSources} highest-signal feeds are listed below across {SOURCES_DATA.length} categories; the full registry ships in the data pipeline.
                 </p>
 
                 {/* Anchor names — proof of credibility */}

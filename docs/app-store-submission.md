@@ -66,7 +66,7 @@ https://www.trunorthapp.com/#privacy
 ### Description (4000 char limit — use ~1500)
 
 ```
-TruNorth grades 11,000+ companies on what they actually do — using only public records, not opinions.
+TruNorth grades 12,000+ companies on what they actually do — using only public records, not opinions.
 
 No vibes. No spin. Just journalism.
 
@@ -86,7 +86,7 @@ Most ethical shopping apps give you opinions dressed up as ratings. TruNorth pul
 Every grade is auditable. Tap any score → see the specific filings that drove it. If a score moves, it's because new records moved it.
 
 PERSONALIZED FOR YOU
-Take a 30-second values quiz. Every grade in the app re-weights to YOUR priorities. A climate-first user and a labor-first user see different Top Picks for the same brand.
+Take a 45-second values match. Every grade in the app re-weights to YOUR priorities. A climate-first user and a labor-first user see different Top Picks for the same brand.
 
 IN-STORE BARCODE SCANNER
 Scan any product in the store. Get the verdict in 2 seconds before you pay.
@@ -95,7 +95,7 @@ Scan any product in the store. Get the verdict in 2 seconds before you pay.
 Politics · Environment · Labor · DEI · Charity · Animal Testing · Firearms · Privacy · Executive Pay
 
 FREE FOREVER
-The core experience is free. Browse 11,000+ companies, take the values quiz, see letter grades, scan barcodes. TruNorth Pro ($0.99/mo) unlocks personalized scoring, per-grade citations, the full sources directory, and the weekly digest.
+The core experience is free. Browse 12,000+ companies, take the values quiz, see letter grades, scan barcodes. TruNorth Pro ($0.99/mo) unlocks personalized scoring, per-grade citations, the full sources directory, and the weekly digest.
 
 NO ADS · NO AFFILIATE LINKS · NO SELLING YOUR DATA
 
@@ -107,7 +107,7 @@ If you've ever wanted to align your shopping with your values but didn't want to
 ### Promotional Text (170 char limit — appears above description, can update without re-review)
 
 ```
-Public records, not opinions. 11,000+ brands graded across politics, environment, labor & more. Take the 30-second values quiz to personalize every score.
+Public records, not opinions. 12,000+ brands graded across politics, environment, labor & more. Take the 45-second values match to personalize every score.
 ```
 
 ### Keywords (100 char limit, comma-separated, no spaces after commas)
@@ -145,7 +145,7 @@ https://www.trunorthapp.com
 ```
 Hi Apple App Review team,
 
-TruNorth is a consumer values shopping app that grades 11,000+ companies using only public records (FEC, OSHA, EPA, SEC, etc.). It does NOT require sign-in to use — you can browse the entire app as a guest.
+TruNorth is a consumer values shopping app that grades 12,000+ companies using only public records (FEC, OSHA, EPA, SEC, etc.). It does NOT require sign-in to use — you can browse the entire app as a guest.
 
 GETTING STARTED:
 1. Tap through the welcome carousel
@@ -199,9 +199,9 @@ Thanks for your time reviewing!
 Welcome to TruNorth — the consumer values shopping app that uses only public records.
 
 This first release includes:
-• 11,000+ companies graded across 9 value categories
+• 12,000+ companies graded across 9 value categories
 • 100 public-records data sources (FEC, OSHA, EPA, SEC, CFPB, NHTSA, CISA, DOJ + 90 more)
-• 30-second values quiz to personalize every grade
+• 45-second values match to personalize every grade
 • In-store barcode scanner (ML Kit, on-device)
 • Compare any 2 companies side-by-side
 • Save favorites + see weekly grade changes
@@ -222,15 +222,15 @@ Use existing PH gallery images as starting point. Apple requires:
 - 12.9" iPad Pro: **2048 × 2732 px** — only if iPad approved
 
 Pick **5 screenshots, in this order:**
-1. Hero: app icon + tagline + "11,000+ brands graded" → use `02-app-search.png`
-2. Quiz: the 30-second values quiz → take fresh screenshot
+1. Hero: app icon + tagline + "12,000+ brands graded" → use `02-app-search.png`
+2. Quiz: the 45-second values match → take fresh screenshot
 3. Top Picks: ranked brand cards with grades → use `04-app-top.png`
 4. Scanner: barcode scanner moment → use a fresh screenshot
 5. Account / Values Fingerprint → use `05-app-account.png`
 
 **For each, add a 1-line caption** burned into the screenshot:
-1. "11,000+ brands graded with public records"
-2. "30-second quiz tunes every score to you"
+1. "12,000+ brands graded with public records"
+2. "45-second values match tunes every score to you"
 3. "Personalized Top Picks for your values"
 4. "Scan any barcode in-store"
 5. "Your values archetype, your fingerprint"

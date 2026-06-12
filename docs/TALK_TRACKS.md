@@ -6,15 +6,15 @@ Plain-language answers to the questions you'll get asked at events, in DMs, on p
 
 ## "What is TruNorth?"
 
-**TruNorth tracks 11,000+ consumer brands and grades them on what they actually do — using only public records.**
+**TruNorth tracks 12,000+ consumer brands and grades them on what they actually do — using only public records.**
 
-It's an iOS app. You scan a barcode in-store and get a letter grade (A through F) on the company behind the product, tuned to the values you care about — politics, environment, labor, animal testing, privacy, and more. Every score traces back to a public-record citation. No surveys, no vibes, no opinions.
+It's an iOS app. Nine quick choices — the Match — shape your personal compass; then any brand you search or scan gets one serif verdict with the receipts under it: the federal penalties, the recalls, the political money. A through F, tuned to YOUR values. Every claim traces to a public record. No surveys, no vibes, no opinions. When a brand clashes, the app hands you a better-matched swap and counts the dollars you redirect.
 
 ---
 
 ## "How many brands actually get a real grade?"
 
-**Honest answer: ~5,000 of the 11,000 have at least one piece of verified public-record signal. ~1,100 have three or more. ~380 have four or more.**
+**Honest answer: ~5,400 of the 12,800 have at least one piece of verified public-record signal. ~1,600 have three or more. ~800 have four or more.**
 
 The top brands you've heard of — every Fortune 500, the big consumer names — carry deep coverage. The long tail (small private brands, niche subsidiaries) doesn't yet, because the public records that grade them simply haven't been published. We mark those brands "limited data" rather than fake a score. As more data lands, more brands earn grades.
 
@@ -40,12 +40,12 @@ The longer breakdown:
 
 | Layer | What I use | Why |
 |---|---|---|
-| **App UI** | React 18, Vite (build tool) | Fast iteration, hot reload, huge ecosystem |
+| **App UI** | React 19, Vite (build tool) | Fast iteration, hot reload, huge ecosystem |
 | **iOS shell** | Capacitor | Wraps the web app in a native iOS container. Same codebase ships to TestFlight and App Store. |
 | **Barcode scanner** | Google ML Kit via `@capacitor-mlkit/barcode-scanning` | Apple's native barcode reader (free, on-device) |
 | **Hosting (marketing site)** | Vercel free tier | Auto-deploys from GitHub on every push. Zero cost. |
-| **"Database"** | JSON files in the GitHub repo | 11k companies, 5.6 MB bundle, served as a static file. No SQL, no NoSQL. The iOS app downloads it once and caches it. |
-| **Data pipeline** | 143 GitHub Actions workflows | Each one fetches a public-records source on a schedule (daily/weekly/monthly/quarterly/annual) and commits the result back to the repo. The repo IS the database. |
+| **"Database"** | JSON files in the GitHub repo | 12.8k companies served as static JSON. No SQL, no NoSQL. The iOS app fetches fresh data live and carries a bundled fallback for offline. |
+| **Data pipeline** | 167 GitHub Actions workflows | Each one fetches a public-records source on a schedule (daily/weekly/monthly/quarterly/annual) and commits the result back to the repo. The repo IS the database. |
 | **Email** | MailerLite (newsletter), Gmail Apps Script (support auto-reply) | Both free tiers cover us for years at expected scale |
 | **Analytics** | PostHog | Free tier, proxied through our subdomain so ad blockers don't break it |
 | **Code/data version control** | GitHub | Every data update is a git commit — fully auditable change history |
@@ -61,7 +61,7 @@ The longer breakdown:
 **There isn't one.**
 
 The marketing site is static HTML/JS/CSS served by Vercel's CDN. The iOS app is a self-contained React bundle that talks to:
-- The bundled data file (11k companies, downloaded once per app session)
+- Live data from trunorthapp.com (12.8k companies; bundled fallback offline)
 - Open Food Facts (third-party, free, for barcode → brand name lookup)
 - Our marketing site's email endpoint (Vercel Edge Function — counts as part of Vercel's free tier)
 
@@ -106,7 +106,7 @@ TruNorth uses 200+ public-records data sources with traceable citations. We grad
 
 **Two things converged.**
 
-First, the public data is finally good enough. FEC, EPA, OSHA, NLRB all expose machine-readable feeds. Five years ago this would have required a research team. Today it's 143 cron jobs.
+First, the public data is finally good enough. FEC, EPA, OSHA, NLRB all expose machine-readable feeds. Five years ago this would have required a research team. Today it's 167 cron jobs.
 
 Second, consumers got fed up with marketing-speak. "Sustainable," "ethical," "purpose-driven" are all spin. People want receipts. We provide the receipts.
 
@@ -114,7 +114,7 @@ Second, consumers got fed up with marketing-speak. "Sustainable," "ethical," "pu
 
 ## "What's your business model?"
 
-**Free for users, forever. Pro tier for power users (~$5/mo) covers everything personalized and the in-store scanner.**
+**Free for users, forever — v1 ships with everything unlocked. The Pro tier ($0.99/mo, founder early-bird $9/yr) turns on when the paid build flips post-launch.**
 
 No ads. No selling user data. No taking money from rated companies.
 
@@ -165,10 +165,10 @@ If they ask about background, mention: a year of solo development, mortgaged-the
 
 ## Quick numbers to memorize
 
-- **11,209 companies graded**
+- **12,841 companies tracked · ~5,400 carry letter grades** (the rest show "?" — we never fake a score)
 - **200+ public-records data sources** (growing weekly)
-- **143 GitHub Actions cron jobs** keeping data fresh
-- **11 values categories** (political donations, charity, environment, labor, DEI, animal testing, firearms, data privacy, executive pay, transparency, health)
+- **167 GitHub Actions cron jobs** keeping data fresh
+- **9 compass categories** (political money, environment, labor, DEI, charity, animal testing, firearms, data privacy, CEO pay)
 - **0 ads, 0 trackers selling user data, 0 dollars from rated companies**
 - **$0/month** total infrastructure cost
 - **1 founder, 1 year, evenings and weekends**
@@ -177,4 +177,4 @@ If they ask about background, mention: a year of solo development, mortgaged-the
 
 ## The 30-second elevator pitch
 
-"Every ethical-shopping app out there feels like vibes — opinions dressed up as ratings. I built TruNorth differently. It grades 11,000 companies using only public records — FEC, EPA, OSHA, SEC. Every score traces back to a citation. You scan a barcode in-store, get the verdict before you pay. Free, iOS, launching on Product Hunt June 23. Want me to add you to the launch list?"
+"Every ethical-shopping app out there feels like vibes — opinions dressed up as ratings. I built TruNorth differently. It grades 12,000+ companies using only public records — FEC, EPA, OSHA, SEC. Nine quick choices shape your compass, then any barcode you scan gets a verdict with receipts before you pay. Free, iOS, Product Hunt launch coming. Want me to add you to the launch list?"

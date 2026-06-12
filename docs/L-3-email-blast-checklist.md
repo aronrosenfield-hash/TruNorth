@@ -52,7 +52,7 @@ Aim for 10-20 people. Quality > quantity. Each one should be someone who:
 Hi [name],
 
 I've been quietly building TruNorth — a consumer values shopping app that
-grades 11,000+ companies on what they actually do (not what their marketing says).
+grades 12,000+ companies on what they actually do (not what their marketing says).
 
 It pulls from public records only — FEC donations, EPA violations, OSHA
 citations. Every grade traceable. Free forever. Currently in TestFlight beta.

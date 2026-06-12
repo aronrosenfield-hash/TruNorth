@@ -22,7 +22,7 @@ Hi {$name|"there"},
 Thanks for subscribing — you'll be one of the first to hear when TruNorth goes live on the App Store (target: June 23).
 
 If you want a preview right now:
-👉 Open trunorthapp.com on your phone — the web version has the full 11,000-brand database. The iOS app adds personalized scoring (locked behind a 30-second values quiz) + an in-store barcode scanner.
+👉 Open trunorthapp.com on your phone — the web version has the full 12,000+-brand database. The iOS app adds personalized scoring (locked behind a 45-second values match) + an in-store barcode scanner.
 
 A few brands I'd suggest looking up first to get a feel for how the grading works:
 • A brand you assume is "good" (Patagonia, Ben & Jerry's, REI)

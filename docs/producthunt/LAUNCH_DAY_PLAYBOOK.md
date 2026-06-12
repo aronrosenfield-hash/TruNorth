@@ -29,7 +29,7 @@ Every "ethical shopping" app I tried felt like vibes — opinions dressed up as 
 
 A few things that make it different:
 
-🎯 Personalized — 30-second values quiz tunes EVERY grade to what YOU care about
+🎯 Personalized — 45-second values match tunes EVERY grade to what YOU care about
 📸 In-store — scan any barcode and see the verdict before you pay
 📰 Honest — no streaks, no outrage feeds, no influencers pushing affiliate links
 
