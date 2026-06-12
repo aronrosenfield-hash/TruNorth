@@ -30,6 +30,19 @@ Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scorin
 
 **Note:** the 1,583 new public cos enrich incrementally as the 30+ source crons cycle (their fetchers need network windows) + via the Lever 3 bake.
 
+## ✅ FULL CRITICAL REVIEW — ALL FIXES SHIPPED (2026-06-11 PM)
+
+Every finding from the investor/product review is fixed and pushed (batches 1-5 + chip fix). Highlights: iOS bundle 521MB→~100MB + _cache out of git/Vercel · native iOS now fetches LIVE data (offline = bundled + honest stale banner) · O(n) dedupe + single-parse search index + 12KB icon subset (was 457KB) · session replay OFF, settled-search analytics, zero third-party favicon calls · retry UI instead of "no public record" on fetch failure · PostHog exception capture + cron-health-daily watchdog issue · central augment shrink-guard + snapshot-guard lib + 122 workflows get shared concurrency + staggered cron minutes · quiz weight scale unified (stance 4.5 max, rank-5 wins; shrinkage by evidence breadth) + "Foreign-owned parent company" reword + reveal-screen weight transparency · /methodology published (formulas, frozen thresholds, disclosed judgment calls) + evidence-depth chips + opinion-framing footer · consumerFacing gating (4,734 non-consumer entries hidden from browse, down-ranked in search, toggle to show) · 1-screen onboarding · submit.js origin allowlist + SEO hydration TTL + profile v2 normalization + NaN guard · AI prompt fair-report rules (corpus scan: 0 hits) · Retention v1: "Since your last visit" grade-change feed on saved brands + brand-grade share buttons.
+
+**Aron-side residue from the review:**
+| Item | Why |
+|---|---|
+| **Bind media-liability E&O insurance (~$78/mo)** | The realistic legal risk is defense-cost attrition, not losing — bind before PH visibility |
+| Re-capture promo video assets (L-9) | Onboarding is now 1 screen; old captures show 3 |
+| Lever 3 full bake still ON HOLD | Top-3,000 demand-ranked fills = best coverage $ post-review |
+| APNs push (X-6) | The what-changed feed is local; push is the retention upgrade path post-launch |
+| git filter-repo for the old 197MB pack | Needs all sessions to re-clone — coordinate a quiet day |
+
 ## 🔧 OUTSTANDING — ENGINEERING (remaining)
 
 | # | Item | Size | Notes |
