@@ -100,6 +100,11 @@ export function indexEntryFromCompanyFile(slug, co) {
     competitors:    co.competitors,
     logoUrl:        co.logoUrl,
     hasRecall:      co.recalls?.recalls?.length > 0,
+    // B64 fix (Aron's Denny's repro): third-party DEI recognition
+    // (deiBadges — HRC CEI / Disability:IN / Bloomberg GEI) is real evidence
+    // for STANCED users even when sc.dei never got an enum. The flag rides
+    // the index so collapsed rows and expanded detail score identically.
+    ...(Array.isArray(co.deiBadges) && co.deiBadges.length > 0 ? { deiB: 1 } : {}),
     ...(isConsumerFacing(co) ? {} : { consumerFacing: false }),
     recallSeverity: co.recalls?.severityMax,
     // bdsListed lives at ownership.bdsListed in company files (never

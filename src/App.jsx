@@ -708,6 +708,13 @@ function politicalScoreApp(co, val) {
   return null;
 }
 
+// B64 fix: documented third-party DEI recognition. Detail JSONs carry the
+// deiBadges array; index entries carry the compact deiB flag (see
+// scripts/lib/index-entry.mjs) so list rows and detail score identically.
+function deiEvidence(co) {
+  return !!((Array.isArray(co?.deiBadges) && co.deiBadges.length > 0) || co?.deiB);
+}
+
 function scoreCat(k, v, profile, co) {
   // Build 55 (Aron's Excel-rebuild): scores normalized to {8, 50, 97, 100}
   // ranges. Wider separation between match and mismatch, cleaner mental model.
@@ -742,9 +749,19 @@ function scoreCat(k, v, profile, co) {
     // Build 56: mismatch 8 → 30 (see political comment — DEI programs are
     // near-universal at large brands; a flat 8 made anti-DEI profiles grade
     // everything F. Symmetric for pro-DEI users on anti_dei brands).
+    //
+    // B64 fix (Aron's Denny's repro): the badge row shows "Active programs"
+    // off third-party recognition (deiBadges: HRC CEI / Disability:IN /
+    // Bloomberg GEI) even when sc.dei never got an enum — so an anti-DEI
+    // user saw an A next to a green DEI badge and rightly called it a lie.
+    // Documented third-party recognition now counts as pro_dei EVIDENCE for
+    // stanced users, both directions (pro-DEI users were silently missing
+    // the credit too). Neutral users unchanged — stance categories still
+    // contribute nothing without a stance.
     const deiLean = profile?.deiLean || "neutral";
-    if (deiLean === "pro")  { if (val==="pro_dei") return 100; if (val==="anti_dei") return 30; return 50; }
-    if (deiLean === "anti") { if (val==="anti_dei") return 100; if (val==="pro_dei") return 30; return 50; }
+    const dv = (!val || val === "neutral" || val === "unknown") && deiEvidence(co) ? "pro_dei" : val;
+    if (deiLean === "pro")  { if (dv==="pro_dei") return 100; if (dv==="anti_dei") return 30; return 50; }
+    if (deiLean === "anti") { if (dv==="anti_dei") return 100; if (dv==="pro_dei") return 30; return 50; }
     return 50;
   }
 
@@ -924,8 +941,13 @@ function computeScore(co, profile) {
     // record present, enum never set). Keeps personalized grades consistent
     // with the neutral baseline, which already scores those records.
     const hasCsc = co.csc && typeof co.csc[k] === "number";
-    if (getDataState(k, v) === "unknown" && !hasCsc) continue;
-    if (lv === "neutral" && !hasCsc) continue;
+    // B64 fix (Denny's repro): for dei we only reach here when the user IS
+    // stanced (neutral-stance users continue'd above) — third-party DEI
+    // recognition counts as a signal even with no enum, so the badge the
+    // user can SEE always reaches the grade they're shown.
+    const deiEv = k === "dei" && deiEvidence(co);
+    if (getDataState(k, v) === "unknown" && !hasCsc && !deiEv) continue;
+    if (lv === "neutral" && !hasCsc && !deiEv) continue;
     // 2026-06-01 (user-reported bug): 'na' (not applicable, e.g. animal
     // testing on a B2B software company) was being scored as 50 (fallback)
     // because NA_IS_FACTUAL marks it 'scored' for display. But the GRADE
@@ -946,9 +968,12 @@ function computeScore(co, profile) {
     // generator (scripts/rebuild-bundle-index.mjs) now bakes an `excl`
     // array of "no public record" category keys into each index entry,
     // so we honor it here regardless of whether co[k].s is present.
-    if (Array.isArray(co.excl) && co.excl.includes(k)) continue;
+    // B64: deiBadges ARE a hard public record (HRC/Disability:IN/Bloomberg
+    // publish their lists) — recognition evidence overrides a "no public
+    // record" narrative for the dei axis.
+    if (Array.isArray(co.excl) && co.excl.includes(k) && !deiEv) continue;
     const detailObj = co[k] || {};
-    if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) continue;
+    if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || "")) && !deiEv) continue;
     // B-23: apply scoring_overlay delta if present (numeric categories only;
     // categorical categories carry events_agg + excl_stale, not deltas).
     const catScore = applyOverlay(co, k, scoreCat(k, v, profile, co));
@@ -1193,6 +1218,8 @@ function userRelevantRealCats(co, profile) {
   if (profile.unionSupport  && profile.unionSupport  !== "neutral") boosted.add("labor");
   let boostedFilled = 0;
   for (const k of boosted) {
+    // B64: third-party DEI recognition fills the dei slot for stanced users.
+    if (k === "dei" && deiEvidence(co)) { boostedFilled++; continue; }
     const v = sc[k];
     if (!v || v === "neutral" || v === "na" || v === "unknown") continue;
     boostedFilled++;
@@ -1234,10 +1261,12 @@ function verdictSentence(enriched, profile, grade) {
     const v = enriched.sc?.[k];
     const lv = String(v || "").toLowerCase();
     const hasCsc = enriched.csc && typeof enriched.csc[k] === "number";
+    // B64: stanced users see third-party DEI recognition in ring + sentence.
+    const deiEv = k === "dei" && profile?.deiLean && profile.deiLean !== "neutral" && deiEvidence(enriched);
     if (enriched.flags?.[k]?.na) continue;
-    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc) continue;
+    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc && !deiEv) continue;
     if (lv === "na" || lv === "n/a") continue;
-    if (Array.isArray(enriched.excl) && enriched.excl.includes(k)) continue;
+    if (Array.isArray(enriched.excl) && enriched.excl.includes(k) && !deiEv) continue;
     axisScores[k] = scoreCat(k, v, profile, enriched);
   }
   const keys = Object.keys(axisScores);
@@ -2225,7 +2254,10 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
             <div style={{ fontSize:12, fontWeight:600, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:10 }}>
               Suggested matches
             </div>
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8 }}>
+            {/* B64 (Aron's device repro): the 2x2 grid clipped past the modal
+                edge — grid items refuse to shrink below content. One straight
+                column, every row full-width. */}
+            <div style={{ display:"grid", gridTemplateColumns:"1fr", gap:8 }}>
               {(() => {
                 const pickedSlugs = new Set(list.map(l => l.slug));
                 const firstCat = resolved[0]?.cat;
@@ -2274,7 +2306,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                   <button
                     key={co.slug || co.id}
                     onClick={() => { onAdd && onAdd(co.slug || co.id, co.name); track("compare_suggest_pick", { slug: co.slug || co.id, name: co.name }); }}
-                    style={{ display:"flex", alignItems:"center", gap:8, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", color:T.txt }}
+                    style={{ display:"flex", alignItems:"center", gap:8, padding:"8px 10px", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", color:T.txt, minWidth:0, width:"100%" }}
                   >
                     <div style={{ width:28, height:28, borderRadius:6, background:T.bg3, color:T.txt2, display:"flex", alignItems:"center", justifyContent:"center", fontSize:10, fontWeight:700, flexShrink:0 }}>{co.init || "??"}</div>
                     <div style={{ minWidth:0, flex:1 }}>
@@ -2928,11 +2960,19 @@ function CategoryRow({ cat: k, enriched, profile }) {
                   Signal: <span style={{ color:T.txt2, fontWeight:600 }}>{disp.label}</span>
                 </div>
               )}
-              {(d.sources||[]).length > 0 && (
-                <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
-                  {d.sources.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
-                </div>
-              )}
+              {(() => {
+                // B64 (Aron): internal synthesis labels never render — the
+                // user-facing promise is public records; tooling names are
+                // noise that reads as contradiction. Real source names
+                // (sec-def14a, corporate-giving, EPA ECHO…) still show.
+                const vis = (d.sources || []).filter(src => !/claude|ai synthesis/i.test(String(src)));
+                if (!vis.length) return null;
+                return (
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:4, marginTop:6 }}>
+                    {vis.map(src => <span key={src} style={{ padding:"2px 7px", fontSize:10, borderRadius:20, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}` }}>{src}</span>)}
+                  </div>
+                );
+              })()}
             </>
           ) : (
             <div style={{ fontSize:11, color:T.txt3, fontStyle:"italic" }}>
@@ -3422,10 +3462,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     const v = enriched.sc?.[k];
                     const lv = String(v || "").toLowerCase();
                     const hasCsc = enriched.csc && typeof enriched.csc[k] === "number";
+                    // B64: stanced-dei recognition draws the dei arc too.
+                    const deiEv = k === "dei" && profile?.deiLean && profile.deiLean !== "neutral" && deiEvidence(enriched);
                     if (enriched.flags?.[k]?.na) continue;
-                    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc) continue;
+                    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc && !deiEv) continue;
                     if (lv === "na" || lv === "n/a") continue;
-                    if (Array.isArray(enriched.excl) && enriched.excl.includes(k)) continue;
+                    if (Array.isArray(enriched.excl) && enriched.excl.includes(k) && !deiEv) continue;
                     sealValues[k] = scoreCat(k, v, profile, enriched);
                   }
                   return (
@@ -3470,11 +3512,13 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         const baseW = Object.fromEntries(CAT_KEYS.map(k => [k, profile.weights?.[k] || PROFILE_DEFAULT_WEIGHTS[k]]));
                         const impacts = CAT_KEYS.map(k => {
                           const v = enriched.sc?.[k];
-                          if (getDataState(k, v) === "unknown") return null;
+                          // B64: stanced-dei recognition shows up in the Why too.
+                          const deiEvW = k === "dei" && profile.deiLean && profile.deiLean !== "neutral" && deiEvidence(enriched);
+                          if (getDataState(k, v) === "unknown" && !deiEvW) return null;
                           const lv = String(v||"").toLowerCase();
-                          if (lv === "neutral" || lv === "na" || lv === "n/a") return null;
+                          if ((lv === "neutral" && !deiEvW) || lv === "na" || lv === "n/a") return null;
                           const detailObj = enriched[k] || {};
-                          if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || ""))) return null;
+                          if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || "")) && !deiEvW) return null;
                           // QA fix 2026-06-10: pass `enriched` as the co arg —
                           // scoreCat's overlay/context branches read it; omitting
                           // it made the Why-panel numbers drift from computeScore.
