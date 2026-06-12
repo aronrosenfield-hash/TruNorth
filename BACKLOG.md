@@ -39,6 +39,7 @@ Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scorin
 | **R2.1 — Aron's device feedback** (Versus single-column · "Claude AI synthesis" chips hidden · DEI third-party recognition reaches stanced grades — Denny's anti-DEI repro A→C, deiB index flag, all surfaces agree) | ✅ Build 65 (2026-06-12) |
 | **Brand media refresh** (app icon ink/bone/verdigris seal · OG share cards · og-image · favicon/touch/email icons · landing → Civic Premium serif hero · social avatar+banners+kit in docs/media/brand-2026-06) | ✅ Build 66 carries the icon; web deployed on push. Aron-side: upload socials per SOCIAL_KIT.md, capture device screenshots, promo-video recapture (L-9) pending |
 | **B66 device fixes** (splash imageset → seal mark · Lens circle un-clipped (iOS composited-layer z-order) · center button = scanner in ONE tap · Methodology owns its scroll · personalized-share OG title drops baseline grade) | ✅ Build 67 (2026-06-12, both batches) |
+| **B68 — clash-led basket articulation** (Aron picked A+C: "0% aligned" retired everywhere — Today serif clash sentence + one-switch projection, Ledger "N clashes · aligned/neutral" tile, Reveal clash line; basketVerdict() single source; scoring untouched/symmetric) | ✅ Build 68 (2026-06-12) |
 | **R3 — The Magic** (compass physics + haptics · Aisle Mode + Cart Report · APNs push loop · NL ask · Wrapped · App Clip/widgets) | ⏳ next — needs Aron's go |
 | Wrapped | 💤 dormant until December (design exists in brief §4 flow E) |
 
