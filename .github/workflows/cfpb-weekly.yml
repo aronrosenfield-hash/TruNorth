@@ -9,11 +9,15 @@ name: cfpb-weekly
 
 on:
   schedule:
-    - cron: "0 18 * * 0"   # Sunday 18:00 UTC
+    - cron: "55 18 * * 0"   # Sunday 18:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit cfpb-complaints.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

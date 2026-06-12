@@ -13,7 +13,7 @@ name: disability-in-annual
 
 on:
   schedule:
-    - cron: "0 5 1 8 *"   # 05:00 UTC, Aug 1
+    - cron: "39 5 1 8 *"   # 05:00 UTC, Aug 1
   workflow_dispatch:
     inputs:
       csv_url:
@@ -22,6 +22,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

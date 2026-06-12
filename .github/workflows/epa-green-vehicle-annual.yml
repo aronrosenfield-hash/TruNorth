@@ -19,11 +19,15 @@ name: epa-green-vehicle-annual
 
 on:
   schedule:
-    - cron: "0 6 1 2 *"   # 06:00 UTC, Feb 1
+    - cron: "57 6 1 2 *"   # 06:00 UTC, Feb 1
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

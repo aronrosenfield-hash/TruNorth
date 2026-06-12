@@ -16,11 +16,15 @@ name: score-rebake-weekly
 
 on:
   schedule:
-    - cron: "0 16 * * 0"   # Sundays 16:00 UTC
+    - cron: "20 16 * * 0"   # Sundays 16:00 UTC
   workflow_dispatch:        # manual trigger
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   rebake:

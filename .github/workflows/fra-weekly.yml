@@ -11,11 +11,15 @@ name: fra-weekly
 
 on:
   schedule:
-    - cron: "0 8 * * 1"   # Monday 08:00 UTC
+    - cron: "51 8 * * 1"   # Monday 08:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit fra-incidents.json + company files
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -18,7 +18,7 @@ name: wikirate-quarterly
 
 on:
   schedule:
-    - cron: "30 5 5 1,4,7,10 *"   # 05:30 UTC on Jan/Apr/Jul/Oct 5th
+    - cron: "6 5 5 1,4,7,10 *"   # 05:30 UTC on Jan/Apr/Jul/Oct 5th
   workflow_dispatch:
 
 permissions:

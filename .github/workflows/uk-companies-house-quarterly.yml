@@ -25,11 +25,15 @@ name: uk-companies-house-quarterly
 
 on:
   schedule:
-    - cron: "0 18 1 3,6,9,12 *"   # 1st of Mar/Jun/Sep/Dec, 18:00 UTC
+    - cron: "39 18 1 3,6,9,12 *"   # 1st of Mar/Jun/Sep/Dec, 18:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit uk-companies-house.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

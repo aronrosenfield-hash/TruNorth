@@ -5,11 +5,15 @@ name: ca-dlse-monthly
 
 on:
   schedule:
-    - cron: "20 5 3 * *"   # 05:20 UTC on the 3rd of every month
+    - cron: "2 5 3 * *"   # 05:20 UTC on the 3rd of every month
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

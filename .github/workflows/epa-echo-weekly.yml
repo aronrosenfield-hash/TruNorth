@@ -10,11 +10,15 @@ name: epa-echo-weekly
 
 on:
   schedule:
-    - cron: "0 22 * * 0"   # Sunday 22:00 UTC
+    - cron: "51 22 * * 0"   # Sunday 22:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit epa-echo.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

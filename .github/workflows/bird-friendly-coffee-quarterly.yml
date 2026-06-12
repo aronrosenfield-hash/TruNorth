@@ -11,7 +11,7 @@ name: bird-friendly-coffee-quarterly
 
 on:
   schedule:
-    - cron: "30 6 2 1,4,7,10 *"   # 06:30 UTC on the 2nd of Jan/Apr/Jul/Oct
+    - cron: "39 6 2 1,4,7,10 *"   # 06:30 UTC on the 2nd of Jan/Apr/Jul/Oct
   workflow_dispatch:
 
 permissions:

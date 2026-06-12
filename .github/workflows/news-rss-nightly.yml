@@ -11,7 +11,7 @@ name: news-rss-nightly
 
 on:
   schedule:
-    - cron: "0 4 * * *"    # daily 04:00 UTC
+    - cron: "48 4 * * *"    # daily 04:00 UTC
   workflow_dispatch:        # allow manual runs
 
 # Serialize overlapping triggers (manual dispatch landing on top of a still-

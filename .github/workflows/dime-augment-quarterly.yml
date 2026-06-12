@@ -19,7 +19,7 @@ name: dime-augment-quarterly
 
 on:
   schedule:
-    - cron: "0 5 20 1,4,7,10 *"
+    - cron: "18 5 20 1,4,7,10 *"
   workflow_dispatch:
     inputs:
       apply:
@@ -29,6 +29,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

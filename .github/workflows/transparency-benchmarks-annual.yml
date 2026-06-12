@@ -19,11 +19,15 @@ name: transparency-benchmarks-annual
 
 on:
   schedule:
-    - cron: "0 6 1 2 *"   # Feb 1, 06:00 UTC
+    - cron: "49 6 1 2 *"   # Feb 1, 06:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit the snapshot + derived augment
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

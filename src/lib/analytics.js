@@ -60,6 +60,10 @@ export function initAnalytics() {
     // — session replay recorded full screen contents and was ON. Replay is
     // now permanently disabled; we keep event analytics only.
     disable_session_recording: true,
+    // H6 (2026-06-11): crashes were invisible — no Sentry, no exception
+    // events. PostHog error tracking captures unhandled exceptions +
+    // unhandled rejections client-side.
+    capture_exceptions: true,
     loaded: (ph) => {
       const ai = detectAiReferrer();
       if (ai) {

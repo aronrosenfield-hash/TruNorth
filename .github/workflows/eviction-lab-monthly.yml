@@ -20,11 +20,15 @@ name: eviction-lab-monthly
 
 on:
   schedule:
-    - cron: "0 3 5 * *"   # 03:00 UTC on the 5th of each month
+    - cron: "17 3 5 * *"   # 03:00 UTC on the 5th of each month
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch-merge-apply:

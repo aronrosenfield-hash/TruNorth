@@ -14,11 +14,15 @@ name: nlrb-voluntary-recognition-monthly
 
 on:
   schedule:
-    - cron: "0 7 3 * *"   # 07:00 UTC on the 3rd of every month
+    - cron: "50 7 3 * *"   # 07:00 UTC on the 3rd of every month
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

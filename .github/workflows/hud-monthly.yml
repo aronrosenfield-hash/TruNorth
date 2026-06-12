@@ -10,11 +10,15 @@ name: hud-monthly
 
 on:
   schedule:
-    - cron: "0 19 1 * *"   # 1st of month, 19:00 UTC
+    - cron: "9 19 1 * *"   # 1st of month, 19:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit hud-fairhousing.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

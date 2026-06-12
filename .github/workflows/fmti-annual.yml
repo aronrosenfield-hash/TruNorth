@@ -17,7 +17,7 @@ name: fmti-annual
 
 on:
   schedule:
-    - cron: "0 14 15 1 *"   # Jan 15, 14:00 UTC (well after annual release)
+    - cron: "19 14 15 1 *"   # Jan 15, 14:00 UTC (well after annual release)
   workflow_dispatch:
 
 permissions:

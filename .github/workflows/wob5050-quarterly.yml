@@ -5,7 +5,7 @@ name: wob5050-quarterly
 
 on:
   schedule:
-    - cron: "0 7 20 1,4,7,10 *"   # 20th of Jan/Apr/Jul/Oct, 07:00 UTC
+    - cron: "4 7 20 1,4,7,10 *"   # 20th of Jan/Apr/Jul/Oct, 07:00 UTC
   workflow_dispatch:
 
 permissions:

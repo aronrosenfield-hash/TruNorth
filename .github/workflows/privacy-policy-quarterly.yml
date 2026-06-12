@@ -12,11 +12,15 @@ name: privacy-policy-quarterly
 
 on:
   schedule:
-    - cron: "0 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "12 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit the raw + derived JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch-and-score:

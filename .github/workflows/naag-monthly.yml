@@ -15,7 +15,7 @@ name: naag-monthly
 
 on:
   schedule:
-    - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of each month
+    - cron: "8 5 1 * *"   # 05:00 UTC on the 1st of each month
   workflow_dispatch:
 
 permissions:

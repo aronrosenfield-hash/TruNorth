@@ -26,11 +26,15 @@ name: ca100-annual
 
 on:
   schedule:
-    - cron: "0 17 15 4 *"   # Apr 15, 17:00 UTC
+    - cron: "36 17 15 4 *"   # Apr 15, 17:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit ca100.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

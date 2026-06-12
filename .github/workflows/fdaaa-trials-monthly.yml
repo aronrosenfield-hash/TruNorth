@@ -14,7 +14,7 @@ name: fdaaa-trials-monthly
 
 on:
   schedule:
-    - cron: "15 6 6 * *"   # 06:15 UTC on the 6th of each month
+    - cron: "56 6 6 * *"   # 06:15 UTC on the 6th of each month
   workflow_dispatch:
 
 permissions:

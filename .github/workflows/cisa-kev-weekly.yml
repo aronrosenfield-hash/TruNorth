@@ -8,11 +8,15 @@ name: cisa-kev-weekly
 
 on:
   schedule:
-    - cron: "0 0 * * 1"   # Monday 00:00 UTC
+    - cron: "56 0 * * 1"   # Monday 00:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit cisa-kev.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

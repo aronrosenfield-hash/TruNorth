@@ -8,11 +8,15 @@ name: dea-monthly
 
 on:
   schedule:
-    - cron: "0 21 1 * *"   # 1st of month, 21:00 UTC
+    - cron: "25 21 1 * *"   # 1st of month, 21:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit dea-actions.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

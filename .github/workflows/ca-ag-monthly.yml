@@ -8,11 +8,15 @@ name: ca-ag-monthly
 
 on:
   schedule:
-    - cron: "0 6 1 * *"   # 1st of each month, 06:00 UTC
+    - cron: "3 6 1 * *"   # 1st of each month, 06:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit raw data + per-company merges
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

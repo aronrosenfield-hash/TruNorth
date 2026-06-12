@@ -6,11 +6,15 @@ name: dol-whd-violations-monthly
 
 on:
   schedule:
-    - cron: "15 5 2 * *"   # 05:15 UTC on the 2nd of every month
+    - cron: "35 5 2 * *"   # 05:15 UTC on the 2nd of every month
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -9,11 +9,15 @@ name: osv-monthly
 
 on:
   schedule:
-    - cron: "0 9 1 * *"   # 1st of month, 09:00 UTC
+    - cron: "34 9 1 * *"   # 1st of month, 09:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit osv.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -26,11 +26,15 @@ name: usda-aphis-monthly
 
 on:
   schedule:
-    - cron: "0 22 1 * *"   # 1st of month, 22:00 UTC
+    - cron: "59 22 1 * *"   # 1st of month, 22:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit usda-aphis.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

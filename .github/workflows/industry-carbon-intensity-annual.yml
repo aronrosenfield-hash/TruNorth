@@ -16,7 +16,7 @@ name: industry-carbon-intensity-annual
 
 on:
   schedule:
-    - cron: "0 6 1 2 *"   # Feb 1 06:00 UTC
+    - cron: "35 6 1 2 *"   # Feb 1 06:00 UTC
   workflow_dispatch:
     inputs:
       live:
@@ -26,6 +26,10 @@ on:
 
 permissions:
   contents: write   # required to commit the augment JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   build:

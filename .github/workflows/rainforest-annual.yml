@@ -22,11 +22,15 @@ name: rainforest-annual
 
 on:
   schedule:
-    - cron: "0 18 1 2 *"   # Feb 1, 18:00 UTC
+    - cron: "18 18 1 2 *"   # Feb 1, 18:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit rainforest.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

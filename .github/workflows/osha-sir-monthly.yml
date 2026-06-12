@@ -10,11 +10,15 @@ name: osha-sir-monthly
 
 on:
   schedule:
-    - cron: "0 1 1 * *"   # 01:00 UTC, day 1 of every month
+    - cron: "6 1 1 * *"   # 01:00 UTC, day 1 of every month
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit osha-sir.json + companies/ back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

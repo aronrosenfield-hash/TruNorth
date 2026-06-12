@@ -21,7 +21,7 @@ name: strike-map-monthly
 
 on:
   schedule:
-    - cron: "30 4 8 * *"   # 04:30 UTC on the 8th of each month
+    - cron: "9 4 8 * *"   # 04:30 UTC on the 8th of each month
   workflow_dispatch:
 
 permissions:

@@ -11,11 +11,15 @@ name: doj-atr-monthly
 
 on:
   schedule:
-    - cron: "0 3 2 * *"   # 2nd of month, 03:00 UTC
+    - cron: "12 3 2 * *"   # 2nd of month, 03:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # commit doj-atr.json + per-company changes
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

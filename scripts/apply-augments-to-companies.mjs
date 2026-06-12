@@ -58,10 +58,33 @@ const TRACE_SLUGS = new Set([
   "patagonia", "ben-and-jerry-s", "microsoft", "salesforce", "costco",
 ]);
 
+// H5 (2026-06-11, central shrink-guard): a sandboxed/empty fetch run that
+// commits a near-empty augment must NOT wipe narratives on the next apply.
+// We remember each augment's entry count in data/derived/_augment-sizes.json;
+// if an augment shrinks below 50% of its previous size (and previously had
+// ≥10 entries), we SKIP it loudly instead of applying it. Per-fetcher guards
+// (scripts/lib/snapshot-guard.mjs) are the first line; this is the backstop
+// that protects all ~200 sources at once.
+const SIZES_PATH = path.join(AUG_DIR, "_augment-sizes.json");
+let augSizes = {};
+try { augSizes = JSON.parse(fs.readFileSync(SIZES_PATH, "utf8")); } catch {}
+const augSizesNext = { ...augSizes };
+const shrunkSkipped = [];
+
 function loadAugment(name) {
   const p = path.join(AUG_DIR, `${name}-augment.json`);
   if (!fs.existsSync(p)) return null;
-  try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch { return null; }
+  let aug;
+  try { aug = JSON.parse(fs.readFileSync(p, "utf8")); } catch { return null; }
+  const count = entriesOf(aug).length;
+  const prev = augSizes[name];
+  if (typeof prev === "number" && prev >= 10 && count < prev * 0.5) {
+    shrunkSkipped.push(`${name} (${prev} → ${count})`);
+    console.warn(`[apply-augments] SHRINK-GUARD: skipping ${name} — ${count} entries vs ${prev} previously (>50% drop). Investigate the fetcher before trusting this snapshot.`);
+    return null;
+  }
+  if (count > 0) augSizesNext[name] = count;
+  return aug;
 }
 
 function entriesOf(aug) {
@@ -2220,4 +2243,11 @@ console.log("");
 for (const s of TRACE_SLUGS) {
   console.log(`=== ${s} trace ===`);
   for (const l of patagoniaTrace[s]) console.log(l);
+}
+
+
+// H5: persist the augment-size manifest + summarize shrink-guard skips.
+fs.writeFileSync(SIZES_PATH, JSON.stringify(augSizesNext, null, 1));
+if (shrunkSkipped.length) {
+  console.warn(`[apply-augments] shrink-guard skipped ${shrunkSkipped.length} augment(s): ${shrunkSkipped.join(", ")}`);
 }

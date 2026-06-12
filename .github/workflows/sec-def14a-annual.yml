@@ -16,11 +16,15 @@ name: sec-def14a-annual
 
 on:
   schedule:
-    - cron: "0 6 10 7 *"   # 06:00 UTC, July 10
+    - cron: "11 6 10 7 *"   # 06:00 UTC, July 10
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit raw output + augment + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -9,11 +9,15 @@ name: doj-weekly
 
 on:
   schedule:
-    - cron: "0 21 * * 0"   # Sunday 21:00 UTC
+    - cron: "47 21 * * 0"   # Sunday 21:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit doj-mentions.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

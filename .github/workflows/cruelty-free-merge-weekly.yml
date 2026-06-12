@@ -17,11 +17,15 @@ name: cruelty-free-merge-weekly
 
 on:
   schedule:
-    - cron: "0 3 * * 0"   # Sunday 03:00 UTC
+    - cron: "28 3 * * 0"   # Sunday 03:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit per-company JSON + merge log
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   merge:

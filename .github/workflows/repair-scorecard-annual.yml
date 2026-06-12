@@ -16,7 +16,7 @@ name: repair-scorecard-annual
 
 on:
   schedule:
-    - cron: "0 15 1 5 *"   # May 1, 15:00 UTC (well after PIRG release)
+    - cron: "16 15 1 5 *"   # May 1, 15:00 UTC (well after PIRG release)
   workflow_dispatch:
 
 permissions:

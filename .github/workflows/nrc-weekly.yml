@@ -10,11 +10,15 @@ name: nrc-weekly
 
 on:
   schedule:
-    - cron: "0 3 * * 2"   # Tuesday 03:00 UTC
+    - cron: "3 3 * * 2"   # Tuesday 03:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # commit nrc-events.json + per-company changes back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

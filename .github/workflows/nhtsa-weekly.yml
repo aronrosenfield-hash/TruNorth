@@ -10,11 +10,15 @@ name: nhtsa-weekly
 
 on:
   schedule:
-    - cron: "0 19 * * 0"   # Sunday 19:00 UTC
+    - cron: "3 19 * * 0"   # Sunday 19:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit nhtsa-auto.json + companies/ back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

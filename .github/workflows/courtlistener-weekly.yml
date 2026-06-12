@@ -8,11 +8,15 @@ name: courtlistener-weekly
 
 on:
   schedule:
-    - cron: "0 17 * * 0"   # Sunday 17:00 UTC
+    - cron: "21 17 * * 0"   # Sunday 17:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit lawsuits.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

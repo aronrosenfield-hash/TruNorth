@@ -21,11 +21,15 @@ name: c2c-annual
 
 on:
   schedule:
-    - cron: "0 18 1 5 *"   # May 1, 18:00 UTC
+    - cron: "58 18 1 5 *"   # May 1, 18:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit c2c.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

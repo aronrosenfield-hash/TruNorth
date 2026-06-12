@@ -26,7 +26,7 @@ name: itep-tax-annual
 
 on:
   schedule:
-    - cron: "0 5 15 5 *"  # 05:00 UTC on May 15
+    - cron: "47 5 15 5 *"  # 05:00 UTC on May 15
   workflow_dispatch:
     inputs:
       force_live:

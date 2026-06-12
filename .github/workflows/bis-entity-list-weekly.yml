@@ -6,11 +6,15 @@ name: bis-entity-list-weekly
 
 on:
   schedule:
-    - cron: "0 4 * * 1"    # 04:00 UTC every Monday
+    - cron: "56 4 * * 1"    # 04:00 UTC every Monday
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

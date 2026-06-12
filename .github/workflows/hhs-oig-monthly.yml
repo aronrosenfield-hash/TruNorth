@@ -19,11 +19,15 @@ name: hhs-oig-monthly
 
 on:
   schedule:
-    - cron: "0 3 1 * *"   # 1st of month, 03:00 UTC
+    - cron: "2 3 1 * *"   # 1st of month, 03:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit hhs-oig.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

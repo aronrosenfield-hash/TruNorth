@@ -11,11 +11,15 @@ name: nvd-monthly
 
 on:
   schedule:
-    - cron: "0 8 1 * *"   # 1st of month, 08:00 UTC
+    - cron: "27 8 1 * *"   # 1st of month, 08:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit nvd-cves.json + per-company changes
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -12,11 +12,15 @@ name: dol-oflc-lca-quarterly
 
 on:
   schedule:
-    - cron: "0 6 5 1,4,7,10 *"   # 06:00 UTC on the 5th of Jan/Apr/Jul/Oct
+    - cron: "29 6 5 1,4,7,10 *"   # 06:00 UTC on the 5th of Jan/Apr/Jul/Oct
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

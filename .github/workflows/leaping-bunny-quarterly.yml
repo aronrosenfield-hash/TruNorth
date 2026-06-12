@@ -15,11 +15,15 @@ name: leaping-bunny-quarterly
 
 on:
   schedule:
-    - cron: "0 2 1 1,4,7,10 *"   # 02:00 UTC on Jan/Apr/Jul/Oct 1
+    - cron: "40 2 1 1,4,7,10 *"   # 02:00 UTC on Jan/Apr/Jul/Oct 1
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit public/data/_raw/leaping-bunny.json
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

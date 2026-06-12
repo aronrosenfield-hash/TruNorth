@@ -20,11 +20,15 @@ name: state-campaign-finance-monthly
 
 on:
   schedule:
-    - cron: "0 5 1 * *"   # 1st of month, 05:00 UTC
+    - cron: "1 5 1 * *"   # 1st of month, 05:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

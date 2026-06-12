@@ -16,7 +16,7 @@ name: weekly-digest
 
 on:
   schedule:
-    - cron: "0 14 * * 0"   # Sunday 14:00 UTC
+    - cron: "25 14 * * 0"   # Sunday 14:00 UTC
   workflow_dispatch:
     inputs:
       dry_run:
@@ -27,6 +27,7 @@ on:
 jobs:
   send:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4

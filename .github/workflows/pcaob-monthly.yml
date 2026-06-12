@@ -10,11 +10,15 @@ name: pcaob-monthly
 
 on:
   schedule:
-    - cron: "0 16 1 * *"   # 1st of month, 16:00 UTC
+    - cron: "57 16 1 * *"   # 1st of month, 16:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit pcaob-enforcement.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

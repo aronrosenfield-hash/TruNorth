@@ -12,11 +12,15 @@ name: gdelt-weekly
 
 on:
   schedule:
-    - cron: "0 2 * * 1"     # Monday 02:00 UTC
+    - cron: "52 2 * * 1"     # Monday 02:00 UTC
   workflow_dispatch:         # allow manual runs
 
 permissions:
   contents: write   # required to commit the digest back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   collect:

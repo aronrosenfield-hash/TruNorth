@@ -7,11 +7,15 @@ name: epa-smartway-quarterly
 
 on:
   schedule:
-    - cron: "0 7 1 1,4,7,10 *"   # 07:00 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "27 7 1 1,4,7,10 *"   # 07:00 UTC on Jan/Apr/Jul/Oct 1st
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

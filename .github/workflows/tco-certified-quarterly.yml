@@ -17,7 +17,7 @@ name: tco-certified-quarterly
 
 on:
   schedule:
-    - cron: "30 6 1 1,4,7,10 *"   # 06:30 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "18 6 1 1,4,7,10 *"   # 06:30 UTC on Jan/Apr/Jul/Oct 1st
   workflow_dispatch:
 
 permissions:

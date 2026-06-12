@@ -8,7 +8,7 @@ name: uk-ico-monthly
 
 on:
   schedule:
-    - cron: "0 7 4 * *"
+    - cron: "31 7 4 * *"
   workflow_dispatch:
     inputs:
       url:
@@ -17,6 +17,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -12,11 +12,15 @@ name: fed-reserve-monthly
 
 on:
   schedule:
-    - cron: "0 17 1 * *"   # 1st of month, 17:00 UTC
+    - cron: "40 17 1 * *"   # 1st of month, 17:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit fed-reserve-enforcement.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

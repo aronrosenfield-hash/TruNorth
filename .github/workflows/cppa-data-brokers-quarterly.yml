@@ -6,11 +6,15 @@ name: cppa-data-brokers-quarterly
 
 on:
   schedule:
-    - cron: "0 7 8 2,5,8,11 *"   # 07:00 UTC, 8th of Feb/May/Aug/Nov
+    - cron: "38 7 8 2,5,8,11 *"   # 07:00 UTC, 8th of Feb/May/Aug/Nov
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

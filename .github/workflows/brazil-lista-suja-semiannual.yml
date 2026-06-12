@@ -16,7 +16,7 @@ name: brazil-lista-suja-semiannual
 
 on:
   schedule:
-    - cron: "0 5 10 4,10 *"  # 05:00 UTC on Apr 10 and Oct 10
+    - cron: "13 5 10 4,10 *"  # 05:00 UTC on Apr 10 and Oct 10
   workflow_dispatch:
 
 permissions:

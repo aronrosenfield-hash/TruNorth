@@ -9,11 +9,15 @@ name: gao-monthly
 
 on:
   schedule:
-    - cron: "0 0 2 * *"   # 2nd of month, 00:00 UTC
+    - cron: "32 0 2 * *"   # 2nd of month, 00:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit gao-reports.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -6,7 +6,7 @@ name: sipri-arms-annual
 
 on:
   schedule:
-    - cron: "0 8 5 12 *"
+    - cron: "37 8 5 12 *"
   workflow_dispatch:
 
 permissions:

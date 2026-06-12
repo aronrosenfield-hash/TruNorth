@@ -16,7 +16,7 @@ on:
     # 7th of Jan/Apr/Jul/Oct at 06:00 UTC (offset from other quarterly
     # workflows: lobbying runs the 30th, usaspending runs the 1st, this
     # picks the 7th to spread API load).
-    - cron: "0 6 7 1,4,7,10 *"
+    - cron: "12 6 7 1,4,7,10 *"
   workflow_dispatch:
     inputs:
       apply:
@@ -27,6 +27,10 @@ on:
 permissions:
   contents: write
   pull-requests: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   refresh:

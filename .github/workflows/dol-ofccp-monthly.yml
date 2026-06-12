@@ -29,6 +29,10 @@ on:
 permissions:
   contents: write   # required to commit dol-ofccp.json + per-company JSON
 
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest

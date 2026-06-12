@@ -1,0 +1,46 @@
+name: cron-health-daily
+
+# H6 (2026-06-11 tech review): 0 of 166 data workflows notified anyone on
+# failure — a silently failing cron just meant quietly stale data. Instead of
+# editing every workflow, this single watchdog lists all failed workflow runs
+# from the last 24h and maintains one rolling GitHub issue. Aron watches
+# issues; stale data now announces itself.
+
+on:
+  schedule:
+    - cron: "12 13 * * *" # daily 13:30 UTC (~8:30 AM CT)
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Collect failures and report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          SINCE=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          gh api "repos/$REPO/actions/runs?status=failure&created=>$SINCE&per_page=100" \
+            --jq '.workflow_runs[] | "- [" + .name + "](" + .html_url + ") — " + (.created_at | sub("T.*";""))' > failures.txt || true
+          COUNT=$(grep -c '^-' failures.txt || true)
+          echo "Failed runs in last 24h: $COUNT"
+          TITLE="🔴 Cron failures — daily watchdog"
+          EXISTING=$(gh issue list --repo "$REPO" --state open --search "$TITLE in:title" --json number --jq '.[0].number' || true)
+          if [ "$COUNT" -gt 0 ]; then
+            BODY=$(printf "Failed workflow runs in the last 24h (%s):\n\n%s\n\n_Auto-maintained by cron-health-daily._" "$COUNT" "$(cat failures.txt)")
+            if [ -n "$EXISTING" ]; then
+              gh issue comment "$EXISTING" --repo "$REPO" --body "$BODY"
+            else
+              gh issue create --repo "$REPO" --title "$TITLE" --body "$BODY"
+            fi
+          else
+            if [ -n "$EXISTING" ]; then
+              gh issue close "$EXISTING" --repo "$REPO" --comment "✅ No failed runs in the last 24h — closing."
+            fi
+          fi

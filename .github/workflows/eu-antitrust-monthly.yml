@@ -10,11 +10,15 @@ name: eu-antitrust-monthly
 
 on:
   schedule:
-    - cron: "0 4 2 * *"   # 2nd of month, 04:00 UTC
+    - cron: "20 4 2 * *"   # 2nd of month, 04:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit eu-antitrust.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

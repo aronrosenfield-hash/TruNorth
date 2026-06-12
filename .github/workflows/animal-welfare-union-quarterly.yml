@@ -14,11 +14,15 @@ name: animal-welfare-union-quarterly
 
 on:
   schedule:
-    - cron: "0 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st (offset 1h from usaspending)
+    - cron: "6 5 1 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 1st (offset 1h from usaspending)
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

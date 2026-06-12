@@ -23,12 +23,16 @@ name: usda-fooddata-quarterly
 
 on:
   schedule:
-    - cron: "0 5 15 2,5,8,11 *"   # 05:00 UTC on Feb/May/Aug/Nov 15
+    - cron: "11 5 15 2,5,8,11 *"   # 05:00 UTC on Feb/May/Aug/Nov 15
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

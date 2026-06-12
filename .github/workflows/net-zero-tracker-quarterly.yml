@@ -20,11 +20,15 @@ name: net-zero-tracker-quarterly
 
 on:
   schedule:
-    - cron: "0 6 1 1,4,7,10 *"   # 06:00 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "5 6 1 1,4,7,10 *"   # 06:00 UTC on Jan/Apr/Jul/Oct 1st
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

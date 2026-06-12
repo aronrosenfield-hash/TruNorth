@@ -15,11 +15,15 @@ name: eeoc-dei-annual
 
 on:
   schedule:
-    - cron: "0 4 15 3 *"   # 04:00 UTC on March 15
+    - cron: "8 4 15 3 *"   # 04:00 UTC on March 15
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit the raw + augment JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

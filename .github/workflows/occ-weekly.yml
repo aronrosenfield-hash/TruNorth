@@ -10,11 +10,15 @@ name: occ-weekly
 
 on:
   schedule:
-    - cron: "0 0 * * 2"   # Tuesday 00:00 UTC
+    - cron: "55 0 * * 2"   # Tuesday 00:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit occ-enforcement.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -22,11 +22,15 @@ name: cpa-zicklin-annual
 
 on:
   schedule:
-    - cron: "0 13 1 10 *"   # Oct 1, 13:00 UTC
+    - cron: "47 13 1 10 *"   # Oct 1, 13:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit cpa-zicklin.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

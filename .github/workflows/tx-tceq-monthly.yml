@@ -7,11 +7,15 @@ name: tx-tceq-monthly
 
 on:
   schedule:
-    - cron: "40 5 5 * *"   # 05:40 UTC on the 5th of every month
+    - cron: "41 5 5 * *"   # 05:40 UTC on the 5th of every month
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

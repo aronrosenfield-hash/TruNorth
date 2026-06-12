@@ -15,11 +15,15 @@ name: eu-sanctions-monthly
 
 on:
   schedule:
-    - cron: "0 5 2 * *"   # 2nd of the month, 05:00 UTC
+    - cron: "46 5 2 * *"   # 2nd of the month, 05:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit the data file back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

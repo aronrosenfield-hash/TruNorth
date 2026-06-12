@@ -12,11 +12,15 @@ name: canada-comp-monthly
 
 on:
   schedule:
-    - cron: "0 6 2 * *"   # 2nd of month, 06:00 UTC
+    - cron: "32 6 2 * *"   # 2nd of month, 06:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit canada-comp-actions.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

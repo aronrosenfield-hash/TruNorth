@@ -24,11 +24,15 @@ name: uk-gpg-annual
 
 on:
   schedule:
-    - cron: "0 19 1 4 *"   # April 1, 19:00 UTC
+    - cron: "46 19 1 4 *"   # April 1, 19:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit uk-gpg.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

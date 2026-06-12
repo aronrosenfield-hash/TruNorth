@@ -9,7 +9,7 @@ name: oecd-ncp-monthly
 
 on:
   schedule:
-    - cron: "0 7 5 * *"
+    - cron: "22 7 5 * *"
   workflow_dispatch:
 
 permissions:

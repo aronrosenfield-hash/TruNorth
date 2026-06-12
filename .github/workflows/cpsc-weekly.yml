@@ -8,11 +8,15 @@ name: cpsc-weekly
 
 on:
   schedule:
-    - cron: "0 20 * * 0"   # Sunday 20:00 UTC
+    - cron: "51 20 * * 0"   # Sunday 20:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit cpsc-recalls.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

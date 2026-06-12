@@ -22,11 +22,15 @@ name: ungc-annual
 
 on:
   schedule:
-    - cron: "0 18 1 8 *"   # Aug 1, 18:00 UTC
+    - cron: "16 18 1 8 *"   # Aug 1, 18:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit ungc.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

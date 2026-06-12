@@ -16,11 +16,15 @@ name: fdic-weekly
 
 on:
   schedule:
-    - cron: "0 1 * * 2"   # Tuesday 01:00 UTC
+    - cron: "56 1 * * 2"   # Tuesday 01:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit fdic-enforcement.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

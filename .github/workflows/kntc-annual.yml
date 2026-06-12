@@ -23,11 +23,15 @@ name: kntc-annual
 
 on:
   schedule:
-    - cron: "0 14 1 4 *"   # April 1, 14:00 UTC
+    - cron: "13 14 1 4 *"   # April 1, 14:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit kntc.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

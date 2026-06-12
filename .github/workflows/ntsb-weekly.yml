@@ -9,11 +9,15 @@ name: ntsb-weekly
 
 on:
   schedule:
-    - cron: "0 9 * * 1"   # Monday 09:00 UTC
+    - cron: "13 9 * * 1"   # Monday 09:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit ntsb-accidents.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

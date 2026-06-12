@@ -12,7 +12,7 @@ name: au-fair-work-monthly
 
 on:
   schedule:
-    - cron: "30 5 4 * *"   # 05:30 UTC on the 4th of each month
+    - cron: "57 5 4 * *"   # 05:30 UTC on the 4th of each month
   workflow_dispatch:
 
 permissions:

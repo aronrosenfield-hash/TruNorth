@@ -5,11 +5,15 @@ name: cpuc-quarterly
 
 on:
   schedule:
-    - cron: "30 5 4 1,4,7,10 *"   # 05:30 UTC on the 4th of Jan/Apr/Jul/Oct
+    - cron: "40 5 4 1,4,7,10 *"   # 05:30 UTC on the 4th of Jan/Apr/Jul/Oct
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

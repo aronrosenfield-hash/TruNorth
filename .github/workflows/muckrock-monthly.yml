@@ -9,11 +9,15 @@ name: muckrock-monthly
 
 on:
   schedule:
-    - cron: "0 2 2 * *"   # 2nd of month, 02:00 UTC
+    - cron: "6 2 2 * *"   # 2nd of month, 02:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit muckrock-foia.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -21,7 +21,7 @@ name: health-pharma-r3-monthly
 
 on:
   schedule:
-    - cron: "25 6 9 * *"   # 06:25 UTC on the 9th of each month
+    - cron: "14 6 9 * *"   # 06:25 UTC on the 9th of each month
   workflow_dispatch:
 
 permissions:

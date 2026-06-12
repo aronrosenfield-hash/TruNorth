@@ -10,11 +10,15 @@ name: gsa-sam-monthly
 
 on:
   schedule:
-    - cron: "0 0 1 * *"   # 1st of the month, 00:00 UTC
+    - cron: "49 0 1 * *"   # 1st of the month, 00:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit the data file back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

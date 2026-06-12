@@ -14,7 +14,7 @@ name: la-county-restaurants-weekly
 
 on:
   schedule:
-    - cron: "15 4 * * 1"   # Mondays 04:15 UTC
+    - cron: "12 4 * * 1"   # Mondays 04:15 UTC
   workflow_dispatch:
 
 permissions:

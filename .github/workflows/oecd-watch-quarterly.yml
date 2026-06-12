@@ -28,11 +28,15 @@ name: oecd-watch-quarterly
 
 on:
   schedule:
-    - cron: "0 18 15 1,4,7,10 *"   # 18:00 UTC on Jan/Apr/Jul/Oct 15
+    - cron: "28 18 15 1,4,7,10 *"   # 18:00 UTC on Jan/Apr/Jul/Oct 15
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit oecd-watch.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

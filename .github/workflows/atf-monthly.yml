@@ -25,11 +25,15 @@ name: atf-monthly
 
 on:
   # schedule:               # disabled per B-37 — see header.
-  #   - cron: "0 20 1 * *"  # 1st of month, 20:00 UTC
+  #   - cron: "36 20 1 * *"  # 1st of month, 20:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit atf-firearms.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

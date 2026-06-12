@@ -21,12 +21,16 @@ name: asyousow-annual
 
 on:
   schedule:
-    - cron: "0 12 1 1 *"   # Jan 1, 12:00 UTC
-    - cron: "0 12 1 7 *"   # Jul 1, 12:00 UTC
+    - cron: "19 12 1 1 *"   # Jan 1, 12:00 UTC
+    - cron: "19 12 1 7 *"   # Jul 1, 12:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit asyousow.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

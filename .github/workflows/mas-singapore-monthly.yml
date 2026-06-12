@@ -8,7 +8,7 @@ name: mas-singapore-monthly
 
 on:
   schedule:
-    - cron: "30 7 5 * *"
+    - cron: "2 7 5 * *"
   workflow_dispatch:
     inputs:
       url:
@@ -17,6 +17,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

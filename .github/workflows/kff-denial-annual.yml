@@ -24,11 +24,15 @@ name: kff-denial-annual
 
 on:
   schedule:
-    - cron: "0 4 15 2 *"   # 04:00 UTC on Feb 15
+    - cron: "22 4 15 2 *"   # 04:00 UTC on Feb 15
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch-merge-apply:

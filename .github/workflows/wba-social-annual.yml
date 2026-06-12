@@ -8,7 +8,7 @@ name: wba-social-annual
 
 on:
   schedule:
-    - cron: "0 6 10 1,4,7,10 *"   # 10th of Jan/Apr/Jul/Oct, 06:00 UTC
+    - cron: "56 6 10 1,4,7,10 *"   # 10th of Jan/Apr/Jul/Oct, 06:00 UTC
   workflow_dispatch:
 
 permissions:

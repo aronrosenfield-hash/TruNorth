@@ -14,7 +14,7 @@ name: followthemoney-state-monthly
 
 on:
   schedule:
-    - cron: "0 6 1 * *"
+    - cron: "31 6 1 * *"
   workflow_dispatch:
     inputs:
       apply:
@@ -24,6 +24,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

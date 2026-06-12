@@ -18,6 +18,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest

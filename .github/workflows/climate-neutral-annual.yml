@@ -27,6 +27,10 @@ on:
 permissions:
   contents: write   # required to commit climate-neutral.json + per-company JSON
 
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest

@@ -11,11 +11,15 @@ name: doj-fcpa-monthly
 
 on:
   schedule:
-    - cron: "0 15 1 * *"   # 1st of month, 15:00 UTC
+    - cron: "55 15 1 * *"   # 1st of month, 15:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # commit doj-fcpa.json + per-company changes
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

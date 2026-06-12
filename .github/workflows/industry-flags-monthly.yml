@@ -10,7 +10,7 @@ name: industry-flags-monthly
 
 on:
   schedule:
-    - cron: "0 6 15 * *"
+    - cron: "3 6 15 * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -20,6 +20,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   apply:

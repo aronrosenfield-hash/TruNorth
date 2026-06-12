@@ -15,7 +15,7 @@ name: opensanctions-monthly
 
 on:
   schedule:
-    - cron: "0 6 7 * *"   # 7th of each month, 06:00 UTC
+    - cron: "3 6 7 * *"   # 7th of each month, 06:00 UTC
   workflow_dispatch:
 
 permissions:

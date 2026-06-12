@@ -12,11 +12,15 @@ name: health-signals-monthly
 
 on:
   schedule:
-    - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of every month
+    - cron: "28 5 1 * *"   # 05:00 UTC on the 1st of every month
   workflow_dispatch:
 
 permissions:
   contents: write   # for committing data/derived/health-signals-augment.json
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch-merge:

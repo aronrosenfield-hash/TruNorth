@@ -6,11 +6,15 @@ name: ofac-sdn-daily
 
 on:
   schedule:
-    - cron: "30 3 * * *"   # 03:30 UTC daily
+    - cron: "5 3 * * *"   # 03:30 UTC daily
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

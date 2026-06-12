@@ -11,11 +11,15 @@ name: sec-litigation-weekly
 
 on:
   schedule:
-    - cron: "0 23 * * 0"   # Sunday 23:00 UTC
+    - cron: "52 23 * * 0"   # Sunday 23:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit sec-litigation.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

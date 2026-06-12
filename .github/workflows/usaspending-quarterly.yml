@@ -12,11 +12,15 @@ name: usaspending-quarterly
 
 on:
   schedule:
-    - cron: "0 4 1 1,4,7,10 *"   # 04:00 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "56 4 1 1,4,7,10 *"   # 04:00 UTC on Jan/Apr/Jul/Oct 1st
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit usaspending-contracts.json + company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

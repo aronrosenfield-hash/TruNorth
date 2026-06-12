@@ -16,11 +16,15 @@ name: climate-trace-monthly
 
 on:
   schedule:
-    - cron: "0 4 15 * *"   # 04:00 UTC on the 15th of each month
+    - cron: "31 4 15 * *"   # 04:00 UTC on the 15th of each month
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit data/raw/ + data/derived/ back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

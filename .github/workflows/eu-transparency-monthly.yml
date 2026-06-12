@@ -15,7 +15,7 @@ name: eu-transparency-monthly
 
 on:
   schedule:
-    - cron: "0 5 8 * *"
+    - cron: "15 5 8 * *"
   workflow_dispatch:
 
 permissions:

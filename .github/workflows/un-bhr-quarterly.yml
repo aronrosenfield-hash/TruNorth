@@ -12,7 +12,7 @@ name: un-bhr-quarterly
 
 on:
   schedule:
-    - cron: "0 5 12 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 12th
+    - cron: "36 5 12 1,4,7,10 *"   # 05:00 UTC on Jan/Apr/Jul/Oct 12th
   workflow_dispatch:
 
 permissions:

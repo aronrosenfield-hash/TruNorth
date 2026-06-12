@@ -17,7 +17,7 @@ name: supplements-verified-quarterly
 
 on:
   schedule:
-    - cron: "30 6 12 1,4,7,10 *"
+    - cron: "3 6 12 1,4,7,10 *"
   workflow_dispatch:
 
 permissions:

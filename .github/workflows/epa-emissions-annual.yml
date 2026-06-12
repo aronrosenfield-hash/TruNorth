@@ -13,7 +13,7 @@ name: epa-emissions-annual
 
 on:
   schedule:
-    - cron: "0 6 1 4 *"     # Apr 1 06:00 UTC
+    - cron: "55 6 1 4 *"     # Apr 1 06:00 UTC
   workflow_dispatch:
     inputs:
       dry_run:
@@ -23,6 +23,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch-merge:

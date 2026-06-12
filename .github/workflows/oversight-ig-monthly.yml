@@ -23,11 +23,15 @@ name: oversight-ig-monthly
 
 on:
   schedule:
-    - cron: "0 1 2 * *"   # 2nd of month, 01:00 UTC
+    - cron: "28 1 2 * *"   # 2nd of month, 01:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit oversight-ig-reports.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -10,11 +10,15 @@ name: fcc-weekly
 
 on:
   schedule:
-    - cron: "0 10 * * 1"   # Monday 10:00 UTC
+    - cron: "53 10 * * 1"   # Monday 10:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit fcc-complaints.json back to main
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:

@@ -20,11 +20,15 @@ name: fairtrade-annual
 
 on:
   schedule:
-    - cron: "0 18 1 1 *"   # Jan 1, 18:00 UTC
+    - cron: "53 18 1 1 *"   # Jan 1, 18:00 UTC
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit fairtrade.json + per-company JSON
+
+concurrency:
+  group: data-pipeline-commit
+  cancel-in-progress: false
 
 jobs:
   fetch:
