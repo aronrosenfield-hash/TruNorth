@@ -199,8 +199,20 @@ export default async function handler(req) {
     const txt = parts.join(" ").replace(/\s+/g, " ").slice(0, 160).trim();
     return txt || `${name} — ${cat}. See political donations, labor record, environmental enforcement, and consumer-values grades on TruNorth.`;
   };
-  const description = buildDesc();
-  const title = `${name} — ${overallG ? overallG + " grade · " : ""}${cat || "Consumer values"} | TruNorth`;
+  // B66 fix (Aron's iMessage repro): a PERSONALIZED share carries ?g=<their
+  // grade>. The link preview's title was showing the baked baseline grade
+  // ("Waffle House — C grade") right under a message saying "grades A on my
+  // values" — three different signals in one bubble. For personal shares the
+  // preview becomes the tease (matching the "?" og-image); organic search
+  // visits (no g param) keep the baseline-grade title for SEO CTR.
+  const sharedG = (url.searchParams.get("g") || "").toUpperCase();
+  const isPersonalShare = ["A", "B", "C", "D", "F"].includes(sharedG);
+  const description = isPersonalShare
+    ? `A friend's TruNorth grades ${name} ${sharedG} on THEIR values. Grades are personal — answer nine quick choices and see what ${name} grades on yours.`
+    : buildDesc();
+  const title = isPersonalShare
+    ? `${name} — what does it grade on YOUR values? | TruNorth`
+    : `${name} — ${overallG ? overallG + " grade · " : ""}${cat || "Consumer values"} | TruNorth`;
 
   // Freshness + quotable summary (used in both JSON-LD and the visible body)
   const lastUpdated = company.lastUpdated || company.dataLastUpdated || null;

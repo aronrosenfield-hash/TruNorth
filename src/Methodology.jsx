@@ -29,7 +29,10 @@ function Code({ children }) {
 
 export default function Methodology({ onBack }) {
   return (
-    <div style={{ minHeight: "100dvh", background: C.bg, color: C.text, fontFamily: FONT }}>
+    // B66 fix (Aron: page wouldn't scroll in-app): the iOS shell sets
+    // body{overflow:hidden}, so document scrolling is dead — the page must
+    // OWN its scroll container, same as PrivacyPolicy's 2026-06-01 fix.
+    <div style={{ height: "100dvh", overflowY: "auto", WebkitOverflowScrolling: "touch", overscrollBehavior: "contain", background: C.bg, color: C.text, fontFamily: FONT }}>
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "calc(24px + env(safe-area-inset-top,0px)) 22px 80px" }}>
         <button onClick={onBack} style={{ background: "transparent", border: "none", color: C.accent, fontSize: 14, fontWeight: 600, cursor: "pointer", padding: "8px 0", marginBottom: 8 }}>← Back</button>
         <h1 style={{ fontFamily: "ui-serif, 'New York', Georgia, serif", fontSize: 32, fontWeight: 600, letterSpacing: -0.5, marginBottom: 6, color: C.text }}>How TruNorth grades work</h1>
