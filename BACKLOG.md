@@ -36,6 +36,8 @@ Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scorin
 | **R1.1 — ring verdict seal** (radar sharded on real data — Adobe "what the hell is that") + E-9 cap | ✅ Build 62 — Aron: "Ring Seal — Looks good" |
 | **R1.2 — chip fit + cooler signal color** (#3DD6B5→#38C0CE cyan-teal, full sweep) | ✅ Build 63 (2026-06-12, `fde1d05b2`) |
 | **R2 — The Flows** (4-surface nav Today/Lens/Ledger/You · Today's 3 cards · Lens verdict card + receipts · the Match 11 tension cards · the Switch + Ledger v1 · Versus verdict line · first-run basket → Reveal-judged) | ✅ Build 64 (2026-06-12, Aron's go after 63) — gates passed (first-run ≤90s, verdict ≤3s). Tension-card copy awaits Aron's red pen (brief §8.5). |
+| **R2.1 — Aron's device feedback** (Versus single-column · "Claude AI synthesis" chips hidden · DEI third-party recognition reaches stanced grades — Denny's anti-DEI repro A→C, deiB index flag, all surfaces agree) | ✅ Build 65 (2026-06-12) |
+| **Brand media refresh** (app icon ink/bone/verdigris seal · OG share cards · og-image · favicon/touch/email icons · landing → Civic Premium serif hero · social avatar+banners+kit in docs/media/brand-2026-06) | ✅ Build 66 carries the icon; web deployed on push. Aron-side: upload socials per SOCIAL_KIT.md, capture device screenshots, promo-video recapture (L-9) pending |
 | **R3 — The Magic** (compass physics + haptics · Aisle Mode + Cart Report · APNs push loop · NL ask · Wrapped · App Clip/widgets) | ⏳ next — needs Aron's go |
 | Wrapped | 💤 dormant until December (design exists in brief §4 flow E) |
 
