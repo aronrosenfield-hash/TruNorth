@@ -58,3 +58,8 @@ scripts/cache/
 public/data/_cache/irs990pf/
 # R7: 52MB OFCCP XLSX stays out of git; the derived JSON + dictionary are committed
 data/raw/ofccp-eeo1/*.xlsx
+
+# C2 (2026-06-11 tech review): pipeline fetch caches are NOT product data —
+# they were 398MB tracked in git, deployed to Vercel, and bundled into the
+# 521MB iOS .ipa. Fetchers re-download on cache miss (annual/quarterly).
+public/data/_cache/

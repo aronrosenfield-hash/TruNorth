@@ -84,6 +84,23 @@ fi
 echo "📦 Building web bundle..."
 npx vite build >/dev/null
 
+# C1 (2026-06-11 tech review): the .ipa was 521MB because cap sync copied ALL
+# of public/ — including the 398MB pipeline _cache and ~30MB of raw per-source
+# snapshots the app never fetches. Prune dist/data to ONLY what the client
+# reads (see src/lib/dataSource.js + App.jsx fetch surface) before syncing.
+# The web deploy is unaffected (Vercel builds independently; _cache excluded
+# there via .vercelignore).
+echo "✂️  Pruning non-app data from iOS bundle..."
+KEEP_RE='^(companies|_meta|index\.json|search-index\.json|meta\.json|trending\.json|weekly_changes\.json|editorial\.json)$'
+for entry in dist/data/*; do
+  base=$(basename "$entry")
+  if ! echo "$base" | grep -qE "$KEEP_RE"; then
+    rm -rf "$entry"
+  fi
+done
+PRUNED_SIZE=$(du -sh dist/data | cut -f1)
+echo "   dist/data after prune: $PRUNED_SIZE"
+
 echo "📲 Syncing to iOS..."
 npx cap sync ios >/dev/null
 
