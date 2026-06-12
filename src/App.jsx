@@ -1223,6 +1223,81 @@ function weekKey(ts) {
   return `${t.getFullYear()}-W${String(wk).padStart(2, "0")}`;
 }
 
+// R2 (Lens verdict card): the serif verdict sentence — one editorial line
+// computed from the user's priority axes vs this brand's per-axis scores.
+// Axis inclusion mirrors the seal's sealValues loop exactly (na/excl/neutral
+// guards) so the sentence never contradicts the ring it sits next to.
+function verdictSentence(enriched, profile, grade) {
+  const axisScores = {};
+  for (const k of COMPASS_AXES) {
+    const v = enriched.sc?.[k];
+    const lv = String(v || "").toLowerCase();
+    const hasCsc = enriched.csc && typeof enriched.csc[k] === "number";
+    if (enriched.flags?.[k]?.na) continue;
+    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc) continue;
+    if (lv === "na" || lv === "n/a") continue;
+    if (Array.isArray(enriched.excl) && enriched.excl.includes(k)) continue;
+    axisScores[k] = scoreCat(k, v, profile, enriched);
+  }
+  const keys = Object.keys(axisScores);
+  if (!keys.length || grade === "?") return "No scoreable public record yet — we don't guess.";
+  if (!profile) {
+    const strong = keys.filter(k => axisScores[k] >= 60).length;
+    const flags = keys.filter(k => axisScores[k] < 25).length;
+    let s = `On the record in ${keys.length} ${keys.length === 1 ? "category" : "categories"}`;
+    s += strong ? ` — strong in ${strong}` : "";
+    s += flags ? `, ${flags === 1 ? "one red flag" : `${flags} red flags`}.` : ".";
+    return s;
+  }
+  // priorities: stanced axes + anything ranked above its default weight
+  const pri = new Set();
+  const w = profile.weights || {};
+  for (const k of COMPASS_AXES) {
+    if (typeof w[k] === "number" && w[k] > (PROFILE_DEFAULT_WEIGHTS[k] ?? 2)) pri.add(k);
+  }
+  if (profile.lean && profile.lean !== "neutral" && profile.lean !== "mixed") pri.add("political");
+  if (profile.deiLean && profile.deiLean !== "neutral") pri.add("dei");
+  if (profile.animalTesting && profile.animalTesting !== "neutral") pri.add("animals");
+  if (profile.guns && profile.guns !== "neutral") pri.add("guns");
+  if (profile.unionSupport && profile.unionSupport !== "neutral") pri.add("labor");
+  const priWithData = keys.filter(k => pri.has(k));
+  const pool = priWithData.length ? priWithData : keys;
+  const phrase = priWithData.length
+    ? `of your ${pool.length} ${pool.length === 1 ? "priority" : "priorities"}`
+    : `of ${pool.length} documented ${pool.length === 1 ? "category" : "categories"}`;
+  const aligned = pool.filter(k => axisScores[k] >= 55).length;
+  const flags = pool.filter(k => axisScores[k] < 25).length;
+  if (flags) return `Aligned on ${aligned} ${phrase} — ${flags === 1 ? "one red flag" : `${flags} red flags`}.`;
+  if (aligned === pool.length && pool.length > 1) return `Aligned on all ${pool.length} ${priWithData.length ? "of your priorities" : "documented categories"} — settled.`;
+  return `Aligned on ${aligned} ${phrase}.`;
+}
+
+// R2 (Lens verdict card): up to three receipt lines — the mono/brass proof
+// under the verdict. Every line is a real figure from a named public source;
+// when we have a URL we link it. Order: penalties → recalls → money → grants.
+function receiptLines(enriched) {
+  const fmt$ = (n) => n >= 1e9 ? `$${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `$${(n / 1e3).toFixed(0)}K` : `$${n}`;
+  const out = [];
+  const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
+  if (vt?.totalPenalty && vt.totalRecords) {
+    out.push({ src: "FED RECORD", text: `${fmt$(vt.totalPenalty)} penalties · ${vt.totalRecords} records`, sub: vt.primaryOffenses?.[0]?.category });
+  }
+  const recall = enriched.cpsc?.sampleRecalls?.[0];
+  if (recall?.recall_date) {
+    out.push({ src: "CPSC", date: String(recall.recall_date).slice(0, 7), text: `recall · ${(recall.title || "").replace(/ Due to.*$/i, "").slice(0, 52)}`, url: enriched.cpsc.sourceUrl });
+  }
+  if (enriched.fec?.totalRaised) {
+    out.push({ src: "FEC", date: enriched.fec.cycle ? String(enriched.fec.cycle) : undefined, text: `${enriched.fec.totalRaisedFmt || fmt$(enriched.fec.totalRaised)} political money · ${enriched.fec.lean || "—"}` });
+  }
+  if (enriched.charity_irs990?.totalGrants) {
+    out.push({ src: "IRS-990", date: enriched.charity_irs990.fiscalYear ? `FY${enriched.charity_irs990.fiscalYear}` : undefined, text: `${fmt$(enriched.charity_irs990.totalGrants)} documented grants`, url: enriched.charity_irs990.propublicaUrl });
+  }
+  if (enriched.payRatio?.ratio) {
+    out.push({ src: "SEC", date: enriched.payRatio.year ? String(enriched.payRatio.year) : undefined, text: `CEO-to-worker pay ${enriched.payRatio.ratioDisplay || `${Math.round(enriched.payRatio.ratio)}:1`}`, url: enriched.payRatio.sourceUrl });
+  }
+  return out.slice(0, 3);
+}
+
 // ─── SVG ICONS ────────────────────────────────────────────────────────────────
 function DonkeySVG({ size=14, col="#4a90e2" }) {
   return (
@@ -2128,7 +2203,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
     <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Compare brands" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
       <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 16px 10px", borderBottom:`1px solid ${T.border}`, flexShrink:0 }}>
-        <div style={{ fontSize:16, fontWeight:700 }}>Compare</div>
+        <div style={{ fontSize:16, fontWeight:700 }}>Versus</div>
         <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, minWidth:44, minHeight:44, cursor:"pointer" }} aria-label="Close">×</button>
       </div>
       <div style={{ padding:16, overflowY:"auto", flex:1, minHeight:0, WebkitOverflowScrolling:"touch" }}>
@@ -2235,6 +2310,30 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                 );
               })}
             </div>
+
+            {/* R2 (Versus, brief flow D): one serif verdict line above the
+                table — the judgment, then the receipts. Counts only categories
+                where BOTH brands have data (no winning on the other's blanks). */}
+            {(() => {
+              const a = resolved[0], b = resolved[1];
+              let aw = 0, bw = 0, n = 0;
+              for (const k of CAT_KEYS) {
+                if (getDataState(k, a.sc?.[k]) === "unknown" || getDataState(k, b.sc?.[k]) === "unknown") continue;
+                const sa = scoreCat(k, a.sc?.[k], profile, a);
+                const sb = scoreCat(k, b.sc?.[k], profile, b);
+                if (sa > sb + 5) aw++; else if (sb > sa + 5) bw++;
+                n++;
+              }
+              if (!n) return null;
+              const lead = aw === bw ? null : (aw > bw ? a.name : b.name);
+              return (
+                <div style={{ fontFamily:SERIF, fontSize:17, color:T.txt, lineHeight:1.35, textAlign:"center", margin:"0 4px 14px" }}>
+                  {lead
+                    ? <>{lead} leads on {Math.max(aw, bw)} of {n} comparable {n === 1 ? "category" : "categories"}{profile ? " for you" : ""}.</>
+                    : <>A dead heat across {n} comparable {n === 1 ? "category" : "categories"}.</>}
+                </div>
+              );
+            })()}
 
             {/* Category-by-category comparison */}
             <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
@@ -2852,7 +2951,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
 // parent render but are functionally identical (just closures over the same
 // stable parent state). Comparing the data props that actually drive the
 // render is enough.
-const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, allCompanies, initiallyOpen, onConsumedDeepLink }) {
+const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profile, isPaid, onUpgrade, isSaved, onToggleSave, inCompare, onToggleCompare, onCompareWith, onNavigate, allCompanies, initiallyOpen, onConsumedDeepLink, onCommitSwitch }) {
   const [open, setOpen]     = useState(!!initiallyOpen);
   const [detail, setDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
@@ -2861,6 +2960,8 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   // FACTUAL CLAIM this app must never make in an error state. Track the
   // failure and render a retry block instead.
   const [detailError, setDetailError] = useState(false);
+  // R2 (the Switch): null → idle · {to,toName} → asking spend · "done"
+  const [switchSheet, setSwitchSheet] = useState(null);
 
   // QA fix 2026-06-10: tell the deep-link effect its slug was consumed so it
   // stops marking this brand initiallyOpen on future list re-mounts.
@@ -3052,6 +3153,35 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               >Retry</button>
             </div>
           )}
+          {/* R2 (Lens, brief §3.2): THE VERDICT — one serif sentence + up to
+              three mono receipt lines. The card opens with the judgment and
+              its proof; everything below is supporting detail. */}
+          {(() => {
+            const sentence = verdictSentence(enriched, profile, profile ? grade : (enriched.overall != null ? scoreGrade(enriched.overall, enriched.realCats) : "?"));
+            const receipts = receiptLines(enriched);
+            if (!sentence && !receipts.length) return null;
+            return (
+              <div style={{ marginBottom: 14 }}>
+                <div style={{ fontFamily: SERIF, fontSize: 18.5, color: T.txt, lineHeight: 1.35 }}>{sentence}</div>
+                {receipts.length > 0 && (
+                  <div style={{ marginTop: 9 }}>
+                    {receipts.map((r, i) => (
+                      <div key={i} style={{ display: "flex", alignItems: "baseline", gap: 8, padding: "5px 0", borderBottom: i < receipts.length - 1 ? `1px dashed ${T.border}` : "none", fontFamily: MONO, fontSize: 10.5, color: T.txt2, minWidth: 0 }}>
+                        <span style={{ color: T.gold, fontWeight: 600, flexShrink: 0, letterSpacing: "0.04em" }}>{r.src}</span>
+                        {r.date && <span style={{ color: T.txt3, flexShrink: 0 }}>{r.date}</span>}
+                        <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1 }}>{r.text}</span>
+                        {r.url && (
+                          <a href={r.url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+                            aria-label={`Open ${r.src} source record`}
+                            style={{ color: T.gold, textDecoration: "none", flexShrink: 0 }}>↗</a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })()}
           {/* Federal penalty callout. Phase 4.11: now triggers on the FACT
               (≥$5M in penalties), not the app's grade verdict. Lets users
               see the raw data and decide for themselves. */}
@@ -3205,6 +3335,39 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                       );
                     })}
                   </div>
+                  {/* R2 (the Switch): commit the swap right where the better
+                      option is staring at you. Spend is asked ONCE, about the
+                      brand being left — that's the dollars redirected. */}
+                  {onCommitSwitch && (
+                    switchSheet === "done" ? (
+                      <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, fontSize:12, color:T.accent2, fontWeight:600, display:"flex", alignItems:"center", gap:7 }}>
+                        <i className="ti ti-check" aria-hidden="true" /> Switch logged — counted in your Ledger.
+                      </div>
+                    ) : switchSheet ? (
+                      <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}` }}>
+                        <div style={{ fontSize:12, color:T.txt2, marginBottom:8 }}>About how much do you spend on <strong style={{ color:T.txt }}>{enriched.name}</strong> a month?</div>
+                        <div style={{ display:"flex", gap:6 }}>
+                          {[10, 25, 50, 100].map(amt => (
+                            <button key={amt}
+                              onClick={(e) => { e.stopPropagation(); onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, amt); setSwitchSheet("done"); }}
+                              style={{ flex:1, padding:"9px 4px", borderRadius:9, background:T.bg2, border:`1px solid ${T.border}`, color:T.txt, fontFamily:MONO, fontSize:13, fontWeight:600, cursor:"pointer" }}>
+                              ${amt}
+                            </button>
+                          ))}
+                        </div>
+                        <button onClick={(e) => { e.stopPropagation(); onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, 0); setSwitchSheet("done"); }}
+                          style={{ marginTop:7, background:"none", border:"none", color:T.txt3, fontSize:11, cursor:"pointer", padding:0, textDecoration:"underline" }}>
+                          Not sure — log it without an amount
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={(e) => { e.stopPropagation(); const best = display[0].co; setSwitchSheet({ to: best.slug || best.id, toName: best.name }); track("switch_started", { from: enriched.slug || enriched.id, to: best.slug || best.id }); }}
+                        style={{ marginTop:10, width:"100%", padding:"12px 10px", borderRadius:11, background:"#EDE9E0", border:"none", color:"#111", fontSize:13.5, fontWeight:700, cursor:"pointer" }}>
+                        Make the switch → {display[0].co.name}
+                      </button>
+                    )
+                  )}
                 </div>
               );
             }
@@ -5261,6 +5424,26 @@ useEffect(() => {
     });
   };
 
+  // R2 (the Switch, brief flow C): commit a swap. Logs the pair + monthly
+  // spend to tn_switches (the Ledger's impact source), and pulls the swap
+  // target into the basket so its records are watched from day one. The
+  // departed brand stays saved — its future records are exactly the
+  // "told you so" the Ledger exists to show.
+  const commitSwitch = useCallback((from, fromName, to, toName, monthly) => {
+    try {
+      const list = JSON.parse(localStorage.getItem("tn_switches") || "[]");
+      list.push({ from, fromName, to, toName, monthly: Number(monthly) || 0, at: Date.now() });
+      localStorage.setItem("tn_switches", JSON.stringify(list));
+    } catch {}
+    setSavedSet(prev => {
+      if (prev.has(to)) return prev;
+      const next = new Set(prev); next.add(to);
+      try { localStorage.setItem("tn_saved", JSON.stringify([...next])); } catch {}
+      return next;
+    });
+    track("switch_committed", { from, to, monthly: Number(monthly) || 0 });
+  }, []);
+
   // 2026-06-01: scroll to top whenever the active tab changes. Bottom-nav
   // tap = "fresh view" intent; preserving scroll across tabs felt buggy.
   const tabScrollRef = React.useRef(null);
@@ -6695,7 +6878,7 @@ if (screen === "onboarding") {
                     </button>
                   </div>
                 )}
-                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} onConsumedDeepLink={() => setDeepLinkSlug(null)} />)}
+                {visibleFiltered.map(co => <CompanyCard key={co.id} company={co} catFilter={catFilters.length===1?catFilters[0]:"all"} profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} onCommitSwitch={commitSwitch} initiallyOpen={deepLinkSlug && (co.slug || co.id) === deepLinkSlug} onConsumedDeepLink={() => setDeepLinkSlug(null)} />)}
                 {filtered.length > visibleLimit && (
                   <button
                     onClick={() => { setVisibleLimit(n => n + VISIBLE_BATCH); track("show_more", { from: visibleLimit, total: filtered.length }); }}
@@ -6785,7 +6968,7 @@ if (screen === "onboarding") {
                     onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)}
                     allCompanies={companies}
                     onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }}
-                    onNavigate={(slug) => openBrand(slug)}
+                    onNavigate={(slug) => openBrand(slug)} onCommitSwitch={commitSwitch}
                   />
                 ))}
               </div>
@@ -6929,7 +7112,7 @@ if (screen === "onboarding") {
                 of the "slow to navigate" delay. Now memoized + capped at
                 top 50. Tap "Show all" to expand to the full list (rare). */}
             {topPicksRanked.slice(0, topPicksLimit).map((co) => (
-              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} />
+              <CompanyCard key={co.id} company={co} catFilter="all" profile={profile} isPaid={isPaid} onUpgrade={()=>setShowPaywall(true)} isSaved={savedSet.has(co.slug || co.id)} onToggleSave={() => toggleSaved(co.slug || co.id, co.name)} inCompare={isInCompare(co.slug || co.id)} onToggleCompare={() => toggleCompare(co.slug || co.id, co.name)} allCompanies={companies} onCompareWith={(otherSlug, otherName) => { setCompareList([{ slug: co.slug || co.id, name: co.name }, { slug: otherSlug, name: otherName }]); setShowCompare(true); track("compare_via_alt", { from: co.slug || co.id, to: otherSlug }); }} onNavigate={(slug) => openBrand(slug)} onCommitSwitch={commitSwitch} />
             ))}
             {topPicksLimit < topPicksRanked.length && (
               <button
