@@ -156,7 +156,7 @@ The scoring engine and methodology page (untouched) · evidence-count honesty (r
 
 ## 8. Design decisions (Aron, 2026-06-11 PM)
 1. ✅ **Dark ink** — sole mode. No paper-light variant for now.
-2. ✅ **Radar-polygon** seal geometry (mockup v1 as shipped).
+2. ✅ **Radar-polygon** for the IDENTITY compass (your weights — always 9 axes, convex). **Verdict seal revised to a segmented RING** (2026-06-12, Aron's Adobe screenshot): real brands have sparse axes + extreme scores, and the radar collapsed into shards. Nine fixed arc slots — color = alignment, oxblood = the clash, dashed = no data, grade engraved serif center. A seal at every data density.
 3. ✅ **The Switch flow greenlit** as the core action/loop.
 4. Wrapped: design now, ship dormant for the December cultural moment (default kept — revisit anytime).
 5. Tension-card copy: drafts stand pending Aron's red pen during R2.

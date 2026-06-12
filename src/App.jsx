@@ -2402,7 +2402,7 @@ function CategorySpectrum({ pos, leftLabel, rightLabel, axisType = "stance", unk
     ? "#2a2348"
     : isUniversal
       ? "linear-gradient(to right, #E0524D 0%, #E0524D 22%, #555 38%, #555 62%, #3DD6B5 78%, #3DD6B5 100%)"
-      : "linear-gradient(to right, #2A2E35 0%, #555 50%, #6a5dca 100%)";
+      : "linear-gradient(to right, #2A2E35 0%, #4A4E55 50%, #6E6A60 100%)";
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:4, width:"100%", opacity: unknown ? 0.65 : 1 }}>
       <div style={{
@@ -3250,7 +3250,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         if (n <= 0) return null;
                         const limited = n <= 1;
                         return (
-                          <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
+                          <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, whiteSpace:"nowrap", background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
                             <i className={`ti ${limited ? "ti-file" : "ti-files"}`} aria-hidden="true" style={{ fontSize:11 }} />
                             {limited ? `Limited data — ${n} record category` : `Based on ${n} record categories`}
                           </div>
@@ -3373,7 +3373,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         if (n <= 0) return null;
                         const limited = n <= 1;
                         return (
-                          <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
+                          <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, whiteSpace:"nowrap", background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
                             <i className={`ti ${limited ? "ti-file" : "ti-files"}`} aria-hidden="true" style={{ fontSize:11 }} />
                             {limited ? `Limited data — ${n} record category` : `Based on ${n} record categories`}
                           </div>

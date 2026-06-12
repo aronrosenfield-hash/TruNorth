@@ -47,6 +47,11 @@ Every finding from the investor/product review is fixed and pushed (batches 1-5 
 
 ## 🔧 OUTSTANDING — ENGINEERING (remaining)
 
+| # | Item | Notes |
+|---|---|---|
+| E-9 | **Single-stance-signal grade tuning** | A brand whose ONLY signal is a stance match (e.g. no_guns for a gun-avoider) can grade A at 75 post-shrinkage. Defensible? Or cap stance-only brands at B / require ≥1 record-backed category for A? Mirror question to the Build-56 D-floor. Needs Aron's call. |
+
+
 | # | Item | Size | Notes |
 |---|---|---|---|
 | E-1 | **Scoring-flags toggle ON** | scheduled | Flip `scoringFlagsEnabled` Mon Jun 16, 24h watch → App Store cut Tue Jun 17 (see rollout table below) |
