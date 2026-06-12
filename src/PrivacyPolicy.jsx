@@ -89,7 +89,7 @@ export default function PrivacyPolicy({ onBack }) {
         }}>Privacy Policy</div>
         <h1 style={{
           fontSize:36, fontWeight:800, letterSpacing:-1, lineHeight:1.1,
-          marginBottom:8,
+          marginBottom:8, color:C.text,
         }}>How we handle your data</h1>
         <div style={{ fontSize:13, color:C.textMute, marginBottom:24 }}>
           Last updated: June 9, 2026

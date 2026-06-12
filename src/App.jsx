@@ -5,6 +5,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useModalA11y } from "./lib/useModalA11y";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
+import MatchFlow from "./MatchFlow";
 import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
 import Methodology from "./Methodology";
@@ -5361,6 +5362,13 @@ useEffect(() => {
   // This converts the daily data pipeline into a visible return-trigger
   // without accounts or push infra (APNs is the post-launch upgrade path).
   const [savedChanges, setSavedChanges] = useState([]);
+  // R2 (flow A step 5): "watch my basket" intent, asked at the Reveal. Local
+  // intent flag only — the in-app what-changed feed honors it today; it
+  // becomes the APNs opt-in seed when push lands (R3). No OS prompt is
+  // burned before push infrastructure exists.
+  const [watchBasket, setWatchBasket] = useState(() => {
+    try { return localStorage.getItem("tn_watchBasket") === "1"; } catch { return false; }
+  });
   // Review fix (2026-06-11): default surfaces exclude non-consumer companies
   // (EDGAR mid-caps, B2B). Search still finds them by exact intent — they
   // rank below consumer matches — and this toggle reveals everything.
@@ -6035,12 +6043,66 @@ if (screen === "onboarding") {
         // meaning the moat was invisible by default. Now: new users land
         // in the quiz immediately, see their personalized "top match"
         // celebration, then enter the main app.
-        track("quiz_started", { from: "onboarding_rail" });
-        setScreen("quiz");
+        // R2 (brief flow A): basket BEFORE the Match — pick what you buy,
+        // then your answers immediately have something to judge.
+        track("basket_picker_shown", { from: "onboarding_rail" });
+        setScreen("basket");
       }}
     />
   );
 }
+
+if (screen === "basket") {
+  // R2 (brief flow A step 2): "Pick what you actually buy" — a chip cloud of
+  // the most-documented household brands. Picks seed the basket (savedSet)
+  // so the Reveal can say "your basket: N% aligned" with receipts attached.
+  const pool = (deduped || [])
+    .filter(c => c.consumerFacing !== false && (c.realCats ?? 0) >= 5 && ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"].includes(getBucket(c.cat || "")))
+    .sort((a, b) => (b.realCats ?? 0) - (a.realCats ?? 0) || String(a.name).localeCompare(String(b.name)))
+    .slice(0, 40);
+  return (
+    <div style={{ display:"flex", flexDirection:"column", height:"100dvh", maxWidth:430, margin:"0 auto", paddingTop:"calc(env(safe-area-inset-top, 0px) + 18px)", overflow:"hidden", background:T.bg }}>
+      <div style={{ padding:"0 22px", flexShrink:0 }}>
+        <div style={{ fontFamily:SERIF, fontSize:26, color:T.txt, lineHeight:1.25 }}>Pick what you actually buy.</div>
+        <div style={{ fontSize:13, color:T.txt2, lineHeight:1.5, marginTop:8 }}>
+          Tap 5–10 brands. Their public records become your ledger — judged against your values in the next 45 seconds.
+        </div>
+      </div>
+      <div style={{ flex:1, minHeight:0, overflowY:"auto", WebkitOverflowScrolling:"touch", padding:"16px 22px 12px" }}>
+        {!pool.length ? (
+          <div style={{ padding:"40px 0", textAlign:"center", color:T.txt3, fontSize:13 }}>Loading brands…</div>
+        ) : (
+          <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
+            {pool.map(co => {
+              const slug = co.slug || co.id;
+              const on = savedSet.has(slug);
+              return (
+                <button key={slug} onClick={() => toggleSaved(slug, co.name)} aria-pressed={on}
+                  style={{ display:"inline-flex", alignItems:"center", gap:7, padding:"8px 12px 8px 8px", borderRadius:22, fontSize:12.5, fontWeight:600, cursor:"pointer", background: on ? T.accentBg : T.bg2, color: on ? T.accent2 : T.txt, border:`1px solid ${on ? T.accent : T.border}` }}>
+                  <CompanyLogo company={co} size={22} />
+                  {co.name}
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+      <div style={{ flexShrink:0, padding:"10px 22px calc(env(safe-area-inset-bottom, 0px) + 16px)", borderTop:`1px solid ${T.border}`, background:T.bg }}>
+        <button
+          onClick={() => { track("basket_picked", { count: savedSet.size }); track("quiz_started", { from: "basket_picker" }); setScreen("quiz"); }}
+          disabled={savedSet.size === 0}
+          style={{ width:"100%", padding:"15px 12px", borderRadius:13, background: savedSet.size ? "#EDE9E0" : T.bg3, color: savedSet.size ? "#111" : T.txt3, border:"none", fontSize:15, fontWeight:700, cursor: savedSet.size ? "pointer" : "default" }}>
+          {savedSet.size ? `Continue with ${savedSet.size} ${savedSet.size === 1 ? "brand" : "brands"}` : "Pick at least one brand"}
+        </button>
+        <button onClick={() => { track("basket_skipped", {}); track("quiz_started", { from: "basket_picker_skip" }); setScreen("quiz"); }}
+          style={{ width:"100%", background:"none", border:"none", color:T.txt3, fontSize:11.5, cursor:"pointer", padding:"10px 0 0", textAlign:"center" }}>
+          skip for now
+        </button>
+      </div>
+    </div>
+  );
+}
+
   if (screen === "reveal") {
     // Phase 5.ag (item C): Quiz completion celebration.
     //
@@ -6124,6 +6186,48 @@ if (screen === "onboarding") {
                 Weighing most for you: {eff.map((e, i) => (
                   <span key={e.k}>{i > 0 && " · "}<span style={{ color:T.txt2, fontWeight:600 }}>{CAT_LABELS[e.k]} ×{(Math.round(e.x * 10) / 10).toFixed(1).replace(/\.0$/, "")}</span></span>
                 ))}
+              </div>
+            );
+          })()}
+          {/* R2 (flow A step 4): the basket, judged — the personal payoff.
+              The % the user just earned by answering, plus the ONE sharpest
+              clash with a route to its receipts (the verdict card has the
+              swap + switch waiting one tap away). */}
+          {savedSet.size > 0 && (() => {
+            const savedCos = Array.from(savedSet).map(s => (companies || []).find(c => (c.slug || c.id) === s)).filter(Boolean);
+            const { pct, graded } = basketAlignment(savedCos, profile);
+            if (pct == null) return null;
+            const worst = savedCos
+              .map(co => { const s = computeScore(co, profile); return { co, s, g: scoreGrade(s, userRelevantRealCats(co, profile)) }; })
+              .filter(x => x.g === "D" || x.g === "F")
+              .sort((a, b) => (a.s ?? 99) - (b.s ?? 99))[0];
+            return (
+              <div style={{ width:"100%", maxWidth:340, marginBottom:18, padding:"14px 16px", boxSizing:"border-box", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16 }}>
+                <div style={{ fontFamily:MONO, fontSize:10, color:T.gold, letterSpacing:"0.14em", marginBottom:8 }}>YOUR BASKET, JUDGED</div>
+                <div style={{ fontFamily:SERIF, fontSize:20, color:T.txt, lineHeight:1.3 }}>
+                  {pct}% of your basket aligns with your compass.
+                </div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:4 }}>{graded} of {savedCos.length} brands graded on the public record</div>
+                {worst && (
+                  <button
+                    onClick={() => openBrand(worst.co.slug || worst.co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
+                    style={{ marginTop:10, width:"100%", textAlign:"left", padding:"10px 12px", borderRadius:10, background:T.bg3, border:"none", borderLeft:"3px solid #E0524D", cursor:"pointer" }}>
+                    <div style={{ fontSize:12.5, color:T.txt, fontWeight:600 }}>Sharpest clash: {worst.co.name} — {worst.g}</div>
+                    <div style={{ fontFamily:MONO, fontSize:10.5, color:T.txt3, marginTop:3 }}>tap for the receipts ↗</div>
+                  </button>
+                )}
+                <button
+                  onClick={() => {
+                    const next = !watchBasket;
+                    setWatchBasket(next);
+                    try { localStorage.setItem("tn_watchBasket", next ? "1" : "0"); } catch {}
+                    track(next ? "watch_basket_on" : "watch_basket_off", { from: "reveal" });
+                  }}
+                  aria-pressed={watchBasket}
+                  style={{ marginTop:10, width:"100%", padding:"10px 12px", borderRadius:10, fontSize:12, fontWeight:600, cursor:"pointer", background: watchBasket ? T.accentBg : "transparent", border:`1px solid ${watchBasket ? T.accent : T.border2}`, color: watchBasket ? T.accent2 : T.txt2, display:"flex", alignItems:"center", gap:7, justifyContent:"center" }}>
+                  <i className={`ti ${watchBasket ? "ti-check" : "ti-bell"}`} aria-hidden="true" />
+                  {watchBasket ? "Watching your basket for record changes" : "Watch my basket — flag me when records change"}
+                </button>
               </div>
             );
           })()}
@@ -6303,10 +6407,10 @@ if (screen === "onboarding") {
             setScreen("main");
           }}
         />}
-        <Quiz
-          // H10 fix (audit 2026-06-01): pass current profile so retake
-          // hydrates existing answers instead of starting blank. Quiz
-          // reads this on mount only when there's no in-progress draft.
+        <MatchFlow
+          // R2 (brief flow B): the Match replaces the quiz. Same props
+          // contract, same output shape — engine untouched. Retakes hydrate
+          // from the existing profile (H10 parity).
           initialProfile={profile}
           onComplete={(p) => {
             setProfile(p);

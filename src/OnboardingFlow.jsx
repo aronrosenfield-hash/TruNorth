@@ -94,7 +94,10 @@ const s = {
   slideWrap:       { flex:1, overflow:"hidden", position:"relative" },
   slide:           { padding:"52px 24px 24px", display:"flex", flexDirection:"column", height:"100%", overflowY:"auto" },
   eyebrow:         { fontSize:11, fontWeight:600, letterSpacing:2, textTransform:"uppercase", color:"#38C0CE", marginBottom:16 },
-  headline:        { fontFamily:"ui-serif, 'New York', Georgia, serif", fontSize:36, fontWeight:600, lineHeight:1.12, letterSpacing:-0.5, marginBottom:14 },
+  // color EXPLICIT — global index.css sets h1{color:var(--text-h)} for the
+  // landing page, which is near-black in light scheme. Without this the
+  // headline is ink-on-ink for every light-mode device (caught in R2 preview).
+  headline:        { fontFamily:"ui-serif, 'New York', Georgia, serif", fontSize:36, fontWeight:600, lineHeight:1.12, letterSpacing:-0.5, marginBottom:14, color:"#EDE9E0" },
   subtext:         { fontSize:15, lineHeight:1.6, color:"#888" },
   demoCard:        { marginTop:28, background:"#16181D", borderRadius:20, padding:18, border:"1px solid #23262C", borderTop:"2px solid #38C0CE" },
   demoLabel:       { fontSize:10, fontWeight:600, letterSpacing:1.5, textTransform:"uppercase", color:"#555", marginBottom:12 },

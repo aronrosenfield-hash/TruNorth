@@ -32,7 +32,7 @@ export default function Methodology({ onBack }) {
     <div style={{ minHeight: "100dvh", background: C.bg, color: C.text, fontFamily: FONT }}>
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "calc(24px + env(safe-area-inset-top,0px)) 22px 80px" }}>
         <button onClick={onBack} style={{ background: "transparent", border: "none", color: C.accent, fontSize: 14, fontWeight: 600, cursor: "pointer", padding: "8px 0", marginBottom: 8 }}>← Back</button>
-        <h1 style={{ fontFamily: "ui-serif, 'New York', Georgia, serif", fontSize: 32, fontWeight: 600, letterSpacing: -0.5, marginBottom: 6 }}>How TruNorth grades work</h1>
+        <h1 style={{ fontFamily: "ui-serif, 'New York', Georgia, serif", fontSize: 32, fontWeight: 600, letterSpacing: -0.5, marginBottom: 6, color: C.text }}>How TruNorth grades work</h1>
         <p style={{ fontSize: 13, color: C.textMute, marginBottom: 24 }}>Methodology, published in full. Last updated June 11, 2026.</p>
 
         <P>Every grade in TruNorth is computed by the published formula on this page, from public records we cite. No grade is hand-set, no company can pay to change one, and the same math runs identically whether a brand leans left, right, or neither.</P>
