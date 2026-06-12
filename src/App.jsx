@@ -8066,7 +8066,11 @@ if (screen === "basket") {
       {/* BOTTOM NAV — in-flow flex child.
           html { height:100dvh } makes the full chain reach the physical screen bottom.
           paddingBottom:env(safe-area-inset-bottom) fills the home indicator zone. */}
-      <div style={{ flexShrink:0, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 8px)" }}>
+      {/* B66 fix #2 (Aron's device repro): the scroll area's
+          -webkit-overflow-scrolling:touch promotes it to a composited layer
+          on iOS WebKit, which painted OVER the Lens circle's protruding top.
+          position:relative + zIndex keeps the bar (and the circle) on top. */}
+      <div style={{ flexShrink:0, position:"relative", zIndex:10, background:T.bg2, borderTop:`1px solid ${T.border}`, display:"flex", paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 8px)", overflow:"visible" }}>
         {[
           // R2 (brief §3): four surfaces — TODAY · LENS(center) · LEDGER, with
           // YOU living top-right. Top Picks and Browse fold into Lens (chips
@@ -8077,24 +8081,26 @@ if (screen === "basket") {
           {id:"search",  icon:"ti-crosshair", label:"Lens", center:true},
           {id:"library", icon:"ti-coin",      label:"Ledger"},
         ].map(t => {
-          const isActive = tab === t.id;
+          const isActive = !t.center && tab === t.id;
           return (
             <button
               key={t.id}
               onClick={() => {
-                if (t.center && tab === "search") { setShowScanner(true); track("scanner_open", { tab: "lens_double" }); return; }
+                // B66 fix #3: the center circle IS the camera — one tap,
+                // viewfinder, no tab switch, no keyboard (the autofocus
+                // path popped the keyboard + accessory bar on device).
+                if (t.center) { setShowScanner(true); track("scanner_open", { tab: "lens_center" }); return; }
                 setTab(t.id);
-                if (t.center) setTimeout(() => { try { document.getElementById("tn-search")?.focus(); } catch {} }, 60);
               }}
-              aria-label={t.center ? "Lens — search, ask, or point" : t.label}
+              aria-label={t.center ? "Lens — scan a product" : t.label}
               style={{ flex:1, padding:"10px 4px 8px", display:"flex", flexDirection:"column", alignItems:"center", gap:3, background:"none", border:"none", cursor:"pointer" }}
             >
               {t.center ? (
                 <div style={{
                   width:46, height:46, borderRadius:"50%",
-                  background: isActive ? T.accent : T.bg3,
+                  background:T.bg3,
                   border:`1.5px solid ${T.accent}`,
-                  color: isActive ? "#0E0F12" : T.accent2,
+                  color:T.accent2,
                   display:"flex", alignItems:"center", justifyContent:"center",
                   marginTop:-14, marginBottom:-2,
                   boxShadow:"0 6px 18px rgba(56,192,206,0.18)"
