@@ -3351,6 +3351,19 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     <>
                       <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.2 }}>Take the 30-second quiz</div>
                       <div style={{ fontSize:12, color:T.txt3, marginTop:3, lineHeight:1.4 }}>{enriched.cat} · data shown below; your values set the grade</div>
+                      {/* Trust layer: evidence-depth chip for UN-quizzed users
+                          too (the profile branch renders its own copy). */}
+                      {(() => {
+                        const n = enriched.realCats ?? 0;
+                        if (n <= 0) return null;
+                        const limited = n <= 1;
+                        return (
+                          <div style={{ display:"inline-flex", alignItems:"center", gap:5, marginTop:6, padding:"3px 9px", borderRadius:20, fontSize:10.5, fontWeight:600, background:limited ? T.bg3 : T.accentBg, border:`1px solid ${limited ? T.border2 : T.accent}`, color: limited ? T.txt3 : T.accent2 }}>
+                            <i className={`ti ${limited ? "ti-file" : "ti-files"}`} aria-hidden="true" style={{ fontSize:11 }} />
+                            {limited ? `Limited data — ${n} record category` : `Based on ${n} record categories`}
+                          </div>
+                        );
+                      })()}
                     </>
                   )}
                 </div>
