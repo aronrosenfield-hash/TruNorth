@@ -26,6 +26,20 @@ Everything verified ready (Xcode 26.5, .p8 key, clean tree, build + 27/27 scorin
 
 ---
 
+## 🧭 COMPASS REDESIGN — IN FLIGHT (updated 2026-06-12 AM)
+
+| Step | Status |
+|---|---|
+| Design brief + 6-screen mockups | ✅ docs/design/REDESIGN_BRIEF.md + public/mockups/compass-redesign.html |
+| Aron's decisions | ✅ Dark ink · Make the Switch · Radar (identity) — brief §8 |
+| **R1 — Civic Premium skin** | ✅ Build 61 |
+| **R1.1 — ring verdict seal** (radar sharded on real data — Adobe "what the hell is that") + E-9 cap | ✅ Build 62 — Aron: "Ring Seal — Looks good" |
+| **R1.2 — chip fit + cooler signal color** (#3DD6B5→#38C0CE cyan-teal, full sweep) | ✅ Build 63 (2026-06-12, `fde1d05b2`) |
+| **R2 — The Flows** (4-surface nav Today/Lens/Ledger/You · Lens verdict card · Match tension cards · Ledger v1 · Versus) | ⏳ AWAITS ARON'S GO once the skin feels right on device — spec brief §3-4, sequencing §6 |
+| Wrapped | 💤 dormant until December |
+
+Build numbering is now true (ExportOptions `manageAppVersionAndBuildNumber=false`): repo build == ASC build from 61 onward; ASC builds ≤60 ran one ahead.
+
 ## 🔧 OUTSTANDING — ENGINEERING (updated 2026-06-11 PM)
 
 **Shipped this round (`3f251e342`):** EDGAR expansion **+1,583 public cos → 12,841 brands** (all count claims now 12,000+) · ToS;DR privacy source live (E-2 ✅ — license verified CC BY-SA 3.0 grades-only-with-attribution, 114 fills, monthly cron) · Lever 2 residuals ✅ (1,607 factual no_guns from ATF-FFL absence, 27 sells/makes from FFL evidence, private-co execPay→na) · Lever 3 BUILT (`scripts/ai-research-bake.mjs`, citation-required) with a 20-brand pilot dispatched — **full ~3,000-brand run awaits your go (~$300-700 API)** · private+zero-data brands get a distinct "not required to disclose" explainer card with report-a-record CTA · fixed fabricated "C 50" on zero-data brands for quiz users (now "?").
@@ -49,7 +63,7 @@ Every finding from the investor/product review is fixed and pushed (batches 1-5 
 
 | # | Item | Notes |
 |---|---|---|
-| E-9 | **Single-stance-signal grade tuning** | A brand whose ONLY signal is a stance match (e.g. no_guns for a gun-avoider) can grade A at 75 post-shrinkage. Defensible? Or cap stance-only brands at B / require ≥1 record-backed category for A? Mirror question to the Build-56 D-floor. Needs Aron's call. |
+| ~~E-9~~ | ~~Single-stance-signal grade tuning~~ | ✅ done 2026-06-12 (Build 62) — Aron's call: "With only 1 category, we should cap at B." Implemented in both engines (rebake + personalized): `contributingCats === 1 → ws ≤ 62`, upside-only. 117 brands A→B; methodology line "One strong record can earn a B; an A takes a broad, verified track record" now enforced. |
 
 
 | # | Item | Size | Notes |
