@@ -18,20 +18,20 @@ import { ImageResponse } from "@vercel/og";
 
 export const config = { runtime: "edge" };
 
-const ACCENT2 = "#7c6dfa";
-const BG = "#0f0f0f";
-const BG2 = "#1a1a1a";
-const TXT = "#f2f2f2";
-const TXT2 = "#a8a8a8";
-const TXT3 = "#666666";
+const ACCENT2 = "#38C0CE";
+const BG = "#0E0F12";
+const BG2 = "#16181D";
+const TXT = "#EDE9E0";
+const TXT2 = "#A9A498";
+const TXT3 = "#6E6A60";
 
 const GRADE_COLORS = {
-  A: { bg: "#0d2318", border: "#4caf82", text: "#4caf82", verdict: "Aligned with your values" },
-  B: { bg: "#1a2810", border: "#8bc34a", text: "#8bc34a", verdict: "Mostly aligned with your values" },
-  C: { bg: "#2a2210", border: "#f0a030", text: "#f0a030", verdict: "Mixed signals on your values" },
-  D: { bg: "#2a1810", border: "#ff7043", text: "#ff7043", verdict: "Mostly clashes with your values" },
-  F: { bg: "#2a0d0d", border: "#e24a4a", text: "#e24a4a", verdict: "Clashes with your values" },
-  "?": { bg: "#1a1a1a", border: "#3a3a3a", text: TXT2, verdict: "" },
+  A: { bg: "#0E2126", border: "#1E444A", text: "#38C0CE", verdict: "Aligned with your values" },
+  B: { bg: "#19230F", border: "#2E4A1E", text: "#9CC98A", verdict: "Mostly aligned with your values" },
+  C: { bg: "#1F2228", border: "#2A2E35", text: "#A9A498", verdict: "Mixed signals on your values" },
+  D: { bg: "#241B0D", border: "#4A381E", text: "#E8A04C", verdict: "Mostly clashes with your values" },
+  F: { bg: "#291110", border: "#4A1E1E", text: "#E0524D", verdict: "Clashes with your values" },
+  "?": { bg: "#16181D", border: "#2A2E35", text: TXT2, verdict: "" },
 };
 
 export default function handler(req) {

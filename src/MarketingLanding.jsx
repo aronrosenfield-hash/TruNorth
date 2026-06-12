@@ -22,19 +22,21 @@ export function setMarketingSkipped() {
 
 // ─── tokens ─────────────────────────────────────────────────────────────────
 const C = {
-  bg:        "#0f0f0f",
-  bgSoft:    "#161616",
-  bgCard:    "#1c1c1e",
-  border:    "#2a2a2c",
-  text:      "#f2f2f2",
-  textDim:   "#b0b0b5",
-  textMute:  "#8a8a92",
-  accent:    "#7c6dfa",
-  accent2:   "#aa3bff",
-  good:      "#4ade80",
-  warn:      "#fde68a",
-  bad:       "#fca5a5",
-  gold:      "#fdb74e",
+  // Civic Premium (2026-06-12): the landing finally matches the app —
+  // archival ink + bone, verdigris signal, brass for records.
+  bg:        "#0E0F12",
+  bgSoft:    "#16181D",
+  bgCard:    "#16181D",
+  border:    "#23262C",
+  text:      "#EDE9E0",
+  textDim:   "#A9A498",
+  textMute:  "#9A9489",
+  accent:    "#38C0CE",
+  accent2:   "#5CD6E0",
+  good:      "#9CC98A",
+  warn:      "#E8A04C",
+  bad:       "#E0524D",
+  gold:      "#C9A86A",
 };
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
@@ -111,7 +113,7 @@ function DemoCard() {
   return (
     <div style={{
       background:C.bgCard, border:`1px solid ${C.border}`, borderRadius:18,
-      padding:18, boxShadow:"0 24px 60px -20px rgba(124,109,250,0.25)",
+      padding:18, boxShadow:"0 24px 60px -20px rgba(56,192,206,0.18)",
     }}>
       <div style={{
         fontSize:10, fontWeight:700, letterSpacing:1.5, textTransform:"uppercase",
@@ -254,7 +256,7 @@ function PrimaryCTA({ children, onClick, href, style }) {
     background:`linear-gradient(135deg, ${C.accent} 0%, ${C.accent2} 100%)`,
     color:"#fff", fontSize:15, fontWeight:700, textDecoration:"none",
     border:"none", cursor:"pointer", fontFamily:FONT,
-    boxShadow:"0 10px 30px -10px rgba(124,109,250,0.6)",
+    boxShadow:"0 10px 30px -10px rgba(56,192,206,0.45)",
     ...style,
   };
   if (href) return <a href={href} style={baseStyle}>{children}</a>;
@@ -347,8 +349,9 @@ export default function MarketingLanding({ onOpenPrivacy }) {
           <div className="tn-fade-in">
             <Eyebrow>Values-based shopping, made simple</Eyebrow>
             <h1 style={{
-              fontSize:"clamp(34px, 6vw, 54px)", fontWeight:800, lineHeight:1.04,
-              letterSpacing:-1.5, marginBottom:18, color:C.text,
+              fontFamily:"ui-serif, 'New York', Georgia, serif",
+              fontSize:"clamp(34px, 6vw, 54px)", fontWeight:600, lineHeight:1.08,
+              letterSpacing:-0.5, marginBottom:18, color:C.text,
             }}>
               Shop with your values.<br/>
               <span style={{

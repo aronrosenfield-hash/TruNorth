@@ -27,15 +27,15 @@ import { ImageResponse } from "@vercel/og";
 
 export const config = { runtime: "edge" };
 
-const ACCENT  = "#9d91ff";
-const ACCENT2 = "#7c6dfa";
-const BG      = "#0f0f0f";
-const BG2     = "#1a1a1a";
-const TXT     = "#f2f2f2";
-const TXT2    = "#a8a8a8";
-const TXT3    = "#666666";
-const GREEN   = "#4caf82";
-const GOLD    = "#f0c040";
+const ACCENT  = "#5CD6E0";
+const ACCENT2 = "#38C0CE";
+const BG      = "#0E0F12";
+const BG2     = "#16181D";
+const TXT     = "#EDE9E0";
+const TXT2    = "#A9A498";
+const TXT3    = "#6E6A60";
+const GREEN   = "#9CC98A";
+const GOLD    = "#C9A86A";
 
 const LEAN_LABEL = {
   left:    { label: "Progressive",   color: "#4a90e2" },
