@@ -39,6 +39,29 @@ export function scoreGrade(n) {
 // everything App.jsx renders from the index — plus `excl` and `flags` so
 // computeScore() gets identical inputs on the collapsed row and the
 // expanded detail (no grade flicker on tap).
+// Review fix (2026-06-11): the EDGAR expansion added 1,583 NYSE/Nasdaq
+// mid-caps — correct for coverage, wrong for a consumer shopping app's
+// DEFAULT browse/discovery surfaces (search "a" shouldn't surface regional
+// banks above Adidas). consumerFacing=false marks entries the app down-ranks
+// in search and hides from Browse unless "Show all companies" is on.
+// Heuristic: consumer-sector cats are consumer by default; B2B-leaning cats
+// (and the zero-data EDGAR cohort) need consumer EVIDENCE — a store
+// footprint, curated logo, recall history, or UPC/brand-map presence proxy.
+const CONSUMER_CATS = new Set([
+  "Retail", "Grocery", "Food & Beverage", "Consumer Goods",
+  "Apparel & Fashion", "Beauty & Personal Care", "Hospitality",
+  "Automotive", "Sports & Outdoor", "Travel & Transportation",
+]);
+function isConsumerFacing(co) {
+  const evidence = !!(co.storeFootprint || co.logoUrl || co.recalls?.recalls?.length || co.upcCount || co.products);
+  if (co.addedBy === "edgar-expansion-2026-06" && (co.realCats ?? 0) === 0 && !evidence) return false;
+  if (CONSUMER_CATS.has(co.cat)) return true;
+  // Tech / Entertainment / Healthcare / Financial / Energy / Mfg / Professional:
+  // consumer only with evidence (Netflix has a logo + products; a midcap
+  // drilling servicer doesn't).
+  return evidence;
+}
+
 export function indexEntryFromCompanyFile(slug, co) {
   // Categories whose narrative says "No public record found" are excluded
   // from weighted scoring; mirror that decision into the bundle.
@@ -77,6 +100,7 @@ export function indexEntryFromCompanyFile(slug, co) {
     competitors:    co.competitors,
     logoUrl:        co.logoUrl,
     hasRecall:      co.recalls?.recalls?.length > 0,
+    ...(isConsumerFacing(co) ? {} : { consumerFacing: false }),
     recallSeverity: co.recalls?.severityMax,
     // bdsListed lives at ownership.bdsListed in company files (never
     // top-level). Emit a compact boolean only when set.

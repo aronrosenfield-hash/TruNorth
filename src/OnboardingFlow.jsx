@@ -24,119 +24,66 @@ const CATEGORIES = [
 ];
 
 export default function OnboardingFlow({ onComplete }) {
-  const [slide, setSlide]           = useState(0);
+  // Review fix (2026-06-11): was 3 slides before the quiz (7 screens total
+  // before a user touched a real brand). Slide 1 (the 9-category tour)
+  // duplicated what the quiz itself teaches, and slide 2 was a second value
+  // prop. Now ONE screen: hook + interactive live example + proof stats +
+  // consent line → straight to the app. Time-to-first-brand: 2 taps.
   const [expandedCo, setExpandedCo] = useState(null);
-  const [fading, setFading]         = useState(false);
-
-  function goTo(n) {
-    setFading(true);
-    setTimeout(() => { setSlide(n); setFading(false); }, 280);
-  }
 
   function handleNext() {
-    if (slide < 2) { goTo(slide + 1); return; }
-    // Phase 5.as (#11): killed the onboarding sign-in. We were capturing
-    // email + password that did nothing (no backend auth), creating a
-    // fake-friction funnel. Now: 3 informational slides → straight into
-    // the app. Email is captured ONLY at Pro upgrade (paywall), where
-    // it's actually required for Stripe + tied to a real account.
     localStorage.setItem("tn_hasOnboarded", "1");
     try { sessionStorage.setItem("tn_justOnboarded", String(Date.now())); } catch {}
     onComplete({ email: null, isGuest: true });
   }
 
-  const btnLabel = slide === 0 ? "Let's go →" : slide === 1 ? "Next →" : "Start exploring →";
-
   return (
     <div style={s.wrap}>
-      <div style={{ ...s.slideWrap, opacity: fading ? 0 : 1, transform: fading ? "translateX(-20px)" : "translateX(0)", transition: "opacity 0.28s ease, transform 0.28s ease" }}>
-        {slide === 0 && (
-          <div style={s.slide}>
-            <div style={s.eyebrow}>Know where your money goes</div>
-            <h1 style={s.headline}>Your wallet<br />is a <em style={{ color:"#7c6dfa", fontStyle:"normal" }}>vote.</em><br />Cast it wisely.</h1>
-            <p style={s.subtext}>See how every brand scores on what matters to you, before you buy.</p>
-            <div style={s.demoCard}>
-              <div style={s.demoLabel}>Live example — tap a company</div>
-              {COMPANIES.map(co => (
-                <div key={co.name}>
-                  <div style={s.companyRow} onClick={() => setExpandedCo(expandedCo === co.name ? null : co.name)}>
-                    <div style={{ ...s.coLogo, background: co.bg }}>{co.emoji}</div>
-                    <div style={{ flex:1 }}>
-                      <div style={s.coName}>{co.name}</div>
-                      <div style={s.coMeta}>{co.meta}</div>
-                    </div>
-                    <div style={{ ...s.gradeBadge, ...co.gradeStyle }}>{co.grade}</div>
+      <div style={s.slideWrap}>
+        <div style={s.slide}>
+          <div style={s.eyebrow}>Know where your money goes</div>
+          <h1 style={s.headline}>Your wallet<br />is a <em style={{ color:"#7c6dfa", fontStyle:"normal" }}>vote.</em><br />Cast it wisely.</h1>
+          <p style={s.subtext}>Every brand graded on 9 things that matter — politics, environment, labor & more — from public records only. Real records, not opinions.</p>
+          <div style={s.demoCard}>
+            <div style={s.demoLabel}>Live example — tap a company</div>
+            {COMPANIES.map(co => (
+              <div key={co.name}>
+                <div style={s.companyRow} onClick={() => setExpandedCo(expandedCo === co.name ? null : co.name)}>
+                  <div style={{ ...s.coLogo, background: co.bg }}>{co.emoji}</div>
+                  <div style={{ flex:1 }}>
+                    <div style={s.coName}>{co.name}</div>
+                    <div style={s.coMeta}>{co.meta}</div>
                   </div>
-                  {expandedCo === co.name && (
-                    <div style={s.expandedDetail}>
-                      {co.details.map(d => (
-                        <div key={d.label} style={s.detailRow}>
-                          <span style={s.detailLabel}>{d.label}</span>
-                          <div style={s.detailBarWrap}><div style={{ ...s.detailBarFill, width:`${d.pct}%`, background:d.color }} /></div>
-                          <span style={{ ...s.detailGrade, color:d.color }}>{d.grade}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div style={{ ...s.gradeBadge, ...co.gradeStyle }}>{co.grade}</div>
                 </div>
-              ))}
-            </div>
-            <div style={s.tapHint}><div style={s.tapDot} /><span style={{ fontSize:11, color:"#555" }}>Tap any company to see their breakdown</span></div>
-          </div>
-        )}
-
-        {slide === 1 && (
-          <div style={s.slide}>
-            <h2 style={{ ...s.headline, fontSize:30 }}>9 things<br />that matter.</h2>
-            <p style={{ ...s.subtext, marginBottom:24 }}>Real data from the FEC, EPA, OSHA, NLRB, BHRRC, HIBP, and more — not opinions.</p>
-            {CATEGORIES.map(cat => (
-              <div key={cat.name} style={s.catItem}>
-                <div style={{ ...s.catIcon, background:cat.bg }}>{cat.emoji}</div>
-                <div style={{ flex:1 }}>
-                  <div style={s.catName}>{cat.name}</div>
-                  <div style={s.catDesc}>{cat.desc}</div>
-                </div>
-                <div style={s.catBar}><div style={{ ...s.catFill, width:`${cat.pct}%` }} /></div>
+                {expandedCo === co.name && (
+                  <div style={s.expandedDetail}>
+                    {co.details.map(d => (
+                      <div key={d.label} style={s.detailRow}>
+                        <span style={s.detailLabel}>{d.label}</span>
+                        <div style={s.detailBarWrap}><div style={{ ...s.detailBarFill, width:`${d.pct}%`, background:d.color }} /></div>
+                        <span style={{ ...s.detailGrade, color:d.color }}>{d.grade}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        )}
-
-        {slide === 2 && (
-          <div style={s.slide}>
-            <div style={s.ctaArt}><div style={s.ctaArtInner}><svg width="36" height="36" viewBox="0 0 48 48"><polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/></svg></div></div>
-            <h2 style={{ ...s.headline, fontSize:28, textAlign:"center" }}>Shop with a<br /><em style={{ color:"#7c6dfa", fontStyle:"normal" }}>clear conscience.</em></h2>
-            <p style={{ ...s.subtext, textAlign:"center", marginBottom:28 }}>12,000+ companies tracked. Top brands carry full grades across 9 categories — federal regulators, court records, corporate filings. Real records, not opinions.</p>
-            <div style={s.statsRow}>
-              {[["12,000+","Tracked"],["9","Categories"],["200+","Sources"]].map(([num,label]) => (
-                <div key={label} style={{ textAlign:"center" }}>
-                  <div style={s.statNum}>{num}</div>
-                  <div style={s.statLabel}>{label}</div>
-                </div>
-              ))}
-            </div>
-            <div style={{ background:"#161616", border:"1px solid #222", borderRadius:14, padding:"16px 18px", marginBottom:8 }}>
-              <div style={{ fontSize:13, color:"#aaa", lineHeight:1.55 }}>
-                Search, scan barcodes, browse by category — all free. Take the 30-second values quiz any time to personalize your scores.
+          <div style={{ ...s.statsRow, marginTop:22 }}>
+            {[["12,000+","Companies"],["9","Categories"],["200+","Public sources"]].map(([num,label]) => (
+              <div key={label} style={{ textAlign:"center" }}>
+                <div style={s.statNum}>{num}</div>
+                <div style={s.statLabel}>{label}</div>
               </div>
-            </div>
-            {/* QA fix 2026-06-10: both links were href="#" (dead) — an App
-                Review-visible defect on the consent line. Terms = Apple's
-                standard EULA (the App Store listing's default; no custom ToS
-                exists yet). Privacy = the live #privacy route on the site.
-                target=_blank so the native shell opens Safari instead of
-                navigating the WebView away from onboarding. */}
-            <p style={s.terms}>By continuing you agree to our <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:"#7c6dfa", textDecoration:"none" }}>Terms</a> & <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:"#7c6dfa", textDecoration:"none" }}>Privacy Policy</a>.</p>
+            ))}
           </div>
-        )}
+          <p style={{ ...s.terms, marginTop:14 }}>By continuing you agree to our <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:"#7c6dfa", textDecoration:"none" }}>Terms</a> & <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:"#7c6dfa", textDecoration:"none" }}>Privacy Policy</a>.</p>
+        </div>
       </div>
 
       <div style={s.bottom}>
-        <div style={s.dots}>
-          {[0,1,2].map(i => <div key={i} style={{ ...s.dot, ...(i===slide ? s.dotActive : {}) }} />)}
-        </div>
-        <button style={s.btnPrimary} onClick={handleNext}>{btnLabel}</button>
-        {slide < 2 && <button style={s.btnSkip} onClick={() => goTo(2)}>Skip</button>}
+        <button style={s.btnPrimary} onClick={handleNext}>Start exploring →</button>
       </div>
     </div>
   );

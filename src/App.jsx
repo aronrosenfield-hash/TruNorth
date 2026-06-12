@@ -611,7 +611,10 @@ const QUIZ_STEPS_ALT_B = [
       {v:"childLabor",   l:"Child labor in supply chain",        icon:"ti-baby-carriage"},
       {v:"privacy",      l:"Privacy abuse",                      icon:"ti-lock"},
       {v:"monopoly",     l:"Monopoly behavior",                  icon:"ti-crown"},
-      {v:"foreignOwn",   l:"Made in adversary nations",          icon:"ti-world"},
+      // Build 57 (review): was "Made in adversary nations" — loaded framing
+      // for a neutrality-positioned app, and the flag actually fires on
+      // foreign PARENT OWNERSHIP, not manufacturing origin. Say what it does.
+      {v:"foreignOwn",   l:"Foreign-owned parent company",       icon:"ti-world"},
     ]},
 ];
 
@@ -825,6 +828,30 @@ function applyOverlay(co, k, baseline0to100) {
   return Math.max(0, Math.min(100, baseline0to100 + ov.delta));
 }
 
+// Build 57 (review): ONE canonical weight scale. The quiz stores ranks 1-5;
+// stance axes get 3 (× the 1.5 stance boost = 4.5 — parity with politics,
+// never outranking an explicit 5). These defaults fill LEGACY profiles that
+// predate per-category weights, and the Why-panel uses the SAME constants —
+// it previously defaulted to 3/2 while computeScore used 1.0/1.2, so the
+// explanation could disagree with the grade it explained (M7).
+export const PROFILE_DEFAULT_WEIGHTS = {
+  political: 3, charity: 2, environment: 3, labor: 3, dei: 2,
+  animals: 2, guns: 2, privacy: 2, execPay: 2, health: 2,
+};
+
+// M7: versioned profile normalization — every read path goes through this,
+// so old localStorage shapes can never reach the scoring engine.
+function normalizeProfile(p) {
+  if (!p || typeof p !== "object") return null;
+  if (p.v === 2) return p;
+  const weights = { ...PROFILE_DEFAULT_WEIGHTS, ...(p.weights || {}) };
+  for (const k of Object.keys(weights)) {
+    const n = Number(weights[k]);
+    weights[k] = Number.isFinite(n) ? Math.max(1, Math.min(5, n)) : PROFILE_DEFAULT_WEIGHTS[k];
+  }
+  return { ...p, weights, dealBreakers: Array.isArray(p.dealBreakers) ? p.dealBreakers : [], v: 2 };
+}
+
 function computeScore(co, profile) {
   if (!profile) return co.overall;
   // Phase 5.aa: SYMMETRIC user-preference boosts. A user who picks a clear
@@ -842,17 +869,18 @@ function computeScore(co, profile) {
   const animalBoost    = profile.animalTesting && profile.animalTesting !== "neutral" ? 1.5 : 1;
   const gunBoost       = profile.guns         && profile.guns         !== "neutral" ? 1.5 : 1;
   const unionBoost     = profile.unionSupport && profile.unionSupport !== "neutral" ? 1.5 : 1;
+  const W0 = PROFILE_DEFAULT_WEIGHTS;
   const baseWeights = {
-    political:    (profile.weights?.political    || 1.2) * politicalBoost,
-    charity:      profile.weights?.charity      || 1.0,
-    environment:  (profile.weights?.environment  || 1.2),
-    labor:        (profile.weights?.labor       || 1.2) * unionBoost,
-    dei:          (profile.weights?.dei          || 1.2) * deiBoost,
-    animals:      (profile.weights?.animals      || 1.0) * animalBoost,
-    guns:         (profile.weights?.guns        || 1.0) * gunBoost,
-    privacy:      profile.weights?.privacy      || 1.0,
-    execPay:      profile.weights?.execPay      || 1.0,
-    health:       profile.weights?.health       || 1.0,
+    political:    (profile.weights?.political    || W0.political) * politicalBoost,
+    charity:      profile.weights?.charity      || W0.charity,
+    environment:  (profile.weights?.environment  || W0.environment),
+    labor:        (profile.weights?.labor       || W0.labor) * unionBoost,
+    dei:          (profile.weights?.dei          || W0.dei) * deiBoost,
+    animals:      (profile.weights?.animals      || W0.animals) * animalBoost,
+    guns:         (profile.weights?.guns        || W0.guns) * gunBoost,
+    privacy:      profile.weights?.privacy      || W0.privacy,
+    execPay:      profile.weights?.execPay      || W0.execPay,
+    health:       profile.weights?.health       || W0.health,
   };
   // Phase 5.ac — "neutral" enum means NO DATA SIGNAL for that category and is
   // ALWAYS excluded from the weighted score. (Previously we kept it when the
@@ -869,6 +897,7 @@ function computeScore(co, profile) {
   // those badges are informational only — they don't contribute to the grade.
   let weightedSum  = 0;
   let weightUsed   = 0;
+  let contributingCats = 0; // evidence breadth — drives shrinkage (Build 57)
   let minUniversal = 100; // worst record-backed category seen (Build 56 floor)
   // PR-3: when the scoring-flags feature is on, exclude categories explicitly
   // marked `flags.<cat>.na` or `flags.<cat>.notDisclosed`. `_inferred` scores
@@ -933,6 +962,7 @@ function computeScore(co, profile) {
     }
     weightedSum += catScore * baseWeights[k];
     weightUsed  += baseWeights[k];
+    contributingCats++;
   }
   // If nothing scored, fall back to the overall (un-personalized) score so the
   // app doesn't show a misleading "50" for companies with no data at all.
@@ -941,9 +971,14 @@ function computeScore(co, profile) {
   // more weighted evidence behind the score, the more of its raw signal
   // survives; replaces the old hard signal-count grade cap in scoreGrade.
   // co.overall is already shrunk, so the fallback path must NOT re-shrink.
+  // Build 57 (review): shrink by EVIDENCE BREADTH (number of contributing
+  // categories), not by weight mass — user emphasis changes the mix, never
+  // the confidence. Matches the baked engine's semantics exactly (its
+  // weights are ~1/category, so weightUsed ≈ count there).
   const K_SHRINK = 1.5;
-  let ws = weightUsed > 0
-    ? (weightedSum + 50 * K_SHRINK) / (weightUsed + K_SHRINK)
+  const raw = weightUsed > 0 ? weightedSum / weightUsed : null;
+  let ws = raw != null
+    ? (raw * contributingCats + 50 * K_SHRINK) / (contributingCats + K_SHRINK)
     : (co.overall ?? null);
   // 2026-06-11 (100 Thieves repro): a zero-data brand used to fall through
   // as ||50 → quiz users saw a fabricated "C 50" right next to the
@@ -3202,13 +3237,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                         // foreign-ownership dealbreaker silently dropped the
                         // brand 30 points. Now penalties are first-class
                         // citizens in the explanation.
-                        const baseW = {
-                          political:profile.weights?.political||3, charity:profile.weights?.charity||2,
-                          environment:profile.weights?.environment||3, labor:profile.weights?.labor||3,
-                          dei:profile.weights?.dei||3, animals:profile.weights?.animals||2,
-                          guns:profile.weights?.guns||2, privacy:profile.weights?.privacy||2,
-                          execPay:profile.weights?.execPay||2,
-                        };
+                        // M7 fix: SAME defaults as computeScore (was 3/2 here
+                        // vs 1.0/1.2 there — panel could contradict the grade).
+                        const baseW = Object.fromEntries(CAT_KEYS.map(k => [k, profile.weights?.[k] || PROFILE_DEFAULT_WEIGHTS[k]]));
                         const impacts = CAT_KEYS.map(k => {
                           const v = enriched.sc?.[k];
                           if (getDataState(k, v) === "unknown") return null;
@@ -4112,9 +4143,12 @@ function Quiz({ onComplete, onSkip, initialProfile = null }) {
           charity:      answers.charityImportance    || 2,
           environment:  answers.envImportance        || 3,
           labor:        answers.laborImportance      || 3,
-          dei:          answers.deiImportance !== undefined ? answers.deiImportance : (answers.deiLean !== "neutral" ? 4 : 2),
-          animals:      answers.animalTesting !== "neutral" ? 4 : 2,
-          guns:         answers.guns !== "neutral"   ? 4 : 2,
+          // Build 57 (review): stance axes were 4 (×1.5 boost = 6.0) — they
+          // outranked even a 5-ranked category. Now 3 (×1.5 = 4.5): a clear
+          // stance matters a lot, but an explicit rank-5 still wins.
+          dei:          answers.deiImportance !== undefined ? answers.deiImportance : (answers.deiLean !== "neutral" ? 3 : 2),
+          animals:      answers.animalTesting !== "neutral" ? 3 : 2,
+          guns:         answers.guns !== "neutral"   ? 3 : 2,
           privacy:      answers.privacy              || 2,
           execPay:      answers.execPay              || 2,
         },
@@ -4927,11 +4961,11 @@ const [currentUser, setCurrentUser] = useState(() => {
 // their personalization after a reload (and so paying after a quiz doesn't
 // trigger a retake).
 const [profile, setProfile]   = useState(() => {
-  try { return JSON.parse(localStorage.getItem("tn_profile") || "null"); } catch { return null; }
+  try { return normalizeProfile(JSON.parse(localStorage.getItem("tn_profile") || "null")); } catch { return null; }
 });
 useEffect(() => {
   try {
-    if (profile) localStorage.setItem("tn_profile", JSON.stringify(profile));
+    if (profile) localStorage.setItem("tn_profile", JSON.stringify(normalizeProfile(profile)));
     else         localStorage.removeItem("tn_profile");
   } catch {}
 }, [profile]);
@@ -5039,6 +5073,10 @@ useEffect(() => {
     catch { return new Set(); }
   });
   const [showSavedOnly, setShowSavedOnly] = useState(false);
+  // Review fix (2026-06-11): default surfaces exclude non-consumer companies
+  // (EDGAR mid-caps, B2B). Search still finds them by exact intent — they
+  // rank below consumer matches — and this toggle reveals everything.
+  const [showAllCompanies, setShowAllCompanies] = useState(false);
   // Phase 5.ak (item #6): industryBucket filter — set when user taps a
   // Browse-tab category tile. Stricter than the loose name-match the
   // search input does (so "Airline" doesn't pull in companies whose
@@ -5386,11 +5424,21 @@ useEffect(() => {
       }
       // UX 7A: saved-only filter
       if (showSavedOnly && !savedSet.has(c.slug || c.id)) return false;
+      // Consumer gating: hide non-consumer entries from BROWSE surfaces
+      // (no query). With a query, keep them — someone typing "gulfport
+      // energy" means it — but they sort below consumer matches.
+      if (!showAllCompanies && c.consumerFacing === false && !query.trim() && !showSavedOnly) return false;
       // Phase 5.ak (item #6): industry-bucket filter — strict bucket match
       if (industryBucket && getBucket(c.cat || "") !== industryBucket) return false;
       return true;
     })
     .sort((a,b) => {
+      // Consumer-first: within any sort, consumer-facing entries rank above
+      // non-consumer ones (search for "target" → the retailer, not an
+      // obscure same-named entity).
+      const ca = a.consumerFacing === false ? 1 : 0;
+      const cb = b.consumerFacing === false ? 1 : 0;
+      if (ca !== cb) return ca - cb;
       // QA fix 2026-06-10: without a profile computeScore returns co.overall
       // RAW — null/undefined on the ~6,300 stub brands — so score-sort
       // compared NaN and ordered arbitrarily. `?? -1` sinks no-data brands
@@ -5401,7 +5449,7 @@ useEffect(() => {
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
     });
   },
-    [deduped, leanFilter, catFilters, flagFilters, query, searchHits, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket]
+    [deduped, leanFilter, catFilters, flagFilters, query, searchHits, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket, showAllCompanies]
   );
 
   // Phase 5.ag (perf): cap rendered company cards. Creating 11,000+ JSX
@@ -5693,6 +5741,28 @@ if (screen === "onboarding") {
                 <div style={{ fontSize:22, fontWeight:800, color:T.txt, lineHeight:1.2, marginBottom:4 }}>{fp.name}</div>
                 <div style={{ fontSize:11, color:T.accent2, fontFamily:"ui-monospace, Menlo, monospace", letterSpacing:1.5, marginBottom:10 }}>{fp.codename}</div>
                 <div style={{ fontSize:12.5, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
+              </div>
+            );
+          })()}
+          {/* Build 57 (review): show the math — users should see exactly how
+              their answers weigh, and it sets correct expectations for why
+              grades differ from a friend's. */}
+          {(() => {
+            const w = { ...PROFILE_DEFAULT_WEIGHTS, ...(profile?.weights || {}) };
+            const boosts = {
+              political: profile?.lean && profile.lean !== "neutral" ? 1.5 : 1,
+              dei: profile?.deiLean && profile.deiLean !== "neutral" ? 1.5 : 1,
+              animals: profile?.animalTesting && profile.animalTesting !== "neutral" ? 1.5 : 1,
+              guns: profile?.guns && profile.guns !== "neutral" ? 1.5 : 1,
+              labor: profile?.unionSupport && profile.unionSupport !== "neutral" ? 1.5 : 1,
+            };
+            const eff = CAT_KEYS.map(k => ({ k, x: (w[k] || 2) * (boosts[k] || 1) }))
+              .sort((a, b) => b.x - a.x).slice(0, 3);
+            return (
+              <div style={{ fontSize:11.5, color:T.txt3, textAlign:"center", marginBottom:14, maxWidth:340, lineHeight:1.5 }}>
+                Weighing most for you: {eff.map((e, i) => (
+                  <span key={e.k}>{i > 0 && " · "}<span style={{ color:T.txt2, fontWeight:600 }}>{CAT_LABELS[e.k]} ×{(Math.round(e.x * 10) / 10).toFixed(1).replace(/\.0$/, "")}</span></span>
+                ))}
               </div>
             );
           })()}
@@ -6201,7 +6271,8 @@ if (screen === "onboarding") {
             )}
             <span style={{ marginLeft:"auto", fontSize:11, color:T.txt3 }}>{filtered.length}</span>
             {(leanFilter!=="all"||catFilters.length>0||query||showSavedOnly) && (
-              <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQueryRaw("");setQuery("");setShowSavedOnly(false);}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
+              <button onClick={()=>setShowAllCompanies(v=>!v)} style={{ fontSize:11, color:showAllCompanies?T.accent2:T.txt3, background:showAllCompanies?T.accentBg:"transparent", border:`1px solid ${showAllCompanies?T.accent:T.border2}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }} title="Include banks, utilities, and other non-consumer companies in browse">{showAllCompanies ? "All companies" : "Consumer brands"}</button>
+              <button onClick={()=>{setLeanFilter("all");setCatFilters([]);setQueryRaw("");setQuery("");setShowSavedOnly(false);setShowAllCompanies(false);}} style={{ fontSize:11, color:T.rep, background:T.repBg, border:`1px solid ${T.rep}`, borderRadius:20, padding:"4px 9px", cursor:"pointer" }}>Clear all</button>
             )}
           </div>
 
