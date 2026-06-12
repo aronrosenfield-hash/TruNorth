@@ -1242,6 +1242,49 @@ function basketAlignment(savedCos, profile) {
   return { pct: graded ? Math.round((aligned / graded) * 100) : null, graded, aligned };
 }
 
+// B68 (Aron's call, options A+C): the HEADLINE basket statistic is the clash
+// count, not the aligned-%. For stanced users most national brands sit at C —
+// "no strong signal for you" — and an A/B-only percentage rendered "mostly
+// neutral, one problem" as "0% aligned." Clashes (D/F) are what the engine is
+// actually confident about; they're fixable; they're the loop. The math is
+// untouched and symmetric — this changes which true number leads.
+function basketVerdict(savedCos, profile, allCompanies) {
+  const out = { graded: 0, aligned: 0, neutral: 0, clashes: [], best: null, swap: null };
+  if (!profile || !savedCos.length) return out;
+  for (const co of savedCos) {
+    const s = computeScore(co, profile);
+    const g = scoreGrade(s, userRelevantRealCats(co, profile));
+    if (g === "?") continue;
+    out.graded++;
+    if (g === "A" || g === "B") {
+      out.aligned++;
+      if (!out.best || s > out.best.s) out.best = { co, g, s };
+    } else if (g === "C") {
+      out.neutral++;
+    } else {
+      out.clashes.push({ co, g, s });
+    }
+  }
+  out.clashes.sort((a, b) => (a.s ?? 99) - (b.s ?? 99)); // worst first
+  // The projection (option C): best same-aisle swap for the sharpest clash.
+  const worst = out.clashes[0];
+  if (worst && Array.isArray(worst.co.competitors) && allCompanies?.length) {
+    const lookup = new Map(allCompanies.map(c => [c.slug || c.id, c]));
+    let bestAlt = null;
+    for (const slug of worst.co.competitors) {
+      const alt = lookup.get(slug);
+      if (!alt) continue;
+      const s2 = computeScore(alt, profile);
+      if (s2 == null || s2 < (worst.s ?? 0) + 7) continue;
+      const g2 = scoreGrade(s2, userRelevantRealCats(alt, profile));
+      if (g2 === "?" || g2 === "D" || g2 === "F") continue;
+      if (!bestAlt || s2 > bestAlt.s) bestAlt = { co: alt, g: g2, s: s2 };
+    }
+    if (bestAlt) out.swap = { from: worst, to: bestAlt };
+  }
+  return out;
+}
+
 // ISO-ish week key for the alignment history (local-time, Monday-agnostic —
 // consistency week-over-week matters, not calendar pedantry).
 function weekKey(ts) {
@@ -6239,24 +6282,29 @@ if (screen === "basket") {
               swap + switch waiting one tap away). */}
           {savedSet.size > 0 && (() => {
             const savedCos = Array.from(savedSet).map(s => (companies || []).find(c => (c.slug || c.id) === s)).filter(Boolean);
-            const { pct, graded } = basketAlignment(savedCos, profile);
-            if (pct == null) return null;
-            const worst = savedCos
-              .map(co => { const s = computeScore(co, profile); return { co, s, g: scoreGrade(s, userRelevantRealCats(co, profile)) }; })
-              .filter(x => x.g === "D" || x.g === "F")
-              .sort((a, b) => (a.s ?? 99) - (b.s ?? 99))[0];
+            const bv = basketVerdict(savedCos, profile, companies || []);
+            if (bv.graded === 0) return null;
+            const n = bv.clashes.length;
+            const worst = bv.clashes[0] || null;
             return (
               <div style={{ width:"100%", maxWidth:340, marginBottom:18, padding:"14px 16px", boxSizing:"border-box", background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16 }}>
                 <div style={{ fontFamily:MONO, fontSize:10, color:T.gold, letterSpacing:"0.14em", marginBottom:8 }}>YOUR BASKET, JUDGED</div>
                 <div style={{ fontFamily:SERIF, fontSize:20, color:T.txt, lineHeight:1.3 }}>
-                  {pct}% of your basket aligns with your compass.
+                  {n === 0
+                    ? "Nothing in your basket clashes with your compass."
+                    : n === 1
+                      ? "One of your brands clashes with your compass."
+                      : `${n} of your brands clash with your compass.`}
                 </div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:4 }}>{graded} of {savedCos.length} brands graded on the public record</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:4 }}>{bv.graded} of {savedCos.length} graded · <span style={{ color:T.accent2 }}>{bv.aligned} aligned</span> · {bv.neutral} neutral</div>
                 {worst && (
                   <button
                     onClick={() => openBrand(worst.co.slug || worst.co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
                     style={{ marginTop:10, width:"100%", textAlign:"left", padding:"10px 12px", borderRadius:10, background:T.bg3, border:"none", borderLeft:"3px solid #E0524D", cursor:"pointer" }}>
                     <div style={{ fontSize:12.5, color:T.txt, fontWeight:600 }}>Sharpest clash: {worst.co.name} — {worst.g}</div>
+                    {bv.swap && (
+                      <div style={{ fontFamily:MONO, fontSize:10.5, color:T.gold, marginTop:3 }}>one switch: → {bv.swap.to.co.name} {bv.swap.to.g}</div>
+                    )}
                     <div style={{ fontFamily:MONO, fontSize:10.5, color:T.txt3, marginTop:3 }}>tap for the receipts ↗</div>
                   </button>
                 )}
@@ -6695,14 +6743,6 @@ if (screen === "basket") {
         <ErrorBoundary name="today">
           {(() => {
             const savedCos = Array.from(savedSet).map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
-            const { pct, graded } = basketAlignment(savedCos, profile);
-            let delta = null;
-            try {
-              const hist = JSON.parse(localStorage.getItem("tn_alignHist") || "{}");
-              const keys = Object.keys(hist).sort();
-              const prev = keys.length >= 2 ? hist[keys[keys.length - 2]] : null;
-              if (prev != null && pct != null) delta = pct - prev;
-            } catch {}
 
             // Story pick: your basket moved → this week's digest → quiet week.
             const story = savedChanges[0] || null;
@@ -6751,24 +6791,54 @@ if (screen === "basket") {
                     </div>
                   </button>
                 ) : (
-                  <button onClick={() => setTab("library")}
-                    style={{ ...card, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}
-                    aria-label={`Your basket: ${pct == null ? "not yet graded" : pct + " percent aligned"}. Open Ledger.`}>
-                    <CompassSeal weights={profile.weights} size={64} glow />
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 11, color: T.txt3, textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600 }}>Your basket</div>
-                      <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 2 }}>
-                        <span style={{ fontFamily: MONO, fontSize: 30, fontWeight: 700, color: T.txt, lineHeight: 1 }}>{pct == null ? "—" : `${pct}%`}</span>
-                        <span style={{ fontSize: 12, color: T.txt2 }}>aligned</span>
-                        {delta != null && delta !== 0 && (
-                          <span style={{ fontFamily: MONO, fontSize: 12, fontWeight: 600, color: delta > 0 ? T.accent2 : "#E0524D" }}>
-                            {delta > 0 ? "▲" : "▼"}{Math.abs(delta)} this week
-                          </span>
+                  /* B68 (A+C): clash-led sentence + one-switch projection.
+                     The aligned-% punished every strong-stance user with a
+                     daily "0%" when the truth was "mostly neutral, one
+                     fixable problem." Clashes lead; the compass points at
+                     the next move. Same math, different headline. */
+                  (() => {
+                    const bv = basketVerdict(savedCos, profile, deduped);
+                    const n = bv.clashes.length;
+                    const headline = bv.graded === 0
+                      ? "Your basket awaits its first records."
+                      : n === 0
+                        ? "Nothing in your basket clashes with your compass."
+                        : n === 1
+                          ? "One clash on the record. The rest holds steady."
+                          : `${n} clashes on the record.`;
+                    return (
+                      <button onClick={() => setTab("library")}
+                        style={{ ...card, textAlign: "left", cursor: "pointer" }}
+                        aria-label={`Your basket: ${n} ${n === 1 ? "clash" : "clashes"} of ${bv.graded} graded. Open Ledger.`}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                          <CompassSeal weights={profile.weights} size={64} glow={n === 0} />
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <div style={{ fontSize: 11, color: T.txt3, textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600, marginBottom: 3 }}>Your basket</div>
+                            <div style={{ fontFamily: SERIF, fontSize: 17.5, color: T.txt, lineHeight: 1.3 }}>{headline}</div>
+                          </div>
+                        </div>
+                        {n > 0 && (
+                          <div style={{ marginTop: 10, paddingTop: 9, borderTop: `1px solid ${T.border}` }}>
+                            <div style={{ fontSize: 12.5, color: T.txt }}>
+                              <span style={{ color: "#E0524D" }}>●</span> {bv.clashes[0].co.name} — {bv.clashes[0].g}
+                              {n > 1 && <span style={{ color: T.txt3 }}> · +{n - 1} more</span>}
+                            </div>
+                            {bv.swap && (
+                              <div style={{ fontFamily: MONO, fontSize: 11, color: T.gold, marginTop: 5 }}>
+                                one switch: {bv.swap.from.co.name} {bv.swap.from.g} → {bv.swap.to.co.name} {bv.swap.to.g}
+                              </div>
+                            )}
+                          </div>
                         )}
-                      </div>
-                      <div style={{ fontSize: 11, color: T.txt3, marginTop: 5 }}>{graded} graded · {savedCos.length} in basket · open Ledger →</div>
-                    </div>
-                  </button>
+                        {n === 0 && bv.best && (
+                          <div style={{ marginTop: 10, paddingTop: 9, borderTop: `1px solid ${T.border}`, fontSize: 12.5, color: T.txt }}>
+                            <span style={{ color: "#38C0CE" }}>●</span> Strongest match: {bv.best.co.name} — {bv.best.g}
+                          </div>
+                        )}
+                        <div style={{ fontSize: 11, color: T.txt3, marginTop: 8 }}>{bv.graded} graded · {savedCos.length} in basket · open Ledger →</div>
+                      </button>
+                    );
+                  })()
                 )}
 
                 {/* 2 · STORY CARD */}
@@ -7285,31 +7355,27 @@ if (screen === "basket") {
               they have something true to say (no fabricated aggregates). */}
           {(() => {
             const savedCos = Array.from(savedSet).map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
-            const { pct, graded, aligned } = basketAlignment(savedCos, profile);
-            let hist = {};
-            try { hist = JSON.parse(localStorage.getItem("tn_alignHist") || "{}"); } catch {}
-            const histVals = Object.keys(hist).sort().map(k => hist[k]);
+            const bv = basketVerdict(savedCos, profile, deduped);
             let switches = [];
             try { switches = JSON.parse(localStorage.getItem("tn_switches") || "[]"); } catch {}
             const monthly = switches.reduce((a, s) => a + (Number(s.monthly) || 0), 0);
-            if (pct == null && !switches.length) return null;
+            if (bv.graded === 0 && !switches.length) return null;
             return (
               <div style={{ padding:"14px 16px 4px", background:T.bg2, borderBottom:`1px solid ${T.border}` }}>
                 <div style={{ display:"flex", gap:10 }}>
-                  {pct != null && (
-                    <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${T.border}` }}>
-                      <div style={{ fontSize:10, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>Basket aligned</div>
+                  {bv.graded > 0 && (
+                    /* B68 (A+C): clash count leads; aligned/neutral are the
+                       quiet sublines. The old aligned-% met every strong-
+                       stance user with "0%" — see basketVerdict(). */
+                    <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${bv.clashes.length ? "#4A1E1E" : T.border}` }}>
+                      <div style={{ fontSize:10, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>On the record</div>
                       <div style={{ display:"flex", alignItems:"baseline", gap:8 }}>
-                        <span style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color:T.txt }}>{pct}%</span>
-                        <span style={{ fontSize:10.5, color:T.txt3 }}>{aligned}/{graded} brands</span>
+                        <span style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color: bv.clashes.length ? "#E0524D" : T.txt }}>{bv.clashes.length}</span>
+                        <span style={{ fontSize:10.5, color:T.txt3 }}>{bv.clashes.length === 1 ? "clash" : "clashes"} · {bv.graded} graded</span>
                       </div>
-                      {histVals.length >= 2 && (
-                        <div style={{ display:"flex", gap:2, alignItems:"flex-end", height:16, marginTop:6 }} aria-label="12-week alignment trend">
-                          {histVals.slice(-12).map((v, i, arr) => (
-                            <div key={i} style={{ flex:1, height:`${Math.max(2, (v / 100) * 16)}px`, background:"#38C0CE", opacity: i === arr.length - 1 ? 1 : 0.45, borderRadius:1 }} />
-                          ))}
-                        </div>
-                      )}
+                      <div style={{ fontSize:10.5, color:T.txt3, marginTop:6 }}>
+                        <span style={{ color:"#38C0CE" }}>{bv.aligned} aligned</span> · {bv.neutral} neutral
+                      </div>
                     </div>
                   )}
                   {switches.length > 0 && (
