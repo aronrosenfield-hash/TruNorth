@@ -5842,7 +5842,7 @@ if (screen === "onboarding") {
             const fp = computeFingerprint(profile);
             if (!fp) return null;
             return (
-              <div style={{ width:"100%", maxWidth:340, marginBottom:18, padding:"16px 18px", background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:16, textAlign:"center" }}>
+              <div style={{ width:"100%", maxWidth:340, marginBottom:18, padding:"16px 18px", boxSizing:"border-box", background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:16, textAlign:"center" }}>
                 <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:8 }}>
                   Your values archetype
                 </div>
@@ -5886,7 +5886,7 @@ if (screen === "onboarding") {
               <div style={{ fontSize:11, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Your top match</div>
               <div
                 onClick={() => openBrand(winner.co.slug || winner.co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
-                style={{ width:"100%", maxWidth:340, background:T.bg2, border:`2px solid ${T.accent}`, borderRadius:16, padding:18, cursor:"pointer", display:"flex", alignItems:"center", gap:14, marginBottom:14 }}
+                style={{ width:"100%", maxWidth:340, boxSizing:"border-box", background:T.bg2, border:`2px solid ${T.accent}`, borderRadius:16, padding:18, cursor:"pointer", display:"flex", alignItems:"center", gap:14, marginBottom:14 }}
               >
                 <CompanyLogo company={winner.co} size={48} />
                 <div style={{ flex:1, minWidth:0 }}>

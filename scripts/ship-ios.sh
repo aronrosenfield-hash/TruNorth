@@ -80,6 +80,17 @@ if ! $SKIP_UPLOAD; then
   fi
 fi
 
+# ─── Step 0.5: UI regression guards (2026-06-11) ────────────────────────────
+# Static locks for bugs that have recurred across builds (reveal-screen
+# right-edge cutoff, zoom lock, icon-font bloat). A failed guard ABORTS the
+# ship — fix the regression, don't bypass.
+echo "🛡  Running UI regression guards..."
+if ! node --test scripts/ui-guards.test.mjs > /dev/null 2>&1; then
+  echo "❌ UI guards FAILED — run 'node --test scripts/ui-guards.test.mjs' to see which lock broke. Ship aborted."
+  exit 1
+fi
+echo "   guards passed"
+
 # ─── Step 1: Build web + sync iOS ────────────────────────────────────────────
 echo "📦 Building web bundle..."
 npx vite build >/dev/null

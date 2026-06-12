@@ -1,3 +1,13 @@
+/* Permanent fix (2026-06-11): the quiz-reveal "content cut off at the right
+   edge" bug recurred every build because cards kept being added with
+   width:100% + maxWidth + padding but NO box-sizing — content-box made each
+   one 36px wider than its parent and pushed the whole column off-screen
+   ("Your values are set" got the same fix 2026-06-01; the archetype card
+   then reintroduced it). border-box everywhere ends the CLASS, not the
+   instance. GUARDED: scripts/ui-guards.test.mjs + ship-ios.sh preflight
+   refuse to ship if this rule is removed. */
+*, *::before, *::after { box-sizing: border-box; }
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
