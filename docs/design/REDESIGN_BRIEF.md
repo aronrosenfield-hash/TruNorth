@@ -162,3 +162,9 @@ The scoring engine and methodology page (untouched) · evidence-count honesty (r
 5. Tension-card copy: drafts stand pending Aron's red pen during R2.
 
 **R1 began 2026-06-11 PM.**
+
+## 9. Build log
+- **R1** (Build 61): Civic Premium skin, seal rendering, share cards v1. Gate passed — nothing purple remains (three stragglers caught and killed in R2: CategorySpectrum dot, PoliticalSpectrum dot, scan-glow rgba).
+- **R1.1** (Build 62): verdict seal revised radar → segmented ring (§8.2).
+- **R1.2** (Build 63): evidence chip fit; verdigris cooled to #38C0CE.
+- **R2** (Build 64, 2026-06-12): four-surface nav (Today / Lens center / Ledger + YOU top-right; Browse & Top Picks fold into Lens chips; Lens re-tap = camera) · Today's three cards (compass + story + daily shelf, whitelisted consumer aisles) · Lens verdict card (serif sentence + 3 mono/brass receipt lines + ↗ source links) · the Switch (commit flow → tn_switches; spend asked once) · the Match (MatchFlow.jsx, 11 tension cards, weights derived never asked, side cards styled identically for structural neutrality, forming compass) · first-run basket picker (flow A: hook → basket → Match → Reveal-with-basket-verdict → watch-my-basket intent ask; OS push prompt deliberately deferred to R3/APNs) · Ledger v1 (alignment dial + sparkline, Redirected counter, switch receipts, Basket rename) · Versus serif verdict line · YOU archetype card with identity seal. Gates: first-run ≈17 taps ≤90s ✓ · verdict ≤3s via typeahead → card-top verdict ✓. The old Quiz component remains in App.jsx, dormant, for one build as a fallback.
