@@ -7236,9 +7236,63 @@ if (screen === "basket") {
           discoverable in the bottom nav. */}
       {tab === "library" && (
         <ErrorBoundary name="library">
+          {/* R2 (Ledger, brief §3.3): the money's record — alignment dial,
+              impact counter, committed switches. Sections render only once
+              they have something true to say (no fabricated aggregates). */}
+          {(() => {
+            const savedCos = Array.from(savedSet).map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
+            const { pct, graded, aligned } = basketAlignment(savedCos, profile);
+            let hist = {};
+            try { hist = JSON.parse(localStorage.getItem("tn_alignHist") || "{}"); } catch {}
+            const histVals = Object.keys(hist).sort().map(k => hist[k]);
+            let switches = [];
+            try { switches = JSON.parse(localStorage.getItem("tn_switches") || "[]"); } catch {}
+            const monthly = switches.reduce((a, s) => a + (Number(s.monthly) || 0), 0);
+            if (pct == null && !switches.length) return null;
+            return (
+              <div style={{ padding:"14px 16px 4px", background:T.bg2, borderBottom:`1px solid ${T.border}` }}>
+                <div style={{ display:"flex", gap:10 }}>
+                  {pct != null && (
+                    <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${T.border}` }}>
+                      <div style={{ fontSize:10, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>Basket aligned</div>
+                      <div style={{ display:"flex", alignItems:"baseline", gap:8 }}>
+                        <span style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color:T.txt }}>{pct}%</span>
+                        <span style={{ fontSize:10.5, color:T.txt3 }}>{aligned}/{graded} brands</span>
+                      </div>
+                      {histVals.length >= 2 && (
+                        <div style={{ display:"flex", gap:2, alignItems:"flex-end", height:16, marginTop:6 }} aria-label="12-week alignment trend">
+                          {histVals.slice(-12).map((v, i, arr) => (
+                            <div key={i} style={{ flex:1, height:`${Math.max(2, (v / 100) * 16)}px`, background:"#38C0CE", opacity: i === arr.length - 1 ? 1 : 0.45, borderRadius:1 }} />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {switches.length > 0 && (
+                    <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${T.gold}` }}>
+                      <div style={{ fontSize:10, color:T.gold, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>Redirected</div>
+                      <div style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color:T.txt }}>{monthly ? `$${monthly}` : "—"}<span style={{ fontSize:11, color:T.txt3, fontWeight:500 }}>{monthly ? "/mo" : ""}</span></div>
+                      <div style={{ fontSize:10.5, color:T.txt3, marginTop:2 }}>{monthly ? `$${monthly * 12}/yr · ` : ""}{switches.length} {switches.length === 1 ? "switch" : "switches"}</div>
+                    </div>
+                  )}
+                </div>
+                {switches.length > 0 && (
+                  <div style={{ marginTop:10, marginBottom:10 }}>
+                    {switches.slice(-3).reverse().map((sw, i, arr) => (
+                      <div key={i} style={{ display:"flex", alignItems:"baseline", gap:8, padding:"5px 2px", fontFamily:MONO, fontSize:11, color:T.txt2, borderBottom: i < arr.length - 1 ? `1px dashed ${T.border}` : "none" }}>
+                        <span style={{ color:T.txt3 }}>{new Date(sw.at).toLocaleDateString(undefined, { month:"short", day:"numeric" })}</span>
+                        <span style={{ overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{sw.fromName} → <span style={{ color:T.accent2 }}>{sw.toName}</span></span>
+                        <span style={{ marginLeft:"auto", color:T.gold }}>{sw.monthly ? `$${sw.monthly}/mo` : ""}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })()}
           <div style={{ display:"flex", borderBottom:`1px solid ${T.border}`, background:T.bg2 }}>
             {[
-              { id:"saved",   label:"Saved",   icon:"ti-star",     count: savedSet.size },
+              { id:"saved",   label:"Basket",  icon:"ti-star",     count: savedSet.size },
               { id:"history", label:"History", icon:"ti-history",  count: (() => { try { return JSON.parse(localStorage.getItem("tn_viewHistory") || "[]").length; } catch { return 0; } })() },
             ].map(s => {
               const active = librarySubtab === s.id;
@@ -7656,11 +7710,16 @@ if (screen === "basket") {
             const fp = getStoredFingerprint() || computeFingerprint(profile);
             if (!fp) return null;
             return (
-              <div style={{ background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:16, padding:16, marginBottom:12 }}>
-                <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:6 }}>Your values archetype</div>
-                <div style={{ fontSize:18, fontWeight:800, color:T.txt, lineHeight:1.2 }}>{fp.name}</div>
-                <div style={{ fontSize:10, color:T.accent2, fontFamily:MONO, letterSpacing:1.5, marginTop:2, marginBottom:8 }}>{fp.codename}</div>
-                <div style={{ fontSize:12, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
+              <div style={{ background:T.accentBg, border:`1.5px solid ${T.accent}`, borderRadius:16, padding:16, marginBottom:12, display:"flex", alignItems:"center", gap:14 }}>
+                {/* R2 (YOU, brief §3.4): the identity compass lives with the
+                    archetype — serif name, the seal, the codename. */}
+                <CompassSeal weights={{ ...PROFILE_DEFAULT_WEIGHTS, ...(profile.weights || {}) }} size={66} title="Your values compass" />
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:4 }}>Your values archetype</div>
+                  <div style={{ fontFamily:SERIF, fontSize:19, fontWeight:600, color:T.txt, lineHeight:1.2 }}>{fp.name}</div>
+                  <div style={{ fontSize:10, color:T.accent2, fontFamily:MONO, letterSpacing:1.5, marginTop:2, marginBottom:6 }}>{fp.codename}</div>
+                  <div style={{ fontSize:12, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
+                </div>
               </div>
             );
           })()}
@@ -7675,12 +7734,12 @@ if (screen === "basket") {
                   {" · "}Animals: <strong style={{color:T.txt}}>{profile.animalTesting==="dealbreaker"?"Dealbreaker":profile.animalTesting==="prefer_not"?"Prefer cruelty-free":"Neutral"}</strong>
                 </div>
                 <button onClick={()=>{ track("quiz_started", { isPaid, from: "account_retake" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
-                  Retake personalization quiz
+                  Re-run the Match — reshape your compass
                 </button>
               </>
             ) : (
               <>
-                <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Take the quiz to personalize every company score based on what you care about.</div>
+                <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Run the Match — nine quick choices personalize every grade in the app.</div>
                 <button onClick={()=>{ track("quiz_started", { isPaid, from: "account" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
                   Take the quiz {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
                 </button>
