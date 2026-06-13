@@ -209,6 +209,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
           if (perm?.camera !== "granted" && perm?.camera !== "limited") {
             setStatus("error");
             setError("Camera access denied. Grant permission in iOS Settings → TruNorth.");
+            track("scanner_permission_denied", { platform: "native" });
             return;
           }
           setStatus("scanning");
@@ -231,6 +232,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
           return;
         } catch (mlkitErr) {
           console.error("[scanner] ML Kit failed, falling back:", mlkitErr);
+          track("scanner_mlkit_fallback", { error: String(mlkitErr?.message || mlkitErr).slice(0, 100) });
           // Fall through to browser path
         }
       }
@@ -5566,6 +5568,11 @@ useEffect(() => {
   // Analytics — init once, then track key funnel events
   useEffect(() => { initAnalytics(); }, []);
 
+  // 2026-06-12 review: instrument surface navigation. Previously a single
+  // capture_pageview fired per SPA load with no per-tab signal, so Today /
+  // Lens / Ledger / You engagement and the Today→Ledger loop were invisible.
+  useEffect(() => { track("surface_view", { tab }); }, [tab]);
+
   // PR-3: warm the feature-flag cache as early as possible so the FIRST
   // computeScore() call honors the runtime flag (otherwise iOS would always
   // see flag=off for the first paint, then flicker when the JSON resolves).
@@ -8096,7 +8103,10 @@ if (screen === "basket") {
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About TruNorth</div>
             {[
               ["Companies", formatCompanyCount(deduped.length)],
-              ["Updated", "May 2026"],
+              // 2026-06-12 review: was hardcoded "May 2026" (already stale in
+              // June). The catalog refreshes continuously via the nightly/weekly
+              // crons, so show the current month rather than a frozen date.
+              ["Updated", new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })],
               ["Version", "2.0"],
             ].map(([label, val]) => (
               <div key={label} style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>

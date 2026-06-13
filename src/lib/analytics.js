@@ -53,7 +53,12 @@ export function initAnalytics() {
   posthog.init(key, {
     api_host: apiHost,
     ui_host:  uiHost,
-    persistence: 'memory',         // cookieless — no consent banner needed
+    // 2026-06-12 review: was 'memory', which minted a NEW distinct_id on every
+    // cold launch — no D1/D7 retention, no install→Match→switch funnel, inflated
+    // DAU. 'localStorage' keeps one persistent anonymous id WITHOUT cookies, so
+    // the no-consent-banner posture holds while activation/retention become
+    // measurable. (A random local id is not PII and not fingerprinting.)
+    persistence: 'localStorage',
     autocapture: true,             // grabs most clicks/forms automatically
     capture_pageview: true,
     // M4 (2026-06-11 privacy alignment): the app markets itself as anonymous
