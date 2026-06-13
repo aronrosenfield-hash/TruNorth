@@ -161,12 +161,18 @@ function payRatioScore(ratio) {
 //   $10K→60 · $100K→68 · $1M→76 · $10M→84 · $100M→92 · ≥$1B→100
 // Returns null when no structured grant data — caller falls back to 85
 // (documented-but-unquantified giving).
-function charityGivingScore(d) {
+function charityGivingScore(d, revenue) {
   const g = d?.charity_irs990?.totalGrants;
-  if (typeof g === "number" && g >= 10_000) {
-    return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
+  if (typeof g !== "number" || g < 10_000) return null;
+  if (revenue && revenue > 0) {
+    // R7.1 (2026-06-13): score giving as a SHARE of revenue, not absolute
+    // dollars — a $1B gift from a $600B company (0.17%) shouldn't outrank a
+    // $35M gift that's a bigger slice of a smaller firm (review flag). Anchors:
+    // ~0.1% of revenue → 70, ~1% → 90. Absolute-$ fallback when revenue unknown.
+    const ratio = g / revenue;
+    return Math.max(60, Math.min(100, 60 + 20 * Math.log10(ratio / 0.000316)));
   }
-  return null;
+  return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
 }
 
 // Narrative-keyword scoring (Build 55 — salvage signals from text records
@@ -329,7 +335,7 @@ function baseScoreCat(k, v, d) {
     // V3/R3: positive band spread 60–100 by IRS-990 grant totals; enum-only
     // positives (documented but unquantified giving) sit at 85.
     if (["positive", "excellent", "strong", "good", "active_giving"].includes(val)) {
-      return charityGivingScore(d) ?? 85;
+      return charityGivingScore(d, REVENUE[d?.slug]?.revenue) ?? 85;
     }
     if (val === "mixed") return 50;
     if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
