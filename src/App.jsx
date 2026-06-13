@@ -920,6 +920,7 @@ function computeScore(co, profile) {
   let weightedSum  = 0;
   let weightUsed   = 0;
   let contributingCats = 0; // evidence breadth — drives shrinkage (Build 57)
+  let soleCatScore = null;  // E-10: the lone score when contributingCats===1
   let minUniversal = 100; // worst record-backed category seen (Build 56 floor)
   // PR-3: when the scoring-flags feature is on, exclude categories explicitly
   // marked `flags.<cat>.na` or `flags.<cat>.notDisclosed`. `_inferred` scores
@@ -998,6 +999,7 @@ function computeScore(co, profile) {
     weightedSum += catScore * baseWeights[k];
     weightUsed  += baseWeights[k];
     contributingCats++;
+    soleCatScore = catScore; // only meaningful when contributingCats ends at 1
   }
   // If nothing scored, fall back to the overall (un-personalized) score so the
   // app doesn't show a misleading "50" for companies with no data at all.
@@ -1031,8 +1033,14 @@ function computeScore(co, profile) {
   // signal (including a lone stance match like no_guns for a gun-avoider)
   // can never mint an A. Matches the published methodology line: "One
   // strong record can earn a B; an A takes a broad, verified track record."
-  // Cap limits upside only — bad single signals still grade D/F normally.
-  if (contributingCats === 1 && ws > 62) ws = 62;
+  // Cap is 61 = top of B (A is now ≥62 after the R7.1 recalibration).
+  if (contributingCats === 1 && ws > 61) ws = 61;
+  // E-10 (Aron, 2026-06-13): symmetric thin-record FLOOR — one moderate
+  // negative-only record can't sink below C (46). Punishing data-sparsity
+  // (we have a brand's violations but not its positives) isn't conduct. F/D
+  // require breadth (2+ records) or severity (a low single score). Mirrors the
+  // baked baseline in rebake-scoring.mjs so quizzed ≈ un-quizzed on thin records.
+  if (contributingCats === 1 && ws < 46 && (soleCatScore == null || soleCatScore >= 20)) ws = 46;
   // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
   // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
   // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.
@@ -1182,10 +1190,10 @@ function scoreGrade(n, realCats) {
   // gradeFromOverall and scripts/lib/index-entry.mjs scoreGrade (shared by
   // rebuild-bundle-index.mjs + finalize-bundle.mjs).
   if (n == null || !Number.isFinite(Number(n))) return "?"; // L1: NaN was falling through to F
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 
@@ -8078,11 +8086,11 @@ if (screen === "basket") {
               Each category with public-record data is scored 0–100, then combined with a shrinkage toward 50 that prices in how much evidence exists — so one thin signal can't swing a grade. The result maps to fixed, published cut points (not a school curve):
             </div>
             {[
-              { grade:"A", range:"63–100", desc:"Best of class — strong across a broad, verified record",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
-              { grade:"B", range:"56–62",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
-              { grade:"C", range:"46–55",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
-              { grade:"D", range:"41–45",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
-              { grade:"F", range:"0–40",   desc:"Substantial negative signals with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
+              { grade:"A", range:"62–100", desc:"Best of class — strong across a broad, verified record",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
+              { grade:"B", range:"50–61",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
+              { grade:"C", range:"38–49",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
+              { grade:"D", range:"33–37",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
+              { grade:"F", range:"0–32",   desc:"Substantial negative signals with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
             ].map((r) => (
               <div key={r.grade} style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0" }}>
                 <div style={{ width:34, height:34, borderRadius:8, background:r.bg, border:`1px solid ${r.border}`, color:r.color, fontSize:16, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>{r.grade}</div>

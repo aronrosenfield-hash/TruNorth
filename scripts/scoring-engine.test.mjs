@@ -33,10 +33,10 @@ const K_SHRINK = 1.5;
 function gradeFromOverall(n) {
   // V3 frozen thresholds — no signal-count cap (shrinkage handles evidence).
   if (n == null) return "?";
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 
@@ -137,16 +137,16 @@ function politicalScore(d, val) {
 
 // ─── Grade-threshold tests (V3 frozen calibration) ───────────────────
 
-test("grade thresholds: A≥63, B≥56, C≥46, D≥41, F<41", () => {
+test("grade thresholds: A≥62, B≥50, C≥38, D≥33, F<33 (R7.1 recalibration)", () => {
   assert.equal(gradeFromOverall(90), "A");
-  assert.equal(gradeFromOverall(63), "A");
-  assert.equal(gradeFromOverall(62.9), "B");
-  assert.equal(gradeFromOverall(56), "B");
-  assert.equal(gradeFromOverall(55.9), "C");
-  assert.equal(gradeFromOverall(46), "C");
-  assert.equal(gradeFromOverall(45.9), "D");
-  assert.equal(gradeFromOverall(41), "D");
-  assert.equal(gradeFromOverall(40.9), "F");
+  assert.equal(gradeFromOverall(62), "A");
+  assert.equal(gradeFromOverall(61.9), "B");
+  assert.equal(gradeFromOverall(50), "B");
+  assert.equal(gradeFromOverall(49.9), "C");
+  assert.equal(gradeFromOverall(38), "C");
+  assert.equal(gradeFromOverall(37.9), "D");
+  assert.equal(gradeFromOverall(33), "D");
+  assert.equal(gradeFromOverall(32.9), "F");
   assert.equal(gradeFromOverall(0), "F");
 });
 
@@ -158,9 +158,9 @@ test("null score returns '?'", () => {
 // ─── Shrinkage tests (V3/R1 — replaces the signal-count cap) ─────────
 
 test("shrinkage: single-signal raw 80 lands in B, not A and not flat C", () => {
-  // Old cap: 80 with 1 signal → forced C. V3: (80·1 + 50·1.5)/2.5 = 62 → B.
-  const s = shrink(80, 1);
-  assert.ok(s > 61.9 && s < 62.1, `expected 62, got ${s}`);
+  // V3: (80·1 + 50·1.5)/2.5 = 62. R7.1: A is now ≥62, so the E-9 single-signal
+  // cap (61) is what holds a lone strong record at B — one record never mints A.
+  const s = Math.min(61, shrink(80, 1));
   assert.equal(gradeFromOverall(s), "B");
 });
 
@@ -173,9 +173,9 @@ test("shrinkage: single-signal raw 46 stays C — low scores aren't lifted past 
 test("E-9: one contributing category caps at B — never A", () => {
   // Aron's call 2026-06-12. A lone 95-scoring signal shrinks to 68 (A range)
   // — the cap pulls it to 62 (B). Two categories are NOT capped.
-  const one = Math.min(62, shrink(95, 1));
+  const one = Math.min(61, shrink(95, 1));
   assert.equal(gradeFromOverall(one), "B");
-  assert.ok(shrink(95, 1) >= 63, "precondition: uncapped single-signal would have been an A");
+  assert.ok(shrink(95, 1) >= 62, "precondition: uncapped single-signal would have been an A");
   assert.equal(gradeFromOverall(shrink(95, 2)), "A", "two signals may still earn A");
 });
 
@@ -190,11 +190,12 @@ test("shrinkage: evidence weight scales confidence monotonically", () => {
 });
 
 test("shrinkage: symmetric — bad records shrink up toward 50 the same way", () => {
-  const s = shrink(8, 1); // (8 + 75)/2.5 = 33.2 → F
+  const s = shrink(8, 1); // (8 + 75)/2.5 = 33.2 — one severe record → D (R7.1: D≥33)
   assert.ok(s > 33 && s < 33.5);
-  assert.equal(gradeFromOverall(s), "F");
-  const s5 = shrink(8, 5); // (40 + 75)/6.5 = 17.7 → F, deeper with more evidence
+  assert.equal(gradeFromOverall(s), "D");
+  const s5 = shrink(8, 5); // (40 + 75)/6.5 = 17.7 → F: breadth of bad records sinks it
   assert.ok(s5 < s);
+  assert.equal(gradeFromOverall(s5), "F");
 });
 
 test("shrinkage: zero evidence is not scored (null overall → '?')", () => {
@@ -320,16 +321,20 @@ test("political: narrative parsing — '+23 across N donors' lean magnitude", ()
 
 // ─── Combined: realistic end-to-end brand cases ──────────────────────
 
-test("combined: single-bipartisan-only (the old capped-C cluster) → B", () => {
-  // Raw 78-82 with W=1 shrinks to 61.2-62.8 → B. These 1,500+ brands were
-  // the C mountain under the Build-57 cap; now they're differentiated.
-  assert.equal(gradeFromOverall(shrink(78, 1)), "B");
-  assert.equal(gradeFromOverall(shrink(82, 1)), "B");
+test("R7: a political-only brand is no longer graded (political excluded from baseline)", () => {
+  // R7 (2026-06-13): political left the un-quizzed baseline — it's a stance
+  // category now (rebake-scoring.mjs baseScoreCat returns null for political).
+  // A brand whose ONLY signal was donations has no contributing category →
+  // overall null → "?". It still personalizes once the user takes a side.
+  assert.equal(gradeFromOverall(null), "?");
 });
 
-test("combined: single-partisan small PAC → C", () => {
-  // Raw ~54 with W=1 → (54+75)/2.5 = 51.6 → C
-  assert.equal(gradeFromOverall(shrink(54, 1)), "C");
+test("E-10: a single moderate negative-only record floors at C, not D/F", () => {
+  // R7.1 (2026-06-13): one moderate (non-severe) record can't sink below C —
+  // we have the brand's violations but not its positives; that's data sparsity,
+  // not conduct. shrink(40,1)=44 (would be D≥33) → floored to 46 (C).
+  const floored = Math.max(46, shrink(40, 1));
+  assert.equal(gradeFromOverall(floored), "C");
 });
 
 test("combined: multi-signal strong record clears A", () => {
@@ -338,6 +343,9 @@ test("combined: multi-signal strong record clears A", () => {
 });
 
 test("combined: multi-signal violation-heavy record lands D/F", () => {
-  // Raw 30 across W=3 → (90+75)/4.5 = 36.7 → F
-  assert.equal(gradeFromOverall(shrink(30, 3)), "F");
+  // Raw 30 across W=3 → (90+75)/4.5 = 36.7 → D (R7.1: D≥33). Breadth of bad
+  // records is what pushes into F — a single one floors at C (E-10).
+  assert.equal(gradeFromOverall(shrink(30, 3)), "D");
+  // Deeper violation record (raw 18 × W=4) → (72+75)/5.5 = 26.7 → F.
+  assert.equal(gradeFromOverall(shrink(18, 4)), "F");
 });

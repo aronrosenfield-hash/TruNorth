@@ -48,6 +48,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const COMPS = path.join(ROOT, "public/data/companies");
 
+// R7.1 (2026-06-13): per-brand annual revenue (SEC XBRL, slug → {revenue,…})
+// used to revenue-normalize penalty severity so big, heavily-scrutinized brands
+// aren't auto-penalized by absolute-dollar fines. Built by sec-revenue-fetch.mjs.
+// Absent / unresolved-CIK brands fall back to the absolute-dollar curve.
+const REVENUE = (() => {
+  try {
+    const p = path.join(ROOT, "public/data/_meta/company-revenue.json");
+    return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : {};
+  } catch { return {}; }
+})();
+
 // Categories the scoring engine cares about. NOTE: transparency is not in
 // CAT_KEYS in App.jsx — it's a display-only badge — so we omit it here too.
 const CAT_KEYS = ["political", "charity", "environment", "labor", "dei", "animals", "guns", "privacy", "execPay", "health"];
@@ -74,6 +85,11 @@ const DRY = process.argv.includes("--dry");
 //      values; those axes only move grades after the user takes the quiz.
 //      They still render as badges and still personalize.
 const K_SHRINK = 1.5;
+// E-10 (Aron, 2026-06-13): a single contributing category with a csc below this
+// is a "severe" negative (≈ a $5M+ federal penalty on the 8–40 band) and is
+// allowed to sink a thin-record brand below C. Above it, one moderate record
+// floors at C — see the thin-record floor where newOverall is finalized.
+const SEVERE_NEG = 20;
 
 // Parse "$8.4M" / "$120,500" / "$95K" → dollars. 0 when nothing parseable.
 function parseDollars(text) {
@@ -88,10 +104,22 @@ function parseDollars(text) {
 //   $10K→40 · $100K→32 · $1M→24 · $10M→16 · ≥$100M→8   (clamped 8–40)
 // "very poor" enums cap at 18 so they can't out-score a documented "poor".
 // No parseable $ → legacy band defaults (35 / 8) so nothing silently moves.
-function negativeSeverityScore(narrative, enumVal) {
+function negativeSeverityScore(narrative, enumVal, revenue) {
   const dollars = parseDollars(narrative);
   if (dollars >= 1000) {
-    const sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
+    let sev;
+    if (revenue && revenue > 0) {
+      // R7.1 (2026-06-13): revenue-normalized severity — score the penalty as a
+      // SHARE of annual revenue, not absolute dollars. A $10M fine is trivial
+      // for a $700B company and existential for a $50M one; absolute dollars
+      // treated them identically and bottomed out every mega-brand. Anchors:
+      // ~0.01% of revenue → ~45 (trivial), ~10%+ → 8 (severe). Falls back to the
+      // absolute curve when revenue is unknown (private / unresolved-CIK cos).
+      const ratio = dollars / revenue;
+      sev = Math.max(8, Math.min(47, -4.33 - 12.33 * Math.log10(ratio)));
+    } else {
+      sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
+    }
     return enumVal === "very poor" ? Math.min(sev, 18) : sev;
   }
   return enumVal === "very poor" ? 8 : 35;
@@ -262,7 +290,7 @@ function baseScoreCat(k, v, d) {
     if (val === "mixed") return 50;
     // V3/R3: negatives spread 8–40 by penalty dollars in the record.
     if (["negative", "poor", "below average", "very poor"].includes(val)) {
-      return negativeSeverityScore(d?.labor?.s, val);
+      return negativeSeverityScore(d?.labor?.s, val, REVENUE[d?.slug]?.revenue);
     }
     return null;
   }
@@ -293,7 +321,7 @@ function baseScoreCat(k, v, d) {
     if (val === "mixed") return 50;
     // V3/R3: negatives spread 8–40 by penalty dollars in the record.
     if (["negative", "poor", "below average", "very poor"].includes(val)) {
-      return negativeSeverityScore(d?.environment?.s, val);
+      return negativeSeverityScore(d?.environment?.s, val, REVENUE[d?.slug]?.revenue);
     }
     return null;
   }
@@ -371,10 +399,10 @@ function gradeFromOverall(n) {
   // Must stay in sync with src/App.jsx scoreGrade and
   // scripts/finalize-bundle.mjs scoreGrade.
   if (n == null) return "?";
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 
@@ -461,7 +489,19 @@ for (const f of files) {
   // E-9 (Aron, 2026-06-12): single-category brands cap at B (score ≤62,
   // below the A≥63 threshold). Upside-only — the score-level clamp keeps
   // every downstream scoreGrade() copy in sync with zero signature churn.
-  if (newOverall != null && signalCount === 1 && newOverall > 62) newOverall = 62;
+  if (newOverall != null && signalCount === 1 && newOverall > 61) newOverall = 61;
+  // E-10 (Aron, 2026-06-13): symmetric thin-record FLOOR — the mirror of E-9.
+  // One moderate, negative-only record shouldn't sink a brand to D/F: that
+  // punishes data-sparsity (we have its violations but not its positives), not
+  // conduct. A single NON-severe contributing category floors at C (46). F/D
+  // require breadth (2+ contributing records) OR severity (a low csc — see
+  // SEVERE_NEG). This is the lower-bound counterpart to E-9's upper cap, so a
+  // single record — good or bad — lands mid-range; the extremes need breadth.
+  if (newOverall != null && signalCount === 1 && newOverall < 46) {
+    const onlyScore = Object.values(csc)[0];
+    const isSevere = typeof onlyScore === "number" && onlyScore < SEVERE_NEG;
+    if (!isSevere) newOverall = 46;
+  }
   trace.newOverall = newOverall;
   trace.newGrade = gradeFromOverall(newOverall);
 

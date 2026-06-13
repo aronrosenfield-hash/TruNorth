@@ -59,8 +59,8 @@ export default function Methodology({ onBack }) {
         <P>Brands with no scoreable records show <Code>?</Code> instead of a grade — we never average missing data into a fake C.</P>
 
         <H2>4. Letter grades — fixed, published thresholds</H2>
-        <P><Code>A ≥ 63 · B ≥ 56 · C ≥ 46 · D ≥ 41 · F &lt; 41</Code></P>
-        <P>These cut points were calibrated once against the live distribution of all scored brands (June 2026) and then frozen. Grades move only when a brand's own records change — we do not re-curve.</P>
+        <P><Code>A ≥ 62 · B ≥ 50 · C ≥ 38 · D ≥ 33 · F &lt; 33</Code></P>
+        <P>These cut points were re-anchored once (June 2026) after two structural changes — political donations were removed from the neutral baseline, and penalty severity is now measured as a share of a company's revenue rather than in absolute dollars. Both shifted the score scale, so the thresholds were recalibrated to match and then frozen again. We re-anchor on a structural change like this; we do not perpetually re-curve, and a brand's grade moves only when its own records change.</P>
 
         <H2>5. Your Match changes the mix, never the facts</H2>
         <P>The 45-second Match sets how much each category weighs for <i>you</i> (1–5 ranks, with a 1.5× boost on axes where you took a clear stance). Two users see different grades for the same brand because they weigh the same facts differently — the facts never change. Two guardrails apply to everyone:</P>

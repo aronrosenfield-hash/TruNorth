@@ -24,13 +24,13 @@ function grade(score, realCats) {
   // realCats is kept for call-site compatibility but unused. Thresholds
   // frozen from the one-time V3 recalibration. MUST stay in sync with
   // src/App.jsx scoreGrade, scripts/finalize-bundle.mjs scoreGrade,
-  // scripts/rebake-scoring.mjs gradeFromOverall: A>=63, B>=56, C>=46, D>=41.
+  // scripts/rebake-scoring.mjs gradeFromOverall: A>=62, B>=50, C>=38, D>=33.
   const n = Number(score);
   if (!isFinite(n)) return "\u2014";
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 
