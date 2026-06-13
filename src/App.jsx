@@ -6164,6 +6164,7 @@ if (screen === "onboarding") {
         // R2 (brief flow A): basket BEFORE the Match — pick what you buy,
         // then your answers immediately have something to judge.
         track("basket_picker_shown", { from: "onboarding_rail" });
+        setQueryRaw(""); // start the basket search empty (shows the chip cloud)
         setScreen("basket");
       }}
     />
@@ -6178,6 +6179,19 @@ if (screen === "basket") {
     .filter(c => c.consumerFacing !== false && (c.realCats ?? 0) >= 5 && ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"].includes(getBucket(c.cat || "")))
     .sort((a, b) => (b.realCats ?? 0) - (a.realCats ?? 0) || String(a.name).localeCompare(String(b.name)))
     .slice(0, 40);
+  // R2 brief flow A specced search alongside the chip cloud (review): a user who
+  // buys none of the 40 household chips was stuck with only the tiny "skip".
+  // Substring-filter `deduped` directly — it's already loaded (the chip pool
+  // uses it), so this works during first-run even before the lazy MiniSearch
+  // index is ready (MiniSearch's searchHits is null then → don't depend on it).
+  const _bq = queryRaw.trim().toLowerCase();
+  const basketSearchResults = _bq
+    ? (deduped || [])
+        .filter(c => c.consumerFacing !== false && String(c.name || "").toLowerCase().includes(_bq))
+        .sort((a, b) => (b.realCats ?? 0) - (a.realCats ?? 0) || String(a.name).localeCompare(String(b.name)))
+        .slice(0, 30)
+    : null;
+  const basketChips = basketSearchResults || pool;
   return (
     <div style={{ display:"flex", flexDirection:"column", height:"100dvh", maxWidth:430, margin:"0 auto", paddingTop:"calc(env(safe-area-inset-top, 0px) + 18px)", overflow:"hidden", background:T.bg }}>
       <div style={{ padding:"0 22px", flexShrink:0 }}>
@@ -6185,13 +6199,22 @@ if (screen === "basket") {
         <div style={{ fontSize:13, color:T.txt2, lineHeight:1.5, marginTop:8 }}>
           Tap 5–10 brands. Their public records become your ledger — judged against your values in the next 45 seconds.
         </div>
+        <input
+          value={queryRaw}
+          onChange={(e) => setQueryRaw(e.target.value)}
+          placeholder="Search any brand…"
+          aria-label="Search for a brand to add to your basket"
+          style={{ width:"100%", boxSizing:"border-box", marginTop:14, background:T.bg3, border:`1px solid ${T.border}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px" }}
+        />
       </div>
       <div style={{ flex:1, minHeight:0, overflowY:"auto", WebkitOverflowScrolling:"touch", padding:"16px 22px 12px" }}>
         {!pool.length ? (
           <div style={{ padding:"40px 0", textAlign:"center", color:T.txt3, fontSize:13 }}>Loading brands…</div>
+        ) : basketSearchResults && !basketSearchResults.length ? (
+          <div style={{ padding:"40px 0", textAlign:"center", color:T.txt3, fontSize:13 }}>No brands match “{queryRaw.trim()}”.</div>
         ) : (
           <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
-            {pool.map(co => {
+            {basketChips.map(co => {
               const slug = co.slug || co.id;
               const on = savedSet.has(slug);
               return (
@@ -6207,12 +6230,12 @@ if (screen === "basket") {
       </div>
       <div style={{ flexShrink:0, padding:"10px 22px calc(env(safe-area-inset-bottom, 0px) + 16px)", borderTop:`1px solid ${T.border}`, background:T.bg }}>
         <button
-          onClick={() => { track("basket_picked", { count: savedSet.size }); track("quiz_started", { from: "basket_picker" }); setScreen("quiz"); }}
+          onClick={() => { track("basket_picked", { count: savedSet.size }); track("quiz_started", { from: "basket_picker" }); setQueryRaw(""); setScreen("quiz"); }}
           disabled={savedSet.size === 0}
           style={{ width:"100%", padding:"15px 12px", borderRadius:13, background: savedSet.size ? "#EDE9E0" : T.bg3, color: savedSet.size ? "#111" : T.txt3, border:"none", fontSize:15, fontWeight:700, cursor: savedSet.size ? "pointer" : "default" }}>
           {savedSet.size ? `Continue with ${savedSet.size} ${savedSet.size === 1 ? "brand" : "brands"}` : "Pick at least one brand"}
         </button>
-        <button onClick={() => { track("basket_skipped", {}); track("quiz_started", { from: "basket_picker_skip" }); setScreen("quiz"); }}
+        <button onClick={() => { track("basket_skipped", {}); track("quiz_started", { from: "basket_picker_skip" }); setQueryRaw(""); setScreen("quiz"); }}
           style={{ width:"100%", background:"none", border:"none", color:T.txt3, fontSize:11.5, cursor:"pointer", padding:"10px 0 0", textAlign:"center" }}>
           skip for now
         </button>
@@ -6690,7 +6713,11 @@ if (screen === "basket") {
               return (
                 <div style={{ position:"absolute", top:"calc(100% + 4px)", left:0, right:0, background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, boxShadow:"0 8px 24px rgba(0,0,0,0.4)", zIndex:50, overflow:"hidden" }}>
                   {suggestions.map(co => {
-                    const g = co.overall != null ? scoreGrade(co.overall, co.realCats) : "?";
+                    // 2026-06-13 (review): the typeahead leaked baseline letters
+                    // while every other surface gates grades behind the Match
+                    // (`profile ? grade : "?"`). Respect the gate — and show the
+                    // PERSONALIZED grade for quizzed users, like the shelf/rows.
+                    const g = profile ? scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile)) : "?";
                     const gradeColor = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
                     return (
                       <button
