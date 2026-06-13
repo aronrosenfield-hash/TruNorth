@@ -1,1 +1,256 @@
-{"name":"Alabama Power","cat":"Energy & Utilities","init":"ALAB","overall":69.6,"isPublic":true,"sc":{"political":"bipartisan","charity":"positive","environment":"neutral","labor":"neutral","dei":"neutral","animals":"na","guns":"neutral","privacy":"neutral","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $38K PAC donations; 53% to Republican, 47% to Democratic committees.","amt":"$110K","lean":"bipartisan","sources":["FEC.gov"]},"labor":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dataLastUpdated":{"legacy":"2026-05-31","federalContracts":"2026-06-11T23:51:18.870Z"},"charity":{"s":"Operates the Alabama Power Foundation Inc: $19.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).","sources":["Claude AI synthesis","irs990pf-foundations"]},"environment":{"s":"No public record found.","sources":["Claude AI synthesis"]},"dei":{"s":"EEO-1 workforce demographics on federal record (FY2020, DOL OFCCP FOIA release): 6,256 US employees — 25% women, 23.1% racial/ethnic minorities; management 22.4% women, 18.7% minorities.","sources":["Claude AI synthesis","ofccp-eeo1"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#1e1535","ac":"#9b8ff0","wiki":{"founded":"1906-00-00","hq":"Birmingham","employees":null,"revenue":null,"parent":"Southern Company","industry":"electric power industry","products":null,"keyPeople":null,"website":"https://www.alabamapower.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Alabama_Power_building.jpg/330px-Alabama_Power_building.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/Alabama_Power","extract":"Alabama Power Company, headquartered in Birmingham, Alabama, is a company in the southern United States that provides electricity service to 1.4 million customers in the southern two-thirds of Alabama. It also operates appliance stores. It is one of four U.S. utilities operated by the Southern Company, one of the nation's largest generators of electricity."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/al/birmingham/profile/electric-companies/alabama-power-company-0463-561"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Alabama%20Power%20new%20logo.svg","logoSource":"wikidata_p154","slug":"alabama-power","competitors":[],"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":null,"fec":{"source":"FEC API","committeeId":"C00077305","committeeName":"ALABAMA POWER CO EMPLOYEES FEDERAL POLITICAL ACTION CMTE (APC EMPLOYEES FEDERAL PAC)","lean":"bipartisan","repTotal":20000,"demTotal":17500,"totalRaised":109949,"totalRaisedFmt":"$110K","lastFilingDate":"2026-05-19","cycle":2026,"fetchedAt":"2026-05-30T21:45:21.434Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-06","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Alabama%20Power&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-30T21:45:24.616Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T21:45:24.616Z","realCats":2,"governance":{"s":"Wikidata: owned by Southern Company; HQ Birmingham. (Wikidata Q4705296)","sources":["wikidata"]},"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Energy & Utilities"}},"csc":{"political":83.5,"charity":85},"dei_eeo1":{"year":2020,"totalEmployees":6256,"pctWomen":25,"pctMinority":23.1,"pctWomenMgmt":22.4,"pctMinorityMgmt":18.7,"source":"DOL OFCCP FOIA — Type 2 EEO-1","sourceUrl":"https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"},"enriched":{"federalContracts":{"totalObligatedUSDLast5y":168703545,"awardCountLast5y":67,"recentTop5":[{"date":"2003-05-23","agency":"Department of Defense","naics":{"code":"221122","description":"ELECTRIC POWER DISTRIBUTION"},"amount":75778384.61,"description":"200309!009606!97AS!0600  !DEFENSE ENERGY SUPPORT CENTER   !SP060003C8262  !A!N! !N!                   !20030523!20030523!006900120!006900120!006925341!N!ALABAMA POWER COMPANY         !600 NORTH 18TH STREET     !BIRMINGHAM          !AL!35291"},{"date":"2025-06-01","agency":"Department of Defense","naics":{"code":"221122","description":"ELECTRIC POWER DISTRIBUTION"},"amount":20000000,"description":"UESC ANNISTON ARMY DEPOT IMPLEMENTATION"},{"date":"2013-09-01","agency":"Department of Homeland Security","naics":{"code":"221122","description":"ELECTRIC POWER DISTRIBUTION"},"amount":16860914.6,"description":"IGF::OT::IGF ELECTRICAL SERVICES FOR THE CDP"},{"date":"2025-01-30","agency":"Department of Defense","naics":{"code":"221122","description":"ELECTRIC POWER DISTRIBUTION"},"amount":8732883,"description":"INVESTMENT GRADE AUDIT (IGA)"},{"date":"2022-03-01","agency":"Department of Defense","naics":{"code":"811310","description":"COMMERCIAL AND INDUSTRIAL MACHINERY AND EQUIPMENT (EXCEPT AUTOMOTIVE AND ELECTRONIC) REPAIR AND MAINTENANCE"},"amount":8305201.69,"description":"PREVENTIVE MAINT OF ELECTRICAL EQUIPMENT"}],"primaryAgency":"Department of Defense","primaryNaics":"[object Object]","lastUpdated":"2026-06-11T23:51:18.870Z","source":"usaspending","sourceUrl":"https://www.usaspending.gov/"}}}
+{
+  "name": "Alabama Power",
+  "cat": "Energy & Utilities",
+  "init": "ALAB",
+  "overall": 62,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "positive",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "neutral",
+    "execPay": "na",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $38K PAC donations; 53% to Republican, 47% to Democratic committees.",
+    "amt": "$110K",
+    "lean": "bipartisan",
+    "sources": [
+      "FEC.gov"
+    ]
+  },
+  "labor": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "federalContracts": "2026-06-11T23:51:18.870Z"
+  },
+  "charity": {
+    "s": "Operates the Alabama Power Foundation Inc: $19.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
+    "sources": [
+      "Claude AI synthesis",
+      "irs990pf-foundations"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dei": {
+    "s": "EEO-1 workforce demographics on federal record (FY2020, DOL OFCCP FOIA release): 6,256 US employees — 25% women, 23.1% racial/ethnic minorities; management 22.4% women, 18.7% minorities.",
+    "sources": [
+      "Claude AI synthesis",
+      "ofccp-eeo1"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#1e1535",
+  "ac": "#9b8ff0",
+  "wiki": {
+    "founded": "1906-00-00",
+    "hq": "Birmingham",
+    "employees": null,
+    "revenue": null,
+    "parent": "Southern Company",
+    "industry": "electric power industry",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.alabamapower.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Alabama_Power_building.jpg/330px-Alabama_Power_building.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Alabama_Power",
+    "extract": "Alabama Power Company, headquartered in Birmingham, Alabama, is a company in the southern United States that provides electricity service to 1.4 million customers in the southern two-thirds of Alabama. It also operates appliance stores. It is one of four U.S. utilities operated by the Southern Company, one of the nation's largest generators of electricity."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/al/birmingham/profile/electric-companies/alabama-power-company-0463-561"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Alabama%20Power%20new%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "alabama-power",
+  "competitors": [],
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00077305",
+    "committeeName": "ALABAMA POWER CO EMPLOYEES FEDERAL POLITICAL ACTION CMTE (APC EMPLOYEES FEDERAL PAC)",
+    "lean": "bipartisan",
+    "repTotal": 20000,
+    "demTotal": 17500,
+    "totalRaised": 109949,
+    "totalRaisedFmt": "$110K",
+    "lastFilingDate": "2026-05-19",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-30T21:45:21.434Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-06",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Alabama%20Power&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-30T21:45:24.616Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T21:45:24.616Z",
+  "realCats": 1,
+  "governance": {
+    "s": "Wikidata: owned by Southern Company; HQ Birmingham. (Wikidata Q4705296)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Energy & Utilities"
+    }
+  },
+  "csc": {
+    "charity": 85
+  },
+  "dei_eeo1": {
+    "year": 2020,
+    "totalEmployees": 6256,
+    "pctWomen": 25,
+    "pctMinority": 23.1,
+    "pctWomenMgmt": 22.4,
+    "pctMinorityMgmt": 18.7,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "federalContracts": {
+      "totalObligatedUSDLast5y": 168703545,
+      "awardCountLast5y": 67,
+      "recentTop5": [
+        {
+          "date": "2003-05-23",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "221122",
+            "description": "ELECTRIC POWER DISTRIBUTION"
+          },
+          "amount": 75778384.61,
+          "description": "200309!009606!97AS!0600  !DEFENSE ENERGY SUPPORT CENTER   !SP060003C8262  !A!N! !N!                   !20030523!20030523!006900120!006900120!006925341!N!ALABAMA POWER COMPANY         !600 NORTH 18TH STREET     !BIRMINGHAM          !AL!35291"
+        },
+        {
+          "date": "2025-06-01",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "221122",
+            "description": "ELECTRIC POWER DISTRIBUTION"
+          },
+          "amount": 20000000,
+          "description": "UESC ANNISTON ARMY DEPOT IMPLEMENTATION"
+        },
+        {
+          "date": "2013-09-01",
+          "agency": "Department of Homeland Security",
+          "naics": {
+            "code": "221122",
+            "description": "ELECTRIC POWER DISTRIBUTION"
+          },
+          "amount": 16860914.6,
+          "description": "IGF::OT::IGF ELECTRICAL SERVICES FOR THE CDP"
+        },
+        {
+          "date": "2025-01-30",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "221122",
+            "description": "ELECTRIC POWER DISTRIBUTION"
+          },
+          "amount": 8732883,
+          "description": "INVESTMENT GRADE AUDIT (IGA)"
+        },
+        {
+          "date": "2022-03-01",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "811310",
+            "description": "COMMERCIAL AND INDUSTRIAL MACHINERY AND EQUIPMENT (EXCEPT AUTOMOTIVE AND ELECTRONIC) REPAIR AND MAINTENANCE"
+          },
+          "amount": 8305201.69,
+          "description": "PREVENTIVE MAINT OF ELECTRICAL EQUIPMENT"
+        }
+      ],
+      "primaryAgency": "Department of Defense",
+      "primaryNaics": "[object Object]",
+      "lastUpdated": "2026-06-11T23:51:18.870Z",
+      "source": "usaspending",
+      "sourceUrl": "https://www.usaspending.gov/"
+    }
+  }
+}

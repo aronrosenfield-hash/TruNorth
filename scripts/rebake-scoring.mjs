@@ -245,19 +245,18 @@ function baseScoreCat(k, v, d) {
   const val = String(v || "").toLowerCase();
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
-  // Build 58 (Path B): political differentiation — spread the 80-cluster
-  // and 50-cluster using donation $ + tilt %.
-  if (k === "political") {
-    if (["bipartisan", "mixed", "left", "right", "left-leaning", "right-leaning"].includes(val)) {
-      return politicalScore(d, val);
-    }
-    return null;
-  }
-  // V3/R4: stance categories are personal-values axes the app is neutral on.
-  // They contribute NOTHING to the un-quizzed baseline (previously injected a
-  // flat 50, diluting every real signal toward C). They still render as
-  // badges and still drive personalized grades after the quiz.
-  if (k === "dei" || k === "animals" || k === "guns") return null;
+  // V3/R4 + R7: stance categories are personal-values axes the app is neutral
+  // on. They contribute NOTHING to the un-quizzed baseline (previously injected
+  // a flat 50, diluting every real signal toward C). They still render as
+  // badges and still drive personalized grades after the Match.
+  //
+  // R7 (Aron, 2026-06-12): POLITICAL joins them. A direction-neutral donation
+  // score (bipartisan ≈80 vs concentrated-partisan ≈46-48) is itself an
+  // editorial position living inside a grade we call "neutral" — the review's
+  // strongest "it's biased" attack. Politics now counts ONLY once a user picks
+  // a side in the Match (App.jsx computeScore maps lean → own-side/opposite).
+  // Returning null here drops political from `overall` and from `csc`.
+  if (k === "political" || k === "dei" || k === "animals" || k === "guns") return null;
   if (k === "labor") {
     if (["positive", "excellent", "strong", "good"].includes(val)) return 97;
     if (val === "mixed") return 50;
@@ -428,7 +427,7 @@ for (const f of files) {
       // demographics fact is display evidence, not a neutral-user score.
       // Without this, 722 OFCCP dei narratives entered as flat 50s and
       // pulled strong brands toward C.
-      if (k === "dei" || k === "animals" || k === "guns") {
+      if (k === "political" || k === "dei" || k === "animals" || k === "guns") {
         trace.categories.push({ k, state: "narrative-display-only", val: "(stance cat)" });
         continue;
       }

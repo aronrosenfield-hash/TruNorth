@@ -1,1 +1,300 @@
-{"name":"AECOM","cat":"Manufacturing","init":"AECO","overall":37.5,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na"},"political":{"s":"FEC: $244K in executive political donations; partisan lean Republican +39 across 12 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"53 federal penalties totaling $134.3M since 2000 (Violation Tracker).","rating":"good","sources":["Violation Tracker","OSHA","NLRB"]},"dataLastUpdated":{"legacy":"2026-05-28","federalContracts":"2026-06-11T23:51:18.870Z"},"ab":"#0d2318","ac":"#4caf82","charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA","Violation Tracker"]},"dei":{"s":"No public record found.","sources":["Claude AI synthesis"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"competitors":["fluor","stantec"],"childLabor":true,"wiki":{"founded":"1990-04-06","hq":"Los Angeles, Munich","employees":null,"revenue":"2770000000","parent":null,"industry":"construction","products":null,"keyPeople":null,"website":"http://www.aecom.com","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/AECOMOffice.jpg/330px-AECOMOffice.jpg","wikipediaUrl":"https://en.wikipedia.org/wiki/AECOM","extract":"AECOM is an American multinational infrastructure consulting firm headquartered in Dallas, Texas."},"bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/ak/anchorage/profile/professional-engineer/aecom-environment-1296-22733002"},"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/b/b4/AECOMOffice.jpg","logoSource":"wiki_infobox","deiBadges":[{"scoreType":"hrc_cei","score":100,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"}],"slug":"aecom","secComplaints":null,"news":null,"payRatio":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"violationTracker":{"source":"Violation Tracker","matchedName":"AECOM","slug":"aecom","ownership":"publicly traded (ticker symbol ACM)","hq":"California","majorIndustry":"construction and engineering","specificIndustry":"construction &amp; engineering","totalPenalty":134332610,"totalRecords":53,"offenseGroups":[{"category":"government-contracting-related offenses","penalty":110955000,"records":7},{"category":"competition-related offenses","penalty":20230917,"records":1},{"category":"employment-related offenses","penalty":2605894,"records":16},{"category":"safety-related offenses","penalty":496299,"records":27},{"category":"environment-related offenses","penalty":44500,"records":2}],"primaryOffenses":[{"category":"False Claims Act and related","penalty":110955000,"records":7},{"category":"fraud","penalty":20230917,"records":1},{"category":"wage and hour violation","penalty":2470775,"records":13},{"category":"workplace safety or health violation","penalty":383799,"records":26},{"category":"labor relations violation","penalty":135119,"records":3}],"rating":"good","lastChecked":"2026-05-27","fetchedAt":"2026-05-27T16:10:10.319Z"},"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-01-29","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=AECOM&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-27T16:10:07.654Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-27T16:10:10.319Z","realCats":2,"flags":{"guns":{"na":true},"health":{"na":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Manufacturing"}},"csc":{"political":48.3,"labor":8},"enriched":{"federalContracts":{"totalObligatedUSDLast5y":7000859572,"awardCountLast5y":500,"recentTop5":[{"date":"2007-06-29","agency":"Department of Energy","naics":{"code":"562910","description":"REMEDIATION SERVICES"},"amount":319940763.45,"description":"WEST VALLEY DEMONSTRATION PROJECT INTERIM END STATE"},{"date":"2003-06-25","agency":"Department of Defense","naics":{"code":"561210","description":"FACILITIES SUPPORT SERVICES"},"amount":291336932.27,"description":""},{"date":"2000-07-15","agency":"Department of Energy","naics":{"code":null,"description":null},"amount":271068026.84,"description":""},{"date":"2009-09-30","agency":"Department of Defense","naics":{"code":"541990","description":"ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES"},"amount":237693939.27,"description":"BIOLOGICAL THREAT REDUCTION PROGRAM IN KAZAHKSTAN"},{"date":"2022-07-29","agency":"Department of Defense","naics":{"code":"236220","description":"COMMERCIAL AND INSTITUTIONAL BUILDING CONSTRUCTION"},"amount":229651455.66,"description":"DB REPAIR BERTHS 40 AND 41, NORFOLK NAVAL SHIPYARD, PORTSMOUTH, VA"}],"primaryAgency":"Department of Defense","primaryNaics":"[object Object]","lastUpdated":"2026-06-11T23:51:18.870Z","source":"usaspending","sourceUrl":"https://www.usaspending.gov/"}}}
+{
+  "name": "AECOM",
+  "cat": "Manufacturing",
+  "init": "AECO",
+  "overall": 33.2,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na"
+  },
+  "political": {
+    "s": "FEC: $244K in executive political donations; partisan lean Republican +39 across 12 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "53 federal penalties totaling $134.3M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "Violation Tracker",
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "federalContracts": "2026-06-11T23:51:18.870Z"
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA",
+      "Violation Tracker"
+    ]
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "competitors": [
+    "fluor",
+    "stantec"
+  ],
+  "childLabor": true,
+  "wiki": {
+    "founded": "1990-04-06",
+    "hq": "Los Angeles, Munich",
+    "employees": null,
+    "revenue": "2770000000",
+    "parent": null,
+    "industry": "construction",
+    "products": null,
+    "keyPeople": null,
+    "website": "http://www.aecom.com",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/AECOMOffice.jpg/330px-AECOMOffice.jpg",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/AECOM",
+    "extract": "AECOM is an American multinational infrastructure consulting firm headquartered in Dallas, Texas."
+  },
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/ak/anchorage/profile/professional-engineer/aecom-environment-1296-22733002"
+  },
+  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/AECOMOffice.jpg",
+  "logoSource": "wiki_infobox",
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 100,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    }
+  ],
+  "slug": "aecom",
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "violationTracker": {
+    "source": "Violation Tracker",
+    "matchedName": "AECOM",
+    "slug": "aecom",
+    "ownership": "publicly traded (ticker symbol ACM)",
+    "hq": "California",
+    "majorIndustry": "construction and engineering",
+    "specificIndustry": "construction &amp; engineering",
+    "totalPenalty": 134332610,
+    "totalRecords": 53,
+    "offenseGroups": [
+      {
+        "category": "government-contracting-related offenses",
+        "penalty": 110955000,
+        "records": 7
+      },
+      {
+        "category": "competition-related offenses",
+        "penalty": 20230917,
+        "records": 1
+      },
+      {
+        "category": "employment-related offenses",
+        "penalty": 2605894,
+        "records": 16
+      },
+      {
+        "category": "safety-related offenses",
+        "penalty": 496299,
+        "records": 27
+      },
+      {
+        "category": "environment-related offenses",
+        "penalty": 44500,
+        "records": 2
+      }
+    ],
+    "primaryOffenses": [
+      {
+        "category": "False Claims Act and related",
+        "penalty": 110955000,
+        "records": 7
+      },
+      {
+        "category": "fraud",
+        "penalty": 20230917,
+        "records": 1
+      },
+      {
+        "category": "wage and hour violation",
+        "penalty": 2470775,
+        "records": 13
+      },
+      {
+        "category": "workplace safety or health violation",
+        "penalty": 383799,
+        "records": 26
+      },
+      {
+        "category": "labor relations violation",
+        "penalty": 135119,
+        "records": 3
+      }
+    ],
+    "rating": "good",
+    "lastChecked": "2026-05-27",
+    "fetchedAt": "2026-05-27T16:10:10.319Z"
+  },
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-01-29",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=AECOM&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-27T16:10:07.654Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-27T16:10:10.319Z",
+  "realCats": 1,
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Manufacturing"
+    }
+  },
+  "csc": {
+    "labor": 8
+  },
+  "enriched": {
+    "federalContracts": {
+      "totalObligatedUSDLast5y": 7000859572,
+      "awardCountLast5y": 500,
+      "recentTop5": [
+        {
+          "date": "2007-06-29",
+          "agency": "Department of Energy",
+          "naics": {
+            "code": "562910",
+            "description": "REMEDIATION SERVICES"
+          },
+          "amount": 319940763.45,
+          "description": "WEST VALLEY DEMONSTRATION PROJECT INTERIM END STATE"
+        },
+        {
+          "date": "2003-06-25",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "561210",
+            "description": "FACILITIES SUPPORT SERVICES"
+          },
+          "amount": 291336932.27,
+          "description": ""
+        },
+        {
+          "date": "2000-07-15",
+          "agency": "Department of Energy",
+          "naics": {
+            "code": null,
+            "description": null
+          },
+          "amount": 271068026.84,
+          "description": ""
+        },
+        {
+          "date": "2009-09-30",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "541990",
+            "description": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES"
+          },
+          "amount": 237693939.27,
+          "description": "BIOLOGICAL THREAT REDUCTION PROGRAM IN KAZAHKSTAN"
+        },
+        {
+          "date": "2022-07-29",
+          "agency": "Department of Defense",
+          "naics": {
+            "code": "236220",
+            "description": "COMMERCIAL AND INSTITUTIONAL BUILDING CONSTRUCTION"
+          },
+          "amount": 229651455.66,
+          "description": "DB REPAIR BERTHS 40 AND 41, NORFOLK NAVAL SHIPYARD, PORTSMOUTH, VA"
+        }
+      ],
+      "primaryAgency": "Department of Defense",
+      "primaryNaics": "[object Object]",
+      "lastUpdated": "2026-06-11T23:51:18.870Z",
+      "source": "usaspending",
+      "sourceUrl": "https://www.usaspending.gov/"
+    }
+  }
+}

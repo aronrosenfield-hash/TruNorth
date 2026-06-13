@@ -934,6 +934,11 @@ function computeScore(co, profile) {
     if (k === "dei"     && (!profile.deiLean       || profile.deiLean       === "neutral")) continue;
     if (k === "animals" && (!profile.animalTesting || profile.animalTesting === "neutral")) continue;
     if (k === "guns"    && (!profile.guns          || profile.guns          === "neutral")) continue;
+    // R7 (Aron, 2026-06-12): political is now a stance category — it enters a
+    // personalized grade only when the user picked a side in the Match, exactly
+    // like the three above. Neutral-lean users get no political signal, which
+    // matches the baked baseline (rebake-scoring.mjs now excludes political).
+    if (k === "political" && (!profile.lean || profile.lean === "neutral")) continue;
     const v = co.sc[k];
     const lv = String(v || "").toLowerCase();
     // V3: a baked continuous score (co.csc[k]) counts as a real signal even
@@ -981,7 +986,7 @@ function computeScore(co, profile) {
     // THIS user (e.g. "doesn't sell firearms" for a firearms supporter) is
     // not a signal — without this, a brand whose only datum is a
     // stance-neutral fact fabricated a whole grade from it.
-    if (["dei", "animals", "guns"].includes(k) && Math.abs(catScore - 50) < 5) continue;
+    if (["political", "dei", "animals", "guns"].includes(k) && Math.abs(catScore - 50) < 5) continue;
     // Build 56: track the worst UNIVERSAL (record-backed) category for the
     // F-requires-misconduct floor below. Stance axes (politics/DEI/animals/
     // guns) are values alignment, not misconduct.
