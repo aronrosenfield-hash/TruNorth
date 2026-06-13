@@ -1461,7 +1461,10 @@ function ElephantSVG({ size=14, col="#E0524D" }) {
 //   - User is NOT flipped to Pro (isPaid stays false)
 //   - When real IAP launches, flip PRO_WAITLIST_MODE = false and the
 //     same component switches back to the real subscription flow.
-const PRO_WAITLIST_MODE = true;
+// X-2 (2026-06-13): flipped to false — real RevenueCat IAP is wired
+// (src/lib/payments.js, entitlement "TruNorth Pro"). MUST sandbox-verify a
+// purchase/restore/cancel on device before submitting to App Review.
+const PRO_WAITLIST_MODE = false;
 
 // App Review fix (2026-06-11 — v1.0 rejected on 2.1.0 / 3.1.1 / 3.1.2):
 // until RevenueCat IAP is live (X-0/X-2), the iOS binary must contain NO
@@ -1472,7 +1475,10 @@ const PRO_WAITLIST_MODE = true;
 // free; Pro returns in 1.1 with real IAP). The founder-pricing waitlist on
 // the WEB marketing site is unaffected — Apple doesn't govern the web.
 // Flip to false together with PRO_WAITLIST_MODE when RevenueCat goes live.
-const IAP_SAFE_MODE = true;
+// X-2 (2026-06-13): flipped to false — the real paywall + Pro feature gating
+// are back on now that RevenueCat IAP is live. (v1.0 shipped this true/free
+// after the first rejection; Pro returns here with a working purchase flow.)
+const IAP_SAFE_MODE = false;
 
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
@@ -1480,12 +1486,16 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
   const [email, setEmail] = useState(initialEmail || getStoredEmail());
+  // X-2 IAP (2026-06-13): real RevenueCat purchase state.
+  const [purchaseError, setPurchaseError] = useState("");
+  const [plan, setPlan] = useState("annual"); // "annual" | "monthly"
 
   // Tighter email validation (audit H8): catches "@@", trailing dots, etc.
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
 
   const handleSubscribe = async () => {
     if (!isValidEmail(email)) { return; /* button stays disabled — no native alert() */ }
+    setPurchaseError("");
     track("upgrade_clicked", {
       email_provided: true,
       source: PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall",
@@ -1496,17 +1506,49 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       intendsToSubscribe: true,
       waitlist: PRO_WAITLIST_MODE,
     });
-    setLoading(false);
     if (PRO_WAITLIST_MODE) {
       // Don't grant Pro — just confirm the waitlist signup. The user stays
       // free; we surface this to them with a success state, then close.
+      setLoading(false);
       setDone(true);
       setTimeout(() => onClose(), 2200);
-    } else {
-      // Real-IAP path (future): only flip Pro after actual Stripe/StoreKit
-      // receipt verification. setTimeout below is just a placeholder.
-      setTimeout(() => onSubscribe(email), 1500);
+      return;
     }
+    // Real-IAP path (X-2): RevenueCat purchase. Web has no IAP — show an
+    // explicit message instead of a silent dead-end (iOS is the only purchase
+    // surface at launch). A user *cancel* is NOT a failure.
+    const { Capacitor } = await import("@capacitor/core");
+    if (!Capacitor.isNativePlatform()) {
+      setLoading(false);
+      setPurchaseError("Subscriptions are available in the iOS app — get TruNorth on the App Store.");
+      return;
+    }
+    const { setEmailOnCustomer, purchasePro } = await import("./lib/payments");
+    await setEmailOnCustomer(email).catch(() => {});
+    const result = await purchasePro(plan === "monthly" ? "monthly" : "annual");
+    setLoading(false);
+    if (result === "purchased") {
+      track("subscribe_succeeded", { plan });
+      onSubscribe(email);
+    } else if (result === "cancelled") {
+      track("subscribe_cancelled", { plan }); // keep the paywall open quietly
+    } else {
+      track("subscribe_failed", { plan });
+      setPurchaseError("Purchase didn't go through. Check your App Store connection and try again.");
+    }
+  };
+
+  // Apple REQUIRES a restore-purchases affordance for auto-renewable subs.
+  const handleRestore = async () => {
+    track("restore_clicked");
+    setPurchaseError("");
+    setLoading(true);
+    const { restorePurchases } = await import("./lib/payments");
+    const ok = await restorePurchases();
+    setLoading(false);
+    track(ok ? "restore_succeeded" : "restore_failed");
+    if (ok) onSubscribe(email);
+    else setPurchaseError("No previous purchase found for this Apple ID.");
   };
 
   return (
@@ -1593,19 +1635,34 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           ))}
         </div>
 
-        <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
-          {PRO_WAITLIST_MODE ? (
-            <>
-              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
-            </>
-          ) : (
-            <>
-              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$0.99</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
-            </>
-          )}
-        </div>
+        {PRO_WAITLIST_MODE ? (
+          <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
+            <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
+            <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
+          </div>
+        ) : (
+          // X-2: plan selector. Prices mirror App Store Connect (annual $14.99,
+          // monthly $1.99). StoreKit shows the user their localized price at the
+          // purchase sheet; these are the display anchors.
+          <div style={{ display:"flex", gap:8, marginBottom:10 }}>
+            {[
+              { id:"annual",  label:"Annual",  price:"$14.99", per:"/yr", sub:"Save 37% · ~$1.25/mo" },
+              { id:"monthly", label:"Monthly", price:"$1.99",  per:"/mo", sub:"Cancel anytime" },
+            ].map(opt => (
+              <button key={opt.id} type="button" onClick={() => setPlan(opt.id)} aria-pressed={plan===opt.id}
+                style={{ flex:1, padding:"10px 8px", borderRadius:12, cursor:"pointer", textAlign:"center",
+                  background: plan===opt.id ? T.goldBg : T.bg3,
+                  border:`1.5px solid ${plan===opt.id ? T.gold : T.border}` }}>
+                <div style={{ fontSize:12, fontWeight:700, color: plan===opt.id ? T.gold : T.txt2 }}>{opt.label}</div>
+                <div style={{ marginTop:2 }}>
+                  <span style={{ fontSize:17, fontWeight:800, color:T.txt }}>{opt.price}</span>
+                  <span style={{ fontSize:11, color:T.txt3 }}>{opt.per}</span>
+                </div>
+                <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>{opt.sub}</div>
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus */}
         <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}>
@@ -1620,14 +1677,26 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
-            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : "Subscribe for $0.99/mo")}
+            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : (plan === "monthly" ? "Subscribe · $1.99/mo" : "Subscribe · $14.99/yr"))}
         </button>
+
+        {purchaseError && (
+          <div role="alert" style={{ fontSize:12, color:T.bad, textAlign:"center", margin:"2px 0 8px", lineHeight:1.45 }}>{purchaseError}</div>
+        )}
 
         <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10 }}>
           {PRO_WAITLIST_MODE
             ? "We email once: when Pro opens. No charges yet · cancel before launch."
-            : "Secure payment · Cancel anytime · No contracts"}
+            : "Secure payment via Apple · Cancel anytime · No contracts"}
         </div>
+
+        {/* Apple requires a restore-purchases affordance for auto-renewable subs. */}
+        {!PRO_WAITLIST_MODE && (
+          <button type="button" onClick={handleRestore} disabled={loading}
+            style={{ width:"100%", padding:9, borderRadius:12, border:"none", background:"transparent", color:T.txt2, fontSize:12.5, cursor: loading ? "default" : "pointer", marginBottom:4 }}>
+            Restore purchases
+          </button>
+        )}
 
         <button onClick={onClose} style={{ width:"100%", padding:11, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer", minHeight:44 }}>
           Maybe later

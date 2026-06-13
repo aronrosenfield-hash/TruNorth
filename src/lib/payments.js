@@ -37,7 +37,7 @@ async function loadRC() {
 }
 
 const IOS_API_KEY  = import.meta.env.VITE_REVENUECAT_IOS_KEY || "";
-const ENTITLEMENT_ID = "pro";
+const ENTITLEMENT_ID = "TruNorth Pro"; // exact RevenueCat entitlement identifier (confirmed 2026-06-13)
 
 // PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR — the only error-shape that
 // reliably crosses the Capacitor bridge is `err.code` (the native side rejects
