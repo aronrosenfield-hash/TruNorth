@@ -1,9 +1,14 @@
 # Phase 5.as — Sunday weekly digest.
 #
-# Sends one MailerLite campaign every Sunday at 14:00 UTC (~9am ET, 6am PT)
-# summarizing the week's grade changes + new recalls + scandals from
-# public/data/weekly_changes.json. The data file is rebuilt by other crons
-# during the week; this just packages it as an email.
+# Sends one MailerLite campaign every Sunday at 18:00 UTC (~1pm ET, 10am PT)
+# summarizing the week's grade changes + new recalls from
+# public/data/weekly_changes.json.
+#
+# TIMING IS LOAD-BEARING: weekly_changes.json is rebuilt by
+# score-rebake-weekly.yml at 16:20 UTC Sunday (its compute-weekly-changes
+# step). This digest runs at 18:00 UTC — ~1h40m later — so it always emails
+# the grades that rebake just recomputed. Do not move it earlier than the
+# rebake, or it will send last week's (or empty) data.
 #
 # Repo secrets required:
 #   MAILERLITE_API_KEY     — MailerLite API token (Subscribers + Campaigns scope)
@@ -16,7 +21,7 @@ name: weekly-digest
 
 on:
   schedule:
-    - cron: "25 14 * * 0"   # Sunday 14:00 UTC
+    - cron: "0 18 * * 0"    # Sunday 18:00 UTC (after score-rebake-weekly @ 16:20)
   workflow_dispatch:
     inputs:
       dry_run:

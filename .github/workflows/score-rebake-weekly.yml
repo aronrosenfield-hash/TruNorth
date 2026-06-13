@@ -53,12 +53,19 @@ jobs:
           node scripts/rebake-scoring.mjs --apply
           node scripts/finalize-bundle.mjs
 
+      # Diff the grades we just recomputed against last week's snapshot and
+      # rebuild weekly_changes.json (the "what changed this week" retention
+      # loop + Sunday digest source). Runs here, after index.json is fresh,
+      # so the changes commit atomically with the grades that caused them.
+      - name: Compute weekly changes
+        run: node scripts/compute-weekly-changes.mjs --apply
+
       - name: Commit + push
         run: |
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/companies/ || true
+          git add public/data/companies/ public/data/weekly_changes.json public/data/_meta/grade-snapshot.json || true
           git diff --quiet --staged && echo "No changes to rebake — exiting" && exit 0
           git commit -m "data(rebake): weekly scoring overlay refresh $DATE [skip ci]"
           for i in 1 2 3; do
