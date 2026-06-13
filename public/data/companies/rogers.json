@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -60,10 +60,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, dealer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -126,21 +124,6 @@
         "form": "8-K"
       }
     ]
-  },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "CO"
-    ],
-    "primaryRole": "dealer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
   },
   "slug": "rogers",
   "news": null,

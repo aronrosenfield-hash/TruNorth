@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
-    "guns": "makes_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -60,10 +60,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, manufacturer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -122,21 +120,6 @@
     "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/SGS_SA.svg/330px-SGS_SA.svg.png",
     "wikipediaUrl": "https://en.wikipedia.org/wiki/SGS_S.A.",
     "extract": "SGS  is a Swiss multinational company headquartered in Baar, which provides inspection, verification, testing and certification services. Its 99,600 employees operate a network of 2,600 offices and laboratories worldwide. It ranked on Forbes Global 2000 in 2015, 2016, 2017, 2020 and 2021."
-  },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "07"
-    ],
-    "fflTypeNames": [
-      "Manufacturer of Firearms Other Than Destructive Devices (07)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "KS"
-    ],
-    "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
   },
   "slug": "sgs",
   "news": null,

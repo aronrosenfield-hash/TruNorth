@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "makes_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -64,10 +64,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 2 active federal firearms licenses (ATF FFL registry, manufacturer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -106,24 +104,6 @@
   },
   "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/AGC%20Logo.svg",
   "logoSource": "wikidata_p154",
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "07",
-      "08"
-    ],
-    "fflTypeNames": [
-      "Manufacturer of Firearms Other Than Destructive Devices (07)",
-      "Importer of Firearms Other Than Destructive Devices (08)"
-    ],
-    "licenseCount": 2,
-    "states": [
-      "GA",
-      "UT"
-    ],
-    "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "agc",
   "secComplaints": null,
   "news": null,

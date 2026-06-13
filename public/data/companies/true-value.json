@@ -12,7 +12,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -61,11 +61,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 4 active federal firearms licenses (ATF FFL registry, dealer).",
-    "verdict": "N/A",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -187,23 +184,6 @@
       "sourceUrl": "https://disabilityin-bulk.s3.amazonaws.com/2021/2021+Disability+Equality+Index+Top-Scoring+Companies.July.13+DisabilityIN508.pdf"
     }
   ],
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)"
-    ],
-    "licenseCount": 4,
-    "states": [
-      "KS",
-      "MN",
-      "VA"
-    ],
-    "primaryRole": "dealer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "true-value",
   "news": null,
   "payRatio": null,

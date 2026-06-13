@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "makes_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na",
     "governance": "neutral"
@@ -60,10 +60,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 3 active federal firearms licenses (ATF FFL registry, manufacturer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -107,26 +105,6 @@
         "form": "8-K"
       }
     ]
-  },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01",
-      "07",
-      "08"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)",
-      "Manufacturer of Firearms Other Than Destructive Devices (07)",
-      "Importer of Firearms Other Than Destructive Devices (08)"
-    ],
-    "licenseCount": 3,
-    "states": [
-      "AZ",
-      "MA"
-    ],
-    "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
   },
   "logoUrl": "https://icons.duckduckgo.com/ip3/prime.com.ico",
   "logoSource": "ddg_favicon_heuristic",

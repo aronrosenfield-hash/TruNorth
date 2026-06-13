@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "makes_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na",
     "violations": "poor",
@@ -61,10 +61,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, manufacturer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -127,21 +125,6 @@
   },
   "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lloyd's%20Register%20logo.svg",
   "logoSource": "wikidata_p154",
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "07"
-    ],
-    "fflTypeNames": [
-      "Manufacturer of Firearms Other Than Destructive Devices (07)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "TX"
-    ],
-    "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "lloyd-s",
   "competitors": [],
   "news": null,

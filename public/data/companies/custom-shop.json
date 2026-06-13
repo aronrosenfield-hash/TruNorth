@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "makes_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -53,10 +53,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 6 active federal firearms licenses (ATF FFL registry, manufacturer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -80,28 +78,6 @@
   },
   "logoUrl": "https://icons.duckduckgo.com/ip3/customshop.com.ico",
   "logoSource": "ddg_favicon_heuristic",
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01",
-      "06",
-      "07"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)",
-      "Manufacturer of Ammunition for Firearms (06)",
-      "Manufacturer of Firearms Other Than Destructive Devices (07)"
-    ],
-    "licenseCount": 6,
-    "states": [
-      "AL",
-      "MT",
-      "NY",
-      "TX"
-    ],
-    "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "custom-shop",
   "competitors": [],
   "wiki": null,

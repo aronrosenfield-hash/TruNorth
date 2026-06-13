@@ -11,7 +11,7 @@
     "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na",
     "health": "mixed"
@@ -62,10 +62,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, dealer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -132,21 +130,6 @@
       "sourceUrl": "https://www.crueltyfreeinternational.org/approved-brands/listing/safeway/"
     }
   ],
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "AK"
-    ],
-    "primaryRole": "dealer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "safeway",
   "competitors": [],
   "news": null,

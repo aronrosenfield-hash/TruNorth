@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -59,10 +59,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, importer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -134,21 +132,6 @@
       "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
     }
   ],
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "08"
-    ],
-    "fflTypeNames": [
-      "Importer of Firearms Other Than Destructive Devices (08)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "FL"
-    ],
-    "primaryRole": "importer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "iac",
   "news": null,
   "payRatio": null,
