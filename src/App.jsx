@@ -7148,15 +7148,15 @@ if (screen === "basket") {
               return (
                 <div style={{ padding:"60px 24px", textAlign:"center", color:T.txt3 }}>
                   <i className="ti ti-star" style={{ fontSize:48, color:T.txt3, marginBottom:14 }} aria-hidden="true" />
-                  <div style={{ fontSize:15, fontWeight:600, color:T.txt2 }}>No saved brands yet</div>
+                  <div style={{ fontSize:15, fontWeight:600, color:T.txt2 }}>Your basket is empty</div>
                   <div style={{ fontSize:12, marginTop:6, lineHeight:1.4 }}>
-                    Tap the ☆ on any brand to save it for later.
+                    Tap the ☆ on any brand to add it to your basket.
                   </div>
                   <button
                     onClick={() => setTab("search")}
                     style={{ marginTop:18, padding:"10px 18px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer" }}
                   >
-                    Find brands to save →
+                    Build your basket →
                   </button>
                 </div>
               );
@@ -7172,9 +7172,9 @@ if (screen === "basket") {
                        on focus. The previous 12 looked nicer but trapped
                        users in zoomed-Library state until they pinch out. */
                     style={{ background:T.bg3, color:T.txt, border:`1px solid ${T.border}`, borderRadius:8, padding:"6px 8px", fontSize:16, flexShrink:0, minHeight:36 }}
-                    aria-label="Sort saved brands"
+                    aria-label="Sort your basket"
                   >
-                    <option value="recent">Recently saved</option>
+                    <option value="recent">Recently added</option>
                     <option value="grade">Grade (best first)</option>
                     <option value="name">Name (A–Z)</option>
                     <option value="category">Category</option>
@@ -7197,7 +7197,7 @@ if (screen === "basket") {
                 </div>
                 {savedCos.length === 0 ? (
                   <div style={{ padding:"40px 24px", textAlign:"center", color:T.txt3, fontSize:13 }}>
-                    No saved brands in <strong>{savedCategoryFilter}</strong>. <button onClick={() => setSavedCategoryFilter("all")} style={{ background:"none", border:"none", color:T.accent2, textDecoration:"underline", cursor:"pointer" }}>Clear filter</button>
+                    Nothing in your basket under <strong>{savedCategoryFilter}</strong>. <button onClick={() => setSavedCategoryFilter("all")} style={{ background:"none", border:"none", color:T.accent2, textDecoration:"underline", cursor:"pointer" }}>Clear filter</button>
                   </div>
                 ) : savedCos.map(co => {
                   const ps = computeScore(co, profile);
@@ -7232,7 +7232,7 @@ if (screen === "basket") {
                       <button
                         onClick={(e) => { e.stopPropagation(); toggleSaved(co.slug || co.id, co.name); }}
                         style={{ background:"none", border:"none", color:T.gold, fontSize:18, cursor:"pointer", padding:"0 4px" }}
-                        aria-label="Remove from saved"
+                        aria-label="Remove from basket"
                       >★</button>
                       <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
                     </button>
@@ -7678,7 +7678,7 @@ if (screen === "basket") {
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Sign out?",
-                    body: "Your saved brands and preferences stay on this device. To wipe everything, use 'Delete my data' below.",
+                    body: "Your basket and preferences stay on this device. To wipe everything, use 'Delete my data' below.",
                     confirmLabel: "Sign out",
                     cancelLabel: "Stay",
                     danger: true,
@@ -7704,7 +7704,7 @@ if (screen === "basket") {
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Delete all my data on this device?",
-                    body: "Wipes your saved brands, history, Match answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
+                    body: "Wipes your basket, history, Match answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
                     confirmLabel: "Delete everything",
                     cancelLabel: "Cancel",
                     danger: true,
