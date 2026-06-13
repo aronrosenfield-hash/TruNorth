@@ -5481,10 +5481,12 @@ useEffect(() => {
   // This converts the daily data pipeline into a visible return-trigger
   // without accounts or push infra (APNs is the post-launch upgrade path).
   const [savedChanges, setSavedChanges] = useState([]);
-  // R2 (flow A step 5): "watch my basket" intent, asked at the Reveal. Local
-  // intent flag only — the in-app what-changed feed honors it today; it
-  // becomes the APNs opt-in seed when push lands (R3). No OS prompt is
-  // burned before push infrastructure exists.
+  // R2 (flow A step 5): "watch my basket" intent, asked at the Reveal.
+  // 2026-06-13 (review): this was a silent no-op — nothing read it. It now
+  // gates whether basket record-changes surface as the Today story card (the
+  // "flag me" promise, in-app since there's no push yet); the Library → Saved
+  // feed still shows them regardless. It also seeds the APNs opt-in for when
+  // push lands (R3). No OS prompt is burned before push infrastructure exists.
   const [watchBasket, setWatchBasket] = useState(() => {
     try { return localStorage.getItem("tn_watchBasket") === "1"; } catch { return false; }
   });
@@ -6811,7 +6813,11 @@ if (screen === "basket") {
             const savedCos = Array.from(savedSet).map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
 
             // Story pick: your basket moved → this week's digest → quiet week.
-            const story = savedChanges[0] || null;
+            // 2026-06-13 (review): the basket-change story is gated on the
+            // "watch my basket" opt-in — toggling it ON at the Reveal is what
+            // surfaces record changes here on Today (the Library → Saved feed
+            // shows them regardless). Makes the watch toggle a real control.
+            const story = watchBasket ? (savedChanges[0] || null) : null;
             const weeklyStory = !story && weeklyChanges?.changes?.length ? weeklyChanges.changes[0] : null;
 
             // Shelf: deterministic daily category. WHITELISTED to aisles a
