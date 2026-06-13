@@ -3,8 +3,8 @@
   "legalName": "TORO CORP.",
   "cat": "Travel & Transportation",
   "init": "TORO",
-  "overall": null,
-  "realCats": 0,
+  "overall": 50,
+  "realCats": 2,
   "isPublic": true,
   "ticker": "TORO",
   "cik": 1941131,
@@ -15,13 +15,13 @@
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "neutral",
-    "health": "neutral"
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -36,7 +36,7 @@
     "sources": []
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "18 OSHA severe-injury reports since 2015.",
     "sources": []
   },
   "dei": {
@@ -54,7 +54,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 120 on record (27 in past 12mo); 97% timely response rate.",
     "sources": []
   },
   "execPay": {
@@ -62,7 +62,7 @@
     "sources": []
   },
   "health": {
-    "s": "No public record found.",
+    "s": "34 CPSC recalls on record; sample hazard: laceration.",
     "sources": []
   },
   "ab": "#0d0d21",
@@ -515,5 +515,9 @@
     "pctMinorityMgmt": 8.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "csc": {
+    "labor": 50,
+    "privacy": 50
   }
 }

@@ -2,19 +2,20 @@
   "name": "Paramount+",
   "cat": "Entertainment & Media",
   "init": "PARA",
-  "overall": null,
+  "overall": 38,
   "isPublic": true,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "anti_dei",
     "animals": "na",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "na",
-    "governance": "neutral"
+    "governance": "neutral",
+    "health": "mixed"
   },
   "political": {
     "s": "FEC: $34K PAC donations; 34% to Republican, 66% to Democratic committees.",
@@ -25,7 +26,7 @@
     ]
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "1 OSHA severe-injury reports in past 2y (0 amputations); 11 since 2015.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -72,7 +73,7 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "CFPB consumer complaints: 3379 on record (100 in past 12mo); 100% timely response rate.",
     "sources": [
       "Claude AI synthesis"
     ]
@@ -182,7 +183,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T01:45:21.901Z",
-  "realCats": 0,
+  "realCats": 2,
   "governance": {
     "s": "Wikidata: owned by Paramount Skydance; HQ New York City. (Wikidata Q27903045)",
     "sources": [
@@ -754,5 +755,12 @@
     "lastUpdated": "2026-06-11T14:35:44.580Z",
     "source": "phmsa",
     "sourceUrl": "https://primis.phmsa.dot.gov/enforcement-data/operators?search=Paramount"
+  },
+  "health": {
+    "s": "5 CPSC recalls on record; sample hazard: electrical arcing can cause the units to catch fire."
+  },
+  "csc": {
+    "labor": 50,
+    "privacy": 8
   }
 }
