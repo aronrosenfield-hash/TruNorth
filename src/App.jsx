@@ -630,15 +630,13 @@ function getQuizSteps() { return QUIZ_STEPS_ALT_B; }
 const QUIZ_STEPS = QUIZ_STEPS_ALT_B; // back-compat for any direct refs elsewhere
 
 // ─── SCORING ENGINE ───────────────────────────────────────────────────────────
-// 2026-06-13 (review #4, engine reconciliation): `health` was in the baked
-// baseline (rebake-scoring.mjs CAT_KEYS) but missing here, so computeScore
-// silently dropped a signal the baseline grades on — profiled grades diverged
-// from baseline for 256 brands (19 graded on health alone became "?" for quiz
-// users). Added so the two engines score the same category set. (scoreCat and
-// baseWeights already handle health; it's a universal/conduct cat, not stance.)
-// NOTE for Aron: health has no Match card and no detail UI — it's an invisible
-// driver. Separate decision pending: render health, or drop it from scoring.
-const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay","health"];
+// 2026-06-13 (review): `health` is DROPPED from scoring (Aron's call). It had no
+// Match card and no detail-card UI — an invisible grade driver (the review tied
+// Denny's D partly to 2018 LA-county health data) — and dropping it was nearly
+// distribution-neutral (only 19 health-only brands → "?"). Both engines now
+// score the same 9 marketed categories. Must stay in sync with
+// rebake-scoring.mjs CAT_KEYS + scripts/lib/index-entry.mjs CATEGORIES.
+const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
 const CAT_LABELS = {political:"Political",charity:"Charity",environment:"Environ.",labor:"Labor",dei:"DEI",animals:"Animal Testing",guns:"Firearms",privacy:"Data Privacy",execPay:"Exec Pay"};
 const CAT_ICONS  = {political:"ti-flag-2",charity:"ti-heart",environment:"ti-leaf",labor:"ti-users",dei:"ti-rainbow",animals:"ti-paw",guns:"ti-target",privacy:"ti-lock",execPay:"ti-coin"};
 const CAT_FULL   = {political:"Political donations & lobbying",charity:"Charitable giving",environment:"Environmental policy",labor:"Labor practices",dei:"DEI & social equity",animals:"Animal testing",guns:"Firearms policy",privacy:"Data privacy",execPay:"Executive pay ratio"};
@@ -1218,7 +1216,7 @@ function scoreGrade(n, realCats) {
 // Use the larger of that count and the brand's total realCats — i.e.
 // personalization is generous, never stricter than the base cap.
 // If there's no profile, fall back to base realCats unchanged.
-const CAT_KEYS_FOR_REL = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay","health"];
+const CAT_KEYS_FOR_REL = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
 // QA fix 2026-06-10: this read profile[k] for weights, but the quiz stores
 // rank weights under profile.weights[k] and stance boosts as separate string
 // fields (lean / deiLean / animalTesting / guns / unionSupport) — so

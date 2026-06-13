@@ -61,7 +61,10 @@ const REVENUE = (() => {
 
 // Categories the scoring engine cares about. NOTE: transparency is not in
 // CAT_KEYS in App.jsx — it's a display-only badge — so we omit it here too.
-const CAT_KEYS = ["political", "charity", "environment", "labor", "dei", "animals", "guns", "privacy", "execPay", "health"];
+// 2026-06-13 (review): `health` dropped from scoring (Aron's call) — it was an
+// invisible driver (no Match card, no detail UI). Kept in sync with App.jsx
+// CAT_KEYS + index-entry CATEGORIES (all 9 marketed categories, no health).
+const CAT_KEYS = ["political", "charity", "environment", "labor", "dei", "animals", "guns", "privacy", "execPay"];
 
 const NO_RECORD = /^\s*no public record found\.?\s*$/i;
 
