@@ -630,7 +630,15 @@ function getQuizSteps() { return QUIZ_STEPS_ALT_B; }
 const QUIZ_STEPS = QUIZ_STEPS_ALT_B; // back-compat for any direct refs elsewhere
 
 // ─── SCORING ENGINE ───────────────────────────────────────────────────────────
-const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
+// 2026-06-13 (review #4, engine reconciliation): `health` was in the baked
+// baseline (rebake-scoring.mjs CAT_KEYS) but missing here, so computeScore
+// silently dropped a signal the baseline grades on — profiled grades diverged
+// from baseline for 256 brands (19 graded on health alone became "?" for quiz
+// users). Added so the two engines score the same category set. (scoreCat and
+// baseWeights already handle health; it's a universal/conduct cat, not stance.)
+// NOTE for Aron: health has no Match card and no detail UI — it's an invisible
+// driver. Separate decision pending: render health, or drop it from scoring.
+const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay","health"];
 const CAT_LABELS = {political:"Political",charity:"Charity",environment:"Environ.",labor:"Labor",dei:"DEI",animals:"Animal Testing",guns:"Firearms",privacy:"Data Privacy",execPay:"Exec Pay"};
 const CAT_ICONS  = {political:"ti-flag-2",charity:"ti-heart",environment:"ti-leaf",labor:"ti-users",dei:"ti-rainbow",animals:"ti-paw",guns:"ti-target",privacy:"ti-lock",execPay:"ti-coin"};
 const CAT_FULL   = {political:"Political donations & lobbying",charity:"Charitable giving",environment:"Environmental policy",labor:"Labor practices",dei:"DEI & social equity",animals:"Animal testing",guns:"Firearms policy",privacy:"Data privacy",execPay:"Executive pay ratio"};
