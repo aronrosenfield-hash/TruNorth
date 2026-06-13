@@ -11,7 +11,7 @@ import PrivacyPolicy from "./PrivacyPolicy";
 import Methodology from "./Methodology";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource, apiUrl } from "./lib/dataSource";
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
@@ -1541,7 +1541,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           </div>
           {[
             { feat: "View brand names + grade",       free: true,  pro: true  },
-            { feat: "30-second values quiz",          free: true,  pro: true  },
+            { feat: "45-second values Match",          free: true,  pro: true  },
             { feat: "Browse 12,000+ companies",       free: true,  pro: true  },
             { feat: "Personalized scores",            free: false, pro: true, hi: true },
             { feat: "Full grade breakdowns",          free: false, pro: true  },
@@ -2154,10 +2154,14 @@ function WhatsNewModal({ companyCount }) {
       // throwing a "what's new" modal over their target is poor UX. Skip it.
       if (/^\/company\//.test(window.location.pathname)) return false;
     }
-    // Phase 5.ab: if the user previously checked "Don't show again", honor
-    // it across sessions. Otherwise show once per session (Phase 5.aa).
+    // 2026-06-12 review fix: this was gated on sessionStorage, which iOS clears
+    // on every cold launch — so the modal re-fired on each app open until the
+    // user found the "Don't show again" checkbox. Gate on localStorage instead:
+    // show exactly ONCE per WHATSNEW_VERSION, and again only when a new version
+    // ships (which is the actual point of a "what's new" card).
     try {
       if (localStorage.getItem("tn_whatsnew_optout") === WHATSNEW_VERSION) return false;
+      if (localStorage.getItem("tn_whatsnew_seen") === WHATSNEW_VERSION) return false;
       // Phase 5.ag: a first-time user just landed — "What's NEW" is meaningless
       // (they have no baseline). Suppress on the session that immediately
       // follows onboarding; show on session 2+.
@@ -2166,7 +2170,7 @@ function WhatsNewModal({ companyCount }) {
         const age = Date.now() - parseInt(justOnboarded, 10);
         if (age < 5 * 60 * 1000) return false; // 5-min window
       }
-      return sessionStorage.getItem("tn_whatsnew_session") !== WHATSNEW_VERSION;
+      return true;
     } catch { return false; }
   });
   const [dontShowAgain, setDontShowAgain] = useState(false);
@@ -2176,7 +2180,10 @@ function WhatsNewModal({ companyCount }) {
   // dismiss declared before the conditional return so useModalA11y can
   // see it as a stable callback at every render (rules of hooks).
   const dismiss = useCallback(() => {
-    try { sessionStorage.setItem("tn_whatsnew_session", WHATSNEW_VERSION); } catch {}
+    // Persist per-version so this version's card never re-fires (was sessionStorage,
+    // which iOS wiped each cold launch). "Don't show again" additionally opts out
+    // of future-version cards.
+    try { localStorage.setItem("tn_whatsnew_seen", WHATSNEW_VERSION); } catch {}
     if (dontShowAgain) {
       try { localStorage.setItem("tn_whatsnew_optout", WHATSNEW_VERSION); } catch {}
     }
@@ -2222,7 +2229,7 @@ function WhatsNewModal({ companyCount }) {
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Tailored to your values.</b> 30-second quiz reweights every grade so what matters to you, counts.</span>
+            <span><b style={{ color:T.txt }}>Tailored to your values.</b> The 45-second Match reweights every grade so what matters to you, counts.</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
@@ -2380,7 +2387,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                     <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
                       <div style={{ fontSize:28, fontWeight:800, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
                       {isPaid && profile && ps != null && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
-                      {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take quiz</div>}
+                      {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take the Match</div>}
                     </div>
                   </div>
                 );
@@ -3194,7 +3201,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             };
             const rc = gradeRowColors[profile ? grade : "?"];
             return (
-              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : "Take the values quiz to see grades"}>
+              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : "Take the Match to see grades"}>
                 <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1 }}>{profile ? grade : "?"}</div>
                 {isPaid && profile && <div style={{ fontSize:10, color:rc.text, opacity:0.7 }}>{ps}</div>}
               </div>
@@ -3516,7 +3523,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   return (
                     <div style={{ flexShrink:0 }}>
                       <CompassSeal values={sealValues} grade={profile ? grade : "?"} size={86}
-                        title={profile ? `Your verdict: grade ${grade}` : "Take the quiz to strike your compass"} />
+                        title={profile ? `Your verdict: grade ${grade}` : "Take the Match to strike your compass"} />
                     </div>
                   );
                 })()}
@@ -3649,7 +3656,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     </>
                   ) : (
                     <>
-                      <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.2 }}>Take the 30-second quiz</div>
+                      <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.2 }}>Take the 45-second Match</div>
                       <div style={{ fontSize:12, color:T.txt3, marginTop:3, lineHeight:1.4 }}>{enriched.cat} · data shown below; your values set the grade</div>
                       {/* Trust layer: evidence-depth chip for UN-quizzed users
                           too (the profile branch renders its own copy). */}
@@ -4764,7 +4771,7 @@ function Quiz({ onComplete, onSkip, initialProfile = null }) {
             and doesn't extend the page below the viewport (the old bug). */}
         {onSkip && (
           <button onClick={onSkip} style={{ width:"100%", padding:9, borderRadius:10, border:"none", background:"transparent", color:T.txt3, fontSize:12, cursor:"pointer" }}>
-            Skip — see baseline scores. You can take the quiz anytime from Account.
+            Skip — see baseline scores. You can take the Match anytime from Account.
           </button>
         )}
       </div>
@@ -4804,7 +4811,9 @@ function SubmitView({ isPaid, onUpgrade }) {
     // never penalized for our infra hiccups.
     try {
       const storedEmail = (typeof localStorage !== "undefined" && localStorage.getItem("tn_email")) || "";
-      fetch("/api/submit", {
+      // apiUrl() rewrites to the production origin on native iOS — a relative
+      // /api/submit there hits capacitor://localhost and the correction is lost.
+      fetch(apiUrl("/api/submit"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -5957,16 +5966,18 @@ useEffect(() => {
     if (!q) return;
     const settle = setTimeout(() => {
       track("search", { query: q.slice(0, 60), result_count: filtered.length });
+      // 2026-06-12 review: this stash used to sit AFTER the cleanup `return`
+      // below — unreachable since the M4 settle refactor, so "Recent" never
+      // populated for anyone. Record settled, non-empty searches here.
+      if (filtered.length > 0) {
+        setRecentSearches(prev => {
+          const next = [q, ...prev.filter(x => x.toLowerCase() !== q.toLowerCase())].slice(0, 5);
+          try { localStorage.setItem("tn_recentSearches", JSON.stringify(next)); } catch {}
+          return next;
+        });
+      }
     }, 1200);
     return () => clearTimeout(settle);
-    // Only stash searches that returned something
-    if (filtered.length > 0) {
-      setRecentSearches(prev => {
-        const next = [q, ...prev.filter(x => x.toLowerCase() !== q.toLowerCase())].slice(0, 5);
-        try { localStorage.setItem("tn_recentSearches", JSON.stringify(next)); } catch {}
-        return next;
-      });
-    }
   }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleCat = (f) => setCatFilters(prev => prev.includes(f) ? prev.filter(x=>x!==f) : [...prev, f]);
@@ -7310,12 +7321,12 @@ if (screen === "basket") {
               <i className="ti ti-sparkles" style={{ fontSize:20, color:T.accent2, flexShrink:0 }} aria-hidden="true" />
               <div style={{ flex:1, minWidth:0 }}>
                 <div style={{ fontSize:13, fontWeight:600, color:T.txt, lineHeight:1.3 }}>See <strong>{teaserCompany.name}</strong>'s score tailored to <em>your</em> values</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:3 }}>30-second quiz — free</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:3 }}>45-second Match — free</div>
               </div>
               <button
                 onClick={()=>{ track("personalized_teaser_clicked", { slug: teaserCompany.slug || teaserCompany.id, name: teaserCompany.name }); track("quiz_started", { from: "personalized_teaser" }); setScreen("quiz"); }}
                 style={{ padding:"7px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer", flexShrink:0 }}
-              >Take quiz</button>
+              >Take the Match</button>
               <button
                 onClick={()=>{ setTeaserDismissed(true); try { sessionStorage.setItem("tn_teaserDismissed","1"); } catch {} track("personalized_teaser_dismissed"); }}
                 style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer", flexShrink:0 }}
@@ -7851,7 +7862,7 @@ if (screen === "basket") {
               <>
                 <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Run the Match — nine quick choices personalize every grade in the app.</div>
                 <button onClick={()=>{ track("quiz_started", { isPaid, from: "account" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
-                  Take the quiz {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
+                  Take the Match {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
                 </button>
               </>
             )}
@@ -8019,7 +8030,7 @@ if (screen === "basket") {
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Delete all my data on this device?",
-                    body: "Wipes your saved brands, history, quiz answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
+                    body: "Wipes your saved brands, history, Match answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
                     confirmLabel: "Delete everything",
                     cancelLabel: "Cancel",
                     danger: true,
@@ -8052,14 +8063,14 @@ if (screen === "basket") {
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>How grades work</div>
             <div style={{ fontSize:12, color:T.txt3, marginBottom:12, lineHeight:1.55 }}>
-              Each company is scored 0–100 across the value categories with data, then averaged. The letter grade is the overall score put on a school-grade curve:
+              Each category with public-record data is scored 0–100, then combined with a shrinkage toward 50 that prices in how much evidence exists — so one thin signal can't swing a grade. The result maps to fixed, published cut points (not a school curve):
             </div>
             {[
-              { grade:"A", range:"90–100", desc:"Best of class — strong on most categories with no major red flags",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
-              { grade:"B", range:"80–89",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
-              { grade:"C", range:"70–79",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
-              { grade:"D", range:"60–69",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
-              { grade:"F", range:"0–59",   desc:"Substantial negative signals across most categories with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
+              { grade:"A", range:"63–100", desc:"Best of class — strong across a broad, verified record",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
+              { grade:"B", range:"56–62",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
+              { grade:"C", range:"46–55",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
+              { grade:"D", range:"41–45",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
+              { grade:"F", range:"0–40",   desc:"Substantial negative signals with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
             ].map((r) => (
               <div key={r.grade} style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0" }}>
                 <div style={{ width:34, height:34, borderRadius:8, background:r.bg, border:`1px solid ${r.border}`, color:r.color, fontSize:16, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>{r.grade}</div>
@@ -8070,7 +8081,8 @@ if (screen === "basket") {
               </div>
             ))}
             <div style={{ fontSize:11, color:T.txt3, marginTop:10, lineHeight:1.5, paddingTop:10, borderTop:`1px solid ${T.border}` }}>
-              Categories without enough data are <strong style={{ color:T.txt2 }}>excluded</strong> from the grade — they don't count for or against the brand.
+              Categories without enough data are <strong style={{ color:T.txt2 }}>excluded</strong> from the grade — they don't count for or against the brand.{" "}
+              <a href="#methodology" onClick={() => track("methodology_opened", { from: "grade_legend" })} style={{ color:T.accent2, fontWeight:600, textDecoration:"none" }}>Full methodology →</a>
             </div>
           </div>
 

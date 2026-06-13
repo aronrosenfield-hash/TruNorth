@@ -32,6 +32,17 @@ const IS_NATIVE = (() => {
 let nativeDataSource = null;
 export function getNativeDataSource() { return IS_NATIVE ? nativeDataSource : null; }
 
+// Funnel fix (2026-06-12 review): the same .ipa-frozen-origin problem that hit
+// /data/* also silently broke EVERY /api/* POST on native — fetch("/api/subscribe")
+// resolves to capacitor://localhost/api/subscribe (no server there), so on-device
+// email capture, Pro-waitlist signups, and corrections were lost while the UI
+// reported success. Route API calls to the real origin on native; web stays
+// same-origin relative. Vercel CORS + the per-route OPTIONS handlers allow the
+// capacitor:// origin.
+export function apiUrl(path) {
+  return IS_NATIVE ? REMOTE_BASE + path : path;
+}
+
 export { fetchData as fetchAppData }; // App.jsx routes its own /data/ fetches through this
 
 async function fetchData(path, { timeoutMs = 12_000 } = {}) {
