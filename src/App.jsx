@@ -5904,6 +5904,16 @@ if (screen === "basket") {
       .sort((a, b) => ((GRADE_RANK[b.grade] || 0) - (GRADE_RANK[a.grade] || 0)) || (b.score - a.score))
       .slice(0, 3);
     const winner = top3[0];
+    // R2 review — slimmed Reveal to one payoff: archetype → clash → one CTA.
+    // If the user has a basket, the sharpest clash is the hook; otherwise their
+    // top match is. Never both (showing two payoffs + runners-up + the weighting
+    // math was the 9-ask overload the review flagged). Computed once here so the
+    // clash card and the top-match gate stay mutually exclusive.
+    const savedCos = savedSet.size > 0
+      ? Array.from(savedSet).map(s => (companies || []).find(c => (c.slug || c.id) === s)).filter(Boolean)
+      : [];
+    const basketView = savedCos.length ? basketVerdict(savedCos, profile, companies || []) : null;
+    const hasBasketPayoff = !!(basketView && basketView.graded > 0);
     return (
       <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg, paddingTop:"env(safe-area-inset-top,0px)" }}>
         <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center", boxSizing:"border-box", width:"100%" }}>
@@ -5931,36 +5941,17 @@ if (screen === "basket") {
               </div>
             );
           })()}
-          {/* Build 57 (review): show the math — users should see exactly how
-              their answers weigh, and it sets correct expectations for why
-              grades differ from a friend's. */}
-          {(() => {
-            const w = { ...PROFILE_DEFAULT_WEIGHTS, ...(profile?.weights || {}) };
-            const boosts = {
-              political: profile?.lean && profile.lean !== "neutral" ? 1.5 : 1,
-              dei: profile?.deiLean && profile.deiLean !== "neutral" ? 1.5 : 1,
-              animals: profile?.animalTesting && profile.animalTesting !== "neutral" ? 1.5 : 1,
-              guns: profile?.guns && profile.guns !== "neutral" ? 1.5 : 1,
-              labor: profile?.unionSupport && profile.unionSupport !== "neutral" ? 1.5 : 1,
-            };
-            const eff = CAT_KEYS.map(k => ({ k, x: (w[k] || 2) * (boosts[k] || 1) }))
-              .sort((a, b) => b.x - a.x).slice(0, 3);
-            return (
-              <div style={{ fontSize:11.5, color:T.txt3, textAlign:"center", marginBottom:14, maxWidth:340, lineHeight:1.5 }}>
-                Weighing most for you: {eff.map((e, i) => (
-                  <span key={e.k}>{i > 0 && " · "}<span style={{ color:T.txt2, fontWeight:600 }}>{CAT_LABELS[e.k]} ×{(Math.round(e.x * 10) / 10).toFixed(1).replace(/\.0$/, "")}</span></span>
-                ))}
-              </div>
-            );
-          })()}
+          {/* R2 review: the per-category weighting math used to render here
+              ("Weighing most for you: …"). Cut from the celebration screen —
+              the compass seal above already shows those weights as spoke
+              lengths, and the numeric breakdown cooled the peak moment. The
+              detailed math still lives on the Account fingerprint + Methodology. */}
           {/* R2 (flow A step 4): the basket, judged — the personal payoff.
               The % the user just earned by answering, plus the ONE sharpest
               clash with a route to its receipts (the verdict card has the
               swap + switch waiting one tap away). */}
-          {savedSet.size > 0 && (() => {
-            const savedCos = Array.from(savedSet).map(s => (companies || []).find(c => (c.slug || c.id) === s)).filter(Boolean);
-            const bv = basketVerdict(savedCos, profile, companies || []);
-            if (bv.graded === 0) return null;
+          {hasBasketPayoff && (() => {
+            const bv = basketView;
             const n = bv.clashes.length;
             const worst = bv.clashes[0] || null;
             return (
@@ -6000,14 +5991,19 @@ if (screen === "basket") {
               </div>
             );
           })()}
-          <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>Your values are set.</div>
-          {/* 2026-06-01 fix: was maxWidth:"100%" which inherited parent width
-              and let the italic "you" overflow past the viewport on narrow
-              iPhones. Constrained to 340 to match the archetype card above. */}
-          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
+          {/* R2 review: dropped the redundant "Your values are set." headline —
+              the archetype card + compass already deliver the identity beat. Kept
+              one functional line so users know grades are now personalized.
+              maxWidth:340 (not 100%) so the italic "you" can't overflow on narrow
+              iPhones — the 2026-06-01 fix. */}
+          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:22, lineHeight:1.4, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
             Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
           </div>
-          {winner && (
+          {/* R2 review: the top match is the payoff ONLY when there's no basket
+              clash to lead with — otherwise the clash card above is the hook, and
+              showing both (plus a runners-up list) was the overload the review
+              flagged. One payoff, never two. */}
+          {!hasBasketPayoff && winner && (
             <>
               <div style={{ fontSize:11, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Your top match</div>
               <div
@@ -6039,24 +6035,6 @@ if (screen === "basket") {
                   );
                 })()}
               </div>
-              {top3.length > 1 && (
-                <>
-                  <div style={{ fontSize:11, color:T.txt3, marginBottom:6 }}>Runners-up</div>
-                  <div style={{ width:"100%", maxWidth:340, display:"flex", flexDirection:"column", gap:6 }}>
-                    {top3.slice(1).map(({ co, score }) => (
-                      <div
-                        key={co.slug || co.id}
-                        onClick={() => openBrand(co.slug || co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
-                        style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:"10px 14px", cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}
-                      >
-                        <CompanyLogo company={co} size={28} />
-                        <div style={{ flex:1, minWidth:0, fontSize:13, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
-                        <div style={{ fontSize:13, fontWeight:700, color:"#9CC98A" }}>{scoreGrade(score, userRelevantRealCats(co, profile))}</div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
             </>
           )}
           {/* B-6 (2026-06-01): soft email ask at the highest-intent moment.
@@ -6127,7 +6105,10 @@ if (screen === "basket") {
               // The destination page sets the og:image meta dynamically.)
               console.info("[share] og image url:", `/api/og/values?${qp.toString()}`);
             }}
-            style={{ width:"100%", padding:14, borderRadius:12, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
+            /* R2 review: ONE primary CTA. Share is the growth loop but it was a
+               second co-equal filled button competing with Explore — demoted to a
+               subordinate ghost link so the eye lands on the primary action. */
+            style={{ width:"100%", padding:"10px 14px", borderRadius:12, border:"none", background:"transparent", color:T.txt3, fontSize:13, fontWeight:500, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
           >
             <i className="ti ti-share" aria-hidden="true" /> Share my values
           </button>
