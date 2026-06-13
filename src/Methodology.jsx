@@ -50,7 +50,7 @@ export default function Methodology({ onBack }) {
           <li><b>Executive pay</b> follows the actual SEC-disclosed CEO-to-median-worker ratio on a log curve: 20:1 → 100 · 100:1 → 70 · 300:1 → 45 · 1000:1 → 15.</li>
           <li><b>Labor and environment violations</b> scale with penalty dollars: $10K → 40 · $1M → 24 · $100M+ → 8. A $9K citation never scores like a $100M consent decree.</li>
           <li><b>Charitable giving</b> scales with documented IRS-990 grant totals: $10K → 60 up to $1B+ → 100.</li>
-          <li><b>Political donations</b> (un-quizzed baseline) score the concentration and scale of money, not its direction — see section 6.</li>
+          <li><b>Political donations</b> (baseline, before the Match) score the concentration and scale of money, not its direction — see section 6.</li>
         </UL>
 
         <H2>3. Evidence confidence — why thin data can't fake a great grade</H2>
@@ -59,11 +59,11 @@ export default function Methodology({ onBack }) {
         <P>Brands with no scoreable records show <Code>?</Code> instead of a grade — we never average missing data into a fake C.</P>
 
         <H2>4. Letter grades — fixed, published thresholds</H2>
-        <P><Code>A ≥ 63 · B ≥ 56 · C ≥ 46 · D ≥ 41 · F &lt; 41</Code></P>
-        <P>These cut points were calibrated once against the live distribution of all scored brands (June 2026) and then frozen. Grades move only when a brand's own records change — we do not re-curve.</P>
+        <P><Code>A ≥ 62 · B ≥ 50 · C ≥ 38 · D ≥ 33 · F &lt; 33</Code></P>
+        <P>These cut points were re-anchored once (June 2026) after two structural changes — political donations were removed from the neutral baseline, and penalty severity is now measured as a share of a company's revenue rather than in absolute dollars. Both shifted the score scale, so the thresholds were recalibrated to match and then frozen again. We re-anchor on a structural change like this; we do not perpetually re-curve, and a brand's grade moves only when its own records change.</P>
 
-        <H2>5. Your quiz changes the mix, never the facts</H2>
-        <P>The 30-second quiz sets how much each category weighs for <i>you</i> (1–5 ranks, with a 1.5× boost on axes where you took a clear stance). Two users see different grades for the same brand because they weigh the same facts differently — the facts never change. Two guardrails apply to everyone:</P>
+        <H2>5. Your Match changes the mix, never the facts</H2>
+        <P>The 45-second Match sets how much each category weighs for <i>you</i> (1–5 ranks, with a 1.5× boost on axes where you took a clear stance). Two users see different grades for the same brand because they weigh the same facts differently — the facts never change. Two guardrails apply to everyone:</P>
         <UL>
           <li><b>Values disagreement caps at D.</b> A brand whose records are clean can't score an F for you just because its politics oppose yours — F requires documented misconduct or one of your explicit dealbreakers.</li>
           <li><b>Symmetry.</b> The engine treats a progressive profile mismatching a conservative brand exactly as it treats the reverse. Same formulas, mirrored.</li>
@@ -72,14 +72,14 @@ export default function Methodology({ onBack }) {
         <H2>6. Where we make judgment calls — disclosed</H2>
         <P>Almost everything here is records arithmetic, but two modeling choices are genuine judgments, so we're saying them plainly:</P>
         <UL>
-          <li>For users with no political preference, the baseline political score treats <i>balanced, smaller-dollar</i> giving as better than <i>concentrated, large-dollar partisan</i> giving. If you take a side in the quiz, this baseline is replaced by your own preference entirely.</li>
-          <li>Stance categories — politics, DEI, animal testing, firearms — contribute <b>nothing</b> to a brand's neutral baseline grade. We display the facts as badges; they only affect grades after you tell us your values. The app takes no position on contested values.</li>
+          <li>For users with no political preference, the baseline political score treats <i>balanced, smaller-dollar</i> giving as better than <i>concentrated, large-dollar partisan</i> giving. If you take a side in the Match, this baseline is replaced by your own preference entirely.</li>
+          <li><b>DEI, animal testing, and firearms are excluded from the neutral baseline grade entirely.</b> We show those facts as badges, but they only move a grade after you take a stance in the Match — the app takes no position on them. Political giving is the one stance-adjacent category we <i>do</i> fold into the baseline, through the balanced-vs-concentrated judgment described just above; the moment you state a political preference, your own weighting replaces that baseline.</li>
         </UL>
 
         <H2>7. What we don't do</H2>
         <UL>
           <li>No pay-for-grades, no advertiser influence, no sponsored placements — ever.</li>
-          <li>No accounts, no sale of personal data, no session recording. The quiz lives on your device.</li>
+          <li>No accounts, no sale of personal data, no session recording. The Match lives on your device.</li>
           <li>No editorial overrides: if the records are wrong, we fix the records pipeline, not the letter.</li>
         </UL>
 

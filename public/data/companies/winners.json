@@ -2,7 +2,7 @@
   "name": "Winners",
   "cat": "Retail",
   "init": "WINN",
-  "overall": 61.5,
+  "overall": null,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -56,10 +56,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, dealer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -125,21 +123,6 @@
     "usStoreCount": 206,
     "byState": {}
   },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "PA"
-    ],
-    "primaryRole": "dealer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "winners",
   "news": null,
   "payRatio": null,
@@ -171,7 +154,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:28:21.468Z",
-  "realCats": 1,
+  "realCats": 0,
   "flags": {
     "health": {
       "na": true
@@ -189,8 +172,5 @@
       "_inferred": true,
       "basis": "Retail"
     }
-  },
-  "csc": {
-    "political": 78.7
   }
 }

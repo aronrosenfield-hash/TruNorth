@@ -95,6 +95,14 @@ const FORCE_SCRUB_BY_SLUG = new Set([
   "frenchs",           // mustard
 ]);
 
+// 2026-06-13 (review entity-resolution): genuine firearms retailers whose gun
+// evidence happens to be the bare ATF-FFL registry — keep them flagged even
+// though they'd otherwise trip the registry-collision rule below. (The
+// editorially-sourced sellers — Bass Pro, Cabela's, Walmart, Sam's Club, Vista
+// Outdoor — don't match the registry pattern, so they're safe already.)
+const GUNS_KEEP = new Set(["dunhams-sports", "dunham-s-sports"]);
+const FFL_REGISTRY_RE = /ATF FFL regist/i;
+
 let scanned = 0, scrubbed = 0;
 const removed = [];
 
@@ -106,16 +114,28 @@ for (const fname of fs.readdirSync(DIR)) {
   try { doc = JSON.parse(fs.readFileSync(fp, "utf8")); }
   catch { continue; }
 
-  if (!doc.firearms_atf_ffl) continue;
-
   const slug = fname.replace(".json","");
+  const gunsEnum = String(doc.sc?.guns || "").toLowerCase();
+  const isGunStance = gunsEnum === "sells_guns" || gunsEnum === "makes_guns";
+  const registryOnly = FFL_REGISTRY_RE.test(String(doc.guns?.s || ""));
   const hitByCategory = SCRUB_CATEGORIES.has(doc.cat || "");
   const hitBySlug = FORCE_SCRUB_BY_SLUG.has(slug);
-  if (!hitByCategory && !hitBySlug) continue;
+  // 2026-06-13: registry-only FFL matches on a gun STANCE enum are name
+  // collisions (Safeway, Arhaus, TK Holdings/Takata, generic short names…)
+  // unless the brand is a known firearms retailer. Catch them by RULE so we
+  // don't have to enumerate every collision slug.
+  const hitByRegistry = isGunStance && registryOnly && !GUNS_KEEP.has(slug);
+  if (!hitByCategory && !hitBySlug && !hitByRegistry) continue;
+  if (!doc.firearms_atf_ffl && !isGunStance) continue; // nothing left to scrub
 
-  const role = doc.firearms_atf_ffl.primaryRole || "?";
-  removed.push({ slug, name: doc.name, cat: doc.cat, role, why: hitBySlug ? "slug" : "category" });
-  delete doc.firearms_atf_ffl;
+  const role = doc.firearms_atf_ffl?.primaryRole || gunsEnum || "?";
+  removed.push({ slug, name: doc.name, cat: doc.cat, role, why: hitByRegistry ? "registry" : hitBySlug ? "slug" : "category" });
+  // 2026-06-13 fix: the old scrub deleted only the data block and left
+  // sc.guns / guns.s behind, so collisions still rendered as gun sellers.
+  // Clear the stance enum and the registry narrative too.
+  if (doc.firearms_atf_ffl) delete doc.firearms_atf_ffl;
+  if (isGunStance && doc.sc) doc.sc.guns = "neutral";
+  if (registryOnly && doc.guns) doc.guns = { s: "No public record found.", sources: [] };
   fs.writeFileSync(fp, JSON.stringify(doc, null, 2) + "\n");
   scrubbed++;
 }

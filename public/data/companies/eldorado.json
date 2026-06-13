@@ -2,7 +2,7 @@
   "name": "Eldorado",
   "cat": "Retail",
   "init": "ELDO",
-  "overall": 61.7,
+  "overall": null,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -56,10 +56,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 2 active federal firearms licenses (ATF FFL registry, pawnbroker).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -88,21 +86,6 @@
   },
   "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Laguna_de_Guatavita_centro_de_la_leyenda_del_Dorado.jpg",
   "logoSource": "wiki_infobox",
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "02"
-    ],
-    "fflTypeNames": [
-      "Pawnbroker in Firearms Other Than Destructive Devices (02)"
-    ],
-    "licenseCount": 2,
-    "states": [
-      "FL"
-    ],
-    "primaryRole": "pawnbroker",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "eldorado",
   "wiki": null,
   "secComplaints": null,
@@ -135,7 +118,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T16:14:55.648Z",
-  "realCats": 1,
+  "realCats": 0,
   "flags": {
     "health": {
       "na": true
@@ -153,8 +136,5 @@
       "_inferred": true,
       "basis": "Retail"
     }
-  },
-  "csc": {
-    "political": 79.3
   }
 }

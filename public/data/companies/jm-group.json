@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -57,10 +57,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, dealer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -100,21 +98,6 @@
   },
   "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Agencia_JAC_Tuxtla_Guti%C3%A9rez.jpg",
   "logoSource": "wiki_infobox",
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "IA"
-    ],
-    "primaryRole": "dealer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "jm-group",
   "secComplaints": null,
   "news": null,

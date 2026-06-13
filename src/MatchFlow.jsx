@@ -20,13 +20,17 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { T, SERIF, MONO } from "./lib/theme";
 import { COMPASS_AXES } from "./CompassSeal";
+import { track } from "./lib/analytics";
 
+// Card order (2026-06-12 review): open with concrete, non-tribal RECORD
+// trade-offs to build investment before any stance question — the partisan
+// Democrats/Republicans card used to be slot 1, which contradicted the
+// project's own "politics never first" research note and primed a partisan
+// lens for every card after it. Politics now sits at slot 10, just before the
+// dealbreaker finale. Output mapping is keyed by id/axis, not position, so the
+// engine is unaffected; DRAFT_V is bumped so in-flight drafts don't restore a
+// now-wrong index.
 const CARDS = [
-  { id: "political", axis: "political", kicker: "POLITICS", type: "side",
-    serif: "Your money has a politics.",
-    sub: "Brand PACs and executives fund campaigns — all on the federal record. Pick the side your dollars should favor.",
-    a: { label: "Democrats", value: "left" }, b: { label: "Republicans", value: "right" },
-    skipLabel: "independent / no preference — skip" },
   { id: "environment", axis: "environment", kicker: "ENVIRONMENT", type: "record",
     serif: "A company pollutes — but it's the cheapest option on the shelf.",
     sub: "EPA penalties are public record. Price is price. Which decides?",
@@ -40,34 +44,39 @@ const CARDS = [
     sub: "Union drives, elections, and disputes are NLRB public record.",
     a: { label: "Pro-union", value: "pro" }, b: { label: "Anti-union", value: "anti" },
     skipLabel: "no preference — skip" },
-  { id: "deiLean", axis: "dei", kicker: "DIVERSITY", type: "side",
-    serif: "Workplace diversity programs.",
-    sub: "Some buyers seek them out. Some avoid them. The app takes no side — you do.",
-    a: { label: "I support them", value: "pro" }, b: { label: "I avoid them", value: "anti" },
-    skipLabel: "no preference — skip" },
   { id: "charity", axis: "charity", kicker: "GIVING", type: "record",
     serif: "Billions in profit. Zero documented giving.",
     sub: "Foundation grants are IRS-990 public filings. Does it move you?",
     aLabel: "Doesn't bother me", bLabel: "It matters to me",
     forgive: 2, dealbreak: 4, skip: 2 },
+  { id: "execPay", axis: "execPay", kicker: "CEO PAY", type: "record",
+    serif: "The CEO makes a thousand times the median worker.",
+    sub: "SEC proxy statements disclose the exact ratio. Does it change the purchase?",
+    forgive: 2, dealbreak: 5, skip: 2 },
+  { id: "deiLean", axis: "dei", kicker: "DIVERSITY", type: "side",
+    serif: "Workplace diversity programs.",
+    sub: "Some buyers seek them out. Some avoid them. The app takes no side — you do.",
+    a: { label: "I support them", value: "pro" }, b: { label: "I avoid them", value: "anti" },
+    skipLabel: "no preference — skip" },
   { id: "animalTesting", axis: "animals", kicker: "ANIMALS", type: "side",
     serif: "A great product — tested on animals.",
     sub: "Certifications and testing policies are documented. Still buying?",
     a: { label: "Not a priority", value: "prefer_not" }, b: { label: "I'm out", value: "dealbreaker" },
     skipLabel: "no preference — skip" },
+  { id: "privacy", axis: "privacy", kicker: "PRIVACY", type: "record",
+    serif: "The fine print sells your data.",
+    sub: "FTC actions and breach records are public. Which decides?",
+    forgive: 2, dealbreak: 5, skip: 2 },
   { id: "guns", axis: "guns", kicker: "FIREARMS", type: "side",
     serif: "Brands in the firearms business.",
     sub: "Federal firearms licenses are public. Which way do your dollars go?",
     a: { label: "I support them", value: "support" }, b: { label: "I avoid them", value: "avoid" },
     skipLabel: "no preference — skip" },
-  { id: "privacy", axis: "privacy", kicker: "PRIVACY", type: "record",
-    serif: "The fine print sells your data.",
-    sub: "FTC actions and breach records are public. Which decides?",
-    forgive: 2, dealbreak: 5, skip: 2 },
-  { id: "execPay", axis: "execPay", kicker: "CEO PAY", type: "record",
-    serif: "The CEO makes a thousand times the median worker.",
-    sub: "SEC proxy statements disclose the exact ratio. Does it change the purchase?",
-    forgive: 2, dealbreak: 5, skip: 2 },
+  { id: "political", axis: "political", kicker: "POLITICS", type: "side",
+    serif: "Your money has a politics.",
+    sub: "Brand PACs and executives fund campaigns — all on the federal record. Pick the side your dollars should favor.",
+    a: { label: "Democrats", value: "left" }, b: { label: "Republicans", value: "right" },
+    skipLabel: "independent / no preference — skip" },
   { id: "dealBreakers", kicker: "LINES", type: "multi",
     serif: "Lines you won't cross.",
     sub: "Brands with documented records here take a hard penalty for you. Skipping is fine.",
@@ -81,6 +90,10 @@ const CARDS = [
 ];
 
 const DEFAULT_W = { political: 3, charity: 2, environment: 3, labor: 3, dei: 2, animals: 2, guns: 2, privacy: 2, execPay: 2 };
+
+// Bump whenever the CARDS order or shape changes so a draft saved against the
+// old layout is discarded rather than restoring a now-wrong card index.
+const DRAFT_V = 2;
 
 // Map an existing profile back onto card answers so a retake starts from
 // what the user already told us (H10 parity with the old quiz).
@@ -160,17 +173,26 @@ function FormingCompass({ answers, size = 46 }) {
 
 export default function MatchFlow({ onComplete, onSkip, initialProfile = null }) {
   const [idx, setIdx] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("tn_match_draft") || "{}").idx || 0; } catch { return 0; }
+    try {
+      const d = JSON.parse(localStorage.getItem("tn_match_draft") || "{}");
+      if (d.v !== DRAFT_V) return 0; // stale layout → start fresh
+      // 2026-06-12 review: a corrupt/out-of-range idx restored here used to make
+      // CARDS[idx] undefined → `card.kicker` TypeError → root-boundary "Try
+      // again" re-read the same draft → permanent crash loop on first run.
+      // Clamp into range.
+      const i = Number(d.idx) || 0;
+      return Math.min(Math.max(0, i), CARDS.length - 1);
+    } catch { return 0; }
   });
   const [answers, setAnswers] = useState(() => {
     try {
       const d = JSON.parse(localStorage.getItem("tn_match_draft") || "{}");
-      if (d.answers && Object.keys(d.answers).length) return d.answers;
+      if (d.v === DRAFT_V && d.answers && Object.keys(d.answers).length) return d.answers;
     } catch {}
     return answersFromProfile(initialProfile);
   });
   useEffect(() => {
-    try { localStorage.setItem("tn_match_draft", JSON.stringify({ idx, answers, at: Date.now() })); } catch {}
+    try { localStorage.setItem("tn_match_draft", JSON.stringify({ v: DRAFT_V, idx, answers, at: Date.now() })); } catch {}
   }, [idx, answers]);
 
   const card = CARDS[idx];
@@ -183,6 +205,14 @@ export default function MatchFlow({ onComplete, onSkip, initialProfile = null })
   };
   const answer = (val) => {
     const next = { ...answers, [card.id]: val };
+    // 2026-06-12 review: per-card instrumentation. MatchFlow had zero analytics,
+    // so an abandonment cliff inside the 11 cards was undiagnosable (only
+    // started/completed were tracked). choice is coarse (no PII).
+    track("match_card_answered", {
+      idx, id: card.id, axis: card.axis,
+      choice: Array.isArray(val) ? `multi:${val.length}` : String(val),
+      last: isLast,
+    });
     setAnswers(next);
     if (isLast) finish(next);
     else setIdx(i => i + 1);

@@ -2,7 +2,7 @@
   "name": "Geo",
   "cat": "Retail",
   "init": "GEO",
-  "overall": 40.5,
+  "overall": 38.2,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -62,10 +62,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 2 active federal firearms licenses (ATF FFL registry, destructive_devices).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -123,23 +121,6 @@
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/GEO_Magazine_logo.svg/330px-GEO_Magazine_logo.svg.png",
     "wikipediaUrl": "https://en.wikipedia.org/wiki/Geo_(magazine)",
     "extract": "GEO is a family of educational monthly magazines similar to the National Geographic magazine. It is known for its detailed reports and pictures."
-  },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01",
-      "10"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)",
-      "Manufacturer of Destructive Devices (10)"
-    ],
-    "licenseCount": 2,
-    "states": [
-      "FL"
-    ],
-    "primaryRole": "destructive_devices",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
   },
   "slug": "geo",
   "news": null,
@@ -247,7 +228,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:06:17.927Z",
-  "realCats": 3,
+  "realCats": 2,
   "flags": {
     "health": {
       "na": true
@@ -264,7 +245,6 @@
     }
   },
   "csc": {
-    "political": 48,
     "charity": 50,
     "labor": 11.6
   }

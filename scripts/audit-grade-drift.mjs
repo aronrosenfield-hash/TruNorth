@@ -171,10 +171,10 @@ function scoreGrade(n) {
   // SCORING V3 (2026-06-11) frozen thresholds — keep in sync with
   // src/App.jsx scoreGrade / scripts/rebake-scoring.mjs gradeFromOverall.
   if (n == null) return null;
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 

@@ -2,7 +2,7 @@
   "name": "Target",
   "cat": "Retail",
   "init": "TGT",
-  "overall": 38.8,
+  "overall": 36,
   "isPublic": true,
   "ticker": "TGT",
   "sc": {
@@ -10,7 +10,7 @@
     "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "pro_dei",
+    "dei": "mixed",
     "animals": "positive",
     "guns": "no_guns",
     "privacy": "poor",
@@ -64,15 +64,13 @@
     ]
   },
   "dei": {
-    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. JUST Capital JUST 100 — ranked #23 of Russell 1000 (2025) for treatment of workers, customers, communities, environment. Bloomberg Gender-Equality Index member (2024) — transparent on female leadership, equal pay, inclusive culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "s": "Rolled back major DEI programs in January 2025 — ended its three-year DEI goals and the REACH (Racial Equity Action and Change) initiative begun in 2020, withdrew from the Human Rights Campaign Corporate Equality Index, stopped tracking DEI hiring goals, and rebranded its Supplier Diversity program to “Supplier Engagement,” citing “an evolving external landscape” (CNBC, Jan 24 2025). Before the rollback Target was a long-standing DEI leader: HRC Corporate Equality Index 100/100 (2024), JUST Capital JUST 100 (#23 of the Russell 1000, 2024), and a Bloomberg Gender-Equality Index member.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis",
+      "cnbc",
       "hrc-cei",
       "just-capital",
-      "hrc-cei",
-      "bloomberg-gei",
-      "hrc-cei"
+      "bloomberg-gei"
     ]
   },
   "animals": {
@@ -539,7 +537,7 @@
   "health": {
     "s": "141 CPSC recalls (3 in past 24 months); latest hazard: choking."
   },
-  "realCats": 6,
+  "realCats": 5,
   "enriched": {
     "newsweekMrc": {
       "rank": 33,
@@ -812,10 +810,9 @@
     }
   },
   "csc": {
-    "political": 79,
-    "charity": 87.4,
-    "environment": 13.2,
-    "labor": 8,
+    "charity": 60,
+    "environment": 40.9,
+    "labor": 29.4,
     "privacy": 8,
     "execPay": 20.7
   },

@@ -25,128 +25,38 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-// ─── Helpers replicated from rebake-scoring.mjs + finalize-bundle.mjs
-// (in-line so the test never breaks when those files refactor) ─────────────
+// ─── Engine functions: imported from the REAL engine (rebake-scoring.mjs) ────
+// 2026-06-13 (review): these were inline COPIES — which could silently drift
+// from the engine, defeating the point of the test. They're now the actual
+// exported functions, so a scoring change without a matching test update fails
+// HERE. rebake-scoring.mjs guards its catalog run behind an isMain check, so
+// importing it triggers no rebake. (negativeSeverityScore/charityGivingScore
+// called without a revenue arg fall back to the absolute curve these tests
+// assert.)
+import {
+  gradeFromOverall, parseDollars, negativeSeverityScore, payRatioScore,
+  charityGivingScore, parsePoliticalSignals, politicalScore,
+} from "./rebake-scoring.mjs";
 
+// Shrinkage is inline in rebake's loop (not a standalone export), so the test
+// keeps a copy of just this one expression.
 const K_SHRINK = 1.5;
-
-function gradeFromOverall(n) {
-  // V3 frozen thresholds — no signal-count cap (shrinkage handles evidence).
-  if (n == null) return "?";
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
-  return "F";
-}
-
 function shrink(raw, W) {
   return (raw * W + 50 * K_SHRINK) / (W + K_SHRINK);
 }
 
-function parseDollars(text) {
-  const m = String(text || "").match(/\$([\d,]+(?:\.\d+)?)\s*([KMB])?/i);
-  if (!m) return 0;
-  const n = parseFloat(m[1].replace(/,/g, ""));
-  const unit = (m[2] || "").toUpperCase();
-  return n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
-}
-
-function negativeSeverityScore(narrative, enumVal) {
-  const dollars = parseDollars(narrative);
-  if (dollars >= 1000) {
-    const sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
-    return enumVal === "very poor" ? Math.min(sev, 18) : sev;
-  }
-  return enumVal === "very poor" ? 8 : 35;
-}
-
-const PAY_ANCHORS = [[20, 100], [25, 95], [100, 70], [300, 45], [1000, 15], [3000, 5]];
-function payRatioScore(ratio) {
-  if (ratio <= PAY_ANCHORS[0][0]) return 100;
-  const lr = Math.log10(ratio);
-  for (let i = 1; i < PAY_ANCHORS.length; i++) {
-    const [r1, s1] = PAY_ANCHORS[i - 1];
-    const [r2, s2] = PAY_ANCHORS[i];
-    if (ratio <= r2) {
-      const t = (lr - Math.log10(r1)) / (Math.log10(r2) - Math.log10(r1));
-      return s1 + t * (s2 - s1);
-    }
-  }
-  return 5;
-}
-
-function charityGivingScore(d) {
-  const g = d?.charity_irs990?.totalGrants;
-  if (typeof g === "number" && g >= 10_000) {
-    return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
-  }
-  return null;
-}
-
-function parsePoliticalSignals(d) {
-  const p = d?.political || {};
-  let amount = 0, tiltAbs = null, hasData = false;
-  if (p.fecData) {
-    amount = Number(p.fecData.totalRaised) || 0;
-    const rep = Number(p.fecData.repTotal) || 0;
-    const dem = Number(p.fecData.demTotal) || 0;
-    if (rep + dem > 0) tiltAbs = Math.abs((rep / (rep + dem)) * 100 - 50);
-    hasData = true;
-  }
-  const s = String(p.s || "");
-  if (!hasData) {
-    const m = s.match(/\$([\d.]+)\s*([KMB]?)/);
-    if (m) {
-      const n = parseFloat(m[1]);
-      const unit = m[2] || "";
-      amount = n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
-    }
-  }
-  if (tiltAbs == null) {
-    const pctR = s.match(/(\d+)%\s+to\s+Republican/i);
-    const pctD = s.match(/(\d+)%\s+to\s+Democratic/i);
-    if (pctR || pctD) {
-      const r = pctR ? +pctR[1] : (pctD ? 100 - +pctD[1] : 50);
-      tiltAbs = Math.abs(r - 50);
-    } else {
-      const lean = s.match(/\+(\d+)\s+across/i);
-      if (lean) tiltAbs = Math.min(50, +lean[1]);
-      else if (/partisan lean split/i.test(s)) tiltAbs = 5;
-    }
-  }
-  if (amount === 0) amount = 100_000;
-  if (tiltAbs == null) tiltAbs = 15;
-  return { amount, tiltAbs };
-}
-
-function politicalScore(d, val) {
-  const { amount, tiltAbs } = parsePoliticalSignals(d);
-  const sizeFactor = Math.log10(Math.max(1, amount / 100_000));
-  if (val === "bipartisan" || val === "mixed") {
-    return Math.max(55, Math.min(95, 85 - tiltAbs * 0.5 - sizeFactor * 7));
-  }
-  if (val === "left-leaning" || val === "right-leaning") {
-    return Math.max(45, Math.min(70, 65 - sizeFactor * 5));
-  }
-  if (val === "left" || val === "right") {
-    return Math.max(35, Math.min(65, 58 - tiltAbs * 0.2 - sizeFactor * 5));
-  }
-  return null;
-}
-
 // ─── Grade-threshold tests (V3 frozen calibration) ───────────────────
 
-test("grade thresholds: A≥63, B≥56, C≥46, D≥41, F<41", () => {
+test("grade thresholds: A≥62, B≥50, C≥38, D≥33, F<33 (R7.1 recalibration)", () => {
   assert.equal(gradeFromOverall(90), "A");
-  assert.equal(gradeFromOverall(63), "A");
-  assert.equal(gradeFromOverall(62.9), "B");
-  assert.equal(gradeFromOverall(56), "B");
-  assert.equal(gradeFromOverall(55.9), "C");
-  assert.equal(gradeFromOverall(46), "C");
-  assert.equal(gradeFromOverall(45.9), "D");
-  assert.equal(gradeFromOverall(41), "D");
-  assert.equal(gradeFromOverall(40.9), "F");
+  assert.equal(gradeFromOverall(62), "A");
+  assert.equal(gradeFromOverall(61.9), "B");
+  assert.equal(gradeFromOverall(50), "B");
+  assert.equal(gradeFromOverall(49.9), "C");
+  assert.equal(gradeFromOverall(38), "C");
+  assert.equal(gradeFromOverall(37.9), "D");
+  assert.equal(gradeFromOverall(33), "D");
+  assert.equal(gradeFromOverall(32.9), "F");
   assert.equal(gradeFromOverall(0), "F");
 });
 
@@ -158,9 +68,9 @@ test("null score returns '?'", () => {
 // ─── Shrinkage tests (V3/R1 — replaces the signal-count cap) ─────────
 
 test("shrinkage: single-signal raw 80 lands in B, not A and not flat C", () => {
-  // Old cap: 80 with 1 signal → forced C. V3: (80·1 + 50·1.5)/2.5 = 62 → B.
-  const s = shrink(80, 1);
-  assert.ok(s > 61.9 && s < 62.1, `expected 62, got ${s}`);
+  // V3: (80·1 + 50·1.5)/2.5 = 62. R7.1: A is now ≥62, so the E-9 single-signal
+  // cap (61) is what holds a lone strong record at B — one record never mints A.
+  const s = Math.min(61, shrink(80, 1));
   assert.equal(gradeFromOverall(s), "B");
 });
 
@@ -173,9 +83,9 @@ test("shrinkage: single-signal raw 46 stays C — low scores aren't lifted past 
 test("E-9: one contributing category caps at B — never A", () => {
   // Aron's call 2026-06-12. A lone 95-scoring signal shrinks to 68 (A range)
   // — the cap pulls it to 62 (B). Two categories are NOT capped.
-  const one = Math.min(62, shrink(95, 1));
+  const one = Math.min(61, shrink(95, 1));
   assert.equal(gradeFromOverall(one), "B");
-  assert.ok(shrink(95, 1) >= 63, "precondition: uncapped single-signal would have been an A");
+  assert.ok(shrink(95, 1) >= 62, "precondition: uncapped single-signal would have been an A");
   assert.equal(gradeFromOverall(shrink(95, 2)), "A", "two signals may still earn A");
 });
 
@@ -190,11 +100,12 @@ test("shrinkage: evidence weight scales confidence monotonically", () => {
 });
 
 test("shrinkage: symmetric — bad records shrink up toward 50 the same way", () => {
-  const s = shrink(8, 1); // (8 + 75)/2.5 = 33.2 → F
+  const s = shrink(8, 1); // (8 + 75)/2.5 = 33.2 — one severe record → D (R7.1: D≥33)
   assert.ok(s > 33 && s < 33.5);
-  assert.equal(gradeFromOverall(s), "F");
-  const s5 = shrink(8, 5); // (40 + 75)/6.5 = 17.7 → F, deeper with more evidence
+  assert.equal(gradeFromOverall(s), "D");
+  const s5 = shrink(8, 5); // (40 + 75)/6.5 = 17.7 → F: breadth of bad records sinks it
   assert.ok(s5 < s);
+  assert.equal(gradeFromOverall(s5), "F");
 });
 
 test("shrinkage: zero evidence is not scored (null overall → '?')", () => {
@@ -320,16 +231,20 @@ test("political: narrative parsing — '+23 across N donors' lean magnitude", ()
 
 // ─── Combined: realistic end-to-end brand cases ──────────────────────
 
-test("combined: single-bipartisan-only (the old capped-C cluster) → B", () => {
-  // Raw 78-82 with W=1 shrinks to 61.2-62.8 → B. These 1,500+ brands were
-  // the C mountain under the Build-57 cap; now they're differentiated.
-  assert.equal(gradeFromOverall(shrink(78, 1)), "B");
-  assert.equal(gradeFromOverall(shrink(82, 1)), "B");
+test("R7: a political-only brand is no longer graded (political excluded from baseline)", () => {
+  // R7 (2026-06-13): political left the un-quizzed baseline — it's a stance
+  // category now (rebake-scoring.mjs baseScoreCat returns null for political).
+  // A brand whose ONLY signal was donations has no contributing category →
+  // overall null → "?". It still personalizes once the user takes a side.
+  assert.equal(gradeFromOverall(null), "?");
 });
 
-test("combined: single-partisan small PAC → C", () => {
-  // Raw ~54 with W=1 → (54+75)/2.5 = 51.6 → C
-  assert.equal(gradeFromOverall(shrink(54, 1)), "C");
+test("E-10: a single moderate negative-only record floors at C, not D/F", () => {
+  // R7.1 (2026-06-13): one moderate (non-severe) record can't sink below C —
+  // we have the brand's violations but not its positives; that's data sparsity,
+  // not conduct. shrink(40,1)=44 (would be D≥33) → floored to 46 (C).
+  const floored = Math.max(46, shrink(40, 1));
+  assert.equal(gradeFromOverall(floored), "C");
 });
 
 test("combined: multi-signal strong record clears A", () => {
@@ -338,6 +253,9 @@ test("combined: multi-signal strong record clears A", () => {
 });
 
 test("combined: multi-signal violation-heavy record lands D/F", () => {
-  // Raw 30 across W=3 → (90+75)/4.5 = 36.7 → F
-  assert.equal(gradeFromOverall(shrink(30, 3)), "F");
+  // Raw 30 across W=3 → (90+75)/4.5 = 36.7 → D (R7.1: D≥33). Breadth of bad
+  // records is what pushes into F — a single one floors at C (E-10).
+  assert.equal(gradeFromOverall(shrink(30, 3)), "D");
+  // Deeper violation record (raw 18 × W=4) → (72+75)/5.5 = 26.7 → F.
+  assert.equal(gradeFromOverall(shrink(18, 4)), "F");
 });

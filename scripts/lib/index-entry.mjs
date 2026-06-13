@@ -28,10 +28,10 @@ const NO_REC_RE = /^\s*no public record found\.?\s*$/i;
 // src/App.jsx scoreGrade and scripts/rebake-scoring.mjs gradeFromOverall.
 export function scoreGrade(n) {
   if (n == null) return "?";
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 

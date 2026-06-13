@@ -2,7 +2,7 @@
   "name": "TK Holdings",
   "cat": "Retail",
   "init": "TKHO",
-  "overall": 44.8,
+  "overall": 32.8,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -59,10 +59,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, dealer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -98,21 +96,6 @@
     "accredited": null,
     "complaintCount": null,
     "profileUrl": "https://www.bbb.org/us/wi/monroe/profile/auto-equipment/tk-holdings-inc-0694-1000027761"
-  },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "01"
-    ],
-    "fflTypeNames": [
-      "Dealer in Firearms Other Than Destructive Devices (01)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "OH"
-    ],
-    "primaryRole": "dealer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
   },
   "slug": "tk-holdings",
   "competitors": [],
@@ -217,7 +200,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T02:55:10.831Z",
-  "realCats": 3,
+  "realCats": 2,
   "flags": {
     "health": {
       "na": true
@@ -233,7 +216,6 @@
     }
   },
   "csc": {
-    "political": 83.5,
     "environment": 29.9,
     "labor": 9.3
   }

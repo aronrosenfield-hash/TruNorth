@@ -2,7 +2,7 @@
   "name": "Noble",
   "cat": "Retail",
   "init": "NOBL",
-  "overall": 40.3,
+  "overall": 29.7,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "poor",
     "dei": "neutral",
     "animals": "na",
-    "guns": "makes_guns",
+    "guns": "neutral",
     "privacy": "neutral",
     "execPay": "na"
   },
@@ -61,10 +61,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, manufacturer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -128,21 +126,6 @@
   "storeFootprint": {
     "usStoreCount": 2,
     "byState": {}
-  },
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "07"
-    ],
-    "fflTypeNames": [
-      "Manufacturer of Firearms Other Than Destructive Devices (07)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "SC"
-    ],
-    "primaryRole": "manufacturer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
   },
   "slug": "noble",
   "news": null,
@@ -232,7 +215,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:14:57.765Z",
-  "realCats": 3,
+  "realCats": 2,
   "flags": {
     "health": {
       "na": true
@@ -248,7 +231,6 @@
     }
   },
   "csc": {
-    "political": 77.5,
     "environment": 15.3,
     "labor": 13.5
   }

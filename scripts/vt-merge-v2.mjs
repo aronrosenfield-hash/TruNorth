@@ -71,7 +71,12 @@ function applyV2(vt, entry) {
 }
 
 async function mergeOne(entry, now) {
-  if (entry.status !== "ok" && entry.status !== "ok_synth") {
+  // 2026-06-12 review: NEVER merge synthetic/dry-run snapshots into live
+  // company files. `ok_synth` rows carry fabricated state-level penalty dollars
+  // (e.g. a ~$2.3B synthetic Walmart figure) that would overwrite real
+  // Violation Tracker data on the largest brands. Only genuine "ok" rows merge;
+  // dry-run snapshots may still be produced for inspection, just never applied.
+  if (entry.status !== "ok") {
     return { brand: entry.slug, status: "skipped", reason: entry.status };
   }
   const file = path.join(COMP_DIR, `${entry.slug}.json`);

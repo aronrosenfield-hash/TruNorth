@@ -48,9 +48,23 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const COMPS = path.join(ROOT, "public/data/companies");
 
+// R7.1 (2026-06-13): per-brand annual revenue (SEC XBRL, slug → {revenue,…})
+// used to revenue-normalize penalty severity so big, heavily-scrutinized brands
+// aren't auto-penalized by absolute-dollar fines. Built by sec-revenue-fetch.mjs.
+// Absent / unresolved-CIK brands fall back to the absolute-dollar curve.
+const REVENUE = (() => {
+  try {
+    const p = path.join(ROOT, "public/data/_meta/company-revenue.json");
+    return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : {};
+  } catch { return {}; }
+})();
+
 // Categories the scoring engine cares about. NOTE: transparency is not in
 // CAT_KEYS in App.jsx — it's a display-only badge — so we omit it here too.
-const CAT_KEYS = ["political", "charity", "environment", "labor", "dei", "animals", "guns", "privacy", "execPay", "health"];
+// 2026-06-13 (review): `health` dropped from scoring (Aron's call) — it was an
+// invisible driver (no Match card, no detail UI). Kept in sync with App.jsx
+// CAT_KEYS + index-entry CATEGORIES (all 9 marketed categories, no health).
+const CAT_KEYS = ["political", "charity", "environment", "labor", "dei", "animals", "guns", "privacy", "execPay"];
 
 const NO_RECORD = /^\s*no public record found\.?\s*$/i;
 
@@ -74,9 +88,14 @@ const DRY = process.argv.includes("--dry");
 //      values; those axes only move grades after the user takes the quiz.
 //      They still render as badges and still personalize.
 const K_SHRINK = 1.5;
+// E-10 (Aron, 2026-06-13): a single contributing category with a csc below this
+// is a "severe" negative (≈ a $5M+ federal penalty on the 8–40 band) and is
+// allowed to sink a thin-record brand below C. Above it, one moderate record
+// floors at C — see the thin-record floor where newOverall is finalized.
+const SEVERE_NEG = 20;
 
 // Parse "$8.4M" / "$120,500" / "$95K" → dollars. 0 when nothing parseable.
-function parseDollars(text) {
+export function parseDollars(text) {
   const m = String(text || "").match(/\$([\d,]+(?:\.\d+)?)\s*([KMB])?/i);
   if (!m) return 0;
   const n = parseFloat(m[1].replace(/,/g, ""));
@@ -88,10 +107,22 @@ function parseDollars(text) {
 //   $10K→40 · $100K→32 · $1M→24 · $10M→16 · ≥$100M→8   (clamped 8–40)
 // "very poor" enums cap at 18 so they can't out-score a documented "poor".
 // No parseable $ → legacy band defaults (35 / 8) so nothing silently moves.
-function negativeSeverityScore(narrative, enumVal) {
+export function negativeSeverityScore(narrative, enumVal, revenue) {
   const dollars = parseDollars(narrative);
   if (dollars >= 1000) {
-    const sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
+    let sev;
+    if (revenue && revenue > 0) {
+      // R7.1 (2026-06-13): revenue-normalized severity — score the penalty as a
+      // SHARE of annual revenue, not absolute dollars. A $10M fine is trivial
+      // for a $700B company and existential for a $50M one; absolute dollars
+      // treated them identically and bottomed out every mega-brand. Anchors:
+      // ~0.01% of revenue → ~45 (trivial), ~10%+ → 8 (severe). Falls back to the
+      // absolute curve when revenue is unknown (private / unresolved-CIK cos).
+      const ratio = dollars / revenue;
+      sev = Math.max(8, Math.min(47, -4.33 - 12.33 * Math.log10(ratio)));
+    } else {
+      sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
+    }
     return enumVal === "very poor" ? Math.min(sev, 18) : sev;
   }
   return enumVal === "very poor" ? 8 : 35;
@@ -115,7 +146,7 @@ function parsePayRatio(d) {
 // The anchors keep the old enum bands honest (<50 was "fair", >300 "poor")
 // while spreading brands inside each band by their disclosed number.
 const PAY_ANCHORS = [[20, 100], [25, 95], [100, 70], [300, 45], [1000, 15], [3000, 5]];
-function payRatioScore(ratio) {
+export function payRatioScore(ratio) {
   if (ratio <= PAY_ANCHORS[0][0]) return 100;
   const lr = Math.log10(ratio);
   for (let i = 1; i < PAY_ANCHORS.length; i++) {
@@ -133,12 +164,18 @@ function payRatioScore(ratio) {
 //   $10K→60 · $100K→68 · $1M→76 · $10M→84 · $100M→92 · ≥$1B→100
 // Returns null when no structured grant data — caller falls back to 85
 // (documented-but-unquantified giving).
-function charityGivingScore(d) {
+export function charityGivingScore(d, revenue) {
   const g = d?.charity_irs990?.totalGrants;
-  if (typeof g === "number" && g >= 10_000) {
-    return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
+  if (typeof g !== "number" || g < 10_000) return null;
+  if (revenue && revenue > 0) {
+    // R7.1 (2026-06-13): score giving as a SHARE of revenue, not absolute
+    // dollars — a $1B gift from a $600B company (0.17%) shouldn't outrank a
+    // $35M gift that's a bigger slice of a smaller firm (review flag). Anchors:
+    // ~0.1% of revenue → 70, ~1% → 90. Absolute-$ fallback when revenue unknown.
+    const ratio = g / revenue;
+    return Math.max(60, Math.min(100, 60 + 20 * Math.log10(ratio / 0.000316)));
   }
-  return null;
+  return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
 }
 
 // Narrative-keyword scoring (Build 55 — salvage signals from text records
@@ -177,7 +214,7 @@ function narrativeScore(text) {
 // Old scoring jammed ALL bipartisan brands at score 80 (the right peak of
 // the bimodal cluster). This spreads them across 55-90 using donation size
 // (log scale) + tilt distance from 50/50.
-function parsePoliticalSignals(d) {
+export function parsePoliticalSignals(d) {
   const p = d?.political || {};
   let amount = 0, tiltAbs = null, hasData = false;
   // Prefer structured fecData if present
@@ -221,7 +258,7 @@ function parsePoliticalSignals(d) {
   return { amount, tiltAbs };
 }
 
-function politicalScore(d, val) {
+export function politicalScore(d, val) {
   const { amount, tiltAbs } = parsePoliticalSignals(d);
   // Log-scaled $ factor: $100K → 0, $1M → 1, $10M → 2, $100M → 3 …
   // Always positive; we SUBTRACT it weighted to push bigger PACs lower.
@@ -241,29 +278,28 @@ function politicalScore(d, val) {
 }
 
 /** Non-personalized score for a category. Returns null when no signal. */
-function baseScoreCat(k, v, d) {
+export function baseScoreCat(k, v, d) {
   const val = String(v || "").toLowerCase();
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
-  // Build 58 (Path B): political differentiation — spread the 80-cluster
-  // and 50-cluster using donation $ + tilt %.
-  if (k === "political") {
-    if (["bipartisan", "mixed", "left", "right", "left-leaning", "right-leaning"].includes(val)) {
-      return politicalScore(d, val);
-    }
-    return null;
-  }
-  // V3/R4: stance categories are personal-values axes the app is neutral on.
-  // They contribute NOTHING to the un-quizzed baseline (previously injected a
-  // flat 50, diluting every real signal toward C). They still render as
-  // badges and still drive personalized grades after the quiz.
-  if (k === "dei" || k === "animals" || k === "guns") return null;
+  // V3/R4 + R7: stance categories are personal-values axes the app is neutral
+  // on. They contribute NOTHING to the un-quizzed baseline (previously injected
+  // a flat 50, diluting every real signal toward C). They still render as
+  // badges and still drive personalized grades after the Match.
+  //
+  // R7 (Aron, 2026-06-12): POLITICAL joins them. A direction-neutral donation
+  // score (bipartisan ≈80 vs concentrated-partisan ≈46-48) is itself an
+  // editorial position living inside a grade we call "neutral" — the review's
+  // strongest "it's biased" attack. Politics now counts ONLY once a user picks
+  // a side in the Match (App.jsx computeScore maps lean → own-side/opposite).
+  // Returning null here drops political from `overall` and from `csc`.
+  if (k === "political" || k === "dei" || k === "animals" || k === "guns") return null;
   if (k === "labor") {
     if (["positive", "excellent", "strong", "good"].includes(val)) return 97;
     if (val === "mixed") return 50;
     // V3/R3: negatives spread 8–40 by penalty dollars in the record.
     if (["negative", "poor", "below average", "very poor"].includes(val)) {
-      return negativeSeverityScore(d?.labor?.s, val);
+      return negativeSeverityScore(d?.labor?.s, val, REVENUE[d?.slug]?.revenue);
     }
     return null;
   }
@@ -294,7 +330,7 @@ function baseScoreCat(k, v, d) {
     if (val === "mixed") return 50;
     // V3/R3: negatives spread 8–40 by penalty dollars in the record.
     if (["negative", "poor", "below average", "very poor"].includes(val)) {
-      return negativeSeverityScore(d?.environment?.s, val);
+      return negativeSeverityScore(d?.environment?.s, val, REVENUE[d?.slug]?.revenue);
     }
     return null;
   }
@@ -302,7 +338,7 @@ function baseScoreCat(k, v, d) {
     // V3/R3: positive band spread 60–100 by IRS-990 grant totals; enum-only
     // positives (documented but unquantified giving) sit at 85.
     if (["positive", "excellent", "strong", "good", "active_giving"].includes(val)) {
-      return charityGivingScore(d) ?? 85;
+      return charityGivingScore(d, REVENUE[d?.slug]?.revenue) ?? 85;
     }
     if (val === "mixed") return 50;
     if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
@@ -344,6 +380,24 @@ function classifyCategory(d, k) {
   return { state: "real", value: val };
 }
 
+// Moved above the run block (was interleaved with it) so it's module-scoped
+// and exportable for scripts/scoring-engine.test.mjs — which now imports the
+// REAL engine instead of inline copies that could drift.
+export function gradeFromOverall(n) {
+  // Thresholds recalibrated once (R7.1, 2026-06-13: A≥62/B≥50/C≥38/D≥33/F<33,
+  // after political-exclusion + revenue-normalized severity) then re-frozen.
+  // Must stay in sync with src/App.jsx scoreGrade + scripts/lib/index-entry.mjs.
+  if (n == null) return "?";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
+  return "F";
+}
+
+// Run the catalog rebake ONLY when invoked directly (node scripts/rebake-...).
+// Importing this module (the test does) gets the functions without the run.
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
 const files = fs.readdirSync(COMPS).filter(f => f.endsWith(".json"));
 console.log(`[rebake] processing ${files.length} companies`);
 
@@ -355,29 +409,6 @@ let nullOveralls = 0;
 const wendySlug = "wendy-s";
 const tjSlug = "trader-joe-s";
 const traces = { [wendySlug]: null, [tjSlug]: null };
-
-function gradeFromOverall(n) {
-  // SCORING V3 (2026-06-11): the Build-57 signal-count cliff (A needs ≥3 sig,
-  // single-signal brands capped at C) is GONE — evidence confidence is now
-  // handled continuously by the K_SHRINK shrinkage upstream, so a one-signal
-  // brand at raw 82 lands ~63 (B) instead of being flattened to the same C
-  // as a one-signal brand at 46.
-  //
-  // Thresholds were recalibrated ONCE from the post-V3 distribution of all
-  // 5,303 scored brands (2026-06-11 dry run), then FROZEN — calibration, not
-  // a perpetual curve; brands move on their own evidence from here. Cut
-  // points deliberately avoid the two dense score spikes (47-48 mixed-record
-  // cluster → interior of C; 61-62 single-signal-political cluster → interior
-  // of B). Resulting shape among graded: A 7% · B 35% · C 40% · D 8% · F 10%.
-  // Must stay in sync with src/App.jsx scoreGrade and
-  // scripts/finalize-bundle.mjs scoreGrade.
-  if (n == null) return "?";
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
-  return "F";
-}
 
 for (const f of files) {
   const filePath = path.join(COMPS, f);
@@ -428,7 +459,7 @@ for (const f of files) {
       // demographics fact is display evidence, not a neutral-user score.
       // Without this, 722 OFCCP dei narratives entered as flat 50s and
       // pulled strong brands toward C.
-      if (k === "dei" || k === "animals" || k === "guns") {
+      if (k === "political" || k === "dei" || k === "animals" || k === "guns") {
         trace.categories.push({ k, state: "narrative-display-only", val: "(stance cat)" });
         continue;
       }
@@ -462,7 +493,19 @@ for (const f of files) {
   // E-9 (Aron, 2026-06-12): single-category brands cap at B (score ≤62,
   // below the A≥63 threshold). Upside-only — the score-level clamp keeps
   // every downstream scoreGrade() copy in sync with zero signature churn.
-  if (newOverall != null && signalCount === 1 && newOverall > 62) newOverall = 62;
+  if (newOverall != null && signalCount === 1 && newOverall > 61) newOverall = 61;
+  // E-10 (Aron, 2026-06-13): symmetric thin-record FLOOR — the mirror of E-9.
+  // One moderate, negative-only record shouldn't sink a brand to D/F: that
+  // punishes data-sparsity (we have its violations but not its positives), not
+  // conduct. A single NON-severe contributing category floors at C (46). F/D
+  // require breadth (2+ contributing records) OR severity (a low csc — see
+  // SEVERE_NEG). This is the lower-bound counterpart to E-9's upper cap, so a
+  // single record — good or bad — lands mid-range; the extremes need breadth.
+  if (newOverall != null && signalCount === 1 && newOverall < 46) {
+    const onlyScore = Object.values(csc)[0];
+    const isSevere = typeof onlyScore === "number" && onlyScore < SEVERE_NEG;
+    if (!isSevere) newOverall = 46;
+  }
   trace.newOverall = newOverall;
   trace.newGrade = gradeFromOverall(newOverall);
 
@@ -527,3 +570,4 @@ function printTrace(name, t) {
 }
 printTrace("Wendy's", traces[wendySlug]);
 printTrace("Trader Joe's", traces[tjSlug]);
+} // end: if invoked directly (catalog rebake run)

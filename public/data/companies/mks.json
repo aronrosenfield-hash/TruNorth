@@ -2,7 +2,7 @@
   "name": "MKS",
   "cat": "Retail",
   "init": "MKS",
-  "overall": 51.7,
+  "overall": 42.6,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -11,7 +11,7 @@
     "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
-    "guns": "sells_guns",
+    "guns": "neutral",
     "privacy": "na",
     "execPay": "na"
   },
@@ -60,10 +60,8 @@
     ]
   },
   "guns": {
-    "s": "Holds 1 active federal firearms license (ATF FFL registry, importer).",
-    "sources": [
-      "atf-ffl"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "privacy": {
     "s": "No public record found.",
@@ -127,21 +125,6 @@
   },
   "logoUrl": "https://icons.duckduckgo.com/ip3/mks.com.ico",
   "logoSource": "ddg_favicon_heuristic",
-  "firearms_atf_ffl": {
-    "fflTypes": [
-      "08"
-    ],
-    "fflTypeNames": [
-      "Importer of Firearms Other Than Destructive Devices (08)"
-    ],
-    "licenseCount": 1,
-    "states": [
-      "IN"
-    ],
-    "primaryRole": "importer",
-    "sourceMonth": "2026-04",
-    "sourceUrl": "https://www.atf.gov/firearms/listing-federal-firearms-licensees/complete"
-  },
   "slug": "mks",
   "news": null,
   "payRatio": null,
@@ -214,7 +197,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-27T17:14:04.362Z",
-  "realCats": 3,
+  "realCats": 2,
   "flags": {
     "health": {
       "na": true
@@ -230,7 +213,6 @@
     }
   },
   "csc": {
-    "political": 79.1,
     "environment": 36.5,
     "labor": 33.9
   }

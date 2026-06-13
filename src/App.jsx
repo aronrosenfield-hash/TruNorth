@@ -11,7 +11,7 @@ import PrivacyPolicy from "./PrivacyPolicy";
 import Methodology from "./Methodology";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource, apiUrl } from "./lib/dataSource";
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
@@ -209,6 +209,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
           if (perm?.camera !== "granted" && perm?.camera !== "limited") {
             setStatus("error");
             setError("Camera access denied. Grant permission in iOS Settings → TruNorth.");
+            track("scanner_permission_denied", { platform: "native" });
             return;
           }
           setStatus("scanning");
@@ -231,6 +232,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
           return;
         } catch (mlkitErr) {
           console.error("[scanner] ML Kit failed, falling back:", mlkitErr);
+          track("scanner_mlkit_fallback", { error: String(mlkitErr?.message || mlkitErr).slice(0, 100) });
           // Fall through to browser path
         }
       }
@@ -517,117 +519,14 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
 }
 
 // ─── QUIZ STEPS ───────────────────────────────────────────────────────────────
-// Phase 5.ai: Alt-B is now the DEFAULT (and only) quiz. Order + copy
-// derived from research synthesis (Krosnick, Pew polarization, evergreen
-// survey-design literature, Coglode onboarding research). Locked in after
-// user picked alt-b over v1 and alt-a.
-//
-// Screen order is INTENTIONALLY soft-to-hard, not topic-first:
-//   1. "Things you'd rather not buy"  — foot-in-the-door (low-stakes avoids)
-//   2. "Rank what matters most"       — values-mindset anchoring
-//   3. "Your positions"                — identity questions AFTER commitment
-//                                        (Politics never first — see research)
-//   4. "Lines you won't cross"         — peak-end commitment device
-//
-// "No preference" replaces "Don't care" everywhere — research found
-// "don't care" reads as morally dismissive on values topics like child labor.
-const QUIZ_STEPS_ALT_B = [
-  // ── Screen 1 (was screen 2): low-stakes avoids — foot-in-the-door ──────
-  { id:"stances_avoid", type:"tri-single",
-    q:"Things you'd rather not buy",
-    subs:[
-      { id:"animalTesting", title:"Animal testing",
-        opts:[
-          {v:"dealbreaker",l:"Cruelty-free",   icon:"ti-paw"},
-          {v:"prefer_not", l:"Not a priority", icon:"ti-paw"},
-          {v:"neutral",    l:"No preference",  icon:null},
-        ]},
-      { id:"guns", title:"Firearms",
-        opts:[
-          {v:"avoid",   l:"Gun-industry-free", icon:"ti-x"},
-          {v:"support", l:"Supportive",        icon:"ti-check"},
-          {v:"neutral", l:"No preference",     icon:null},
-        ]},
-    ]},
-  // ── Screen 2 (was screen 3): importance grid ────────────────────────────
-  { id:"importances", type:"importance-grid",
-    q:"Rank what matters most",
-    rows:[
-      // Lead with broadly-endorsed categories (anchoring high), CEO pay last
-      // (most ideologically charged of the five — straightlining risk).
-      { id:"envImportance",     label:"Environment",           icon:"ti-leaf" },
-      { id:"laborImportance",   label:"Worker treatment",      icon:"ti-users" },
-      { id:"charityImportance", label:"Charitable giving",     icon:"ti-heart" },
-      { id:"privacy",           label:"Data privacy",          icon:"ti-lock" },
-      { id:"execPay",           label:"CEO-to-worker pay gap", icon:"ti-coin" },
-    ]},
-  // ── Screen 3 (was screen 1): identity questions — Politics LAST ────────
-  // Reassurance microcopy added per research (reduces social-desirability
-  // distortion on the most sensitive screen).
-  { id:"stances_identity", type:"tri-single",
-    q:"Your positions",
-    sub:"Stays on your device. We never sell or share this.",
-    subs:[
-      { id:"deiLean", title:"Workplace diversity programs",
-        opts:[
-          {v:"pro",    l:"Support",       icon:"ti-heart"},
-          {v:"anti",   l:"Avoid",         icon:"ti-x"},
-          {v:"neutral",l:"No preference", icon:null},
-        ]},
-      { id:"unionSupport", title:"Labor unions",
-        opts:[
-          {v:"pro",    l:"Pro-union",     icon:"ti-users"},
-          {v:"anti",   l:"Anti-union",    icon:"ti-x"},
-          {v:"neutral",l:"No preference", icon:null},
-        ]},
-      // Politics has 4 options — adds "Mixed" so the ~40% of Americans
-      // with cross-cutting views aren't forced into a false binary
-      // (Pew). Mixed scores the same as Neutral (no left/right boost)
-      // but lets the user opt in honestly instead of lying or quitting.
-      // Phase 5.as (QA bug #6): "Mixed" and "No preference" used to both
-      // return v:"neutral", which made them visually co-select (UI keys
-      // by value) and stored identical weights — teaches users that
-      // their answers are theater. "Mixed" now uses v:"mixed" → halves
-      // the political weight rather than zeroing it; the scoring engine
-      // treats unrecognized values as neutral so this remains safe.
-      // Build 54 (Aron call): switch quiz labels from ideology framing
-      // ("Progressive/Conservative") to party framing ("Democrat/Republican")
-      // to match the FEC donation data we actually display. Internal enum
-      // values stay "left"/"right"/"mixed"/"neutral" so no data needs to
-      // change. Added "Independent" as the new middle option to replace
-      // "Mixed", which read as "no opinion" rather than a real third stance.
-      { id:"politicalLean", title:"Politics",
-        opts:[
-          {v:"left",   l:"Democrat",       icon:"dem"},
-          {v:"right",  l:"Republican",     icon:"rep"},
-          {v:"mixed",  l:"Independent",    icon:null},
-          {v:"neutral",l:"No preference",  icon:null},
-        ]},
-    ]},
-  // ── Screen 4: dealbreakers — peak-end commitment ─────────────────────
-  { id:"dealBreakers", type:"multi",
-    q:"Lines you won't cross",
-    sub:"Companies with poor records here get heavily penalized. Skipping is fine.",
-    opts:[
-      // Universal-moral first, geopolitical last (most divisive)
-      {v:"forcedLabor",  l:"Forced labor in supply chain",      icon:"ti-link"},
-      {v:"childLabor",   l:"Child labor in supply chain",        icon:"ti-baby-carriage"},
-      {v:"privacy",      l:"Privacy abuse",                      icon:"ti-lock"},
-      {v:"monopoly",     l:"Monopoly behavior",                  icon:"ti-crown"},
-      // Build 57 (review): was "Made in adversary nations" — loaded framing
-      // for a neutrality-positioned app, and the flag actually fires on
-      // foreign PARENT OWNERSHIP, not manufacturing origin. Say what it does.
-      {v:"foreignOwn",   l:"Foreign-owned parent company",       icon:"ti-world"},
-    ]},
-];
-
-// Phase 5.ai: alt-b is now the universal quiz. v1 and alt-a are removed —
-// the experiment is over, the winner picked. Keeping this as a tiny helper
-// in case we ever want to re-enable variants for an A/B test.
-function getQuizSteps() { return QUIZ_STEPS_ALT_B; }
-const QUIZ_STEPS = QUIZ_STEPS_ALT_B; // back-compat for any direct refs elsewhere
 
 // ─── SCORING ENGINE ───────────────────────────────────────────────────────────
+// 2026-06-13 (review): `health` is DROPPED from scoring (Aron's call). It had no
+// Match card and no detail-card UI — an invisible grade driver (the review tied
+// Denny's D partly to 2018 LA-county health data) — and dropping it was nearly
+// distribution-neutral (only 19 health-only brands → "?"). Both engines now
+// score the same 9 marketed categories. Must stay in sync with
+// rebake-scoring.mjs CAT_KEYS + scripts/lib/index-entry.mjs CATEGORIES.
 const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
 const CAT_LABELS = {political:"Political",charity:"Charity",environment:"Environ.",labor:"Labor",dei:"DEI",animals:"Animal Testing",guns:"Firearms",privacy:"Data Privacy",execPay:"Exec Pay"};
 const CAT_ICONS  = {political:"ti-flag-2",charity:"ti-heart",environment:"ti-leaf",labor:"ti-users",dei:"ti-rainbow",animals:"ti-paw",guns:"ti-target",privacy:"ti-lock",execPay:"ti-coin"};
@@ -918,6 +817,7 @@ function computeScore(co, profile) {
   let weightedSum  = 0;
   let weightUsed   = 0;
   let contributingCats = 0; // evidence breadth — drives shrinkage (Build 57)
+  let soleCatScore = null;  // E-10: the lone score when contributingCats===1
   let minUniversal = 100; // worst record-backed category seen (Build 56 floor)
   // PR-3: when the scoring-flags feature is on, exclude categories explicitly
   // marked `flags.<cat>.na` or `flags.<cat>.notDisclosed`. `_inferred` scores
@@ -934,6 +834,11 @@ function computeScore(co, profile) {
     if (k === "dei"     && (!profile.deiLean       || profile.deiLean       === "neutral")) continue;
     if (k === "animals" && (!profile.animalTesting || profile.animalTesting === "neutral")) continue;
     if (k === "guns"    && (!profile.guns          || profile.guns          === "neutral")) continue;
+    // R7 (Aron, 2026-06-12): political is now a stance category — it enters a
+    // personalized grade only when the user picked a side in the Match, exactly
+    // like the three above. Neutral-lean users get no political signal, which
+    // matches the baked baseline (rebake-scoring.mjs now excludes political).
+    if (k === "political" && (!profile.lean || profile.lean === "neutral")) continue;
     const v = co.sc[k];
     const lv = String(v || "").toLowerCase();
     // V3: a baked continuous score (co.csc[k]) counts as a real signal even
@@ -981,7 +886,7 @@ function computeScore(co, profile) {
     // THIS user (e.g. "doesn't sell firearms" for a firearms supporter) is
     // not a signal — without this, a brand whose only datum is a
     // stance-neutral fact fabricated a whole grade from it.
-    if (["dei", "animals", "guns"].includes(k) && Math.abs(catScore - 50) < 5) continue;
+    if (["political", "dei", "animals", "guns"].includes(k) && Math.abs(catScore - 50) < 5) continue;
     // Build 56: track the worst UNIVERSAL (record-backed) category for the
     // F-requires-misconduct floor below. Stance axes (politics/DEI/animals/
     // guns) are values alignment, not misconduct.
@@ -991,6 +896,7 @@ function computeScore(co, profile) {
     weightedSum += catScore * baseWeights[k];
     weightUsed  += baseWeights[k];
     contributingCats++;
+    soleCatScore = catScore; // only meaningful when contributingCats ends at 1
   }
   // If nothing scored, fall back to the overall (un-personalized) score so the
   // app doesn't show a misleading "50" for companies with no data at all.
@@ -1024,8 +930,14 @@ function computeScore(co, profile) {
   // signal (including a lone stance match like no_guns for a gun-avoider)
   // can never mint an A. Matches the published methodology line: "One
   // strong record can earn a B; an A takes a broad, verified track record."
-  // Cap limits upside only — bad single signals still grade D/F normally.
-  if (contributingCats === 1 && ws > 62) ws = 62;
+  // Cap is 61 = top of B (A is now ≥62 after the R7.1 recalibration).
+  if (contributingCats === 1 && ws > 61) ws = 61;
+  // E-10 (Aron, 2026-06-13): symmetric thin-record FLOOR — one moderate
+  // negative-only record can't sink below C (46). Punishing data-sparsity
+  // (we have a brand's violations but not its positives) isn't conduct. F/D
+  // require breadth (2+ records) or severity (a low single score). Mirrors the
+  // baked baseline in rebake-scoring.mjs so quizzed ≈ un-quizzed on thin records.
+  if (contributingCats === 1 && ws < 46 && (soleCatScore == null || soleCatScore >= 20)) ws = 46;
   // Build 55 (Aron's Excel-rebuild): hard dealbreakers flat -20, soft category
   // dealbreakers flat -10. Animal-testing special-case penalty reduced to -20.
   // Source: docs/scoring-calculator.xlsx · Dealbreakers sheet.
@@ -1175,10 +1087,10 @@ function scoreGrade(n, realCats) {
   // gradeFromOverall and scripts/lib/index-entry.mjs scoreGrade (shared by
   // rebuild-bundle-index.mjs + finalize-bundle.mjs).
   if (n == null || !Number.isFinite(Number(n))) return "?"; // L1: NaN was falling through to F
-  if (n >= 63) return "A";
-  if (n >= 56) return "B";
-  if (n >= 46) return "C";
-  if (n >= 41) return "D";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
   return "F";
 }
 
@@ -1195,7 +1107,7 @@ function scoreGrade(n, realCats) {
 // Use the larger of that count and the brand's total realCats — i.e.
 // personalization is generous, never stricter than the base cap.
 // If there's no profile, fall back to base realCats unchanged.
-const CAT_KEYS_FOR_REL = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay","health"];
+const CAT_KEYS_FOR_REL = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
 // QA fix 2026-06-10: this read profile[k] for weights, but the quiz stores
 // rank weights under profile.weights[k] and stance boosts as separate string
 // fields (lean / deiLean / animalTesting / guns / unionSupport) — so
@@ -1440,7 +1352,10 @@ function ElephantSVG({ size=14, col="#E0524D" }) {
 //   - User is NOT flipped to Pro (isPaid stays false)
 //   - When real IAP launches, flip PRO_WAITLIST_MODE = false and the
 //     same component switches back to the real subscription flow.
-const PRO_WAITLIST_MODE = true;
+// X-2 (2026-06-13): flipped to false — real RevenueCat IAP is wired
+// (src/lib/payments.js, entitlement "TruNorth Pro"). MUST sandbox-verify a
+// purchase/restore/cancel on device before submitting to App Review.
+const PRO_WAITLIST_MODE = false;
 
 // App Review fix (2026-06-11 — v1.0 rejected on 2.1.0 / 3.1.1 / 3.1.2):
 // until RevenueCat IAP is live (X-0/X-2), the iOS binary must contain NO
@@ -1451,7 +1366,10 @@ const PRO_WAITLIST_MODE = true;
 // free; Pro returns in 1.1 with real IAP). The founder-pricing waitlist on
 // the WEB marketing site is unaffected — Apple doesn't govern the web.
 // Flip to false together with PRO_WAITLIST_MODE when RevenueCat goes live.
-const IAP_SAFE_MODE = true;
+// X-2 (2026-06-13): flipped to false — the real paywall + Pro feature gating
+// are back on now that RevenueCat IAP is live. (v1.0 shipped this true/free
+// after the first rejection; Pro returns here with a working purchase flow.)
+const IAP_SAFE_MODE = false;
 
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
@@ -1459,12 +1377,16 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
   const [email, setEmail] = useState(initialEmail || getStoredEmail());
+  // X-2 IAP (2026-06-13): real RevenueCat purchase state.
+  const [purchaseError, setPurchaseError] = useState("");
+  const [plan, setPlan] = useState("annual"); // "annual" | "monthly"
 
   // Tighter email validation (audit H8): catches "@@", trailing dots, etc.
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
 
   const handleSubscribe = async () => {
     if (!isValidEmail(email)) { return; /* button stays disabled — no native alert() */ }
+    setPurchaseError("");
     track("upgrade_clicked", {
       email_provided: true,
       source: PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall",
@@ -1475,17 +1397,49 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       intendsToSubscribe: true,
       waitlist: PRO_WAITLIST_MODE,
     });
-    setLoading(false);
     if (PRO_WAITLIST_MODE) {
       // Don't grant Pro — just confirm the waitlist signup. The user stays
       // free; we surface this to them with a success state, then close.
+      setLoading(false);
       setDone(true);
       setTimeout(() => onClose(), 2200);
-    } else {
-      // Real-IAP path (future): only flip Pro after actual Stripe/StoreKit
-      // receipt verification. setTimeout below is just a placeholder.
-      setTimeout(() => onSubscribe(email), 1500);
+      return;
     }
+    // Real-IAP path (X-2): RevenueCat purchase. Web has no IAP — show an
+    // explicit message instead of a silent dead-end (iOS is the only purchase
+    // surface at launch). A user *cancel* is NOT a failure.
+    const { Capacitor } = await import("@capacitor/core");
+    if (!Capacitor.isNativePlatform()) {
+      setLoading(false);
+      setPurchaseError("Subscriptions are available in the iOS app — get TruNorth on the App Store.");
+      return;
+    }
+    const { setEmailOnCustomer, purchasePro } = await import("./lib/payments");
+    await setEmailOnCustomer(email).catch(() => {});
+    const result = await purchasePro(plan === "monthly" ? "monthly" : "annual");
+    setLoading(false);
+    if (result === "purchased") {
+      track("subscribe_succeeded", { plan });
+      onSubscribe(email);
+    } else if (result === "cancelled") {
+      track("subscribe_cancelled", { plan }); // keep the paywall open quietly
+    } else {
+      track("subscribe_failed", { plan });
+      setPurchaseError("Purchase didn't go through. Check your App Store connection and try again.");
+    }
+  };
+
+  // Apple REQUIRES a restore-purchases affordance for auto-renewable subs.
+  const handleRestore = async () => {
+    track("restore_clicked");
+    setPurchaseError("");
+    setLoading(true);
+    const { restorePurchases } = await import("./lib/payments");
+    const ok = await restorePurchases();
+    setLoading(false);
+    track(ok ? "restore_succeeded" : "restore_failed");
+    if (ok) onSubscribe(email);
+    else setPurchaseError("No previous purchase found for this Apple ID.");
   };
 
   return (
@@ -1541,7 +1495,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           </div>
           {[
             { feat: "View brand names + grade",       free: true,  pro: true  },
-            { feat: "30-second values quiz",          free: true,  pro: true  },
+            { feat: "45-second values Match",          free: true,  pro: true  },
             { feat: "Browse 12,000+ companies",       free: true,  pro: true  },
             { feat: "Personalized scores",            free: false, pro: true, hi: true },
             { feat: "Full grade breakdowns",          free: false, pro: true  },
@@ -1572,19 +1526,34 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           ))}
         </div>
 
-        <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
-          {PRO_WAITLIST_MODE ? (
-            <>
-              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
-            </>
-          ) : (
-            <>
-              <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$0.99</span>
-              <span style={{ fontSize:13, color:T.txt3 }}> / month · Cancel anytime</span>
-            </>
-          )}
-        </div>
+        {PRO_WAITLIST_MODE ? (
+          <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
+            <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
+            <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
+          </div>
+        ) : (
+          // X-2: plan selector. Prices mirror App Store Connect (annual $14.99,
+          // monthly $1.99). StoreKit shows the user their localized price at the
+          // purchase sheet; these are the display anchors.
+          <div style={{ display:"flex", gap:8, marginBottom:10 }}>
+            {[
+              { id:"annual",  label:"Annual",  price:"$14.99", per:"/yr", sub:"Save 37% · ~$1.25/mo" },
+              { id:"monthly", label:"Monthly", price:"$1.99",  per:"/mo", sub:"Cancel anytime" },
+            ].map(opt => (
+              <button key={opt.id} type="button" onClick={() => setPlan(opt.id)} aria-pressed={plan===opt.id}
+                style={{ flex:1, padding:"10px 8px", borderRadius:12, cursor:"pointer", textAlign:"center",
+                  background: plan===opt.id ? T.goldBg : T.bg3,
+                  border:`1.5px solid ${plan===opt.id ? T.gold : T.border}` }}>
+                <div style={{ fontSize:12, fontWeight:700, color: plan===opt.id ? T.gold : T.txt2 }}>{opt.label}</div>
+                <div style={{ marginTop:2 }}>
+                  <span style={{ fontSize:17, fontWeight:800, color:T.txt }}>{opt.price}</span>
+                  <span style={{ fontSize:11, color:T.txt3 }}>{opt.per}</span>
+                </div>
+                <div style={{ fontSize:10, color:T.txt3, marginTop:2 }}>{opt.sub}</div>
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus */}
         <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}>
@@ -1599,14 +1568,26 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
-            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : "Subscribe for $0.99/mo")}
+            : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : (plan === "monthly" ? "Subscribe · $1.99/mo" : "Subscribe · $14.99/yr"))}
         </button>
+
+        {purchaseError && (
+          <div role="alert" style={{ fontSize:12, color:T.bad, textAlign:"center", margin:"2px 0 8px", lineHeight:1.45 }}>{purchaseError}</div>
+        )}
 
         <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10 }}>
           {PRO_WAITLIST_MODE
             ? "We email once: when Pro opens. No charges yet · cancel before launch."
-            : "Secure payment · Cancel anytime · No contracts"}
+            : "Secure payment via Apple · Cancel anytime · No contracts"}
         </div>
+
+        {/* Apple requires a restore-purchases affordance for auto-renewable subs. */}
+        {!PRO_WAITLIST_MODE && (
+          <button type="button" onClick={handleRestore} disabled={loading}
+            style={{ width:"100%", padding:9, borderRadius:12, border:"none", background:"transparent", color:T.txt2, fontSize:12.5, cursor: loading ? "default" : "pointer", marginBottom:4 }}>
+            Restore purchases
+          </button>
+        )}
 
         <button onClick={onClose} style={{ width:"100%", padding:11, borderRadius:12, border:`1px solid ${T.border}`, background:"transparent", color:T.txt3, fontSize:14, cursor:"pointer", minHeight:44 }}>
           Maybe later
@@ -2154,10 +2135,14 @@ function WhatsNewModal({ companyCount }) {
       // throwing a "what's new" modal over their target is poor UX. Skip it.
       if (/^\/company\//.test(window.location.pathname)) return false;
     }
-    // Phase 5.ab: if the user previously checked "Don't show again", honor
-    // it across sessions. Otherwise show once per session (Phase 5.aa).
+    // 2026-06-12 review fix: this was gated on sessionStorage, which iOS clears
+    // on every cold launch — so the modal re-fired on each app open until the
+    // user found the "Don't show again" checkbox. Gate on localStorage instead:
+    // show exactly ONCE per WHATSNEW_VERSION, and again only when a new version
+    // ships (which is the actual point of a "what's new" card).
     try {
       if (localStorage.getItem("tn_whatsnew_optout") === WHATSNEW_VERSION) return false;
+      if (localStorage.getItem("tn_whatsnew_seen") === WHATSNEW_VERSION) return false;
       // Phase 5.ag: a first-time user just landed — "What's NEW" is meaningless
       // (they have no baseline). Suppress on the session that immediately
       // follows onboarding; show on session 2+.
@@ -2166,7 +2151,7 @@ function WhatsNewModal({ companyCount }) {
         const age = Date.now() - parseInt(justOnboarded, 10);
         if (age < 5 * 60 * 1000) return false; // 5-min window
       }
-      return sessionStorage.getItem("tn_whatsnew_session") !== WHATSNEW_VERSION;
+      return true;
     } catch { return false; }
   });
   const [dontShowAgain, setDontShowAgain] = useState(false);
@@ -2176,7 +2161,10 @@ function WhatsNewModal({ companyCount }) {
   // dismiss declared before the conditional return so useModalA11y can
   // see it as a stable callback at every render (rules of hooks).
   const dismiss = useCallback(() => {
-    try { sessionStorage.setItem("tn_whatsnew_session", WHATSNEW_VERSION); } catch {}
+    // Persist per-version so this version's card never re-fires (was sessionStorage,
+    // which iOS wiped each cold launch). "Don't show again" additionally opts out
+    // of future-version cards.
+    try { localStorage.setItem("tn_whatsnew_seen", WHATSNEW_VERSION); } catch {}
     if (dontShowAgain) {
       try { localStorage.setItem("tn_whatsnew_optout", WHATSNEW_VERSION); } catch {}
     }
@@ -2222,7 +2210,7 @@ function WhatsNewModal({ companyCount }) {
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8, marginBottom:6 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
-            <span><b style={{ color:T.txt }}>Tailored to your values.</b> 30-second quiz reweights every grade so what matters to you, counts.</span>
+            <span><b style={{ color:T.txt }}>Tailored to your values.</b> The 45-second Match reweights every grade so what matters to you, counts.</span>
           </li>
           <li style={{ display:"flex", alignItems:"flex-start", gap:8 }}>
             <i className="ti ti-circle-check-filled" style={{ color:T.accent2, marginTop:3, flexShrink:0 }} aria-hidden="true" />
@@ -2380,7 +2368,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                     <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
                       <div style={{ fontSize:28, fontWeight:800, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
                       {isPaid && profile && ps != null && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
-                      {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take quiz</div>}
+                      {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take the Match</div>}
                     </div>
                   </div>
                 );
@@ -3194,7 +3182,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             };
             const rc = gradeRowColors[profile ? grade : "?"];
             return (
-              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : "Take the values quiz to see grades"}>
+              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : "Take the Match to see grades"}>
                 <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1 }}>{profile ? grade : "?"}</div>
                 {isPaid && profile && <div style={{ fontSize:10, color:rc.text, opacity:0.7 }}>{ps}</div>}
               </div>
@@ -3516,7 +3504,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   return (
                     <div style={{ flexShrink:0 }}>
                       <CompassSeal values={sealValues} grade={profile ? grade : "?"} size={86}
-                        title={profile ? `Your verdict: grade ${grade}` : "Take the quiz to strike your compass"} />
+                        title={profile ? `Your verdict: grade ${grade}` : "Take the Match to strike your compass"} />
                     </div>
                   );
                 })()}
@@ -3649,7 +3637,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     </>
                   ) : (
                     <>
-                      <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.2 }}>Take the 30-second quiz</div>
+                      <div style={{ fontSize:14, fontWeight:600, color:T.txt, lineHeight:1.2 }}>Take the 45-second Match</div>
                       <div style={{ fontSize:12, color:T.txt3, marginTop:3, lineHeight:1.4 }}>{enriched.cat} · data shown below; your values set the grade</div>
                       {/* Trust layer: evidence-depth chip for UN-quizzed users
                           too (the profile branch renders its own copy). */}
@@ -4427,351 +4415,6 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   prev.allCompanies  === next.allCompanies
 ));
 
-// ─── QUIZ ─────────────────────────────────────────────────────────────────────
-function Quiz({ onComplete, onSkip, initialProfile = null }) {
-  // Phase 5.ag: resolve QUIZ_STEPS at mount via URL param ?quiz=alt-a or
-  // the cached preference. Switching mid-quiz isn't supported (resets the
-  // answer state), so the choice is captured once on mount.
-  const steps = React.useMemo(getQuizSteps, []);
-
-  // H10 fix (audit 2026-06-01): when retaking the quiz, hydrate from the
-  // existing profile so the user can tweak rather than re-answer from
-  // scratch. Order of precedence:
-  //   1. In-progress draft (tn_quiz_draft) — never lose work in flight
-  //   2. Existing profile — retake-friendly defaults
-  //   3. Empty {} — true first-time visitor
-  const profileAsAnswers = React.useMemo(() => {
-    if (!initialProfile) return null;
-    const p = initialProfile;
-    const w = p.weights || {};
-    return {
-      politicalLean:      p.lean        || "neutral",
-      deiLean:            p.deiLean     || "neutral",
-      animalTesting:      p.animalTesting || "neutral",
-      guns:               p.guns        || "neutral",
-      unionSupport:       p.unionSupport || "neutral",
-      politicalImportance: w.political,
-      charityImportance:   w.charity,
-      envImportance:       w.environment,
-      laborImportance:     w.labor,
-      deiImportance:       w.dei,
-      privacy:             w.privacy,
-      execPay:             w.execPay,
-      dealBreakers:        p.dealBreakers || [],
-    };
-  }, [initialProfile]);
-
-  const [step, setStep] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}").step || 0; }
-    catch { return 0; }
-  });
-  const [answers, setAnswers] = useState(() => {
-    try {
-      const draft = JSON.parse(localStorage.getItem("tn_quiz_draft") || "{}");
-      if (draft.answers && Object.keys(draft.answers).length) return draft.answers;
-    } catch {}
-    // No draft → hydrate from profile if available (retake), else empty.
-    return profileAsAnswers || {};
-  });
-  useEffect(() => {
-    try { localStorage.setItem("tn_quiz_draft", JSON.stringify({ step, answers, at: Date.now() })); } catch {}
-  }, [step, answers]);
-  const isWelcome = step === 0;
-  const current = isWelcome ? null : steps[step-1];
-  const isLast = step === steps.length;
-  const prog = (step / steps.length) * 100;
-  // Phase 5.y bug fix: combined-question pages were advancing when ONLY the
-  // primary question had an answer. Now every sub-question must be answered.
-  // Phase 5.ag: tri-single requires every sub answered before advancing.
-  const canAdvance = isWelcome || current?.type === "multi"
-    || (current?.type === "scale"  && answers[current?.id] !== undefined)
-    || (current?.type === "single" && answers[current?.id] !== undefined)
-    || (current?.type === "single+scale" && answers[current?.id] !== undefined && answers[current?.scaleId] !== undefined)
-    || (current?.type === "scale+single" && answers[current?.id] !== undefined && answers[current?.singleId] !== undefined)
-    || (current?.type === "scale+scale"  && answers[current?.id] !== undefined && answers[current?.scale2Id] !== undefined)
-    || (current?.type === "tri-single"   && (current.subs || []).every(sub => answers[sub.id] !== undefined))
-    || (current?.type === "importance-grid" && (current.rows || []).every(r => answers[r.id] !== undefined));
-
-  const advance = () => {
-    if (isLast) {
-      // Phase 5.as: clear the draft once the quiz completes so a retake
-      // starts fresh.
-      try { localStorage.removeItem("tn_quiz_draft"); } catch {}
-      onComplete({
-        lean:            answers.politicalLean || "neutral",
-        deiLean:         answers.deiLean       || "neutral",
-        animalTesting:   answers.animalTesting || "neutral",
-        guns:            answers.guns          || "neutral",
-        unionSupport:    answers.unionSupport  || "neutral",
-        weights: {
-          political:    answers.politicalImportance  || 3,
-          charity:      answers.charityImportance    || 2,
-          environment:  answers.envImportance        || 3,
-          labor:        answers.laborImportance      || 3,
-          // Build 57 (review): stance axes were 4 (×1.5 boost = 6.0) — they
-          // outranked even a 5-ranked category. Now 3 (×1.5 = 4.5): a clear
-          // stance matters a lot, but an explicit rank-5 still wins.
-          dei:          answers.deiImportance !== undefined ? answers.deiImportance : (answers.deiLean !== "neutral" ? 3 : 2),
-          animals:      answers.animalTesting !== "neutral" ? 3 : 2,
-          guns:         answers.guns !== "neutral"   ? 3 : 2,
-          privacy:      answers.privacy              || 2,
-          execPay:      answers.execPay              || 2,
-        },
-        dealBreakers: answers.dealBreakers || [],
-      });
-    } else {
-      // For combined steps, copy secondary answers with correct keys
-      if (current?.type === "single+scale" && current.scaleId) {
-        // scaleId answer already set via set() — nothing extra needed
-      }
-      if (current?.type === "scale+single" && current.singleId) {
-        // singleId answer already set via set() — nothing extra needed
-      }
-      setStep(s => s+1);
-    }
-  };
-
-  const set = (k, v) => setAnswers(a => ({ ...a, [k]: v }));
-  const toggleMulti = (k, v) => {
-    const cur = answers[k] || [];
-    set(k, cur.includes(v) ? cur.filter(x=>x!==v) : [...cur, v]);
-  };
-
-  return (
-    // Phase 5.z: full-height column with constrained inner scroll. The CRITICAL
-    // bit is `minHeight:0` on the flex child — without it, the inner scroller
-    // grows to fit its content instead of letting overflow:auto kick in. This
-    // is why the dealbreakers page wouldn't scroll on iPhone.
-    <div style={{ display:"flex", flexDirection:"column", height:"100dvh", paddingTop:"env(safe-area-inset-top, 0px)", overflow:"hidden" }}>
-      <div style={{ padding:"10px 16px 0", flexShrink:0 }}>
-        <div style={{ height:4, background:T.bg3, borderRadius:4 }}>
-          <div style={{ height:4, background:T.accent, borderRadius:4, width:`${prog}%`, transition:"width 0.3s" }} />
-        </div>
-        {step > 0 && <div style={{ fontSize:11, color:T.txt3, textAlign:"right", marginTop:5 }}>{step} of {steps.length}</div>}
-      </div>
-
-      <div style={{ flex:1, minHeight:0, padding:"12px 16px 24px", overflowY:"auto", WebkitOverflowScrolling:"touch" }}>
-        {isWelcome && (
-          <div style={{ display:"flex", flexDirection:"column", alignItems:"center", textAlign:"center", paddingTop:20 }}>
-            <div style={{ width:64, height:64, background:T.accentBg, borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:14 }}>
-              <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
-                <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
-              </svg>
-            </div>
-            <div style={{ fontSize:24, fontWeight:800, color:T.txt, letterSpacing:-1, lineHeight:1 }}>Tru<span style={{ color:T.accent }}>North</span></div>
-            <div style={{ fontSize:12, color:T.txt3, letterSpacing:2, textTransform:"uppercase", marginTop:4, marginBottom:10 }}>Know where your money goes</div>
-            <div style={{ fontSize:14, color:T.txt3, lineHeight:1.7, maxWidth:300 }}>
-              Answer 4 quick steps. Every company's score recalculates based on what you actually care about — politics, DEI, animal testing, guns, privacy, and more.
-            </div>
-          </div>
-        )}
-
-        {(current?.type === "single" || current?.type === "single+scale") && (
-          <>
-            <div style={{ fontSize:16, fontWeight:600, color:T.txt, marginBottom:12, lineHeight:1.4 }}>
-              {current.type === "scale+single" ? current.singleQ : current.q}
-            </div>
-            {(current.type === "scale+single" ? current.opts : current.opts).map((opt, i) => {
-              const sel = answers[current.id] === opt.v && answers[current.id+"_idx"] === i;
-              return (
-                <button key={i} onClick={() => { set(current.id, opt.v); set(current.id+"_idx", i); }}
-                  style={{ display:"flex", alignItems:"center", gap:12, padding:"10px 12px", borderRadius:12, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:6, textAlign:"left", width:"100%" }}>
-                  <div style={{ width:24, height:24, borderRadius:"50%", border:`2px solid ${sel?T.accent:T.border2}`, background:sel?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-                    {sel && <i className="ti ti-check" style={{ fontSize:13, color:"#fff" }} aria-hidden="true" />}
-                  </div>
-                  {opt.icon === "dem" && <DonkeySVG size={20} />}
-                  {opt.icon === "rep" && <ElephantSVG size={20} />}
-                  {opt.icon && opt.icon !== "dem" && opt.icon !== "rep" && <i className={`ti ${opt.icon}`} style={{ fontSize:18, color:sel?T.accent2:T.txt3 }} aria-hidden="true" />}
-                  <span style={{ fontSize:14, color:sel?T.accent2:T.txt, fontWeight:sel?600:400 }}>{opt.l}</span>
-                </button>
-              );
-            })}
-
-            {/* Inline scale — shown after user picks an option */}
-            {current.type === "single+scale" && answers[current.id] !== undefined && (
-              <div style={{ marginTop:16, padding:"14px", background:T.bg3, borderRadius:12, border:`1px solid ${T.border2}` }}>
-                <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:12 }}>{current.scaleQ}</div>
-                <div style={{ display:"flex", gap:8, justifyContent:"center", marginBottom:8 }}>
-                  {[1,2,3,4,5].map(n => (
-                    <button key={n} onClick={() => set(current.scaleId, n)}
-                      style={{ width:48, height:48, borderRadius:10, border:`1.5px solid ${answers[current.scaleId]===n?T.accent:T.border}`, background:answers[current.scaleId]===n?T.accent:T.bg2, color:answers[current.scaleId]===n?"#fff":T.txt, fontSize:16, fontWeight:700, cursor:"pointer" }}>{n}</button>
-                  ))}
-                </div>
-                <div style={{ display:"flex", justifyContent:"space-between", fontSize:11, color:T.txt3 }}>
-                  <span>{current.lo}</span><span>{current.hi}</span>
-                </div>
-              </div>
-            )}
-          </>
-        )}
-
-        {(current?.type === "scale" || current?.type === "scale+single" || current?.type === "scale+scale") && (
-          <>
-            <div style={{ fontSize:16, fontWeight:600, color:T.txt, marginBottom:16, lineHeight:1.4 }}>{current.q}</div>
-            <div style={{ display:"flex", gap:8, justifyContent:"center", marginBottom:10 }}>
-              {[1,2,3,4,5].map(n => (
-                <button key={n} onClick={() => set(current.id, n)}
-                  style={{ width:52, height:52, borderRadius:12, border:`1.5px solid ${answers[current.id]===n?T.accent:T.border}`, background:answers[current.id]===n?T.accent:T.bg2, color:answers[current.id]===n?"#fff":T.txt, fontSize:17, fontWeight:700, cursor:"pointer" }}>{n}</button>
-              ))}
-            </div>
-            <div style={{ display:"flex", justifyContent:"space-between", fontSize:11, color:T.txt3, marginBottom:8 }}>
-              <span>{current.lo}</span><span>{current.hi}</span>
-            </div>
-            {answers[current.id] && (
-              <div style={{ textAlign:"center", fontSize:13, fontWeight:600, color:T.accent2, marginBottom:12 }}>
-                {["","Not important","Slightly important","Moderately important","Very important","Extremely important"][answers[current.id]]}
-              </div>
-            )}
-
-            {/* Second scale for scale+scale type */}
-            {current.type === "scale+scale" && (
-              <div style={{ marginTop:8, padding:"14px", background:T.bg3, borderRadius:12, border:`1px solid ${T.border2}` }}>
-                <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:12 }}>{current.scale2Q}</div>
-                <div style={{ display:"flex", gap:8, justifyContent:"center", marginBottom:8 }}>
-                  {[1,2,3,4,5].map(n => (
-                    <button key={n} onClick={() => set(current.scale2Id, n)}
-                      style={{ width:48, height:48, borderRadius:10, border:`1.5px solid ${answers[current.scale2Id]===n?T.accent:T.border}`, background:answers[current.scale2Id]===n?T.accent:T.bg2, color:answers[current.scale2Id]===n?"#fff":T.txt, fontSize:16, fontWeight:700, cursor:"pointer" }}>{n}</button>
-                  ))}
-                </div>
-                <div style={{ display:"flex", justifyContent:"space-between", fontSize:11, color:T.txt3 }}>
-                  <span>{current.lo2}</span><span>{current.hi2}</span>
-                </div>
-              </div>
-            )}
-
-            {/* Inline single for scale+single type */}
-            {current.type === "scale+single" && (
-              <div style={{ marginTop:8, padding:"14px", background:T.bg3, borderRadius:12, border:`1px solid ${T.border2}` }}>
-                <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>{current.singleQ}</div>
-                {current.opts.map((opt, i) => {
-                  const sel = answers[current.singleId] === opt.v && answers[current.singleId+"_idx"] === i;
-                  return (
-                    <button key={i} onClick={() => { set(current.singleId, opt.v); set(current.singleId+"_idx", i); }}
-                      style={{ display:"flex", alignItems:"center", gap:10, padding:"9px 12px", borderRadius:10, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:6, textAlign:"left", width:"100%" }}>
-                      <div style={{ width:20, height:20, borderRadius:"50%", border:`2px solid ${sel?T.accent:T.border2}`, background:sel?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-                        {sel && <i className="ti ti-check" style={{ fontSize:11, color:"#fff" }} aria-hidden="true" />}
-                      </div>
-                      {opt.icon && <i className={`ti ${opt.icon}`} style={{ fontSize:16, color:sel?T.accent2:T.txt3 }} aria-hidden="true" />}
-                      <span style={{ fontSize:13, color:sel?T.accent2:T.txt, fontWeight:sel?600:400 }}>{opt.l}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-          </>
-        )}
-
-        {/* Phase 5.ag/ai: tri-single — multiple quick single-selects on one
-            screen. Pill row wraps to 2 lines when there are 4 options
-            (Politics) on narrow screens. Sub-question microcopy ("Stays on
-            your device…") is the reassurance line on the identity screen. */}
-        {current?.type === "tri-single" && (
-          <>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:current.sub ? 6 : 16, lineHeight:1.4 }}>{current.q}</div>
-            {current.sub && (
-              <div style={{ fontSize:12, color:T.txt3, marginBottom:16, lineHeight:1.5 }}>{current.sub}</div>
-            )}
-            {(current.subs || []).map((sub) => (
-              <div key={sub.id} style={{ marginBottom:18 }}>
-                <div style={{ fontSize:12, fontWeight:700, color:T.txt2, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>{sub.title}</div>
-                <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
-                  {sub.opts.map((opt, i) => {
-                    const sel = answers[sub.id] === opt.v;
-                    // 4-option rows (politics) wrap to 2x2; others stay 1 row
-                    const minWidth = sub.opts.length >= 4 ? "calc(50% - 3px)" : "0";
-                    return (
-                      <button
-                        key={i}
-                        onClick={() => set(sub.id, opt.v)}
-                        style={{ flex:"1 1 0", minWidth, padding:"10px 8px", borderRadius:10, border:`1.5px solid ${sel ? T.accent : T.border}`, background: sel ? T.accentBg : T.bg2, color: sel ? T.accent2 : T.txt, fontSize:12, fontWeight: sel ? 700 : 500, cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4 }}
-                      >
-                        {opt.icon && opt.icon !== "dem" && opt.icon !== "rep" && (
-                          <i className={`ti ${opt.icon}`} style={{ fontSize:14 }} aria-hidden="true" />
-                        )}
-                        <span>{opt.l}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </>
-        )}
-
-        {/* Phase 5.ah: importance-grid — N categories, each with a 1-5
-            compact pill row. Reuses the tri-single look-and-feel but for
-            importance (not stance). All rows on one screen for speed. */}
-        {current?.type === "importance-grid" && (
-          <>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:6, lineHeight:1.4 }}>{current.q}</div>
-            <div style={{ fontSize:12, color:T.txt3, marginBottom:18 }}>1 = not at all · 5 = critical</div>
-            {(current.rows || []).map(row => {
-              const v = answers[row.id];
-              return (
-                <div key={row.id} style={{ marginBottom:14, display:"flex", alignItems:"center", gap:10 }}>
-                  <div style={{ flex:1, minWidth:0, display:"flex", alignItems:"center", gap:6 }}>
-                    {row.icon && <i className={`ti ${row.icon}`} style={{ fontSize:14, color:T.txt3, flexShrink:0 }} aria-hidden="true" />}
-                    <span style={{ fontSize:13, color:T.txt, fontWeight:500 }}>{row.label}</span>
-                  </div>
-                  <div style={{ display:"flex", gap:4, flexShrink:0 }}>
-                    {[1,2,3,4,5].map(n => {
-                      const sel = v === n;
-                      return (
-                        <button
-                          key={n}
-                          onClick={() => set(row.id, n)}
-                          style={{ width:34, height:34, borderRadius:8, border:`1.5px solid ${sel ? T.accent : T.border}`, background: sel ? T.accent : T.bg2, color: sel ? "#fff" : T.txt3, fontSize:13, fontWeight:700, cursor:"pointer" }}
-                        >{n}</button>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-          </>
-        )}
-
-        {current?.type === "multi" && (
-          <>
-            <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:6, lineHeight:1.4 }}>{current.q}</div>
-            {current.sub && <div style={{ fontSize:13, color:T.txt3, marginBottom:18, lineHeight:1.5 }}>{current.sub}</div>}
-            {current.opts.map((opt, i) => {
-              const sel = (answers[current.id]||[]).includes(opt.v);
-              return (
-                <button key={i} onClick={() => toggleMulti(current.id, opt.v)}
-                  style={{ display:"flex", alignItems:"center", gap:12, padding:"9px 12px", borderRadius:12, border:`1.5px solid ${sel?T.accent:T.border}`, background:sel?T.accentBg:T.bg2, cursor:"pointer", marginBottom:6, textAlign:"left", width:"100%" }}>
-                  <div style={{ width:22, height:22, borderRadius:5, border:`2px solid ${sel?T.accent:T.border2}`, background:sel?T.accent:"transparent", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-                    {sel && <i className="ti ti-check" style={{ fontSize:12, color:"#fff" }} aria-hidden="true" />}
-                  </div>
-                  <i className={`ti ${opt.icon}`} style={{ fontSize:18, color:sel?T.accent2:T.txt3 }} aria-hidden="true" />
-                  <span style={{ fontSize:14, color:sel?T.accent2:T.txt, fontWeight:sel?600:400 }}>{opt.l}</span>
-                </button>
-              );
-            })}
-          </>
-        )}
-      </div>
-
-      <div style={{ display:"flex", flexDirection:"column", gap:8, padding:"12px 16px", paddingBottom:"calc(12px + env(safe-area-inset-bottom, 0px))", borderTop:`1px solid ${T.border}`, background:T.bg, flexShrink:0 }}>
-        <div style={{ display:"flex", gap:10 }}>
-          {step > 0 && <button onClick={()=>setStep(s=>s-1)} style={{ padding:"11px 16px", borderRadius:12, border:`1px solid ${T.border}`, background:T.bg3, color:T.txt2, fontSize:14, fontWeight:600, cursor:"pointer" }}>←</button>}
-          <button onClick={advance} disabled={!canAdvance}
-            style={{ flex:1, padding:13, borderRadius:12, border:"none", background:canAdvance?T.accent:T.bg3, color:canAdvance?"#fff":T.txt3, fontSize:15, fontWeight:700, cursor:canAdvance?"pointer":"default", opacity:canAdvance?1:0.4 }}>
-            {isWelcome ? "Let's go →" : isLast ? "See my scores →" : "Next →"}
-          </button>
-        </div>
-        {/* Phase 5.z: Skip lives in the Quiz footer so it's always reachable
-            and doesn't extend the page below the viewport (the old bug). */}
-        {onSkip && (
-          <button onClick={onSkip} style={{ width:"100%", padding:9, borderRadius:10, border:"none", background:"transparent", color:T.txt3, fontSize:12, cursor:"pointer" }}>
-            Skip — see baseline scores. You can take the quiz anytime from Account.
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
-
 // ─── SUBMIT FORM ──────────────────────────────────────────────────────────────
 function SubmitView({ isPaid, onUpgrade }) {
   const [type, setType] = useState("correction");
@@ -4804,7 +4447,9 @@ function SubmitView({ isPaid, onUpgrade }) {
     // never penalized for our infra hiccups.
     try {
       const storedEmail = (typeof localStorage !== "undefined" && localStorage.getItem("tn_email")) || "";
-      fetch("/api/submit", {
+      // apiUrl() rewrites to the production origin on native iOS — a relative
+      // /api/submit there hits capacitor://localhost and the correction is lost.
+      fetch(apiUrl("/api/submit"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -5449,10 +5094,12 @@ useEffect(() => {
   // This converts the daily data pipeline into a visible return-trigger
   // without accounts or push infra (APNs is the post-launch upgrade path).
   const [savedChanges, setSavedChanges] = useState([]);
-  // R2 (flow A step 5): "watch my basket" intent, asked at the Reveal. Local
-  // intent flag only — the in-app what-changed feed honors it today; it
-  // becomes the APNs opt-in seed when push lands (R3). No OS prompt is
-  // burned before push infrastructure exists.
+  // R2 (flow A step 5): "watch my basket" intent, asked at the Reveal.
+  // 2026-06-13 (review): this was a silent no-op — nothing read it. It now
+  // gates whether basket record-changes surface as the Today story card (the
+  // "flag me" promise, in-app since there's no push yet); the Library → Saved
+  // feed still shows them regardless. It also seeds the APNs opt-in for when
+  // push lands (R3). No OS prompt is burned before push infrastructure exists.
   const [watchBasket, setWatchBasket] = useState(() => {
     try { return localStorage.getItem("tn_watchBasket") === "1"; } catch { return false; }
   });
@@ -5551,6 +5198,11 @@ useEffect(() => {
 
   // Analytics — init once, then track key funnel events
   useEffect(() => { initAnalytics(); }, []);
+
+  // 2026-06-12 review: instrument surface navigation. Previously a single
+  // capture_pageview fired per SPA load with no per-tab signal, so Today /
+  // Lens / Ledger / You engagement and the Today→Ledger loop were invisible.
+  useEffect(() => { track("surface_view", { tab }); }, [tab]);
 
   // PR-3: warm the feature-flag cache as early as possible so the FIRST
   // computeScore() call honors the runtime flag (otherwise iOS would always
@@ -5957,16 +5609,18 @@ useEffect(() => {
     if (!q) return;
     const settle = setTimeout(() => {
       track("search", { query: q.slice(0, 60), result_count: filtered.length });
+      // 2026-06-12 review: this stash used to sit AFTER the cleanup `return`
+      // below — unreachable since the M4 settle refactor, so "Recent" never
+      // populated for anyone. Record settled, non-empty searches here.
+      if (filtered.length > 0) {
+        setRecentSearches(prev => {
+          const next = [q, ...prev.filter(x => x.toLowerCase() !== q.toLowerCase())].slice(0, 5);
+          try { localStorage.setItem("tn_recentSearches", JSON.stringify(next)); } catch {}
+          return next;
+        });
+      }
     }, 1200);
     return () => clearTimeout(settle);
-    // Only stash searches that returned something
-    if (filtered.length > 0) {
-      setRecentSearches(prev => {
-        const next = [q, ...prev.filter(x => x.toLowerCase() !== q.toLowerCase())].slice(0, 5);
-        try { localStorage.setItem("tn_recentSearches", JSON.stringify(next)); } catch {}
-        return next;
-      });
-    }
   }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleCat = (f) => setCatFilters(prev => prev.includes(f) ? prev.filter(x=>x!==f) : [...prev, f]);
@@ -6133,6 +5787,7 @@ if (screen === "onboarding") {
         // R2 (brief flow A): basket BEFORE the Match — pick what you buy,
         // then your answers immediately have something to judge.
         track("basket_picker_shown", { from: "onboarding_rail" });
+        setQueryRaw(""); // start the basket search empty (shows the chip cloud)
         setScreen("basket");
       }}
     />
@@ -6147,6 +5802,19 @@ if (screen === "basket") {
     .filter(c => c.consumerFacing !== false && (c.realCats ?? 0) >= 5 && ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"].includes(getBucket(c.cat || "")))
     .sort((a, b) => (b.realCats ?? 0) - (a.realCats ?? 0) || String(a.name).localeCompare(String(b.name)))
     .slice(0, 40);
+  // R2 brief flow A specced search alongside the chip cloud (review): a user who
+  // buys none of the 40 household chips was stuck with only the tiny "skip".
+  // Substring-filter `deduped` directly — it's already loaded (the chip pool
+  // uses it), so this works during first-run even before the lazy MiniSearch
+  // index is ready (MiniSearch's searchHits is null then → don't depend on it).
+  const _bq = queryRaw.trim().toLowerCase();
+  const basketSearchResults = _bq
+    ? (deduped || [])
+        .filter(c => c.consumerFacing !== false && String(c.name || "").toLowerCase().includes(_bq))
+        .sort((a, b) => (b.realCats ?? 0) - (a.realCats ?? 0) || String(a.name).localeCompare(String(b.name)))
+        .slice(0, 30)
+    : null;
+  const basketChips = basketSearchResults || pool;
   return (
     <div style={{ display:"flex", flexDirection:"column", height:"100dvh", maxWidth:430, margin:"0 auto", paddingTop:"calc(env(safe-area-inset-top, 0px) + 18px)", overflow:"hidden", background:T.bg }}>
       <div style={{ padding:"0 22px", flexShrink:0 }}>
@@ -6154,13 +5822,22 @@ if (screen === "basket") {
         <div style={{ fontSize:13, color:T.txt2, lineHeight:1.5, marginTop:8 }}>
           Tap 5–10 brands. Their public records become your ledger — judged against your values in the next 45 seconds.
         </div>
+        <input
+          value={queryRaw}
+          onChange={(e) => setQueryRaw(e.target.value)}
+          placeholder="Search any brand…"
+          aria-label="Search for a brand to add to your basket"
+          style={{ width:"100%", boxSizing:"border-box", marginTop:14, background:T.bg3, border:`1px solid ${T.border}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px" }}
+        />
       </div>
       <div style={{ flex:1, minHeight:0, overflowY:"auto", WebkitOverflowScrolling:"touch", padding:"16px 22px 12px" }}>
         {!pool.length ? (
           <div style={{ padding:"40px 0", textAlign:"center", color:T.txt3, fontSize:13 }}>Loading brands…</div>
+        ) : basketSearchResults && !basketSearchResults.length ? (
+          <div style={{ padding:"40px 0", textAlign:"center", color:T.txt3, fontSize:13 }}>No brands match “{queryRaw.trim()}”.</div>
         ) : (
           <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
-            {pool.map(co => {
+            {basketChips.map(co => {
               const slug = co.slug || co.id;
               const on = savedSet.has(slug);
               return (
@@ -6176,12 +5853,12 @@ if (screen === "basket") {
       </div>
       <div style={{ flexShrink:0, padding:"10px 22px calc(env(safe-area-inset-bottom, 0px) + 16px)", borderTop:`1px solid ${T.border}`, background:T.bg }}>
         <button
-          onClick={() => { track("basket_picked", { count: savedSet.size }); track("quiz_started", { from: "basket_picker" }); setScreen("quiz"); }}
+          onClick={() => { track("basket_picked", { count: savedSet.size }); track("quiz_started", { from: "basket_picker" }); setQueryRaw(""); setScreen("quiz"); }}
           disabled={savedSet.size === 0}
           style={{ width:"100%", padding:"15px 12px", borderRadius:13, background: savedSet.size ? "#EDE9E0" : T.bg3, color: savedSet.size ? "#111" : T.txt3, border:"none", fontSize:15, fontWeight:700, cursor: savedSet.size ? "pointer" : "default" }}>
           {savedSet.size ? `Continue with ${savedSet.size} ${savedSet.size === 1 ? "brand" : "brands"}` : "Pick at least one brand"}
         </button>
-        <button onClick={() => { track("basket_skipped", {}); track("quiz_started", { from: "basket_picker_skip" }); setScreen("quiz"); }}
+        <button onClick={() => { track("basket_skipped", {}); track("quiz_started", { from: "basket_picker_skip" }); setQueryRaw(""); setScreen("quiz"); }}
           style={{ width:"100%", background:"none", border:"none", color:T.txt3, fontSize:11.5, cursor:"pointer", padding:"10px 0 0", textAlign:"center" }}>
           skip for now
         </button>
@@ -6227,6 +5904,16 @@ if (screen === "basket") {
       .sort((a, b) => ((GRADE_RANK[b.grade] || 0) - (GRADE_RANK[a.grade] || 0)) || (b.score - a.score))
       .slice(0, 3);
     const winner = top3[0];
+    // R2 review — slimmed Reveal to one payoff: archetype → clash → one CTA.
+    // If the user has a basket, the sharpest clash is the hook; otherwise their
+    // top match is. Never both (showing two payoffs + runners-up + the weighting
+    // math was the 9-ask overload the review flagged). Computed once here so the
+    // clash card and the top-match gate stay mutually exclusive.
+    const savedCos = savedSet.size > 0
+      ? Array.from(savedSet).map(s => (companies || []).find(c => (c.slug || c.id) === s)).filter(Boolean)
+      : [];
+    const basketView = savedCos.length ? basketVerdict(savedCos, profile, companies || []) : null;
+    const hasBasketPayoff = !!(basketView && basketView.graded > 0);
     return (
       <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg, paddingTop:"env(safe-area-inset-top,0px)" }}>
         <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center", boxSizing:"border-box", width:"100%" }}>
@@ -6254,36 +5941,17 @@ if (screen === "basket") {
               </div>
             );
           })()}
-          {/* Build 57 (review): show the math — users should see exactly how
-              their answers weigh, and it sets correct expectations for why
-              grades differ from a friend's. */}
-          {(() => {
-            const w = { ...PROFILE_DEFAULT_WEIGHTS, ...(profile?.weights || {}) };
-            const boosts = {
-              political: profile?.lean && profile.lean !== "neutral" ? 1.5 : 1,
-              dei: profile?.deiLean && profile.deiLean !== "neutral" ? 1.5 : 1,
-              animals: profile?.animalTesting && profile.animalTesting !== "neutral" ? 1.5 : 1,
-              guns: profile?.guns && profile.guns !== "neutral" ? 1.5 : 1,
-              labor: profile?.unionSupport && profile.unionSupport !== "neutral" ? 1.5 : 1,
-            };
-            const eff = CAT_KEYS.map(k => ({ k, x: (w[k] || 2) * (boosts[k] || 1) }))
-              .sort((a, b) => b.x - a.x).slice(0, 3);
-            return (
-              <div style={{ fontSize:11.5, color:T.txt3, textAlign:"center", marginBottom:14, maxWidth:340, lineHeight:1.5 }}>
-                Weighing most for you: {eff.map((e, i) => (
-                  <span key={e.k}>{i > 0 && " · "}<span style={{ color:T.txt2, fontWeight:600 }}>{CAT_LABELS[e.k]} ×{(Math.round(e.x * 10) / 10).toFixed(1).replace(/\.0$/, "")}</span></span>
-                ))}
-              </div>
-            );
-          })()}
+          {/* R2 review: the per-category weighting math used to render here
+              ("Weighing most for you: …"). Cut from the celebration screen —
+              the compass seal above already shows those weights as spoke
+              lengths, and the numeric breakdown cooled the peak moment. The
+              detailed math still lives on the Account fingerprint + Methodology. */}
           {/* R2 (flow A step 4): the basket, judged — the personal payoff.
               The % the user just earned by answering, plus the ONE sharpest
               clash with a route to its receipts (the verdict card has the
               swap + switch waiting one tap away). */}
-          {savedSet.size > 0 && (() => {
-            const savedCos = Array.from(savedSet).map(s => (companies || []).find(c => (c.slug || c.id) === s)).filter(Boolean);
-            const bv = basketVerdict(savedCos, profile, companies || []);
-            if (bv.graded === 0) return null;
+          {hasBasketPayoff && (() => {
+            const bv = basketView;
             const n = bv.clashes.length;
             const worst = bv.clashes[0] || null;
             return (
@@ -6323,14 +5991,19 @@ if (screen === "basket") {
               </div>
             );
           })()}
-          <div style={{ fontSize:22, fontWeight:700, color:T.txt, textAlign:"center", marginBottom:6, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>Your values are set.</div>
-          {/* 2026-06-01 fix: was maxWidth:"100%" which inherited parent width
-              and let the italic "you" overflow past the viewport on narrow
-              iPhones. Constrained to 340 to match the archetype card above. */}
-          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:24, lineHeight:1.4, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
+          {/* R2 review: dropped the redundant "Your values are set." headline —
+              the archetype card + compass already deliver the identity beat. Kept
+              one functional line so users know grades are now personalized.
+              maxWidth:340 (not 100%) so the italic "you" can't overflow on narrow
+              iPhones — the 2026-06-01 fix. */}
+          <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:22, lineHeight:1.4, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
             Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
           </div>
-          {winner && (
+          {/* R2 review: the top match is the payoff ONLY when there's no basket
+              clash to lead with — otherwise the clash card above is the hook, and
+              showing both (plus a runners-up list) was the overload the review
+              flagged. One payoff, never two. */}
+          {!hasBasketPayoff && winner && (
             <>
               <div style={{ fontSize:11, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, marginBottom:8 }}>Your top match</div>
               <div
@@ -6362,24 +6035,6 @@ if (screen === "basket") {
                   );
                 })()}
               </div>
-              {top3.length > 1 && (
-                <>
-                  <div style={{ fontSize:11, color:T.txt3, marginBottom:6 }}>Runners-up</div>
-                  <div style={{ width:"100%", maxWidth:340, display:"flex", flexDirection:"column", gap:6 }}>
-                    {top3.slice(1).map(({ co, score }) => (
-                      <div
-                        key={co.slug || co.id}
-                        onClick={() => openBrand(co.slug || co.id, { setMainScreen: true, focusDetail: false, switchTab: false })}
-                        style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, padding:"10px 14px", cursor:"pointer", display:"flex", alignItems:"center", gap:10 }}
-                      >
-                        <CompanyLogo company={co} size={28} />
-                        <div style={{ flex:1, minWidth:0, fontSize:13, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.name}</div>
-                        <div style={{ fontSize:13, fontWeight:700, color:"#9CC98A" }}>{scoreGrade(score, userRelevantRealCats(co, profile))}</div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
             </>
           )}
           {/* B-6 (2026-06-01): soft email ask at the highest-intent moment.
@@ -6450,7 +6105,10 @@ if (screen === "basket") {
               // The destination page sets the og:image meta dynamically.)
               console.info("[share] og image url:", `/api/og/values?${qp.toString()}`);
             }}
-            style={{ width:"100%", padding:14, borderRadius:12, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
+            /* R2 review: ONE primary CTA. Share is the growth loop but it was a
+               second co-equal filled button competing with Explore — demoted to a
+               subordinate ghost link so the eye lands on the primary action. */
+            style={{ width:"100%", padding:"10px 14px", borderRadius:12, border:"none", background:"transparent", color:T.txt3, fontSize:13, fontWeight:500, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
           >
             <i className="ti ti-share" aria-hidden="true" /> Share my values
           </button>
@@ -6659,7 +6317,11 @@ if (screen === "basket") {
               return (
                 <div style={{ position:"absolute", top:"calc(100% + 4px)", left:0, right:0, background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, boxShadow:"0 8px 24px rgba(0,0,0,0.4)", zIndex:50, overflow:"hidden" }}>
                   {suggestions.map(co => {
-                    const g = co.overall != null ? scoreGrade(co.overall, co.realCats) : "?";
+                    // 2026-06-13 (review): the typeahead leaked baseline letters
+                    // while every other surface gates grades behind the Match
+                    // (`profile ? grade : "?"`). Respect the gate — and show the
+                    // PERSONALIZED grade for quizzed users, like the shelf/rows.
+                    const g = profile ? scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile)) : "?";
                     const gradeColor = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
                     return (
                       <button
@@ -6745,7 +6407,11 @@ if (screen === "basket") {
             const savedCos = Array.from(savedSet).map(s => deduped.find(c => (c.slug || c.id) === s)).filter(Boolean);
 
             // Story pick: your basket moved → this week's digest → quiet week.
-            const story = savedChanges[0] || null;
+            // 2026-06-13 (review): the basket-change story is gated on the
+            // "watch my basket" opt-in — toggling it ON at the Reveal is what
+            // surfaces record changes here on Today (the Library → Saved feed
+            // shows them regardless). Makes the watch toggle a real control.
+            const story = watchBasket ? (savedChanges[0] || null) : null;
             const weeklyStory = !story && weeklyChanges?.changes?.length ? weeklyChanges.changes[0] : null;
 
             // Shelf: deterministic daily category. WHITELISTED to aisles a
@@ -7310,12 +6976,12 @@ if (screen === "basket") {
               <i className="ti ti-sparkles" style={{ fontSize:20, color:T.accent2, flexShrink:0 }} aria-hidden="true" />
               <div style={{ flex:1, minWidth:0 }}>
                 <div style={{ fontSize:13, fontWeight:600, color:T.txt, lineHeight:1.3 }}>See <strong>{teaserCompany.name}</strong>'s score tailored to <em>your</em> values</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:3 }}>30-second quiz — free</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:3 }}>45-second Match — free</div>
               </div>
               <button
                 onClick={()=>{ track("personalized_teaser_clicked", { slug: teaserCompany.slug || teaserCompany.id, name: teaserCompany.name }); track("quiz_started", { from: "personalized_teaser" }); setScreen("quiz"); }}
                 style={{ padding:"7px 12px", borderRadius:8, border:"none", background:T.accent2, color:"#000", fontSize:12, fontWeight:700, cursor:"pointer", flexShrink:0 }}
-              >Take quiz</button>
+              >Take the Match</button>
               <button
                 onClick={()=>{ setTeaserDismissed(true); try { sessionStorage.setItem("tn_teaserDismissed","1"); } catch {} track("personalized_teaser_dismissed"); }}
                 style={{ width:24, height:24, padding:0, borderRadius:6, border:"none", background:"transparent", color:T.txt3, fontSize:16, minWidth:44, minHeight:44, cursor:"pointer", flexShrink:0 }}
@@ -7463,15 +7129,15 @@ if (screen === "basket") {
               return (
                 <div style={{ padding:"60px 24px", textAlign:"center", color:T.txt3 }}>
                   <i className="ti ti-star" style={{ fontSize:48, color:T.txt3, marginBottom:14 }} aria-hidden="true" />
-                  <div style={{ fontSize:15, fontWeight:600, color:T.txt2 }}>No saved brands yet</div>
+                  <div style={{ fontSize:15, fontWeight:600, color:T.txt2 }}>Your basket is empty</div>
                   <div style={{ fontSize:12, marginTop:6, lineHeight:1.4 }}>
-                    Tap the ☆ on any brand to save it for later.
+                    Tap the ☆ on any brand to add it to your basket.
                   </div>
                   <button
                     onClick={() => setTab("search")}
                     style={{ marginTop:18, padding:"10px 18px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer" }}
                   >
-                    Find brands to save →
+                    Build your basket →
                   </button>
                 </div>
               );
@@ -7487,9 +7153,9 @@ if (screen === "basket") {
                        on focus. The previous 12 looked nicer but trapped
                        users in zoomed-Library state until they pinch out. */
                     style={{ background:T.bg3, color:T.txt, border:`1px solid ${T.border}`, borderRadius:8, padding:"6px 8px", fontSize:16, flexShrink:0, minHeight:36 }}
-                    aria-label="Sort saved brands"
+                    aria-label="Sort your basket"
                   >
-                    <option value="recent">Recently saved</option>
+                    <option value="recent">Recently added</option>
                     <option value="grade">Grade (best first)</option>
                     <option value="name">Name (A–Z)</option>
                     <option value="category">Category</option>
@@ -7512,7 +7178,7 @@ if (screen === "basket") {
                 </div>
                 {savedCos.length === 0 ? (
                   <div style={{ padding:"40px 24px", textAlign:"center", color:T.txt3, fontSize:13 }}>
-                    No saved brands in <strong>{savedCategoryFilter}</strong>. <button onClick={() => setSavedCategoryFilter("all")} style={{ background:"none", border:"none", color:T.accent2, textDecoration:"underline", cursor:"pointer" }}>Clear filter</button>
+                    Nothing in your basket under <strong>{savedCategoryFilter}</strong>. <button onClick={() => setSavedCategoryFilter("all")} style={{ background:"none", border:"none", color:T.accent2, textDecoration:"underline", cursor:"pointer" }}>Clear filter</button>
                   </div>
                 ) : savedCos.map(co => {
                   const ps = computeScore(co, profile);
@@ -7547,7 +7213,7 @@ if (screen === "basket") {
                       <button
                         onClick={(e) => { e.stopPropagation(); toggleSaved(co.slug || co.id, co.name); }}
                         style={{ background:"none", border:"none", color:T.gold, fontSize:18, cursor:"pointer", padding:"0 4px" }}
-                        aria-label="Remove from saved"
+                        aria-label="Remove from basket"
                       >★</button>
                       <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
                     </button>
@@ -7851,7 +7517,7 @@ if (screen === "basket") {
               <>
                 <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Run the Match — nine quick choices personalize every grade in the app.</div>
                 <button onClick={()=>{ track("quiz_started", { isPaid, from: "account" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
-                  Take the quiz {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
+                  Take the Match {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
                 </button>
               </>
             )}
@@ -7993,7 +7659,7 @@ if (screen === "basket") {
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Sign out?",
-                    body: "Your saved brands and preferences stay on this device. To wipe everything, use 'Delete my data' below.",
+                    body: "Your basket and preferences stay on this device. To wipe everything, use 'Delete my data' below.",
                     confirmLabel: "Sign out",
                     cancelLabel: "Stay",
                     danger: true,
@@ -8019,7 +7685,7 @@ if (screen === "basket") {
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Delete all my data on this device?",
-                    body: "Wipes your saved brands, history, quiz answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
+                    body: "Wipes your basket, history, Match answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
                     confirmLabel: "Delete everything",
                     cancelLabel: "Cancel",
                     danger: true,
@@ -8052,14 +7718,14 @@ if (screen === "basket") {
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>How grades work</div>
             <div style={{ fontSize:12, color:T.txt3, marginBottom:12, lineHeight:1.55 }}>
-              Each company is scored 0–100 across the value categories with data, then averaged. The letter grade is the overall score put on a school-grade curve:
+              Each category with public-record data is scored 0–100, then combined with a shrinkage toward 50 that prices in how much evidence exists — so one thin signal can't swing a grade. The result maps to fixed, published cut points (not a school curve):
             </div>
             {[
-              { grade:"A", range:"90–100", desc:"Best of class — strong on most categories with no major red flags",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
-              { grade:"B", range:"80–89",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
-              { grade:"C", range:"70–79",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
-              { grade:"D", range:"60–69",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
-              { grade:"F", range:"0–59",   desc:"Substantial negative signals across most categories with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
+              { grade:"A", range:"62–100", desc:"Best of class — strong across a broad, verified record",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
+              { grade:"B", range:"50–61",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
+              { grade:"C", range:"38–49",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
+              { grade:"D", range:"33–37",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
+              { grade:"F", range:"0–32",   desc:"Substantial negative signals with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
             ].map((r) => (
               <div key={r.grade} style={{ display:"flex", alignItems:"center", gap:10, padding:"6px 0" }}>
                 <div style={{ width:34, height:34, borderRadius:8, background:r.bg, border:`1px solid ${r.border}`, color:r.color, fontSize:16, fontWeight:800, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>{r.grade}</div>
@@ -8070,7 +7736,8 @@ if (screen === "basket") {
               </div>
             ))}
             <div style={{ fontSize:11, color:T.txt3, marginTop:10, lineHeight:1.5, paddingTop:10, borderTop:`1px solid ${T.border}` }}>
-              Categories without enough data are <strong style={{ color:T.txt2 }}>excluded</strong> from the grade — they don't count for or against the brand.
+              Categories without enough data are <strong style={{ color:T.txt2 }}>excluded</strong> from the grade — they don't count for or against the brand.{" "}
+              <a href="#methodology" onClick={() => track("methodology_opened", { from: "grade_legend" })} style={{ color:T.accent2, fontWeight:600, textDecoration:"none" }}>Full methodology →</a>
             </div>
           </div>
 
@@ -8079,7 +7746,10 @@ if (screen === "basket") {
             <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>About TruNorth</div>
             {[
               ["Companies", formatCompanyCount(deduped.length)],
-              ["Updated", "May 2026"],
+              // 2026-06-12 review: was hardcoded "May 2026" (already stale in
+              // June). The catalog refreshes continuously via the nightly/weekly
+              // crons, so show the current month rather than a frozen date.
+              ["Updated", new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })],
               ["Version", "2.0"],
             ].map(([label, val]) => (
               <div key={label} style={{ display:"flex", justifyContent:"space-between", padding:"7px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>

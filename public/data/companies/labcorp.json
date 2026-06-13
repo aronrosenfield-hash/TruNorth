@@ -3,8 +3,8 @@
   "legalName": "LABCORP HOLDINGS INC.",
   "cat": "Healthcare",
   "init": "LH",
-  "overall": 33.2,
-  "realCats": 1,
+  "overall": 38,
+  "realCats": 2,
   "isPublic": true,
   "ticker": "LH",
   "cik": 920148,
@@ -15,13 +15,13 @@
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "neutral",
+    "labor": "mixed",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
     "privacy": "poor",
     "execPay": "neutral",
-    "health": "neutral"
+    "health": "mixed"
   },
   "political": {
     "s": "No public record found.",
@@ -36,7 +36,7 @@
     "sources": []
   },
   "labor": {
-    "s": "No public record found.",
+    "s": "3 OSHA severe-injury reports since 2015.",
     "sources": []
   },
   "dei": {
@@ -62,7 +62,7 @@
     "sources": []
   },
   "health": {
-    "s": "No public record found.",
+    "s": "HHS Office of Inspector General: 1 recent OIG enforcement action (past 24mo).",
     "sources": []
   },
   "ab": "#211b0d",
@@ -163,6 +163,7 @@
     }
   },
   "csc": {
+    "labor": 50,
     "privacy": 8
   }
 }

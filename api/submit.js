@@ -51,13 +51,24 @@ const ALLOWED_ORIGINS = [
 ];
 
 export default async function handler(req) {
-  if (req.method !== "POST") {
-    return new Response(JSON.stringify({ ok: false, error: "method_not_allowed" }), { status: 405 });
-  }
-
   const origin = req.headers.get("origin") || "";
-  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
-    return new Response(JSON.stringify({ ok: false, error: "forbidden_origin" }), { status: 403, headers: { "Content-Type": "application/json" } });
+  const isAllowed = !origin || ALLOWED_ORIGINS.includes(origin);
+
+  // 2026-06-12 review: submit.js had no OPTIONS handler and no CORS headers on
+  // its responses, so the native capacitor:// shell (and apex→www) failed the
+  // preflight and corrections never reached the function — even once the client
+  // started POSTing to the absolute production origin. Mirror subscribe.js.
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      status: isAllowed ? 204 : 403,
+      headers: { ...corsHeaders(origin), "Access-Control-Max-Age": "86400" },
+    });
+  }
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ ok: false, error: "method_not_allowed" }), { status: 405, headers: { "Content-Type": "application/json", ...corsHeaders(origin) } });
+  }
+  if (!isAllowed) {
+    return new Response(JSON.stringify({ ok: false, error: "forbidden_origin" }), { status: 403, headers: { "Content-Type": "application/json", ...corsHeaders(origin) } });
   }
 
   // Rate limit before parsing any body
@@ -65,13 +76,13 @@ export default async function handler(req) {
   if (rateLimited(ip)) {
     return new Response(JSON.stringify({ ok: false, error: "rate_limited" }), {
       status: 429,
-      headers: { "Content-Type": "application/json", "Retry-After": "60" },
+      headers: { "Content-Type": "application/json", "Retry-After": "60", ...corsHeaders(origin) },
     });
   }
 
   let payload;
   try { payload = await req.json(); }
-  catch { return new Response(JSON.stringify({ ok: false, error: "bad_json" }), { status: 400 }); }
+  catch { return new Response(JSON.stringify({ ok: false, error: "bad_json" }), { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders(origin) } }); }
 
   const { type, category, company, detail, source, email } = payload || {};
   const cleaned = {
@@ -87,7 +98,7 @@ export default async function handler(req) {
   };
 
   if (!cleaned.company || !cleaned.detail) {
-    return new Response(JSON.stringify({ ok: false, error: "missing_fields" }), { status: 400 });
+    return new Response(JSON.stringify({ ok: false, error: "missing_fields" }), { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders(origin) } });
   }
 
   // Always log so Vercel function logs capture it even without Resend
@@ -138,8 +149,16 @@ export default async function handler(req) {
 
   return new Response(JSON.stringify({ ok: true }), {
     status: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...corsHeaders(origin) },
   });
+}
+
+function corsHeaders(origin) {
+  return {
+    "Access-Control-Allow-Origin": origin || "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
 }
 
 function esc(s) {

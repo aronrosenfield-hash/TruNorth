@@ -1,1 +1,140 @@
-{"name":"Ubiquiti","legalName":"Ubiquiti Inc.","cat":"Technology","init":"UI","overall":null,"realCats":0,"isPublic":true,"ticker":"UI","cik":1511737,"sic":3663,"sicDescription":"Radio & Tv Broadcasting & Communications Equipment","addedBy":"edgar-expansion-2026-06","sc":{"political":"neutral","charity":"neutral","environment":"neutral","labor":"neutral","dei":"neutral","animals":"neutral","guns":"neutral","privacy":"neutral","execPay":"neutral","health":"neutral"},"political":{"s":"No public record found.","sources":[]},"charity":{"s":"No public record found.","sources":[]},"environment":{"s":"No public record found.","sources":[]},"labor":{"s":"No public record found.","sources":[]},"dei":{"s":"No public record found.","sources":[]},"animals":{"s":"No public record found.","sources":[]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":[]},"execPay":{"s":"No public record found.","sources":[]},"health":{"s":"No public record found.","sources":[]},"ab":"#0d211f","ac":"#59cfc3","competitors":[],"slug":"ubiquiti","enriched":{"cisaKev":{"vendor":"Ubiquiti","totalCveCount":1,"recent12moCount":0,"ransomwareCount":0,"productBreakdown":[{"label":"AirOS","count":1}],"topCves":[{"cveID":"CVE-2010-5330","product":"AirOS","vulnerabilityName":"Ubiquiti AirOS Command Injection Vulnerability","dateAdded":"2022-04-15","dueDate":"2022-05-06","knownRansomwareCampaignUse":"Unknown","shortDescription":"Certain Ubiquiti devices contain a command injection vulnerability via a GET request to stainfo.cgi.","requiredAction":"Apply updates per vendor instructions.","url":"https://nvd.nist.gov/vuln/detail/CVE-2010-5330"}],"highestSeverity":[{"cveID":"CVE-2010-5330","product":"AirOS","vulnerabilityName":"Ubiquiti AirOS Command Injection Vulnerability","dateAdded":"2022-04-15","knownRansomwareCampaignUse":"Unknown","url":"https://nvd.nist.gov/vuln/detail/CVE-2010-5330"}],"lastUpdated":"2026-06-11T14:35:39.055Z","source":"cisa-kev","sourceUrl":"https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}},"dataLastUpdated":{"cisaKev":"2026-06-11T14:35:39.055Z"},"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Technology"}}}
+{
+  "name": "Ubiquiti",
+  "legalName": "Ubiquiti Inc.",
+  "cat": "Technology",
+  "init": "UI",
+  "overall": 50,
+  "realCats": 1,
+  "isPublic": true,
+  "ticker": "UI",
+  "cik": 1511737,
+  "sic": 3663,
+  "sicDescription": "Radio & Tv Broadcasting & Communications Equipment",
+  "addedBy": "edgar-expansion-2026-06",
+  "sc": {
+    "political": "neutral",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "neutral",
+    "dei": "neutral",
+    "animals": "neutral",
+    "guns": "neutral",
+    "privacy": "mixed",
+    "execPay": "neutral",
+    "health": "neutral"
+  },
+  "political": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "labor": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "dei": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "CISA Known Exploited Vulns: 1 CVE on record (0 in past 12mo); affected products include AirOS.",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "health": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "ab": "#0d211f",
+  "ac": "#59cfc3",
+  "competitors": [],
+  "slug": "ubiquiti",
+  "enriched": {
+    "cisaKev": {
+      "vendor": "Ubiquiti",
+      "totalCveCount": 1,
+      "recent12moCount": 0,
+      "ransomwareCount": 0,
+      "productBreakdown": [
+        {
+          "label": "AirOS",
+          "count": 1
+        }
+      ],
+      "topCves": [
+        {
+          "cveID": "CVE-2010-5330",
+          "product": "AirOS",
+          "vulnerabilityName": "Ubiquiti AirOS Command Injection Vulnerability",
+          "dateAdded": "2022-04-15",
+          "dueDate": "2022-05-06",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Certain Ubiquiti devices contain a command injection vulnerability via a GET request to stainfo.cgi.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-5330"
+        }
+      ],
+      "highestSeverity": [
+        {
+          "cveID": "CVE-2010-5330",
+          "product": "AirOS",
+          "vulnerabilityName": "Ubiquiti AirOS Command Injection Vulnerability",
+          "dateAdded": "2022-04-15",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-5330"
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:39.055Z",
+      "source": "cisa-kev",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    }
+  },
+  "dataLastUpdated": {
+    "cisaKev": "2026-06-11T14:35:39.055Z"
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Technology"
+    }
+  },
+  "csc": {
+    "privacy": 50
+  }
+}

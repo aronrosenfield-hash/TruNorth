@@ -13,7 +13,8 @@
 // — analytics fires, localStorage saves, the user flow continues. This keeps
 // dev / prod-before-MailerLite-signup working without any feature flag.
 
-import { track, identify } from "./analytics";
+import { track } from "./analytics";
+import { apiUrl } from "./dataSource";
 
 // CRITICAL FIX (audit 2026-06-01): MailerLite API key was here, but
 // VITE_-prefixed values inline into the public bundle at build time —
@@ -36,18 +37,21 @@ export async function subscribeEmail(email, source, metadata = {}) {
     return { ok: false, error: "invalid_email", source };
   }
 
-  // 1) Persist so we can prefill / identify on future visits
+  // 1) Persist so we can prefill on future visits
   try { localStorage.setItem("tn_email", cleaned); } catch {}
 
-  // 2) PostHog identification — links this email to the anonymous distinctId
-  try { identify(cleaned, { source, ...metadata }); } catch {}
-
-  // 3) Analytics event (never blocks — never throws)
+  // 2) Analytics event (never blocks — never throws).
+  // NOTE (2026-06-12 review): we deliberately do NOT identify() the raw email
+  // into PostHog. Setting a plaintext email as distinct_id leaks PII and
+  // contradicts the app's anonymous-analytics promise (and is a no-op anyway
+  // under persistence:'memory'). The capture is still counted here.
   try { track("email_captured", { source, ...metadata }); } catch {}
 
-  // 4) Server-side proxy to MailerLite (key never touches the client bundle)
+  // 3) Server-side proxy to MailerLite (key never touches the client bundle).
+  // apiUrl() rewrites to the production origin on native iOS (relative paths
+  // resolve to capacitor://localhost there and never reach the edge function).
   try {
-    const res = await fetch(SUBSCRIBE_ENDPOINT, {
+    const res = await fetch(apiUrl(SUBSCRIBE_ENDPOINT), {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
       body:    JSON.stringify({ email: cleaned, source, metadata }),
