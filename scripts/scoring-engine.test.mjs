@@ -25,114 +25,24 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-// ─── Helpers replicated from rebake-scoring.mjs + finalize-bundle.mjs
-// (in-line so the test never breaks when those files refactor) ─────────────
+// ─── Engine functions: imported from the REAL engine (rebake-scoring.mjs) ────
+// 2026-06-13 (review): these were inline COPIES — which could silently drift
+// from the engine, defeating the point of the test. They're now the actual
+// exported functions, so a scoring change without a matching test update fails
+// HERE. rebake-scoring.mjs guards its catalog run behind an isMain check, so
+// importing it triggers no rebake. (negativeSeverityScore/charityGivingScore
+// called without a revenue arg fall back to the absolute curve these tests
+// assert.)
+import {
+  gradeFromOverall, parseDollars, negativeSeverityScore, payRatioScore,
+  charityGivingScore, parsePoliticalSignals, politicalScore,
+} from "./rebake-scoring.mjs";
 
+// Shrinkage is inline in rebake's loop (not a standalone export), so the test
+// keeps a copy of just this one expression.
 const K_SHRINK = 1.5;
-
-function gradeFromOverall(n) {
-  // V3 frozen thresholds — no signal-count cap (shrinkage handles evidence).
-  if (n == null) return "?";
-  if (n >= 62) return "A";
-  if (n >= 50) return "B";
-  if (n >= 38) return "C";
-  if (n >= 33) return "D";
-  return "F";
-}
-
 function shrink(raw, W) {
   return (raw * W + 50 * K_SHRINK) / (W + K_SHRINK);
-}
-
-function parseDollars(text) {
-  const m = String(text || "").match(/\$([\d,]+(?:\.\d+)?)\s*([KMB])?/i);
-  if (!m) return 0;
-  const n = parseFloat(m[1].replace(/,/g, ""));
-  const unit = (m[2] || "").toUpperCase();
-  return n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
-}
-
-function negativeSeverityScore(narrative, enumVal) {
-  const dollars = parseDollars(narrative);
-  if (dollars >= 1000) {
-    const sev = Math.max(8, Math.min(40, 40 - 8 * Math.log10(dollars / 10_000)));
-    return enumVal === "very poor" ? Math.min(sev, 18) : sev;
-  }
-  return enumVal === "very poor" ? 8 : 35;
-}
-
-const PAY_ANCHORS = [[20, 100], [25, 95], [100, 70], [300, 45], [1000, 15], [3000, 5]];
-function payRatioScore(ratio) {
-  if (ratio <= PAY_ANCHORS[0][0]) return 100;
-  const lr = Math.log10(ratio);
-  for (let i = 1; i < PAY_ANCHORS.length; i++) {
-    const [r1, s1] = PAY_ANCHORS[i - 1];
-    const [r2, s2] = PAY_ANCHORS[i];
-    if (ratio <= r2) {
-      const t = (lr - Math.log10(r1)) / (Math.log10(r2) - Math.log10(r1));
-      return s1 + t * (s2 - s1);
-    }
-  }
-  return 5;
-}
-
-function charityGivingScore(d) {
-  const g = d?.charity_irs990?.totalGrants;
-  if (typeof g === "number" && g >= 10_000) {
-    return Math.max(60, Math.min(100, 60 + 8 * Math.log10(g / 10_000)));
-  }
-  return null;
-}
-
-function parsePoliticalSignals(d) {
-  const p = d?.political || {};
-  let amount = 0, tiltAbs = null, hasData = false;
-  if (p.fecData) {
-    amount = Number(p.fecData.totalRaised) || 0;
-    const rep = Number(p.fecData.repTotal) || 0;
-    const dem = Number(p.fecData.demTotal) || 0;
-    if (rep + dem > 0) tiltAbs = Math.abs((rep / (rep + dem)) * 100 - 50);
-    hasData = true;
-  }
-  const s = String(p.s || "");
-  if (!hasData) {
-    const m = s.match(/\$([\d.]+)\s*([KMB]?)/);
-    if (m) {
-      const n = parseFloat(m[1]);
-      const unit = m[2] || "";
-      amount = n * (unit === "K" ? 1e3 : unit === "M" ? 1e6 : unit === "B" ? 1e9 : 1);
-    }
-  }
-  if (tiltAbs == null) {
-    const pctR = s.match(/(\d+)%\s+to\s+Republican/i);
-    const pctD = s.match(/(\d+)%\s+to\s+Democratic/i);
-    if (pctR || pctD) {
-      const r = pctR ? +pctR[1] : (pctD ? 100 - +pctD[1] : 50);
-      tiltAbs = Math.abs(r - 50);
-    } else {
-      const lean = s.match(/\+(\d+)\s+across/i);
-      if (lean) tiltAbs = Math.min(50, +lean[1]);
-      else if (/partisan lean split/i.test(s)) tiltAbs = 5;
-    }
-  }
-  if (amount === 0) amount = 100_000;
-  if (tiltAbs == null) tiltAbs = 15;
-  return { amount, tiltAbs };
-}
-
-function politicalScore(d, val) {
-  const { amount, tiltAbs } = parsePoliticalSignals(d);
-  const sizeFactor = Math.log10(Math.max(1, amount / 100_000));
-  if (val === "bipartisan" || val === "mixed") {
-    return Math.max(55, Math.min(95, 85 - tiltAbs * 0.5 - sizeFactor * 7));
-  }
-  if (val === "left-leaning" || val === "right-leaning") {
-    return Math.max(45, Math.min(70, 65 - sizeFactor * 5));
-  }
-  if (val === "left" || val === "right") {
-    return Math.max(35, Math.min(65, 58 - tiltAbs * 0.2 - sizeFactor * 5));
-  }
-  return null;
 }
 
 // ─── Grade-threshold tests (V3 frozen calibration) ───────────────────

@@ -95,7 +95,7 @@ const K_SHRINK = 1.5;
 const SEVERE_NEG = 20;
 
 // Parse "$8.4M" / "$120,500" / "$95K" → dollars. 0 when nothing parseable.
-function parseDollars(text) {
+export function parseDollars(text) {
   const m = String(text || "").match(/\$([\d,]+(?:\.\d+)?)\s*([KMB])?/i);
   if (!m) return 0;
   const n = parseFloat(m[1].replace(/,/g, ""));
@@ -107,7 +107,7 @@ function parseDollars(text) {
 //   $10K→40 · $100K→32 · $1M→24 · $10M→16 · ≥$100M→8   (clamped 8–40)
 // "very poor" enums cap at 18 so they can't out-score a documented "poor".
 // No parseable $ → legacy band defaults (35 / 8) so nothing silently moves.
-function negativeSeverityScore(narrative, enumVal, revenue) {
+export function negativeSeverityScore(narrative, enumVal, revenue) {
   const dollars = parseDollars(narrative);
   if (dollars >= 1000) {
     let sev;
@@ -146,7 +146,7 @@ function parsePayRatio(d) {
 // The anchors keep the old enum bands honest (<50 was "fair", >300 "poor")
 // while spreading brands inside each band by their disclosed number.
 const PAY_ANCHORS = [[20, 100], [25, 95], [100, 70], [300, 45], [1000, 15], [3000, 5]];
-function payRatioScore(ratio) {
+export function payRatioScore(ratio) {
   if (ratio <= PAY_ANCHORS[0][0]) return 100;
   const lr = Math.log10(ratio);
   for (let i = 1; i < PAY_ANCHORS.length; i++) {
@@ -164,7 +164,7 @@ function payRatioScore(ratio) {
 //   $10K→60 · $100K→68 · $1M→76 · $10M→84 · $100M→92 · ≥$1B→100
 // Returns null when no structured grant data — caller falls back to 85
 // (documented-but-unquantified giving).
-function charityGivingScore(d, revenue) {
+export function charityGivingScore(d, revenue) {
   const g = d?.charity_irs990?.totalGrants;
   if (typeof g !== "number" || g < 10_000) return null;
   if (revenue && revenue > 0) {
@@ -214,7 +214,7 @@ function narrativeScore(text) {
 // Old scoring jammed ALL bipartisan brands at score 80 (the right peak of
 // the bimodal cluster). This spreads them across 55-90 using donation size
 // (log scale) + tilt distance from 50/50.
-function parsePoliticalSignals(d) {
+export function parsePoliticalSignals(d) {
   const p = d?.political || {};
   let amount = 0, tiltAbs = null, hasData = false;
   // Prefer structured fecData if present
@@ -258,7 +258,7 @@ function parsePoliticalSignals(d) {
   return { amount, tiltAbs };
 }
 
-function politicalScore(d, val) {
+export function politicalScore(d, val) {
   const { amount, tiltAbs } = parsePoliticalSignals(d);
   // Log-scaled $ factor: $100K → 0, $1M → 1, $10M → 2, $100M → 3 …
   // Always positive; we SUBTRACT it weighted to push bigger PACs lower.
@@ -278,7 +278,7 @@ function politicalScore(d, val) {
 }
 
 /** Non-personalized score for a category. Returns null when no signal. */
-function baseScoreCat(k, v, d) {
+export function baseScoreCat(k, v, d) {
   const val = String(v || "").toLowerCase();
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
@@ -380,6 +380,24 @@ function classifyCategory(d, k) {
   return { state: "real", value: val };
 }
 
+// Moved above the run block (was interleaved with it) so it's module-scoped
+// and exportable for scripts/scoring-engine.test.mjs — which now imports the
+// REAL engine instead of inline copies that could drift.
+export function gradeFromOverall(n) {
+  // Thresholds recalibrated once (R7.1, 2026-06-13: A≥62/B≥50/C≥38/D≥33/F<33,
+  // after political-exclusion + revenue-normalized severity) then re-frozen.
+  // Must stay in sync with src/App.jsx scoreGrade + scripts/lib/index-entry.mjs.
+  if (n == null) return "?";
+  if (n >= 62) return "A";
+  if (n >= 50) return "B";
+  if (n >= 38) return "C";
+  if (n >= 33) return "D";
+  return "F";
+}
+
+// Run the catalog rebake ONLY when invoked directly (node scripts/rebake-...).
+// Importing this module (the test does) gets the functions without the run.
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
 const files = fs.readdirSync(COMPS).filter(f => f.endsWith(".json"));
 console.log(`[rebake] processing ${files.length} companies`);
 
@@ -391,29 +409,6 @@ let nullOveralls = 0;
 const wendySlug = "wendy-s";
 const tjSlug = "trader-joe-s";
 const traces = { [wendySlug]: null, [tjSlug]: null };
-
-function gradeFromOverall(n) {
-  // SCORING V3 (2026-06-11): the Build-57 signal-count cliff (A needs ≥3 sig,
-  // single-signal brands capped at C) is GONE — evidence confidence is now
-  // handled continuously by the K_SHRINK shrinkage upstream, so a one-signal
-  // brand at raw 82 lands ~63 (B) instead of being flattened to the same C
-  // as a one-signal brand at 46.
-  //
-  // Thresholds were recalibrated ONCE from the post-V3 distribution of all
-  // 5,303 scored brands (2026-06-11 dry run), then FROZEN — calibration, not
-  // a perpetual curve; brands move on their own evidence from here. Cut
-  // points deliberately avoid the two dense score spikes (47-48 mixed-record
-  // cluster → interior of C; 61-62 single-signal-political cluster → interior
-  // of B). Resulting shape among graded: A 7% · B 35% · C 40% · D 8% · F 10%.
-  // Must stay in sync with src/App.jsx scoreGrade and
-  // scripts/finalize-bundle.mjs scoreGrade.
-  if (n == null) return "?";
-  if (n >= 62) return "A";
-  if (n >= 50) return "B";
-  if (n >= 38) return "C";
-  if (n >= 33) return "D";
-  return "F";
-}
 
 for (const f of files) {
   const filePath = path.join(COMPS, f);
@@ -575,3 +570,4 @@ function printTrace(name, t) {
 }
 printTrace("Wendy's", traces[wendySlug]);
 printTrace("Trader Joe's", traces[tjSlug]);
+} // end: if invoked directly (catalog rebake run)
