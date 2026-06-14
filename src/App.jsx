@@ -1396,15 +1396,17 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
 
   const handleSubscribe = async () => {
-    if (!isValidEmail(email)) { return; /* button stays disabled — no native alert() */ }
+    // B73 (App Review 5.1.1 / 3.1.1): email is OPTIONAL for a real IAP — never
+    // gate the StoreKit purchase on it. Still required for the dormant waitlist.
+    if (PRO_WAITLIST_MODE && !isValidEmail(email)) { return; }
     setPurchaseError("");
     track("upgrade_clicked", {
-      email_provided: true,
+      email_provided: isValidEmail(email),
       source: PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall",
       mode: PRO_WAITLIST_MODE ? "waitlist" : "subscription",
     });
     setLoading(true);
-    await subscribeEmail(email, PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall", {
+    if (isValidEmail(email)) await subscribeEmail(email, PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall", {
       intendsToSubscribe: true,
       waitlist: PRO_WAITLIST_MODE,
     });
@@ -1426,7 +1428,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       return;
     }
     const { setEmailOnCustomer, purchasePro } = await import("./lib/payments");
-    await setEmailOnCustomer(email).catch(() => {});
+    if (isValidEmail(email)) await setEmailOnCustomer(email).catch(() => {});
     const result = await purchasePro(plan === "monthly" ? "monthly" : "annual");
     setLoading(false);
     if (result === "purchased") {
@@ -1570,14 +1572,14 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
         {/* fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus */}
         <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}>
           <input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)}
-            placeholder={PRO_WAITLIST_MODE ? "Email for the waitlist" : "Enter your email to subscribe"}
+            placeholder={PRO_WAITLIST_MODE ? "Email for the waitlist" : "Email (optional) — receipt & Sunday digest"}
             style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px", marginBottom:10, boxSizing:"border-box" }}
           />
           <button type="submit" style={{display:"none"}} />
         </form>
 
-        <button onClick={handleSubscribe} disabled={loading || !isValidEmail(email)}
-          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
+        <button onClick={handleSubscribe} disabled={loading || (PRO_WAITLIST_MODE && !isValidEmail(email))}
+          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || (PRO_WAITLIST_MODE && !isValidEmail(email))) ? "default" : "pointer", opacity: (PRO_WAITLIST_MODE && !isValidEmail(email)) ? 0.5 : 1, marginBottom:6, minHeight:44 }}>
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
             : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : (plan === "monthly" ? "Subscribe · $1.99/mo" : "Subscribe · $14.99/yr"))}
