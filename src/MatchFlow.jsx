@@ -250,7 +250,7 @@ export default function MatchFlow({ onComplete, onSkip, initialProfile = null })
       </div>
 
       {/* the tension card */}
-      <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center", padding: "18px 22px", overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+      <div key={idx} style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center", padding: "18px 22px", overflowY: "auto", WebkitOverflowScrolling: "touch", animation: "cardIn 0.28s ease" }}>
         <div style={{ fontFamily: MONO, fontSize: 10.5, color: T.gold, letterSpacing: "0.16em", marginBottom: 14 }}>{card.kicker}</div>
         <div style={{ fontFamily: SERIF, fontSize: 26, color: T.txt, lineHeight: 1.28, marginBottom: 10 }}>{card.serif}</div>
         <div style={{ fontSize: 13, color: T.txt2, lineHeight: 1.55 }}>{card.sub}</div>

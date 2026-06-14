@@ -8,6 +8,12 @@
    refuse to ship if this rule is removed. */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* QA-10: gentle card-in motion (Match cards, etc.). Reduced-motion → no movement. */
+@keyframes cardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  @keyframes cardIn { from { opacity: 1; transform: none; } to { opacity: 1; transform: none; } }
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
