@@ -26,7 +26,7 @@
 | **QA-7** | High | Web is marketing-only; can't try/verify the product on a computer | 🟡 surface live `/company/<slug>` demos + link Methodology (QA-19) |
 | **QA-8** | High | Pricing: marketing "$9/yr" vs app $14.99/$1.99 (`MarketingLanding.jsx:391`) | ✅ standardized $14.99/$1.99; dropped the $9 founder chip |
 | **QA-9** | High | A11y: 10px `#444`/`#555` onboarding consent+stat text (~2:1) + pinch-zoom disabled (`index.html:13`) | ✅ pinch-zoom restored + terms/stat contrast bumped (broader contrast pass remains 🟢) |
-| **QA-10** | High | No motion/transitions/haptics (feels static on premium HW); dead `pulse` loader keyframe (`App.jsx:3218`) | ✅ pulse keyframe defined; 🟡 motion layer + `@capacitor/haptics` = project |
+| **QA-10** | High | No motion/transitions/haptics (feels static on premium HW); dead `pulse` loader keyframe (`App.jsx:3218`) | 🟢 pulse keyframe + Match card fade + **haptics** (Match/Switch/purchase/restore) done; 🟡 sheet/tab transitions ongoing → B71 |
 | **QA-11** | MedHi | White-on-white logo tiles (`App.jsx:~2522` `background:"#fff"`) → Patagonia/Allbirds blank | ✅ off-white plate + hairline shadow (verified live) |
 | **QA-12** | MedHi | WPCN buried + "Share my values" sends URL, never the image (`App.jsx:~6097`) | ✅ share attaches the values-card image (url-only fallback) |
 | **QA-13** | Med | Empty states dressed as content ("All quiet on the record") | ✅ reframed to "We're watching…" |
