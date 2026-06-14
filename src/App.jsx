@@ -17,6 +17,7 @@ import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
 import { T, SERIF, MONO, GRADE_COLORS } from "./lib/theme";
+import { tapMedium, notifySuccess } from "./lib/haptics";
 import CompassSeal, { COMPASS_AXES } from "./CompassSeal";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
@@ -1430,6 +1431,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
     setLoading(false);
     if (result === "purchased") {
       track("subscribe_succeeded", { plan });
+      notifySuccess();
       onSubscribe(email);
     } else if (result === "cancelled") {
       track("subscribe_cancelled", { plan }); // keep the paywall open quietly
@@ -1448,7 +1450,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
     const ok = await restorePurchases();
     setLoading(false);
     track(ok ? "restore_succeeded" : "restore_failed");
-    if (ok) onSubscribe(email);
+    if (ok) { notifySuccess(); onSubscribe(email); }
     else setPurchaseError("No previous purchase found for this Apple ID.");
   };
 
@@ -5193,6 +5195,7 @@ useEffect(() => {
   // departed brand stays saved — its future records are exactly the
   // "told you so" the Ledger exists to show.
   const commitSwitch = useCallback((from, fromName, to, toName, monthly) => {
+    tapMedium();
     try {
       const list = JSON.parse(localStorage.getItem("tn_switches") || "[]");
       list.push({ from, fromName, to, toName, monthly: Number(monthly) || 0, at: Date.now() });

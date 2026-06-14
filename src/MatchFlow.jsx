@@ -21,6 +21,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { T, SERIF, MONO } from "./lib/theme";
 import { COMPASS_AXES } from "./CompassSeal";
 import { track } from "./lib/analytics";
+import { tapLight } from "./lib/haptics";
 
 // Card order (2026-06-12 review): open with concrete, non-tribal RECORD
 // trade-offs to build investment before any stance question — the partisan
@@ -204,6 +205,7 @@ export default function MatchFlow({ onComplete, onSkip, initialProfile = null })
     onComplete(buildProfile(finalAnswers));
   };
   const answer = (val) => {
+    tapLight();
     const next = { ...answers, [card.id]: val };
     // 2026-06-12 review: per-card instrumentation. MatchFlow had zero analytics,
     // so an abandonment cliff inside the 11 cards was undiagnosable (only
