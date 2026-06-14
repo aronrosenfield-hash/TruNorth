@@ -117,7 +117,14 @@ Today: ${new Date().toISOString().slice(0, 10)}`;
     body: JSON.stringify({
       model: MODEL,
       max_tokens: 4096,
-      system: TOOL_HINT,
+      // Prompt caching (2026-06-14): TOOL_HINT + the web_search tool are byte-identical
+      // on every brand call in a run, but only userPrompt varies. Marking the system
+      // block as a cache breakpoint caches the whole stable prefix (tools + system),
+      // so after the first call each subsequent brand pays ~10% on those input tokens
+      // instead of full price — Anthropic flagged ~30% total org API-spend savings.
+      // 5-min TTL keeps refreshing as long as the loop keeps firing calls; a cache
+      // miss is a silent no-op (just full price), so this is risk-free.
+      system: [{ type: "text", text: TOOL_HINT, cache_control: { type: "ephemeral" } }],
       tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 8 }],
       messages: [{ role: "user", content: userPrompt }],
     }),

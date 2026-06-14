@@ -151,7 +151,11 @@ ${batch.map((item, i) => `[${i + 1}] BRAND: ${item.brand_name} (${item.brand_slu
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 4096,
-        system: SYSTEM_PROMPT,
+        // Prompt caching (2026-06-14): SYSTEM_PROMPT + EXTRACTION_TOOL are identical
+        // across every article in a nightly run; only userPrompt varies. Caching the
+        // stable prefix drops repeat input-token cost ~90% after the first call.
+        // Risk-free — a cache miss just falls back to full price.
+        system: [{ type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } }],
         tools: [EXTRACTION_TOOL],
         tool_choice: { type: "tool", name: "record_extracted_items" },
         messages: [{ role: "user", content: userPrompt }],
