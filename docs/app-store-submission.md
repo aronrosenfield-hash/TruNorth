@@ -1,330 +1,128 @@
-# App Store Submission — Paste-Ready Metadata
+# TruNorth — App Store Resubmission Sheet (Build 73)
 
-> **Goal:** Get TruNorth approved on the App Store before Product Hunt launch (June 23).
+> **Status — 2026-06-14:** Resubmitting **iOS 1.0** after the Jun-11 rejection. **Build 73** (iPhone-only) is the candidate. Every cited issue is fixed in the binary; this is the paste-ready metadata + the exact App Store Connect steps.
 >
-> **Apple processing window:** 1-3 days typical for first submission; can be longer if rejected. Submit by **June 17** to leave room.
->
-> **Where to paste each field:** App Store Connect → My Apps → TruNorth → App Store tab → 1.0 Prepare for Submission.
+> **App:** `com.trunorthapp.app` · TruNorthApp (app id 6775301458) · SKU `trunorth-001`
+> **Build 73 delivery:** `7aefbec5-2a45-4b81-a242-3cdb21ac1330`
 
 ---
 
-## 1. App Information (locked at first submission)
+## Why it was rejected — and where each fix lives
 
-**Name:**
+Apple's rejection (Submission `50e085d7`, reviewed on an **iPad**, v1.0 build 51) cited three guidelines:
+
+| Guideline | What Apple said | Fix |
+|---|---|---|
+| **3.1.1** Payments – IAP | Subscriptions purchasable via a mechanism other than IAP (the old email **waitlist**) | ✅ B73 = real StoreKit purchase via RevenueCat; waitlist gone |
+| **3.1.2(c)** Subscriptions | Need functional **Terms of Use (EULA)** + **Privacy Policy** links **in the app** AND **in metadata** | ✅ In-app: on the paywall · Metadata: EULA line in Description (below) + Privacy Policy URL field |
+| **2.1(b)** Completeness | IAPs not submitted for review + must provide an **App Review screenshot** | ✅ Attach both subs to the version + upload the IAP screenshot to each |
+
+Also proactively fixed: **5.1.1** — the paywall no longer *requires* an email to purchase (email is optional). The app is now **iPhone-only**, so the iPad screenshot requirement is gone.
+
+---
+
+## The exact ASC steps  (Distribution → iOS App 1.0)
+
+1. **Build** → attach **Build 73** (wait until it shows VALID — ~10–15 min after upload).
+2. **In-App Purchases and Subscriptions** (on the version) → **＋** → add **TruNorth Pro Annual** *and* **TruNorth Pro Monthly**.
+3. For **each subscription** → **Review Information → Screenshot** → upload `docs/marketing/iap-review/paywall-real-65.png` (same file for both). *(This is the "App Review screenshot" 2.1(b) requires.)*
+4. **Previews and Screenshots → iPhone 6.5"** → drag the 5 from `docs/app-store-screenshots/final-65/` in order **01 → 05**. *(iPhone-only — no iPad slot.)*
+5. **Promotional Text** → paste below.
+6. **Description** → paste below (already includes the EULA link).
+7. **App Review Information** → Sign-in required: **No** · Notes below · Contact: Aron / Aron@trunorthapp.com.
+8. **Reply** to the rejection: App Review (sidebar) → the **Jun 7** submission → **Reply to App Review** → paste the reply below.
+9. **Save** → **Resubmit to App Review**. Answer the gates: **Export compliance** = exempt (standard HTTPS) · **IDFA / advertising identifier** = No · **Content rights** = Yes.
+
+---
+
+## Paste-ready fields
+
+### Name (30) · Subtitle (30)
 ```
 TruNorth
 ```
-(30 char limit. We're at 8. ✅)
-
-**Subtitle:**
 ```
 Shop your values · Real data
 ```
-(30 char limit. We're at 28. ✅)
 
-**Primary Language:** English (U.S.)
-
-**Bundle ID:** `com.trunorthapp.app` (already set)
-
-**SKU:** `trunorth-app-001` (arbitrary, internal-only)
-
----
-
-## 2. Pricing & Availability
-
-**Price:** Free
-
-**Availability:** All countries/regions
-
-**Price Schedule:** N/A (free)
-
----
-
-## 3. App Privacy
-
-Apple's Privacy Nutrition Label. Map our data collection honestly:
-
-**Data Linked to You:**
-- ✅ Email Address — used for App Functionality (paywall) + Product Personalization (digest opt-in). Not used for tracking.
-
-**Data Not Linked to You:**
-- ✅ Product Interaction (PostHog autocapture) — used for Analytics
-- ✅ Crash Data — used for App Functionality
-- ✅ Performance Data — used for App Functionality
-
-**Data Used to Track You:** NONE
-
-**Privacy Policy URL:**
+### Promotional Text (170 char)
 ```
-https://www.trunorthapp.com/#privacy
+Public records, not opinions. ~2,900 brands graded, 12,000+ tracked. Take the 45-second values Match to personalize every score.
 ```
 
----
-
-## 4. Version 1.0 Submission Details
-
-### Description (4000 char limit — use ~1500)
-
+### Keywords (100 char, no spaces after commas)
 ```
-TruNorth tracks 12,000+ companies and grades ~2,900 of them on what they actually do — using only public records, not opinions.
+ethical,shopping,values,consumer,brands,scanner,barcode,sustainability,ESG,politics,labor,environment
+```
 
-No vibes. No spin. Just journalism.
+### Description
+```
+WHAT YOU BUY MATTERS — TruNorth shows you how every brand really behaves, using public records, not opinions.
 
-WHAT MAKES TRUNORTH DIFFERENT
-Most ethical shopping apps give you opinions dressed up as ratings. TruNorth pulls from primary records only:
-• FEC — political donations
-• OSHA — workplace safety violations
-• NLRB — labor disputes
-• EPA Enforcement — environmental record
-• SEC EDGAR — executive pay and 10-K filings
-• Have I Been Pwned — data breaches
-• OpenFDA — product recalls
-• HRC CEI — DEI score
-• Yale SOM — Russia operations
-• + 16 more public sources
+We track 12,000+ companies and grade ~2,900 of them across 9 categories that consumers actually care about:
+• Political donations
+• Environmental enforcement
+• Labor practices
+• DEI & social equity
+• Charitable giving
+• Animal testing
+• Firearms policy
+• Data privacy
+• Executive pay ratio
 
-Every grade is auditable. Tap any score → see the specific filings that drove it. If a score moves, it's because new records moved it.
+EVERY GRADE IS AUDITABLE
+Every score comes from public databases — SEC EDGAR, FEC, OSHA, EPA, CFPB, NHTSA, NLRB, OpenFDA, and many more. No editorial opinions. No vibes.
 
-PERSONALIZED FOR YOU
-Take a 45-second values match. Every grade in the app re-weights to YOUR priorities. A climate-first user and a labor-first user see different Top Picks for the same brand.
+PERSONALIZED FOR YOUR VALUES
+Take the 45-second values Match once. Every brand grade rebalances to match what YOU care about. A user who cares about climate sees different scores than someone who cares about labor practices.
 
 IN-STORE BARCODE SCANNER
 Scan any product in the store. Get the verdict in 2 seconds before you pay.
 
-9 VALUE CATEGORIES
-Politics · Environment · Labor · DEI · Charity · Animal Testing · Firearms · Privacy · Executive Pay
-
-FREE FOREVER
-The core experience is free. Browse 12,000+ companies, take the values quiz, see letter grades, scan barcodes. TruNorth Pro ($0.99/mo) unlocks personalized scoring, per-grade citations, the full sources directory, and the weekly digest.
+FREE
+The core experience is free. Browse 12,000+ companies, take the values Match, see letter grades, scan barcodes. TruNorth Pro ($1.99/mo or $14.99/yr) unlocks personalized scoring, per-grade citations, the full sources directory, and the weekly digest.
 
 NO ADS · NO AFFILIATE LINKS · NO SELLING YOUR DATA
 
 If you've ever wanted to align your shopping with your values but didn't want to take any company's word for it, TruNorth is built for you.
 
 — Aron, founder
+
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 ```
 
-### Promotional Text (170 char limit — appears above description, can update without re-review)
-
+### App Review Information → Notes
 ```
-Public records, not opinions. ~2,900 brands graded across politics, environment, labor & more (12,000+ tracked). Take the 45-second values match to personalize every score.
-```
+TruNorth is anonymous — no login needed. Browse the whole app as a guest.
 
-### Keywords (100 char limit, comma-separated, no spaces after commas)
+SUBSCRIPTION (this build resolves the prior 3.1.1 / 3.1.2 rejection):
+Tap the gold "Upgrade" pill (top-right), or any locked feature, to open the paywall. It shows both plans (Annual $14.99 / Monthly $1.99), an auto-renew disclosure, functional Terms of Use + Privacy Policy links, and a "Restore Purchases" button. The paywall completes a real StoreKit purchase via RevenueCat; Restore re-grants Pro on a fresh install. Verified end-to-end in sandbox (purchase + restore). Email is optional — it never blocks the purchase.
 
-```
-ethical,shopping,values,consumer,brands,scanner,barcode,sustainability,ESG,politics,labor,environment
-```
+GETTING STARTED: the 45-second values "Match" is optional and free — you can browse graded companies immediately. Tap a company to see its grade; the in-store barcode Scanner is the center tab.
 
-(Counted: 95 chars ✅. Don't use plural variants of same root — Apple matches stems. Don't repeat words from the title — Apple already indexes those.)
-
-### Support URL
-```
-https://www.trunorthapp.com
+No data sold/shared. US-only by design. Privacy: https://www.trunorthapp.com/#privacy
+Contact: Aron Rosenfield · Aron@trunorthapp.com
 ```
 
-### Marketing URL (optional)
+### Reply to App Review (on the Jun 7 rejection thread)
 ```
-https://www.trunorthapp.com
-```
+Build 73 resolves the cited issues:
 
-### Copyright
-```
-© 2026 TruNorthApp LLC
+• 3.1.1 — the subscription now completes a real StoreKit purchase via RevenueCat (the prior email "waitlist" mechanism is removed). Email is optional and never blocks the purchase.
+• 3.1.2(c) — the paywall now shows the auto-renew terms and functional Terms of Use (EULA) + Privacy Policy links; a Terms of Use (EULA) link is in the App Description and the Privacy Policy is set in the Privacy Policy field.
+• 2.1(b) — both subscriptions (Annual + Monthly) are attached to this version, each with an App Review screenshot.
+
+Verified end-to-end in sandbox: purchase succeeds, Restore Purchases re-grants Pro on a fresh install. Thank you.
 ```
 
 ---
 
-## 5. App Review Information
+## Assets & config (verify these are set)
+- **Build:** 73 (iPhone-only) · **Screenshots:** 5 × iPhone 6.5" (`docs/app-store-screenshots/final-65/`) · **IAP screenshot:** `docs/marketing/iap-review/paywall-real-65.png` (both subs)
+- **Subscriptions** (group 22148623): TruNorth Pro Annual `com.trunorthapp.app.pro.annual` $14.99/yr · TruNorth Pro Monthly `com.trunorthapp.app.pro.monthly` $1.99/mo
+- **Privacy Policy URL:** `https://www.trunorthapp.com/#privacy` · **Support URL:** `https://www.trunorthapp.com`
+- **Price:** Free · **Age rating:** 4+ · **Category:** News / Shopping
+- **Export compliance:** standard HTTPS only (exempt) · **IDFA:** not used · **Content rights:** yes
 
-**Sign-in required:** NO (we have a guest mode)
-
-**Demo Account:** Not needed (sign-up optional, paywall doesn't require account)
-
-**Notes for Reviewer:**
-```
-Hi Apple App Review team,
-
-TruNorth is a consumer values shopping app that tracks 12,000+ companies and grades ~2,900 of them using only public records (FEC, OSHA, EPA, SEC, etc.). It does NOT require sign-in to use — you can browse the entire app as a guest.
-
-GETTING STARTED:
-1. Tap through the welcome carousel
-2. Optionally take the values quiz (30 sec) — this personalizes the scores
-3. Browse the Top Picks tab, Search tab, or Browse tab
-4. Tap any company to see its grade
-
-PAYWALL TESTING:
-- Free users can fully view 1 company detail per day (resets at local midnight)
-- Tapping a 2nd company within the same day triggers the paywall
-- Already-viewed companies can be re-opened anytime without paywall
-- Paywall offers founder pricing: $0.99/mo, first 500 subscribers
-- Currently using a waitlist mode — tapping Subscribe captures email; real Apple IAP via RevenueCat integration ships in version 1.1 once LLC banking is finalized
-- Search, Browse, Scan, Quiz, and Save (Favorites) are all FREE with no quota — only the full detail-card expansion is gated
-
-EMAIL CAPTURE / VERIFICATION:
-- Adding an email is optional (Account tab → Edit email)
-- We use MailerLite double opt-in: entering an email triggers a confirmation message; user must click the link in that email before becoming an active subscriber
-- We send a Sunday digest with brand grade movements and occasional product updates
-- Unsubscribe link in every email
-- All processing servers are in the US
-
-DATA SOURCES:
-All data is researched from publicly available sources (FEC, OSHA, EPA, SEC, CFPB, NHTSA, CISA, DOJ, CourtListener, etc. — 100 sources total). No data is sold. No data is shared with third parties. See Privacy Policy: https://www.trunorthapp.com/#privacy
-
-GEO RESTRICTIONS:
-The app is currently US-only by design (App Store can confirm this). Backend additionally blocks 8 countries at the edge for compliance: RU, BY, CN, KP, IR, SY, CU, VE.
-
-CONTACT:
-Aron Rosenfield, Founder
-Aron@trunorthapp.com
-
-Thanks for your time reviewing!
-```
-
-**Contact Information:**
-- First name: Aron
-- Last name: Rosenfield
-- Phone: [redacted — fill in App Store Connect]
-- Email: Aron@trunorthapp.com
-
-**Demo Account:** None needed (guest mode works)
-
----
-
-## 6. What's New in This Version
-
-**(This appears in the "What's New" section of the App Store listing. Update for each version. For 1.0:)**
-
-```
-Welcome to TruNorth — the consumer values shopping app that uses only public records.
-
-This first release includes:
-• ~2,900 companies graded across 9 value categories (12,000+ tracked)
-• 100 public-records data sources (FEC, OSHA, EPA, SEC, CFPB, NHTSA, CISA, DOJ + 90 more)
-• 45-second values match to personalize every grade
-• In-store barcode scanner (ML Kit, on-device)
-• Compare any 2 companies side-by-side
-• Save favorites + see weekly grade changes
-• Free to use; Pro tier unlocks personalized scoring + per-grade citations
-
-Built solo, indie, no VC money. Thanks for trying it.
-
-— Aron
-```
-
----
-
-## 7. Screenshots (required, 6.5" iPhone format)
-
-Use existing PH gallery images as starting point. Apple requires:
-- 6.5" Display (iPhone 14 Pro Max / 15 Plus): **1290 × 2796 px** — REQUIRED
-- 5.5" Display (iPhone 8 Plus): **1242 × 2208 px** — OPTIONAL
-- 12.9" iPad Pro: **2048 × 2732 px** — only if iPad approved
-
-Pick **5 screenshots, in this order:**
-1. Hero: app icon + tagline + "~2,900 brands graded · 12,000+ tracked" → use `02-app-search.png`
-2. Quiz: the 45-second values match → take fresh screenshot
-3. Top Picks: ranked brand cards with grades → use `04-app-top.png`
-4. Scanner: barcode scanner moment → use a fresh screenshot
-5. Account / Values Fingerprint → use `05-app-account.png`
-
-**For each, add a 1-line caption** burned into the screenshot:
-1. "~2,900 brands graded with public records · 12,000+ tracked"
-2. "45-second values match tunes every score to you"
-3. "Personalized Top Picks for your values"
-4. "Scan any barcode in-store"
-5. "Your values archetype, your fingerprint"
-
-I'll generate caption-burned versions in a follow-up if you want them.
-
----
-
-## 8. Age Rating Questionnaire
-
-Walk through Apple's questionnaire. Recommended answers:
-
-- **Cartoon or fantasy violence:** None
-- **Realistic violence:** None
-- **Mature/suggestive themes:** None
-- **Profanity or crude humor:** None
-- **Alcohol, tobacco, drug use:** None (we do mention companies in those industries but factually, not promotionally)
-- **Mature/suggestive themes:** None
-- **Horror:** None
-- **Gambling:** None
-- **Unrestricted web access:** No (controlled by app)
-- **Medical/treatment info:** No
-
-**Result:** 4+ rating ✅
-
----
-
-## 9. App Category
-
-**Primary:** News
-**Secondary:** Shopping
-
-(Discussed: "News" reads more credible than "Lifestyle" for the public-records angle. Reach is similar.)
-
----
-
-## 10. Build to Submit
-
-**Use Build 21+ (after barcode scanner, B-3, B-23, paywall comparison table land):**
-
-Build 21 has:
-- iOS Universal Links wired
-- 1-free paywall (so the paywall fires for reviewers)
-- Free vs Pro comparison table
-- v4 ProfileStrip
-- v1 Browse + bug fix
-- Brand of Day above Top Picks
-- Paid Sources paragraph
-- Welcome What's New
-- Soft email ask on Reveal
-- Failed-search notify-me
-
-Confirm Build 21 (or higher) processed before submitting in App Store Connect.
-
----
-
-## 11. Submission Day Checklist
-
-- [ ] All 11 sections above filled in
-- [ ] 5 screenshots uploaded (6.5" format)
-- [ ] Build 21+ selected
-- [ ] Privacy policy URL works (https://www.trunorthapp.com/#privacy)
-- [ ] Support URL works
-- [ ] Tested the In-App Purchase flow in TestFlight
-- [ ] Read the Reviewer Notes one more time
-- [ ] Click "Submit for Review"
-- [ ] Expect 24-72hr turnaround
-
----
-
-## 12. If rejected
-
-Common rejection reasons + responses:
-
-**"In-App Purchase doesn't work."**
-→ This will happen if RevenueCat / Stripe isn't fully wired by submission day. Either: (a) ship IAP first, or (b) remove the paywall entirely for v1 and add it in 1.1. For v1, we want the IAP working.
-
-**"App doesn't justify a separate iOS app vs. a web page."**
-→ Cite: barcode scanner (uses native ML Kit camera), offline-capable, push notification potential, App Store discovery value.
-
-**"Privacy label inaccurate."**
-→ Re-audit our PostHog config; we don't link PostHog identifiers to email. Privacy nutrition label needs to reflect that exactly.
-
-**"Spam (scoring brands is editorial / inflammatory)."**
-→ Unlikely given the public-records-only methodology, but if it comes up, point reviewer to the in-app Sources tab + Privacy Policy that clearly explains the methodology.
-
-**"You compare TruNorth to other apps in description."**
-→ We don't currently. Don't add it before review.
-
----
-
-## 13. After Approval
-
-- App Store listing URL → update vercel.json + marketing landing + PROMO_COPY.md + LAUNCH_DAY_PLAYBOOK.md
-- Switch the marketing landing CTA from TestFlight mailto to App Store URL (already wired via APP_STORE_URL constant — just needs the value)
-- Update PH First Comment with the live App Store URL
-- Tweet: "TruNorth is on the App Store: [URL]"
+## After approval
+- Set `APP_STORE_URL` (marketing landing CTA flips from the TestFlight mailto automatically) · update PH First Comment + announcement copy with the live URL · merge PR #109 to deploy the web changes.
