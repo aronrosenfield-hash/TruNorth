@@ -22,7 +22,7 @@ TikTok with the 30s video in the evening slot.
 >
 > Nine choices shape your values. Then every brand you scan gets one verdict — with the receipts under it. Federal penalties. Recalls. Political money.
 >
-> 12,000+ companies. 200+ public sources. Zero opinions.
+> ~2,900 graded · 12,000+ tracked. 200+ public sources. Zero opinions.
 >
 > Free on iOS.
 
@@ -45,7 +45,7 @@ TikTok with the 30s video in the evening slot.
 >
 > 💵 **The Ledger** — when a brand clashes with your values, TruNorth hands you a better-matched swap and counts the dollars you redirect. Real behavior change, measured.
 >
-> The data behind it: **12,000+ companies** graded across 9 values categories from **200+ public-record sources** — FEC, EPA, OSHA, SEC, NLRB, CPSC, and a long tail of regulators most people have never heard of. The methodology is published in full. No pay-for-grades, ever.
+> The data behind it: **12,000+ companies** tracked and **~2,900** graded across 9 values categories from **200+ public-record sources** — FEC, EPA, OSHA, SEC, NLRB, CPSC, and a long tail of regulators most people have never heard of. The methodology is published in full. No pay-for-grades, ever.
 >
 > Built solo, nights and weekends, $0/month infrastructure. iOS beta is open — link in comments.
 
@@ -60,7 +60,7 @@ TikTok with the 30s video in the evening slot.
 >
 > It now works like this: answer nine quick questions about what matters to you — politics, environment, labor, privacy, whatever YOU care about. Then scan any product in a store and get a letter grade for the company behind it, with the receipts to back it up: real federal penalties, real recalls, real political donations.
 >
-> 12,000+ companies. 200+ public sources. Every claim traceable. And when a brand doesn't match your values, the app shows you one that does — and keeps a running count of the money you've moved.
+> ~2,900 companies graded, 12,000+ tracked. 200+ public sources. Every claim traceable. And when a brand doesn't match your values, the app shows you one that does — and keeps a running count of the money you've moved.
 >
 > Free on iOS: trunorthapp.com
 
@@ -73,7 +73,7 @@ TikTok with the 30s video in the evening slot.
 >
 > Nine choices shape your values → every brand answers to them. One verdict, with receipts: penalties, recalls, political money — all from public records.
 >
-> 12,000+ brands · 200+ public sources · 0 opinions
+> ~2,900 graded · 12,000+ tracked · 200+ public sources · 0 opinions
 >
 > When a brand clashes, switch — and watch the dollars you redirect add up.
 >
@@ -86,7 +86,7 @@ TikTok with the 30s video in the evening slot.
 ## TikTok
 *(video: ../TruNorth-30s.mp4 — new VO cut)*
 
-> We rebuilt the whole app. Your money votes — now you can see the ballot. 12,000+ brands graded on what they actually DO, from 200+ public records. No vibes. No opinions. Receipts. Free on iOS 🧭
+> We rebuilt the whole app. Your money votes — now you can see the ballot. ~2,900 brands graded on what they actually DO (12,000+ tracked), from 200+ public records. No vibes. No opinions. Receipts. Free on iOS 🧭
 
 `#consciousconsumer #ethicalshopping #moneytok #fintech #publicrecords #buildinpublic #apprelease`
 

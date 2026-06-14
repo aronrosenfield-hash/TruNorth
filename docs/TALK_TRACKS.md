@@ -6,7 +6,7 @@ Plain-language answers to the questions you'll get asked at events, in DMs, on p
 
 ## "What is TruNorth?"
 
-**TruNorth tracks 12,000+ consumer brands and grades them on what they actually do — using only public records.**
+**TruNorth tracks 12,000+ consumer brands and grades ~2,900 of them on what they actually do — using only public records.**
 
 It's an iOS app. Nine quick choices — the Match — shape your personal compass; then any brand you search or scan gets one serif verdict with the receipts under it: the federal penalties, the recalls, the political money. A through F, tuned to YOUR values. Every claim traces to a public record. No surveys, no vibes, no opinions. When a brand clashes, the app hands you a better-matched swap and counts the dollars you redirect.
 
@@ -177,4 +177,4 @@ If they ask about background, mention: a year of solo development, mortgaged-the
 
 ## The 30-second elevator pitch
 
-"Every ethical-shopping app out there feels like vibes — opinions dressed up as ratings. I built TruNorth differently. It grades 12,000+ companies using only public records — FEC, EPA, OSHA, SEC. Nine quick choices shape your compass, then any barcode you scan gets a verdict with receipts before you pay. Free, iOS, Product Hunt launch coming. Want me to add you to the launch list?"
+"Every ethical-shopping app out there feels like vibes — opinions dressed up as ratings. I built TruNorth differently. It tracks 12,000+ companies and grades ~2,900 of them today using only public records — FEC, EPA, OSHA, SEC. Nine quick choices shape your compass, then any barcode you scan gets a verdict with receipts before you pay. Free, iOS, Product Hunt launch coming. Want me to add you to the launch list?"

@@ -58,7 +58,7 @@
 
 **Body (3-25s):**
 - "They'd score Patagonia A and Amazon C and never tell me why. I'm a normal person — I want receipts."
-- "So I built TruNorth. 11,000 companies. Only public records. FEC donations, OSHA violations, EPA enforcement. Every score traceable."
+- "So I built TruNorth. ~2,900 brands graded, 12,000+ tracked. Only public records. FEC donations, OSHA violations, EPA enforcement. Every score traceable."
 - "You can verify any grade against the actual government filing in two clicks."
 - Show the app briefly during this
 

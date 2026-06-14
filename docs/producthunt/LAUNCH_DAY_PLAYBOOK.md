@@ -25,7 +25,7 @@ Every "ethical shopping" app I tried felt like vibes — opinions dressed up as 
 ✅ Yale CELI for Russia operations
 ✅ + 20 more public sources
 
-12,000 companies, every grade traceable to a public-record citation.
+12,000+ companies tracked, ~2,900 graded — every grade traceable to a public-record citation.
 
 A few things that make it different:
 
@@ -47,7 +47,7 @@ I'll be here all day to answer questions, take feedback, and own anything that's
 ```
 🚀 TruNorth is live on @ProductHunt today.
 
-Grade any of 12,000 companies on politics, environment, labor, animal testing & more — using only public records.
+Grade any of ~2,900 companies (12,000+ tracked) on politics, environment, labor, animal testing & more — using only public records.
 
 Scan a barcode in-store. Get the verdict before you pay.
 
@@ -63,7 +63,7 @@ Today's the day. TruNorth is live on Product Hunt 🚀
 It started as a personal frustration: every "ethical shopping" app I tried felt like vibes. Opinions dressed up as ratings. No way to verify anything.
 
 So for the past year I built one that does it differently:
-• 12,000+ companies graded
+• ~2,900 companies graded (12,000+ tracked)
 • Only public records — FEC, EPA, OSHA, SEC, NLRB, OpenFDA
 • Every grade traceable to a citation
 • Scan any barcode in-store, get the verdict in 2 seconds

@@ -66,7 +66,7 @@ https://www.trunorthapp.com/#privacy
 ### Description (4000 char limit — use ~1500)
 
 ```
-TruNorth grades 12,000+ companies on what they actually do — using only public records, not opinions.
+TruNorth tracks 12,000+ companies and grades ~2,900 of them on what they actually do — using only public records, not opinions.
 
 No vibes. No spin. Just journalism.
 
@@ -107,7 +107,7 @@ If you've ever wanted to align your shopping with your values but didn't want to
 ### Promotional Text (170 char limit — appears above description, can update without re-review)
 
 ```
-Public records, not opinions. 12,000+ brands graded across politics, environment, labor & more. Take the 45-second values match to personalize every score.
+Public records, not opinions. ~2,900 brands graded across politics, environment, labor & more (12,000+ tracked). Take the 45-second values match to personalize every score.
 ```
 
 ### Keywords (100 char limit, comma-separated, no spaces after commas)
@@ -145,7 +145,7 @@ https://www.trunorthapp.com
 ```
 Hi Apple App Review team,
 
-TruNorth is a consumer values shopping app that grades 12,000+ companies using only public records (FEC, OSHA, EPA, SEC, etc.). It does NOT require sign-in to use — you can browse the entire app as a guest.
+TruNorth is a consumer values shopping app that tracks 12,000+ companies and grades ~2,900 of them using only public records (FEC, OSHA, EPA, SEC, etc.). It does NOT require sign-in to use — you can browse the entire app as a guest.
 
 GETTING STARTED:
 1. Tap through the welcome carousel
@@ -199,7 +199,7 @@ Thanks for your time reviewing!
 Welcome to TruNorth — the consumer values shopping app that uses only public records.
 
 This first release includes:
-• 12,000+ companies graded across 9 value categories
+• ~2,900 companies graded across 9 value categories (12,000+ tracked)
 • 100 public-records data sources (FEC, OSHA, EPA, SEC, CFPB, NHTSA, CISA, DOJ + 90 more)
 • 45-second values match to personalize every grade
 • In-store barcode scanner (ML Kit, on-device)
@@ -222,14 +222,14 @@ Use existing PH gallery images as starting point. Apple requires:
 - 12.9" iPad Pro: **2048 × 2732 px** — only if iPad approved
 
 Pick **5 screenshots, in this order:**
-1. Hero: app icon + tagline + "12,000+ brands graded" → use `02-app-search.png`
+1. Hero: app icon + tagline + "~2,900 brands graded · 12,000+ tracked" → use `02-app-search.png`
 2. Quiz: the 45-second values match → take fresh screenshot
 3. Top Picks: ranked brand cards with grades → use `04-app-top.png`
 4. Scanner: barcode scanner moment → use a fresh screenshot
 5. Account / Values Fingerprint → use `05-app-account.png`
 
 **For each, add a 1-line caption** burned into the screenshot:
-1. "12,000+ brands graded with public records"
+1. "~2,900 brands graded with public records · 12,000+ tracked"
 2. "45-second values match tunes every score to you"
 3. "Personalized Top Picks for your values"
 4. "Scan any barcode in-store"

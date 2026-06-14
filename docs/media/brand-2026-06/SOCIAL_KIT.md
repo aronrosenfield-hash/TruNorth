@@ -39,8 +39,8 @@ voice. Every public asset now matches.
 ## Bio copy (suggested)
 
 **X/LinkedIn bio:**
-> Your money votes. TruNorth grades 12,000+ brands from 200+ public-record
-> sources — FEC, EPA, OSHA, SEC — against YOUR values. Records, not opinions.
+> Your money votes. TruNorth grades ~2,900 brands (12,000+ tracked) from 200+
+> public-record sources — FEC, EPA, OSHA, SEC — against YOUR values. Records, not opinions.
 > iPhone beta → trunorthapp.com
 
 **Pinned post draft:**

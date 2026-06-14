@@ -16,7 +16,7 @@ Launch URL (paste in all 3): `https://www.producthunt.com/products/trunorth?laun
 ```
 TruNorth launches on @ProductHunt Tue June 23.
 
-Grades 12,000+ companies on politics, environment, labor, animal testing & more — using only public records (FEC, EPA, OSHA, SEC).
+Tracks 12,000+ companies and grades ~2,900 of them on politics, environment, labor, animal testing & more — using only public records (FEC, EPA, OSHA, SEC).
 
 No vibes. No spin. Just public records.
 
@@ -29,7 +29,7 @@ https://www.producthunt.com/products/trunorth?launch=trunorth
 ```
 I got tired of every "ethical shopping" app being someone's opinions in a trench coat.
 
-So I built TruNorth — 12,000+ companies graded only from public records (FEC, EPA, OSHA, SEC).
+So I built TruNorth — 12,000+ companies tracked, ~2,900 graded only from public records (FEC, EPA, OSHA, SEC).
 
 Launching on @ProductHunt Tue June 23.
 
@@ -61,7 +61,7 @@ So I built TruNorth differently. It pulls from primary sources only:
 • SEC for executive pay
 • 20+ more
 
-12,000+ companies graded. Every score traceable to a public-record citation.
+12,000+ companies tracked, ~2,900 graded. Every score traceable to a public-record citation.
 
 You can scan a barcode in-store and get the verdict before you pay.
 
@@ -100,8 +100,8 @@ Hey [first name],
 [1 personalized line — pick from the list below]
 
 I've been quietly building TruNorth for the past year — a consumer
-values shopping app that grades 12,000+ companies on what they
-actually do, not what their marketing says.
+values shopping app that tracks 12,000+ companies and grades ~2,900
+of them on what they actually do, not what their marketing says.
 
 Every grade traces back to a primary public record: FEC for political
 donations, EPA for environmental violations, OSHA for worker safety,

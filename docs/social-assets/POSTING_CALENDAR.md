@@ -29,7 +29,7 @@ Media all lives in `docs/social-assets/`.
 
 ### Mon Jun 9 — TikTok (+ optional IG Reels) · 🎬 `TruNorth-30s.mp4`
 ```
-Know where your money goes. We grade 12,000+ brands on what they actually do — politics, environment, labor, privacy & more — using only public records. No vibes. Free on iOS, launching June 23.
+Know where your money goes. ~2,900 brands graded on what they actually do — politics, environment, labor, privacy & more — using only public records (12,000+ tracked). No vibes. Free on iOS, launching June 23.
 ```
 Hashtags: `#consciousconsumer #ethicalshopping #fintech #buildinpublic #ProductHunt`
 
@@ -40,7 +40,7 @@ Hashtags: `#consciousconsumer #ethicalshopping #fintech #buildinpublic #ProductH
 ```
 A lot of shopping apps tell you what to buy. Almost none show you *why.*
 
-TruNorth grades 12,000+ brands using 200+ public-record sources — and every grade links back to the actual filing. 🧵
+TruNorth grades ~2,900 brands (12,000+ tracked) using 200+ public-record sources — and every grade links back to the actual filing. 🧵
 ```
 **2/**
 ```
@@ -83,7 +83,7 @@ ExxonMobil
 
 Every grade traced to public filings — EPA violations, OSHA citations, FEC donations. Not opinions.
 
-12,000+ brands. Free on iOS.
+~2,900 graded · 12,000+ tracked. Free on iOS.
 ```
 *(All three D's are verified. Attach the sources card, not a grade screenshot, so nothing contradicts.)*
 
@@ -102,7 +102,7 @@ So I built TruNorth differently. It pulls from primary sources only:
 • SEC for exec pay
 • 90+ more
 
-12,000+ brands graded. Every score traceable to a public-record citation. You can scan a barcode in-store and get the verdict before you pay.
+~2,900 brands graded, 12,000+ tracked. Every score traceable to a public-record citation. You can scan a barcode in-store and get the verdict before you pay.
 
 Free forever. iOS first.
 
@@ -116,7 +116,7 @@ https://www.producthunt.com/products/trunorth?launch=trunorth
 
 ### Mon Jun 16 — Instagram + Facebook · 🖼️ `ig-post-2.png`
 ```
-200+ public-record sources. 12,000+ brands. One letter grade you can actually trace.
+200+ public-record sources. ~2,900 brands graded, 12,000+ tracked. One letter grade you can actually trace.
 
 FEC. EPA. OSHA. SEC. CourtListener. ATF. 94 more.
 
@@ -131,7 +131,7 @@ Free on iOS — June 23. Link in bio.
 ```
 What if you could see what a brand really does — before you give them your money?
 
-12,000+ brands graded from public records. Free on iOS, June 23.
+~2,900 brands graded from public records, 12,000+ tracked. Free on iOS, June 23.
 ```
 Hashtags: `#consciousconsumer #buildinpublic #ethicalshopping #ProductHunt`
 
@@ -141,7 +141,7 @@ Hashtags: `#consciousconsumer #buildinpublic #ethicalshopping #ProductHunt`
 ```
 I tried every "ethical shopping" app out there. They all felt like vibes — opinions dressed up as ratings.
 
-So I spent a year building the opposite: 12,000+ brands graded from public records only. Every score you can audit yourself.
+So I spent a year building the opposite: ~2,900 brands graded from public records only, 12,000+ tracked. Every score you can audit yourself.
 
 Solo founder. iOS first. Launching June 23.
 ```
@@ -152,7 +152,7 @@ Solo founder. iOS first. Launching June 23.
 ```
 Tomorrow. 🚀
 
-TruNorth goes live on Product Hunt — 12,000+ brands graded from 200+ public-record sources, free on iOS.
+TruNorth goes live on Product Hunt — ~2,900 brands graded from 200+ public-record sources (12,000+ tracked), free on iOS.
 
 Know where your money goes.
 ```
@@ -167,7 +167,7 @@ Know where your money goes.
 ```
 🚀 TruNorth is LIVE on Product Hunt.
 
-12,000+ brands. 200+ public-record sources. Every grade traceable to a real filing.
+~2,900 brands graded · 12,000+ tracked. 200+ public-record sources. Every grade traceable to a real filing.
 
 Know where your money goes — free on iOS.
 
@@ -179,7 +179,7 @@ An upvote today means everything to a solo founder 🙏
 ```
 It's launch day. 🚀 TruNorth is live on Product Hunt and free on iOS.
 
-12,000+ brands graded on what they actually do — from 200+ public records. No vibes. No spin.
+~2,900 brands graded on what they actually do — from 200+ public records (12,000+ tracked). No vibes. No spin.
 
 Know where your money goes. Link in bio 👇
 ```
@@ -188,7 +188,7 @@ Know where your money goes. Link in bio 👇
 ```
 TruNorth is live on Product Hunt today. 🚀
 
-A year solo, 12,000+ brands graded entirely from public records, free on iOS. If you've ever wanted to know what a company actually does before you pay — this is it.
+A year solo, ~2,900 brands graded entirely from public records (12,000+ tracked), free on iOS. If you've ever wanted to know what a company actually does before you pay — this is it.
 
 Would mean the world to have your support on PH today ↓
 [LIVE PH LINK]

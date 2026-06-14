@@ -11,7 +11,7 @@ All `https://www.producthunt.com/products/trunorth?launch=trunorth` URLs below a
 ```
 TruNorth is launching on @ProductHunt soon.
 
-Grades 12,000+ companies on politics, environment, labor, animal testing & more — using only public records (FEC, EPA, OSHA).
+Grades ~2,900 companies (12,000+ tracked) on politics, environment, labor, animal testing & more — using only public records (FEC, EPA, OSHA).
 
 No vibes. No spin. Just journalism.
 
@@ -35,7 +35,7 @@ So I built TruNorth differently. It pulls from primary sources only:
 • SEC for exec pay
 • 20+ more
 
-12,000+ companies graded. Every score traceable to a public-record citation.
+~2,900 companies graded, 12,000+ tracked. Every score traceable to a public-record citation.
 
 You can scan a barcode in-store and get the verdict before you pay.
 
@@ -62,7 +62,7 @@ Subject: I've been building this in my garage and would love your support
 
 Hi [name],
 
-I've been quietly building TruNorth — a consumer values shopping app that grades 12,000+ companies on what they actually do (not what their marketing says).
+I've been quietly building TruNorth — a consumer values shopping app that tracks 12,000+ companies and grades ~2,900 of them on what they actually do (not what their marketing says).
 
 It pulls from public records only — FEC donations, EPA violations, OSHA citations. Every grade traceable. Free forever. Currently in TestFlight beta.
 
@@ -92,7 +92,7 @@ Title: Built TruNorth — public-records-only consumer values shopping app — l
 Body:
 Hey HN/IH,
 
-After a year solo, my consumer values app launches on Product Hunt in about a week. The unique angle: every grade across 12,000+ companies traces back to a public record (FEC, EPA, OSHA, SEC, NLRB, OpenFDA). No AI scoring, no scraped opinions.
+After a year solo, my consumer values app launches on Product Hunt in about a week. The unique angle: every grade across ~2,900 graded companies (12,000+ tracked) traces back to a public record (FEC, EPA, OSHA, SEC, NLRB, OpenFDA). No AI scoring, no scraped opinions.
 
 Subscribe here if interested: https://www.producthunt.com/products/trunorth?launch=trunorth
 

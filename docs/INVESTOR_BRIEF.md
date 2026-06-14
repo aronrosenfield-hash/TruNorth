@@ -21,7 +21,7 @@
 
 ## 1 · One-line pitch
 
-> **TruNorth grades 12,000+ consumer brands across 9 values categories using over 200 public-records sources — so you can shop in line with what you actually believe in.**
+> **TruNorth tracks 12,000+ consumer brands and grades ~2,900 of them across 9 values categories using over 200 public-records sources — so you can shop in line with what you actually believe in.**
 
 We're a personalized, mobile-first, primary-sourced shopping intelligence app. Anti-engagement-trap by design: no streaks, no push spam, no rage-bait. Open, decide, close. The Match — nine full-screen tension cards, ~45 seconds — derives your weights (never asks for numbers), and every grade reweights to you: two users see different verdicts on the same brand.
 

@@ -16,7 +16,7 @@
 - Andrew Liszewski — gadgets but reads consumer-tech-adjacent
 - Tip line: tips@theverge.com (last resort)
 
-**Subject:** 11,000 brands graded with FEC + OSHA + EPA records, not vibes — launching on PH Jun 23
+**Subject:** ~2,900 brands graded on FEC + OSHA + EPA records, not vibes — launching on PH Jun 23
 
 **Body:**
 
@@ -26,7 +26,7 @@ Hi [name],
 I built TruNorth because every "ethical shopping" app I tried gave me opinions dressed up as ratings. They'd score Patagonia and Amazon B+ and B- — vibes, basically.
 
 So I built one that uses public records only:
-- 11,000+ companies graded across politics (FEC), environment (EPA), labor (OSHA/NLRB), animal testing (Leaping Bunny), exec pay (SEC), privacy (HIBP/FTC), and 4 more.
+- 12,000+ companies tracked, ~2,900 graded across politics (FEC), environment (EPA), labor (OSHA/NLRB), animal testing (Leaping Bunny), exec pay (SEC), privacy (HIBP/FTC), and 4 more.
 - Every grade traceable to a specific filing. You can verify any of them against FEC.gov or EPA.gov yourself.
 - A 30-second quiz reweights every score to the user's actual values — a climate-first user and a labor-first user see different Top Picks for the same brand.
 - iOS app launching on Product Hunt June 23. Currently in TestFlight, can send you a build today.
@@ -60,7 +60,7 @@ trunorthapp.com
 - Talib Visram — climate + consumer goods
 - Pitch line: pitches@fastcompany.com
 
-**Subject:** A solo-built consumer values app grading 11,000 brands on public records — launching Jun 23
+**Subject:** A solo-built consumer values app grading ~2,900 of 12,000+ tracked brands on public records — launching Jun 23
 
 **Body:**
 
@@ -71,7 +71,7 @@ A few years ago I started keeping a personal spreadsheet of which brands' politi
 
 The existing apps score with vibes. They tell you "Patagonia is great, Walmart is bad" without ever showing why. So I built TruNorth, which uses primary records only:
 
-- 11,000+ companies, each graded across 9 value categories using SEC, FEC, EPA, OSHA, NLRB, OpenFDA, HIBP, and a dozen more public records.
+- 12,000+ companies tracked, ~2,900 graded across 9 value categories using SEC, FEC, EPA, OSHA, NLRB, OpenFDA, HIBP, and a dozen more public records.
 - Every grade traceable to a specific citation. You can fact-check any score against the source.
 - A values quiz reweights every grade so the same brand scores differently for a climate-first user vs a labor-first user.
 - iOS, free forever. Launching on Product Hunt June 23.
@@ -109,7 +109,7 @@ Hi [name],
 
 Mother Jones has been doing the work of tying corporate political donations to consumer behavior for ~30 years. I built the consumer-side delivery layer.
 
-TruNorth grades 11,000+ companies across politics, environment, labor, animal testing, privacy, exec pay, charity, DEI, and firearms — using only public records:
+TruNorth tracks 12,000+ companies and grades ~2,900 of them across politics, environment, labor, animal testing, privacy, exec pay, charity, DEI, and firearms — using only public records:
 
 - FEC for PAC + exec donations
 - OSHA for workplace safety records
@@ -158,7 +158,7 @@ TruNorth is the consumer-facing version of that same problem. I built it because
 What's different:
 - 100% primary public records — FEC, EPA, OSHA, NLRB, SEC, OpenFDA, HIBP, Yale SOM Russia list, BHRRC, etc.
 - Every grade in the app links back to the specific citation. Auditable end-to-end.
-- 11,000+ companies scored across 9 ESG-adjacent categories.
+- 12,000+ companies tracked, ~2,900 scored across 9 ESG-adjacent categories.
 - No AI in scoring (AI only generates the narrative summaries on top of the underlying score).
 - Free consumer iOS app launching on Product Hunt June 23.
 
