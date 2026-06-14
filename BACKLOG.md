@@ -11,6 +11,40 @@
 
 ---
 
+## 🔎 QA PANEL REVIEW — 11-DEVICE / 11-PERSONA (2026-06-14)
+
+11 independent device+persona review agents + Director live walkthrough + source verification. IDs **QA-1…QA-25**, ranked by impact (QA-N = Top-25 item #N). Status: 🔵 needs your decision · 🟢 fixing now · 🟡 project · ✅ done. Full synthesis in session 2026-06-14.
+
+| ID | Sev | Issue | Status / next |
+|---|---|---|---|
+| **QA-1** | Crit | First run gates all value behind 11-card Match + paywall (inverted funnel) | ✅ **browse-first shipped** — basket → browse; Match optional ("Start the Match · 45s" card); verified live |
+| **QA-2** | Crit | Per-grade citations Pro-gated vs "records, not opinions"; code self-contradicts (`App.jsx:7354` "free" vs `:7400` "Pro") | ✅ **kept Pro-gated** (Aron's call); fixed the self-contradicting comment (App.jsx:7354) |
+| **QA-3** | High | The Match: huge black void on every card (`MatchFlow.jsx` `marginTop:auto`) — 9/11 flagged | ✅ Match card centered — void gone (verified live) |
+| **QA-4** | High | Jargon wall: Lens/Ledger/Compass/WPCN undefined (nav ids are literally today/search/library) | ✅ Lens→**Scan**, Ledger→**Basket** (Aron's call) + WPCN caption |
+| **QA-5** | High | No Android build; web dead-ends Android users with no capture | ✅ Android-detect waitlist live (CTA + tagged subscribe); 🟡 native build = P-1 |
+| **QA-6** | High | No tablet/desktop layout — centered 430px column in black (1 media query in 7.7k lines) | 🟢 responsive column shipped (CSS-var 430→560→600px, verified live); 🟡 full 2-pane/multi-col grid = follow-up |
+| **QA-7** | High | Web is marketing-only; can't try/verify the product on a computer | 🟡 surface live `/company/<slug>` demos + link Methodology (QA-19) |
+| **QA-8** | High | Pricing: marketing "$9/yr" vs app $14.99/$1.99 (`MarketingLanding.jsx:391`) | ✅ standardized $14.99/$1.99; dropped the $9 founder chip |
+| **QA-9** | High | A11y: 10px `#444`/`#555` onboarding consent+stat text (~2:1) + pinch-zoom disabled (`index.html:13`) | ✅ pinch-zoom restored + terms/stat contrast bumped (broader contrast pass remains 🟢) |
+| **QA-10** | High | No motion/transitions/haptics (feels static on premium HW); dead `pulse` loader keyframe (`App.jsx:3218`) | ✅ pulse keyframe defined; 🟡 motion layer + `@capacitor/haptics` = project |
+| **QA-11** | MedHi | White-on-white logo tiles (`App.jsx:~2522` `background:"#fff"`) → Patagonia/Allbirds blank | ✅ off-white plate + hairline shadow (verified live) |
+| **QA-12** | MedHi | WPCN buried + "Share my values" sends URL, never the image (`App.jsx:~6097`) | ✅ share attaches the values-card image (url-only fallback) |
+| **QA-13** | Med | Empty states dressed as content ("All quiet on the record") | ✅ reframed to "We're watching…" |
+| **QA-14** | Med | Nav: 3 items, no "You" tab; "Lens" = scanner crosshair | ✅ kept top-right (your call), made noticeable (accent ring + 40px icon) |
+| **QA-15** | Med | Brand tap = inline expand, not a page (breaks back/bookmark/deep-link; no desktop reading view) | 🟡 real `/company/<slug>` in-app route |
+| **QA-16** | Med | Touch targets <44px (Account/Upgrade 32px, top-right reach on big phones) | ✅ Account + Upgrade → 40px hit areas |
+| **QA-17** | Med | In-app "Your wallet is a vote. Cast it wisely." reads partisan to pragmatic users | ✅ softened to "Shop with your values / See the record" |
+| **QA-18** | Med | In-app still claims "12,000+" though ~2,900 graded; first browse = "?" | 🟢 honest count + baseline grade |
+| **QA-19** | Med | Methodology orphaned (0 in sitemap, 0 landing links) — best trust asset undiscoverable | ✅ sitemap entry + footer link |
+| **QA-20** | Med | First-run basket has B2B chips (Accenture, BrightDrop) under "what you actually buy" | ✅ B2B brands excluded from basket pool (verified — Accenture/BrightDrop gone) |
+| **QA-21** | Med | Sort/filter chip row clips the right chip at phone widths (no scroll affordance) | 🟢 edge-fade + wrap ≥700px |
+| **QA-22** | Med | No hover/focus-visible states on web/pointer; weak keyboard a11y | ✅ `:focus-visible` rings added (keyboard a11y) |
+| **QA-23** | Med | No human-facing founder/About/neutrality on web | 🟢 add section |
+| **QA-24** | Med | Inferred grades shown under "records, not opinions" (`App.jsx:~2925`) | 🟢 label inferred distinctly |
+| **QA-25** | LowMed | Source count inconsistent (100/200+/free-see-~10); design-system leaks (banned purple `rgba(124,109,250)`, ~250 hardcoded hex) | ✅ banned purple → accent (fully removed); 🔵 source-count number = your call |
+
+---
+
 ## 🔴 NEEDS YOUR DECISION — CURRENT (cleaned 2026-06-11 AM)
 
 ### 1. Ship Build 54 to TestFlight — ready on your word

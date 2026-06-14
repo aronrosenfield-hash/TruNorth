@@ -5,8 +5,9 @@
 // is no-op (post-launch we'll add Stripe Checkout via RevenueCat web).
 //
 // Product IDs match what was created in App Store Connect → IAPs
-// (see docs/payments-integration-plan.md). Entitlement identifier "pro"
-// matches the RevenueCat dashboard config.
+// (see docs/payments-integration-plan.md). Entitlement identifier
+// "TruNorth Pro" (with the space) matches the RevenueCat dashboard config
+// (confirmed 2026-06-13). See ENTITLEMENT_ID below — keep them identical.
 //
 // USAGE
 //   import { configurePayments, hasProEntitlement, purchasePackage,

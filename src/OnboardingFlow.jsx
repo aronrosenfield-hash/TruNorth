@@ -42,7 +42,7 @@ export default function OnboardingFlow({ onComplete }) {
       <div style={s.slideWrap}>
         <div style={s.slide}>
           <div style={s.eyebrow}>Know where your money goes</div>
-          <h1 style={s.headline}>Your wallet<br />is a <em style={{ color:"#38C0CE", fontStyle:"normal" }}>vote.</em><br />Cast it wisely.</h1>
+          <h1 style={s.headline}>Shop with<br />your <em style={{ color:"#38C0CE", fontStyle:"normal" }}>values.</em><br />See the record.</h1>
           <p style={s.subtext}>Every brand graded on 9 things that matter — politics, environment, labor & more — from public records only. Real records, not opinions.</p>
           <div style={s.demoCard}>
             <div style={s.demoLabel}>Live example — tap a company</div>
@@ -120,11 +120,11 @@ const s = {
   catDesc:         { fontSize:11, color:"#555", marginTop:2 },
   catBar:          { width:44, height:5, background:"#23262C", borderRadius:3, overflow:"hidden" },
   catFill:         { height:"100%", borderRadius:3, background:"linear-gradient(90deg,#38C0CE,#5CD6E0)" },
-  ctaArt:          { width:100, height:100, background:"radial-gradient(circle,rgba(124,109,250,0.2) 0%,transparent 70%)", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 20px" },
+  ctaArt:          { width:100, height:100, background:"radial-gradient(circle,rgba(56,192,206,0.2) 0%,transparent 70%)", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 20px" },
   ctaArtInner:     { width:70, height:70, background:"#38C0CE", borderRadius:20, display:"flex", alignItems:"center", justifyContent:"center" },
   statsRow:        { display:"flex", justifyContent:"space-around", marginBottom:24 },
   statNum:         { fontSize:22, fontWeight:800, color:"#38C0CE", textAlign:"center" },
-  statLabel:       { fontSize:10, color:"#555", marginTop:2, letterSpacing:0.5, textAlign:"center" },
+  statLabel:       { fontSize:11, color:"#9A948A", marginTop:2, letterSpacing:0.5, textAlign:"center" },
   authTabs:        { display:"flex", background:"#16181D", borderRadius:12, padding:4, marginBottom:14, border:"1px solid #23262C" },
   authTab:         { flex:1, padding:9, border:"none", background:"transparent", color:"#555", fontFamily:"inherit", fontSize:13, fontWeight:600, cursor:"pointer", borderRadius:9 },
   authTabActive:   { background:"#38C0CE", color:"#fff" },
@@ -132,7 +132,7 @@ const s = {
   divider:         { display:"flex", alignItems:"center", gap:10, margin:"12px 0" },
   dividerLine:     { flex:1, height:1, background:"#23262C" },
   btnGhost:        { width:"100%", padding:14, background:"transparent", border:"1px solid #23262C", borderRadius:14, color:"#888", fontFamily:"inherit", fontSize:14, fontWeight:600, cursor:"pointer", marginBottom:12 },
-  terms:           { fontSize:10, color:"#444", textAlign:"center", lineHeight:1.5 },
+  terms:           { fontSize:12, color:"#9A948A", textAlign:"center", lineHeight:1.55 },
   bottom:          { padding:"0 24px calc(40px + env(safe-area-inset-bottom, 0px))" },
   dots:            { display:"flex", justifyContent:"center", gap:6, marginBottom:16 },
   dot:             { width:6, height:6, borderRadius:3, background:"#2A2E35", transition:"all 0.3s ease" },
