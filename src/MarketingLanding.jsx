@@ -285,11 +285,14 @@ export default function MarketingLanding({ onOpenPrivacy }) {
   const [email, setEmail] = useState("");
   const [submitState, setSubmitState] = useState("idle"); // idle | loading | done | error
 
+  // QA-5: detect Android so the iOS-only dead-end becomes an Android-tagged
+  // waitlist signal instead of a lost visitor.
+  const isAndroid = typeof navigator !== "undefined" && /android/i.test(navigator.userAgent || "");
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     if (submitState === "loading" || submitState === "done") return;
     setSubmitState("loading");
-    const res = await subscribeEmail(email, "landing_page");
+    const res = await subscribeEmail(email, isAndroid ? "landing_android_waitlist" : "landing_page");
     setSubmitState(res.ok ? "done" : "error");
   };
 
@@ -368,9 +371,15 @@ export default function MarketingLanding({ onOpenPrivacy }) {
                   approved. Until then it's a TestFlight-invite mailto so we
                   capture interest. Set APP_STORE_URL when the listing is live
                   and the button flips automatically. */}
-              <PrimaryCTA href={APP_STORE_URL || "mailto:Aron@trunorthapp.com?subject=TestFlight%20access&body=Hi%20Aron%2C%20please%20send%20me%20a%20TestFlight%20invite%20for%20TruNorth."}>
-                Get TruNorth on iOS
-              </PrimaryCTA>
+              {isAndroid ? (
+                <PrimaryCTA href="#get-notified">
+                  Get notified — Android coming soon
+                </PrimaryCTA>
+              ) : (
+                <PrimaryCTA href={APP_STORE_URL || "mailto:Aron@trunorthapp.com?subject=TestFlight%20access&body=Hi%20Aron%2C%20please%20send%20me%20a%20TestFlight%20invite%20for%20TruNorth."}>
+                  Get TruNorth on iOS
+                </PrimaryCTA>
+              )}
             </div>
             <div style={{ marginTop:18, fontSize:13, color:C.textMute }}>
               iPhone first · Android coming soon. {APP_STORE_URL ? "Download on the App Store." : "App Store launch imminent — TestFlight invite arrives same day."}
@@ -387,8 +396,8 @@ export default function MarketingLanding({ onOpenPrivacy }) {
             }}>
               <span style={{ fontSize:14 }} aria-hidden="true">👑</span>
               <span>
-                <b style={{ color:C.gold || "#ffd97a" }}>Founder pricing:</b>{" "}
-                <span style={{ color:C.textDim }}>first 500 supporters get TruNorth Pro at $9/yr forever — join the in-app waitlist after install</span>
+                <b style={{ color:C.gold || "#ffd97a" }}>TruNorth Pro:</b>{" "}
+                <span style={{ color:C.textDim }}>$14.99/yr or $1.99/mo — full breakdowns, sources, and personalized scores. Cancel anytime.</span>
               </span>
             </div>
             {/* 2026-06-01 (L-6): Product Hunt Coming Soon chip. Highest-leverage
@@ -530,6 +539,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
       </Section>
 
       {/* ── Email capture ── */}
+      <div id="get-notified" />
       <Section style={{ background:C.bgSoft, maxWidth:"100%", padding:"56px 0" }}>
         <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
           <Eyebrow>Stay in the loop</Eyebrow>
@@ -590,6 +600,9 @@ export default function MarketingLanding({ onOpenPrivacy }) {
         <div style={{ display:"flex", flexWrap:"wrap", gap:18, fontSize:13 }}>
           <a href="mailto:Aron@trunorthapp.com" style={{ color:C.textDim, textDecoration:"none" }}>
             Aron@trunorthapp.com
+          </a>
+          <a href="#methodology" style={{ color:C.textDim, textDecoration:"none" }}>
+            Methodology
           </a>
           <a href="#privacy" onClick={handlePrivacy} style={{ color:C.textDim, textDecoration:"none" }}>
             Privacy Policy

@@ -138,24 +138,25 @@ async function shot(page, name) {
     await page.goto(`${BASE}/?tab=today`, { waitUntil: 'networkidle2' });
     await pause(2500); await dismissWelcome(page); await pause(600);
     await tapByText(page, 'Start the Match');
-    await pause(900);
-    const answers = [
-      'independent / no preference — skip', // politics
-      'Dealbreaker',                        // environment
-      'Forgivable',                         // workers
-      'no preference — skip',               // unions
-      'no preference — skip',               // diversity
-      'It matters to me',                   // giving
-      'Not a priority',                     // animals
-      'no preference — skip',               // firearms
-      'Dealbreaker',                        // privacy
-      'Forgivable',                         // CEO pay
-    ];
-    for (const a of answers) { await tapByText(page, a); }
-    await tapByText(page, 'Forced labor in supply chain');
-    await tapByText(page, 'Child labor in supply chain');
-    await tapByText(page, 'finish');
-    await pause(2500);
+    await pause(1000);
+    // Robust generic driver — card order can shift, so click any answer per
+    // card, handle the dealbreaker finale + Finish, and stop at the archetype.
+    for (let i = 0; i < 22; i++) {
+      const st = await page.evaluate(() => {
+        if (/ARCHETYPE|values archetype/i.test(document.body.innerText)) return 'done';
+        const B = [...document.querySelectorAll('button')];
+        const fin = B.find((b) => /^finish/i.test(b.textContent.trim()));
+        if (fin) { const db = B.find((b) => /forced labor/i.test(b.textContent)); if (db) db.click(); fin.click(); return 'fin'; }
+        const a = B.find((b) => /^forgivable$|^i support them$|^it matters to me$/i.test(b.textContent.trim()))
+          || B.find((b) => /^dealbreaker$|^i avoid them$|^not a priority$/i.test(b.textContent.trim()))
+          || B.find((b) => /no preference|— skip$/i.test(b.textContent));
+        if (a) { a.click(); return 'ans'; }
+        return 'none';
+      });
+      await pause(600);
+      if (st === 'done' || st === 'none') break;
+    }
+    await pause(2800);
     await shot(page, '05-reveal.png');
     await context.close();
   }

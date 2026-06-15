@@ -32,6 +32,7 @@ const HARDCODED_PAGES = [
   // was a duplicate homepage entry and the policy page was uncrawlable.
   // /privacy is a real rewrite (vercel.json) and the app now routes it.
   { loc: BASE + "/privacy",   priority: "0.5", changefreq: "monthly" },
+  { loc: BASE + "/methodology", priority: "0.7", changefreq: "monthly" },
 ];
 
 function esc(s) {

@@ -41,7 +41,7 @@ export default function Methodology({ onBack }) {
         <P>Every grade in TruNorth is computed by the published formula on this page, from public records we cite. No grade is hand-set, no company can pay to change one, and the same math runs identically whether a brand leans left, right, or neither.</P>
 
         <H2>1. Where the data comes from</H2>
-        <P>We pull from 200+ public sources on fixed schedules: federal regulators (FEC, OSHA, EPA, NLRB, SEC, CFPB, CPSC, FDA, ATF, CBP, DOL), court records, state regulators, international enforcement agencies, certification bodies (B Corp, Leaping Bunny, Fair Trade, FSC), and official disclosure filings (SEC pay ratios, IRS-990 grants, EEO-1 workforce reports). Each category on a brand's card names its sources, and the in-app Sources tab lists every feed and its refresh cadence.</P>
+        <P>We pull from 200+ public sources on fixed schedules: federal regulators (FEC, OSHA, EPA, NLRB, SEC, CFPB, CPSC, FDA, ATF, CBP, DOL), court records, state regulators, international enforcement agencies, certification bodies (B Corp, Leaping Bunny, Fair Trade, FSC), and official disclosure filings (SEC pay ratios, IRS-990 grants, EEO-1 workforce reports). Each grade traces back to specific records. Those are representative anchors, though — we deliberately don't publish the complete feed list, because the exact source mix and pipeline is what keeps TruNorth from being trivially replicated.</P>
         <P>Where a category shows a narrative researched with AI assistance, every claim required a citation URL to a verifiable source before it was written — uncited findings are discarded, and "no public record found" is always a permitted answer.</P>
 
         <H2>2. From records to category scores</H2>

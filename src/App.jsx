@@ -17,17 +17,25 @@ import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail } from "./lib/marketing";
 import { T, SERIF, MONO, GRADE_COLORS } from "./lib/theme";
+import { tapMedium, notifySuccess } from "./lib/haptics";
 import CompassSeal, { COMPASS_AXES } from "./CompassSeal";
 
 // ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
 const globalCSS = `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  /* QA-6: responsive column — widen the phone-width shells on tablet/desktop
+     so the app isn't a 430px strip in a black void. (Full 2-pane = follow-up.) */
+  :root { --app-max: 430px; }
+  @media (min-width: 768px)  { :root { --app-max: 560px; } }
+  @media (min-width: 1024px) { :root { --app-max: 600px; } }
   html { background: #16181D; height: var(--app-height, 100dvh); width: 100%; max-width: 100%; }
   body, #root { background: #16181D; height: 100%; overflow: hidden; width: 100%; max-width: 100%; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: #EDE9E0; }
   input, textarea, select, button { font-family: inherit; }
-  input:focus, textarea:focus, select:focus { outline: none; }
+  input:focus:not(:focus-visible), textarea:focus:not(:focus-visible), select:focus:not(:focus-visible) { outline: none; }
+  :focus-visible { outline: 2px solid #38C0CE; outline-offset: 2px; border-radius: 3px; }
   @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.15; } }
   .spin { animation: spin 0.7s linear infinite; display: inline-block; }
   ::placeholder { color: #555; }
   /* UX 8A: visually hide labels but keep them for screen readers */
@@ -1372,7 +1380,10 @@ const PRO_WAITLIST_MODE = false;
 const IAP_SAFE_MODE = false;
 
 function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
-  const dialogRef = useModalA11y({ isOpen: true, onClose });
+  // autoFocus:false — the deferred focus() was scrolling the bottom-sheet down
+  // to the email input on open; a sales screen must open at the TOP (value prop
+  // + plans), not the entry field. (device bug, 2026-06-14)
+  const dialogRef = useModalA11y({ isOpen: true, onClose, autoFocus: false });
   const [loading, setLoading] = useState(false);
   const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
@@ -1385,15 +1396,17 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   const isValidEmail = (s) => /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(String(s || "").trim());
 
   const handleSubscribe = async () => {
-    if (!isValidEmail(email)) { return; /* button stays disabled — no native alert() */ }
+    // B73 (App Review 5.1.1 / 3.1.1): email is OPTIONAL for a real IAP — never
+    // gate the StoreKit purchase on it. Still required for the dormant waitlist.
+    if (PRO_WAITLIST_MODE && !isValidEmail(email)) { return; }
     setPurchaseError("");
     track("upgrade_clicked", {
-      email_provided: true,
+      email_provided: isValidEmail(email),
       source: PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall",
       mode: PRO_WAITLIST_MODE ? "waitlist" : "subscription",
     });
     setLoading(true);
-    await subscribeEmail(email, PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall", {
+    if (isValidEmail(email)) await subscribeEmail(email, PRO_WAITLIST_MODE ? "pro_waitlist" : "paywall", {
       intendsToSubscribe: true,
       waitlist: PRO_WAITLIST_MODE,
     });
@@ -1415,11 +1428,12 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
       return;
     }
     const { setEmailOnCustomer, purchasePro } = await import("./lib/payments");
-    await setEmailOnCustomer(email).catch(() => {});
+    if (isValidEmail(email)) await setEmailOnCustomer(email).catch(() => {});
     const result = await purchasePro(plan === "monthly" ? "monthly" : "annual");
     setLoading(false);
     if (result === "purchased") {
       track("subscribe_succeeded", { plan });
+      notifySuccess();
       onSubscribe(email);
     } else if (result === "cancelled") {
       track("subscribe_cancelled", { plan }); // keep the paywall open quietly
@@ -1438,13 +1452,13 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
     const ok = await restorePurchases();
     setLoading(false);
     track(ok ? "restore_succeeded" : "restore_failed");
-    if (ok) onSubscribe(email);
+    if (ok) { notifySuccess(); onSubscribe(email); }
     else setPurchaseError("No previous purchase found for this Apple ID.");
   };
 
   return (
     <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="TruNorth Pro upgrade" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, display:"flex", alignItems:"flex-end", justifyContent:"center" }}>
-      <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px calc(28px + env(safe-area-inset-bottom, 0px))", width:"100%", maxWidth:430, maxHeight:"92vh", overflowY:"auto" }}>
+      <div style={{ background:T.bg2, borderRadius:"24px 24px 0 0", border:`1px solid ${T.border2}`, padding:"16px 18px calc(28px + env(safe-area-inset-bottom, 0px))", width:"100%", maxWidth:"var(--app-max, 430px)", maxHeight:"92vh", overflowY:"auto" }}>
         <div style={{ width:40, height:4, background:T.bg4, borderRadius:2, margin:"0 auto 20px" }} />
 
         {done ? (
@@ -1529,7 +1543,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
         {PRO_WAITLIST_MODE ? (
           <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, borderRadius:12, padding:"8px 12px", marginBottom:10, textAlign:"center" }}>
             <span style={{ fontSize:22, fontWeight:700, color:T.gold }}>$9</span>
-            <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $0.99/mo</span>
+            <span style={{ fontSize:13, color:T.txt3 }}> / year — first 500 only · then $1.99/mo</span>
           </div>
         ) : (
           // X-2: plan selector. Prices mirror App Store Connect (annual $14.99,
@@ -1558,14 +1572,14 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
         {/* fontSize ≥16 keeps iOS Safari + Android Chrome from auto-zooming on focus */}
         <form onSubmit={e=>{e.preventDefault();handleSubscribe();}} autoComplete="on" style={{width:"100%"}}>
           <input type="email" autoComplete="email" name="email" value={email} onChange={e=>setEmail(e.target.value)}
-            placeholder={PRO_WAITLIST_MODE ? "Email for the waitlist" : "Enter your email to subscribe"}
+            placeholder={PRO_WAITLIST_MODE ? "Email for the waitlist" : "Email (optional) — receipt & Sunday digest"}
             style={{ width:"100%", background:T.bg3, border:`1px solid ${T.border2}`, borderRadius:10, color:T.txt, fontSize:16, padding:"11px 13px", marginBottom:10, boxSizing:"border-box" }}
           />
           <button type="submit" style={{display:"none"}} />
         </form>
 
-        <button onClick={handleSubscribe} disabled={loading || !isValidEmail(email)}
-          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || !isValidEmail(email)) ? "default" : "pointer", opacity: isValidEmail(email) ? 1 : 0.5, marginBottom:6, minHeight:44 }}>
+        <button onClick={handleSubscribe} disabled={loading || (PRO_WAITLIST_MODE && !isValidEmail(email))}
+          style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor: (loading || (PRO_WAITLIST_MODE && !isValidEmail(email))) ? "default" : "pointer", opacity: (PRO_WAITLIST_MODE && !isValidEmail(email)) ? 0.5 : 1, marginBottom:6, minHeight:44 }}>
           {loading
             ? (PRO_WAITLIST_MODE ? "Joining…" : "Processing…")
             : (PRO_WAITLIST_MODE ? "Join the Pro waitlist" : (plan === "monthly" ? "Subscribe · $1.99/mo" : "Subscribe · $14.99/yr"))}
@@ -1575,10 +1589,21 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           <div role="alert" style={{ fontSize:12, color:T.bad, textAlign:"center", margin:"2px 0 8px", lineHeight:1.45 }}>{purchaseError}</div>
         )}
 
-        <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10 }}>
-          {PRO_WAITLIST_MODE
-            ? "We email once: when Pro opens. No charges yet · cancel before launch."
-            : "Secure payment via Apple · Cancel anytime · No contracts"}
+        {/* Apple 3.1.2 point-of-sale disclosure: price + length + auto-renew
+            terms + functional Terms (Apple std EULA) and Privacy links. These
+            MUST be on the paywall itself, not just in onboarding — v1.0 was
+            rejected on 3.1.2. URLs mirror OnboardingFlow.jsx. */}
+        <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginBottom:10, lineHeight:1.5 }}>
+          {PRO_WAITLIST_MODE ? (
+            "We email once: when Pro opens. No charges yet · cancel before launch."
+          ) : (
+            <>
+              {plan === "monthly" ? "$1.99/month" : "$14.99/year"}, billed to your Apple Account. Auto-renews unless canceled at least 24 hours before the current period ends. Manage or cancel anytime in your App Store settings.{" "}
+              <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:T.accent, textDecoration:"none", whiteSpace:"nowrap" }}>Terms of Use</a>
+              {" · "}
+              <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:T.accent, textDecoration:"none", whiteSpace:"nowrap" }}>Privacy Policy</a>
+            </>
+          )}
         </div>
 
         {/* Apple requires a restore-purchases affordance for auto-renewable subs. */}
@@ -1816,19 +1841,19 @@ function RevealEmailCapture() {
       {status === "done" ? (
         <>
           <div style={{ fontSize:14, fontWeight:700, color:T.accent2, marginBottom:4 }}>
-            ✓ You're on the list
+            ✓ You're subscribed
           </div>
           <div style={{ fontSize:12, color:T.txt3, lineHeight:1.4 }}>
-            We'll email when TruNorth ships on the App Store.
+            We'll send the occasional brand update. Unsubscribe anytime.
           </div>
         </>
       ) : (
         <>
           <div style={{ fontSize:14, fontWeight:700, color:T.txt, marginBottom:4 }}>
-            Want launch updates?
+            Stay in the loop?
           </div>
           <div style={{ fontSize:12, color:T.txt3, marginBottom:10, lineHeight:1.4 }}>
-            One email when we ship on the App Store. Then quiet — no spam.
+            Occasional email when brands change their behavior. No spam — unsubscribe anytime.
           </div>
           <form onSubmit={submit} style={{ display:"flex", flexDirection:"column", gap:8 }}>
             <input
@@ -1859,7 +1884,7 @@ function RevealEmailCapture() {
                   opacity: !email ? 0.5 : 1,
                 }}
               >
-                {status === "loading" ? "Subscribing…" : "Notify me"}
+                {status === "loading" ? "Subscribing…" : "Subscribe"}
               </button>
               <button
                 type="button"
@@ -2262,7 +2287,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
   // wrapper uses 100dvh and the inner card scrolls internally when tall.
   return (
     <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Compare brands" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:100, padding:"calc(20px + env(safe-area-inset-top, 0px)) 12px calc(20px + env(safe-area-inset-bottom, 0px))", display:"flex", flexDirection:"column", alignItems:"center" }}>
-      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:430, width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
+      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:"var(--app-max, 430px)", width:"100%", margin:"0 auto", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, color:T.txt, display:"flex", flexDirection:"column", overflow:"hidden", maxHeight:"100%" }}>
       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", padding:"14px 16px 10px", borderBottom:`1px solid ${T.border}`, flexShrink:0 }}>
         <div style={{ fontSize:16, fontWeight:700 }}>Versus</div>
         <button onClick={onClose} style={{ width:32, height:32, padding:0, borderRadius:8, border:"none", background:T.bg3, color:T.txt, fontSize:18, minWidth:44, minHeight:44, cursor:"pointer" }} aria-label="Close">×</button>
@@ -2505,7 +2530,7 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
   return (
     <div style={{
       width:size, height:size, borderRadius:rounded,
-      background:"#fff", flexShrink:0,
+      background:"#F4F4F5", flexShrink:0,
       display:"flex", alignItems:"center", justifyContent:"center",
       overflow:"hidden", border:`1px solid ${T.border}`,
     }} aria-hidden="true">
@@ -2520,7 +2545,7 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
           if (providerIdx + 1 < providers.length) setProviderIdx(providerIdx + 1);
           else setErrored(true);
         }}
-        style={{ width:"86%", height:"86%", objectFit:"contain" }}
+        style={{ width:"86%", height:"86%", objectFit:"contain", filter:"drop-shadow(0 0 0.5px rgba(0,0,0,0.5))" }}
       />
     </div>
   );
@@ -3075,7 +3100,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     // Refined from the previous "0 free / paywall on first tap" — that was
     // too aggressive; users couldn't even sample the product before being
     // gated. 1 free view lets them experience the depth of one brand
-    // profile, builds the desire, then the paywall asks for $0.99/mo to
+    // profile, builds the desire, then the paywall asks for $1.99/mo to
     // unlock the rest. Cooldown preserved so dismissers can browse for 4h.
     //
     // Re-opening an already-viewed company doesn't punish the user.
@@ -3413,7 +3438,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   {onCommitSwitch && (
                     switchSheet === "done" ? (
                       <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, fontSize:12, color:T.accent2, fontWeight:600, display:"flex", alignItems:"center", gap:7 }}>
-                        <i className="ti ti-check" aria-hidden="true" /> Switch logged — counted in your Ledger.
+                        <i className="ti ti-check" aria-hidden="true" /> Switch logged — counted in your Basket.
                       </div>
                     ) : switchSheet ? (
                       <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}` }}>
@@ -4112,10 +4137,10 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                 <div style={{ marginBottom:10 }}>
                   <div style={{ fontSize:11, color:T.txt3, marginBottom:4 }}>Ownership</div>
                   <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
-                    {enriched.ownership.blackOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>Black-owned</span>}
-                    {enriched.ownership.womenOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>Women-owned</span>}
-                    {enriched.ownership.minorityOwned && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>Minority-owned</span>}
-                    {enriched.ownership.lgbtOwned     && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(124,109,250,0.12)", border:"1px solid rgba(124,109,250,0.4)", color:"#5CD6E0" }}>LGBT-owned</span>}
+                    {enriched.ownership.blackOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(56,192,206,0.12)", border:"1px solid rgba(56,192,206,0.4)", color:"#5CD6E0" }}>Black-owned</span>}
+                    {enriched.ownership.womenOwned    && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(56,192,206,0.12)", border:"1px solid rgba(56,192,206,0.4)", color:"#5CD6E0" }}>Women-owned</span>}
+                    {enriched.ownership.minorityOwned && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(56,192,206,0.12)", border:"1px solid rgba(56,192,206,0.4)", color:"#5CD6E0" }}>Minority-owned</span>}
+                    {enriched.ownership.lgbtOwned     && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:"rgba(56,192,206,0.12)", border:"1px solid rgba(56,192,206,0.4)", color:"#5CD6E0" }}>LGBT-owned</span>}
                     {enriched.ownership.smallBusiness && <span style={{ fontSize:10, padding:"3px 7px", borderRadius:5, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}>Small business</span>}
                   </div>
                 </div>
@@ -4432,7 +4457,7 @@ function SubmitView({ isPaid, onUpgrade }) {
         </div>
         <div style={{ fontSize:17, fontWeight:600, color:T.txt, marginBottom:8 }}>Submissions are for subscribers</div>
         <div style={{ fontSize:13, color:T.txt3, marginBottom:20, lineHeight:1.6 }}>Upgrade to help keep our database accurate by flagging corrections or suggesting new companies.</div>
-        <button onClick={onUpgrade} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $0.99/mo</button>
+        <button onClick={onUpgrade} style={{ padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}>Upgrade for $1.99/mo</button>
       </div>
     );
   }
@@ -5172,6 +5197,7 @@ useEffect(() => {
   // departed brand stays saved — its future records are exactly the
   // "told you so" the Ledger exists to show.
   const commitSwitch = useCallback((from, fromName, to, toName, monthly) => {
+    tapMedium();
     try {
       const list = JSON.parse(localStorage.getItem("tn_switches") || "[]");
       list.push({ from, fromName, to, toName, monthly: Number(monthly) || 0, at: Date.now() });
@@ -5798,8 +5824,13 @@ if (screen === "basket") {
   // R2 (brief flow A step 2): "Pick what you actually buy" — a chip cloud of
   // the most-documented household brands. Picks seed the basket (savedSet)
   // so the Reveal can say "your basket: N% aligned" with receipts attached.
+  // QA-20: pure-B2B brands (consultancies, commercial fleets, enterprise SaaS)
+  // leak into the pool via high record counts + a consumer-ish bucket; exclude
+  // the obvious ones by name until consumerFacing data flags cover them. Search
+  // results are NOT filtered, so a user can still add one deliberately.
+  const BASKET_EXCLUDE_RE = /\b(accenture|brightdrop|deloitte|mckinsey|kpmg|pwc|pricewaterhouse|ernst\s*&?\s*young|booz\s*allen|bain\s*(?:capital|&|company)|boston consulting|cognizant|infosys|capgemini|tata consultancy|wipro|salesforce|servicenow|workday|sap se|oracle)\b/i;
   const pool = (deduped || [])
-    .filter(c => c.consumerFacing !== false && (c.realCats ?? 0) >= 5 && ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"].includes(getBucket(c.cat || "")))
+    .filter(c => c.consumerFacing !== false && (c.realCats ?? 0) >= 5 && !BASKET_EXCLUDE_RE.test(String(c.name || "")) && ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"].includes(getBucket(c.cat || "")))
     .sort((a, b) => (b.realCats ?? 0) - (a.realCats ?? 0) || String(a.name).localeCompare(String(b.name)))
     .slice(0, 40);
   // R2 brief flow A specced search alongside the chip cloud (review): a user who
@@ -5816,7 +5847,7 @@ if (screen === "basket") {
     : null;
   const basketChips = basketSearchResults || pool;
   return (
-    <div style={{ display:"flex", flexDirection:"column", height:"100dvh", maxWidth:430, margin:"0 auto", paddingTop:"calc(env(safe-area-inset-top, 0px) + 18px)", overflow:"hidden", background:T.bg }}>
+    <div style={{ display:"flex", flexDirection:"column", height:"100dvh", maxWidth:"var(--app-max, 430px)", margin:"0 auto", paddingTop:"calc(env(safe-area-inset-top, 0px) + 18px)", overflow:"hidden", background:T.bg }}>
       <div style={{ padding:"0 22px", flexShrink:0 }}>
         <div style={{ fontFamily:SERIF, fontSize:26, color:T.txt, lineHeight:1.25 }}>Pick what you actually buy.</div>
         <div style={{ fontSize:13, color:T.txt2, lineHeight:1.5, marginTop:8 }}>
@@ -5853,12 +5884,12 @@ if (screen === "basket") {
       </div>
       <div style={{ flexShrink:0, padding:"10px 22px calc(env(safe-area-inset-bottom, 0px) + 16px)", borderTop:`1px solid ${T.border}`, background:T.bg }}>
         <button
-          onClick={() => { track("basket_picked", { count: savedSet.size }); track("quiz_started", { from: "basket_picker" }); setQueryRaw(""); setScreen("quiz"); }}
+          onClick={() => { track("basket_picked", { count: savedSet.size }); track("browse_started", { from: "basket_picker" }); setQueryRaw(""); setScreen("main"); }}
           disabled={savedSet.size === 0}
           style={{ width:"100%", padding:"15px 12px", borderRadius:13, background: savedSet.size ? "#EDE9E0" : T.bg3, color: savedSet.size ? "#111" : T.txt3, border:"none", fontSize:15, fontWeight:700, cursor: savedSet.size ? "pointer" : "default" }}>
           {savedSet.size ? `Continue with ${savedSet.size} ${savedSet.size === 1 ? "brand" : "brands"}` : "Pick at least one brand"}
         </button>
-        <button onClick={() => { track("basket_skipped", {}); track("quiz_started", { from: "basket_picker_skip" }); setQueryRaw(""); setScreen("quiz"); }}
+        <button onClick={() => { track("basket_skipped", {}); track("browse_started", { from: "basket_picker_skip" }); setQueryRaw(""); setScreen("main"); }}
           style={{ width:"100%", background:"none", border:"none", color:T.txt3, fontSize:11.5, cursor:"pointer", padding:"10px 0 0", textAlign:"center" }}>
           skip for now
         </button>
@@ -5915,7 +5946,7 @@ if (screen === "basket") {
     const basketView = savedCos.length ? basketVerdict(savedCos, profile, companies || []) : null;
     const hasBasketPayoff = !!(basketView && basketView.graded > 0);
     return (
-      <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg, paddingTop:"env(safe-area-inset-top,0px)" }}>
+      <div style={{ height:"100dvh", maxWidth:"var(--app-max, 430px)", margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg, paddingTop:"env(safe-area-inset-top,0px)" }}>
         <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center", boxSizing:"border-box", width:"100%" }}>
           {/* R1: YOUR compass — spoke lengths are the user's own weights.
               This is the identity object the whole redesign hangs on. */}
@@ -5936,7 +5967,8 @@ if (screen === "basket") {
                   Your values archetype
                 </div>
                 <div style={{ fontFamily:SERIF, fontSize:24, fontWeight:600, color:T.txt, lineHeight:1.2, marginBottom:4 }}>{fp.name}</div>
-                <div style={{ fontSize:11, color:T.accent2, fontFamily:MONO, letterSpacing:1.5, marginBottom:10 }}>{fp.codename}</div>
+                <div style={{ fontSize:11, color:T.accent2, fontFamily:MONO, letterSpacing:1.5, marginBottom:3 }}>{fp.codename}</div>
+                <div style={{ fontSize:10, color:T.txt3, marginBottom:10 }}>your values code · top categories + lean</div>
                 <div style={{ fontSize:12.5, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
               </div>
             );
@@ -6086,6 +6118,17 @@ if (screen === "basket") {
                 url:   shareUrl,
               };
               let method = "unknown";
+              // QA-12: attach the rendered values card so it actually posts to
+              // Stories/Snap/DMs (many apps don't unfurl OG previews). Optional —
+              // falls back to url-only share if the fetch or canShare fails.
+              try {
+                const imgResp = await fetch(`https://www.trunorthapp.com/api/og/values?${qp.toString()}`);
+                if (imgResp.ok) {
+                  const blob = await imgResp.blob();
+                  const file = new File([blob], "my-trunorth-values.png", { type: blob.type || "image/png" });
+                  if (navigator.canShare?.({ ...shareData, files: [file] })) shareData.files = [file];
+                }
+              } catch { /* image optional */ }
               try {
                 if (navigator.share && navigator.canShare?.(shareData) !== false) {
                   await navigator.share(shareData);
@@ -6131,7 +6174,7 @@ if (screen === "basket") {
     // and scroll the rest. The "Skip" button moved INTO Quiz (welcome screen)
     // so the Quiz fully fills the viewport.
     return (
-      <div style={{ height:"100dvh", maxWidth:430, margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden" }}>
+      <div style={{ height:"100dvh", maxWidth:"var(--app-max, 430px)", margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden" }}>
         {showPaywall && !IAP_SAFE_MODE && <PaywallScreen
           initialEmail={currentUser?.email||""}
           onSubscribe={(paidEmail)=>{
@@ -6176,7 +6219,7 @@ if (screen === "basket") {
   }
 
   return (
-    <div style={{ height:"100%", width:"100%", maxWidth:430, margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
+    <div style={{ height:"100%", width:"100%", maxWidth:"var(--app-max, 430px)", margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
       {showPaywall && !IAP_SAFE_MODE && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={(paidEmail)=>{
         setIsPaid(true);
         // Phase 5.as (#11): persist paywall email to Account.
@@ -6258,21 +6301,21 @@ if (screen === "basket") {
               onClick={()=>setTab("account")}
               aria-label="Account"
               style={{
-                width:32, height:32, borderRadius:"50%",
+                width:40, height:40, borderRadius:"50%",
                 background: tab === "account" ? T.accentBg : "transparent",
-                border:`1px solid ${T.border}`,
-                color: tab === "account" ? T.accent2 : T.txt2,
+                border:`1px solid ${T.accent}`,
+                color: T.accent2,
                 display:"flex", alignItems:"center", justifyContent:"center",
                 cursor:"pointer", padding:0
               }}
             >
-              <i className="ti ti-user-circle" style={{ fontSize:18 }} aria-hidden="true" />
+              <i className="ti ti-user-circle" style={{ fontSize:20 }} aria-hidden="true" />
             </button>
             {/* IAP_SAFE_MODE: no Pro chip, no Upgrade button — the App Store
                 binary carries zero purchase affordances until IAP is real. */}
             {!IAP_SAFE_MODE && (isPaid
               ? <div style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"4px 10px", borderRadius:20, display:"flex", alignItems:"center", gap:4 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Pro</div>
-              : <button onClick={()=>setShowPaywall(true)} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"5px 10px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4, minHeight:32 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
+              : <button onClick={()=>setShowPaywall(true)} style={{ background:T.goldBg, border:`1px solid ${T.gold}`, color:T.gold, fontSize:11, padding:"8px 12px", borderRadius:20, cursor:"pointer", display:"flex", alignItems:"center", gap:4, minHeight:40 }}><i className="ti ti-crown" style={{fontSize:11}} aria-hidden="true" /> Upgrade</button>
             )}
           </div>
         </div>
@@ -6475,7 +6518,7 @@ if (screen === "basket") {
                     return (
                       <button onClick={() => setTab("library")}
                         style={{ ...card, textAlign: "left", cursor: "pointer" }}
-                        aria-label={`Your basket: ${n} ${n === 1 ? "clash" : "clashes"} of ${bv.graded} graded. Open Ledger.`}>
+                        aria-label={`Your basket: ${n} ${n === 1 ? "clash" : "clashes"} of ${bv.graded} graded. Open Basket.`}>
                         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                           <CompassSeal weights={profile.weights} size={64} glow={n === 0} />
                           <div style={{ flex: 1, minWidth: 0 }}>
@@ -6501,7 +6544,7 @@ if (screen === "basket") {
                             <span style={{ color: "#38C0CE" }}>●</span> Strongest match: {bv.best.co.name} — {bv.best.g}
                           </div>
                         )}
-                        <div style={{ fontSize: 11, color: T.txt3, marginTop: 8 }}>{bv.graded} graded · {savedCos.length} in basket · open Ledger →</div>
+                        <div style={{ fontSize: 11, color: T.txt3, marginTop: 8 }}>{bv.graded} graded · {savedCos.length} in basket · open Basket →</div>
                       </button>
                     );
                   })()
@@ -6528,7 +6571,7 @@ if (screen === "basket") {
                   <div style={{ ...card, borderLeft: `3px solid ${T.border2}` }}>
                     <div style={{ fontFamily: MONO, fontSize: 10, color: T.txt3, letterSpacing: "0.12em", marginBottom: 7 }}>THIS WEEK ON THE RECORD</div>
                     <div style={{ fontFamily: SERIF, fontSize: 17, color: T.txt2, lineHeight: 1.35 }}>
-                      All quiet — no grade moves {savedCos.length ? "in your basket" : "to report"} this week.
+                      We're watching {savedCos.length ? "your basket" : "the records"} — no grade changes this week.
                     </div>
                     <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh nightly across 200+ public sources.</div>
                   </div>
@@ -6667,7 +6710,7 @@ if (screen === "basket") {
               <i className="ti ti-crown" style={{ fontSize:18, color:T.gold, flexShrink:0 }} aria-hidden="true" />
               <div>
                 <div style={{ fontSize:13, fontWeight:600, color:T.gold }}>Unlock personalized scores</div>
-                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $0.99/mo · narratives, sources & full profiles</div>
+                <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>Pro · $1.99/mo · narratives, sources & full profiles</div>
               </div>
               <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.gold, marginLeft:"auto" }} aria-hidden="true" />
             </div>
@@ -7337,8 +7380,9 @@ if (screen === "basket") {
           // Rationale: prevents competitors from cloning our data pipeline
           // by reading our app. The "100 public-records sources" badge
           // on landing still drives credibility; the recipe stays behind
-          // the wall. Per-grade citations on each company page remain free
-          // — that's the audit trail, not the pipeline shape.
+          // the wall. Per-grade source citations are also Pro-only (see the
+          // gated panel below) — consistent with the "Unlock per-grade
+          // citations" upsell; the audit trail is a Pro benefit (Aron 2026-06-14).
           //
           // Source count is computed from SOURCES_DATA so it never goes
           // stale as we add more sources.
@@ -7390,7 +7434,7 @@ if (screen === "basket") {
 
                 <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:"13px 24px", borderRadius:12, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
                   <i className="ti ti-crown" style={{ marginRight:6 }} aria-hidden="true" />
-                  Unlock per-grade citations — $0.99/mo
+                  Unlock per-grade citations — $1.99/mo
                 </button>
                 <div style={{ fontSize:11, color:T.txt3, textAlign:"center", marginTop:8, lineHeight:1.5 }}>
                   Pro shows which specific records drove each brand's grade.
@@ -7473,7 +7517,7 @@ if (screen === "basket") {
             </div>
             {!isPaid && (
               <button onClick={()=>{ window.scrollTo(0,0); setShowPaywall(true); }} style={{ width:"100%", padding:12, borderRadius:10, border:"none", background:T.gold, color:"#000", fontSize:14, fontWeight:700, cursor:"pointer" }}>
-                Upgrade to Pro — $0.99/mo
+                Upgrade to Pro — $1.99/mo
               </button>
             )}
           </div>
@@ -7493,7 +7537,8 @@ if (screen === "basket") {
                 <div style={{ flex:1, minWidth:0 }}>
                   <div style={{ fontSize:10, color:T.accent2, fontWeight:700, textTransform:"uppercase", letterSpacing:0.8, marginBottom:4 }}>Your values archetype</div>
                   <div style={{ fontFamily:SERIF, fontSize:19, fontWeight:600, color:T.txt, lineHeight:1.2 }}>{fp.name}</div>
-                  <div style={{ fontSize:10, color:T.accent2, fontFamily:MONO, letterSpacing:1.5, marginTop:2, marginBottom:6 }}>{fp.codename}</div>
+                  <div style={{ fontSize:10, color:T.accent2, fontFamily:MONO, letterSpacing:1.5, marginTop:2, marginBottom:2 }}>{fp.codename}</div>
+                  <div style={{ fontSize:9, color:T.txt3, marginBottom:6 }}>your values code</div>
                   <div style={{ fontSize:12, color:T.txt2, lineHeight:1.5 }}>{fp.blurb}</div>
                 </div>
               </div>
@@ -7541,10 +7586,10 @@ if (screen === "basket") {
           {/* Login details — always show so guest users can sign out */}
           <div style={{ background:T.bg2, border:`1px solid ${T.border}`, borderRadius:16, padding:16, marginBottom:12 }}>
               <div style={{ fontSize:14, fontWeight:600, color:T.txt, marginBottom:10 }}>Account details</div>
-              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
-                <span style={{ color:T.txt3 }}>Email</span>
-                <div style={{ display:"flex", alignItems:"center", gap:8 }}>
-                  <span style={{ color:T.txt, fontWeight:500 }}>{currentUser?.email || "Guest"}</span>
+              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", gap:10, padding:"10px 0", borderBottom:`1px solid ${T.border}`, fontSize:13 }}>
+                <span style={{ color:T.txt3, flexShrink:0 }}>Email</span>
+                <div style={{ display:"flex", alignItems:"center", gap:8, minWidth:0, flex:"1 1 auto", justifyContent:"flex-end" }}>
+                  <span title={currentUser?.email || "Guest"} style={{ color:T.txt, fontWeight:500, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap", minWidth:0 }}>{currentUser?.email || "Guest"}</span>
                   {/* 2026-06-05: "Pending verification" badge. Shows when a
                       user has entered a new email and MailerLite has sent a
                       confirmation link but they haven't clicked it yet. We
@@ -7555,7 +7600,7 @@ if (screen === "basket") {
                       deep link — a true confirmation handshake requires
                       MailerLite webhook → /api/verify-confirm). */}
                   {currentUser?.email && currentUser?.emailVerified === false && (
-                    <span style={{ fontSize:10, fontWeight:600, padding:"3px 8px", borderRadius:6, background:T.goldBg, color:T.gold, border:`1px solid ${T.gold}`, whiteSpace:"nowrap" }}>
+                    <span style={{ fontSize:10, fontWeight:600, padding:"3px 8px", borderRadius:6, background:T.goldBg, color:T.gold, border:`1px solid ${T.gold}`, whiteSpace:"nowrap", flexShrink:0 }}>
                       Pending
                     </span>
                   )}
@@ -7637,6 +7682,7 @@ if (screen === "basket") {
                       padding:"6px 10px",
                       cursor:"pointer",
                       minHeight:32,
+                      flexShrink:0,
                     }}
                   >
                     <i className={`ti ${currentUser?.email ? "ti-pencil" : "ti-plus"}`} style={{ fontSize:12 }} aria-hidden="true" />
@@ -7814,8 +7860,8 @@ if (screen === "basket") {
           // Lens input, plus a power shortcut: tapping LENS while already on
           // it opens the camera directly (preserves the one-thumb store flow).
           {id:"today",   icon:"ti-location",  label:"Today"},
-          {id:"search",  icon:"ti-crosshair", label:"Lens", center:true},
-          {id:"library", icon:"ti-coin",      label:"Ledger"},
+          {id:"search",  icon:"ti-crosshair", label:"Scan", center:true},
+          {id:"library", icon:"ti-shopping-cart", label:"Basket"},
         ].map(t => {
           const isActive = !t.center && tab === t.id;
           return (
@@ -7828,7 +7874,7 @@ if (screen === "basket") {
                 if (t.center) { setShowScanner(true); track("scanner_open", { tab: "lens_center" }); return; }
                 setTab(t.id);
               }}
-              aria-label={t.center ? "Lens — scan a product" : t.label}
+              aria-label={t.center ? "Scan a product" : t.label}
               style={{ flex:1, padding:"10px 4px 8px", display:"flex", flexDirection:"column", alignItems:"center", gap:3, background:"none", border:"none", cursor:"pointer" }}
             >
               {t.center ? (

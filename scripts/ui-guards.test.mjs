@@ -19,10 +19,17 @@ test("guard: global box-sizing border-box rule present in src/index.css", () => 
     "GLOBAL border-box rule removed — the quiz-reveal right-edge-cutoff bug WILL return. See the comment in index.css.");
 });
 
-test("guard: viewport zoom lock intact in index.html", () => {
+test("guard: viewport allows pinch-zoom (a11y) in index.html", () => {
+  // 2026-06-14 (QA-9): the zoom lock was intentionally removed for a11y —
+  // pinch-zoom is a WCAG requirement; input auto-zoom is handled via fontSize:16
+  // on inputs, and Capacitor/WKWebView blocks pinch natively in the native app.
+  // Guard INVERTED + scoped to the actual <meta viewport> tag (the old version
+  // matched the explanatory comment text, a false positive). Catches anyone
+  // re-adding user-scalable=no / maximum-scale to the viewport meta.
   const html = fs.readFileSync("index.html", "utf8");
-  assert.ok(/maximum-scale=1(\.0)?/.test(html) && /user-scalable=no/.test(html),
-    "Viewport zoom lock removed — accidental pinch will leave the iOS WebView stuck zoomed (Build 55 bug).");
+  const viewportTag = (html.match(/<meta[^>]*name=["']viewport["'][^>]*>/i) || [""])[0];
+  assert.ok(!/user-scalable=no/.test(viewportTag) && !/maximum-scale/.test(viewportTag),
+    "Viewport zoom lock re-added — pinch-zoom is a WCAG a11y requirement (QA-9). Remove user-scalable=no / maximum-scale from the viewport meta.");
 });
 
 test("guard: Civic Premium — the retired purple (#7c6dfa) never returns", () => {
