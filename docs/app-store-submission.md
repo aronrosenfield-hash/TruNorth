@@ -31,7 +31,7 @@ Also proactively fixed: **5.1.1** — the paywall no longer *requires* an email 
 6. **Description** → paste below (already includes the EULA link).
 7. **App Review Information** → Sign-in required: **No** · Notes below · Contact: Aron / Aron@trunorthapp.com.
 8. **Reply** to the rejection: App Review (sidebar) → the **Jun 7** submission → **Reply to App Review** → paste the reply below.
-9. **Save** → **Resubmit to App Review**. Answer the gates: **Export compliance** = exempt (standard HTTPS) · **IDFA / advertising identifier** = No · **Content rights** = Yes.
+9. **Save** → **Resubmit to App Review**. Answer the gates: **Export compliance** = exempt (standard HTTPS) · **IDFA / advertising identifier** = No · **Content rights** = leave as already declared (**No** — no licensed third-party content; this is set in App Information and was accepted in the prior submission).
 
 ---
 
@@ -122,7 +122,7 @@ Verified end-to-end in sandbox: purchase succeeds, Restore Purchases re-grants P
 - **Subscriptions** (group 22148623): TruNorth Pro Annual `com.trunorthapp.app.pro.annual` $14.99/yr · TruNorth Pro Monthly `com.trunorthapp.app.pro.monthly` $1.99/mo
 - **Privacy Policy URL:** `https://www.trunorthapp.com/#privacy` · **Support URL:** `https://www.trunorthapp.com`
 - **Price:** Free · **Age rating:** 4+ · **Category:** News / Shopping
-- **Export compliance:** standard HTTPS only (exempt) · **IDFA:** not used · **Content rights:** yes
+- **Export compliance:** standard HTTPS only (exempt) · **IDFA:** not used · **Content rights:** No (no licensed third-party content — already declared in App Information)
 
 ## After approval
 - Set `APP_STORE_URL` (marketing landing CTA flips from the TestFlight mailto automatically) · update PH First Comment + announcement copy with the live URL · merge PR #109 to deploy the web changes.
