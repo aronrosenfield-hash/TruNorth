@@ -1841,19 +1841,19 @@ function RevealEmailCapture() {
       {status === "done" ? (
         <>
           <div style={{ fontSize:14, fontWeight:700, color:T.accent2, marginBottom:4 }}>
-            ✓ You're on the list
+            ✓ You're subscribed
           </div>
           <div style={{ fontSize:12, color:T.txt3, lineHeight:1.4 }}>
-            We'll email when TruNorth ships on the App Store.
+            We'll send the occasional brand update. Unsubscribe anytime.
           </div>
         </>
       ) : (
         <>
           <div style={{ fontSize:14, fontWeight:700, color:T.txt, marginBottom:4 }}>
-            Want launch updates?
+            Stay in the loop?
           </div>
           <div style={{ fontSize:12, color:T.txt3, marginBottom:10, lineHeight:1.4 }}>
-            One email when we ship on the App Store. Then quiet — no spam.
+            Occasional email when brands change their behavior. No spam — unsubscribe anytime.
           </div>
           <form onSubmit={submit} style={{ display:"flex", flexDirection:"column", gap:8 }}>
             <input
@@ -1884,7 +1884,7 @@ function RevealEmailCapture() {
                   opacity: !email ? 0.5 : 1,
                 }}
               >
-                {status === "loading" ? "Subscribing…" : "Notify me"}
+                {status === "loading" ? "Subscribing…" : "Subscribe"}
               </button>
               <button
                 type="button"
