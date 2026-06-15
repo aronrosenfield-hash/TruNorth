@@ -2,8 +2,8 @@
 
 > **Living document.** Maintained by the founder + AI engineering co-pilot. Last updated automatically as material changes ship. **Do not share secrets / API keys from this doc** — all sensitive values are intentionally redacted and stored in `.env` files (git-ignored) and GitHub Actions Secrets.
 
-**Last updated:** 2026-06-12 PM
-**Status:** Pre-launch · iOS TestFlight (Build 68) · full product redesign shipped Jun 11–12 ("Civic Premium") · PH launch date being re-set post-redesign
+**Last updated:** 2026-06-14 PM
+**Status:** Pre-launch · **iOS v1.0 (Build 74) RESUBMITTED to App Review 2026-06-14 — "Waiting for Review"** (live RevenueCat StoreKit IAP, sandbox-verified purchase + restore; iPhone-only) · Civic Premium redesign + 11-agent QA sweep shipped (Builds 59–74) · PH launch date being re-set post-approval
 **Founder:** Aron Rosenfield (solo indie, US-based, Texas)
 **Legal entity:** TruNorthApp LLC (formed; business bank account + RevenueCat live — pre-revenue by choice until the paid build flips)
 
@@ -253,7 +253,7 @@ React app reads companies.json → renders detail card on demand
 
 | Date | Milestone |
 |---|---|
-| Tue Jun 17 | Submit to Apple App Store (5-day review buffer) |
+| ✅ Jun 14 | **Submitted v1.0 (Build 74) to App Review** — "Waiting for Review" (~24–48h) |
 | Mon Jun 22 PM | PH launch-eve readiness check |
 | Tue Jun 23 02:01 AM CDT | 🚀 Product Hunt launch |
 
@@ -354,7 +354,7 @@ Assuming PH launch performance similar to peer indie apps (5k-15k downloads firs
 
 | Risk | Mitigation |
 |---|---|
-| Apple App Store rejection at launch | Build 51 was rejected (IAP metadata + receipts); fixed via free-v1 safe mode + full resubmission package staged. Build 68 live on TestFlight; resubmission fires on founder go |
+| Apple App Store rejection | Build 51 was rejected (3.1.1/3.1.2c/2.1b — subs not via StoreKit, no in-app Terms/Privacy, IAPs not submitted). Fully remediated: real RevenueCat StoreKit IAP (sandbox-verified purchase + restore), paywall auto-renew + Terms/Privacy links, both subs submitted with App Review screenshots. **Build 74 resubmitted 2026-06-14 — "Waiting for Review."** |
 | Source endpoint changes (gov reshuffling URLs) | Per-source `*-fetch.mjs` scripts are isolated. Failures don't cascade. Repair time per source ~30 min |
 | Cloudflare bot blocks on public sources | Already handled — workflows run on GH Actions IPs which clear most WAFs. Two sources behind heavy bot protection (BBB dropped; ConsumerAffairs not used) |
 | Lawsuit threat from brands with bad grades | Every score traces to **primary public records**. We don't editorialize. Settled SCOTUS precedent (Hustler v. Falwell) protects factual reporting. Defamation insurance + privacy-policy lawyer review is X-5 in backlog |
@@ -387,10 +387,10 @@ Assuming PH launch performance similar to peer indie apps (5k-15k downloads firs
 | Apple Developer account proof | Available |
 | Vercel / GitHub / domain registration proof | Available |
 | PostHog dashboard access | Available |
-| TestFlight build (current = 68) | Available |
+| TestFlight build (current = 74; v1.0 in App Review) | Available |
 | Privacy policy + terms | Live at `/#privacy` |
 | Founder background / LinkedIn | Available |
-| LLC formation docs | **Pending — to be filed post-launch** |
+| LLC formation docs | ✅ TruNorthApp LLC formed (business bank + RevenueCat live) |
 | Trademark filings | **Pending — to be filed post-LLC** |
 | Pro revenue history | **N/A pre-launch — will be in App Store Connect after IAP enabled** |
 
