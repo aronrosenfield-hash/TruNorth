@@ -76,6 +76,39 @@ export async function subscribeEmail(email, source, metadata = {}) {
   }
 }
 
+const DELETE_ENDPOINT = "/api/delete-account";
+
+/**
+ * Deletes the user's server-side data — their email in MailerLite — for the
+ * in-app "Delete Account" flow (App Store Guideline 5.1.1(v): account creation
+ * requires in-app account deletion, not "email support"). Best-effort: always
+ * resolves ok:true (even on a transient error or no-email-on-file) so the
+ * local data wipe + on-screen confirmation still complete. The RevenueCat
+ * purchase record is intentionally retained — Apple requires receipt history
+ * for "Restore Purchases".
+ * @param {string} email — the stored email (may be empty)
+ * @returns {Promise<{ok: boolean, deleted?: boolean, warning?: string}>}
+ */
+export async function deleteAccountData(email) {
+  const cleaned = String(email || "").trim().toLowerCase();
+  try { track("account_deleted", { had_email: !!(cleaned.includes("@") && cleaned.includes(".")) }); } catch {}
+  if (!cleaned.includes("@") || !cleaned.includes(".")) {
+    return { ok: true, deleted: false }; // nothing server-side to remove
+  }
+  try {
+    const res = await fetch(apiUrl(DELETE_ENDPOINT), {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify({ email: cleaned }),
+    });
+    const data = await res.json().catch(() => ({}));
+    return { ok: data.ok !== false, deleted: !!data.deleted, warning: data.warning };
+  } catch (err) {
+    console.warn("[marketing] /api/delete-account call failed:", err);
+    return { ok: true, deleted: false, warning: "delete_network" };
+  }
+}
+
 /** Prefill helper — returns the stored email if any. */
 export function getStoredEmail() {
   try { return localStorage.getItem("tn_email") || ""; }

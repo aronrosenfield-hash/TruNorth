@@ -15,7 +15,7 @@ import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIn
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
-import { subscribeEmail, getStoredEmail } from "./lib/marketing";
+import { subscribeEmail, getStoredEmail, deleteAccountData } from "./lib/marketing";
 import { T, SERIF, MONO, GRADE_COLORS } from "./lib/theme";
 import { tapMedium, notifySuccess } from "./lib/haptics";
 import CompassSeal, { COMPASS_AXES } from "./CompassSeal";
@@ -7705,7 +7705,7 @@ if (screen === "basket") {
                 onClick={async () => {
                   const ok = await confirm({
                     title: "Sign out?",
-                    body: "Your basket and preferences stay on this device. To wipe everything, use 'Delete my data' below.",
+                    body: "Your basket and preferences stay on this device. To permanently delete your account and all data, use 'Delete Account' below.",
                     confirmLabel: "Sign out",
                     cancelLabel: "Stay",
                     danger: true,
@@ -7721,39 +7721,59 @@ if (screen === "basket") {
                 Sign out
               </button>
 
-              {/* H7 (audit) — full GDPR/CCPA-grade data deletion.
-                  Wipes EVERY tn_* localStorage key, opts out of PostHog
-                  going forward, then hard-reloads. Doesn't touch the
-                  MailerLite server-side record (user must email us per
-                  the Privacy Policy) — but the in-app surface is now
-                  honest and the app behaves like a fresh install. */}
-              <button style={{ width:"100%", marginTop:8, padding:10, borderRadius:10, border:`1px solid ${T.rep || "#E0524D"}`, background:"transparent", color:T.rep || "#E0524D", fontSize:13, cursor:"pointer", minHeight:44 }}
+              {/* App Store 5.1.1(v) — IN-APP account deletion. The app collects
+                  an optional email (paywall receipt + digest) which Apple counts
+                  as "account creation", so deletion must complete in-app, NOT via
+                  "email support". Flow: (1) delete the server-side email from
+                  MailerLite via /api/delete-account, (2) wipe EVERY tn_*
+                  localStorage key, (3) opt out of PostHog, (4) show a visible
+                  confirmation, then hard-reload to a fresh-install state. The
+                  RevenueCat purchase record is retained — Apple requires receipt
+                  history for "Restore Purchases". */}
+              <button style={{ width:"100%", marginTop:8, padding:10, borderRadius:10, border:`1px solid ${T.rep || "#E0524D"}`, background:"transparent", color:T.rep || "#E0524D", fontSize:13, fontWeight:600, cursor:"pointer", minHeight:44 }}
                 onClick={async () => {
                   const ok = await confirm({
-                    title: "Delete all my data on this device?",
-                    body: "Wipes your basket, history, Match answers, archetype, email, and analytics opt-in. The app behaves like a fresh install on next launch. To remove your email from our server, email Aron@trunorthapp.com.",
-                    confirmLabel: "Delete everything",
+                    title: "Delete account?",
+                    body: "This permanently deletes your email from our servers and wipes all data on this device — basket, history, Match answers, archetype, and analytics. This can't be undone. (Your App Store subscription stays active and can still be restored.)",
+                    confirmLabel: "Delete account",
                     cancelLabel: "Cancel",
                     danger: true,
                   });
                   if (!ok) return;
+                  // 1) Delete the server-side record (email in MailerLite).
+                  //    Capture the email BEFORE any local wipe.
+                  const storedEmail = getStoredEmail();
+                  try { await deleteAccountData(storedEmail); } catch {}
+                  // 2) Opt out of analytics (async) BEFORE the final wipe, so no
+                  //    `await` sits between the localStorage wipe and the reload.
+                  //    (A component effect re-persists tn_email on render; if a
+                  //    render lands between wipe and reload the email comes back.)
                   try {
-                    // Wipe everything tn_* — comprehensive across the app
+                    const posthog = (await import("posthog-js")).default;
+                    posthog.opt_out_capturing?.();
+                    posthog.reset?.();
+                  } catch {}
+                  // 3) Visible confirmation (Apple wants the flow to end on a
+                  //    confirmation).
+                  await themedAlert({
+                    title: "Account deleted",
+                    body: "Your email and all data have been deleted. The app will now reset.",
+                    kind: "info",
+                  });
+                  // 4) Mark the reset so the NEXT load (main.jsx, before React
+                  //    mounts) wipes any tn_* key the live tree re-persists during
+                  //    the reload transition (notably tn_email). Then wipe locally
+                  //    now and reload. The sessionStorage flag survives the reload.
+                  try { sessionStorage.setItem("tn_account_reset", "1"); } catch {}
+                  try {
                     for (let i = localStorage.length - 1; i >= 0; i--) {
                       const k = localStorage.key(i);
                       if (k && k.startsWith("tn_")) localStorage.removeItem(k);
                     }
-                    // Best-effort PostHog opt-out for this session + going forward
-                    try {
-                      const posthog = (await import("posthog-js")).default;
-                      posthog.opt_out_capturing?.();
-                      posthog.reset?.();
-                    } catch {}
                   } catch {}
-                  track("user_data_deleted"); // last gasp before opt-out lands
                   window.location.reload();
                 }}>
-                Delete my data on this device
+                Delete Account
               </button>
             </div>
 

@@ -9,6 +9,24 @@ import { initCapacitor } from './lib/capacitor-init'
 import { ConfirmProvider } from './components/ConfirmModal'
 import { ErrorBoundary } from './lib/ErrorBoundary'
 
+// App Store 5.1.1(v) account deletion — finish the reset on the FIRST load
+// after the in-app "Delete Account" flow set this flag. Running HERE, before
+// React mounts, removes any tn_* key the old (pre-reload) component tree
+// re-persisted during the reload transition — notably tn_email, which a live
+// email-state component re-writes after the handler's wipe but before the
+// browser actually navigates. After this, the fresh mount has no armed state,
+// so nothing re-persists (verified). The sessionStorage flag survives the
+// reload; this localStorage wipe never touches it.
+try {
+  if (sessionStorage.getItem("tn_account_reset") === "1") {
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith("tn_")) localStorage.removeItem(k);
+    }
+    sessionStorage.removeItem("tn_account_reset");
+  }
+} catch {}
+
 // Phase 5.am: Native bridge — only runs when inside the Capacitor iOS shell.
 initCapacitor()
 
