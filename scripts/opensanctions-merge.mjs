@@ -8,7 +8,7 @@
  * Output: data/derived/opensanctions-augment.json
  *   {
  *     _generated_at: "...",
- *     _license: "CC-BY-NC 4.0 — OpenSanctions; v2 license review required if monetizing",
+ *     _license: "CC-BY-NC 4.0 — OpenSanctions; ⚠️ TRIGGERED — paid Pro tier LIVE 2026-06-18, NC review open; do not merge into shipped product until resolved",
  *     _source: "https://www.opensanctions.org",
  *     _scanned: N,
  *     _matched_slugs: M,
@@ -282,7 +282,7 @@ async function main() {
 
   const output = {
     _generated_at: new Date().toISOString(),
-    _license: "CC-BY-NC 4.0 — OpenSanctions; v2 license review required if monetizing",
+    _license: "CC-BY-NC 4.0 — OpenSanctions; ⚠️ TRIGGERED — paid Pro tier LIVE 2026-06-18, NC review open; do not merge into shipped product until resolved",
     _source: "https://www.opensanctions.org",
     _source_dataset: "sanctions (consolidated)",
     _snapshot_file: path.relative(ROOT, jsonlPath),

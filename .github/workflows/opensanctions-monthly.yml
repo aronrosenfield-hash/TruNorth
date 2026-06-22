@@ -8,10 +8,11 @@ name: opensanctions-monthly
 # brand-level matches change slowly (months between new corporate
 # designations) — a monthly snapshot is plenty for TruNorth.
 #
-# License: CC-BY-NC 4.0 (non-commercial). TruNorth is free today, so this
-# is in bounds. If/when a paid Pro tier ships, the commercial license
-# (€500–2k/y) needs to be evaluated. The PR body and the merge output both
-# carry an explicit reminder.
+# License: CC-BY-NC 4.0 (non-commercial). ⚠️ TRIGGERED — the paid Pro tier
+# shipped (App Store-approved Build 75, 2026-06-18), so "free today, in
+# bounds" is STALE. NC review is open; do NOT merge refreshes into the
+# shipped product until resolved (buy commercial license / leave dormant /
+# legal sign-off). This feed currently lands ZERO committed augment data.
 
 on:
   schedule:
@@ -54,13 +55,14 @@ jobs:
             - Raw snapshot:    `data/raw/opensanctions/<date>.jsonl`
             - Derived augment: `data/derived/opensanctions-augment.json`
 
-            ### License caveat
-            OpenSanctions ships under **CC-BY-NC 4.0** (Creative Commons,
-            non-commercial). TruNorth is currently free, so we are in
-            bounds — but if/when the Pro tier monetizes, the commercial
-            license (€500–2k/year) must be evaluated before merging
-            subsequent refreshes. The `_license` field in the derived
-            JSON carries an inline reminder.
+            ### License caveat — ⚠️ TRIGGERED
+            OpenSanctions ships under **CC-BY-NC 4.0** (non-commercial). The
+            paid Pro tier is now LIVE (App Store-approved Build 75,
+            2026-06-18), so the old "currently free → in bounds" assumption is
+            STALE. Do NOT merge this refresh into the shipped product until the
+            NC review is resolved (buy commercial license €500–2k/yr / leave
+            dormant / legal sign-off). The `_license` field carries the same
+            reminder.
           branch: data/opensanctions-monthly
           add-paths: |
             data/raw/opensanctions/**

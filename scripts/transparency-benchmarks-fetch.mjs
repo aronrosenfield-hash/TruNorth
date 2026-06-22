@@ -33,8 +33,12 @@
  *
  *   5. Fashion Revolution Fashion Transparency Index
  *      https://www.fashionrevolution.org/about/transparency/
- *      License: CC BY-NC 4.0  (NOTE: NonCommercial — flag for monetization
- *      review before paid tier ships).
+ *      License: CC BY-NC 4.0  (NonCommercial). ⚠️ TRIGGERED — the paid Pro
+ *      tier shipped (App Store-approved 2026-06-18); this NC component is now
+ *      blended into the live "transparency" composite (note: the merged
+ *      augment's top-level license label masks this). Resolve before relying
+ *      on it commercially: drop Fashion Rev from the blend, get written reuse
+ *      permission, or accept-with-legal-signoff.
  *      ~250 major apparel/footwear brands, raw 0–250 → normalized 0–100.
  *
  *   SKIPPED: CDP Climate Scoring — paywalled since 2025 (per prior
@@ -209,7 +213,7 @@ export const CHRB_2024_RAW = [
 
 // Fashion Revolution Fashion Transparency Index 2024 — raw 0–250.
 // Source: https://www.fashionrevolution.org/about/transparency/
-// LICENSE NOTE: CC BY-NC 4.0 — NonCommercial. Flag for monetization tier.
+// LICENSE NOTE: CC BY-NC 4.0 — NonCommercial. ⚠️ TRIGGERED — paid Pro tier LIVE 2026-06-18; resolve NC status before commercial reliance (this feeds the live "transparency" composite).
 export const FASHION_REV_2024 = [
   { slug: "omu",                       raw: 208 }, // OVS
   { slug: "kmart-australia",           raw: 195 },
@@ -284,7 +288,7 @@ export const SOURCES = {
   },
   fashionRevTransparency: {
     name: "Fashion Revolution Fashion Transparency Index",
-    license: "CC BY-NC 4.0 (NonCommercial — flag for paid tier)",
+    license: "CC BY-NC 4.0 (NonCommercial — ⚠️ TRIGGERED: Pro tier LIVE 2026-06-18, NC review open)",
     url: "https://www.fashionrevolution.org/about/transparency/",
     vintage: "2024",
   },

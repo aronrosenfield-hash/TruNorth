@@ -18,11 +18,24 @@
  * web stream, decode UTF-8 chunks, hand-roll a line splitter, and JSON.parse
  * one entity at a time. Memory stays flat regardless of file size.
  *
- * LICENSE: OpenSanctions is CC-BY-NC 4.0 (Creative Commons,
- * non-commercial). TruNorth is currently free, so non-commercial use is in
- * bounds. If/when a paid Pro tier ships, we need to evaluate the commercial
- * license (€500–2k/year). The license is stamped into the merge output and
- * flagged in the workflow PR.
+ * LICENSE: OpenSanctions is CC-BY-NC 4.0 (Creative Commons, non-commercial).
+ * ⚠️ TRIGGER FIRED (2026-06-22) — the "currently free, so NC is in bounds"
+ * assumption is now STALE: the paid Pro tier shipped (com.trunorthapp.app.pro.
+ * {annual,monthly}; App Store-approved Build 75, 2026-06-18). CC-BY-NC bars
+ * use "primarily directed toward commercial advantage," which a freemium app
+ * with paid subscriptions plausibly crosses. NC review is OPEN — do NOT merge
+ * future refreshes into the shipped product until resolved: (a) buy the
+ * OpenSanctions commercial license (€500–2k/yr), (b) leave dormant / remove,
+ * or (c) accept-with-legal-signoff.
+ *
+ * NOTE: this feed currently contributes ZERO data to the product — no
+ * opensanctions-augment.json is committed and no company file carries a
+ * `sanctions` key (the monthly cron has not landed merged output, and US
+ * consumer brands ~never appear on sanctions lists by design). The underlying
+ * lists (OFAC, EU, UN) are public-domain government works ingested directly
+ * elsewhere (ofac-sdn-fetch.mjs, eu-sanctions-fetch.mjs) and carry NO NC
+ * restriction — only OpenSanctions' aggregated FTM packaging does. The license
+ * is stamped into the merge output and flagged in the workflow PR.
  *
  * Standalone usage:
  *   node scripts/opensanctions-fetch.mjs                          # default: ./data/raw/opensanctions/<date>.jsonl
@@ -316,7 +329,7 @@ async function main() {
     scanned,
     kept,
     license: "CC-BY-NC 4.0 — OpenSanctions",
-    license_note: "Non-commercial use only. v2 license review required if monetizing.",
+    license_note: "Non-commercial only. ⚠️ TRIGGERED — paid Pro tier is LIVE (App Store-approved 2026-06-18); NC review open, do not merge into the shipped product until resolved (see fetcher header).",
   }, null, 2));
   console.log(`  meta:    ${metaPath}`);
 }
