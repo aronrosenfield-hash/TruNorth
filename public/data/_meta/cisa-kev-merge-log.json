@@ -1,29 +1,17 @@
 {
-  "merged_at": "2026-06-15T18:25:57.470Z",
+  "merged_at": "2026-06-22T18:06:40.648Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 266,
-  "merged_count": 3,
-  "skipped_count": 33,
-  "orphan_count": 230,
+  "total_vendors": 268,
+  "merged_count": 1,
+  "skipped_count": 35,
+  "orphan_count": 232,
   "error_count": 0,
   "merged_vendors": [
     {
       "vendor": "Cisco",
       "target": "cisco",
       "routed_via": "override",
-      "cves": 91
-    },
-    {
-      "vendor": "Google",
-      "target": "google-alphabet",
-      "routed_via": "override",
-      "cves": 72
-    },
-    {
-      "vendor": "Oracle",
-      "target": "oracle-cloud",
-      "routed_via": "parent",
-      "cves": 44
+      "cves": 92
     }
   ],
   "top_orphans": [
