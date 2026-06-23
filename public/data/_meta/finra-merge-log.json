@@ -1,0 +1,585 @@
+{
+  "merged_at": "2026-06-23T12:57:34.337Z",
+  "source_file": "public/data/finra-disclosures.json",
+  "total_brands": 528,
+  "merged_count": 93,
+  "skipped_count": 421,
+  "orphan_count": 14,
+  "error_count": 0,
+  "orphans": [
+    "johnson-johnson",
+    "new-balance",
+    "linear",
+    "block",
+    "cash-app",
+    "plaid",
+    "us-bank",
+    "sofi",
+    "metlife",
+    "new-york-life",
+    "massmutual",
+    "northwestern-mutual",
+    "ram",
+    "polestar"
+  ],
+  "merged": [
+    {
+      "brand": "red-bull",
+      "target": "red-bull",
+      "routed_via": "direct",
+      "totalDisclosures": 13
+    },
+    {
+      "brand": "corona",
+      "target": "anheuser-busch",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "mars",
+      "target": "mars",
+      "routed_via": "direct",
+      "totalDisclosures": 1
+    },
+    {
+      "brand": "mms",
+      "target": "mars",
+      "routed_via": "parent",
+      "totalDisclosures": 1
+    },
+    {
+      "brand": "kit-kat",
+      "target": "kit-kat",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "general-mills",
+      "target": "general-mills",
+      "routed_via": "direct",
+      "totalDisclosures": 47
+    },
+    {
+      "brand": "quaker",
+      "target": "pepsi",
+      "routed_via": "parent",
+      "totalDisclosures": 1
+    },
+    {
+      "brand": "crest",
+      "target": "crest",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "bounty",
+      "target": "bounty",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "dawn",
+      "target": "dawn",
+      "routed_via": "direct",
+      "totalDisclosures": 28
+    },
+    {
+      "brand": "cascade",
+      "target": "procter-and-gamble",
+      "routed_via": "parent",
+      "totalDisclosures": 2
+    },
+    {
+      "brand": "dove",
+      "target": "dove",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "axe",
+      "target": "unilever",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "camel",
+      "target": "r-j-reynolds-tobacco-company",
+      "routed_via": "parent",
+      "totalDisclosures": 14
+    },
+    {
+      "brand": "sonic",
+      "target": "sonic-drive-in",
+      "routed_via": "parent",
+      "totalDisclosures": 8
+    },
+    {
+      "brand": "heb",
+      "target": "h-e-b",
+      "routed_via": "alias",
+      "totalDisclosures": 3
+    },
+    {
+      "brand": "burlington",
+      "target": "burlington",
+      "routed_via": "direct",
+      "totalDisclosures": 13
+    },
+    {
+      "brand": "rei",
+      "target": "rei",
+      "routed_via": "direct",
+      "totalDisclosures": 28
+    },
+    {
+      "brand": "petco",
+      "target": "petco",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "circle-k",
+      "target": "circle-k",
+      "routed_via": "direct",
+      "totalDisclosures": 15
+    },
+    {
+      "brand": "nike",
+      "target": "nike",
+      "routed_via": "direct",
+      "totalDisclosures": 4
+    },
+    {
+      "brand": "puma",
+      "target": "puma",
+      "routed_via": "direct",
+      "totalDisclosures": 7
+    },
+    {
+      "brand": "american-eagle",
+      "target": "american-eagle",
+      "routed_via": "direct",
+      "totalDisclosures": 37
+    },
+    {
+      "brand": "hollister",
+      "target": "abercrombie-and-fitch",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "hm",
+      "target": "handm",
+      "routed_via": "alias",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "toms",
+      "target": "toms",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "gucci",
+      "target": "kering",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "fossil",
+      "target": "fossil-group",
+      "routed_via": "parent",
+      "totalDisclosures": 30
+    },
+    {
+      "brand": "apple",
+      "target": "apple",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "x-corp",
+      "target": "x-corp",
+      "routed_via": "direct",
+      "totalDisclosures": 3
+    },
+    {
+      "brand": "oracle",
+      "target": "oracle-cloud",
+      "routed_via": "parent",
+      "totalDisclosures": 7
+    },
+    {
+      "brand": "ibm",
+      "target": "ibm",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "intel",
+      "target": "intel",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "amd",
+      "target": "amd",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "hp",
+      "target": "hp",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "dell",
+      "target": "dell",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "samsung",
+      "target": "samsung-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "lg",
+      "target": "lg-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "disney-plus",
+      "target": "disney",
+      "routed_via": "alias",
+      "totalDisclosures": 10
+    },
+    {
+      "brand": "peacock",
+      "target": "comcast",
+      "routed_via": "parent",
+      "totalDisclosures": 6
+    },
+    {
+      "brand": "paramount",
+      "target": "paramount",
+      "routed_via": "direct",
+      "totalDisclosures": 2
+    },
+    {
+      "brand": "threads",
+      "target": "meta-platforms",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "jpmorgan-chase",
+      "target": "jpmorgan-chase",
+      "routed_via": "direct",
+      "totalDisclosures": 547
+    },
+    {
+      "brand": "bank-of-america",
+      "target": "bank-of-america",
+      "routed_via": "direct",
+      "totalDisclosures": 43
+    },
+    {
+      "brand": "wells-fargo",
+      "target": "wells-fargo",
+      "routed_via": "direct",
+      "totalDisclosures": 162
+    },
+    {
+      "brand": "citi",
+      "target": "citigroup",
+      "routed_via": "parent",
+      "totalDisclosures": 22
+    },
+    {
+      "brand": "truist",
+      "target": "truist-financial",
+      "routed_via": "parent",
+      "totalDisclosures": 23
+    },
+    {
+      "brand": "discover",
+      "target": "discover-financial",
+      "routed_via": "parent",
+      "totalDisclosures": 11
+    },
+    {
+      "brand": "american-express",
+      "target": "american-express",
+      "routed_via": "direct",
+      "totalDisclosures": 184
+    },
+    {
+      "brand": "visa",
+      "target": "visa",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "fidelity",
+      "target": "fidelity-investments",
+      "routed_via": "alias",
+      "totalDisclosures": 20
+    },
+    {
+      "brand": "vanguard",
+      "target": "vanguard",
+      "routed_via": "direct",
+      "totalDisclosures": 59
+    },
+    {
+      "brand": "charles-schwab",
+      "target": "charles-schwab",
+      "routed_via": "direct",
+      "totalDisclosures": 317
+    },
+    {
+      "brand": "robinhood",
+      "target": "robinhood",
+      "routed_via": "direct",
+      "totalDisclosures": 65
+    },
+    {
+      "brand": "chime",
+      "target": "chime",
+      "routed_via": "direct",
+      "totalDisclosures": 7
+    },
+    {
+      "brand": "goldman-sachs",
+      "target": "goldman-sachs",
+      "routed_via": "direct",
+      "totalDisclosures": 433
+    },
+    {
+      "brand": "morgan-stanley",
+      "target": "morgan-stanley",
+      "routed_via": "direct",
+      "totalDisclosures": 183
+    },
+    {
+      "brand": "blackrock",
+      "target": "blackrock",
+      "routed_via": "direct",
+      "totalDisclosures": 2
+    },
+    {
+      "brand": "state-farm",
+      "target": "state-farm",
+      "routed_via": "direct",
+      "totalDisclosures": 7
+    },
+    {
+      "brand": "geico",
+      "target": "geico",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "progressive",
+      "target": "progressive",
+      "routed_via": "direct",
+      "totalDisclosures": 1
+    },
+    {
+      "brand": "allstate",
+      "target": "allstate",
+      "routed_via": "direct",
+      "totalDisclosures": 5
+    },
+    {
+      "brand": "liberty-mutual",
+      "target": "liberty-mutual",
+      "routed_via": "direct",
+      "totalDisclosures": 16
+    },
+    {
+      "brand": "nationwide",
+      "target": "nationwide",
+      "routed_via": "direct",
+      "totalDisclosures": 13
+    },
+    {
+      "brand": "travelers",
+      "target": "travelers",
+      "routed_via": "direct",
+      "totalDisclosures": 11
+    },
+    {
+      "brand": "prudential",
+      "target": "prudential",
+      "routed_via": "direct",
+      "totalDisclosures": 3
+    },
+    {
+      "brand": "att",
+      "target": "atandt",
+      "routed_via": "alias",
+      "totalDisclosures": 1
+    },
+    {
+      "brand": "sprint",
+      "target": "sprint",
+      "routed_via": "direct",
+      "totalDisclosures": 22
+    },
+    {
+      "brand": "spectrum",
+      "target": "spectrum",
+      "routed_via": "direct",
+      "totalDisclosures": 1
+    },
+    {
+      "brand": "optimum",
+      "target": "optimum",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "chevron",
+      "target": "chevron",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "shell",
+      "target": "shell-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "bp",
+      "target": "bp-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "southern-company",
+      "target": "southern-company",
+      "routed_via": "direct",
+      "totalDisclosures": 30
+    },
+    {
+      "brand": "ford",
+      "target": "ford",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "chrysler",
+      "target": "chrysler",
+      "routed_via": "direct",
+      "totalDisclosures": 2
+    },
+    {
+      "brand": "dodge",
+      "target": "dodge",
+      "routed_via": "direct",
+      "totalDisclosures": 4
+    },
+    {
+      "brand": "toyota",
+      "target": "toyota-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "honda",
+      "target": "honda-motor-co",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "hyundai",
+      "target": "hyundai-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "mitsubishi",
+      "target": "mitsubishi-motors-north-america",
+      "routed_via": "parent",
+      "totalDisclosures": 5
+    },
+    {
+      "brand": "audi",
+      "target": "volkswagen-usa",
+      "routed_via": "parent",
+      "totalDisclosures": 2
+    },
+    {
+      "brand": "bmw",
+      "target": "bmw-usa",
+      "routed_via": "alias",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "abbott",
+      "target": "abbott-laboratories",
+      "routed_via": "parent",
+      "totalDisclosures": 3
+    },
+    {
+      "brand": "anthem",
+      "target": "anthem-elevance-health",
+      "routed_via": "parent",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "cigna",
+      "target": "cigna",
+      "routed_via": "direct",
+      "totalDisclosures": 3
+    },
+    {
+      "brand": "marriott",
+      "target": "marriott",
+      "routed_via": "direct",
+      "totalDisclosures": 30
+    },
+    {
+      "brand": "hilton",
+      "target": "hilton",
+      "routed_via": "direct",
+      "totalDisclosures": 17
+    },
+    {
+      "brand": "hertz",
+      "target": "hertz",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "enterprise",
+      "target": "enterprise-rent-a-car",
+      "routed_via": "parent",
+      "totalDisclosures": 3
+    },
+    {
+      "brand": "avis",
+      "target": "avis",
+      "routed_via": "direct",
+      "totalDisclosures": 0
+    },
+    {
+      "brand": "dyson",
+      "target": "dyson",
+      "routed_via": "direct",
+      "totalDisclosures": 2
+    },
+    {
+      "brand": "toro",
+      "target": "toro",
+      "routed_via": "direct",
+      "totalDisclosures": 15
+    }
+  ]
+}

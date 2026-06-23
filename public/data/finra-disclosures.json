@@ -1,0 +1,4330 @@
+{
+  "generated_at": "2026-06-23T12:57:34.289Z",
+  "source": "FINRA BrokerCheck public API",
+  "source_notes": "All-time disclosure counts from anonymous BrokerCheck. 5y window and fine totals require authenticated PDF report endpoint (not yet implemented).",
+  "brand_count": 528,
+  "with_disclosures": 69,
+  "clean_record": 109,
+  "not_found": 350,
+  "error_count": 0,
+  "firms": [
+    {
+      "slug": "coca-cola",
+      "name": "Coca-Cola",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pepsi",
+      "name": "Pepsi",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sprite",
+      "name": "Sprite",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dr-pepper",
+      "name": "Dr Pepper",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "mountain-dew",
+      "name": "Mountain Dew",
+      "firm_id": "171481",
+      "firm_name": "IHT WEALTH MANAGEMENT LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "gatorade",
+      "name": "Gatorade",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "red-bull",
+      "name": "Red Bull",
+      "firm_id": "10740",
+      "firm_name": "PROSPERA FINANCIAL SERVICES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 13,
+      "total_regulatory_events": 10,
+      "total_civil_events": 0,
+      "total_arbitrations": 3,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/10740",
+          "description": "10 regulatory + 0 civil + 3 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/10740",
+      "scraped_at": "2026-06-23T12:48:08.203Z"
+    },
+    {
+      "slug": "monster-energy",
+      "name": "Monster Energy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "budweiser",
+      "name": "Budweiser",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "bud-light",
+      "name": "Bud Light",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "coors-light",
+      "name": "Coors Light",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "modelo",
+      "name": "Modelo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "corona",
+      "name": "Corona",
+      "firm_id": "111992",
+      "firm_name": "CORONADO INVESTMENTS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "heineken",
+      "name": "Heineken",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "stella-artois",
+      "name": "Stella Artois",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cheerios",
+      "name": "Cheerios",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "froot-loops",
+      "name": "Froot Loops",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "frosted-flakes",
+      "name": "Frosted Flakes",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lucky-charms",
+      "name": "Lucky Charms",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "oreo",
+      "name": "Oreo",
+      "firm_id": "341607",
+      "firm_name": "OREON TECHNOLOGIES INC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "chips-ahoy",
+      "name": "Chips Ahoy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "doritos",
+      "name": "Doritos",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cheetos",
+      "name": "Cheetos",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lays",
+      "name": "Lay's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pringles",
+      "name": "Pringles",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cheez-its",
+      "name": "Cheez-Its",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "goldfish",
+      "name": "Goldfish",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ritz",
+      "name": "Ritz",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hershey",
+      "name": "Hershey's",
+      "firm_id": "169651",
+      "firm_name": "HERSHEY'S INVESTMENTS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "mars",
+      "name": "Mars",
+      "firm_id": "31971",
+      "firm_name": "FARRELL MARSH & CO.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/31971",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/31971",
+      "scraped_at": "2026-06-23T12:48:32.893Z"
+    },
+    {
+      "slug": "mms",
+      "name": "M&Ms",
+      "firm_id": "154327",
+      "firm_name": "MSEC, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/154327",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/154327",
+      "scraped_at": "2026-06-23T12:48:34.017Z"
+    },
+    {
+      "slug": "snickers",
+      "name": "Snickers",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "reeses",
+      "name": "Reese's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kit-kat",
+      "name": "Kit Kat",
+      "firm_id": "118095",
+      "firm_name": "BARTHEL, KATHLEEN",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "twix",
+      "name": "Twix",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "heinz",
+      "name": "Heinz",
+      "firm_id": "114339",
+      "firm_name": "DAVID B. HEINZ, CFP",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "hellmanns",
+      "name": "Hellmann's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kraft",
+      "name": "Kraft",
+      "firm_id": "332355",
+      "firm_name": "KRAFT CAPITAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "kellogg",
+      "name": "Kellogg's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "general-mills",
+      "name": "General Mills",
+      "firm_id": "7461",
+      "firm_name": "FSC SECURITIES CORPORATION",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 47,
+      "total_regulatory_events": 31,
+      "total_civil_events": 0,
+      "total_arbitrations": 16,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/7461",
+          "description": "31 regulatory + 0 civil + 16 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/7461",
+      "scraped_at": "2026-06-23T12:48:43.816Z"
+    },
+    {
+      "slug": "nestle",
+      "name": "Nestlé",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pepsico",
+      "name": "PepsiCo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "unilever",
+      "name": "Unilever",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "mondelez",
+      "name": "Mondelez",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tyson-foods",
+      "name": "Tyson Foods",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hormel",
+      "name": "Hormel",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "conagra",
+      "name": "Conagra",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "campbells",
+      "name": "Campbell's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "del-monte",
+      "name": "Del Monte",
+      "firm_id": "106669",
+      "firm_name": "DEL MONTE GROUP, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "chobani",
+      "name": "Chobani",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "yoplait",
+      "name": "Yoplait",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fairlife",
+      "name": "Fairlife",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "oatly",
+      "name": "Oatly",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "silk",
+      "name": "Silk",
+      "firm_id": "161339",
+      "firm_name": "NEW SILK ROUTE",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "clif-bar",
+      "name": "Clif Bar",
+      "firm_id": "171351",
+      "firm_name": "NEWEDGE ADVISORS",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "kind-snacks",
+      "name": "KIND Snacks",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "rxbar",
+      "name": "RXBAR",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "quaker",
+      "name": "Quaker",
+      "firm_id": "27263",
+      "firm_name": "QUAKER SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/27263",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/27263",
+      "scraped_at": "2026-06-23T12:49:03.129Z"
+    },
+    {
+      "slug": "post",
+      "name": "Post Consumer Brands",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tide",
+      "name": "Tide",
+      "firm_id": "327611",
+      "firm_name": "TIDEMARK, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "crest",
+      "name": "Crest",
+      "firm_id": "164986",
+      "firm_name": "CRESTA WESTHALL LLP",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "charmin",
+      "name": "Charmin",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "bounty",
+      "name": "Bounty",
+      "firm_id": "14451",
+      "firm_name": "BOUNTY SECURITIES CORPORATION",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "pampers",
+      "name": "Pampers",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "huggies",
+      "name": "Huggies",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dawn",
+      "name": "Dawn",
+      "firm_id": "3870",
+      "firm_name": "OSAIC FS, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 28,
+      "total_regulatory_events": 22,
+      "total_civil_events": 0,
+      "total_arbitrations": 6,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/3870",
+          "description": "22 regulatory + 0 civil + 6 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/3870",
+      "scraped_at": "2026-06-23T12:49:11.861Z"
+    },
+    {
+      "slug": "cascade",
+      "name": "Cascade",
+      "firm_id": "35844",
+      "firm_name": "CASCADE INVESTMENT GROUP, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/35844",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/35844",
+      "scraped_at": "2026-06-23T12:49:12.991Z"
+    },
+    {
+      "slug": "clorox",
+      "name": "Clorox",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lysol",
+      "name": "Lysol",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "febreze",
+      "name": "Febreze",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "swiffer",
+      "name": "Swiffer",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dove",
+      "name": "Dove",
+      "firm_id": "16809",
+      "firm_name": "DOVER GROUP, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "olay",
+      "name": "Olay",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pantene",
+      "name": "Pantene",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "old-spice",
+      "name": "Old Spice",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gillette",
+      "name": "Gillette",
+      "firm_id": "131088",
+      "firm_name": "CAPE ANN FINANCIAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "suave",
+      "name": "Suave",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "axe",
+      "name": "Axe",
+      "firm_id": "134036",
+      "firm_name": "AXES, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "aveeno",
+      "name": "Aveeno",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "neutrogena",
+      "name": "Neutrogena",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cetaphil",
+      "name": "Cetaphil",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cerave",
+      "name": "CeraVe",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lush",
+      "name": "Lush",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sephora",
+      "name": "Sephora",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ulta-beauty",
+      "name": "Ulta Beauty",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "the-ordinary",
+      "name": "The Ordinary",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "glossier",
+      "name": "Glossier",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fenty-beauty",
+      "name": "Fenty Beauty",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "maybelline",
+      "name": "Maybelline",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "loreal",
+      "name": "L'Oréal",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "clinique",
+      "name": "Clinique",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "estee-lauder",
+      "name": "Estée Lauder",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "procter-gamble",
+      "name": "Procter & Gamble",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "colgate-palmolive",
+      "name": "Colgate-Palmolive",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kimberly-clark",
+      "name": "Kimberly-Clark",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "johnson-johnson",
+      "name": "Johnson & Johnson",
+      "firm_id": "100040",
+      "firm_name": "JOHNSON TRADING, JV",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/100040",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/100040",
+      "scraped_at": "2026-06-23T12:49:43.953Z"
+    },
+    {
+      "slug": "philip-morris",
+      "name": "Philip Morris",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "altria",
+      "name": "Altria",
+      "firm_id": "328484",
+      "firm_name": "ALTRIARCH CREDIT, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "marlboro",
+      "name": "Marlboro",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "camel",
+      "name": "Camel",
+      "firm_id": "31091",
+      "firm_name": "THE CAMELOT GROUP, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 14,
+      "total_regulatory_events": 10,
+      "total_civil_events": 0,
+      "total_arbitrations": 4,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/31091",
+          "description": "10 regulatory + 0 civil + 4 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/31091",
+      "scraped_at": "2026-06-23T12:49:48.303Z"
+    },
+    {
+      "slug": "mcdonalds",
+      "name": "McDonald's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "burger-king",
+      "name": "Burger King",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "wendys",
+      "name": "Wendy's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "chick-fil-a",
+      "name": "Chick-fil-A",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "starbucks",
+      "name": "Starbucks",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dunkin",
+      "name": "Dunkin'",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "subway",
+      "name": "Subway",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "taco-bell",
+      "name": "Taco Bell",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kfc",
+      "name": "KFC",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pizza-hut",
+      "name": "Pizza Hut",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dominos",
+      "name": "Domino's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "papa-johns",
+      "name": "Papa John's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "chipotle",
+      "name": "Chipotle",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "panera",
+      "name": "Panera Bread",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "five-guys",
+      "name": "Five Guys",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "shake-shack",
+      "name": "Shake Shack",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "in-n-out",
+      "name": "In-N-Out Burger",
+      "firm_id": "162235",
+      "firm_name": "YIELD FINANCIAL ADVISORS",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "sweetgreen",
+      "name": "Sweetgreen",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "panda-express",
+      "name": "Panda Express",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "arbys",
+      "name": "Arby's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dairy-queen",
+      "name": "Dairy Queen",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sonic",
+      "name": "Sonic",
+      "firm_id": "104249",
+      "firm_name": "EVOLUTION FINANCIAL TECHNOLOGIES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 8,
+      "total_regulatory_events": 8,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/104249",
+          "description": "8 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/104249",
+      "scraped_at": "2026-06-23T12:50:11.771Z"
+    },
+    {
+      "slug": "cracker-barrel",
+      "name": "Cracker Barrel",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "olive-garden",
+      "name": "Olive Garden",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "applebees",
+      "name": "Applebee's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "chilis",
+      "name": "Chili's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "red-lobster",
+      "name": "Red Lobster",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "texas-roadhouse",
+      "name": "Texas Roadhouse",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cheesecake-factory",
+      "name": "Cheesecake Factory",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "walmart",
+      "name": "Walmart",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "target",
+      "name": "Target",
+      "firm_id": "318687",
+      "firm_name": "TARGET WEALTH LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "costco",
+      "name": "Costco",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sams-club",
+      "name": "Sam's Club",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "amazon",
+      "name": "Amazon",
+      "firm_id": "325264",
+      "firm_name": "AMAZONITE INVESTMENTS LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "home-depot",
+      "name": "The Home Depot",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lowes",
+      "name": "Lowe's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "best-buy",
+      "name": "Best Buy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "trader-joes",
+      "name": "Trader Joe's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "whole-foods",
+      "name": "Whole Foods Market",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "wegmans",
+      "name": "Wegmans",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "publix",
+      "name": "Publix",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "heb",
+      "name": "H-E-B",
+      "firm_id": "19885",
+      "firm_name": "E. S. HOPE FINANCIAL",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 3,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/19885",
+          "description": "2 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/19885",
+      "scraped_at": "2026-06-23T12:50:33.179Z"
+    },
+    {
+      "slug": "kroger",
+      "name": "Kroger",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "safeway",
+      "name": "Safeway",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "albertsons",
+      "name": "Albertsons",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "food-lion",
+      "name": "Food Lion",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "giant-eagle",
+      "name": "Giant Eagle",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sprouts",
+      "name": "Sprouts Farmers Market",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "aldi",
+      "name": "Aldi",
+      "firm_id": "142858",
+      "firm_name": "ALDIERI FINANCIAL SERVICES LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "lidl",
+      "name": "Lidl",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ikea",
+      "name": "IKEA",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "wayfair",
+      "name": "Wayfair",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "overstock",
+      "name": "Overstock",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "qvc",
+      "name": "QVC",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hsn",
+      "name": "HSN",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dollar-general",
+      "name": "Dollar General",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dollar-tree",
+      "name": "Dollar Tree",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "family-dollar",
+      "name": "Family Dollar",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "five-below",
+      "name": "Five Below",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "big-lots",
+      "name": "Big Lots",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tj-maxx",
+      "name": "TJ Maxx",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "marshalls",
+      "name": "Marshalls",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ross",
+      "name": "Ross Dress for Less",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "firm_id": "26991",
+      "firm_name": "BURLINGTON CAPITAL MARKETS INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 13,
+      "total_regulatory_events": 12,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/26991",
+          "description": "12 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/26991",
+      "scraped_at": "2026-06-23T12:50:56.576Z"
+    },
+    {
+      "slug": "homegoods",
+      "name": "HomeGoods",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "macys",
+      "name": "Macy's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kohls",
+      "name": "Kohl's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "jcpenney",
+      "name": "JCPenney",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "nordstrom",
+      "name": "Nordstrom",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "bloomingdales",
+      "name": "Bloomingdale's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "saks",
+      "name": "Saks Fifth Avenue",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "neiman-marcus",
+      "name": "Neiman Marcus",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "nordstrom-rack",
+      "name": "Nordstrom Rack",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "rei",
+      "name": "REI",
+      "firm_id": "11217",
+      "firm_name": "QUICK & REILLY, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 28,
+      "total_regulatory_events": 16,
+      "total_civil_events": 2,
+      "total_arbitrations": 10,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/11217",
+          "description": "16 regulatory + 2 civil + 10 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/11217",
+      "scraped_at": "2026-06-23T12:51:07.244Z"
+    },
+    {
+      "slug": "bass-pro-shops",
+      "name": "Bass Pro Shops",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cabelas",
+      "name": "Cabela's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dicks-sporting-goods",
+      "name": "Dick's Sporting Goods",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "academy",
+      "name": "Academy Sports",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "petco",
+      "name": "Petco",
+      "firm_id": "47663",
+      "firm_name": "PETCO TRADING LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "petsmart",
+      "name": "PetSmart",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gamestop",
+      "name": "GameStop",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "barnes-noble",
+      "name": "Barnes & Noble",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "office-depot",
+      "name": "Office Depot",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "staples",
+      "name": "Staples",
+      "firm_id": "284652",
+      "firm_name": "FINANCIAL STAPLES",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "autozone",
+      "name": "AutoZone",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "oreilly-auto-parts",
+      "name": "O'Reilly Auto Parts",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "advance-auto-parts",
+      "name": "Advance Auto Parts",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "napa-auto-parts",
+      "name": "NAPA Auto Parts",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cvs",
+      "name": "CVS",
+      "firm_id": "339546",
+      "firm_name": "MOMENTUM CAPITAL MANAGEMENT",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "walgreens",
+      "name": "Walgreens",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "rite-aid",
+      "name": "Rite Aid",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "duane-reade",
+      "name": "Duane Reade",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "7-eleven",
+      "name": "7-Eleven",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "wawa",
+      "name": "Wawa",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sheetz",
+      "name": "Sheetz",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "circle-k",
+      "name": "Circle K",
+      "firm_id": "20804",
+      "firm_name": "UNITED PLANNERS' FINANCIAL SERVICES OF AMERICA A LIMITED PARTNER",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 15,
+      "total_regulatory_events": 12,
+      "total_civil_events": 0,
+      "total_arbitrations": 3,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/20804",
+          "description": "12 regulatory + 0 civil + 3 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/20804",
+      "scraped_at": "2026-06-23T12:51:30.864Z"
+    },
+    {
+      "slug": "cumberland-farms",
+      "name": "Cumberland Farms",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "goya",
+      "name": "Goya Foods",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "nike",
+      "name": "Nike",
+      "firm_id": "28519",
+      "firm_name": "FIRST TRUST PORTFOLIOS L.P.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 4,
+      "total_regulatory_events": 4,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/28519",
+          "description": "4 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/28519",
+      "scraped_at": "2026-06-23T12:51:34.093Z"
+    },
+    {
+      "slug": "adidas",
+      "name": "Adidas",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "under-armour",
+      "name": "Under Armour",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lululemon",
+      "name": "Lululemon",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "puma",
+      "name": "Puma",
+      "firm_id": "146744",
+      "firm_name": "PUMA CAPITAL, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 7,
+      "total_regulatory_events": 7,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/146744",
+          "description": "7 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/146744",
+      "scraped_at": "2026-06-23T12:51:38.385Z"
+    },
+    {
+      "slug": "new-balance",
+      "name": "New Balance",
+      "firm_id": "25803",
+      "firm_name": "TRIAD ADVISORS LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 13,
+      "total_regulatory_events": 8,
+      "total_civil_events": 0,
+      "total_arbitrations": 5,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/25803",
+          "description": "8 regulatory + 0 civil + 5 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/25803",
+      "scraped_at": "2026-06-23T12:51:39.548Z"
+    },
+    {
+      "slug": "reebok",
+      "name": "Reebok",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "asics",
+      "name": "ASICS",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "brooks",
+      "name": "Brooks Running",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hoka",
+      "name": "Hoka",
+      "firm_id": "333504",
+      "firm_name": "HOKAGE CAPITAL MANAGEMENT LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "levis",
+      "name": "Levi's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gap",
+      "name": "Gap",
+      "firm_id": "297114",
+      "firm_name": "GAP TO GAP FINANCIAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "old-navy",
+      "name": "Old Navy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "banana-republic",
+      "name": "Banana Republic",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "abercrombie",
+      "name": "Abercrombie & Fitch",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "american-eagle",
+      "name": "American Eagle",
+      "firm_id": "133763",
+      "firm_name": "OSAIC SERVICES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 37,
+      "total_regulatory_events": 26,
+      "total_civil_events": 0,
+      "total_arbitrations": 11,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/133763",
+          "description": "26 regulatory + 0 civil + 11 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/133763",
+      "scraped_at": "2026-06-23T12:51:50.341Z"
+    },
+    {
+      "slug": "hollister",
+      "name": "Hollister",
+      "firm_id": "173366",
+      "firm_name": "HOLLISTER ASSOCIATES, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "hm",
+      "name": "H&M",
+      "firm_id": "104100",
+      "firm_name": "M. S. HOWELLS & CO.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "zara",
+      "name": "Zara",
+      "firm_id": "330510",
+      "firm_name": "ZARATHUSTRA  WEALTH MANAGEMENT",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "uniqlo",
+      "name": "Uniqlo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "forever-21",
+      "name": "Forever 21",
+      "firm_id": "315846",
+      "firm_name": "DISCIPLINE WEALTH SOLUTIONS, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "shein",
+      "name": "Shein",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "temu",
+      "name": "Temu",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fashion-nova",
+      "name": "Fashion Nova",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "boohoo",
+      "name": "Boohoo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "asos",
+      "name": "ASOS",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "victorias-secret",
+      "name": "Victoria's Secret",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "patagonia",
+      "name": "Patagonia",
+      "firm_id": "335981",
+      "firm_name": "PATAGONIA RESEARCH",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "north-face",
+      "name": "The North Face",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "columbia",
+      "name": "Columbia Sportswear",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "arc-teryx",
+      "name": "Arc'teryx",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "allbirds",
+      "name": "Allbirds",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "toms",
+      "name": "TOMS",
+      "firm_id": "16553",
+      "firm_name": "NILCORP SECURITIES COMPANY",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "warby-parker",
+      "name": "Warby Parker",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "yeti",
+      "name": "Yeti",
+      "firm_id": "338425",
+      "firm_name": "YETI WEALTH MANAGEMENT GROUP, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "canada-goose",
+      "name": "Canada Goose",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "moncler",
+      "name": "Moncler",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ralph-lauren",
+      "name": "Ralph Lauren",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tommy-hilfiger",
+      "name": "Tommy Hilfiger",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "calvin-klein",
+      "name": "Calvin Klein",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gucci",
+      "name": "Gucci",
+      "firm_id": "42077",
+      "firm_name": "GUCCIARDO, MICHAEL ANTHONY",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "louis-vuitton",
+      "name": "Louis Vuitton",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "prada",
+      "name": "Prada",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "chanel",
+      "name": "Chanel",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hermes",
+      "name": "Hermès",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "coach",
+      "name": "Coach",
+      "firm_id": "174860",
+      "firm_name": "R.E.A.L. COACH",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "michael-kors",
+      "name": "Michael Kors",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kate-spade",
+      "name": "Kate Spade",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fossil",
+      "name": "Fossil",
+      "firm_id": "205",
+      "firm_name": "SANCTUARY SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 30,
+      "total_regulatory_events": 21,
+      "total_civil_events": 0,
+      "total_arbitrations": 9,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/205",
+          "description": "21 regulatory + 0 civil + 9 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/205",
+      "scraped_at": "2026-06-23T12:52:26.160Z"
+    },
+    {
+      "slug": "apple",
+      "name": "Apple",
+      "firm_id": "129331",
+      "firm_name": "APPLE LANE GROUP LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "microsoft",
+      "name": "Microsoft",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "google",
+      "name": "Google",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "alphabet",
+      "name": "Alphabet",
+      "firm_id": "324265",
+      "firm_name": "ALPHABETWISE CAPITAL, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "meta",
+      "name": "Meta",
+      "firm_id": "297815",
+      "firm_name": "METAPROP",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "facebook",
+      "name": "Facebook",
+      "firm_id": "128677",
+      "firm_name": "WAKEFIELD FINANCIAL PLANNING, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "instagram",
+      "name": "Instagram",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "whatsapp",
+      "name": "WhatsApp",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "x-corp",
+      "name": "X",
+      "firm_id": "140802",
+      "firm_name": "BOLT-X LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 3,
+      "total_regulatory_events": 3,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/140802",
+          "description": "3 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/140802",
+      "scraped_at": "2026-06-23T12:52:36.032Z"
+    },
+    {
+      "slug": "amazon-web-services",
+      "name": "Amazon Web Services",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "oracle",
+      "name": "Oracle",
+      "firm_id": "40258",
+      "firm_name": "NORTHLAND SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 7,
+      "total_regulatory_events": 7,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/40258",
+          "description": "7 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/40258",
+      "scraped_at": "2026-06-23T12:52:38.226Z"
+    },
+    {
+      "slug": "salesforce",
+      "name": "Salesforce",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ibm",
+      "name": "IBM",
+      "firm_id": "25588",
+      "firm_name": "IBM CREDIT DISTRIBUTORS CORPORATION",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "intel",
+      "name": "Intel",
+      "firm_id": "103964",
+      "firm_name": "INTELATRADE.COM",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "amd",
+      "name": "AMD",
+      "firm_id": "121539",
+      "firm_name": "AMD CAPITAL, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "nvidia",
+      "name": "NVIDIA",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "qualcomm",
+      "name": "Qualcomm",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cisco",
+      "name": "Cisco",
+      "firm_id": "290330",
+      "firm_name": "PONTCHARTRAIN CISCOR LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "hp",
+      "name": "HP",
+      "firm_id": "319197",
+      "firm_name": "HPS SECURITIES, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "dell",
+      "name": "Dell",
+      "firm_id": "144347",
+      "firm_name": "DELLACAMERA OPTIONS INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "lenovo",
+      "name": "Lenovo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "asus",
+      "name": "ASUS",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "samsung",
+      "name": "Samsung",
+      "firm_id": "43432",
+      "firm_name": "SAMSUNG SECURITIES (AMERICA), INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "lg",
+      "name": "LG",
+      "firm_id": "282415",
+      "firm_name": "LGA CAPITAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "sony",
+      "name": "Sony",
+      "firm_id": "321945",
+      "firm_name": "SONY VENTURES CORPORATION",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "xiaomi",
+      "name": "Xiaomi",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "oneplus",
+      "name": "OnePlus",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "github",
+      "name": "GitHub",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gitlab",
+      "name": "GitLab",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "atlassian",
+      "name": "Atlassian",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "jira",
+      "name": "Jira",
+      "firm_id": "304978",
+      "firm_name": "OWLCREST PARTNERS LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "slack",
+      "name": "Slack",
+      "firm_id": "285922",
+      "firm_name": "KEVIN M. SLACK FINANCIAL LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "zoom",
+      "name": "Zoom",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "teams",
+      "name": "Microsoft Teams",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "discord",
+      "name": "Discord",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "firm_id": "164583",
+      "firm_name": "NOTION CAPITAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "asana",
+      "name": "Asana",
+      "firm_id": "284477",
+      "firm_name": "ASANA PARTNERS, LP",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "clickup",
+      "name": "ClickUp",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "monday",
+      "name": "Monday.com",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "trello",
+      "name": "Trello",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "firm_id": "133389",
+      "firm_name": "LINEAR FINANCIAL SERVICES, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "figma",
+      "name": "Figma",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "adobe",
+      "name": "Adobe",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "firm_id": "168532",
+      "firm_name": "CANVAS VENTURES",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "shopify",
+      "name": "Shopify",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "firm_id": "157553",
+      "firm_name": "STRIPES, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "square",
+      "name": "Square",
+      "firm_id": "146694",
+      "firm_name": "12 SQUARED",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "block",
+      "name": "Block",
+      "firm_id": "36666",
+      "firm_name": "BLOCK TRADING INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "paypal",
+      "name": "PayPal",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "venmo",
+      "name": "Venmo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cash-app",
+      "name": "Cash App",
+      "firm_id": "144076",
+      "firm_name": "CASH APP INVESTING LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/144076",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/144076",
+      "scraped_at": "2026-06-23T12:53:21.976Z"
+    },
+    {
+      "slug": "plaid",
+      "name": "Plaid",
+      "firm_id": "3767",
+      "firm_name": "&PARTNERS",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 9,
+      "total_regulatory_events": 5,
+      "total_civil_events": 0,
+      "total_arbitrations": 4,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/3767",
+          "description": "5 regulatory + 0 civil + 4 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/3767",
+      "scraped_at": "2026-06-23T12:53:23.136Z"
+    },
+    {
+      "slug": "twilio",
+      "name": "Twilio",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "sendgrid",
+      "name": "SendGrid",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "mailchimp",
+      "name": "Mailchimp",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "zendesk",
+      "name": "Zendesk",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "intercom",
+      "name": "Intercom",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fastly",
+      "name": "Fastly",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "netlify",
+      "name": "Netlify",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "heroku",
+      "name": "Heroku",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "digitalocean",
+      "name": "DigitalOcean",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "linode",
+      "name": "Linode",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "openai",
+      "name": "OpenAI",
+      "firm_id": "300362",
+      "firm_name": "OPENAIR FINANCIAL, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "spotify",
+      "name": "Spotify",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "apple-music",
+      "name": "Apple Music",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pandora",
+      "name": "Pandora",
+      "firm_id": "331816",
+      "firm_name": "PANDORA WEALTH, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "soundcloud",
+      "name": "SoundCloud",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "firm_id": "172256",
+      "firm_name": "SICKLE HUNTER FINANCIAL ADVISORS",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hulu",
+      "name": "Hulu",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "disney",
+      "name": "The Walt Disney Company",
+      "firm_id": "164109",
+      "firm_name": "ADVISOR RESOURCE COUNCIL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "disney-plus",
+      "name": "Disney+",
+      "firm_id": "113055",
+      "firm_name": "RIDGEWAY & CONGER, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 10,
+      "total_regulatory_events": 8,
+      "total_civil_events": 0,
+      "total_arbitrations": 2,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/113055",
+          "description": "8 regulatory + 0 civil + 2 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/113055",
+      "scraped_at": "2026-06-23T12:53:48.916Z"
+    },
+    {
+      "slug": "hbo-max",
+      "name": "HBO Max",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "peacock",
+      "name": "Peacock",
+      "firm_id": "21477",
+      "firm_name": "PEACOCK, HISLOP, STALEY & GIVEN, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 6,
+      "total_regulatory_events": 6,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/21477",
+          "description": "6 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/21477",
+      "scraped_at": "2026-06-23T12:53:51.092Z"
+    },
+    {
+      "slug": "paramount",
+      "name": "Paramount",
+      "firm_id": "29795",
+      "firm_name": "PARAMOUNT BIOCAPITAL, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/29795",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/29795",
+      "scraped_at": "2026-06-23T12:53:52.228Z"
+    },
+    {
+      "slug": "roku",
+      "name": "Roku",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "firetv",
+      "name": "Amazon Fire TV",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "twitch",
+      "name": "Twitch",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tumblr",
+      "name": "Tumblr",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "pinterest",
+      "name": "Pinterest",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "snapchat",
+      "name": "Snapchat",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tiktok",
+      "name": "TikTok",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "linkedin",
+      "name": "LinkedIn",
+      "firm_id": "341052",
+      "firm_name": "LINKEDIN RESEARCH INSTITUTE LTD",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "twitter",
+      "name": "Twitter",
+      "firm_id": "172256",
+      "firm_name": "SICKLE HUNTER FINANCIAL ADVISORS",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "threads",
+      "name": "Threads",
+      "firm_id": "158691",
+      "firm_name": "THREADSTONE CAPITAL, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "bluesky",
+      "name": "Bluesky",
+      "firm_id": "116760",
+      "firm_name": "BLUESKY WEALTH ADVISORS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "mastodon",
+      "name": "Mastodon",
+      "firm_id": "283494",
+      "firm_name": "MASTODON ADVISORY GROUP",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "firm_id": "79",
+      "firm_name": "J.P. MORGAN SECURITIES LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 547,
+      "total_regulatory_events": 394,
+      "total_civil_events": 9,
+      "total_arbitrations": 144,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/79",
+          "description": "394 regulatory + 9 civil + 144 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/79",
+      "scraped_at": "2026-06-23T12:54:07.590Z"
+    },
+    {
+      "slug": "bank-of-america",
+      "name": "Bank of America",
+      "firm_id": "8032",
+      "firm_name": "COMMONWEALTH FINANCIAL NETWORK",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 43,
+      "total_regulatory_events": 26,
+      "total_civil_events": 0,
+      "total_arbitrations": 17,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/8032",
+          "description": "26 regulatory + 0 civil + 17 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/8032",
+      "scraped_at": "2026-06-23T12:54:08.777Z"
+    },
+    {
+      "slug": "wells-fargo",
+      "name": "Wells Fargo",
+      "firm_id": "126292",
+      "firm_name": "WELLS FARGO SECURITIES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 162,
+      "total_regulatory_events": 161,
+      "total_civil_events": 1,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/126292",
+          "description": "161 regulatory + 1 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/126292",
+      "scraped_at": "2026-06-23T12:54:10.064Z"
+    },
+    {
+      "slug": "citi",
+      "name": "Citi",
+      "firm_id": "39550",
+      "firm_name": "CITIZENS SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 22,
+      "total_regulatory_events": 16,
+      "total_civil_events": 0,
+      "total_arbitrations": 6,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/39550",
+          "description": "16 regulatory + 0 civil + 6 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/39550",
+      "scraped_at": "2026-06-23T12:54:11.225Z"
+    },
+    {
+      "slug": "us-bank",
+      "name": "U.S. Bank",
+      "firm_id": "7654",
+      "firm_name": "UBS SECURITIES LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 317,
+      "total_regulatory_events": 309,
+      "total_civil_events": 4,
+      "total_arbitrations": 4,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/7654",
+          "description": "309 regulatory + 4 civil + 4 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/7654",
+      "scraped_at": "2026-06-23T12:54:12.419Z"
+    },
+    {
+      "slug": "pnc",
+      "name": "PNC Bank",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "truist",
+      "name": "Truist",
+      "firm_id": "6271",
+      "firm_name": "TRUIST SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 23,
+      "total_regulatory_events": 22,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/6271",
+          "description": "22 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/6271",
+      "scraped_at": "2026-06-23T12:54:14.666Z"
+    },
+    {
+      "slug": "capital-one",
+      "name": "Capital One",
+      "firm_id": "158782",
+      "firm_name": "M-ONE CAPITAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "discover",
+      "name": "Discover",
+      "firm_id": "29355",
+      "firm_name": "DISCOVERY CAPITAL GROUP",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 11,
+      "total_regulatory_events": 10,
+      "total_civil_events": 1,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/29355",
+          "description": "10 regulatory + 1 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/29355",
+      "scraped_at": "2026-06-23T12:54:16.934Z"
+    },
+    {
+      "slug": "american-express",
+      "name": "American Express",
+      "firm_id": "6363",
+      "firm_name": "AMERIPRISE FINANCIAL SERVICES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 184,
+      "total_regulatory_events": 80,
+      "total_civil_events": 1,
+      "total_arbitrations": 103,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/6363",
+          "description": "80 regulatory + 1 civil + 103 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/6363",
+      "scraped_at": "2026-06-23T12:54:18.288Z"
+    },
+    {
+      "slug": "visa",
+      "name": "Visa",
+      "firm_id": "169254",
+      "firm_name": "INVESTMENT VISA CONSULTANTS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "mastercard",
+      "name": "Mastercard",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fidelity",
+      "name": "Fidelity Investments",
+      "firm_id": "17507",
+      "firm_name": "FIDELITY DISTRIBUTORS COMPANY LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 20,
+      "total_regulatory_events": 3,
+      "total_civil_events": 0,
+      "total_arbitrations": 17,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/17507",
+          "description": "3 regulatory + 0 civil + 17 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/17507",
+      "scraped_at": "2026-06-23T12:54:21.603Z"
+    },
+    {
+      "slug": "vanguard",
+      "name": "Vanguard",
+      "firm_id": "7452",
+      "firm_name": "VANGUARD MARKETING CORPORATION",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 59,
+      "total_regulatory_events": 51,
+      "total_civil_events": 0,
+      "total_arbitrations": 8,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/7452",
+          "description": "51 regulatory + 0 civil + 8 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/7452",
+      "scraped_at": "2026-06-23T12:54:22.755Z"
+    },
+    {
+      "slug": "charles-schwab",
+      "name": "Charles Schwab",
+      "firm_id": "5393",
+      "firm_name": "CHARLES SCHWAB & CO., INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 317,
+      "total_regulatory_events": 58,
+      "total_civil_events": 3,
+      "total_arbitrations": 256,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/5393",
+          "description": "58 regulatory + 3 civil + 256 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/5393",
+      "scraped_at": "2026-06-23T12:54:23.897Z"
+    },
+    {
+      "slug": "robinhood",
+      "name": "Robinhood",
+      "firm_id": "165998",
+      "firm_name": "ROBINHOOD FINANCIAL, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 65,
+      "total_regulatory_events": 56,
+      "total_civil_events": 0,
+      "total_arbitrations": 9,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/165998",
+          "description": "56 regulatory + 0 civil + 9 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/165998",
+      "scraped_at": "2026-06-23T12:54:25.022Z"
+    },
+    {
+      "slug": "sofi",
+      "name": "SoFi",
+      "firm_id": "151717",
+      "firm_name": "SOFI SECURITIES LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/151717",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/151717",
+      "scraped_at": "2026-06-23T12:54:26.153Z"
+    },
+    {
+      "slug": "chime",
+      "name": "Chime",
+      "firm_id": "147566",
+      "firm_name": "CHIMERA SECURITIES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 7,
+      "total_regulatory_events": 7,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/147566",
+          "description": "7 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/147566",
+      "scraped_at": "2026-06-23T12:54:27.291Z"
+    },
+    {
+      "slug": "ally-bank",
+      "name": "Ally Bank",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "firm_id": "361",
+      "firm_name": "GOLDMAN SACHS & CO. LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 433,
+      "total_regulatory_events": 409,
+      "total_civil_events": 4,
+      "total_arbitrations": 20,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/361",
+          "description": "409 regulatory + 4 civil + 20 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/361",
+      "scraped_at": "2026-06-23T12:54:29.525Z"
+    },
+    {
+      "slug": "morgan-stanley",
+      "name": "Morgan Stanley",
+      "firm_id": "149777",
+      "firm_name": "MORGAN STANLEY",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 183,
+      "total_regulatory_events": 66,
+      "total_civil_events": 0,
+      "total_arbitrations": 117,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/149777",
+          "description": "66 regulatory + 0 civil + 117 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/149777",
+      "scraped_at": "2026-06-23T12:54:30.754Z"
+    },
+    {
+      "slug": "blackrock",
+      "name": "BlackRock",
+      "firm_id": "38642",
+      "firm_name": "BLACKROCK INVESTMENTS, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/38642",
+          "description": "1 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/38642",
+      "scraped_at": "2026-06-23T12:54:31.901Z"
+    },
+    {
+      "slug": "state-farm",
+      "name": "State Farm",
+      "firm_id": "43036",
+      "firm_name": "STATE FARM VP MANAGEMENT CORP.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 7,
+      "total_regulatory_events": 7,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/43036",
+          "description": "7 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/43036",
+      "scraped_at": "2026-06-23T12:54:33.498Z"
+    },
+    {
+      "slug": "geico",
+      "name": "GEICO",
+      "firm_id": "10297",
+      "firm_name": "GEICO INVESTMENT SERVICES COMPANY",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "progressive",
+      "name": "Progressive",
+      "firm_id": "45299",
+      "firm_name": "PROGRESSIVE SECURITIES CORP.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/45299",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/45299",
+      "scraped_at": "2026-06-23T12:54:35.777Z"
+    },
+    {
+      "slug": "allstate",
+      "name": "Allstate",
+      "firm_id": "18272",
+      "firm_name": "ALLSTATE FINANCIAL SERVICES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 5,
+      "total_regulatory_events": 4,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/18272",
+          "description": "4 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/18272",
+      "scraped_at": "2026-06-23T12:54:36.964Z"
+    },
+    {
+      "slug": "liberty-mutual",
+      "name": "Liberty Mutual",
+      "firm_id": "30184",
+      "firm_name": "INVESTMENT PROFESSIONALS, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 16,
+      "total_regulatory_events": 16,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/30184",
+          "description": "16 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/30184",
+      "scraped_at": "2026-06-23T12:54:38.081Z"
+    },
+    {
+      "slug": "nationwide",
+      "name": "Nationwide",
+      "firm_id": "11173",
+      "firm_name": "NATIONWIDE SECURITIES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 13,
+      "total_regulatory_events": 10,
+      "total_civil_events": 0,
+      "total_arbitrations": 3,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/11173",
+          "description": "10 regulatory + 0 civil + 3 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/11173",
+      "scraped_at": "2026-06-23T12:54:39.203Z"
+    },
+    {
+      "slug": "farmers-insurance",
+      "name": "Farmers Insurance",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "travelers",
+      "name": "Travelers",
+      "firm_id": "833",
+      "firm_name": "TOWER SQUARE SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 11,
+      "total_regulatory_events": 10,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/833",
+          "description": "10 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/833",
+      "scraped_at": "2026-06-23T12:54:41.400Z"
+    },
+    {
+      "slug": "metlife",
+      "name": "MetLife",
+      "firm_id": "107622",
+      "firm_name": "METLIFE INVESTORS DISTRIBUTION COMPANY",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/107622",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/107622",
+      "scraped_at": "2026-06-23T12:54:42.522Z"
+    },
+    {
+      "slug": "prudential",
+      "name": "Prudential",
+      "firm_id": "21570",
+      "firm_name": "PRUDENTIAL ANNUITIES DISTRIBUTORS, INC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 3,
+      "total_regulatory_events": 2,
+      "total_civil_events": 1,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/21570",
+          "description": "2 regulatory + 1 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/21570",
+      "scraped_at": "2026-06-23T12:54:43.642Z"
+    },
+    {
+      "slug": "aflac",
+      "name": "Aflac",
+      "firm_id": "304316",
+      "firm_name": "AFLAC ASSET MANAGEMENT LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "new-york-life",
+      "name": "New York Life",
+      "firm_id": "5167",
+      "firm_name": "NYLIFE SECURITIES LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 20,
+      "total_regulatory_events": 13,
+      "total_civil_events": 0,
+      "total_arbitrations": 7,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/5167",
+          "description": "13 regulatory + 0 civil + 7 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/5167",
+      "scraped_at": "2026-06-23T12:54:45.937Z"
+    },
+    {
+      "slug": "massmutual",
+      "name": "MassMutual",
+      "firm_id": "10409",
+      "firm_name": "MML INVESTORS SERVICES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 28,
+      "total_regulatory_events": 27,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/10409",
+          "description": "27 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/10409",
+      "scraped_at": "2026-06-23T12:54:47.143Z"
+    },
+    {
+      "slug": "northwestern-mutual",
+      "name": "Northwestern Mutual",
+      "firm_id": "2881",
+      "firm_name": "NORTHWESTERN MUTUAL INVESTMENT SERVICES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 11,
+      "total_regulatory_events": 10,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/2881",
+          "description": "10 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/2881",
+      "scraped_at": "2026-06-23T12:54:48.270Z"
+    },
+    {
+      "slug": "att",
+      "name": "AT&T",
+      "firm_id": "130486",
+      "firm_name": "ATP TRADING LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 1,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/130486",
+          "description": "1 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/130486",
+      "scraped_at": "2026-06-23T12:54:49.397Z"
+    },
+    {
+      "slug": "verizon",
+      "name": "Verizon",
+      "firm_id": "105804",
+      "firm_name": "VERIZON INVESTMENT MANAGEMENT CORP.",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "t-mobile",
+      "name": "T-Mobile",
+      "firm_id": "161242",
+      "firm_name": "FONTINALIS PARTNERS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "sprint",
+      "name": "Sprint",
+      "firm_id": "107403",
+      "firm_name": "SPEEDTRADER, INC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 22,
+      "total_regulatory_events": 21,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/107403",
+          "description": "21 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/107403",
+      "scraped_at": "2026-06-23T12:54:52.754Z"
+    },
+    {
+      "slug": "us-cellular",
+      "name": "US Cellular",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "mint-mobile",
+      "name": "Mint Mobile",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cricket-wireless",
+      "name": "Cricket Wireless",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "xfinity",
+      "name": "Xfinity",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "spectrum",
+      "name": "Spectrum",
+      "firm_id": "28303",
+      "firm_name": "SPECTRUM CAPITAL, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 1,
+      "total_regulatory_events": 0,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/28303",
+          "description": "0 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/28303",
+      "scraped_at": "2026-06-23T12:54:58.111Z"
+    },
+    {
+      "slug": "cox",
+      "name": "Cox Communications",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "optimum",
+      "name": "Optimum",
+      "firm_id": "10644",
+      "firm_name": "OPTIMUM CAPITAL, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "frontier",
+      "name": "Frontier Communications",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "comcast",
+      "name": "Comcast",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "charter",
+      "name": "Charter Communications",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "exxonmobil",
+      "name": "ExxonMobil",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "chevron",
+      "name": "Chevron",
+      "firm_id": "107410",
+      "firm_name": "CHEVRON TRADING LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "shell",
+      "name": "Shell",
+      "firm_id": "159433",
+      "firm_name": "SHELLPOINT CAPITAL LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "bp",
+      "name": "BP",
+      "firm_id": "159384",
+      "firm_name": "BRASIL PLURAL SECURITIES LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "conocophillips",
+      "name": "ConocoPhillips",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "duke-energy",
+      "name": "Duke Energy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "nextera",
+      "name": "NextEra Energy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dominion-energy",
+      "name": "Dominion Energy",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "southern-company",
+      "name": "Southern Company",
+      "firm_id": "205",
+      "firm_name": "SANCTUARY SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 30,
+      "total_regulatory_events": 21,
+      "total_civil_events": 0,
+      "total_arbitrations": 9,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/205",
+          "description": "21 regulatory + 0 civil + 9 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/205",
+      "scraped_at": "2026-06-23T12:55:13.408Z"
+    },
+    {
+      "slug": "exelon",
+      "name": "Exelon",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla",
+      "firm_id": "338846",
+      "firm_name": "TESLAEX GLOBAL INC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "ford",
+      "name": "Ford",
+      "firm_id": "13421",
+      "firm_name": "FORD FINANCIAL SERVICES, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "gm",
+      "name": "General Motors",
+      "firm_id": "106939",
+      "firm_name": "GENERAL MOTORS INVESTMENT MANAGEMENT CORPORATION",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "chevrolet",
+      "name": "Chevrolet",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "chrysler",
+      "name": "Chrysler",
+      "firm_id": "37813",
+      "firm_name": "FSIC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/37813",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/37813",
+      "scraped_at": "2026-06-23T12:55:20.048Z"
+    },
+    {
+      "slug": "dodge",
+      "name": "Dodge",
+      "firm_id": "23288",
+      "firm_name": "CLARK DODGE & CO., INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 4,
+      "total_regulatory_events": 4,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/23288",
+          "description": "4 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/23288",
+      "scraped_at": "2026-06-23T12:55:21.193Z"
+    },
+    {
+      "slug": "jeep",
+      "name": "Jeep",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ram",
+      "name": "Ram",
+      "firm_id": "330235",
+      "firm_name": "RAM FINANCIAL LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "stellantis",
+      "name": "Stellantis",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "toyota",
+      "name": "Toyota",
+      "firm_id": "135978",
+      "firm_name": "TOYOTA FINANCIAL SERVICES SECURITIES USA CORPORATION",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "honda",
+      "name": "Honda",
+      "firm_id": "165045",
+      "firm_name": "LA HONDA ADVISORS LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "nissan",
+      "name": "Nissan",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hyundai",
+      "name": "Hyundai",
+      "firm_id": "39356",
+      "firm_name": "KBFG SECURITIES AMERICA INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "kia",
+      "name": "Kia",
+      "firm_id": "159955",
+      "firm_name": "KIAROS ADVISORS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "mazda",
+      "name": "Mazda",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "subaru",
+      "name": "Subaru",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "mitsubishi",
+      "name": "Mitsubishi",
+      "firm_id": "19685",
+      "firm_name": "MUFG SECURITIES AMERICAS INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 5,
+      "total_regulatory_events": 5,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/19685",
+          "description": "5 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/19685",
+      "scraped_at": "2026-06-23T12:55:33.268Z"
+    },
+    {
+      "slug": "volkswagen",
+      "name": "Volkswagen",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "audi",
+      "name": "Audi",
+      "firm_id": "2493",
+      "firm_name": "SOMERSET SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/2493",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/2493",
+      "scraped_at": "2026-06-23T12:55:35.454Z"
+    },
+    {
+      "slug": "bmw",
+      "name": "BMW",
+      "firm_id": "25869",
+      "firm_name": "BMW SECURITIES CORPORATION",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "porsche",
+      "name": "Porsche",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "volvo",
+      "name": "Volvo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ferrari",
+      "name": "Ferrari",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lamborghini",
+      "name": "Lamborghini",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "rivian",
+      "name": "Rivian",
+      "firm_id": "160969",
+      "firm_name": "NEW LEGACY GROUP, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "lucid",
+      "name": "Lucid Motors",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "polestar",
+      "name": "Polestar",
+      "firm_id": "118342",
+      "firm_name": "POLESTAR SECURITIES, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "pfizer",
+      "name": "Pfizer",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "moderna",
+      "name": "Moderna",
+      "firm_id": "167072",
+      "firm_name": "STASH WEALTH, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "merck",
+      "name": "Merck",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "abbvie",
+      "name": "AbbVie",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "eli-lilly",
+      "name": "Eli Lilly",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "bristol-myers-squibb",
+      "name": "Bristol Myers Squibb",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "abbott",
+      "name": "Abbott",
+      "firm_id": "23697",
+      "firm_name": "STEIN ABBOTT AND COMPANY INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 3,
+      "total_regulatory_events": 3,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/23697",
+          "description": "3 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/23697",
+      "scraped_at": "2026-06-23T12:55:52.756Z"
+    },
+    {
+      "slug": "unitedhealth",
+      "name": "UnitedHealth Group",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cvs-health",
+      "name": "CVS Health",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "anthem",
+      "name": "Anthem",
+      "firm_id": "333874",
+      "firm_name": "ANTHEM SECURITIES, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "elevance",
+      "name": "Elevance Health",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "humana",
+      "name": "Humana",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cigna",
+      "name": "Cigna",
+      "firm_id": "145",
+      "firm_name": "LINCOLN FINANCIAL DISTRIBUTORS, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 3,
+      "total_regulatory_events": 3,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/145",
+          "description": "3 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/145",
+      "scraped_at": "2026-06-23T12:55:59.236Z"
+    },
+    {
+      "slug": "kaiser-permanente",
+      "name": "Kaiser Permanente",
+      "firm_id": "162019",
+      "firm_name": "NATIONAL VENTURE DEVELOPMENT",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "medtronic",
+      "name": "Medtronic",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "stryker",
+      "name": "Stryker",
+      "firm_id": "146273",
+      "firm_name": "STRYKER FINANCIAL",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "quest-diagnostics",
+      "name": "Quest Diagnostics",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "labcorp",
+      "name": "LabCorp",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hca-healthcare",
+      "name": "HCA Healthcare",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gilead",
+      "name": "Gilead Sciences",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "amgen",
+      "name": "Amgen",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "biogen",
+      "name": "Biogen",
+      "firm_id": "327422",
+      "firm_name": "BIOGENERATION III SERVICES B.V.",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "novartis",
+      "name": "Novartis",
+      "firm_id": "286570",
+      "firm_name": "ELEVENHEIMER GROUP LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "gsk",
+      "name": "GSK",
+      "firm_id": "126603",
+      "firm_name": "GSK WEALTH ADVISORS, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "sanofi",
+      "name": "Sanofi",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "astrazeneca",
+      "name": "AstraZeneca",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "delta-airlines",
+      "name": "Delta Air Lines",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "american-airlines",
+      "name": "American Airlines",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "united-airlines",
+      "name": "United Airlines",
+      "firm_id": "326636",
+      "firm_name": "UNITED AIRLINES VENTURES MANAGEMENT LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "southwest-airlines",
+      "name": "Southwest Airlines",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "jetblue",
+      "name": "JetBlue",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "alaska-airlines",
+      "name": "Alaska Airlines",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "spirit-airlines",
+      "name": "Spirit Airlines",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "frontier-airlines",
+      "name": "Frontier Airlines",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "marriott",
+      "name": "Marriott",
+      "firm_id": "205",
+      "firm_name": "SANCTUARY SECURITIES, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 30,
+      "total_regulatory_events": 21,
+      "total_civil_events": 0,
+      "total_arbitrations": 9,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/205",
+          "description": "21 regulatory + 0 civil + 9 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/205",
+      "scraped_at": "2026-06-23T12:56:23.055Z"
+    },
+    {
+      "slug": "hilton",
+      "name": "Hilton",
+      "firm_id": "18663",
+      "firm_name": "A.B. WATLEY DIRECT, INC.",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 17,
+      "total_regulatory_events": 16,
+      "total_civil_events": 0,
+      "total_arbitrations": 1,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/18663",
+          "description": "16 regulatory + 0 civil + 1 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/18663",
+      "scraped_at": "2026-06-23T12:56:24.193Z"
+    },
+    {
+      "slug": "hyatt",
+      "name": "Hyatt",
+      "firm_id": "105770",
+      "firm_name": "HYATT CAPITAL MANAGEMENT",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "ihg",
+      "name": "IHG Hotels",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "wyndham",
+      "name": "Wyndham",
+      "firm_id": "167097",
+      "firm_name": "WYNDHAM FEE-ONLY ADVISORS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "best-western",
+      "name": "Best Western",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "choice-hotels",
+      "name": "Choice Hotels",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "airbnb",
+      "name": "Airbnb",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "vrbo",
+      "name": "Vrbo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "booking",
+      "name": "Booking.com",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "expedia",
+      "name": "Expedia",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "priceline",
+      "name": "Priceline",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kayak",
+      "name": "Kayak",
+      "firm_id": "148258",
+      "firm_name": "BLUE KAYAK PARTNERS",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "trivago",
+      "name": "Trivago",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "tripadvisor",
+      "name": "TripAdvisor",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "uber",
+      "name": "Uber",
+      "firm_id": "324751",
+      "firm_name": "UBERFUND CAPITAL ADVISORS LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "lyft",
+      "name": "Lyft",
+      "firm_id": "160592",
+      "firm_name": "HUDSON CAPITAL MANAGEMENT (NY), L.P.",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "hertz",
+      "name": "Hertz",
+      "firm_id": "13876",
+      "firm_name": "HERTZ INVESTMENTS LTD.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "enterprise",
+      "name": "Enterprise",
+      "firm_id": "8733",
+      "firm_name": "LPL ENTERPRISE, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 3,
+      "total_regulatory_events": 3,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/8733",
+          "description": "3 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/8733",
+      "scraped_at": "2026-06-23T12:56:42.750Z"
+    },
+    {
+      "slug": "avis",
+      "name": "Avis",
+      "firm_id": "125977",
+      "firm_name": "AVISEN WEALTH MANAGEMENT, INC.",
+      "status": "no_disclosures",
+      "is_broker_dealer": true,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "budget",
+      "name": "Budget",
+      "firm_id": "226756",
+      "firm_name": "BRUNCH & BUDGET, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "royal-caribbean",
+      "name": "Royal Caribbean",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "carnival",
+      "name": "Carnival",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "norwegian-cruise",
+      "name": "Norwegian Cruise",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "disney-cruise",
+      "name": "Disney Cruise",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hobby-lobby",
+      "name": "Hobby Lobby",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "my-pillow",
+      "name": "MyPillow",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ben-jerrys",
+      "name": "Ben & Jerry's",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "bumble",
+      "name": "Bumble",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "truth-social",
+      "name": "Truth Social",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "parler",
+      "name": "Parler",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "gettr",
+      "name": "Gettr",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "rumble",
+      "name": "Rumble",
+      "firm_id": "118005",
+      "firm_name": "NORTHSTAR INVESTMENT MANAGEMENT",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "sherwin-williams",
+      "name": "Sherwin-Williams",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "benjamin-moore",
+      "name": "Benjamin Moore",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "masterbrand",
+      "name": "MasterBrand Cabinets",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "whirlpool",
+      "name": "Whirlpool",
+      "firm_id": "114577",
+      "firm_name": "TAYLOR FINANCIAL CONSULTING",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "ge-appliances",
+      "name": "GE Appliances",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "kitchenaid",
+      "name": "KitchenAid",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "keurig",
+      "name": "Keurig",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ninja",
+      "name": "Ninja",
+      "firm_id": "331447",
+      "firm_name": "NINJA WEALTH ADVISORS, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "breville",
+      "name": "Breville",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "cuisinart",
+      "name": "Cuisinart",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "vitamix",
+      "name": "Vitamix",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "dyson",
+      "name": "Dyson",
+      "firm_id": "44656",
+      "firm_name": "ARCADIA SECURITIES, LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 2,
+      "total_regulatory_events": 2,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/44656",
+          "description": "2 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/44656",
+      "scraped_at": "2026-06-23T12:57:10.700Z"
+    },
+    {
+      "slug": "roomba",
+      "name": "iRobot Roomba",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "black-decker",
+      "name": "Black & Decker",
+      "firm_id": "168267",
+      "firm_name": "INDEPENDENT ADVISOR ALLIANCE, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "dewalt",
+      "name": "DeWalt",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "craftsman",
+      "name": "Craftsman",
+      "firm_id": "299245",
+      "firm_name": "CRAFTSMAN MANAGEMENT LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "milwaukee-tools",
+      "name": "Milwaukee Tools",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "makita",
+      "name": "Makita",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ryobi",
+      "name": "Ryobi",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "husqvarna",
+      "name": "Husqvarna",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "toro",
+      "name": "Toro",
+      "firm_id": "115872",
+      "firm_name": "TORO TRADING LLC",
+      "status": "ok",
+      "is_broker_dealer": true,
+      "total_disclosures": 15,
+      "total_regulatory_events": 15,
+      "total_civil_events": 0,
+      "total_arbitrations": 0,
+      "total_disciplinary_actions_5y": null,
+      "total_fines_usd": null,
+      "sample_actions": [
+        {
+          "label": "View full BrokerCheck disclosure history",
+          "url": "https://brokercheck.finra.org/firm/summary/115872",
+          "description": "15 regulatory + 0 civil + 0 arbitration events on file"
+        }
+      ],
+      "brokercheck_url": "https://brokercheck.finra.org/firm/summary/115872",
+      "scraped_at": "2026-06-23T12:57:20.442Z"
+    },
+    {
+      "slug": "john-deere",
+      "name": "John Deere",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "lego",
+      "name": "LEGO",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "hasbro",
+      "name": "Hasbro",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "mattel",
+      "name": "Mattel",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "fisher-price",
+      "name": "Fisher-Price",
+      "firm_id": "155344",
+      "firm_name": "CWM, LLC",
+      "status": "no_disclosures",
+      "is_broker_dealer": false,
+      "total_disclosures": 0
+    },
+    {
+      "slug": "nintendo",
+      "name": "Nintendo",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "playstation",
+      "name": "PlayStation",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "xbox",
+      "name": "Xbox",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ea",
+      "name": "Electronic Arts",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "activision",
+      "name": "Activision Blizzard",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "take-two",
+      "name": "Take-Two Interactive",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "ubisoft",
+      "name": "Ubisoft",
+      "status": "not_found_in_finra"
+    },
+    {
+      "slug": "square-enix",
+      "name": "Square Enix",
+      "status": "not_found_in_finra"
+    }
+  ]
+}
