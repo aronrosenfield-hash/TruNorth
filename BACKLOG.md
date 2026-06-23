@@ -169,7 +169,7 @@ All scripted in `/docs/producthunt/LAUNCH_DAY_PLAYBOOK.md`.
 | **X-4** | MailerLite paid plan | >1k subscribers OR >12k emails/month |
 | **X-5** | Annual + lifetime pricing tiers | RevenueCat live (depends on X-2) |
 | **X-6** | Push notifications (iOS APNs + FCM Android) | iOS launch settled first |
-| **X-7** | ITEP citation approval | Sent to Amy Hanauer (`itep@itep.org`). Follow-up auto-reminder Tue Jun 9 · 9 AM CDT. |
+| ~~**X-7**~~ | ~~ITEP citation approval~~ | ✅ **APPROVED 2026-06-14** by Amy Hanauer (ITEP Exec Dir): "all our work is published and available to use with citation"; "the way you're citing this all seems good to us." **Commercial/paid-tier OK** (Aron asked explicitly — no NC restriction, unlike OpenSanctions). Conditions: cite "Verified source: Institute on Taxation & Economic Policy (ITEP)" on every datapoint + link `https://itep.org/corporate-tax-avoidance/` (Amy's suggested target) + refresh annually. → unblocks **B-12**. |
 
 ---
 
@@ -255,7 +255,7 @@ Sorted by category. Effort tags: **S** = <1 hr · **M** = 1-4 hr · **L** = day+
 
 | ID | Item | Effort | Notes |
 |---|---|---|---|
-| **B-12** | Tax category (ITEP, FTF, SEC 10-K parsing) | M | PR #34 shipped ITEP pipeline **dormant** pending license clarity. Activate when X-7 lands. |
+| **B-12** | Tax category (ITEP, FTF, SEC 10-K parsing) | M · **post-launch** | ✅ **UNBLOCKED — ITEP approved (X-7, 2026-06-14).** PR #34 shipped the ITEP pipeline **dormant**; activate POST-launch (new scoring category = rebake — don't churn on launch day). ⚠️ Pre-reqs before going live: (1) **fix the fetcher 404** — it was 404ing on the latest XLSX so the mockup showed a placeholder **$4.4B**; pull ITEP's *real* Corporate Tax Avoidance data from `itep.org/corporate-tax-avoidance/`; (2) display effective rate + total profits + zero-tax-year count per company; (3) cite "Verified source: ITEP" + link the report on every datapoint; (4) wire the tax category into scoring → `rebake-scoring.mjs` → `finalize-bundle.mjs` + tests + grade-drift (rule #16). Commercial use OK per Amy. |
 | **B-13** | Supply-chain labor extension (BHRRC + KnowTheChain) | M | Separate score from domestic Labor. `planned_scoring_expansion.md` |
 | ~~**B-14**~~ | ~~Cruelty-free / animal testing flags~~ | ✅ done 2026-06-08 | Bird Friendly + AWA shipped in PR #45. |
 | **B-15** | Tobacco / fossil-fuel financing flags | S | Easy boolean adds. (Firearms shipped in PR #20.) |
