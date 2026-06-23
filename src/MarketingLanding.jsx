@@ -43,7 +43,7 @@ const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 // Phase 5.az: flip this to the live App Store URL once the listing is
 // approved. CTAs fall back to a TestFlight-invite mailto until then.
-const APP_STORE_URL = "";
+const APP_STORE_URL = "https://apps.apple.com/app/id6775301458";
 
 // Phase 5.az: TestFlight beta testimonials. Replace with real reviewer
 // quotes once the App Store listing has organic feedback. Avoid making
