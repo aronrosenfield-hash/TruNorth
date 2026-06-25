@@ -33,7 +33,10 @@ const NEWS_DIR = path.join(ROOT, "public/data/news");
 // changes between versions — 4.6 supports adaptive thinking out of the box
 // and is the recommended target for new code.
 const MODEL = "claude-sonnet-4-6";
-const BATCH_SIZE = 20;
+// B-64 (2026-06-25): was 20 items @ max_tokens 4096 → the forced tool call hit
+// the output cap and returned input:{} every night for weeks. Smaller batches +
+// more headroom keep each structured response well under the cap.
+const BATCH_SIZE = 10;
 const MAX_RETRIES = 2;
 
 // JSON Schema enforced via Anthropic tool use — guarantees structured output
@@ -150,7 +153,7 @@ ${batch.map((item, i) => `[${i + 1}] BRAND: ${item.brand_name} (${item.brand_slu
       },
       body: JSON.stringify({
         model: MODEL,
-        max_tokens: 4096,
+        max_tokens: 8192,
         // Prompt caching (2026-06-14): SYSTEM_PROMPT + EXTRACTION_TOOL are identical
         // across every article in a nightly run; only userPrompt varies. Caching the
         // stable prefix drops repeat input-token cost ~90% after the first call.
@@ -196,8 +199,14 @@ ${batch.map((item, i) => `[${i + 1}] BRAND: ${item.brand_name} (${item.brand_slu
     // returned tool_use blocks where `input.items` is missing — causing
     // the caller's `.find` on the return value to crash with a generic
     // TypeError. Surface the actual input shape so we can diagnose.
+    // 2026-06-25 (B-64): the nightly hung for weeks on input:{} with no
+    // stop_reason logged, so the cause was unprovable. Call out truncation
+    // explicitly and always log stop_reason + output_tokens.
+    if (data.stop_reason === "max_tokens") {
+      throw new Error(`Output truncated at max_tokens — batch too large to fit a full tool call. output_tokens=${data.usage?.output_tokens}. Lower BATCH_SIZE or raise max_tokens.`);
+    }
     if (!Array.isArray(toolUse.input?.items)) {
-      throw new Error(`tool_use.input.items missing or wrong shape. input_keys=${Object.keys(toolUse.input || {}).join(",")} input_sample=${JSON.stringify(toolUse.input).slice(0, 400)}`);
+      throw new Error(`tool_use.input.items missing or wrong shape. stop_reason=${data.stop_reason} output_tokens=${data.usage?.output_tokens} input_keys=${Object.keys(toolUse.input || {}).join(",")} input_sample=${JSON.stringify(toolUse.input).slice(0, 400)}`);
     }
     return toolUse.input.items;
   } catch (err) {
@@ -240,9 +249,19 @@ async function main() {
   const results = [];
   const failures = [];
   let totalInputTokens = 0, totalOutputTokens = 0;
+  // B-64 (2026-06-25): hard wall-clock budget so the extract step can never burn
+  // to GitHub's 60-min job kill again. 20 min leaves room under the 60-min job
+  // cap after the collector's own 35-min budget (35 + 20 = 55 < 60).
+  const EXTRACT_BUDGET_MS = 20 * 60_000;
+  const startedMs = Date.now();
 
   for (let i = 0; i < batches.length; i++) {
     const batch = batches[i];
+    if (Date.now() - startedMs > EXTRACT_BUDGET_MS) {
+      console.warn(`\n⏱ extract budget (${EXTRACT_BUDGET_MS / 60000}min) exceeded at batch ${i + 1}/${batches.length} — stopping early, writing partial results`);
+      batches.slice(i).forEach(b => b.forEach(it => failures.push({ ...it, error: "skipped: extract time budget exceeded" })));
+      break;
+    }
     process.stdout.write(`  batch ${i + 1}/${batches.length} (${batch.length} items)… `);
     try {
       const extracted = await extractBatch(batch, apiKey);
