@@ -1,7 +1,251 @@
 {
-  "merged_at": "2026-06-03T17:03:42.783Z",
-  "total_items": 0,
-  "brand_count": 0,
-  "merged_count": 0,
-  "note": "no items_for_ai in extracted file — skipped merge"
+  "merged_at": "2026-06-25T23:38:16.879Z",
+  "source_file": "2026-06-25.extracted.json",
+  "total_items": 27,
+  "brand_count": 20,
+  "merged_count": 20,
+  "orphan_count": 0,
+  "error_count": 0,
+  "orphans": [],
+  "errors": [],
+  "sample_merged": [
+    {
+      "slug": "coca-cola",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 1,
+      "items_total": 1,
+      "events_total": 1,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": -1.5,
+        "scandalSignals": [
+          "LABOR"
+        ],
+        "topArticles": [
+          {
+            "title": "Coca-Cola’s Northampton plant closing will trigger 175 layoffs - CommonWealth Beacon",
+            "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNcDhGQ3FNMXdIc0dHdTloU1NWMk5YRG8wTVAwaGktUW5NNXVHY1BMZXF2Q0lDNjhyMFZxVmZHVkVzOHEwT0ZDaUhOblEyVkVWNnRXWUJ2LWpSMVRlWVBrbDNva3FGVmhxTnF6SzV0NGEtbjZUT2hTMERndk5zenFaa1BfcHJ4RE1Xd09uaW5PdGZua2pqdm04WnJINjhRT1dBbGpz?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.896Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "dr-pepper",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 1,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "Keurig Dr Pepper coffee chief Rafa Oliveira to depart for Heineken CEO role (KDP:NASDAQ) - Seeking Alpha",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxObFZGVFQxQ1AtZU1aOEFJUWFXYU5PNVJfZ3BsLWg0VmZLMDNwS0J5dV9taTk3ckp5aEtPaHVtdW12OHBwRTNGcmREVlBtLXRHVVpKVUpMd0JTQThGM1pNNTRxX19KLThsdG5tVWJTVzJtVWxVZkxuWGp4OHN5MXVCMWgzaFVNY3kwV3hUa25vNmNkM3M1Sm92V2dBSlBhNTktWTJpSlByWVF4WUpkMkt4cEJmRQ?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.897Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "heineken-usa",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 1,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0,
+        "scandalSignals": [
+          "GOVERNANCE"
+        ],
+        "topArticles": [
+          {
+            "title": "Heineken Names New CEO After Predecessor's Shock Departure - Barron's",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaU40UmdKS2NsWEhDYmRQT3pWRFRhMVF5VGdCM3FKZXU0a21Ub3NGVWpkSWpfWDlXUmRySXMzOVowaldCSkxFLUJhTGUwZE04NDE3aFJHZnlqUVdGMG1fdEJLRXdETnJmbk9XOVNhdFNtMjF5SkJoNXA0R19pVjl2ZTZuUU85bVpJUldsbkZIaUkwWWJmN1A1ZE1GR2JjUjJla1hoZ05YbUJwaEVnMlR0M1NGX0xzYTlwNlBV?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.898Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "mondelez-international",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 1,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "BTS-inspired Oreo cookies appear in some stores ahead of official launch - ABC10",
+            "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPNWkwRDRoNVd2RkNOTGllN0pKTHAtelJmUTBfVmlxcDJ5ZkNEeFhFZG9rZzdldWd1cEtYaFRWYzNPTFZtM0NFcHJtR3RXS2pFNGNrS3hlZkNUei1fWmhQLUJ2Z1lpNC1VdGdUNVlkMlR3cDBOclZHVXgzRDNkOE9sOWQzZ2otTzhQQVNXaXFvYWI5VjV4VEpaQWV6N3hwdmZVNkROeGd3RkZ1Qi1YVXVJYXZyUlozc1R5YmVIQXlhQjNuOFNYVGxWRmZnMzQ5S3BYNEw4VU1relY2MGV1MmNYemVTREFkSm51UmlXbG8xSzZQOXBkcnBnVA?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.899Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "mars",
+      "status": "merged",
+      "news_added": 2,
+      "events_added": 1,
+      "items_total": 2,
+      "events_total": 1,
+      "aggregate": {
+        "mentionCount90d": 2,
+        "avgTone": 0,
+        "scandalSignals": [
+          "ENVIRONMENT"
+        ],
+        "topArticles": [
+          {
+            "title": "How Mars and Mondelēz fared on 2025 packaging targets - Packaging Dive",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ2tSVWdYdW5rVGNqSmw2aVF2bVREZTJQRUUyZV9sdUVSZkNsTTZFbUJEU2F2eTh4UHJkSDFRcFJRV2dJQzlFNUlHTE5FYnYzVWN0eDBZTlFyRk1WbDM4R3k4SERqaGF5a1VpUmRqaUJiM0dwQlB6MFMwSjVwdkxmV3l5aldpcHR6R1hrTFpSRGJPdXAzZ0JiQ1JEb1M3bUFPQmVoMQ?oc=5"
+          },
+          {
+            "title": "Snickers launches cheesecake bites as frozen dessert line expands - MSN",
+            "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZjBjRWdabnNHWlRXTkJnTldMNTNGSFlPOTBhZVZYYnJzTTFxN0ViNGZMT1ByQjNEVnUxOEhpdG9TU0pLa2NCYlBsSnZ1SmlQc1NLenFucTR2Zm9ZeDdNRUdqUlV5XzFoakRJbDhLX0JBWGJlVHZTYzJhaUFEcXlYZk1aREszSU83eEtCUC1QSHpfZ25ucWs0MGZKTVhnUVRaWTVDcnJIU2lOSlpTU3J3cWx5eUNKTlpSd1lfXzIxQnBjWjZ6X2R2enZuaU95ODBOZTF2OTN6MlF6OHNoVjJ0c2hRSVFCcUdlR1RTNUpfbEtDV3JsWHdHamdxUQ?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.900Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "kraft-heinz",
+      "status": "merged",
+      "news_added": 3,
+      "events_added": 0,
+      "items_total": 3,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 3,
+        "avgTone": 0,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "Kraft teases new 'TSA-compliant' ranch amid World Cup tourist hype - 10TV",
+            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUk90ZmNNNThWNEpacGRmd2xVQ2Vlc0dDVVY4NFhEMm1fWWZKZXhUVzJBdE85THRTVEp2ODlCZFdPMjJFeTRPendTcUh5dFlPakFWc21mMDFHTmhrdmluaGlEN013QkNzbHVqODZlUmhSbVJhcGJYNmhIcEZSR1ZpX1NObGh1dzBJTFZHczN2NUNuaWFtWW93RzNocDRkQjFOckhLRkxKLVVwN2R6UXpLamFhWkFXNkdl?oc=5"
+          },
+          {
+            "title": "Kraft works on TSA-compliant ranch after World Cup fans pack bottles - Scripps News",
+            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQemR0a3dFZnotazhXX3o2SUllM3AxQjZPUTRTenItLVM1cGZ5XzVheFFhNmJrTEFRUFVnYkRBOTFKX3FiQ25RMGxmSHRoWThFQ1FOZk5jSTB3MHd0NmZVWlNobktUS1hoRHdUeWFPWWJRSVVwLWNxQ2hhR2JzYlo3Q0U1MlhGVFgzUVdBRmJNZWtaZHNYUGVXQXdhTnRwM2VNdzZQU3RXRVpVU2duTDBaRXNmbWxQUUk?oc=5"
+          },
+          {
+            "title": "Kraft Teases TSA‑Friendly Ranch Dressing Packets After World Cup Fans Obsess Over Condiment - People.com",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYVBDeGNhbDJrTjBYUkFfZ2RmMEFkZlF0RW84ODg4LXJ5WXZUdlozVTRQWGNvLWZFMUpCQzJtSXhOcmp5dzJEQ0ZyRjhmZG5yNHpvREhVLU1hczVQd2U5aFM2NmFPZEIwd0ZiMFpvUEp6MF9sd0RXNkd1VzdjUWlERDN1Vm9SeDZicS1Pd053UWlwRlFVbFpBaE1PdFhtZ1hwUndIOTktZkJXTUQtT3hsRjV5UjNzMjBJZTZr?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.901Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "kellogg-s",
+      "status": "merged",
+      "news_added": 4,
+      "events_added": 4,
+      "items_total": 4,
+      "events_total": 4,
+      "aggregate": {
+        "mentionCount90d": 4,
+        "avgTone": -1.88,
+        "scandalSignals": [
+          "LABOR"
+        ],
+        "topArticles": [
+          {
+            "title": "Kellogg’s to lay off 117 workers in Memphis - WREG.com",
+            "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1kSjluZDkxQ19vdzFDUDBqTDh5NXQxTTNaelFSMS1VbTdKdXNSTWp0ajJOT2F2UTA1YzBFNE80X1ExMTItbG8zVFc5bkR6QTdDNF9CNlo3VTRVUElVZ3Nyckd4d1dfYXMySGdWZThVMW1qN0tFVjhsT3BiY9IBgAFBVV95cUxNNGJiSmRkMmE3NmdkeVBvNDl4ajFYNFFnRFY2bHg3VUZrdG1aN05xZTVoM19jZ24wTEEwMF9xbS13U3ppUnVvU1p5c3pCLUtCaHFDZUZXMkRIMEpsU2tGbzNCdWQ2T3ZHX0prVkFEcEdQbVRaaHhFb1NxLUxzX1ctbQ?oc=5"
+          },
+          {
+            "title": "Kellogg's to lay off 451 Omaha employees as it prepares to permanently close plant - Omaha World-Herald",
+            "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB5cFlVSzd5TWhHSktGa2ZBdlRfa0h4VW9uMVM0T19qQk52NzQ4QkF2UzBJRVpYUjQwb3JfSmR4NkxYUk9VVlhodGljQVVlLTVXeVk5aG9wYUNDV1pLZDBWaF9sUmJpQnVGT2ZvbmYwd19WT0NxNmZmS0RsTkg?oc=5"
+          },
+          {
+            "title": "Kellogg’s details Omaha plant layoffs set for this summer - WOWT",
+            "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQOHNBSFFRMjRmVklYLU1xTnBmX1VmREJXVXpid2stV0VpZkw4QWdtelRiNGNJeHl4ZmxVRlJBT2VxSlllN2dhWlFWOWpQMkUxejdRbmJMT1J4aGVocHZESzkzdjZjRDNucE1xb0cxVVdrR25EWGl0T0tnV0hSWGVkZ3ZwcEhtdzlhV21FbTdVbmJIRUU?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.902Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "nestl",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 1,
+      "items_total": 1,
+      "events_total": 1,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0.5,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "Daystar Power Reaches 6.8 Megawatts of Installed Solar Capacity For Nestlé Across West Africa - PR Newswire",
+            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNOGt0V1dVb0RFNmQ2cmVMOXRyX214cHpjSlp4N1pqc1RFeHdxeVV1NDF6RFlCS2VjOFRxTnFQRjEyT2ViS1hqMVJ2THUzT3A5VnFpT3V4eHlDSmQ1WGdzWm1NRkZVTTd3OFBCZjI1bzVxXzN3VGMzdmtlQWZva3ZJdktpN3BWdVpfXzA2ZllXS0xSTENaQlFBakdnTlZIUVRyRmpKQjlWeUJCVDk2VjFnbWFucTNzdE0xY014OG9PSkJld3pfQzg1cU1xQjlmNVp0aDB5ZXU0QXNZR3B1SDdEd0VSVQ?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.903Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "pepsico",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 1,
+      "items_total": 1,
+      "events_total": 1,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0.5,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "Kim Komando's Tech Tips &amp; Advice: PepsiCo Turns To Autonomous Trucks - Times Union",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQVMtUVBFS1M1WG5uUEtoRkJpVXdSZ01vUTdFU0VNMkh6SFlXOUEzUXBWTE1JdTRMMUhPZ3ZYSHZiMmJPQXZJY0RQRjlpX1hiZVJINVpmOHBXMjNzQmhiY3hxOEVIbXZQamJoSEc1ZGlua2NSVjIzcERFcE40VDRYcGdiajlUajVPVGJkT3lMUWVya2VsOXFiaE1yeVdiUQ?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.904Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "unilever",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 1,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0.5,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "Connecticut officials weigh economic impact of Unilever bringing research, development center to New Haven - WTNH.com",
+            "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQbjBCcUxrVUNBVkNIQW1fVEZBVVlFMXlMUTQ0MXpQSjk2ZVlUUm8tVFFGUVFkdWsyZFctSHp1Vm5nRm94R1pYaHgxTzdIQUVMLUo5dW1ncWZidVNrSHMzRjI3YzZ3dTlMN2w0ZnduRFR2WnJMZXFNaGw4VmpVUm92ckVFM3h1c214N1R0bkpQU1hzTTFjcWhjQW1SX2pOTmhyYWdEYVktU080cmNTZkY3NTdrWDVoMkM5SllFVXJNNU9aVlRpeHUxOEVJd2dadkxmRXhCUzBwdG5UaDBIYkM0VC1sUXNPQjBEU2fSAe8BQVVfeXFMTjcyYWpJVEhFZS02N1ZYc255d3JtQ3V0cTIyZEYwZks4RGJMQ0p3US1pUkhxcmVkS3d1NlBEamsydlFDdkRmckFrMnNPWG81WVh5Q3NCUUk3V0ZXbjZybWtUbE9ka2hTQ0RGX2hGVVZIOUZDbjRRdGZGVWoyVXlJa2NWeU5DcnM0NU9XMi1KTktPS3QwenppVU5haXBUSTZlajJ2bEhjVVpQSmlfX2JsbnBXOEdFYlQtZWdfMTJ5RGxESmRxX1lENmd3M3h3c1FjcGhDZm8ycE8zcldUVXF3TFhNTkVvR3Y3LU54Qm1DcUU?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-06-25T23:38:16.905Z",
+        "source": "rss-extraction"
+      }
+    }
+  ]
 }
