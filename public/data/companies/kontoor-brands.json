@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Kontoor Brands Foundation: $150K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -178,5 +181,15 @@
   },
   "csc": {
     "charity": 85
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1760965",
+        "displayName": "Kontoor Brands, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

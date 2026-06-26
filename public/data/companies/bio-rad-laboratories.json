@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -241,5 +244,38 @@
     "pctMinorityMgmt": 41.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.213,
+      "taxExpenseUsd": -498300000,
+      "pretaxIncomeUsd": -2342500000,
+      "year": 2024,
+      "cik": 12208,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 14,
+      "classI": 0,
+      "classII": 14,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-09-10",
+        "reason": "Due to a risk of false positive results that could lead to unnecessary medical treatment.",
+        "classification": "Class II",
+        "product": "Platelia Toxo IgM Catalog Number 26211 UDI Code: 03610520005552 The Platelia Toxo IgM assay is a semi-quantitative immunocapture enzyme immunoassay kit for the detection of IgM an…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 14
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 421192,
+      "sunshineActYear": 2024
+    }
   }
 }

@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
@@ -323,6 +324,22 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.679,
+      "taxExpenseUsd": 26400000,
+      "pretaxIncomeUsd": 38900000,
+      "year": 2024,
+      "cik": 1750,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1750",
+        "displayName": "AAR CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

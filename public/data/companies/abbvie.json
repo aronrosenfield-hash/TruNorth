@@ -108,7 +108,8 @@
     "cpaZicklin": "2026-06-11T14:35:39.917Z",
     "courtlistener": "2026-06-11T14:35:43.162Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -570,6 +571,54 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.153,
+      "taxExpenseUsd": -570000000,
+      "pretaxIncomeUsd": 3716000000,
+      "year": 2024,
+      "cik": 1551152,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1551152",
+        "displayName": "AbbVie Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2026-06-03",
+        "reason": "Failed Stability Specifications",
+        "classification": "Class III",
+        "product": "PRED MILD, prednisolone acetate ophthalmic suspension, USP, 0.12%, 10 mL, Sterile, Rx only, Allergen, Inc., an AbbVie company, North Chicago, IL 60064, Product of France, NDC 1198…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 4,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2024-02-21",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 156382683,
+      "sunshineActYear": 2024
     }
   },
   "flags": {

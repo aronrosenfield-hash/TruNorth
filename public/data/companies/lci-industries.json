@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -225,5 +228,15 @@
   "csc": {
     "environment": 33.8,
     "labor": 50
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "763744",
+        "displayName": "LCI INDUSTRIES"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

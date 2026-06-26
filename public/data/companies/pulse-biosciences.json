@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -126,6 +129,29 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 0,
+      "pretaxIncomeUsd": 53600000,
+      "year": 2024,
+      "cik": 1625101,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1625101",
+        "displayName": "PULSE BIOSCIENCES, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 534821,
+      "sunshineActYear": 2024
     }
   }
 }

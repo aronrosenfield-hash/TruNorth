@@ -99,5 +99,26 @@
     "pctMinorityMgmt": 11.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.129,
+      "taxExpenseUsd": 102433000,
+      "pretaxIncomeUsd": 792760000,
+      "year": 2024,
+      "cik": 110621,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "110621",
+        "displayName": "RPM INTERNATIONAL INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -163,5 +166,23 @@
     "pctMinorityMgmt": 18.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.257,
+      "taxExpenseUsd": 63567000,
+      "pretaxIncomeUsd": 247415000,
+      "year": 2024,
+      "cik": 810136,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "810136",
+        "displayName": "PHOTRONICS INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

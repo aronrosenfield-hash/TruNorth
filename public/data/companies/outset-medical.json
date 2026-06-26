@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -188,6 +189,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1484612/000119312526177150/om-20260424.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.004,
+      "taxExpenseUsd": 491000,
+      "pretaxIncomeUsd": -127485000,
+      "year": 2024,
+      "cik": 1484612,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1484612",
+        "displayName": "Outset Medical, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 1,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-10-09",
+        "reason": "Blood leak sensor, a component of hemodialysis device, may show decreased sensitivity, at the lowest level, specified as 0.35 mL/min blood leak rate, which could delay triggering the ALARM_DIALYZER_BLOOD_LEAK alarm, if blood loss, less-tha…",
+        "classification": "Class II",
+        "product": "Tablo Console, REF: PN-0003000, PN-0006000, part of the Tablo Hemodialysis System. The Tablo Hemodialysis System is indicated for use in patients with acute and/or chronic renal f…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 5
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 160738,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -245,5 +248,25 @@
     "reviewed": false,
     "license": "CC BY-SA 3.0",
     "fetchedAt": "2026-06-11"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-05-28",
+        "reason": "Product is contaminated with Listeria monocytogenes.",
+        "classification": "Class I",
+        "product": "Enoki Mushroom in a 200g, green plastic package marked with UPC Barcode 6975730520101 on the back label and labeled as distributed by Hofood99 Inc., 21903 56th Ave Oakland Gardens…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

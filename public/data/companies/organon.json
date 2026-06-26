@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -267,6 +268,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1821825/000119312526177411/ogn-20260423.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.071,
+      "taxExpenseUsd": -57000000,
+      "pretaxIncomeUsd": 807000000,
+      "year": 2024,
+      "cik": 1821825,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1821825",
+        "displayName": "Organon & Co."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 3,
+      "mostRecent": {
+        "date": "2024-06-19",
+        "reason": "Defective Container",
+        "classification": "Class III",
+        "product": "Asmanex Twisthaler, mometasone furoate inhalation powder, 220 mcg per actuation, 14 Metered Doses, Rx Only, Manuf. for: Organon LLC, a subsidiary of Organon & Co. Product of Singa…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 3,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 4515241,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -253,5 +256,23 @@
   "csc": {
     "environment": 100,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.07,
+      "taxExpenseUsd": 111000000,
+      "pretaxIncomeUsd": 1522000000,
+      "year": 2024,
+      "cik": 833444,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "833444",
+        "displayName": "Johnson Controls International plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

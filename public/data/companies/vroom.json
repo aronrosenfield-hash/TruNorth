@@ -90,7 +90,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "carvana",
     "shift4-payments",
@@ -182,6 +185,16 @@
     "environment": {
       "_inferred": true,
       "basis": "Automotive"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.0052,
+      "taxExpenseUsd": 856000,
+      "pretaxIncomeUsd": -137384000,
+      "year": 2024,
+      "cik": 1580864,
+      "source": "SEC EDGAR XBRL"
     }
   }
 }

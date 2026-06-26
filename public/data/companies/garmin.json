@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -198,6 +199,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1121788/000130817926000318/grmn015328-def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.167,
+      "taxExpenseUsd": 283965000,
+      "pretaxIncomeUsd": 1695401000,
+      "year": 2024,
+      "cik": 1121788,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1121788",
+        "displayName": "GARMIN LTD"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

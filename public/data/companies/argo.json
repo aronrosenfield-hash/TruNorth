@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-31",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -291,6 +292,32 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.222,
+      "taxExpenseUsd": -42200000,
+      "pretaxIncomeUsd": 27200000,
+      "year": 2024,
+      "cik": 1091748,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-05-19",
+        "reason": "ReWalk Robotics received two complaints (one in the US; one in the Germany), which alleged that the ReWalk device waistpack (which is the location of the Li-Ion battery packs) caught fire while being charged.",
+        "classification": "Class II",
+        "product": "ReWalk Personal 6.0, ReWalk Personal 5.0 and ReWalk R Systems orthotically fits to the lower limbs and part of the upper body and is intended to enable individuals with spinal cor…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

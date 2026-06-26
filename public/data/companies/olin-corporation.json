@@ -100,7 +100,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "huntsman",
@@ -281,6 +282,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/74303/000007430326000041/oln-20260316.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.259,
+      "taxExpenseUsd": 36700000,
+      "pretaxIncomeUsd": 141700000,
+      "year": 2024,
+      "cik": 74303,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "74303",
+        "displayName": "OLIN Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

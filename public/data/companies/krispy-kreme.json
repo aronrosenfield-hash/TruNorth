@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -259,5 +262,33 @@
   "csc": {
     "charity": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.807,
+      "taxExpenseUsd": 15954000,
+      "pretaxIncomeUsd": 19769000,
+      "year": 2024,
+      "cik": 1857154,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-12-22",
+        "reason": "The firm was notified by customers that the product contained metal fragments",
+        "classification": "Class II",
+        "product": "Krispy Kreme DOUGHNUT Bites ORIGINAL GLAZED 5 1.6 OZ (45g) POUCHES NET WT. 8 OZ (227g) Manufactured under the authority of Krispy Kreme Doughnut Corporation Winston-Salem, NC 2710…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

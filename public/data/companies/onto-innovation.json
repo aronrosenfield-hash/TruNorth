@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -196,6 +197,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/704532/000119312526143699/onto-20260406.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.09,
+      "taxExpenseUsd": 18777000,
+      "pretaxIncomeUsd": 220447000,
+      "year": 2024,
+      "cik": 704532,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "704532",
+        "displayName": "ONTO INNOVATION INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

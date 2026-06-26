@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -243,5 +246,25 @@
   "csc": {
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 7,
+      "classI": 6,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-09-24",
+        "reason": "Due to a faulty electrical connection between the speed control Dial and the wheelchair motor, their is a potential for lost of control of the device potentially resulting in minor or major injuries.",
+        "classification": "Class I",
+        "product": "Max Mobility/Permobil Smart Drive MX2+ SpeedControl Dial Ref: MX2-3DCMC use in conjunction with the SmartDrive MX2+ Wheelchair Power Assist component."
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 6
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

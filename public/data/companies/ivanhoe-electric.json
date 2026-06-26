@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -182,6 +183,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1879016/000114036126015947/ny20062456x1_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 32000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1879016,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1879016",
+        "displayName": "Ivanhoe Electric Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

@@ -67,7 +67,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "competitors": [],
-  "dataLastUpdated": "2026-06-08",
+  "dataLastUpdated": {
+    "legacy": "2026-06-08",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "seedSource": "top-brands-coverage-2026-06-08",
   "seedNote": "Small appliances",
   "role": "brand",
@@ -103,5 +106,32 @@
     "pctMinorityMgmt": 19.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.0784,
+      "taxExpenseUsd": 2617000,
+      "pretaxIncomeUsd": 33376000,
+      "year": 2024,
+      "cik": 1709164,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1709164",
+        "displayName": "Hamilton Beach Brands Holding Co"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2021-02-04",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -231,5 +234,24 @@
   },
   "csc": {
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.124,
+      "taxExpenseUsd": -731000,
+      "pretaxIncomeUsd": -5913000,
+      "year": 2024,
+      "cik": 876427,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2024-11-21",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

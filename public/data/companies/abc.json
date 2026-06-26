@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -267,6 +268,24 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 2,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-02-23",
+        "reason": "Marketed Without An Approved NDA/ANDA: product was found to contain undeclared tadalafil and/or sildenafil, ingredients found in FDA approved products for the treatment of male sexual enhancement, making these unapproved drugs.",
+        "classification": "Class I",
+        "product": "MAC DADDY RED Capsules, packaged in 10-count blisters per carton, ASIN B07TLDZLY2, UPC 742137 605191."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 2,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

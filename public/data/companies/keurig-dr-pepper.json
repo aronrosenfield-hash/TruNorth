@@ -35,7 +35,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -305,6 +306,40 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1418135/000119312526177266/d201572ddef14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.247,
+      "taxExpenseUsd": 473000000,
+      "pretaxIncomeUsd": 1914000000,
+      "year": 2024,
+      "cik": 1418135,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1418135",
+        "displayName": "Keurig Dr Pepper Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 11,
+      "classI": 0,
+      "classII": 11,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-02-04",
+        "reason": "Product is labeled as decaf, but might contain caffeine.",
+        "classification": "Class II",
+        "product": "McCafe Premium Roast Decaf Coffee K-Cup Pods, Net Wt. 29 oz (823g), packaged as an 84-count carton, UPC 043000073438. Distributed By: Keurig Green Mountain, Inc. Burlington, MA 01…"
+      },
+      "byCategory": {
+        "food": 11,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

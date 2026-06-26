@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -158,6 +161,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 1,
+      "classII": 1,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-03-11",
+        "reason": "Undeclared shrimp, crab, lobster, pollock (fish), whiting (fish), and soy.",
+        "classification": "Class I",
+        "product": "Lobster & Crab Ravioli. Keep Frozen. Contains: Wheat, Eggs, Milk, Crustaceans-Shellfish. Product is intended to be further cooked. Weight: 1-10 pound (4.5g). Use within 6 months. …"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

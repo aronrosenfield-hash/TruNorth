@@ -34,7 +34,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Cargill Foundation: $24.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -282,5 +285,25 @@
     "charity": 85,
     "environment": 8,
     "labor": 8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 33,
+      "classI": 8,
+      "classII": 25,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-07-12",
+        "reason": "Potential for foreign material (metal).",
+        "classification": "Class II",
+        "product": "Cargill Tripotassium Citrate Monohydrate packaged in 50 lb. paper bag. Product item: SKU 100105392, TPC GNLR 50LB BG KH FCC"
+      },
+      "byCategory": {
+        "food": 33,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

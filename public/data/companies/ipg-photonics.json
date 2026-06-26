@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -203,5 +206,15 @@
   "csc": {
     "environment": 39.1,
     "labor": 39.1
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1111928",
+        "displayName": "IPG PHOTONICS CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

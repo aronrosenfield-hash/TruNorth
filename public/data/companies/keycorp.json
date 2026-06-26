@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$19M reported corporate giving in 2024 (~0.17% of revenue) via KeyBank Foundation.",
     "sources": [
@@ -281,5 +284,15 @@
   "csc": {
     "charity": 50,
     "labor": 12.3
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.466,
+      "taxExpenseUsd": -143000000,
+      "pretaxIncomeUsd": -306000000,
+      "year": 2024,
+      "cik": 91576,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

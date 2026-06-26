@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -227,6 +228,54 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1145197/000114036126013333/ny20060552x1_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.393,
+      "taxExpenseUsd": -118100000,
+      "pretaxIncomeUsd": 300200000,
+      "year": 2024,
+      "cik": 1145197,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1145197",
+        "displayName": "INSULET CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 8,
+      "classI": 3,
+      "classII": 5,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-04-22",
+        "reason": "Due to a manufacturing defect, certain Omnipod 5 Pods from 49 lots have an internal soft cannula tear that results in insulin leaking into the Pod instead of being delivered to the user regardless of basal or bolus delivery. This defect re…",
+        "classification": "Class I",
+        "product": "Omnipod 5 Pods. Model/Catalog number: PT-001662 ASM 5PK Pod STRL OPS G6G7"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 8
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2022-12-01",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 3821253,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

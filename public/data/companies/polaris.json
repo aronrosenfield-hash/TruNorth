@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -256,5 +259,23 @@
   },
   "csc": {
     "labor": 12.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.21,
+      "taxExpenseUsd": 29600000,
+      "pretaxIncomeUsd": 140800000,
+      "year": 2024,
+      "cik": 931015,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "931015",
+        "displayName": "Polaris Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

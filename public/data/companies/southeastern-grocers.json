@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -133,6 +136,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Grocery"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-11-24",
+        "reason": "Cooked shrimps potentially contaminated with Listeria monocytogenes.",
+        "classification": "Class I",
+        "product": "Fisherman's Wharf, Shrimp 16 /20 Cooked Shrimp 16oz 7306067"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

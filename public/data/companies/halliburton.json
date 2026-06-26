@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -278,5 +281,28 @@
   "csc": {
     "environment": 50,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.222,
+      "taxExpenseUsd": 718000000,
+      "pretaxIncomeUsd": 3234000000,
+      "year": 2024,
+      "cik": 45012,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "45012",
+        "displayName": "HALLIBURTON CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 233,
+      "warnMostRecent": "2020-04-29"
+    }
   }
 }

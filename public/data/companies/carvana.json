@@ -94,7 +94,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "carvana-co",
@@ -324,5 +327,15 @@
     "charity": 50,
     "environment": 28.8,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.01,
+      "taxExpenseUsd": -4000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1690820,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

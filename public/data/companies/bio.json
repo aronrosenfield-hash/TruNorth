@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -183,6 +186,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Grocery"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-04-20",
+        "reason": "Product contained cesium chloride, a New Dietary Ingredient",
+        "classification": "Class II",
+        "product": "NATURE's ANSWER Coral Calcium; Antioxidant Benefits*; 1000mg Coral Calcium per serving; DIETARY SUPPLEMENT; 90 capsules"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

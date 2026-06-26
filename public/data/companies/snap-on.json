@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -223,5 +226,34 @@
     "pctMinorityMgmt": 9.7,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.222,
+      "taxExpenseUsd": 304200000,
+      "pretaxIncomeUsd": 1373100000,
+      "year": 2024,
+      "cik": 91440,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "91440",
+        "displayName": "Snap-on Inc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2022-04-14",
+        "maxAffected": 531,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

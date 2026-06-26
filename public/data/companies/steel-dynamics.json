@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Steel Dynamics Foundation Inc: $600K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -226,5 +229,23 @@
     "charity": 85,
     "environment": 50,
     "labor": 15.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.218,
+      "taxExpenseUsd": 432925000,
+      "pretaxIncomeUsd": 1982881000,
+      "year": 2024,
+      "cik": 1022671,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1022671",
+        "displayName": "STEEL DYNAMICS INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

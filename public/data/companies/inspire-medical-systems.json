@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -142,6 +145,47 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.091,
+      "taxExpenseUsd": 4944000,
+      "pretaxIncomeUsd": 58453000,
+      "year": 2024,
+      "cik": 1609550,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1609550",
+        "displayName": "Inspire Medical Systems, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 1,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-10-16",
+        "reason": "Labeling error with a mismatch between the shelf box serial number label and the serial number of the lead provided in the box.",
+        "classification": "Class II",
+        "product": "Inspire Model 4340 Respiratory Sensing Lead, component of the Inspire Upper Airway Stimulation (UAS) system."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 3
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 2943286,
+      "sunshineActYear": 2024
     }
   }
 }

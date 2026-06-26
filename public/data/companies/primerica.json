@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Primerica Foundation Inc: $1.6M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -211,5 +214,15 @@
   "csc": {
     "charity": 85,
     "labor": 34.9
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.233,
+      "taxExpenseUsd": 219118000,
+      "pretaxIncomeUsd": 939247000,
+      "year": 2024,
+      "cik": 1475922,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

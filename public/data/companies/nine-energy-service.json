@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -157,6 +160,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Energy & Utilities"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.005,
+      "taxExpenseUsd": 198000,
+      "pretaxIncomeUsd": -40884000,
+      "year": 2024,
+      "cik": 1532286,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1532286",
+        "displayName": "Nine Energy Service, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

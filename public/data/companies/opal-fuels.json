@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -170,6 +173,16 @@
     "environment": {
       "_inferred": true,
       "basis": "Energy & Utilities"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -1.64,
+      "taxExpenseUsd": -8906000,
+      "pretaxIncomeUsd": 5419000,
+      "year": 2024,
+      "cik": 1842279,
+      "source": "SEC EDGAR XBRL"
     }
   }
 }

@@ -29,7 +29,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -150,5 +153,25 @@
     "charity": 50,
     "labor": 13.6,
     "execPay": 64.4
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Contains undeclared allergen (shrimp).",
+        "classification": "Class I",
+        "product": "Individual Unit Label (both lid and front of cup): Whole Foods Market Kitchens Minestrone Soup, VEGETARIAN NET WT 24 OZ (1 Lb 8OZ) 680g. Case Label: Whole Foods Global Minestrone …"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

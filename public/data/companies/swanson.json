@@ -30,7 +30,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$8M reported corporate giving in 2024 (~0.08% of revenue) via Campbell Soup Foundation.",
     "sources": [
@@ -191,5 +194,25 @@
     "pctMinorityMgmt": 10.6,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-03-23",
+        "reason": "Dietary supplement may contain potential metal shavings greater than or equal to 7mm in length.",
+        "classification": "Class II",
+        "product": "Swanson Ultra: Vitamin B12 Methylcobalamin High Absorption 60 serving per container, Item Code SWU122, UPC 87614-02122. Distributed by Swanson Health Products Fargo, ND 58104. 60 …"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -233,5 +236,23 @@
   "csc": {
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.084,
+      "taxExpenseUsd": 22079000,
+      "pretaxIncomeUsd": 264194000,
+      "year": 2024,
+      "cik": 33213,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "33213",
+        "displayName": "EQT Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

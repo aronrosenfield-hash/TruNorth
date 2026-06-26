@@ -102,5 +102,27 @@
     "pctMinorityMgmt": 17.1,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1477294",
+        "displayName": "Sensata Technologies Holding plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2025-04-06",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

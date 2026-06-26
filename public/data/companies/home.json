@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -195,6 +198,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2025-10-29",
+        "reason": "Due to incorrect/lack of Unique Device Identifier (UDI) codes.",
+        "classification": "Class III",
+        "product": "One Step Sterile Lancet for Single Use (3 sizes): 06949517008861 30g 06949517008854 28g 06949517008847 23g The Lancing System is intended for the hygienic collection of capillary …"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

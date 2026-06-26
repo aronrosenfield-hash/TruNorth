@@ -29,7 +29,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -164,6 +165,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/890821/000149315226016543/formdef14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.001,
+      "taxExpenseUsd": 8930,
+      "pretaxIncomeUsd": -9566057,
+      "year": 2024,
+      "cik": 890821,
+      "source": "SEC EDGAR XBRL"
     }
   }
 }

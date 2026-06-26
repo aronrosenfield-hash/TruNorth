@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -267,5 +270,32 @@
   "csc": {
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.287,
+      "taxExpenseUsd": 265000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1065696,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1065696",
+        "displayName": "LKQ CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2025-08-09",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -168,6 +171,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Hospitality"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 1,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-07-12",
+        "reason": "Products were not properly pasteurized.",
+        "classification": "Class II",
+        "product": "Cricket Creek Farm brand Berkshire Bloom Cheese"
+      },
+      "byCategory": {
+        "food": 4,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

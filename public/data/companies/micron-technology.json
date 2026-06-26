@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$16M reported corporate giving in 2024 (~0.09% of revenue) via Micron Foundation. Operates the Micron Technology Foundation Inc: $12.8M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -275,5 +278,23 @@
     "pctMinorityMgmt": 28.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.364,
+      "taxExpenseUsd": 451000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 723125,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "723125",
+        "displayName": "MICRON TECHNOLOGY INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

@@ -94,7 +94,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "cisaKev": "2026-06-11T14:35:39.055Z"
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "atlassian"
@@ -299,6 +300,14 @@
       "lastUpdated": "2026-06-11T14:35:39.055Z",
       "source": "cisa-kev",
       "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.18,
+      "taxExpenseUsd": 313000000,
+      "pretaxIncomeUsd": 1738000000,
+      "year": 2024,
+      "cik": 1373715,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

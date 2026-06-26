@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -229,5 +232,33 @@
   "csc": {
     "environment": 24.9,
     "labor": 24.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.876,
+      "taxExpenseUsd": 358878,
+      "pretaxIncomeUsd": -409673,
+      "year": 2024,
+      "cik": 1922331,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-03-20",
+        "reason": "Stability testing failures for one or two of the four active pharmaceutical ingredients among the finished drug products, i.e., Phenylephrine HCL, and/or Chlorpheniramine Maleate.",
+        "classification": "Class II",
+        "product": "Broncochem Cold & Flu Syrup Kids (acetaminophen, guaifenesin, phenylephrine HCl), packaged in 120 mL bottles, Made in Dominican Republic Exclusively for Global Corporation Inc, Bo…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 2,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

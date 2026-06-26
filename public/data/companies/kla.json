@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -201,5 +204,23 @@
   },
   "csc": {
     "labor": 35.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.134,
+      "taxExpenseUsd": 428136000,
+      "pretaxIncomeUsd": 3190032000,
+      "year": 2024,
+      "cik": 319201,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "319201",
+        "displayName": "KLA CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

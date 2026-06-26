@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -200,5 +203,23 @@
     "charity": 85,
     "environment": 31.7,
     "labor": 27.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.328,
+      "taxExpenseUsd": 107500000,
+      "pretaxIncomeUsd": 328000000,
+      "year": 2024,
+      "cik": 1718512,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1718512",
+        "displayName": "Gates Industrial Corp plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

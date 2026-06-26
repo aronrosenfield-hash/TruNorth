@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$12M reported corporate giving in 2024 (~0.02% of revenue) via Sysco Foundation.",
     "sources": [
@@ -258,5 +261,44 @@
     "charity": 50,
     "environment": 100,
     "labor": 10.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.243,
+      "taxExpenseUsd": 587000000,
+      "pretaxIncomeUsd": 2415000000,
+      "year": 2024,
+      "cik": 96021,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 34,
+      "classI": 22,
+      "classII": 12,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-06-18",
+        "reason": "Cucumbers have the potential to be contaminated with Salmonella",
+        "classification": "Class I",
+        "product": "RTSALSA1LB 1# EAST COAST FRESH Salsa Cup - 1 lb ALL LOT CODES SAL20 5# EAST COAST FRESH EC-Salsa- Fresh 5# ALL LOT CODES SAL210 6/1# EAST COAST FRESH Salsa- Fresh Retail 6x1# (E) …"
+      },
+      "byCategory": {
+        "food": 34,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2023-03-05",
+        "maxAffected": 1977,
+        "causes": [
+          "Other"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

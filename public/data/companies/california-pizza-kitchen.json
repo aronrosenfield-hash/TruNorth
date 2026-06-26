@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -161,6 +164,19 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2021-09-15",
+        "maxAffected": 1095,
+        "causes": [
+          "Ransomware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   }
 }

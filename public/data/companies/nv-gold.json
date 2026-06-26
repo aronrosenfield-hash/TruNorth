@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -194,5 +197,25 @@
   "csc": {
     "environment": 28.4,
     "labor": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 33,
+      "classI": 0,
+      "classII": 33,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-02-04",
+        "reason": "Potential exposure of rodents and rodent activity in the distribution center.",
+        "classification": "Class II",
+        "product": "Feminine hygiene products, labeled as: KOTEX FREEDOM MAXI NO WINGS 48CT, ALWAYS THIN LINERS UNSCENTED 12 CT, ALWAYS THIN LINERS SCENTED 12CT, ALWAYS ULT.THIN WINGS REG.12/22CT, AL…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 27,
+        "device": 5
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

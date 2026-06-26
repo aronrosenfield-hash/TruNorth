@@ -145,7 +145,10 @@
       "rating": "mixed"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "general-motors",
     "honda-motor-co",
@@ -340,5 +343,15 @@
   "csc": {
     "environment": 100,
     "labor": 22.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.185,
+      "taxExpenseUsd": 1339000000,
+      "pretaxIncomeUsd": 7233000000,
+      "year": 2024,
+      "cik": 37996,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

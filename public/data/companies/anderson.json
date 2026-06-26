@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-31",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -300,6 +301,24 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-09-17",
+        "reason": "Undeclared soy allergen",
+        "classification": "Class II",
+        "product": "Peanut rounds 2.25 oz and 3 oz"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

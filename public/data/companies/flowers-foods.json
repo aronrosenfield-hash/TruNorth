@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -263,6 +264,32 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1128928/000110465926043025/tm2519497-4_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.246,
+      "taxExpenseUsd": 80826000,
+      "pretaxIncomeUsd": 328942000,
+      "year": 2024,
+      "cik": 1128928,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 19,
+      "classI": 3,
+      "classII": 16,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-06-14",
+        "reason": "Undeclared Peanuts in bakery product.",
+        "classification": "Class I",
+        "product": "Tastykake Chocolate Kandy Kakes NET WT 8 OZ (227g) 6-1.3 OZ (38g) PKGS TASTY BAKING COMPANY, PHILADELPHIA, PA 19112 UPC 0 25600 00225 4"
+      },
+      "byCategory": {
+        "food": 19,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

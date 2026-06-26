@@ -89,5 +89,27 @@
   },
   "csc": {
     "privacy": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.256,
+      "taxExpenseUsd": 44782000,
+      "pretaxIncomeUsd": 174769000,
+      "year": 2024,
+      "cik": 1320414,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2024-07-11",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

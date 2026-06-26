@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -178,6 +181,51 @@
     "environment": {
       "_inferred": true,
       "basis": "Apparel & Fashion"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.465,
+      "taxExpenseUsd": 95100000,
+      "pretaxIncomeUsd": 204500000,
+      "year": 2024,
+      "cik": 1024305,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1024305",
+        "displayName": "COTY INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 13,
+      "classI": 5,
+      "classII": 8,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-05-31",
+        "reason": "Possible contamination with listeria monocytogenes",
+        "classification": "Class I",
+        "product": "GIANT CURLY LEAF SPINACH, 12 /8 OZ, UPC: 6-88267-09813-0. Packaged in sealed plastic bags, 12 in a case."
+      },
+      "byCategory": {
+        "food": 13,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2018-01-12",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   }
 }

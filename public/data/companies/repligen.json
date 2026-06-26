@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -185,6 +188,34 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.056,
+      "taxExpenseUsd": -1521000,
+      "pretaxIncomeUsd": -27035000,
+      "year": 2024,
+      "cik": 730272,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-01-21",
+        "reason": "Potential Elevated Laser Output A disconnected cable or a poorly crimped cable under mechanical bending stress can cause loss of electrical contact. At one connection on the board, the failure can drive the laser output to approximately 1,…",
+        "classification": "Class II",
+        "product": "MAVERICK¿ Measurement Module Spectrometer PN 820-01367 (originally part of a kit PN 820-01519) Finished Goods PN 820-01496"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

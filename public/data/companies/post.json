@@ -119,7 +119,8 @@
   },
   "dataLastUpdated": {
     "courtlistener": "2026-06-11T14:35:43.162Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "enriched": {
     "oshaSevereInjury": {
@@ -147,6 +148,32 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.223,
+      "taxExpenseUsd": 105100000,
+      "pretaxIncomeUsd": 472100000,
+      "year": 2024,
+      "cik": 1530950,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-13",
+        "reason": "Foreign Material (plastic)",
+        "classification": "Class II",
+        "product": "Publix Bran Flakes, Wheat Cereal. Net Wt 18oz (1 lb 2 oz) 510g. UPC 0 41415-24305 7. Distributed by Publix Super Markets, Inc. Lakeland, FL 33802."
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "flags": {

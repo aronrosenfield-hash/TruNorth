@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$8M reported corporate giving in 2024 (~0.02% of revenue). Operates the Lennar Foundation Inc: $31.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -237,5 +240,18 @@
     "pctMinorityMgmt": 23.7,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2023-08-11",
+        "maxAffected": 594,
+        "causes": [
+          "Other"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

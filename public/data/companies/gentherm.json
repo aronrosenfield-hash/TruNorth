@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -176,5 +179,41 @@
     "pctMinorityMgmt": 17.1,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.365,
+      "taxExpenseUsd": 37318000,
+      "pretaxIncomeUsd": 102265000,
+      "year": 2024,
+      "cik": 903129,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "903129",
+        "displayName": "Gentherm Inc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-01-19",
+        "reason": "This recall has been initiated to provide a labeling update with revised instruction how to operate the unit with Cold Therapy pads.",
+        "classification": "Class II",
+        "product": "Electri-Cool II Portable Cold Therapy Unit, Model Number 767, Part Number 86193"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

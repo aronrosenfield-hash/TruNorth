@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -228,5 +231,23 @@
     "charity": 85,
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.16,
+      "taxExpenseUsd": 44800000,
+      "pretaxIncomeUsd": 287700000,
+      "year": 2024,
+      "cik": 1590714,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1590714",
+        "displayName": "Element Solutions Inc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

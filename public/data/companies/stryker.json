@@ -99,7 +99,8 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "courtlistener": "2026-06-11T14:35:43.162Z",
     "msha": "2026-06-11T14:35:43.462Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -520,6 +521,45 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.143,
+      "taxExpenseUsd": 499000000,
+      "pretaxIncomeUsd": 3492000000,
+      "year": 2024,
+      "cik": 310764,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "310764",
+        "displayName": "STRYKER CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 224,
+      "classI": 1,
+      "classII": 222,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-06-10",
+        "reason": "It has been identified that the impacted docking station (SN 2521008873) was not product released from manufacturing and may not have completed required testing prior to being shipped to your facility. There is a potential risk of electric…",
+        "classification": "Class II",
+        "product": "Neptune Smart Docking Station (120V), Catalog Number 0770-100-000, part of the Neptune Waste Management System"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 224
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 132155940,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

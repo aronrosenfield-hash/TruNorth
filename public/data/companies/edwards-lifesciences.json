@@ -34,7 +34,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -249,5 +252,38 @@
     "pctMinorityMgmt": 39.6,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1099800",
+        "displayName": "Edwards Lifesciences Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 35,
+      "classI": 6,
+      "classII": 29,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-20",
+        "reason": "Labeling update to provide warning if functionality of the valve replacement delivery system is compromised.",
+        "classification": "Class II",
+        "product": "Edwards EVOQUE tricuspid delivery system REF:9850TDS Sterile EO"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 35
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 27838833,
+      "sunshineActYear": 2024
+    }
   }
 }

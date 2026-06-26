@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -183,5 +186,33 @@
   },
   "csc": {
     "labor": 30.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.302,
+      "taxExpenseUsd": 24053000,
+      "pretaxIncomeUsd": 79532000,
+      "year": 2024,
+      "cik": 1517175,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 5,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-10-08",
+        "reason": "Product is contaminated with Salmonella",
+        "classification": "Class I",
+        "product": "190 cs Cucumber Select 15ct"
+      },
+      "byCategory": {
+        "food": 5,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

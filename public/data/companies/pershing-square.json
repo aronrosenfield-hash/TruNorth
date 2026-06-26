@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Pershing Square Foundation: $21.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -173,5 +176,15 @@
   },
   "csc": {
     "charity": 85
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 0,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1895582,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -171,6 +172,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1840502/000114036126018296/ny20067407x3_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 1.27,
+      "taxExpenseUsd": 17697000,
+      "pretaxIncomeUsd": 13937000,
+      "year": 2024,
+      "cik": 1840502,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

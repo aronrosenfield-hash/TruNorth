@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -270,5 +273,41 @@
     "pctMinority": 33.9,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.1504,
+      "taxExpenseUsd": 32525000,
+      "pretaxIncomeUsd": 216287000,
+      "year": 2024,
+      "cik": 1109345,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1109345",
+        "displayName": "NOVA LTD."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 9,
+      "classI": 3,
+      "classII": 6,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-01-01",
+        "reason": "A software bug within the Gen 2 StatStrip Hospital Meter firmware leads to transmission of erroneous glucose patient test results to a healthcare institution's data management system (DMS) at healthcare sites using WiFi if a user navigates…",
+        "classification": "Class I",
+        "product": "StatStrip Glucose Hospital Meter System. Model/Catalog Number: 63685. Prescription use blood glucose meter for near-patient testing."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 9
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

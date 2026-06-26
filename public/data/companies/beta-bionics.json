@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -190,6 +193,39 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 0,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1674632,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-06",
+        "reason": "insulin pump software versions 1.4.2, and 1.4.3 issue with Dexcom Continuous Glucose Monitoring (CGM) G7 sensor may result in delayed CGM reading then switch to non-CGM dosing, leading to only basal/requested meal doses provided, no correc…",
+        "classification": "Class II",
+        "product": "iLet Bionic Pancreas, REF: BB1001"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 243607,
+      "sunshineActYear": 2024
     }
   }
 }

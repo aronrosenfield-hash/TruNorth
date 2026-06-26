@@ -32,7 +32,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -231,6 +232,32 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1046257/000104625726000151/ingr-20260402.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.298,
+      "taxExpenseUsd": 277000000,
+      "pretaxIncomeUsd": 931000000,
+      "year": 2024,
+      "cik": 1046257,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-11-17",
+        "reason": "Potential for metal fragments in product",
+        "classification": "Class II",
+        "product": "Ingredion INSTANT PURE-FLO F (50 pound bag) food grade starch material 12151103CA"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

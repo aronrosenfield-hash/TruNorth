@@ -99,5 +99,26 @@
     "pctMinorityMgmt": 16.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.181,
+      "taxExpenseUsd": 197000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1524472,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1524472",
+        "displayName": "Xylem Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

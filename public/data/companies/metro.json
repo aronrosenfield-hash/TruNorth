@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -165,6 +168,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Grocery"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 5,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-08-21",
+        "reason": "Guacamole products may be contaminated with Listeria monocytogenes.",
+        "classification": "Class I",
+        "product": "Lunds & Byerlys Fresh Guacamole Dip, Net Wt 14 oz (396g). UPC 0 72431-66072 6. Keep Refrigerated."
+      },
+      "byCategory": {
+        "food": 5,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

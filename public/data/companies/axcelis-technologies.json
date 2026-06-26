@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -174,6 +177,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Manufacturing"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.127,
+      "taxExpenseUsd": 29282000,
+      "pretaxIncomeUsd": 230274000,
+      "year": 2024,
+      "cik": 1113232,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1113232",
+        "displayName": "AXCELIS TECHNOLOGIES INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "cisaKev": "2026-06-11T14:35:39.055Z"
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "$11M reported corporate giving in 2024 (~0.14% of revenue).",
@@ -314,6 +315,22 @@
       "lastUpdated": "2026-06-11T14:35:39.055Z",
       "source": "cisa-kev",
       "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "secTax": {
+      "effectiveTaxRate": -1.608,
+      "taxExpenseUsd": -1589300000,
+      "pretaxIncomeUsd": 988300000,
+      "year": 2024,
+      "cik": 1327567,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1327567",
+        "displayName": "Palo Alto Networks Inc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

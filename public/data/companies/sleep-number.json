@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -190,6 +191,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/827187/000082718726000031/snbr-20260408.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.202,
+      "taxExpenseUsd": -5162000,
+      "pretaxIncomeUsd": -25496000,
+      "year": 2024,
+      "cik": 827187,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "827187",
+        "displayName": "Sleep Number Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

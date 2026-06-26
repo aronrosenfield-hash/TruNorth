@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -235,5 +238,23 @@
   "csc": {
     "environment": 33.6,
     "labor": 28.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.156,
+      "taxExpenseUsd": 10284000,
+      "pretaxIncomeUsd": 65899000,
+      "year": 2024,
+      "cik": 1604778,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1604778",
+        "displayName": "Qorvo, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

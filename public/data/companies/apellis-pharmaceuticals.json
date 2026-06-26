@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -223,6 +224,37 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.006,
+      "taxExpenseUsd": 1162000,
+      "pretaxIncomeUsd": -196716000,
+      "year": 2024,
+      "cik": 1492422,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-10-11",
+        "reason": "19-gauge x 1\" inch filter needles showed appearances of a small fraction of non-preferred characteristics. A causal relationship has not been established between the structural variations in this 19-gauge filter needle and the rare events …",
+        "classification": "Class II",
+        "product": "Apellis Injection Kit 29g Injection Needle -single use intended to inject fluids into, or withdraw fluids from, parts of the body below the surface of the skin and either an 18-ga…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 3516926,
+      "sunshineActYear": 2024
     }
   }
 }

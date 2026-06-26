@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the The Kemper Foundation: $1.0M in charitable contributions, gifts & grants paid (FY2021, IRS Form 990-PF).",
     "sources": [
@@ -261,5 +264,15 @@
     "charity": 85,
     "labor": 9.8,
     "privacy": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.196,
+      "taxExpenseUsd": 76000000,
+      "pretaxIncomeUsd": 388500000,
+      "year": 2024,
+      "cik": 860748,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

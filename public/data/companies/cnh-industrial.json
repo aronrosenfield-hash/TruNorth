@@ -102,7 +102,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -361,6 +362,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1567094/000119312526124227/cnh-20260325.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.215,
+      "taxExpenseUsd": 67624000,
+      "pretaxIncomeUsd": 314323000,
+      "year": 2024,
+      "cik": 1552493,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

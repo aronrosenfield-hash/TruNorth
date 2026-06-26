@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -194,6 +195,33 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1294133/000129413326000009/ingn-20260428.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.0161,
+      "taxExpenseUsd": -588000,
+      "pretaxIncomeUsd": -36476000,
+      "year": 2024,
+      "cik": 1294133,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1294133",
+        "displayName": "Inogen Inc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2018-04-13",
+        "maxAffected": 518,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "dei_eeo1": {

@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -218,6 +221,48 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1438133",
+        "displayName": "TANDEM DIABETES CARE INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 11,
+      "classI": 5,
+      "classII": 6,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-04-01",
+        "reason": "The Czech language user guide contained multiple translation errors. The most significant error was that it incorrectly instructs users to verify that the infusion set is connected to the body, when it should instead direct users to confir…",
+        "classification": "Class II",
+        "product": "Tandem pumps are battery-operated infusion pumps capable of both basal and bolus delivery of insulin. The pumps utilize a motor-driven mechanism to deliver insulin from within a d…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 11
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2020-01-20",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1383014,
+      "sunshineActYear": 2024
     }
   }
 }

@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -142,6 +145,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Manufacturing"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.17,
+      "taxExpenseUsd": 260678,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 806172,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "806172",
+        "displayName": "SONO TEK CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

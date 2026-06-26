@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -210,5 +213,33 @@
     "pctMinorityMgmt": 10.5,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "711377",
+        "displayName": "NEOGEN CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-12-04",
+        "reason": "CGMP violations.",
+        "classification": "Class II",
+        "product": "LICEOUT, Liquid Lice Treatment for Human Use, Contents: 1 FL. OZ. (29.6 mL) per sachet, Distributed By: Bob Barker Company, Inc., 7925 Purfoy Road, Fuquay-Varina, NC 27526. NDC: 5…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 2,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

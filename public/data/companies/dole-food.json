@@ -97,7 +97,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "fresh-del-monte-produce"
   ],
@@ -235,5 +238,34 @@
     "pctMinorityMgmt": 57.1,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 168,
+      "classI": 143,
+      "classII": 4,
+      "classIII": 21,
+      "mostRecent": {
+        "date": "2024-03-27",
+        "reason": "Product has the potential to be contaminated with Listeria monocytogenes.",
+        "classification": "Class I",
+        "product": "Dole Chopped Kit Avocado Ranch UPC 71430000915"
+      },
+      "byCategory": {
+        "food": 168,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2023-02-10",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

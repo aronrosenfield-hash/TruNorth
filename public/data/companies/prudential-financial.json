@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$36M reported corporate giving in 2024 (~0.07% of revenue) via Prudential Foundation.",
     "sources": [
@@ -272,5 +275,15 @@
   "csc": {
     "charity": 50,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.158,
+      "taxExpenseUsd": 507000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1137774,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

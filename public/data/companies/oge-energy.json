@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Oge Energy Foundation Inc: $10.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -243,5 +246,15 @@
     "charity": 85,
     "environment": 28.2,
     "labor": 26.2
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.152,
+      "taxExpenseUsd": 79100000,
+      "pretaxIncomeUsd": 520600000,
+      "year": 2024,
+      "cik": 1021635,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

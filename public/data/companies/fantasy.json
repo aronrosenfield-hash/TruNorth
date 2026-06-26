@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -136,6 +139,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Entertainment & Media"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-09-20",
+        "reason": "Foreign object; rocks.",
+        "classification": "Class II",
+        "product": "Trader Joe's Almond Windmill Cookies Buttery, tender cookies topped with crunchy almonds. Net Wt. 15 oz."
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

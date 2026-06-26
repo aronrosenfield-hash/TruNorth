@@ -97,7 +97,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "comcast",
     "charter-communications",
@@ -208,5 +211,23 @@
   },
   "csc": {
     "privacy": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.142,
+      "taxExpenseUsd": -10390000,
+      "pretaxIncomeUsd": -73083000,
+      "year": 2024,
+      "cik": 1001082,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1001082",
+        "displayName": "DISH Network CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

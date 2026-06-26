@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -267,5 +270,23 @@
     "charity": 85,
     "environment": 50,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.498,
+      "taxExpenseUsd": 507000000,
+      "pretaxIncomeUsd": -1019000000,
+      "year": 2024,
+      "cik": 1306830,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1306830",
+        "displayName": "Celanese Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

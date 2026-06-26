@@ -104,7 +104,8 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -580,6 +581,45 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.166,
+      "taxExpenseUsd": 936000000,
+      "pretaxIncomeUsd": 5628000000,
+      "year": 2024,
+      "cik": 1613103,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1613103",
+        "displayName": "Medtronic plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 548,
+      "classI": 171,
+      "classII": 376,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-06-03",
+        "reason": "A limited number of Pocket Adaptor Kits, Model 64001 and 64002, are labeled with incorrect Use-By-Dates.",
+        "classification": "Class II",
+        "product": "Medtronic 1x4 Pocket Adaptor Kit for Deep Brain Stimulation, Model 64001; Stimulator, electrical, implanted, for parkinsonian tremor"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 548
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 117649217,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

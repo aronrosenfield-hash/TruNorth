@@ -103,5 +103,34 @@
   },
   "csc": {
     "privacy": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.04,
+      "taxExpenseUsd": 5000000,
+      "pretaxIncomeUsd": -107000000,
+      "year": 2024,
+      "cik": 1617640,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2017-05-09",
+        "maxAffected": 1086,
+        "causes": [
+          "Theft or Mistake"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 64,
+      "warnMostRecent": "2022-01-03"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

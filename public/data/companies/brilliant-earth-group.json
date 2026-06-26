@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -127,6 +130,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.039,
+      "taxExpenseUsd": 160000,
+      "pretaxIncomeUsd": 4154000,
+      "year": 2024,
+      "cik": 1866757,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1866757",
+        "displayName": "Brilliant Earth Group, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

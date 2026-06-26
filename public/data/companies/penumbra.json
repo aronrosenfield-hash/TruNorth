@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -196,6 +197,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1321732/000132173226000010/pen-20260427.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.329,
+      "taxExpenseUsd": 6857000,
+      "pretaxIncomeUsd": 20869000,
+      "year": 2024,
+      "cik": 1321732,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1321732",
+        "displayName": "Penumbra Inc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 4,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-01-27",
+        "reason": "The catheter may become susceptible to distal tip damage during use. Distal tip damage in conjunction with pressurization of contrast injection may result in potential vessel damage, and subsequent patient injury or death.",
+        "classification": "Class I",
+        "product": "Penumbra JET 7 KIT Reperfusion Catheter+Penumbra Hi-Flow Aspiration Tubing REF 5MAXJET7KIT The Penumbra JET 7 Reperfusion Catheter with Xtra Flex technology (JET 7 Xtra Flex) is a…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 4
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 5805938,
+      "sunshineActYear": 2024
     }
   }
 }

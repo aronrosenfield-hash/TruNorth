@@ -98,7 +98,8 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -399,6 +400,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/807882/000080788225000004/jack-20250127.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -7.489,
+      "taxExpenseUsd": 32372000,
+      "pretaxIncomeUsd": -4323000,
+      "year": 2024,
+      "cik": 807882,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

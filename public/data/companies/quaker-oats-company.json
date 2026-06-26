@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": []
@@ -137,6 +140,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 66,
+      "classI": 0,
+      "classII": 66,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-03-06",
+        "reason": "potential Salmonella",
+        "classification": "Class II",
+        "product": "Quaker Chewy Bars Less Sugar Peanut Butter Chocolate Chip 8ct 6.7 oz. Bars are individually wrapped in plastic and then packaged in paperboard boxes."
+      },
+      "byCategory": {
+        "food": 66,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

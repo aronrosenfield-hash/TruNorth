@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -163,6 +166,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 8,
+      "classI": 5,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-02-25",
+        "reason": "Potential contamination with leachable lead.",
+        "classification": "Class I",
+        "product": "Brass Pital Pot 4-quart. Sticker label: BRASS HAMMERED HANDI NO 3 UPC 7 023672 414398 US $ 74.99 Sticker label: IKM INDIAN KITCHEN MART"
+      },
+      "byCategory": {
+        "food": 8,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

@@ -105,7 +105,8 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -312,6 +313,33 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/94845/000130817926000050/levi014917_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.033,
+      "taxExpenseUsd": 7200000,
+      "pretaxIncomeUsd": 217600000,
+      "year": 2024,
+      "cik": 94845,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "94845",
+        "displayName": "LEVI STRAUSS & CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2024-06-13",
+        "maxAffected": 640,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "csc": {

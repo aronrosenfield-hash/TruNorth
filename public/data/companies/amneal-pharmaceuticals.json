@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -376,6 +377,37 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.343,
+      "taxExpenseUsd": 18863000,
+      "pretaxIncomeUsd": -55013000,
+      "year": 2024,
+      "cik": 1723128,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 34,
+      "classI": 4,
+      "classII": 27,
+      "classIII": 3,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Cross Contamination with Other Products: due to a potential for cross-contamination with Acemetacin API due to an issue at the API manufacturer.",
+        "classification": "Class III",
+        "product": "Primidone Tablets, USP, 50 mg, 100 Tablets per Bottle, Rx only, Manufactured by: Amneal Pharmaceuticals Pvt. Ltd., Oral Solid Dosage Unit, Ahmedabad 382213, INDIA. Distributed by:…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 34,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1926341,
+      "sunshineActYear": 2024
     }
   }
 }

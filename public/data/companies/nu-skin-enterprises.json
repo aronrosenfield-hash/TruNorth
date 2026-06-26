@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -191,5 +194,23 @@
   },
   "csc": {
     "labor": 24.9
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.1626,
+      "taxExpenseUsd": -28457000,
+      "pretaxIncomeUsd": -175051000,
+      "year": 2024,
+      "cik": 1021561,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1021561",
+        "displayName": "NU SKIN ENTERPRISES, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

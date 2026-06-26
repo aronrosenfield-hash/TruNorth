@@ -100,7 +100,10 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "berkshire-hathaway",
@@ -367,5 +370,15 @@
     "pctMinorityMgmt": 18.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.189,
+      "taxExpenseUsd": 20815000000,
+      "pretaxIncomeUsd": 110376000000,
+      "year": 2024,
+      "cik": 1067983,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

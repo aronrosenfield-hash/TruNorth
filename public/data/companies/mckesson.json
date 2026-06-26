@@ -35,7 +35,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "$12M reported corporate giving in 2024 (~0.01% of revenue) via McKesson Foundation. Operates the Mckesson Foundation: $13.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
@@ -354,6 +355,46 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.201,
+      "taxExpenseUsd": 878000000,
+      "pretaxIncomeUsd": 4359000000,
+      "year": 2024,
+      "cik": 927653,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "927653",
+        "displayName": "MCKESSON CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 285,
+      "classI": 1,
+      "classII": 259,
+      "classIII": 25,
+      "mostRecent": {
+        "date": "2026-02-18",
+        "reason": "Temperature Abuse. 116 cartons with specific serial numbers of Lot 2199821, were stored incorrectly in a controlled room temperature environment instead of the required refrigerated environment.",
+        "classification": "Class I",
+        "product": "UDENYCA, pegfilgrastim-cbqv injection, 6 mg/0.6mL Single Dose Prefilled Syringe, Rx only, Manufactured by Accord BioPharma, Inc., 8041 Arco Corporate Drive, Suite 200, Raleigh, NC…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 166,
+        "device": 119
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 98310,
+      "sunshineActYear": 2024,
+      "opioidSettlementUsd": 7400000000
     }
   }
 }

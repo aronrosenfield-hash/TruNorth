@@ -27,7 +27,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the The Perfect Moment Foundation: $237K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -165,5 +168,15 @@
   },
   "csc": {
     "charity": 85
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": null,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1849221,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

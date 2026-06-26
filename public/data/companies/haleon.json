@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -179,6 +182,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 3,
+      "classII": 1,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Chemical Contamination: contamination with a diluted propylene glycol-based coolant from a machine leakage during the packaging process.",
+        "classification": "Class I",
+        "product": "Gas-X Extra Strength, SIMETHICONE 125 mg/ANTIGAS, packaged in a) 120 SoftGels (UPC 3 00674 35041 9, b) 72 SoftGels (UPC 3 00439 00572 1), Distributed by: Haleon, Warren, NJ 07059."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 6,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

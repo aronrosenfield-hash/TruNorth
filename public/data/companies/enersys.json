@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a1a05",
   "ac": "#f0a030",
   "charity": {
@@ -246,5 +249,23 @@
   "csc": {
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.105,
+      "taxExpenseUsd": 42842000,
+      "pretaxIncomeUsd": 406577000,
+      "year": 2024,
+      "cik": 1289308,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1289308",
+        "displayName": "EnerSys"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

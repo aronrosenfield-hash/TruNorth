@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -146,6 +149,39 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 2000,
+      "pretaxIncomeUsd": -33540000,
+      "year": 2024,
+      "cik": 1407973,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-11-23",
+        "reason": "Procedure Instruments with erroneous unit carton labels.",
+        "classification": "Class II",
+        "product": "GentleWave System APM Procedure Instrument with Matrix REF GW-APM-PI02"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1290023,
+      "sunshineActYear": 2024
     }
   }
 }

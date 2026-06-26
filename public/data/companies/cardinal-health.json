@@ -35,7 +35,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -381,6 +382,44 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.289,
+      "taxExpenseUsd": 348000000,
+      "pretaxIncomeUsd": 1201000000,
+      "year": 2024,
+      "cik": 721371,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "721371",
+        "displayName": "CARDINAL HEALTH INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 442,
+      "classI": 42,
+      "classII": 399,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-04-08",
+        "reason": "The outer packaging and blister pack labeling identify the product as 1mL Luer Lock Tuberculin Syringe (Product Code 1180100777), however the syringes contained within the packages are U-100 Insulin syringes.",
+        "classification": "Class II",
+        "product": "Cardinal Health Monoject Tuberculin Syringe, 1 mL Luer Lock, Catalog Number 1180100777"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 214,
+        "device": 228
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "opioidSettlementUsd": 6000000000
     }
   }
 }

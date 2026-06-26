@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -218,5 +221,12 @@
   "csc": {
     "charity": 50,
     "labor": 40
+  },
+  "enriched": {
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 6683995,
+      "sunshineActYear": 2024
+    }
   }
 }

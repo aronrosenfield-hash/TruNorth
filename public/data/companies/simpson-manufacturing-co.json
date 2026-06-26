@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -210,5 +213,23 @@
   "csc": {
     "environment": 35.3,
     "labor": 32
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.258,
+      "taxExpenseUsd": 111819000,
+      "pretaxIncomeUsd": 434043000,
+      "year": 2024,
+      "cik": 920371,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "920371",
+        "displayName": "Simpson Manufacturing Co., Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

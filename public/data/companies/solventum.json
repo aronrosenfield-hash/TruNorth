@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -222,5 +225,28 @@
   },
   "csc": {
     "labor": 11.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.209,
+      "taxExpenseUsd": 127000000,
+      "pretaxIncomeUsd": 605000000,
+      "year": 2024,
+      "cik": 1964738,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1964738",
+        "displayName": "Solventum Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 5959972,
+      "sunshineActYear": 2024
+    }
   }
 }

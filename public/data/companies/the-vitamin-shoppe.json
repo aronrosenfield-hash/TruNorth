@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -147,6 +150,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2020-08-12",
+        "reason": "Sample analysis revealed product is sub-potent for Vitamin D",
+        "classification": "Class III",
+        "product": "The Vitamin Shoppe Calcium Citrate Plus Magnesium & Vitamin D. 100 count (VS-1086; UPC:6653601086), 300 count (VS-1087; UPC: 6653601087), and 600 count (VS-1123; UPC: 6653601123)."
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -276,6 +277,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/58492/000119312526144643/leg-20260406.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.004,
+      "taxExpenseUsd": 2200000,
+      "pretaxIncomeUsd": -509200000,
+      "year": 2024,
+      "cik": 58492,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "58492",
+        "displayName": "LEGGETT & PLATT INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

@@ -103,7 +103,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -373,6 +374,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1551182/000119312526105117/etn-20260312.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.168,
+      "taxExpenseUsd": 768000000,
+      "pretaxIncomeUsd": 4566000000,
+      "year": 2024,
+      "cik": 1551182,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1551182",
+        "displayName": "Eaton Corp plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

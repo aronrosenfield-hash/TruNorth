@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -168,6 +171,42 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.19,
+      "taxExpenseUsd": 507000,
+      "pretaxIncomeUsd": 2634000,
+      "year": 2024,
+      "cik": 788920,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "788920",
+        "displayName": "PRO DEX INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-11-06",
+        "reason": "The packaging of a sterile battery, intended to power a surgical screwdriver, may contain Tyvek shavings inside the sterile package.",
+        "classification": "Class II",
+        "product": "KLS Martin Battery Pack, REF: KLS BP2 001, and KLS BP2 040 (bulk case of 40), used in conjunction with the KLS Martin MaxDriver 2.0 surgical driver, REF: KLS-SD-2000"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 3
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

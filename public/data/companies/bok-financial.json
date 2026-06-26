@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -249,5 +252,15 @@
     "pctMinorityMgmt": 19.9,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.215,
+      "taxExpenseUsd": 143091000,
+      "pretaxIncomeUsd": 666644000,
+      "year": 2024,
+      "cik": 875357,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

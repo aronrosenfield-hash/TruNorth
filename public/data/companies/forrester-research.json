@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -174,5 +177,15 @@
     "pctMinorityMgmt": 7.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 3.179,
+      "taxExpenseUsd": 8384000,
+      "pretaxIncomeUsd": 2637000,
+      "year": 2024,
+      "cik": 1023313,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

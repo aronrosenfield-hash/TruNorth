@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-31",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -232,6 +233,28 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2024-05-08",
+        "reason": "Their is a potential that breast implants lack the lubricious coating that allows them to slide through the funnels during the implantation procedure.",
+        "classification": "Class II",
+        "product": "Keller Funnel 2, REF: HA-001, STERILEEO, Rx Only,"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 3,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "opioidSettlementUsd": 2370000000
     }
   }
 }

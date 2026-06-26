@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -264,5 +267,39 @@
     "charity": 50,
     "environment": 100,
     "labor": 8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 24,
+      "classI": 9,
+      "classII": 15,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-10",
+        "reason": "Supplier changes resulted in a fit issue with the Contrast Flow Control Valve (CFCV) interface on the Avanta Injector System. Multiple customer reports indicate that the stopcock cannot be reliably engaged with the CFCV snap interface. In …",
+        "classification": "Class II",
+        "product": "Avanta Multi-Patient Administration Tube Sets (AVA 500 MPAT (Part 2 of 2)) used with the Medrad¿ Avanta Injection System; Catalog number: AVA 500 MPAT (Part 2 of 2); Affected mate…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 20,
+        "device": 4
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2024-02-21",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 11636921,
+      "sunshineActYear": 2024
+    }
   }
 }

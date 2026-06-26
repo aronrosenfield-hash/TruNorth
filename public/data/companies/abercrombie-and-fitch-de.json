@@ -86,5 +86,26 @@
       "_inferred": true,
       "basis": "Retail"
     }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.253,
+      "taxExpenseUsd": 194661000,
+      "pretaxIncomeUsd": 768677000,
+      "year": 2024,
+      "cik": 1018840,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1018840",
+        "displayName": "ABERCROMBIE & FITCH CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

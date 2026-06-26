@@ -105,7 +105,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -441,6 +442,37 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 1.821,
+      "taxExpenseUsd": 213000000,
+      "pretaxIncomeUsd": 117000000,
+      "year": 2024,
+      "cik": 1666700,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 10,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 9,
+      "mostRecent": {
+        "date": "2023-05-03",
+        "reason": "Failed Impurities/Degradation Specifications: Out of specification results obtained for conductivity.",
+        "classification": "Class III",
+        "product": "Avicel PH-200 NF, Microcrystalline Cellulose NF, Net Content/Gross Weight 20.0 KG / 21.1 KG bulk container, Manufactured by: DuPont Nutrition USA, Inc., 1301 Ogletown Road, Newark…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 10,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 79,
+      "warnMostRecent": "2020-08-31"
     }
   },
   "csc": {

@@ -111,7 +111,8 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "courtlistener": "2026-06-11T14:35:43.162Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -600,6 +601,18 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.254,
+      "taxExpenseUsd": 1562000000,
+      "pretaxIncomeUsd": 6148000000,
+      "year": 2024,
+      "cik": 64803,
+      "source": "SEC EDGAR XBRL"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "opioidSettlementUsd": 5000000000
     }
   },
   "csc": {

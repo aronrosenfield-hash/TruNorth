@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -242,5 +245,23 @@
     "charity": 85,
     "environment": 28.5,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.261,
+      "taxExpenseUsd": 248600000,
+      "pretaxIncomeUsd": 953500000,
+      "year": 2024,
+      "cik": 8818,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "8818",
+        "displayName": "Avery Dennison Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

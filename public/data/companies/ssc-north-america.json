@@ -27,7 +27,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -136,6 +139,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-10",
+        "reason": "3.0mm surgical knives labeled and packaged as 2.2mm surgical knives.",
+        "classification": "Class II",
+        "product": "Sharpoint 2.2MM, ANGLED, DOUBLE- BEVEL Model/Catalog Number: 72-2231 Microsurgical Knife"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

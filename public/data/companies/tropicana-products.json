@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -144,6 +147,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-04-28",
+        "reason": "Firm initiated a recall because of mislabeling of bottled product inside case.",
+        "classification": "Class II",
+        "product": "KeVita Cucumber Rosemary (primary package), 15.2 oz., glass bottles, 6 packages per case, refrigerated storage"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

@@ -96,7 +96,10 @@
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "l-l-bean",
     "rei",
@@ -234,6 +237,19 @@
     "environment": {
       "_inferred": true,
       "basis": "Apparel & Fashion"
+    }
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2016-07-17",
+        "maxAffected": 73508,
+        "causes": [
+          "Malware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   }
 }

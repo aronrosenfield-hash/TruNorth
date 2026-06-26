@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -213,5 +216,30 @@
     "pctMinorityMgmt": 24.8,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2023-09-06",
+        "reason": "Cross contamination with other products",
+        "classification": "Class III",
+        "product": "Sabril (vigabatrin) for Oral Solution, 500 mg, 50 Packets, Rx only, Manufactured by: Patheon, Cincinnati, OH 45237, NDC 67386-211-65"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 1,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 4073513,
+      "sunshineActYear": 2024
+    }
   }
 }

@@ -30,7 +30,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -183,5 +186,33 @@
   },
   "csc": {
     "labor": 15.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.1817,
+      "taxExpenseUsd": null,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 2049717,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 26,
+      "classI": 24,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-11-27",
+        "reason": "Pieces of plastic in product",
+        "classification": "Class II",
+        "product": "Great Value Cinnamon Rolls 16.5oz UPC 078742201160, 12 retail units per case"
+      },
+      "byCategory": {
+        "food": 26,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

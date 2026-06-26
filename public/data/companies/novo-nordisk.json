@@ -31,7 +31,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -228,5 +231,30 @@
   "csc": {
     "charity": 50,
     "environment": 100
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 15,
+      "classI": 10,
+      "classII": 5,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-01-07",
+        "reason": "Presence of Particulate Matter: Hair was found in a prefilled syringe",
+        "classification": "Class II",
+        "product": "Wegovy (semaglutide) Injection, 1 mg/0.5 mL, 4 Single-Dose Prefilled Pens, Manufactured by: Novo Nordisk A/S, DK-2880 Bagsvaerd, Denmark, Product of Denmark, Novo Nordisk A/S, Nov…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 15,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 25453924,
+      "sunshineActYear": 2024
+    }
   }
 }

@@ -30,7 +30,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$18M reported corporate giving in 2024 (~0.11% of revenue) via Whole Kids Foundation. Operates the Whole Foods Market Foundation: $5.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -186,5 +189,25 @@
     "charity": 85,
     "environment": 100,
     "labor": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 32,
+      "classI": 30,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-11-16",
+        "reason": "Undeclared wheat",
+        "classification": "Class I",
+        "product": "Whole Foods Market Dipping Caramel, PLU 34888 sold by the pound and packaged in nonflexible plastic containers"
+      },
+      "byCategory": {
+        "food": 32,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

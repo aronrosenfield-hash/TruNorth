@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -170,5 +173,46 @@
     "pctMinorityMgmt": 16.7,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 236000,
+      "pretaxIncomeUsd": -51271000,
+      "year": 2024,
+      "cik": 1531177,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1531177",
+        "displayName": "Sight Sciences, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-05-04",
+        "reason": "Ophthalmic devices distributed prior to the recently-obtained 510(k) clearance do not fall within the relevant 510(k) exemption and so their performance characteristics were not evaluated by the FDA prior to distribution.",
+        "classification": "Class II",
+        "product": "TearCare version 1.0 SmartHubs"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1017623,
+      "sunshineActYear": 2024
+    }
   }
 }

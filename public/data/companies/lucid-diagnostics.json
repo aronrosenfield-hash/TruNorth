@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -147,6 +150,39 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 0,
+      "pretaxIncomeUsd": -45529000,
+      "year": 2024,
+      "cik": 1799011,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-06-05",
+        "reason": "The EsophaCap sponge may be at increased risk of detaching from the string during removal of the device from the patient, particularly at the lower esophageal sphincter at the gastroesophageal junction or the upper esophageal sphincter bet…",
+        "classification": "Class II",
+        "product": "Brand Name: EsophaCap Product Name: EsophaCap (25mm diameter, 10 pores/inch) Model/Catalog Number: EC25T10VI Software Version: N/A Product Description: EsophaCap is pouched as ind…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 203334,
+      "sunshineActYear": 2024
     }
   }
 }

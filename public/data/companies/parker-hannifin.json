@@ -142,7 +142,10 @@
       "rating": "good"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "eaton",
     "inter",
@@ -332,5 +335,34 @@
     "pctMinorityMgmt": 13.6,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.209,
+      "taxExpenseUsd": 750000000,
+      "pretaxIncomeUsd": 3595000000,
+      "year": 2024,
+      "cik": 76334,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "76334",
+        "displayName": "Parker-Hannifin Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2022-03-14",
+        "maxAffected": 4597,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

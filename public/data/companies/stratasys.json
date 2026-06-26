@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -179,5 +182,41 @@
     "pctMinorityMgmt": 24,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.035,
+      "taxExpenseUsd": 2973000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1517396,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1517396",
+        "displayName": "STRATASYS LTD."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 5,
+      "mostRecent": {
+        "date": "2025-07-16",
+        "reason": "Customers unable to use cartridges due to formatting error in expiration date which leads to switching the day with the month. Or, the system will not recognize that a resin is expired and will not prevent the user from using an expired ma…",
+        "classification": "Class III",
+        "product": "TrueDent Clear, TDM 100, Model No. OBJ-09164 Light-curable methacrylate-based resin that enables fabrication of dental appliances"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 5
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -243,5 +246,51 @@
   },
   "csc": {
     "labor": 13.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.198,
+      "taxExpenseUsd": 29636000,
+      "pretaxIncomeUsd": 149993000,
+      "year": 2024,
+      "cik": 856982,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "856982",
+        "displayName": "MERIT MEDICAL SYSTEMS INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 102,
+      "classI": 5,
+      "classII": 97,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-06",
+        "reason": "catheter may experience resistance when being advanced over the guidewire",
+        "classification": "Class II",
+        "product": "Philips Bridge Prep Kit REF: K12-09098C Sterile EO, Rx ONLY"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 102
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 2736320,
+      "sunshineActYear": 2024
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 117,
+      "warnMostRecent": "2022-10-25"
+    }
   }
 }

@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -265,5 +268,25 @@
     "pctMinorityMgmt": 5,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2024-10-09",
+        "reason": "Potential foreign material (metal)",
+        "classification": "Class II",
+        "product": "1. Sqwincher Electrolyte Beverage Mix, orange powder packs, Net Wt 23.83 oz (1 lb 8 oz) 675.6 g: UPC 7588025004; packaged in assorted case, 32 per case / 2.5 gal yield item number…"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

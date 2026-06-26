@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -167,6 +170,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-09-25",
+        "reason": "During CAPA investigations of sight production inconsistencies, it was highlighted that previous Electromagnetic Compatibility (EMC) assessments related to RF radiated emissions may not be reasonably equivalent to the current product due t…",
+        "classification": "Class II",
+        "product": "Seer Home System is an ambulatory electroencephalograph (EEG) system intended for at-home use for extended EEG and video EEG (vEEG) recordings and analysis. The Seer Home System i…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

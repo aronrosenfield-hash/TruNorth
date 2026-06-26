@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$6M reported corporate giving in 2024 (~0.05% of revenue) via Molson Coors Foundation.",
     "sources": [
@@ -266,5 +269,33 @@
     "charity": 50,
     "environment": 50,
     "labor": 15.2
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.23,
+      "taxExpenseUsd": 345300000,
+      "pretaxIncomeUsd": 1503000000,
+      "year": 2024,
+      "cik": 24545,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 16,
+      "classI": 0,
+      "classII": 16,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-12-25",
+        "reason": "CGMP deviations: the bulk product was rejected by the Quality Unit after routine inspection of the mixing vessel showed scratches on the sides and bottom of the mixing vessel. Product was to be rejected but was inadvertently released and s…",
+        "classification": "Class II",
+        "product": "Gelato, Benzocaine 20% Topical Gel Anesthetic Gel, Net Wt. 1 oz. (30ml), Manufactured by Keystone Industries 480 S. Democrat Rd., Gibbstown, NJ 08027, NDC# 68400-352-30."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 13,
+        "device": 3
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -101,5 +101,36 @@
   "csc": {
     "charity": 85,
     "labor": 27.4
+  },
+  "enriched": {
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "106640",
+        "displayName": "WHIRLPOOL CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2020-08-26",
+        "reason": "The rivets that secure the elastic headband to the face shield have the potential to be mis-assembled. When this condition occurs, it can result in a headband that can become loose from face shield allowing the face shield to shield on the…",
+        "classification": "Class II",
+        "product": "PAPR (Powered Air-Purifying Respirator) - Model# WLPAPR20W1"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

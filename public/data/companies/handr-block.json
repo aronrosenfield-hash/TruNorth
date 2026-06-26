@@ -136,7 +136,10 @@
       "rating": "mixed"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "turbotax-intuit",
     "jackson-hewitt",
@@ -302,5 +305,26 @@
   "csc": {
     "charity": 85,
     "labor": 11.3
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.216,
+      "taxExpenseUsd": 164359000,
+      "pretaxIncomeUsd": 762322000,
+      "year": 2024,
+      "cik": 12659,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2018-05-09",
+        "maxAffected": 2655,
+        "causes": [
+          "Theft or Mistake"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

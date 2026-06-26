@@ -86,5 +86,18 @@
       "_inferred": true,
       "basis": "Retail"
     }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.0222,
+      "taxExpenseUsd": -931000,
+      "pretaxIncomeUsd": -41911000,
+      "year": 2024,
+      "cik": 1713539,
+      "source": "SEC EDGAR XBRL"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

@@ -100,7 +100,10 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "usaa",
@@ -342,5 +345,18 @@
     "charity": 85,
     "labor": 8,
     "privacy": 50
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 3,
+        "mostRecent": "2024-04-30",
+        "maxAffected": 546,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -206,5 +209,25 @@
   "csc": {
     "environment": 50,
     "labor": 11.4
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 1,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-05-04",
+        "reason": "Chemical contamination: presence of benzene",
+        "classification": "Class I",
+        "product": "Suave 24-Hour Protection Aerosol Antiperspirant Powder scent, Aluminum Chlorohydrate (19.1%), packaged in a) 4 oz. cans (UPC 0 79400 75150 8), and b) 6 oz. cans (UPC 0 79400 78490…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 2,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

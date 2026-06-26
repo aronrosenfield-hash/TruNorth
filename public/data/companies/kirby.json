@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -241,5 +244,23 @@
   "csc": {
     "environment": 50,
     "labor": 13.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.209,
+      "taxExpenseUsd": 75867000,
+      "pretaxIncomeUsd": 362763000,
+      "year": 2024,
+      "cik": 56047,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "56047",
+        "displayName": "KIRBY CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

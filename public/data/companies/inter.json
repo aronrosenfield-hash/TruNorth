@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -234,5 +237,25 @@
   },
   "csc": {
     "labor": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Some units of Aluminum Chloride Gel contain the package insert for Ferric Sulfate Gel. The incorrect insert misidentifies the product and contains different first aid instructions, most critically in that the Ferric Sulfate insert instruct…",
+        "classification": "Class II",
+        "product": "Advance Aluminum Chloride Gel Clear Hemostatic Gel Kit, Catalog number 504600-28"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

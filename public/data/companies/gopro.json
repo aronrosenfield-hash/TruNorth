@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -185,5 +188,23 @@
     "reviewed": false,
     "license": "CC BY-SA 3.0",
     "fetchedAt": "2026-06-11"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -2.248,
+      "taxExpenseUsd": 299222000,
+      "pretaxIncomeUsd": -133089000,
+      "year": 2024,
+      "cik": 1500435,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1500435",
+        "displayName": "GoPro, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

@@ -105,7 +105,8 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -372,6 +373,37 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000023/isrg-20260313.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1035267",
+        "displayName": "INTUITIVE SURGICAL INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 77,
+      "classI": 1,
+      "classII": 76,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-10",
+        "reason": "Due to unintentionally activated near infrared handheld camera when attempting to turn off illumination during normal clinical workflow transitions, particularly when switching from the handheld camera to the robotic endoscope.",
+        "classification": "Class II",
+        "product": "Brand Name: Da Vinci 5 Product Name: ASSY,DV5 TOWER,IS5000 Model/Catalog Number: 380746 Software Version: N/A Product Description: Preface: This report under 21 CFR 806.10 is bein…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 77
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 72225869,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

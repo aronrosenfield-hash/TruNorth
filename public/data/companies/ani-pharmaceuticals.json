@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -187,6 +188,37 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1023024/000102302426000039/anip-20260408.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.166,
+      "taxExpenseUsd": -3690000,
+      "pretaxIncomeUsd": -22212000,
+      "year": 2024,
+      "cik": 1023024,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 12,
+      "classI": 0,
+      "classII": 6,
+      "classIII": 6,
+      "mostRecent": {
+        "date": "2026-05-27",
+        "reason": "Defective Container; packets were found to be either empty or partially full.",
+        "classification": "Class II",
+        "product": "Estradiol Gel, 0.1%, 0.25 mg, 0.25 g per packet, 30 packets per carton, Rx only, Distributed by: ANI Pharmaceuticals, Inc., Baudette, MN 56623. NDC 70954-531-20"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 12,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1125992,
+      "sunshineActYear": 2024
     }
   }
 }

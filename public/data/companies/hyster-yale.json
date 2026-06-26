@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -214,5 +217,23 @@
   },
   "csc": {
     "labor": 33.7
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.342,
+      "taxExpenseUsd": 74800000,
+      "pretaxIncomeUsd": 219000000,
+      "year": 2024,
+      "cik": 1173514,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1173514",
+        "displayName": "HYSTER-YALE, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

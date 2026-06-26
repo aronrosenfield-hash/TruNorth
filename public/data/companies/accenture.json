@@ -102,7 +102,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -386,6 +387,22 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.235,
+      "taxExpenseUsd": 2280126000,
+      "pretaxIncomeUsd": 9699323000,
+      "year": 2024,
+      "cik": 1467373,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1467373",
+        "displayName": "Accenture plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

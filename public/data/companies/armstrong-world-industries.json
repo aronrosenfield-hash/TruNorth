@@ -34,7 +34,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -272,6 +273,22 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.237,
+      "taxExpenseUsd": 82200000,
+      "pretaxIncomeUsd": 347100000,
+      "year": 2024,
+      "cik": 7431,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "7431",
+        "displayName": "ARMSTRONG WORLD INDUSTRIES INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

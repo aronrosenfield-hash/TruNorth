@@ -73,7 +73,8 @@
     "phmsa": "2026-06-11T14:35:44.580Z",
     "execPay": "2026-06-11T03:48:51.753Z",
     "courtlistener": "2026-06-11T14:35:43.162Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "seedSource": "top-brands-coverage-2026-06-08",
   "seedNote": "US steakhouse chain",
@@ -284,6 +285,14 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.153,
+      "taxExpenseUsd": 80145000,
+      "pretaxIncomeUsd": 524490000,
+      "year": 2024,
+      "cik": 1289460,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

@@ -37,7 +37,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "cisaKev": "2026-06-11T14:35:39.055Z"
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -373,6 +374,14 @@
       "lastUpdated": "2026-06-11T14:35:39.055Z",
       "source": "cisa-kev",
       "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1730168",
+        "displayName": "Broadcom Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

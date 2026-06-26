@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the S&P Global Foundation: $8.8M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -254,5 +257,26 @@
     "pctMinorityMgmt": 32.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.215,
+      "taxExpenseUsd": 1141000000,
+      "pretaxIncomeUsd": 5308000000,
+      "year": 2024,
+      "cik": 64040,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "dataBroker": {
+        "registered": true,
+        "collectsBiometric": false,
+        "collectsGeolocation": true,
+        "collectsMinors": false,
+        "soldToLawEnforcement": false,
+        "soldToGenAI": false
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

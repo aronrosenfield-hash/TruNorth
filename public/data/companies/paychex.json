@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Paychex Charitable Foundation Inc: $2.4M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
@@ -227,5 +230,24 @@
   "csc": {
     "charity": 85,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.238,
+      "taxExpenseUsd": 518600000,
+      "pretaxIncomeUsd": 2175900000,
+      "year": 2024,
+      "cik": 723531,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2024-03-22",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

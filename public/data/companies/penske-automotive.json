@@ -92,7 +92,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "penske-automotive",
@@ -260,5 +263,15 @@
   },
   "csc": {
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.245,
+      "taxExpenseUsd": 316500000,
+      "pretaxIncomeUsd": 1289900000,
+      "year": 2024,
+      "cik": 1019849,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

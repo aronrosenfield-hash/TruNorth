@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -213,5 +216,34 @@
     "charity": 85,
     "environment": 100,
     "labor": 13.7
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 1,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-01-15",
+        "reason": "Some units in a single production lot were programmed incorrectly which will result in the VivAer Stylus being incorrectly recognized as RhinAer Stylus when connected to the Aerin Console.",
+        "classification": "Class II",
+        "product": "Aerin Medical VivAer Stylus, REF CAT1785 (individual stylus), and REF CAT500 (5-pack), sterile."
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2015-05-20",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -157,6 +160,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Financial Services"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 3,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-11-16",
+        "reason": "Vegan Golden nuggets were sampled by the FDA and found to contain egg that is not declared on the label.",
+        "classification": "Class I",
+        "product": "Vegan Golden Nuggets, (1 lb. bags) Ingredients: (NON GMO) Textured Soybean Fiber, Isolated Soy Protein, Soybean Oil, Sugar, Salt, Pepper, Vegan Chicken Flavor Seasoning (Food Addi…"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

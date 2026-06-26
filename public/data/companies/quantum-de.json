@@ -102,5 +102,44 @@
     "pctMinorityMgmt": 14.6,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.007,
+      "taxExpenseUsd": 821000,
+      "pretaxIncomeUsd": -114270000,
+      "year": 2024,
+      "cik": 709283,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "709283",
+        "displayName": "QUANTUM CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 1,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-06-18",
+        "reason": "Due to a software bug the robotic arm may incorrectly guide the instrument compared to the planning defined by user.",
+        "classification": "Class II",
+        "product": "EPIONE Model 30-0001 UDI-DI code: 03760305400031 The EPIONE¿ device is a user controlled, stereotactic accessory intended to assist in the planning and manual advancement of one o…"
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

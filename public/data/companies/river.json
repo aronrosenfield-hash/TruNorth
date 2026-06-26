@@ -29,7 +29,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -169,5 +172,25 @@
     "charity": 50,
     "environment": 50,
     "labor": 9.6
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2025-01-29",
+        "reason": "Underprocessing",
+        "classification": "Class III",
+        "product": "River Valley Ranch & Kitchens Spinach Artichoke Dip Mix. net wt. 16 oz. (453g). UPC 6 92016-40021 1. Keep Refrigerated After Opening. 39900 60th Street, Burlington, WI 53105."
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

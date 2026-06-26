@@ -107,7 +107,8 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "courtlistener": "2026-06-11T14:35:43.162Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -475,6 +476,25 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.219,
+      "taxExpenseUsd": 1866000000,
+      "pretaxIncomeUsd": 8523000000,
+      "year": 2024,
+      "cik": 860730,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2023-07-05",
+        "maxAffected": 7500,
+        "causes": [
+          "Theft or Mistake"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "csc": {

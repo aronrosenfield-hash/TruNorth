@@ -105,10 +105,27 @@
       "lastUpdated": "2026-06-11T14:35:39.055Z",
       "source": "cisa-kev",
       "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.174,
+      "taxExpenseUsd": 73868000,
+      "pretaxIncomeUsd": 423828000,
+      "year": 2024,
+      "cik": 1511737,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1511737",
+        "displayName": "Ubiquiti Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "dataLastUpdated": {
-    "cisaKev": "2026-06-11T14:35:39.055Z"
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "flags": {
     "animals": {

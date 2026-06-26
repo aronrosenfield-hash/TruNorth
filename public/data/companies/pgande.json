@@ -35,7 +35,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "Operates the Pg&E Corporation Foundation: $17.4M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
@@ -298,6 +299,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1004980/000100498026000020/pcg-20260409.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.088,
+      "taxExpenseUsd": -200000000,
+      "pretaxIncomeUsd": 2312000000,
+      "year": 2024,
+      "cik": 1004980,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

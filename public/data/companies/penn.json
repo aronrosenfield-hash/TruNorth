@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -226,5 +229,25 @@
   },
   "csc": {
     "labor": 15.8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-07-10",
+        "reason": "Potential Salmonella contamination",
+        "classification": "Class I",
+        "product": "Nature's Wonderland brand Thyroid Formula 60 Veg Capsules UPC: 715486893205. Packaged in White PET 150cc bottle with security closure"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

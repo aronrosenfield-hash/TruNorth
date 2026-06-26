@@ -29,7 +29,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -155,5 +158,16 @@
     "environment": 50,
     "labor": 11.4,
     "privacy": 50
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2018-03-21",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

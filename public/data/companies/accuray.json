@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -246,6 +247,37 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1138723",
+        "displayName": "ACCURAY INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 0,
+      "classII": 5,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-02-05",
+        "reason": "Snap rings may become partially or completed detached from the shafts within the internal mechanism. Uncontrolled rotation may occur on the left and right roll axes when the rings are removed or damaged.",
+        "classification": "Class II",
+        "product": "CyberKnife Treatment Delivery System, REF 0660000 The CyberKnife System may be labeled as CyberKnife M6TM or VSI TM Robotic Surgery System. The CyberKnife Treatment Delivery Syste…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 5
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 113041,
+      "sunshineActYear": 2024
     }
   }
 }

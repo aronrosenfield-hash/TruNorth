@@ -109,5 +109,29 @@
     "labor": 14.2,
     "privacy": 8,
     "execPay": 25.9
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.24,
+      "taxExpenseUsd": 64482000,
+      "pretaxIncomeUsd": 268665000,
+      "year": 2024,
+      "cik": 1157408,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2020-11-19",
+        "maxAffected": 742,
+        "causes": [
+          "Ransomware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

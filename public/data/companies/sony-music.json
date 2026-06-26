@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -259,5 +262,25 @@
   },
   "csc": {
     "labor": 8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2020-10-28",
+        "reason": "Lobster tail pastry contains undeclared wheat, FD&C Red #40, and FD&C Yellow #5 food dyes.",
+        "classification": "Class II",
+        "product": "Frozen raw Lobster Tail pastry 100 count, sold in 15LB, 24LB, 40.25LB cases"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

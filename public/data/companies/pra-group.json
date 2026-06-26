@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -191,6 +192,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1185348/000118534826000012/praa-20260430.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.192,
+      "taxExpenseUsd": 21032000,
+      "pretaxIncomeUsd": 109605000,
+      "year": 2024,
+      "cik": 1185348,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

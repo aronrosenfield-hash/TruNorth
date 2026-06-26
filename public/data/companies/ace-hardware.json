@@ -134,7 +134,10 @@
       "rating": "good"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "home-depot",
     "lowe-s",
@@ -343,5 +346,18 @@
   "csc": {
     "environment": 25.3,
     "labor": 50
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2023-10-29",
+        "maxAffected": 613,
+        "causes": [
+          "Ransomware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

@@ -106,7 +106,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -447,6 +448,43 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.2,
+      "taxExpenseUsd": 1249000000,
+      "pretaxIncomeUsd": 6244000000,
+      "year": 2024,
+      "cik": 773840,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-05-01",
+        "reason": "CGMP Deviations",
+        "classification": "Class II",
+        "product": "Eyesaline, Saline Eyewash Solution, Cartridge for Fendall 2000, Net contents: 7.9 gal per cartridge, Sperian Eye & Face Protection, Inc., 825 East Highway 151, Platteville, WI 538…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 1,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2023-05-28",
+        "maxAffected": 2194,
+        "causes": [
+          "Other"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "csc": {

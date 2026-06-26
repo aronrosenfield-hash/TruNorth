@@ -30,7 +30,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Schneider National Foundation Inc: $2.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -220,5 +223,15 @@
     "charity": 85,
     "environment": 26.6,
     "labor": 9.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.231,
+      "taxExpenseUsd": 35200000,
+      "pretaxIncomeUsd": 152200000,
+      "year": 2024,
+      "cik": 1692063,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

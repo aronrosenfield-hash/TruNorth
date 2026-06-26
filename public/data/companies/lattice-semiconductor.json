@@ -102,5 +102,26 @@
     "pctMinorityMgmt": 36.1,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.69,
+      "taxExpenseUsd": -24902000,
+      "pretaxIncomeUsd": 36229000,
+      "year": 2024,
+      "cik": 855658,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "855658",
+        "displayName": "LATTICE SEMICONDUCTOR CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

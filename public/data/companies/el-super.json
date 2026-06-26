@@ -30,7 +30,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -189,5 +192,25 @@
   },
   "csc": {
     "labor": 10.1
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-03-16",
+        "reason": "Potential to be contaminated with lead.",
+        "classification": "Class II",
+        "product": "El Super Leon brand, Dry Salted Plum with Chili, Shelf Stable, packaged in plastic bag, Net Wt 1.05oz, UPC 8-52605-00408. With 12 packs of 12 units per case, for a total of 144 un…"
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

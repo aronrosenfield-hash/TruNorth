@@ -105,7 +105,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -379,6 +380,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/79879/000007987926000088/ppg-20260304.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.256,
+      "taxExpenseUsd": 475000000,
+      "pretaxIncomeUsd": 1852000000,
+      "year": 2024,
+      "cik": 79879,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "79879",
+        "displayName": "PPG INDUSTRIES INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

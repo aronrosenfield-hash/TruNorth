@@ -33,7 +33,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -247,6 +248,25 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1280058/000128005826000009/blkb-20260418.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.041,
+      "taxExpenseUsd": -12938000,
+      "pretaxIncomeUsd": -312462000,
+      "year": 2024,
+      "cik": 1280058,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "dataBroker": {
+        "registered": true,
+        "collectsBiometric": false,
+        "collectsGeolocation": false,
+        "collectsMinors": false,
+        "soldToLawEnforcement": false,
+        "soldToGenAI": false
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "csc": {

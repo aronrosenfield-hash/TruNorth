@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -186,5 +189,28 @@
     "pctMinorityMgmt": 10,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.2779,
+      "taxExpenseUsd": 6529000,
+      "pretaxIncomeUsd": 23489000,
+      "year": 2024,
+      "cik": 1027838,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1027838",
+        "displayName": "TACTILE SYSTEMS TECHNOLOGY INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 810270,
+      "sunshineActYear": 2024
+    }
   }
 }

@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -169,6 +170,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1323885/000132388526000010/atrc-20260403.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.023,
+      "taxExpenseUsd": 1024000,
+      "pretaxIncomeUsd": -43674000,
+      "year": 2024,
+      "cik": 1323885,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1323885",
+        "displayName": "AtriCure, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-02-07",
+        "reason": "AtriCure has identified certain lots of tank hose assemblies where a second-tier supplier provided incorrect tank hose assemblies. These tank hose assemblies were provided with an outer sheathing that does not have required pin perforation…",
+        "classification": "Class II",
+        "product": "Cryo Module Accessories Domestic CMA-OUS, Product Catalog Number A001053"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 4923636,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

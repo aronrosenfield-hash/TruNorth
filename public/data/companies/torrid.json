@@ -90,7 +90,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "lane-bryant",
     "handm",
@@ -215,5 +218,15 @@
     "pctMinorityMgmt": 32.1,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.245,
+      "taxExpenseUsd": 5285000,
+      "pretaxIncomeUsd": 21603000,
+      "year": 2024,
+      "cik": 1792781,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

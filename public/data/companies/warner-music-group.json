@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -168,6 +171,19 @@
     "environment": {
       "_inferred": true,
       "basis": "Entertainment & Media"
+    }
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2020-08-05",
+        "maxAffected": 3368,
+        "causes": [
+          "Malware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   }
 }

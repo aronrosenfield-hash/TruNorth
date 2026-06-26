@@ -99,7 +99,10 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "bacardi-limited",
@@ -325,5 +328,25 @@
     "charity": 85,
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-13",
+        "reason": "Undeclared allergen Milk. The presence of the milk allergen in the product was found to exceed acceptable levels despite the product being labeled with the statement *May contain milk. *",
+        "classification": "Class II",
+        "product": "Montebianco, 113542 Base Vegan, 2 Kg (4.41 Lb) Bag, packed 8 bags per master case of 2 Kg (4.41 lb) each total case weight,16 Kg / 35.27 lb"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

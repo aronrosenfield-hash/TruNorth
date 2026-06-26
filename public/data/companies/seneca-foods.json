@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Seneca Foods Foundation: $315K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -222,5 +225,33 @@
     "charity": 85,
     "environment": 28.8,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.243,
+      "taxExpenseUsd": 13259000,
+      "pretaxIncomeUsd": 54483000,
+      "year": 2024,
+      "cik": 88948,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 2,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-12-13",
+        "reason": "Undeclared soy.",
+        "classification": "Class I",
+        "product": "HyVee Turkey Gravy, Net Wt 12 oz (340g). UPC 0 75450-03608 4. Distributed by Hy-Vee, Inc., West Des Moines, IA 50266"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

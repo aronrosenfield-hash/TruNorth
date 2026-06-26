@@ -96,7 +96,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "breyers",
     "da"
@@ -217,5 +220,13 @@
     "environment": 100,
     "labor": 78,
     "privacy": 50
+  },
+  "enriched": {
+    "animalCerts": {
+      "certifications": [
+        "certified-vegan"
+      ],
+      "lastUpdated": "2026-06-26T16:16:32.985Z"
+    }
   }
 }

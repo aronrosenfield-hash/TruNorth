@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -142,6 +145,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.254,
+      "taxExpenseUsd": -388000,
+      "pretaxIncomeUsd": -1531000,
+      "year": 2024,
+      "cik": 355948,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "355948",
+        "displayName": "RICHARDSON ELECTRONICS, LTD."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

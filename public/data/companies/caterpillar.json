@@ -153,7 +153,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "hitachi"
@@ -415,6 +416,22 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.124,
+      "taxExpenseUsd": -66000000,
+      "pretaxIncomeUsd": 533000000,
+      "year": 2024,
+      "cik": 764764,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "18230",
+        "displayName": "CATERPILLAR INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

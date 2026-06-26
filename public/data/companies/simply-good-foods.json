@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "cisaKev": "2026-06-11T14:35:39.055Z"
+    "cisaKev": "2026-06-11T14:35:39.055Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -231,6 +232,32 @@
       "lastUpdated": "2026-06-11T14:35:39.055Z",
       "source": "cisa-kev",
       "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.251,
+      "taxExpenseUsd": 46741000,
+      "pretaxIncomeUsd": 186050000,
+      "year": 2024,
+      "cik": 1702744,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 0,
+      "classII": 6,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-11-26",
+        "reason": "Due to distributing the measles IgG IVD without a premarket approved/cleared.",
+        "classification": "Class II",
+        "product": "Brand Name: ReQuest Measles IgG Product Name: Rubeola IgG Enzyme Linked Immunoabsorbant Assay Model/Catalog Number: 01-190 Software Version: N/A Product Description: Measles IgG t…"
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 4
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

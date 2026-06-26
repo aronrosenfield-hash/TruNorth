@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -253,5 +256,16 @@
   "csc": {
     "environment": 36,
     "labor": 8
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2023-05-30",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

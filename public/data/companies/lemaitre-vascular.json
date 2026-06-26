@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -209,6 +210,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1158895/000119312526153877/ck0001158895-20260413.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.226,
+      "taxExpenseUsd": 12837000,
+      "pretaxIncomeUsd": 56875000,
+      "year": 2024,
+      "cik": 1158895,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1158895",
+        "displayName": "LEMAITRE VASCULAR INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 11,
+      "classI": 0,
+      "classII": 11,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-03-25",
+        "reason": "Labeling mix-up resulting in the incorrect lot outer packaging of product.",
+        "classification": "Class II",
+        "product": "Artegraft Vascular Graft; REF#: AG740;"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 11
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 311504,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

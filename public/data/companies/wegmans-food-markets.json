@@ -68,7 +68,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "competitors": [],
-  "dataLastUpdated": "2026-06-08",
+  "dataLastUpdated": {
+    "legacy": "2026-06-08",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "seedSource": "top-brands-coverage-2026-06-08",
   "seedNote": "Private US Northeast grocer",
   "role": "brand",
@@ -91,5 +94,25 @@
       "basis": "Grocery"
     }
   },
-  "realCats": 0
+  "realCats": 0,
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 64,
+      "classI": 25,
+      "classII": 30,
+      "classIII": 9,
+      "mostRecent": {
+        "date": "2025-12-31",
+        "reason": "Product may be contaminated with Listeria monocytogenes.",
+        "classification": "Class I",
+        "product": "Locatelli Pecorino Romano Cheese Grated (Wegmans #270010) Packaged and sold by the pound Packaged in cylindrical clear plastic tubs with lid UPC: 2-77580-XXXXX-7, where X is the u…"
+      },
+      "byCategory": {
+        "food": 64,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  }
 }

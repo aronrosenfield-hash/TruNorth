@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -205,5 +208,23 @@
   "csc": {
     "environment": 26.6,
     "labor": 25.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.119,
+      "taxExpenseUsd": 25100000,
+      "pretaxIncomeUsd": 211600000,
+      "year": 2024,
+      "cik": 17843,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "17843",
+        "displayName": "CARPENTER TECHNOLOGY CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

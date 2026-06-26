@@ -103,7 +103,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -377,6 +378,25 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/51434/000162828026021729/ipc-20260327.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.98,
+      "taxExpenseUsd": -361000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 51434,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2023-05-30",
+        "maxAffected": 1057,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "csc": {

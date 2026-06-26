@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -141,6 +144,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.0628,
+      "taxExpenseUsd": 365617,
+      "pretaxIncomeUsd": -5818112,
+      "year": 2024,
+      "cik": 1369290,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1369290",
+        "displayName": "MYOMO, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

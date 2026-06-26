@@ -102,7 +102,8 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -318,6 +319,24 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1639438/000162828026027224/cava-20260424.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-08-16",
+        "reason": "Undeclared sesame",
+        "classification": "Class I",
+        "product": "Cava Spicy Hummus UPC 89832800227 Net Wt. 8oz./226.8 g Packaged in clear plastic container. 12 units per case"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

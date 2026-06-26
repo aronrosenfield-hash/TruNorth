@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Newmarket Foundation: $994K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -208,5 +211,15 @@
     "charity": 85,
     "environment": 25.4,
     "labor": 24.8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.208,
+      "taxExpenseUsd": 121694000,
+      "pretaxIncomeUsd": 584107000,
+      "year": 2024,
+      "cik": 1282637,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

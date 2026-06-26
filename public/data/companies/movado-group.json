@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "Operates the The Movado Group Foundation: $1.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
@@ -185,6 +186,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/72573/000114036126019208/ny20069088x1_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.279,
+      "taxExpenseUsd": 7442000,
+      "pretaxIncomeUsd": 26651000,
+      "year": 2024,
+      "cik": 72573,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

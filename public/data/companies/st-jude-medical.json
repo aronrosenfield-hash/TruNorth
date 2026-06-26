@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -167,6 +170,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 24,
+      "classI": 2,
+      "classII": 22,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-04-02",
+        "reason": "Due to issues associated with data migration of patient information and results to a Cloud service, the firm has received complaint associated with some patient profile information being duplicated while other patient information is missin…",
+        "classification": "Class II",
+        "product": "CardioMEMS Heart Failure (HF) System that consist of: -CardioMEMS Hospital System Model CM3100 -CardioMEMS Backend Web Application Model CM4000 -Merlin.net Patient Care Network (P…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 24
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

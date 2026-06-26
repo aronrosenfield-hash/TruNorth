@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -238,5 +241,25 @@
   "csc": {
     "environment": 50,
     "labor": 8.3
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1222,
+      "classI": 140,
+      "classII": 1079,
+      "classIII": 3,
+      "mostRecent": {
+        "date": "2026-06-03",
+        "reason": "Medline kits were distributed containing Huons Bupivacaine Hydrochloride in Dextrose Injection, USP, which was subsequently recalled due to quality issues, including microbiology testing data integrity concerns and reported efficacy compla…",
+        "classification": "Class I",
+        "product": "Medline kits containing Huons Co. Bupivacaine HCL in Dextrose Injection, USP, labeled as: 1) BLOCK TRAY, Medline Kit SKU DYNJRA1181C; 2) SPINAL BLOCK 25G WHTCRE 5S BU, Medline Kit…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 14,
+        "device": 1208
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

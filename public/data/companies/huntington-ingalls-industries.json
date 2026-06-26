@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -257,5 +260,32 @@
   },
   "csc": {
     "labor": 13.8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.145,
+      "taxExpenseUsd": 93000000,
+      "pretaxIncomeUsd": 643000000,
+      "year": 2024,
+      "cik": 1501585,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1501585",
+        "displayName": "HUNTINGTON INGALLS INDUSTRIES, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2023-04-18",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

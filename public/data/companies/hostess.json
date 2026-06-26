@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -154,6 +157,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 0,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-09-08",
+        "reason": "The firm's contract manufacturer found positive environmental samples analyzed for Listeria and Salmonella species.",
+        "classification": "Class II",
+        "product": "Hostess Soft White Hot Dog Buns, Net Wt. 12 OZ, UPC 888109110970"
+      },
+      "byCategory": {
+        "food": 4,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

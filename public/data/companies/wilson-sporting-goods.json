@@ -81,7 +81,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "aldi",
     "rawlings"
@@ -158,6 +161,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 16,
+      "classI": 0,
+      "classII": 16,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-04-22",
+        "reason": "Due to increased in complaints their is the potential for endoscopic clipping device to malfunction.",
+        "classification": "Class II",
+        "product": "Instinct Plus Endoscopic Clipping Device REF: G58010 Rx Only, Sterile EO"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 16
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

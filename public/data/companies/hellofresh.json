@@ -82,7 +82,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "rocky-mountain-chocolate-factory"
   ],
@@ -161,6 +164,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 19,
+      "classI": 19,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-11-24",
+        "reason": "Products contain onions purchased from ProSource and associated with a Salmonella Oranienburg outbreak.",
+        "classification": "Class I",
+        "product": "EveryPlate Meal Kit Product Codes 81-82-84-90-92-95-98-99 from Production Week 32 (production week start date: 08/04/2021)"
+      },
+      "byCategory": {
+        "food": 19,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

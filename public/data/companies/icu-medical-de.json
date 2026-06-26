@@ -96,5 +96,36 @@
     "pctMinorityMgmt": 30.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.783,
+      "taxExpenseUsd": 51676000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 883984,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 230,
+      "classI": 13,
+      "classII": 217,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Under certain conditions, the pump may not display a soft limit alert, and will not notify the clinician of a soft limit violation before confirming and starting delivery. This may potentially lead to under- or over-delivery.",
+        "classification": "Class II",
+        "product": "Plum Duo Precision IV Pump, 40002-0403"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 5,
+        "device": 225
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

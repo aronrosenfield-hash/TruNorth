@@ -37,7 +37,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
@@ -331,6 +332,14 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.221,
+      "taxExpenseUsd": -68212000,
+      "pretaxIncomeUsd": -308450000,
+      "year": 2024,
+      "cik": 1362468,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -228,5 +231,25 @@
   },
   "csc": {
     "labor": 14.1
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-01-25",
+        "reason": "CGMP Deviations: Voluntary recall of all hand sanitizer distributed after March 31, 2022, due to FDA issued guidance to cease placing hand sanitizer product, produced under temporary approval, into the market after March 31, 2022.",
+        "classification": "Class II",
+        "product": "Hand Sanitizer, HSANI500ML, (Isopropyl Alcohol), 75% v/v, packaged in a) 500 mL bottle and b) 6 x 500 mL bottles per case, Thermo Fisher Scientific: Janssen Pharmaceuticalaan 3a, …"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 2,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

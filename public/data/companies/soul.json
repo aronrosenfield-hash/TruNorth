@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -158,6 +161,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Entertainment & Media"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-06-22",
+        "reason": "Potential to be contaminated with Clostridium botulinum. Product was tested and found to have pH level of 5.57.",
+        "classification": "Class II",
+        "product": "Zesty Sweet Peppers. Shelf stable product in glass container. Net wt. 8 oz (372 g). The label is read in parts: \"***Zesty Sweet Peppers *** Ingredients: Sweet Peppers, Balsamic Vi…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

@@ -102,7 +102,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -381,6 +382,32 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/63754/000006375426000140/mkc-20260217.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.205,
+      "taxExpenseUsd": 184000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 63754,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 3,
+      "classII": 2,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-05-08",
+        "reason": "Potential growth of Staphylococcus aureus",
+        "classification": "Class II",
+        "product": "FRENCH S CRISPY FRIED ONIONS ORIG 16/6 OZ, Case Pack - 16/6 OZ,"
+      },
+      "byCategory": {
+        "food": 5,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

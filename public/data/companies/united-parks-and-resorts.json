@@ -33,7 +33,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-31",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -252,6 +253,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1564902/000119312526197833/prks-20260430.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.2196,
+      "taxExpenseUsd": 64029000,
+      "pretaxIncomeUsd": 291526000,
+      "year": 2024,
+      "cik": 1564902,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1564902",
+        "displayName": "United Parks & Resorts Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

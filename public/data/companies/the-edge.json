@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -168,6 +171,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 63,
+      "classI": 0,
+      "classII": 61,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2025-04-30",
+        "reason": "Due to product outer packaging incorrectly labeled.",
+        "classification": "Class II",
+        "product": "Edge Biologicals STERILE WATER, 3ML, 100/PK CAT T-0780 Sterile Water, 3mL, 10/PK - Sterile water is used in making dilutions of samples/transport media in preparation for microbia…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 62,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

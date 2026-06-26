@@ -29,7 +29,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -164,6 +165,37 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1425450/000142545026000027/kids-20260420.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.098,
+      "taxExpenseUsd": -4107000,
+      "pretaxIncomeUsd": -41929000,
+      "year": 2024,
+      "cik": 1425450,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 0,
+      "classII": 6,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-09-04",
+        "reason": "During the assembly of the FRT250 cartridge assembly, an incorrect component was used. Specifically, the FRT240-HEX (2) was used instead of the FRT250-HEX.",
+        "classification": "Class II",
+        "product": "FRT250 - 4.0-6.4 CARTRIDGE. Component of the Fassier-Duval Telescopic IM System"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 6
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 2663289,
+      "sunshineActYear": 2024
     }
   }
 }

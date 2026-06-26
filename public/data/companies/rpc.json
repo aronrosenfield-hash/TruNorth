@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -211,5 +214,23 @@
   "csc": {
     "environment": 38.2,
     "labor": 27.6
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.189,
+      "taxExpenseUsd": 21358000,
+      "pretaxIncomeUsd": 112802000,
+      "year": 2024,
+      "cik": 742278,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "742278",
+        "displayName": "RPC INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

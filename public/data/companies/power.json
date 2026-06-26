@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -208,5 +211,25 @@
   },
   "csc": {
     "labor": 26.9
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 8,
+      "classI": 1,
+      "classII": 7,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-04-26",
+        "reason": "A shard of glass being found in one of the jars.",
+        "classification": "Class II",
+        "product": "Matiz Piparra Peppers are packaged in a clear glass jar, net wt. 4lb. (1.8kg), drained wt. 25oz (700g). Product is shelf stable. UPC 832924005768. Produced By Conservas Rubio - Na…"
+      },
+      "byCategory": {
+        "food": 8,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

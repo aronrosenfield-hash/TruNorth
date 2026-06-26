@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -256,5 +259,23 @@
     "charity": 85,
     "environment": 27.3,
     "labor": 25.9
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.228,
+      "taxExpenseUsd": 21500000,
+      "pretaxIncomeUsd": 94400000,
+      "year": 2024,
+      "cik": 1164863,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1164863",
+        "displayName": "Enpro Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

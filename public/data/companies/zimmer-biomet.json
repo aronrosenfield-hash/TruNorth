@@ -104,7 +104,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -393,6 +394,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1136869/000119312526135661/zbh-20260331.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.127,
+      "taxExpenseUsd": 131400000,
+      "pretaxIncomeUsd": 1036600000,
+      "year": 2024,
+      "cik": 1136869,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1136869",
+        "displayName": "ZIMMER BIOMET HOLDINGS, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 79,
+      "classI": 0,
+      "classII": 79,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-01-10",
+        "reason": "Spinal fixation system 7.5mmx 50mm screws are packaged with the correct labeling, but the screws themselves were laser marked with an incorrect size description of 7.5 x 40; use of incorrect screws could lead to screw perforation and inden…",
+        "classification": "Class II",
+        "product": "Vitality Polyaxial Screw, 7.5mmx 50mm, REF: 07.02000.118, used with Vitality and Vital Spinal Fixation System"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 79
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 83904351,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

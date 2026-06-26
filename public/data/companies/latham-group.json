@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -160,6 +163,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -1.044,
+      "taxExpenseUsd": 9120000,
+      "pretaxIncomeUsd": -8740000,
+      "year": 2024,
+      "cik": 1833197,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1833197",
+        "displayName": "Latham Group, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -134,6 +137,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Manufacturing"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.236,
+      "taxExpenseUsd": 576818,
+      "pretaxIncomeUsd": 2438207,
+      "year": 2024,
+      "cik": 830616,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "830616",
+        "displayName": "SCI Engineered Materials, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

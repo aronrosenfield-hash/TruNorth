@@ -96,5 +96,45 @@
     "pctMinorityMgmt": 14.6,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.24,
+      "taxExpenseUsd": -79258000,
+      "pretaxIncomeUsd": -330509000,
+      "year": 2024,
+      "cik": 1278027,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 4,
+      "classII": 1,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2023-02-15",
+        "reason": "Cookies may contain undeclared peanut residue.",
+        "classification": "Class III",
+        "product": "Back To Nature Plant Based Snacks Fudge Mint Cookies Net Wt. 6.4 OZ. (181g) UPC code: 819898011025"
+      },
+      "byCategory": {
+        "food": 6,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2013-11-16",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

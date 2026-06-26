@@ -98,7 +98,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "relativity-space"
@@ -231,6 +232,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1819994/000162828026023922/rklb-20260406.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.004,
+      "taxExpenseUsd": 764000,
+      "pretaxIncomeUsd": -189411000,
+      "year": 2024,
+      "cik": 1819994,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

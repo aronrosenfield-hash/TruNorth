@@ -31,7 +31,10 @@
       "fair-trade"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$3M reported corporate giving in 2024 (~0.09% of revenue). Certified B Corporation since 2014 (B Impact score 91.3/200).",
     "sources": [
@@ -150,5 +153,18 @@
     "environment": 100,
     "labor": 97,
     "execPay": 70.2
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 2,
+        "mostRecent": "2017-02-06",
+        "maxAffected": 18172,
+        "causes": [
+          "Malware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

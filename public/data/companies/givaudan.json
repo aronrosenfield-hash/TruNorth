@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -221,5 +224,25 @@
   "csc": {
     "environment": 31,
     "labor": 27.2
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 2,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-13",
+        "reason": "Product has the potential to be contaminated with Salmonella.",
+        "classification": "Class I",
+        "product": "Bulk WN-976-782-1 Seasoning for Cheese Sauce, Net Wt. 43.50 lbs., in a brown kraft bag"
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

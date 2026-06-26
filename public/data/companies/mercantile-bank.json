@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Mercantile Bank Foundation: $518K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -180,5 +183,15 @@
   },
   "csc": {
     "charity": 85
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.19,
+      "taxExpenseUsd": 18693000,
+      "pretaxIncomeUsd": 98286000,
+      "year": 2024,
+      "cik": 1042729,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

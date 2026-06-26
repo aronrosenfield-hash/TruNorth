@@ -102,5 +102,28 @@
     "pctMinorityMgmt": 7.7,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-08-18",
+        "reason": "Non-Sterility",
+        "classification": "Class I",
+        "product": "C-PROGESTERONE OIL 100 MG/ML, 10 mL vials, Compound, People's Custom Rx, Compounded, Rx only, People's Custom Rx, 785 E Brookhaven Cir, Memphis, TN 38117"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 1,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

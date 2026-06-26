@@ -102,5 +102,30 @@
     "pctMinorityMgmt": 44,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -1.396,
+      "taxExpenseUsd": -5758000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1543151,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 4,
+        "mostRecent": "2016-11-15",
+        "maxAffected": 10888,
+        "causes": [
+          "Unclear/unknown",
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

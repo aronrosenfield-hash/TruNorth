@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -342,6 +343,45 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.153,
+      "taxExpenseUsd": 232000000,
+      "pretaxIncomeUsd": 1521000000,
+      "year": 2024,
+      "cik": 1090872,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1090872",
+        "displayName": "AGILENT TECHNOLOGIES, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 7,
+      "classI": 0,
+      "classII": 5,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2025-09-24",
+        "reason": "Their is the potential for weak staining which may result in false negative CD20 identification.",
+        "classification": "Class II",
+        "product": "Brand Name: FLEX Monoclonal Mouse Anti-Human CD20cy, Clone L26, Ready-to-Use (Dako Omnis) Model/Catalog Number: GA60461-2 Software Version: Not applicable Product Description: FLE…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 7
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1213516,
+      "sunshineActYear": 2024
     }
   }
 }

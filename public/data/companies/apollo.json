@@ -35,7 +35,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-31",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -324,6 +325,32 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.202,
+      "taxExpenseUsd": 13764000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1971381,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 19,
+      "classI": 0,
+      "classII": 19,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-05-14",
+        "reason": "Lack of Assurance of Sterility",
+        "classification": "Class II",
+        "product": "FentaNYL 500mcg (2mcg/mL) and Ropivacaine HCl 250mg (0.1%) added to 250 mL, 0.9% Sodium Chloride Injection (For Epidural Use Only), Sterile, Single-Use Container, Rx Only, Apolloc…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 19,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

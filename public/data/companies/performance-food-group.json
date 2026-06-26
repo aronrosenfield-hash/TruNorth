@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$5M reported corporate giving in 2024 (~0.01% of revenue).",
     "sources": [
@@ -234,5 +237,15 @@
     "charity": 50,
     "environment": 100,
     "labor": 13.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.258,
+      "taxExpenseUsd": 118600000,
+      "pretaxIncomeUsd": 458800000,
+      "year": 2024,
+      "cik": 1618673,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

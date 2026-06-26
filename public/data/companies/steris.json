@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -293,5 +296,46 @@
     "pctMinorityMgmt": 19.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.232,
+      "taxExpenseUsd": 184700000,
+      "pretaxIncomeUsd": 796200000,
+      "year": 2024,
+      "cik": 1757898,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1757898",
+        "displayName": "STERIS plc"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 45,
+      "classI": 0,
+      "classII": 43,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2026-02-18",
+        "reason": "This is a sub-recall of event RES 96885. The supplier identified that during their manufacturing process for a limited batch of MNA-6x0 (adapter) components the incorrect configuration file was used.",
+        "classification": "Class II",
+        "product": "Barco MNA with the HexaVue IP Integration System, Model/Catalog Number: MNA-6x0-H"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 45
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 514255,
+      "sunshineActYear": 2024
+    }
   }
 }

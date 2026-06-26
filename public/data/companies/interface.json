@@ -29,7 +29,10 @@
       "bcorp"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Certified B Corporation since 2018 (B Impact score 84/200).",
     "sources": [
@@ -178,5 +181,24 @@
     "pctMinorityMgmt": 15.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.234,
+      "taxExpenseUsd": 26608000,
+      "pretaxIncomeUsd": 113554000,
+      "year": 2024,
+      "cik": 715787,
+      "source": "SEC EDGAR XBRL"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2022-11-10",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

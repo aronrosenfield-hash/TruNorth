@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -189,6 +190,19 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1070081/000110465926045528/tmb-20260602xdef14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.0002,
+      "taxExpenseUsd": 176000,
+      "pretaxIncomeUsd": -363119000,
+      "year": 2024,
+      "cik": 1070081,
+      "source": "SEC EDGAR XBRL"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 464150,
+      "sunshineActYear": 2024
     }
   }
 }

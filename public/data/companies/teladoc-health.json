@@ -96,5 +96,26 @@
     "pctMinorityMgmt": 32.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.008,
+      "taxExpenseUsd": 7592000,
+      "pretaxIncomeUsd": -993653000,
+      "year": 2024,
+      "cik": 1477449,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1477449",
+        "displayName": "Teladoc Health, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

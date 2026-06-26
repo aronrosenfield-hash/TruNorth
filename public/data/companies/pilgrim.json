@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -151,6 +154,34 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.23,
+      "taxExpenseUsd": 325046000,
+      "pretaxIncomeUsd": 1412269000,
+      "year": 2024,
+      "cik": 802481,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 7,
+      "classI": 3,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-03-01",
+        "reason": "Squirrel Mix product is recalled due to undeclared milk, soy lecithin, and colors: B1, R40, Y5, Y6, and B2.",
+        "classification": "Class I",
+        "product": "Pilgrim's Roasted Nut'Z Squirrel Mix are packaged by hand into either the 8 oz Plastic Cone Bags or 8 Oz Pouch Bags. Label declares almonds, Spanish peanuts, mini M&M's, Golden Ra…"
+      },
+      "byCategory": {
+        "food": 7,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

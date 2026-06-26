@@ -102,7 +102,8 @@
   "ac": "#9b8ff0",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -436,6 +437,45 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/10795/000162828025057846/bdx-20251217.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.15,
+      "taxExpenseUsd": 300000000,
+      "pretaxIncomeUsd": 2005000000,
+      "year": 2024,
+      "cik": 10795,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "10795",
+        "displayName": "BECTON DICKINSON & CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 183,
+      "classI": 10,
+      "classII": 172,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-06-10",
+        "reason": "This is a sub-recall of a product recall from Huons Co, Ltd., the manufacturer of Bupivacaine Hydrochloride in Dextrose Injection, USP. The recall is due to quality issues identified during an FDA manufacturing facility inspection, citing …",
+        "classification": "Class I",
+        "product": "BD¿Spinal Tray with BD¿Whitacre Needle 22 G x 3.5 in.; lidocaine HCL (1%), 5 mL, bupivacaine HCL (0.75%) with dextrose (8.25%), 2 mL (marcaine). Catalog Number: 405645."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 183
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 7763365,
+      "sunshineActYear": 2024
     }
   },
   "csc": {

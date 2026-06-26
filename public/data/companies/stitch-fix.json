@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -169,6 +172,29 @@
     "environment": {
       "_inferred": true,
       "basis": "Apparel & Fashion"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.014,
+      "taxExpenseUsd": -1661000,
+      "pretaxIncomeUsd": -120546000,
+      "year": 2024,
+      "cik": 1576942,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1576942",
+        "displayName": "Stitch Fix, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 558,
+      "warnMostRecent": "2023-12-01"
     }
   }
 }

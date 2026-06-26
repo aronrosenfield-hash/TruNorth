@@ -96,5 +96,23 @@
     "pctMinorityMgmt": 14.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.241,
+      "taxExpenseUsd": 46311000,
+      "pretaxIncomeUsd": 191804000,
+      "year": 2024,
+      "cik": 1802665,
+      "source": "SEC EDGAR XBRL"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 1272575,
+      "sunshineActYear": 2024
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

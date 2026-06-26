@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -233,5 +236,23 @@
   "csc": {
     "environment": 34,
     "labor": 13.6
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.1,
+      "taxExpenseUsd": 17900000,
+      "pretaxIncomeUsd": -188200000,
+      "year": 2024,
+      "cik": 1227654,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1227654",
+        "displayName": "COMPASS MINERALS INTERNATIONAL INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

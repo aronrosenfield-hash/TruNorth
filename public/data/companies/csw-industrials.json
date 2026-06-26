@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -163,6 +166,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Manufacturing"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.237,
+      "taxExpenseUsd": 42633000,
+      "pretaxIncomeUsd": 180117000,
+      "year": 2024,
+      "cik": 1624794,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1624794",
+        "displayName": "CSW INDUSTRIALS, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

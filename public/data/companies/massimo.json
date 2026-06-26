@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -173,6 +176,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-04-02",
+        "reason": "Mislabeling. A portion of the production of Our Family Traverse City Ground Coffee was mislabeled as decaffeinate.",
+        "classification": "Class II",
+        "product": "COFFEE ROASTERS Our Family TRAVERSE CITY CHERRY ARTIFICIALLY FLAVORED DECAF LIGHT ROAST GROUND COFFEE NET WT 12 OZ (340g) UPC 0 70253 11080 1 DISTRIBUTED BY THE SPARTANNASH COMPAN…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

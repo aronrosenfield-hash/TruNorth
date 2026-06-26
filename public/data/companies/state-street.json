@@ -104,7 +104,8 @@
   "ac": "#f0a030",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -378,6 +379,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/93751/000114036126013817/ny20058931x1_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.208,
+      "taxExpenseUsd": 708000000,
+      "pretaxIncomeUsd": 3395000000,
+      "year": 2024,
+      "cik": 93751,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

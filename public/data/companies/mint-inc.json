@@ -27,7 +27,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -141,6 +144,34 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.107,
+      "taxExpenseUsd": -174620,
+      "pretaxIncomeUsd": -1635736,
+      "year": 2024,
+      "cik": 1998560,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-13",
+        "reason": "If the connection between a mint Lesion workstation and the mint Lesion server is interrupted while performing a read, in rare cases some information may be lost or incorrectly linked to other patients.",
+        "classification": "Class II",
+        "product": "Mint Lesion; Software Versions: 3.4.0 up to 3.9.5.;"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 3
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

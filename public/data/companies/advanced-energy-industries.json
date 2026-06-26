@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -238,6 +239,22 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.074,
+      "taxExpenseUsd": -3900000,
+      "pretaxIncomeUsd": 52400000,
+      "year": 2024,
+      "cik": 927003,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "927003",
+        "displayName": "ADVANCED ENERGY INDUSTRIES INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

@@ -99,7 +99,8 @@
   "ac": "#9b8ff0",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -321,6 +322,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1601712/000160171226000017/synchronyfinancialproxy202.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.231,
+      "taxExpenseUsd": 1054000000,
+      "pretaxIncomeUsd": 4553000000,
+      "year": 2024,
+      "cik": 1601712,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -245,5 +248,33 @@
   "csc": {
     "environment": 30.2,
     "labor": 14.8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.25,
+      "taxExpenseUsd": 5440000,
+      "pretaxIncomeUsd": 21786000,
+      "year": 2024,
+      "cik": 1750735,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 12,
+      "classI": 0,
+      "classII": 12,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-01-14",
+        "reason": "The affected lots show a decline in performance over time, which may lead to false-negative results.",
+        "classification": "Class II",
+        "product": "Revogene C. difficile, in vitro diagnostic assay intended for use with the Revogene instrument, Catalog Number 410300"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 12
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

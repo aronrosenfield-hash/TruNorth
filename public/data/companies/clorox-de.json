@@ -98,5 +98,26 @@
   "csc": {
     "charity": 85,
     "labor": 26.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.265,
+      "taxExpenseUsd": 106000000,
+      "pretaxIncomeUsd": 398000000,
+      "year": 2024,
+      "cik": 21076,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "21076",
+        "displayName": "CLOROX CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

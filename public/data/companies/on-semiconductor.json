@@ -102,5 +102,26 @@
     "pctMinorityMgmt": 29.9,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.143,
+      "taxExpenseUsd": 262800000,
+      "pretaxIncomeUsd": 1837400000,
+      "year": 2024,
+      "cik": 1097864,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1097864",
+        "displayName": "ON SEMICONDUCTOR CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

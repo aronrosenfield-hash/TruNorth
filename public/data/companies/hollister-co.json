@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -224,5 +227,25 @@
   "csc": {
     "labor": 15.5,
     "privacy": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 0,
+      "classII": 5,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-02-26",
+        "reason": "Hollister received reports of decreased skin barrier wear time which could can lead to tube migration",
+        "classification": "Class II",
+        "product": "AnchorFast SlimFit, Oral Endotracheal Tube Fastener, REF 9787,"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 5
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

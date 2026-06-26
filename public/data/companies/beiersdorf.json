@@ -68,7 +68,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "competitors": [],
-  "dataLastUpdated": "2026-06-08",
+  "dataLastUpdated": {
+    "legacy": "2026-06-08",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "seedSource": "top-brands-coverage-2026-06-08",
   "seedNote": "German CPG — Nivea, Eucerin, Aquaphor, Coppertone",
   "role": "parent",
@@ -99,5 +102,25 @@
   },
   "csc": {
     "environment": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 8,
+      "classI": 5,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2021-10-27",
+        "reason": "Chemical contamination; presence of benzene",
+        "classification": "Class I",
+        "product": "Coppertone SPORT MINERAL 50 Sunscreen Spray (To Deliver) Zinc Oxide 24.08%, NET WT 5 OZ (142 g) can, Beiersdorf Inc., Wilton, CT 06897 UPC 0 72140 02870 1"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 8,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

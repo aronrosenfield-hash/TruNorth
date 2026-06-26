@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -182,6 +185,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2025-06-11",
+        "reason": "Undeclared Fish allergen (parvalbumin).",
+        "classification": "Class III",
+        "product": "GNC Women's 30+ Vitapak, Carton of 30 Sachets. Each sachet contains four tablets and a capsule. Paper-board carton that measures 10.25 width x 3.56 height x 3.15 depth containing …"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

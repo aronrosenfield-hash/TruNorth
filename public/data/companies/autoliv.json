@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -215,5 +218,23 @@
   },
   "csc": {
     "labor": 8.8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.26,
+      "taxExpenseUsd": 227000000,
+      "pretaxIncomeUsd": 875000000,
+      "year": 2024,
+      "cik": 1034670,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1034670",
+        "displayName": "AUTOLIV INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

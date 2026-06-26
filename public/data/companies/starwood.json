@@ -30,7 +30,10 @@
       "eviction-lab"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -187,5 +190,15 @@
   },
   "csc": {
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.062,
+      "taxExpenseUsd": 25432000,
+      "pretaxIncomeUsd": 406009000,
+      "year": 2024,
+      "cik": 1465128,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the The Ovintiv Foundation: $1.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -258,5 +261,15 @@
     "charity": 85,
     "environment": 14.1,
     "labor": 12
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.167,
+      "taxExpenseUsd": 226000000,
+      "pretaxIncomeUsd": 1351000000,
+      "year": 2024,
+      "cik": 1792580,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

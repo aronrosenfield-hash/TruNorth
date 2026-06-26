@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -250,5 +253,42 @@
   "csc": {
     "environment": 40,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.176,
+      "taxExpenseUsd": 184000000,
+      "pretaxIncomeUsd": -1046800000,
+      "year": 2024,
+      "cik": 91419,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-09-03",
+        "reason": "Mold. The firm noticed an increase in customer complaints. They conducted a root cause investigation and discovered that one of their coolers had malfunctioning.",
+        "classification": "Class II",
+        "product": "Hostess Ding Dongs CHOCOLATE CAKE WITH CREAMY FILLING 2.55 oz twin pack UPC 8 88109 01002 7; 10-1.28 oz carton (12.7 oz) UPC 8 88109 11061 1; 16-1.28 oz carton (20.31 oz) Individu…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2012-12-23",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

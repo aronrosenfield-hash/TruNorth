@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -263,5 +266,30 @@
   "csc": {
     "environment": 39.1,
     "labor": 8.2
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 92,
+      "classI": 0,
+      "classII": 92,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-12-24",
+        "reason": "Removal of affected lot of screws due to labeling error.",
+        "classification": "Class II",
+        "product": "BIOSURE HA SCREW, 6MM x 20 MM. Threaded metallic bone fixation fastener."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 92
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 46443943,
+      "sunshineActYear": 2024
+    }
   }
 }

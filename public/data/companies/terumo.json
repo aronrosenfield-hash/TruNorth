@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "charity": {
@@ -211,5 +214,25 @@
   "csc": {
     "environment": 33.3,
     "labor": 31.8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 16,
+      "classI": 0,
+      "classII": 16,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-07-02",
+        "reason": "Due to an error in assembly of the thermistor within some units, the affected probes will experience inaccuracy in measured shunt sensor temperature. Additionally, following changes in patient temperature without an in vivo recalibration, …",
+        "classification": "Class II",
+        "product": "CDI OneView System BPM Probe: Cat. No. CDI753 - CDI OneView BPM Probe, Cat. No. CDI753TK - CDI OneView BPM Probe Trial Kit"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 16
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

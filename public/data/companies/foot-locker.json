@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$6M reported corporate giving in 2024 (~0.08% of revenue) via Foot Locker Foundation.",
     "sources": [
@@ -181,5 +184,23 @@
   },
   "csc": {
     "charity": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.646,
+      "taxExpenseUsd": 33000000,
+      "pretaxIncomeUsd": 51000000,
+      "year": 2024,
+      "cik": 850209,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "850209",
+        "displayName": "FOOT LOCKER, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

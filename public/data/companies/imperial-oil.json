@@ -27,7 +27,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -167,5 +170,23 @@
     "environment": 50,
     "labor": 50,
     "execPay": 56.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.232,
+      "taxExpenseUsd": null,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 49938,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "49938",
+        "displayName": "IMPERIAL OIL LTD"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

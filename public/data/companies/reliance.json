@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -227,5 +230,23 @@
   "csc": {
     "environment": 31.6,
     "labor": 24.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.23,
+      "taxExpenseUsd": 261900000,
+      "pretaxIncomeUsd": 1139900000,
+      "year": 2024,
+      "cik": 861884,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "861884",
+        "displayName": "RELIANCE, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

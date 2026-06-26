@@ -26,7 +26,10 @@
     "s": "No public record found.",
     "sources": []
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -145,6 +148,16 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.65,
+      "taxExpenseUsd": 13000000,
+      "pretaxIncomeUsd": 20000000,
+      "year": 2024,
+      "cik": 1625297,
+      "source": "SEC EDGAR XBRL"
     }
   }
 }

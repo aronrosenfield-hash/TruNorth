@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -178,6 +179,37 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1116463/000111646326000032/osur-20260430.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -0.112,
+      "taxExpenseUsd": 1799000,
+      "pretaxIncomeUsd": -16001000,
+      "year": 2024,
+      "cik": 1116463,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 6,
+      "mostRecent": {
+        "date": "2021-03-17",
+        "reason": "Incorrect lot of Substrate Reagent (TMB) may be included in the kit. The original kit box labeling and the specification sheet listed the Substrate Reagent (TMB) lot 6676239, but contained Substrate Reagent (TMB) lot 6679623, should not af…",
+        "classification": "Class III",
+        "product": "Methamphetamine Intercept Microplate kit EIA - IVD qualitative determination of methamphetamine in oral fluid, PN 11041C."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 6
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 211411,
+      "sunshineActYear": 2024
     }
   },
   "dei_eeo1": {

@@ -34,7 +34,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "$5M reported corporate giving in 2024 (~0.07% of revenue).",
@@ -283,6 +284,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1699150/000114036126016726/ny20063676x1_def14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.232,
+      "taxExpenseUsd": 262500000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1699150,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1699150",
+        "displayName": "Ingersoll Rand Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

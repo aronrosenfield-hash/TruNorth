@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -237,5 +240,25 @@
     "environment": 50,
     "labor": 14.4,
     "privacy": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 0,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-12-31",
+        "reason": "Undeclared allergen - walnuts. Maple Walnut Coffee Cake was incorrectly labeled as Raspberry Coffee Cake and walnuts were not declared on the label.",
+        "classification": "Class II",
+        "product": "Publix Raspberry Coffee Cake, Net Wt. 15 oz. (425g), packaged in an aluminum foil tray and clear plastic clamshell lid with wraparound label, UPC 0-41415-54691-2, Distributed By P…"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

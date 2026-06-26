@@ -95,7 +95,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "courtlistener": "2026-06-11T14:35:43.162Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "chipotle",
@@ -442,6 +443,18 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 3,
+        "mostRecent": "2026-01-07",
+        "maxAffected": 1564,
+        "causes": [
+          "Ransomware",
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   },
   "dei_eeo1": {

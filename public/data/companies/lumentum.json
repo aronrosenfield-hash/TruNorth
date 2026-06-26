@@ -102,5 +102,26 @@
     "pctMinorityMgmt": 58.6,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 1.1504,
+      "taxExpenseUsd": -198000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1633978,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1633978",
+        "displayName": "Lumentum Holdings Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

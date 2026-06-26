@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -179,5 +182,18 @@
   },
   "csc": {
     "privacy": 8
+  },
+  "enriched": {
+    "privacy": {
+      "breaches": {
+        "count": 4,
+        "mostRecent": "2023-11-25",
+        "maxAffected": 3655,
+        "causes": [
+          "Unauthorized Access"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    }
   }
 }

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -309,5 +312,25 @@
   },
   "csc": {
     "labor": 8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 76,
+      "classI": 0,
+      "classII": 76,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-05-06",
+        "reason": "Ten complaints have been received identifying issues at the time of use related to the package seal, including incomplete seals, wrinkles in the seals or peeling seals. Compromised sterile barrier may lead to clinically insignificant exten…",
+        "classification": "Class II",
+        "product": "Brand Name: Disposable Mixing Bowls with Spatula Product Name: Mixing Bowl and Spatula Model/Catalog Number: 00-5049-011-00 Software Version: N/A Product Description: Mixing Bowl …"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 76
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

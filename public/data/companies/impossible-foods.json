@@ -67,7 +67,10 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "competitors": [],
-  "dataLastUpdated": "2026-06-08",
+  "dataLastUpdated": {
+    "legacy": "2026-06-08",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "seedSource": "top-brands-coverage-2026-06-08",
   "seedNote": "Plant-based meat",
   "role": "brand",
@@ -92,5 +95,25 @@
   "realCats": 1,
   "csc": {
     "environment": 100
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 0,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-12-25",
+        "reason": "product may contain pieces of metal",
+        "classification": "Class II",
+        "product": "Impossible Spicy Ground Sausage Meat from plants 14oz chub, UPC 8 16697 02109 5; 8 retail chubs per case"
+      },
+      "byCategory": {
+        "food": 4,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

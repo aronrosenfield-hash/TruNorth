@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Nisource Charitable Foundation: $7.6M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -261,5 +264,15 @@
     "charity": 85,
     "environment": 8,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.158,
+      "taxExpenseUsd": 158100000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1111711,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

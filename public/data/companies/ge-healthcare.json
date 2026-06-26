@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -281,5 +284,30 @@
   },
   "csc": {
     "labor": 11.8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 214,
+      "classI": 12,
+      "classII": 202,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-04-15",
+        "reason": "Presence of particulate matter",
+        "classification": "Class II",
+        "product": "GE Healthcare Omnipaque (iohexol) Injection, 350 mg/mL (64.7%), Rx Only, Distributed by: GE Healthcare Inc., Marlborough, MA 01752 USA, NDC 0407-1414-91."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 2,
+        "device": 212
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 6186011,
+      "sunshineActYear": 2024
+    }
   }
 }

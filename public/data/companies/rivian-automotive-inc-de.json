@@ -33,7 +33,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -200,6 +201,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1874178/000187417826000023/rivn-20260427.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 5000000,
+      "pretaxIncomeUsd": -4741000000,
+      "year": 2024,
+      "cik": 1874178,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1874178",
+        "displayName": "Rivian Automotive, Inc. / DE"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

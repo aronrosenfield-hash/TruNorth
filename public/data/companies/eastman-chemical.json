@@ -102,7 +102,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -376,6 +377,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/915389/000091538926000074/emn-20260324.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.16,
+      "taxExpenseUsd": 170000000,
+      "pretaxIncomeUsd": 1078000000,
+      "year": 2024,
+      "cik": 915389,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "915389",
+        "displayName": "EASTMAN CHEMICAL CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

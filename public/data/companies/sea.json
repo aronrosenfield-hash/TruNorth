@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -232,5 +235,25 @@
   },
   "csc": {
     "labor": 8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2025-10-22",
+        "reason": "Shrimp may be contaminated with Cesium-137 (Cs-137).",
+        "classification": "Class II",
+        "product": "Sea Port brand, Raw Frozen Easy Peel Headless Shell-On White Shrimp, Jumbo size 16-20. Product of Indonesia. Distributed by Sea Port Products Corporation, Kirkland, WA. Master Cas…"
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

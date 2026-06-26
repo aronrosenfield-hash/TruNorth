@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -154,6 +157,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 1,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-11-13",
+        "reason": "Undeclared allergen: milk",
+        "classification": "Class II",
+        "product": "Hammond's Dark Chocolate Filled Mini Waffle Cones, packaged in a 4 oz (113g) Stand-Up Resealable Pouch. Item Number: FC23212; UPC 6 91355 90513 5. Label declares ***CONTAINS: WHEA…"
+      },
+      "byCategory": {
+        "food": 2,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

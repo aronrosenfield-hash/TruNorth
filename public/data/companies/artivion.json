@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -242,6 +243,46 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "784199",
+        "displayName": "ARTIVION, INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-08-14",
+        "reason": "Grafts were found to have been approved, released, shipped and implanted with an invalid test results.",
+        "classification": "Class II",
+        "product": "(1) CryoPatch SG Pulmonary Human Cardiac Hemi-Artery - Artery Patch, SGPH00 Cryopreserved Decellularized Cardiac Tissue Allograft Prepared with SynerGraft (SG) Technology; and (2)…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 3
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2024-11-21",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 449908,
+      "sunshineActYear": 2024
     }
   }
 }

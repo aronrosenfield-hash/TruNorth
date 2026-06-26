@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -182,5 +185,57 @@
     "pctMinorityMgmt": 16.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.284,
+      "taxExpenseUsd": 25058000,
+      "pretaxIncomeUsd": 88310000,
+      "year": 2024,
+      "cik": 1639691,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1639691",
+        "displayName": "LivaNova PLC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 35,
+      "classI": 0,
+      "classII": 33,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2025-02-12",
+        "reason": "Vagus nerve stimulator generators may stop delivering stimulation due to an internal, mechanically activated component that may become stuck in a closed position, which may result in patients returning to baseline seizure frequency or depr…",
+        "classification": "Class II",
+        "product": "SenTiva, REF: 1000; SenTiva Duo, REF: 1000-D; Generators Part of the VNS Therapy System. Used for Vagus Nerve Stimulation (VNS)."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 35
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 3,
+        "mostRecent": "2023-11-23",
+        "maxAffected": 2116,
+        "causes": [
+          "Ransomware"
+        ]
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 19722393,
+      "sunshineActYear": 2024
+    }
   }
 }

@@ -31,7 +31,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "$5M reported corporate giving in 2024 (~0.04% of revenue).",
@@ -200,6 +201,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1413447/000141344726000026/nxpi-20260427.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.176,
+      "taxExpenseUsd": 545000000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1413447,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1413447",
+        "displayName": "NXP Semiconductors N.V."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

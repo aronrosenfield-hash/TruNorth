@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Pricesmart Foundation: $1.2M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -188,5 +191,15 @@
   "csc": {
     "charity": 85,
     "labor": 37
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.311,
+      "taxExpenseUsd": 62618000,
+      "pretaxIncomeUsd": 98000,
+      "year": 2024,
+      "cik": 1041803,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

@@ -104,7 +104,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -359,6 +360,32 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025042772/fox-20250925.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.26,
+      "taxExpenseUsd": 550000000,
+      "pretaxIncomeUsd": 2104000000,
+      "year": 2024,
+      "cik": 1754301,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 7,
+      "classI": 0,
+      "classII": 7,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-09-27",
+        "reason": "Undeclared FD&C Yellow #5 and Yellow #6",
+        "classification": "Class II",
+        "product": "F-Bombs Cookie Dough Truffles: 12 ounce plastic packaging, plastic packaging is packed into 4x4x2 cardboard boxes. UPC 850036018032"
+      },
+      "byCategory": {
+        "food": 7,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

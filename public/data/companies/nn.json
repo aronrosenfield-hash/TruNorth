@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -232,5 +235,23 @@
   "csc": {
     "environment": 33.4,
     "labor": 28.9
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.053,
+      "taxExpenseUsd": 2410000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 918541,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "918541",
+        "displayName": "NN INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

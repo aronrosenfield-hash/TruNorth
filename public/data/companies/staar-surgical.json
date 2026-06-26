@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -206,6 +207,32 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/718937/000071893726000015/staa-20260501.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": -1.232,
+      "taxExpenseUsd": 11156000,
+      "pretaxIncomeUsd": -9052000,
+      "year": 2024,
+      "cik": 718937,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 12,
+      "classI": 0,
+      "classII": 12,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-03-11",
+        "reason": "Toric Implantable Collamer for correction/reduction of myopia in phakic eyes with astigmatism were labeled as 12.1 mm length but are 12.6 mm length lenses, so there is the potential for excessive vault, which may cause: Significant reducti…",
+        "classification": "Class II",
+        "product": "EVO+ Visian Toric Implantable Collamer Lens (TICL), Model: VTICM5"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 12
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   },
   "csc": {

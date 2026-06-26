@@ -99,5 +99,26 @@
     "pctMinorityMgmt": 14.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.196,
+      "taxExpenseUsd": 944900000,
+      "pretaxIncomeUsd": 4821200000,
+      "year": 2024,
+      "cik": 2969,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "2969",
+        "displayName": "Air Products & Chemicals, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -194,5 +197,25 @@
   "csc": {
     "environment": 26.6,
     "labor": 50
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 8,
+      "classI": 2,
+      "classII": 6,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-03-25",
+        "reason": "Potentially under pasteurized. The firm was notified by the California Department of Agriculture that due to the broken seal on the pasteurizer, the products may be under pasteurized, and they should recall the products.",
+        "classification": "Class II",
+        "product": "Great Value Fat Free Cottage Cheese Small Curd 0% Milkfat NET WT 24OZ UPC 0 78742 37339 3 DISTRIBUTED BY: Walmart Inc., Bentonville, AR 72716"
+      },
+      "byCategory": {
+        "food": 7,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -185,6 +188,31 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-04-10",
+        "reason": "Torrent Suite Dx Software versions 5.14 and earlier used in connection with Ion PGM DX Systems exploitation of the vulnerability by a threat actor may allow them to alter settings, configurations, software, or data on the instrument",
+        "classification": "Class II",
+        "product": "Torrent Suite Dx Software versions 5.14 and earlier used in connection with Ion PGM DX Systems-IVD intended for targeted sequencing of human genomic DNA (gDNA) from peripheral who…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 3
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 868106,
+      "sunshineActYear": 2024
     }
   }
 }

@@ -146,7 +146,10 @@
       "rating": "good"
     }
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "competitors": [
     "leonardo-drs",
     "lockheed-martin"
@@ -315,5 +318,23 @@
     "charity": 50,
     "environment": 50,
     "labor": 13.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.125,
+      "taxExpenseUsd": 118000000,
+      "pretaxIncomeUsd": 943000000,
+      "year": 2024,
+      "cik": 217346,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "217346",
+        "displayName": "TEXTRON INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

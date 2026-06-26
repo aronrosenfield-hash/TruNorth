@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -245,5 +248,41 @@
   "csc": {
     "environment": 24.5,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.167,
+      "taxExpenseUsd": 142400000,
+      "pretaxIncomeUsd": 853900000,
+      "year": 2024,
+      "cik": 1722482,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1722482",
+        "displayName": "Avantor, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 0,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-04-22",
+        "reason": "Subpotent drug",
+        "classification": "Class III",
+        "product": "Magnesium Chloride, 6-Hydrate, Crystal, 500G per bottle, Bulk active pharmaceutical ingredient (API), Avantor Performance Materials, LLC, 100 Matsonford Road, Suite 200, Radnor, P…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 1,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

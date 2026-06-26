@@ -30,7 +30,10 @@
       "fair-trade"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Certified B Corporation since 2012 (B Impact score 89.4/200).",
     "sources": [
@@ -172,5 +175,33 @@
     "charity": 85,
     "environment": 100,
     "labor": 97
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.013,
+      "taxExpenseUsd": 75000,
+      "pretaxIncomeUsd": -6049000,
+      "year": 2024,
+      "cik": 1530979,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-07-05",
+        "reason": "Undeclared walnuts",
+        "classification": "Class II",
+        "product": "Cinnamon Sticky Buns With Nuts 6 Count Net WT 2 LB 1 OZ (935g). Packaged as a singe pack or 6 pack. Packaged in a plastic container."
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

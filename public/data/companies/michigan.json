@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -231,5 +234,25 @@
     "pctMinorityMgmt": 5.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 36,
+      "classI": 36,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2020-08-12",
+        "reason": "Chemical contamination: product contains elevated levels of undeclared lead.",
+        "classification": "Class I",
+        "product": "BC Hemp Co., Full Spectrum Hemp Extract, CBD Oil, Berry Blast, 500mg CBD, 1 FL. OZ (30 ML) bottles, Distributed by: B.C. Hemp Co., LLC, P.O. Box 146, Eau Claire, MI 49111"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 36,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

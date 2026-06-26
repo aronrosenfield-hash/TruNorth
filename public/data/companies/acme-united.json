@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -212,6 +215,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Consumer Goods"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 22,
+      "classI": 0,
+      "classII": 22,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-03-11",
+        "reason": "CGMP Deviations",
+        "classification": "Class II",
+        "product": "Med Nap BZK Antiseptic Towelettes (Benzalkonium Chloride 0.13%), 100 Towelettes, Manufactured by: Acme United Corporation, 1 Waterview Dr, Shelton, CT 06481, NDC 0924-0246-01."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 22,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

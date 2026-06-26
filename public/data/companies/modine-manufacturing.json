@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Modine Manufacturing Company Foundation Inc: $82K in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
@@ -232,5 +235,23 @@
     "charity": 85,
     "environment": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.27,
+      "taxExpenseUsd": 68500000,
+      "pretaxIncomeUsd": 254000000,
+      "year": 2024,
+      "cik": 67347,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "67347",
+        "displayName": "MODINE MANUFACTURING CO"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

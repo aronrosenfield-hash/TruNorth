@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -183,5 +186,41 @@
     "pctMinorityMgmt": 13.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.079,
+      "taxExpenseUsd": 2700000,
+      "pretaxIncomeUsd": -33900000,
+      "year": 2024,
+      "cik": 1809987,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1809987",
+        "displayName": "Mirion Technologies, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 0,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-06-05",
+        "reason": "Complaints of unexpected detachment of the collimator have been reported.",
+        "classification": "Class II",
+        "product": "Captus 4000e Thyroid Uptake System. Intended to be used to perform Thyroid Uptakes, Staff Bioassay, and wipe tests."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 4
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

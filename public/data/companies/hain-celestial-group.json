@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -238,5 +241,33 @@
   },
   "csc": {
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.097,
+      "taxExpenseUsd": -7820000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 910406,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-05-22",
+        "reason": "Undeclared milk",
+        "classification": "Class I",
+        "product": "Sensible Portions brand Garden Veggie Straws Sea Salt. 1 oz bag UPC:2951530057 Packaged in a 30 CT Variety Pack that contains Sea Salt, Cheddar Cheese, and Zesty Ranch in plastic …"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

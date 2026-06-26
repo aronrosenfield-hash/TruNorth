@@ -27,7 +27,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -175,6 +178,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.038,
+      "taxExpenseUsd": -218000000,
+      "pretaxIncomeUsd": 5797000000,
+      "year": 2024,
+      "cik": 51143,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "51143",
+        "displayName": "INTERNATIONAL BUSINESS MACHINES CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

@@ -92,7 +92,8 @@
   "ac": "#9b8ff0",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "illinois-tool-works",
@@ -236,6 +237,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/29905/000119312526120708/d935769ddef14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.203,
+      "taxExpenseUsd": 357048000,
+      "pretaxIncomeUsd": 1757016000,
+      "year": 2024,
+      "cik": 29905,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "29905",
+        "displayName": "DOVER Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

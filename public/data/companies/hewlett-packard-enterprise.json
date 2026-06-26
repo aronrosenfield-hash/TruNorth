@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Hewlett Packard Enterprise Foundation: $8.7M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -294,5 +297,15 @@
     "pctMinorityMgmt": 26.1,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.127,
+      "taxExpenseUsd": 374000000,
+      "pretaxIncomeUsd": 2953000000,
+      "year": 2024,
+      "cik": 1645590,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

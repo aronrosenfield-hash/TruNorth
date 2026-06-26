@@ -29,7 +29,10 @@
       "parent-inheritance"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Via parent company Kroger: $240M reported corporate giving in 2024 (~0.16% of revenue) via Kroger Co. Foundation. Operates the Kroger Co Foundation: $6.9M in charitable contributions, gifts & grants paid (FY2024, IRS Form 990-PF).",
     "sources": [
@@ -180,5 +183,25 @@
     "environment": 8,
     "labor": 8,
     "execPay": 36.8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 86,
+      "classI": 86,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-10-15",
+        "reason": "Undeclared Milk. During production the firm discovered that the ingredients \"cheese and butter\" is not listed in the ingredient statement and therefore the allergen milk was not listed in the contain statement.",
+        "classification": "Class I",
+        "product": "Harris Teeter ASIAGO TEXAS TOAST, NET WT 5.0OZ (0.3lb), INGREDIENTS BREAD***CONTAINS WHEAT, UPC 0 72036 95364 3, Harris Teeter Raleigh, NC"
+      },
+      "byCategory": {
+        "food": 86,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

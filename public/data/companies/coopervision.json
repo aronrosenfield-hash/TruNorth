@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -193,6 +196,31 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 24,
+      "classI": 0,
+      "classII": 24,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-10-01",
+        "reason": "One lot manufactured with an invalid sterilization cycle.",
+        "classification": "Class II",
+        "product": "MyDay Toric, stenfilcon A) Contact Lens. Model/Catalog Number: MyDay Toric. 54% water content, Toric, cast moulded Silicone Hydrogel, In-monomer tinted, contact lens, for Daily Di…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 24
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 2510660,
+      "sunshineActYear": 2024
     }
   }
 }

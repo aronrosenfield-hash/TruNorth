@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -218,5 +221,23 @@
   "csc": {
     "charity": 50,
     "labor": 33.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.217,
+      "taxExpenseUsd": 50238000,
+      "pretaxIncomeUsd": 231847000,
+      "year": 2024,
+      "cik": 38725,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "38725",
+        "displayName": "FRANKLIN ELECTRIC CO INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

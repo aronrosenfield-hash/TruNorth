@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$6M reported corporate giving in 2024 (~0.07% of revenue). Operates the Newell Brands Charitable Foundation: $286K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -271,5 +274,41 @@
     "pctMinorityMgmt": 21.8,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.169,
+      "taxExpenseUsd": -44000000,
+      "pretaxIncomeUsd": -260000000,
+      "year": 2024,
+      "cik": 814453,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "814453",
+        "displayName": "NEWELL BRANDS INC."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 8,
+      "classI": 0,
+      "classII": 8,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-05-01",
+        "reason": "Product demonstrates low viscosity.",
+        "classification": "Class II",
+        "product": "Redux Electrolyte Creme, Product Ref. 66-04. Highly conductive electrolyte creme."
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 5,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

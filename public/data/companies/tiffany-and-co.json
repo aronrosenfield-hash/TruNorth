@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -153,6 +156,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Retail"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 4,
+      "classI": 3,
+      "classII": 0,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2024-07-31",
+        "reason": "Product contains undeclared cyclamates.",
+        "classification": "Class III",
+        "product": "Sweet Preserved Dried Plums; Farmer's Grange; Series Food; 88g; Plastic synthetic (flexible) package; INGREDIENTS: Plum, Salt, Sugar, ADDITIVES: Clove, Cinnamon, Liquorice, Citric…"
+      },
+      "byCategory": {
+        "food": 4,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

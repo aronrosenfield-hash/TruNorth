@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -172,6 +175,34 @@
     "environment": {
       "_inferred": true,
       "basis": "Financial Services"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.3096,
+      "taxExpenseUsd": 36797000,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 1499543,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 1,
+      "classII": 5,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-12-03",
+        "reason": "Due to Users not having access to the Instructions for Use/User Manual due to it being password protected.",
+        "classification": "Class II",
+        "product": "Brand Name: Galaxy System Product Name: Galaxy System Model/Catalog Number: GAL-001 Product Description: The Galaxy SystemTM and its accessories are intended to provide bronchosco…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 1,
+        "device": 5
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

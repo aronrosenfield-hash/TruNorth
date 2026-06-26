@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -180,5 +183,25 @@
     "pctMinorityMgmt": 13,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-08-27",
+        "reason": "Product mislabeled - cans are labeled as Zero Sugar, but contain full sugar product",
+        "classification": "Class II",
+        "product": "7up Zero Sugar Tropical Soda, 12 FL OZ (355 mL) aluminum cans, packaged in 12 pack cardboard cartons labeled as 7up Tropical Flavored Soda, UPC (on can): 078000037975, UPC (on car…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -259,5 +262,15 @@
   "csc": {
     "environment": 13.4,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.229,
+      "taxExpenseUsd": null,
+      "pretaxIncomeUsd": null,
+      "year": 2024,
+      "cik": 895728,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

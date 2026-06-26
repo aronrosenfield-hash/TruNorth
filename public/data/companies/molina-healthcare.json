@@ -102,7 +102,10 @@
   },
   "ab": "#1e1535",
   "ac": "#9b8ff0",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "molina-healthcare",
@@ -354,5 +357,15 @@
   "csc": {
     "charity": 85,
     "labor": 31.6
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.258,
+      "taxExpenseUsd": 410000000,
+      "pretaxIncomeUsd": 1589000000,
+      "year": 2024,
+      "cik": 1179929,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

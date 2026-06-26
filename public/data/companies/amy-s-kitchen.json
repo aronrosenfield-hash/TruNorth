@@ -30,7 +30,10 @@
       "fair-trade"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Certified B Corporation since 2023 (B Impact score 91.7/200).",
     "sources": [
@@ -182,5 +185,31 @@
     "pctMinorityMgmt": 33.5,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-10-22",
+        "reason": "Potential contamination with foreign objects.",
+        "classification": "Class II",
+        "product": "Gluten Free Bean & Rice Burrito. 12 retail units per case. 5.5oz/retail unit. UPC code 042272003525. Frozen."
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "animalCerts": {
+      "certifications": [
+        "certified-vegan"
+      ],
+      "lastUpdated": "2026-06-26T16:16:32.985Z"
+    }
   }
 }

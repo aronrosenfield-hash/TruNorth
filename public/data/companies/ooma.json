@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -175,6 +178,24 @@
     "environment": {
       "_inferred": true,
       "basis": "Technology"
+    }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.12,
+      "taxExpenseUsd": 760000,
+      "pretaxIncomeUsd": -6141000,
+      "year": 2024,
+      "cik": 1327688,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1327688",
+        "displayName": "OOMA INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   }
 }

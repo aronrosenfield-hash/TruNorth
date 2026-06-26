@@ -99,5 +99,18 @@
     "pctMinorityMgmt": 11.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.04,
+      "taxExpenseUsd": 4609000,
+      "pretaxIncomeUsd": 114936000,
+      "year": 2024,
+      "cik": 1323468,
+      "source": "SEC EDGAR XBRL"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

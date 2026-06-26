@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Marcus & Millichap Foundation: $475K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -173,5 +176,15 @@
   },
   "csc": {
     "charity": 85
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.051,
+      "taxExpenseUsd": -666000,
+      "pretaxIncomeUsd": -13028000,
+      "year": 2024,
+      "cik": 1578732,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

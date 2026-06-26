@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "$30M reported corporate giving in 2024 (~0.23% of revenue) via Kellogg's Corporate Citizenship Fund.",
     "sources": [
@@ -232,5 +235,15 @@
     "pctMinorityMgmt": 24.3,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.219,
+      "taxExpenseUsd": 104000000,
+      "pretaxIncomeUsd": 473900000,
+      "year": 2024,
+      "cik": 1289419,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

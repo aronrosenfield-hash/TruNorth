@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -238,5 +241,25 @@
   "csc": {
     "environment": 28.9,
     "labor": 26.6
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 9,
+      "classI": 0,
+      "classII": 9,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-08-27",
+        "reason": "During endoscopic procedures using a combination of the video processor EPK-i8020c and i20c series video endoscope, the observed image can become reddish or dark. Users have observed smoke like steam and noted that the light guide at the t…",
+        "classification": "Class II",
+        "product": "Pentax Medical Video Processor; Model Number: EPK-i8020c;"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 9
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -166,6 +169,26 @@
     "environment": {
       "_inferred": true,
       "basis": "Healthcare"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 6,
+      "classI": 0,
+      "classII": 6,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Stent delivery system may encounter complications during deployment which may result in high resistance or inability to deploy the stent.",
+        "classification": "Class II",
+        "product": "Brand Name: CGuard¿ Prime Carotid Stent System, 135cm, 8mmx40mm Model/Catalog Number: CND0840"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 6
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

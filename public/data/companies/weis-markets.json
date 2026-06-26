@@ -83,5 +83,36 @@
       "_inferred": true,
       "basis": "Grocery"
     }
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.269,
+      "taxExpenseUsd": 38923000,
+      "pretaxIncomeUsd": 144947000,
+      "year": 2024,
+      "cik": 105418,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 10,
+      "classI": 2,
+      "classII": 8,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-04-24",
+        "reason": "Foreign material (metal) in donuts",
+        "classification": "Class II",
+        "product": "Bakery Item Angel Creme Filled Chocolate Iced Donuts 6 ct. scale UPC: 2101080005508 packaged in a cardboard box. Product is also separately in the self service case in the store b…"
+      },
+      "byCategory": {
+        "food": 10,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

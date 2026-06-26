@@ -30,7 +30,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "charity": {
     "s": "No public record found.",
@@ -195,6 +196,14 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1819848/000181984826000313/joby-20260421.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0,
+      "taxExpenseUsd": 129000,
+      "pretaxIncomeUsd": -607905000,
+      "year": 2024,
+      "cik": 1819848,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "csc": {

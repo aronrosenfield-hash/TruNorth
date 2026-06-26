@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -234,5 +237,25 @@
   },
   "csc": {
     "labor": 8
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2022-08-31",
+        "reason": "Potential to be contaminated with Salmonella.",
+        "classification": "Class II",
+        "product": "Organic Amaranth Grain Gluten Free, Bob's Red Mill brand, packaged in Standup Pouch (24oz). Each case consists of 4/24 oz. pouches. RETAIL Pouch UPC 0 39978 02910 2. RETAIL Case U…"
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -221,5 +224,23 @@
   "csc": {
     "environment": 40,
     "labor": 32.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": -0.35,
+      "taxExpenseUsd": -32087000,
+      "pretaxIncomeUsd": 91664000,
+      "year": 2024,
+      "cik": 916789,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "916789",
+        "displayName": "HELEN OF TROY LTD"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

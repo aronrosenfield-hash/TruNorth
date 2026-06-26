@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the One Gas Foundation Inc: $2.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -236,5 +239,15 @@
     "pctMinorityMgmt": 25.2,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.1403,
+      "taxExpenseUsd": 36386000,
+      "pretaxIncomeUsd": 259236000,
+      "year": 2024,
+      "cik": 1587732,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

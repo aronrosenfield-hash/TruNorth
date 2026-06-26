@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -237,5 +240,33 @@
   "csc": {
     "charity": 85,
     "labor": 8.4
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.224,
+      "taxExpenseUsd": 1015600000,
+      "pretaxIncomeUsd": 4541400000,
+      "year": 2024,
+      "cik": 1156375,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 44,
+      "classI": 37,
+      "classII": 7,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2020-12-09",
+        "reason": "Multiple reasons: 1) Due to wear and tear of pump motor block mechanism - may cause under infusion situations without the pump alarm being generated. 2) Due to cracks, pump hardware may be damaged by fluid used during the cleaning process.",
+        "classification": "Class II",
+        "product": "CME America T-Syringe Pump - T34 - Product Usage: infusion of medications or fluids requiring continuous or intermittent delivery at precisely-controlled infusion rates through cl…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 44
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

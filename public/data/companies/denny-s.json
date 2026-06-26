@@ -94,7 +94,10 @@
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "laborAPI": {
     "violationTracker": {
       "slug": "dennys-corp",
@@ -389,5 +392,15 @@
   "csc": {
     "charity": 50,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.26,
+      "taxExpenseUsd": 7678000,
+      "pretaxIncomeUsd": 29249000,
+      "year": 2024,
+      "cik": 852772,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

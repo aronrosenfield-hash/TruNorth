@@ -34,7 +34,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Invesco Foundation: $520K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -269,5 +272,15 @@
     "charity": 85,
     "environment": 33.1,
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.252,
+      "taxExpenseUsd": 252900000,
+      "pretaxIncomeUsd": 1005300000,
+      "year": 2024,
+      "cik": 914208,
+      "source": "SEC EDGAR XBRL"
+    }
   }
 }

@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -147,6 +150,35 @@
     "environment": {
       "_inferred": true,
       "basis": "Food & Beverage"
+    }
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 0,
+      "classII": 2,
+      "classIII": 3,
+      "mostRecent": {
+        "date": "2022-05-25",
+        "reason": "California Department of Pesticide Regulation detected the presence of Formetante HCI. This pesticide has a non-tolerance for blackberries.",
+        "classification": "Class III",
+        "product": "Driscoll's Blackberries (Fresh) 12x6 oz, 12x12 oz, 12x10 oz, 2x8x18 oz Clamshell Distributed by Strawberry Associated, Inc. Watsonville, CA Product of Mexico"
+      },
+      "byCategory": {
+        "food": 5,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2017-08-18",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
   }
 }

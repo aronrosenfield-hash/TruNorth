@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -222,5 +225,23 @@
   "csc": {
     "environment": 40,
     "labor": 28.2
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.221,
+      "taxExpenseUsd": 133600000,
+      "pretaxIncomeUsd": 605500000,
+      "year": 2024,
+      "cik": 1519751,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1519751",
+        "displayName": "Fortune Brands Innovations, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

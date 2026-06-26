@@ -36,7 +36,8 @@
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "federalContracts": "2026-06-11T23:51:18.870Z"
+    "federalContracts": "2026-06-11T23:51:18.870Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
@@ -335,6 +336,32 @@
       "lastUpdated": "2026-06-11T23:51:18.870Z",
       "source": "usaspending",
       "sourceUrl": "https://www.usaspending.gov/"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1167379",
+        "displayName": "ALCON INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 75,
+      "classI": 2,
+      "classII": 72,
+      "classIII": 1,
+      "mostRecent": {
+        "date": "2026-05-06",
+        "reason": "Lack of Assurance of Sterility: Due to FDA inspection observations that it believes may impact product quality.",
+        "classification": "Class II",
+        "product": "GenTeal Tears, Lubricant Eye Gel, Sterile, 10g (0.34 Fl oz), Distributed by: Alcon Laboratories, Inc., Fort Worth, Texas 76134, USA, NDC: 0065-8064-01."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 3,
+        "device": 72
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
     }
   }
 }

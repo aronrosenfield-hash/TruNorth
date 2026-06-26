@@ -103,7 +103,8 @@
   "ac": "#e24a4a",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -455,6 +456,50 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/885725/000088572526000025/bsx-20260318.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.191,
+      "taxExpenseUsd": 436000000,
+      "pretaxIncomeUsd": 2282000000,
+      "year": 2024,
+      "cik": 885725,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "885725",
+        "displayName": "BOSTON SCIENTIFIC CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "openfdaRecalls": {
+      "recallCount": 437,
+      "classI": 130,
+      "classII": 305,
+      "classIII": 2,
+      "mostRecent": {
+        "date": "2026-06-17",
+        "reason": "Boston Scientific is initiating a medical device removal of Orca Sterile, Single Use Air/Water and Suction Valves due to a higher than anticipated occurrence of the suction button sticking.",
+        "classification": "Class II",
+        "product": "Orca Single Use Air/Water and Suction Valves, Material Number (UPN) SUV-617-50; The Orca Air/Water Valve is intended to be used to control the air/water function on an endoscope d…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 437
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "sunshineActPaymentsUsd": 61435976,
+      "sunshineActYear": 2024
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 120,
+      "warnMostRecent": "2023-04-23"
     }
   },
   "csc": {

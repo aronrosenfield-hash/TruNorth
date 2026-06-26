@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -240,5 +243,33 @@
   "csc": {
     "environment": 38.6,
     "labor": 50
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.261,
+      "taxExpenseUsd": 223529000,
+      "pretaxIncomeUsd": 856654000,
+      "year": 2024,
+      "cik": 317540,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 3,
+      "classI": 0,
+      "classII": 3,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-10-16",
+        "reason": "Mislabeled. Cans of regular Minute Made Lemonade were placed in cartons labeled Minute Maid Zero Sugar Lemonade.",
+        "classification": "Class II",
+        "product": "Minute Maid Zero Sugar Lemonade 12 cans carton UPC 0 25000 12115 9 CANNED UNDER THE AUTHORITY OF THE COCA-COLA COMPANY, ATLANTA, GA"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

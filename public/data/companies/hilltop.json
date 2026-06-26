@@ -102,5 +102,36 @@
     "pctMinorityMgmt": 17.4,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.201,
+      "taxExpenseUsd": 31047000,
+      "pretaxIncomeUsd": 154257000,
+      "year": 2024,
+      "cik": 1265131,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 1,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-12-13",
+        "reason": "Potential contamination with Listeria monocytogenes",
+        "classification": "Class I",
+        "product": "Hilltop Meadow Farm Raw Milk Cheese Pepper Jack Aged 60 Days .5 lb., 1 lb., 1.15 lb, 2.5 lb., and 5 lb. UPC: 0 200144 612644. Packaged in clear plastic packaging."
+      },
+      "byCategory": {
+        "food": 1,
+        "drug": 0,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

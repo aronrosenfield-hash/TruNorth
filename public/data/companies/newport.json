@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -236,5 +239,25 @@
     "pctMinorityMgmt": 23.9,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-06-12",
+        "reason": "According to 21 CFR 1040.10(f)(4), each laser system classified as a Class IIIb or IV laser product shall incorporate a key-actuated master control. The key shall be removable and the laser shall not be operable when the key is removed. Ho…",
+        "classification": "Class II",
+        "product": "Newport s N-LHP-928(j) units if sold as a laser head/power supply set, and N5-LPL-944-080 and N6-LPL-944-080 if sold as a power supply alone."
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

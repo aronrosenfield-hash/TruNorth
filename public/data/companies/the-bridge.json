@@ -29,7 +29,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#0d2318",
   "ac": "#4caf82",
   "charity": {
@@ -193,5 +196,33 @@
     "pctMinorityMgmt": 66.7,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.0822,
+      "taxExpenseUsd": 1496000,
+      "pretaxIncomeUsd": 18212000,
+      "year": 2024,
+      "cik": 1854401,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-07-30",
+        "reason": "The firm issued a field safety notice after becoming aware of three lots of products not having quarterly dose audits being completed on time in the first quarter of 2024. Routine lot by lot testing was completed properly however the quart…",
+        "classification": "Class II",
+        "product": "Bridge to Life EasiSlush, (Sodium Chloride Solution for Sterile Slush Preparation) (0.9% Sodium Chloride Irrigation, USP), Part Number REF BTLE-1250"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 1
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

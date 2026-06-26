@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -223,5 +226,23 @@
   "csc": {
     "environment": 40,
     "labor": 32.5
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.144,
+      "taxExpenseUsd": -9997000,
+      "pretaxIncomeUsd": -69657000,
+      "year": 2024,
+      "cik": 63296,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "63296",
+        "displayName": "MATTHEWS INTERNATIONAL CORP"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
   }
 }

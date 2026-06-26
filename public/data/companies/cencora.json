@@ -33,7 +33,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "charity": {
@@ -269,5 +272,27 @@
   },
   "csc": {
     "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.242,
+      "taxExpenseUsd": 484702000,
+      "pretaxIncomeUsd": 2003975000,
+      "year": 2024,
+      "cik": 1140859,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1140859",
+        "displayName": "Cencora, Inc."
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
+    "pharmaConduct": {
+      "lastUpdated": "2026-06-26",
+      "opioidSettlementUsd": 6400000000
+    }
   }
 }

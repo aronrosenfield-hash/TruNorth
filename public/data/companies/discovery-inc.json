@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "No public record found.",
     "sources": [
@@ -243,5 +246,25 @@
   },
   "csc": {
     "labor": 8.7
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 1,
+      "classI": 0,
+      "classII": 1,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2023-02-08",
+        "reason": "CGMP deviations",
+        "classification": "Class II",
+        "product": "Conzerol zero molluscum contagiosum, Homeopathic treatment for Molluscum Contagiosum, Topical Cream, Net weight 0.78 oz (22g) tube, UPC 8 60322 00180 8, Manufactured by: Dr. Rette…"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 1,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

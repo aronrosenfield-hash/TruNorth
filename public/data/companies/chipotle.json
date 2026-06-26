@@ -105,7 +105,8 @@
     "newsweekMrc": "2026-06-11T14:35:43.707Z",
     "execPay": "2026-06-11T03:48:51.753Z",
     "doj": "2026-06-11T14:35:40.356Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -549,6 +550,14 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.237,
+      "taxExpenseUsd": 476120000,
+      "pretaxIncomeUsd": 2010230000,
+      "year": 2024,
+      "cik": 1058090,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "flags": {

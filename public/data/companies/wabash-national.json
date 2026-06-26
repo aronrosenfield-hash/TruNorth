@@ -102,5 +102,26 @@
     "pctMinorityMgmt": 8.5,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.248,
+      "taxExpenseUsd": -93523000,
+      "pretaxIncomeUsd": -376598000,
+      "year": 2024,
+      "cik": 879526,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "879526",
+        "displayName": "WABASH NATIONAL Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  },
+  "dataLastUpdated": {
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   }
 }

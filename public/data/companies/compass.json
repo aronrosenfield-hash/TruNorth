@@ -32,7 +32,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "ab": "#2a1a05",
   "ac": "#f0a030",
   "charity": {
@@ -261,5 +264,47 @@
     "charity": 50,
     "environment": 50,
     "labor": 11
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.003,
+      "taxExpenseUsd": -500000,
+      "pretaxIncomeUsd": -154900000,
+      "year": 2024,
+      "cik": 1563190,
+      "source": "SEC EDGAR XBRL"
+    },
+    "openfdaRecalls": {
+      "recallCount": 5,
+      "classI": 1,
+      "classII": 4,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2024-12-25",
+        "reason": "foreign material",
+        "classification": "Class II",
+        "product": "Bulk salt product shipped in 1 metric ton tote; 50lb bag Special Purity Granulated Food-Grade Salt with UPC 041582150158; 44lb bag sifto Hy Grade Food Grade Salt, Compass Minerals…"
+      },
+      "byCategory": {
+        "food": 3,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "privacy": {
+      "breaches": {
+        "count": 1,
+        "mostRecent": "2015-02-02",
+        "maxAffected": null,
+        "causes": []
+      },
+      "lastUpdated": "2026-06-26T16:14:48.292Z"
+    },
+    "laborWages": {
+      "lastUpdated": "2026-06-26T16:16:39.401Z",
+      "warnLayoffs": 153,
+      "warnMostRecent": "2023-08-01"
+    }
   }
 }

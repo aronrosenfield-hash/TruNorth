@@ -31,7 +31,10 @@
       "NLRB"
     ]
   },
-  "dataLastUpdated": "2026-05-31",
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
   "charity": {
     "s": "Operates the Mercury Foundation: $22.5M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -207,5 +210,25 @@
     "charity": 85,
     "environment": 100,
     "labor": 10.9
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 2,
+      "classI": 2,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2025-01-22",
+        "reason": "Gas powered emergency resuscitator has a circuit flow controller manufactured with an undersized spring, which may cause resuscitator not reach the high and low ends of the PIP and PEEP pressure ranges, which may cause a loss of positive p…",
+        "classification": "Class I",
+        "product": "Neo-Tee T-Piece Resuscitator, for pediatric emergency respiratory support, Part: 1050805, 1050808, 1050809, 1050810, 1050811, 1050814, 1050832, 1050839, 1050840, 1050841, 1050842"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 0,
+        "device": 2
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    }
   }
 }

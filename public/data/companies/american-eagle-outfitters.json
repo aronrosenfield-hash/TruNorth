@@ -95,7 +95,8 @@
   "ac": "#4caf82",
   "dataLastUpdated": {
     "legacy": "2026-05-28",
-    "execPay": "2026-06-11T03:48:51.753Z"
+    "execPay": "2026-06-11T03:48:51.753Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "laborAPI": {
     "violationTracker": {
@@ -369,6 +370,22 @@
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/919012/000119312526227158/d70088ddef14a.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
       "source": "sec-def14a"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.257,
+      "taxExpenseUsd": 112854000,
+      "pretaxIncomeUsd": 439757000,
+      "year": 2024,
+      "cik": 919012,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "919012",
+        "displayName": "AMERICAN EAGLE OUTFITTERS INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
     }
   },
   "csc": {

@@ -154,7 +154,8 @@
     "ferc": "2026-06-09T13:48:16.996Z",
     "courtlistener": "2026-06-11T14:35:43.162Z",
     "msha": "2026-06-11T14:35:43.462Z",
-    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
   "competitors": [
     "duke-energy",
@@ -554,6 +555,14 @@
       "lastUpdated": "2026-06-11T14:35:44.423Z",
       "source": "osha-sir",
       "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.078,
+      "taxExpenseUsd": 207000000,
+      "pretaxIncomeUsd": 2667000000,
+      "year": 2024,
+      "cik": 1109357,
+      "source": "SEC EDGAR XBRL"
     }
   },
   "realCats": 3,
