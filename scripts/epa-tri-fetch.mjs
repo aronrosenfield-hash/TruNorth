@@ -2,29 +2,41 @@
 /**
  * EPA Toxics Release Inventory (TRI) — annual chemical releases per facility.
  *
- * Pulls the publicly-posted "TRI Basic Data Files" CSVs for the most-recent
- * reporting year + 3 prior years (so the merge step can compute a 4-year
- * trend). EPA typically releases the prior reporting year in March.
+ * Pulls EPA's "TRI Basic Data File" (one denormalized national CSV per
+ * reporting year) and caches it for the shared epa-emissions-merge step,
+ * which sums ON-SITE + OFF-SITE releases to PARENT_COMPANY and writes
+ * enriched.environment.tri_* into per-company JSON. Fetches the most-recent
+ * released year + 3 prior so the merge can build a 4-year trend.
  *
- * Source landing page:  https://www.epa.gov/toxics-release-inventory-tri-program/
- *                         tri-basic-data-files-calendar-years-1987-present
- * Direct CSV pattern (per-year microsite path):
- *   https://www3.epa.gov/tri/current/basic/<YYYY>/US_<YYYY>_v##.csv
+ * Source (Envirofacts bulk download — public domain, no key required):
+ *   https://data.epa.gov/efservice/downloads/tri/mv_tri_basic_download/<YEAR>_US/csv
+ * (~55 MB / ~77k rows per year; the server rejects HEAD/Range and streams
+ * the full file, so each year is a single buffered GET. EPA posts a reporting
+ * year the following autumn — RY2024 posted Oct 2025.)
  *
- * ~21,000 facilities report annually (any covered facility with >10K lbs
- * manufactured / >25K lbs processed of a listed chemical). Each row =
- * one facility × chemical × year; we sum within (PARENT_COMPANY_NAME,
- * YEAR) and track top-3 chemicals by lbs.
+ * The raw EPA header prefixes every column with an ordinal ("15. PARENT CO
+ * NAME"). We strip that prefix and normalise to UPPER_SNAKE on write so the
+ * merge's pick() matches with no per-year aliasing — e.g.
+ *   "15. PARENT CO NAME"        -> PARENT_CO_NAME
+ *   "37. CHEMICAL"              -> CHEMICAL
+ *   "65. ON-SITE RELEASE TOTAL" -> ON-SITE_RELEASE_TOTAL
+ *   "107. TOTAL RELEASES"       -> TOTAL_RELEASES   (on-site + off-site, lbs)
+ * Data rows are written verbatim (the merge's CSV parser handles quoting).
  *
- * Cache:   public/data/_cache/epa-tri/<year>.csv
- * Output:  none — fetch only seeds the cache; merge script reads it.
+ * NOTE: a small share of rows (PFAS, dioxins) report in grams, not pounds
+ * (col "UNIT OF MEASURE"). v1 sums TOTAL_RELEASES as-is to match the existing
+ * merge; those rows are mass-negligible against the pound totals. Unit-aware
+ * summing is a tracked follow-up (see BACKLOG).
+ *
+ * Cache:   public/data/_cache/epa-tri/<year>.csv   (header normalised)
+ * Output:  none — fetch only seeds the cache; epa-emissions-merge reads it.
  *
  * Flags:
- *   --dry          (default) skip live downloads; use test/fixtures/epa/*
+ *   --dry          (default) skip live downloads; seed from test/fixtures/epa/tri-*
  *   --live         actually hit EPA (workflow uses this)
- *   --years N      number of years to fetch (default 4: current + 3 prior)
+ *   --years N      number of years to fetch (default 4: latest released + 3 prior)
  *
- * Runs via .github/workflows/epa-emissions-annual.yml on Apr 1.
+ * Runs via .github/workflows/epa-emissions-annual.yml (alongside GHGRP).
  */
 import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -36,33 +48,64 @@ const ROOT      = path.resolve(__dirname, "..");
 const CACHE_DIR = path.join(ROOT, "public/data/_cache/epa-tri");
 const FIX_DIR   = path.join(ROOT, "test/fixtures/epa");
 const UA        = "TruNorth-TRI/1.0 (+https://www.trunorthapp.com)";
-
-// TRI per-year URLs. EPA rotates a version suffix (v15, v16…) each year —
-// keep this table current.
-const TRI_URL_BY_YEAR = {
-  2024: "https://www3.epa.gov/tri/current/basic/2024/US_2024_v15.csv",
-  2023: "https://www3.epa.gov/tri/current/basic/2023/US_2023_v15.csv",
-  2022: "https://www3.epa.gov/tri/current/basic/2022/US_2022_v15.csv",
-  2021: "https://www3.epa.gov/tri/current/basic/2021/US_2021_v15.csv",
-};
+const BASE_URL  = "https://data.epa.gov/efservice/downloads/tri/mv_tri_basic_download";
 
 function parseArgs() {
   const a = new Set(process.argv.slice(2));
   const live = a.has("--live");
-  const dry  = !live;
+  const dry  = !live; // default = dry
   const yIdx = process.argv.indexOf("--years");
   const years = yIdx >= 0 ? Number(process.argv[yIdx + 1]) : 4;
   return { dry, live, years };
 }
 
 function targetYears(n) {
-  const latest = new Date().getUTCFullYear() - 1;
+  // EPA posts a reporting year's TRI data the following autumn (RY2024 posted
+  // Oct 2025). So the latest fully-available year is (current year - 1) only
+  // after ~October, else (current year - 2). The merge tolerates a year whose
+  // file 404s (not yet posted), so this is a best-effort window.
+  const now = new Date();
+  const latest = now.getUTCMonth() >= 9 ? now.getUTCFullYear() - 1 : now.getUTCFullYear() - 2;
   return Array.from({ length: n }, (_, i) => latest - i);
 }
 
+// "15. PARENT CO NAME" -> "PARENT_CO_NAME". Strip the leading ordinal, collapse
+// whitespace to underscores, keep hyphens, uppercase — so epa-emissions-merge's
+// pick() matches (PARENT_CO_NAME / CHEMICAL / TOTAL_RELEASES / ON-SITE_RELEASE_TOTAL).
+function normalizeHeaderCell(cell) {
+  return String(cell)
+    .replace(/^\s*\d+\.\s*/, "")
+    .trim()
+    .replace(/\s+/g, "_")
+    .toUpperCase();
+}
+
+function normalizeHeaderLine(line) {
+  // The EPA header row has no quoted/embedded-comma columns, so a plain split
+  // is safe here (data rows are written through untouched).
+  return line.split(",").map(normalizeHeaderCell).join(",");
+}
+
+// Envirofacts intermittently 500s on these on-demand downloads; retry with
+// backoff before giving up on a year.
+async function fetchBuffer(url, attempts = 3) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(240_000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return Buffer.from(await res.arrayBuffer());
+    } catch (e) {
+      lastErr = e;
+      console.warn(`    attempt ${i}/${attempts} failed: ${e.message}`);
+      if (i < attempts) await new Promise(r => setTimeout(r, 4000 * i));
+    }
+  }
+  throw lastErr;
+}
+
 async function downloadYear(year) {
-  const url = TRI_URL_BY_YEAR[year];
-  if (!url) throw new Error(`No URL pattern for TRI year ${year} — update TRI_URL_BY_YEAR`);
+  const url  = `${BASE_URL}/${year}_US/csv`;
   const dest = path.join(CACHE_DIR, `${year}.csv`);
   if (existsSync(dest)) {
     const st = await fs.stat(dest);
@@ -72,15 +115,26 @@ async function downloadYear(year) {
     }
   }
   console.log(`  [${year}] downloading ${url} …`);
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  await fs.writeFile(dest, buf);
-  console.log(`  [${year}] saved ${(buf.length / 1024 / 1024).toFixed(1)} MB → ${path.relative(ROOT, dest)}`);
-  return { year, status: "downloaded", path: dest, bytes: buf.length };
+  const raw = (await fetchBuffer(url)).toString("utf-8");
+  const nl  = raw.indexOf("\n");
+  if (nl < 0) throw new Error(`No newline in TRI ${year} download (${raw.length} B) — endpoint may be down`);
+  const header = normalizeHeaderLine(raw.slice(0, nl).replace(/\r$/, ""));
+  // Guard against empty / garbage / renamed-schema downloads (the sandboxed-fetch
+  // lesson): refuse to cache a file the merge can't aggregate.
+  if (!/(^|,)PARENT_CO_NAME(,|$)/.test(header) || !/(^|,)TOTAL_RELEASES(,|$)/.test(header)) {
+    throw new Error(`TRI ${year} header missing expected columns after normalise: ${header.slice(0, 200)}`);
+  }
+  const body = raw.slice(nl + 1);
+  if (body.length < 1024) throw new Error(`TRI ${year} body suspiciously small (${body.length} B) — refusing to cache`);
+  const out = header + "\n" + body;
+  await fs.writeFile(dest, out);
+  console.log(`  [${year}] saved ${(Buffer.byteLength(out) / 1024 / 1024).toFixed(1)} MB → ${path.relative(ROOT, dest)}`);
+  return { year, status: "downloaded", path: dest, bytes: Buffer.byteLength(out) };
 }
 
 async function seedFromFixtures(years) {
+  // Copy bundled fixtures into the cache so the merge runs with no network.
+  // Used by the default --dry mode and CI smoke tests.
   const results = [];
   for (const y of years) {
     const src = path.join(FIX_DIR, `tri-${y}-sample.csv`);
@@ -106,8 +160,9 @@ async function main() {
   console.log(`TRI fetch — mode=${live ? "LIVE" : "DRY"}, years=${ys.join(",")}`);
 
   let results;
-  if (dry) results = await seedFromFixtures(ys);
-  else {
+  if (dry) {
+    results = await seedFromFixtures(ys);
+  } else {
     results = [];
     for (const y of ys) {
       try { results.push(await downloadYear(y)); }
@@ -118,8 +173,11 @@ async function main() {
     }
   }
 
-  const ok = results.filter(r => r.status === "downloaded" || r.status === "cached" || r.status === "fixture").length;
+  const ok = results.filter(r => ["downloaded", "cached", "fixture"].includes(r.status)).length;
   console.log(`\nTRI fetch done — ${ok}/${ys.length} years available in cache.`);
+  // Fail loudly if a live run produced nothing at all, so the workflow surfaces
+  // it instead of silently merging stale/empty data.
+  if (live && ok === 0) process.exit(1);
 }
 
 main().catch(e => { console.error("epa-tri-fetch failed:", e); process.exit(1); });
