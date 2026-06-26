@@ -1,0 +1,1066 @@
+{
+  "_source": "CMS Open Payments (Sunshine Act) + National Opioid Settlement",
+  "_signals": {
+    "sunshineActPaymentsUsd": "Total CMS Open Payments general payments (manufacturer→physician) in the program year. Public domain.",
+    "opioidSettlementUsd": "Global national opioid settlement amount for the named defendant. Curated from nationalopioidofficialsettlement.com."
+  },
+  "_note": "Pharma/medical-device/retail-pharmacy conduct. STRICT matching (curated alias + exact normalized name) — a missing flag beats a wrong one.",
+  "sunshineActSourceUrl": "https://openpaymentsdata.cms.gov/",
+  "opioidSettlementSourceUrl": "https://www.nationalopioidofficialsettlement.com/",
+  "sunshineActYear": 2024,
+  "generatedAt": "2026-06-26T13:58:02.295Z",
+  "matchCount": 211,
+  "sunshineSlugCount": 204,
+  "opioidSlugCount": 10,
+  "biontech-se": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 180558679,
+    "sunshineActYear": 2024
+  },
+  "abbvie": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 156382683,
+    "sunshineActYear": 2024
+  },
+  "stryker": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 132155940,
+    "sunshineActYear": 2024
+  },
+  "medtronic": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 117649217,
+    "sunshineActYear": 2024
+  },
+  "zimmer-biomet": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 83904351,
+    "sunshineActYear": 2024
+  },
+  "intuitive-surgical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 72225869,
+    "sunshineActYear": 2024
+  },
+  "takeda-pharmaceutical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 71616187,
+    "sunshineActYear": 2024
+  },
+  "astrazeneca": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 77837144,
+    "sunshineActYear": 2024
+  },
+  "boston-scientific": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 61435976,
+    "sunshineActYear": 2024
+  },
+  "genentech": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 67717073,
+    "sunshineActYear": 2024
+  },
+  "sanofi": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 65477405,
+    "sunshineActYear": 2024
+  },
+  "johnson-and-johnson": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 126012991,
+    "sunshineActYear": 2024,
+    "opioidSettlementUsd": 5000000000
+  },
+  "smith-and-nephew": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 46443943,
+    "sunshineActYear": 2024
+  },
+  "amgen": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 44726300,
+    "sunshineActYear": 2024
+  },
+  "eli-lilly": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 50758517,
+    "sunshineActYear": 2024
+  },
+  "pfizer": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 42700673,
+    "sunshineActYear": 2024
+  },
+  "abbott-laboratories": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 38150794,
+    "sunshineActYear": 2024
+  },
+  "gilead-sciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 37366614,
+    "sunshineActYear": 2024
+  },
+  "bristol-myers-squibb": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 31473489,
+    "sunshineActYear": 2024
+  },
+  "edwards-lifesciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 27838833,
+    "sunshineActYear": 2024
+  },
+  "henry-schein": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 27402695,
+    "sunshineActYear": 2024
+  },
+  "globus-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 26667936,
+    "sunshineActYear": 2024
+  },
+  "novo-nordisk": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 25453924,
+    "sunshineActYear": 2024
+  },
+  "gsk": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 25259587,
+    "sunshineActYear": 2024
+  },
+  "regeneron": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 33836195,
+    "sunshineActYear": 2024
+  },
+  "merck": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 21019991,
+    "sunshineActYear": 2024
+  },
+  "encore-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 19818592,
+    "sunshineActYear": 2024
+  },
+  "livanova": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 19722393,
+    "sunshineActYear": 2024
+  },
+  "novartis": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 18104493,
+    "sunshineActYear": 2024
+  },
+  "boehringer-ingelheim-united-states": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 17629691,
+    "sunshineActYear": 2024
+  },
+  "angiodynamics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 17131279,
+    "sunshineActYear": 2024
+  },
+  "align-technology": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 16798811,
+    "sunshineActYear": 2024
+  },
+  "bausch-and-lomb": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 14219845,
+    "sunshineActYear": 2024
+  },
+  "neurocrine-biosciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 13851672,
+    "sunshineActYear": 2024
+  },
+  "teva-pharmaceutical-industries": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 13811571,
+    "sunshineActYear": 2024,
+    "opioidSettlementUsd": 4250000000
+  },
+  "incyte": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 13083422,
+    "sunshineActYear": 2024
+  },
+  "axsome-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 12229273,
+    "sunshineActYear": 2024
+  },
+  "alexion-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 11780676,
+    "sunshineActYear": 2024
+  },
+  "bayer": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 11636921,
+    "sunshineActYear": 2024
+  },
+  "rxsight": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 11077232,
+    "sunshineActYear": 2024
+  },
+  "phathom-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 10634050,
+    "sunshineActYear": 2024
+  },
+  "dentsply-sirona": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 10207380,
+    "sunshineActYear": 2024
+  },
+  "alkermes": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 10100768,
+    "sunshineActYear": 2024
+  },
+  "jazz-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 9815963,
+    "sunshineActYear": 2024
+  },
+  "orthofix-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 9643126,
+    "sunshineActYear": 2024
+  },
+  "biogen": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 9161043,
+    "sunshineActYear": 2024
+  },
+  "si-bone": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 8128503,
+    "sunshineActYear": 2024
+  },
+  "becton-dickinson": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 7763365,
+    "sunshineActYear": 2024
+  },
+  "treace-medical-concepts": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 7136080,
+    "sunshineActYear": 2024
+  },
+  "daiichi-sankyo": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 7223573,
+    "sunshineActYear": 2024
+  },
+  "vertex-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 6683995,
+    "sunshineActYear": 2024
+  },
+  "alnylam-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 6421121,
+    "sunshineActYear": 2024
+  },
+  "ge-healthcare": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 6186011,
+    "sunshineActYear": 2024
+  },
+  "envista": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 5970406,
+    "sunshineActYear": 2024
+  },
+  "solventum": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 5959972,
+    "sunshineActYear": 2024
+  },
+  "penumbra": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 5805938,
+    "sunshineActYear": 2024
+  },
+  "teleflex": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 6251076,
+    "sunshineActYear": 2024
+  },
+  "arcutis-biotherapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 5034342,
+    "sunshineActYear": 2024
+  },
+  "atricure": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4923636,
+    "sunshineActYear": 2024
+  },
+  "tg-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4749309,
+    "sunshineActYear": 2024
+  },
+  "vanda-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4600092,
+    "sunshineActYear": 2024
+  },
+  "organon": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4515241,
+    "sunshineActYear": 2024
+  },
+  "madrigal-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4487924,
+    "sunshineActYear": 2024
+  },
+  "supernus-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4372426,
+    "sunshineActYear": 2024
+  },
+  "united-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4335919,
+    "sunshineActYear": 2024
+  },
+  "glaukos": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4104659,
+    "sunshineActYear": 2024
+  },
+  "lundbeck": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4073513,
+    "sunshineActYear": 2024
+  },
+  "exelixis": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 4041458,
+    "sunshineActYear": 2024
+  },
+  "illumina": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3960562,
+    "sunshineActYear": 2024
+  },
+  "corcept-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3892660,
+    "sunshineActYear": 2024
+  },
+  "insulet": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3821253,
+    "sunshineActYear": 2024
+  },
+  "tarsus-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3598199,
+    "sunshineActYear": 2024
+  },
+  "apellis-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3516926,
+    "sunshineActYear": 2024
+  },
+  "argenx-se": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3418466,
+    "sunshineActYear": 2024
+  },
+  "mimedx-group": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3325463,
+    "sunshineActYear": 2024
+  },
+  "integra-lifesciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 3028346,
+    "sunshineActYear": 2024
+  },
+  "biomarin-pharmaceutical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2963525,
+    "sunshineActYear": 2024
+  },
+  "inspire-medical-systems": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2943286,
+    "sunshineActYear": 2024
+  },
+  "dexcom": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2857185,
+    "sunshineActYear": 2024
+  },
+  "sarepta-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2790726,
+    "sunshineActYear": 2024
+  },
+  "merit-medical-systems": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2736320,
+    "sunshineActYear": 2024
+  },
+  "orthopediatrics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2663289,
+    "sunshineActYear": 2024
+  },
+  "acadia-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2636727,
+    "sunshineActYear": 2024
+  },
+  "masimo": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2607386,
+    "sunshineActYear": 2024
+  },
+  "lexicon-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2512493,
+    "sunshineActYear": 2024
+  },
+  "coopervision": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2510660,
+    "sunshineActYear": 2024
+  },
+  "moderna": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2385371,
+    "sunshineActYear": 2024
+  },
+  "shoulder-innovations": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2154880,
+    "sunshineActYear": 2024
+  },
+  "tela-bio": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2067848,
+    "sunshineActYear": 2024
+  },
+  "organogenesis": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 2052705,
+    "sunshineActYear": 2024
+  },
+  "travere-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1974138,
+    "sunshineActYear": 2024
+  },
+  "grifols-sa": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1959879,
+    "sunshineActYear": 2024
+  },
+  "ferring-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1951953,
+    "sunshineActYear": 2024
+  },
+  "amneal-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1926341,
+    "sunshineActYear": 2024
+  },
+  "ceribell": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1887430,
+    "sunshineActYear": 2024
+  },
+  "ardelyx": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1814060,
+    "sunshineActYear": 2024
+  },
+  "axogen": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1796275,
+    "sunshineActYear": 2024
+  },
+  "ocular-therapeutix": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1743069,
+    "sunshineActYear": 2024
+  },
+  "procept-biorobotics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1728615,
+    "sunshineActYear": 2024
+  },
+  "heartflow": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1719876,
+    "sunshineActYear": 2024
+  },
+  "kiniksa-pharmaceuticals-international": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1643655,
+    "sunshineActYear": 2024
+  },
+  "urogen-pharma": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1588160,
+    "sunshineActYear": 2024
+  },
+  "agios-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1512677,
+    "sunshineActYear": 2024
+  },
+  "cvrx": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1487717,
+    "sunshineActYear": 2024
+  },
+  "collegium-pharmaceutical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1470027,
+    "sunshineActYear": 2024
+  },
+  "viatris": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1387567,
+    "sunshineActYear": 2024
+  },
+  "tandem-diabetes-care": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1383014,
+    "sunshineActYear": 2024
+  },
+  "shionogi-and-co": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1366083,
+    "sunshineActYear": 2024
+  },
+  "esperion-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1315185,
+    "sunshineActYear": 2024
+  },
+  "milestone-scientific": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1306839,
+    "sunshineActYear": 2024
+  },
+  "sonendo": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1290023,
+    "sunshineActYear": 2024
+  },
+  "harmony-biosciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1272575,
+    "sunshineActYear": 2024
+  },
+  "vericel": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1265718,
+    "sunshineActYear": 2024
+  },
+  "mirum-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1232854,
+    "sunshineActYear": 2024
+  },
+  "transmedics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1228546,
+    "sunshineActYear": 2024
+  },
+  "agilent-technologies": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1213516,
+    "sunshineActYear": 2024
+  },
+  "haemonetics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1190989,
+    "sunshineActYear": 2024
+  },
+  "ani-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1125992,
+    "sunshineActYear": 2024
+  },
+  "bioventus": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1095694,
+    "sunshineActYear": 2024
+  },
+  "anika-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1074751,
+    "sunshineActYear": 2024
+  },
+  "catalyst-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1065448,
+    "sunshineActYear": 2024
+  },
+  "insmed": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1064607,
+    "sunshineActYear": 2024
+  },
+  "verrica-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1060498,
+    "sunshineActYear": 2024
+  },
+  "neuronetics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1052717,
+    "sunshineActYear": 2024
+  },
+  "rigel-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1040057,
+    "sunshineActYear": 2024
+  },
+  "sight-sciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 1017623,
+    "sunshineActYear": 2024
+  },
+  "karyopharm-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 987235,
+    "sunshineActYear": 2024
+  },
+  "capsovision": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 965999,
+    "sunshineActYear": 2024
+  },
+  "conmed": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 945880,
+    "sunshineActYear": 2024
+  },
+  "novocure": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 924814,
+    "sunshineActYear": 2024
+  },
+  "heron-therapeutics-de": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 906892,
+    "sunshineActYear": 2024
+  },
+  "life-technologies": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 868106,
+    "sunshineActYear": 2024
+  },
+  "avanos-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 867206,
+    "sunshineActYear": 2024
+  },
+  "pulmonx": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 847726,
+    "sunshineActYear": 2024
+  },
+  "tactile-systems-technology": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 810270,
+    "sunshineActYear": 2024
+  },
+  "telix-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 753843,
+    "sunshineActYear": 2024
+  },
+  "sanara-medtech": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 748668,
+    "sunshineActYear": 2024
+  },
+  "tempus-ai": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 683536,
+    "sunshineActYear": 2024
+  },
+  "ironwood-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 659434,
+    "sunshineActYear": 2024
+  },
+  "xtant-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 659264,
+    "sunshineActYear": 2024
+  },
+  "bausch-health-companies": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 610763,
+    "sunshineActYear": 2024
+  },
+  "pulse-biosciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 534821,
+    "sunshineActYear": 2024
+  },
+  "steris": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 514255,
+    "sunshineActYear": 2024
+  },
+  "akebia-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 496991,
+    "sunshineActYear": 2024
+  },
+  "avita-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 483915,
+    "sunshineActYear": 2024
+  },
+  "neuropace": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 477376,
+    "sunshineActYear": 2024
+  },
+  "ptc-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 464150,
+    "sunshineActYear": 2024
+  },
+  "adaptive-biotechnologies": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 462235,
+    "sunshineActYear": 2024
+  },
+  "ultragenyx-pharmaceutical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 454574,
+    "sunshineActYear": 2024
+  },
+  "artivion": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 449908,
+    "sunshineActYear": 2024
+  },
+  "trisalus-life-sciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 443261,
+    "sunshineActYear": 2024
+  },
+  "canon-medical-systems": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 511534,
+    "sunshineActYear": 2024
+  },
+  "carlsmed": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 436397,
+    "sunshineActYear": 2024
+  },
+  "clearpoint-neuro": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 426149,
+    "sunshineActYear": 2024
+  },
+  "mannkind": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 423228,
+    "sunshineActYear": 2024
+  },
+  "bio-rad-laboratories": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 421192,
+    "sunshineActYear": 2024
+  },
+  "cerus": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 405694,
+    "sunshineActYear": 2024
+  },
+  "puma-biotechnology": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 396860,
+    "sunshineActYear": 2024
+  },
+  "cumberland-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 341441,
+    "sunshineActYear": 2024
+  },
+  "lensar": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 330064,
+    "sunshineActYear": 2024
+  },
+  "delcath-systems": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 329476,
+    "sunshineActYear": 2024
+  },
+  "biocryst-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 319125,
+    "sunshineActYear": 2024
+  },
+  "lemaitre-vascular": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 311504,
+    "sunshineActYear": 2024
+  },
+  "daxor": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 270555,
+    "sunshineActYear": 2024
+  },
+  "biofrontera": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 252583,
+    "sunshineActYear": 2024
+  },
+  "electromed": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 249649,
+    "sunshineActYear": 2024
+  },
+  "embecta": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 245361,
+    "sunshineActYear": 2024
+  },
+  "beta-bionics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 243607,
+    "sunshineActYear": 2024
+  },
+  "nuwellis": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 242758,
+    "sunshineActYear": 2024
+  },
+  "fuse-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 236228,
+    "sunshineActYear": 2024
+  },
+  "fennec-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 215037,
+    "sunshineActYear": 2024
+  },
+  "orasure-technologies": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 211411,
+    "sunshineActYear": 2024
+  },
+  "oculus": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 204048,
+    "sunshineActYear": 2024
+  },
+  "lucid-diagnostics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 203334,
+    "sunshineActYear": 2024
+  },
+  "legend-biotech": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 189173,
+    "sunshineActYear": 2024
+  },
+  "rhythm-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 177036,
+    "sunshineActYear": 2024
+  },
+  "outset-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 160738,
+    "sunshineActYear": 2024
+  },
+  "resmed": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 160397,
+    "sunshineActYear": 2024
+  },
+  "iridex": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 150984,
+    "sunshineActYear": 2024
+  },
+  "veru": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 149541,
+    "sunshineActYear": 2024
+  },
+  "novavax": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 146844,
+    "sunshineActYear": 2024
+  },
+  "beyond-air": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 141684,
+    "sunshineActYear": 2024
+  },
+  "krystal-biotech": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 136195,
+    "sunshineActYear": 2024
+  },
+  "seres-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 132448,
+    "sunshineActYear": 2024
+  },
+  "profound-medical": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 125200,
+    "sunshineActYear": 2024
+  },
+  "bioxcel-therapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 115962,
+    "sunshineActYear": 2024
+  },
+  "iovance-biotherapeutics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 114661,
+    "sunshineActYear": 2024
+  },
+  "accuray": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 113041,
+    "sunshineActYear": 2024
+  },
+  "biolinerx": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 112250,
+    "sunshineActYear": 2024
+  },
+  "varex-imaging": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 102341,
+    "sunshineActYear": 2024
+  },
+  "mckesson": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 98310,
+    "sunshineActYear": 2024,
+    "opioidSettlementUsd": 7400000000
+  },
+  "geron": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 91159,
+    "sunshineActYear": 2024
+  },
+  "elutia": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 90725,
+    "sunshineActYear": 2024
+  },
+  "evofem-biosciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 89953,
+    "sunshineActYear": 2024
+  },
+  "strata-skin-sciences": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 89405,
+    "sunshineActYear": 2024
+  },
+  "kamada": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 83396,
+    "sunshineActYear": 2024
+  },
+  "x4-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 80863,
+    "sunshineActYear": 2024
+  },
+  "eton-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 80619,
+    "sunshineActYear": 2024
+  },
+  "aspira-women-s-health": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 74736,
+    "sunshineActYear": 2024
+  },
+  "amylyx-pharmaceuticals": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 70766,
+    "sunshineActYear": 2024
+  },
+  "invivyd": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 70507,
+    "sunshineActYear": 2024
+  },
+  "cormedix": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 70025,
+    "sunshineActYear": 2024
+  },
+  "immunitybio": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 67816,
+    "sunshineActYear": 2024
+  },
+  "senseonics": {
+    "lastUpdated": "2026-06-26",
+    "sunshineActPaymentsUsd": 65384,
+    "sunshineActYear": 2024
+  },
+  "cardinal-health": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 6000000000
+  },
+  "cencora": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 6400000000
+  },
+  "allergan-inc": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 2370000000
+  },
+  "cvs-health": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 5000000000
+  },
+  "walgreens": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 5700000000
+  },
+  "walmart": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 3100000000
+  },
+  "kroger": {
+    "lastUpdated": "2026-06-26",
+    "opioidSettlementUsd": 1200000000
+  }
+}

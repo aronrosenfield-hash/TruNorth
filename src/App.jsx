@@ -3359,6 +3359,104 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               </div>
             );
           })()}
+          {/* Build 76: display-only "public-record footprint" — aggregates the
+              government-sourced enriched signals (EPA emissions · ITEP/SEC tax ·
+              openFDA recalls · CMS/opioid pharma · SEC conflict-minerals · WARN/WHD
+              labor · CA/WA privacy · animal certs). No score impact; each card
+              renders only when present. Third-party indices stay excluded (B-63). */}
+          {(() => {
+            const E = enriched.enriched || {};
+            const env = E.environment, tax = E.tax, secTax = E.secTax, rc = E.openfdaRecalls;
+            const ph = E.pharmaConduct, sc = E.supplyChain, lw = E.laborWages, pv = E.privacy, ac = E.animalCerts;
+            const big = (n) => n >= 1e9 ? `${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(0)}K` : `${Math.round(n || 0)}`;
+            const usd = (n) => "$" + big(n);
+            const card = (key, icon, label, value, sub, tone) => {
+              const c = tone === "good" ? "#54B98A" : tone === "bad" ? "#E0524D" : "#E8A04C";
+              const bg = tone === "good" ? "rgba(84,185,138,0.10)" : tone === "bad" ? "rgba(226,74,74,0.12)" : "rgba(240,160,48,0.10)";
+              const bd = tone === "good" ? "rgba(84,185,138,0.4)" : tone === "bad" ? "rgba(226,74,74,0.4)" : "rgba(240,160,48,0.35)";
+              return (
+                <div key={key} style={{ flex:"1 1 140px", padding:"8px 10px", borderRadius:8, background:bg, border:`1px solid ${bd}` }}>
+                  <div style={{ fontSize:10, color:c, fontWeight:700, textTransform:"uppercase", letterSpacing:0.4 }}>
+                    <i className={`ti ti-${icon}`} aria-hidden="true" /> {label}
+                  </div>
+                  <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginTop:2 }}>{value}</div>
+                  {sub ? <div style={{ fontSize:9.5, color:T.txt3, marginTop:1 }}>{sub}</div> : null}
+                </div>
+              );
+            };
+            const cards = [];
+            if (env?.ghg_tons_co2e_last_year != null) cards.push(card("ghg", "flame", "GHG emissions", `${big(env.ghg_tons_co2e_last_year)} t CO₂e`, `EPA GHGRP · ${env.ghg_last_year}`));
+            if (env?.tri_releases_lbs_last_year != null) {
+              const tc = env.tri_top_chemicals?.[0]?.chemical?.replace(/\s*\(.*$/, "").trim().slice(0, 22);
+              cards.push(card("tri", "alert-triangle", "Toxic releases", `${big(env.tri_releases_lbs_last_year)} lbs`, `EPA TRI · ${env.tri_last_year}${tc ? ` · ${tc}` : ""}`));
+            }
+            if (tax?.effectiveFederalTaxRate != null) cards.push(card("tax", "coin", "Federal tax rate", `${(tax.effectiveFederalTaxRate * 100).toFixed(1)}%`, `${tax.zeroTaxYears > 0 ? `$0 in ${tax.zeroTaxYears}/${tax.studyYears} yrs · ` : ""}ITEP ’18–’22`, tax.zeroTaxYears > 0 ? "bad" : null));
+            else if (secTax?.effectiveTaxRate != null) cards.push(card("sectax", "coin", "Effective tax rate", `${(secTax.effectiveTaxRate * 100).toFixed(1)}%`, `SEC filings · ${secTax.year}`));
+            if (rc?.recallCount > 0) cards.push(card("recalls", "rosette", "FDA recalls", `${rc.recallCount}${rc.classI > 0 ? ` · ${rc.classI} Class I` : ""}`, `openFDA${rc.mostRecent?.date ? ` · ${String(rc.mostRecent.date).slice(0, 4)}` : ""}`, rc.classI > 0 ? "bad" : null));
+            if (ph?.opioidSettlementUsd > 0) cards.push(card("opioid", "pill", "Opioid settlement", usd(ph.opioidSettlementUsd), "National settlement", "bad"));
+            if (ph?.sunshineActPaymentsUsd > 0) cards.push(card("sunshine", "stethoscope", "Physician payments", usd(ph.sunshineActPaymentsUsd), `CMS Open Payments · ${ph.sunshineActYear}`));
+            if (sc?.conflictMineralsFiler) cards.push(card("conflict", "world", "Conflict minerals", "Files 3TG disclosure", "SEC Form SD"));
+            if (lw?.warnLayoffs > 0) cards.push(card("layoffs", "users", "Mass layoffs", `${big(lw.warnLayoffs)} workers`, `WARN${lw.warnMostRecent ? ` · ${String(lw.warnMostRecent).slice(0, 4)}` : ""}`, "bad"));
+            if (lw?.backWagesUsd > 0) cards.push(card("wages", "briefcase", "Back wages owed", usd(lw.backWagesUsd), `DOL WHD · ${lw.whdCaseCount || 0} cases`, "bad"));
+            if (pv?.breaches?.count > 0) cards.push(card("breach", "lock", "Data breaches", `${pv.breaches.count}${pv.breaches.maxAffected ? ` · ${big(pv.breaches.maxAffected)} hit` : ""}`, "State AG filings", "bad"));
+            if (pv?.dataBroker?.registered) cards.push(card("broker", "shield-lock", "Data broker", "Registered", `CPPA${(pv.dataBroker.soldToLawEnforcement || pv.dataBroker.soldToGenAI) ? " · sells data" : ""}`, "bad"));
+            if (ac?.certifications?.length) cards.push(card("certs", "leaf", "Certified", ac.certifications.map(x => x.replace("certified-", "").replace(/^\w/, m => m.toUpperCase())).join(" · "), "Cruelty-free / humane", "good"));
+            if (!cards.length) return null;
+            return (
+              <div style={{ marginBottom:14 }}>
+                <div style={{ fontSize:10.5, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.5, marginBottom:7 }}>
+                  Public-record footprint
+                </div>
+                <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>{cards}</div>
+                {tax?.citation && (
+                  <a href={tax.citeUrl || "https://itep.org/corporate-tax-avoidance/"} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+                     style={{ display:"inline-block", fontSize:9.5, color:T.gold, marginTop:5, textDecoration:"none", fontStyle:"italic" }}>
+                    {tax.citation} ↗
+                  </a>
+                )}
+              </div>
+            );
+          })()}
+          {/* Build 76: surface previously-dark enriched signals — financial +
+              securities enforcement records and governance/transparency ratings
+              (display-only; data was written by merges but never rendered). */}
+          {(() => {
+            const E = enriched.enriched || {};
+            const fed = E.fedReserve, sec = E.secLitigation;
+            const big = (n) => n >= 1e9 ? `$${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `$${(n / 1e3).toFixed(0)}K` : `$${Math.round(n || 0)}`;
+            const hasFed = fed && (fed.totalPenaltiesDollars > 0 || fed.totalActions > 0);
+            const hasSec = sec && sec.totalReleasesLifetime > 0;
+            // NB: cpaZicklin / asYouSow / newsweekMrc are THIRD-PARTY indices held
+            // back from the paid-tier UI pending reuse-license confirmation (B-63).
+            // Only government public records (Fed Reserve, SEC) are surfaced here.
+            if (!hasFed && !hasSec) return null;
+            return (
+              <div style={{ marginBottom:14 }}>
+                {(hasFed || hasSec) && (
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                    {hasFed && (
+                      <div style={{ flex:"1 1 140px", padding:"8px 10px", borderRadius:8, background:"rgba(226,74,74,0.12)", border:"1px solid rgba(226,74,74,0.4)" }}>
+                        <div style={{ fontSize:10, color:"#E0524D", fontWeight:700, textTransform:"uppercase", letterSpacing:0.4 }}>
+                          <i className="ti ti-building-bank" aria-hidden="true" /> Bank penalties
+                        </div>
+                        <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginTop:2 }}>{big(fed.totalPenaltiesDollars)}</div>
+                        <div style={{ fontSize:9.5, color:T.txt3, marginTop:1 }}>Fed Reserve · {fed.totalActions} action{fed.totalActions === 1 ? "" : "s"}</div>
+                      </div>
+                    )}
+                    {hasSec && (
+                      <div style={{ flex:"1 1 140px", padding:"8px 10px", borderRadius:8, background:"rgba(226,74,74,0.10)", border:"1px solid rgba(226,74,74,0.35)" }}>
+                        <div style={{ fontSize:10, color:"#E0524D", fontWeight:700, textTransform:"uppercase", letterSpacing:0.4 }}>
+                          <i className="ti ti-gavel" aria-hidden="true" /> SEC actions
+                        </div>
+                        <div style={{ fontSize:13, fontWeight:700, color:T.txt, marginTop:2 }}>{sec.totalReleasesLifetime}{sec.recent24mo > 0 ? ` · ${sec.recent24mo} recent` : ""}</div>
+                        <div style={{ fontSize:9.5, color:T.txt3, marginTop:1 }}>SEC litigation releases</div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })()}
           {/* Phase 5.ag (item G): "Better for your values" recommendation.
               YUKA's single highest-leverage retention feature — when the
               current grade is C/D/F for the user, surface 2-3 same-category

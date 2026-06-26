@@ -75,6 +75,8 @@ const FIXTURE = path.join(__dirname, "fixtures/itep-tax/sample.json");
 const DERIVED_DIR = path.join(ROOT, "data/derived");
 const OUT_FILE = path.join(DERIVED_DIR, "itep-tax-augment.json");
 const INDEX_FILE = path.join(ROOT, "public/data/index.json");
+const COMP_DIR = path.join(ROOT, "public/data/companies");
+const CITE_URL = "https://itep.org/corporate-tax-avoidance/";
 const PARENT_MAP_FILE = path.join(
   ROOT,
   "public/data/_meta/brand-parent-map.json",
@@ -314,8 +316,33 @@ async function main() {
     console.log(`\nWrote ${path.relative(ROOT, OUT_FILE)}`);
     if (out._dormant) {
       console.log(
-        "  (_dormant: true — augment is shipped but the loader should skip it until ITEP_INTEGRATION_ENABLED=true.)",
+        "  (_dormant: true — fixture/offline source; NOT writing into company files.)",
       );
+    } else {
+      // Display-first: fold the tax data into company.enriched.tax — a standalone
+      // datapoint block (like enriched.environment), so the reveal can show it
+      // WITHOUT touching the political category narrative or its score.
+      let written = 0;
+      for (const [slug, v] of Object.entries(augment)) {
+        const file = path.join(COMP_DIR, `${slug}.json`);
+        if (!existsSync(file)) continue;
+        let company;
+        try { company = JSON.parse(await fs.readFile(file, "utf-8")); } catch { continue; }
+        company.enriched = company.enriched || {};
+        company.enriched.tax = {
+          ...v.political,
+          citation: `Verified source: ${LICENSE_TAG}`,
+          citeUrl: snapshot.citeUrl || CITE_URL,
+          reportPdf: snapshot.reportPdf || null,
+        };
+        if (typeof company.dataLastUpdated !== "object" || company.dataLastUpdated === null) {
+          company.dataLastUpdated = company.dataLastUpdated ? { legacy: company.dataLastUpdated } : {};
+        }
+        company.dataLastUpdated.itepTax = out.generatedAt;
+        await fs.writeFile(file, JSON.stringify(company));
+        written++;
+      }
+      console.log(`  Wrote enriched.tax into ${written} company files.`);
     }
   } else {
     console.log(`\nDRY — re-run with --apply to write ${path.relative(ROOT, OUT_FILE)}.`);

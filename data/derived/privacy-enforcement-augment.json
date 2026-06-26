@@ -1,0 +1,3452 @@
+{
+  "_license": "US state government public records (CA AG + WA AG data-breach lists; CA CPPA Data Broker Registry).",
+  "_sources": {
+    "caBreach": {
+      "url": "https://oag.ca.gov/privacy/databreach/list-export",
+      "landing": "https://oag.ca.gov/privacy/databreach/list",
+      "rows": 5172
+    },
+    "waBreach": {
+      "url": "https://data.wa.gov/resource/sb4j-ca4h.json",
+      "landing": "https://www.atg.wa.gov/data-breach-notifications",
+      "rows": 1596
+    },
+    "cppaBroker": {
+      "url": "https://cppa.ca.gov/data_broker_registry/registry.csv",
+      "landing": "https://cppa.ca.gov/data_broker_registry/",
+      "rows": 581
+    }
+  },
+  "_generatedAt": "2026-06-26T13:42:22.617Z",
+  "_stats": {
+    "caRows": 5172,
+    "waRows": 1596,
+    "brokerRows": 581,
+    "caMatched": 404,
+    "waMatched": 135,
+    "brokerMatched": 25,
+    "breachSlugCount": 325,
+    "brokerSlugCount": 24,
+    "totalSlugCount": 345,
+    "orphanBreachOrgs": 4827,
+    "orphanBrokerOrgs": 556
+  },
+  "first-advantage": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-11-13",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "meta-platforms": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2026-05-31",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "strategic-education": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2026-02-25",
+      "maxAffected": 14112,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "carnival-corp": {
+    "breaches": {
+      "count": 7,
+      "mostRecent": "2026-04-14",
+      "maxAffected": 54960,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "nickey-kehoe": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2026-03-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lumexa-imaging": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2026-04-09",
+      "maxAffected": 3632,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "fluke-corporation": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2025-10-07",
+      "maxAffected": 5085,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ameriprise-financial": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2026-03-18",
+      "maxAffected": 991,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "option-care-health": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2026-02-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hims-and-hers": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2026-02-04",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "osi-systems": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-12-23",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "madison-square-garden-entertainment": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-10-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hennessy-advisors": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-03-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "choice-hotels": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2026-01-14",
+      "maxAffected": 1684,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "phreesia": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-08-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ingram-micro": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-07-03",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "total-wireless": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-11-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "inotiv": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2025-08-08",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "aflac": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2025-07-11",
+      "maxAffected": 432025,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "mcintosh-laboratory": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-10-24",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lkq": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-08-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "discord": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-09-22",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "team": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-07-26",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "appfolio": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2025-08-18",
+      "maxAffected": 2882,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "boyd-gaming": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-09-07",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "empire-distribution": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-11-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "transunion": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2025-07-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "healthcare-services-group": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-10-03",
+      "maxAffected": 7745,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "blue-shield-of-california": {
+    "breaches": {
+      "count": 10,
+      "mostRecent": "2025-05-22",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "artivion": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-11-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bitcoin-depot": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-06-30",
+      "maxAffected": 3486,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "select-medical": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-07-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sensata-technologies": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-04-06",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lee-enterprises": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-02-03",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "interactive-brokers": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-04-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "axt": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-04-08",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "coinbase": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2025-05-05",
+      "maxAffected": 3337,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "healthequity": {
+    "breaches": {
+      "count": 11,
+      "mostRecent": "2024-03-25",
+      "maxAffected": 102140,
+      "causes": [
+        "Phishing",
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hertz": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2025-04-11",
+      "maxAffected": 19297,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "gilead-sciences": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "monro": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-11-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "kyocera": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-10-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "stiiizy": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-12-20",
+      "maxAffected": 3500,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "acadia-pharmaceuticals": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-11-04",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bob-s-discount-furniture": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-09-25",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "kulicke-and-soffa-industries": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-05-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "henry-schein": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2024-10-23",
+      "maxAffected": 1953,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "save-mart-supermarkets": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-08-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "fidelity-investments": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-08-19",
+      "maxAffected": 2731,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "amgen": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "usaa": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2024-04-30",
+      "maxAffected": 546,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "baxter-international": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-05-10",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "livanova": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2023-11-23",
+      "maxAffected": 2116,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "pinnacle-bank": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-01-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "wise": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-06-26",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "marinemax": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-03-10",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "rite-aid": {
+    "breaches": {
+      "count": 7,
+      "mostRecent": "2024-06-06",
+      "maxAffected": 96270,
+      "causes": [
+        "Unauthorized Access",
+        "Phishing",
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "davita": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2027-11-20",
+      "maxAffected": 13404,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "levi-strauss": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-06-13",
+      "maxAffected": 640,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "caredx": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "panera-bread": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2026-01-07",
+      "maxAffected": 1564,
+      "causes": [
+        "Ransomware",
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "first-american-financial": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2024-01-02",
+      "maxAffected": 706,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "pfizer": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bausch-health-companies": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "heron-therapeutics-de": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "abbott-laboratories": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "incyte": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "abbvie": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "genentech": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bayer": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "paychex": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-03-22",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "guardant-health": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lagunitas-brewing-company": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-03-06",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "atandt": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2024-04-09",
+      "maxAffected": 378471,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ace-hardware": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-10-29",
+      "maxAffected": 613,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hot-topic": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2023-11-25",
+      "maxAffected": 3655,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "roku": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ttm-technologies": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-09-26",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "insomniac-games": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-02-22",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "u-haul": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2023-10-02",
+      "maxAffected": 61770,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lineage": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "verizon-communications": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-09-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "geico": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "cadence-bank": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2023-05-31",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "23andme": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-09-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "wabtec": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-03-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "national-amusements": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-12-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "humana": {
+    "breaches": {
+      "count": 7,
+      "mostRecent": "2023-07-31",
+      "maxAffected": 675,
+      "causes": [
+        "Theft or Mistake",
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "mgm-resorts-international": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2023-09-12",
+      "maxAffected": 811740,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "valrhona": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-09-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "international-paper": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-05-30",
+      "maxAffected": 1057,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "autozone": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-05-28",
+      "maxAffected": 2509,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "fidelity-national-information-services": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2023-05-31",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sun-life-financial": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "okta": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-09-23",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "caesars-entertainment": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2026-03-03",
+      "maxAffected": 784234,
+      "causes": [
+        "Unauthorized Access",
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lennar-corp": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-08-11",
+      "maxAffected": 594,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ethos-technologies": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2022-08-04",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sony-interactive-entertainment": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bassett-furniture-industries": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-04-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "unum": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-06-01",
+      "maxAffected": 4186,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "honeywell": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-05-28",
+      "maxAffected": 2194,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "cbiz": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-06-05",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "caleres": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-07-07",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "charter-communications": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-09-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "tesla": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-08-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "interface": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-11-10",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "brightspring-health-services": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-03-13",
+      "maxAffected": 28194,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "american-national-group": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hca-healthcare": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-07-05",
+      "maxAffected": 7500,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "fandg-annuities-and-life": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "corebridge-financial": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-05-30",
+      "maxAffected": 101027,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dole-food": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-02-10",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "citi-trends": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-01-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "mondelez-international": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-03-01",
+      "maxAffected": 1102,
+      "causes": [
+        "Phishing"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "aldi": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "brightline": {
+    "breaches": {
+      "count": 6,
+      "mostRecent": "2023-01-30",
+      "maxAffected": 26333,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "puma-biotechnology": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-06-19",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sysco": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-03-05",
+      "maxAffected": 1977,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "albertsons": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2025-07-21",
+      "maxAffected": 1882,
+      "causes": [
+        "Ransomware",
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "huntington-ingalls-industries": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-04-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "chick-fil-a": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-02-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "credit-suisse-ag": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-02-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "paypal": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-12-08",
+      "maxAffected": 890,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "insulet": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-12-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "southern-california-edison": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-11-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "jakks-pacific": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-09-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "booz-allen-hamilton": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-04-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "starbucks": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-07-31",
+      "maxAffected": 39864,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sturm-ruger-and-co": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-02-03",
+      "maxAffected": 4866,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "aetna": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-04-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lendingtree": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-02-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "princeton-university": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-04-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "danaher-de": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-02-25",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "express-scripts": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-04-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "aon": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-03-01",
+      "maxAffected": 6889,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "general-motors": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-04-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "parker-hannifin": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-03-14",
+      "maxAffected": 4597,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "snap-on": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-04-14",
+      "maxAffected": 531,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "marten-transport": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-10-04",
+      "maxAffected": 521,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "charles-schwab": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2021-12-16",
+      "maxAffected": 975,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "e-w-scripps": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2022-01-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "cvs-pharmacy": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2022-01-06",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "puma": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-12-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "mcgrath-rentcorp": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-07-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "quest-diagnostics": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2021-10-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "california-pizza-kitchen": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-09-15",
+      "maxAffected": 1095,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "anthem-elevance-health": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2021-08-03",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "scuf-gaming": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-03-16",
+      "maxAffected": 691,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "forward-air": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-12-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hci-group": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-09-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "mfa-financial": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-03-10",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "t-mobile": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2023-01-05",
+      "maxAffected": 2079648,
+      "causes": [
+        "Malware",
+        "Unauthorized Access"
+      ]
+    },
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dixie-group": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-04-19",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ryan-specialty": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-04-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "motor-trend-group": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-06-20",
+      "maxAffected": 1600,
+      "causes": [
+        "Unclear/unknown"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "cna-financial": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-03-21",
+      "maxAffected": 823,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "stride": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-11-19",
+      "maxAffected": 742,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "morgan-stanley": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2021-07-02",
+      "maxAffected": 401246,
+      "causes": [
+        "Malware",
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "arthur-j-gallagher-and": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2020-09-26",
+      "maxAffected": 72378,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "marsh-and-mclennan-companies": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-04-30",
+      "maxAffected": 2550,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "maximus": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2023-05-31",
+      "maxAffected": 70847,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ally-financial": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-02-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "farmers-insurance": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2021-01-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hamilton-beach-brands": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-02-04",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "liberty-mutual": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-03-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "capital-one": {
+    "breaches": {
+      "count": 6,
+      "mostRecent": "2023-02-04",
+      "maxAffected": 605,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "wind-river-systems": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-09-16",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dickey-s-barbecue-pit": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-11-24",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "ultra-clean": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-08-04",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "belden": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-12-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "spotify": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-04-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "minerals-technologies": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-10-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "geo": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-08-19",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "siteone-landscape-supply": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-07-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sam-s-club": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-09-24",
+      "maxAffected": 771,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "georgia-southern-university": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-05-20",
+      "maxAffected": 552,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "radnet": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-07-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "warner-music-group": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-08-05",
+      "maxAffected": 3368,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "amphastar-pharmaceuticals": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-05-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "brown-forman": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-04-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dave-de": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-07-01",
+      "maxAffected": 40998,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dyson": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-07-31",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "formfactor": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-06-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "federal-home-loan-mortgage": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-07-07",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "cognizant-technology-solutions": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-04-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "maxlinear": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-04-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "amtrak": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-11-04",
+      "maxAffected": 1208,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bank-of-america": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-04-22",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "chegg": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2020-04-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "general-electric": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-02-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "tandem-diabetes-care": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-01-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "j-crew": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-03-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "aveanna-healthcare": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2019-08-24",
+      "maxAffected": 2444,
+      "causes": [
+        "Unclear/unknown"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "the-ups-store": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2020-01-13",
+      "maxAffected": 963,
+      "causes": [
+        "Phishing"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hanna-andersson": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2019-11-11",
+      "maxAffected": 8816,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "wawa": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2019-12-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "marriott-international": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2019-10-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": true,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bed-bath-and-beyond": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2019-09-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "zynga": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2019-09-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "doordash": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2019-05-04",
+      "maxAffected": 2243,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "kaiser-permanente": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2019-08-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sprint": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2019-06-23",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "urban-one": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2019-02-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "abm-industries-de": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2018-08-07",
+      "maxAffected": 1100,
+      "causes": [
+        "Phishing"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "unilever": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2018-07-03",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "five-below": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-11-13",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "paylocity": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-11-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lpl-financial": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2021-07-28",
+      "maxAffected": 8127,
+      "causes": [
+        "Unclear/unknown",
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "tyler-technologies": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-10-08",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "nordstrom": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2018-10-09",
+      "maxAffected": 13442,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "travismathew": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-09-25",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "biomarin-pharmaceutical": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-06-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "shein": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-06-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "reddit": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-06-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hasbro": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-11-19",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "coty": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-01-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "macy-s": {
+    "breaches": {
+      "count": 3,
+      "mostRecent": "2019-10-15",
+      "maxAffected": 3810,
+      "causes": [
+        "Unclear/unknown",
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "forever-21": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2018-03-23",
+      "maxAffected": null,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "myheritage": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-10-26",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "brinker-international": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-05-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "southwest-airlines": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-10-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "w-w-grainger": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2017-10-12",
+      "maxAffected": 725,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "best-buy": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-10-12",
+      "maxAffected": 8390,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "inogen": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2018-04-13",
+      "maxAffected": 518,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "delta-air-lines": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-10-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dollar-shave-club": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-03-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "thermo-fisher-scientific": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-03-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "under-armour": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-03-29",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "driscoll-s": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-08-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "pinterest": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-11-24",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "uber-technologies": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2016-11-15",
+      "maxAffected": 10888,
+      "causes": [
+        "Unclear/unknown",
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "kimberly-clark": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-10-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "pizza-hut": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-10-02",
+      "maxAffected": 1896,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hyatt-hotels": {
+    "breaches": {
+      "count": 4,
+      "mostRecent": "2017-07-02",
+      "maxAffected": 640,
+      "causes": [
+        "Malware",
+        "Skimmers"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sonic-drive-in": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-10-05",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "abb": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-08-25",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "equifax": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-07-31",
+      "maxAffected": 3243664,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "virgin-america": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-07-26",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "neiman-marcus": {
+    "breaches": {
+      "count": 5,
+      "mostRecent": "2024-05-24",
+      "maxAffected": 11049,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "aqua-aston-hospitality": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-03-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "google-alphabet": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-03-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "gamestop": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-02-09",
+      "maxAffected": 27956,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "tripadvisor": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-05-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "brooks-brothers": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-03-01",
+      "maxAffected": null,
+      "causes": [
+        "Skimmers"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "genpact": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-01-12",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "rent-the-runway": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-02-23",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "prana": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2017-02-06",
+      "maxAffected": 18172,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "boeing": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2016-11-21",
+      "maxAffected": 7288,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sunrun": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-01-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "topps": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-07-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "turner-broadcasting-system": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-12-16",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "qvc": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-11-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "cisco-systems": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-08-18",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "vera-bradley": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-07-25",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lulu-s-fashion-lounge": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-08-16",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "eddie-bauer": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2016-07-17",
+      "maxAffected": 73508,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "7-eleven": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-06-13",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "noodles-and-company": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2016-06-02",
+      "maxAffected": null,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "microsoft": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-05-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bristol-farms": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-03-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sprouts-farmers-market": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-03-14",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "advance-auto-parts": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2016-03-07",
+      "maxAffected": 544,
+      "causes": [
+        "Phishing"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "1-800-flowers-com": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-02-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "snap": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-02-26",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "university-of-central-florida": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-01-06",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "tunecore": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-12-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hilton-worldwide": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2015-11-24",
+      "maxAffected": null,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "estee-lauder-companies": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-05-20",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sally-beauty": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-04-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "copart": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-03-31",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "compass": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-02-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "intuit": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-02-27",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "weyerhaeuser": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-05-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "american-airlines": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-12-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "united-airlines": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-01-06",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "nvidia": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-10-08",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "staples": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-08-10",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "harmonic": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-10-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "fidelity-national-financial": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2014-04-16",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "pacific-biosciences-of-california": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-09-16",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "home-depot": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2014-09-09",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "p-f-chang-s-china-bistro": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-10-19",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "northern-trust": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-05-17",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "atandt-mobility": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-04-21",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "lowe-s": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-04-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "j-m-smucker": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2012-12-23",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "coca-cola": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2014-01-24",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "t-mobile-us": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-12-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "target": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-12-15",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "b-and-g-foods": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-11-16",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dun-and-bradstreet": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-04-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": true,
+      "soldToGenAI": true
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "exelixis": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-07-30",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "us-airways": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-08-02",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "beachbody-company": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-04-01",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "stanley-black-and-decker": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-01-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "citigroup": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-03-28",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "rollins": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-03-04",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "finish-line-inc": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2013-01-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "korn-ferry": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2012-10-11",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "global-payments": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2012-07-03",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "regions-financial": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2012-01-23",
+      "maxAffected": null,
+      "causes": []
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "mead-johnson": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-11-08",
+      "maxAffected": 2828,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "kroger": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-12-29",
+      "maxAffected": 153800,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "university-of-florida": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2020-05-20",
+      "maxAffected": 5075,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "zillow": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-05-09",
+      "maxAffected": 1086,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "wendy-s": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-06-08",
+      "maxAffected": null,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "grand-sierra-resort": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-08-06",
+      "maxAffected": 1061,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "church-and-dwight-co-inc": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2016-04-27",
+      "maxAffected": 1639,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "costco": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2015-07-15",
+      "maxAffected": 29425,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "handr-block": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2018-05-09",
+      "maxAffected": 2655,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "alaska-airlines": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-12-22",
+      "maxAffected": 1442,
+      "causes": [
+        "Unclear/unknown"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sears": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2017-10-12",
+      "maxAffected": 2373,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "asarco": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-03-01",
+      "maxAffected": 670,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "destination-maternity": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-04-13",
+      "maxAffected": 2237,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "insureon": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2021-09-12",
+      "maxAffected": 671,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "est-e-lauder": {
+    "breaches": {
+      "count": 2,
+      "mostRecent": "2023-08-20",
+      "maxAffected": 150535,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "bristol-myers-squibb": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-05-27",
+      "maxAffected": 2231,
+      "causes": [
+        "Malware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "european-wax-center": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2023-04-18",
+      "maxAffected": 1592,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "dick-s-sporting-goods": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-08-22",
+      "maxAffected": 72012,
+      "causes": [
+        "Other"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "green-dot": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-10-11",
+      "maxAffected": 1715,
+      "causes": [
+        "Unauthorized Access"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "crimson-wine-group": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2024-06-30",
+      "maxAffected": 3436,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "morningside": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2025-11-17",
+      "maxAffected": 1534,
+      "causes": [
+        "Ransomware"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sofi-technologies": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2026-01-02",
+      "maxAffected": 38049,
+      "causes": [
+        "Theft or Mistake"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "figure-technology-solutions": {
+    "breaches": {
+      "count": 1,
+      "mostRecent": "2026-01-28",
+      "maxAffected": 26128,
+      "causes": [
+        "Phishing"
+      ]
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "acxiom": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": true,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "blackbaud": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "nestl": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "criteo-s-a": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "hubspot": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "liveramp": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "magnite": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "similarweb": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": true
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "teads": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "veeva-systems": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "zeta-global": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "clarivate": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "comscore": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": true,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "techtarget": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "relx": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": true,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "definitive-healthcare": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "quad-graphics": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "sandp-global": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "pubmatic": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": true,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  },
+  "zoominfo-technologies": {
+    "dataBroker": {
+      "registered": true,
+      "collectsBiometric": false,
+      "collectsGeolocation": false,
+      "collectsMinors": false,
+      "soldToLawEnforcement": false,
+      "soldToGenAI": false
+    },
+    "lastUpdated": "2026-06-26T13:42:22.616Z"
+  }
+}

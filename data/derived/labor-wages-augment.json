@@ -1,0 +1,262 @@
+{
+  "_source": "DOL WHD WHISARD + Texas WARN (US government public records)",
+  "_signals": {
+    "whisard": {
+      "source": "DOL Wage & Hour Division — Compliance Action Data (WHISARD)",
+      "landingUrl": "https://dataportal.dol.gov/datasets/10362",
+      "available": false,
+      "skipReason": "no-key"
+    },
+    "warn": {
+      "source": "Texas Workforce Commission — WARN Notices",
+      "landingUrl": "https://data.texas.gov/dataset/TWC-WARN-Notices/8w53-c4f6",
+      "available": true,
+      "rowsPulled": 2363
+    }
+  },
+  "_matching": "STRICT — full normalized name + suffix/geo-stripped full name only; never bare words or n-gram prefixes; parent-map gated to high/medium confidence.",
+  "generatedAt": "2026-06-26T13:57:28.414Z",
+  "matchCount": 48,
+  "whisardSlugCount": 0,
+  "warnSlugCount": 48,
+  "amentum": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 270,
+    "warnMostRecent": "2022-03-27"
+  },
+  "zillow": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 64,
+    "warnMostRecent": "2022-01-03"
+  },
+  "probe": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 150,
+    "warnMostRecent": "2021-07-31"
+  },
+  "coca-cola": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 76,
+    "warnMostRecent": "2021-04-15"
+  },
+  "cbre": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 193,
+    "warnMostRecent": "2021-04-30"
+  },
+  "ibex": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 248,
+    "warnMostRecent": "2021-02-16"
+  },
+  "seadrill": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 303,
+    "warnMostRecent": "2020-10-01"
+  },
+  "expedia-group": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 116,
+    "warnMostRecent": "2020-10-07"
+  },
+  "spirit-aerosystems": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 72,
+    "warnMostRecent": "2020-08-17"
+  },
+  "dupont": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 79,
+    "warnMostRecent": "2020-08-31"
+  },
+  "collins-aerospace": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 144,
+    "warnMostRecent": "2020-07-31"
+  },
+  "benchmark-electronics": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 190,
+    "warnMostRecent": "2021-01-01"
+  },
+  "halliburton": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 233,
+    "warnMostRecent": "2020-04-29"
+  },
+  "porch": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 69,
+    "warnMostRecent": "2020-03-16"
+  },
+  "fossil-group": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 222,
+    "warnMostRecent": "2020-03-30"
+  },
+  "jostens": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 142,
+    "warnMostRecent": "2020-03-24"
+  },
+  "sport-clips": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 66,
+    "warnMostRecent": "2020-03-23"
+  },
+  "harte-hanks": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 146,
+    "warnMostRecent": "2019-12-22"
+  },
+  "natera": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 92,
+    "warnMostRecent": "2019-04-17"
+  },
+  "boeing": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 6,
+    "warnMostRecent": "2019-03-22"
+  },
+  "nestl": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 84,
+    "warnMostRecent": "2019-03-08"
+  },
+  "merit-medical-systems": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 117,
+    "warnMostRecent": "2022-10-25"
+  },
+  "spirit-airlines": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 134,
+    "warnMostRecent": "2022-09-30"
+  },
+  "dxp-enterprises": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 4,
+    "warnMostRecent": "2022-12-21"
+  },
+  "genpact": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 1329,
+    "warnMostRecent": "2024-02-28"
+  },
+  "boston-scientific": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 120,
+    "warnMostRecent": "2023-04-23"
+  },
+  "wix-com": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 100,
+    "warnMostRecent": "2023-04-16"
+  },
+  "wipro": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 64,
+    "warnMostRecent": "2023-06-30"
+  },
+  "regal-rexnord": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 78,
+    "warnMostRecent": "2023-09-30"
+  },
+  "compass": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 153,
+    "warnMostRecent": "2023-08-01"
+  },
+  "cognizant-technology-solutions": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 56,
+    "warnMostRecent": "2023-08-20"
+  },
+  "raytheon-technologies": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 99,
+    "warnMostRecent": "2023-12-08"
+  },
+  "appfolio": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 38,
+    "warnMostRecent": "2023-11-15"
+  },
+  "l3harris-technologies": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 268,
+    "warnMostRecent": "2023-11-30"
+  },
+  "stitch-fix": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 558,
+    "warnMostRecent": "2023-12-01"
+  },
+  "hyliion": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 150,
+    "warnMostRecent": "2023-11-08"
+  },
+  "custom-ink": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 256,
+    "warnMostRecent": "2023-12-15"
+  },
+  "stanley-black-and-decker": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 127,
+    "warnMostRecent": "2024-05-10"
+  },
+  "tesla": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 2688,
+    "warnMostRecent": "2024-04-19"
+  },
+  "holiday-inn-club-vacations": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 54,
+    "warnMostRecent": "2024-07-29"
+  },
+  "wolfspeed": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 73,
+    "warnMostRecent": "2024-11-23"
+  },
+  "intel": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 361,
+    "warnMostRecent": "2025-07-15"
+  },
+  "jabil": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 136,
+    "warnMostRecent": "2024-12-06"
+  },
+  "tenneco": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 140,
+    "warnMostRecent": "2025-02-15"
+  },
+  "southstate-bank": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 141,
+    "warnMostRecent": "2025-05-31"
+  },
+  "united-supermarkets": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 126,
+    "warnMostRecent": "2026-01-19"
+  },
+  "janus-international-group": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 113,
+    "warnMostRecent": "2026-04-03"
+  },
+  "t-mobile": {
+    "lastUpdated": "2026-06-26T13:57:28.414Z",
+    "warnLayoffs": 74,
+    "warnMostRecent": "2026-06-08"
+  }
+}
