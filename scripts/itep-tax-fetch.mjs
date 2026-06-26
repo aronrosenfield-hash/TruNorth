@@ -22,29 +22,19 @@
  *   Landing page:     https://itep.org/corporate-tax-avoidance-report
  *   Headline mirror:  https://itep.org/55-corporations-paid-0-in-federal-taxes
  *
- * ⚠️ LICENSING
- *
- * ITEP's published data is not under an open public-records license. Before
- * we surface ITEP-derived flags in any paid (Pro) tier we need explicit
- * written reuse permission from ITEP. The free tier shipping the data is
- * lower-risk (clear attribution + a small slice of well-known Fortune-500
- * names) but still warrants the email-and-go pattern.
- *
- * Until that permission lands, this pipeline:
- *
- *   - runs in fixture mode by default (ITEP_INTEGRATION_ENABLED=false)
- *   - stamps every output record with a `_license` field naming the open
- *     question, so the augment is obviously dormant downstream
- *   - the merge script flips the augment file to a clearly-tagged dormant
- *     shape until the env gate is opened
+ * ✅ LICENSING — APPROVED 2026-06-14 by Amy Hanauer (ITEP Exec Director):
+ * citation + commercial/paid-tier reuse OK. Condition: show a visible
+ * "Verified source: Institute on Taxation & Economic Policy (ITEP)" citation
+ * + link to https://itep.org/corporate-tax-avoidance/ on every datapoint, and
+ * refresh annually. INTEGRATION_ENABLED now defaults true; the env var
+ * ITEP_INTEGRATION_ENABLED=false remains only as a manual offline kill switch.
  *
  * Fetch strategy:
- *   1. Try the landing page; pick the first downloadable .xlsx / .csv asset
- *      that mentions "appendix", "data", or "company".
- *   2. Excel parsing is intentionally out of scope for v1 — we only handle
- *      CSV in the live path. When the upstream asset is XLSX we surface a
- *      clear error and fall back to the bundled fixture.
- *   3. Map rows into a canonical shape and write the snapshot to
+ *   1. Download the stable per-company appendix XLSX (DigitalOcean Spaces;
+ *      see XLSX_URL) — no landing-page scrape (the old landing 404s).
+ *   2. Parse sheet "a2_alphabetical" positionally via scripts/lib/xlsx-minimal
+ *      (no xlsx dependency). 342 companies, effective federal rates 2018–2022.
+ *   3. Map rows into the canonical shape + write the snapshot to
  *      data/raw/itep-tax/<date>.json.
  *
  * Per-row record shape:
@@ -78,6 +68,7 @@ import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readXlsx } from "./lib/xlsx-minimal.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -85,21 +76,33 @@ const RAW_DIR = path.join(ROOT, "data/raw/itep-tax");
 const FIXTURE_DIR = path.join(__dirname, "fixtures/itep-tax");
 const DEFAULT_FIXTURE = path.join(FIXTURE_DIR, "sample.json");
 
-const LANDING = "https://itep.org/corporate-tax-avoidance-report";
+const LANDING = "https://itep.org/corporate-tax-avoidance-report"; // legacy (now 404) — kept for reference
+const REPORT_PAGE = "https://itep.org/corporate-tax-avoidance-trump-tax-law/"; // current report (Feb 2024)
+const CITE_URL = "https://itep.org/corporate-tax-avoidance/"; // Amy Hanauer's suggested citation link
+const REPORT_PDF =
+  "https://sfo2.digitaloceanspaces.com/itep/ITEP-Corporate-Tax-Avoidance-in-the-First-Five-Years-of-the-Trump-Tax-Law.pdf";
 const HEADLINE_MIRROR =
   "https://itep.org/55-corporations-paid-0-in-federal-taxes";
 
+// The per-company appendix — sheet "a2_alphabetical": 342 continuously-
+// profitable large corporations, effective federal income tax rates 2018–2022.
+const XLSX_URL =
+  "https://sfo2.digitaloceanspaces.com/itep/Corporate-Tax-Avoidance-in-the-First-Five-Years-of-the-Trump-Tax-Law-data.xlsx";
+const XLSX_SHEET = "a2_alphabetical";
+
 const UA =
   "TruNorth-ITEP/1.0 (+https://www.trunorthapp.com; contact@trunorthapp.com)";
-const REQUEST_TIMEOUT_MS = 30_000;
+const REQUEST_TIMEOUT_MS = 60_000;
 
-export const LICENSE_TAG =
-  "ITEP Corporate Tax Avoidance — reuse permission pending";
+// Attribution surfaced on every ITEP datapoint. ITEP (Amy Hanauer, Exec Dir)
+// approved citation + commercial/paid-tier reuse on 2026-06-14; condition is a
+// visible citation + link to CITE_URL, refreshed annually.
+export const LICENSE_TAG = "Institute on Taxation & Economic Policy (ITEP)";
 
-// Env gate: explicit opt-in only. Defaults to false so CI / local runs
-// never accidentally hit the upstream while the license question is open.
+// Approved for use (incl. paid tier) → defaults ON. The env var remains a
+// manual kill switch: set ITEP_INTEGRATION_ENABLED=false to force fixture mode.
 export const INTEGRATION_ENABLED =
-  String(process.env.ITEP_INTEGRATION_ENABLED || "").toLowerCase() === "true";
+  String(process.env.ITEP_INTEGRATION_ENABLED || "true").toLowerCase() !== "false";
 
 // ─────────────────────────── CLI parsing ────────────────────────────
 const argv = process.argv.slice(2);
@@ -307,57 +310,85 @@ export function parseCsv(text) {
     });
 }
 
-// ─────────────────────────── live fetch ─────────────────────────────
+// ─────────────────────────── XLSX parser ────────────────────────────
+
+function round2(n) {
+  return typeof n === "number" && Number.isFinite(n) ? Math.round(n * 100) / 100 : n;
+}
 
 /**
- * Scrape the landing page for the most likely data asset link. Prefer
- * CSV (which we can parse) over XLSX (which we cannot in v1).
+ * Parse ITEP's "a2_alphabetical" appendix into canonical records. Layout
+ * verified against the Feb-2024 edition: titles in rows 1–4, data from row 5,
+ * positional columns (merged-cell header → read by index, not name):
+ *   A(0)=company  B(1)=state  C(2)=5yr profit($M)  D(3)=5yr tax($M)  E(4)=5yr rate
+ *   annual effective rates: H(7)=2022 K(10)=2021 N(13)=2020 Q(16)=2019 T(19)=2018
+ * zeroTaxYears = count of annual rates <= 0 (profit is positive across this
+ * continuously-profitable set, so rate<=0 ⟺ a $0-or-negative federal-tax year).
+ * The trailing "ALL 342 COMPANIES" aggregate row + blank tail rows are dropped.
  */
-async function discoverAsset() {
-  const res = await fetchWithTimeout(LANDING);
-  if (!res.ok) throw new Error(`itep landing HTTP ${res.status}`);
-  const html = await res.text();
-  const linkRe = /href=["']([^"']+)["'][^>]*>([^<]{0,200})/gi;
-  const candidates = [];
-  let m;
-  while ((m = linkRe.exec(html)) !== null) {
-    const href = m[1];
-    const label = (m[2] || "").toLowerCase();
-    const hl = href.toLowerCase();
-    if (!/\.(csv|xlsx?)(\?|$)/.test(hl)) continue;
-    if (!/(appendix|company|data|tax|corporate)/i.test(href + " " + label)) continue;
-    candidates.push({ href: new URL(href, LANDING).toString(), label });
+export function parseItepXlsx(buf, { edition = "2024", sourceUrl = REPORT_PAGE } = {}) {
+  let rows = null;
+  for (let s = 1; s <= 12; s++) {
+    let r;
+    try { r = readXlsx(buf, { sheet: s }); } catch { break; }
+    if (r.sheetName === XLSX_SHEET) { rows = r.rows; break; }
   }
-  candidates.sort((a, b) => priority(a.href) - priority(b.href));
-  function priority(u) {
-    if (/\.csv(\?|$)/i.test(u)) return 0;
-    if (/\.xlsx?(\?|$)/i.test(u)) return 1;
-    return 2;
+  if (!rows) throw new Error(`itep: sheet "${XLSX_SHEET}" not found in workbook`);
+
+  const ANNUAL_RATE_COLS = [7, 10, 13, 16, 19]; // H,K,N,Q,T → 2022..2018
+  const out = [];
+  for (let i = 4; i < rows.length; i++) {        // data starts at row index 4 (Excel row 5)
+    const row = rows[i] || [];
+    const company = String(row[0] ?? "").trim();
+    if (!company || /^ALL\s+\d+\s+COMPANIES/i.test(company)) continue;
+    const totalProfitsUsdMillions =
+      typeof row[2] === "number" ? row[2] : parseMoneyMillions(row[2]);
+    if (!Number.isFinite(totalProfitsUsdMillions)) continue; // skip blank/footnote rows
+    const federalTaxesPaidUsdMillions =
+      typeof row[3] === "number" ? row[3] : parseMoneyMillions(row[3]);
+    const effectiveFederalTaxRate =
+      typeof row[4] === "number" ? row[4] : parseRate(row[4]);
+    let zeroTaxYears = 0, yearsSeen = 0;
+    for (const c of ANNUAL_RATE_COLS) {
+      const v = row[c];
+      if (typeof v !== "number") continue;
+      yearsSeen++;
+      if (v <= 0) zeroTaxYears++;
+    }
+    out.push({
+      company,
+      state: String(row[1] ?? "").trim() || null,
+      totalProfitsUsdMillions: round2(totalProfitsUsdMillions),
+      federalTaxesPaidUsdMillions: round2(federalTaxesPaidUsdMillions),
+      effectiveFederalTaxRate,
+      zeroTaxYears,
+      studyYears: yearsSeen || 5,
+      reportEdition: edition,
+      sourceUrl,
+    });
   }
-  return candidates[0] || null;
+  return out;
 }
+
+// ─────────────────────────── live fetch ─────────────────────────────
 
 async function realFetch() {
   if (!INTEGRATION_ENABLED) {
-    throw new Error(
-      "ITEP_INTEGRATION_ENABLED=false — refusing to hit upstream until reuse permission lands.",
-    );
+    throw new Error("ITEP_INTEGRATION_ENABLED=false — fixture/offline mode forced.");
   }
-  const asset = await discoverAsset();
-  if (!asset) throw new Error("itep: no CSV/XLSX asset link found on landing page");
-  const ext = asset.href.toLowerCase().match(/\.(csv|xlsx?)(\?|$)/)?.[1] || "";
-  const res = await fetchWithTimeout(asset.href);
-  if (!res.ok) throw new Error(`itep asset HTTP ${res.status}`);
-  if (ext === "csv") {
-    const text = await res.text();
-    const rows = parseCsv(text)
-      .map((r) => shapeRow(r, { edition: EDITION, sourceUrl: asset.href }))
-      .filter(Boolean);
-    return { rows, sourceUrl: asset.href, sourceKind: "itep-csv" };
+  console.log(`Downloading ITEP appendix XLSX: ${XLSX_URL}`);
+  const res = await fetchWithTimeout(XLSX_URL);
+  if (!res.ok) throw new Error(`itep XLSX HTTP ${res.status}`);
+  const buf = Buffer.from(await res.arrayBuffer());
+  // ZIP magic "PK" — guard against an HTML error page / truncated body.
+  if (buf.length < 10_000 || buf[0] !== 0x50 || buf[1] !== 0x4b) {
+    throw new Error(`itep XLSX looks invalid (${buf.length} B, magic=${buf.slice(0, 2).toString("hex")})`);
   }
-  throw new Error(
-    `itep asset is ${ext.toUpperCase()} (parser not implemented in v1) — see scripts/itep-tax-fetch.mjs`,
-  );
+  const rows = parseItepXlsx(buf, { edition: EDITION, sourceUrl: REPORT_PAGE });
+  if (rows.length < 100) {
+    throw new Error(`itep parse yielded only ${rows.length} companies (expected ~342) — layout may have changed`);
+  }
+  return { rows, sourceUrl: XLSX_URL, sourceKind: "itep-xlsx" };
 }
 
 // ─────────────────────────── network helper ─────────────────────────
@@ -421,10 +452,14 @@ async function main() {
     const { rows, sourceUrl, sourceKind } = await realFetch();
     snapshot = {
       _license: LICENSE_TAG,
-      _dormant: true,
+      _dormant: false,
+      _approved: "ITEP (Amy Hanauer, Exec Dir) — citation + commercial reuse OK, 2026-06-14",
+      citation: `Verified source: ${LICENSE_TAG}`,
+      citeUrl: CITE_URL,
+      reportPage: REPORT_PAGE,
+      reportPdf: REPORT_PDF,
       sourceUrl,
       sourceKind,
-      landingUrl: LANDING,
       headlineMirror: HEADLINE_MIRROR,
       reportEdition: EDITION,
       fetchedAt: new Date().toISOString(),
@@ -444,7 +479,7 @@ async function main() {
   );
   if (!INTEGRATION_ENABLED) {
     console.log(
-      "(license-pending: set ITEP_INTEGRATION_ENABLED=true to enable live fetch + merge writes.)",
+      "(ITEP_INTEGRATION_ENABLED=false — offline/fixture mode; unset it to fetch live.)",
     );
   }
 }

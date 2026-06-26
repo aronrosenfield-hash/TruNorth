@@ -119,10 +119,10 @@ test("shapeRow returns null when company is missing", () => {
 
 // ─────────────────────────── fixture round-trip ─────────────────────
 
-test("fixture is parseable + tagged license-pending + dormant", async () => {
+test("fixture is parseable + ITEP-attributed + active (license approved)", async () => {
   const snap = JSON.parse(await fs.readFile(FIXTURE, "utf-8"));
   assert.equal(snap._license, LICENSE_TAG);
-  assert.equal(snap._dormant, true);
+  assert.equal(snap._dormant, false);
   assert.equal(snap._fixture, true);
   assert.ok(snap.rows.length >= 10, "fixture should have ≥10 rows");
   assert.equal(snap.rowCount, snap.rows.length);
