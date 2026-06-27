@@ -2,7 +2,7 @@
 //
 // First-time visitors see this *before* the SPA. CTAs let them either jump
 // into the web app (sets tn_skipMarketing=1 + reload → App.jsx mounts the
-// real app) or request iOS TestFlight access via mailto.
+// real app) or download the iOS app from the App Store.
 //
 // Deliberately honest: no fake countdowns, no scarcity, no streak hooks.
 // Anti-pattern stickiness is itself a value-prop card. Dark-theme,
@@ -41,8 +41,8 @@ const C = {
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
-// Phase 5.az: flip this to the live App Store URL once the listing is
-// approved. CTAs fall back to a TestFlight-invite mailto until then.
+// Live App Store listing (approved + launched Jun 23, 2026). The CTAs below
+// use this; the TestFlight-mailto fallback only applies if it's ever blanked.
 const APP_STORE_URL = "https://apps.apple.com/app/id6775301458";
 
 // Phase 5.az: TestFlight beta testimonials. Replace with real reviewer
@@ -276,9 +276,8 @@ function SecondaryCTA({ children, onClick, href, style }) {
 }
 
 // ─── main component ────────────────────────────────────────────────────────
-// Phase 5.av: web app entry is DISABLED. Landing page drives iOS download
-// only via mailto:Aron@trunorthapp.com TestFlight invite. The web app
-// continues to work for deep-link shares (/company/<slug>) but is no
+// The landing page drives iOS downloads to the live App Store listing. The
+// web app continues to work for deep-link shares (/company/<slug>) but is no
 // longer a primary surface.
 export default function MarketingLanding({ onOpenPrivacy }) {
   const [openFaq, setOpenFaq] = useState(null);
@@ -367,10 +366,8 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               TruNorth tracks 12,000+ companies. Where public records exist, we grade them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 170+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
-              {/* Phase 5.az: the iOS CTA points at the App Store listing once
-                  approved. Until then it's a TestFlight-invite mailto so we
-                  capture interest. Set APP_STORE_URL when the listing is live
-                  and the button flips automatically. */}
+              {/* The iOS CTA points at the live App Store listing (APP_STORE_URL).
+                  The TestFlight-mailto fallback only fires if that constant is blanked. */}
               {isAndroid ? (
                 <PrimaryCTA href="#get-notified">
                   Get notified — Android coming soon
@@ -384,9 +381,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
             <div style={{ marginTop:18, fontSize:13, color:C.textMute }}>
               iPhone first · Android coming soon. {APP_STORE_URL ? "Download on the App Store." : "App Store launch imminent — TestFlight invite arrives same day."}
             </div>
-            {/* 2026-06-01 (audit) founder pricing chip — points pre-launch
-                visitors at the in-app Pro waitlist via a single line. Once
-                real IAP ships, swap "founder" → "Get Pro" + flip target URL. */}
+            {/* Pro pricing chip — real IAP is live ($14.99/yr · $1.99/mo). */}
             <div style={{
               marginTop:14, padding:"8px 14px",
               display:"inline-flex", alignItems:"center", gap:8,
@@ -400,9 +395,9 @@ export default function MarketingLanding({ onOpenPrivacy }) {
                 <span style={{ color:C.textDim }}>$14.99/yr or $1.99/mo — full breakdowns, sources, and personalized scores. Cancel anytime.</span>
               </span>
             </div>
-            {/* 2026-06-01 (L-6): Product Hunt Coming Soon chip. Highest-leverage
-                conversion surface on the landing for the pre-launch window.
-                Disappears the day we ship — easy to delete in one edit. */}
+            {/* Product Hunt social-proof chip. Pre-launch this was a "Coming Soon
+                · June 23" countdown; since launch (Jun 23, 2026) it links to the
+                live Product Hunt product page. */}
             <a
               href="https://www.producthunt.com/products/trunorth?launch=trunorth"
               target="_blank"
@@ -421,8 +416,8 @@ export default function MarketingLanding({ onOpenPrivacy }) {
             >
               <span style={{ fontSize:16 }} aria-hidden="true">🚀</span>
               <span>
-                Launching on Product Hunt <b style={{ color:C.accent2 }}>June 23</b>
-                <span style={{ color:C.textMute, marginLeft:6 }}>· Subscribe for the launch notification →</span>
+                We're live on <b style={{ color:C.accent2 }}>Product Hunt</b>
+                <span style={{ color:C.textMute, marginLeft:6 }}>· See the launch →</span>
               </span>
             </a>
           </div>
@@ -453,9 +448,9 @@ export default function MarketingLanding({ onOpenPrivacy }) {
       <Section style={{ background:C.bgSoft, maxWidth:"100%", padding:"56px 0", textAlign:"center" }}>
         <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
           <Eyebrow>What early users say</Eyebrow>
-          <H2>From the TestFlight beta.</H2>
+          <H2>From early users.</H2>
           <Lead style={{ marginBottom:36, marginLeft:"auto", marginRight:"auto", textAlign:"center" }}>
-            Real quotes from the first round of beta testers. We'll refresh these once the App Store launch generates more.
+            Real quotes from early users and beta testers. We refresh these as more come in.
           </Lead>
           <div className="tn-testimonials-grid">
             {TESTIMONIALS.map((t, i) => (
@@ -543,7 +538,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
       <Section style={{ background:C.bgSoft, maxWidth:"100%", padding:"56px 0" }}>
         <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
           <Eyebrow>Stay in the loop</Eyebrow>
-          <H2 style={{ marginBottom:10 }}>Get launch updates.</H2>
+          <H2 style={{ marginBottom:10 }}>Get product updates.</H2>
           <Lead style={{ marginBottom:24 }}>
             Occasional notes when we ship something meaningful. No spam, no “growth” emails, unsubscribe in one click.
           </Lead>
