@@ -366,6 +366,15 @@ async function pickSlugs() {
 }
 
 async function main() {
+  // ── LICENSE QUARANTINE (2026-06-27) ───────────────────────────────────────
+  // Good Jobs First Violation Tracker is internal-use-only / bulk-paywalled /
+  // copyright-asserted, and is NOT cleared for TruNorth's paid tier. Scraping or
+  // re-fetching it is a license exposure. This fetcher is disabled; the live
+  // "Federal penalties" UI is gated off (SHOW_FEDERAL_PENALTIES in App.jsx)
+  // pending re-sourcing from government primaries (EPA ECHO/OSHA/DOJ/NLRB/DOL).
+  // Remove this guard ONLY with explicit license clearance.
+  console.error("⛔ vt-fetch-v2 is DISABLED — Good Jobs First Violation Tracker is not licensed for the paid app (license review 2026-06-27). Aborting.");
+  process.exit(1);
   console.log(`📋 VT v2 fetch — mode: ${DRY_RUN ? "DRY-RUN (synth, no network)" : SMOKE ? "smoke (10 brands, live)" : "full"}`);
   const slugs = await pickSlugs();
   console.log(`   ${slugs.length} slugs queued`);
