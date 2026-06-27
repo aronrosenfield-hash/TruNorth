@@ -363,7 +363,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth tracks 12,000+ companies. Where public records exist, we grade them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 170+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
+              TruNorth tracks 12,000+ companies. Where public records exist, we grade them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 190+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* The iOS CTA points at the live App Store listing (APP_STORE_URL).

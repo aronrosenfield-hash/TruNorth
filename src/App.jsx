@@ -7491,7 +7491,7 @@ if (screen === "basket") {
             return (
               <div style={{ padding:16 }}>
                 <p style={{ fontSize:13, color:T.txt3, marginBottom:14, lineHeight:1.6 }}>
-                  Every score is researched from <strong style={{ color:T.txt2 }}>200+ primary public-record sources</strong> — federal regulators, court records, accredited certifications, independent monitors. The {totalSources} highest-signal feeds are listed below across {SOURCES_DATA.length} categories; the full registry ships in the data pipeline.
+                  Every score is researched from <strong style={{ color:T.txt2 }}>200+ primary public-record sources</strong> — federal regulators, court records, accredited certifications, and independent monitors. The {totalSources} highest-signal feeds span {SOURCES_DATA.length} categories; the full 200+ refresh continuously in our data pipeline.
                 </p>
 
                 {/* Anchor names — proof of credibility */}
@@ -7556,7 +7556,7 @@ if (screen === "basket") {
             const totalSources = SOURCES_DATA.reduce((a, g) => a + g.items.length, 0);
             return (
               <p style={{ fontSize:14, color:T.txt2, marginBottom:14, lineHeight:1.6 }}>
-                Every score in TruNorth is built from <strong style={{ color:T.txt }}>primary public records</strong> — not opinions, not vibes, not AI synthesis. We pull from federal regulators, court records, public financial filings, accredited certifications, and independent monitors across <strong style={{ color:T.txt }}>{totalSources}+ data sources</strong> spanning {SOURCES_DATA.length} categories.
+                Every score in TruNorth is built from <strong style={{ color:T.txt }}>primary public records</strong> — not opinions, not vibes, not AI synthesis. We pull from federal regulators, court records, public financial filings, accredited certifications, and independent monitors across <strong style={{ color:T.txt }}>200+ data sources</strong> spanning {SOURCES_DATA.length} categories.
               </p>
             );
           })()}
