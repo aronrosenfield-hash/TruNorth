@@ -1,6 +1,8 @@
 # B-23 — Wire `enriched.*` into scoring: design proposal
 
-> **Status:** PROPOSAL — awaiting Aron's go/adjust. Produced 2026-06-27 by an 8-agent adversarial analysis (1 engine-spec + 7 per-dimension skeptics) verified against the live R7.1 engine. Each dimension was judged on: category fit, a severity model *consistent with R7.1*, double-count risk, and expected grade drift (audit acceptance bar = <200 brands).
+> **Status:** ✅ **`animalCerts` WIRED + verified (2026-06-27, approved by Aron).** The other 6 remain HOLD. Produced 2026-06-27 by an 8-agent adversarial analysis (1 engine-spec + 7 per-dimension skeptics) verified against the live R7.1 engine. Each dimension was judged on: category fit, a severity model *consistent with R7.1*, double-count risk, and expected grade drift (audit acceptance bar = <200 brands).
+>
+> **Implementation (2026-06-27):** client-only personalized promotion mirrored across all 5 scoring sites in `src/App.jsx` (`computeScore`, `userRelevantRealCats`, `verdictSentence`, the CompassSeal ring, the Why-panel) + a compact `acertB` index flag in `scripts/lib/index-entry.mjs` so browse and detail agree (the proposal under-specified this; without it the promotion would have caused index-vs-detail flicker). **No audit-drift mirror** — `audit-grade-drift.mjs` skips neutral/na enums *before* `scoreCat`, so the promotion is structurally invisible to the baseline auditor (same as `deiEvidence`); baseline drift is 0 by construction. **Verified:** 28/28 baked tests, 0 baseline grade drift after `rebuild-bundle-index`, `acertB` on all 19 carriers, per-category logic against real data (cert→92/88, cal-maine→50), and end-to-end in preview (Trader Joe's → A "aligned 1/1"; Cal-Maine → 40 "aligned 0/1", *not* whitewashed).
 
 ## TL;DR
 
@@ -45,6 +47,6 @@
 
 ## Recommendation
 
-1. **Approve `animalCerts`** (the one safe wire) → I implement the client-only stance-gated promotion with the negative-enum guard + audit-drift mirror.
+1. ~~**Approve `animalCerts`**~~ ✅ **DONE** — client-only stance-gated promotion (88 prefer-not / 92 dealbreaker) with the negative-enum guard + `acertB` index flag, verified end-to-end.
 2. **Keep the other 6 display-only** — the footprint card already surfaces them honestly; scoring them as-is is a reputational/fairness liability for a paid ethics app.
 3. **Log two follow-up sub-tasks** for the genuinely-salvageable signals: ITEP multi-year cash tax, and a consumer-food recall score (recency + Class-I + volume).
