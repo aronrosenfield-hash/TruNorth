@@ -89,7 +89,7 @@ async function mergeOne(entry, maps, now) {
   }
   company.dataLastUpdated.fedReserve = now;
 
-  await fs.writeFile(file, JSON.stringify(company));
+  await fs.writeFile(file, JSON.stringify(company, null, /\n {2}/.test(await fs.readFile(file, "utf-8").catch(() => "")) ? 2 : 0));
 
   return {
     brand:        entry.slug,

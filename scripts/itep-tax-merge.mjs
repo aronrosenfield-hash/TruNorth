@@ -339,7 +339,7 @@ async function main() {
           company.dataLastUpdated = company.dataLastUpdated ? { legacy: company.dataLastUpdated } : {};
         }
         company.dataLastUpdated.itepTax = out.generatedAt;
-        await fs.writeFile(file, JSON.stringify(company));
+        await fs.writeFile(file, JSON.stringify(company, null, /\n {2}/.test(await fs.readFile(file, "utf-8").catch(() => "")) ? 2 : 0));
         written++;
       }
       console.log(`  Wrote enriched.tax into ${written} company files.`);

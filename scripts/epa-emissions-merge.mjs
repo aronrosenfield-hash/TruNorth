@@ -331,7 +331,7 @@ async function mergeOne(slug, payload, maps, now, apply) {
   }
   company.dataLastUpdated.epaEmissions = now;
 
-  await fs.writeFile(file, JSON.stringify(company));
+  await fs.writeFile(file, JSON.stringify(company, null, /\n {2}/.test(await fs.readFile(file, "utf-8").catch(() => "")) ? 2 : 0));
   return { slug, target: r.slug, via: r.via, status: "merged" };
 }
 
