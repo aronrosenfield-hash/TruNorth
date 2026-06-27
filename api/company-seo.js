@@ -71,7 +71,12 @@ const TRUNORTH_ORG = {
   "@id": `${BASE}/#org`,
   name: "TruNorth",
   url: BASE,
-  sameAs: ["https://x.com/TruNorthapp"],
+  sameAs: [
+    "https://x.com/TruNorthapp",
+    "https://apps.apple.com/app/id6775301458",
+    "https://www.producthunt.com/products/trunorth",
+    "https://www.linkedin.com/company/trunorth",
+  ],
 };
 
 // Sources that are NOT public records. We must never present these as
