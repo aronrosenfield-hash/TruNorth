@@ -68,9 +68,22 @@ function topN(items, n = 5) {
 }
 
 async function fetchJson(url, attempt = 0) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, "Accept": "application/json" },
-  });
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: { "User-Agent": UA, "Accept": "application/json" },
+      // B-64: bound each request at 20s. Without this a single hung ECHO
+      // request stalls the whole weekly job to its 60-min cancel.
+      signal: AbortSignal.timeout(20000),
+    });
+  } catch (err) {
+    // Treat a timeout/network abort like a throttle: back off and retry a few
+    // times so one stuck request can't hang the job.
+    if (attempt >= MAX_RETRIES) throw err;
+    console.warn(`  ⏸  request error (${err.name || err.message}), retry ${attempt + 1}/${MAX_RETRIES} …`);
+    await new Promise(r => setTimeout(r, BACKOFF_429_MS));
+    return fetchJson(url, attempt + 1);
+  }
   if (res.status === 429) {
     if (attempt >= MAX_RETRIES) throw new Error("ECHO 429 — repeated throttle");
     console.warn(`  ⏸  429 throttle, backing off ${BACKOFF_429_MS / 1000}s …`);

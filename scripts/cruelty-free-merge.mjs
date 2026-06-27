@@ -166,8 +166,12 @@ async function main() {
   const peta = await tryReadJson(PETA_FILE);
 
   if (!lb && !peta) {
-    console.error("No raw files found. Run the fetchers first.");
-    process.exit(1);
+    // B-64: Leaping Bunny / PETA BWB are a QUARTERLY source. The weekly merge
+    // legitimately has nothing to do until those fetchers have populated
+    // public/data/_raw/, so skip cleanly (exit 0) rather than red-X'ing the
+    // weekly cron every week between quarterly refreshes.
+    console.warn("No raw cruelty-free files yet (quarterly fetchers haven't run) — nothing to merge, skipping.");
+    process.exit(0);
   }
 
   const maps = await loadMaps();

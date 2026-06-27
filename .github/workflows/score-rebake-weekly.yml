@@ -36,6 +36,11 @@ jobs:
         with:
           node-version: "22"
 
+      # B-64: without this the first bare import (finalize-bundle.mjs → minisearch)
+      # dies with ERR_MODULE_NOT_FOUND and the whole rebake hard-fails in <25s.
+      - name: Install deps
+        run: npm ci
+
       - name: Dry-run (always — prints summary even if --apply fails)
         run: node scripts/rebake-scores-from-events.mjs
 
