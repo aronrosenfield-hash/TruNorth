@@ -622,6 +622,18 @@ function deiEvidence(co) {
   return !!((Array.isArray(co?.deiBadges) && co.deiBadges.length > 0) || co?.deiB);
 }
 
+// B-23 (2026-06-27): third-party cruelty-free / humane certification evidence.
+// Detail files carry enriched.animalCerts = { certifications:[...] }; index
+// entries carry the compact `acertB` flag (scripts/lib/index-entry.mjs) so
+// browse and detail agree — the same dual-source pattern as deiEvidence/deiB.
+function animalCertEvidence(co) {
+  const ac = co?.enriched?.animalCerts;
+  return !!(
+    (ac && ((ac.certifications?.length > 0) || (Array.isArray(ac) && ac.length > 0)))
+    || co?.acertB
+  );
+}
+
 function scoreCat(k, v, profile, co) {
   // Build 55 (Aron's Excel-rebuild): scores normalized to {8, 50, 97, 100}
   // ranges. Wider separation between match and mismatch, cleaner mental model.
@@ -674,8 +686,16 @@ function scoreCat(k, v, profile, co) {
 
   if (k === "animals") {
     const pref = profile?.animalTesting || "neutral";
-    if (pref === "dealbreaker") { if (val==="cruelty_free") return 100; if (val==="some_testing") return 15; if (val==="tests_animals") return 0; return 50; }
-    if (pref === "prefer_not")  { if (val==="cruelty_free") return 97; if (val==="some_testing") return 50; if (val==="tests_animals") return 20; return 50; }
+    // B-23: a third-party cruelty-free/humane cert (enriched.animalCerts)
+    // promotes an otherwise-unscored brand for a stanced user — mirrors the
+    // deiEvidence path. Capped BELOW the company-wide cruelty_free score (a
+    // product-line cert is bounded evidence), and SUPPRESSED on a record-backed
+    // negative enum so e.g. cal-maine-foods (animals=negative + humane cert) is
+    // never whitewashed.
+    const certEv = animalCertEvidence(co) &&
+      !["negative","poor","very_poor","very poor","below_average","below average","mixed"].includes(val);
+    if (pref === "dealbreaker") { if (val==="cruelty_free") return 100; if (val==="some_testing") return 15; if (val==="tests_animals") return 0; if (certEv) return 92; return 50; }
+    if (pref === "prefer_not")  { if (val==="cruelty_free") return 97; if (val==="some_testing") return 50; if (val==="tests_animals") return 20; if (certEv) return 88; return 50; }
     return 50;
   }
 
@@ -859,14 +879,17 @@ function computeScore(co, profile) {
     // recognition counts as a signal even with no enum, so the badge the
     // user can SEE always reaches the grade they're shown.
     const deiEv = k === "dei" && deiEvidence(co);
-    if (getDataState(k, v) === "unknown" && !hasCsc && !deiEv) continue;
-    if (lv === "neutral" && !hasCsc && !deiEv) continue;
+    // B-23: animals cert evidence rescues an unscored cert brand from the
+    // neutral/na/unknown skips below, exactly like deiEv does for DEI badges.
+    const animalEv = k === "animals" && animalCertEvidence(co);
+    if (getDataState(k, v) === "unknown" && !hasCsc && !deiEv && !animalEv) continue;
+    if (lv === "neutral" && !hasCsc && !deiEv && !animalEv) continue;
     // 2026-06-01 (user-reported bug): 'na' (not applicable, e.g. animal
     // testing on a B2B software company) was being scored as 50 (fallback)
     // because NA_IS_FACTUAL marks it 'scored' for display. But the GRADE
     // should ignore inapplicable categories — they're not a positive OR
     // negative signal, they just don't apply. Exclude them like neutral.
-    if (lv === "na" || lv === "n/a") continue;
+    if ((lv === "na" || lv === "n/a") && !animalEv) continue;
     // 2026-06-03 (user-reported bug, Walmart): sc.dei = "pro_dei" was
     // dragging the grade down even though dei.s says "No public record
     // found." The category enum exists (often from AI synthesis) but
@@ -884,9 +907,9 @@ function computeScore(co, profile) {
     // B64: deiBadges ARE a hard public record (HRC/Disability:IN/Bloomberg
     // publish their lists) — recognition evidence overrides a "no public
     // record" narrative for the dei axis.
-    if (Array.isArray(co.excl) && co.excl.includes(k) && !deiEv) continue;
+    if (Array.isArray(co.excl) && co.excl.includes(k) && !deiEv && !animalEv) continue;
     const detailObj = co[k] || {};
-    if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || "")) && !deiEv) continue;
+    if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || "")) && !deiEv && !animalEv) continue;
     // B-23: apply scoring_overlay delta if present (numeric categories only;
     // categorical categories carry events_agg + excl_stale, not deltas).
     const catScore = applyOverlay(co, k, scoreCat(k, v, profile, co));
@@ -1140,6 +1163,8 @@ function userRelevantRealCats(co, profile) {
   for (const k of boosted) {
     // B64: third-party DEI recognition fills the dei slot for stanced users.
     if (k === "dei" && deiEvidence(co)) { boostedFilled++; continue; }
+    // B-23: a cruelty-free/humane cert fills the animals slot for stanced users.
+    if (k === "animals" && animalCertEvidence(co)) { boostedFilled++; continue; }
     const v = sc[k];
     if (!v || v === "neutral" || v === "na" || v === "unknown") continue;
     boostedFilled++;
@@ -1226,10 +1251,12 @@ function verdictSentence(enriched, profile, grade) {
     const hasCsc = enriched.csc && typeof enriched.csc[k] === "number";
     // B64: stanced users see third-party DEI recognition in ring + sentence.
     const deiEv = k === "dei" && profile?.deiLean && profile.deiLean !== "neutral" && deiEvidence(enriched);
+    // B-23: stanced users see a cruelty-free/humane cert in ring + sentence too.
+    const animalEv = k === "animals" && profile?.animalTesting && profile.animalTesting !== "neutral" && animalCertEvidence(enriched);
     if (enriched.flags?.[k]?.na) continue;
-    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc && !deiEv) continue;
-    if (lv === "na" || lv === "n/a") continue;
-    if (Array.isArray(enriched.excl) && enriched.excl.includes(k) && !deiEv) continue;
+    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc && !deiEv && !animalEv) continue;
+    if ((lv === "na" || lv === "n/a") && !animalEv) continue;
+    if (Array.isArray(enriched.excl) && enriched.excl.includes(k) && !deiEv && !animalEv) continue;
     axisScores[k] = scoreCat(k, v, profile, enriched);
   }
   const keys = Object.keys(axisScores);
@@ -3618,10 +3645,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     const hasCsc = enriched.csc && typeof enriched.csc[k] === "number";
                     // B64: stanced-dei recognition draws the dei arc too.
                     const deiEv = k === "dei" && profile?.deiLean && profile.deiLean !== "neutral" && deiEvidence(enriched);
+                    // B-23: a cruelty-free/humane cert draws the animals arc too.
+                    const animalEv = k === "animals" && profile?.animalTesting && profile.animalTesting !== "neutral" && animalCertEvidence(enriched);
                     if (enriched.flags?.[k]?.na) continue;
-                    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc && !deiEv) continue;
-                    if (lv === "na" || lv === "n/a") continue;
-                    if (Array.isArray(enriched.excl) && enriched.excl.includes(k) && !deiEv) continue;
+                    if ((getDataState(k, v) === "unknown" || lv === "neutral") && !hasCsc && !deiEv && !animalEv) continue;
+                    if ((lv === "na" || lv === "n/a") && !animalEv) continue;
+                    if (Array.isArray(enriched.excl) && enriched.excl.includes(k) && !deiEv && !animalEv) continue;
                     sealValues[k] = scoreCat(k, v, profile, enriched);
                   }
                   return (
@@ -3668,11 +3697,13 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                           const v = enriched.sc?.[k];
                           // B64: stanced-dei recognition shows up in the Why too.
                           const deiEvW = k === "dei" && profile.deiLean && profile.deiLean !== "neutral" && deiEvidence(enriched);
-                          if (getDataState(k, v) === "unknown" && !deiEvW) return null;
+                          // B-23: a cruelty-free/humane cert shows up in the Why too.
+                          const animalEvW = k === "animals" && profile.animalTesting && profile.animalTesting !== "neutral" && animalCertEvidence(enriched);
+                          if (getDataState(k, v) === "unknown" && !deiEvW && !animalEvW) return null;
                           const lv = String(v||"").toLowerCase();
-                          if ((lv === "neutral" && !deiEvW) || lv === "na" || lv === "n/a") return null;
+                          if ((lv === "neutral" && !deiEvW && !animalEvW) || ((lv === "na" || lv === "n/a") && !animalEvW)) return null;
                           const detailObj = enriched[k] || {};
-                          if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || "")) && !deiEvW) return null;
+                          if (/^\s*no public record found\.?\s*$/i.test(String(detailObj.s || "")) && !deiEvW && !animalEvW) return null;
                           // QA fix 2026-06-10: pass `enriched` as the co arg —
                           // scoreCat's overlay/context branches read it; omitting
                           // it made the Why-panel numbers drift from computeScore.

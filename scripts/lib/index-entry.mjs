@@ -105,6 +105,10 @@ export function indexEntryFromCompanyFile(slug, co) {
     // for STANCED users even when sc.dei never got an enum. The flag rides
     // the index so collapsed rows and expanded detail score identically.
     ...(Array.isArray(co.deiBadges) && co.deiBadges.length > 0 ? { deiB: 1 } : {}),
+    // B-23: compact cruelty-free/humane cert flag (mirrors deiB) so the
+    // personalized animals promotion agrees between collapsed browse rows and
+    // expanded detail (enriched.animalCerts lives only on detail files).
+    ...((co.enriched?.animalCerts?.certifications?.length > 0 || (Array.isArray(co.enriched?.animalCerts) && co.enriched.animalCerts.length > 0)) ? { acertB: 1 } : {}),
     ...(isConsumerFacing(co) ? {} : { consumerFacing: false }),
     recallSeverity: co.recalls?.severityMax,
     // bdsListed lives at ownership.bdsListed in company files (never
