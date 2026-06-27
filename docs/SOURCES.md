@@ -2,7 +2,7 @@
 
 > **Single source of truth** for every data source TruNorth pulls from. Mirrored by `SOURCES_DATA` in `src/App.jsx`, which renders the in-app Sources tab. Any time we add or remove a source, both this doc + that array stay in sync.
 
-**Last updated:** 2026-06-07 (B-14: Leaping Bunny + PETA BWB upgraded from manual entries to live quarterly pipeline)
+**Last updated:** 2026-06-27. This registry lists the ~105 curated, named sources that render in the in-app Sources tab (mirrors `SOURCES_DATA`). The full pipeline is larger — **200+ sources across 168 cron workflows / 225 fetch scripts** — including the Build-76 footprint additions noted below. *(2026-06-07: Leaping Bunny + PETA BWB upgraded to a live quarterly pipeline.)*
 
 ---
 
@@ -10,13 +10,16 @@
 
 | Status | Count |
 |---|---|
-| ✅ Live in pipeline | **102** 🎯 |
+| ✅ Curated & named (this doc ≈ in-app tab) | **~105** |
+| 🛰️ Full pipeline (all crons + fetchers) | **200+** |
 | 🟡 In flight | 0 |
 | 📋 Planned (queued) | 0 |
 | 💰 Paid alternatives (not used) | see bottom |
 | **Categories (in-app groups)** | **18** |
 
 > **2026-06-04 milestone:** Hit the 100-source mark. All Tier 1-7 integrations shipped in the Jun 3-4 push (46 baseline + 54 new). Tier 8 (California Prop 65 + CARB) was deferred per product decision.
+>
+> **2026-06-26 (Build 76):** +10 footprint sources, not yet itemized row-by-row below — 3 revived fetchers (EPA TRI, ITEP corporate tax, EPA GHGRP) + 7 license-clean `enriched.*` pipelines (SEC effective tax, SEC Form SD conflict minerals, OpenFDA recalls, CA/WA breach + CPPA broker, CMS Open Payments + opioid, state WARN, vegan/humane certs). Display-only footprint card; **not yet read by scoring (B-23)**.
 
 ---
 

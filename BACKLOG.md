@@ -429,7 +429,7 @@ DW-51 As You Sow Fund Lists · DW-52 BaFin (Germany) · DW-53 FCA (UK) · DW-54 
 
 ---
 
-## ⏰ DATA-FRESHNESS CADENCE — 144 workflows now (+`enriched-augments-refresh.yml`, Jun-26)
+## ⏰ DATA-FRESHNESS CADENCE — 168 workflows now (+`enriched-augments-refresh.yml`, Jun-26)
 
 ### Daily (UTC)
 News RSS (04:00) · Trending refresh (06:00) · OFAC SDN snapshot · MSHA refresh · PHMSA refresh · BIS Entity List · trending augments
