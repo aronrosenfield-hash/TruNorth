@@ -116,6 +116,7 @@ Every finding from the investor/product review is fixed and pushed (batches 1-5 
 | E-4 | **OFCCP EEO-1 Type 2 static augment** | manual + 1h | Needs Aron: one-time manual FOIA-library download, then a static augment writer (best per-company DEI option) |
 | ~~E-5~~ | ~~11 empty augments~~ | ✅ verified legit 2026-06-11 | All 11 are legitimately empty: seed/merge scripts run clean but those small intl regulators have zero catalog-brand matches (awa: 9 records all orphaned; fdpic: 0; weko: 1). NOT the wiped-snapshot class |
 | E-6 | **SOURCES_DATA sync** | ~1h | In-app Sources tab lists 100 sources; `docs/SOURCES.md` has ~150; landing claims 200+. User-visible — reconcile before PH eyes on it |
+| ~~E-11~~ | ~~brand-parent-map Wikidata collision guard~~ | ✅ done 2026-06-27 | [PR #115](https://github.com/aronrosenfield-hash/TruNorth/pull/115) — new `scripts/lib/parent-map-guards.mjs` drops 12 bad Wikidata edges (asna→GM same-name collisions + BlackRock/Invesco/Pershing "owned by"=largest-shareholder artifacts); generator + itep/brazil `matchViaParentMap` now guard so the next regen stays clean. Map 6,716→6,704; no company files / no rebake needed. |
 
 ---
 
