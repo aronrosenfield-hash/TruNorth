@@ -155,37 +155,9 @@ const WRITERS = [
     },
   },
   // ─── Banking on Climate Chaos — fossil-fuel financing 2016-2023 ──────
-  {
-    name: "banking-on-climate-chaos",
-    write: (e) => {
-      if (e.fossil_usd_b == null) return [];
-      const usd = `$${e.fossil_usd_b.toFixed(1)}B`;
-      const rk = e.rank ? ` (#${e.rank} globally)` : "";
-      return [{
-        category: "environment",
-        narrative: `Banking on Climate Chaos 2024: ${usd} in fossil-fuel financing ${e.period || "2016-2023"}${rk}.`,
-        sc: e.rank <= 10 ? "very_poor" : "poor",
-        severity: "negative",
-      }];
-    },
-  },
+  // banking-on-climate-chaos writer removed 2026-06-27 (B-63: CC-BY-NC, paid tier).
   // ─── Toxic 100 Air / Water (UMass PERI) ──────────────────────────────
-  {
-    name: "toxic-100",
-    write: (e) => {
-      const ranks = [];
-      if (e.air_rank) ranks.push(`#${e.air_rank} Toxic 100 Air Polluters`);
-      if (e.water_rank) ranks.push(`#${e.water_rank} Toxic 100 Water Polluters`);
-      if (!ranks.length) return [];
-      const worst = Math.min(e.air_rank || 99, e.water_rank || 99);
-      return [{
-        category: "environment",
-        narrative: `UMass PERI ranks this company ${ranks.join(" and ")} (toxicity-weighted US releases).`,
-        sc: worst <= 15 ? "very_poor" : "poor",
-        severity: "negative",
-      }];
-    },
-  },
+  // toxic-100 writer removed 2026-06-27 (B-63: CC-BY-NC, paid tier).
   // ─── EPA GHGRP — facility-level CO2e rolled to parent ────────────────
   {
     name: "epa-ghgrp",
@@ -203,28 +175,7 @@ const WRITERS = [
     },
   },
   // ─── InfluenceMap LobbyMap — corporate climate-policy lobbying ───────
-  {
-    name: "influence-map",
-    write: (e) => {
-      if (!e.grade) return [];
-      let envSc, label;
-      switch (e.grade) {
-        case "A": envSc = "positive";  label = "actively advocates for ambitious climate policy"; break;
-        case "B": envSc = "positive";  label = "broadly supports ambitious climate policy"; break;
-        case "C": envSc = "mixed";     label = "mixed climate-policy engagement"; break;
-        case "D": envSc = "poor";      label = "opposes major elements of climate policy"; break;
-        case "E": envSc = "very_poor"; label = "strategically opposes ambitious climate policy"; break;
-        case "F": envSc = "very_poor"; label = "actively obstructs climate policy"; break;
-        default:  envSc = "mixed";     label = `LobbyMap grade ${e.grade}`;
-      }
-      return [{
-        category: "environment",
-        narrative: `InfluenceMap LobbyMap grade ${e.grade}: ${label} (${e.engagement || "tracked"} engagement, ${e.topline || "unknown"} topline).`,
-        sc: envSc,
-        severity: envSc === "positive" ? "positive" : envSc === "mixed" ? "neutral" : "negative",
-      }];
-    },
-  },
+  // influence-map writer removed 2026-06-27 (B-63: CC-BY-NC, paid tier).
   // ─── Climate Action 100+ benchmark ───────────────────────────────────
   {
     name: "ca100",
@@ -318,17 +269,7 @@ const WRITERS = [
     },
   },
   // ─── Net Zero Tracker ────────────────────────────────────────────────
-  {
-    name: "net-zero-tracker",
-    write: (e) => {
-      const yr = e.targetYear || e.netZeroYear;
-      const quality = e.qualityScore || e.assessment || "tracked";
-      const grade = e.grade;
-      const narrative = `Net-zero pledge${yr ? ` by ${yr}` : ""}${grade ? ` (Net Zero Tracker grade: ${grade})` : ""}.`;
-      const sc = grade === "A" || grade === "B" ? "positive" : grade === "F" || grade === "D" ? "negative" : "mixed";
-      return [{ category: "environment", narrative, sc, severity: sc }];
-    },
-  },
+  // net-zero-tracker writer removed 2026-06-27 (B-63: CC-BY-NC, paid tier).
   // ─── Textile Exchange (apparel certs) ────────────────────────────────
   {
     name: "textile-exchange",
@@ -902,28 +843,7 @@ const WRITERS = [
   // in AR, Koch in KS, AT&T in TX, etc.). We treat this writer the same
   // way as DIME — cross-cite an existing political narrative rather than
   // overwrite it.
-  {
-    name: "followthemoney-state",
-    write: (e) => {
-      const p = e.political || e;
-      const total = p.totalUsd || 0;
-      if (!total) return [];
-      const states = p.stateCount || 0;
-      const topStates = Array.isArray(p.topStates) ? p.topStates : [];
-      const totalStr = total >= 1e6 ? `$${(total / 1e6).toFixed(1)}M`
-        : total >= 1e3 ? `$${Math.round(total / 1e3)}K`
-        : `$${Math.round(total)}`;
-      const topStr = topStates.slice(0, 3).map(s => s.state).join(", ");
-      const narrative =
-        `FollowTheMoney.org: ~${totalStr} in state-level political contributions across ${states} state${states === 1 ? "" : "s"}${topStr ? ` (top: ${topStr})` : ""}.`;
-      return [{
-        category: "political",
-        narrative,
-        mergeCrossCite: true,
-        crossCiteSuffix: " [FollowTheMoney.org adds state-level totals.]",
-      }];
-    },
-  },
+  // followthemoney-state writer removed 2026-06-27 (B-63: CC-BY-NC, paid tier).
   // ─── FARA foreign-agent registrations (DOJ) ──────────────────────────
   // Augment shape per slug: { registrations[], countries[], match_via,
   // registration_count }. Match was made via either the US registrant
@@ -2091,7 +2011,6 @@ for (const w of WRITERS) {
 // richer combined narrative; don't truncate."
 const SUPPLY_CHAIN_SOURCES = new Set([
   "knowthechain",
-  "fashion-revolution",
   "chrb",
   "dol-tvpra",
   "fair-labor-association",
@@ -2110,7 +2029,6 @@ function buildSupplyChainSummary(hits) {
   for (const [name, w] of hits) {
     if (name === "knowthechain") labels.push(`KnowTheChain ${w._raw?.score ?? "?"}/100`);
     else if (name === "chrb") labels.push(`CHRB ${w._raw?.score ?? "?"}/26`);
-    else if (name === "fashion-revolution") labels.push(`Fashion Rev ${w._raw?.score ?? "?"}%`);
     else if (name === "fair-labor-association") labels.push(`FLA ${w._raw?.status || "affiliate"}`);
     else if (name === "dol-tvpra") labels.push(`TVPRA exposure`);
     else if (name === "uk-modern-slavery") labels.push(w._raw?.status === "weak-or-non-compliant" ? "UK MS gap" : "UK MS statement");

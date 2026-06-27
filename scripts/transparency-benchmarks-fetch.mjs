@@ -356,7 +356,7 @@ export function buildRecord(slug) {
     sourceUrls.push(SOURCES.chrb.url);
   }
 
-  const fr = FASHION_REV_2024.find(r => r.slug === slug);
+  const fr = null; // B-63 (2026-06-27): Fashion Revolution disabled — CC-BY-NC, paid tier.
   if (fr) {
     subScores.fashionRevTransparency = normalize("fashionRevTransparency", fr.raw);
     sourceUrls.push(SOURCES.fashionRevTransparency.url);
