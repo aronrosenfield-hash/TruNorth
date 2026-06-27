@@ -125,6 +125,14 @@ async function mergeOne(entry, now) {
 }
 
 async function main() {
+  // ── LICENSE QUARANTINE (2026-06-27) ───────────────────────────────────────
+  // Merges Good Jobs First Violation Tracker data into company files. GJF is
+  // internal-use-only / bulk-paywalled / copyright-asserted and NOT cleared for
+  // TruNorth's paid tier. Disabled alongside the fetcher (vt-fetch-v2.mjs) and
+  // the gated-off "Federal penalties" UI (SHOW_FEDERAL_PENALTIES in App.jsx).
+  // Remove this guard ONLY with explicit license clearance.
+  console.error("⛔ vt-merge-v2 is DISABLED — Good Jobs First Violation Tracker is not licensed for the paid app (license review 2026-06-27). Aborting.");
+  process.exit(1);
   const now = new Date().toISOString();
   console.log(`📊 VT v2 merge starting… (${DRY_RUN ? "DRY-RUN — no writes" : "WRITE"})`);
 

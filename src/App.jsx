@@ -1265,6 +1265,17 @@ function verdictSentence(enriched, profile, grade) {
   return `Aligned on ${aligned} ${phrase}.`;
 }
 
+// ─── LICENSE GATE: "Federal penalties" (Good Jobs First Violation Tracker) ────
+// enriched.violationTracker (and laborAPI.violationTracker) is sourced from Good
+// Jobs First's Violation Tracker, whose ToS grant only a limited internal-use
+// license — bulk data paywalled, copyright asserted on the compilation. That is
+// NOT cleared for a paid app (TruNorth Pro is live), so every UI surface that
+// renders it is gated off here until the totals are re-sourced from government
+// primaries (EPA ECHO, OSHA, DOJ, NLRB, DOL-WHD — public-domain, already in the
+// in-app Sources list). Display-only: scoring never reads this field, so grades
+// are unchanged. Do NOT flip back to true on GJF data — only after re-sourcing.
+const SHOW_FEDERAL_PENALTIES = false;
+
 // R2 (Lens verdict card): up to three receipt lines — the mono/brass proof
 // under the verdict. Every line is a real figure from a named public source;
 // when we have a URL we link it. Order: penalties → recalls → money → grants.
@@ -1272,7 +1283,7 @@ function receiptLines(enriched) {
   const fmt$ = (n) => n >= 1e9 ? `$${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `$${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `$${(n / 1e3).toFixed(0)}K` : `$${n}`;
   const out = [];
   const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
-  if (vt?.totalPenalty && vt.totalRecords) {
+  if (SHOW_FEDERAL_PENALTIES && vt?.totalPenalty && vt.totalRecords) {
     out.push({ src: "FED RECORD", text: `${fmt$(vt.totalPenalty)} penalties · ${vt.totalRecords} records`, sub: vt.primaryOffenses?.[0]?.category });
   }
   const recall = enriched.cpsc?.sampleRecalls?.[0];
@@ -3002,7 +3013,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
               {/* B-30: surface "active enforcement" badge on the labor row when
                   VT v2 saw a penalty assessed in the last 6 months.  Render
                   inline above the Signal line.  Silent if vt v2 isn't merged. */}
-              {k === "labor" && (() => {
+              {k === "labor" && SHOW_FEDERAL_PENALTIES && (() => {
                 const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
                 if (!vt?.active_last_6mo) return null;
                 return (
@@ -3283,6 +3294,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               (≥$5M in penalties), not the app's grade verdict. Lets users
               see the raw data and decide for themselves. */}
           {(() => {
+            // GJF license gate (2026-06-27): Violation Tracker is not cleared for
+            // the paid app — see SHOW_FEDERAL_PENALTIES near receiptLines().
+            if (!SHOW_FEDERAL_PENALTIES) return null;
             // B-30 (VT v2): VT lives at two paths historically — root and
             // laborAPI.  Read both, prefer the richer one.
             const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
@@ -4588,7 +4602,6 @@ const SOURCES_DATA = [
     {name:"NLRB (National Labor Relations Board)",url:"https://www.nlrb.gov",desc:"US agency that oversees union elections and investigates illegal labor practices.",cadence:"Monthly"},
     {name:"DOL Wage & Hour Division",url:"https://enforcedata.dol.gov",desc:"DOL Wage and Hour Division enforcement actions — back wages, employee impact per case.",cadence:"Monthly"},
     {name:"DOL OFCCP",url:"https://www.dol.gov/agencies/ofccp",desc:"Office of Federal Contract Compliance Programs audits + settlements (race, disability, veteran discrimination).",cadence:"Monthly"},
-    {name:"Violation Tracker",url:"https://violationtracker.goodjobsfirst.org",desc:"Aggregates federal penalties across 50+ agencies — wage theft, safety, environmental, antitrust.",cadence:"Monthly"},
     {name:"Oxfam Behind The Brands",url:"https://www.oxfam.org/en/research/behind-brands",desc:"Rates major food companies on worker rights.",cadence:"Annual"},
   ]},
   {group:"Supply-chain & human rights",icon:"ti-world",items:[
