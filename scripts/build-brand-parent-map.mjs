@@ -28,6 +28,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { sanitizeParentMap } from "./lib/parent-map-guards.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -1540,6 +1541,19 @@ async function fetchWikidata() {
 // Main
 // ─────────────────────────────────────────────────────────────────────────────
 async function main() {
+  // Offline prune: re-apply the edge guards to the committed artifact without a
+  // Wikidata fetch or index rebuild. Deterministic, surgical, parallel-safe.
+  //   node scripts/build-brand-parent-map.mjs --sanitize-only
+  if (process.argv.includes("--sanitize-only")) {
+    const current = await readJson(OUT_JSON);
+    const { clean, dropped } = sanitizeParentMap(current);
+    console.log(`[guards] dropped ${dropped.length} edge(s):`);
+    for (const d of dropped) console.log(`  - ${d.key} → ${d.parent} [${d.confidence}] (${d.reason})`);
+    await writeJson(OUT_JSON, clean);
+    console.log(`[guards] wrote ${OUT_JSON} (${Object.keys(clean).filter(k => k !== "_doc").length} entries)`);
+    return;
+  }
+
   console.log("[build] reading index.json…");
   const index = await readJson(INDEX_JSON);
   const validSlugs = new Set(index.map(c => c.slug));
@@ -1614,6 +1628,18 @@ async function main() {
     console.warn("[build] wikidata fan-out failed:", e.message);
   }
   console.log(`[build] wikidata: added ${wdAdded} (skipped ${wdSkipped} with no parent match)`);
+
+  // 4. Guards — drop audited bad edges: same-name collisions + passive-holder
+  //    ("owned by" = largest shareholder) noise. See lib/parent-map-guards.mjs.
+  //    Runs over ALL layers (carried-over + curated + wikidata) so a bad edge
+  //    can't sneak back in via carry-over.
+  const { clean: guarded, dropped } = sanitizeParentMap(out);
+  if (dropped.length) {
+    console.log(`[build] guards: dropped ${dropped.length} edge(s):`);
+    for (const d of dropped) console.log(`  - ${d.key} → ${d.parent} [${d.confidence}] (${d.reason})`);
+  }
+  for (const k of Object.keys(out)) delete out[k];
+  Object.assign(out, guarded);
 
   // Sort keys (preserve _doc at top of JSON)
   const sorted = {};

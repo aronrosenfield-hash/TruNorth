@@ -67,6 +67,7 @@ import {
   LICENSE_TAG,
   INTEGRATION_ENABLED,
 } from "./itep-tax-fetch.mjs";
+import { isBlockedEdge } from "./lib/parent-map-guards.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -158,7 +159,7 @@ export function matchViaParentMap(companyName, parentMap) {
   const candidates = slugCandidates(companyName);
   for (const c of candidates) {
     const entry = parentMap[c];
-    if (entry && entry.parent) return entry.parent;
+    if (entry && entry.parent && !isBlockedEdge(c, entry.parent, entry.confidence)) return entry.parent;
   }
   return null;
 }
