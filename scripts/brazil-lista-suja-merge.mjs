@@ -54,6 +54,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { normalizePtName } from "./brazil-lista-suja-fetch.mjs";
+import { isBlockedEdge } from "./lib/parent-map-guards.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -164,7 +165,7 @@ export function matchViaParentMap(employerName, parentMap) {
   const candidates = slugCandidates(employerName);
   for (const c of candidates) {
     const entry = parentMap[c];
-    if (entry && entry.parent) return entry.parent;
+    if (entry && entry.parent && !isBlockedEdge(c, entry.parent, entry.confidence)) return entry.parent;
   }
   return null;
 }
