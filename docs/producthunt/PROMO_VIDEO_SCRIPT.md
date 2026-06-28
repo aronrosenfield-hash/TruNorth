@@ -1,5 +1,7 @@
 # TruNorth — promo video voiceover script (L-9)
 
+> ✅ **VO RECORDED (2026-06-28):** Brian voice via ElevenLabs — `~/Downloads/ElevenLabs_2026-06-28T14_16_27_Brian_pvc_s50_m2.mp3`, **30.3s** (matches the primary cut exactly). Next: lay screen-capture footage to the beat timings below, add burned-in captions, export 9:16 (Reels/TikTok/App Store) + 1:1 (LinkedIn feed).
+>
 > Verbiage for the 30–60s demo video (TikTok / Reels / Product Hunt gallery / App Store preview).
 > **Voice:** calm, plain, trustworthy — *journalist, not salesperson.* No hype, no scarcity, no "your wallet is a vote" framing (reads partisan — QA-17). The hook is curiosity + receipts, not outrage.
 > **Facts (keep accurate):** 12,000+ brands tracked · ~2,900 fully graded · 200+ public-record sources · 9 values categories · free app, optional Pro · live on the App Store. Pace ≈ 150 wpm.
