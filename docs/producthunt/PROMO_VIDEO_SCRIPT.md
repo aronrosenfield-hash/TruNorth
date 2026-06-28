@@ -1,5 +1,7 @@
 # TruNorth — promo video voiceover script (L-9)
 
+> 🎬 **ASSEMBLED 2026-06-28:** `docs/social-assets/TruNorth-30s-2026-06-28.mp4` (1080×1920, 30.3s, Brian VO baked in) — title card → 4 current App Store screens (01-today/02-verdict/03-match/04-ledger) → CTA. **Use this, not the June-12 `TruNorth-30s.mp4`** (that one overclaims "12,000+ graded" + has the old VO).
+>
 > ✅ **VO RECORDED (2026-06-28):** Brian voice via ElevenLabs — `~/Downloads/ElevenLabs_2026-06-28T14_16_27_Brian_pvc_s50_m2.mp3`, **30.3s** (matches the primary cut exactly). Next: lay screen-capture footage to the beat timings below, add burned-in captions, export 9:16 (Reels/TikTok/App Store) + 1:1 (LinkedIn feed).
 >
 > Verbiage for the 30–60s demo video (TikTok / Reels / Product Hunt gallery / App Store preview).
