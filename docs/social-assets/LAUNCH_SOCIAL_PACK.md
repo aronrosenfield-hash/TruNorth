@@ -149,3 +149,22 @@ https://apps.apple.com/app/id6775301458
 - **Link:** App Store link goes ONLY in the final tweet (tweet 7): https://apps.apple.com/app/id6775301458 — mid-thread links suppress reach, so every earlier tweet stays link-free.
 - **Media:** Attach the 30s captioned video (VO recorded) to the HOOK tweet (tweet 1) — native video autoplays in-feed, holds the scroll, and shows the scan→grade→document flow that the thread describes. If video can't be used, fall back to the verdict/brand-detail screenshot showing the letter grade + the tappable source document. Keep the 9-slide carousel out of the thread; it's better repurposed as a quote-tweet later or for LinkedIn/IG.
 - **Tips:** Post the hook tweet first with video attached, then immediately reply-chain the rest so the thread lands fully formed. Best windows for a launch-story thread: 8-10am or 12-1pm CST (Aron's tz) on a weekday — avoid late Fri/weekend. Reply to your own hook within a minute to seed the thread (helps the algo treat it as a conversation). Pin tweet 1 to profile for launch week. Engage every reply in the first 60-90 min — early replies are the biggest reach lever on X. The em-dash-free, lowercase-ok phrasing reads native; resist the urge to capitalize or add hashtags mid-thread. Tweet 6 (the honest \"?\" admission) is the credibility beat — don't cut it; it's what separates this from salesy launches and tends to get quoted.
+
+---
+
+## 📸 Instagram carousel — 8-slide deck (1080×1350, rendered)
+
+Ready-to-post PNGs in `docs/social-assets/ig-carousel/`. All 4:5 for a consistent swipe. Brand: `#0E0F12` bg · Georgia serif heads · teal `#38C0CE` · brass `#C9A86A`.
+
+| # | Type | Content |
+|---|---|---|
+| 1 | cover (rendered) | eyebrow "I stood in a grocery aisle, googling which brand was the 'good' one…" → **"Everyone had a take." / "Nobody had a receipt."** → brass "So I spent a year building the receipts." → swipe → |
+| 2 | type (rendered) | "Every 'ethical shopping' app runs on vibes." → "Scraped reviews. Self-reported ESG reports. Somebody's opinion of 'good.'" |
+| 3 | type (rendered) | **"Records, not opinions."** → "FEC · EPA · OSHA · SEC · courts" |
+| 4 | screenshot (02-verdict) | the grade + records (scan → grade → the receipt) |
+| 5 | screenshot (03-match) | the 30-second values quiz / personalization |
+| 6 | screenshot (04-ledger) | the ledger ("your wallet, as a ledger") |
+| 7 | type (rendered) | "ONE PERSON. ONE YEAR." → 12,000+ tracked / ~2,900 graded / 200+ sources → "No streaks. No outrage. Just the record." |
+| 8 | type (rendered) | "It's live on the App Store today." → TruNorth → "Free." → "link in bio →" |
+
+Post the **caption** (above) with these as the carousel; hashtags + link go in the **first comment** (IG captions can't link). Slides 4–6 are the composited App Store screens; 1/2/3/7/8 are the rendered type slides. Tweak any text in Canva if you want — sizes/positions are in `make_ig_slides.py`.
